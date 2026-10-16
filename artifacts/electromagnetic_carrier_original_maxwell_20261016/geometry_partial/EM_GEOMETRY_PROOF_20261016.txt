@@ -1,0 +1,196 @@
+ACTUAL ORIGINAL MAXWELL GEOMETRY COVECTOR AND EM CROSS APPLICATION
+2026-10-16.  Isolated WORK calculation; no repository/Git mutation.
+
+RESULT AND CLAIM BOUNDARY
+
+The original material Maxwell action was evaluated on the two supplied real
+one-cell midpoint fields, using all original100 geometry coordinates and all
+16 released EM radial/mode amplitudes.  The independent gauge/inherited
+remainder, raw Higgs/Hdot, and radial/angular test maps were held fixed under
+geometry variation.  This supplies a genuine partial constitutive action
+covector and geometry/gauge cross block, NOT a full inherited-source geometry
+derivative, a selected collider history, a pointwise full stress tensor, a
+native determinant response, a terminal return, or physical2e-10 admission.
+No correction, force, reference state, incoming field, or boundary load was
+selected or set to zero.
+
+The100 action-covector and complete16x100 weak/momentum arrays stabilize in
+the96-to192 numerical comparison below2e-10 ABSOLUTELY in every entry.  This
+is a fixed finite-field quadrature observation, not a continuum enclosure or
+a radial-basis/domain-completeness theorem.  The full physical flags remain
+false.  No fresh adopted-preparation Maxwell/all226 validation or muon moment
+has been supplied.
+
+OWNED ACTION AND COORDINATE FAMILY
+
+Let Q be the original raw100 material geometry coordinates, Q0 the actual
+retained midpoint, and B(Q) the owned mechanical connection M*(lambda-1),
+with its coordinate-time/radial firsts M*lambda_tau and M*lambda_rho.
+The saved total field A0 is recentered exactly once:
+
+  a_fixed = A0-B(Q0),  A(Q)=B(Q)+a_fixed,
+  S_added(Q) = S_Max(Q,A(Q))-S_Max(Q,B(Q)).
+
+The subtraction avoids adding the mechanical reference energy a second time
+to the geometric R8 owner.  The field derivative of S_added equals the full
+Maxwell weak derivative because the subtracted term has no independent a.
+The returned geometric partial is d_Q S_added.  It does NOT differentiate
+the recentered inherited/source remainder as a physical function of Q.
+
+Geometry is holomorphic_geometry_rows(raw100,rho,differentiate=True), converted
+to real Jets ONLY after every value/gradient/Hessian imaginary part was
+checked exactly zero.  All100 gradients and100x100 contacts are retained.
+The same anchored material rho nodes are held fixed while normal98, rate99,
+wall Jacobian, density, mechanical connection and clock contacts vary.
+The source owner uses stable localization4p(1-p), not a reconstructed
+1-4*sigma^2 that loses small-p relative accuracy.
+
+The original signed scalar is
+
+  S_Max = (MAXWELL_TO_CAP/2) integral
+    [ k X^2+e(T-beta R)^2-r_density R^2-d Bmag^2 ],
+
+with every temporal/radial/angular/internal curvature and commutator retained.
+The angular densities already carry their owned orbit/fiber normalization;
+the24cell Haar rule has total weight1.  MAXWELL_TO_CAP occurs once.
+
+The16 tests use all four frozen radial/source/wall profiles and all four
+actual-right-coframe Maxwell seed forms.  At each midpoint,
+
+  V_a = radial_a*W_mode*s(H),
+  (V_a)_t = radial_a*W_mode*sdot(H,Hdot),
+
+with the exact radial and angular derivatives.  These arrays are fixed under
+the geometry partial.  full_maxwell_weak_geometric_jets supplies the16 weak
+rows, their16x100 geometry Jacobian, and the canonical16 momentum tests with
+their16x100 geometry Jacobian.  Full geometric Hessians are also archived in
+WORK, but are not independently admitted by the first-derivative controls.
+
+DIRECT HIGGS COEFFICIENT IDENTITY
+
+The actual nonzero H/Hdot and original real U2 generators are exported.
+For the retained aligned charge coefficients s(H), its Higgs representation
+is q_H=i(P_H-I), with P_H=H Hdag/(Hdag H).  Consequently
+
+  q_H H=0,
+  qdot_H H+q_H Hdot=0.
+
+Thus adding any spatial aligned seed amplitude leaves the direct classical
+Higgs D_i H unchanged pointwise.  Differentiating the SAME aligned map with
+H retains both mixed placements, which cancel.  This is an algebraic
+pullback identity, not an assertion that all Higgs/native/fermion/interface
+responses vanish.  No new full mixed Higgs-action numerical gate is claimed.
+
+Actual incoming absolute residuals:
+  q_H H                      3.8515170447997007e-31
+  qdot_H H+q_H Hdot           1.2855829619257607e-28
+  q_H Hdot (held-axis only)   2.348811916506556e-13, NONZERO
+
+Actual outgoing absolute residuals:
+  q_H H                      3.838669075090002e-31
+  qdot_H H+q_H Hdot           2.5715030888714455e-30
+  q_H Hdot (held-axis only)   6.185364400947571e-15, NONZERO
+
+LITERAL FIRST-DERIVATIVE CONTROLS
+
+The AD backend is the existing full polynomial/Jet Maxwell owner.  Its
+independent control uses independent_original_maxwell_weak, rebuilding total
+fields B(Q)+a_fixed and the actual densities through the VALUE-only geometry
+owner.  It also evaluates the mechanical-only scalar separately.  No action
+gradient/Hessian helper is called in that literal control.
+
+The original24/48 sweep keeps every centered2/centered4 step
+  h = 1e-4,3e-5,1e-5,3e-6,1e-6,
+on the declared axes normal98, rate99 and log-radiusq0.  Small-step binary64
+cancellation failures are preserved; no favorable step was used as a
+physical admission.  Literal unperturbed values agree with the independent
+AD weak/momentum/action applications to at most5.47954310374986e-15 scaled.
+
+The96/192 supplement preserves COMPLEX values throughout the perturbed
+holomorphic geometry/density/mechanical application.  It performs no real
+clipping, conjugation, or finite-difference subtraction in that comparison.
+It tests ALL of h=1e-16,1e-20,1e-24 on axes0,98,99.  Across both sides and
+both radial orders the worst combined33-output scaled difference is
+1.9790016020402865e-14; worst absolute difference6.572520305780927e-13.
+Coverage is three declared directions, not an independent all100 derivative
+verification and not a full physical outgoing derivative.  The implicit
+chart residual is recorded but is not itself a derivative-error enclosure.
+
+NUMERICAL RADIAL COMPARISON (ALL ENTRIES, NOT ONLY PEAK-NORM CHANGES)
+
+                         incoming48->96     incoming96->192
+  action covector100      3.5767975248e-9     7.1054273576e-14
+  weak cross16x100        1.4079878907e-7     1.5376144802e-11
+  momentum cross16x100    1.0491914004e-9     2.9487523534e-13
+
+                         outgoing48->96     outgoing96->192
+  action covector100      1.2824941109e-10    8.5265128291e-14
+  weak cross16x100        2.7983849904e-8     1.0288658814e-11
+  momentum cross16x100    3.8593611640e-10    3.9435121835e-13
+
+The supplement executed192 whenever ANY absolute entry difference at96
+exceeded2e-10.  Every100/16x100 entry participated.  No basis coefficient,
+source, field, physical parameter or quadrature node was fitted to a muon
+measurement.  The old24/48 sensitivity and all failed FD controls remain
+unchanged in their original paired files.
+
+The four inherited radial test functions were originally built for the old
+curl-squared9 carrier.  Their admissible fixed finite use here is NOT a
+proof of the natural leading endpoint behavior for the new Killing modes
+(curl-squared4), nor of full constrained/domain completeness.  That domain
+and enrichment question is separate from quadrature stability.
+
+SOURCES, REPLAY AND PROVENANCE
+
+All files below are under
+C:/Users/carbe/OneDrive/Documents/CODEX/outputs/your_own_em_geometry_20261016.
+
+Frozen original producer:
+  evaluate_em_geometry.py
+  SHA25643476aa10597491656098b354e35101ceae46c56e1d046c48beb451a8115a2b6
+
+Its two independent executions run_1 and run_2 have identical files:
+  geometry_application.npz,4947518bytes
+    e352b4859fd10d7c383a4f2014211d4b9ef5c9cf41acce0c3b836e6abd69506a
+  result.json,138034bytes
+    9e1213886a357c2be27515f6075a70e3f8867c5f5e391ecc1251a42ee1ceb7bd
+  partial_result.json,90198bytes
+    5626d54bc98515baa19df0269153a83613abec5b18cb32dc89a7d873d8df9918
+
+The first refinement pilot source/run is preserved unchanged:
+  refine_em_geometry.py and refinement_run_1.
+It is not the portable publication source.
+
+Portable refinement source:
+  evaluate_em_geometry_refinement_20261016.py
+  SHA25672c7af88652d72010a58feef905136c72b2a80e1b65df22dc2630fcfa9213530
+
+This source uses BHSM_REPOSITORY, defaulting to __file__.parents[1].  The
+WORK execution sets it to the actual retained repository.  It requires
+explicit --baseline and --frozen-producer paths and hashes those inputs.
+It compiles only seven exact utility function definitions from the frozen
+executed source, never its fixed-REPO import preamble.  Their block digest is
+  ea20aced22662577cdd9ce29e2a256c7399829e2912c68c1229fb6feb6cbbbb5.
+Selected canonical repository imports are checked against the chosen root.
+
+Two independent portable executions portable_refinement_run_1 and
+portable_refinement_run_2 have identical files:
+  compact_geometry_application.npz,145603bytes
+    12a7c0e26426c59af0d888a1e44cd90633d2b7f464191c31fb2a2ff121c729d3
+  work_only_geometry_hessians.npz,4514697bytes
+    d8f9965a307c2d394c3dbec702d16f775c4a5beb5a8a78f5c96494fda11829d6
+  result.json,93610bytes
+    6632435313736906c9351534c0ec02737356757246ba782eada1fa654f394a51
+  partial_result.json,47467bytes
+    ae0f3bdeee8ea40d3fd70e84726fdda2f7720e104970eff3881cda41033d6566
+
+The compact numerical archive is identical to the earlier pilot, proving
+that portable binding changed no evaluated array.  All four portable output
+files were compared byte-for-byte across the two independent executions.
+The large Hessians remain WORK-only; the compact archive contains all
+q48/q96/q192 first arrays and all literal complex-step output columns.
+Result JSON contains full actual phase/input/source SHA256 pins.
+
+Frozen24/48 source/math and refinement CS/math were independently reviewed
+read-only by the scalar peer, who found no actionable calculus/source error.
+The held inherited-remainder scope was explicitly checked and retained.

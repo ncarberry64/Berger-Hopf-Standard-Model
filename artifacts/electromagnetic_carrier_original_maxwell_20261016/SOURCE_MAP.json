@@ -1,0 +1,52 @@
+{
+  "adopted_preparation": {
+    "path": "artifacts/muon_ideal_collider_preparation_20261016/BHSM_IDEAL_COLLIDER_PREPARATION_V1.json",
+    "sha256": "dcc4ad850ea38dcd405637d24b306efe8789ab08e144f559d7cc294cd72e8f0f"
+  },
+  "canonical_sources": {
+    "scripts/evaluate_em_carrier_natural_cap_application_20261016.py": "8e13e624327122a4729dc68370e7b026c275aa6233a356dd3f32ed9a57e47c6e",
+    "scripts/evaluate_em_carrier_original_maxwell_20261016.py": "8ce0d6446012827817d116ae57dc7b907856ea23236efa99ebe296e9a50d6a43",
+    "scripts/evaluate_em_geometry_refinement_20261016.py": "72c7af88652d72010a58feef905136c72b2a80e1b65df22dc2630fcfa9213530",
+    "src/bhsm/interface/electromagnetic_carrier_cap_domain.py": "a8f2948f18b67b894f4e0a17745bf856f4faf18af03df39cd4d72b3802d169df",
+    "src/bhsm/interface/electromagnetic_carrier_original_maxwell.py": "fffb4b563ce226d0a380114377627dbfeb9ae807287b3d749024c793f5a1627d"
+  },
+  "classification": "EVALUATED_ORIGINAL_ACTION_PARTIALS_AND_DERIVED_LEADING_DOMAIN_COMPONENT",
+  "datasets": {
+    "consumed_cap_frame": {
+      "path": "artifacts/electromagnetic_carrier_original_maxwell_20261016/natural_cap/run_1/result.json",
+      "sha256": "79607e367ea995819f42e7c1ad77aef688012cbb919bd8960da5a9d319f27e79"
+    },
+    "full_operator_radial": {
+      "path": "artifacts/electromagnetic_carrier_original_maxwell_20261016/operator_radial/run_1/result.json",
+      "sha256": "ed16a7bf9b8952a42f8c40747c2fb43beb703523dab8f41ce4b50efb130ac4f2"
+    },
+    "geometry_partial": {
+      "path": "artifacts/electromagnetic_carrier_original_maxwell_20261016/geometry_partial/portable_refinement_run_1/result.json",
+      "sha256": "6632435313736906c9351534c0ec02737356757246ba782eada1fa654f394a51"
+    },
+    "leading_cap_operator": {
+      "path": "artifacts/electromagnetic_carrier_original_maxwell_20261016/cap_indicial/run_1/result.json",
+      "sha256": "db7c10080fbbe81207b7006985b6a720d632cc522cd6dbb6cf373bf8f9846a92"
+    },
+    "original_application": {
+      "path": "artifacts/electromagnetic_carrier_original_maxwell_20261016/run_2/result.json",
+      "sha256": "79072b58e6cd13f0297a4efbcc65543822a5ef5260187b219e491d96fedae38b"
+    }
+  },
+  "external_retained_inputs": "Full geometry Hessian/baseline caches remain at source-hash-pinned WORK locations in geometry_partial/provenance.json and proof; compact first arrays and all failures are published.",
+  "published_import": "e751fefbc461f25583e8d08c51a9fd16f9b5e0da",
+  "supporting_executed_sources": {
+    "artifacts/electromagnetic_carrier_original_maxwell_20261016/cap_indicial/em_coexact_cap_domain_20261016.py": "a8f2948f18b67b894f4e0a17745bf856f4faf18af03df39cd4d72b3802d169df",
+    "artifacts/electromagnetic_carrier_original_maxwell_20261016/cap_indicial/evaluate_em_coexact_cap_domain_20261016.py": "5865742eb2ca503b77aa1bdaf1afa192ec02ffe91b2f831a13dd25fb4a8a2fe1",
+    "artifacts/electromagnetic_carrier_original_maxwell_20261016/geometry_partial/evaluate_em_geometry.py": "43476aa10597491656098b354e35101ceae46c56e1d046c48beb451a8115a2b6",
+    "artifacts/electromagnetic_carrier_original_maxwell_20261016/operator_radial/evaluate_operator_radial.py": "552367914fc696ca74c829c79f5c4cd3fc36bf5ef9651a3cbdf19631f2e7a826"
+  },
+  "unmodified_owners": [
+    "muon_parent_maxwell_full_weak",
+    "muon_baton_zoo_original_validation",
+    "muon_holomorphic_normal_geometry",
+    "muon_two_collar_weak_domain",
+    "muon_primal_electromagnetic_source",
+    "muon_parent_retarded_hypercharge"
+  ]
+}

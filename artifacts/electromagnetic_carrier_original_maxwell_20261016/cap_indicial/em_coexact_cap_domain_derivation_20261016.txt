@@ -1,0 +1,160 @@
+LEADING REAL-CAP COEXACT MAXWELL DOMAIN COMPONENT (2026-10-16)
+
+Scope. This derives the leading transverse spatial radial operator and an
+additional weak/field variation frame. It does not replace any retained radial
+function, source profile, primal, Gauss/temporal/longitudinal condition, outgoing
+condition, native carrier, or physical packet. The numerical application uses
+the SAME incoming/outgoing one-cell real midpoints as the canonical Maxwell
+application, with nonzero normal98 and normal99. No history is integrated.
+
+1. Exact coframe, anchoring, localization and connection at the cap
+
+Primary owners (repository-relative):
+ muon_holomorphic_normal_geometry.py:101-118,121-154,157-170;
+ muon_holomorphic_d5_trace_action.py:24-39,53-105,111-135;
+ muon_parent_maxwell_full_weak.py:107-119,147-149,177-184;
+ muon_parent_retarded_hypercharge.py:102-134;
+ muon_birth_trace_enriched_action.trace_enriched_radial_basis.
+
+Write chi=eta*rho, eta=wall/WALL>0, with the ACTUAL anchored wall
+wall=pi/4+raw98/Cstar. Let
+ L0=RADIUS0 exp(q0+sum_{k=1}^{12}qk), N0=exp(sum_{k=1}^{12}mk).
+The coefficient owner has u even in chi, b,w=O(chi^2). Hence
+ A=L0(1+O(chi^2)), B=L0 chi(1+O(chi^2)), C=L0(1+O(chi^2)),
+ R=AB/sqrt(A^2+B^2)=L0 eta rho(1+O(rho^2)),
+ C_rho=C eta=L0 eta(1+O(rho^2)), N=N0(1+O(rho^2)).
+The material shift z=(beta+rho*wall_dot/WALL)/eta is O(rho).
+
+For the SAME implicit response branch,
+ f_eta=k chi+O(chi^3), k=1+2*a0+6*a1>0,
+ p=Z^-1 int_0^chi sin^2(2 f)/4 dc
+   =k^2 eta^3 rho^3/(3Z)+O(rho^5),
+ localization=4p(1-p)=4k^2 eta^3 rho^3/(3Z)+O(rho^5).
+This is the rho^3 quantity called Lambda in the OLD radial-basis prose. It
+is NOT connection_lambda. The latter is
+ lambda_conn=A^2/(A^2+B^2)=1-eta^2 rho^2+O(rho^4).
+Thus h=lambda_conn-1 tends to ZERO, not -1. The full retained connection
+has A_total=a_independent+M*h. It is NOT asymptotically the flat a=0 plus -M.
+
+The inherited profile is pp-rp+rc; its constant term is 1-1+1=1.
+Consequently h_inherited=-(eta_p^2-eta_rp^2+eta_rc^2)rho^2+O(rho^4).
+All old ordinary Jacobi functions and the old wall lift are O(rho^alpha9),
+alpha9=(sqrt(45)-3)/2>0. The affine complement subtracts a linear combination
+of these from a difference of O(rho^2) connection profiles, so it too vanishes
+at least as O(rho^min(alpha9,2)). All independent raw gauge coefficients are
+finite in the saved germs, hence A_total -> 0 on BOTH real phases.
+
+The numerical application preserves the literal lambda-1 and complete total A.
+It separately evaluates the EXACT algebraic identity h=-B^2/(A^2+B^2) as a
+cancellation diagnostic. That diagnostic does not replace the recorded owner
+values. At rho=1e-6, literal-versus-stable total A differences are up to
+8.54e-16; all such differences and all sampled radii are retained.
+
+2. Exact leading coefficient ratio; normal98 does not change it
+
+Let common=2*pi^4*(A^2+B^2)^(5/2)*localization = w3 rho^3+O(rho^5),
+ w3=8*pi^4 L0^5 k^2 eta^3/(3Z)>0.
+The actual material density formulas, with jac=2*eta and Crho=C/2, are
+ e=jac*common*Crho*R/N,
+ r=common*N*R/(Crho*jac),
+ d=jac*common*N*Crho/R.
+Therefore
+ e=e4 rho^4(1+O(rho^2)), e4=w3 L0^2 eta^2/N0,
+ r=r4 rho^4(1+O(rho^2)), d=r4 rho^2(1+O(rho^2)), r4=w3 N0,
+ rho^2*d/r=(rho*C_rho/R)^2 -> 1.
+Both the anchored scale eta and L0 cancel in this LAST identity. This is an
+analytic result, not a fitted endpoint exponent. Nonzero normal98 and its
+future clock change coefficient values and z, but not the leading constant.
+The effective radial kinetic coefficient r-e*z^2 also has leading r4 rho^4.
+
+At rho=1e-6 the actual finite-radius |rho^2*d/r-1| is
+ incoming 5.384581669432009e-13; outgoing 3.0597746558669314e-13.
+The individual predicted e4/r4/d2 ratios have retained finite-radius errors
+up to 7.61e-12. These are binary arithmetic/asymptotic diagnostics, not a
+uniform all-rho enclosure or a physical derivative gate.
+
+3. Complete owned n=0,2 angular curl and gradient image
+
+Use the ACTUAL scalar_basis_values/scalar_angular_derivative_matrices and
+real_scalar_basis_transform, not a generic quaternion frame. There are
+1+9=10 scalar functions. For the 30 spatial coefficients,
+ C_{ik}=2 delta_ik I + epsilon_ijk E_j, G=stack(E_1,E_2,E_3).
+The scalar label Casimir is G^T G=diag(0,8 I9), and C G=0.
+The n=0 band has C=+2 with multiplicity3. For n=2, coupling the vector
+spin1 to the right-body spin1 gives total spin0,1,2, so C=-2,0,+4 with
+multiplicities3,9,15 (including the spectator multiplicity3).
+With the original FOUR unit-Tr16 internal components the FULL120 spectrum is
+ -2:12, 0:36, +2:12, +4:60.
+Thus curl^2=4 has dimension24 (all SIX Killing forms x four internal axes),
+curl^2=16 dimension60, and the kernel is precisely the 36-dimensional scalar
+gradient image in this finite band. The constant scalar kernel has dimension4.
+No zero-curl row is deleted: At/Ar/Gauss and the coupled longitudinal problem
+still determine its actual physical role.
+The four supplied seed forms occupy two of each sign of the Killing sectors;
+their curl residual is 2.23e-16 and the full120 spectral residual is 9.77e-15.
+
+4. Leading radial equation and what it does NOT imply
+
+For a transverse angular eigenform C^2 alpha=lambda alpha with lambda>0,
+the fixed-time leading spatial form is proportional to
+ int [rho^4 |a'|^2 + lambda rho^2 |a|^2] drho.
+The homogeneous spatial Euler equation is
+ -(rho^4 a')'+lambda rho^2 a=0,
+ alpha(alpha+3)=lambda.
+The positive and negative roots are
+ alpha_plus=(-3+sqrt(9+4lambda))/2,
+ alpha_minus=(-3-sqrt(9+4lambda))/2.
+For lambda=4 these are 1,-4; for lambda=16 they are
+ (sqrt73-3)/2,(-sqrt73-3)/2. The negative branches have divergent energy.
+The OLD alpha9 follows ONLY from its old curl^2=9 source, not every coexact
+mode. It must not be silently imposed as the new seed's indicial exponent.
+
+For the frozen leading L2 weight rho^4 drho, U=rho^2 a gives the leading
+one-dimensional operator -U''+(lambda+2)U/rho^2, which is limit-point at0.
+This is a statement about this LEADING SPATIAL expression. Matching its form
+closure or maximal realization to the actual moving coupled action domain
+requires the source, trace and remainder analysis. We do not assert a global
+strong domain, Cartesian smoothness, Lorentzian ellipticity, or a native E1
+realization from this calculation.
+
+Time terms at fixed temporal frequency and smooth moving shift z=O(rho) are
+lower order in the radial indicial equation. The vanishing retained background
+connection gives lower-order commutator/curvature contacts. The affine source
+does not change the HOMOGENEOUS indicial polynomial, but it CAN force a
+particular asymptotic of a different exponent (including rho^2 or old-alpha
+terms). It is never assigned zero. Preserve every old known source function
+separately when adding the new homogeneous variation frame.
+
+Generic form vectors only need the corresponding integrated finite energy;
+they do not all have the homogeneous solution asymptotic. In particular, the
+old alpha9 functions are admissible finite-form tests here. Their wrong
+homogeneous exponent for lambda4 does NOT prove that their increasing-order
+form closure is a different domain, or that prior fixed-form quadrature was
+invalid. It motivates the action-derived additional weak/field variation
+block and a genuine solution-space convergence comparison.
+
+5. Reusable factory and independent controls
+
+WORK/em_coexact_cap_domain_20261016.py:
+ coexact_radial_jacobi(rho,order,*,curl_squared,wall)->(B,DrB).
+It returns order INTERIOR functions plus an independent final wall lift:
+ B_j=x^alpha(1-x) P_j^(2,4+2alpha)(2x-1)/sqrt(h_j), B_wall=x^alpha,
+ h_j=Gamma(j+3)Gamma(j+5+2alpha)/
+     [j! Gamma(j+7+2alpha)(2j+7+2alpha)].
+Interiors are orthonormal under int_0^1 x^4 B_i B_j dx. The wall lift is
+not prescribed or normalized. Actual finite-domain action pairing is still
+the actual density; this reference normalization is only a coordinate choice.
+
+Nine tests pass: indicial identities, negative-branch energy exclusion,
+weighted Jacobi Gram, exact wall traces, independent MP64 literal derivative,
+old lambda9 owner parity, and invalid/longitudinal-input rejection.
+The first test execution retained a failure of an overly tight UNscaled
+absolute 8e-14 MP derivative assertion: a derivative of135.9590736603126
+differs by1.1368683772161603e-13, relative8.36e-16. The final test uses the
+explicit component criterion rtol3e-15/atol5e-14. No function, physical guard,
+coefficient, quadrature or scientific result was altered by that harness fix.
+
+The actual numerical producer preserves its pilot and final run_1/run_2.
+Final JSON/NPZ/source bytes and source/input hashes are supplied in the pair
+inventory. The full physical radial/temporal/outgoing/muon gates remain false;
+the original coupled correction count remains zero.
