@@ -1,8 +1,10 @@
 # Collider preparation bound to the current muon continuation
 
-This binds the user's selected preparation to checkpoint
-`5493924e97c8d23b9aaf9f54bd3c7657dad71b6c`. It records unresolved physical
-operands; it does not report a terminal application, convergence result,
+The current preparation is `BHSM_EE_MUMU_IDEAL_PREPARATION_V1`, adopted by
+direct human instruction after `823d070ac445989169a6bf63a2ef044035f2602f`.
+It preserves checkpoint `5493924e97c8d23b9aaf9f54bd3c7657dad71b6c` and later
+changes. It records unresolved physical constructions; it does not report
+a terminal application, convergence result,
 derivative admission, corrected state, or magnetic-moment prediction.
 The checkpoint and subsequent local changes are preserved.
 
@@ -29,33 +31,62 @@ Its adjacent `actual_frozen_family_and_exact_pair_spin_CAR_preparation.npz`
 has SHA256 `20db0b3b1a5cb09be1979b0fb24027bbb70f713d4001bd8c50e9807137a136d3`.
 These are inherited data references, not new pair-kinematics controls.
 
-The existing receipt explicitly leaves `E_beam` an external scan parameter;
-no numerical energy or scan grid has been recovered. The following remain
-unresolved inputs and action-owned construction/solution operands, including
-functions rather than just numbers:
+## Adopted ideal collider preparation
 
-1. Particle/antiparticle spectral coefficients and packet profiles, widths,
-   separation, encounter timing, and observable coherence/phase data.
+The exact adopted specification is
+`artifacts/muon_ideal_collider_preparation_20261016/BHSM_IDEAL_COLLIDER_PREPARATION_V1.json`,
+SHA256 `dcc4ad850ea38dcd405637d24b306efe8789ab08e144f559d7cc294cd72e8f0f`.
+The adjacent `adoption.json` records the direct human authorization. The
+older pair receipt remains unchanged; its formerly unresolved energy is
+historical provenance, not the current selection.
+
+Each incoming particle has a central total energy target of 500 MeV. The
+coherent scalar reference envelope has 100 fm probability RMS width per
+axis, with no extra chirp. At preparation time zero the electron center is
+`(0,0,-1000) fm`, moving toward positive X3; the positron center is
+`(0,0,+1000) fm`, moving toward negative X3. The width is a packet property,
+not a particle or encapsulation radius. Actual energy moments and widths
+must be measured after projection into physical BHSM modes.
+
+No independent incoming coherent radiation, extra occupation over the
+inherited reference, or external machine field is selected for production.
+Charge dressing, longitudinal/near fields, constraints, inherited sea and
+vacuum fluctuations remain. No global flat exterior or zero-field state
+follows from this condition. The formed muon is probed separately in the
+weak measuring-field limit along all three prescribed axes.
+
+Energy, width and separation are fixed for numerical convergence. The
+declared sensitivity scans follow completion of this baseline connection.
+Reference CODATA masses do not replace action poles or set the common unit.
+
+The following remain action-owned constructions or solution values:
+
+1. Physical particle/antiparticle spectral coefficients realizing the
+   selected envelope, and the achieved energy, widths and encounter time.
 2. Their common collision geometry, tetrad, gauge/Higgs/metric Cauchy fields,
    positive-frequency embedding, complete Cauchy pairing, and constraints.
-3. Homogeneous incoming exterior fields or their actual incoming
-   characteristic data. No incoming vacuum or no-extra-radiation condition
-   has been selected. Retarded response support is not a primal initial state.
+3. The inherited quantum reference and source-consistent Cauchy data under
+   the selected relative no-extra-radiation condition. Retarded response
+   support alone is not that primal initial state.
 4. The same-action collision incidence `Phi_coll` and its first/second
    derivatives, connecting the prepared incoming fields to the event/history.
 5. Physical same-domain electron/muon poles, residues, and owned energy units.
 
-Items 4 and 5 are action-owned constructions or solution values, not extra
-experimental knobs. Likewise the constrained background, future fields,
+These are action-owned constructions or solution values, not extra
+experimental knobs. The constrained background, future fields,
 retarded exterior graph and their jets must be solved consistently from the
-action and supplied preparation. The genuine external choices include the
-incoming packets, admissible initial/characteristic data, and any selected
-quantum in-state. Neither changing beam energy alone nor asking for an
+action and adopted preparation. The external beam choices are now fixed;
+the inherited reference must be realized within its specified ownership.
+Neither changing beam energy alone nor asking for an
 independent fitted exterior graph supplies the missing connected realization.
 
 The reaction label and retained interior enclosure supply none of these
-missing full exterior data. No free-space packet, vacuum, zero exterior,
-measured mass, or beam energy is inserted here.
+missing full exterior data. No free-space spinor, replacement vacuum,
+zero exterior, or measured action pole is inserted here. The selected
+energies and widths are external preparation inputs, not action coefficients.
+
+The coupled scale and reference derivation is in
+`theory/muon_ideal_preparation_action_derivation_20261016.md`.
 
 ## Actual application boundary
 
@@ -138,6 +169,9 @@ Maxwell `|R_Z[3,2]|=2.4777309846820184`; original matching maximum
 `9.602842247524184e-7`, one-based row 226
 `common_normal_temporal_dual[0]`. This binding computes no after-values and
 applies no coupled state correction.
+These historical values are not a before-state for the newly adopted
+physical preparation. That state requires fresh original-equation
+before-values on its own common fields and coefficients.
 
 Production and probe are separate. Preserve the outgoing spin density matrix
 and all action-coupled channel/overlap information through the formed-muon
