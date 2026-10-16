@@ -1,0 +1,160 @@
+ORIGINAL M8: POSITIVE COFRAME DIRAC AND THE OWNED PLUS FACTOR
+2026-10-16. Exact geometric reference identity; no native grading choice.
+
+1. ACTUAL EXPRESSION AND THE METRIC USED HERE
+
+The source is src/bhsm/interface/muon_original_m8_geometric_expression.py,
+original_m8_geometric_expression_jets. Its original coframe is
+  e0=Ndt, er=C(dchi+beta dt), eua=A theta_u,a, eva=B theta_v,a,
+with both theta LEFT Maurer, dtheta_a=-epsilon_abc theta_b wedge theta_c,
+full ordered summation and [U_a,U_b]=[V_a,V_b]=+2epsilon_abc U_c/V_c.
+The full Spin16 geometric fibre, both orbit triples and all time/shift
+coefficients are retained. No SM tensor copy, statistics or twist is added.
+
+Define the POSITIVE metric g+=e0^2+er^2+sum eua^2+sum eva^2, with the SAME
+real positive coframe coefficients and density mu=N C A^3 B^3. This is a
+geometric positive reference, not a Wick rotation of the physical fields,
+not the original Lorentz metric, and not an identification of P_strat.
+The original source explicitly exposes plus_product Aplus=Dtau+W on this
+density. This proof identifies that particular reference expression.
+
+Let Gamma_L have signature(+-------) and define Hermitian Euclidean matrices
+  gamma0=Gamma_L0, gammaj=-i Gamma_Lj for ALL seven spatial j.
+Their algebra is {gammaA,gammaB}=2deltaAB. The constant matrix
+  U=-i gamma0
+is unitary in the positive geometric fibre pairing. It is an OUTPUT
+multiplier; no change of initial data, physical spin state or Riesz density
+is made by this identity.
+
+2. FULL UNCONTRACTED POSITIVE LEVI-CIVITA CONNECTION
+
+Write Er=C^-1 partial_chi, E0=N^-1(partial_t-beta partial_chi), and define
+  a=N_chi/(N C), k=(C_t-beta C_chi-C beta_chi)/(N C),
+  Hu=(A_t-beta A_chi)/(N A), Hv=(B_t-beta B_chi)/(N B),
+  ru=A_chi/(C A), rv=B_chi/(C B).
+The POSITIVE LOWER Cartan connection solving deA+omegaAB wedge eB=0 is
+  omega0r=a e0-k er,
+  omega0ua=-Hu eua, omega_rua=-ru eua,
+  omega0va=-Hv eva, omega_rva=-rv eva,
+  omega_ua,ub=-epsilon_abc euc/A,
+  omega_va,vb=-epsilon_abc evc/B,
+with omegaBA=-omegaAB and all other components zero. These are derived
+uncontracted forms, not inferred from a selected h0/hr combination.
+They differ from the Lorentz lower connection; silently keeping the
+Lorentz omega while changing gamma matrices would be incorrect.
+
+Set Omega_E,A=(1/4)sum_(B,C)omega_BC,A gammaB gammaC, FULL ordered sum,
+and D_E=i gammaA(EA+Omega_E,A). Its contraction is
+  D_E=i gamma0(E0+h0)+i gammar(Er+hr)
+    +(i sum gammaua U_a-(3i/2)gamma_u123)/A
+    +(i sum gammava V_a-(3i/2)gamma_v123)/B,
+  h0=(k+3Hu+3Hv)/2, hr=(a+3ru+3rv)/2.
+The minus Euclidean LEFT triple is essential. Under gammaj=-iGamma_Lj,
+gamma_u123=iGamma_Lu123, and similarly for v. Therefore
+  U D_E=E0+h0-i Gamma_L0 Gamma_Lr(Er+hr)
+      -(i/A)Gamma_L0[sum Gamma_Lua U_a+(3/2)Gamma_Lu123]
+      -(i/B)Gamma_L0[sum Gamma_Lva V_a+(3/2)Gamma_Lv123]
+    = Aplus
+EXACTLY as the existing source returns. In particular the radial time
+shift -beta/N, all eight principal directions and both nonzero triples
+are retained. The identity holds for a fully moving coframe, not only
+for a static product or a fixed angular mode.
+
+The half-divergence checks are independent of the triple conversion:
+  div_mu E0=2h0, div_mu Er=2hr.
+They give formal anti-adjoint E0+h0 and the corresponding spatial
+half-divergences in the positive L2 pairing. D_E is formally symmetric
+on the compact smooth geometric core because it is the positive LC
+Dirac operator in that pairing.
+
+3. FORM IDENTITY VERSUS CLOSED OPERATOR AND OUTGOING DOMAIN
+
+On the SAME smooth core, ||Aplus u||_mu=||D_E u||_mu pointwise after
+integration, since U is constant unitary. Hence the two graph/form norms
+agree. For matched closed input domains (closure of the same declared
+core, or an actually supplied common boundary domain), multiplication
+by U gives the closed-operator identity
+  Aplus^dagger Aplus = D_E^dagger D_E.
+This statement does not require U to preserve the INPUT boundary domain:
+it multiplies the output of D_E. It does require using the same actual
+input domain and adjoint pairing, including any moving-domain contacts.
+
+Only formally/on the local common smooth core is the right side D_E^2.
+As a global closed operator, D_E^dagger D_E may be written D_E^2 only
+after the actual domain makes D_E self-adjoint with the appropriate
+square domain. The retarded open problem, material-wall Cauchy/seam
+domain and physical exterior have not been selected by this local
+identity. No such self-adjointness or full native-domain admission is
+inferred from formal LC symmetry.
+
+Because U is independent of these coframe coefficients, source derivatives
+of the local coefficient identity are obtained by differentiating the
+SAME geometric Cartan construction and pairing. No extra derivative of
+a newly fitted frame is required. This does not evaluate missing physical
+energy/B, trajectory, reset, initial-state or outgoing-domain jets.
+
+4. PRECISE INTERIOR HEAT CONSTRAINT NOW AVAILABLE
+
+For this POSITIVE geometric reference, the formal square is the
+Riemannian LC Dirac square, with Bochner convention
+  P=positive_connection_Laplacian+V, V=R_+/4.
+Its standard interior densities in dimension8 are
+  a0(x)=(4pi)^-4 tr(I),
+  a2(x)=(4pi)^-4 tr(R_+ I/6-V)=-(4pi)^-4 tr(I) R_+/12.
+For the ordinary Spin16 trace, tr(I)=16. With a statistics operator or
+larger Clifford module, the ACTUAL corresponding supertrace must be used;
+it is not picked here. Geometric chirality is not automatically statistics.
+These standard LC/heat conventions are reviewed in Vassilevich,
+Heat kernel expansion: user's manual, hep-th/0306138, sections3.3 and4.1,
+especially equations4.26-4.28:
+  https://arxiv.org/pdf/hep-th/0306138
+
+AE4's owned moments F8=-ell^-8/8 and F6=-ell^-6/6 then give this component's
+interior volume coefficient -tr(I)ell^-8/[8(4pi)^4] and R_+ coefficient
++tr(I)ell^-6/[72(4pi)^4]. If the graded rank is nonzero their ratio is
+  C_R+/C_volume=-ell^2/9.
+This is a necessary reference matching relation, not a fitted scale or
+an evaluated whole-action coefficient. Relative subtraction, boundaries,
+other graded strata/components, zero modes and BRST quotient remain in
+the common functional. R_+ is NOT silently replaced by the Lorentz R_8
+appearing in a local Lorentz action; that continuation/matching requires
+its own demonstrated common-domain relation. Thus the result removes
+an artificial unknown LC conversion for the geometric PLUS block without
+claiming native grading, full heat trace or physical mean-field matching.
+
+5. INDEPENDENT FULL EIGHT-DIMENSIONAL CONTROLS
+
+Canonical source:
+  audits/bhsm_original_m8_positive_cartan_controls_20261016.py
+SHA256
+  7c406cf5f854062719919ff06296004469f642863fbb274c7a5b92b89968b613
+WORK independent canonical outputs:
+  outputs/bhsm_original_m8_positive_cartan_20261016/canonical_run_1
+  outputs/bhsm_original_m8_positive_cartan_20261016/canonical_run_2
+Each controls.npz is45,904 bytes, SHA256
+  1ddc2a09cf195ec7c955f4934f735ac535110f4a0f0e2f7336a5ebcf3b27535d.
+Each result.json is46,567 bytes, SHA256
+  eb80566f8f9ff8e0ad47bb06b2cdc58a479951a5ed31ed37ee9225b5a3a2cf4f.
+Both pairs are byte-identical. The NPZ bytes also match the preserved
+WORK prototype run_1/run_2 exactly. Canonical metadata makes formal-core
+versus closed-domain square scope explicit and binds242 consumed source
+files plus four exact raw archive-recipe/chunk files, all repo-relative.
+
+There are18 actual real-source germs (three saved times, three chi nodes,
+both arms) and three independent MP64 literal positive metrics with
+nonzero time/shift derivatives and BOTH full quaternion angular charts.
+All eight-coordinate Christoffels and tetrad postulates are reconstructed
+from the metric independently of the Cartan formula. The independent
+Christoffel connection, not the tested contracted formula, constructs
+the numerical D_E body that is compared to the existing original source.
+
+Maximum absolute residuals:
+  full8D Cartan versus metric-Christoffel:5.38276e-15,
+  full8D tetrad postulate:1.77636e-15,
+  all eight principal coefficients after U:8.88179e-16,
+  entire nonzero body after U:5.66214e-15,
+  generic MP64 independent connection:1.11023e-16,
+  U^dagger U-I:4.44090e-16.
+The saved Euclidean gamma matrices have Hermitian defect4.47423e-17.
+Every finite residual is retained. The same controls preserve zero
+coupled corrections and no physical derivative/state/moment claim.

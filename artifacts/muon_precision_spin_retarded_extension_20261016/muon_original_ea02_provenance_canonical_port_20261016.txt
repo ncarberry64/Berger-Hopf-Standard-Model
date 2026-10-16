@@ -1,0 +1,29 @@
+CANONICAL PORT RECEIPT: INDEPENDENT ORIGINAL ea02 SAVED CHAIN
+2026-10-16. The WORK checker/prototype receipt/proof are preserved unchanged.
+
+Canonical source:
+ audits/bhsm_original_ea02_saved_chain_provenance_20261016.py
+9838 bytes, SHA256
+ 22d50dde10c089f0e6cb8daf0cbef4c66bf27f992b13471e21f265e9220f7863.
+The only port changes add __file__.parents[1] as the default repository,
+retain the explicit --repository override, and simplify recording the
+two already consumed .py producer byte pins. No equation, input packet,
+field, source-clock, response column, precision, or guard changes.
+
+Executed twice from WORK (outside the repository), relying on the new
+canonical __file__ repository default:
+ outputs/bhsm_original_ea02_saved_chain_provenance_20261016/canonical_run_1.json
+ outputs/bhsm_original_ea02_saved_chain_provenance_20261016/canonical_run_2.json
+Both are byte-identical, 32036 bytes, SHA256
+ 88e3ef7f9b2afa129e65af85560f41456a3e5d0f24e594802df96de43c2310aa.
+Every scientific field, all61 input/source pins, branch comparison, and
+all8 chronological/source/response records are exactly equal to the
+original WORK result. Only source_sha256 necessarily changes.
+
+The original detailed proof is
+ muon_original_ea02_saved_chain_provenance_20261016.txt,
+SHA256 194f725ac889bef6d0f25e7a61ac27003ff4ee29bac39a08899746c6aef4d07d.
+The canonical pair closes saved epoch provenance only. It retains cell7
+complete_density_time_derivative_admitted=False and null for absent old
+metadata keys. No action/Hessian/history is recomputed or admitted, no
+unclosed remainder is erased, and no physical gate or correction occurs.

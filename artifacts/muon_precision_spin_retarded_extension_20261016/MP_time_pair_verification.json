@@ -1,0 +1,256 @@
+{
+  "all_corresponding_files_byteidentical": true,
+  "all_source_owner_hashes_current": true,
+  "classification": "TWO_INDEPENDENT_TIME_CONTROL_EXECUTIONS_EXACT_BYTE_PAIR",
+  "coupled_corrections": 0,
+  "exact_moment_tuple_controls": [
+    {
+      "decode_reencode_exact": true,
+      "exact_binary_moment_entries": 6344,
+      "folder": "incoming_time8",
+      "nonzero_entries": 1168
+    },
+    {
+      "decode_reencode_exact": true,
+      "exact_binary_moment_entries": 6344,
+      "folder": "incoming_time12",
+      "nonzero_entries": 1168
+    },
+    {
+      "decode_reencode_exact": true,
+      "exact_binary_moment_entries": 6344,
+      "folder": "outgoing_time8",
+      "nonzero_entries": 1168
+    },
+    {
+      "decode_reencode_exact": true,
+      "exact_binary_moment_entries": 6344,
+      "folder": "outgoing_time12",
+      "nonzero_entries": 1168
+    }
+  ],
+  "file_inventory": [
+    {
+      "bytes": 379342,
+      "path": "incoming_time12/forms.npz",
+      "sha256": "d7f598264ae6d0598b98d978bf8527c1a21074598170bef92fad8203ef8492dc"
+    },
+    {
+      "bytes": 27550,
+      "path": "incoming_time12/result.json",
+      "sha256": "02152138cd425f5be4f2a392e7d14af1449c224cd15f4f86fc08d0853720d95f"
+    },
+    {
+      "bytes": 373085,
+      "path": "incoming_time8/forms.npz",
+      "sha256": "36d593ef0e21a9cf739403322d79b22e0d34240067baa5dfe00e4e46bbd1b996"
+    },
+    {
+      "bytes": 23975,
+      "path": "incoming_time8/result.json",
+      "sha256": "bb827c814876f24fc3de993e19271f92805d7e3c1fde232e7d2875856c645c72"
+    },
+    {
+      "bytes": 378399,
+      "path": "outgoing_time12/forms.npz",
+      "sha256": "9303856f76ef133a7c93d871a9e5a5f4d22a4acad0b35da34d54263164d48ce0"
+    },
+    {
+      "bytes": 27592,
+      "path": "outgoing_time12/result.json",
+      "sha256": "a150b5c6f7f87b5ea953d20fdefaf67ef7c226bfdd7b5322fe2e14e73104b507"
+    },
+    {
+      "bytes": 372159,
+      "path": "outgoing_time8/forms.npz",
+      "sha256": "bec853990291a1df105577d8600a30e6017ea92fb0741035e4ac43768552b314"
+    },
+    {
+      "bytes": 23910,
+      "path": "outgoing_time8/result.json",
+      "sha256": "810aae46a2fbb2d00d6d0ecbc71fe10e57025b2b3cd72b2fef14d02b04f4d340"
+    },
+    {
+      "bytes": 159415,
+      "path": "result.json",
+      "sha256": "d4c2d92fb01be31b8944bd1a09f67dcd8ffac346751e3e070f038d344bf2453a"
+    }
+  ],
+  "physical_derivative_pass": false,
+  "records": [
+    {
+      "comparisons": {
+        "B": {
+          "bound_scope": "Original MP80 arithmetic value before its correctly rounded float conversion; not upstream uncertainty",
+          "denominator_lower_bound": "max(1,abs(reference_float)-radius,abs(new_MP))",
+          "index": [
+            140,
+            940
+          ],
+          "max_absolute_upper": "0.0000000033746487954217214067770268833566809818839394952600524701329938787",
+          "max_entry_scaled_upper": "0.0000000000000002162875461718184217480038733763628761690216279078581160382716988",
+          "new_MP_entry": "2132605.4918516476128901058844409672885845968098295288218327624205",
+          "reference_float": "2132605.491851647384464740753173828125",
+          "reference_half_max_neighbor_gap": "0.00000000023283064365386962890625"
+        },
+        "F": {
+          "bound_scope": "Original MP80 arithmetic value before its correctly rounded float conversion; not upstream uncertainty",
+          "denominator_lower_bound": "max(1,abs(reference_float)-radius,abs(new_MP))",
+          "index": [
+            280,
+            920
+          ],
+          "max_absolute_upper": "0.00076502725801549219752540401293275439253371783617904821288692358643",
+          "max_entry_scaled_upper": "0.000000000000038344159749476375045759682192691748402201491112054370151587838174",
+          "new_MP_entry": "-116908.18662433994980488352333502846000129583829435232223188570224",
+          "reference_float": "-116908.186624335474334657192230224609375",
+          "reference_half_max_neighbor_gap": "0.0000000000072759576141834259033203125"
+        },
+        "fixing": {
+          "bound_scope": "Original MP80 arithmetic value before its correctly rounded float conversion; not upstream uncertainty",
+          "denominator_lower_bound": "max(1,abs(reference_float)-radius,abs(new_MP))",
+          "index": [
+            924,
+            444
+          ],
+          "max_absolute_upper": "1.7271569143311938711328486341063273154581688165993661372563138963",
+          "max_entry_scaled_upper": "0.000000000000084403446522739329705015859043522148332519469026507709395755678938",
+          "new_MP_entry": "-352.6535432710507583628387939228338136334078186566863822962910228",
+          "reference_float": "-352.6535432710210216100676916539669036865234375",
+          "reference_half_max_neighbor_gap": "0.000000000000028421709430404007434844970703125"
+        }
+      },
+      "finite_Lorenz_component_time_rule_pass": true,
+      "side": "incoming",
+      "time_order_per_half": 8
+    },
+    {
+      "comparisons": {
+        "B": {
+          "denominator": "max(1,abs(old),abs(new)) on every unrounded MP entry",
+          "index": [
+            164,
+            985
+          ],
+          "max_absolute": "3.4104187690312399533025828773474043626385167605567313193849298506e-41",
+          "max_entry_scaled": "7.1653086720745675986054472547673533176682950870577648378239845148e-43",
+          "new_value": "-0.000071877206061771564474851753352610039590706803512406669007150240369",
+          "old_value": "-0.000071877206061771564474851753352610039589990272645199212247289695643"
+        },
+        "F": {
+          "denominator": "max(1,abs(old),abs(new)) on every unrounded MP entry",
+          "index": [
+            300,
+            940
+          ],
+          "max_absolute": "3.2800610304555424951279770795527670119193369126272718369157432573e-26",
+          "max_entry_scaled": "4.0647637296190122925615687835185194700006736521840808915184254594e-37",
+          "new_value": "-116908.18660889619323130022570296453306948648798713882668801019197",
+          "old_value": "-116908.18660889619323130022570296453302196607232480159072953489265"
+        },
+        "fixing": {
+          "denominator": "max(1,abs(old),abs(new)) on every unrounded MP entry",
+          "index": [
+            460,
+            940
+          ],
+          "max_absolute": "5.2600346525397859531821964470470517532783361654425284977599694376e-23",
+          "max_entry_scaled": "1.7177390082097386086459793797365184088587716639083055952783605495e-36",
+          "new_value": "-352.65354044043678415494795857677278113620194836998215095929750595",
+          "old_value": "-352.65354044043678415494795857677278053043520557217332335221124795"
+        }
+      },
+      "finite_Lorenz_component_time_rule_pass": true,
+      "side": "incoming",
+      "time_order_per_half": 12
+    },
+    {
+      "comparisons": {
+        "B": {
+          "bound_scope": "Original MP80 arithmetic value before its correctly rounded float conversion; not upstream uncertainty",
+          "denominator_lower_bound": "max(1,abs(reference_float)-radius,abs(new_MP))",
+          "index": [
+            304,
+            1104
+          ],
+          "max_absolute_upper": "0.0000000073516275419614109776721415462567348363962826994402035046089355599",
+          "max_entry_scaled_upper": "0.00000000000000021572786381885073914741698946233830605653264981983904005490136177",
+          "new_MP_entry": "1057626.1050898117199394034137470776061530325749220752352366736521",
+          "reference_float": "1057626.10508981160819530487060546875",
+          "reference_half_max_neighbor_gap": "0.000000000116415321826934814453125"
+        },
+        "F": {
+          "bound_scope": "Original MP80 arithmetic value before its correctly rounded float conversion; not upstream uncertainty",
+          "denominator_lower_bound": "max(1,abs(reference_float)-radius,abs(new_MP))",
+          "index": [
+            284,
+            924
+          ],
+          "max_absolute_upper": "0.001050007328275235322207047802857859829079318528388235442666775202",
+          "max_entry_scaled_upper": "0.0000000000000022491790912460496071370613870086478725750419902027338829664850062",
+          "new_MP_entry": "-1337249.6787632704754437645452240889214834037109487895215655433587",
+          "reference_float": "-1337249.678763267584145069122314453125",
+          "reference_half_max_neighbor_gap": "0.000000000116415321826934814453125"
+        },
+        "fixing": {
+          "bound_scope": "Original MP80 arithmetic value before its correctly rounded float conversion; not upstream uncertainty",
+          "denominator_lower_bound": "max(1,abs(reference_float)-radius,abs(new_MP))",
+          "index": [
+            464,
+            944
+          ],
+          "max_absolute_upper": "3.128967930799148106093883669997228289923128134965656910072877336",
+          "max_entry_scaled_upper": "0.00000000000032965646932972951812371746676138366821946911307794249900974540694",
+          "new_MP_entry": "-137.20405099724265756700114289155716650061881602069546818648918218",
+          "reference_float": "-137.2040509971974415748263709247112274169921875",
+          "reference_half_max_neighbor_gap": "0.0000000000000142108547152020037174224853515625"
+        }
+      },
+      "finite_Lorenz_component_time_rule_pass": true,
+      "side": "outgoing",
+      "time_order_per_half": 8
+    },
+    {
+      "comparisons": {
+        "B": {
+          "denominator": "max(1,abs(old),abs(new)) on every unrounded MP entry",
+          "index": [
+            164,
+            985
+          ],
+          "max_absolute": "2.5770391040090393237644001045909340454195680245878360633526094962e-41",
+          "max_entry_scaled": "5.4332625166302126942625205588099293067516384670035547432294520231e-43",
+          "new_value": "-0.000051346513330851045406574337143754877903929404572972070819984083165",
+          "old_value": "-0.000051346513330851045406574337143754877903386078321309049550557831109"
+        },
+        "F": {
+          "denominator": "max(1,abs(old),abs(new)) on every unrounded MP entry",
+          "index": [
+            124,
+            1004
+          ],
+          "max_absolute": "7.5836510626779959459145624001094082628095656242851356965899583044e-26",
+          "max_entry_scaled": "1.6312221274880130567647565781828832234430082058777473051558151041e-37",
+          "new_value": "893840.99727860984033257756166076622604891918689815809071448861944",
+          "old_value": "893840.9972786098403325775616607662261947245082198402139838916606"
+        },
+        "fixing": {
+          "denominator": "max(1,abs(old),abs(new)) on every unrounded MP entry",
+          "index": [
+            940,
+            460
+          ],
+          "max_absolute": "1.0943470471513848838502163134033175112874593115886031145917578061e-22",
+          "max_entry_scaled": "5.166891076219895040631782292600516289941953474720644561480598959e-36",
+          "new_value": "-137.20404824972454678382370213689658278726782962873236062484023176",
+          "old_value": "-137.20404824972454678382370213689658207834945710598669062463884667"
+        }
+      },
+      "finite_Lorenz_component_time_rule_pass": true,
+      "side": "outgoing",
+      "time_order_per_half": 12
+    }
+  ],
+  "run_1": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_changing_lorenz_mp_time_control_20261016\\run_1",
+  "run_2": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_changing_lorenz_mp_time_control_20261016\\run_2"
+}
