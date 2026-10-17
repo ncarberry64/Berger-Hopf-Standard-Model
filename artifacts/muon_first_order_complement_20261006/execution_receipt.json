@@ -1,0 +1,48 @@
+{
+  "accepted_first_order": {
+    "command": "replay_muon_first_order_complement.py --output C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\artifacts\\muon_first_order_complement_20261006\\run_2",
+    "full_causal_Q_solve": false,
+    "native_heat_evaluations": 0,
+    "new_Q_solve": "first-order compact Galerkin only",
+    "old_production_repeated": false,
+    "physical_transfer_directions": 0,
+    "wall_seconds": 4.1187506999704055
+  },
+  "branch": "codex/muon-parent-maxwell-density-review",
+  "errors": {
+    "arithmetic": "binary64 representative/residual; no rigorous rounding enclosure",
+    "original_load": "LL projection at inherited arithmetic scale; not physical nonzero effect or global decoupling",
+    "previous_authorities": "endpoint/tube/nodal/interpolation scopes unchanged",
+    "spatial": "inherited512-point nodal quadrature; continuum/quadrature/operator bounds not supplied",
+    "temporal": "linear first-order weak moment densities, exact polynomial temporal integral; history/interpolation error unevaluated"
+  },
+  "historical_first_order": {
+    "command": "replay_muon_first_order_complement.py --output C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\artifacts\\muon_first_order_complement_20261006\\run_1",
+    "full_causal_Q_solve": false,
+    "native_heat_evaluations": 0,
+    "new_Q_solve": "first-order compact Galerkin only",
+    "old_production_repeated": false,
+    "physical_transfer_directions": 0,
+    "wall_seconds": 6.314308399974834
+  },
+  "historical_unaccepted_reason": {
+    "accepted": false,
+    "executed_source_hashes": {
+      "muon_first_order_complement.py": "8bb44daac77d03401ba748fdee101da4a61e04d87ad35f7d7a5f8fb4ca1913aa",
+      "replay_muon_first_order_complement.py": "dc2095e0d6cf29a017f413e7829d9f6513022a73bc908182754d33c2d656266c"
+    },
+    "reason": "source Xi contains unmatched right-spin LL; physical wall R must use independent Pi_L Xi frame. Corrected run2 keeps full Q but uses rank6 physical LL R. Complex Cauchy diagonal extraction gains an explicit imaginary-part guard; no physical coefficient changed.",
+    "scope": "historical full-carrier R diagnostic, not physical wall reduction"
+  },
+  "initial_revision": "262621da4f006929ee62b73d7565e2624054fb75",
+  "intrinsic_completion": {
+    "QQ_solution_rerun": false,
+    "QQ_solution_reused": true,
+    "command": "C:\\Python314\\python.exe scripts/complete_muon_first_order_LL_restriction.py --input artifacts/muon_first_order_complement_20261006/run_2 --output artifacts/muon_first_order_complement_20261006/run_2/ll_completion",
+    "tool_wall_seconds": 1.0527797
+  },
+  "native_heat_evaluations": 0,
+  "old_production_repeated": false,
+  "physical_transfer_directions": 0,
+  "scientific_reference": "524ed90689bd5923c249bba2e699abf627e703cd"
+}

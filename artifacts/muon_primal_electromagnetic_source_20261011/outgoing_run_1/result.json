@@ -1,0 +1,359 @@
+{
+  "Gate7_closed": false,
+  "Gauss_relative_maximum": 9.811222948992177e-16,
+  "action_boundary_relative_defect": 1.9018492597670337e-16,
+  "action_parameters": {
+    "nu_squared_action": 4.0,
+    "surface_gamma": null
+  },
+  "action_selected": false,
+  "actual_phase_span": 1e-05,
+  "adjoint_pairing_maximum_defect": 1.6155871338926322e-26,
+  "array_archives": {
+    "adjoint.npz": {
+      "arrays": [
+        "adjoint_readout_map",
+        "advanced_adjoint",
+        "times"
+      ],
+      "bytes": 193322,
+      "sha256": "08feac0715a7dddd83b13c902144b6348e6c6191cc540c541009b76a5e2fd4f9"
+    },
+    "contacts.npz": {
+      "arrays": [
+        "A_tau",
+        "Gauss_residual",
+        "action_boundary_pairing",
+        "action_temporal_endpoint",
+        "adjoint_output",
+        "adjoint_source_pairing",
+        "gauge_Euler_reaction_integrand",
+        "intrinsic_H_canonical_momenta",
+        "intrinsic_H_response",
+        "intrinsic_scalar_wall_current_pairing",
+        "paired_gauge_Euler_reaction",
+        "source_trace",
+        "source_trace_rate",
+        "times",
+        "wall_trace_reaction_pairing"
+      ],
+      "bytes": 368130,
+      "sha256": "0cdc626680dfdf378b793fe8a5eccb599322be686432e8bcdc548910fe7d3bab"
+    },
+    "operators.npz": {
+      "arrays": [
+        "gauge_weak_rows",
+        "raw_B",
+        "raw_K",
+        "raw_M",
+        "scalar_B",
+        "scalar_K",
+        "scalar_M"
+      ],
+      "bytes": 351643,
+      "sha256": "068845b9f658a569f8c1aa9e5950b768327491203ae34398f0464a9aefc9382c"
+    },
+    "phase.npz": {
+      "arrays": [
+        "state",
+        "times"
+      ],
+      "bytes": 997109,
+      "sha256": "2d3b0ba9306abe9bc67ec0932ad4075f6175b6f7615d0d6361ef300e489770df"
+    },
+    "primal_and_source.npz": {
+      "arrays": [
+        "H_aligned_source_rate",
+        "Q",
+        "Qdot",
+        "T_b",
+        "T_b_dot",
+        "b_source_coefficients",
+        "coordinate_times",
+        "electromagnetic_wavefunctions",
+        "gauge_basis",
+        "gauge_radial_basis",
+        "raw_fields",
+        "s_H",
+        "s_H_dot",
+        "source_phase_jacobian",
+        "times",
+        "wall_trace_map"
+      ],
+      "bytes": 279260,
+      "sha256": "1ddc021cd93d4d1c5449073951cf1303aace793835239b4a94eada227bdef6e9"
+    },
+    "source_first_jets.npz": {
+      "arrays": [
+        "Q_first_jet",
+        "Qdot_first_jet",
+        "charged_to_neutral_first_jet",
+        "primitive_Clifford_coefficients",
+        "times"
+      ],
+      "bytes": 191051,
+      "sha256": "1cda8873e1377d3f96d086ccc86bff5ad8928494aeb3d0d8e600ee4bf44974b0"
+    },
+    "velocity.npz": {
+      "arrays": [
+        "times",
+        "velocity"
+      ],
+      "bytes": 474248,
+      "sha256": "85dc791ed7e5843a6a5ebf84708b8c0e1c80d90b7d07e43fd84bd195a366971a"
+    }
+  },
+  "b_source_coefficients_time_dependent": true,
+  "chronological_response_span": 1e-05,
+  "classification": "EVALUATED_HIGGS_ALIGNED_ELECTROMAGNETIC_FULL488_SAME_ACTION_RESPONSE",
+  "complete_a_mu": null,
+  "complete_g_mu": null,
+  "complete_observable": false,
+  "error_scope": "actual finite retarded/advanced action application with Gauss and temporal contacts; ODE/mesh diagnostics, not continuum/operator-rounding/soft-Pauli enclosure",
+  "external_LSZ_or_open_fermion_vertex_completed": false,
+  "external_soft_momentum_selected": false,
+  "field_bridge": "actual same chronological cell x linear, future v/y held at solved midpoint; finite temporal interpolation only",
+  "gauge_Euler_reaction_norm": 0.000581343479873556,
+  "input_hashes": {
+    "artifacts/flagship_integration/BHSM_N12_C2_REFINED_RESET_ROOT_CENTER.npz": "59dd88661b15cbeec96bc19294f9d9c64f754cccbfbc385c32329fa9c864a8fe",
+    "artifacts/flagship_integration/BHSM_N12_FULL_RESET_ACTION_JACOBIAN.npz": "35bb2b67ff784206d3a5b9dc82881f5ffd8f844b55342f2032d29cdafb38a67a",
+    "artifacts/muon_birth_transfer_value_20261008/retained_reset/run_1/result.json": "d0fec0f8e8a05818fcce67e88ed8db73744484220a2cb213825893f481cb0a72",
+    "artifacts/muon_calibrated_pauli_20261009/inputs.json": "0b614ab6f26d169ca04a4878f767f78eb3668484840867e46aebbebf186369da",
+    "artifacts/muon_calibrated_weak_decay_20261010/run_1/weak_decay.json": "9c31575ce0889571790f8767cf53ffe043cb9906e0a45a96b194971320a0aad7",
+    "artifacts/muon_matched_mechanical_source_20261002/replay_reference/matched_source_and_weak_actions.npz": "146435df28178967c321c0aa7e89a1511395d196f96b8715532aa98e3e312c2b",
+    "artifacts/muon_parent_gauge_geometry_correction_20261010/attached_phase_outgoing_1steps_run_1/application.npz": "4a84d1f982b65b9b9b3e6cf4ea24b4a7be2aced8e42b239bcdd0de3ff47368a5",
+    "artifacts/muon_parent_gauge_geometry_correction_20261010/attached_phase_outgoing_1steps_run_1/result.json": "87b353e0efa1cf174a9b350c8e219f8818cc26e8b627fab98d140bfeb50c6926",
+    "scripts/evaluate_muon_primal_electromagnetic_source.py": "3141d200086f0853f454f2ab24f1b9d488fb64d391f406ec298c3c5ba124e000",
+    "scripts/evaluate_muon_reached_trace_action.py": "f2ecf5b614f8b3b1b5f9bf2b73490e539321049633f7deb467bdf60a81e0c260",
+    "src/bhsm/interface/aether_canonical_momentum_action_jacobian.py": "d0ade20dc8a999e43073b45ca3ef59e05c65c55e37a1d6565d4e389176295cb1",
+    "src/bhsm/interface/aether_diagonal_sp1_m4_attachment_v15_50.py": "e6482614dcb54f4890a5e66fbe724d4c302405d575a4b73ddbb64a075cb1827e",
+    "src/bhsm/interface/aether_lorentzian_child_galerkin_v15_44.py": "574a9a6267d9228170c7309bd4be3cafb36b7515a6ee558509beb968e97bdab7",
+    "src/bhsm/interface/muon_birth_attached_phase.py": "948c1505e9b68cffbe8050be31dcb5727d8f8d4f25399f9037cfc94a9ae9fdeb",
+    "src/bhsm/interface/muon_birth_coupled_primal_midpoint.py": "ce321f641fa51d98710d006e246aac5cf6bd046be93a74fab452808597c599ce",
+    "src/bhsm/interface/muon_birth_full_field_attachment.py": "58b3bd8a4ae5fe7c63b5551e4d0f26d82ab82a27d4389066c894a5e1b4728d03",
+    "src/bhsm/interface/muon_birth_paired_attachment_endpoint.py": "71a69275ebeef226fd8dc7585745c5c8acac687e497a8441fe37a37553178f23",
+    "src/bhsm/interface/muon_birth_paired_field_endpoint.py": "f22b6a17b65c72b30571b3d9f721f347737a5916fa08e50bd833ad22df3cd035",
+    "src/bhsm/interface/muon_birth_phase_continuation.py": "9169a1c56bf5084d1f240043ca12d431c87e4adaff24fe09bdf7bf27fc5eb0be",
+    "src/bhsm/interface/muon_birth_trace_enriched_action.py": "c36c48482dd58ebe369ab935574b78b3693036f717fb49035dfac01164956dce",
+    "src/bhsm/interface/muon_birth_trace_enriched_phase.py": "591754957f1cc452bfd53d8adc1087308459902a822876105315b7423c2fd676",
+    "src/bhsm/interface/muon_birth_two_arm_assigned_action.py": "cf6c58dc68700315d701fb9a1e9e99e927d18d90016a6ae7f86470c36136c77a",
+    "src/bhsm/interface/muon_chronological_charged_current.py": "b2a01b0c23c494fdcc28940cf6b55077c2018ed490f0a4f082d786a31f6509e3",
+    "src/bhsm/interface/muon_current_source_motion_cubic.py": "32427cda80ec7e8089e8a88f0f594f7013b825d8b00ac458f7e11a034b5339b4",
+    "src/bhsm/interface/muon_intrinsic_higgs_gauge_action.py": "c19354209300ab06c0f1ab6bf4e111dbb5de0cd9e8d1d31a71af357a829118d4",
+    "src/bhsm/interface/muon_intrinsic_m4_normal_pullback.py": "43187eee35f2879a43fe0fd02ae447502811349ccf2f2a78aa14beb8aa706bf0",
+    "src/bhsm/interface/muon_material_higgs_gauge_action.py": "8bca013820283614c6578be4f44c29c4ea1c919f516aa9a2783f0eb38127d035",
+    "src/bhsm/interface/muon_moving_geometric_action.py": "bf560fdb9766f563d97d3100ccb266e2a4350c910ac14a51d57576c2b5371392",
+    "src/bhsm/interface/muon_parent_gauge_geometry_correction.py": "fa29f5764dca39196c807d64e7976d5894589e7de3ffa9d4a5ddecfb136b4816",
+    "src/bhsm/interface/muon_parent_maxwell_background_euler.py": "fbb2c99d4b1c58247ac42a769fad3e1b16ccc76a1744fe0c5334e50c4a974bee",
+    "src/bhsm/interface/muon_parent_maxwell_full_weak.py": "c1fb703967a644306d3521d457a6d7c778a49d89c1e081b401487a25b7491565",
+    "src/bhsm/interface/muon_parent_maxwell_geometry_weak.py": "f0b4a49934e17ad18c40e9164b66c54e1b2cb146fb476f59b0e500f2dd6c9153",
+    "src/bhsm/interface/muon_parent_mean_causal_action.py": "2a84b1be22625b1a5ae88d10c76631d7a5b602d2b0e22e57f00201bb74a593ad",
+    "src/bhsm/interface/muon_parent_retarded_hypercharge.py": "2eb97a704bce63f601cc0d6e0f647266d4b4aac7f746d34dceb41b72018c3510",
+    "src/bhsm/interface/muon_pointwise_full_field_action.py": "d57cd5953de00bcae857d0e458bbead1e463e5fffe8d947c5b9e71806aabaff6",
+    "src/bhsm/interface/muon_primal_electromagnetic_source.py": "fe38cda80affb38820a64e704f9ee4c80b7c4ab58b08c8f925a655333053c91a",
+    "src/bhsm/interface/muon_primal_trace_enriched_lepton_operator.py": "c6956d8b195c80e8a4488b1ef2c2e4b2bd8544736b6e1735bc7de3108597ec2f",
+    "src/bhsm/interface/muon_reached_trace_action.py": "7fed7f2520a6f66e31323905359e491897f7187ccf9871ecfc2ab95e415ffade",
+    "src/bhsm/interface/muon_trace_enriched_reached_action.py": "3721d05a2e82dfc04b75a0c570fd9946ee842e0e391704687ae9ebe29eb96e9a"
+  },
+  "intrinsic_H_canonical_norm": 0.000730480850108906,
+  "intrinsic_H_response_norm": 8.45405908772385e-12,
+  "minimum_interior_mass_eigenvalue": 442.9256723171155,
+  "numerical_integrator": {
+    "atol": 2e-11,
+    "evaluations": 3842,
+    "method": "DOP853",
+    "rtol": 2e-09
+  },
+  "old_transported_Q8_inverse_substituted": false,
+  "physical_Pauli_value": false,
+  "primitive_Clifford_tensor_zero_is_native_Pauli_zero": false,
+  "scalar_wall_current_norm": 5.816736029620938e-19,
+  "side": "outgoing",
+  "source_basis": "actual local H-selected Q_H=T_H+Y times retained eight coexact photon wavefunctions; all full400 components before Gauss",
+  "source_coordinate": "unit charged connection beta=Tb*b; canonical Omega=-i e Q_H A_can needs consistent action/current residue matching",
+  "source_first_jets_are_analytic": true,
+  "source_frame_rate": "future coordinate Hdot and geometric Tb_dot; Qdot=Tb_dot S(H)+Tb D_H S(H)Hdot exactly once",
+  "source_motion_before_Gauss": true,
+  "source_motion_count": 1,
+  "source_phase_jacobian_chronological": true,
+  "source_pulse_duration": 2.5e-06,
+  "sources": [
+    {
+      "H_rate_real": [
+        -1.7691240945128901e-15,
+        -7.060740822359462e-09,
+        1.1022278273632586e-15,
+        -1.6500937012060095e-08
+      ],
+      "H_real": [
+        2.786096509422029e-16,
+        1.068072360486792,
+        4.741423069082167e-16,
+        -4.947286099301131e-16
+      ],
+      "T_b": 0.22565333970481707,
+      "T_b_dot": -0.006480665079586782,
+      "coordinate_time": 0.0,
+      "local_charge_covariant_time_norm": 6.38404972926639e-17,
+      "local_charge_evolution_commutator_norm": 2.4346428661237676,
+      "mass_charge_commutator_defect": 1.8907002479835353e-33,
+      "old_source_span_relative_residual": 0.775044801572428,
+      "primitive_Clifford_tensor_projection_norm": 4.4809185773380773e-17,
+      "response_time": 0.0,
+      "unit_Tr16_charge_coefficient_rate": [
+        4.684924707901757e-15,
+        2.9188763055186237e-15,
+        -2.3396201552909652e-24,
+        0.0
+      ],
+      "unit_Tr16_charge_coefficients": [
+        -7.378030956459142e-16,
+        1.2556049678485405e-15,
+        1.4142135623730951,
+        1.8257418583505538
+      ]
+    },
+    {
+      "H_rate_real": [
+        -1.7691240945128901e-15,
+        -7.060740822359462e-09,
+        1.1022278273632586e-15,
+        -1.6500937012060095e-08
+      ],
+      "H_real": [
+        2.786048394312981e-16,
+        1.0680723604867743,
+        4.741446326073652e-16,
+        -4.174707116928645e-14
+      ],
+      "T_b": 0.22565332350318731,
+      "T_b_dot": -0.006480638707353525,
+      "coordinate_time": 2.5e-06,
+      "local_charge_covariant_time_norm": 6.384049729348136e-17,
+      "local_charge_evolution_commutator_norm": 2.434639884640213,
+      "mass_charge_commutator_defect": 9.881504604993533e-32,
+      "old_source_span_relative_residual": 0.775044801572428,
+      "primitive_Clifford_tensor_projection_norm": 4.4809140524175856e-17,
+      "response_time": 2.5e-06,
+      "unit_Tr16_charge_coefficient_rate": [
+        4.684924707902128e-15,
+        2.918876305518335e-15,
+        4.679240089509032e-24,
+        0.0
+      ],
+      "unit_Tr16_charge_coefficients": [
+        -7.377903539923557e-16,
+        1.2556111266734027e-15,
+        1.4142135623730951,
+        1.8257418583505538
+      ]
+    },
+    {
+      "H_rate_real": [
+        -1.7691240945128901e-15,
+        -7.060740822359462e-09,
+        1.1022278273632586e-15,
+        -1.6500937012060095e-08
+      ],
+      "H_real": [
+        2.7860002792039327e-16,
+        1.0680723604867568,
+        4.741469583065137e-16,
+        -8.299941372864278e-14
+      ],
+      "T_b": 0.22565330730162347,
+      "T_b_dot": -0.0064806123351267165,
+      "coordinate_time": 5e-06,
+      "local_charge_covariant_time_norm": 6.384049729429449e-17,
+      "local_charge_evolution_commutator_norm": 2.4346369031589394,
+      "mass_charge_commutator_defect": 1.976075804346082e-31,
+      "old_source_span_relative_residual": 0.775044801572428,
+      "primitive_Clifford_tensor_projection_norm": 4.480909527525384e-17,
+      "response_time": 5e-06,
+      "unit_Tr16_charge_coefficient_rate": [
+        4.684924707902495e-15,
+        2.918876305518046e-15,
+        -7.373673397194162e-32,
+        0.0
+      ],
+      "unit_Tr16_charge_coefficients": [
+        -7.377776123387966e-16,
+        1.2556172854982646e-15,
+        1.4142135623730951,
+        1.8257418583505538
+      ]
+    },
+    {
+      "H_rate_real": [
+        -1.7691240945128901e-15,
+        -7.060740822359462e-09,
+        1.1022278273632586e-15,
+        -1.6500937012060095e-08
+      ],
+      "H_real": [
+        2.7859521640948845e-16,
+        1.0680723604867393,
+        4.741492840056623e-16,
+        -1.2425175628799912e-13
+      ],
+      "T_b": 0.22565329110012564,
+      "T_b_dot": -0.006480585962906392,
+      "coordinate_time": 7.500000000000001e-06,
+      "local_charge_covariant_time_norm": 6.384049729511043e-17,
+      "local_charge_evolution_commutator_norm": 2.4346339216799504,
+      "mass_charge_commutator_defect": 7.763671808408093e-34,
+      "old_source_span_relative_residual": 0.775044801572428,
+      "primitive_Clifford_tensor_projection_norm": 4.480905002661479e-17,
+      "response_time": 7.500000000000001e-06,
+      "unit_Tr16_charge_coefficient_rate": [
+        4.684924707902865e-15,
+        2.918876305517757e-15,
+        -7.37641946529052e-32,
+        0.0
+      ],
+      "unit_Tr16_charge_coefficients": [
+        -7.37764870685238e-16,
+        1.2556234443231266e-15,
+        1.4142135623730951,
+        1.8257418583505538
+      ]
+    },
+    {
+      "H_rate_real": [
+        -1.7691240945128901e-15,
+        -7.060740822359462e-09,
+        1.1022278273632586e-15,
+        -1.6500937012060095e-08
+      ],
+      "H_real": [
+        2.7859040489858363e-16,
+        1.0680723604867215,
+        4.741516097048107e-16,
+        -1.6550409884735544e-13
+      ],
+      "T_b": 0.22565327489869366,
+      "T_b_dot": -0.006480559590692519,
+      "coordinate_time": 1e-05,
+      "local_charge_covariant_time_norm": 6.384049729592562e-17,
+      "local_charge_evolution_commutator_norm": 2.4346309402032427,
+      "mass_charge_commutator_defect": 7.70372069590385e-34,
+      "old_source_span_relative_residual": 0.775044801572428,
+      "primitive_Clifford_tensor_projection_norm": 4.4809004778258634e-17,
+      "response_time": 1e-05,
+      "unit_Tr16_charge_coefficient_rate": [
+        4.684924707903235e-15,
+        2.9188763055174688e-15,
+        -7.379165533386879e-32,
+        0.0
+      ],
+      "unit_Tr16_charge_coefficients": [
+        -7.377521290316794e-16,
+        1.2556296031479888e-15,
+        1.4142135623730951,
+        1.8257418583505538
+      ]
+    }
+  ],
+  "time_nodes": 5,
+  "time_steps": 64
+}

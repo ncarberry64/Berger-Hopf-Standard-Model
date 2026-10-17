@@ -1,0 +1,990 @@
+diff --git a/scripts/control_muon_support_loss_quotient.py b/scripts/control_muon_support_loss_quotient.py
+new file mode 100644
+index 00000000..b51cc5c2
+--- /dev/null
++++ b/scripts/control_muon_support_loss_quotient.py
+@@ -0,0 +1,51 @@
++"""Independent analytic branch control; not a BHSM event or operator."""
++from __future__ import annotations
++import numpy as np
++import sympy as sp
++
++from bhsm.interface.muon_native_support_loss_cutoff import (
++    quadratic_form_branch_jets,cutoff_from_total_contractions,
++)
++
++
++def control_expressions():
++    x,y,t = sp.symbols('x y t', real=True)
++    # The prescribed surface is a CHAIN-RULE CONTROL only; no physical event
++    # is selected by it. The forms and line include both explicit and t motion.
++    surface = sp.Rational(3,10)*x-sp.Rational(1,5)*y+sp.Rational(3,20)*x*y
++    p = sp.Matrix([1+x/5+3*y/10+t/7+x*y/10,
++                   sp.Rational(1,10)+2*x/5-y/5-t/9+x*y/4])
++    R = sp.Matrix([[4+x/5+t/3,1+x/10-y/8],[1+x/10-y/8,3+y/4-t/6+x*y/7]])
++    I = sp.Matrix([[2-y/8+t/5,sp.Rational(1,10)+x/9],[sp.Rational(1,10)+x/9,sp.Rational(3,2)+x/7+t/4-x*y/6]])
++    return x,y,surface,p.subs(t,surface),R.subs(t,surface),I.subs(t,surface)
++
++
++def execute_control():
++    x,y,surface,p,R,I = control_expressions()
++    zero={x:0,y:0}
++    def jet(f):
++        return [np.array(g.subs(zero),dtype=float) for g in (f,sp.diff(f,x),sp.diff(f,y),sp.diff(f,x,y))]
++    pv,px,py,pxy = [z.reshape(-1) for z in jet(p)]
++    R0,Rx,Ry,Rxy = jet(R);I0,Ix,Iy,Ixy = jet(I)
++    r = quadratic_form_branch_jets(R0,pv,K_x=Rx,K_y=Ry,K_xy=Rxy,psi_x=px,psi_y=py,psi_xy=pxy)
++    i = quadratic_form_branch_jets(I0,pv,K_x=Ix,K_y=Iy,K_xy=Ixy,psi_x=px,psi_y=py,psi_xy=pxy)
++    c = cutoff_from_total_contractions(r,i)
++    exactr=(p.T*R*p)[0];exacti=(p.T*I*p)[0];exact=exacti/exactr
++    direct=dict(value=float(exact.subs(zero)),x=float(sp.diff(exact,x).subs(zero)),
++                y=float(sp.diff(exact,y).subs(zero)),xy=float(sp.diff(exact,x,y).subs(zero)))
++    evaluate=sp.lambdify((x,y),exact,'numpy')
++    fd=[]
++    for h in (1e-3,5e-4,2.5e-4):
++        value=(evaluate(h,h)-evaluate(h,-h)-evaluate(-h,h)+evaluate(-h,-h))/(4*h*h)
++        fd.append(dict(step=h,c_xy=float(value),absolute_error=float(abs(value-c['c_xy']))))
++    def scalar(j):return {k:float(complex(j[k]).real) for k in ('value','x','y','xy')}
++    report=dict(classification='SUPPLIED_ARITHMETIC_BRANCH_CONTROL__NO_PHYSICAL_SUPPORT_LOSS',
++        r=scalar(r),i=scalar(i),c={k:float(complex(c[k]).real) for k in ('c','c_x','c_y','c_xy')},
++        independent_symbolic=direct,finite_differences=fd,
++        mode_not_assumed_R_eigenvector=True,total_event_motion_included_once=True,
++        second_embedding_terms_retained=True,
++        max_symbolic_difference=max(float(abs(c[k]-direct[j])) for k,j in (('c','value'),('c_x','x'),('c_y','y'),('c_xy','xy'))),
++        error_scope='binary64 consistency and exact symbolic identity; no rigorous FD remainder, continuum or physical error bound')
++    arrays=dict(R=R0,R_x=Rx,R_y=Ry,R_xy=Rxy,I=I0,I_x=Ix,I_y=Iy,I_xy=Ixy,
++                psi=pv,psi_x=px,psi_y=py,psi_xy=pxy)
++    return report,arrays
+diff --git a/scripts/replay_muon_native_support_loss_cutoff.py b/scripts/replay_muon_native_support_loss_cutoff.py
+new file mode 100644
+index 00000000..2fcb97b6
+--- /dev/null
++++ b/scripts/replay_muon_native_support_loss_cutoff.py
+@@ -0,0 +1,152 @@
++"""Adopted cutoff composition and narrow retained-history reconciliation.
++
++One new small arithmetic control is evaluated. No history, parent solve,
++local contact, normalization or old test producer is replayed.
++"""
++from __future__ import annotations
++import argparse
++import hashlib
++import json
++from pathlib import Path
++import subprocess
++import sys
++import time
++import numpy as np
++import sympy as sp
++
++ROOT=Path(__file__).resolve().parents[1]
++sys.path.insert(0,str(ROOT/'src'));sys.path.insert(0,str(ROOT/'scripts'))
++from bhsm.interface.ae4_stratified_dirac_zeta_induced_owner import native_spectral_length_contract
++from bhsm.interface.muon_native_support_loss_cutoff import lower_limit_coefficients
++from bhsm.interface.muon_native_induced_polarization import lower_limit_mixed
++from control_muon_support_loss_quotient import execute_control
++
++
++def save(path,value):
++    path.write_text(json.dumps(value,indent=2,sort_keys=True,allow_nan=False)+'\n',encoding='utf8')
++
++
++def sha(path):return hashlib.sha256(path.read_bytes()).hexdigest()
++
++
++def run(output,history_repository):
++    if output.exists():raise FileExistsError('Fresh output required; preserve older work')
++    output.mkdir(parents=True);start=time.perf_counter()
++    history=history_repository/'artifacts/current_runtime'
++    paths=dict(owner=ROOT/'src/bhsm/interface/ae4_stratified_dirac_zeta_induced_owner.py',
++        builder=ROOT/'src/bhsm/interface/muon_native_support_loss_cutoff.py',
++        replay=Path(__file__),control=ROOT/'scripts/control_muon_support_loss_quotient.py',
++        existing_heat_identity=ROOT/'src/bhsm/interface/muon_native_induced_polarization.py',
++        formation=ROOT/'src/bhsm/interface/covariant_bubble_interface_mechanics.py',
++        fixed_trace=ROOT/'src/bhsm/interface/aether_unified_m5_m4_pushforward_v15_69.py',
++        mode_arrays=history/'current_physical_mode_response/arrays.npz',
++        mode_report=history/'current_physical_mode_response/report.json',
++        backreaction_arrays=history/'current_child_parent_backreaction/arrays.npz',
++        backreaction_report=history/'current_child_parent_backreaction/report.json',
++        mode_producer=history_repository/'scripts/run_n12_current_physical_mode_response.py',
++        backreaction_producer=history_repository/'scripts/run_n12_current_child_parent_backreaction.py',
++        graph_producer=history_repository/'src/bhsm/interface/aether_hybrid_c2_graph_jacobian.py',
++        incidence=history_repository/'src/bhsm/interface/aether_forward_c2_geometry_incidence.py',
++        frozen=ROOT/'artifacts/muon_source_jet_20261002/frozen_local.json',
++        prior_source_receipt=ROOT/'artifacts/muon_native_induced_polarization_20261006/run_1/input_hashes.json')
++    # Source identities include read-only local handoffs, not Git alone.
++    mode=json.loads(paths['mode_report'].read_text(encoding='utf8'))
++    back=json.loads(paths['backreaction_report'].read_text(encoding='utf8'))
++    paths['retained_center']=Path(mode['center'])
++    identities={k:dict(path=str(p.resolve()),sha256=sha(p),
++                       canonical_LF_sha256=hashlib.sha256(p.read_bytes().replace(b'\r\n',b'\n')).hexdigest()
++                       if p.suffix in ('.py','.json') else None) for k,p in paths.items()}
++    if identities['retained_center']['sha256'].upper()!=mode['center_SHA256'].upper():
++        raise ValueError('retained mode center changed')
++    if back['center_SHA256'].upper()!=mode['center_SHA256'].upper():
++        raise ValueError('retained histories refer to different centers')
++    save(output/'input_hashes.json',identities)
++    git=lambda where,*args:subprocess.check_output(['git','-c','gc.auto=0','-c','maintenance.auto=false',*args],cwd=where,text=True).strip()
++    save(output/'starting_revision.json',dict(HEAD=git(ROOT,'rev-parse','HEAD'),branch=git(ROOT,'branch','--show-current'),
++        working_tree_status=git(ROOT,'status','--short'),scientific_reference='524ed90689bd5923c249bba2e699abf627e703cd',
++        read_only_history_HEAD=git(history_repository,'rev-parse','HEAD'),
++        read_only_history_branch=git(history_repository,'branch','--show-current')))
++    save(output/'owner_contract.json',native_spectral_length_contract())
++    shape_keys={
++        'mode_arrays':('graph_Jacobian_action','physical_tangent_action','normalized_constraint_action','initial_mode_action','initial_mode_coefficients','physical_fundamental','node_indices','action_lengths'),
++        'backreaction_arrays':('states','action_rates','state_action_first_jet','transition_jacobians_action','state_clock_transition_jacobians','terminal_hit_state_action_first_jet','proper_times','proper_time_density','log_radius_first_jet')}
++    shapes={}
++    for key,selected in shape_keys.items():
++        with np.load(paths[key],allow_pickle=False) as z:
++            shapes[key]={name:list(z[name].shape) for name in selected if name in z.files}
++    history_scope=dict(mode_domain=mode['domain'],mode_norm=mode['norm'],mode_transport=mode['transport'],
++        mode_declared_external_response=mode['external_environment_response'],
++        backreaction_domain=back['domain'],backreaction_first_hit=back['first_hit'],
++        arrays=shapes,
++        current_mode_meaning='73 constrained state tangent gain vectors from SVD, NOT a selected interface-displacement formation/support-loss eigenline',
++        current_endpoint_meaning='signed_descriptor=0 and proper_time_density=0 at the canonical stop, NOT an evaluated AE4 support-loss event',
++        graph_action_meaning='98-coordinate derivative of normalized cancelled evolution field; no normal-interface displacement input or constrained bulk zero-trace test',
++        geometry_incidence_meaning='state covectors D_y log R4 and D_y log N, not a normal-displacement-to-field injection',
++        source_role='existing b-source connection insertions are retained photon inputs; they are not variations of the interface embedding X',
++        numerical_actions_replayed=False)
++    save(output/'retained_history_scope.json',history_scope)
++    next_operand=dict(name='interface-normal/bulk-field mixed response forcing',
++        symbol='f_psi(eta)=D_Phi D_X S_bulk^owner[eta,xi_psi]',
++        input_space='xi_psi in the selected normal-interface harmonic trace space; eta in V0, allowed constrained bulk variations with zero interface trace on the inherited domain',
++        output_space='V0 dual; only the source-connected covector/application is needed',
++        producer='same-action bulk/interface second variation, including owned moving-trace/contact/domain terms; mechanics harmonic_modes.Z_lambda names its environmental Hessian but does not evaluate this forcing',
++        consumer='H_etaeta deltaPhi_psi=-f_psi on V0, followed by the contracted constrained bulk impedance and F(tau)=<psi,(gamma J+Himp-Hdrive)psi>',
++        defining_weak_equation='Q_bulk^owner((eta,0),(deltaPhi_psi,xi_psi))=0 for every allowed eta in V0',
++        impedance_contraction='z_psi=Q_bulk^owner((deltaPhi_psi,xi_psi),(deltaPhi_psi,xi_psi)) in a justified stationary-response realization',
++        stationary_matching_scope='the gauge fixed-trace tree reduction exhibits this method; it does NOT by itself identify the full all-sector mechanical response. The SAME total-action/interface matching is required.',
++        observed_implementation_gap='the inspected graph/time response accepts state, weights, reference and signed_descriptor; no xi_psi injection, X-variation or V0 action-dual map is supplied by those arrays/producers',
++        all_relevant_science_absence_theorem=False,
++        value=None,status='UNEVALUATED_ACTION_REQUIRED_RESPONSE',
++        not_a_new_constitutive_or_scalar_energy_postulate=True)
++    save(output/'next_operand.json',next_operand)
++    save(output/'event_locator.json',dict(
++        equality='F(tau,b)=<psi_tau,(gamma_tau J_Sigma+H_impedance-H_event,drive)psi_tau>=0',
++        inertia_cancels_from_same_mode_energy_equality=True,
++        extra_condition='outward spacetime support ceases under the inherited action; no zero-flux/descriptor/endpoint surrogate adopted',
++        selected_branch='continuous physical branch from the action-selected formation event, not a new SVD gain or convenient eigenvalue minimizer',
++        formation_event_not_substituted=True,canonical_stop_not_substituted=True,
++        locator_executed=False,reason='the source-restricted mixed bulk/interface action above is not evaluated; the independent cessation test is also unevaluated'))
++    report,arrays=execute_control()
++    save(output/'branch_control.json',report);np.savez_compressed(output/'branch_control_actions.npz',**arrays)
++    r,i=sp.symbols('r i',positive=True)
++    rx,ry,rxy,ix,iy,ixy=sp.symbols('r_v r_J r_vJ i_v i_J i_vJ')
++    T,Hp,Hx,Hy=sp.symbols('T H_P H_v H_J')
++    coefficients=lower_limit_coefficients(r=r,i=i,r_x=rx,r_y=ry,r_xy=rxy,i_x=ix,i_y=iy,i_xy=ixy)
++    c=i/r;cv=ix/r-i*rx/r**2;cj=iy/r-i*ry/r**2
++    cvj=ixy/r-(ix*ry+iy*rx+i*rxy)/r**2+2*i*rx*ry/r**3
++    composed=(coefficients['coefficient_T']*T+coefficients['coefficient_H_P']*Hp+
++              coefficients['coefficient_H_x']*Hx+coefficients['coefficient_H_y']*Hy)
++    residual=sp.simplify(composed-lower_limit_mixed(c,cv,cj,cvj,T,Hp,Hx,Hy))
++    if residual!=0:raise AssertionError('adopted quotient/heat composition mismatch')
++    save(output/'composed_heat_length_term.json',dict(classification='EXACT_SYMBOLIC_CONSUMPTION__NOT_PHYSICAL_HEAT_EVALUATION',
++        c=str(c),c_v=str(cv),c_J=str(cj),c_vJ=str(cvj),
++        coefficients={k:str(v) for k,v in coefficients.items()},composed_term=str(composed),
++        identity_residual=str(residual),T_coefficient='[(log i)_vJ-(log r)_vJ]/2',
++        heat_trace_meanings=dict(T='STr exp(-cP)',H_P='STr(P exp(-cP))',H_v='STr(exp(-cP)P_v)',H_J='STr(exp(-cP)P_J)'),
++        native_cotangents_evaluated=False))
++    ownership={key:dict(status='UNEVALUATED',value=None) for key in (
++        'primitive_Maxwell','common_A_background','Higgs_gauge_local_mixed','gauge_fixing_ghost',
++        'induced_heat','relative_zeta_eta','domain_interface','completion')}
++    ownership['primitive_Maxwell'].update(already_owned_operand='earlier same-frame local angular Maxwell/curvature rows remain cached; subtraction from complete Gamma not yet evaluated',whole_primitive_diagnostic_subtracted=False)
++    ownership['common_A_background'].update(shared_dependency='subset of same-owner local angular/background terms; not an extra addend')
++    result=dict(classification='ADOPTED_CUTOFF_TOTAL_JETS_COMPOSED__PHYSICAL_BRANCH_ACTION_UNEVALUATED',
++        owner_definition_adopted=True,new_result='full branch contraction two-jets and exact i/r substitution into existing AE4 moving-lower-limit term',
++        physical={k:None for k in ('r','i','r_v','r_J','r_vJ','i_v','i_J','i_vJ','support_loss_event','psi_star','c','c_v','c_J','c_vJ','heat_length_contribution','R_ind','native_photon_response','paired_family_heat','a_mu','g_mu')},
++        next_operand=next_operand,ownership=ownership,frozen_local=json.loads(paths['frozen'].read_text(encoding='utf8')),
++        formation_zero_used_as_support_loss=False,canonical_stop_used_as_support_loss=False,
++        default_physical_length_used=False,physical_eigenline_selected_from_control=False,
++        error_scope=dict(symbolic='exact supplied-form/quotient/heat identities',control=report['error_scope'],physical_numerical=None,physical_theoretical=None),
++        execution=dict(old_production_replays=0,old_source_or_parent_solves=0,physical_branch_actions=0,physical_heat_applications=0,new_control_dimension=2,elapsed_seconds=time.perf_counter()-start))
++    save(output/'result.json',result)
++    save(output/'checkpoint.json',dict(id='BHSM_MUON_SUPPORT_LOSS_TOTAL_CONTRACTION_AND_HEAT_COMPOSITION_20261007',
++        stage='adopted owner implemented; total branch/heat algebra evaluated; physical assembly stops at first mixed bulk/interface response forcing',
++        next_operand='next_operand.json',result='result.json',physical_a_mu=None,physical_g_mu=None))
++    save(output/'output_hashes.json',{p.name:sha(p) for p in sorted(output.iterdir()) if p.is_file()})
++    print(json.dumps(dict(output=str(output),classification=result['classification'],
++        control_c_xy=report['c']['c_xy'],symbolic_heat_identity_residual=str(residual),physical_heat_applications=0,seconds=result['execution']['elapsed_seconds'])))
++
++
++if __name__=='__main__':
++    parser=argparse.ArgumentParser();parser.add_argument('--output',type=Path,required=True)
++    parser.add_argument('--history-repository',type=Path,default=Path(r'C:\Users\carbe\OneDrive\Documents\CODEX\Berger-Hopf-Standard-Model'))
++    a=parser.parse_args();run(a.output,a.history_repository)
+diff --git a/src/bhsm/interface/ae4_stratified_dirac_zeta_induced_owner.py b/src/bhsm/interface/ae4_stratified_dirac_zeta_induced_owner.py
+index 1bcefa86..5088ef1d 100644
+--- a/src/bhsm/interface/ae4_stratified_dirac_zeta_induced_owner.py
++++ b/src/bhsm/interface/ae4_stratified_dirac_zeta_induced_owner.py
+@@ -20,6 +20,7 @@ from typing import Any
+ ACTION_VERSION = "BHSM-AE-4.0.0"
+ PREDECESSOR_ACTION_VERSION = "BHSM-AE-3.1.0"
+ CLASSIFICATION = "AE4_STRATIFIED_DIRAC_ZETA_INDUCED_ACTION_OWNER_SELECTED"
++CUTOFF_OWNER_TAG = "BHSM-AE4-MODE-FREQUENCY-CUTOFF-2026-10-07"
+ RELEVANT_MOMENT_ORDERS = (8, 6, 5, 4, 3, 2)
+ 
+ 
+@@ -66,15 +67,32 @@ def proper_time_moment_ratio(
+ 
+ 
+ def native_spectral_length_contract() -> dict[str, Any]:
+-    """Bind the sole spectral length to the BHSM collapse surface.
++    """Bind the length to the adopted support-loss mode-frequency owner.
+ 
+     The rule is an owner selection, not a numerical evaluation.  In natural
+-    units the length is the inverse of the action-derived impedance energy at
+-    the first future surface where exterior spacetime support reaches the core
+-    threshold.  No astrophysical or particle datum is used to set it.
++    units E^2 is total restoring resistance divided by kinetic inertia on the
++    continuously transported physical branch at AE4's support-loss event.
++    Formation is not identified with that event. No particle datum sets it.
+     """
+ 
+     return {
++        "cutoff_owner_tag": CUTOFF_OWNER_TAG,
++        "definition_status": "ADOPTED_OWNER__PHYSICAL_BRANCH_CONTRACTIONS_UNEVALUATED",
++        "total_restoring_resistance": "R_star=gamma_star J_Sigma+H_impedance",
++        "kinetic_inertia": (
++            "I_star=positive action-owned kinetic inertia in "
++            "I_lambda D_tau^2 a_lambda+R_lambda a_lambda=f_lambda"
++        ),
++        "branch_rule": (
++            "CONTINUOUS_TRANSPORT_OF_ACTION_SELECTED_FORMATION_BRANCH_TO_"
++            "AE4_FIRST_FUTURE_SUPPORT_LOSS_EVENT"
++        ),
++        "impedance_energy_rule_natural_units": (
++            "E_impedance=sqrt(<psi_star,R_star psi_star>/<psi_star,I_star psi_star>)"
++        ),
++        "core_energy_rule_natural_units": (
++            "E_core=sqrt(<psi_star,H_event,drive psi_star>/<psi_star,I_star psi_star>)"
++        ),
+         "surface_rule": (
+             "Sigma_star=FIRST_FUTURE_SURFACE_WHERE_"
+             "E_impedance[Phi;Sigma]=E_core[Phi;Sigma]_AND_OUTWARD_"
+@@ -83,6 +101,17 @@ def native_spectral_length_contract() -> dict[str, Any]:
+         "spectral_length_rule_natural_units": (
+             "ell_star=1/E_impedance[Phi_star;Sigma_star]"
+         ),
++        "heat_length_squared_rule": (
++            "c_star=ell_star^2=<psi_star,I_star psi_star>/<psi_star,R_star psi_star>"
++        ),
++        "proper_clock_units": "hbar=c_light=1; frequency energy uses the owned physical D_tau",
++        "formation_zero_is_support_loss_by_default": False,
++        "surface_Jacobi_contribution_retained": True,
++        "bulk_impedance_only_cutoff_allowed": False,
++        "selected_mode_is_resistance_eigenvector_by_default": False,
++        "source_jets_are_total_branch_derivatives": True,
++        "physical_default_ell_equals_one_allowed": False,
++        "measured_particle_or_anomaly_input": False,
+         "ell_star_is_BHSM_native_geometry_functional": True,
+         "ell_star_is_free_universal_cutoff": False,
+         "first_crossing_not_singular_endpoint_evaluation": True,
+@@ -92,6 +121,62 @@ def native_spectral_length_contract() -> dict[str, Any]:
+     }
+ 
+ 
++def native_mode_frequency_energy(
++    *, surface_jacobi: float, bulk_impedance: float, kinetic_inertia: float
++) -> float:
++    """Evaluate supplied SAME-branch contractions, not a branch producer.
++
++    ``surface_jacobi`` is <psi,gamma J psi> and is required, even if a
++    separate action proof gives zero. Unknown terms must not be passed as zero.
++    Positivity is required of the total resistance and inertia, not of J alone.
++    """
++    surface = float(surface_jacobi)
++    bulk = float(bulk_impedance)
++    if not math.isfinite(surface) or not math.isfinite(bulk):
++        raise ValueError("both restoring contributions must be finite and supplied")
++    resistance = _positive_finite(surface + bulk, "total resistance")
++    inertia = _positive_finite(kinetic_inertia, "kinetic inertia")
++    return math.sqrt(resistance / inertia)
++
++
++def native_heat_length_squared(
++    *, surface_jacobi: float, bulk_impedance: float, kinetic_inertia: float
++) -> float:
++    """Evaluate c=i/r directly, with both restoring terms required."""
++    surface = float(surface_jacobi)
++    bulk = float(bulk_impedance)
++    if not math.isfinite(surface) or not math.isfinite(bulk):
++        raise ValueError("both restoring contributions must be finite and supplied")
++    resistance = _positive_finite(surface + bulk, "total resistance")
++    return _positive_finite(kinetic_inertia, "kinetic inertia") / resistance
++
++
++def native_heat_length_squared_jets(
++    *, r: float, i: float, r_x: complex, r_y: complex, r_xy: complex,
++    i_x: complex, i_y: complex, i_xy: complex
++) -> dict[str, Any]:
++    """Chain rule on SUPPLIED TOTAL branch contractions; x=v, y=J.
++
++    Include embedding, event, pairing, domain and source motion in r/i jets
++    before calling. A second event-motion correction would double count it.
++    Complex current weights are extended linearly, never conjugated here.
++    No eigenvector stationarity or source-independent length is assumed.
++    """
++    r = _positive_finite(r, "total resistance contraction")
++    i = _positive_finite(i, "inertia contraction")
++    jets = [complex(z) for z in (r_x, r_y, r_xy, i_x, i_y, i_xy)]
++    if not all(math.isfinite(z.real) and math.isfinite(z.imag) for z in jets):
++        raise ValueError("all total branch jets must be finite and supplied")
++    rx, ry, rxy, ix, iy, ixy = jets
++    return {
++        "c": i/r,
++        "c_x": ix/r-i*rx/r**2,
++        "c_y": iy/r-i*ry/r**2,
++        "c_xy": ixy/r-(ix*ry+iy*rx+i*rxy)/r**2+2*i*rx*ry/r**3,
++        "scope": "CHAIN_RULE_ON_SUPPLIED_TOTAL_BRANCH_CONTRACTIONS",
++    }
++
++
+ def forward_time_domain_contract() -> dict[str, Any]:
+     """Separate forward physical evolution from heat proper time."""
+ 
+@@ -110,9 +195,18 @@ def forward_time_domain_contract() -> dict[str, Any]:
+ 
+ 
+ def enclosure_holding_threshold_hypothesis() -> dict[str, Any]:
+-    """Record the native cross-scale stability hypothesis fail-closed."""
++    """Preserve the historical scalar hypothesis, superseded by RHO-B2."""
+ 
+     return {
++        "classification": "HISTORICAL_SCALAR_HOLDING_HYPOTHESIS_SUPERSEDED",
++        "active_owner": False,
++        "current_owner": "RHO-B2_OPERATOR_VALUED_FORMATION_QUOTIENT",
++        "current_definition": (
++            "rho_B=sup_(psi!=0) <psi,H_event,drive psi>/"
++            "<psi,(gamma J_Sigma+H_impedance)psi>"
++        ),
++        "scalar_reduction_scope": "one-mode common-charge reduction only",
++        "formation_zero_is_support_loss_by_default": False,
+         "dimensionless_control_candidate": (
+             "rho_hold=E_mode/E_impedance[Phi;Sigma_enclosure]"
+         ),
+@@ -238,6 +332,7 @@ def claim_boundary() -> dict[str, Any]:
+         "AE4_POSITIVE_ORDER_M8_M5_M4_MOMENT_RATIOS_DERIVED": True,
+         "AE4_INDEPENDENT_CROSS_STRATUM_WILSON_ONTOLOGY_RETIRED": True,
+         "AE4_ELL_STAR_NATIVE_COLLAPSE_SURFACE_OWNER_RULE_SELECTED": True,
++        "AE4_MODE_FREQUENCY_CUTOFF_OWNER_DEFINITION_ADOPTED": True,
+         "AE4_FUTURE_DIRECTED_PARENT_CHILD_DOMAIN_SELECTED": True,
+         "AE4_COMMON_SPECTRAL_LENGTH_PHYSICAL_ORIGIN_DERIVED": False,
+         "AE4_CURRENT_C2_COLLAPSE_IMPEDANCE_ENERGY_EVALUATED": False,
+@@ -248,10 +343,9 @@ def claim_boundary() -> dict[str, Any]:
+         "AE4_PHYSICAL_M8_M5_M4_NUMERICAL_COEFFICIENTS_DERIVED": False,
+         "FULL_BHSM_COMPLETE": False,
+         "exact_next_calculation": (
+-            "CONSTRUCT_THE_GLOBAL_OPERATOR_VALUED_RELATIVE_BOUNDARY_DIRAC_DOMAIN_"
+-            "THEN_EVALUATE_THE_FIRST_FUTURE_CURRENT_C2_IMPEDANCE_CROSSING_"
+-            "TO_OBTAIN_ELL_STAR_AND_THE_STRATIFIED_HEAT_COEFFICIENTS_AND_"
+-            "RELATIVE_ZETA_ETA_TERMS"
++            "EVALUATE_THE_TRANSPORTED_PHYSICAL_BRANCH_AT_AE4_SUPPORT_LOSS:_"
++            "TOTAL_RESISTANCE_AND_INERTIA_CONTRACTIONS_AND_TOTAL_SOURCE_JETS;_"
++            "CONSUME_c=i/r_IN_THE_SAME_STRATIFIED_HEAT_AND_RELATIVE_COMPLETION"
+         ),
+     }
+ 
+@@ -259,6 +353,7 @@ def claim_boundary() -> dict[str, Any]:
+ __all__ = [
+     "ACTION_VERSION",
+     "CLASSIFICATION",
++    "CUTOFF_OWNER_TAG",
+     "PREDECESSOR_ACTION_VERSION",
+     "RELEVANT_MOMENT_ORDERS",
+     "claim_boundary",
+@@ -268,6 +363,9 @@ __all__ = [
+     "induced_local_weight_ledger",
+     "microscopic_owner_contract",
+     "native_spectral_length_contract",
++    "native_mode_frequency_energy",
++    "native_heat_length_squared",
++    "native_heat_length_squared_jets",
+     "proper_time_moment",
+     "proper_time_moment_ratio",
+ ]
+diff --git a/src/bhsm/interface/muon_native_support_loss_cutoff.py b/src/bhsm/interface/muon_native_support_loss_cutoff.py
+new file mode 100644
+index 00000000..9b2a0505
+--- /dev/null
++++ b/src/bhsm/interface/muon_native_support_loss_cutoff.py
+@@ -0,0 +1,62 @@
++"""Consumed total branch contractions for the adopted AE4 cutoff.
++
++These small helpers evaluate supplied form/branch jets. They do not generate
++a physical interface branch, event or heat action from finite photon probes.
++All form matrices must already include their owned geometric pairing and
++domain pullback. Parameter derivatives are real; complex currents are then
++extended linearly in the real Hessian coefficients.
++"""
++from __future__ import annotations
++
++import numpy as np
++
++from .ae4_stratified_dirac_zeta_induced_owner import native_heat_length_squared_jets
++
++
++def quadratic_form_branch_jets(K, psi, *, K_x, K_y, K_xy, psi_x, psi_y, psi_xy):
++    """Full total two-jet of <psi,K psi>, without an eigenline assumption.
++
++    Source/event/domain/pairing motion is included in the supplied total
++    K/psi jets. No second surface-motion correction belongs after this call.
++    In particular both second embedding terms involving psi_xy are retained.
++    """
++    K, K_x, K_y, K_xy = [np.asarray(z, complex) for z in (K,K_x,K_y,K_xy)]
++    p, px, py, pxy = [np.asarray(z, complex) for z in (psi,psi_x,psi_y,psi_xy)]
++    def b(left, form, right): return np.vdot(left, form@right)
++    base = b(p,K,p)
++    x = b(px,K,p)+b(p,K_x,p)+b(p,K,px)
++    y = b(py,K,p)+b(p,K_y,p)+b(p,K,py)
++    xy = (b(pxy,K,p)+b(px,K_y,p)+b(px,K,py)
++          +b(py,K_x,p)+b(p,K_xy,p)+b(p,K_x,py)
++          +b(py,K,px)+b(p,K_y,px)+b(p,K,pxy))
++    return dict(value=base,x=x,y=y,xy=xy,
++                scope='SUPPLIED_TOTAL_FORM_AND_EMBEDDING_JETS__NOT_A_PHYSICAL_PRODUCER')
++
++
++def cutoff_from_total_contractions(r, i):
++    """Compose total scalar contractions with the adopted quotient rule."""
++    r0, i0 = complex(r['value']), complex(i['value'])
++    if r0.imag != 0 or i0.imag != 0:
++        raise ValueError('real physical base resistance/inertia contractions required')
++    return native_heat_length_squared_jets(
++        r=r0.real,i=i0.real,r_x=r['x'],r_y=r['y'],r_xy=r['xy'],
++        i_x=i['x'],i_y=i['y'],i_xy=i['xy'])
++
++
++def lower_limit_coefficients(*, r, i, r_x, r_y, r_xy, i_x, i_y, i_xy):
++    """Exact adopted quotient consumed into the existing AE4 length term.
++
++    Accepts numbers or symbolic total contractions. No heat trace is supplied
++    here. H_x=STr(exp(-cP)P_x), H_y similarly, H_P=STr(P exp(-cP)).
++    T is STr(exp(-cP)); all have the SAME grading, quotient and domain.
++    """
++    dx = r*i_x-i*r_x
++    dy = r*i_y-i*r_y
++    return {
++        'c':i/r,
++        'coefficient_H_y':-dx/(2*r**2),
++        'coefficient_H_x':-dy/(2*r**2),
++        'coefficient_T':(i_xy/i-i_x*i_y/i**2-r_xy/r+r_x*r_y/r**2)/2,
++        'coefficient_H_P':-dx*dy/(2*i*r**3),
++        'scope':'EXACT_CONDITIONAL_LENGTH_TERM__NATIVE_HEAT_COTANGENTS_NOT_GENERATED',
++    }
+diff --git a/tests/test_ae4_mode_frequency_cutoff_owner.py b/tests/test_ae4_mode_frequency_cutoff_owner.py
+new file mode 100644
+index 00000000..6486f82d
+--- /dev/null
++++ b/tests/test_ae4_mode_frequency_cutoff_owner.py
+@@ -0,0 +1,114 @@
++"""Focused adopted-owner/quotient controls; no old production replay."""
++import math
++from pathlib import Path
++import sys
++
++import pytest
++import sympy as sp
++
++sys.path.insert(0, str(Path(__file__).resolve().parents[1]/"src"))
++from bhsm.interface.ae4_stratified_dirac_zeta_induced_owner import (
++    CUTOFF_OWNER_TAG, enclosure_holding_threshold_hypothesis,
++    native_spectral_length_contract, native_mode_frequency_energy,
++    native_heat_length_squared, native_heat_length_squared_jets,
++)
++
++
++def test_adopted_owner_retains_total_resistance_and_action_inertia():
++    c = native_spectral_length_contract()
++    assert c['cutoff_owner_tag'] == CUTOFF_OWNER_TAG
++    assert c['total_restoring_resistance'] == 'R_star=gamma_star J_Sigma+H_impedance'
++    assert c['surface_Jacobi_contribution_retained']
++    assert not c['bulk_impedance_only_cutoff_allowed']
++    assert 'I_lambda D_tau^2' in c['kinetic_inertia']
++    assert '<psi_star,I_star psi_star>' in c['core_energy_rule_natural_units']
++
++
++def test_bulk_only_and_unsupplied_surface_input_are_rejected():
++    with pytest.raises(TypeError):
++        native_mode_frequency_energy(bulk_impedance=4, kinetic_inertia=2)
++    with pytest.raises(TypeError):
++        native_heat_length_squared(surface_jacobi=None, bulk_impedance=4, kinetic_inertia=2)
++    assert math.isclose(native_mode_frequency_energy(
++        surface_jacobi=2, bulk_impedance=4, kinetic_inertia=2)**2, 3)
++
++
++def test_formation_is_distinct_and_scalar_holding_is_historical():
++    c = native_spectral_length_contract()
++    h = enclosure_holding_threshold_hypothesis()
++    assert not c['formation_zero_is_support_loss_by_default']
++    assert 'AND_OUTWARD_SPACETIME_SUPPORT_CEASES' in c['surface_rule']
++    assert not h['active_owner'] and 'SUPERSEDED' in h['classification']
++    assert h['current_owner'] == 'RHO-B2_OPERATOR_VALUED_FORMATION_QUOTIENT'
++
++
++def test_frequency_squared_and_heat_length_squared_are_reciprocal():
++    # Supplied scalar control, with a signed Jacobi contribution.
++    data = dict(surface_jacobi=-1, bulk_impedance=5, kinetic_inertia=3)
++    E = native_mode_frequency_energy(**data)
++    c = native_heat_length_squared(**data)
++    assert math.isclose(E*E, 4/3) and c == 3/4
++    assert math.isclose(c*E*E, 1)
++
++
++def test_invalid_resistance_inertia_and_jet_values_fail_closed():
++    with pytest.raises(ValueError):
++        native_mode_frequency_energy(surface_jacobi=-5, bulk_impedance=4, kinetic_inertia=2)
++    with pytest.raises(ValueError):
++        native_heat_length_squared(surface_jacobi=1, bulk_impedance=4, kinetic_inertia=0)
++    with pytest.raises(ValueError):
++        native_heat_length_squared_jets(r=4, i=2, r_x=1, r_y=0, r_xy=float('nan'),
++                                       i_x=0, i_y=0, i_xy=0)
++
++
++def test_total_quotient_mixed_jet_matches_independent_finite_difference():
++    r = lambda x,y: 4+.7*x-.4*y+.6*x*y+.1*x*x
++    i = lambda x,y: 1.3-.2*x+.3*y-.15*x*y+.05*y*y
++    j = native_heat_length_squared_jets(r=4, i=1.3, r_x=.7, r_y=-.4,
++                                       r_xy=.6, i_x=-.2, i_y=.3, i_xy=-.15)
++    c = lambda x,y: i(x,y)/r(x,y)
++    for h in (1e-3, 5e-4, 2.5e-4):
++        mixed = (c(h,h)-c(h,-h)-c(-h,h)+c(-h,-h))/(4*h*h)
++        assert abs(mixed-j['c_xy']) < 2e-8
++        assert abs((c(h,0)-c(-h,0))/(2*h)-j['c_x']) < 2e-8
++        assert abs((c(0,h)-c(0,-h))/(2*h)-j['c_y']) < 2e-8
++
++
++def test_source_direction_extension_is_complex_linear_not_sesquilinear():
++    data = dict(r=4, i=1.3, r_x=.7, r_y=-.4, r_xy=.6, i_x=-.2, i_y=.3, i_xy=-.15)
++    real = native_heat_length_squared_jets(**data)
++    weight = 1.2-.7j
++    for key in ('r_y','r_xy','i_y','i_xy'): data[key] *= weight
++    extended = native_heat_length_squared_jets(**data)
++    assert abs(extended['c_y']-weight*real['c_y']) < 1e-16
++    assert abs(extended['c_xy']-weight*real['c_xy']) < 1e-16
++
++
++def test_total_surface_motion_is_consumed_once():
++    x,y,t = sp.symbols('x y t', real=True)
++    surface = 2+sp.Rational(1,5)*x-sp.Rational(1,7)*y+sp.Rational(1,9)*x*y
++    r = (4+t/3+x/2+y/4+x*y/6).subs(t,surface)
++    i = (2+t/5-x/7+y/8+x*y/10).subs(t,surface)
++    zero = {x:0,y:0}
++    vals = lambda f: (float(f.subs(zero)), float(sp.diff(f,x).subs(zero)),
++                      float(sp.diff(f,y).subs(zero)), float(sp.diff(f,x,y).subs(zero)))
++    rv,rx,ry,rxy = vals(r);iv,ix,iy,ixy = vals(i)
++    j = native_heat_length_squared_jets(r=rv,i=iv,r_x=rx,r_y=ry,r_xy=rxy,
++                                       i_x=ix,i_y=iy,i_xy=ixy)
++    assert abs(j['c_xy']-float(sp.diff(i/r,x,y).subs(zero))) < 1e-16
++
++
++def test_owner_does_not_assume_energy_eigenline_or_default_length():
++    c = native_spectral_length_contract()
++    assert not c['selected_mode_is_resistance_eigenvector_by_default']
++    assert c['source_jets_are_total_branch_derivatives']
++    assert not c['physical_default_ell_equals_one_allowed']
++    with pytest.raises(TypeError): native_heat_length_squared()
++    assert not c['numerical_ell_star_evaluated_on_current_C2']
++
++
++def test_no_measured_particle_or_anomaly_inputs_enter_definition():
++    c = native_spectral_length_contract()
++    assert not c['measured_particle_or_anomaly_input']
++    assert not c['black_hole_magnetar_neutron_and_atomic_data_set_ell_star']
++    assert 'hbar=c_light=1' in c['proper_clock_units']
+diff --git a/tests/test_muon_native_support_loss_cutoff.py b/tests/test_muon_native_support_loss_cutoff.py
+new file mode 100644
+index 00000000..613f2aae
+--- /dev/null
++++ b/tests/test_muon_native_support_loss_cutoff.py
+@@ -0,0 +1,97 @@
++"""New total-branch and heat-composition checks, not physical evaluations."""
++from pathlib import Path
++import sys
++import numpy as np
++import sympy as sp
++
++ROOT=Path(__file__).resolve().parents[1]
++sys.path.insert(0,str(ROOT/'src'));sys.path.insert(0,str(ROOT/'scripts'))
++from control_muon_support_loss_quotient import control_expressions
++from bhsm.interface.muon_native_support_loss_cutoff import (
++    quadratic_form_branch_jets,cutoff_from_total_contractions,lower_limit_coefficients,
++)
++from bhsm.interface.muon_native_induced_polarization import lower_limit_mixed
++
++
++def evaluated_jets(expr,x,y):
++    zero={x:0,y:0}
++    return [np.array(z.subs(zero),float) for z in (expr,sp.diff(expr,x),sp.diff(expr,y),sp.diff(expr,x,y))]
++
++
++def test_total_form_and_second_embedding_jets_against_independent_differentiation():
++    x,y,_,p,R,I=control_expressions()
++    pv,px,py,pxy=[z.reshape(-1) for z in evaluated_jets(p,x,y)]
++    for K in (R,I):
++        K0,Kx,Ky,Kxy=evaluated_jets(K,x,y)
++        got=quadratic_form_branch_jets(K0,pv,K_x=Kx,K_y=Ky,K_xy=Kxy,psi_x=px,psi_y=py,psi_xy=pxy)
++        exact=evaluated_jets((p.T*K*p)[0],x,y)
++        assert max(abs(got[key]-float(value)) for key,value in zip(('value','x','y','xy'),exact))<2e-15
++        omitted=quadratic_form_branch_jets(K0,pv,K_x=Kx,K_y=Ky,K_xy=Kxy,psi_x=px,psi_y=py,psi_xy=np.zeros(2))
++        assert abs(got['xy']-omitted['xy'])>.3
++
++
++def test_cutoff_consumes_the_total_branch_without_energy_eigenline_assumption():
++    x,y,_,p,R,I=control_expressions()
++    pv,px,py,pxy=[z.reshape(-1) for z in evaluated_jets(p,x,y)]
++    results=[]
++    for K in (R,I):
++        K0,Kx,Ky,Kxy=evaluated_jets(K,x,y)
++        results.append(quadratic_form_branch_jets(K0,pv,K_x=Kx,K_y=Ky,K_xy=Kxy,psi_x=px,psi_y=py,psi_xy=pxy))
++    c=cutoff_from_total_contractions(*results)
++    exact=(p.T*I*p)[0]/(p.T*R*p)[0]
++    zero={x:0,y:0}
++    assert abs(c['c_xy']-float(sp.diff(exact,x,y).subs(zero)))<2e-15
++    R0=np.array(R.subs(zero),float);I0=np.array(I.subs(zero),float)
++    lam=results[0]['value']/results[1]['value']
++    assert np.linalg.norm((R0-lam*I0)@pv)>.1
++
++
++def test_common_branch_normalization_motion_cancels_only_when_all_jets_retained():
++    x,y,_,p,R,I=control_expressions()
++    scale=1+x/7-y/11+x*y/13
++    zero={x:0,y:0}
++    for vector in (p,scale*p):
++        pv,px,py,pxy=[z.reshape(-1) for z in evaluated_jets(vector,x,y)]
++        jets=[]
++        for K in (R,I):
++            K0,Kx,Ky,Kxy=evaluated_jets(K,x,y)
++            jets.append(quadratic_form_branch_jets(K0,pv,K_x=Kx,K_y=Ky,K_xy=Kxy,psi_x=px,psi_y=py,psi_xy=pxy))
++        result=cutoff_from_total_contractions(*jets)
++        target=(p.T*I*p)[0]/(p.T*R*p)[0]
++        assert abs(result['c_xy']-float(sp.diff(target,x,y).subs(zero)))<2e-15
++
++
++def test_adopted_quotient_is_consumed_into_existing_complete_length_identity():
++    r,i=sp.symbols('r i',positive=True)
++    rx,ry,rxy,ix,iy,ixy=sp.symbols('r_x r_y r_xy i_x i_y i_xy')
++    T,Hp,Hx,Hy=sp.symbols('T H_P H_x H_y')
++    c=i/r;cx=ix/r-i*rx/r**2;cy=iy/r-i*ry/r**2
++    cxy=ixy/r-(ix*ry+iy*rx+i*rxy)/r**2+2*i*rx*ry/r**3
++    coefficients=lower_limit_coefficients(r=r,i=i,r_x=rx,r_y=ry,r_xy=rxy,i_x=ix,i_y=iy,i_xy=ixy)
++    composed=(coefficients['coefficient_T']*T+coefficients['coefficient_H_P']*Hp
++              +coefficients['coefficient_H_x']*Hx+coefficients['coefficient_H_y']*Hy)
++    assert sp.simplify(composed-lower_limit_mixed(c,cx,cy,cxy,T,Hp,Hx,Hy))==0
++    assert sp.simplify(coefficients['coefficient_T']-(ixy/i-ix*iy/i**2-rxy/r+rx*ry/r**2)/2)==0
++
++
++def test_numerical_branch_control_has_independent_finite_difference_scope():
++    # Saved new control only; do not rerun its producer in this check.
++    import json
++    report=json.loads((ROOT/'artifacts/muon_native_support_loss_cutoff_20261007/run_1/branch_control.json').read_text())
++    assert report['max_symbolic_difference']<2e-15
++    assert all(row['absolute_error']<1e-7 for row in report['finite_differences'])
++    assert report['total_event_motion_included_once'] and report['second_embedding_terms_retained']
++    assert report['classification'].endswith('NO_PHYSICAL_SUPPORT_LOSS')
++
++
++def test_physical_cutoff_and_native_heat_are_not_filled_with_control_values():
++    import json
++    result=json.loads((ROOT/'artifacts/muon_native_support_loss_cutoff_20261007/run_1/result.json').read_text())
++    assert result['owner_definition_adopted']
++    assert all(value is None for value in result['physical'].values())
++    assert result['execution']['old_production_replays']==0
++    assert result['execution']['physical_heat_applications']==0
++    assert not result['formation_zero_used_as_support_loss']
++    assert not result['canonical_stop_used_as_support_loss']
++    assert result['next_operand']['name']=='interface-normal/bulk-field mixed response forcing'
++    assert all(item['status']=='UNEVALUATED' for item in result['ownership'].values())
+diff --git a/theory/ae4_mode_frequency_cutoff_owner_20261007.md b/theory/ae4_mode_frequency_cutoff_owner_20261007.md
+new file mode 100644
+index 00000000..d5547634
+--- /dev/null
++++ b/theory/ae4_mode_frequency_cutoff_owner_20261007.md
+@@ -0,0 +1,75 @@
++# Adopted AE4 support-loss mode-frequency cutoff
++
++Owner tag: `BHSM-AE4-MODE-FREQUENCY-CUTOFF-2026-10-07`.
++Starting revision: `20849fe1f8fae375c011b9eea1b70c400ebe6a1c`.
++Scientific reference: `524ed90689bd5923c249bba2e699abf627e703cd`.
++
++Norman's October 7 continuation explicitly adopts this clarification of the
++existing AE4 cutoff energy. It resolves the previous definition-level energy
++identification; the older reconciliation and its executed outputs remain
++historical evidence. It supplies no numerical event, mode or operator action.
++
++At **AE4's own first-future support-loss event**, continuously transport the
++action-selected physical formation branch to obtain psi_star. With the same
++owned geometric/action pairing, define
++
++\[
++ R_* = \gamma_* J_\Sigma+H_{\rm impedance},\quad
++ r=\langle\psi_*,R_*\psi_*\rangle,\quad
++ i=\langle\psi_*,I_*\psi_*\rangle>0.
++\]
++
++Here I_star is the positive kinetic inertia in the retained physical-clock
++equation `I_lambda D_tau^2 a_lambda+R_lambda a_lambda=f_lambda`. At a valid
++cutoff r is positive. Neither positivity of the Jacobi contribution separately
++nor equality of a symbolic reference length with ell_star is assumed.
++In natural units,
++
++\[
++ E_{\rm impedance}=\sqrt{r/i},\qquad
++ E_{\rm core}=\sqrt{\langle\psi_*,H_{\rm event,drive}\psi_*\rangle/i},\qquad
++ \ell_*=1/E_{\rm impedance},\quad c_*=\ell_*^2=i/r.
++\]
++
++Thus the energy is a **frequency**, not the stiffness eigenvalue itself.
++The action's clock/inertia makes `c_star P_strat` dimensionless. No measured
++particle quantity, fitted scale, new coupling or constitutive function enters.
++The complete surface Jacobi contraction is retained once.
++
++The event requires BOTH energy equality and cessation of outward spacetime
++support. With the same positive inertia and mode, equality is equivalent to
++`<psi_star,(R_star-H_event,drive)psi_star>=0`; it does not require a new
++lowest-eigenvalue selection. Initial RHO-B2 formation, persistence and AE4
++support loss remain distinct unless the action proves coincidence. A C2 cut,
++last cached node or canonical stop is not this event by default.
++
++For x=v and y=J, use **total** branch contractions. They include all applicable
++mode embedding, event, pairing/inertia, normalization, domain and source-map
++motion on a common pullback exactly once:
++
++\[
++ c_x=i_x/r-i r_x/r^2,
++ \quad c_{xy}=i_{xy}/r-(i_xr_y+i_yr_x+i r_{xy})/r^2
++                    +2i r_xr_y/r^3.
++\]
++
++No bare Hellmann-Feynman assumption about R is made. A contraction along the
++moving selected surface already contains event motion and must not receive
++another crossing correction. Real-coordinate Hessian coefficients extend
++linearly to the retained complex current weights, without conjugating them.
++The helper functions evaluate supplied contractions; they do not select the
++physical branch, certify its domain or manufacture unknown terms as zero.
++
++The new targeted controls check total resistance, required Jacobi input,
++frequency/length identities, nondefault length, mixed quotient differentiation,
++complex-linear current extension and once-only surface motion. The control
++inputs are arithmetic examples, not BHSM physical operands or uncertainty
++bounds. Only two affected legacy contract checks are reused; their historical
++materializer and production tests are not run.
++
++This owner update leaves the AE4 finite-E1 functional, quotient, domain,
++relative-zeta/eta completion and local subtraction architecture intact. Its
++numerical realization proceeds through r/i on the actual support-loss branch,
++then the existing mixed heat lower-limit term and fixed-length heat response.
++Physical ell_star, native R_ind, a_mu and g_mu remain unevaluated until those
++contractions are actually supplied.
+diff --git a/theory/muon_native_support_loss_cutoff_20261007.md b/theory/muon_native_support_loss_cutoff_20261007.md
+new file mode 100644
+index 00000000..88fdbd19
+--- /dev/null
++++ b/theory/muon_native_support_loss_cutoff_20261007.md
+@@ -0,0 +1,207 @@
++# Adopted cutoff: total branch jets consumed into AE4 heat
++
++Starting revision: `20849fe1f8fae375c011b9eea1b70c400ebe6a1c`.
++Adopted-owner scientific commit: `34034e79b821f55e55ebf9109a84c026f100478d`.
++Scientific reference: `524ed90689bd5923c249bba2e699abf627e703cd`.
++Branch: `codex/muon-parent-maxwell-density-review`, PR #465.
++
++The October 7 adoption resolves the cutoff **definition**. The implemented
++owner is `BHSM-AE4-MODE-FREQUENCY-CUTOFF-2026-10-07`: at AE4 support loss,
++`R=gamma J_Sigma+H_impedance`, `E_impedance=sqrt(r/i)`, and `c=ell_star^2=i/r`.
++Initial formation is not support loss by default. The previous owner-gap
++report remains historical evidence; no arbitrary energy function is needed.
++
++The new mathematical result is the complete form/embedding two-jet and its
++exact composition into the existing AE4 moving-lower-limit term. No physical
++mode, r/i contraction, support-loss event or native heat trace is supplied by
++the arithmetic controls. This continuation inspected retained local history
++records without rerunning their producers.
++
++## Full contraction, without a resistance-eigenline assumption
++
++Let K denote an action form pulled back to a common domain, including its
++geometric pairing. Let p denote the transported selected line in that same
++representation. Derivatives below are total derivatives on the selected
++surface. For `n=p^dagger K p`,
++
++\[
++ n_x=p_x^\dagger Kp+p^\dagger K_xp+p^\dagger Kp_x,
++\]
++
++and
++
++\[
++\begin{aligned}
++ n_{xy}={}&p_{xy}^\dagger Kp+p_x^\dagger K_yp+p_x^\dagger Kp_y\\
++ &+p_y^\dagger K_xp+p^\dagger K_{xy}p+p^\dagger K_xp_y\\
++ &+p_y^\dagger Kp_x+p^\dagger K_yp_x+p^\dagger Kp_{xy}.
++\end{aligned}
++\]
++
++This is applied separately to the total restoring form and kinetic-inertia
++form. Their pairing, source, interface and domain derivatives belong inside
++K's jets; embedding and event motion belong inside the total p/K jets. A
++second event correction would double count them. Neither the frequency
++eigenproblem `R p=omega^2 I p` nor `I=identity` is assumed. The second embedding
++terms do not generally vanish.
++An arbitrary common normalization cancels from i/r only when its complete
++derivatives are retained. For complex current J, extend the real-coordinate
++Hessian using its existing weights; do not conjugate those weights.
++
++The implementation is a contraction helper, not a physical operator producer.
++It does not infer a mode or a domain from supplied finite matrices.
++
++## Exact heat consumption
++
++Write x=v, y=J and
++
++\[
++ T(c)=\operatorname{STr}e^{-cP},\quad
++ H_P(c)=\operatorname{STr}(Pe^{-cP}),\quad
++ H_x(c)=\operatorname{STr}(e^{-cP}P_x),\quad
++ H_y(c)=\operatorname{STr}(e^{-cP}P_y).
++\]
++
++Substituting the adopted total quotient jets into the **existing**
++`muon_native_induced_polarization.lower_limit_mixed` gives
++
++\[
++\begin{aligned}
++ L_{xy}={}&-\frac{r i_x-i r_x}{2r^2}H_y(c)
++           -\frac{r i_y-i r_y}{2r^2}H_x(c)\\
++ &+\frac12\left(\frac{i_{xy}}i-\frac{i_xi_y}{i^2}
++                  -\frac{r_{xy}}r+\frac{r_xr_y}{r^2}\right)T(c)\\
++ &-\frac{(r i_x-i r_x)(r i_y-i r_y)}{2i r^3}H_P(c),
++ \qquad c=i/r.
++\end{aligned}
++\]
++
++In particular the T coefficient simplifies to
++`[(log i)_xy-(log r)_xy]/2`. SymPy verifies exact equality to the retained
++four-term lower-limit expression. This is an explicit symbolic consumption,
++not a numerical native heat contribution. The four heat cotangents retain
++the same grading, zero-mode/BRST quotient, domain and connected complement.
++They cannot be replaced by heat of the primitive photon/probe block.
++
++The fixed-length contact/pair term, moving Gram, source pullback, interface,
++relative-zeta/eta and completion actions remain required. Unknown entries
++remain unevaluated. Strong interactions are included through the same bulk
++environment/native functional where required; no separate strong addend or
++zero value is introduced. Only already-owned local terms may be subtracted
++once in the unchanged b/beta/A_Q frame. No old primitive diagnostic is
++subtracted wholesale.
++
++## Recovered history and the first action that stops physical assembly
++
++The read-only primary checkout is at the scientific reference on
++`codex/n12-current-finite-stop-witness`. Its current mode-response and
++backreaction handoffs refer to the same retained 48-node center. Their exact
++hashes, shapes, conventions and producer identities are in the new packet.
++
++The mode arrays contain a `(48,98,98)` graph Jacobian and `(48,98,73)`
++constraint tangents. Their producer chooses SVD gain vectors of state
++transport. The graph producer does use a local action Hessian and a
++reference-matched reduced eigenline, but the stored graph Jacobian is the
++derivative of the normalized cancelled evolution field. Its inputs do not
++include an interface embedding X, a normal-displacement mode or an allowed
++bulk zero-trace test. It is not the mechanical impedance action.
++
++The geometry-incidence producer returns state covectors `D_y log R4` and
++`D_y log N`. A covector is not a displacement-to-field injection. The saved
++backreaction endpoint imposes `signed_descriptor=0` and
++`proper_time_density=0`. Its outgoing normal is a descriptor-gradient state
++direction, not an outward-support/Noether-flux evaluation. These records do
++not establish that the canonical stop is AE4 support loss. No new branch is
++chosen from their spectra or singular values.
++
++With the same mode and positive inertia, energy equality needs only
++
++\[
++ F(\tau,b)=\langle\psi_\tau,
++       (\gamma_\tau J_\Sigma+H_{\rm impedance}-H_{\rm event,drive})
++       \psi_\tau\rangle=0.
++\]
++
++The independent outward-support-cessation condition remains part of the
++event; a balance law or descriptor zero does not evaluate it. No event
++locator is executed on an invented residual.
++
++The next constructive action is the **source-restricted mixed bulk/interface
++forcing**, not an unspecified scalar energy law:
++
++\[
++ f_\psi(\eta)=D_\Phi D_X S_{\rm bulk}^{\rm owner}[\eta,\xi_\psi]
++             \in\mathcal V_0^*.
++\]
++
++Here xi_psi is the normal-interface direction, and V0 is the allowed
++constraint-reduced bulk variation space with zero interface trace. The
++sign convention above gives the stationary equation
++
++\[
++ H_{\eta\eta}\,\delta\Phi_\psi=-f_\psi,
++ \quad Q_{\rm bulk}^{\rm owner}((\eta,0),(\delta\Phi_\psi,\xi_\psi))=0.
++\]
++
++Where this stationary-response realization and its same-action interface
++matching are established, its contracted bulk impedance is
++
++\[
++ z_\psi=Q_{\rm bulk}^{\rm owner}
++       ((\delta\Phi_\psi,\xi_\psi),(\delta\Phi_\psi,\xi_\psi)).
++\]
++
++This requires only the connected forcing/response, not a full inverse or
++impedance spectrum. If a graph chart fails, retain the inherited full
++trace/traction relation without a regularizer. The v15.69 fixed-trace gauge
++functional exhibits stationary bulk reduction; it does **not** alone prove
++the all-sector mechanical matching. No symmetry of a causal response is
++imposed by the displayed contracted notation.
++
++The examined state-Jacobian and geometry-incidence producers supply neither
++this mixed action covector nor a same-action normal-displacement injection
++that would contract their Hessians into it. Existing photon b-source
++Clifford insertions vary the connection, not X. Accepted parent-spinor and
++primitive photon component solves cannot be relabeled as this response.
++Assembly therefore stops **before the response right-hand side is formed**;
++no physical complementary solve, support-loss search or heat application
++was executed. This is a gap in the examined action realization, not a proof
++that the adopted definition is inconsistent or that no other retained
++scientific record could provide the action. No additional constitutive
++postulate is installed.
++
++## Execution and error scope
++
++Ten new owner checks and two affected legacy contract checks passed. The old
++historical materializer and all frozen muon production/check campaigns were
++not run. Six additional new contraction/heat-composition checks passed.
++
++One two-dimensional supplied arithmetic control includes explicit form
++motion, a nonstationary line, second embedding jets and a prescribed moving
++surface. Exact symbolic differentiation and decreasing two-parameter finite
++differences check the quotient. Common normalization motion is checked in
++the same convention. Its numbers and subtraction residuals are arithmetic
++consistency evidence, not physical cutoff values or uncertainty estimates.
++No validated finite-difference remainder or continuum error is claimed.
++
++The new replay ran once and wrote
++`artifacts/muon_native_support_loss_cutoff_20261007/run_1/`. It records the
++input hashes, actual history identities, source/form control actions, exact
++composed heat term, event equation, first unprovided action, ownership ledger
++and checkpoint. Physical r/i/length/native/Pauli values are explicitly null.
++The frozen local interval already includes its local terms; none is added
++again and its calibration-only uncertainty is not a total bound.
++
++Reproduction uses a fresh directory and the read-only retained history:
++
++```powershell
++C:\Python314\python.exe scripts/replay_muon_native_support_loss_cutoff.py --output <fresh-directory>
++C:\Python314\python.exe -m pytest --noconftest -q tests/test_muon_native_support_loss_cutoff.py
++```
++
++The standalone Downloads launcher requires the retained repository/history;
++it is not a physical muon-number program. Source snapshots and raw/canonical
++hashes preserve executed identities. The first owner push encountered two
++GitHub internal-server errors; an ordinary retry with HTTP/1.1 succeeded and
++the owner head was verified. No reset, force push, cleaning or cache overwrite
++was used.

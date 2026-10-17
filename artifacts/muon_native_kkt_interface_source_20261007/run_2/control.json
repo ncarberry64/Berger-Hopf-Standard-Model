@@ -1,0 +1,574 @@
+{
+  "Arb": {
+    "direct_minus_schur": "[+/- 9.71e-76]",
+    "owned_residual": [
+      "[+/- 2.29e-76]",
+      "[+/- 2.00e-76]",
+      "[+/- 5.88e-77]"
+    ],
+    "precision_bits": 256,
+    "response": [
+      "[-0.0534104556748626475271860144780069271777038586068349221002273155793119737265 +/- 2.72e-77]",
+      "[0.1544285170301315356617756212726633090509612259813300466098491961200036546994 +/- 3.53e-77]",
+      "[-0.3488463185602884980117575314969723955692454251302342421596044871995749780984 +/- 7.39e-77]"
+    ],
+    "z": "[8.287796455879206956044292559628443938672030889630873642159140668787295717031 +/- 5.72e-76]"
+  },
+  "KKT_base": {
+    "eta0": "0",
+    "eta1": "0",
+    "lambda0": "3/2",
+    "s": "0"
+  },
+  "action_sectors": [
+    {
+      "expression": "eta0*(4*eta0 + eta1)/2 - 3*eta0/2 + eta1*(eta0 + 3*eta1)/2 - 3*eta1/2 + 4041768875809004945678509643*s**2/1028535809515297017671226490 + s*(40693010978429*eta0/156025776167800 - 21319993540613*eta1/125279520275910)",
+      "name": "bulk_geometric",
+      "sign": 1,
+      "zero_provenance": null
+    },
+    {
+      "expression": "0",
+      "name": "reset",
+      "sign": 1,
+      "zero_provenance": "absent by definition of this finite control action"
+    },
+    {
+      "expression": "0",
+      "name": "trace_momentum_conormal",
+      "sign": 1,
+      "zero_provenance": "absent by definition of this finite control action"
+    },
+    {
+      "expression": "0",
+      "name": "dynamic_flux",
+      "sign": 1,
+      "zero_provenance": "absent by definition of this finite control action"
+    },
+    {
+      "expression": "0",
+      "name": "Wentzell",
+      "sign": 1,
+      "zero_provenance": "absent by definition of this finite control action"
+    },
+    {
+      "expression": "0",
+      "name": "scalar_topographic",
+      "sign": 1,
+      "zero_provenance": "absent by definition of this finite control action"
+    },
+    {
+      "expression": "0",
+      "name": "contact",
+      "sign": 1,
+      "zero_provenance": "absent by definition of this finite control action"
+    }
+  ],
+  "all_checks_pass": true,
+  "b_psi": [
+    [
+      "16/55"
+    ],
+    [
+      "19/91"
+    ],
+    [
+      "-14/51"
+    ],
+    [
+      "2/5"
+    ],
+    [
+      "-3/7"
+    ],
+    [
+      "132750/265031"
+    ],
+    [
+      "136203/496961"
+    ]
+  ],
+  "canonical_port_order": [
+    "trace_1",
+    "trace_2",
+    "trace_3",
+    "momentum_1",
+    "momentum_2",
+    "dynamic_flux_1",
+    "dynamic_flux_2"
+  ],
+  "checks": {
+    "Arb_owned_response_residual_contains_zero": true,
+    "direct_KKT_residual_derivative": true,
+    "direct_full_action_equals_schur": true,
+    "dropping_R_s_changes_response": true,
+    "dropping_multiplier_mixed_contact_changes_response": true,
+    "exactly_seven_kinematic_coordinates": true,
+    "finite_photon_response_replay": true,
+    "moving_port_DB_nonzero": true,
+    "moving_port_product_rule_retained": true,
+    "multiplier_mixed_contact_retained": true,
+    "multiplier_response_retained": true,
+    "multiplier_source_source_contact_retained": true,
+    "naive_row_contraction_changes_impedance": true,
+    "no_control_promoted_to_physical": true,
+    "no_lambda_s_in_fixed_source": true,
+    "owner_impedance_invariant_under_row_mixing": true,
+    "response_replay": true,
+    "row_equivalence_preserves_response": true,
+    "source_dependent_constraint_retained": true,
+    "supplied_finite_chain_reaches_Pauli": true,
+    "total_impedance_branch_value_replays": true
+  },
+  "classification": "EXACT_RATIONAL_AND_ARB_FINITE_ACTION_CONTROL__NOT_PHYSICAL_BHSM",
+  "constraints": [
+    "eta0*(eta0/5 + eta1/13)/2 + eta0 + eta1*(eta0/13 + eta1/7)/2 + eta1 + s**2/7 + s*(16*eta0/165 + 136203*eta1/2484805 - 5532258921902717/54765047434897800)"
+  ],
+  "downstream": {
+    "classification": "CONDITIONAL_SAME_OWNER_KKT_DOWNSTREAM_COMPOSITION",
+    "exact_error_scope": "Supplied binary64 scalar/form composition only; no continuum, tail, physical-input or transfer-limit enclosure.",
+    "native_operator_or_source_produced": false,
+    "owner_identity": "91fbcf8b03d5c2e6f3d359e409fcc6889435a915267cb104fcb224081cb30fd8",
+    "physical_a_mu": null,
+    "physical_g_mu": null,
+    "physical_promotion": false,
+    "stages": {
+      "AE4_heat": {
+        "missing": [],
+        "status": "EVALUATED_SUPPLIED_OWNER_OPERANDS",
+        "value": {
+          "fixed_length_mixed": 0.0019767725498814467,
+          "moving_length_mixed": -0.0001835833298847147,
+          "total": 0.001793189219996732
+        }
+      },
+      "Pauli_readout": {
+        "missing": [],
+        "status": "EVALUATED_SUPPLIED_OWNER_OPERANDS",
+        "value": {
+          "electron": {
+            "F1": {
+              "imag": 1.6161887999213252e-18,
+              "real": 0.9999999999999998
+            },
+            "F2": {
+              "imag": 6.938893903907228e-18,
+              "real": 0.02888126762346245
+            },
+            "basis_condition_2": 5.828427124746189,
+            "q_squared": -0.2,
+            "relative_projection_residual": 2.218263192174742e-16
+          },
+          "muon": {
+            "F1": {
+              "imag": -1.183377295630789e-18,
+              "real": 0.9999999999999998
+            },
+            "F2": {
+              "imag": 6.938893903907228e-18,
+              "real": 0.01616362773375785
+            },
+            "basis_condition_2": 5.828427124746189,
+            "q_squared": -0.2,
+            "relative_projection_residual": 2.2200803987096976e-16
+          },
+          "paired_F2": -0.012717639889704601,
+          "scope": "SUPPLIED_TENSOR_PROJECTION__PHYSICAL_TRANSFER_LIMIT_NOT_PROMOTED"
+        }
+      },
+      "R_ind": {
+        "missing": [],
+        "status": "EVALUATED_SUPPLIED_OWNER_OPERANDS",
+        "value": 0.04179318921999674
+      },
+      "exact_heat_coefficients": {
+        "missing": [],
+        "status": "EVALUATED_SUPPLIED_OWNER_OPERANDS",
+        "value": {
+          "c": 0.2916076355967928,
+          "coefficient_H_P": -1.2494115293311908e-06,
+          "coefficient_H_x": 0.0001978509879281958,
+          "coefficient_H_y": 0.0009207382428837484,
+          "coefficient_T": -0.000530376748637981,
+          "scope": "EXACT_CONDITIONAL_LENGTH_TERM__NATIVE_HEAT_COTANGENTS_NOT_GENERATED"
+        }
+      },
+      "heat_length_squared": {
+        "missing": [],
+        "status": "EVALUATED_SUPPLIED_OWNER_OPERANDS",
+        "value": {
+          "c": 0.2916076355967928,
+          "c_J": -0.00039570197585639226,
+          "c_v": -0.0018414764857674973,
+          "c_vJ": -0.0003068249962330089
+        }
+      },
+      "matching_inertia": {
+        "missing": [],
+        "status": "EVALUATED_SUPPLIED_OWNER_OPERANDS",
+        "value": {
+          "J": 0.07692307692307693,
+          "v": 0.09090909090909091,
+          "vJ": 0.058823529411764705,
+          "value": 3.0
+        }
+      },
+      "native_photon_response": {
+        "missing": [],
+        "status": "EVALUATED_SUPPLIED_OWNER_OPERANDS",
+        "value": {
+          "classification": "PRESCRIBED_FINITE_COMPLETED_PHOTON_CONTROL",
+          "consumed_R_ind": 0.04179318921999674,
+          "equation": "(K_primitive+R_ind_action+zeta M) u=J",
+          "residual": [
+            0.0
+          ],
+          "residual_norm": 0.0,
+          "response": [
+            0.09835575965042137
+          ],
+          "scope": "SUPPLIED_COMPLETE_QUOTIENT_FORMS__NO_NATIVE_OPERATOR_PRODUCTION"
+        }
+      },
+      "owner_impedance": {
+        "missing": [],
+        "status": "EVALUATED_SUPPLIED_OWNER_OPERANDS",
+        "value": {
+          "J": 0.07774985432777713,
+          "v": 0.043384601188964485,
+          "vJ": 0.07195417458003239,
+          "value": 8.287796455879207
+        }
+      },
+      "paired_electron_muon_native_heat": {
+        "missing": [],
+        "status": "EVALUATED_SUPPLIED_OWNER_OPERANDS",
+        "value": {
+          "classification": "PRESCRIBED_FINITE_FAMILY_HEAT_CONTROLS__NO_PHYSICAL_PARTICLE_INPUT",
+          "electron_vertex": [
+            {
+              "imag": 0.05776253524692491,
+              "real": 1.0
+            },
+            0.028881267623462454,
+            0.0
+          ],
+          "ledger": {
+            "completion_counterterm": 0,
+            "contact": 0,
+            "domain_boundary": 0,
+            "native_bulk_heat": -0.012717639889704604,
+            "state_variation": 0,
+            "strong_within_native": -0.003179409972426151
+          },
+          "muon_vertex": [
+            {
+              "imag": 0.0323272554675157,
+              "real": 1.0
+            },
+            0.01616362773375785,
+            0.0
+          ],
+          "strong_is_subset": true
+        }
+      },
+      "relative_zeta_eta": {
+        "missing": [],
+        "status": "EVALUATED_SUPPLIED_OWNER_OPERANDS",
+        "value": 0.07
+      },
+      "total_resistance": {
+        "missing": [],
+        "status": "EVALUATED_SUPPLIED_OWNER_OPERANDS",
+        "value": {
+          "J": 0.27774985432777716,
+          "v": 0.3767179345222978,
+          "vJ": 0.21481131743717524,
+          "value": 10.287796455879207
+        }
+      }
+    }
+  },
+  "error_scope": "Exact rational finite-action identities plus 256-bit Arb rounding enclosures; downstream supplied-jet arithmetic is binary64 without an enclosure. No physical, continuum, discretization, domain, heat-tail or transfer error bound.",
+  "exact": {
+    "E_base": [
+      [
+        "0"
+      ],
+      [
+        "0"
+      ],
+      [
+        "0"
+      ]
+    ],
+    "H_KKT": [
+      [
+        "43/10",
+        "29/26",
+        "1"
+      ],
+      [
+        "29/26",
+        "45/14",
+        "1"
+      ],
+      [
+        "1",
+        "1",
+        "0"
+      ]
+    ],
+    "L_etaeta": [
+      [
+        "43/10",
+        "29/26"
+      ],
+      [
+        "29/26",
+        "45/14"
+      ]
+    ],
+    "L_ss": "4262169406419425735179486748/514267904757648508835613245",
+    "R_eta": [
+      [
+        "1",
+        "1"
+      ]
+    ],
+    "R_eta_s": [
+      [
+        "16/165",
+        "136203/2484805"
+      ]
+    ],
+    "R_s": [
+      [
+        "-5532258921902717/54765047434897800"
+      ]
+    ],
+    "R_ss": [
+      [
+        "2/7"
+      ]
+    ],
+    "S_eta_s": [
+      [
+        "40693010978429/156025776167800"
+      ],
+      [
+        "-21319993540613/125279520275910"
+      ]
+    ],
+    "S_ss": "4041768875809004945678509643/514267904757648508835613245",
+    "delta_eta_psi": [
+      [
+        "-53763765097349/1006614986111280"
+      ],
+      [
+        "1129517404740911521/7314176335194128400"
+      ]
+    ],
+    "delta_lambda_psi": [
+      [
+        "-29852824807649076253/85575863121771302280"
+      ]
+    ],
+    "delta_psi": [
+      [
+        "-53763765097349/1006614986111280"
+      ],
+      [
+        "1129517404740911521/7314176335194128400"
+      ],
+      [
+        "-29852824807649076253/85575863121771302280"
+      ]
+    ],
+    "direct_minus_schur": "0",
+    "direct_quadratic": "543778294761488364133535567863752645859/65611926844045773763248300745897776000",
+    "h_psi": [
+      [
+        "63387669330109/156025776167800"
+      ],
+      [
+        "-93664204151039/1064875922345235"
+      ],
+      [
+        "-5532258921902717/54765047434897800"
+      ]
+    ],
+    "multiplier_contact": [
+      [
+        "8/55"
+      ],
+      [
+        "408609/4969610"
+      ]
+    ],
+    "multiplier_source_contact": "3/7",
+    "replay": [
+      [
+        "0"
+      ],
+      [
+        "0"
+      ],
+      [
+        "0"
+      ]
+    ],
+    "z_psi": "543778294761488364133535567863752645859/65611926844045773763248300745897776000"
+  },
+  "fixed_source_coordinates": [
+    "eta0",
+    "eta1",
+    "lambda0"
+  ],
+  "moving_port": {
+    "B": [
+      [
+        "1/23"
+      ],
+      [
+        "2/23"
+      ],
+      [
+        "3/23"
+      ],
+      [
+        "4/23"
+      ],
+      [
+        "5/23"
+      ],
+      [
+        "6/23"
+      ],
+      [
+        "7/23"
+      ]
+    ],
+    "DB": [
+      [
+        "1/31"
+      ],
+      [
+        "1/32"
+      ],
+      [
+        "1/33"
+      ],
+      [
+        "1/34"
+      ],
+      [
+        "1/35"
+      ],
+      [
+        "1/36"
+      ],
+      [
+        "1/37"
+      ]
+    ],
+    "derivative": [
+      [
+        "65384829311741566607/1968244851800739952440"
+      ],
+      [
+        "260446622502892262117/15745958814405919619520"
+      ],
+      [
+        "-30933113698470913/656081617266913317480"
+      ],
+      [
+        "-16288483766752418261/984122425900369976220"
+      ],
+      [
+        "-64910773246785097589/1968244851800739952440"
+      ],
+      [
+        "-32368915562510097611/656081617266913317480"
+      ],
+      [
+        "-18453723349343632513/281177835971534278920"
+      ]
+    ],
+    "lambda_base": [
+      [
+        "3/2"
+      ]
+    ],
+    "lambda_response": [
+      [
+        "-29852824807649076253/85575863121771302280"
+      ]
+    ]
+  },
+  "multipliers": [
+    "3/2"
+  ],
+  "owner_identity": {
+    "action": "FINITE_CONTROL_ACTION_V1",
+    "branch": "eta=0,lambda=3/2 stationary finite v/J family",
+    "domain": "finite real chart R2 x R1 x R1",
+    "pairing": "scalar action covector pairing in the declared real chart"
+  },
+  "row_mixing": {
+    "C": [
+      [
+        "2",
+        "1",
+        "0"
+      ],
+      [
+        "0",
+        "3",
+        "1"
+      ],
+      [
+        "0",
+        "0",
+        "5"
+      ]
+    ],
+    "incorrect_naive_row_z": "161501600802175712705639697800449296761/19297625542366404048014206101734640000",
+    "owner_z": "543778294761488364133535567863752645859/65611926844045773763248300745897776000",
+    "response": [
+      [
+        "-53763765097349/1006614986111280"
+      ],
+      [
+        "1129517404740911521/7314176335194128400"
+      ],
+      [
+        "-29852824807649076253/85575863121771302280"
+      ]
+    ]
+  },
+  "same_control_action_total_branch_jets": {
+    "inertia": {
+      "J": "1/13",
+      "owner_identity": "91fbcf8b03d5c2e6f3d359e409fcc6889435a915267cb104fcb224081cb30fd8",
+      "v": "1/11",
+      "vJ": "1/17",
+      "value": "3"
+    },
+    "owner_z": {
+      "J": "37434578392281885765170971718331212887/481474579160824298311504624521179040000",
+      "owner_identity": "91fbcf8b03d5c2e6f3d359e409fcc6889435a915267cb104fcb224081cb30fd8",
+      "v": "574959074533685605666025511904463/13252607118120402736611489015033600",
+      "vJ": "1068816859920868065980595367047993882225167/14854132733216977368640999672644401622720000",
+      "value": "543778294761488364133535567863752645859/65611926844045773763248300745897776000"
+    },
+    "surface_jacobi": {
+      "J": "1/5",
+      "owner_identity": "91fbcf8b03d5c2e6f3d359e409fcc6889435a915267cb104fcb224081cb30fd8",
+      "v": "1/3",
+      "vJ": "1/7",
+      "value": "2"
+    }
+  },
+  "xi_psi_provenance": "prescribed finite normal-direction kinematics; NOT a physical BHSM xi_psi"
+}

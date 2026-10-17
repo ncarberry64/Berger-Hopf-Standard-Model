@@ -1,0 +1,381 @@
+{
+  "schema_version": 1,
+  "base_head": "914505d4f4e649be8a62bf066f01b09e01586b04",
+  "date": "2026-10-09",
+  "worktree": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+  "classification": "EVALUATED_CALIBRATED_LOCAL_COMPONENTS; full physical Pauli prediction UNEVALUATED",
+  "measured_authorization": "inputs.json records latest explicit human instruction; no anomaly calibration",
+  "commands": [
+    {
+      "command": "$env:PYTHONPATH='src'; C:\\Python314\\python.exe -m pytest --noconftest -q tests/test_muon_intrinsic_scalar_discretization.py tests/test_muon_intrinsic_lepton_primal.py tests/test_muon_intrinsic_worldvolume_scalar_transport.py tests/test_muon_intrinsic_coupled_primal.py tests/test_muon_calibrated_matching.py tests/test_muon_calibrated_local_pauli.py tests/test_muon_calibrated_decay_matching.py",
+      "exit_code": 0,
+      "stdout": "........................................................................ [ 70%]\r\n..............................                                           [100%]\r\n102 passed in 2.95s\r\n",
+      "output_combines_stderr": true
+    },
+    {
+      "command": "$env:PYTHONPATH='src'; C:\\Python314\\python.exe -m pytest --noconftest -q tests/test_muon_intrinsic_higgs_weak_action.py tests/test_muon_intrinsic_higgs_connection.py tests/test_muon_intrinsic_m4_normal_pullback.py tests/test_muon_coupled_temporal_weak_action.py tests/test_muon_moving_material_response.py tests/test_muon_moving_geometric_action.py tests/test_muon_birth_candidate_geometry_action.py tests/test_muon_native_kkt_downstream.py tests/test_muon_native_kkt_interface_source.py tests/test_muon_native_photon_response.py tests/test_universal_lsz.py tests/test_universal_quadratic_spectrum.py tests/test_universal_precision_form_factor.py",
+      "exit_code": 0,
+      "stdout": "........................................................................ [ 37%]\r\n........................................................................ [ 75%]\r\n...............................................                          [100%]\r\n191 passed in 12.73s\r\n",
+      "output_combines_stderr": true
+    },
+    {
+      "command": "C:\\Python314\\python.exe scripts/evaluate_muon_intrinsic_coupled_primal.py --output artifacts/muon_intrinsic_coupled_primal_20261009/run_1",
+      "exit_code": 0,
+      "stdout": "{\"a_mu\": null, \"classification\": \"EVALUATED_OFF_SHELL_COUPLED_PRIMAL\", \"first_unbound\": \"nu_squared_action_units\", \"g_mu\": null, \"output\": \"artifacts\\\\muon_intrinsic_coupled_primal_20261009\\\\run_1\", \"physical_Newton_executed\": false, \"residual_norms\": {\"child\": {\"higgs_potential_per_lambda_nu4\": [147.34036652153108, 47.18286366118563], \"retained_geometry\": [1114.1364568938416, 5.352053639974018e-13], \"surface_per_gamma\": [117.63898267325668, 18.837313110977227]}, \"parent\": {\"higgs_potential_per_lambda_nu4\": [235.2211363974568, 75.32495724617684], \"retained_geometry\": [1150.5100608929988, 5.629030827846534e-13], \"surface_per_gamma\": [187.80444112035335, 30.072778432998373]}}}\r\n",
+      "output_combines_stderr": true
+    },
+    {
+      "command": "C:\\Python314\\python.exe scripts/evaluate_muon_intrinsic_coupled_primal.py --output artifacts/muon_intrinsic_coupled_primal_20261009/run_2",
+      "exit_code": 0,
+      "stdout": "{\"a_mu\": null, \"classification\": \"EVALUATED_OFF_SHELL_COUPLED_PRIMAL\", \"first_unbound\": \"nu_squared_action_units\", \"g_mu\": null, \"output\": \"artifacts\\\\muon_intrinsic_coupled_primal_20261009\\\\run_2\", \"physical_Newton_executed\": false, \"residual_norms\": {\"child\": {\"higgs_potential_per_lambda_nu4\": [147.34036652153108, 47.18286366118563], \"retained_geometry\": [1114.1364568938416, 5.352053639974018e-13], \"surface_per_gamma\": [117.63898267325668, 18.837313110977227]}, \"parent\": {\"higgs_potential_per_lambda_nu4\": [235.2211363974568, 75.32495724617684], \"retained_geometry\": [1150.5100608929988, 5.629030827846534e-13], \"surface_per_gamma\": [187.80444112035335, 30.072778432998373]}}}\r\n",
+      "output_combines_stderr": true
+    },
+    {
+      "command": "C:\\Python314\\python.exe scripts/evaluate_muon_calibrated_pauli.py --output artifacts/muon_calibrated_pauli_20261009/run_1",
+      "exit_code": 0,
+      "stdout": "{\"a_mu_local_QED_alpha_through_alpha2\": 0.001165541908810458, \"classification\": \"EVALUATED_CALIBRATED_LOCAL_PAULI_COMPONENTS_AND_LOCAL_HIGGS_SOLVE\", \"evaluated_partial_a_mu\": 0.0011655419088320725, \"evaluated_partial_g_mu\": 2.0023310838176642, \"fixed_Y_Higgs_one_loop\": 2.1614509207310445e-14, \"full_a_mu\": null, \"full_g_mu\": null, \"input_only_std\": 1.4343531283933382e-12, \"local_Higgs_Newton_converged\": true, \"native_evaluated\": false}\r\n",
+      "output_combines_stderr": true
+    },
+    {
+      "command": "C:\\Python314\\python.exe scripts/evaluate_muon_calibrated_pauli.py --output artifacts/muon_calibrated_pauli_20261009/run_2",
+      "exit_code": 0,
+      "stdout": "{\"a_mu_local_QED_alpha_through_alpha2\": 0.001165541908810458, \"classification\": \"EVALUATED_CALIBRATED_LOCAL_PAULI_COMPONENTS_AND_LOCAL_HIGGS_SOLVE\", \"evaluated_partial_a_mu\": 0.0011655419088320725, \"evaluated_partial_g_mu\": 2.0023310838176642, \"fixed_Y_Higgs_one_loop\": 2.1614509207310445e-14, \"full_a_mu\": null, \"full_g_mu\": null, \"input_only_std\": 1.4343531283933382e-12, \"local_Higgs_Newton_converged\": true, \"native_evaluated\": false}\r\n",
+      "output_combines_stderr": true
+    },
+    {
+      "command": "@'\nfrom pathlib import Path\nimport hashlib,json\nreplays=[]\nfor directory,names in [('muon_calibrated_pauli_20261009',['calibrated_pauli.json']),('muon_intrinsic_coupled_primal_20261009',['result.json','primal_action_applications.json'])]:\n for name in names:\n  a=Path('artifacts')/directory/'run_1'/name\n  b=Path('artifacts')/directory/'run_2'/name\n  x,y=a.read_bytes(),b.read_bytes()\n  row=dict(path=str(a),bytes=len(x),sha256=hashlib.sha256(x).hexdigest(),replay_sha256=hashlib.sha256(y).hexdigest(),identical=x==y)\n  print(json.dumps(row,sort_keys=True));replays.append(row)\n  assert x==y\nnew_paths=[\"src/bhsm/interface/muon_intrinsic_scalar_discretization.py\",\"tests/test_muon_intrinsic_scalar_discretization.py\",\"src/bhsm/interface/muon_intrinsic_lepton_primal.py\",\"tests/test_muon_intrinsic_lepton_primal.py\",\"src/bhsm/interface/muon_intrinsic_worldvolume_scalar_transport.py\",\"tests/test_muon_intrinsic_worldvolume_scalar_transport.py\",\"src/bhsm/interface/muon_intrinsic_coupled_primal.py\",\"tests/test_muon_intrinsic_coupled_primal.py\",\"src/bhsm/interface/muon_calibrated_matching.py\",\"tests/test_muon_calibrated_matching.py\",\"src/bhsm/interface/muon_calibrated_local_pauli.py\",\"tests/test_muon_calibrated_local_pauli.py\",\"src/bhsm/interface/muon_calibrated_decay_matching.py\",\"tests/test_muon_calibrated_decay_matching.py\",\"scripts/evaluate_muon_intrinsic_coupled_primal.py\",\"scripts/evaluate_muon_calibrated_pauli.py\"]\nnew_paths+=['theory/muon_calibrated_pauli_20261009.md','artifacts/muon_calibrated_pauli_20261009/inputs.json']\nfor name in new_paths:\n p=Path(name)\n data=p.read_bytes()\n assert b'\\r\\n' not in data,(name,'CRLF')\nprint('All new replay source/test/report/config bytes use LF')\n\n'@ | C:\\Python314\\python.exe -",
+      "exit_code": 0,
+      "stdout": "{\"bytes\": 79851, \"identical\": true, \"path\": \"artifacts\\\\muon_calibrated_pauli_20261009\\\\run_1\\\\calibrated_pauli.json\", \"replay_sha256\": \"20a4b5a169439f2db2ff8d37c9746bb7a43c6887a266d6c3e5262d8500fad419\", \"sha256\": \"20a4b5a169439f2db2ff8d37c9746bb7a43c6887a266d6c3e5262d8500fad419\"}\r\n{\"bytes\": 13678, \"identical\": true, \"path\": \"artifacts\\\\muon_intrinsic_coupled_primal_20261009\\\\run_1\\\\result.json\", \"replay_sha256\": \"77d63c5fcb37df313513e35583bdbd4b2fb0cb46375b959701945a694c1e75fe\", \"sha256\": \"77d63c5fcb37df313513e35583bdbd4b2fb0cb46375b959701945a694c1e75fe\"}\r\n{\"bytes\": 4476331, \"identical\": true, \"path\": \"artifacts\\\\muon_intrinsic_coupled_primal_20261009\\\\run_1\\\\primal_action_applications.json\", \"replay_sha256\": \"24135ae4e3121b89deb90cb8ee9fa863d7e15496d810f790cd0051cabaee8ebf\", \"sha256\": \"24135ae4e3121b89deb90cb8ee9fa863d7e15496d810f790cd0051cabaee8ebf\"}\r\nAll new replay source/test/report/config bytes use LF\r\n",
+      "output_combines_stderr": true
+    },
+    {
+      "command": "@'\nimport hashlib,json\nfrom pathlib import Path\nimport numpy as np\nr=Path('artifacts/muon_native_photon_response_20261006/run_1')\nmeta=json.loads((r/'result.json').read_text())\na=np.load(r/'component_action_and_current.npz',allow_pickle=False)\nJ=a['reached_current_dual'];Jb=a['dual_current_basis'];C=a['mode_current_covector']\nprint(json.dumps({'classification':meta['classification'],'shifts':meta['shifts'],'certificate_scope':meta['certificates'][0] if isinstance(meta['certificates'],list) else meta['certificates'],'K_trace':float(np.trace(a['K_per_kappa1']).real),'source_projection_identity':float(np.linalg.norm(J-Jb@C)),'result_sha256':hashlib.sha256((r/'result.json').read_bytes()).hexdigest()},default=str,sort_keys=True))\nfor i in range(3):\n p=r/f'response_{i}.npz';u=np.load(p,allow_pickle=False)\n returned=J.conj().T@u['current_response']\n print(json.dumps({'i':i,'trace_stored_real':float(np.trace(u['current_return']).real),'trace_recontracted_real':float(np.trace(returned).real),'trace_imaginary':float(np.trace(returned).imag),'recontraction_vs_stored_Frobenius':float(np.linalg.norm(returned-u['current_return'])),'sha256':hashlib.sha256(p.read_bytes()).hexdigest(),'physical_native_or_Pauli':False},sort_keys=True))\n'@ | C:\\Python314\\python.exe -",
+      "exit_code": 0,
+      "stdout": "{\"K_trace\": -803192.2451015242, \"certificate_scope\": {\"basis_consumed_return_error_upper\": 9.511817041691884e-15, \"basis_residual_frobenius_upper\": 1.3916466669735852e-10, \"classification\": \"CERTIFIED_FROZEN_ANGULAR_MATRIX_ARITHMETIC_ONLY\", \"coercivity_lower\": 17918.89089849367, \"coercivity_lower_arb\": \"[17918.8908984936759415268637889946466647130655254750105117 +/- 3.89e-53]\", \"consumed_current_column_error_upper\": [5e-324, 5e-324, 2.259984307259292e-15, 2.259978517667768e-15, 2.2599780506137733e-15, 2.259983323149439e-15, 2.2599790784938506e-15, 2.2599790528044667e-15, 3.914399282556228e-15, 3.914399503609789e-15, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 3.914398747883422e-15, 3.91439586835244e-15, 2.259978203840073e-15, 2.2599760874511364e-15, 2.259984307259292e-15, 2.259978517667768e-15, 2.2599780506137733e-15, 2.259983323149439e-15, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 2.259984307259292e-15, 2.259978517667768e-15, 2.2599780506137733e-15, 2.259983323149439e-15, 2.2599790784938506e-15, 2.2599790528044667e-15, 3.914399282556228e-15, 3.914399503609789e-15, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 3.914398747883422e-15, 3.91439586835244e-15, 2.259978203840073e-15, 2.2599760874511364e-15, 2.259984307259292e-15, 2.259978517667768e-15, 2.2599780506137733e-15, 2.259983323149439e-15, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324], \"current_coefficient_column_norm_upper\": [5e-324, 5e-324, 0.18518653601355167, 0.18518653601355167, 0.18518653601355167, 0.18518653601355167, 0.18518653601355162, 0.18518653601355162, 0.3207524892531551, 0.3207524892531551, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 0.3207524892531551, 0.3207524892531551, 0.18518653601355162, 0.18518653601355162, 0.18518653601355167, 0.18518653601355167, 0.18518653601355167, 0.18518653601355167, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 0.18518653601355167, 0.18518653601355167, 0.18518653601355167, 0.18518653601355167, 0.18518653601355162, 0.18518653601355162, 0.3207524892531551, 0.3207524892531551, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 0.3207524892531551, 0.3207524892531551, 0.18518653601355162, 0.18518653601355162, 0.18518653601355167, 0.18518653601355167, 0.18518653601355167, 0.18518653601355167, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324], \"current_residual_absolute_upper\": [5e-324, 5e-324, 2.5771570943970912e-11, 2.5771504922774125e-11, 2.5771499596756982e-11, 2.5771559721743926e-11, 2.5771511318114627e-11, 2.5771511025167553e-11, 4.463757491120159e-11, 4.463757743197021e-11, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 4.463756881409813e-11, 4.4637535977570564e-11, 2.5771501344062237e-11, 2.577147720997093e-11, 2.5771570943970912e-11, 2.5771504922774125e-11, 2.5771499596756982e-11, 2.5771559721743926e-11, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 2.5771570943970912e-11, 2.5771504922774125e-11, 2.5771499596756982e-11, 2.5771559721743926e-11, 2.5771511318114627e-11, 2.5771511025167553e-11, 4.463757491120159e-11, 4.463757743197021e-11, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 4.463756881409813e-11, 4.4637535977570564e-11, 2.5771501344062237e-11, 2.577147720997093e-11, 2.5771570943970912e-11, 2.5771504922774125e-11, 2.5771499596756982e-11, 2.5771559721743926e-11, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324, 5e-324], \"current_return_frobenius_error_upper\": 1.5657597306091805e-14, \"equation\": \"||J^dagger(u_hat-u_exact)|| <= ||J|| rho / alpha; rho includes post-solve current multiplication error\", \"physical_or_native_error_bound\": false, \"precision_bits\": 192, \"zeta_over_kappa1\": 93420.48007025628}, \"classification\": \"ACTUAL_CURRENT_FULL_AMBIENT_PRIMITIVE_ANGULAR_RESPONSE__NOT_NATIVE_PHOTON_SOLUTION\", \"result_sha256\": \"55f46922261b8b0d9058f1cd9fca4cf0bd2f0bbb1b7e64a0f42b38d2dc538ce2\", \"shifts\": [{\"ambient_return_difference_norm\": 2.532595478513417e-21, \"ambient_solve_difference_norm\": 1.6036153473415684e-15, \"current_return_Hermiticity_residual\": 2.709192042901061e-22, \"current_return_frobenius_norm\": 1.2512734116212555e-06, \"current_return_trace_real\": 3.5391356579032634e-06, \"max_current_equation_residual\": 1.578171423662557e-11, \"spectral_parameter_only\": true, \"zeta_over_kappa1\": 93420.48007025628}, {\"ambient_return_difference_norm\": 1.1893890657444118e-21, \"ambient_solve_difference_norm\": 1.4644630689059496e-16, \"current_return_Hermiticity_residual\": 1.7410799128358824e-22, \"current_return_frobenius_norm\": 7.740984894767101e-07, \"current_return_trace_real\": 2.18948116486098e-06, \"max_current_equation_residual\": 2.33412120728368e-12, \"spectral_parameter_only\": true, \"zeta_over_kappa1\": 149472.76811241003}, {\"ambient_return_difference_norm\": 6.286128776785499e-22, \"ambient_solve_difference_norm\": 4.4159692714934855e-18, \"current_return_Hermiticity_residual\": 1.0372505933937047e-22, \"current_return_frobenius_norm\": 3.838030567011702e-07, \"current_return_trace_real\": 1.08555897613409e-06, \"max_current_equation_residual\": 1.4217694116328587e-13, \"spectral_parameter_only\": true, \"zeta_over_kappa1\": 298945.53622482007}], \"source_projection_identity\": 0.0}\r\n{\"i\": 0, \"physical_native_or_Pauli\": false, \"recontraction_vs_stored_Frobenius\": 0.0, \"sha256\": \"7737c0d1d96b5288f1418d94b31861e0d8bf91b8078a38e8d16cc1f02717010d\", \"trace_imaginary\": -7.573923468153248e-23, \"trace_recontracted_real\": 3.5391356579032634e-06, \"trace_stored_real\": 3.5391356579032634e-06}\r\n{\"i\": 1, \"physical_native_or_Pauli\": false, \"recontraction_vs_stored_Frobenius\": 0.0, \"sha256\": \"f2acab835f906e9614ba4c352f441f5681aac1727a0a2fca07502de695062372\", \"trace_imaginary\": 1.3284690111277285e-24, \"trace_recontracted_real\": 2.18948116486098e-06, \"trace_stored_real\": 2.18948116486098e-06}\r\n{\"i\": 2, \"physical_native_or_Pauli\": false, \"recontraction_vs_stored_Frobenius\": 0.0, \"sha256\": \"53fe0c05b80048d9c3dc9425d06513219e88724b1ab0fded9e9f4194d237ca4e\", \"trace_imaginary\": -2.5665979240433283e-23, \"trace_recontracted_real\": 1.08555897613409e-06, \"trace_stored_real\": 1.08555897613409e-06}\r\n",
+      "output_combines_stderr": true
+    },
+    {
+      "command": "@'\nfrom pathlib import Path\nimport hashlib,json,subprocess\nnames=[\"src/bhsm/interface/muon_intrinsic_scalar_discretization.py\",\"tests/test_muon_intrinsic_scalar_discretization.py\",\"src/bhsm/interface/muon_intrinsic_lepton_primal.py\",\"tests/test_muon_intrinsic_lepton_primal.py\",\"src/bhsm/interface/muon_intrinsic_worldvolume_scalar_transport.py\",\"tests/test_muon_intrinsic_worldvolume_scalar_transport.py\",\"src/bhsm/interface/muon_intrinsic_coupled_primal.py\",\"tests/test_muon_intrinsic_coupled_primal.py\",\"src/bhsm/interface/muon_calibrated_matching.py\",\"tests/test_muon_calibrated_matching.py\",\"src/bhsm/interface/muon_calibrated_local_pauli.py\",\"tests/test_muon_calibrated_local_pauli.py\",\"src/bhsm/interface/muon_calibrated_decay_matching.py\",\"tests/test_muon_calibrated_decay_matching.py\",\"scripts/evaluate_muon_intrinsic_coupled_primal.py\",\"scripts/evaluate_muon_calibrated_pauli.py\",\".gitattributes\",\"theory/muon_calibrated_pauli_20261009.md\",\"artifacts/muon_calibrated_pauli_20261009/inputs.json\",\"artifacts/muon_calibrated_pauli_20261009/run_1/calibrated_pauli.json\",\"artifacts/muon_calibrated_pauli_20261009/run_2/calibrated_pauli.json\",\"artifacts/muon_intrinsic_coupled_primal_20261009/run_1/result.json\",\"artifacts/muon_intrinsic_coupled_primal_20261009/run_2/result.json\",\"artifacts/muon_intrinsic_coupled_primal_20261009/run_1/primal_action_applications.json\",\"artifacts/muon_intrinsic_coupled_primal_20261009/run_2/primal_action_applications.json\"]\nrows=[]\nfor name in names:\n p=Path(name); b=p.read_bytes()\n rows.append(dict(path=name,bytes=len(b),sha256=hashlib.sha256(b).hexdigest()))\nprint(json.dumps(rows,sort_keys=True))\nprior=['theory/muon_intrinsic_higgs_weak_action_20261009.md','theory/muon_moving_interface_action_20261009.md','artifacts/muon_intrinsic_higgs_weak_action_20261009/run_1/result.json','docs/frozen_predictions.md','docs/frozen_predictions.json']\nfor name in prior:\n b=Path(name).read_bytes()\n baseline=subprocess.run(['git','show','914505d4f4e649be8a62bf066f01b09e01586b04:'+name],check=True,capture_output=True).stdout\n same=b==baseline if name.startswith(('theory/','artifacts/')) else b.replace(b'\\r\\n',b'\\n')==baseline.replace(b'\\r\\n',b'\\n')\n print(json.dumps(dict(prior_path=name,sha256=hashlib.sha256(b).hexdigest(),baseline_content_preserved=same),sort_keys=True))\n assert same\n\n'@ | C:\\Python314\\python.exe -",
+      "exit_code": 0,
+      "stdout": "[{\"bytes\": 16741, \"path\": \"src/bhsm/interface/muon_intrinsic_scalar_discretization.py\", \"sha256\": \"eaf8028999836e8df3cbbb9e16c5bf2b1a8adb5cdc62be1a360ec8a497159d47\"}, {\"bytes\": 16184, \"path\": \"tests/test_muon_intrinsic_scalar_discretization.py\", \"sha256\": \"21f7ce50c5675fd30ccfd0a4bc13f90799b04d8ef81f17de150d88ff4a6f96b5\"}, {\"bytes\": 18266, \"path\": \"src/bhsm/interface/muon_intrinsic_lepton_primal.py\", \"sha256\": \"42d4193340504fe47831b669bd7848f9fb1a794868b817e41eb14fe20e283027\"}, {\"bytes\": 10944, \"path\": \"tests/test_muon_intrinsic_lepton_primal.py\", \"sha256\": \"e2f9445389fcafa6ad43b87f8ea92d25340af55f58e071bcf141571d21fd9ad3\"}, {\"bytes\": 24479, \"path\": \"src/bhsm/interface/muon_intrinsic_worldvolume_scalar_transport.py\", \"sha256\": \"a9bb2d3895cd9184692737516c2bc79bdf85e7b5d106537ff510fe79705b49c1\"}, {\"bytes\": 12642, \"path\": \"tests/test_muon_intrinsic_worldvolume_scalar_transport.py\", \"sha256\": \"4fa1f6703dda62e52f766a0230d0741b70acf6040f7d61a8c1d1d541abe5627d\"}, {\"bytes\": 15552, \"path\": \"src/bhsm/interface/muon_intrinsic_coupled_primal.py\", \"sha256\": \"7ea36d5ae4ee9ba93815f8199bb7d79c2828e2c80fddcb3e763866b1a7553aa8\"}, {\"bytes\": 5493, \"path\": \"tests/test_muon_intrinsic_coupled_primal.py\", \"sha256\": \"602fc2bdaad7b90b86cb6a9bc77e3578fec08afb851f4e0854e7f360c1d9a516\"}, {\"bytes\": 16353, \"path\": \"src/bhsm/interface/muon_calibrated_matching.py\", \"sha256\": \"24f46ea0be28c8fc34bff3cbfbb7eb14f1b7d9dd38953f11e24c7aa2f7917dbc\"}, {\"bytes\": 9218, \"path\": \"tests/test_muon_calibrated_matching.py\", \"sha256\": \"cb47d8b8dede388dc941fc9239a9a2272f2b6bf113cf46a389478b270c319dc2\"}, {\"bytes\": 13630, \"path\": \"src/bhsm/interface/muon_calibrated_local_pauli.py\", \"sha256\": \"f8adec351b3a1fcc606f8b27deb8f32d6a308e5b718173f2974ce856760c9d27\"}, {\"bytes\": 5646, \"path\": \"tests/test_muon_calibrated_local_pauli.py\", \"sha256\": \"423858d3ee5f4ed82c951fb3a1bcd288964343bffc4d1f2bea84dc4d94821550\"}, {\"bytes\": 5493, \"path\": \"src/bhsm/interface/muon_calibrated_decay_matching.py\", \"sha256\": \"e31971b1cc7004ff6c00c2f76632f2a315d2d041023c32d4f60f77f2d8aaf395\"}, {\"bytes\": 3498, \"path\": \"tests/test_muon_calibrated_decay_matching.py\", \"sha256\": \"7757866a9d202dd59ff48210d6558175e0c0b083b176ee1c49b0f3f9991d84b7\"}, {\"bytes\": 17808, \"path\": \"scripts/evaluate_muon_intrinsic_coupled_primal.py\", \"sha256\": \"1979e992713ed4e84042ff8d32bf9b139d610bf12e310e4c6e91baa5d208b0b9\"}, {\"bytes\": 11901, \"path\": \"scripts/evaluate_muon_calibrated_pauli.py\", \"sha256\": \"ffbed47bc7faf3351efa1dbdabf5c67b9699dda9984c55ffc81e7f897e3f4681\"}, {\"bytes\": 5435, \"path\": \".gitattributes\", \"sha256\": \"5c6a93a2880cc3eab7ad53b03aa8adf5d09e0395aa1d9cfd45e5476631172292\"}, {\"bytes\": 22593, \"path\": \"theory/muon_calibrated_pauli_20261009.md\", \"sha256\": \"452f0bab9a8880ca631eff253bad22c4f51b3686bba058076ce92de6caaf5870\"}, {\"bytes\": 19492, \"path\": \"artifacts/muon_calibrated_pauli_20261009/inputs.json\", \"sha256\": \"0b614ab6f26d169ca04a4878f767f78eb3668484840867e46aebbebf186369da\"}, {\"bytes\": 79851, \"path\": \"artifacts/muon_calibrated_pauli_20261009/run_1/calibrated_pauli.json\", \"sha256\": \"20a4b5a169439f2db2ff8d37c9746bb7a43c6887a266d6c3e5262d8500fad419\"}, {\"bytes\": 79851, \"path\": \"artifacts/muon_calibrated_pauli_20261009/run_2/calibrated_pauli.json\", \"sha256\": \"20a4b5a169439f2db2ff8d37c9746bb7a43c6887a266d6c3e5262d8500fad419\"}, {\"bytes\": 13678, \"path\": \"artifacts/muon_intrinsic_coupled_primal_20261009/run_1/result.json\", \"sha256\": \"77d63c5fcb37df313513e35583bdbd4b2fb0cb46375b959701945a694c1e75fe\"}, {\"bytes\": 13678, \"path\": \"artifacts/muon_intrinsic_coupled_primal_20261009/run_2/result.json\", \"sha256\": \"77d63c5fcb37df313513e35583bdbd4b2fb0cb46375b959701945a694c1e75fe\"}, {\"bytes\": 4476331, \"path\": \"artifacts/muon_intrinsic_coupled_primal_20261009/run_1/primal_action_applications.json\", \"sha256\": \"24135ae4e3121b89deb90cb8ee9fa863d7e15496d810f790cd0051cabaee8ebf\"}, {\"bytes\": 4476331, \"path\": \"artifacts/muon_intrinsic_coupled_primal_20261009/run_2/primal_action_applications.json\", \"sha256\": \"24135ae4e3121b89deb90cb8ee9fa863d7e15496d810f790cd0051cabaee8ebf\"}]\r\n{\"baseline_content_preserved\": true, \"prior_path\": \"theory/muon_intrinsic_higgs_weak_action_20261009.md\", \"sha256\": \"8c1508bac14f41460b454d9b4da876c1799914c139aeab62b041b6d439402015\"}\r\n{\"baseline_content_preserved\": true, \"prior_path\": \"theory/muon_moving_interface_action_20261009.md\", \"sha256\": \"bb32428697a8f90a889eb5fcd725d6d8b932f1e3963fa5acc3263a6ebd4e29c3\"}\r\n{\"baseline_content_preserved\": true, \"prior_path\": \"artifacts/muon_intrinsic_higgs_weak_action_20261009/run_1/result.json\", \"sha256\": \"92460fe52eed6f01619e2c09fd2315f3d02ebcf4a96f3431a25cab00fe990f43\"}\r\n{\"baseline_content_preserved\": true, \"prior_path\": \"docs/frozen_predictions.md\", \"sha256\": \"9ea147c56537520c86d3c4f9b864c6ba98bac9e64931edae96449f3b335a36c4\"}\r\n{\"baseline_content_preserved\": true, \"prior_path\": \"docs/frozen_predictions.json\", \"sha256\": \"f38210e0689871a25a9d5b0a1a4239883b7240cd7d0e25cdcf4c8cab72a2cbe7\"}\r\n",
+      "output_combines_stderr": true
+    },
+    {
+      "command": "@'\nimport hashlib,json\nfrom pathlib import Path\nfor path in ['theory/muon_calibrated_pauli_20261009.md','src/bhsm/interface/universal_gf_scale.py','src/bhsm/interface/master_action/observable_transport.py','src/bhsm/interface/aether_einstein_cartan_joint_pushforward_v15_75.py']:\n data=Path(path).read_bytes()\n print(json.dumps(dict(path=path,bytes=len(data),sha256=hashlib.sha256(data).hexdigest()),sort_keys=True))\n\n'@ | C:\\Python314\\python.exe -",
+      "exit_code": 0,
+      "stdout": "{\"bytes\": 23569, \"path\": \"theory/muon_calibrated_pauli_20261009.md\", \"sha256\": \"f7f59b7d6b09510ef20303a0eb78f23ab5f4fa06a32da9468d1a8a3e1fa03b19\"}\r\n{\"bytes\": 3356, \"path\": \"src/bhsm/interface/universal_gf_scale.py\", \"sha256\": \"ec4ac21f4b0d6b2d9cbaaf3d606ae807db16aa07a739e77d91d87c208ede5dbe\"}\r\n{\"bytes\": 27078, \"path\": \"src/bhsm/interface/master_action/observable_transport.py\", \"sha256\": \"6cb165daecbb02a900d00c6ee7fe55ca29317035efc435e60bd149cb0b9789ed\"}\r\n{\"bytes\": 9272, \"path\": \"src/bhsm/interface/aether_einstein_cartan_joint_pushforward_v15_75.py\", \"sha256\": \"44e6512c6ed7646a74f438ed160420d829dcb8dbbe32ceb8bcff218a1a86acb0\"}\r\n",
+      "output_combines_stderr": true
+    },
+    {
+      "command": "git diff --cached --check",
+      "exit_code": 0,
+      "stdout": "",
+      "output_combines_stderr": true
+    },
+    {
+      "command": "git diff --cached --stat",
+      "exit_code": 0,
+      "stdout": " .gitattributes                                     |   19 +\n .../muon_calibrated_pauli_20261009/inputs.json     |  465 ++++\n .../run_1/calibrated_pauli.json                    | 2804 ++++++++++++++++++++\n .../run_2/calibrated_pauli.json                    | 2804 ++++++++++++++++++++\n .../verification.json                              |  318 +++\n .../run_1/primal_action_applications.json          |    1 +\n .../run_1/result.json                              |    1 +\n .../run_2/primal_action_applications.json          |    1 +\n .../run_2/result.json                              |    1 +\n scripts/evaluate_muon_calibrated_pauli.py          |  196 ++\n scripts/evaluate_muon_intrinsic_coupled_primal.py  |  262 ++\n .../interface/muon_calibrated_decay_matching.py    |  113 +\n src/bhsm/interface/muon_calibrated_local_pauli.py  |  241 ++\n src/bhsm/interface/muon_calibrated_matching.py     |  311 +++\n .../interface/muon_intrinsic_coupled_primal.py     |  269 ++\n src/bhsm/interface/muon_intrinsic_lepton_primal.py |  329 +++\n .../muon_intrinsic_scalar_discretization.py        |  336 +++\n .../muon_intrinsic_worldvolume_scalar_transport.py |  399 +++\n tests/test_muon_calibrated_decay_matching.py       |   67 +\n tests/test_muon_calibrated_local_pauli.py          |  120 +\n tests/test_muon_calibrated_matching.py             |  190 ++\n tests/test_muon_intrinsic_coupled_primal.py        |  115 +\n tests/test_muon_intrinsic_lepton_primal.py         |  202 ++\n tests/test_muon_intrinsic_scalar_discretization.py |  287 ++\n ..._muon_intrinsic_worldvolume_scalar_transport.py |  234 ++\n theory/muon_calibrated_pauli_20261009.md           |  457 ++++\n 26 files changed, 10542 insertions(+)\n",
+      "output_combines_stderr": true
+    },
+    {
+      "command": "git status --short",
+      "exit_code": 0,
+      "stdout": "M  .gitattributes\nA  artifacts/muon_calibrated_pauli_20261009/inputs.json\nA  artifacts/muon_calibrated_pauli_20261009/run_1/calibrated_pauli.json\nA  artifacts/muon_calibrated_pauli_20261009/run_2/calibrated_pauli.json\nA  artifacts/muon_calibrated_pauli_20261009/verification.json\nA  artifacts/muon_intrinsic_coupled_primal_20261009/run_1/primal_action_applications.json\nA  artifacts/muon_intrinsic_coupled_primal_20261009/run_1/result.json\nA  artifacts/muon_intrinsic_coupled_primal_20261009/run_2/primal_action_applications.json\nA  artifacts/muon_intrinsic_coupled_primal_20261009/run_2/result.json\nA  scripts/evaluate_muon_calibrated_pauli.py\nA  scripts/evaluate_muon_intrinsic_coupled_primal.py\nA  src/bhsm/interface/muon_calibrated_decay_matching.py\nA  src/bhsm/interface/muon_calibrated_local_pauli.py\nA  src/bhsm/interface/muon_calibrated_matching.py\nA  src/bhsm/interface/muon_intrinsic_coupled_primal.py\nA  src/bhsm/interface/muon_intrinsic_lepton_primal.py\nA  src/bhsm/interface/muon_intrinsic_scalar_discretization.py\nA  src/bhsm/interface/muon_intrinsic_worldvolume_scalar_transport.py\nA  tests/test_muon_calibrated_decay_matching.py\nA  tests/test_muon_calibrated_local_pauli.py\nA  tests/test_muon_calibrated_matching.py\nA  tests/test_muon_intrinsic_coupled_primal.py\nA  tests/test_muon_intrinsic_lepton_primal.py\nA  tests/test_muon_intrinsic_scalar_discretization.py\nA  tests/test_muon_intrinsic_worldvolume_scalar_transport.py\nA  theory/muon_calibrated_pauli_20261009.md\n",
+      "output_combines_stderr": true
+    },
+    {
+      "command": "git rev-parse HEAD",
+      "exit_code": 0,
+      "stdout": "914505d4f4e649be8a62bf066f01b09e01586b04\n",
+      "output_combines_stderr": true
+    }
+  ],
+  "development_failures": [
+    {
+      "source": "root and delegated development tool outputs before final checks",
+      "kind": "local Pauli F1 projection test",
+      "failure": "absolute binary64 residual 4.440892098500626e-16 exceeded requested 3e-16 assertion",
+      "repair": "test rounding tolerance 8e-16; no projection or loop formula change",
+      "scope": "software floating tolerance; no physical error bound"
+    },
+    {
+      "source": "delegated development",
+      "kind": "real harmonic tests",
+      "failure": "31 passed, 2 failed; observed association 2.66e-15 and Laplacian 5.33e-15 exceeded assertion thresholds",
+      "repair": "thresholds 5e-15 and 8e-15; no production mathematics change",
+      "scope": "finite-dimensional binary64 verification"
+    },
+    {
+      "source": "delegated development",
+      "kind": "nested VP adaptive integral",
+      "failure": "roundoff warnings near representation endpoints",
+      "repair": "analytic inner antiderivative, stable beta series and one outer adaptive integral; independent 60/90 digit convergence references",
+      "scope": "QUADPACK estimates are not rigorous integration/roundoff enclosure"
+    },
+    {
+      "kind": "publication receipt index-byte guard",
+      "exit_code": 1,
+      "stdout": "Traceback (most recent call last):\r\n  File \"<stdin>\", line 12, in <module>\r\nAssertionError: ('index/source byte mismatch', 'src/bhsm/interface/universal_gf_scale.py')\r\n",
+      "repair": "Restrict exact index/worktree byte equality to newly staged milestone files; retain raw hashes of unchanged CRLF owner sources without normalizing their historical bytes",
+      "scope": "receipt scope error only; no scientific source or numerical result changed"
+    }
+  ],
+  "error_scope": {
+    "complete_anomaly_enclosure": false,
+    "input_uncertainty": "linear subtotal only; illustrative independence and all-correlation linear upper bound both reported",
+    "numerical": "quad estimates and exact-arithmetic beta-series tail; roundoff and continuum not enclosed",
+    "soft": "local one-loop bias bound only; no native bound",
+    "unbounded": [
+      "higher local orders",
+      "scalar/radiative matching including decay",
+      "native source/domain/response and overlap",
+      "full observable uncertainty"
+    ],
+    "physical_promotion_flags": false,
+    "OWNER_DEFINITION_GAP": []
+  },
+  "publication_audits": [
+    {
+      "command": "C:\\Python314\\python.exe tools/audit_bhsm_status.py --format json",
+      "exit_code": 0,
+      "stdout": "{\r\n  \"audit\": \"bhsm_status\",\r\n  \"checks\": {\r\n    \"candidate_architecture_complete\": true,\r\n    \"completion_payload_candidate_only\": true,\r\n    \"completion_payload_not_proven\": true,\r\n    \"dark_matter_not_solved\": true,\r\n    \"frozen_predictions_unchanged\": true,\r\n    \"full_bhsm_not_proven\": true,\r\n    \"mass_numerical_closure_open\": true,\r\n    \"official_predictions_unchanged\": true,\r\n    \"standard_model_not_fully_derived\": true\r\n  },\r\n  \"passed\": true,\r\n  \"verdict_labels\": [\r\n    \"BHSM_REPO_STATUS_REFRESH_COMPLETE\",\r\n    \"FULL_BHSM_STATUS_SYNCHRONIZED\",\r\n    \"SM_DERIVATION_REMAINS_OPEN\",\r\n    \"MASS_NUMERICAL_CLOSURE_REMAINS_OPEN\"\r\n  ]\r\n}\r\n",
+      "output_combines_stderr": true
+    },
+    {
+      "command": "C:\\Python314\\python.exe tools/audit_forbidden_claims.py --format json",
+      "exit_code": 0,
+      "stdout": "{\r\n  \"allowed_example_paths\": [\r\n    \"docs/forbidden_claims.md\"\r\n  ],\r\n  \"audit\": \"forbidden_claims\",\r\n  \"findings\": [],\r\n  \"passed\": true,\r\n  \"verdict_labels\": [\r\n    \"FORBIDDEN_CLAIM_GUARDRAILS_ADDED\"\r\n  ]\r\n}\r\n",
+      "output_combines_stderr": true
+    },
+    {
+      "command": "C:\\Python314\\python.exe tools/audit_frozen_prediction_integrity.py --format json",
+      "exit_code": 0,
+      "stdout": "{\r\n  \"audit\": \"frozen_prediction_integrity\",\r\n  \"files\": [\r\n    {\r\n      \"actual_sha256\": \"9EA147C56537520C86D3C4F9B864C6BA98BAC9E64931EDAE96449F3B335A36C4\",\r\n      \"expected_sha256\": \"9EA147C56537520C86D3C4F9B864C6BA98BAC9E64931EDAE96449F3B335A36C4\",\r\n      \"path\": \"docs/frozen_predictions.md\",\r\n      \"unchanged\": true\r\n    },\r\n    {\r\n      \"actual_sha256\": \"F38210E0689871A25A9D5B0A1A4239883B7240CD7D0E25CDCF4C8CAB72A2CBE7\",\r\n      \"expected_sha256\": \"F38210E0689871A25A9D5B0A1A4239883B7240CD7D0E25CDCF4C8CAB72A2CBE7\",\r\n      \"path\": \"docs/frozen_predictions.json\",\r\n      \"unchanged\": true\r\n    }\r\n  ],\r\n  \"frozen_predictions_changed\": false,\r\n  \"passed\": true\r\n}\r\n",
+      "output_combines_stderr": true
+    },
+    {
+      "command": "C:\\Python314\\python.exe tools/verify_precision.py",
+      "exit_code": 0,
+      "stdout": "PASS: precision gate verified (1.066e-14 <= 1.000e-13).\r\n",
+      "output_combines_stderr": true
+    },
+    {
+      "command": "C:\\Python314\\python.exe tools/audit_public_readiness.py --format json",
+      "exit_code": 0,
+      "stdout": "{\r\n  \"audit\": \"bhsm_public_readiness\",\r\n  \"checks\": {\r\n    \"citation\": {\r\n      \"cff_version\": \"1.2.0\",\r\n      \"doi\": \"10.5281/zenodo.20663419\",\r\n      \"failures\": [],\r\n      \"license\": \"LicenseRef-AllRightsReserved\",\r\n      \"passed\": true,\r\n      \"release_date\": \"2026-06-26\",\r\n      \"release_tag\": \"v1.1.0\",\r\n      \"title\": \"Berger-Hopf Standard Model: Artifact-Backed Geometric Physics Research Framework\",\r\n      \"zenodo_archive_date\": \"2026-06-12\",\r\n      \"zenodo_archive_version\": \"v1.2.0\"\r\n    },\r\n    \"current_claims\": {\r\n      \"findings\": [],\r\n      \"passed\": true\r\n    },\r\n    \"frozen_predictions\": {\r\n      \"files\": [\r\n        {\r\n          \"actual_sha256\": \"9EA147C56537520C86D3C4F9B864C6BA98BAC9E64931EDAE96449F3B335A36C4\",\r\n          \"expected_sha256\": \"9EA147C56537520C86D3C4F9B864C6BA98BAC9E64931EDAE96449F3B335A36C4\",\r\n          \"path\": \"docs/frozen_predictions.md\",\r\n          \"unchanged\": true\r\n        },\r\n        {\r\n          \"actual_sha256\": \"F38210E0689871A25A9D5B0A1A4239883B7240CD7D0E25CDCF4C8CAB72A2CBE7\",\r\n          \"expected_sha256\": \"F38210E0689871A25A9D5B0A1A4239883B7240CD7D0E25CDCF4C8CAB72A2CBE7\",\r\n          \"path\": \"docs/frozen_predictions.json\",\r\n          \"unchanged\": true\r\n        }\r\n      ],\r\n      \"frozen_predictions_changed\": false,\r\n      \"passed\": true\r\n    },\r\n    \"hygiene\": {\r\n      \"allowed_large_artifact_limit_bytes\": 12582912,\r\n      \"allowed_large_artifacts\": [\r\n        {\r\n          \"bytes\": 10525866,\r\n          \"path\": \"artifacts/BHSM_aether_n3_fresh_sbp_fifth_v0_priority_v17_36.json\"\r\n        },\r\n        {\r\n          \"bytes\": 10722599,\r\n          \"path\": \"artifacts/BHSM_aether_n3_fresh_sbp_three_owner_priority_v17_47.json\"\r\n        },\r\n        {\r\n          \"bytes\": 12515555,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_C2_STOP_DOP853_ADAPTIVE_BORDERED_RHS_RESPONSE.json\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 15841669,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_C2_STOP_DOP853_ADAPTIVE_BORDERED_RHS_RESPONSE_CERTIFICATE.json\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 14094876,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_C2_STOP_DOP853_ADAPTIVE_SELECTED_PROJECTOR_GRAPH.json\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 17478672,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_C2_STOP_DOP853_BORDERED_RESPONSE_SECOND_VARIATION.json\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 15073608,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_C2_STOP_FULL_BORDERED_RHS_RESPONSE.json\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 25291911,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_C2_STOP_FULL_SELECTED_PROJECTOR_GRAPH.json\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 13925602,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_C2_STOP_HALF_STEP_FINE_HYBRID_GRAPH_JACOBIAN_RECONNAISSANCE.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 27774619,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_C2_STOP_QUARTER_STEP_FINE_HYBRID_GRAPH_JACOBIAN_RECONNAISSANCE.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 14361466,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_ARB_INTERACTION_TAYLOR26_MACRO_MAPS.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 72207241,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_BLOCK_NEWTON_PREDICTOR.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 22595029,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_NEWTON_ENDPOINT_CANDIDATE.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 98072216,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_CORRELATED_DESCRIPTOR_AUGMENTED_JACOBIANS.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 15882019,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_GREEN_COMPONENTWISE_TWO_RADIUS_SCREEN.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 55828875,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_GREEN_MIDPOINT_AMBIENT_DF.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 15728311,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_GREEN_MIXED_HS_CAUSAL_TRANSPORT.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 41722453,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_GREEN_MIXED_TRANSVERSE_ALL_ENDPOINTS.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 25304028,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_AFFINE_CENTER_BORDERED_RESPONSE_FIRST_VARIATION.json\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 33555226,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_AFFINE_CENTER_BORDERED_RESPONSE_SECOND_VARIATION.json\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 28974337,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_AFFINE_CENTER_BORDERED_RHS_RESPONSE.json\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 24911535,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_AFFINE_CENTER_SELECTED_PROJECTOR_GRAPH.json\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 56354452,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_SIGNED_FULL_TRANSVERSE_CURVATURE_NODES_00_23.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 56326421,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_SIGNED_FULL_TRANSVERSE_CURVATURE_NODES_24_47.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 15474079,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_FINITE_PROPAGATOR_Z1_RECONNAISSANCE.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 27774704,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_FIRST_HS_NEWTON_CENTER_GRAPH_JACOBIAN.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 20453304,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_FIRST_HS_NEWTON_ENDPOINT_TANGENT.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 27982884,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_FIRST_HS_NEWTON_MIDPOINT_GRAPH_JACOBIAN.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 55117636,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_HERMITE_SIMPSON_BLOCK_NEWTON_PREDICTOR.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 27983297,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_HERMITE_SIMPSON_MIDPOINT_GRAPH_JACOBIAN.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 55117625,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_RATE_CONSISTENT_BLOCK_NEWTON_PREDICTOR.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 36414592,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_RECENTERED_CONE_BORDERED_RESPONSE_FIRST_VARIATION.json\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 48333122,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_RECENTERED_CONE_BORDERED_RESPONSE_SECOND_VARIATION.json\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 41758016,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_RECENTERED_CONE_BORDERED_RHS_RESPONSE.json\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 24911532,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_RECENTERED_CONE_SELECTED_PROJECTOR_GRAPH.json\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 27774707,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_CURRENT_CENTER_GRAPH_JACOBIAN.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 55117900,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_HERMITE_SIMPSON_BLOCK_NEWTON_PREDICTOR.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 55678350,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_HS_NEWTON_LINE_SEARCH_PREDICTOR.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 55118294,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_RATE_CONSISTENT_BLOCK_NEWTON_PREDICTOR.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 27774560,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_RATE_CONSISTENT_CENTER_GRAPH_JACOBIAN.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 27983314,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_RATE_CONSISTENT_MIDPOINT_GRAPH_JACOBIAN.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 27774601,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_SIGNED_GREEN_CURRENT_CENTER_GRAPH_JACOBIAN.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 11125650,\r\n          \"path\": \"artifacts/muon_first_order_complement_20261006/run_2/first_order_compact_reduction.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        }\r\n      ],\r\n      \"credential_files\": [],\r\n      \"large_file_threshold_bytes\": 10485760,\r\n      \"malformed_lfs_pointers\": [],\r\n      \"merge_markers\": [],\r\n      \"passed\": true,\r\n      \"secret_findings\": [],\r\n      \"tracked_cache_or_build_junk\": [],\r\n      \"tracked_env_files\": [],\r\n      \"unexpected_large_files\": []\r\n    },\r\n    \"license_visibility\": {\r\n      \"failures\": [],\r\n      \"passed\": true\r\n    },\r\n    \"markdown_links\": {\r\n      \"broken\": [],\r\n      \"checked\": 60,\r\n      \"passed\": true\r\n    },\r\n    \"reproduction\": {\r\n      \"missing_cli_commands\": [],\r\n      \"missing_documented_commands\": [],\r\n      \"missing_scripts\": [],\r\n      \"passed\": true,\r\n      \"reviewer_smoke_target\": true\r\n    },\r\n    \"required_files\": {\r\n      \"empty\": [],\r\n      \"missing\": [],\r\n      \"passed\": true\r\n    },\r\n    \"science_alignment\": {\r\n      \"missing_phrases\": {},\r\n      \"passed\": true\r\n    }\r\n  },\r\n  \"external_urls\": [\r\n    \"https://doi.org/10.5281/zenodo.20663419\",\r\n    \"https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml/badge.svg\",\r\n    \"https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/institutional.yml/badge.svg\",\r\n    \"https://ncarberry64.github.io/Berger-Hopf-Standard-Model/\",\r\n    \"https://orcid.org/0009-0000-6650-3485\",\r\n    \"https://zenodo.org/badge/DOI/10.5281/zenodo.20663419.svg\"\r\n  ],\r\n  \"passed\": true,\r\n  \"verdict\": \"BHSM_REPOSITORY_PUBLIC_REVIEW_READY\",\r\n  \"version\": \"v6.21.0\"\r\n}\r\n",
+      "output_combines_stderr": true
+    }
+  ],
+  "file_identities": [
+    {
+      "bytes": 16741,
+      "path": "src/bhsm/interface/muon_intrinsic_scalar_discretization.py",
+      "sha256": "eaf8028999836e8df3cbbb9e16c5bf2b1a8adb5cdc62be1a360ec8a497159d47"
+    },
+    {
+      "bytes": 16184,
+      "path": "tests/test_muon_intrinsic_scalar_discretization.py",
+      "sha256": "21f7ce50c5675fd30ccfd0a4bc13f90799b04d8ef81f17de150d88ff4a6f96b5"
+    },
+    {
+      "bytes": 18266,
+      "path": "src/bhsm/interface/muon_intrinsic_lepton_primal.py",
+      "sha256": "42d4193340504fe47831b669bd7848f9fb1a794868b817e41eb14fe20e283027"
+    },
+    {
+      "bytes": 10944,
+      "path": "tests/test_muon_intrinsic_lepton_primal.py",
+      "sha256": "e2f9445389fcafa6ad43b87f8ea92d25340af55f58e071bcf141571d21fd9ad3"
+    },
+    {
+      "bytes": 24479,
+      "path": "src/bhsm/interface/muon_intrinsic_worldvolume_scalar_transport.py",
+      "sha256": "a9bb2d3895cd9184692737516c2bc79bdf85e7b5d106537ff510fe79705b49c1"
+    },
+    {
+      "bytes": 12642,
+      "path": "tests/test_muon_intrinsic_worldvolume_scalar_transport.py",
+      "sha256": "4fa1f6703dda62e52f766a0230d0741b70acf6040f7d61a8c1d1d541abe5627d"
+    },
+    {
+      "bytes": 15552,
+      "path": "src/bhsm/interface/muon_intrinsic_coupled_primal.py",
+      "sha256": "7ea36d5ae4ee9ba93815f8199bb7d79c2828e2c80fddcb3e763866b1a7553aa8"
+    },
+    {
+      "bytes": 5493,
+      "path": "tests/test_muon_intrinsic_coupled_primal.py",
+      "sha256": "602fc2bdaad7b90b86cb6a9bc77e3578fec08afb851f4e0854e7f360c1d9a516"
+    },
+    {
+      "bytes": 16353,
+      "path": "src/bhsm/interface/muon_calibrated_matching.py",
+      "sha256": "24f46ea0be28c8fc34bff3cbfbb7eb14f1b7d9dd38953f11e24c7aa2f7917dbc"
+    },
+    {
+      "bytes": 9218,
+      "path": "tests/test_muon_calibrated_matching.py",
+      "sha256": "cb47d8b8dede388dc941fc9239a9a2272f2b6bf113cf46a389478b270c319dc2"
+    },
+    {
+      "bytes": 13630,
+      "path": "src/bhsm/interface/muon_calibrated_local_pauli.py",
+      "sha256": "f8adec351b3a1fcc606f8b27deb8f32d6a308e5b718173f2974ce856760c9d27"
+    },
+    {
+      "bytes": 5646,
+      "path": "tests/test_muon_calibrated_local_pauli.py",
+      "sha256": "423858d3ee5f4ed82c951fb3a1bcd288964343bffc4d1f2bea84dc4d94821550"
+    },
+    {
+      "bytes": 5493,
+      "path": "src/bhsm/interface/muon_calibrated_decay_matching.py",
+      "sha256": "e31971b1cc7004ff6c00c2f76632f2a315d2d041023c32d4f60f77f2d8aaf395"
+    },
+    {
+      "bytes": 3498,
+      "path": "tests/test_muon_calibrated_decay_matching.py",
+      "sha256": "7757866a9d202dd59ff48210d6558175e0c0b083b176ee1c49b0f3f9991d84b7"
+    },
+    {
+      "bytes": 17808,
+      "path": "scripts/evaluate_muon_intrinsic_coupled_primal.py",
+      "sha256": "1979e992713ed4e84042ff8d32bf9b139d610bf12e310e4c6e91baa5d208b0b9"
+    },
+    {
+      "bytes": 11901,
+      "path": "scripts/evaluate_muon_calibrated_pauli.py",
+      "sha256": "ffbed47bc7faf3351efa1dbdabf5c67b9699dda9984c55ffc81e7f897e3f4681"
+    },
+    {
+      "bytes": 5435,
+      "path": ".gitattributes",
+      "sha256": "5c6a93a2880cc3eab7ad53b03aa8adf5d09e0395aa1d9cfd45e5476631172292"
+    },
+    {
+      "bytes": 23569,
+      "path": "theory/muon_calibrated_pauli_20261009.md",
+      "sha256": "f7f59b7d6b09510ef20303a0eb78f23ab5f4fa06a32da9468d1a8a3e1fa03b19"
+    },
+    {
+      "bytes": 19492,
+      "path": "artifacts/muon_calibrated_pauli_20261009/inputs.json",
+      "sha256": "0b614ab6f26d169ca04a4878f767f78eb3668484840867e46aebbebf186369da"
+    },
+    {
+      "bytes": 79851,
+      "path": "artifacts/muon_calibrated_pauli_20261009/run_1/calibrated_pauli.json",
+      "sha256": "20a4b5a169439f2db2ff8d37c9746bb7a43c6887a266d6c3e5262d8500fad419"
+    },
+    {
+      "bytes": 79851,
+      "path": "artifacts/muon_calibrated_pauli_20261009/run_2/calibrated_pauli.json",
+      "sha256": "20a4b5a169439f2db2ff8d37c9746bb7a43c6887a266d6c3e5262d8500fad419"
+    },
+    {
+      "bytes": 13678,
+      "path": "artifacts/muon_intrinsic_coupled_primal_20261009/run_1/result.json",
+      "sha256": "77d63c5fcb37df313513e35583bdbd4b2fb0cb46375b959701945a694c1e75fe"
+    },
+    {
+      "bytes": 13678,
+      "path": "artifacts/muon_intrinsic_coupled_primal_20261009/run_2/result.json",
+      "sha256": "77d63c5fcb37df313513e35583bdbd4b2fb0cb46375b959701945a694c1e75fe"
+    },
+    {
+      "bytes": 4476331,
+      "path": "artifacts/muon_intrinsic_coupled_primal_20261009/run_1/primal_action_applications.json",
+      "sha256": "24135ae4e3121b89deb90cb8ee9fa863d7e15496d810f790cd0051cabaee8ebf"
+    },
+    {
+      "bytes": 4476331,
+      "path": "artifacts/muon_intrinsic_coupled_primal_20261009/run_2/primal_action_applications.json",
+      "sha256": "24135ae4e3121b89deb90cb8ee9fa863d7e15496d810f790cd0051cabaee8ebf"
+    },
+    {
+      "bytes": 3356,
+      "path": "src/bhsm/interface/universal_gf_scale.py",
+      "sha256": "ec4ac21f4b0d6b2d9cbaaf3d606ae807db16aa07a739e77d91d87c208ede5dbe"
+    },
+    {
+      "bytes": 27078,
+      "path": "src/bhsm/interface/master_action/observable_transport.py",
+      "sha256": "6cb165daecbb02a900d00c6ee7fe55ca29317035efc435e60bd149cb0b9789ed"
+    },
+    {
+      "bytes": 9272,
+      "path": "src/bhsm/interface/aether_einstein_cartan_joint_pushforward_v15_75.py",
+      "sha256": "44e6512c6ed7646a74f438ed160420d829dcb8dbbe32ceb8bcff218a1a86acb0"
+    }
+  ],
+  "publication_receipt": "Final commit and remote-head receipt stored externally to avoid self-referential commit hash",
+  "prior_content_preservation": [
+    {
+      "baseline_content_preserved": true,
+      "prior_path": "theory/muon_intrinsic_higgs_weak_action_20261009.md",
+      "sha256": "8c1508bac14f41460b454d9b4da876c1799914c139aeab62b041b6d439402015"
+    },
+    {
+      "baseline_content_preserved": true,
+      "prior_path": "theory/muon_moving_interface_action_20261009.md",
+      "sha256": "bb32428697a8f90a889eb5fcd725d6d8b932f1e3963fa5acc3263a6ebd4e29c3"
+    },
+    {
+      "baseline_content_preserved": true,
+      "prior_path": "artifacts/muon_intrinsic_higgs_weak_action_20261009/run_1/result.json",
+      "sha256": "92460fe52eed6f01619e2c09fd2315f3d02ebcf4a96f3431a25cab00fe990f43"
+    },
+    {
+      "baseline_content_preserved": true,
+      "prior_path": "docs/frozen_predictions.md",
+      "sha256": "9ea147c56537520c86d3c4f9b864c6ba98bac9e64931edae96449f3b335a36c4"
+    },
+    {
+      "baseline_content_preserved": true,
+      "prior_path": "docs/frozen_predictions.json",
+      "sha256": "f38210e0689871a25a9d5b0a1a4239883b7240cd7d0e25cdcf4c8cab72a2cbe7"
+    }
+  ],
+  "replay_comparison": [
+    {
+      "bytes": 79851,
+      "identical": true,
+      "path": "artifacts\\muon_calibrated_pauli_20261009\\run_1\\calibrated_pauli.json",
+      "replay_sha256": "20a4b5a169439f2db2ff8d37c9746bb7a43c6887a266d6c3e5262d8500fad419",
+      "sha256": "20a4b5a169439f2db2ff8d37c9746bb7a43c6887a266d6c3e5262d8500fad419"
+    },
+    {
+      "bytes": 13678,
+      "identical": true,
+      "path": "artifacts\\muon_intrinsic_coupled_primal_20261009\\run_1\\result.json",
+      "replay_sha256": "77d63c5fcb37df313513e35583bdbd4b2fb0cb46375b959701945a694c1e75fe",
+      "sha256": "77d63c5fcb37df313513e35583bdbd4b2fb0cb46375b959701945a694c1e75fe"
+    },
+    {
+      "bytes": 4476331,
+      "identical": true,
+      "path": "artifacts\\muon_intrinsic_coupled_primal_20261009\\run_1\\primal_action_applications.json",
+      "replay_sha256": "24135ae4e3121b89deb90cb8ee9fa863d7e15496d810f790cd0051cabaee8ebf",
+      "sha256": "24135ae4e3121b89deb90cb8ee9fa863d7e15496d810f790cd0051cabaee8ebf"
+    }
+  ],
+  "new_scientific_progress": [
+    "Evaluated calibrated local Pauli diagrams including signed projection and physical input motion",
+    "Solved canonical local Higgs weak residual",
+    "Measured fixed-Y compatibility quantified without Yukawa fits",
+    "Actual retained moving/temporal/spatial action rows evaluated and preserved",
+    "Smallest native source-adjoint reduction verified; no transverse cancellation or full anomaly bound asserted"
+  ],
+  "unit_matching_result": {
+    "existing_maps": [
+      "G_F=c_F/Lambda^2; Lambda=sqrt(c_F/G_F)",
+      "ell_star=v_hat/v_F"
+    ],
+    "current_cap_unit_requires": "current normalized dimensionless c_F or v_hat and common-action identification in ell_kappa chart",
+    "independent_new_measurement_required": false,
+    "current_coefficients_evaluated": false,
+    "historical_Planck_or_fold_transplant_used": false,
+    "OWNER_DEFINITION_GAP": false
+  }
+}

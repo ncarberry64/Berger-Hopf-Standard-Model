@@ -1,0 +1,270 @@
+{
+  "Gate7_closed": false,
+  "Higgs_or_quark_Yukawa_fitted": false,
+  "action_matching": {
+    "actual_E1_Higgs_profile_inferred": false,
+    "fixed_Y_owner": "ae31_c2_intrinsic_m4_lepton_action.charged_lepton_yukawa_operator",
+    "gauge_vertex": "g_hWW=2*MW^2/v from minimal calibrated local Higgs kinetic term",
+    "intrinsic_pole_matching_completed": false,
+    "measured_pole_is_external_on_shell_argument": true,
+    "radial_coupling": "g_hmumu=Y_mu/sqrt(2)",
+    "v": "(sqrt(2)*GF)^(-1/2)"
+  },
+  "action_selected": false,
+  "classification": "CALIBRATED_FIXED_Y_TRANSVERSE_W_HGAMMA_EW2_PROJECTION",
+  "complete_a_mu": null,
+  "complete_native": false,
+  "consumed_inputs": [
+    {
+      "bytes": 19492,
+      "path": "artifacts/muon_calibrated_pauli_20261009/inputs.json",
+      "sha256": "0b614ab6f26d169ca04a4878f767f78eb3668484840867e46aebbebf186369da"
+    },
+    {
+      "bytes": 24253,
+      "path": "artifacts/muon_calibrated_weak_decay_20261010/run_1/weak_decay.json",
+      "sha256": "9c31575ce0889571790f8767cf53ffe043cb9906e0a45a96b194971320a0aad7"
+    },
+    {
+      "bytes": 10856,
+      "path": "src/bhsm/interface/ae31_c2_intrinsic_m4_lepton_action.py",
+      "sha256": "f3fee1ef24a3f13ef94d4ce5b146f9ac7a827045e369819b35ee8af5ccf0678a"
+    },
+    {
+      "bytes": 10881,
+      "path": "artifacts/muon_calibrated_bosonic_weak_log_20261010/run_1/bosonic_weak_log.json",
+      "sha256": "64b89011c453108e651cb2a1d461b97f8c68d2f61ee20ce096ad18677f57f85c"
+    }
+  ],
+  "errors": {
+    "GF_omitted_order_induced_allowance_estimate": 8.126860009994206e-20,
+    "GF_source_correlation_scope": "same decay source; sum sensitivities with other weak contributions before propagation",
+    "GF_source_induced_estimated_standard_uncertainty": 2.7708705212934956e-19,
+    "GF_source_sensitivity": 1.3874113489292791e-06,
+    "complete_uncertainty": false,
+    "float64_minus_independent_70_digit_application_absolute": 5.1073526783194725e-26,
+    "full_finite_bosonic_remainder_enclosure": null,
+    "independent_70_digit_F3": "5.9726031552670233281998998682457741534691079631062619541504725867",
+    "independent_70_digit_literal_integral": "0.000000000032364905504452605879418436839647070299056341504092083602239339821",
+    "numerical_comparisons_are_enclosures": false,
+    "quadrature_error_estimate": 2.7145009924235516e-23,
+    "quadrature_refinement_absolute_difference": 1.9387045606711586e-26,
+    "refined_quadrature_error_estimate": 2.4642278512781178e-24,
+    "suppressed_external_mass_ratio_squared": 1.7287263406414243e-06,
+    "suppressed_mass_ratio_is_remainder_bound": false,
+    "transverse_omitted_completion_enclosure": null
+  },
+  "evaluated_contribution": 3.2364905504452555e-11,
+  "full_EW_two_loop_evaluated": false,
+  "full_bosonic_EW2_evaluated": false,
+  "input_uncertainty": {
+    "actual_cross_source_covariance": null,
+    "fixed_Y_partial_muon_mass_power": 1,
+    "gradient": [
+      -3.545160613123289e-13,
+      -7.3732679556579915e-19,
+      -3.914594088235361e-14,
+      -3.6828852657955735e-18,
+      -2.2077945517067173e-13,
+      -2.4548223237618698e-20,
+      3.437238538032849e-13,
+      0.0,
+      0.0
+    ],
+    "illustrative_independent_standard_uncertainty_minus": 2.452298470161136e-14,
+    "illustrative_independent_standard_uncertainty_plus": 2.452298470161136e-14,
+    "primitive_order": [
+      "alpha_inverse_0",
+      "R_infinity_m_minus1",
+      "muon_electron_mass_ratio",
+      "lifetime_ps",
+      "higgs_GeV",
+      "tau_GeV",
+      "MW_GeV",
+      "MZ_GeV",
+      "top_pole_GeV"
+    ],
+    "scope": "input uncertainty of evaluated transverse projection only",
+    "shared_GF_mass_alpha_and_Higgs_dependencies_included": true,
+    "standard_uncertainties_minus": [
+      1.1e-08,
+      9.6e-05,
+      0.00017,
+      2.2,
+      0.11,
+      0.00013601470508735444,
+      0.0099,
+      0.0021,
+      1.0295630140987
+    ],
+    "standard_uncertainties_plus": [
+      1.1e-08,
+      9.6e-05,
+      0.00017,
+      2.2,
+      0.11,
+      0.00013601470508735444,
+      0.0099,
+      0.0021,
+      1.2083045973594573
+    ],
+    "standard_uncertainty_upper_over_all_correlations_minus": 2.770336735276013e-14,
+    "standard_uncertainty_upper_over_all_correlations_plus": 2.770336735276013e-14
+  },
+  "measured_muon_anomaly_used": false,
+  "overlap": {
+    "addition_target": "previously unevaluated finite bosonic EW2 remainder: transverse W/Hgamma projection only",
+    "all_action_native_overlap_evaluated": false,
+    "bosonic_log_included_again": false,
+    "fermionic_VVA_gammaZ_rest_excluded": true,
+    "fixed_Y_closed_lepton_Hgamma_HZ_added_again": false,
+    "minimal_local_gauge_Higgs_matching": true,
+    "prior_weak_subtotal": 1.7592934564604527e-09,
+    "pure_QED_HVP_HLbL_top_EM_excluded": true,
+    "reason_disjoint_from_log": "F3 depends on MW/MH; literal fixed-Y prefactor linear in external m_mu and contains no log(m_mu)",
+    "retained_bosonic_log": -2.1415901496597387e-10,
+    "weak_subtotal_with_log_and_transverse_projection": 1.5774993469989314e-09
+  },
+  "primary_archive_scope": "original PDFs retained externally under BHSM_MUON_SPECTRAL_INPUTS_20261010; not redistributed",
+  "primary_source_evidence": [
+    {
+      "bytes": 9728610,
+      "equations": "21,28",
+      "scope": "transverse gauge-independent part; omitted structures/non-Barr-Zee cancellation not evaluated here",
+      "sections": "4.1-4.2",
+      "sha256": "b0b886104b0a5bc000d01c82973fcc36b9183d04dfe13e4f0938a4e95b063d5e",
+      "url": "https://arxiv.org/pdf/1502.04199v3"
+    },
+    {
+      "bytes": 552972,
+      "equations": "30-33",
+      "scope": "complete finite bosonic constants need counterterms and Gmu reparametrization",
+      "sha256": "db56c21652d3c56e80a8608daaffebf8e2790bc4c5081796092cd74ab0df84e6",
+      "url": "https://arxiv.org/pdf/hep-ph/0509205v1"
+    },
+    {
+      "bytes": 2806476,
+      "equation": "49",
+      "scope": "full Higgs-Yukawa-dependent difference includes non-Barr-Zee diagrams and counterterm; not used as a supplied numerical correction",
+      "sha256": "03f36fd57574de9f131850652b6e55f98ca971326f24583ce5ee0ff61c4de0a7",
+      "url": "https://arxiv.org/pdf/1607.06292v3"
+    }
+  ],
+  "remaining": {
+    "Gmu_scheme_finite_counterterm_and_Delta_r_composition": null,
+    "HZ_W_counterpart": null,
+    "finite_bosonic_remainder_after_log_and_transverse_W_Hgamma": null,
+    "finite_bosonic_remainder_definition": "complete matched bosonic EW2 minus retained MW-endpoint log minus this transverse W/Hgamma application",
+    "gauge_dependent_vertex_and_non_Barr_Zee_completion": null,
+    "no_finite_bosonic_or_native_remainder_bound": true,
+    "quark_Hgamma_HZ": null,
+    "quark_Y_owner_status": "up_down_Yukawa_terms_added=False; absolute transported quark-Y vertex not assigned from poles"
+  },
+  "result": {
+    "HZ_counterpart_included": false,
+    "a_mu_transverse_W_Hgamma": 3.2364905504452555e-11,
+    "closed_fermion_loops_included": false,
+    "complete_uncertainty": false,
+    "derivatives": {
+      "GF": 1.3874113489292791e-06,
+      "alpha": 4.435157165010426e-09,
+      "higgs_mass": -2.2077945517067173e-13,
+      "muon_mass": 3.063163720705324e-10,
+      "w_mass": 3.437238538032849e-13
+    },
+    "equations": "21,28",
+    "finite_bosonic_remainder": null,
+    "fixed_Y_mu": 0.0006070420455456903,
+    "full_EW_two_loop_evaluated": false,
+    "full_bosonic_two_loop": null,
+    "gauge_dependent_vertex_and_non_Barr_Zee_completion_included": false,
+    "kernel": {
+      "derivative_quadrature_error_estimate": 4.852562796031634e-12,
+      "log_z_derivative": 2.548648842592442,
+      "numerical_error_is_enclosure": false,
+      "numerical_method": "symmetrized F3; analytic removable singularity; adaptive quadrature",
+      "quadrature_error_estimate": 5.009326287108706e-12,
+      "value": 5.972603155267014
+    },
+    "measured_muon_anomaly_used": false,
+    "native_evaluated": false,
+    "no_log_of_external_muon_mass": true,
+    "normalization": "alpha(0)*m_mu*(Y_mu/sqrt(2))/(8*pi^3*v); v=(sqrt(2)*GF)^(-1/2)",
+    "numerical_error_is_enclosure": false,
+    "perturbative_order": "finite two-loop W/Hgamma projection, leading external m_mu/heavy-mass power",
+    "prefactor": 5.418894351939516e-12,
+    "quadrature_error_estimate": 2.7145009924235516e-23,
+    "quark_Yukawa_assigned": false,
+    "radial_H_muon_coupling": 0.0004292435468707106,
+    "relative_H_W_coupling_from_minimal_kinetic_matching": 1.0,
+    "relative_H_muon_coupling_diagnostic": 1.0002823131742054,
+    "relative_H_muon_coupling_is_fit": false,
+    "source": "https://arxiv.org/abs/1502.04199",
+    "source_scope": "section4.1 transverse gauge-independent vertex; section4.2 leading external-mass expansion",
+    "v_GeV": 246.21978547217338,
+    "value": 3.2364905504452555e-11,
+    "version": "v3",
+    "z_MW_squared_over_MH_squared": 0.4125703083813621
+  },
+  "selected_consumer_inputs": {
+    "alpha_0": 0.007297352562787135,
+    "fermi_constant_GeV_inverse_squared": 1.1663774240217167e-05,
+    "higgs_mass_GeV": 125.11,
+    "muon_mass_GeV": 0.10565842526040435,
+    "w_mass_GeV": 80.3602
+  },
+  "selected_input_gradient": [
+    -3.545160613123289e-13,
+    -7.3732679556579915e-19,
+    -3.914594088235361e-14,
+    -3.6828852657955735e-18,
+    -2.2077945517067173e-13,
+    -2.4548223237618698e-20,
+    3.437238538032849e-13,
+    0.0,
+    0.0
+  ],
+  "selected_input_primitive_order": [
+    "alpha_inverse_0",
+    "R_infinity_m_minus1",
+    "muon_electron_mass_ratio",
+    "lifetime_ps",
+    "higgs_GeV",
+    "tau_GeV",
+    "MW_GeV",
+    "MZ_GeV",
+    "top_pole_GeV"
+  ],
+  "source_records": [
+    {
+      "bytes": 5880,
+      "path": "src/bhsm/interface/muon_calibrated_bosonic_higgs_photon.py",
+      "sha256": "0cb6bdf537c5a84ccc5028c55c5321b42c58bbb2a1b7570b97fe9861a22e3c8e"
+    },
+    {
+      "bytes": 11037,
+      "path": "scripts/evaluate_muon_calibrated_bosonic_higgs_photon.py",
+      "sha256": "14611fa840dcddefac316a02bdbd0cd18cc127f1ac7d0d01416e2183d131d563"
+    },
+    {
+      "bytes": 16353,
+      "path": "src/bhsm/interface/muon_calibrated_matching.py",
+      "sha256": "24f46ea0be28c8fc34bff3cbfbb7eb14f1b7d9dd38953f11e24c7aa2f7917dbc"
+    },
+    {
+      "bytes": 23582,
+      "path": "src/bhsm/interface/muon_calibrated_weak_decay.py",
+      "sha256": "e926f1afba8d8ec89351406de1ae042a49854c74042daef0967c62f93182f39f"
+    },
+    {
+      "bytes": 13398,
+      "path": "scripts/evaluate_muon_calibrated_weak_decay.py",
+      "sha256": "856a3c4c8909c469781fd8998074616bdd173e1d4bb0e3969b03481602389e8a"
+    },
+    {
+      "bytes": 14731,
+      "path": "src/bhsm/interface/muon_calibrated_higher_qed.py",
+      "sha256": "da58048f891504419159d558b44d4a0c6cb4cbf703aca7884dd515d88f99ae3a"
+    }
+  ]
+}

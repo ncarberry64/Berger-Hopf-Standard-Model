@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "C:\Users\carbe\Downloads\BHSM_muon_parent_maxwell_worktree_20261001\scripts\evaluate_muon_reached_trace_action.py", line 121, in <module>
+    a=p.parse_args();print(json.dumps(materialize(a.output,time_nodes=a.time_nodes,time_steps=a.time_steps),sort_keys=True))
+                                      ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\carbe\Downloads\BHSM_muon_parent_maxwell_worktree_20261001\scripts\evaluate_muon_reached_trace_action.py", line 93, in materialize
+    if len(data)>10*1024**2:raise ValueError('preserve all arrays; split complete action archive')
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: preserve all arrays; split complete action archive

@@ -1,0 +1,50 @@
+{
+  "actual_same_background_causal_first_response_substituted": false,
+  "explicit_source_part_only": true,
+  "focused_test_command": "C:\\Python314\\python.exe -m pytest --noconftest -q tests/test_muon_current_source_motion_cubic.py",
+  "focused_test_exit_code": 0,
+  "focused_test_stdout": "9 passed in 2.78s",
+  "full_cubic_mean_forcing_or_native_Pauli_evaluated": false,
+  "initial_test_failure_scope": "First test invocation had5 fixture-call TypeErrors because retained_state lacked its repository argument; corrected in tests only. No equation-level production failure. Final9tests passed.",
+  "old_response_substituted": false,
+  "pair_records": [
+    {
+      "bytes": 22599,
+      "independent_replay_byte_identical": true,
+      "name": "source_motion_cubic.json",
+      "sha256": "89825ec6a9267057d9c304cbb56a7b01cdc0e3c4eede5ef77e59d68792166824"
+    },
+    {
+      "bytes": 63445,
+      "independent_replay_byte_identical": true,
+      "name": "source_motion_cubic.npz",
+      "sha256": "df38b979ab95e74f892f7614472b91edae550e4459f6bac9f37a8815a00edbb5"
+    }
+  ],
+  "producer_commands": [
+    "C:\\Python314\\python.exe scripts/evaluate_muon_current_source_motion_cubic.py --output artifacts/muon_current_source_motion_cubic_20261010/run_1",
+    "C:\\Python314\\python.exe scripts/evaluate_muon_current_source_motion_cubic.py --output artifacts/muon_current_source_motion_cubic_20261010/run_2"
+  ],
+  "producer_exit_codes": [
+    0,
+    0
+  ],
+  "review_scope": "Independent validation found no material chain-rule/sign or scalar-normalization defect. Formula and full moving-paired-action derivatives tested.",
+  "source_records": [
+    {
+      "bytes": 12348,
+      "path": "src/bhsm/interface/muon_current_source_motion_cubic.py",
+      "sha256": "32427cda80ec7e8089e8a88f0f594f7013b825d8b00ac458f7e11a034b5339b4"
+    },
+    {
+      "bytes": 7183,
+      "path": "scripts/evaluate_muon_current_source_motion_cubic.py",
+      "sha256": "32f59e8f788d0b75268b2327d9a1bc0759d9bc83953dc22d767908ef2c044ff3"
+    },
+    {
+      "bytes": 8951,
+      "path": "tests/test_muon_current_source_motion_cubic.py",
+      "sha256": "1b651fbc35f487aebcb912d78168460bc7cd1c044368f37351874fbf56183d33"
+    }
+  ]
+}

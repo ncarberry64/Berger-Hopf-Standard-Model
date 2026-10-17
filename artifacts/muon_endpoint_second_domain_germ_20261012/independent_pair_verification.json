@@ -1,0 +1,124 @@
+{
+  "all_consumed_pins_current": true,
+  "ancestor_regeneration_or_extra_precision_campaign": false,
+  "branch_original_DAE_rows": {
+    "half_step_minus": {
+      "exact_reference_only_gradient_clock_norm": 817.7964096201557,
+      "frame_reactions_abs_max": 8.507811411262028e-23,
+      "original_canonical_rows_max": 2.3355172278883845e-06,
+      "phase_rate_norm": 32204295.78146628,
+      "unframed_canonical_rows_max": 2.3355172278883845e-06
+    },
+    "half_step_plus": {
+      "exact_reference_only_gradient_clock_norm": 817.7964100085414,
+      "frame_reactions_abs_max": 1.3423533034047942e-22,
+      "original_canonical_rows_max": 2.066027243217512e-06,
+      "phase_rate_norm": 32204306.427734498,
+      "unframed_canonical_rows_max": 2.066027243217512e-06
+    },
+    "primary_minus": {
+      "exact_reference_only_gradient_clock_norm": 817.7964094261021,
+      "frame_reactions_abs_max": 3.634244467563566e-22,
+      "original_canonical_rows_max": 2.589093230508832e-06,
+      "phase_rate_norm": 32204284.65603817,
+      "unframed_canonical_rows_max": 2.589093230508832e-06
+    },
+    "primary_plus": {
+      "exact_reference_only_gradient_clock_norm": 817.7964102025983,
+      "frame_reactions_abs_max": 1.7219816484822675e-22,
+      "original_canonical_rows_max": 1.6787366485299738e-06,
+      "phase_rate_norm": 32204290.289965894,
+      "unframed_canonical_rows_max": 1.6787366485299738e-06
+    }
+  },
+  "classification": "INDEPENDENT_REPLAY_NEGATIVE_ENDPOINT_TIME_SOURCE_QUALITY_APPLICATION",
+  "endpoint_family_contacts_not_persistent_bulk_glue": true,
+  "environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "PYTHONPATH": "src;scripts"
+  },
+  "exact_commands": [
+    "C:/Python314/python.exe scripts/evaluate_muon_endpoint_second_domain_germ.py --output artifacts/muon_endpoint_second_domain_germ_20261012/run_1",
+    "C:/Python314/python.exe scripts/evaluate_muon_endpoint_second_domain_germ.py --output artifacts/muon_endpoint_second_domain_germ_20261012/run_2"
+  ],
+  "focused_control": {
+    "command": "C:/Python314/python.exe -m pytest --noconftest -q tests/test_muon_endpoint_second_domain_germ.py",
+    "observed_tool_exit_code": 0,
+    "observed_tool_result": "1 passed in 2.42s",
+    "source_sha256": "041fe824d3173162c21a7681d8c83c1aff3abea2a6ccdaeee1879944578b2ebe"
+  },
+  "generic_reaction_helper_not_physical_provenance": true,
+  "interpretation": "Proper-normal/phase-jerk second jets are unstable at the two executed steps. These are preserved negative source-quality diagnostics, not a physical force/error bound or proof of nonexistence.",
+  "pairs": {
+    "endpoint_second_domain_contacts.npz": {
+      "bytes": 2588068,
+      "identical": true,
+      "sha256": "74c10d04bea86d4c7c7c6f4f44585337a85081cb92ba77f5d6d51cd27c35760a"
+    },
+    "half_step_minus_literal_action_rate.npz": {
+      "bytes": 1534416,
+      "identical": true,
+      "sha256": "9823e433e03794878365953d4e0c7100b6f20def4998b6c677397dc940ae5abc"
+    },
+    "half_step_plus_literal_action_rate.npz": {
+      "bytes": 1534560,
+      "identical": true,
+      "sha256": "e5880027fc391500c2e0b2e4fef43479cf75921803b92965ec5ec52a730e24ca"
+    },
+    "primary_minus_literal_action_rate.npz": {
+      "bytes": 1534499,
+      "identical": true,
+      "sha256": "566544ca4a93da937afafaf848620e696ac57b1c4f82ae1b5b1069d60b9f91b4"
+    },
+    "primary_plus_literal_action_rate.npz": {
+      "bytes": 1534397,
+      "identical": true,
+      "sha256": "06cfda9a9d5eda0c2147a8353d59ff1aec3a9a0b70eed87c68700509d8b397f3"
+    },
+    "result.json": {
+      "bytes": 61060,
+      "identical": true,
+      "sha256": "6ec54c5d6c8d7b4be2e647aff01309b7a15b08f41452abef9d0eded3e1bf766b"
+    }
+  },
+  "physical_normal_second_jet_or_jerk_certified": false,
+  "raw_branch_provenance_preserved_locally": true,
+  "step_comparisons": {
+    "explicit_reference_clock_gradient_total_time_first": {
+      "difference_norm": 135.44454305912026,
+      "half_step_norm": 1608710.7507112387,
+      "primary_max": 733394.6611525866,
+      "primary_norm": 1608667.7377722189,
+      "relative_difference": 8.419446628254202e-05
+    },
+    "induced_lapse_time_second": {
+      "difference_norm": 2969389798.0774546,
+      "half_step_norm": 1655725619.5903237,
+      "primary_max": 1433381602.921043,
+      "primary_norm": 1451407669.1305084,
+      "relative_difference": 1.7934069286263572
+    },
+    "moving_geometric_trace_time_second": {
+      "difference_norm": 21.50157141880812,
+      "half_step_norm": 135639.47160512206,
+      "primary_max": 86522.78726162712,
+      "primary_norm": 135630.45287914446,
+      "relative_difference": 0.0001585200175462507
+    },
+    "original_master_coordinate_rate_time_first": {
+      "difference_norm": 56984011985643.37,
+      "half_step_norm": 41265042356583.234,
+      "primary_max": 7937732931106.348,
+      "primary_norm": 24832610714113.09,
+      "relative_difference": 1.380927020339103
+    },
+    "proper_normal_rows_time_second": {
+      "difference_norm": 1746588680.862022,
+      "half_step_norm": 1361798679.3309562,
+      "primary_max": 392402156.15683997,
+      "primary_norm": 400629730.8388322,
+      "relative_difference": 1.2825601224111267
+    }
+  }
+}

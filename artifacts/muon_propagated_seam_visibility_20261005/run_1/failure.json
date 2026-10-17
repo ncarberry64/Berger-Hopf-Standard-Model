@@ -1,0 +1,9 @@
+{
+  "accepted_run": "run_4",
+  "cause": "symmetric magnitude ball near zero squared and square-rooted without nonnegative endpoint bounds",
+  "error": "ValueError: Out of range float values are not JSON compliant: nan in binary_visibility_higgs_error_upper",
+  "evaluated_field_and_contraction_arrays_unchanged": true,
+  "exit_code": 1,
+  "repair": "norm_entries uses explicit abs_lower/abs_upper before summation and square root",
+  "stage": "JSON serialization of result"
+}

@@ -1,0 +1,465 @@
+{
+  "alpha_consumer": {
+    "formula": "alpha=1/alpha_inverse_0",
+    "standard_uncertainty_first_order": 5.857648986817756e-13,
+    "unit": "1",
+    "value": 0.0072973525627871355,
+    "value_decimal": "0.007297352562787135751576124425344017584599"
+  },
+  "authorization": {
+    "scope": "User authorizes independently measured quantities for a calibrated BHSM prediction, superseding older no-measured-input policy. Muon anomaly, g_mu and discrepancy-inferred native correction remain excluded.",
+    "sha256": "0cc073554c9bd9e9834c8cfb6aca753eba264fe99816d2a9dcf930c451685a3d",
+    "source_path": "C:\\Users\\carbe\\.codex\\attachments\\02b550b4-76ca-42b8-8270-517413dc7216\\Pasted text.txt"
+  },
+  "claims": {
+    "Gate7_closed": false,
+    "action_selected": false,
+    "calibrated_inputs": true,
+    "complete_error_claim": false,
+    "discrepancy_inferred_native_correction_used": false,
+    "equivalent_measured_muon_g_used": false,
+    "fixed_family_operator_replaced": false,
+    "independent_yukawas_introduced": false,
+    "interface_coefficient_identified_with_alpha": false,
+    "lambda_H_identified_with_64_pi_power5": false,
+    "measured_muon_anomaly_used": false,
+    "native_cutoff_identified_from_mass": false,
+    "tree_matching_is_exact": false
+  },
+  "classification": "CALIBRATED_INPUT_CONFIGURATION_WITH_PROVISIONAL_REFERENCE_QED_MATCHING",
+  "configuration_id": "BHSM_CALIBRATED_PAULI_PRIMARY_INPUTS_20261009_RB2020_OPTICAL_MU",
+  "created_date": "2026-10-09",
+  "fermi_matching_scope": {
+    "decay_factor_provisional": 0.99561554934729,
+    "direct_vs_reference_rematch_relative_difference": 4.378019926024085e-08,
+    "phase_space_evaluated": 0.9998129493472899,
+    "radiative_coefficients_recomputed_at_selected_inputs": false,
+    "radiative_terms_source": "MuLan2013 pp27-28: rounded one-loop and two-loop corrections, including finite-electron-mass contribution at two loops.",
+    "reference_GF_mass_and_SI_rematched_comparison": 1.1663772419793573e-05,
+    "reference_mass_not_a_calibration_target": true,
+    "reference_rematch_formula": "GF_ref*(m_mu_ref/m_mu)^2.5*sqrt(hbar_new/hbar_ref), with residual R_ref/R_new set1 only for this comparison.",
+    "remaining_matching": "Recompute reference corrections with selected alpha and masses; account for any BHSM contribution to the lifetime matching. This input config makes no complete GF theory/native uncertainty claim.",
+    "reported_reference_GF": {
+      "reference_alpha_inverse_0": 137.035999074,
+      "reference_alpha_inverse_at_muon_scale": 135.902660087,
+      "reference_electron_muon_ratio": 0.00483633166,
+      "reference_hbar_GeV_s": 6.58211928e-25,
+      "reference_muon_mass_GeV": 0.1056583715,
+      "reference_muon_mass_standard_uncertainty_GeV": 3.5e-09,
+      "role": "REFERENCE_ONLY_NOT_INDEPENDENT_SELECTED_INPUT",
+      "source": "MuLan2013",
+      "standard_uncertainty": 6e-12,
+      "unit": "GeV^-2",
+      "value": 1.1663787e-05
+    },
+    "rounding_bound_scope": "Sum of0.05ppm half-last-digit intervals for the two rounded radiative terms; excludes theory truncation and change of extraction inputs.",
+    "rounding_only_R_decay_absolute_bound": 1e-07
+  },
+  "matching_equations": {
+    "candidate_tree_scalar_matching": [
+      "v^2=1/(sqrt(2)*G_F)",
+      "nu_squared=v^2/2",
+      "lambda_H=G_F*m_h^2/sqrt(2)"
+    ],
+    "electron_mass_GeV": "m_e=2*h*c*R_infinity*(alpha_inverse_0)^2/(e*10^9)",
+    "fermi_constant_GeV_minus2": "G_F=sqrt[192*pi^3*hbar_GeV_s/(tau_mu_s*m_mu^5*R_decay)]",
+    "fixed_family_constraint": "M_l_tree=v*Y_l_fixed/sqrt(2); three measured masses do not authorize three independent Yukawas.",
+    "muon_mass_GeV": "m_mu=(muon_electron_mass_ratio)*m_e",
+    "phase_space": "x=(m_e/m_mu)^2; F(x)=1-8x+8x^3-x^4-12x^2*log(x)",
+    "provisional_decay_factor": "R_decay=F(x)-4233.7e-6+36.3e-6",
+    "required_corrections": "Pole locations, residues, charge normalization, BHSM and radiative matching corrections remain to be calculated. The candidate tree scalar equations are not exact precision matching."
+  },
+  "primary_measurements": {
+    "R_infinity": {
+      "extraction_assumptions": "Bound-state QED and hydrogen line-shift model; uses charge universality. It is not a global muonium/muon-anomaly-adjusted mass. The published Rb alpha has its own Rydberg input; this configuration does not claim an exact re-adjustment of the recoil primitives.",
+      "method": "Hydrogen2S-4P plus1S-2S spectroscopy, joint R_infinity/proton-radius extraction.",
+      "role": "SELECTED_PRIMARY_INPUT_FOR_ELECTRON_MASS_MATCHING",
+      "source": "H2017",
+      "standard_uncertainty": 9.6e-05,
+      "unit": "m^-1",
+      "value": 10973731.568076,
+      "value_decimal": "10973731.568076"
+    },
+    "alpha_inverse_0": {
+      "extraction_assumptions": "Uses atomic mass ratios and Rydberg constant. Bound-electron QED enters A_r(e); this is not free-electron-anomaly or muon-anomaly extraction. Shared metrology dependencies require covariance when precision warrants.",
+      "method": "Rubidium atom recoil interferometry; alpha^2=(2R_infinity/c)*(A_r(Rb)/A_r(e))*(h/m_Rb).",
+      "role": "SELECTED_CALIBRATION_INPUT",
+      "source": "Rb2020",
+      "standard_uncertainty": 1.1e-08,
+      "unit": "1",
+      "value": 137.035999206,
+      "value_decimal": "137.035999206"
+    },
+    "higgs_mass": {
+      "extraction_assumptions": "Invariant-mass peak fits with detector calibration, signal/background and interference modeling. Published channel/run correlations are already included; retain reported rounded total0.11GeV. Matching a measured resonance mass to a BHSM pole/curvature requires its radiative corrections.",
+      "role": "SELECTED_CALIBRATION_INPUT",
+      "source": "ATLAS2024",
+      "standard_uncertainty": 0.11,
+      "statistical_uncertainty": 0.09,
+      "systematic_uncertainty": 0.06,
+      "unit": "GeV",
+      "value": 125.11,
+      "value_decimal": "125.11"
+    },
+    "muon_electron_mass_ratio": {
+      "extraction_assumptions": "Assumes equal magnitude muon/electron charge and bound-state QED. Centroid extraction applies976.4MHz hyperfine and0.8MHz quadratic-Doppler corrections. The reported magnetic-moment-derived ratio is comparison only and is not selected.",
+      "method": "Optical muonium1S-2S gross-structure measurement and QED extraction.",
+      "raw_transition_MHz": 2455528941.0,
+      "raw_transition_standard_uncertainty_MHz": 9.8,
+      "role": "SELECTED_CALIBRATION_INPUT",
+      "source": "Mu1S2S2000",
+      "standard_uncertainty": 0.00017,
+      "unit": "1",
+      "value": 206.76838,
+      "value_decimal": "206.76838"
+    },
+    "positive_muon_lifetime": {
+      "extraction_assumptions": "Published lifetime combines two stopping-target runs with their correlations. Decay-rate matching assumes V-A Fermi theory with reference radiative corrections; no muon anomaly value is used as a target.",
+      "role": "SELECTED_PRIMITIVE_FOR_GF_MATCHING",
+      "source": "MuLan2013",
+      "standard_uncertainty": 2.2,
+      "statistical_uncertainty": 2.1,
+      "systematic_uncertainty": 0.7,
+      "unit": "ps",
+      "value": 2196980.3,
+      "value_decimal": "2196980.3"
+    },
+    "tau_mass": {
+      "extraction_assumptions": "Three-pion pseudomass endpoint with fitted estimator-bias correction, beam-energy and momentum calibration, ISR/FSR and decay simulation. Experimental mass interpretation is not a computed BHSM residue or external mode.",
+      "role": "SELECTED_CALIBRATION_INPUT",
+      "source": "BelleII2023",
+      "standard_uncertainty": 0.00013601470508735444,
+      "statistical_uncertainty": 8e-05,
+      "systematic_uncertainty": 0.00011,
+      "unit": "GeV",
+      "value": 1.77709,
+      "value_decimal": "1.77709"
+    }
+  },
+  "reference_and_rejected_inputs": {
+    "CODATA2022_electron_mass_reference": {
+      "note": "Global adjusted electron mass shares alpha/Rydberg/bound-electron-QED metrology; the global alpha adjustment also uses the free-electron anomaly. It must not be treated as independent of selected recoil alpha. This configuration instead derives the selected electron mass from its stated primary spectroscopy/recoil inputs.",
+      "role": "REFERENCE_ONLY_NOT_SELECTED",
+      "source": "CODATA2022dependency",
+      "standard_uncertainty_GeV": 1.6e-13,
+      "value_GeV": 0.00051099895069
+    },
+    "CODATA2022_muon_electron_ratio": {
+      "reason": "Sec.IX Eq.(185) contains (1+a_mu)*m_e/m_mu in the muonium magnetic term; a_mu and mass ratio are adjusted jointly. The optical gross-structure ratio avoids selecting this magnetic-moment calibration.",
+      "role": "EXCLUDED_FROM_SELECTED_CALIBRATION",
+      "source": "CODATA2022dependency",
+      "standard_uncertainty": 4.6e-06,
+      "value": 206.7682827
+    },
+    "cesium_alpha_alternative": {
+      "discrepancy_from_Rb_standard_deviations_assuming_independent": 5.487955178635693,
+      "role": "ALTERNATIVE_SENSITIVITY_CONFIGURATION_NOT_AVERAGED_WITH_RB",
+      "source": "Cs2018",
+      "standard_uncertainty_inverse": 2.7e-08,
+      "value_inverse": 137.035999046
+    },
+    "electron_atomic_mass_reference": {
+      "note": "Bound-carbon-electron spin/cyclotron ratio with bound-state QED and binding-energy correction. Relevant to recoil alpha metrology; no muon anomaly target.",
+      "role": "EXTRACTION_DEPENDENCY_REFERENCE_NOT_AN_ADDITIONAL_INDEPENDENT_MASS_INPUT",
+      "source": "Celectron2014",
+      "statistical_uncertainty_u": 1.4e-14,
+      "systematic_uncertainty_u": 9e-15,
+      "theory_uncertainty_u": 2e-15,
+      "value_u": 0.000548579909067
+    }
+  },
+  "repository_head_at_selection": "914505d4f4e649be8a62bf066f01b09e01586b04",
+  "schema_version": 1,
+  "selected_consumer_values": {
+    "G_F_GeV_minus2": {
+      "classification": "PROVISIONAL_REFERENCE_QED_CALIBRATED_MATCHING",
+      "input_only_standard_uncertainty_assuming_independent_primitives": 2.4676961129885133e-11,
+      "input_only_standard_uncertainty_upper_over_primitive_correlations": 2.982082519223485e-11,
+      "unit": "GeV^-2",
+      "value": 1.1663772930435853e-05,
+      "value_decimal": "0.00001166377293043585389959776758555509303531"
+    },
+    "m_e_GeV": {
+      "classification": "DERIVED_CALIBRATED_INPUT",
+      "input_only_standard_uncertainty_assuming_independent_primitives": 8.215837558693551e-14,
+      "input_only_standard_uncertainty_upper_over_primitive_correlations": 8.65069715530793e-14,
+      "unit": "GeV",
+      "value": 0.000510998950905377,
+      "value_decimal": "0.0005109989509053770700117259080901105359649"
+    },
+    "m_h_GeV": {
+      "classification": "MEASURED_CALIBRATION_INPUT",
+      "input_only_standard_uncertainty_assuming_independent_primitives": 0.11,
+      "input_only_standard_uncertainty_upper_over_primitive_correlations": 0.11,
+      "unit": "GeV",
+      "value": 125.11,
+      "value_decimal": "125.1100000000000000000000000000000000000"
+    },
+    "m_mu_GeV": {
+      "classification": "DERIVED_CALIBRATED_INPUT",
+      "input_only_standard_uncertainty_assuming_independent_primitives": 8.686982331492701e-08,
+      "input_only_standard_uncertainty_upper_over_primitive_correlations": 8.688770856028084e-08,
+      "unit": "GeV",
+      "value": 0.10565842526040435,
+      "value_decimal": "0.1056584252604043500554711470198210495424"
+    },
+    "m_tau_GeV": {
+      "classification": "MEASURED_CALIBRATION_INPUT",
+      "input_only_standard_uncertainty_assuming_independent_primitives": 0.00013601470508735444,
+      "input_only_standard_uncertainty_upper_over_primitive_correlations": 0.00013601470508735444,
+      "unit": "GeV",
+      "value": 1.77709,
+      "value_decimal": "1.777090000000000000000000000000000000000"
+    }
+  },
+  "sources": {
+    "ATLAS2024": {
+      "doi": "10.1103/PhysRevLett.131.251802",
+      "edition": "Phys.Rev.Lett.131,251802 (2023); arXiv2308.04775v2 (2024)",
+      "location": "Abstract and final Run1+Run2 combined result",
+      "source_kind": "PRIMARY",
+      "title": "ATLAS, Combined Higgs mass measurement using gamma gamma and four-lepton channels",
+      "url": "https://arxiv.org/abs/2308.04775"
+    },
+    "BelleII2023": {
+      "doi": "10.1103/PhysRevD.108.032006",
+      "edition": "Phys.Rev.D108,032006 (2023)",
+      "location": "Eq.(7) and systematic Table II",
+      "source_kind": "PRIMARY",
+      "title": "Belle II, Measurement of the tau-lepton mass",
+      "url": "https://arxiv.org/abs/2305.19116"
+    },
+    "CODATA2022dependency": {
+      "doi": "10.1103/RevModPhys.97.025002",
+      "edition": "Rev.Mod.Phys.97,025002 (2025), 2022 adjustment",
+      "location": "Sec.IX Eq.(185),(187) and Sec.VII Eq.(101): dependency audit only",
+      "source_kind": "PRIMARY",
+      "title": "Mohr et al., CODATA recommended values of fundamental physical constants 2022",
+      "url": "https://physics.nist.gov/cuu/pdf/RevModPhys.97.025002.pdf"
+    },
+    "Celectron2014": {
+      "doi": "10.1038/nature13026",
+      "edition": "Nature506,467-470 (2014)",
+      "location": "Eq.(5); bound-electron QED extraction",
+      "source_kind": "PRIMARY",
+      "title": "Sturm et al., High-precision measurement of the atomic mass of the electron",
+      "url": "https://arxiv.org/abs/1406.5590"
+    },
+    "Cs2018": {
+      "doi": "10.1126/science.aap7706",
+      "edition": "Science360,191-195 (2018)",
+      "location": "Abstract",
+      "source_kind": "PRIMARY",
+      "title": "Parker et al., Measurement of the fine-structure constant as a test of the Standard Model",
+      "url": "https://arxiv.org/abs/1812.04130"
+    },
+    "H2017": {
+      "doi": "10.1126/science.aah6677",
+      "edition": "Science 358,79-85 (2017)",
+      "location": "Eq.(10); author-hosted paper https://www.agpohl.physik.uni-mainz.de/files/2019/04/Science_2017_Beyer.pdf",
+      "source_kind": "PRIMARY",
+      "title": "Beyer et al., The Rydberg constant and proton size from atomic hydrogen",
+      "url": "https://doi.org/10.1126/science.aah6677"
+    },
+    "Mu1S2S2000": {
+      "doi": "10.1103/PhysRevLett.84.1136",
+      "edition": "Phys.Rev.Lett.84,1136 (2000); arXiv v1 (1999)",
+      "location": "Abstract; pp5-6 and Table I",
+      "source_kind": "PRIMARY",
+      "title": "Meyer et al., Measurement of the 1s-2s energy interval in muonium",
+      "url": "https://arxiv.org/abs/hep-ex/9907013"
+    },
+    "MuLan2013": {
+      "doi": "10.1103/PhysRevD.87.052003",
+      "edition": "Phys.Rev.D87,052003 (2013)",
+      "location": "Eq.(23)-(24), pp27-28; combined lifetime",
+      "source_kind": "PRIMARY",
+      "title": "MuLan Collaboration, Detailed report of the positive muon lifetime and Fermi constant",
+      "url": "https://arxiv.org/abs/1211.0960"
+    },
+    "Rb2020": {
+      "doi": "10.1038/s41586-020-2964-7",
+      "edition": "Nature 588,61-65 (2020)",
+      "location": "Abstract and recoil extraction",
+      "source_kind": "PRIMARY",
+      "title": "Morel et al., Determination of the fine-structure constant with an accuracy of 81 parts per trillion",
+      "url": "https://www.nature.com/articles/s41586-020-2964-7"
+    },
+    "SI2019": {
+      "doi": null,
+      "edition": "SI effective20May2019",
+      "location": "Exact h,c,e defining values",
+      "source_kind": "PRIMARY",
+      "title": "BIPM, SI defining constants",
+      "url": "https://www.bipm.org/en/measurement-units/"
+    }
+  },
+  "uncertainty_and_correlations": {
+    "complete_observable_uncertainty": false,
+    "consumer_order": [
+      "G_F_GeV_minus2",
+      "m_h_GeV",
+      "m_tau_GeV",
+      "m_mu_GeV",
+      "m_e_GeV"
+    ],
+    "consumer_vs_primitive_jacobian": [
+      [
+        -4.255733164284165e-07,
+        -2.6572029892655824e-12,
+        -1.4103521489584984e-07,
+        -2.6545010281694045e-12,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ],
+      [
+        0.0015420535607081295,
+        9.62830415569653e-09,
+        0.000510998950905377,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        7.457879007941782e-06,
+        4.656565068458016e-11,
+        0.0,
+        0.0,
+        0.0,
+        0.0
+      ]
+    ],
+    "correlation_upper_scope": "Input-only linear standard-uncertainty upper bound over |rho_ij|<=1; not a probability interval or a rigorous observable enclosure.",
+    "cross_source_covariance_status": "Not established. Rb recoil, spectroscopy and electron-mass metrology share constants and theory; tau/Higgs calibration may share reference masses. Missing correlations are not asserted zero.",
+    "illustrative_independent_primitive_consumer_correlation": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        -0.9715939845456631,
+        -0.00018998496067976033
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        -0.9715939845456631,
+        0.0,
+        0.0,
+        1.0,
+        0.00019555414728952454
+      ],
+      [
+        -0.00018998496067976033,
+        0.0,
+        0.0,
+        0.00019555414728952454,
+        1.0
+      ]
+    ],
+    "illustrative_independent_primitive_consumer_covariance": [
+      [
+        6.089524106058618e-22,
+        0.0,
+        0.0,
+        -2.082789753679931e-18,
+        -3.851791267579138e-28
+      ],
+      [
+        0.0,
+        0.0121,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.8500000000000004e-08,
+        0.0,
+        0.0
+      ],
+      [
+        -2.082789753679931e-18,
+        0.0,
+        0.0,
+        7.546366202766637e-15,
+        1.3956862918763308e-24
+      ],
+      [
+        -3.851791267579138e-28,
+        0.0,
+        0.0,
+        1.3956862918763308e-24,
+        6.749998679083961e-27
+      ]
+    ],
+    "illustrative_matrix_scope": "First-order propagation assuming independent selected primitives and fixed rounded radiative terms. It retains exact derived mass/GF dependence, but is not the measured cross-source covariance or a complete theory/native error budget.",
+    "important_dependency": "GF varies as m_mu^-5/2 at fixed lifetime and decay correction. m_mu shares m_e through the optical ratio, so GF, muon and electron masses must not be treated as three independent measured inputs.",
+    "physical_cross_source_covariance": null,
+    "primitive_order": [
+      "alpha_inverse_0",
+      "R_infinity_m_minus1",
+      "muon_electron_mass_ratio",
+      "lifetime_ps",
+      "higgs_GeV",
+      "tau_GeV"
+    ],
+    "primitive_standard_uncertainties": [
+      1.1e-08,
+      9.6e-05,
+      0.00017,
+      2.2,
+      0.11,
+      0.00013601470508735444
+    ],
+    "uncertainties_are_one_standard_deviation": true,
+    "uncovered_errors": [
+      "Reference-QED re-extraction at selected inputs",
+      "Potential BHSM effects in atomic/lifetime matching",
+      "Native Pauli contribution and overlap subtraction",
+      "Numerical, angular/temporal truncation and soft-transfer errors"
+    ]
+  },
+  "unit_convention": {
+    "alpha": "dimensionless Thomson-limit coupling alpha(0)",
+    "energy": "GeV",
+    "exact_SI": {
+      "c_m_s": "299792458",
+      "e_C": "1.602176634e-19",
+      "h_J_s": "6.62607015e-34",
+      "one_GeV_J": "1.602176634e-10"
+    },
+    "exact_constants_source": "SI2019",
+    "fermi_constant": "GeV^-2",
+    "hbar_GeV_s": "6.582119569509065698073512182441931335286e-25",
+    "mass": "GeV/c^2; c=1 when passed to field theory"
+  }
+}

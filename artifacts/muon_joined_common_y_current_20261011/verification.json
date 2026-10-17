@@ -1,0 +1,263 @@
+{
+  "CONTROL_ONLY": "Conditional represented homogeneous canonical birth frameT=I and finite numerical outer faces. Computational angular and Y0 coefficient bases do not select a physical covariance or massless carrier.",
+  "DERIVED": "Block first-order coefficient solve and its analytic transpose adjoint; one inherited common birth trace; both adjacent magnetic source contacts and both source/target Y placements, retaining odd powers.",
+  "EVALUATED": "Same joined canonical current at16/32/64 cells per arm; actual n1<-n0 and n1-input to n0+n2 output with literal reverse; full C6 before charge projection; coefficient primal/adjoint and refinement checks.",
+  "OWNER_DEFINITION_GAP": "none established",
+  "UNEVALUATED": "Full worldvolume trace graph, completed Gaussian/native relative heat loop, physical overlap subtraction and normalized Pauli remainder, entry/continuum/soft-limit and total observable uncertainty.",
+  "actual_records": [
+    {
+      "all_coefficient_primal_adjoint_difference_norm": 2.0440278395443665e-31,
+      "kind": "constant",
+      "paired_current_norm": 3.4151666846516286e-26,
+      "placement": "forward",
+      "refinement_difference": null,
+      "steps_per_arm": 16
+    },
+    {
+      "all_coefficient_primal_adjoint_difference_norm": 2.0440278395443665e-31,
+      "kind": "constant",
+      "paired_current_norm": 3.4151666848130364e-26,
+      "placement": "reverse",
+      "refinement_difference": null,
+      "steps_per_arm": 16
+    },
+    {
+      "all_coefficient_primal_adjoint_difference_norm": 5.5480476215498355e-31,
+      "kind": "momentum",
+      "paired_current_norm": 6.830333541028028e-26,
+      "placement": "forward",
+      "refinement_difference": null,
+      "steps_per_arm": 16
+    },
+    {
+      "all_coefficient_primal_adjoint_difference_norm": 5.5480476215498355e-31,
+      "kind": "momentum",
+      "paired_current_norm": 6.830333541350642e-26,
+      "placement": "reverse",
+      "refinement_difference": null,
+      "steps_per_arm": 16
+    },
+    {
+      "all_coefficient_primal_adjoint_difference_norm": 3.076553580112032e-31,
+      "kind": "constant",
+      "paired_current_norm": 3.386336338946528e-26,
+      "placement": "forward",
+      "refinement_difference": 2.883034618680041e-28,
+      "steps_per_arm": 32
+    },
+    {
+      "all_coefficient_primal_adjoint_difference_norm": 3.076553580112032e-31,
+      "kind": "constant",
+      "paired_current_norm": 3.386336339107293e-26,
+      "placement": "reverse",
+      "refinement_difference": 2.8830346187443164e-28,
+      "steps_per_arm": 32
+    },
+    {
+      "all_coefficient_primal_adjoint_difference_norm": 6.682212042799849e-31,
+      "kind": "momentum",
+      "paired_current_norm": 6.772672849816682e-26,
+      "placement": "forward",
+      "refinement_difference": 5.766069264325663e-28,
+      "steps_per_arm": 32
+    },
+    {
+      "all_coefficient_primal_adjoint_difference_norm": 6.682212042799849e-31,
+      "kind": "momentum",
+      "paired_current_norm": 6.772672850138138e-26,
+      "placement": "reverse",
+      "refinement_difference": 5.766069264441653e-28,
+      "steps_per_arm": 32
+    },
+    {
+      "all_coefficient_primal_adjoint_difference_norm": 4.169015136006049e-31,
+      "kind": "constant",
+      "paired_current_norm": 3.3784265611076983e-26,
+      "placement": "forward",
+      "refinement_difference": 7.909777992035756e-29,
+      "steps_per_arm": 64
+    },
+    {
+      "all_coefficient_primal_adjoint_difference_norm": 4.169015136006049e-31,
+      "kind": "constant",
+      "paired_current_norm": 3.3784265612681074e-26,
+      "placement": "reverse",
+      "refinement_difference": 7.909777992391898e-29,
+      "steps_per_arm": 64
+    },
+    {
+      "all_coefficient_primal_adjoint_difference_norm": 1.012530226033142e-30,
+      "kind": "momentum",
+      "paired_current_norm": 6.756853294226938e-26,
+      "placement": "forward",
+      "refinement_difference": 1.5819556045105524e-28,
+      "steps_per_arm": 64
+    },
+    {
+      "all_coefficient_primal_adjoint_difference_norm": 1.012530226033142e-30,
+      "kind": "momentum",
+      "paired_current_norm": 6.756853294548248e-26,
+      "placement": "reverse",
+      "refinement_difference": 1.5819556045256924e-28,
+      "steps_per_arm": 64
+    }
+  ],
+  "additional_frozen_import_dependencies": [
+    {
+      "bytes": 9143,
+      "path": "src/bhsm/interface/muon_common_y_current_response.py",
+      "sha256": "94ed99bbcc8bbeb89ac73e2b69395b8bac08c1d626ed9ec9fc23ecfd10580c84"
+    },
+    {
+      "bytes": 5527,
+      "path": "artifacts/muon_common_y_current_response_20261011/publication_manifest.json",
+      "sha256": "b93b2c3c5534490203e4a4b75ec1233f9e4b75b0432bc60bad763df96218c06e"
+    }
+  ],
+  "arithmetic_certificates_not_borrowed_from_other_domain": true,
+  "classification": "VERIFIED_JOINED_CANONICAL_COMMON_Y_CURRENT_AND_BOTH_ANGULAR_INSERTIONS",
+  "commands": [
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "scripts/evaluate_muon_joined_common_y_current.py",
+        "--output",
+        "artifacts/muon_joined_common_y_current_20261011/run_1"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "OPENBLAS_NUM_THREADS": "1",
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "logs": {
+        "stderr": {
+          "bytes": 0,
+          "path": "artifacts/muon_joined_common_y_current_run_1.stderr.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "text": ""
+        },
+        "stdout": {
+          "bytes": 17779,
+          "path": "artifacts/muon_joined_common_y_current_run_1.stdout.txt",
+          "sha256": "6a25104016b40c63dc503d40200c3b5c8c05dc5894a5a29a0825b39f8c26ffbe",
+          "text": "{\"records\": [{\"all_coefficient_primal_adjoint_difference_norm\": 2.0440278395443665e-31, \"kind\": \"constant\", \"paired_current_norm\": 3.4151666846516286e-26, \"placement\": \"forward\", \"refinement_difference\": null, \"steps_per_arm\": 16}, {\"all_coefficient_primal_adjoint_difference_norm\": 2.0440278395443665e-31, \"kind\": \"constant\", \"paired_current_norm\": 3.4151666848130364e-26, \"placement\": \"reverse\", \"refinement_difference\": null, \"steps_per_arm\": 16}, {\"all_coefficient_primal_adjoint_difference_norm\": 5.5480476215498355e-31, \"kind\": \"momentum\", \"paired_current_norm\": 6.830333541028028e-26, \"placement\": \"forward\", \"refinement_difference\": null, \"steps_per_arm\": 16}, {\"all_coefficient_primal_adjoint_difference_norm\": 5.5480476215498355e-31, \"kind\": \"momentum\", \"paired_current_norm\": 6.830333541350642e-26, \"placement\": \"reverse\", \"refinement_difference\": null, \"steps_per_arm\": 16}], \"stage\": \"evaluated_joined_common_Y_and_both_angular_insertions\", \"steps_per_arm\": 16}\n{\"records\": [{\"all_coefficient_primal_adjoint_difference_norm\": 3.076553580112032e-31, \"kind\": \"constant\", \"paired_current_norm\": 3.386336338946528e-26, \"placement\": \"forward\", \"refinement_difference\": 2.883034618680041e-28, \"steps_per_arm\": 32}, {\"all_coefficient_primal_adjoint_difference_norm\": 3.076553580112032e-31, \"kind\": \"constant\", \"paired_current_norm\": 3.386336339107293e-26, \"placement\": \"reverse\", \"refinement_difference\": 2.8830346187443164e-28, \"steps_per_arm\": 32}, {\"all_coefficient_primal_adjoint_difference_norm\": 6.682212042799849e-31, \"kind\": \"momentum\", \"paired_current_norm\": 6.772672849816682e-26, \"placement\": \"forward\", \"refinement_difference\": 5.766069264325663e-28, \"steps_per_arm\": 32}, {\"all_coefficient_primal_adjoint_difference_norm\": 6.682212042799849e-31, \"kind\": \"momentum\", \"paired_current_norm\": 6.772672850138138e-26, \"placement\": \"reverse\", \"refinement_difference\": 5.766069264441653e-28, \"steps_per_arm\": 32}], \"stage\": \"evaluated_joined_common_Y_and_both_angular_insertions\", \"steps_per_arm\": 32}\n{\"records\": [{\"all_coefficient_primal_adjoint_difference_norm\": 4.169015136006049e-31, \"kind\": \"constant\", \"paired_current_norm\": 3.3784265611076983e-26, \"placement\": \"forward\", \"refinement_difference\": 7.909777992035756e-29, \"steps_per_arm\": 64}, {\"all_coefficient_primal_adjoint_difference_norm\": 4.169015136006049e-31, \"kind\": \"constant\", \"paired_current_norm\": 3.3784265612681074e-26, \"placement\": \"reverse\", \"refinement_difference\": 7.909777992391898e-29, \"steps_per_arm\": 64}, {\"all_coefficient_primal_adjoint_difference_norm\": 1.012530226033142e-30, \"kind\": \"momentum\", \"paired_current_norm\": 6.756853294226938e-26, \"placement\": \"forward\", \"refinement_difference\": 1.5819556045105524e-28, \"steps_per_arm\": 64}, {\"all_coefficient_primal_adjoint_difference_norm\": 1.012530226033142e-30, \"kind\": \"momentum\", \"paired_current_norm\": 6.756853294548248e-26, \"placement\": \"reverse\", \"refinement_difference\": 1.5819556045256924e-28, \"steps_per_arm\": 64}], \"stage\": \"evaluated_joined_common_Y_and_both_angular_insertions\", \"steps_per_arm\": 64}\n{\"angular_images\": \"constant n1<-n0 and literal reverse; input-n1 to output n0+n2 and literal reverse; all six charged/neutral fibers before any state projection\", \"array_archives\": {\"joined_16.npz\": {\"bytes\": 2208406, \"sha256\": \"388102fc371a7e15e957b3411097bed2789601ee225a71e029233b1f77b00ea1\"}, \"joined_32.npz\": {\"bytes\": 4021917, \"sha256\": \"c941f28fddefca825f21b7126c4dde3ede8ac25fa555cb04925277bf6cb72f2f\"}, \"joined_64.npz\": {\"bytes\": 7473945, \"sha256\": \"b5f678c8b76d362d484015555801e5b6d84f9a3a60fafa21f9d1ba83d2b281ab\"}}, \"birth_frame\": \"retained homogeneous common canonical frameT=I on C6 and its angular tensor; full worldvolume F_B/U not selected\", \"classification\": \"EVALUATED_JOINED_CANONICAL_COMMON_Y_CURRENT_WITH_BOTH_ANGULAR_SOURCE_DIRECTIONS\", \"domain\": \"one incoming initial-zero inverse, child inherits actual birth response, outgoing free-final adjoint face retained\", \"error_scope\": \"binary64 original joined-action coefficient residuals, literal transpose-adjoint identities and16/32/64 temporal refinements; no magnetic-Y/continuum/exterior/relative-heat or physical Pauli enclosure\", \"fermion_current_inverse_component_not_full_Gaussian_quantum_loop\": true, \"input_hashes\": {\"artifacts/flagship_integration/BHSM_N12_C2_REFINED_RESET_ROOT_CENTER.npz\": \"59dd88661b15cbeec96bc19294f9d9c64f754cccbfbc385c32329fa9c864a8fe\", \"artifacts/flagship_integration/BHSM_N12_FULL_RESET_ACTION_JACOBIAN.npz\": \"35bb2b67ff784206d3a5b9dc82881f5ffd8f844b55342f2032d29cdafb38a67a\", \"artifacts/muon_birth_transfer_value_20261008/retained_reset/run_1/result.json\": \"d0fec0f8e8a05818fcce67e88ed8db73744484220a2cb213825893f481cb0a72\", \"artifacts/muon_calibrated_pauli_20261009/inputs.json\": \"0b614ab6f26d169ca04a4878f767f78eb3668484840867e46aebbebf186369da\", \"artifacts/muon_calibrated_weak_decay_20261010/run_1/weak_decay.json\": \"9c31575ce0889571790f8767cf53ffe043cb9906e0a45a96b194971320a0aad7\", \"artifacts/muon_continued_current_factor_20261011/run_1/incoming_16.npz\": \"f2f39b93990ec7ab4e018e77c2dfc1b8ab9c128fd469e8e3ea0afdd1f90ef8ac\", \"artifacts/muon_continued_current_factor_20261011/run_1/incoming_32.npz\": \"ea11b8065762d27bdd7fa60688a67fd37a6901763d37485892c854ad05f1317f\", \"artifacts/muon_continued_current_factor_20261011/run_1/incoming_64.npz\": \"bf387e5888574dc64fcb82666d1e6f915324509f477c50ffb6cd89dcb412c489\", \"artifacts/muon_continued_current_factor_20261011/run_1/outgoing_16.npz\": \"9d923721b063aa476660df538f7f06a3ab6bb51a8e6d8f276d77532150842915\", \"artifacts/muon_continued_current_factor_20261011/run_1/outgoing_32.npz\": \"47f95fc0febc8caee63bb50fcdfd0b2dbf3bb854024fa599682d19e3128abc01\", \"artifacts/muon_continued_current_factor_20261011/run_1/outgoing_64.npz\": \"f2ceddfc5effb169d6b931fec725bf77c422f7ee6a8e6ac5f1c6c7ddc3169a9f\", \"artifacts/muon_continued_current_factor_20261011/run_1/result.json\": \"a23d8714e4c64cef2ac55bdbe8571229f9ef2e99d2e099bcfe29711bd37d157a\", \"artifacts/muon_corrected_profile_magnetic_response_20261011/run_1/incoming_contacts.npz\": \"427094c0d93147bc143a1378f007e5eeb287dd5fac2eefcac962ff28e9f897a5\", \"artifacts/muon_corrected_profile_magnetic_response_20261011/run_1/incoming_phase.npz\": \"5bd2933bc65890c8a1da7699e8de91ce5d1cdef55a22fbbcc6205eb58d31d350\", \"artifacts/muon_corrected_profile_magnetic_response_20261011/run_1/incoming_primal_and_source.npz\": \"96b2d8f5d9b18229fce85601e6ba912af0326446c2a0f63eb1cacce00ce1ed63\", \"artifacts/muon_corrected_profile_magnetic_response_20261011/run_1/incoming_velocity.npz\": \"3118e2127b24c04a3ac51f6191d1fd217b6561feaf9586bc502214c808f58cf5\", \"artifacts/muon_corrected_profile_magnetic_response_20261011/run_1/outgoing_contacts.npz\": \"b6e9d323f3c55cd2c6eb0fff84a68a52393c017bf4a50adff82686bdcc3baa6e\", \"artifacts/muon_corrected_profile_magnetic_response_20261011/run_1/outgoing_phase.npz\": \"d86d15b1209b970e258d784bd2979f5095250698981a09efc45908aa53fc6dc6\", \"artifacts/muon_corrected_profile_magnetic_response_20261011/run_1/outgoing_primal_and_source.npz\": \"d9b5bb396f478183c928e3ebb49f9dfc752f827ca9dd3132894fb8e54bf5f2ec\", \"artifacts/muon_corrected_profile_magnetic_response_20261011/run_1/outgoing_velocity.npz\": \"4d463858ff9161a103f776e9f6658eaaba1621a5bbe3215254f28b6aa2c4348d\", \"artifacts/muon_corrected_profile_magnetic_response_20261011/run_1/result.json\": \"67d10f7d2064219916ba4abc9caf66f7e673dfc96453aba3c91458363624740b\", \"artifacts/muon_finite_normal_phase_20261011/incoming_run_1/application.npz\": \"254491c04531387f3ef3ae761cb4efccfbed54055683af00fbd8259a2520a8f9\", \"artifacts/muon_finite_normal_phase_20261011/incoming_run_1/result.json\": \"8547be3232459deb8cb1d325a3d956bc0380ba0c767371ccce4bf7f5140b399f\", \"artifacts/muon_inherited_finite_normal_phase_20261011/run_1/application.npz\": \"7a513c82e9e4f3e2560e2989867e00e8af3453e637a29559286c29eb7c184a59\", \"artifacts/muon_inherited_finite_normal_phase_20261011/run_1/result.json\": \"d283c45cb81e86628ecec96159eae5327829d15f440bf01c78164f4b12434c51\", \"artifacts/muon_matched_mechanical_source_20261002/replay_reference/matched_source_and_weak_actions.npz\": \"146435df28178967c321c0aa7e89a1511395d196f96b8715532aa98e3e312c2b\", \"artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1/application.npz\": \"c67363c17adfb519f399614463d5a13dbcd019aa53246d452421eea8ba982455\", \"artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1/result.json\": \"06867e31959910ec21385e8491bd5b794060c68e8404ae0524e3d0c9b544faa6\", \"scripts/evaluate_muon_continued_current_factor.py\": \"bb9c8cf62966a4811274b326fd287f864b5f8c06662d91cfaac3eecb79e5cda3\", \"scripts/evaluate_muon_corrected_profile_magnetic_response.py\": \"7921658039c4a2890151c331ad8516f8a651686c35f14ef51fa95e7ecf5b7b8d\", \"scripts/evaluate_muon_joined_common_y_current.py\": \"a69a72167c3d67c39ac59da222bdb499c7a23069e85a0fee8e6b3587df5ced4e\", \"scripts/evaluate_muon_reached_trace_action.py\": \"f2ecf5b614f8b3b1b5f9bf2b73490e539321049633f7deb467bdf60a81e0c260\", \"src/bhsm/interface/aether_canonical_momentum_action_jacobian.py\": \"d0ade20dc8a999e43073b45ca3ef59e05c65c55e37a1d6565d4e389176295cb1\", \"src/bhsm/interface/aether_diagonal_sp1_m4_attachment_v15_50.py\": \"e6482614dcb54f4890a5e66fbe724d4c302405d575a4b73ddbb64a075cb1827e\", \"src/bhsm/interface/aether_lorentzian_child_galerkin_v15_44.py\": \"574a9a6267d9228170c7309bd4be3cafb36b7515a6ee558509beb968e97bdab7\", \"src/bhsm/interface/muon_birth_attached_phase.py\": \"948c1505e9b68cffbe8050be31dcb5727d8f8d4f25399f9037cfc94a9ae9fdeb\", \"src/bhsm/interface/muon_birth_chronological_normal_inertia.py\": \"909f322d0b375ab03fc0b0a148c9d710ac77e371e029c5e92c9bfbde86883b05\", \"src/bhsm/interface/muon_birth_coupled_primal_midpoint.py\": \"ce321f641fa51d98710d006e246aac5cf6bd046be93a74fab452808597c599ce\", \"src/bhsm/interface/muon_birth_finite_geometric_trace_endpoint.py\": \"4f5c36144222d5d1e657061aa9352f8e86d5ae61a0ebdf05991a477e68d4be5f\", \"src/bhsm/interface/muon_birth_finite_normal_phase.py\": \"660ed731bdbe0bbb71eda750c9dbffd20e7ce9f63be2a6087e5a385d76850361\", \"src/bhsm/interface/muon_birth_finite_normal_trace_graph.py\": \"20eafd9a6abff3d3a89a2f6085d099584684ba19b600673dafda634cb56aad18\", \"src/bhsm/interface/muon_birth_full_field_attachment.py\": \"58b3bd8a4ae5fe7c63b5551e4d0f26d82ab82a27d4389066c894a5e1b4728d03\", \"src/bhsm/interface/muon_birth_inherited_finite_normal_phase.py\": \"86b082dfa0b525e9d8bb510a6c02e53c517d7ecdd8c6c9aec956d175d829add4\", \"src/bhsm/interface/muon_birth_normal_constrained_action.py\": \"fe66a9116816e075cfc5e7c5f5f3c2c02d539311303b693a1d89cbc08ea62577\", \"src/bhsm/interface/muon_birth_normal_trace_graph.py\": \"d012a0455d84be2ce7aae8d6833f8b482f9bbc1e9ee1b899042a421c2a782896\", \"src/bhsm/interface/muon_birth_paired_attachment_endpoint.py\": \"71a69275ebeef226fd8dc7585745c5c8acac687e497a8441fe37a37553178f23\", \"src/bhsm/interface/muon_birth_paired_field_endpoint.py\": \"f22b6a17b65c72b30571b3d9f721f347737a5916fa08e50bd833ad22df3cd035\", \"src/bhsm/interface/muon_birth_phase_continuation.py\": \"9169a1c56bf5084d1f240043ca12d431c87e4adaff24fe09bdf7bf27fc5eb0be\", \"src/bhsm/interface/muon_birth_trace_enriched_action.py\": \"c36c48482dd58ebe369ab935574b78b3693036f717fb49035dfac01164956dce\", \"src/bhsm/interface/muon_birth_trace_enriched_phase.py\": \"591754957f1cc452bfd53d8adc1087308459902a822876105315b7423c2fd676\", \"src/bhsm/interface/muon_birth_two_arm_assigned_action.py\": \"cf6c58dc68700315d701fb9a1e9e99e927d18d90016a6ae7f86470c36136c77a\", \"src/bhsm/interface/muon_changing_magnetic_current_jets.py\": \"f80fd00d7800d04692c1398fa657686d70472df11529831080b2f6763f4e3f19\", \"src/bhsm/interface/muon_continued_current_factor.py\": \"d713d24500cd33d5f0495ce9a7ca7ed02829dc5cf3f0a83626ede3cd39b980ac\", \"src/bhsm/interface/muon_corrected_profile_magnetic_response.py\": \"8d09cd726393d59b6843553c085ffaf61f84f009b44678d1465fe7ebe645f1d8\", \"src/bhsm/interface/muon_coupled_magnetic_field_variation.py\": \"c5e9a6410fffdf52d3a7d4619c9417662580b11ca8f58c0271e73a5120076e33\", \"src/bhsm/interface/muon_electromagnetic_magnetic_birth_continuation.py\": \"51d9cd03cfa6047dfe0fafd249734b26172193c78c860af65d6a6b0148c7c9e4\", \"src/bhsm/interface/muon_electromagnetic_soft_magnetic_source.py\": \"e0ec4c67e29e8f2ac9ce003559c3d9257d00a30a79a373bd2caff58f5dd4d231\", \"src/bhsm/interface/muon_exact_material_response.py\": \"a530651e157a000dbe6935e9de1cedbce5679f98c599c6c7c641158b749307bf\", \"src/bhsm/interface/muon_intrinsic_fermion_wick_application.py\": \"3cb1c24a3ac39743478dfcaac584ccfd1045dce08e74ed11ed69dbf2c286f7b5\", \"src/bhsm/interface/muon_intrinsic_higgs_gauge_action.py\": \"c19354209300ab06c0f1ab6bf4e111dbb5de0cd9e8d1d31a71af357a829118d4\", \"src/bhsm/interface/muon_intrinsic_m4_normal_pullback.py\": \"43187eee35f2879a43fe0fd02ae447502811349ccf2f2a78aa14beb8aa706bf0\", \"src/bhsm/interface/muon_joined_common_y_current.py\": \"72935dd9c56e26b65921c582b73101c17095601b9017d265900246b75bef4d2e\", \"src/bhsm/interface/muon_material_higgs_gauge_action.py\": \"8bca013820283614c6578be4f44c29c4ea1c919f516aa9a2783f0eb38127d035\", \"src/bhsm/interface/muon_moving_geometric_action.py\": \"bf560fdb9766f563d97d3100ccb266e2a4350c910ac14a51d57576c2b5371392\", \"src/bhsm/interface/muon_parent_gauge_geometry_correction.py\": \"fa29f5764dca39196c807d64e7976d5894589e7de3ffa9d4a5ddecfb136b4816\", \"src/bhsm/interface/muon_parent_maxwell_background_euler.py\": \"fbb2c99d4b1c58247ac42a769fad3e1b16ccc76a1744fe0c5334e50c4a974bee\", \"src/bhsm/interface/muon_parent_maxwell_corrected_retarded.py\": \"00bf7053e289297afd4f10dc0ef9522ac8326f2bd07609c9979bb9f5f6f74a4d\", \"src/bhsm/interface/muon_parent_maxwell_full_retarded.py\": \"1ecf85a6da94b84b69af1ff4394301232d9d4cad4b0f0bc08de56d5943e0c478\", \"src/bhsm/interface/muon_parent_maxwell_full_weak.py\": \"c1fb703967a644306d3521d457a6d7c778a49d89c1e081b401487a25b7491565\", \"src/bhsm/interface/muon_parent_maxwell_geometry_weak.py\": \"f0b4a49934e17ad18c40e9164b66c54e1b2cb146fb476f59b0e500f2dd6c9153\", \"src/bhsm/interface/muon_parent_mean_causal_action.py\": \"2a84b1be22625b1a5ae88d10c76631d7a5b602d2b0e22e57f00201bb74a593ad\", \"src/bhsm/interface/muon_parent_positive_coupled_field.py\": \"f26b1c395c8059555d1f3e217705998c5e0437122ab761354ce0f085d891d5c2\", \"src/bhsm/interface/muon_parent_retarded_hypercharge.py\": \"2eb97a704bce63f601cc0d6e0f647266d4b4aac7f746d34dceb41b72018c3510\", \"src/bhsm/interface/muon_pointwise_full_field_action.py\": \"d57cd5953de00bcae857d0e458bbead1e463e5fffe8d947c5b9e71806aabaff6\", \"src/bhsm/interface/muon_profile_preserving_phase_sample.py\": \"27ce99bf8c286b0e3fe56dc4d7f0f215dee51b228dcce1805006e1b2c8998418\", \"src/bhsm/interface/muon_reached_trace_action.py\": \"7fed7f2520a6f66e31323905359e491897f7187ccf9871ecfc2ab95e415ffade\", \"tests/test_muon_joined_common_y_current.py\": \"40e2b979141d768b5eedf8e0e581a9a9788237fa85b397dde4a2310a41efcb81\"}, \"odd_Y_powers_preserved\": true, \"physical_Y_spectral_subtraction\": false, \"physical_a_mu\": null, \"physical_covariance_selected\": false, \"physical_g_mu\": null, \"records\": [{\"all_coefficient_primal_adjoint_difference_norm\": 2.0440278395443665e-31, \"kind\": \"constant\", \"paired_current_norm\": 3.4151666846516286e-26, \"placement\": \"forward\", \"refinement_difference\": null, \"steps_per_arm\": 16}, {\"all_coefficient_primal_adjoint_difference_norm\": 2.0440278395443665e-31, \"kind\": \"constant\", \"paired_current_norm\": 3.4151666848130364e-26, \"placement\": \"reverse\", \"refinement_difference\": null, \"steps_per_arm\": 16}, {\"all_coefficient_primal_adjoint_difference_norm\": 5.5480476215498355e-31, \"kind\": \"momentum\", \"paired_current_norm\": 6.830333541028028e-26, \"placement\": \"forward\", \"refinement_difference\": null, \"steps_per_arm\": 16}, {\"all_coefficient_primal_adjoint_difference_norm\": 5.5480476215498355e-31, \"kind\": \"momentum\", \"paired_current_norm\": 6.830333541350642e-26, \"placement\": \"reverse\", \"refinement_difference\": null, \"steps_per_arm\": 16}, {\"all_coefficient_primal_adjoint_difference_norm\": 3.076553580112032e-31, \"kind\": \"constant\", \"paired_current_norm\": 3.386336338946528e-26, \"placement\": \"forward\", \"refinement_difference\": 2.883034618680041e-28, \"steps_per_arm\": 32}, {\"all_coefficient_primal_adjoint_difference_norm\": 3.076553580112032e-31, \"kind\": \"constant\", \"paired_current_norm\": 3.386336339107293e-26, \"placement\": \"reverse\", \"refinement_difference\": 2.8830346187443164e-28, \"steps_per_arm\": 32}, {\"all_coefficient_primal_adjoint_difference_norm\": 6.682212042799849e-31, \"kind\": \"momentum\", \"paired_current_norm\": 6.772672849816682e-26, \"placement\": \"forward\", \"refinement_difference\": 5.766069264325663e-28, \"steps_per_arm\": 32}, {\"all_coefficient_primal_adjoint_difference_norm\": 6.682212042799849e-31, \"kind\": \"momentum\", \"paired_current_norm\": 6.772672850138138e-26, \"placement\": \"reverse\", \"refinement_difference\": 5.766069264441653e-28, \"steps_per_arm\": 32}, {\"all_coefficient_primal_adjoint_difference_norm\": 4.169015136006049e-31, \"kind\": \"constant\", \"paired_current_norm\": 3.3784265611076983e-26, \"placement\": \"forward\", \"refinement_difference\": 7.909777992035756e-29, \"steps_per_arm\": 64}, {\"all_coefficient_primal_adjoint_difference_norm\": 4.169015136006049e-31, \"kind\": \"constant\", \"paired_current_norm\": 3.3784265612681074e-26, \"placement\": \"reverse\", \"refinement_difference\": 7.909777992391898e-29, \"steps_per_arm\": 64}, {\"all_coefficient_primal_adjoint_difference_norm\": 1.012530226033142e-30, \"kind\": \"momentum\", \"paired_current_norm\": 6.756853294226938e-26, \"placement\": \"forward\", \"refinement_difference\": 1.5819556045105524e-28, \"steps_per_arm\": 64}, {\"all_coefficient_primal_adjoint_difference_norm\": 1.012530226033142e-30, \"kind\": \"momentum\", \"paired_current_norm\": 6.756853294548248e-26, \"placement\": \"reverse\", \"refinement_difference\": 1.5819556045256924e-28, \"steps_per_arm\": 64}], \"source\": \"actual canonical delta-H at three charge-owned magnetic axes; both midpoint trace halves, fixed-Y Higgs and temporal -iG/N retained\"}\n"
+        }
+      }
+    },
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "scripts/evaluate_muon_joined_common_y_current.py",
+        "--output",
+        "artifacts/muon_joined_common_y_current_20261011/run_2"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "OPENBLAS_NUM_THREADS": "1",
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "logs": {
+        "stderr": {
+          "bytes": 0,
+          "path": "artifacts/muon_joined_common_y_current_run_2.stderr.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "text": ""
+        },
+        "stdout": {
+          "bytes": 17779,
+          "path": "artifacts/muon_joined_common_y_current_run_2.stdout.txt",
+          "sha256": "6a25104016b40c63dc503d40200c3b5c8c05dc5894a5a29a0825b39f8c26ffbe",
+          "text": "{\"records\": [{\"all_coefficient_primal_adjoint_difference_norm\": 2.0440278395443665e-31, \"kind\": \"constant\", \"paired_current_norm\": 3.4151666846516286e-26, \"placement\": \"forward\", \"refinement_difference\": null, \"steps_per_arm\": 16}, {\"all_coefficient_primal_adjoint_difference_norm\": 2.0440278395443665e-31, \"kind\": \"constant\", \"paired_current_norm\": 3.4151666848130364e-26, \"placement\": \"reverse\", \"refinement_difference\": null, \"steps_per_arm\": 16}, {\"all_coefficient_primal_adjoint_difference_norm\": 5.5480476215498355e-31, \"kind\": \"momentum\", \"paired_current_norm\": 6.830333541028028e-26, \"placement\": \"forward\", \"refinement_difference\": null, \"steps_per_arm\": 16}, {\"all_coefficient_primal_adjoint_difference_norm\": 5.5480476215498355e-31, \"kind\": \"momentum\", \"paired_current_norm\": 6.830333541350642e-26, \"placement\": \"reverse\", \"refinement_difference\": null, \"steps_per_arm\": 16}], \"stage\": \"evaluated_joined_common_Y_and_both_angular_insertions\", \"steps_per_arm\": 16}\n{\"records\": [{\"all_coefficient_primal_adjoint_difference_norm\": 3.076553580112032e-31, \"kind\": \"constant\", \"paired_current_norm\": 3.386336338946528e-26, \"placement\": \"forward\", \"refinement_difference\": 2.883034618680041e-28, \"steps_per_arm\": 32}, {\"all_coefficient_primal_adjoint_difference_norm\": 3.076553580112032e-31, \"kind\": \"constant\", \"paired_current_norm\": 3.386336339107293e-26, \"placement\": \"reverse\", \"refinement_difference\": 2.8830346187443164e-28, \"steps_per_arm\": 32}, {\"all_coefficient_primal_adjoint_difference_norm\": 6.682212042799849e-31, \"kind\": \"momentum\", \"paired_current_norm\": 6.772672849816682e-26, \"placement\": \"forward\", \"refinement_difference\": 5.766069264325663e-28, \"steps_per_arm\": 32}, {\"all_coefficient_primal_adjoint_difference_norm\": 6.682212042799849e-31, \"kind\": \"momentum\", \"paired_current_norm\": 6.772672850138138e-26, \"placement\": \"reverse\", \"refinement_difference\": 5.766069264441653e-28, \"steps_per_arm\": 32}], \"stage\": \"evaluated_joined_common_Y_and_both_angular_insertions\", \"steps_per_arm\": 32}\n{\"records\": [{\"all_coefficient_primal_adjoint_difference_norm\": 4.169015136006049e-31, \"kind\": \"constant\", \"paired_current_norm\": 3.3784265611076983e-26, \"placement\": \"forward\", \"refinement_difference\": 7.909777992035756e-29, \"steps_per_arm\": 64}, {\"all_coefficient_primal_adjoint_difference_norm\": 4.169015136006049e-31, \"kind\": \"constant\", \"paired_current_norm\": 3.3784265612681074e-26, \"placement\": \"reverse\", \"refinement_difference\": 7.909777992391898e-29, \"steps_per_arm\": 64}, {\"all_coefficient_primal_adjoint_difference_norm\": 1.012530226033142e-30, \"kind\": \"momentum\", \"paired_current_norm\": 6.756853294226938e-26, \"placement\": \"forward\", \"refinement_difference\": 1.5819556045105524e-28, \"steps_per_arm\": 64}, {\"all_coefficient_primal_adjoint_difference_norm\": 1.012530226033142e-30, \"kind\": \"momentum\", \"paired_current_norm\": 6.756853294548248e-26, \"placement\": \"reverse\", \"refinement_difference\": 1.5819556045256924e-28, \"steps_per_arm\": 64}], \"stage\": \"evaluated_joined_common_Y_and_both_angular_insertions\", \"steps_per_arm\": 64}\n{\"angular_images\": \"constant n1<-n0 and literal reverse; input-n1 to output n0+n2 and literal reverse; all six charged/neutral fibers before any state projection\", \"array_archives\": {\"joined_16.npz\": {\"bytes\": 2208406, \"sha256\": \"388102fc371a7e15e957b3411097bed2789601ee225a71e029233b1f77b00ea1\"}, \"joined_32.npz\": {\"bytes\": 4021917, \"sha256\": \"c941f28fddefca825f21b7126c4dde3ede8ac25fa555cb04925277bf6cb72f2f\"}, \"joined_64.npz\": {\"bytes\": 7473945, \"sha256\": \"b5f678c8b76d362d484015555801e5b6d84f9a3a60fafa21f9d1ba83d2b281ab\"}}, \"birth_frame\": \"retained homogeneous common canonical frameT=I on C6 and its angular tensor; full worldvolume F_B/U not selected\", \"classification\": \"EVALUATED_JOINED_CANONICAL_COMMON_Y_CURRENT_WITH_BOTH_ANGULAR_SOURCE_DIRECTIONS\", \"domain\": \"one incoming initial-zero inverse, child inherits actual birth response, outgoing free-final adjoint face retained\", \"error_scope\": \"binary64 original joined-action coefficient residuals, literal transpose-adjoint identities and16/32/64 temporal refinements; no magnetic-Y/continuum/exterior/relative-heat or physical Pauli enclosure\", \"fermion_current_inverse_component_not_full_Gaussian_quantum_loop\": true, \"input_hashes\": {\"artifacts/flagship_integration/BHSM_N12_C2_REFINED_RESET_ROOT_CENTER.npz\": \"59dd88661b15cbeec96bc19294f9d9c64f754cccbfbc385c32329fa9c864a8fe\", \"artifacts/flagship_integration/BHSM_N12_FULL_RESET_ACTION_JACOBIAN.npz\": \"35bb2b67ff784206d3a5b9dc82881f5ffd8f844b55342f2032d29cdafb38a67a\", \"artifacts/muon_birth_transfer_value_20261008/retained_reset/run_1/result.json\": \"d0fec0f8e8a05818fcce67e88ed8db73744484220a2cb213825893f481cb0a72\", \"artifacts/muon_calibrated_pauli_20261009/inputs.json\": \"0b614ab6f26d169ca04a4878f767f78eb3668484840867e46aebbebf186369da\", \"artifacts/muon_calibrated_weak_decay_20261010/run_1/weak_decay.json\": \"9c31575ce0889571790f8767cf53ffe043cb9906e0a45a96b194971320a0aad7\", \"artifacts/muon_continued_current_factor_20261011/run_1/incoming_16.npz\": \"f2f39b93990ec7ab4e018e77c2dfc1b8ab9c128fd469e8e3ea0afdd1f90ef8ac\", \"artifacts/muon_continued_current_factor_20261011/run_1/incoming_32.npz\": \"ea11b8065762d27bdd7fa60688a67fd37a6901763d37485892c854ad05f1317f\", \"artifacts/muon_continued_current_factor_20261011/run_1/incoming_64.npz\": \"bf387e5888574dc64fcb82666d1e6f915324509f477c50ffb6cd89dcb412c489\", \"artifacts/muon_continued_current_factor_20261011/run_1/outgoing_16.npz\": \"9d923721b063aa476660df538f7f06a3ab6bb51a8e6d8f276d77532150842915\", \"artifacts/muon_continued_current_factor_20261011/run_1/outgoing_32.npz\": \"47f95fc0febc8caee63bb50fcdfd0b2dbf3bb854024fa599682d19e3128abc01\", \"artifacts/muon_continued_current_factor_20261011/run_1/outgoing_64.npz\": \"f2ceddfc5effb169d6b931fec725bf77c422f7ee6a8e6ac5f1c6c7ddc3169a9f\", \"artifacts/muon_continued_current_factor_20261011/run_1/result.json\": \"a23d8714e4c64cef2ac55bdbe8571229f9ef2e99d2e099bcfe29711bd37d157a\", \"artifacts/muon_corrected_profile_magnetic_response_20261011/run_1/incoming_contacts.npz\": \"427094c0d93147bc143a1378f007e5eeb287dd5fac2eefcac962ff28e9f897a5\", \"artifacts/muon_corrected_profile_magnetic_response_20261011/run_1/incoming_phase.npz\": \"5bd2933bc65890c8a1da7699e8de91ce5d1cdef55a22fbbcc6205eb58d31d350\", \"artifacts/muon_corrected_profile_magnetic_response_20261011/run_1/incoming_primal_and_source.npz\": \"96b2d8f5d9b18229fce85601e6ba912af0326446c2a0f63eb1cacce00ce1ed63\", \"artifacts/muon_corrected_profile_magnetic_response_20261011/run_1/incoming_velocity.npz\": \"3118e2127b24c04a3ac51f6191d1fd217b6561feaf9586bc502214c808f58cf5\", \"artifacts/muon_corrected_profile_magnetic_response_20261011/run_1/outgoing_contacts.npz\": \"b6e9d323f3c55cd2c6eb0fff84a68a52393c017bf4a50adff82686bdcc3baa6e\", \"artifacts/muon_corrected_profile_magnetic_response_20261011/run_1/outgoing_phase.npz\": \"d86d15b1209b970e258d784bd2979f5095250698981a09efc45908aa53fc6dc6\", \"artifacts/muon_corrected_profile_magnetic_response_20261011/run_1/outgoing_primal_and_source.npz\": \"d9b5bb396f478183c928e3ebb49f9dfc752f827ca9dd3132894fb8e54bf5f2ec\", \"artifacts/muon_corrected_profile_magnetic_response_20261011/run_1/outgoing_velocity.npz\": \"4d463858ff9161a103f776e9f6658eaaba1621a5bbe3215254f28b6aa2c4348d\", \"artifacts/muon_corrected_profile_magnetic_response_20261011/run_1/result.json\": \"67d10f7d2064219916ba4abc9caf66f7e673dfc96453aba3c91458363624740b\", \"artifacts/muon_finite_normal_phase_20261011/incoming_run_1/application.npz\": \"254491c04531387f3ef3ae761cb4efccfbed54055683af00fbd8259a2520a8f9\", \"artifacts/muon_finite_normal_phase_20261011/incoming_run_1/result.json\": \"8547be3232459deb8cb1d325a3d956bc0380ba0c767371ccce4bf7f5140b399f\", \"artifacts/muon_inherited_finite_normal_phase_20261011/run_1/application.npz\": \"7a513c82e9e4f3e2560e2989867e00e8af3453e637a29559286c29eb7c184a59\", \"artifacts/muon_inherited_finite_normal_phase_20261011/run_1/result.json\": \"d283c45cb81e86628ecec96159eae5327829d15f440bf01c78164f4b12434c51\", \"artifacts/muon_matched_mechanical_source_20261002/replay_reference/matched_source_and_weak_actions.npz\": \"146435df28178967c321c0aa7e89a1511395d196f96b8715532aa98e3e312c2b\", \"artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1/application.npz\": \"c67363c17adfb519f399614463d5a13dbcd019aa53246d452421eea8ba982455\", \"artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1/result.json\": \"06867e31959910ec21385e8491bd5b794060c68e8404ae0524e3d0c9b544faa6\", \"scripts/evaluate_muon_continued_current_factor.py\": \"bb9c8cf62966a4811274b326fd287f864b5f8c06662d91cfaac3eecb79e5cda3\", \"scripts/evaluate_muon_corrected_profile_magnetic_response.py\": \"7921658039c4a2890151c331ad8516f8a651686c35f14ef51fa95e7ecf5b7b8d\", \"scripts/evaluate_muon_joined_common_y_current.py\": \"a69a72167c3d67c39ac59da222bdb499c7a23069e85a0fee8e6b3587df5ced4e\", \"scripts/evaluate_muon_reached_trace_action.py\": \"f2ecf5b614f8b3b1b5f9bf2b73490e539321049633f7deb467bdf60a81e0c260\", \"src/bhsm/interface/aether_canonical_momentum_action_jacobian.py\": \"d0ade20dc8a999e43073b45ca3ef59e05c65c55e37a1d6565d4e389176295cb1\", \"src/bhsm/interface/aether_diagonal_sp1_m4_attachment_v15_50.py\": \"e6482614dcb54f4890a5e66fbe724d4c302405d575a4b73ddbb64a075cb1827e\", \"src/bhsm/interface/aether_lorentzian_child_galerkin_v15_44.py\": \"574a9a6267d9228170c7309bd4be3cafb36b7515a6ee558509beb968e97bdab7\", \"src/bhsm/interface/muon_birth_attached_phase.py\": \"948c1505e9b68cffbe8050be31dcb5727d8f8d4f25399f9037cfc94a9ae9fdeb\", \"src/bhsm/interface/muon_birth_chronological_normal_inertia.py\": \"909f322d0b375ab03fc0b0a148c9d710ac77e371e029c5e92c9bfbde86883b05\", \"src/bhsm/interface/muon_birth_coupled_primal_midpoint.py\": \"ce321f641fa51d98710d006e246aac5cf6bd046be93a74fab452808597c599ce\", \"src/bhsm/interface/muon_birth_finite_geometric_trace_endpoint.py\": \"4f5c36144222d5d1e657061aa9352f8e86d5ae61a0ebdf05991a477e68d4be5f\", \"src/bhsm/interface/muon_birth_finite_normal_phase.py\": \"660ed731bdbe0bbb71eda750c9dbffd20e7ce9f63be2a6087e5a385d76850361\", \"src/bhsm/interface/muon_birth_finite_normal_trace_graph.py\": \"20eafd9a6abff3d3a89a2f6085d099584684ba19b600673dafda634cb56aad18\", \"src/bhsm/interface/muon_birth_full_field_attachment.py\": \"58b3bd8a4ae5fe7c63b5551e4d0f26d82ab82a27d4389066c894a5e1b4728d03\", \"src/bhsm/interface/muon_birth_inherited_finite_normal_phase.py\": \"86b082dfa0b525e9d8bb510a6c02e53c517d7ecdd8c6c9aec956d175d829add4\", \"src/bhsm/interface/muon_birth_normal_constrained_action.py\": \"fe66a9116816e075cfc5e7c5f5f3c2c02d539311303b693a1d89cbc08ea62577\", \"src/bhsm/interface/muon_birth_normal_trace_graph.py\": \"d012a0455d84be2ce7aae8d6833f8b482f9bbc1e9ee1b899042a421c2a782896\", \"src/bhsm/interface/muon_birth_paired_attachment_endpoint.py\": \"71a69275ebeef226fd8dc7585745c5c8acac687e497a8441fe37a37553178f23\", \"src/bhsm/interface/muon_birth_paired_field_endpoint.py\": \"f22b6a17b65c72b30571b3d9f721f347737a5916fa08e50bd833ad22df3cd035\", \"src/bhsm/interface/muon_birth_phase_continuation.py\": \"9169a1c56bf5084d1f240043ca12d431c87e4adaff24fe09bdf7bf27fc5eb0be\", \"src/bhsm/interface/muon_birth_trace_enriched_action.py\": \"c36c48482dd58ebe369ab935574b78b3693036f717fb49035dfac01164956dce\", \"src/bhsm/interface/muon_birth_trace_enriched_phase.py\": \"591754957f1cc452bfd53d8adc1087308459902a822876105315b7423c2fd676\", \"src/bhsm/interface/muon_birth_two_arm_assigned_action.py\": \"cf6c58dc68700315d701fb9a1e9e99e927d18d90016a6ae7f86470c36136c77a\", \"src/bhsm/interface/muon_changing_magnetic_current_jets.py\": \"f80fd00d7800d04692c1398fa657686d70472df11529831080b2f6763f4e3f19\", \"src/bhsm/interface/muon_continued_current_factor.py\": \"d713d24500cd33d5f0495ce9a7ca7ed02829dc5cf3f0a83626ede3cd39b980ac\", \"src/bhsm/interface/muon_corrected_profile_magnetic_response.py\": \"8d09cd726393d59b6843553c085ffaf61f84f009b44678d1465fe7ebe645f1d8\", \"src/bhsm/interface/muon_coupled_magnetic_field_variation.py\": \"c5e9a6410fffdf52d3a7d4619c9417662580b11ca8f58c0271e73a5120076e33\", \"src/bhsm/interface/muon_electromagnetic_magnetic_birth_continuation.py\": \"51d9cd03cfa6047dfe0fafd249734b26172193c78c860af65d6a6b0148c7c9e4\", \"src/bhsm/interface/muon_electromagnetic_soft_magnetic_source.py\": \"e0ec4c67e29e8f2ac9ce003559c3d9257d00a30a79a373bd2caff58f5dd4d231\", \"src/bhsm/interface/muon_exact_material_response.py\": \"a530651e157a000dbe6935e9de1cedbce5679f98c599c6c7c641158b749307bf\", \"src/bhsm/interface/muon_intrinsic_fermion_wick_application.py\": \"3cb1c24a3ac39743478dfcaac584ccfd1045dce08e74ed11ed69dbf2c286f7b5\", \"src/bhsm/interface/muon_intrinsic_higgs_gauge_action.py\": \"c19354209300ab06c0f1ab6bf4e111dbb5de0cd9e8d1d31a71af357a829118d4\", \"src/bhsm/interface/muon_intrinsic_m4_normal_pullback.py\": \"43187eee35f2879a43fe0fd02ae447502811349ccf2f2a78aa14beb8aa706bf0\", \"src/bhsm/interface/muon_joined_common_y_current.py\": \"72935dd9c56e26b65921c582b73101c17095601b9017d265900246b75bef4d2e\", \"src/bhsm/interface/muon_material_higgs_gauge_action.py\": \"8bca013820283614c6578be4f44c29c4ea1c919f516aa9a2783f0eb38127d035\", \"src/bhsm/interface/muon_moving_geometric_action.py\": \"bf560fdb9766f563d97d3100ccb266e2a4350c910ac14a51d57576c2b5371392\", \"src/bhsm/interface/muon_parent_gauge_geometry_correction.py\": \"fa29f5764dca39196c807d64e7976d5894589e7de3ffa9d4a5ddecfb136b4816\", \"src/bhsm/interface/muon_parent_maxwell_background_euler.py\": \"fbb2c99d4b1c58247ac42a769fad3e1b16ccc76a1744fe0c5334e50c4a974bee\", \"src/bhsm/interface/muon_parent_maxwell_corrected_retarded.py\": \"00bf7053e289297afd4f10dc0ef9522ac8326f2bd07609c9979bb9f5f6f74a4d\", \"src/bhsm/interface/muon_parent_maxwell_full_retarded.py\": \"1ecf85a6da94b84b69af1ff4394301232d9d4cad4b0f0bc08de56d5943e0c478\", \"src/bhsm/interface/muon_parent_maxwell_full_weak.py\": \"c1fb703967a644306d3521d457a6d7c778a49d89c1e081b401487a25b7491565\", \"src/bhsm/interface/muon_parent_maxwell_geometry_weak.py\": \"f0b4a49934e17ad18c40e9164b66c54e1b2cb146fb476f59b0e500f2dd6c9153\", \"src/bhsm/interface/muon_parent_mean_causal_action.py\": \"2a84b1be22625b1a5ae88d10c76631d7a5b602d2b0e22e57f00201bb74a593ad\", \"src/bhsm/interface/muon_parent_positive_coupled_field.py\": \"f26b1c395c8059555d1f3e217705998c5e0437122ab761354ce0f085d891d5c2\", \"src/bhsm/interface/muon_parent_retarded_hypercharge.py\": \"2eb97a704bce63f601cc0d6e0f647266d4b4aac7f746d34dceb41b72018c3510\", \"src/bhsm/interface/muon_pointwise_full_field_action.py\": \"d57cd5953de00bcae857d0e458bbead1e463e5fffe8d947c5b9e71806aabaff6\", \"src/bhsm/interface/muon_profile_preserving_phase_sample.py\": \"27ce99bf8c286b0e3fe56dc4d7f0f215dee51b228dcce1805006e1b2c8998418\", \"src/bhsm/interface/muon_reached_trace_action.py\": \"7fed7f2520a6f66e31323905359e491897f7187ccf9871ecfc2ab95e415ffade\", \"tests/test_muon_joined_common_y_current.py\": \"40e2b979141d768b5eedf8e0e581a9a9788237fa85b397dde4a2310a41efcb81\"}, \"odd_Y_powers_preserved\": true, \"physical_Y_spectral_subtraction\": false, \"physical_a_mu\": null, \"physical_covariance_selected\": false, \"physical_g_mu\": null, \"records\": [{\"all_coefficient_primal_adjoint_difference_norm\": 2.0440278395443665e-31, \"kind\": \"constant\", \"paired_current_norm\": 3.4151666846516286e-26, \"placement\": \"forward\", \"refinement_difference\": null, \"steps_per_arm\": 16}, {\"all_coefficient_primal_adjoint_difference_norm\": 2.0440278395443665e-31, \"kind\": \"constant\", \"paired_current_norm\": 3.4151666848130364e-26, \"placement\": \"reverse\", \"refinement_difference\": null, \"steps_per_arm\": 16}, {\"all_coefficient_primal_adjoint_difference_norm\": 5.5480476215498355e-31, \"kind\": \"momentum\", \"paired_current_norm\": 6.830333541028028e-26, \"placement\": \"forward\", \"refinement_difference\": null, \"steps_per_arm\": 16}, {\"all_coefficient_primal_adjoint_difference_norm\": 5.5480476215498355e-31, \"kind\": \"momentum\", \"paired_current_norm\": 6.830333541350642e-26, \"placement\": \"reverse\", \"refinement_difference\": null, \"steps_per_arm\": 16}, {\"all_coefficient_primal_adjoint_difference_norm\": 3.076553580112032e-31, \"kind\": \"constant\", \"paired_current_norm\": 3.386336338946528e-26, \"placement\": \"forward\", \"refinement_difference\": 2.883034618680041e-28, \"steps_per_arm\": 32}, {\"all_coefficient_primal_adjoint_difference_norm\": 3.076553580112032e-31, \"kind\": \"constant\", \"paired_current_norm\": 3.386336339107293e-26, \"placement\": \"reverse\", \"refinement_difference\": 2.8830346187443164e-28, \"steps_per_arm\": 32}, {\"all_coefficient_primal_adjoint_difference_norm\": 6.682212042799849e-31, \"kind\": \"momentum\", \"paired_current_norm\": 6.772672849816682e-26, \"placement\": \"forward\", \"refinement_difference\": 5.766069264325663e-28, \"steps_per_arm\": 32}, {\"all_coefficient_primal_adjoint_difference_norm\": 6.682212042799849e-31, \"kind\": \"momentum\", \"paired_current_norm\": 6.772672850138138e-26, \"placement\": \"reverse\", \"refinement_difference\": 5.766069264441653e-28, \"steps_per_arm\": 32}, {\"all_coefficient_primal_adjoint_difference_norm\": 4.169015136006049e-31, \"kind\": \"constant\", \"paired_current_norm\": 3.3784265611076983e-26, \"placement\": \"forward\", \"refinement_difference\": 7.909777992035756e-29, \"steps_per_arm\": 64}, {\"all_coefficient_primal_adjoint_difference_norm\": 4.169015136006049e-31, \"kind\": \"constant\", \"paired_current_norm\": 3.3784265612681074e-26, \"placement\": \"reverse\", \"refinement_difference\": 7.909777992391898e-29, \"steps_per_arm\": 64}, {\"all_coefficient_primal_adjoint_difference_norm\": 1.012530226033142e-30, \"kind\": \"momentum\", \"paired_current_norm\": 6.756853294226938e-26, \"placement\": \"forward\", \"refinement_difference\": 1.5819556045105524e-28, \"steps_per_arm\": 64}, {\"all_coefficient_primal_adjoint_difference_norm\": 1.012530226033142e-30, \"kind\": \"momentum\", \"paired_current_norm\": 6.756853294548248e-26, \"placement\": \"reverse\", \"refinement_difference\": 1.5819556045256924e-28, \"steps_per_arm\": 64}], \"source\": \"actual canonical delta-H at three charge-owned magnetic axes; both midpoint trace halves, fixed-Y Higgs and temporal -iG/N retained\"}\n"
+        }
+      }
+    },
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "pytest",
+        "--noconftest",
+        "-q",
+        "tests/test_muon_joined_common_y_current.py"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "OPENBLAS_NUM_THREADS": "1",
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "logs": {
+        "stderr": {
+          "bytes": 0,
+          "path": "artifacts/muon_joined_common_y_current_tests.stderr.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "text": ""
+        },
+        "stdout": {
+          "bytes": 100,
+          "path": "artifacts/muon_joined_common_y_current_tests.stdout.txt",
+          "sha256": "5ba7bd870147014507dc265aac69e39b1cd6cd7a291fc859e301799bf56e7311",
+          "text": "..                                                                       [100%]\n2 passed in 1.24s\n"
+        }
+      },
+      "tests_passed": 2
+    }
+  ],
+  "complete_observable": false,
+  "error_scope": "binary64 original joined-action coefficient residuals, literal transpose-adjoint identities and16/32/64 temporal refinements; no magnetic-Y/continuum/exterior/relative-heat or physical Pauli enclosure",
+  "independent_byte_replays": {
+    "joined_16.npz": [
+      {
+        "bytes": 2208406,
+        "path": "artifacts/muon_joined_common_y_current_20261011/run_1/joined_16.npz",
+        "sha256": "388102fc371a7e15e957b3411097bed2789601ee225a71e029233b1f77b00ea1"
+      },
+      {
+        "bytes": 2208406,
+        "path": "artifacts/muon_joined_common_y_current_20261011/run_2/joined_16.npz",
+        "sha256": "388102fc371a7e15e957b3411097bed2789601ee225a71e029233b1f77b00ea1"
+      }
+    ],
+    "joined_32.npz": [
+      {
+        "bytes": 4021917,
+        "path": "artifacts/muon_joined_common_y_current_20261011/run_1/joined_32.npz",
+        "sha256": "c941f28fddefca825f21b7126c4dde3ede8ac25fa555cb04925277bf6cb72f2f"
+      },
+      {
+        "bytes": 4021917,
+        "path": "artifacts/muon_joined_common_y_current_20261011/run_2/joined_32.npz",
+        "sha256": "c941f28fddefca825f21b7126c4dde3ede8ac25fa555cb04925277bf6cb72f2f"
+      }
+    ],
+    "joined_64.npz": [
+      {
+        "bytes": 7473945,
+        "path": "artifacts/muon_joined_common_y_current_20261011/run_1/joined_64.npz",
+        "sha256": "b5f678c8b76d362d484015555801e5b6d84f9a3a60fafa21f9d1ba83d2b281ab"
+      },
+      {
+        "bytes": 7473945,
+        "path": "artifacts/muon_joined_common_y_current_20261011/run_2/joined_64.npz",
+        "sha256": "b5f678c8b76d362d484015555801e5b6d84f9a3a60fafa21f9d1ba83d2b281ab"
+      }
+    ],
+    "result.json": [
+      {
+        "bytes": 15691,
+        "path": "artifacts/muon_joined_common_y_current_20261011/run_1/result.json",
+        "sha256": "45dd35acde538e4dfc0a6ff1a2a26120a22331ef9476dfc2ba81540d735bfc1b"
+      },
+      {
+        "bytes": 15691,
+        "path": "artifacts/muon_joined_common_y_current_20261011/run_2/result.json",
+        "sha256": "45dd35acde538e4dfc0a6ff1a2a26120a22331ef9476dfc2ba81540d735bfc1b"
+      }
+    ]
+  },
+  "physical_a_mu": null,
+  "physical_g_mu": null,
+  "verified_input_hash_count": 154
+}

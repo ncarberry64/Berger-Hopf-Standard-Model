@@ -1,0 +1,473 @@
+{
+  "Gate7_closed": false,
+  "action_selected": false,
+  "classification": "PRIMARY_INDEPENDENT_BARE_EE_SPECTRAL_INPUT_WITH_SOURCE_LOW_AND_HIGH_THEORY_REGIONS",
+  "complete_native_remainder": false,
+  "download_records": [
+    {
+      "bytes": 6817,
+      "file": "C:\\Users\\carbe\\Downloads\\BHSM_MUON_SPECTRAL_INPUTS_20261010\\software.html",
+      "sha256": "b0f5917d926539eccf1bd33d268d52cc86ad3a7f2b588552e30cb40b9922e00a",
+      "url": "https://people.physik.hu-berlin.de/~fjeger/software.html"
+    },
+    {
+      "bytes": 4629170,
+      "file": "C:\\Users\\carbe\\Downloads\\BHSM_MUON_SPECTRAL_INPUTS_20261010\\alphaQEDc26.tar.gz",
+      "file_count": 662,
+      "sha256": "12a47193019fa49dc14af1fc53cc663e79b242be2bb1e59b9613c2f8f0dd20f8",
+      "url": "https://people.physik.hu-berlin.de/~fjeger/alphaQEDc26.tar.gz"
+    },
+    {
+      "bytes": 2589490,
+      "file": "C:\\Users\\carbe\\Downloads\\BHSM_MUON_SPECTRAL_INPUTS_20261010\\alphaQED26.pdf",
+      "sha256": "a4c627955f3c04386b03053080c1a21ea95ec94a66878853b597fb39542fa810",
+      "url": "https://people.physik.hu-berlin.de/~fjeger/alphaQED26.pdf"
+    }
+  ],
+  "edition": "alphaQEDc26 June17 2026; downloaded October10 2026",
+  "excluded_inputs": [
+    "measured muon anomaly",
+    "measured muon g",
+    "SM total",
+    "fit to anomaly discrepancy"
+  ],
+  "extraction": {
+    "exit_codes": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "external_path": "C:\\Users\\carbe\\Downloads\\BHSM_MUON_SPECTRAL_INPUTS_20261010\\derived",
+    "gfortran": "C:/Strawberry/c/bin/gfortran.exe",
+    "method": "unchanged source Rdata/common arrays, retained BW tables; source RSpQCD/rhad and BWrenofar evaluated by thin external wrappers; NAG not used",
+    "pQCD_refinement_nodes": [
+      2401,
+      4801
+    ],
+    "source_code_reproduction": "primary archive exact hash above; rhad source intentionally retained external"
+  },
+  "extraction_receipt_records": [
+    {
+      "bytes": 747,
+      "path": "extraction_receipt.json",
+      "sha256": "6cbe82382b20ef2070889ce805bdede880cb33378be5b53ab08be1c30c3b7133"
+    },
+    {
+      "bytes": 1494,
+      "path": "pqcd_extraction_receipt.json",
+      "sha256": "198156707c4aaf7b33ab2a913733cfa16f33bb9709fdce45654539ddcaefb536"
+    },
+    {
+      "bytes": 1672,
+      "path": "pqcd_refinement_receipt.json",
+      "sha256": "ee71b19d867dcb994487796c0f18c3659249df681429180b1c9c2215b1e6d261"
+    },
+    {
+      "bytes": 884,
+      "path": "resonance_extraction_receipt.json",
+      "sha256": "98b8a8c17d8656fd0cb17bcf060f41175a9aae2f7467144dae6a101020b70395"
+    },
+    {
+      "bytes": 1399,
+      "path": "spacelike_undressing_receipt.json",
+      "sha256": "86f8fdd39e5929b28f5365e15e94f2ee73f103beecb41744c6816f20ca323e90"
+    }
+  ],
+  "input_records": [
+    {
+      "bytes": 1073248,
+      "path": "pqcd_spectrum.csv",
+      "sha256": "7da7b62ef0e82235a46d1bbc5ac955410e1adc5410b951fb32760429eade14f9"
+    },
+    {
+      "bytes": 187328,
+      "path": "raw_spectrum.csv",
+      "sha256": "a97b7826c9832f80df6839795093d5925e4f7cedd9aa5a1796686f05d5e2e1b6"
+    },
+    {
+      "bytes": 3222,
+      "path": "resonance_parameters.csv",
+      "sha256": "9ab52a6c5aeaa7bce5479155aeabae2de8de21a9ff213124fea787855a365896"
+    },
+    {
+      "bytes": 92423,
+      "path": "resonance_spacelike_undressing.csv",
+      "sha256": "e3396977fbc9c31ca4f3d2ec9d673e02a1ac4d865e7c9d14e98dc367453c9391"
+    },
+    {
+      "bytes": 246728,
+      "path": "resonance_undressing.csv",
+      "sha256": "f5deb5f0cf6445d9189ccbc538c5dd06190896c19c837a16e44e2377c97dcd1e"
+    },
+    {
+      "bytes": 35524,
+      "path": "SOURCE_LICENCE.txt",
+      "sha256": "955da52fd9200d112f16963dddba29e5ecc0ec67a9551dbc85de2c768b221eb0"
+    }
+  ],
+  "interpolation_notes": [
+    "One reversed psi2 source sampling-grid pair (3.686548,3.686510GeV) is sorted for smooth evaluated spacelike factors; same pair in psi3 is outside consumed resonance range.",
+    "Duplicate terminal 38.29GeV background point is outside the consumed 9.46-11.5GeV data region.",
+    "The last <1.00001GeV phi table gap is treated as zero exactly as frphi() source domain; no extrapolated invented rho."
+  ],
+  "licensing": {
+    "numerical_samples": "evaluated source spectral facts; no rhad code copied",
+    "rhad_source": "retained externally; not copied or redistributed in repository",
+    "source_data": "GPL3 under retained source licence and source author attribution"
+  },
+  "overlap": {
+    "disjoint_from_preserved_local_subtotal": [
+      "pure leptonic QED through alpha^2",
+      "fixed-Y neutral Higgs one-loop"
+    ],
+    "not_determined": [
+      "connected four-current HLbL",
+      "higher-order hadronic VP external kernels",
+      "additional geometry/contact or mixed irreducible lepton-photon vertex response"
+    ],
+    "once_accounting": "replace the hadronic two-current part of native remainder; do not add this again to an independently complete same-sector native heat"
+  },
+  "primary_urls": {
+    "archive": "https://people.physik.hu-berlin.de/~fjeger/alphaQEDc26.tar.gz",
+    "instructions": "https://people.physik.hu-berlin.de/~fjeger/alphaQED26.pdf",
+    "normalization": "https://arxiv.org/html/1911.00367v2#S1",
+    "software": "https://people.physik.hu-berlin.de/~fjeger/software.html"
+  },
+  "published_comparison": {
+    "scope": "source PDF Table1; comparison only, not an input or center adjustment",
+    "standard_ee_source_nominal_LO": 6.9793e-08,
+    "standard_ee_source_nominal_error": 4.01e-10
+  },
+  "raw_source_archive_preserved_external": "C:\\Users\\carbe\\Downloads\\BHSM_MUON_SPECTRAL_INPUTS_20261010\\alphaQEDc26.tar.gz",
+  "source_author": "Friedrich Jegerlehner",
+  "source_options": {
+    "CHPTCUT_GeV": 0.318,
+    "ECUT_GeV": 11.5,
+    "EC_GeV": 5.2,
+    "IOR": 4,
+    "IUNMIX": 0,
+    "MZ_GeV": 91.188,
+    "NF_external": 5,
+    "alpha_s_MZ": 0.1184,
+    "alpha_s_error": 0.0007,
+    "iintRd": 1,
+    "iomegaphidat": 2,
+    "numerical_tail_endpoint_GeV": 1000000.0,
+    "top_mass_for_virtual_loops_GeV": 172.4
+  },
+  "source_records": [
+    {
+      "bytes": 11288,
+      "path": "Rdat_all.f",
+      "sha256": "026f086c97c14ec79f481302e4486ebba89a97d8f85476082a03b626d198a79f",
+      "symbol_spans": {
+        "Rdata": {
+          "lines": [
+            12,
+            275
+          ]
+        }
+      }
+    },
+    {
+      "bytes": 59354,
+      "path": "Rdat_upd.f",
+      "sha256": "40e69fd432926b364b887325c4a81124080f38c12098ec8815afe05a6616e8ee",
+      "symbol_spans": {}
+    },
+    {
+      "bytes": 10704,
+      "path": "omfiRdat.f",
+      "sha256": "625852ae915962152873b02d64eebd5a24b1e03faac329c6d120490e78d486e0",
+      "symbol_spans": {}
+    },
+    {
+      "bytes": 11182,
+      "path": "epemrdata1n_updatehigh.f",
+      "sha256": "2dea4c3483bf93f0650b893d3e734e2003c3f9312b0d48f180bd0dcc46b7b068",
+      "symbol_spans": {}
+    },
+    {
+      "bytes": 32701,
+      "path": "epemrdatgrcorrx.f",
+      "sha256": "b714cdef1c4486c18fd701cf0e68783ff9df8f5ae0fb960cda521dec2bb99e6d",
+      "symbol_spans": {}
+    },
+    {
+      "bytes": 24954,
+      "path": "taurdatisocorrx.f",
+      "sha256": "7eefecf78dd342aea3e58823750882051044db1fa89c295695a1a8a043d7630d",
+      "symbol_spans": {}
+    },
+    {
+      "bytes": 6070,
+      "path": "resonances_dat.f",
+      "sha256": "86ba859c89cbdc5508d8b1069da49320a19f6d730ce8814f77211d8ba9c8e488",
+      "symbol_spans": {}
+    },
+    {
+      "bytes": 50693,
+      "path": "Rdat_fun.f",
+      "sha256": "23001790eace5334c830e9ef96973f8b10e4805d4eb6e0eb326f627fd345666e",
+      "symbol_spans": {
+        "BW": {
+          "lines": [
+            922,
+            950
+          ]
+        },
+        "BWRENO": {
+          "lines": [
+            966,
+            1093
+          ]
+        },
+        "BWrenofar": {
+          "lines": [
+            1095,
+            1126
+          ]
+        },
+        "RS40": {
+          "lines": [
+            22,
+            767
+          ]
+        },
+        "RSpQCD": {
+          "lines": [
+            769,
+            801
+          ]
+        },
+        "frome": {
+          "lines": [
+            1151,
+            1177
+          ]
+        },
+        "frphi": {
+          "lines": [
+            1179,
+            1205
+          ]
+        },
+        "xRS": {
+          "lines": [
+            803,
+            818
+          ]
+        }
+      }
+    },
+    {
+      "bytes": 2339,
+      "path": "constants.f",
+      "sha256": "555b17d9f62da13c3ba16651a2320dd80fd2a95ae07fc7e5661a6979b4e2cf69",
+      "symbol_spans": {}
+    },
+    {
+      "bytes": 2190,
+      "path": "constants_qcd.f",
+      "sha256": "823a58059fdb2e3ac40b310d182ac8a71b7148aa0cff067ca8d195869ef75cd9",
+      "symbol_spans": {}
+    },
+    {
+      "bytes": 35760,
+      "path": "leptons.f",
+      "sha256": "800bd2bee19802502975c8cc2ef42a8a12a1bee51f96547bd9de6c74f1504188",
+      "symbol_spans": {}
+    },
+    {
+      "bytes": 9588,
+      "path": "hadr5n26.f",
+      "sha256": "c72e55a3a3ec4c8ed69d7dea8ff4929124052339976425ba136fb92f37c90eef",
+      "symbol_spans": {}
+    },
+    {
+      "bytes": 57328,
+      "path": "dalhadt26_5.f",
+      "sha256": "fa795b47a710b74c56038bcf7e820dae2426f619ba44c050c5def3a6128054c8",
+      "symbol_spans": {}
+    },
+    {
+      "bytes": 12654,
+      "path": "dalhadthigh26_5.f",
+      "sha256": "13a7c8dbbd8fd3bdb117e0045889b7968bcb37934b001a22f17362c607d09b4d",
+      "symbol_spans": {}
+    },
+    {
+      "bytes": 160395,
+      "path": "dalhadslow26_5.f",
+      "sha256": "70f733daa6da82aaf8b67c56f446227111a48ab093ca403ad34fd98fa4ed049e",
+      "symbol_spans": {}
+    },
+    {
+      "bytes": 12653,
+      "path": "dalhadshigh26_5.f",
+      "sha256": "fe4c3656968e2c92a93c263f774a8bbbc4f639ff5c214920b3dbfab1d77f9341",
+      "symbol_spans": {}
+    },
+    {
+      "bytes": 56230,
+      "path": "rhad/r012.f",
+      "sha256": "5434f2915020fdd3cb473ec73a6c307d11a510ccdc0845febf8145ef16093b30",
+      "symbol_spans": {}
+    },
+    {
+      "bytes": 16961,
+      "path": "rhad/r34.f",
+      "sha256": "c3a68be27d7af2c04298d93afd60b07abcb712a25e9560ad7107c4869405ae98",
+      "symbol_spans": {}
+    },
+    {
+      "bytes": 31054,
+      "path": "rhad/runal.f",
+      "sha256": "f1ff74ecb6b722f37eadb383048284270f58af785216a2db641b4e6f35a97bb3",
+      "symbol_spans": {}
+    },
+    {
+      "bytes": 14917,
+      "path": "rhad/funcs.f",
+      "sha256": "bb69f541eadb219dcb637cb3bd541dfe6150a200f96fd0149fd76c9b4d0ae4ad",
+      "symbol_spans": {}
+    },
+    {
+      "bytes": 10224,
+      "path": "rhad/vegas-rhad.f",
+      "sha256": "8dff3ba882650ac8894fbdc08fbbc1ec062eb7043738a25cec7188d017e74771",
+      "symbol_spans": {}
+    },
+    {
+      "bytes": 2036,
+      "path": "rhad/parameters.f",
+      "sha256": "29bf55283583ef16fe1c20dd0ae8396135780d8fb376ce99e34d45ac50cfebe4",
+      "symbol_spans": {}
+    },
+    {
+      "bytes": 22402,
+      "path": "rhad/rhad.f",
+      "sha256": "3cee6541241da9cfdf4b7445124189ec9627f1c1444aad59ccf1e19372ab6179",
+      "symbol_spans": {}
+    },
+    {
+      "bytes": 17301,
+      "path": "rhad/rqcdHSx.f",
+      "sha256": "73b16d2744a15ef3ddb3405e359021fb0124b4fef91e523e730a20d518643968",
+      "symbol_spans": {}
+    },
+    {
+      "bytes": 571,
+      "path": "rhad/common.f",
+      "sha256": "d25eb88c8c5a902c147ac13291ac64e171d7b9fabff3839ef68106c1a1eea53d",
+      "symbol_spans": {}
+    },
+    {
+      "bytes": 213802,
+      "path": "reso_reno.dat",
+      "sha256": "57f7268c7415fc32691ed6a327d6f4a3a2e8cf43ae72a474f38e59f269961f73",
+      "symbol_spans": {}
+    },
+    {
+      "bytes": 213450,
+      "path": "intRdatx.f",
+      "sha256": "da97e5caca7d7a9684f671d5d59ffa8dc6cc99153c0c3adaf9d76c795139dc71",
+      "symbol_spans": {
+        "covariance_ranges": {
+          "lines": [
+            546,
+            608
+          ]
+        },
+        "resonance_undressing_policy": {
+          "lines": [
+            4404,
+            4517
+          ]
+        },
+        "source_alpha_normalization": {
+          "lines": [
+            835,
+            850
+          ]
+        }
+      }
+    }
+  ],
+  "spectrum_normalization": {
+    "LO_Pauli": "alpha0^2/(3*pi^2)*integral ds R(s)*K(s;m_mu)/s",
+    "R": "12*pi*Im Pi = sigma_bare/(4*pi*alpha_ref^2/(3*s))",
+    "alpha_ref_inverse_R_conversion": 137.0359991657,
+    "current": "j_had=sum_f Q_f qbar_f gamma q_f with e factored out",
+    "delta_alpha_spacelike": "alpha0*Q_squared/(3*pi)*integral ds R(s)/(s*(s+Q_squared))",
+    "kernel": "K=integral_0^1 dx x^2*(1-x)/(x^2+(1-x)*s/m_mu^2)",
+    "subtraction": "Pi(q_squared)-Pi(0), Thomson/on-shell"
+  },
+  "status": "EVALUATED_COMPONENT_ONLY",
+  "threshold_and_regions": {
+    "lower_GeV": 0.27914036,
+    "lowest_region": "source pion chiral/threshold array, not new cross-section measurement",
+    "measured_data": "piecewise-linear source bare world-average R values; source includes FSR convention",
+    "narrow_resonances": "omega/phi background-subtracted data; J/psi1-3 and Upsilon1-6 source BW plus undressing once",
+    "pQCD_regions_GeV": [
+      [
+        5.2,
+        9.46
+      ],
+      [
+        11.5,
+        1000000.0
+      ]
+    ],
+    "strict_all_orders_inclusive_threshold": "pi0-gamma permits threshold below two-pion; this source does not materialize that lower radiative channel here; no exact all-orders completion claim"
+  },
+  "uncertainty": {
+    "higher_QCD_order_error_not_enclosed": true,
+    "missing_full_cross_experiment_covariance": true,
+    "omega_phi": "third array column ABSOLUTE; separate channel systematic errors, independent of background; background third column FRACTIONAL",
+    "pQCD": "source alpha_s +/-0.0007 finite difference; same parameter correlated between the two intervals",
+    "point_covariance": "C_ij=delta_ij stat_i^2+sys_i*sys_j inside each source energy range; different ranges independent",
+    "quadrature": "numerical convergence estimate, not rigorous enclosure",
+    "ranges_GeV": [
+      [
+        0.27914036,
+        0.318
+      ],
+      [
+        0.318,
+        1.05
+      ],
+      [
+        1.05,
+        1.4
+      ],
+      [
+        1.4,
+        2.0
+      ],
+      [
+        2.0,
+        3.2
+      ],
+      [
+        3.2,
+        3.6
+      ],
+      [
+        3.6,
+        5.2
+      ],
+      [
+        5.2,
+        9.46
+      ],
+      [
+        9.46,
+        11.5
+      ]
+    ],
+    "resonance": "retained source STAPS/SYSPS/STAYP/SYSYP parameter-error approximation; not invented full PDG joint covariance",
+    "undressing": "source error separately summed conservatively; not treated as independent from underlying spectral measurements"
+  }
+}

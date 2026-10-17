@@ -1,0 +1,7 @@
+PRESERVED INPUT-LOCATION FAILURE IN APPLICATION_RUN_1
+
+The first new producer used radius[-1] from the 48-point Gauss quadrature as the wall radius. That node is interior. The clock and material-wall velocity were wall quantities, but the radius and its first jet were not. The saved surface-density discrepancy was 8.610092355501653e-7 and the original Green first mismatch reached 0.0011209512960055968. These are failed source-binding checks, despite passing the purely algebraic Cayley identities.
+
+application_run_1/result.json and producer_at_failure.py/seam_helper_at_failure.py preserve that result and exact producer/helper source bytes. The corrected producer reads stage_raw from the same frozen trial and evaluates only _geometry_variables/_fields at its actual wall, contracting their analytic jets with the original saved canonical time direction. It reuses the original normal mode, point traces, Green, mass, source and history. No profile/D5/history integration or fitting is performed.
+
+Corrected application_run_2 and application_run_3 are byte-identical. The surface-density value mismatch is zero; original Green first mismatch is at most 9.074783461686251e-11. The correction fixes this new producer input-location error. It does not establish physical radial quadrature convergence or repair the full physical outgoing derivative by itself.

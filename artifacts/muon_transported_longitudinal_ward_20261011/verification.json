@@ -1,0 +1,65 @@
+{
+  "classification": "VERIFIED_DETERMINISTIC_FINITE_ACTION_APPLICATION",
+  "commands": [
+    "$env:PYTHONPATH='src'; $env:OPENBLAS_NUM_THREADS='4'; $env:OMP_NUM_THREADS='4'; C:\\Python314\\python.exe scripts/evaluate_muon_transported_longitudinal_ward.py --output artifacts/muon_transported_longitudinal_ward_20261011/run_4 --quadrature-order 16 --tolerance 2e-13",
+    "$env:PYTHONPATH='src'; $env:OPENBLAS_NUM_THREADS='4'; $env:OMP_NUM_THREADS='4'; C:\\Python314\\python.exe scripts/evaluate_muon_transported_longitudinal_ward.py --output artifacts/muon_transported_longitudinal_ward_20261011/run_5 --quadrature-order 16 --tolerance 2e-13"
+  ],
+  "files_byte_identical": {
+    "incoming_family_1.npz": true,
+    "incoming_family_2.npz": true,
+    "outgoing_family_1.npz": true,
+    "outgoing_family_2.npz": true,
+    "result.json": true
+  },
+  "focused_test_command": "C:\\Python314\\python.exe -m pytest --noconftest -q tests/test_muon_transported_longitudinal_ward.py tests/test_muon_longitudinal_current_tail_diagnostic.py",
+  "focused_test_output": "........ [100%]\n8 passed in 2.49s",
+  "input_pins_current": true,
+  "paired_runs": [
+    4,
+    5
+  ],
+  "physical_Pauli_or_continuum_bound": false,
+  "producer_exit_codes": [
+    0,
+    0
+  ],
+  "quadrature12_rtol2e_12_to_quadrature16_rtol2e_13_changes": {
+    "incoming_family_1.npz": {
+      "n1_integrated_Ward_residual": 7.945674836968298e-18,
+      "n1_integrated_localization_amputation": 5.297520495285191e-18,
+      "n1_integrated_orbit_current": 3.103927019871204e-18,
+      "n3_integrated_Ward_residual": 3.898936116611206e-18,
+      "n3_integrated_localization_amputation": 2.5434977158823755e-18,
+      "n3_integrated_orbit_current": 1.533154442231442e-18
+    },
+    "incoming_family_2.npz": {
+      "n1_integrated_Ward_residual": 7.384646216903274e-18,
+      "n1_integrated_localization_amputation": 5.3098830365254035e-18,
+      "n1_integrated_orbit_current": 2.6512366883770484e-18,
+      "n3_integrated_Ward_residual": 3.6231040457992804e-18,
+      "n3_integrated_localization_amputation": 2.4022654998755247e-18,
+      "n3_integrated_orbit_current": 1.7557802389696614e-18
+    },
+    "outgoing_family_1.npz": {
+      "n1_integrated_Ward_residual": 1.1646117675190741e-17,
+      "n1_integrated_localization_amputation": 6.221675205038792e-18,
+      "n1_integrated_orbit_current": 6.1896031822972756e-18,
+      "n3_integrated_Ward_residual": 2.0739019597164273e-18,
+      "n3_integrated_localization_amputation": 2.0907279626347336e-18,
+      "n3_integrated_orbit_current": 9.964870886283743e-19
+    },
+    "outgoing_family_2.npz": {
+      "n1_integrated_Ward_residual": 1.1156475083662302e-17,
+      "n1_integrated_localization_amputation": 6.367445774075431e-18,
+      "n1_integrated_orbit_current": 5.386905374923621e-18,
+      "n3_integrated_Ward_residual": 2.1339537787871197e-18,
+      "n3_integrated_localization_amputation": 2.230599309661046e-18,
+      "n3_integrated_orbit_current": 9.746346204738746e-19
+    }
+  },
+  "retained_diagnostics": {
+    "run_1": "Stopped after zero wall-profile smoke test; interior basis had zero trace, no final receipt. Corrected to wall profile1 with explicit nonzero guard.",
+    "run_2": "Completed prior source/test edition numerical diagnostic.",
+    "run_3": "Numerical arrays completed but provenance guard rejected concurrent test-file update; preserved, not publication replay."
+  }
+}

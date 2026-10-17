@@ -1,0 +1,16 @@
+{
+  "correction": "slice first three metric fields/gradients; test only",
+  "first_command": "C:\\Python314\\python.exe -m pytest -q tests/test_muon_cut_inverse_coverage.py",
+  "first_execution": "three passed; rapidity test failed at four-field unpack before assertions",
+  "full_suite_run": false,
+  "passing_checks": [
+    "actual-array rapidity/Christoffel identity and coefficient enclosure",
+    "64 source nodes rejected by whole-family enclosure",
+    "endpoint cut, all46 saltations and implicit derivative",
+    "actual-source radial density/normal identity, no native promotion"
+  ],
+  "prior_four_checks_replayed": false,
+  "rerun_command": "C:\\Python314\\python.exe -m pytest -q tests/test_muon_cut_inverse_coverage.py::test_rapidity_first_exit_identity_on_actual_tail_arrays",
+  "rerun_execution": "one passed",
+  "strengthened_range_test": "independent current cached C_rho factor check added; that test alone rerun: one passed"
+}

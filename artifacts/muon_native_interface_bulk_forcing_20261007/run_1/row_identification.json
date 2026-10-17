@@ -1,0 +1,24 @@
+{
+  "HS_13": "z1-z0-h*(f0+4*fmid+f1)/6, h=1/4",
+  "actual_cached_residual": "F_local=[C_left/s_left; C_right/s_right; T_test HS_13; (lambda_left-s_descriptor,left)/1e-7]",
+  "at_owned_stationarity": "E_owner=0 => f_local=C h_psi and F_n=C H_owner; same response if the consumed row/dual map is valid",
+  "dual_contraction": "h_psi^dagger H_owner^-1 h_psi=f_local^dagger C^-dagger F_n^-1 f_local; row transformations are not form congruences",
+  "internal_partial": "F_n=C H_owner+(D_n C)E_owner",
+  "physical_seven_port_source_map_provided": false,
+  "recovered_F_n": "J125 (125x125), local corrected interval-13 constraint/flow/descriptor derivative",
+  "recovered_F_p": "local125_forcing (125x73), launch forcing; not F_b",
+  "recovered_g_n": "local125_port_normal_derivative (7x125), output derivative; not F_b",
+  "required_identification": "F_local=C E_owner in common internal coordinates and inherited domains",
+  "retained_caveat": "The attached-action flow is not assumed stationary for L_classical after vacuum subtraction",
+  "row_count": {
+    "descriptor": 1,
+    "flow_matching": 74,
+    "left_constraints": 25,
+    "right_constraints": 25
+  },
+  "row_or_consumed_dual_map_C": null,
+  "same_current_AE4_support_loss_base_proved": false,
+  "scope": "Examined concrete producers and retained cache roles; no assertion of absence from all scientific records",
+  "signed_action_ledger": "Gamma_attached-Gamma_SM_zeta+Gamma_heat=Gamma_classical+Gamma_heat",
+  "source_partial": "D_s F_local=C h_psi+(D_s C)E_owner at fixed internal coordinates"
+}

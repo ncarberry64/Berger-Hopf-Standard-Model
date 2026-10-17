@@ -1,0 +1,596 @@
+{
+  "GF_old_provisional_value": 1.1663772930435853e-05,
+  "GF_relative_shift_from_frozen_provisional": 1.1229482277386182e-07,
+  "Gate7_closed": false,
+  "VVA_current_sectors": {
+    "a_mu_VVA": -1.4326786032916142e-10,
+    "contributions": [
+      {
+        "a_mu": -2.0799996805982312e-11,
+        "generation": "u,d,e",
+        "source_standard_uncertainty": 2.9999995393243724e-13
+      },
+      {
+        "a_mu": -4.139999364267633e-11,
+        "generation": "c,s,mu",
+        "source_standard_uncertainty": 2.799999570036081e-12
+      },
+      {
+        "a_mu": -8.106786988050277e-11,
+        "generation": "t,b,tau",
+        "published_reference_prefactor_rescaled_value": -8.119998753104633e-11,
+        "source_standard_uncertainty": 9.999998464414574e-14
+      }
+    ],
+    "equations": "4,6,22,Table I; first/second generation primary dispersive kernels",
+    "internal_mass_source_scope": "2503.04883 footnote1, mb/mc converted to OS through alpha_s; source alpha_s variation also covers its reference Monte Carlo top-to-pole correction",
+    "mass_shape_approximation_allowance": 1e-13,
+    "mass_shape_approximation_scope": "0.07% of VVA magnitude estimate covers uncomputed kernel, alpha_s-mass/tail changes; top/tau one-loop mass difference executed, not a bound or full derivative",
+    "native_evaluated": false,
+    "prefactor_rescaling": 0.9999998464414575,
+    "published_sector_covariance": null,
+    "reference_internal_masses_GeV": {
+      "bottom_MSbar": 4.183,
+      "charm_MSbar": 1.273,
+      "tau": 1.77686,
+      "top_source_MC_parameter": 172.57
+    },
+    "reference_prefactor_inputs": {
+      "GF_GeV_minus2": 1.1663787e-05,
+      "alpha_inverse": 137.035999,
+      "muon_mass_GeV": 0.1056583755
+    },
+    "selected_Higgs_Yukawa": false,
+    "source": "https://arxiv.org/abs/2503.04883",
+    "source_standard_uncertainty_quadrature_if_uncorrelated": 2.817800128023727e-12,
+    "source_standard_uncertainty_sum_over_all_correlations": 3.199999508612664e-12,
+    "third_generation_perturbative_masspoint_shifts": [
+      {
+        "a_mu_shift": 1.3003523675927543e-13,
+        "equations": "1-3, wT=wL/2",
+        "fermion": "top",
+        "log_Q_squared_interval": [
+          -40,
+          50
+        ],
+        "quadrature_error_estimate": 2.4750804485250565e-21,
+        "reference_mass_GeV": 172.57,
+        "selected_mass_GeV": 171.1,
+        "separately_physical_generation_sector": false,
+        "source": "https://arxiv.org/abs/2503.04883",
+        "uncomputed_mass_dependence": "alpha_s/nonperturbative corrections and finite tail retained in separate approximation allowance"
+      },
+      {
+        "a_mu_shift": 2.0824137842846376e-15,
+        "equations": "1-3, wT=wL/2",
+        "fermion": "tau",
+        "log_Q_squared_interval": [
+          -40,
+          50
+        ],
+        "quadrature_error_estimate": 7.069109816415779e-21,
+        "reference_mass_GeV": 1.77686,
+        "selected_mass_GeV": 1.77709,
+        "separately_physical_generation_sector": false,
+        "source": "https://arxiv.org/abs/2503.04883",
+        "uncomputed_mass_dependence": "alpha_s/nonperturbative corrections and finite tail retained in separate approximation allowance"
+      }
+    ],
+    "whole_EW_evaluated": false,
+    "whole_EW_total_imported": false
+  },
+  "action_selected": false,
+  "additional_weak_measurements": {
+    "W_mass": {
+      "edition": "CMS2026 Nature652321",
+      "scheme": "running-width",
+      "source": "https://arxiv.org/abs/2412.13872",
+      "standard_uncertainty_GeV": 0.0099,
+      "value_GeV": 80.3602
+    },
+    "Z_mass": {
+      "edition": "LEP2006 Table2.13",
+      "scheme": "running-width",
+      "source": "https://arxiv.org/abs/hep-ex/0509008",
+      "standard_uncertainty_GeV": 0.0021,
+      "value_GeV": 91.1876
+    },
+    "shared_W_Z_dependency": "CMS W uses LEP Z closure; Table A.1 Z impact1.7MeV, signed covariance unavailable",
+    "top_pole": {
+      "a_mu_at_minus_sigma": -4.5002402962712654e-11,
+      "a_mu_at_plus_sigma": -4.567002162354137e-11,
+      "mass_GeV": 171.1,
+      "scheme": "ATLAS tt+jet normalized differential cross-section NLO pole scheme",
+      "source": "https://arxiv.org/abs/1905.02302",
+      "source_errors_combined_in_quadrature_as_diagnostic": true,
+      "standard_uncertainty_minus_GeV": 1.0295630140987,
+      "standard_uncertainty_plus_GeV": 1.2083045973594573,
+      "statistical_GeV": 0.4,
+      "systematic_GeV": 0.9,
+      "theory_minus_GeV": 0.3,
+      "theory_plus_GeV": 0.7,
+      "top_Yukawa_assigned": false
+    }
+  },
+  "broader_BHSM_exact_tree_nu_lambda_matching_proved": false,
+  "calibrated_GF_scope": "operational low-energy V-A Fermi coefficient extracted from selected lifetime, pole mass and specified local QED/hadronic decay corrections",
+  "classification": "CALIBRATED_DECAY_REMATCH_AND_SELECTED_LOCAL_WEAK_SECTORS",
+  "complete_a_mu": null,
+  "complete_uncertainty": false,
+  "decay_rematching": {
+    "G_F_GeV_minus2": 1.1663774240217167e-05,
+    "classification": "CALIBRATED_FERMI_DECAY_CONSTANT_KNOWN_QED_ORDERS_WITH_EXPLICIT_TRUNCATION",
+    "decay_GF_combined_estimated_standard_uncertainty": 1.997151402453128e-13,
+    "decay_rate_combined_estimated_standard_uncertainty": 3.409521657670921e-08,
+    "decay_uncertainty_scope": "quadrature combination of source numerical QED uncertainty and estimated hadronic alpha3 uncertainty; no complete error claim",
+    "fixed_ratio_derivatives": {
+      "lifetime_seconds": -2.6545013262561272,
+      "muon_mass": -0.0002759783285495403
+    },
+    "full_electroweak_matching_evaluated": false,
+    "hadronic_vp_GF_standard_uncertainty": 1.928044238210926e-14,
+    "lifetime_factor": {
+      "W_propagator_correction_in_GF_definition": false,
+      "alpha_MSbar_known_order3": 0.007358240469840633,
+      "alpha_MSbar_known_order3_inverse": 135.9020548592724,
+      "alpha_e_mu": 0.0073582076988999556,
+      "alpha_e_mu_inverse": 135.90266012054798,
+      "charge_conversion": {
+        "coefficients": [
+          3.554399486393137,
+          16.23705532366665
+        ],
+        "complete_alpha0_to_MSbar_four_loop_conversion_used": false,
+        "equations": "34-35, N=1, mu=m_mu, M=m_e",
+        "retained_accuracy": "OS/MS relation through alpha0^3, sufficient for strict decay through alpha0^3",
+        "source": "https://arxiv.org/abs/1207.2199"
+      },
+      "complete_decay_error": false,
+      "convention": "additive phase+Delta_q1+Delta_q2+Delta_q3; on-shell pole masses; Thomson alpha input; electron-MSbar conversion through needed order",
+      "current_delta_q1": -0.0042337338191558525,
+      "current_delta_q2": 3.631743856318059e-05,
+      "current_delta_q3": -2.3422423729574632e-07,
+      "current_hadronic_delta_q3_estimate": 2.6999924553035454e-08,
+      "current_hadronic_vp": {
+        "coefficient": -0.0428,
+        "equations": "12-15",
+        "input_scope": "unweighted KNT19 and KNT19/CMD3 mean; half spread retained; no measured a_mu input",
+        "source": "https://arxiv.org/abs/2607.02657",
+        "standard_uncertainty": 0.0006
+      },
+      "current_two_loop_coefficient_with_mass_hadron_tau": 6.620137391120848,
+      "delta_q0": -0.00018705065270996357,
+      "delta_q1": -0.0042337338191558525,
+      "delta_q2": 3.631743856318059e-05,
+      "delta_q3": -2.3422423729574632e-07,
+      "equations": "2,6,9,10,15-16; exact one-loop spectrum from 9904240 Appendix C",
+      "errors": {
+        "alpha3_finite_electron_estimate": 3.313184974835086e-10,
+        "hadronic_alpha3_estimated_standard_uncertainty": 2.6999924553035454e-08,
+        "hadronic_nearby_masspoint_allowance": 4.695933871671377e-13,
+        "hadronic_vp_standard_uncertainty": 3.291542433414517e-09,
+        "omitted_order_rate_allowance_estimate": 1e-08,
+        "omitted_order_scope": "conservative perturbative estimate, not an enclosure",
+        "one_loop_quadrature_estimate": 1.5186132361591758e-16,
+        "photonic_alpha3_coefficient_standard_uncertainty": 2.0558541192218178e-08,
+        "reorganized_minus_strict_order3": 2.9786845212598223e-09,
+        "resummed_minus_strict_order2": 2.493210350396069e-07,
+        "tau_quadrature_estimate": 8.259274438214218e-20,
+        "two_loop_mass_power_truncation_estimate": 8.047873928235037e-21,
+        "two_loop_table_rounding_allowance": 2.6415856621272543e-12
+      },
+      "finite_electron_two_loop": {
+        "coefficient_correction": -0.07915965571286782,
+        "equations": "Table I, CF=TR=1, CA=NL=0; finite XA+XC+XH only",
+        "omitted_mass_power_estimate": 1.467009602526039e-15,
+        "powers": {
+          "1": -0.05966582270152573,
+          "2": -0.019364685680464868,
+          "3": -0.00014700089225320705,
+          "4": 1.788028129919719e-05,
+          "5": -2.67308436445531e-08,
+          "6": 1.1072104476151162e-11,
+          "7": -1.516655994793765e-13
+        },
+        "rigorous_remainder_enclosure": null,
+        "source": "https://arxiv.org/abs/0803.0960",
+        "table_rounding_allowance": 4.815223954540322e-07
+      },
+      "hadronic_third_order_estimate": {
+        "equation": "16",
+        "source": "https://arxiv.org/abs/2607.02657",
+        "standard_uncertainty": 2.6999924553035454e-08,
+        "status": "ESTIMATE_NOT_COMPLETED_INTEGRAL",
+        "value": 2.6999924553035454e-08
+      },
+      "hadronic_vp": {
+        "coefficient": -0.042,
+        "equation": "16",
+        "mass_reference_use": "published dispersion integral at physical muon mass; nearby-mass use",
+        "source": "https://arxiv.org/abs/hep-ph/9802341",
+        "standard_uncertainty": 0.002
+      },
+      "massless_two_loop_coefficient": 6.742679334032586,
+      "one_loop": {
+        "coefficient": -1.8075879849306902,
+        "equation": "Appendix C, C.1-C.3 integrated from sqrt(x) to 1",
+        "exact_minus_expansion": -1.34219426084492e-06,
+        "leading_mass_expansion": -1.8075866427364293,
+        "quadrature_error_estimate": 6.483702463810914e-14,
+        "source": "https://arxiv.org/abs/hep-ph/9904240"
+      },
+      "rate_factor": 0.9956153257423845,
+      "source": "https://arxiv.org/abs/2607.02657",
+      "strict_alpha_0_order2_rate_factor": 0.9956153065663762,
+      "strict_alpha_0_order3_rate_factor": 0.9956153227637,
+      "tau_vp": {
+        "coefficient": -0.0005822871988701045,
+        "endpoint_series_threshold": 1e-09,
+        "endpoint_series_truncation_estimate": 1e-18,
+        "equations": "10-12, R_tau(s)=(1+2m_tau\u00b2/s)sqrt(1-4m_tau\u00b2/s)",
+        "muon_bubble_added": false,
+        "quadrature_error_estimate": 1.5055448207568212e-14,
+        "source": "https://arxiv.org/abs/hep-ph/9802341"
+      },
+      "third_order": {
+        "coefficient": -18.22886050957,
+        "coefficient_standard_uncertainty": 1.6,
+        "components": {
+          "electron_loop": -7.187551125,
+          "electron_loop_squared": -6.919459635,
+          "mixed_muon_electron": -0.01288114148,
+          "muon_loop": 2.109799281,
+          "muon_loop_squared": -0.01876788909,
+          "photonic_extrapolation": -6.2
+        },
+        "equation": "10, nl=nh=1; photonic part extrapolated with uncertainty",
+        "source": "https://arxiv.org/abs/2607.02657"
+      },
+      "two_loop_coefficient_with_mass_hadron_tau": 6.620937391120848,
+      "two_loop_diagnostic_delta_q1": -0.0042337149636372815,
+      "two_loop_diagnostic_delta_q2": 3.632150375859221e-05,
+      "two_loop_rate_factor": 0.9956155558874112
+    },
+    "measured_anomaly_used": false,
+    "omitted_order_GF_allowance_estimate": 5.857570659390979e-14,
+    "reconstructed_lifetime_seconds": 2.1969802999999996e-06,
+    "relative_lifetime_residual": 0.0
+  },
+  "existing_higher_QED_packet_modified": false,
+  "fermionic_rest_no_H": {
+    "Higgs_diagrams_included": false,
+    "a_mu_fermionic_rest_no_H": -4.53089813599462e-11,
+    "common_prefactor": 2.7086824792211345e-12,
+    "contributions": {
+      "delta_rho_weak_angle": -2.2732205167535765e-12,
+      "hadronic_gamma_Z_mixing": -2.3076549128375553e-12,
+      "lepton_gamma_Z_log": -2.3836209810551684e-13,
+      "top_W_gauge_remainder": -4.048974383224955e-11
+    },
+    "dimensionless_coefficients": {
+      "delta_rho_weak_angle": 0.8392347697420879,
+      "hadronic_gamma_Z_mixing": 0.8519473694462363,
+      "lepton_gamma_Z_log": 0.08799927637663033,
+      "top_W_gauge_remainder": 14.948132216623682
+    },
+    "equation": "20",
+    "gamma_Z_correlator_induced_standard_uncertainty": 3.846091521395926e-14,
+    "gamma_Z_current_correlator": {
+      "equations": "23-26; 8pi\u00b2 Pi_bar_gammaZ(-MZ\u00b2)=6.0(1)",
+      "source": "https://arxiv.org/abs/2503.04883",
+      "standard_uncertainty": 0.1,
+      "value": 6.0
+    },
+    "native_evaluated": false,
+    "sin_squared_theta_W": 0.22337664470480512,
+    "source": "https://arxiv.org/abs/1306.5546",
+    "source_expansion_uncertainty_allowance": 1e-12,
+    "source_expansion_uncertainty_scope": "2025 Table I rest error 0.10e-11, including omitted weak-angle/heavy-top terms; not rigorous",
+    "top_Yukawa_fitted": false,
+    "top_pole_input_response": {
+      "a_mu_at_minus_sigma": -4.5002402962712654e-11,
+      "a_mu_at_plus_sigma": -4.567002162354137e-11,
+      "mass_GeV": 171.1,
+      "scheme": "ATLAS tt+jet normalized differential cross-section NLO pole scheme",
+      "source": "https://arxiv.org/abs/1905.02302",
+      "source_errors_combined_in_quadrature_as_diagnostic": true,
+      "standard_uncertainty_minus_GeV": 1.0295630140987,
+      "standard_uncertainty_plus_GeV": 1.2083045973594573,
+      "statistical_GeV": 0.4,
+      "systematic_GeV": 0.9,
+      "theory_minus_GeV": 0.3,
+      "theory_plus_GeV": 0.7,
+      "top_Yukawa_assigned": false
+    },
+    "whole_EW_evaluated": false
+  },
+  "fixed_Y_lepton_HZ": {
+    "a_mu_HZ_charged_leptons": -8.64399371867813e-17,
+    "action_selected": false,
+    "contributions": [
+      {
+        "a_mu": -8.589267561547288e-17,
+        "internal_lepton": "tau",
+        "kernel": {
+          "equation": "17",
+          "quadrature_error_estimate": 8.303771732720566e-12,
+          "source": "https://arxiv.org/abs/1306.5546",
+          "value": -0.00391868844268672
+        },
+        "quadrature_error_estimate": 1.8200813416401533e-25
+      },
+      {
+        "a_mu": -5.47237608012131e-19,
+        "internal_lepton": "muon",
+        "kernel": {
+          "equation": "17",
+          "quadrature_error_estimate": 8.363840437559337e-11,
+          "source": "https://arxiv.org/abs/1306.5546",
+          "value": -2.4709576175217197e-05
+        },
+        "quadrature_error_estimate": 1.852321546265807e-24
+      },
+      {
+        "a_mu": -2.3963296292451492e-23,
+        "internal_lepton": "electron",
+        "kernel": {
+          "equation": "17",
+          "quadrature_error_estimate": 9.522602248628806e-11,
+          "source": "https://arxiv.org/abs/1306.5546",
+          "value": -1.0574501214822167e-09
+        },
+        "quadrature_error_estimate": 2.1579546356210285e-24
+      }
+    ],
+    "equation": "13 with fixed g_hmu*g_hf replacing m_mu*m_f/v\u00b2",
+    "fixed_Y_owner": "ae31_c2_intrinsic_m4_lepton_action.charged_lepton_yukawa_operator",
+    "quark_HZ_included": false,
+    "source": "https://arxiv.org/abs/1306.5546",
+    "whole_EW_evaluated": false
+  },
+  "fixed_Y_lepton_Hgamma": {
+    "HZ_included": false,
+    "a_mu_Hgamma_charged_leptons": -6.85127341783822e-14,
+    "action_selected": false,
+    "contributions": [
+      {
+        "a_mu": -6.781949994022558e-14,
+        "higgs_coupling": 0.00714519063101241,
+        "internal_lepton": "tau",
+        "kernel": {
+          "equation": "14",
+          "quadrature_error_estimate": 7.619722908192017e-11,
+          "source": "https://arxiv.org/abs/1306.5546",
+          "value": -0.012642022344505182
+        },
+        "quadrature_error_estimate": 4.0876829927553062e-22
+      },
+      {
+        "a_mu": -6.931811911065324e-16,
+        "higgs_coupling": 0.0004292435468707106,
+        "internal_lepton": "muon",
+        "kernel": {
+          "equation": "14",
+          "quadrature_error_estimate": 3.8696534475010647e-11,
+          "source": "https://arxiv.org/abs/1306.5546",
+          "value": -0.0001278832003631134
+        },
+        "quadrature_error_estimate": 2.0975163104238275e-22
+      },
+      {
+        "a_mu": -5.3047050090689936e-20,
+        "higgs_coupling": 2.1242013292130012e-06,
+        "internal_lepton": "electron",
+        "kernel": {
+          "equation": "14",
+          "quadrature_error_estimate": 9.188481238162795e-11,
+          "source": "https://arxiv.org/abs/1306.5546",
+          "value": -9.564272422633891e-09
+        },
+        "quadrature_error_estimate": 5.09627709207342e-22
+      }
+    ],
+    "equation": "1306.5546 Eq12 with m_mu*m_f/v\u00b2 replaced by g_hmu*g_hf",
+    "fixed_Y_owner": "ae31_c2_intrinsic_m4_lepton_action.charged_lepton_yukawa_operator",
+    "included": "charged-lepton H\u03b3 only",
+    "quark_Hgamma_included": false,
+    "source": "https://arxiv.org/abs/1306.5546",
+    "whole_EW_evaluated": false
+  },
+  "full_native_overlap": null,
+  "full_native_response": null,
+  "input_uncertainty": {
+    "GF_standard_uncertainty_upper_over_all_primitive_correlations": 2.982076012998294e-11,
+    "GF_vs_primitive_gradient": [
+      -4.2575274297379186e-07,
+      -2.657203284790422e-12,
+      -1.4103480255264288e-07,
+      -2.654501326256127e-12,
+      0.0,
+      -1.7693543631860547e-14
+    ],
+    "actual_cross_source_covariance": null,
+    "illustrative_GF_standard_uncertainty_independent_primitives": 2.467689317833209e-11,
+    "muon_mass_vs_primitive_gradient": [
+      0.0015420535607081293,
+      9.62830415569653e-09,
+      0.000510998950905377,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "primitive_order": [
+      "alpha_inverse_0",
+      "R_infinity_m_minus1",
+      "muon_electron_mass_ratio",
+      "lifetime_ps",
+      "higgs_GeV",
+      "tau_GeV"
+    ],
+    "rate_log_response": {
+      "central_log_step": 0.0001,
+      "derivative_log_inputs": {
+        "alpha_0": -0.004196519570731638,
+        "muon_electron_ratio": 0.00035886521088102086,
+        "muon_tau_ratio": -5.367928324062632e-09
+      },
+      "scope": "finite differences of the literal selected finite-order expression, not a covariance or theory-error derivative"
+    },
+    "scope": "shared measured-input dependencies retained; independence illustrative, no complete uncertainty",
+    "source_theory_and_truncation_errors_separate": true
+  },
+  "leading_EW_rematched": {
+    "a_mu_leading_EW": 1.947938897323676e-09,
+    "derivatives": {
+      "GF": 0.0001670075961010205,
+      "muon_mass": 3.6872381781629086e-08,
+      "w_mass": 6.400790123276029e-12,
+      "z_mass": -5.640775439472981e-12
+    },
+    "equation": "8",
+    "full_EW_evaluated": false,
+    "input_uncertainty": {
+      "actual_cross_source_covariance": null,
+      "decay_matching_estimated_standard_uncertainty": 3.3353945477347863e-17,
+      "decay_matching_omitted_order_allowance_estimate": 9.78258794816757e-18,
+      "gradient": [
+        -1.4244754519317933e-11,
+        -8.875462620609537e-17,
+        -4.712134933103959e-12,
+        -4.433218853450065e-16,
+        0.0,
+        -2.9549561884655497e-18,
+        6.400790123276029e-12,
+        -5.640775439472981e-12
+      ],
+      "illustrative_independent_standard_uncertainty": 6.447784684318307e-14,
+      "primitive_order": [
+        "alpha_inverse_0",
+        "R_infinity_m_minus1",
+        "muon_electron_mass_ratio",
+        "lifetime_ps",
+        "higgs_GeV",
+        "tau_GeV",
+        "MW_GeV",
+        "MZ_GeV"
+      ],
+      "shared_G_F_muon_mass_dependency_included": true,
+      "standard_uncertainty_upper_over_all_correlations": 7.698998734437396e-14
+    },
+    "native_evaluated": false,
+    "omitted_terms": "terms suppressed by m_mu\u00b2/M_Z\u00b2 or m_mu\u00b2/M_H\u00b2; higher EW orders",
+    "radial_Higgs_one_loop_included": false,
+    "sin_squared_theta_W": 0.22337664470480512,
+    "source": "https://arxiv.org/abs/1306.5546"
+  },
+  "local_EW_evaluated_sector_subtotal": 1.7592934564604527e-09,
+  "local_EW_evaluated_subtotal_input_uncertainty": {
+    "actual_cross_source_covariance": null,
+    "consumer_central_log_step": 0.0001,
+    "decay_omitted_order_allowance_estimate": 8.835551307197696e-18,
+    "decay_theory_estimated_standard_uncertainty": 3.012500353935316e-17,
+    "evaluated_consumer_derivatives": {
+      "GF": 0.00015083985872252958,
+      "MW": -3.929570496093707e-13,
+      "MZ": 9.05553897773868e-13,
+      "alpha": -2.5851216527450712e-08,
+      "electron": -8.672569900678299e-17,
+      "higgs": 8.343327981157216e-16,
+      "muon": 3.33024302482311e-08,
+      "tau": 9.041170688659382e-12,
+      "top": -3.87108181066683e-13
+    },
+    "gamma_Z_correlator_derivative": -3.8460915213959255e-13,
+    "gradient": [
+      -1.1489740163387502e-11,
+      -8.01662405250299e-17,
+      -4.256162772554918e-12,
+      -4.004046050312416e-16,
+      8.343327981157216e-16,
+      9.04116801976776e-12,
+      -3.929570496093707e-13,
+      9.05553897773868e-13,
+      -3.87108181066683e-13
+    ],
+    "illustrative_independent_standard_uncertainty_minus": 3.985793260976089e-13,
+    "illustrative_independent_standard_uncertainty_plus": 4.67767652507018e-13,
+    "primitive_order": [
+      "alpha_inverse_0",
+      "R_infinity_m_minus1",
+      "muon_electron_mass_ratio",
+      "lifetime_ps",
+      "higgs_GeV",
+      "tau_GeV",
+      "MW_GeV",
+      "MZ_GeV",
+      "top_pole_GeV"
+    ],
+    "scope": "all literal evaluated weak sectors and shared primitive dependencies; uncomputed VVA shapes and theory estimates separate; not full BHSM uncertainty",
+    "standard_uncertainties_minus": [
+      1.1e-08,
+      9.6e-05,
+      0.00017,
+      2.2,
+      0.11,
+      0.00013601470508735444,
+      0.0099,
+      0.0021,
+      1.0295630140987
+    ],
+    "standard_uncertainties_plus": [
+      1.1e-08,
+      9.6e-05,
+      0.00017,
+      2.2,
+      0.11,
+      0.00013601470508735444,
+      0.0099,
+      0.0021,
+      1.2083045973594573
+    ],
+    "standard_uncertainty_upper_over_all_correlations_minus": 4.0727028395288793e-13,
+    "standard_uncertainty_upper_over_all_correlations_plus": 4.764626131299388e-13
+  },
+  "local_subtotal_accounting": "leading EW+VVA+f-rest,noH+literal fixed-Y lepton Hgamma/HZ; preserved scalar1 and QED1-5 excluded",
+  "measured_muon_anomaly_used": false,
+  "native_or_parent_lifetime_matching_correction": null,
+  "remaining_weak_sectors": {
+    "bosonic_scope": "ordinary reference bosonic result uses minimally matched gauge-Higgs/Goldstone counterterms; no full literal BHSM matching evaluated here",
+    "bosonic_two_loop": null,
+    "enclosure": null,
+    "estimate_basis": "twice sum of absolute published omitted two-loop sectors; conditional minimal matched low-energy perturbative scale, not a bound on an arbitrary quark-Y completion",
+    "finite_order_allowance_estimate": 4.292e-10,
+    "full_EW_two_loop_evaluated": false,
+    "published_Higgs_reference": -1.5e-11,
+    "published_bosonic_reference": -1.996e-10,
+    "quark_Hgamma_HZ": null,
+    "quark_Y_owner": "ae31_c2_intrinsic_m4_lepton_action.action_composition_contract",
+    "quark_Y_status": "up_down_Yukawa_terms_added=False; fixed ratios alone do not supply absolute transported action prefactors",
+    "source": "https://arxiv.org/abs/2503.04883",
+    "table": "I, individual reference sectors only",
+    "three_loop_NLL_estimated_standard_uncertainty": 2e-12,
+    "top_Higgs_Yukawa_from_pole_mass_assigned": false
+  },
+  "selected_input_config": {
+    "bytes": 19492,
+    "path": "artifacts/muon_calibrated_pauli_20261009/inputs.json",
+    "sha256": "0b614ab6f26d169ca04a4878f767f78eb3668484840867e46aebbebf186369da"
+  },
+  "sources": [
+    {
+      "bytes": 23582,
+      "path": "src/bhsm/interface/muon_calibrated_weak_decay.py",
+      "sha256": "e926f1afba8d8ec89351406de1ae042a49854c74042daef0967c62f93182f39f"
+    },
+    {
+      "bytes": 13398,
+      "path": "scripts/evaluate_muon_calibrated_weak_decay.py",
+      "sha256": "856a3c4c8909c469781fd8998074616bdd173e1d4bb0e3969b03481602389e8a"
+    },
+    {
+      "bytes": 14731,
+      "path": "src/bhsm/interface/muon_calibrated_higher_qed.py",
+      "sha256": "da58048f891504419159d558b44d4a0c6cb4cbf703aca7884dd515d88f99ae3a"
+    }
+  ]
+}

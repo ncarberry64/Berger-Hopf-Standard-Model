@@ -1,0 +1,468 @@
+{
+  "Gate7_closed": false,
+  "action_selected": false,
+  "audit_claims": {
+    "argv": [
+      "C:\\Python314\\python.exe",
+      "tools/audit_forbidden_claims.py",
+      "--format",
+      "json"
+    ],
+    "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+    "environment_overrides": {
+      "OPENBLAS_NUM_THREADS": "1",
+      "PYTHONPATH": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src"
+    },
+    "exit_code": 0,
+    "stderr": "",
+    "stdout": "{\n  \"allowed_example_paths\": [\n    \"docs/forbidden_claims.md\"\n  ],\n  \"audit\": \"forbidden_claims\",\n  \"findings\": [],\n  \"passed\": true,\n  \"verdict_labels\": [\n    \"FORBIDDEN_CLAIM_GUARDRAILS_ADDED\"\n  ]\n}\n"
+  },
+  "audit_frozen": {
+    "argv": [
+      "C:\\Python314\\python.exe",
+      "tools/audit_frozen_prediction_integrity.py",
+      "--format",
+      "json"
+    ],
+    "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+    "environment_overrides": {
+      "OPENBLAS_NUM_THREADS": "1",
+      "PYTHONPATH": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src"
+    },
+    "exit_code": 0,
+    "stderr": "",
+    "stdout": "{\n  \"audit\": \"frozen_prediction_integrity\",\n  \"files\": [\n    {\n      \"actual_sha256\": \"9EA147C56537520C86D3C4F9B864C6BA98BAC9E64931EDAE96449F3B335A36C4\",\n      \"expected_sha256\": \"9EA147C56537520C86D3C4F9B864C6BA98BAC9E64931EDAE96449F3B335A36C4\",\n      \"path\": \"docs/frozen_predictions.md\",\n      \"unchanged\": true\n    },\n    {\n      \"actual_sha256\": \"F38210E0689871A25A9D5B0A1A4239883B7240CD7D0E25CDCF4C8CAB72A2CBE7\",\n      \"expected_sha256\": \"F38210E0689871A25A9D5B0A1A4239883B7240CD7D0E25CDCF4C8CAB72A2CBE7\",\n      \"path\": \"docs/frozen_predictions.json\",\n      \"unchanged\": true\n    }\n  ],\n  \"frozen_predictions_changed\": false,\n  \"passed\": true\n}\n"
+  },
+  "audit_precision": {
+    "argv": [
+      "C:\\Python314\\python.exe",
+      "tools/verify_precision.py"
+    ],
+    "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+    "environment_overrides": {
+      "OPENBLAS_NUM_THREADS": "1",
+      "PYTHONPATH": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src"
+    },
+    "exit_code": 0,
+    "stderr": "",
+    "stdout": "PASS: precision gate verified (1.066e-14 <= 1.000e-13).\n"
+  },
+  "audit_public": {
+    "argv": [
+      "C:\\Python314\\python.exe",
+      "tools/audit_public_readiness.py",
+      "--format",
+      "json"
+    ],
+    "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+    "environment_overrides": {
+      "OPENBLAS_NUM_THREADS": "1",
+      "PYTHONPATH": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src"
+    },
+    "exit_code": 0,
+    "stderr": "",
+    "stdout": "{\n  \"audit\": \"bhsm_public_readiness\",\n  \"checks\": {\n    \"citation\": {\n      \"cff_version\": \"1.2.0\",\n      \"doi\": \"10.5281/zenodo.20663419\",\n      \"failures\": [],\n      \"license\": \"LicenseRef-AllRightsReserved\",\n      \"passed\": true,\n      \"release_date\": \"2026-06-26\",\n      \"release_tag\": \"v1.1.0\",\n      \"title\": \"Berger-Hopf Standard Model: Artifact-Backed Geometric Physics Research Framework\",\n      \"zenodo_archive_date\": \"2026-06-12\",\n      \"zenodo_archive_version\": \"v1.2.0\"\n    },\n    \"current_claims\": {\n      \"findings\": [],\n      \"passed\": true\n    },\n    \"frozen_predictions\": {\n      \"files\": [\n        {\n          \"actual_sha256\": \"9EA147C56537520C86D3C4F9B864C6BA98BAC9E64931EDAE96449F3B335A36C4\",\n          \"expected_sha256\": \"9EA147C56537520C86D3C4F9B864C6BA98BAC9E64931EDAE96449F3B335A36C4\",\n          \"path\": \"docs/frozen_predictions.md\",\n          \"unchanged\": true\n        },\n        {\n          \"actual_sha256\": \"F38210E0689871A25A9D5B0A1A4239883B7240CD7D0E25CDCF4C8CAB72A2CBE7\",\n          \"expected_sha256\": \"F38210E0689871A25A9D5B0A1A4239883B7240CD7D0E25CDCF4C8CAB72A2CBE7\",\n          \"path\": \"docs/frozen_predictions.json\",\n          \"unchanged\": true\n        }\n      ],\n      \"frozen_predictions_changed\": false,\n      \"passed\": true\n    },\n    \"hygiene\": {\n      \"allowed_large_artifact_limit_bytes\": 12582912,\n      \"allowed_large_artifacts\": [\n        {\n          \"bytes\": 10525866,\n          \"path\": \"artifacts/BHSM_aether_n3_fresh_sbp_fifth_v0_priority_v17_36.json\"\n        },\n        {\n          \"bytes\": 10722599,\n          \"path\": \"artifacts/BHSM_aether_n3_fresh_sbp_three_owner_priority_v17_47.json\"\n        },\n        {\n          \"bytes\": 12515555,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_C2_STOP_DOP853_ADAPTIVE_BORDERED_RHS_RESPONSE.json\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 15841669,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_C2_STOP_DOP853_ADAPTIVE_BORDERED_RHS_RESPONSE_CERTIFICATE.json\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 14094876,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_C2_STOP_DOP853_ADAPTIVE_SELECTED_PROJECTOR_GRAPH.json\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 17478672,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_C2_STOP_DOP853_BORDERED_RESPONSE_SECOND_VARIATION.json\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 15073608,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_C2_STOP_FULL_BORDERED_RHS_RESPONSE.json\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 25291911,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_C2_STOP_FULL_SELECTED_PROJECTOR_GRAPH.json\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 13925602,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_C2_STOP_HALF_STEP_FINE_HYBRID_GRAPH_JACOBIAN_RECONNAISSANCE.npz\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 27774619,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_C2_STOP_QUARTER_STEP_FINE_HYBRID_GRAPH_JACOBIAN_RECONNAISSANCE.npz\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 14361466,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_ARB_INTERACTION_TAYLOR26_MACRO_MAPS.npz\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 72207241,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_BLOCK_NEWTON_PREDICTOR.npz\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 22595029,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_NEWTON_ENDPOINT_CANDIDATE.npz\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 98072216,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_CORRELATED_DESCRIPTOR_AUGMENTED_JACOBIANS.npz\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 15882019,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_GREEN_COMPONENTWISE_TWO_RADIUS_SCREEN.npz\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 55828875,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_GREEN_MIDPOINT_AMBIENT_DF.npz\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 15728311,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_GREEN_MIXED_HS_CAUSAL_TRANSPORT.npz\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 41722453,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_GREEN_MIXED_TRANSVERSE_ALL_ENDPOINTS.npz\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 25304028,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_AFFINE_CENTER_BORDERED_RESPONSE_FIRST_VARIATION.json\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 33555226,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_AFFINE_CENTER_BORDERED_RESPONSE_SECOND_VARIATION.json\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 28974337,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_AFFINE_CENTER_BORDERED_RHS_RESPONSE.json\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 24911535,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_AFFINE_CENTER_SELECTED_PROJECTOR_GRAPH.json\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 56354452,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_SIGNED_FULL_TRANSVERSE_CURVATURE_NODES_00_23.npz\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 56326421,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_SIGNED_FULL_TRANSVERSE_CURVATURE_NODES_24_47.npz\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 15474079,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_FINITE_PROPAGATOR_Z1_RECONNAISSANCE.npz\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 27774704,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_FIRST_HS_NEWTON_CENTER_GRAPH_JACOBIAN.npz\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 20453304,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_FIRST_HS_NEWTON_ENDPOINT_TANGENT.npz\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 27982884,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_FIRST_HS_NEWTON_MIDPOINT_GRAPH_JACOBIAN.npz\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 55117636,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_HERMITE_SIMPSON_BLOCK_NEWTON_PREDICTOR.npz\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 27983297,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_HERMITE_SIMPSON_MIDPOINT_GRAPH_JACOBIAN.npz\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 55117625,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_RATE_CONSISTENT_BLOCK_NEWTON_PREDICTOR.npz\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 36414592,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_RECENTERED_CONE_BORDERED_RESPONSE_FIRST_VARIATION.json\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 48333122,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_RECENTERED_CONE_BORDERED_RESPONSE_SECOND_VARIATION.json\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 41758016,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_RECENTERED_CONE_BORDERED_RHS_RESPONSE.json\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 24911532,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_RECENTERED_CONE_SELECTED_PROJECTOR_GRAPH.json\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 27774707,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_CURRENT_CENTER_GRAPH_JACOBIAN.npz\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 55117900,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_HERMITE_SIMPSON_BLOCK_NEWTON_PREDICTOR.npz\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 55678350,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_HS_NEWTON_LINE_SEARCH_PREDICTOR.npz\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 55118294,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_RATE_CONSISTENT_BLOCK_NEWTON_PREDICTOR.npz\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 27774560,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_RATE_CONSISTENT_CENTER_GRAPH_JACOBIAN.npz\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 27983314,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_RATE_CONSISTENT_MIDPOINT_GRAPH_JACOBIAN.npz\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 27774601,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_SIGNED_GREEN_CURRENT_CENTER_GRAPH_JACOBIAN.npz\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 11125650,\n          \"path\": \"artifacts/muon_first_order_complement_20261006/run_2/first_order_compact_reduction.npz\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        }\n      ],\n      \"credential_files\": [],\n      \"large_file_threshold_bytes\": 10485760,\n      \"malformed_lfs_pointers\": [],\n      \"merge_markers\": [],\n      \"passed\": true,\n      \"secret_findings\": [],\n      \"tracked_cache_or_build_junk\": [],\n      \"tracked_env_files\": [],\n      \"unexpected_large_files\": []\n    },\n    \"license_visibility\": {\n      \"failures\": [],\n      \"passed\": true\n    },\n    \"markdown_links\": {\n      \"broken\": [],\n      \"checked\": 60,\n      \"passed\": true\n    },\n    \"reproduction\": {\n      \"missing_cli_commands\": [],\n      \"missing_documented_commands\": [],\n      \"missing_scripts\": [],\n      \"passed\": true,\n      \"reviewer_smoke_target\": true\n    },\n    \"required_files\": {\n      \"empty\": [],\n      \"missing\": [],\n      \"passed\": true\n    },\n    \"science_alignment\": {\n      \"missing_phrases\": {},\n      \"passed\": true\n    }\n  },\n  \"external_urls\": [\n    \"https://doi.org/10.5281/zenodo.20663419\",\n    \"https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml/badge.svg\",\n    \"https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/institutional.yml/badge.svg\",\n    \"https://ncarberry64.github.io/Berger-Hopf-Standard-Model/\",\n    \"https://orcid.org/0009-0000-6650-3485\",\n    \"https://zenodo.org/badge/DOI/10.5281/zenodo.20663419.svg\"\n  ],\n  \"passed\": true,\n  \"verdict\": \"BHSM_REPOSITORY_PUBLIC_REVIEW_READY\",\n  \"version\": \"v6.21.0\"\n}\n"
+  },
+  "audit_status": {
+    "argv": [
+      "C:\\Python314\\python.exe",
+      "tools/audit_bhsm_status.py",
+      "--format",
+      "json"
+    ],
+    "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+    "environment_overrides": {
+      "OPENBLAS_NUM_THREADS": "1",
+      "PYTHONPATH": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src"
+    },
+    "exit_code": 0,
+    "stderr": "",
+    "stdout": "{\n  \"audit\": \"bhsm_status\",\n  \"checks\": {\n    \"candidate_architecture_complete\": true,\n    \"completion_payload_candidate_only\": true,\n    \"completion_payload_not_proven\": true,\n    \"dark_matter_not_solved\": true,\n    \"frozen_predictions_unchanged\": true,\n    \"full_bhsm_not_proven\": true,\n    \"mass_numerical_closure_open\": true,\n    \"official_predictions_unchanged\": true,\n    \"standard_model_not_fully_derived\": true\n  },\n  \"passed\": true,\n  \"verdict_labels\": [\n    \"BHSM_REPO_STATUS_REFRESH_COMPLETE\",\n    \"FULL_BHSM_STATUS_SYNCHRONIZED\",\n    \"SM_DERIVATION_REMAINS_OPEN\",\n    \"MASS_NUMERICAL_CLOSURE_REMAINS_OPEN\"\n  ]\n}\n"
+  },
+  "error_scope": {
+    "calibrated_subtotal_not_complete_prediction": true,
+    "full_observable_enclosure": false,
+    "historical_corrected_failures": [
+      "Uniform-Gauss spacelike endpoint layer; replaced by endpoint partition before final replay.",
+      "Incorrect test SI magneton range; corrected unit expectation.",
+      "Component driver expected primitive_order; corrected to owned gradient_order.",
+      "Scalar-array shape in energy residual coefficient derivative; corrected before final tests.",
+      "Stale parent source hash rejected during LF normalization; final consumers use canonical replay.",
+      "Birth velocity-Hessian inversion generated order1e12 accelerations; rejected, not used.",
+      "Strong conormal difference remains unconverged; goal estimate is loose and uncertified.",
+      "Git line-ending/whitespace normalization on immutable input receipts and CSV was disabled explicitly; staged scientific bytes verified against working inputs."
+    ],
+    "native_unknown_not_truncation": true,
+    "parent_probe_continuum_estimate_not_enclosure": true
+  },
+  "focused_tests": {
+    "argv": [
+      "C:\\Python314\\python.exe",
+      "-m",
+      "pytest",
+      "-q",
+      "tests/test_muon_calibrated_higher_qed.py",
+      "tests/test_muon_calibrated_hvp_spectral.py",
+      "tests/test_muon_calibrated_hvp_higher.py",
+      "tests/test_muon_calibrated_hvp_nnlo.py",
+      "tests/test_muon_calibrated_hadronic_ledger.py",
+      "tests/test_muon_calibrated_weak_decay.py",
+      "tests/test_muon_calibrated_current_response.py",
+      "tests/test_muon_calibrated_component_ledger.py",
+      "tests/test_muon_intrinsic_scalar_birth_rows.py",
+      "tests/test_muon_parent_retarded_hypercharge.py",
+      "tests/test_muon_parent_maxwell_background_euler.py",
+      "tests/test_muon_parent_maxwell_geometry_weak.py",
+      "tests/test_muon_parent_hypercharge_advanced_probe.py",
+      "tests/test_muon_parent_hypercharge_energy_residual.py"
+    ],
+    "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+    "environment_overrides": {
+      "OPENBLAS_NUM_THREADS": "1",
+      "PYTHONPATH": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src"
+    },
+    "exit_code": 0,
+    "stderr": "",
+    "stdout": "........................................................................ [ 49%]\n........................................................................ [ 99%]\n.                                                                        [100%]\n145 passed in 23.99s\n"
+  },
+  "input_hashes": {
+    "artifacts/muon_calibrated_hlbl_projection_20261010/input/published_projection.json": "c77cecadb13f258d771a8ce2e6e3c9c6383d8caaf2a50cfeedb2c921030efbc4",
+    "artifacts/muon_calibrated_hvp_higher_20261010/input/provenance.json": "bf790fbe25d8f01739c6898d2fb52735e3e52caf9b07296f767df93d866bc6aa",
+    "artifacts/muon_calibrated_hvp_nnlo_20261010/input/coefficients.json": "5f9b09543d4875c3316d8c047322b41d1df69f7b6b348365e37f361619920f3b",
+    "artifacts/muon_calibrated_hvp_nnlo_20261010/input/provenance.json": "a9e61cda482ed67dd34b9ff26af79a32524e9e889094e81f0fae3a3f53041f54",
+    "artifacts/muon_calibrated_hvp_spectral_20261010/input/SOURCE_LICENCE.txt": "955da52fd9200d112f16963dddba29e5ecc0ec67a9551dbc85de2c768b221eb0",
+    "artifacts/muon_calibrated_hvp_spectral_20261010/input/extraction_receipt.json": "6cbe82382b20ef2070889ce805bdede880cb33378be5b53ab08be1c30c3b7133",
+    "artifacts/muon_calibrated_hvp_spectral_20261010/input/pqcd_extraction_receipt.json": "198156707c4aaf7b33ab2a913733cfa16f33bb9709fdce45654539ddcaefb536",
+    "artifacts/muon_calibrated_hvp_spectral_20261010/input/pqcd_refinement_receipt.json": "ee71b19d867dcb994487796c0f18c3659249df681429180b1c9c2215b1e6d261",
+    "artifacts/muon_calibrated_hvp_spectral_20261010/input/pqcd_spectrum.csv": "7da7b62ef0e82235a46d1bbc5ac955410e1adc5410b951fb32760429eade14f9",
+    "artifacts/muon_calibrated_hvp_spectral_20261010/input/provenance.json": "e9b8af65ba2c8f6e3773cda67dcb64e8c6c68af34ee241423fc7f07682fe8c7a",
+    "artifacts/muon_calibrated_hvp_spectral_20261010/input/raw_spectrum.csv": "a97b7826c9832f80df6839795093d5925e4f7cedd9aa5a1796686f05d5e2e1b6",
+    "artifacts/muon_calibrated_hvp_spectral_20261010/input/resonance_extraction_receipt.json": "98b8a8c17d8656fd0cb17bcf060f41175a9aae2f7467144dae6a101020b70395",
+    "artifacts/muon_calibrated_hvp_spectral_20261010/input/resonance_parameters.csv": "9ab52a6c5aeaa7bce5479155aeabae2de8de21a9ff213124fea787855a365896",
+    "artifacts/muon_calibrated_hvp_spectral_20261010/input/resonance_spacelike_undressing.csv": "e3396977fbc9c31ca4f3d2ec9d673e02a1ac4d865e7c9d14e98dc367453c9391",
+    "artifacts/muon_calibrated_hvp_spectral_20261010/input/resonance_undressing.csv": "f5deb5f0cf6445d9189ccbc538c5dd06190896c19c837a16e44e2377c97dcd1e",
+    "artifacts/muon_calibrated_hvp_spectral_20261010/input/spacelike_undressing_receipt.json": "86f8fdd39e5929b28f5365e15e94f2ee73f103beecb41744c6816f20ca323e90",
+    "artifacts/muon_calibrated_pauli_20261009/inputs.json": "0b614ab6f26d169ca04a4878f767f78eb3668484840867e46aebbebf186369da",
+    "artifacts/muon_calibrated_pauli_20261009/run_1/calibrated_pauli.json": "20a4b5a169439f2db2ff8d37c9746bb7a43c6887a266d6c3e5262d8500fad419"
+  },
+  "replays": [
+    {
+      "byte_identical": true,
+      "files": [
+        {
+          "bytes": 10853,
+          "first": "artifacts/muon_calibrated_higher_qed_20261010/run_1/higher_qed.json",
+          "second": "artifacts/muon_calibrated_higher_qed_20261010/run_2/higher_qed.json",
+          "sha256": "4c1c5cb7ba7481b28c009adc9d8817cb6cd70c6d1f642616d4c703663ffc694b"
+        }
+      ]
+    },
+    {
+      "byte_identical": true,
+      "files": [
+        {
+          "bytes": 24253,
+          "first": "artifacts/muon_calibrated_weak_decay_20261010/run_1/weak_decay.json",
+          "second": "artifacts/muon_calibrated_weak_decay_20261010/run_2/weak_decay.json",
+          "sha256": "9c31575ce0889571790f8767cf53ffe043cb9906e0a45a96b194971320a0aad7"
+        }
+      ]
+    },
+    {
+      "byte_identical": true,
+      "files": [
+        {
+          "bytes": 625591,
+          "first": "artifacts/muon_calibrated_hvp_spectral_20261010/run_3/hvp_spectral.json",
+          "second": "artifacts/muon_calibrated_hvp_spectral_20261010/run_4/hvp_spectral.json",
+          "sha256": "171190c21dd1e249394ce6931c8daa69a2d44a29ddf1e6f6a90f38806bad3fc3"
+        }
+      ]
+    },
+    {
+      "byte_identical": true,
+      "files": [
+        {
+          "bytes": 131774,
+          "first": "artifacts/muon_calibrated_hvp_higher_20261010/run_3/hvp_higher.json",
+          "second": "artifacts/muon_calibrated_hvp_higher_20261010/run_4/hvp_higher.json",
+          "sha256": "2c6a7adc1e81faf748d745ae6994e54ed81232044d99441af4a9ffd430380849"
+        }
+      ]
+    },
+    {
+      "byte_identical": true,
+      "files": [
+        {
+          "bytes": 292795,
+          "first": "artifacts/muon_calibrated_hvp_nnlo_20261010/run_3/hvp_nnlo.json",
+          "second": "artifacts/muon_calibrated_hvp_nnlo_20261010/run_4/hvp_nnlo.json",
+          "sha256": "dde237cf01cf4de92121bba1d5000560d378fdd2773313bcad75c06077e24eb5"
+        }
+      ]
+    },
+    {
+      "byte_identical": true,
+      "files": [
+        {
+          "bytes": 59249,
+          "first": "artifacts/muon_calibrated_hvp_spectral_20261010/hadronic_ledger_run_1/physical_hadronic_ledger.json",
+          "second": "artifacts/muon_calibrated_hvp_spectral_20261010/hadronic_ledger_run_2/physical_hadronic_ledger.json",
+          "sha256": "f4018839cbe7c9424b5d77c93d205e2a6106631a47e60799f880efbb23393f84"
+        }
+      ]
+    },
+    {
+      "byte_identical": true,
+      "files": [
+        {
+          "bytes": 694296,
+          "first": "artifacts/muon_calibrated_current_response_20261010/run_1/current_response.json",
+          "second": "artifacts/muon_calibrated_current_response_20261010/run_2/current_response.json",
+          "sha256": "2406bbe5e482ad4e3760bff4c749a29a18b7d3464cc5ac014d2645d2ba8fb208"
+        }
+      ]
+    },
+    {
+      "byte_identical": true,
+      "files": [
+        {
+          "bytes": 51167,
+          "first": "artifacts/muon_calibrated_component_ledger_20261010/run_5/component_ledger.json",
+          "second": "artifacts/muon_calibrated_component_ledger_20261010/run_6/component_ledger.json",
+          "sha256": "937843127402028a13ab8fd96df80ec63b9f54bd4e450fb34b028ffa6a29e945"
+        }
+      ]
+    },
+    {
+      "byte_identical": true,
+      "files": [
+        {
+          "bytes": 12213,
+          "first": "artifacts/muon_parent_retarded_hypercharge_20261010/canonical_run_1/result.json",
+          "second": "artifacts/muon_parent_retarded_hypercharge_20261010/canonical_run_2/result.json",
+          "sha256": "59155d3d470d850054e87f00a73cdb423e20333ebe4ab6cded12fe5ff2d0adc5"
+        },
+        {
+          "bytes": 3510652,
+          "first": "artifacts/muon_parent_retarded_hypercharge_20261010/canonical_run_1/run_0.npz",
+          "second": "artifacts/muon_parent_retarded_hypercharge_20261010/canonical_run_2/run_0.npz",
+          "sha256": "9f08f8dbcb28120da34056de09e0a9c7c532fb7ba294ebb97a56c9eb88c638d6"
+        },
+        {
+          "bytes": 4632956,
+          "first": "artifacts/muon_parent_retarded_hypercharge_20261010/canonical_run_1/run_1.npz",
+          "second": "artifacts/muon_parent_retarded_hypercharge_20261010/canonical_run_2/run_1.npz",
+          "sha256": "7b0ea8826b242a068a3da5ba9d7af43c7285fe1f6b1d279186c5f00e6e15b360"
+        },
+        {
+          "bytes": 5775740,
+          "first": "artifacts/muon_parent_retarded_hypercharge_20261010/canonical_run_1/run_2.npz",
+          "second": "artifacts/muon_parent_retarded_hypercharge_20261010/canonical_run_2/run_2.npz",
+          "sha256": "d4f1feb64347ca0aee4c73f66a5ab1e195535f0d57bfa8ae4d4cb6f9582f8bb1"
+        },
+        {
+          "bytes": 1646972,
+          "first": "artifacts/muon_parent_retarded_hypercharge_20261010/canonical_run_1/run_3.npz",
+          "second": "artifacts/muon_parent_retarded_hypercharge_20261010/canonical_run_2/run_3.npz",
+          "sha256": "f2d076d64dc0bab85d0c97c965535e1f00e130def2e95565e0445611f3cd6b05"
+        },
+        {
+          "bytes": 3023228,
+          "first": "artifacts/muon_parent_retarded_hypercharge_20261010/canonical_run_1/run_4.npz",
+          "second": "artifacts/muon_parent_retarded_hypercharge_20261010/canonical_run_2/run_4.npz",
+          "sha256": "793ffb29d24cca6ce66e566224145f6754f2d13faab1aa2c8ddcb9cd591b1933"
+        }
+      ]
+    },
+    {
+      "byte_identical": true,
+      "files": [
+        {
+          "bytes": 33242,
+          "first": "artifacts/muon_parent_retarded_hypercharge_20261010/background_canonical_run_1/application.npz",
+          "second": "artifacts/muon_parent_retarded_hypercharge_20261010/background_canonical_run_2/application.npz",
+          "sha256": "a8339054883cb3a74b854b074337856a7d356fa6436be972565eb671a623b400"
+        },
+        {
+          "bytes": 4143,
+          "first": "artifacts/muon_parent_retarded_hypercharge_20261010/background_canonical_run_1/result.json",
+          "second": "artifacts/muon_parent_retarded_hypercharge_20261010/background_canonical_run_2/result.json",
+          "sha256": "a30c5b6c959e5a7ed93a4c5c851a3f6acabfa12f5675f2260e7bb138f8dd8d31"
+        }
+      ]
+    },
+    {
+      "byte_identical": true,
+      "files": [
+        {
+          "bytes": 5434768,
+          "first": "artifacts/muon_parent_retarded_hypercharge_20261010/mixed_run_1/application.npz",
+          "second": "artifacts/muon_parent_retarded_hypercharge_20261010/mixed_run_2/application.npz",
+          "sha256": "406110ee432d14e00271c6217b80559d42791dc19e07200256b59fd9ff8438f6"
+        },
+        {
+          "bytes": 3692,
+          "first": "artifacts/muon_parent_retarded_hypercharge_20261010/mixed_run_1/result.json",
+          "second": "artifacts/muon_parent_retarded_hypercharge_20261010/mixed_run_2/result.json",
+          "sha256": "981aac62ffe0bbc9d2bd8fa31fe5f44d293a842a6e9632406319d924018794e9"
+        }
+      ]
+    },
+    {
+      "byte_identical": true,
+      "files": [
+        {
+          "bytes": 8175944,
+          "first": "artifacts/muon_parent_hypercharge_advanced_probe_20261010/run_3/advanced.npz",
+          "second": "artifacts/muon_parent_hypercharge_advanced_probe_20261010/run_4/advanced.npz",
+          "sha256": "0636707ec2ea850ef0c12a8750722e211bb063e6ea461da51cd7b659603cc24c"
+        },
+        {
+          "bytes": 2670,
+          "first": "artifacts/muon_parent_hypercharge_advanced_probe_20261010/run_3/result.json",
+          "second": "artifacts/muon_parent_hypercharge_advanced_probe_20261010/run_4/result.json",
+          "sha256": "3d42686d0daecf33793e341e7e55bee48e07220624ee77a08b240e7f56bd97ee"
+        },
+        {
+          "bytes": 8175944,
+          "first": "artifacts/muon_parent_hypercharge_advanced_probe_20261010/run_3/retarded.npz",
+          "second": "artifacts/muon_parent_hypercharge_advanced_probe_20261010/run_4/retarded.npz",
+          "sha256": "958ddd9aef8bd0945c373c9de36c925f96393c6f040df9211e3f30ab3dcef0c2"
+        }
+      ]
+    },
+    {
+      "byte_identical": true,
+      "files": [
+        {
+          "bytes": 30186,
+          "first": "artifacts/muon_parent_hypercharge_energy_residual_20261010/run_1/energy_residual.json",
+          "second": "artifacts/muon_parent_hypercharge_energy_residual_20261010/run_2/energy_residual.json",
+          "sha256": "44ad43e709ee7ae6d7a30a472a9c88ca75370d8f8825036dab77e1bce546a1aa"
+        }
+      ]
+    }
+  ],
+  "root_producer_replay_commands": [
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "scripts/evaluate_muon_calibrated_current_response.py",
+        "--output",
+        "artifacts/muon_calibrated_current_response_20261010/verification_replay"
+      ],
+      "byte_identical_to_reference": true,
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "OPENBLAS_NUM_THREADS": "1",
+        "PYTHONPATH": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src"
+      },
+      "exit_code": 0,
+      "reference": "artifacts/muon_calibrated_current_response_20261010/run_1",
+      "stderr": "",
+      "stdout": "{\"bytes\": 694296, \"complete_observable\": false, \"evaluated_subtotal\": 0.0011659188303027972, \"hadronic_current_Pauli\": 6.96937765712013e-08, \"path\": \"artifacts\\\\muon_calibrated_current_response_20261010\\\\verification_replay\\\\current_response.json\", \"sha256\": \"2406bbe5e482ad4e3760bff4c749a29a18b7d3464cc5ac014d2645d2ba8fb208\"}\n"
+    },
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "scripts/evaluate_muon_calibrated_component_ledger.py",
+        "--output",
+        "artifacts/muon_calibrated_component_ledger_20261010/verification_replay"
+      ],
+      "byte_identical_to_reference": true,
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "OPENBLAS_NUM_THREADS": "1",
+        "PYTHONPATH": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src"
+      },
+      "exit_code": 0,
+      "reference": "artifacts/muon_calibrated_component_ledger_20261010/run_5",
+      "stderr": "",
+      "stdout": "{\"bytes\": 51167, \"complete_observable\": false, \"evaluated_subtotal\": 0.0011659187997493429, \"path\": \"artifacts\\\\muon_calibrated_component_ledger_20261010\\\\verification_replay\\\\component_ledger.json\", \"sha256\": \"937843127402028a13ab8fd96df80ec63b9f54bd4e450fb34b028ffa6a29e945\"}\n"
+    },
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "scripts/evaluate_muon_parent_hypercharge_advanced_probe.py",
+        "--output",
+        "artifacts/muon_parent_hypercharge_advanced_probe_20261010/verification_replay"
+      ],
+      "byte_identical_to_reference": true,
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "OPENBLAS_NUM_THREADS": "1",
+        "PYTHONPATH": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src"
+      },
+      "exit_code": 0,
+      "reference": "artifacts/muon_parent_hypercharge_advanced_probe_20261010/run_3",
+      "stderr": "",
+      "stdout": "{\"path\": \"artifacts\\\\muon_parent_hypercharge_advanced_probe_20261010\\\\verification_replay\\\\result.json\", \"reciprocal_pairing_defect\": 2.7284841053187847e-12, \"sha256\": \"3d42686d0daecf33793e341e7e55bee48e07220624ee77a08b240e7f56bd97ee\"}\n"
+    }
+  ],
+  "scientific_classification": {
+    "CONTROL_ONLY": "compact temporal/radial parent probes and finite test representation; not a formation section",
+    "DERIVED": "normalized spectral/Pauli kernel, constrained source/adjoint identities, common input tangent, Maxwell weak/chart identities",
+    "EVALUATED": "QED3-5, current HVP LO/NLO/NNLO, independently published HLbL projection, rematched weak subset, top one-loop VP, retained parent weak applications",
+    "OWNER_DEFINITION_GAP": "none established",
+    "UNEVALUATED": "full native Pauli remainder after common-action overlap; physical background and source/heat completion; remaining weak terms"
+  },
+  "scope": "EVALUATED_CALIBRATED_COMPONENTS_AND_ACTION_APPLICATIONS; native remainder incomplete",
+  "source_hashes": {
+    "scripts/evaluate_muon_calibrated_component_ledger.py": "958fc496c02e05945ed2c035ac49dd8628d999722d19c0ecfbac773bd1bdd57d",
+    "scripts/evaluate_muon_calibrated_current_response.py": "3ef58ed9280fea570b413d012e091005e5314b1ac7b1a3286eff2b640d48a5e8",
+    "scripts/evaluate_muon_calibrated_hadronic_ledger.py": "b1a0979c6a50fbd648d73765b2e0ac5fd05b8d5bcba20ae43fbd452ed18cd761",
+    "scripts/evaluate_muon_calibrated_higher_qed.py": "fde869addaf60d8c6b0323f1b39813d385a70baec9dc33feba45dd55ee8e8262",
+    "scripts/evaluate_muon_calibrated_hvp_higher.py": "c116a42e05faf52a9757afb1f1f2100a4860ac3f23244e30c2b0f44a3a82a5ca",
+    "scripts/evaluate_muon_calibrated_hvp_nnlo.py": "ddd15d59c3d01a63a48f52c08987b35e9d2fa372dff8ff672590270e97f95b1c",
+    "scripts/evaluate_muon_calibrated_hvp_spectral.py": "21728ad3d00a0dec63624113da8b2d3d40174ec6f16d10fa3d2dc0bd15c847b6",
+    "scripts/evaluate_muon_calibrated_pauli.py": "ffbed47bc7faf3351efa1dbdabf5c67b9699dda9984c55ffc81e7f897e3f4681",
+    "scripts/evaluate_muon_calibrated_weak_decay.py": "856a3c4c8909c469781fd8998074616bdd173e1d4bb0e3969b03481602389e8a",
+    "scripts/evaluate_muon_parent_hypercharge_advanced_probe.py": "11272205a6bd3ec29a7e2479318723e34792bfd12bd97358aefe2d461119c2d2",
+    "scripts/verify_muon_calibrated_spectral_response.py": "3bf820f557aa6e92a76a72ca93e77b9845da9b782cfea0527f426c19b6f19fbe",
+    "src/bhsm/interface/muon_calibrated_component_ledger.py": "343cd6902e3ee6f298464c16b937bfe9100089e4bb2e9138791641aaccd541be",
+    "src/bhsm/interface/muon_calibrated_current_response.py": "658314b6e1d60d0555a871838992b4cecbe5ee7ef2e9c8ed768be825c863a495",
+    "src/bhsm/interface/muon_calibrated_hadronic_ledger.py": "227e22a514e32afa773764222bfe344eb2b209b958446a68df9e946fec703d8c",
+    "src/bhsm/interface/muon_calibrated_higher_qed.py": "da58048f891504419159d558b44d4a0c6cb4cbf703aca7884dd515d88f99ae3a",
+    "src/bhsm/interface/muon_calibrated_hvp_higher.py": "7487dda95089a86ee719f3d7d3b968edecff20b10082c4037491da90ba467620",
+    "src/bhsm/interface/muon_calibrated_hvp_nnlo.py": "c5190e7a5b000e5665cca3dab13cf6122f6d74d7231cd5d0c5692c9a5c0762c6",
+    "src/bhsm/interface/muon_calibrated_hvp_spectral.py": "d9bd48c651e511f1d058d5842f9115f21c3e72acfea02e158690e9cbd44cc9f1",
+    "src/bhsm/interface/muon_calibrated_weak_decay.py": "e926f1afba8d8ec89351406de1ae042a49854c74042daef0967c62f93182f39f",
+    "src/bhsm/interface/muon_intrinsic_scalar_birth_rows.py": "60e5a2165bb5d485d19422fd50ff04db9b3232d972c8070a7a2e4ce8779a237b",
+    "src/bhsm/interface/muon_parent_hypercharge_advanced_probe.py": "6a8358cfdde3a55dc0db5e05740d1ef32a67e8668b337422d36498351de428a4",
+    "src/bhsm/interface/muon_parent_hypercharge_energy_residual.py": "1bc7f44815f365cf8698ec8f945b1666b25605f4acb673ed806f22dc81621604",
+    "src/bhsm/interface/muon_parent_maxwell_background_euler.py": "fbb2c99d4b1c58247ac42a769fad3e1b16ccc76a1744fe0c5334e50c4a974bee",
+    "src/bhsm/interface/muon_parent_maxwell_geometry_weak.py": "f0b4a49934e17ad18c40e9164b66c54e1b2cb146fb476f59b0e500f2dd6c9153",
+    "src/bhsm/interface/muon_parent_retarded_hypercharge.py": "2eb97a704bce63f601cc0d6e0f647266d4b4aac7f746d34dceb41b72018c3510",
+    "tests/test_muon_calibrated_component_ledger.py": "5939f2d18ba75809bf185d6ce0df20408f3825063cffdbb9fc490d8266559eaa",
+    "tests/test_muon_calibrated_current_response.py": "11e071276ccbe9d4370dfe17081c2dc4a0c817ddae32b472228fc7f72769642b",
+    "tests/test_muon_calibrated_hadronic_ledger.py": "35cce1325a0bbf91c634073ea2b772d8b7989a9990b5b84c2b675ef87efbcfb8",
+    "tests/test_muon_calibrated_higher_qed.py": "c0335d65b22cf164636347882245b3a3caebfcdd6b357f35838a5e62ddc10082",
+    "tests/test_muon_calibrated_hvp_higher.py": "6e367bb4c9d276e24b4bdff358afa8d3668e5a407ee67b019a3dc60dec36ff50",
+    "tests/test_muon_calibrated_hvp_nnlo.py": "135698ea8ae25ecb648f27daef6b55436409611dc66f5dfe918be13494c52940",
+    "tests/test_muon_calibrated_hvp_spectral.py": "a52fc4e5351e70d3ad636633be41bb05b2756cebaf9a18aee7c559b1b99f81f1",
+    "tests/test_muon_calibrated_weak_decay.py": "674c9092771e5696320b8e244a1cf43dfbd0fe337cd8c1331e7482a01bc6a1ad",
+    "tests/test_muon_intrinsic_scalar_birth_rows.py": "70b222e7661c1f39a0cfe44af0ee3869b1a864d6f31fb535529163b26b26584f",
+    "tests/test_muon_parent_hypercharge_advanced_probe.py": "38be7aac0be560357094fd87c693f9b8a3011469c8abe25e286e2ed1f2e4ff19",
+    "tests/test_muon_parent_hypercharge_energy_residual.py": "a650a390830b2f377943c94f89f85af6631bd44e3d6500d3d5dbcf291bfcf0fb",
+    "tests/test_muon_parent_maxwell_background_euler.py": "194f392d9ede36eaadf5d97aac664e11d38c3f0c3f8b738fbe076e69ad1c84cc",
+    "tests/test_muon_parent_maxwell_geometry_weak.py": "56a356c689a72863f93477ecc4bbd22a35f64e3fafea49f378ec6ae89b30d4b6",
+    "tests/test_muon_parent_retarded_hypercharge.py": "39777b251fef58d2349bf98f5f8e975bd1c52d3e155accfd9faf9000d2ea5d27"
+  },
+  "staged_diff_check": {
+    "argv": [
+      "git",
+      "diff",
+      "--cached",
+      "--check"
+    ],
+    "exit_code": 0,
+    "stderr": "",
+    "stdout": ""
+  },
+  "staged_scientific_bytes": {
+    "all_match_working_files": true,
+    "checked": 98,
+    "receipt_and_csv_byte_preservation": "explicit -text attributes preserve CRLF source facts; no scientific values or source receipt hashes changed"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "classification": "actual-source reference/action controls; not native wall, heat or anomaly evaluation",
+  "earlier_tests_rerun": 0,
+  "executed_new_calculations": [
+    "replay_muon_wall_input_attachment.py once on cached node3",
+    "contract_muon_wall_input_time_jet.py once on new run_1 arrays"
+  ],
+  "native_R4_evaluated": false,
+  "new_check_first_attempt": {
+    "reason": "entrywise absolute tolerance1e-17 at analytic zeros; maximum failing difference6.08080442e-17",
+    "resolution": "matrix-scale roundoff criterion plus independent exact quadratic identity; no changed/repeated calculation",
+    "seconds": 0.46,
+    "status": "failed"
+  },
+  "new_checks": [
+    {
+      "count": 6,
+      "seconds": 0.47,
+      "selection": "first six tests, before adding cotangent test",
+      "status": "passed"
+    },
+    {
+      "count": 1,
+      "seconds": 0.31,
+      "selection": "test_actual_intrinsic_principal_time_input_cotangent only",
+      "status": "passed"
+    }
+  ],
+  "new_stationary_solves": 0,
+  "old_production_actions_rerun": 0,
+  "physical_transfer_directions": 0
+}

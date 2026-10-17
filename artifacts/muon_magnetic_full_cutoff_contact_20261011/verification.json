@@ -1,0 +1,220 @@
+{
+  "classification": "VERIFIED_ACTUAL_SAME_BACKGROUND_CUTOFF_CONTACT_APPLICATION",
+  "commands": [
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "pytest",
+        "--noconftest",
+        "tests/test_muon_magnetic_full_cutoff_contact.py",
+        "-q"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "OPENBLAS_NUM_THREADS": "1",
+        "PYTHONPATH": "src"
+      },
+      "error_scope": "One independent expected scalar comparison had shape mismatch; production derivative unchanged",
+      "exit_code": 1,
+      "logs": {
+        "stderr": {
+          "bytes": 0,
+          "path": "artifacts/muon_magnetic_full_cutoff_contact_tests_failed_1.stderr.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "text": ""
+        },
+        "stdout": {
+          "bytes": 941,
+          "path": "artifacts/muon_magnetic_full_cutoff_contact_tests_failed_1.stdout.txt",
+          "sha256": "d08a22c36f3354aceb4156d7db6cb04e6a3e59f870462c121559c03b993dabb9",
+          "text": "F.                                                                       [100%]\n================================== FAILURES ===================================\n________________ test_coincident_lag_has_signed_boundary_value ________________\n\n    def test_coincident_lag_has_signed_boundary_value():\n        p=np.array([2.]);c=.37\n        actual=cutoff_lag_partial(p,p,c)\n>       np.testing.assert_allclose(actual,-c*np.exp(-c*p)/2,rtol=2e-15)\nE       AssertionError: \nE       Not equal to tolerance rtol=2e-15, atol=0\nE       \nE       (shapes (1, 1), (1,) mismatch)\nE        ACTUAL: array([[-0.088266+0.j]])\nE        DESIRED: array([-0.088266])\n\ntests\\test_muon_magnetic_full_cutoff_contact.py:10: AssertionError\n=========================== short test summary info ===========================\nFAILED tests/test_muon_magnetic_full_cutoff_contact.py::test_coincident_lag_has_signed_boundary_value\n1 failed, 1 passed in 1.60s\n"
+        }
+      }
+    },
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "pytest",
+        "--noconftest",
+        "tests/test_muon_magnetic_full_cutoff_contact.py",
+        "-q"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "OPENBLAS_NUM_THREADS": "1",
+        "PYTHONPATH": "src"
+      },
+      "error_scope": "Two independent heat/sign tests before adding inverse consumer",
+      "exit_code": 0,
+      "logs": {
+        "stderr": {
+          "bytes": 0,
+          "path": "artifacts/muon_magnetic_full_cutoff_contact_tests.stderr.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "text": ""
+        },
+        "stdout": {
+          "bytes": 100,
+          "path": "artifacts/muon_magnetic_full_cutoff_contact_tests.stdout.txt",
+          "sha256": "a7199383a51d33cfad38535087cbc9c39f0f556a6b865198918f52d1186c65c0",
+          "text": "..                                                                       [100%]\n2 passed in 1.36s\n"
+        }
+      }
+    },
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "pytest",
+        "--noconftest",
+        "tests/test_muon_magnetic_full_cutoff_contact.py",
+        "-q"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "OPENBLAS_NUM_THREADS": "1",
+        "PYTHONPATH": "src"
+      },
+      "error_scope": "Three independent heat/contact/ordered and signed inverse derivative checks",
+      "exit_code": 0,
+      "logs": {
+        "stderr": {
+          "bytes": 0,
+          "path": "artifacts/muon_magnetic_full_cutoff_contact_tests_final.stderr.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "text": ""
+        },
+        "stdout": {
+          "bytes": 100,
+          "path": "artifacts/muon_magnetic_full_cutoff_contact_tests_final.stdout.txt",
+          "sha256": "f704bde794b7f94e9ef61da0c3f1925337b7321fa222f0e4821f685e403c817f",
+          "text": "...                                                                      [100%]\n3 passed in 1.31s\n"
+        }
+      }
+    },
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "scripts/evaluate_muon_magnetic_full_cutoff_contact.py",
+        "--output",
+        "artifacts/muon_magnetic_full_cutoff_contact_20261011/run_1"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "OPENBLAS_NUM_THREADS": "1",
+        "PYTHONPATH": "src"
+      },
+      "error_scope": "Same stored direct, chronological mean and source inverse at common fixed cutoff probe; physical total c jets/matching excluded",
+      "exit_code": 0,
+      "logs": {
+        "stderr": {
+          "bytes": 0,
+          "path": "artifacts/muon_magnetic_full_cutoff_contact_run_1.stderr.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "text": ""
+        },
+        "stdout": {
+          "bytes": 4194,
+          "path": "artifacts/muon_magnetic_full_cutoff_contact_run_1.stdout.txt",
+          "sha256": "7ee68362849474389c5d80362dc49ee46411fb38bce6fe05b4956c324c3dc6c2",
+          "text": "{\"cutoff_probe\": 2.5822834280687085e-12, \"differentiated_source_equation_residual_upper\": 7.591123734601759e-29, \"direct_contour_lag_refinement_norm\": 6.645157217848323e-33, \"direct_square_contact_partial_trace\": -2.302119840110409e-19, \"first_ordered_partial_trace\": 1.0945093145314782e-30, \"graded_full_partial_norm\": 1.2304521452635225e-09, \"graded_full_partial_trace\": 2.1311965542358703e-09, \"graded_mean_partial_trace\": 2.131196554350976e-09, \"opposite_ordered_partial_trace\": 1.0945093145314782e-30, \"q_probe\": 0.25, \"side\": \"incoming\", \"source_return_cutoff_partial_norm\": 2.651319224899138e-17, \"ungraded_direct_partial_trace\": -2.302119840088519e-19}\n{\"cutoff_probe\": 1.0329133712274834e-11, \"differentiated_source_equation_residual_upper\": 1.8218696869004673e-28, \"direct_contour_lag_refinement_norm\": 4.3229853726253394e-33, \"direct_square_contact_partial_trace\": -4.349777651397363e-19, \"first_ordered_partial_trace\": 9.223290953884944e-30, \"graded_full_partial_norm\": 2.3258073191273347e-09, \"graded_full_partial_trace\": 4.0283994181643946e-09, \"graded_mean_partial_trace\": 4.0283994183818835e-09, \"opposite_ordered_partial_trace\": 9.223290953884944e-30, \"q_probe\": 1.0, \"side\": \"incoming\", \"source_return_cutoff_partial_norm\": 5.011537933293012e-17, \"ungraded_direct_partial_trace\": -4.349777651212897e-19}\n{\"cutoff_probe\": 4.1316534849099337e-11, \"differentiated_source_equation_residual_upper\": 4.554674217251168e-29, \"direct_contour_lag_refinement_norm\": 5.653132445080685e-34, \"direct_square_contact_partial_trace\": -8.662507091837432e-20, \"first_ordered_partial_trace\": 7.536627263629664e-30, \"graded_full_partial_norm\": 4.632257966467173e-10, \"graded_full_partial_trace\": 8.023272304289396e-10, \"graded_mean_partial_trace\": 8.02327230472252e-10, \"opposite_ordered_partial_trace\": 7.536627263629664e-30, \"q_probe\": 4.0, \"side\": \"incoming\", \"source_return_cutoff_partial_norm\": 9.981367016398721e-18, \"ungraded_direct_partial_trace\": -8.662507090330108e-20}\n{\"cutoff_probe\": 2.5822834280687085e-12, \"differentiated_source_equation_residual_upper\": 4.606339910688875e-19, \"direct_contour_lag_refinement_norm\": 1.2269301105232926e-32, \"direct_square_contact_partial_trace\": -1.5768755121598283e-19, \"first_ordered_partial_trace\": -2.7718872017256414e-31, \"graded_full_partial_norm\": 1.8225601042031959e-09, \"graded_full_partial_trace\": -3.1567652770625945e-09, \"graded_mean_partial_trace\": -3.156765276983751e-09, \"opposite_ordered_partial_trace\": -2.7718872017256414e-31, \"q_probe\": 0.25, \"side\": \"outgoing\", \"source_return_cutoff_partial_norm\": 363.4236727086814, \"ungraded_direct_partial_trace\": -1.576875512165372e-19}\n{\"cutoff_probe\": 1.0329133712274834e-11, \"differentiated_source_equation_residual_upper\": 2.319348307578332e-19, \"direct_contour_lag_refinement_norm\": 4.8558087192608644e-33, \"direct_square_contact_partial_trace\": -9.575085404097249e-20, \"first_ordered_partial_trace\": 1.4067552763402295e-30, \"graded_full_partial_norm\": 1.1064926147565793e-09, \"graded_full_partial_trace\": -1.9165005710185964e-09, \"graded_mean_partial_trace\": -1.916500570970721e-09, \"opposite_ordered_partial_trace\": 1.4067552763402295e-30, \"q_probe\": 1.0, \"side\": \"outgoing\", \"source_return_cutoff_partial_norm\": 220.63779012628714, \"ungraded_direct_partial_trace\": -9.575085403815897e-20}\n{\"cutoff_probe\": 4.1316534849099337e-11, \"differentiated_source_equation_residual_upper\": 4.52997716323893e-22, \"direct_contour_lag_refinement_norm\": 1.0652033170448998e-35, \"direct_square_contact_partial_trace\": -2.0339659173281004e-22, \"first_ordered_partial_trace\": 1.6371491519885558e-32, \"graded_full_partial_norm\": 2.3503356366024155e-12, \"graded_full_partial_trace\": -4.070898923616695e-12, \"graded_mean_partial_trace\": -4.070898923514997e-12, \"opposite_ordered_partial_trace\": 1.6371491519885558e-32, \"q_probe\": 4.0, \"side\": \"outgoing\", \"source_return_cutoff_partial_norm\": 0.4686636509823327, \"ungraded_direct_partial_trace\": -2.0339659170006707e-22}\n{\"archive\": {\"bytes\": 26787, \"path\": \"application.npz\", \"sha256\": \"121c53e2ca4d9d8d3cac88ba72fe8008a2a7c19a302e8d0f97eba596893b0828\"}, \"classification\": \"EVALUATED_SAME_BACKGROUND_DIRECT_MEAN_AND_SOURCE_RETURN_CUTOFF_PARTIAL\"}\n"
+        }
+      }
+    },
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "scripts/evaluate_muon_magnetic_full_cutoff_contact.py",
+        "--output",
+        "artifacts/muon_magnetic_full_cutoff_contact_20261011/run_2"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "OPENBLAS_NUM_THREADS": "1",
+        "PYTHONPATH": "src"
+      },
+      "error_scope": "Same stored direct, chronological mean and source inverse at common fixed cutoff probe; physical total c jets/matching excluded",
+      "exit_code": 0,
+      "logs": {
+        "stderr": {
+          "bytes": 0,
+          "path": "artifacts/muon_magnetic_full_cutoff_contact_run_2.stderr.txt",
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "text": ""
+        },
+        "stdout": {
+          "bytes": 4194,
+          "path": "artifacts/muon_magnetic_full_cutoff_contact_run_2.stdout.txt",
+          "sha256": "7ee68362849474389c5d80362dc49ee46411fb38bce6fe05b4956c324c3dc6c2",
+          "text": "{\"cutoff_probe\": 2.5822834280687085e-12, \"differentiated_source_equation_residual_upper\": 7.591123734601759e-29, \"direct_contour_lag_refinement_norm\": 6.645157217848323e-33, \"direct_square_contact_partial_trace\": -2.302119840110409e-19, \"first_ordered_partial_trace\": 1.0945093145314782e-30, \"graded_full_partial_norm\": 1.2304521452635225e-09, \"graded_full_partial_trace\": 2.1311965542358703e-09, \"graded_mean_partial_trace\": 2.131196554350976e-09, \"opposite_ordered_partial_trace\": 1.0945093145314782e-30, \"q_probe\": 0.25, \"side\": \"incoming\", \"source_return_cutoff_partial_norm\": 2.651319224899138e-17, \"ungraded_direct_partial_trace\": -2.302119840088519e-19}\n{\"cutoff_probe\": 1.0329133712274834e-11, \"differentiated_source_equation_residual_upper\": 1.8218696869004673e-28, \"direct_contour_lag_refinement_norm\": 4.3229853726253394e-33, \"direct_square_contact_partial_trace\": -4.349777651397363e-19, \"first_ordered_partial_trace\": 9.223290953884944e-30, \"graded_full_partial_norm\": 2.3258073191273347e-09, \"graded_full_partial_trace\": 4.0283994181643946e-09, \"graded_mean_partial_trace\": 4.0283994183818835e-09, \"opposite_ordered_partial_trace\": 9.223290953884944e-30, \"q_probe\": 1.0, \"side\": \"incoming\", \"source_return_cutoff_partial_norm\": 5.011537933293012e-17, \"ungraded_direct_partial_trace\": -4.349777651212897e-19}\n{\"cutoff_probe\": 4.1316534849099337e-11, \"differentiated_source_equation_residual_upper\": 4.554674217251168e-29, \"direct_contour_lag_refinement_norm\": 5.653132445080685e-34, \"direct_square_contact_partial_trace\": -8.662507091837432e-20, \"first_ordered_partial_trace\": 7.536627263629664e-30, \"graded_full_partial_norm\": 4.632257966467173e-10, \"graded_full_partial_trace\": 8.023272304289396e-10, \"graded_mean_partial_trace\": 8.02327230472252e-10, \"opposite_ordered_partial_trace\": 7.536627263629664e-30, \"q_probe\": 4.0, \"side\": \"incoming\", \"source_return_cutoff_partial_norm\": 9.981367016398721e-18, \"ungraded_direct_partial_trace\": -8.662507090330108e-20}\n{\"cutoff_probe\": 2.5822834280687085e-12, \"differentiated_source_equation_residual_upper\": 4.606339910688875e-19, \"direct_contour_lag_refinement_norm\": 1.2269301105232926e-32, \"direct_square_contact_partial_trace\": -1.5768755121598283e-19, \"first_ordered_partial_trace\": -2.7718872017256414e-31, \"graded_full_partial_norm\": 1.8225601042031959e-09, \"graded_full_partial_trace\": -3.1567652770625945e-09, \"graded_mean_partial_trace\": -3.156765276983751e-09, \"opposite_ordered_partial_trace\": -2.7718872017256414e-31, \"q_probe\": 0.25, \"side\": \"outgoing\", \"source_return_cutoff_partial_norm\": 363.4236727086814, \"ungraded_direct_partial_trace\": -1.576875512165372e-19}\n{\"cutoff_probe\": 1.0329133712274834e-11, \"differentiated_source_equation_residual_upper\": 2.319348307578332e-19, \"direct_contour_lag_refinement_norm\": 4.8558087192608644e-33, \"direct_square_contact_partial_trace\": -9.575085404097249e-20, \"first_ordered_partial_trace\": 1.4067552763402295e-30, \"graded_full_partial_norm\": 1.1064926147565793e-09, \"graded_full_partial_trace\": -1.9165005710185964e-09, \"graded_mean_partial_trace\": -1.916500570970721e-09, \"opposite_ordered_partial_trace\": 1.4067552763402295e-30, \"q_probe\": 1.0, \"side\": \"outgoing\", \"source_return_cutoff_partial_norm\": 220.63779012628714, \"ungraded_direct_partial_trace\": -9.575085403815897e-20}\n{\"cutoff_probe\": 4.1316534849099337e-11, \"differentiated_source_equation_residual_upper\": 4.52997716323893e-22, \"direct_contour_lag_refinement_norm\": 1.0652033170448998e-35, \"direct_square_contact_partial_trace\": -2.0339659173281004e-22, \"first_ordered_partial_trace\": 1.6371491519885558e-32, \"graded_full_partial_norm\": 2.3503356366024155e-12, \"graded_full_partial_trace\": -4.070898923616695e-12, \"graded_mean_partial_trace\": -4.070898923514997e-12, \"opposite_ordered_partial_trace\": 1.6371491519885558e-32, \"q_probe\": 4.0, \"side\": \"outgoing\", \"source_return_cutoff_partial_norm\": 0.4686636509823327, \"ungraded_direct_partial_trace\": -2.0339659170006707e-22}\n{\"archive\": {\"bytes\": 26787, \"path\": \"application.npz\", \"sha256\": \"121c53e2ca4d9d8d3cac88ba72fe8008a2a7c19a302e8d0f97eba596893b0828\"}, \"classification\": \"EVALUATED_SAME_BACKGROUND_DIRECT_MEAN_AND_SOURCE_RETURN_CUTOFF_PARTIAL\"}\n"
+        }
+      }
+    }
+  ],
+  "independent_replay": [
+    {
+      "byte_identical": true,
+      "first": {
+        "bytes": 26787,
+        "path": "artifacts/muon_magnetic_full_cutoff_contact_20261011/run_1/application.npz",
+        "sha256": "121c53e2ca4d9d8d3cac88ba72fe8008a2a7c19a302e8d0f97eba596893b0828"
+      },
+      "second": {
+        "bytes": 26787,
+        "path": "artifacts/muon_magnetic_full_cutoff_contact_20261011/run_2/application.npz",
+        "sha256": "121c53e2ca4d9d8d3cac88ba72fe8008a2a7c19a302e8d0f97eba596893b0828"
+      }
+    },
+    {
+      "byte_identical": true,
+      "first": {
+        "bytes": 21176,
+        "path": "artifacts/muon_magnetic_full_cutoff_contact_20261011/run_1/result.json",
+        "sha256": "5a16659996558e3d6a3e698f9f1054974bc52136daa34924618f39e1e316ccbf"
+      },
+      "second": {
+        "bytes": 21176,
+        "path": "artifacts/muon_magnetic_full_cutoff_contact_20261011/run_2/result.json",
+        "sha256": "5a16659996558e3d6a3e698f9f1054974bc52136daa34924618f39e1e316ccbf"
+      }
+    }
+  ],
+  "not_an_anomaly_enclosure": true,
+  "runtime": {
+    "executable": "C:\\Python314\\python.exe",
+    "packages": {
+      "numpy": "2.4.6",
+      "pytest": "9.0.3",
+      "python-flint": "0.9.0",
+      "scipy": "1.17.1"
+    },
+    "python": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]"
+  },
+  "scientific_scope": {
+    "CONTROL_ONLY": "finite Dirichlet tent/core and numerical cutoff probes; exact-stored interval arithmetic certificate",
+    "DERIVED": "fixed cutoff derivative of direct squared contact, both ordered insertions and signed source return U_c=-U R_c U; same statistics once",
+    "EVALUATED": "both actual arms and all common .25/1/4 probes with certified stored chronological mean entry bounds retained",
+    "OWNER_DEFINITION_GAP": "none established",
+    "UNEVALUATED": "total c/base/source/mean/domain derivatives from physical formation solve, full quantum photon and overlap-subtracted normalized native Pauli"
+  },
+  "source_records": [
+    {
+      "bytes": 7348,
+      "path": "src/bhsm/interface/muon_magnetic_full_cutoff_contact.py",
+      "sha256": "d11783ed84b945d71f28b9e9df1d6b81f31d89bb20dbb3c06758bfa3adc1870f"
+    },
+    {
+      "bytes": 2288,
+      "path": "tests/test_muon_magnetic_full_cutoff_contact.py",
+      "sha256": "05512643ec9c4791168e1eff9b655238e12fa0092691079e7182f62b57d5f7e5"
+    },
+    {
+      "bytes": 7763,
+      "path": "scripts/evaluate_muon_magnetic_full_cutoff_contact.py",
+      "sha256": "d81e61044bc9566fe93075bf3a19164d19879eaa78cfe9cb5b15e6d0c375ea2f"
+    }
+  ],
+  "total_observable_completed": false
+}

@@ -1,0 +1,42 @@
+{
+  "all_arrays_finite": true,
+  "application.npz": {
+    "byte_identical": true,
+    "bytes": 2265677,
+    "sha256": "e0e4edd81b8f192c61402620ad628c49c12949d8829fa55a11153b135c81e904"
+  },
+  "array_count": 19,
+  "commands": [
+    {
+      "command": "C:\\Python314\\python.exe -m pytest --noconftest -q tests/test_muon_parent_maxwell_full_q_application.py",
+      "exit_code": 0,
+      "output": "....................                                                     [100%]\n20 passed in 1.66s\n"
+    },
+    {
+      "command": "$env:PYTHONPATH='src'; C:\\Python314\\python.exe -m bhsm.interface.muon_parent_maxwell_full_q_application --output artifacts/muon_parent_maxwell_full_q_20261010/run_1",
+      "exit_code": 0
+    },
+    {
+      "command": "$env:PYTHONPATH='src'; C:\\Python314\\python.exe -m bhsm.interface.muon_parent_maxwell_full_q_application --output artifacts/muon_parent_maxwell_full_q_20261010/run_2",
+      "exit_code": 0
+    }
+  ],
+  "corrected_initial_smoke_failure": "Initial smoke failed before evaluation because historical transported_source_Gram is normalized by16/3. Raw transformed source is retained, with explicit saved_normalized_Gram=(3/16)*raw_Gram. Subsequent smoke and20focusedtests passed.",
+  "precision_scope": "binary64 same-action angular application and exact representation identities; no validated interval enclosure",
+  "result.json": {
+    "byte_identical": true,
+    "bytes": 6697,
+    "sha256": "f9d0cf60074d430dbbc2fc5763f6b3b9cd0c2f4828d4c0170d47105e3403d57e"
+  },
+  "result_json_LF_only": true,
+  "src/bhsm/interface/muon_parent_maxwell_full_q_application.py": {
+    "CRLF_count": 0,
+    "bytes": 18646,
+    "sha256": "936386142f5f0732210fa7ddba38f3e497341089e2eafe8ff5d1b4b959b8249b"
+  },
+  "tests/test_muon_parent_maxwell_full_q_application.py": {
+    "CRLF_count": 0,
+    "bytes": 7401,
+    "sha256": "92e010918dd1e5b568584b62bbf4db1a8531334d7a9c94a040e6b4141f6d22ec"
+  }
+}

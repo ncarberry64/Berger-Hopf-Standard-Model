@@ -1,0 +1,205 @@
+ACTUAL PHYSICAL deltaV(A,H) / BARE-EULER CLOCK DECOMPOSITION
+2026-10-16. Original complex analytic ea02/D4 cut, no outer correction.
+
+Source:
+C:/Users/carbe/Downloads/BHSM_muon_parent_maxwell_worktree_20261001/audits/bhsm_original_ea02_physical_deltaV_Euler_clock_20261016.py
+SHA256 979045f0e0869905d7e66c926e0cb28ba4d38c0df6d3c6873eaca7d9581839ac
+
+1. What is newly evaluated
+
+The previous actual open clock producer8d4a7fe4... evaluated all277
+clock RHS rows and chi=Z^T f. This supplement separately evaluates the
+PHYSICAL generator variation paired with the actual bare Euler:
+  D = (deltaV)^* E.
+The star here is an analytic weak/transposed contraction, never complex
+conjugation or a Hilbert adjoint.
+
+It consumes the retained exact point/density/wall/raw/boundary-weight
+value and time germs, the original seven position/source germs, and the
+actual updated particular clock packet. It performs zero new action,
+AD/coefficient sampling, field, history or clock-solver calls.
+
+The updated particular differs only in child phase(v,y). Every parent
+coordinate and every child spatial/H position right is checked unchanged
+EXACTLY (reported upper0). Thus original deltaA_i, radial deltaA_i and
+deltaH position germs are valid for the updated seven rays.
+
+2. Physical generator, not a derivative of cached numeric Z
+
+The complete_product_lifts source explicitly selects an external K(A0,t)
+chart, held on J/R, with actual time contacts supplied. It is not a
+nonlinearly reselected K(A) chart. Therefore differentiating its cached
+numeric Z cannot supply the physical deltaV_A contact.
+
+At each of the original48 nodes and actual wall, for eta=phi_p T_a:
+  a_i = [deltaA_i, eta],
+  a_i,rho = [deltaA_i,rho,eta] + [deltaA_i,eta_rho],
+  h = -T_a deltaH phi_p(wall).
+All36 parameter rows (nine profiles times four U(2) channels) and all7
+actual source/response rays are evaluated. The central gauge commutator
+vanishes algebraically; its scalar generator term is retained.
+
+These tests are applied UNPROJECTED as weak functionals. They are not
+assumed to be new admitted state coordinates or projected into the
+finite current-product carrier. Actual source/reference, non-Abelian
+body, scalar wall and original potential terms are retained.
+
+3. Literal same-action weak Euler
+
+Use the original X, radial R_a, electric Y_a and angular B_a:
+  X = At_r-Ar_t+[A_t,A_r],
+  R_a = Ar_a+[A_r,A_a],
+  Y_a = At_a+[A_t,A_a]-beta R_a,
+  B_i = 2 A_i + [A_j,A_k] (owned cyclic ordering).
+
+The original coefficients are electric e, radial r, angular d,
+electric_radial k and shift beta. The exact frozen action commutator
+factor is the retained binary64 1/sqrt(2), not fitted or replaced.
+
+For an instantaneous physical spatial/H test, choose the test's TIME
+EXTENSION a_t=h_t=0 at this instant. This is a mathematical choice of test
+extension, not an assertion that physical Rdot, deltaVdot or any field
+clock is zero. The weak Euler is extension-independent after subtracting
+the actual momentum clock.
+
+For temporal testcomponent a_0=0:
+  deltaX = [A_t,a_r],
+  deltaR_a = a_a,rho+[a_r,A_a]+[A_r,a_a],
+  deltaY_a = [A_t,a_a]-beta deltaR_a,
+with deltaB from the owned angular polynomial. The bulk force is the
+original signed Maxwell polynomial first variation, weighted once by
+MAXWELL_TO_CAP times the original fixed material quadrature.
+
+Physical spatial momenta are
+  p_r = k X,  p_a = e Y_a,
+inside that same fixed weight. Their ACTUAL time derivatives retain
+kdot/edot, point At/Ar clocks and betadot:
+  pdot_r = kdot X+k Xdot,
+  pdot_a = edot Y_a+e Ydot_a.
+The bulk weak Euler subtracts sum(pdot_i dot a_i).
+
+For H:
+  DtH = Hdot+O(A_t,H),
+  PiH = 2 wT DtH / V,
+  PiHdot = 2/V [wTdot DtH
+           +wT(Hddot+O(A_tdot,H)+O(A_t,H_actual_clock))].
+The actual raw_child_h[264:268] supplies Hddot; none is guessed.
+
+Scalar force retains the temporal O(A_t,h) term, both spatial terms
+O(a_i,H)+O(A_i,h), and the SAME original quartic-potential first
+variation with the retained lambda_H and nu_squared_action. Actual wT,
+wS, wV and their required clocks are used, with V once. PiHdot dot h
+is subtracted. No extra Haar/normalization or surface coefficient is
+inserted.
+
+This is the finite classical YM/Higgs sector. It does not claim that a
+fermionic spin or microscopic graded operator has been evaluated.
+
+4. Independent actual Euler controls
+
+The literal physical functional is checked on ALL179 represented
+pure-gauge/Higgs q tests (all217 q except the38 geometry directions),
+including every added59 q test. The original/native point, radial and
+actual wall maps supply these controls; temporal A0 and raw Hdot test
+placements are explicitly guarded.
+
+Time-dependent q-test incidences in coordinate Lq and d_tLv cancel in
+the physical instantaneous Euler. This is checked against the full217
+same-action Euler already freshly evaluated by the separate position
+backend, not asserted from a Noether identity.
+
+Maximum discrepancy over179 actual controls:
+  1.9422812216525845e-20.
+No new geometry Eulerfunctional is inferred from this restricted test
+class; geometry directions remain excluded.
+
+5. Actual evaluated decomposition
+
+All36x7:
+  max |chi|                    1.0925678628280227e-7
+  max |D=deltaV*E|             1.0925678632999213e-7
+  max |chi+D|                 6.257739236974885e-15.
+
+The largest chi and D entries are both row6, ray3:
+  chi =  4.1580458600822856e-8 + 1.0103519590415603e-7 i,
+  D   = -4.1580458700678490e-8 - 1.0103519591409086e-7 i.
+The largest remainder is row9, ray6:
+   3.949629196413565e-15 - 4.8538365824173095e-15 i.
+
+Separate nonzero contributions are retained:
+  bulk Lq                 5.224830304298794e-9
+  bulk momentum clock     1.0958239633355192e-7
+  scalar Lq               2.486404938868541e-13
+  scalar momentum clock   1.8612719367993334e-14.
+Central9 D upper is3.081772321864865e-46; its scalar terms were not
+deleted. SU2 carries the1.0925678632999213e-7 maximum.
+
+Thus the actual physical off-shell Euler contact is the dominant
+evaluated contribution to this projected RHS, with the displayed
+nonzero remainder. Bare E is not required or assumed stationary.
+
+6. What the remainder does and does not establish
+
+For full physical primary/static defects P and S, the exact product
+rule retained in the open-clock proof is
+  Z^T Hphase omega - chi - W*A_G
+    = deltaV*E + deltaW*G
+      + Dt(deltaP)-deltaS + b(DtP-S).
+
+The present calculation evaluates deltaV*E independently. It does not
+separately evaluate or set zero deltaW*G, W*A_G, physical pullback,
+source/domain defects, or the projected operator term Z^T Hphase omega.
+chi+D is retained as the COMBINED unresolved remainder, not labeled
+zero or assigned to a specific primitive by size.
+
+Exact Z left-nullity of the full clock operator has not been proved.
+Six small HZ controls, or a framed candidate, cannot establish that
+every possible unknown omega has negligible Z^T Hphase omega.
+Consequently chi is NOT declared a solvability obstruction, no equation
+chi=0 is imposed, and no source/complement is chosen to cancel it.
+
+The new59 spatial-q complement can participate in these physical
+Euler contacts, via the same literal weakfunctional and actual point/
+radial/wall basis maps. That is a further coupled-unknown coefficient
+map; its source/proper-port/domain constraints must remain separate.
+The31 phase-momentum directions leave the spatial/H position right
+fixed at this cut. No values are chosen for either set.
+
+7. Pins, pair and scope
+
+Source979045f0... consumes clock source8d4a7fe4... with archive
+2e0b2140004e37699f80ed25d14c8d988f657598f6b7d4b1269bce292cf7039d,
+and coefficient exporterc744590f... with archive
+6cf8979c6d81fb427a23a93848f13a87400a615daae0e1496698d042f85755a2.
+The original ea02, corrected native maps, fixed profiles, original
+parameters and consumed sources are pinned. Frozen position70670f...
+and phasec2f11bd4... are instantiated for locked metadata only; no
+action callback is called by this producer.
+
+Two independent reviewed executions are byte-identical:
+C:/Users/carbe/OneDrive/Documents/CODEX/outputs/bhsm_original_ea02_physical_deltaV_Euler_clock_20261016/reviewed_run_1
+C:/Users/carbe/OneDrive/Documents/CODEX/outputs/bhsm_original_ea02_physical_deltaV_Euler_clock_20261016/reviewed_run_2
+
+actual_unprojected_deltaV_bare_Euler_and_clock_projection.npz
+363367 bytes, SHA256
+7c8f3b515139473a664c94a394a3cf1afd09078a0be57795793ec296f390fe87
+result.json:48306 bytes, SHA256
+c6e9d62728a865dc0d01369262592c3e193620bb09e147f538a278fb280be2ae
+executed_producer.py:16320 bytes, source SHA above.
+
+reviewed_paired_inventory.json SHA256
+cd95799264d3acdfeb9874dcbb182e2bb0ba83e4ca40c4f88b06021d9e5895c2.
+
+The pilot and initial final pair are preserved. A metadata-only flag
+was corrected from an ambiguous spin label to YM/Higgs. The numerical
+archive is byte-identical to that earlier pair; no numerical equation
+or tolerance changed. Root and scalar independent source/math reviews
+passed.
+
+No old source/history/D5/canonical campaign was replayed, no original
+coupled correction applied, no free31 clocks/source/outgoing domain
+selected. This finite classical decomposition is not a full native
+P_strat/graded or physical retarded realization. Physical full
+outgoing derivative/radial convergence/Maxwell226 AFTER, normalized
+two-spin state and muon moment remain unevaluated.
+

@@ -1,0 +1,1520 @@
+{
+  "Gauss_reference_geometry_hessian_max": 0.0,
+  "Gauss_reference_geometry_jacobian_max": 0.0,
+  "Gauss_reference_max": 0.0,
+  "Gauss_zero_provenance": "At/Ar constant-angular tests: Ftr=0; each background Fti/Fri is parallel to Mi, so <Mi,[eta,Mi]>=0; E_i eta=0. This is an action-derived reference value, not an imposed matter-free physical Gauss constraint.",
+  "action_formula": "1/2 integral [k Ftr^2+e(Fti-beta Fri)^2-r Fri^2-d B^2]",
+  "action_geometry_gradient_norm": 227132.84626832348,
+  "action_value": -8319.5455728175,
+  "additional_independent_action": 0.0,
+  "additional_independent_geometry_gradient_norm": 0.0,
+  "additional_independent_geometry_hessian_norm": 0.0,
+  "angular_rule": "exact constant right-Maurer field/test Haar average one",
+  "background_energy_added_twice": false,
+  "background_subtraction_owner": "aether_diagonal_sp1_m4_attachment_v15_50.action_ownership_ledger",
+  "common_normalization_assigned": false,
+  "complete_geometry_Euler_claim": false,
+  "complete_native_action": false,
+  "contacts_appended_twice": false,
+  "coupled_geometry_composition": "S_R8+c_attachment*(S_Maxwell(Abar(q)+a)-S_Maxwell(Abar(q)))",
+  "curvature_formula": {
+    "B": "2Ai+epsilon_ijk E_j A_k+1/2 epsilon_ijk[A_j,A_k]",
+    "Fri": "d_rho Ai-E_i Ar+[Ar,Ai]",
+    "Fti": "d_tau Ai-E_i At+[At,Ai]",
+    "Ftr": "d_tau Ar-d_rho At+[At,Ar]"
+  },
+  "error_scope": "binary64 finite weak application; no stationary-base or continuum-tail enclosure",
+  "field_order": [
+    "A_tau",
+    "A_rho",
+    "A_1",
+    "A_2",
+    "A_3"
+  ],
+  "full_gauge_primal_selected": false,
+  "full_reference_action_role": "diagnostic mechanical Maxwell energy already included in geometric R8; not added again",
+  "geometry_coordinate_count": 100,
+  "induced_mechanical_motion_count": 1,
+  "input_hashes": {
+    "artifacts/flagship_integration/BHSM_N12_C2_REFINED_RESET_ROOT_CENTER.npz": "59dd88661b15cbeec96bc19294f9d9c64f754cccbfbc385c32329fa9c864a8fe",
+    "artifacts/muon_birth_transfer_value_20261008/retained_reset/run_1/result.json": "d0fec0f8e8a05818fcce67e88ed8db73744484220a2cb213825893f481cb0a72",
+    "src/bhsm/interface/aether_diagonal_sp1_m4_attachment_v15_50.py": "e6482614dcb54f4890a5e66fbe724d4c302405d575a4b73ddbb64a075cb1827e",
+    "src/bhsm/interface/aether_exact_radial_schur_lift_v15_83.py": "465c43ab417f70ee8bfe03f2e33365d21e81774a20ac98cd551fac94fac52581",
+    "src/bhsm/interface/muon_matched_mechanical_source.py": "ab119bb053280d8da2a8d03db2e521aba4033ae0966c9d3520ca902a027c05de",
+    "src/bhsm/interface/muon_moving_geometric_action.py": "bf560fdb9766f563d97d3100ccb266e2a4350c910ac14a51d57576c2b5371392",
+    "src/bhsm/interface/muon_parent_maxwell_full_weak.py": "c1fb703967a644306d3521d457a6d7c778a49d89c1e081b401487a25b7491565",
+    "src/bhsm/interface/muon_parent_maxwell_geometry_weak.py": "f0b4a49934e17ad18c40e9164b66c54e1b2cb146fb476f59b0e500f2dd6c9153",
+    "src/bhsm/interface/muon_parent_retarded_hypercharge.py": "2eb97a704bce63f601cc0d6e0f647266d4b4aac7f746d34dceb41b72018c3510"
+  },
+  "labels": [
+    {
+      "field": "A_tau",
+      "internal": 0,
+      "radial_test": 0
+    },
+    {
+      "field": "A_tau",
+      "internal": 1,
+      "radial_test": 0
+    },
+    {
+      "field": "A_tau",
+      "internal": 2,
+      "radial_test": 0
+    },
+    {
+      "field": "A_tau",
+      "internal": 3,
+      "radial_test": 0
+    },
+    {
+      "field": "A_rho",
+      "internal": 0,
+      "radial_test": 0
+    },
+    {
+      "field": "A_rho",
+      "internal": 1,
+      "radial_test": 0
+    },
+    {
+      "field": "A_rho",
+      "internal": 2,
+      "radial_test": 0
+    },
+    {
+      "field": "A_rho",
+      "internal": 3,
+      "radial_test": 0
+    },
+    {
+      "field": "A_1",
+      "internal": 0,
+      "radial_test": 0
+    },
+    {
+      "field": "A_1",
+      "internal": 1,
+      "radial_test": 0
+    },
+    {
+      "field": "A_1",
+      "internal": 2,
+      "radial_test": 0
+    },
+    {
+      "field": "A_1",
+      "internal": 3,
+      "radial_test": 0
+    },
+    {
+      "field": "A_2",
+      "internal": 0,
+      "radial_test": 0
+    },
+    {
+      "field": "A_2",
+      "internal": 1,
+      "radial_test": 0
+    },
+    {
+      "field": "A_2",
+      "internal": 2,
+      "radial_test": 0
+    },
+    {
+      "field": "A_2",
+      "internal": 3,
+      "radial_test": 0
+    },
+    {
+      "field": "A_3",
+      "internal": 0,
+      "radial_test": 0
+    },
+    {
+      "field": "A_3",
+      "internal": 1,
+      "radial_test": 0
+    },
+    {
+      "field": "A_3",
+      "internal": 2,
+      "radial_test": 0
+    },
+    {
+      "field": "A_3",
+      "internal": 3,
+      "radial_test": 0
+    },
+    {
+      "field": "A_tau",
+      "internal": 0,
+      "radial_test": 1
+    },
+    {
+      "field": "A_tau",
+      "internal": 1,
+      "radial_test": 1
+    },
+    {
+      "field": "A_tau",
+      "internal": 2,
+      "radial_test": 1
+    },
+    {
+      "field": "A_tau",
+      "internal": 3,
+      "radial_test": 1
+    },
+    {
+      "field": "A_rho",
+      "internal": 0,
+      "radial_test": 1
+    },
+    {
+      "field": "A_rho",
+      "internal": 1,
+      "radial_test": 1
+    },
+    {
+      "field": "A_rho",
+      "internal": 2,
+      "radial_test": 1
+    },
+    {
+      "field": "A_rho",
+      "internal": 3,
+      "radial_test": 1
+    },
+    {
+      "field": "A_1",
+      "internal": 0,
+      "radial_test": 1
+    },
+    {
+      "field": "A_1",
+      "internal": 1,
+      "radial_test": 1
+    },
+    {
+      "field": "A_1",
+      "internal": 2,
+      "radial_test": 1
+    },
+    {
+      "field": "A_1",
+      "internal": 3,
+      "radial_test": 1
+    },
+    {
+      "field": "A_2",
+      "internal": 0,
+      "radial_test": 1
+    },
+    {
+      "field": "A_2",
+      "internal": 1,
+      "radial_test": 1
+    },
+    {
+      "field": "A_2",
+      "internal": 2,
+      "radial_test": 1
+    },
+    {
+      "field": "A_2",
+      "internal": 3,
+      "radial_test": 1
+    },
+    {
+      "field": "A_3",
+      "internal": 0,
+      "radial_test": 1
+    },
+    {
+      "field": "A_3",
+      "internal": 1,
+      "radial_test": 1
+    },
+    {
+      "field": "A_3",
+      "internal": 2,
+      "radial_test": 1
+    },
+    {
+      "field": "A_3",
+      "internal": 3,
+      "radial_test": 1
+    },
+    {
+      "field": "A_tau",
+      "internal": 0,
+      "radial_test": 2
+    },
+    {
+      "field": "A_tau",
+      "internal": 1,
+      "radial_test": 2
+    },
+    {
+      "field": "A_tau",
+      "internal": 2,
+      "radial_test": 2
+    },
+    {
+      "field": "A_tau",
+      "internal": 3,
+      "radial_test": 2
+    },
+    {
+      "field": "A_rho",
+      "internal": 0,
+      "radial_test": 2
+    },
+    {
+      "field": "A_rho",
+      "internal": 1,
+      "radial_test": 2
+    },
+    {
+      "field": "A_rho",
+      "internal": 2,
+      "radial_test": 2
+    },
+    {
+      "field": "A_rho",
+      "internal": 3,
+      "radial_test": 2
+    },
+    {
+      "field": "A_1",
+      "internal": 0,
+      "radial_test": 2
+    },
+    {
+      "field": "A_1",
+      "internal": 1,
+      "radial_test": 2
+    },
+    {
+      "field": "A_1",
+      "internal": 2,
+      "radial_test": 2
+    },
+    {
+      "field": "A_1",
+      "internal": 3,
+      "radial_test": 2
+    },
+    {
+      "field": "A_2",
+      "internal": 0,
+      "radial_test": 2
+    },
+    {
+      "field": "A_2",
+      "internal": 1,
+      "radial_test": 2
+    },
+    {
+      "field": "A_2",
+      "internal": 2,
+      "radial_test": 2
+    },
+    {
+      "field": "A_2",
+      "internal": 3,
+      "radial_test": 2
+    },
+    {
+      "field": "A_3",
+      "internal": 0,
+      "radial_test": 2
+    },
+    {
+      "field": "A_3",
+      "internal": 1,
+      "radial_test": 2
+    },
+    {
+      "field": "A_3",
+      "internal": 2,
+      "radial_test": 2
+    },
+    {
+      "field": "A_3",
+      "internal": 3,
+      "radial_test": 2
+    },
+    {
+      "field": "A_tau",
+      "internal": 0,
+      "radial_test": 3
+    },
+    {
+      "field": "A_tau",
+      "internal": 1,
+      "radial_test": 3
+    },
+    {
+      "field": "A_tau",
+      "internal": 2,
+      "radial_test": 3
+    },
+    {
+      "field": "A_tau",
+      "internal": 3,
+      "radial_test": 3
+    },
+    {
+      "field": "A_rho",
+      "internal": 0,
+      "radial_test": 3
+    },
+    {
+      "field": "A_rho",
+      "internal": 1,
+      "radial_test": 3
+    },
+    {
+      "field": "A_rho",
+      "internal": 2,
+      "radial_test": 3
+    },
+    {
+      "field": "A_rho",
+      "internal": 3,
+      "radial_test": 3
+    },
+    {
+      "field": "A_1",
+      "internal": 0,
+      "radial_test": 3
+    },
+    {
+      "field": "A_1",
+      "internal": 1,
+      "radial_test": 3
+    },
+    {
+      "field": "A_1",
+      "internal": 2,
+      "radial_test": 3
+    },
+    {
+      "field": "A_1",
+      "internal": 3,
+      "radial_test": 3
+    },
+    {
+      "field": "A_2",
+      "internal": 0,
+      "radial_test": 3
+    },
+    {
+      "field": "A_2",
+      "internal": 1,
+      "radial_test": 3
+    },
+    {
+      "field": "A_2",
+      "internal": 2,
+      "radial_test": 3
+    },
+    {
+      "field": "A_2",
+      "internal": 3,
+      "radial_test": 3
+    },
+    {
+      "field": "A_3",
+      "internal": 0,
+      "radial_test": 3
+    },
+    {
+      "field": "A_3",
+      "internal": 1,
+      "radial_test": 3
+    },
+    {
+      "field": "A_3",
+      "internal": 2,
+      "radial_test": 3
+    },
+    {
+      "field": "A_3",
+      "internal": 3,
+      "radial_test": 3
+    },
+    {
+      "field": "A_tau",
+      "internal": 0,
+      "radial_test": 4
+    },
+    {
+      "field": "A_tau",
+      "internal": 1,
+      "radial_test": 4
+    },
+    {
+      "field": "A_tau",
+      "internal": 2,
+      "radial_test": 4
+    },
+    {
+      "field": "A_tau",
+      "internal": 3,
+      "radial_test": 4
+    },
+    {
+      "field": "A_rho",
+      "internal": 0,
+      "radial_test": 4
+    },
+    {
+      "field": "A_rho",
+      "internal": 1,
+      "radial_test": 4
+    },
+    {
+      "field": "A_rho",
+      "internal": 2,
+      "radial_test": 4
+    },
+    {
+      "field": "A_rho",
+      "internal": 3,
+      "radial_test": 4
+    },
+    {
+      "field": "A_1",
+      "internal": 0,
+      "radial_test": 4
+    },
+    {
+      "field": "A_1",
+      "internal": 1,
+      "radial_test": 4
+    },
+    {
+      "field": "A_1",
+      "internal": 2,
+      "radial_test": 4
+    },
+    {
+      "field": "A_1",
+      "internal": 3,
+      "radial_test": 4
+    },
+    {
+      "field": "A_2",
+      "internal": 0,
+      "radial_test": 4
+    },
+    {
+      "field": "A_2",
+      "internal": 1,
+      "radial_test": 4
+    },
+    {
+      "field": "A_2",
+      "internal": 2,
+      "radial_test": 4
+    },
+    {
+      "field": "A_2",
+      "internal": 3,
+      "radial_test": 4
+    },
+    {
+      "field": "A_3",
+      "internal": 0,
+      "radial_test": 4
+    },
+    {
+      "field": "A_3",
+      "internal": 1,
+      "radial_test": 4
+    },
+    {
+      "field": "A_3",
+      "internal": 2,
+      "radial_test": 4
+    },
+    {
+      "field": "A_3",
+      "internal": 3,
+      "radial_test": 4
+    },
+    {
+      "field": "A_tau",
+      "internal": 0,
+      "radial_test": 5
+    },
+    {
+      "field": "A_tau",
+      "internal": 1,
+      "radial_test": 5
+    },
+    {
+      "field": "A_tau",
+      "internal": 2,
+      "radial_test": 5
+    },
+    {
+      "field": "A_tau",
+      "internal": 3,
+      "radial_test": 5
+    },
+    {
+      "field": "A_rho",
+      "internal": 0,
+      "radial_test": 5
+    },
+    {
+      "field": "A_rho",
+      "internal": 1,
+      "radial_test": 5
+    },
+    {
+      "field": "A_rho",
+      "internal": 2,
+      "radial_test": 5
+    },
+    {
+      "field": "A_rho",
+      "internal": 3,
+      "radial_test": 5
+    },
+    {
+      "field": "A_1",
+      "internal": 0,
+      "radial_test": 5
+    },
+    {
+      "field": "A_1",
+      "internal": 1,
+      "radial_test": 5
+    },
+    {
+      "field": "A_1",
+      "internal": 2,
+      "radial_test": 5
+    },
+    {
+      "field": "A_1",
+      "internal": 3,
+      "radial_test": 5
+    },
+    {
+      "field": "A_2",
+      "internal": 0,
+      "radial_test": 5
+    },
+    {
+      "field": "A_2",
+      "internal": 1,
+      "radial_test": 5
+    },
+    {
+      "field": "A_2",
+      "internal": 2,
+      "radial_test": 5
+    },
+    {
+      "field": "A_2",
+      "internal": 3,
+      "radial_test": 5
+    },
+    {
+      "field": "A_3",
+      "internal": 0,
+      "radial_test": 5
+    },
+    {
+      "field": "A_3",
+      "internal": 1,
+      "radial_test": 5
+    },
+    {
+      "field": "A_3",
+      "internal": 2,
+      "radial_test": 5
+    },
+    {
+      "field": "A_3",
+      "internal": 3,
+      "radial_test": 5
+    },
+    {
+      "field": "A_tau",
+      "internal": 0,
+      "radial_test": 6
+    },
+    {
+      "field": "A_tau",
+      "internal": 1,
+      "radial_test": 6
+    },
+    {
+      "field": "A_tau",
+      "internal": 2,
+      "radial_test": 6
+    },
+    {
+      "field": "A_tau",
+      "internal": 3,
+      "radial_test": 6
+    },
+    {
+      "field": "A_rho",
+      "internal": 0,
+      "radial_test": 6
+    },
+    {
+      "field": "A_rho",
+      "internal": 1,
+      "radial_test": 6
+    },
+    {
+      "field": "A_rho",
+      "internal": 2,
+      "radial_test": 6
+    },
+    {
+      "field": "A_rho",
+      "internal": 3,
+      "radial_test": 6
+    },
+    {
+      "field": "A_1",
+      "internal": 0,
+      "radial_test": 6
+    },
+    {
+      "field": "A_1",
+      "internal": 1,
+      "radial_test": 6
+    },
+    {
+      "field": "A_1",
+      "internal": 2,
+      "radial_test": 6
+    },
+    {
+      "field": "A_1",
+      "internal": 3,
+      "radial_test": 6
+    },
+    {
+      "field": "A_2",
+      "internal": 0,
+      "radial_test": 6
+    },
+    {
+      "field": "A_2",
+      "internal": 1,
+      "radial_test": 6
+    },
+    {
+      "field": "A_2",
+      "internal": 2,
+      "radial_test": 6
+    },
+    {
+      "field": "A_2",
+      "internal": 3,
+      "radial_test": 6
+    },
+    {
+      "field": "A_3",
+      "internal": 0,
+      "radial_test": 6
+    },
+    {
+      "field": "A_3",
+      "internal": 1,
+      "radial_test": 6
+    },
+    {
+      "field": "A_3",
+      "internal": 2,
+      "radial_test": 6
+    },
+    {
+      "field": "A_3",
+      "internal": 3,
+      "radial_test": 6
+    },
+    {
+      "field": "A_tau",
+      "internal": 0,
+      "radial_test": 7
+    },
+    {
+      "field": "A_tau",
+      "internal": 1,
+      "radial_test": 7
+    },
+    {
+      "field": "A_tau",
+      "internal": 2,
+      "radial_test": 7
+    },
+    {
+      "field": "A_tau",
+      "internal": 3,
+      "radial_test": 7
+    },
+    {
+      "field": "A_rho",
+      "internal": 0,
+      "radial_test": 7
+    },
+    {
+      "field": "A_rho",
+      "internal": 1,
+      "radial_test": 7
+    },
+    {
+      "field": "A_rho",
+      "internal": 2,
+      "radial_test": 7
+    },
+    {
+      "field": "A_rho",
+      "internal": 3,
+      "radial_test": 7
+    },
+    {
+      "field": "A_1",
+      "internal": 0,
+      "radial_test": 7
+    },
+    {
+      "field": "A_1",
+      "internal": 1,
+      "radial_test": 7
+    },
+    {
+      "field": "A_1",
+      "internal": 2,
+      "radial_test": 7
+    },
+    {
+      "field": "A_1",
+      "internal": 3,
+      "radial_test": 7
+    },
+    {
+      "field": "A_2",
+      "internal": 0,
+      "radial_test": 7
+    },
+    {
+      "field": "A_2",
+      "internal": 1,
+      "radial_test": 7
+    },
+    {
+      "field": "A_2",
+      "internal": 2,
+      "radial_test": 7
+    },
+    {
+      "field": "A_2",
+      "internal": 3,
+      "radial_test": 7
+    },
+    {
+      "field": "A_3",
+      "internal": 0,
+      "radial_test": 7
+    },
+    {
+      "field": "A_3",
+      "internal": 1,
+      "radial_test": 7
+    },
+    {
+      "field": "A_3",
+      "internal": 2,
+      "radial_test": 7
+    },
+    {
+      "field": "A_3",
+      "internal": 3,
+      "radial_test": 7
+    },
+    {
+      "field": "A_tau",
+      "internal": 0,
+      "radial_test": 8
+    },
+    {
+      "field": "A_tau",
+      "internal": 1,
+      "radial_test": 8
+    },
+    {
+      "field": "A_tau",
+      "internal": 2,
+      "radial_test": 8
+    },
+    {
+      "field": "A_tau",
+      "internal": 3,
+      "radial_test": 8
+    },
+    {
+      "field": "A_rho",
+      "internal": 0,
+      "radial_test": 8
+    },
+    {
+      "field": "A_rho",
+      "internal": 1,
+      "radial_test": 8
+    },
+    {
+      "field": "A_rho",
+      "internal": 2,
+      "radial_test": 8
+    },
+    {
+      "field": "A_rho",
+      "internal": 3,
+      "radial_test": 8
+    },
+    {
+      "field": "A_1",
+      "internal": 0,
+      "radial_test": 8
+    },
+    {
+      "field": "A_1",
+      "internal": 1,
+      "radial_test": 8
+    },
+    {
+      "field": "A_1",
+      "internal": 2,
+      "radial_test": 8
+    },
+    {
+      "field": "A_1",
+      "internal": 3,
+      "radial_test": 8
+    },
+    {
+      "field": "A_2",
+      "internal": 0,
+      "radial_test": 8
+    },
+    {
+      "field": "A_2",
+      "internal": 1,
+      "radial_test": 8
+    },
+    {
+      "field": "A_2",
+      "internal": 2,
+      "radial_test": 8
+    },
+    {
+      "field": "A_2",
+      "internal": 3,
+      "radial_test": 8
+    },
+    {
+      "field": "A_3",
+      "internal": 0,
+      "radial_test": 8
+    },
+    {
+      "field": "A_3",
+      "internal": 1,
+      "radial_test": 8
+    },
+    {
+      "field": "A_3",
+      "internal": 2,
+      "radial_test": 8
+    },
+    {
+      "field": "A_3",
+      "internal": 3,
+      "radial_test": 8
+    }
+  ],
+  "missing_coupled_terms": "same-action matter currents, event matching, gauge fixing/constraints and other scalar sectors remain to be composed in one solve",
+  "normalization": "per kappa1/SAME embedding index; real unit-Tr16 internal basis",
+  "numerical_application_sha256": "544f52fb5dcd606bab0fc40fa1e46d016984dc7fee97931af4c2cf1d138d2214",
+  "numerical_packaging": "deterministic ZIP_DEFLATED level9; sorted members;1980 timestamps; every array retained",
+  "physical_Pauli_contraction": false,
+  "radial_contact": "wall plus, pole minus; At momentum=-k Ftr, Ar momentum=0",
+  "radial_electric_density": "k=e*r/d=common*r_orbit^3/(lapse*C_rho*material_jacobian)",
+  "radial_momentum_test_scope": "integrated radial weak coefficient; evaluate same momenta on the face for a boundary contact",
+  "radial_quadrature_order": 96,
+  "radial_test_order": 8,
+  "reference": "A_tau=A_rho=0, A_i=sqrt(8)H_i(lambda-1); actual induced first derivatives",
+  "relative_attachment_factor_assigned": false,
+  "relative_attachment_factor_to_normalized_cap": null,
+  "scope": "EVALUATED_ACTUAL_E1_PLUS_FULL_FIVE_COMPONENT_MAXWELL_REFERENCE_WEAK_APPLICATION",
+  "source_rate": 0.0,
+  "source_value": 0.0,
+  "spatial_reference_weak_norm": 75945.9147055921,
+  "stationary_E1_claim": false,
+  "temporal_contact": "final plus, initial minus; no At temporal momentum",
+  "test_scope": "CONTROL_ONLY finite-energy radial tests tensor all five components and four real internals",
+  "trial_normal": 1.0,
+  "unforced_Gauss_imposed": false,
+  "weak_geometry_jacobian_norm": 10444802.32179216,
+  "weak_normal_rate_column": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    17558.730079762227,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    17558.730079762227,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    17558.730079762227,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    6922.7634333097785,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    6922.7634333097785,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    6922.7634333097785,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -14098.860954408961,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -14098.860954408961,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -14098.860954408961,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -2311.3038540534753,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -2311.3038540534753,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -2311.3038540534753,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    7764.236583361993,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    7764.236583361993,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    7764.236583361993,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    5476.019897203684,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    5476.019897203684,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    5476.019897203684,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -1495.9986632569132,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -1495.9986632569132,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -1495.9986632569132,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -2215.512664527126,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -2215.512664527126,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -2215.512664527126,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -1996.3958225677177,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -1996.3958225677177,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -1996.3958225677177,
+    0.0
+  ],
+  "weak_normal_value_column": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -81450.26001836588,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -81450.26001836588,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -81450.26001836588,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    74288.5933224839,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    74288.5933224839,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    74288.5933224839,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    49418.265919678706,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    49418.265919678706,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    49418.265919678706,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -98191.71835434367,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -98191.71835434367,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -98191.71835434367,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -38333.2764173231,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -38333.2764173231,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -38333.2764173231,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    76457.20300321947,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    76457.20300321947,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    76457.20300321947,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    65577.74139910158,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    65577.74139910158,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    65577.74139910158,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -61631.55978788354,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -61631.55978788354,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -61631.55978788354,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    9526.542386567387,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    9526.542386567387,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    9526.542386567387,
+    0.0
+  ],
+  "weak_values": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -18624.94532551506,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -18624.94532551506,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -18624.94532551506,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1098.754980755849,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1098.754980755849,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    1098.754980755849,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    32543.96033509508,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    32543.96033509508,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    32543.96033509508,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -3434.08363569395,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -3434.08363569395,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -3434.08363569395,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -17481.411556013765,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -17481.411556013765,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -17481.411556013765,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    275.81426416930935,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    275.81426416930935,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    275.81426416930935,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    10601.783545312488,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    10601.783545312488,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    10601.783545312488,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    8206.485946843986,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    8206.485946843986,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    8206.485946843986,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    4263.308784409387,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    4263.308784409387,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    4263.308784409387,
+    0.0
+  ]
+}

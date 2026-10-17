@@ -1,0 +1,71 @@
+{
+  "all_output_bytes_identical": true,
+  "all_output_count": 2,
+  "all_output_sha256": {
+    "application.npz": "4b3cd85357f870daa3ba77cfd09045911048228115841db8fdbd200a8a6eab32",
+    "result.json": "2cde4f635d54406d00177381d18dbce7c30d74fee9de798e2f42e159900365df"
+  },
+  "capture_provenance": "complete actual PowerShell Tee-Object bytes",
+  "classification": "INDEPENDENT_REPLAY_ORIGINAL_RESET_DOMAIN_TEST_OF_SUPPLIED_NORMAL_TRIALS",
+  "coefficient_units": "frequency orders0..2 are Taylor coefficients with different frequency powers; their maxima are domain images, not a Pauli uncertainty",
+  "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+  "environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "PYTHONPATH": "src;scripts"
+  },
+  "executions": [
+    {
+      "argv": [
+        "C:/Python314/python.exe",
+        "scripts/evaluate_muon_reset_normal_trial_domain.py",
+        "--output",
+        "artifacts/muon_reset_normal_trial_domain_20261012/run_1"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "C:/Python314/python.exe",
+        "scripts/evaluate_muon_reset_normal_trial_domain.py",
+        "--output",
+        "artifacts/muon_reset_normal_trial_domain_20261012/run_2"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "finite_normal_owner_review": "FullLyy, commonattachment/propernormal gluing, independent analytic left/right, 8 staticAr frames, heldstate area derivative and one child-plus properclock; complete Jacobi time contacts \u2212dotLvx,\u2212dotLvv,\u2212dotLvy plus reference-only clock reviewed",
+  "focused_review": {
+    "argv": [
+      "C:/Python314/python.exe",
+      "-m",
+      "pytest",
+      "--noconftest",
+      "-q",
+      "tests/test_muon_reset_normal_trial_domain.py"
+    ],
+    "duration_seconds": 1.74,
+    "exit_code": 0,
+    "passed": 1
+  },
+  "full_domain_caveat": "80 reset algebraic/Gauss rows repeat bulk algebraic Jacobi equations; two central Ward identities remain. Do not append all226 as independent borders or call the local3-row trace space the fullreset domain",
+  "independent_math_review": "Validation reviewed module, evaluator and full504 analytic-bilinear/sign test without edits or duplicate tests",
+  "input_pins_current": true,
+  "normal_trial_domain_violation_excludes_all_physical_normal_modes": false,
+  "physical_firsthit_i_over_r_gamma_or_Pauli_completed": false,
+  "stdout": {
+    "focused_review.stdout.txt": {
+      "bytes": 100,
+      "sha256": "5786dea9b9d57d2c49ced7482e3658b77a7e714793519049750ca2544972398d"
+    },
+    "run_1.stdout.txt": {
+      "bytes": 357,
+      "sha256": "57bcc5c8dca6f30613dc06c9e3aea6634d57550f7910c66a0f6de953034b755e"
+    },
+    "run_2.stdout.txt": {
+      "bytes": 357,
+      "sha256": "57bcc5c8dca6f30613dc06c9e3aea6634d57550f7910c66a0f6de953034b755e"
+    }
+  },
+  "verifier_source_sha256": "60975dd6c7147ea8e05ad679606d8b156bd13ca0f42a1dadd4ab5a49dc1397dc"
+}

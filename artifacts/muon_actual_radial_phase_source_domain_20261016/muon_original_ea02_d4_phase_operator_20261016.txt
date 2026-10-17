@@ -1,0 +1,160 @@
+ACTUAL ea02 D4 NATIVE MATRIX-FREE PHASE OPERATOR, 2026-10-16
+
+The backend is now executable on the unchanged original ea02 full368
+primal. It applies every enlarged child217-velocity+60-algebraic row, with
+the actual corrected point/wall maps and independent native material chart.
+The preexisting original-binary277 block and explicit At36 frame are used
+ONLY as diagnostic/preconditioning operands. Neither their inverse nor a
+nonzero border reaction is counted as an original equation pass.
+
+1. Exact operator and primary operands
+-------------------------------------
+Canonical new source
+audits/bhsm_original_ea02_d4_phase_operator_20261016.py
+SHA256 8acb9c41f593edc43ffe637bd9e23ec4b57f3baa1001d01c064a3ed014cc79c0.
+
+Its ActualEa02D4PhaseOperator is deliberately locked to the exact original
+cut, not an unspecified generic exterior. It reads ea02ed6a... full state,
+the published native_epoch_D4 primal and reconstructed maps, literal MP
+original gauge/radial/wall tables and the same assigned action parameters.
+No field, velocity, multiplier, source, reference, normal orientation or
+coupling is changed. Its source-parent cross terms occur once in the
+child/inherited action; the standalone parent action is excluded for this
+child constitutive row application.
+
+The fresh packed owner is the retained new620 native scalar8fcc5e3a...
+with the independent anchored material-chart4, at the SAME base field.
+apply_phase(V277) embeds only child v217/y60 into the full746 source chart;
+the zero source/q entries are EXTERNAL MATVEC TESTS, not a quiet physical
+environment or selected initial fields. apply_full(R746) retains arbitrary
+parent, child position, child velocity and algebraic directions and applies
+the same277 child constitutive tests. It can therefore be used with free
+Cauchy/source complements rather than freezing all old momenta.
+
+Both calls use exact supplied action-ball directions when available,
+native corrected coframe/profile equations, exact source/point incidence
+and all represented gauge/Higgs/geometry/multiplier fields. There is no
+Hilbert conjugation of the complex analytic action. A fresh LOCAL Hessian
+application is made on each requested direction; no earlier D5, profile,
+classical history, nonlinear mean or full-Hessian campaign is replayed.
+
+The prior cached phase block is
+artifacts/muon_baton_zoo_radial_convergence_20261014/
+actual_common_cut_degree4_complete_phase_blocks_run_1/
+actual_same_current_complete_phase_and_literal_temporal_generator_operands.npz
+SHA256 a54ca8625af892a58ad73f9dd3c993096db417f43f6bc030334f226d72f6201a.
+It is277x277, not the parent+child423 phase. The original producer explicitly
+used original_binary material coefficients and analytic scalar-transpose
+completion. It is therefore NOT silently renamed a fresh native operator.
+
+The corrected clock map restriction to these phase columns has identical
+high parts and low point-map change1.23319687065036e-32; wall phase high/low
+parts are identical. This distinguishes a tiny phase-incidence change
+from the more relevant position/mixed-clock incidence and from the
+original-binary versus native action-coefficient precision distinction.
+It does not by itself certify an operator error after inversion.
+
+2. Actual controls and preconditioner behavior
+---------------------------------------------
+Three fresh applications, ten directions total, were made:
+* two nonzero phase directions taken from the actual carried retarded and
+  homogeneous seven-column fields, with disclosed coefficient scaling;
+* six literal temporal-gauge directions, covering SU2/central and differing
+  radial profile labels;
+* two candidates obtained with the cached bordered preconditioner, then
+  checked against ALL277 fresh native original rows.
+
+This is not a dense277-right campaign, a new Hxx matrix or a new response
+solve. Test coefficient scaling is numerical test scaling only, not a
+physical norm, minimum-norm field completion or spin normalization.
+
+Fresh analytic-transpose Hessian symmetry on the actual two directions:
+  <=3.589e-72.
+Fresh six temporal-gauge applications:
+  <=5.405e-15 (retained, not rounded to0).
+Cached original-binary versus fresh native on those actual test directions:
+  <=2.017e-18.
+Cached bordered solve residual:
+  <=2.279e-58.
+The preconditioned candidates were freshly checked on all277 original
+rows, with residual<=2.017e-18 and reaction<=2.097e-33. The reaction remains
+an independent diagnostic; original residuals are reported independently.
+
+The explicit cached F36 Z36=I36 is also checked. For a pure temporal gauge
+variation with gauge parameter0 at the slice and rate psi, the physical
+variations deltaAt=psi, deltaAi_dot=D_i psi, deltaHdot=-psi H cancel in
+F_ti and D_tH. This explains the phase gauge-null mechanism. It does not
+turn a constrained DAE into an unconstrained434-dimensional identity Green
+kernel or supply a physical Dirac bracket. Only six fresh gauge directions
+were applied here; all36 are represented in the preconditioner/frame data.
+
+3. Open constitutive/source relation, rather than a guessed Cauchy selector
+-------------------------------------------------------------------------
+On this actual fixed primal, write independent unknowns
+
+  x=delta child positions217,
+  eta=(delta child velocities217,delta algebraic variables60),
+  s=delta parent/source252,
+  pi=delta SOURCE-COMPLETE canonical momentum217.
+
+Let R=(s,x,eta) in the exact full746 incidence. The now executable relation
+is
+
+  [ H_v R - pi ] = 0,
+  [ H_y R + r_y b ] = 0,
+
+where b selects the affine correction column and r_y is the independently
+evaluated actual60-row primal algebraic gradient. The full source cross
+Hcp is already in H R; a separate parent g_v must not be added again.
+The corresponding chronological equations are
+
+  xdot=delta v,
+  pidot=H_q R+r_E b,
+  r_E=L_q-d_t Pi_primal.
+
+They do not require a stationary mean. All original Euler/Gauss residuals
+remain explicit affine loads; frame reactions are never substituted for
+their satisfaction. apply_full supplies the277-row relation for arbitrary
+x,s,eta. The position-force/chronological operator is a separate action
+application, not inferred from the phase matrix alone.
+
+The original proper input ports and their source maps must be retained at
+the event/source boundary. The numerical3-port section is ONE evaluated
+section, not a reason to impose all158 old canonical momenta as physical
+boundary conditions. Old/new Cauchy complements may be unknowns of the
+coupled inner problem, fixed by the original action, actual incoming/event
+conditions and outgoing domain. They are not new user/model parameters.
+No Euclidean pseudoinverse, arbitrary complement projection, new momentum
+value or zero terminal graph is supplied here. The standalone same-function
+birth0 block is not spliced into this ea02 epoch.
+
+The old carried217 Cauchy data are useful actual test data, with nonzero
+enlarged Gauss residuals already retained. A fixed-Cauchy incompatibility
+diagnostic cannot establish that the open physical port/domain problem
+has no solution. Conversely a bordered solve with reactions cannot make
+those residuals into an admitted physical initial state.
+
+4. Independent pair, exact hashes and limitations
+-------------------------------------------------
+WORK/outputs/bhsm_original_ea02_d4_phase_operator_20261016/run_1 and run_2
+repeat ALL SIX files byte-identically:
+actual_native_D4_matrixfree_phase_backend_controls.npz (958517bytes)
+  bbd47299c543948c7c37b0aa72f3d959b82b9d8ee8f8b9a7e99da5c52e1620db
+fresh_native_actual_two_phase_matvecs.npz (689469bytes)
+  5cab913a4582accc4cec7a42a7671931173b60efe682c0aab3c8513c9dc4e018
+fresh_native_six_literal_temporal_gauge_matvecs.npz (697013bytes)
+  09e29029dc8f48b26c17365666dee543c9ce36af1a47d9ac368fe50ff9f05321
+fresh_native_preconditioned_candidate_two_matvecs.npz (710013bytes)
+  8aafd0129082162eb08cb0e327c565f4eab6fcd373499b19827bab57b0eb44f4
+result.json
+  9ea13a83df35885a78dfc697b71893db866675a6abfa7a52b113b940e5d3398d
+executed_producer.py
+  8acb9c41f593edc43ffe637bd9e23ec4b57f3baa1001d01c064a3ed014cc79c0.
+Each receipt pins332 actual consumed source/input paths. Fresh operands,
+tests and preconditioned candidates are archived, not only summary norms.
+
+No full277-column native matrix error enclosure, constitutive inverse
+theorem on all possible data, source-compatible initial jump, new coupled
+retarded field, nonlinear mean, physical radial convergence, connected
+future/outgoing graph, total energy/field derivative, physical spin state
+or moment is claimed. Original coupled corrections applied:0.

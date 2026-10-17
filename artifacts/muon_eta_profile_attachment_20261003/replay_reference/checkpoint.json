@@ -1,0 +1,21 @@
+{
+  "action": "BHSM-AE-4.0.0 with adopted v14.45 effective Dirac/common-A action",
+  "branch": "codex/muon-parent-maxwell-density-review",
+  "checkpoint_id": "BHSM_MUON_CURRENT_ETA_ATTACHMENT_COTANGENT_20261003",
+  "code_base_HEAD": "1eb713fa12e26858c78913951b600643027714d5",
+  "domain": "inherited reset graph; compatible collar assumed only for functional theorem, not numerically materialized",
+  "exact_checks": 7,
+  "history": "C2 step1222 artificial past cut with inherited physical prefix; canonical future stop; true material wall rho=pi/2",
+  "ledger": "native_ledger.json",
+  "missing_operand": "missing_matching_equation.json",
+  "next": "Continue same-domain collar X/J/transport onto saved source support using inherited prefix/patches, then contract fixed outgoing eta mode to T/B54 and consume coupled exterior K/M solve",
+  "physical_a_mu": null,
+  "physical_g_mu": null,
+  "reproduction": "python scripts/replay_muon_eta_profile_attachment.py --output <fresh-directory>",
+  "result": "result.json",
+  "scientific_reference": "524ed90689bd5923c249bba2e699abf627e703cd",
+  "source_coordinate": "b, beta=T_b b, A_Q=sqrt(2) beta; no action-index vertex factor",
+  "start_HEAD": "1eb713fa12e26858c78913951b600643027714d5",
+  "state": "canonical source trial inputs preserved; no physical state selected",
+  "targeted_tests": "python -m pytest -q tests/test_muon_eta_profile_attachment.py"
+}

@@ -1,0 +1,48 @@
+{
+  "Gate7_closed": false,
+  "action_selected": false,
+  "byte_identical": true,
+  "classification": "FOCUSED_CALIBRATED_DECAY_AND_SELECTED_WEAK_SECTOR_VERIFICATION",
+  "commands": [
+    "C:\\Python314\\python.exe -m pytest --noconftest -q tests\\test_muon_calibrated_weak_decay.py",
+    "C:\\Python314\\python.exe scripts\\evaluate_muon_calibrated_weak_decay.py --output artifacts\\muon_calibrated_weak_decay_20261010\\run_1",
+    "C:\\Python314\\python.exe scripts\\evaluate_muon_calibrated_weak_decay.py --output artifacts\\muon_calibrated_weak_decay_20261010\\run_2"
+  ],
+  "files": [
+    {
+      "bytes": 23582,
+      "path": "src/bhsm/interface/muon_calibrated_weak_decay.py",
+      "sha256": "e926f1afba8d8ec89351406de1ae042a49854c74042daef0967c62f93182f39f"
+    },
+    {
+      "bytes": 13652,
+      "path": "tests/test_muon_calibrated_weak_decay.py",
+      "sha256": "674c9092771e5696320b8e244a1cf43dfbd0fe337cd8c1331e7482a01bc6a1ad"
+    },
+    {
+      "bytes": 13398,
+      "path": "scripts/evaluate_muon_calibrated_weak_decay.py",
+      "sha256": "856a3c4c8909c469781fd8998074616bdd173e1d4bb0e3969b03481602389e8a"
+    },
+    {
+      "bytes": 24253,
+      "path": "artifacts/muon_calibrated_weak_decay_20261010/run_1/weak_decay.json",
+      "sha256": "9c31575ce0889571790f8767cf53ffe043cb9906e0a45a96b194971320a0aad7"
+    },
+    {
+      "bytes": 24253,
+      "path": "artifacts/muon_calibrated_weak_decay_20261010/run_2/weak_decay.json",
+      "sha256": "9c31575ce0889571790f8767cf53ffe043cb9906e0a45a96b194971320a0aad7"
+    }
+  ],
+  "full_observable_evaluated": false,
+  "native_evaluated": false,
+  "preserved_higher_QED_packet_sha256": "4c1c5cb7ba7481b28c009adc9d8817cb6cd70c6d1f642616d4c703663ffc694b",
+  "preserved_higher_QED_producer_sha256": "da58048f891504419159d558b44d4a0c6cb4cbf703aca7884dd515d88f99ae3a",
+  "scope": "Actual local measured-input application and focused kernel/algebra tests; no native/BHSM lifetime matching or full weak2loop completion.",
+  "tests": {
+    "exit_code": 0,
+    "output": "......................... [100%]\n25 passed in 4.72s",
+    "previous_failed_test_runs": []
+  }
+}

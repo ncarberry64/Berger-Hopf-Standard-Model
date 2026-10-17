@@ -1,0 +1,100 @@
+{
+  "executions": [
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "bhsm.interface.muon_birth_inherited_finite_normal_phase",
+        "--base-directory",
+        "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1",
+        "--output",
+        "artifacts/muon_profile_preserving_phase_sample_20261011/outgoing_2steps_run_1",
+        "--span=1e-5",
+        "--steps",
+        "2",
+        "--max-iterations",
+        "12"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "stderr_path": "outgoing_2steps_run_1.stderr.txt",
+      "stdout_path": "outgoing_2steps_run_1.stdout.txt"
+    },
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "bhsm.interface.muon_birth_inherited_finite_normal_phase",
+        "--base-directory",
+        "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1",
+        "--output",
+        "artifacts/muon_profile_preserving_phase_sample_20261011/outgoing_4steps_run_1",
+        "--span=1e-5",
+        "--steps",
+        "4",
+        "--max-iterations",
+        "12"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "stderr_path": "outgoing_4steps_run_1.stderr.txt",
+      "stdout_path": "outgoing_4steps_run_1.stdout.txt"
+    },
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "bhsm.interface.muon_birth_finite_normal_phase",
+        "--base-directory",
+        "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1",
+        "--output",
+        "artifacts/muon_profile_preserving_phase_sample_20261011/incoming_2steps_run_1",
+        "--span=-1e-5",
+        "--steps",
+        "2",
+        "--max-iterations",
+        "12",
+        "--side",
+        "incoming"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "stderr_path": "incoming_2steps_run_1.stderr.txt",
+      "stdout_path": "incoming_2steps_run_1.stdout.txt"
+    },
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "bhsm.interface.muon_birth_finite_normal_phase",
+        "--base-directory",
+        "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1",
+        "--output",
+        "artifacts/muon_profile_preserving_phase_sample_20261011/incoming_4steps_run_1",
+        "--span=-1e-5",
+        "--steps",
+        "4",
+        "--max-iterations",
+        "12",
+        "--side",
+        "incoming"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "stderr_path": "incoming_4steps_run_1.stderr.txt",
+      "stdout_path": "incoming_4steps_run_1.stdout.txt"
+    }
+  ]
+}

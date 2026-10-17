@@ -1,0 +1,236 @@
+DENSITY-STABLE CHANGING REAL-CELL EW4 / HIGGS / FP FORMS
+2026-10-16. Final corrected TIME6 pair and complete rule comparisons.
+
+Canonical new producer:
+ audits/bhsm_real_changing_cell_ew_higgs_fp_stable_weight_20261016.py
+ SHA2562a536410954923a6a4cd7865264fbae1b14ad61d8db1a7d58b1c1cfc84eb3874
+The verified frozen4da9bf48 and original changing7f1805c0 sources and
+all their old outputs are preserved. No existing source is edited.
+
+1. TWO NUMERICAL ISSUES, WITH DIFFERENT CAUSES
+
+The original changing-cell assembly already evaluates the actual incoming
+and inherited-child REAL phases at all Gauss times. Its classical EW4/H
+test/ghost maps, source clocks, wall strata and matrix identities remain
+the same here. Two distinct numerical issues were then diagnosed.
+
+(a) Recovering1-4sigma^2 from binary64 sigma=p-1/2 loses relative precision
+near the pole. The original coefficient owner retains the normalized
+positive cumulative p and evaluates the IDENTICAL weight as4p(1-p).
+This is not a changed action, profile, normalization or fitted parameter.
+On every old time snapshot the largest density relative difference was
+~9.15e-14 at radial4,4.09e-12 at8, and2.049651164034934e-10 at16.
+At32 it reaches1.244565829805523e-8. These local errors must be distinguished
+from the much larger radial quadrature errors and the cancellation in
+tiny finite-difference signals. The old readouts are not relabeled.
+
+(b) Four temporal Gauss points per tent half integrate only degree7, while
+the retained odd ghost bubble (2u-1)u^2(1-u)^2 has a square of degree10.
+The constant-coefficient analytic moment is1/6930; the split4-point rule
+has relative discrepancy-0.004791135204081237 in that entry. The largest
+absolute6x6 moment-matrix discrepancy is8.857709750577890e-6 on the unit
+interval. Six points per half reproduce the exact rational moment matrix
+to1.110223024625157e-16 absolute in that control; eight points also agree
+to roundoff. This addresses polynomial test integration, not convergence
+of arbitrary variable coefficients or a physical outgoing realization.
+
+The final production invocation therefore uses EXPLICIT --time-order6,
+giving12 times per one-cell history. The source supports numerical time
+orders explicitly; its default4 run is retained separately as comparison
+evidence. The six-point invocation does not claim a full temporal error
+bound for the changing nonpolynomial geometry.
+
+2. PRODUCTION WEIGHT AND UNCHANGED REAL SOURCE/CLOCK MAPS
+
+The new function stable_positive_geometry calls
+ muon_holomorphic_normal_geometry.holomorphic_geometry_rows
+ (raw[:100],rho,differentiate=False).
+That actual owner uses its _response:134-154 and the same anchored chart
+and normalized cumulative as the original full-D5 coefficient constructor.
+It produces electric/radial/angular/electric-radial rows directly with
+4p(1-p). Their positive test metric is assembled as before using savedR:
+ (mu,eR^2,rR^2,dR^2,z,R), mu=dR^4.
+The scalar common multiplier is recovered from the stable row as
+ common=d*R/(N*C); it is not recovered from rounded sigma.
+differentiate=False avoids computing another100-dimensional Hessian;
+it does not drop a source term from the actual sampled A/At/Ar/H/Hdot.
+
+The independent real exact_geometric_connection_coefficient_jets owner
+uses the same stable identity. The separately reviewed real reset FP
+conormal application compared its actual value/first with independent
+holomorphic4p(1-p), agreeing to3.79e-13 worst relative. This is additional
+coefficient evidence, not a global physical derivative certificate.
+
+All existing maps remain: incoming t=u-L, child t=u, dt/du=+1, actual
+different proper induced lapses, the fixed original trace-enriched rho
+basis, the exact existing DG images and -etaH/-etadotH-etaHdot, and actual
+wall wT,wS,wV. No shared proper clock or second Ar advection is imposed.
+All20 real n1+n3 harmonics remain. Nonlinear literal action products stay
+on the degree12 Haar rule, including full curvature contact and both
+intrinsic DH(deltaOmega h) Hessian placements. The same1200 field and320
+ghost coefficient chart is used under every quadrature refinement.
+
+Potential matrices remain UNASSIGNED coefficients in lambda_H and
+lambda_H*nu_action^2. The finite Lorenz map/projector remain declared
+representatives with the off-shell Euler contacts retained, not a physical
+BRST quotient. EW4 is not silently promoted to the full SM12 or M8 graded
+operator; the color complement is a separate exact constituent assembly.
+Native/exterior loads, actual physical reset incidence and spin state
+remain explicit unevaluated operands, not zero background loads.
+
+3. PRESERVED REFERENCES AND DENSITY-ONLY MATRIX COMPARISON
+
+The stable time4 comparison reads the original changing4/8/16 data at
+ WORK/outputs/bhsm_real_changing_cell_ew_higgs_fp_20261016/radial16_run_1
+ changing_forms.npz SHA2556eba3a418edc60ca225ab7a358ae7c1ce3182794ecff52ed61f728addc95b
+ result.json SHA72f394bfa2538c466ff9893f57a732fad22cbde3a519fae0d4c87b68afebb4f9.
+Its independent identical sibling is radial16_run_2. These external input
+files are explicitly named here because the stable report records their
+hashes in preserved_naive_reference_sha256 rather than its repo-relative
+path map. A publication binder must bind the archived reference files by
+these hashes before claiming stable-versus-old comparison provenance.
+
+At the SAME time4 rule and coefficient/test chart, replacing only the
+naive weight changes the old4/8/16 complete matrices by at most1.80e-15
+relative Frobenius: the tiny pole density suppresses its pointwise error.
+This small global matrix difference does not justify the inaccurate
+local coefficient calculation. The stable producer stores every point
+density diagnostic and all15 corresponding matrix differences.
+
+4. WHAT THE32-NODE COMPARISON CAN AND CANNOT SHOW
+
+The preliminary stable TIME4 data give16->32 relative Frobenius differences
+ common kinetic:4.288897134990410e-6 /7.900738928299162e-7,
+ FP:3.560584481163467e-6 /3.335799695624334e-7,
+ curvature contact:2.965093636819706e-3 /4.113940626386238e-5,
+for incoming/child respectively. This contracts the earlier8->16 error
+but does NOT establish2e-10 radial convergence. All intrinsic scalar seam
+matrices remain independent of radial rule, as required by their stratum.
+The final TIME6 pair is byte-identical and its table is given below.
+TIME4->6 differences are recorded separately from radial changes; these
+are distinct integration rules on the same retained field/test chart.
+
+Every unfavorable mixed-direction FD step is retained. The separate
+unscaled scalar direction resolves its potential contacts but does not
+replace the tiny mixed-direction cancellation. No physical full derivative,
+completed mean/native operator, physical radial/state convergence,
+normalized two-spin state or magnetic moment is claimed. No coupled
+correction has been applied.
+
+5. FINAL TIME6 NUMERICAL READOUT, ALL MATRIX ENTRIES
+
+For each entry the conservative retained-chart comparison is
+ max_ij |new_ij-old_ij|/max(1,|old_ij|,|new_ij|).
+This is stated in the retained coefficient units; no change of basis,
+normalization or favorable Frobenius replacement is made. The JSON also
+retains all maxima, worst indices/values, absolute differences and
+relative global/Frobenius norms for every coarse/intermediate rule.
+
+TIME6 radial16->32: max-entry-scaled, incoming / inherited-child
+ FP_Hessian_per_kappa: 0.0003539680885559599 / 5.2611820245801905e-05
+ common_Gram: 4.5442497636528911e-06 / 8.132667526083992e-07
+ common_kinetic_Hessian: 4.7199246431658127e-06 / 9.0758963731156762e-07
+ curvature_contact_per_kappa: 0.0035492513172571331 / 6.2372604860659868e-05
+ finite_Lorenz_fixing: 0.0055104084899393474 / 0.0016019245508004053
+ finite_Lorenz_slice_projector: 1.6424112943150618e-09 / 1.0921162726739526e-09
+ ghost_Gram_per_kappa: 2.7062178127763847e-11 / 1.3358606281159598e-11
+ one_form_Gram_per_kappa: 0.00035396807336222512 / 5.2611827536588776e-05
+ one_form_Hessian_per_kappa: 9.1854039101904594e-05 / 7.665330461631599e-05
+ scalar_Gram: 0 / 0
+ scalar_kinetic_Hessian: 0 / 0
+ scalar_lambda_coefficient: 0 / 0
+ scalar_lambda_nu_squared_coefficient: 0 / 0
+ weak_Lorenz: 0.0032566895639055695 / 0.000132538360566606
+ weak_gradient_pairing: 0.00035396807336222512 / 5.2611827536588776e-05
+
+The worst full-matrix entries are finite_Lorenz_fixing, not the kinetic
+Frobenius norm. Curvature contact alone has incoming/child absolute
+differences0.26461465359074055/0.0027066940994302513 and relative Frobenius
+differences0.002965093644360072/4.113940614158903e-5. Thus these fixed-form
+radial rules have NOT reached2e-10. Higher radial diagnostic rules are
+being evaluated separately, with all old bytes preserved.
+
+TIME4->TIME6 at fixed radial32: max-entry-scaled, incoming / child
+ FP_Hessian_per_kappa: 0.0057174267119207249 / 0.0071239427130927891
+ common_Gram: 0.0013950892923190082 / 0.0013950892896411431
+ common_kinetic_Hessian: 5.4914130812658006e-06 / 6.2828631305528994e-06
+ curvature_contact_per_kappa: 0.017117233815626628 / 0.019584255572422556
+ finite_Lorenz_fixing: 0.38870368688034407 / 1.6897109299959923
+ finite_Lorenz_slice_projector: 8.0679499239982421e-08 / 7.6221518168964998e-08
+ ghost_Gram_per_kappa: 6.7898716806640295e-08 / 4.8049321208230221e-08
+ one_form_Gram_per_kappa: 0.0057174267514047477 / 0.0071239426694287029
+ one_form_Hessian_per_kappa: 0.017117233815626628 / 0.019584255572422556
+ scalar_Gram: 9.8996217364163009e-14 / 6.2352672745811219e-14
+ scalar_kinetic_Hessian: 3.2479918038442952e-13 / 2.0457426945444047e-13
+ scalar_lambda_coefficient: 2.2586843019295348e-13 / 1.4226301455209087e-13
+ scalar_lambda_nu_squared_coefficient: 1.9799243472832602e-13 / 1.2470534549162244e-13
+ weak_Lorenz: 0.0077912738199917434 / 0.005185843452831438
+ weak_gradient_pairing: 0.0057174267514047477 / 0.0071239426694287029
+
+This temporal change is substantial in some small/cancelled matrix
+entries even where a kinetic Frobenius difference is tiny. TIME6 is a
+corrected rule for the owned degree10 polynomial test moment; it is not
+called the exact full changing temporal integral. Once radial errors
+are resolved a TIME6->8 comparison is still required.
+
+All literal changing-action directions/steps remain in result.json,
+including unfavorable mixed tiny-potential cancellation (worst nonzero
+relative discrepancy0.6423310127669605). The independently scaled scalar
+direction resolves its potential contacts to9.346013163600101e-12 worst
+relative; this does not replace the unfavorable mixed evidence.
+
+6. DETERMINISTIC PAIRS, EXACT BYTE CHUNKS AND PROVENANCE
+
+Canonical stable producer SHA256
+ 2a536410954923a6a4cd7865264fbae1b14ad61d8db1a7d58b1c1cfc84eb3874
+Actual final pair directories, each under WORK/outputs/
+ bhsm_real_changing_cell_ew_higgs_fp_stable_weight_20261016/
+ time6_run_1 and time6_run_2. Both files are byte-identical:
+ changing_forms.npz (10654028 bytes)
+ SHA2569a132366d729c85ea1d83815a5482fbf6352b117507e9f447abb4c3b7534739d
+ result.json (146362 bytes)
+ SHA256182928faef437728923fa279d44be51bdc4739f5a0ddb10eff83c01f1c95d95a
+Every input/source pin in both receipts was verified against current
+bytes. The original phases were sampled in two independent executions.
+
+To keep publication files below10MiB without changing numerical bytes,
+exact raw byte chunks are in time6_byte_chunks_run_1 and _run_2:
+ changing_forms.npz.part000 (5242880 bytes)
+ SHA2568ccfeba6879051db8d400a2fbff14d44995cba592dc242aecf2d9fa74714a101
+ changing_forms.npz.part001 (5242880 bytes)
+ SHA256ba5d7432a40564e2092de4c40e5ef91dafd0c3e54a9f547926e62abc28ff115f
+ changing_forms.npz.part002 (168268 bytes)
+ SHA256621547705dabb3e35cc7df8b6f70384f6a00fc6c355a310d10da2164e28dee75
+ reconstruction.json
+ SHA256634d10a87e7ce1bc69fddd524bc3a9e474624c92469021691eea44c9ce081c18
+Concatenate these raw byte files in000,001,002 order to recover exactly
+the original10654028-byte9a132366... NPZ; no reencoding is performed.
+Both independently generated chunk sets and reconstructions agree.
+
+Preserved stable TIME4 comparison directories run_1/run_2 also agree:
+ changing_forms.npz SHA2563a081c907a8df406293cd6e5e7052ab06aeb630213099354248335b28d106c9d
+ result.json SHA256d3503cbbea0de730674978d43dd7ae9d91fcec968a28a41e9fd42aa2cdf01574
+The original naive16 reference files are named/hash-bound in section3;
+the old naive density diagnosis is
+ WORK/outputs/bhsm_real_changing_cell_ew_higgs_fp_20261016/
+ naive_sigma_weight_diagnosis.json
+ SHA256259128ff2228916b722dd9e797c9d99db2b5de1e6aac9d549896bdb78ad36bbd.
+
+Reproducible complete rule-comparison source:
+ WORK/bhsm_changing_cell_rule_comparison_20261016.py
+ SHA2563c06801780738b0f4dd776b02635d79691c22b3390b078c20f742a684298c6cd
+ rule_comparison_run_1.json and _run_2.json (97887 bytes), byte-identical
+ SHA256387d2d9c1a6b9dc2e1faccab3a5a21377cf216a0f0cf3ba125fee0b6f64a516b.
+These receipts bind the TIME4/TIME6 source archives and retain every
+15-matrix temporal and radial comparison, not only the listed maxima.
+
+Independent read-only review of the stable producer and source/clock
+dataflow found no actionable algebra issue. The separately reviewed
+fast refinement retains complete original maps and fixed bases, but
+its q32 sparse-versus-original comparison exposes binary64 cancellation
+amplification in Lorenz entries (up to1.23e-8 entry-scaled). That separate
+precision control is not silently substituted for these original bytes.
+
+No physical native/outgoing derivative, completed joint mean, physical
+state convergence, full SM graded determinant, normalized spin state or
+magnetic moment has been inferred. No coupled correction was applied.

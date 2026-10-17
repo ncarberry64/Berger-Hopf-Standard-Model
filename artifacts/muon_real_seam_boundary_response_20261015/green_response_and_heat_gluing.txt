@@ -1,0 +1,158 @@
+FIXED-TRACE SEAM, NONZERO HIGGS GREEN RESPONSE AND FINITE-c HEAT GLUING
+2026-10-15. Independent algebra/source review; no new action or numerical probe.
+
+1. EXACT EXISTING SEAM IDENTITY
+
+The later owned source is
+muon_holomorphic_d5_trace_action.normalized_two_sheet_point_action,
+lines273-339, with its normalized right B and independent Dirac-bar left
+C from muon_full_d5_localized_lepton_trace. The eta sheets are NOT temporal
+parent/child arms. Every full complementary field row remains present.
+The once-only original Higgs action is
+  K=K0-C T B, T=rho M18.
+B is n x N and C is N x n; no C=B^dagger assumption is made.
+
+For the bulk border Q0=[[K0,C],[B,0]], define
+  Q0 [P0;lambda0]=[0;I], Gamma0=-lambda0.
+It follows that K0 P0=C Gamma0 and B P0=I. Consequently
+  K P0=C(Gamma0-T),
+so the FULL border has exactly
+  P=P0, lambda=lambda0+T, Gamma=Gamma0-T.
+The independent left Poisson has L0 C=I and L0 K0=Gamma0 B;
+therefore L=L0 also. This proves Poisson invariance as a complete
+parameter-family identity, not by dropping complementary coordinates.
+
+For independent analytic source jets x,y, differentiate the SAME bulk
+border solves:
+  Q0 Z_x=-Q0_x Z,
+  Q0 Z_xy=-Q0_xy Z-Q0_x Z_y-Q0_y Z_x.
+Every moving B,C contact is in Q0_x/Q0_xy. Then
+  Gamma_x=Gamma0_x-T_x, Gamma_xy=Gamma0_xy-T_xy,
+with both ordered product placements in T=rho M. Moving B/C terms cancel
+from the explicit seam difference only after those full identities are
+used; they do not disappear from the bulk Poisson or Gamma0 derivatives.
+
+The new WORK module muon_normalized_seam_schur_jets_20261015.py was
+independently read. Its ordered product rules, bare derivative solves,
+lambda shift, original full-seam residual jets and independent left/right
+source conventions are correct. It does not supply a physical outgoing
+domain, truncate spin, select a state or insert another Higgs interaction.
+
+2. WHY AFFINE Gamma_H DOES NOT REMOVE THE HIGGS SUSCEPTIBILITY
+
+Let G=Gamma^(-1), away from a trace pole. Then exactly
+  G_x=-G Gamma_x G,
+  G_xy=G Gamma_x G Gamma_y G+G Gamma_y G Gamma_x G-G Gamma_xy G.
+If the DECLARED partial neutral-H variation holds K0,B,C,rho fixed and
+M(H)=M0+h V, then Gamma_h=-T_h=-rho V and Gamma_hh=0. Nevertheless
+  G_h=G T_h G,
+  G_hh=2 G T_h G T_h G,
+  G_hhhh=24 G(T_h G)^4.
+Likewise an affine Gamma_Eh=0 does not set inverse mixed E/h jets to zero.
+All products retain the original noncommuting spin/family/LR order.
+
+For the finite fermion determinant F=-Tr log Gamma, the same affine path
+gives F_hh=Tr[(G T_h)^2] and F_hhhh=6 Tr[(G T_h)^4]. The mixed intrinsic/
+HS susceptibility contains Tr[G V_HS G V_H], which remains nonzero in
+general. A zero second derivative of an ACTION MATRIX is not a zero
+second or fourth derivative of its inverse or determinant. No extra spin,
+family or eta-sheet multiplicity is inserted into these traces.
+
+The COMPLETE unbordered field Green changes as well. Where K0 and Gamma0
+are invertible, define
+  R0=K0^(-1), P0=R0 C Gamma0, L0=Gamma0 B R0,
+  G_D=R0-P0 Gamma0^(-1)L0.
+Then B G_D=0, G_D C=0, and the exact finite Krein decomposition is
+  K^(-1)=G_D+P0 Gamma^(-1)L0.
+Thus
+  K^(-1)-K0^(-1)=P0[Gamma^(-1)-Gamma0^(-1)]L0.
+The fixed-trace Poisson and Dirichlet complement stay unchanged, while
+the natural/free trace inverse carries the nonzero seam susceptibility.
+These identities extend meromorphically away from actual poles; an
+inverse is not taken at a physical spin-doublet pole to normalize it.
+
+3. WHY FINITE-c E1 IS NOT A ZERO-ENERGY LOGDETERMINANT SCHUR SUM
+
+For any block matrix, det K=det K_II det Schur(K), so logarithmic
+determinants split. This does not imply
+  Tr E1(c K)=Tr E1(c K_II)+Tr E1(c Schur(K)).
+A direct algebraic test proves the distinction without a toy numerical
+calculation. For K=[[a,b],[b,d]], the coefficient of b^2 in Tr f(K) at
+b=0 is [f'(a)-f'(d)]/(a-d). The same coefficient in
+f(a)+f(d-b^2/a) is -f'(d)/a. Equality for all positive a,d would require
+a f'(a)=d f'(d), hence f'(x)=constant/x. Logarithms have this property;
+E1(cx) has x f'(x)=-exp(-cx), which is not constant when c>0.
+Therefore finite-c heat gluing cannot use only the Schur operator at
+one spectral point or an ordinary determinant product rule.
+
+The logarithmic small-c asymptotic does not authorize setting the owned
+finite native c to zero or discarding its same-owner logarithmic/phase
+completion. The retained heat-minus-old-Casimir-zeta accounting also
+does not add a second identical heat-reference determinant.
+
+4. EXACT RESOLVENT ROUTE TO FINITE-c E1 AND H4
+
+After the ACTUAL positive spectral form and common pairing are supplied,
+let its generalized pencil be L(z)=K-z Gm with Gm positive, and
+P=Gm^(-1)K (or its unitarily whitened form). Here spectral z belongs to
+that positive pencil; it is not silently the saved unsquared E.
+On a fixed common Hilbert/domain identification,
+  R(z)=(z-P)^(-1)=-L(z)^(-1)Gm,
+  Tr R(z)=partial_z log det L(z).
+For a coordinate bulk/interior block A(z) and its full Schur S(z),
+  Tr R(z)=partial_z[log det A(z)+log det S(z)].
+Every spectral dependence of the Schur complement is retained.
+
+For a trace-local seam L=L0-C T B, with B,C,T held independent of THIS
+spectral z and with the same Gm,
+  det L/det L0=det Gamma(z)/det Gamma0(z),
+  Tr[R(z)-R0(z)]=partial_z log(det Gamma(z)/det Gamma0(z)).
+The corresponding full-field resolvent difference is the decomposition
+in section2 multiplied on the right by -Gm. This is the exact finite-rank
+Krein route; it retains all bulk Poisson and complementary field rows.
+If the chosen trace coordinates themselves depend on spectral z, their
+full normalization/Jacobian and pencil derivative contacts must be kept;
+the resolvent is not obtained by discarding those derivatives.
+
+For an analytic contour enclosing the positive finite spectrum and
+avoiding the E1 branch/zero singularity,
+  Delta Tr E1(cP)
+    =(1/(2 pi i)) contour_integral E1(cz)
+       partial_z log(det Gamma(z)/det Gamma0(z)) dz.
+For a graded problem use the inherited supertrace/superdeterminant on
+the same BRST quotient; grading is not a fitted multiplier. This equation
+does not replace the independently owned logarithmic/eta completion.
+For continuum/exterior use the corresponding trace-class resolvent
+difference and proven contour/heat convergence, not a finite-edge limit
+asserted from local residuals.
+
+At fixed c the exact fourth intrinsic-H contribution can be obtained by
+taking four H derivatives of THIS whole spectral family under a justified
+common contour. If native c moves, derivatives of E1(c(H)z) are also
+required. Moving metric Gram, B/C, scalar mode, density, pairing and
+domain/source contacts enter the same family, not an added correction.
+Even when Gamma(z,H) happens to be affine on a declared path, its log
+and inverse are not, so this route retains the nonzero fourth response.
+
+An actual first-order Dirac-bar field action K_D(E) is not automatically
+the positive pencil L(z). If a matched self-adjoint Dirac realization D
+and its domain are proved, E1(c D^2) may instead be treated by functional
+calculus f(D)=E1(c D^2), with its full unsquared resolvent and phase
+prescription. For a general nonnormal analytic Dirac action, D^dagger D
+is not D^2; that substitution is not made. The later fixed-trace action
+law closes the seam on its supplied sector without proving this global
+positive/outgoing spectral identification.
+
+5. EXACT CURRENT APPLICATION SCOPE
+
+The root application is to the already saved768 full-field rows and18
+normalized trace entries at the two stages, with actual E jets and the
+DECLARED partial ReH2 variation. That is not a magnetic B variation.
+All complete Poisson rows and the once-only fixed-Y Higgs bridge remain.
+No missing c45 term or new seam action is inferred from the older source;
+the stronger later normalized point-trace owner is the current law.
+
+None of these finite identities selects the physical outgoing return,
+computes a full native E1 action, passes the physical E/B derivative,
+normalizes either spin or permits the one coupled correction. They are
+exact reusable field/trace and source identities advancing that solve.

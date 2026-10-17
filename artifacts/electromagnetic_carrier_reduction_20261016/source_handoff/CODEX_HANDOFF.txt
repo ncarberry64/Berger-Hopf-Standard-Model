@@ -1,0 +1,354 @@
+BHSM — ELECTROMAGNETIC CARRIER: INTEGRATE, CONTINUE, AND PUBLISH
+Norman Carberry | 16 October 2026
+
+OBJECTIVE AND AUTHORIZATION
+
+Integrate the supplied mathematical work into ncarberry64/Berger-Hopf-Standard-Model,
+then advance one physical connection: electromagnetic carrier modes -> full
+normal/complement action response -> consistent effective operator and terminal
+matching -> normalized muon magnetic response.
+
+Norman requests implementation and a Git update, not another advisory prompt.
+Commit and push the reviewed changes through the existing PR workflow. A
+scientifically scoped control/derivation commit is appropriate; it must not
+claim that a physical muon result exists. Continue the physical calculation
+after the import rather than treating publication as completion of the science.
+
+Norman's physical premise, quoted exactly:
+“The electromagnetic field is the carrier as all boundary's are spacetime
+differentials and all spacetime differentials are "electromagnetism"”
+
+Record this as Norman's BHSM carrier hypothesis/design premise. The broader
+carrier is not silently replaced by ordinary linear Maxwell theory, and its
+universal identification is not reported as empirically or mathematically
+established. The attached Maxwell construction is a seed and compatibility test.
+
+1. RECOVER ONCE; PRESERVE NEWER AND LOCAL WORK
+
+Last remotely verified PR #465 head:
+  b6cb15f5ab6f6b44057f13895c5fd498ce928d83
+Branch:
+  codex/muon-parent-maxwell-density-review
+PR:
+  https://github.com/ncarberry64/Berger-Hopf-Standard-Model/pull/465
+
+Known locations to verify, not assumptions of current existence:
+  C:\Users\carbe\Downloads\BHSM_muon_parent_maxwell_worktree_20261001
+  C:\Users\carbe\OneDrive\Documents\CODEX\Berger-Hopf-Standard-Model
+
+Read AGENTS.md and the applicable repository instructions. Inspect the actual
+worktrees, HEAD, upstream, relevant dirty/untracked changes, and surviving jobs
+once. This anchor is provenance, NOT an instruction to reset. Preserve newer
+commits and every unrelated local modification. Use an additive checkpoint of
+new changes; do not repeat the historical 58.9-GB backup or all ancestor runs.
+
+Use one integration writer. Helpers may read or produce isolated artifacts;
+they must not overwrite a shared numerical cache, stage another worker's files,
+or compete over the branch. Do not use reset --hard, clean, force-push, blanket
+git add -A, or a stash/checkout that hides or discards the user's work.
+
+2. SOURCES TO IMPORT AND THEIR ORDER
+
+The outer handoff folder contains sources/ with four ORIGINAL archives:
+
+PRIMARY:
+  BHSM_electromagnetic_carrier_reduction_20261016.zip
+  Read DERIVATION.md and check_carrier_reduction.py first.
+
+SUPPORTING MATHEMATICS:
+  BHSM_operator_reference_construction_20261016.zip
+  Conditional positive-domain construction, volume/complement resolvent,
+  statistics restrictions, reference sensitivity and conditional in-state.
+
+  BHSM_scalar_reference_continuation_20261016.zip
+  Scalar Clifford trial, uncancelled curvature/boundary mismatch, covariance
+  and full-density sensitivity, nonlinear remainder controls.
+
+ADOPTED PREPARATION, NOT A NEW CHOICE:
+  BHSM_ideal_collider_benchmark_20261016.zip
+  BHSM_EE_MUMU_IDEAL_PREPARATION_V1 and its exact JSON.
+
+Check SOURCE_MANIFEST.json and SOURCE_INTEGRITY_REPORT.json, then the archives'
+internal manifests. These receipts verify supplied bytes and stored replay
+pairs, not a fresh execution in your environment. Preserve originals unchanged.
+Extract into a dedicated directory without overwriting existing source evidence.
+Do not execute historical CODEX_CONTINUE instructions instead of this handoff;
+older benchmark choices remain authoritative, superseded workflow text does not.
+
+Read the current versions of:
+  src/bhsm/interface/master_action/terms.py
+  src/bhsm/interface/covariant_bubble_interface_mechanics.py
+  src/bhsm/interface/ae4_stratified_dirac_zeta_induced_owner.py
+  src/bhsm/interface/muon_two_collar_weak_domain.py
+  theory/muon_ideal_preparation_action_derivation_20261016.md
+  docs/muon_collider_preparation_binding_20261016.md
+and the actual newer full-field, source, retarded, and matching implementations.
+Use local prior artifacts where relevant; Git alone is not the full record.
+Do not conduct another unbounded search for a measured beam file.
+
+3. INTEGRATE THE VERIFIED MATHEMATICS WITHOUT PROMOTING ITS SCOPE
+
+Port the pure functions and exact checks into the existing module/test layout.
+Keep source hashes and a source-to-repository path/function map. Proposed names,
+subject to existing conventions and duplicate detection:
+  theory/bhsm_electromagnetic_carrier_reduction_20261016.md
+  src/bhsm/interface/electromagnetic_carrier_mode_reduction.py
+  tests/test_electromagnetic_carrier_mode_reduction.py
+  scripts/evaluate_electromagnetic_carrier_mode_reduction.py
+  artifacts/electromagnetic_carrier_reduction_20261016/
+
+Record the earlier operator/reference and scalar-trial constructions as scoped
+supporting derivations; reuse existing equivalents rather than duplicating them.
+Preserve the scalar trial's failed matching conditions and higher-correlation
+counterexample. Do not silently make the auxiliary Clifford representation the
+physical carrier. Any formatting repair or mathematical correction must have
+an explicit diff/erratum; never alter an original result receipt to make it pass.
+
+The primary package reports ten symbolic groups and three numerical groups.
+Reproduce its checks in the actual dependency environment, independently check
+sensitive identities, and adapt tests to the repository. Report group counts
+separately from pytest case counts. Compare fresh repeat runs. If the platform
+changes floating bytes relative to the historical output, report the actual
+versions, numerical differences, and analytic checks; do not round discrepancies
+away or claim historical byte identity that was not obtained.
+
+Required retained controls:
+  - Global transverse modes, curl signs, volume Gram, and gauge quotient.
+  - Exact homogeneous scalar kinetic metric.
+  - Complete tangent/normal projectors and both normal equations.
+  - Exact rotating source-free subset.
+  - Projected-equations/conservation-pass versus full-Maxwell-fail example.
+  - Off-shell second-map cancellation of false phase stiffness.
+  - Bosonic uncertainty/transport and conditional energy bound.
+
+These are controls on a fixed round sphere, not physical collider, Berger,
+stratified, full-M8, spin-half, or magnetic-moment results.
+
+4. THE RESULT TO CONSUME — DO NOT REDERIVE IT FROM SCRATCH
+
+Four transverse electromagnetic modes f_a on S3_R have volume Gram I and
+curl eigenvalues (-2/R,-2/R,+2/R,+2/R). They are a subset of the lowest six-mode
+space, not the whole spectrum. They decouple only in the stated linear,
+source-free, fixed-round-geometry control. Their helicity signs are NOT
+statistical signs. The operator curl^2 is not the full native or fermion operator.
+
+Let b=Z_sigma>0, g>0, Z_chi>0, r=g^(-1/2), Omega=2/R,
+and theta=sqrt(Z_chi*g/b)*chi. The trial amplitude map is
+
+  Q = sqrt(b) (sigma cos(theta), sigma sin(theta),
+               r cos(theta),     r sin(theta)).
+
+Its physical mode kinetic metric is exactly
+
+  dQ.dQ = b d sigma^2 + Z_chi(1+g sigma^2) d chi^2.
+
+This matches HOMOGENEOUS COLLECTIVE-COORDINATE KINETICS only. It does not derive
+the coefficients, radius, field periodicity, full local spatial derivatives,
+gauge algebra, particle identity, or dimension-changing action maps.
+
+It fixes Q3^2+Q4^2=b r^2 and locks the two phases. Those restrictions are not
+imposed by source-free Maxwell theory. With E_Q=Qddot+Omega^2 Q,
+
+  n1.E_Q = sqrt(b) r (Omega^2-thetadot^2)
+  n2.E_Q = 2 sqrt(b) r sigmadot thetadot / sqrt(sigma^2+r^2).
+
+These are REQUIRED normal loads in E_Q=f, not loads supplied by BHSM yet.
+Do not paste them into the equations as invented confining forces.
+
+At the dimensionless control b=r=Omega=sigma=1,
+sigmadot=1/3, thetadot=1/2, the two projected equations vanish but
+  ||E_Q||^2 = 89/144.
+Energy conservation also passes. Preserve this as a negative admission test.
+Do not identify it with the old physical Maxwell residual.
+
+The fixed-background magnetic energy is
+  U_M = b Omega^2(sigma^2+r^2)/2.
+The additional field-dependent potential needed to match the retained target is
+  Delta V = (A0-b Omega^2)sigma^2/2 + G0 sigma^4/4.
+This is a MATCHING TARGET, not a new term authorized for insertion. Retain the
+constant energy in the appropriate gravitational/reference accounting.
+
+5. NEXT PHYSICAL CALCULATION: THE ACTUAL NORMAL/COMPLEMENT RESPONSE
+
+Use the existing action-defined regular background, interface and electromagnetic
+sector. Establish the actual carrier modes, full kinetic pairing, Gauss/source
+constraints, boundary conditions and geometric anchoring. Adapt or continue the
+seed only through a demonstrated map to that domain. Do not substitute round
+harmonics or arbitrarily chosen b=r=Omega=1 values for physical operands.
+
+Evaluate the original full-action residual on the constructed carrier map.
+Compute its tangential AND normal/complement projections, retaining metric,
+scalar/Higgs, inherited-source, interface, corner and induced contributions.
+Determine whether the existing action supplies the required amplitude/phase
+reaction and potential, or whether the restricted surface must be enlarged.
+
+The two displayed normals span only the complement inside the four-mode control.
+They are not the whole physical complement. Include all modes actually reached
+by the physical source, geometry and derivative; justify any truncation by a
+bound or convergence evidence on the consumed response.
+
+If the proposed surface is not invariant, release the fixed amplitude and
+relative phase as original-field coordinates and solve their equations. Do not
+invent a new particle species, Lagrange multiplier, damping coefficient,
+confinement potential or sea-strength parameter to force this particular ansatz.
+A failed ansatz is not a proof that the broad electromagnetic-carrier hypothesis
+fails. The exact failed action equation is the diagnostic to carry forward.
+
+Evaluate actual action applications, not just a routine accepting missing
+matrices. Where the field-to-operator correspondence is still undefined, derive
+its next concrete piece and test it against the retained action. Do not conceal
+a definition gap by marking a null operand as an unevaluated completed producer.
+
+6. COMPLETE DERIVATIVES AND RETARDED ELIMINATION
+
+For the actual nonlinear field map Phi=R(y), on compatible fixed-reference
+pairings/domains, retain
+
+  D2(S o R)[u,v] = D2S[DR u,DR v] + DS[D2R(u,v)].
+
+The second-map term need not vanish at a projected stationary state. Differentiate
+the constraint solution, projector, basis, metric/Gram, moving normal, trace,
+source binding, scale, cutoff and interface maps where they actually move.
+Do not double count contacts. Keep analytic left leaves distinct from Hermitian
+conjugation, and preserve the original fixed-adjoint source-derivative convention.
+
+The control potential has zero phase curvature only after
+  + b Omega^2(sigma^2+r^2)
+and
+  - b Omega^2(sigma^2+r^2)
+are combined. Use this as an independent regression, not as proof that the old
+1.05–6.21% physical derivative discrepancy has been repaired.
+
+Where a same-action, common-domain linearization supports it, solve
+  K_ZZ^R Delta z = -r_Z - K_ZB Delta b
+chronologically, with the actual inherited initial state and retarded/outgoing
+returns. Compute the baseline defect once and the separate port columns.
+Retarded support does not choose the primal quantum reference. A pointwise
+inverse, closed round-sphere heat kernel or extra future cap is not this solve.
+
+With G_Z^R the actual inverse action, the compatible reduced correction is
+  (K_BB-K_BZ G_Z^R K_ZB) Delta b = -r_B+K_BZ G_Z^R r_Z.
+Derive its pullback to the original matching rows; do not equate chronological
+and instantaneous operators because their dimensions agree. Extract terminal
+traces/conormals and their source/domain derivatives from the solved histories.
+
+7. QUANTUM STATISTICS, STATE, SCALE AND NATIVE ACCOUNTING
+
+Radiation variables use CCR and the bosonic covariance condition
+  V + i*hbar*J/2 >= 0,
+not 0<=C<=I. Fermion CAR controls remain in their actually identified fermionic
+sectors. Neither curl helicity, spin chirality nor alternating form degree
+supplies the full statistical grading by itself.
+
+Do not claim that the four electromagnetic modes have produced a charged
+spin-half muon. Preserve the need for its mode representation, statistics,
+normalization and physical domain. Reuse the conditional closed-form/domain and
+full-resolvent complement constructions without identifying different operators.
+The heat of a compressed operator is not generally the compression of its heat.
+
+Keep the selected native E1/relative-zeta/eta action, its physical cutoff,
+zero-mode handling, quotient and overlap subtraction. The earlier scalar trial's
+b*sigma^2*R_scalar/12 discrepancy has NOT been canceled by this Maxwell test.
+Do not add a counterterm or adjust coefficients/cutoff just to fit it.
+
+The inherited electromagnetic reference has not been selected by identifying the
+carrier. Do not adopt a vacuum, thermal population, or incoming-ground-state
+premise without a derived or separately authorized rule. The existing
+no-extra-radiation preparation does not empty the inherited sea or set charged
+constraint fields to zero.
+
+A quadratic bound |<O>|<=kappa E_max needs an actual positive energy, complete
+consumed kernel and owned energy budget. No arbitrary E_max or sea density.
+For nonlinear or higher-current observables retain the earlier full solved-state
+adjoint, higher correlations and remainder. A covariance-only cancellation is
+not automatically state independence. Derive a reference or bound/cancel the
+state information the complete observable consumes.
+
+Retain physical compression/scale equations: ordinary 4D conformal invariance
+must not be treated as either a complete scale construction or an M8 no-go.
+Keep G_F calibration and the physical-preparation chart scaling in the coupled
+solve; do not freeze them to obtain a convenient numerical coefficient.
+
+8. PRESERVE THE ADOPTED COLLIDER AND MUON TARGET
+
+Use the supplied authoritative JSON, not a newly reconstructed preparation:
+  e- e+ -> mu- mu+; equal 500 MeV central total beam energies;
+  head-on; zero impact parameter; centers z=-1000 and +1000 fm;
+  100 fm probability RMS per spatial direction; unpolarized I4/4;
+  coherent Gaussian envelopes; no additional incoming radiation beyond the
+  inherited reference and required beam fields; separate weak magnetic probe.
+
+No further measured beam-wavefunction file is needed for these design choices.
+Construct actual sections and initial fields rather than label the envelope a
+physical spinor. No beam variable may be tuned to the measured muon anomaly.
+Production kinematics at timelike s are not the zero-transfer Pauli readout.
+
+After physical derivative and domain admission, apply a coupled correction and
+re-evaluate the original Maxwell equations and all 226 original matching rows
+at the unchanged 2e-10 guard, in their recorded physical conventions. If a
+legitimate enlarged representation adds equations, retain original-row checks
+and explain the mapping; do not make a failure disappear by changing the norm,
+deleting rows or reporting only a projection.
+
+Compute fresh before/after states for this adopted preparation. Historical
+2.4777309847 and 9.602842e-7 residuals are historical diagnostics, not the new
+preparation's initial or final results. Round-sphere counterexamples are separate.
+
+Once admitted, continue directly through physical pole/residue, charge and
+magnetic normalization, soft Pauli contraction, native completion, owned overlap
+subtraction and total error accounting. Preserve existing local subtotals by
+revision; do not relabel them final or add a duplicate virtual-sea contribution.
+Do not start galaxy fitting, re-open Gate-7 from scratch, or change cosmology or
+museum claims. Shared results may be reused only after domain compatibility.
+
+9. GIT PUBLICATION AND INTERRUPTION-SAFE CHECKPOINTS
+
+Make the tested import a small, reviewable commit, followed by a separate
+physical-continuation commit only when it contains a substantive new evaluated
+application, derivation or independent correction. Do not require full BHSM
+completion before preserving the useful exact results in Git.
+
+Suggested first commit subject:
+  Add scoped electromagnetic-carrier reduction and full-equation controls
+
+Run focused tests, affected regressions, deterministic replay comparisons and
+all repository-mandated publication audits (the existing workflow has five).
+Discover actual commands from the repository; do not invent passing receipts.
+Separate completed, failed, skipped and not-run checks. Skips are not passes.
+Inspect the exact staged diff and stage only intended files. Keep large run
+caches and duplicate historical backups out of Git; commit compact evidence,
+source/producer hashes and exact reproduction commands in the approved layout.
+
+Push to the verified existing PR #465 branch without rewriting history or
+merging to main. Update the PR summary to distinguish exact controls, candidate
+maps, physical evaluations and unresolved items. Preserve unrelated dirty
+changes; a successful scoped commit does not justify saying the worktree is clean
+when those changes remain. Verify local committed SHA, remote branch SHA and
+PR head after pushing. If another writer advances the branch, preserve that
+advance and resolve through the established workflow; never force-push over it.
+
+Save results before progress narration. Use atomic, per-run result writes and
+a compact CHECKPOINT.json/STATUS.md containing exact inputs, domain, equations,
+outputs, hashes, error scope and NEXT_OPERAND. One writer owns the current
+checkpoint. Resume from it after disconnection; do not repeat verified solves.
+
+10. NEXT SCIENTIFIC AND PUBLICATION REPORT
+
+Report:
+  - actual commit, branch, PR head and preserved local-change status;
+  - imported artifacts and source-to-code provenance;
+  - what exact controls were reproduced;
+  - actual physical carrier/domain used, or precisely what is still unconstructed;
+  - tangential and normal/complement residuals on that same state;
+  - evaluated action origin of the reaction/potential, or explicit mismatch;
+  - independent complete-derivative and convergence/error results;
+  - whether a physical correction was applied and fresh original-row results;
+  - physical pole, a_mu, g_mu and total uncertainty status;
+  - the single next consumed mathematical operand.
+
+Classify evidence explicitly: EXACT_CONTROL, CANDIDATE_MAP,
+PHYSICAL_EVALUATION, or UNRESOLVED (map to existing repository vocabulary).
+No physical result exists merely because tests or publication audits pass.
+No wrapper, duplicate absence report or repeated context audit counts as the
+next physical calculation. Preserve and publish the new mathematics, then
+advance its actual same-action normal/complement application.

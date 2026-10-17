@@ -1,0 +1,131 @@
+{
+  "all_five_passed": true,
+  "audit_scope": "Repository publication policy only; precision/status checks are not native anomaly or operator certification.",
+  "current_operator_evaluations": 0,
+  "existing_draft_pr": "https://github.com/ncarberry64/Berger-Hopf-Standard-Model/pull/465",
+  "full_suite_run": false,
+  "physical_a_mu": null,
+  "physical_g_mu": null,
+  "primary_tree_and_shared_caches_untouched": true,
+  "publication_audits": [
+    {
+      "audit": "audit_bhsm_status",
+      "command": [
+        "python",
+        "tools/audit_bhsm_status.py"
+      ],
+      "publication_parent_revision": "ca5baeaa15a6f589850986501f07efafed0d58f3",
+      "returncode": 0,
+      "staged_diff_sha256": "ecec29483d9032b1a2cc98d410d093f9fbaf9395f494e0ba68bc5d06ac69df15",
+      "stdout_sha256": "67dcb4844fb5ae22fa81b02fe4297a270cb8895184979d7e4fe1920f0ec1958e"
+    },
+    {
+      "audit": "audit_forbidden_claims",
+      "command": [
+        "python",
+        "tools/audit_forbidden_claims.py"
+      ],
+      "publication_parent_revision": "ca5baeaa15a6f589850986501f07efafed0d58f3",
+      "returncode": 0,
+      "staged_diff_sha256": "ecec29483d9032b1a2cc98d410d093f9fbaf9395f494e0ba68bc5d06ac69df15",
+      "stdout_sha256": "ab19067cf15e0a20b3e28374c77f15f1dbd1277938c682f675d8726d2dc1460a"
+    },
+    {
+      "audit": "audit_frozen_prediction_integrity",
+      "command": [
+        "python",
+        "tools/audit_frozen_prediction_integrity.py"
+      ],
+      "publication_parent_revision": "ca5baeaa15a6f589850986501f07efafed0d58f3",
+      "returncode": 0,
+      "staged_diff_sha256": "ecec29483d9032b1a2cc98d410d093f9fbaf9395f494e0ba68bc5d06ac69df15",
+      "stdout_sha256": "97694acc837bc21d90c8390c12cd39ba5bdc76e6e7209601e985561136d5b884"
+    },
+    {
+      "audit": "verify_precision",
+      "command": [
+        "python",
+        "tools/verify_precision.py"
+      ],
+      "publication_parent_revision": "ca5baeaa15a6f589850986501f07efafed0d58f3",
+      "returncode": 0,
+      "staged_diff_sha256": "ecec29483d9032b1a2cc98d410d093f9fbaf9395f494e0ba68bc5d06ac69df15",
+      "stdout_sha256": "9aeba488a47f2f68d79b46c5cb04fea049e2ffccd6b5411d475e43a748ade6e2"
+    },
+    {
+      "audit": "audit_public_readiness",
+      "command": [
+        "python",
+        "tools/audit_public_readiness.py",
+        "--format",
+        "json"
+      ],
+      "publication_parent_revision": "ca5baeaa15a6f589850986501f07efafed0d58f3",
+      "returncode": 0,
+      "staged_diff_sha256": "ecec29483d9032b1a2cc98d410d093f9fbaf9395f494e0ba68bc5d06ac69df15",
+      "stdout_sha256": "8b9be85f2a9c43a9c5d94b806b977f369260120afc91280e0b157cbfba55cf85"
+    }
+  ],
+  "scientific_files_with_manifest_byte_identical": 5,
+  "scoped_publication_branch": "codex/muon-parent-maxwell-density-review",
+  "staged_scientific_artifact_hashes_verified": true,
+  "tests": {
+    "arithmetic_certification": "Arb192 for exact cached input values; history/operator/domain/tail/theory errors separate and unevaluated",
+    "frozen_local": {
+      "a_mu_QED_local": "0.00116550200495813",
+      "a_mu_selected_local_open_interval": [
+        "0.0011655039493",
+        "0.0011655109506"
+      ],
+      "already_combined_selected_local": true,
+      "calibration_convention": "alpha_inverse=137.035999084; standard uncertainty=2.1e-8; other original conditional inputs fixed",
+      "calibration_only_standard_uncertainty": "1.79e-13",
+      "delta_a_mu_h_local_1_open_interval": [
+        "0",
+        "3.500331e-9"
+      ],
+      "native_added": false
+    },
+    "hash_manifest_identical": true,
+    "independent_review": "No material factor or pole error; Lambda and trace factors occur once. Source coordinate/frame clarified in this receipt.",
+    "inherited_checkpoint_sha256": "16de1b6d7d9d75e7a0ad12542cfa9a197ccd7590a072ae47da9221adeadb183f",
+    "input_hashes_verified": 14,
+    "inspection_only_hashes_verified": 5,
+    "native_shifted_resolvent_actions": 0,
+    "older_three_checks_six_artifacts_22_hash_record_preserved": true,
+    "output_hashes": {
+      "attachment_and_weighted_density.npz": "d55dad66ec719a3c88530be15322671d448bd5b81253902c18fc7a6aea12899d",
+      "checkpoint.json": "d58283635b52b028e8b74e281488546406c7a998e9ec8e992599bffd9173e5bb",
+      "next_operand.json": "d7695adf9cb35df65a88f791c22167a52472d8559452b1fd5bed9d4c3dc86f30",
+      "packet_hashes.json": "dce2d3216a29ea099e5b4f6042ecf350f91487f222af78d7709843a33eea329c",
+      "result.json": "f9dd510416e50ac20c1f3f4680f25ee9452677851dd2841c13e3793e279b6cc4"
+    },
+    "physical_a_mu": null,
+    "physical_g_mu": null,
+    "physical_soft_transfer_directions": 0,
+    "predecessor_three_checks_and_two_replays_preserved": true,
+    "prior_calculations_repeated": false,
+    "publication_labels": "Portable logical paths; original local metadata preserved in standalone packet.",
+    "raw_old_results_changed": false,
+    "repository_layout_targeted_test_command": "python -m pytest tests/test_muon_connection_weight.py -q",
+    "repository_layout_targeted_test_seconds": 2.51,
+    "repository_layout_targeted_tests_passed": 3,
+    "scientific_artifacts_compared": [
+      "attachment_and_weighted_density.npz",
+      "result.json",
+      "next_operand.json",
+      "checkpoint.json"
+    ],
+    "source_Clifford_phase": "c_src is the source derivative in the retained Dirac convention, including its fixed sign/i; the full native lift is not supplied.",
+    "source_frame": {
+      "T_b": "(2*pi^2*R4)^(-1/2)",
+      "Y_A": "unit-S3 coordinate one-form",
+      "beta": "T_b*b",
+      "orthonormal_frame_source_factor": "T_b/R4=f_R4=(2*pi^2*R4^3)^(-1/2)",
+      "output": "b-frame coefficient per kappa1"
+    },
+    "standalone_targeted_test_command": "python -m pytest test_muon_connection_weight.py -q",
+    "targeted_test_seconds": 0.09,
+    "targeted_tests_passed": 3
+  }
+}

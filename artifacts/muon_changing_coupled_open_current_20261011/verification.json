@@ -1,0 +1,114 @@
+{
+  "classification": "VERIFIED_PAIRED_CHANGING_COUPLED_OPEN_EXCHANGE_REPLAY",
+  "commands": [
+    {
+      "command": "$env:PYTHONPATH='src'; $env:OPENBLAS_NUM_THREADS='1'; C:\\Python314\\python.exe -m pytest --noconftest -q tests/test_muon_changing_coupled_open_current.py",
+      "exit_code": 0
+    },
+    {
+      "command": "$env:PYTHONPATH='src'; $env:OPENBLAS_NUM_THREADS='1'; C:\\Python314\\python.exe scripts/evaluate_muon_changing_coupled_open_current.py --output artifacts/muon_changing_coupled_open_current_20261011/run_1 --field-directory artifacts/muon_parent_positive_coupled_temporal_20261011/run_1 --cutoff 1e-11",
+      "exit_code": 0
+    },
+    {
+      "command": "$env:PYTHONPATH='src'; $env:OPENBLAS_NUM_THREADS='1'; C:\\Python314\\python.exe scripts/evaluate_muon_changing_coupled_open_current.py --output artifacts/muon_changing_coupled_open_current_20261011/run_2 --field-directory artifacts/muon_parent_positive_coupled_temporal_20261011/run_1 --cutoff 1e-11",
+      "exit_code": 0
+    }
+  ],
+  "focused_test_output": ".... [100%]\n4 passed in 2.12s",
+  "initial_regression_failures": [],
+  "paired_files": [
+    {
+      "byte_identical": true,
+      "bytes": 8323293,
+      "name": "incoming_fermion_form.npz",
+      "sha256": "8f39efd557161309d84812dea4191d06a85b8a5bf4aaa586eed0c2cfc4bd63d9"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 5647976,
+      "name": "incoming_field_modes_0.npz",
+      "sha256": "259217583be3f8b632620eed30d4bc876d6cf3d414e6efcaf509f951045f4958"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 5648553,
+      "name": "incoming_field_modes_1.npz",
+      "sha256": "20d9940ea5b2cbe0377de585a926e080f77e7bf39cadeb8dd3f20ec41966a802"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 8019,
+      "name": "incoming_result.npz",
+      "sha256": "e6f0e16259dafb37c50fc99fae427d083bfe2484a18104db62d62e8dd45b3475"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 1918333,
+      "name": "incoming_source_0.npz",
+      "sha256": "55f733cfaf57762f6a9cd23a10eff24164d86c89c07beb980b0ce03ff1d92a34"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 1918135,
+      "name": "incoming_source_1.npz",
+      "sha256": "c230419d507b64a498471d32d246dbabf20b0a06aead00c95792e9bc900f9d53"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 8327689,
+      "name": "outgoing_fermion_form.npz",
+      "sha256": "2accb2fc4d4599467293861d8c98579004c9d80825a134027824e9d62761695b"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 5648806,
+      "name": "outgoing_field_modes_0.npz",
+      "sha256": "f56f19b349ce480ad66b9a8d4b6ab624254c3162709a146c37d3ef06d301d7e6"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 5647072,
+      "name": "outgoing_field_modes_1.npz",
+      "sha256": "09d6701671d58a3c84590569c1f7651df18cab365f0d72d14ccd77b5699279c9"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 8030,
+      "name": "outgoing_result.npz",
+      "sha256": "7e90d9b730066121bcb9a0642c884677a5d034d90c65d348d6961a2238f218a3"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 1918312,
+      "name": "outgoing_source_0.npz",
+      "sha256": "a2f2fe499177d50da0050f149d7dd97647ec8728707e0d7e453839b713377a14"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 1918735,
+      "name": "outgoing_source_1.npz",
+      "sha256": "f97e3c21c10e425759470fbdfda5ccd3a8f3f3f3051a6898bdc39c69afb7dadc"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 16392,
+      "name": "result.json",
+      "sha256": "4304f6c2d1b772b964ab2cf2a449e1928db3364368537c10c23f7c2d3e716481"
+    }
+  ],
+  "scientific_error_scope": "Only determinism and focused algebra/guards are verified. Source projection/eigen/assembly/continuum and P_strat/LSZ/Pauli completion are not enclosed.",
+  "sources": {
+    "scripts/evaluate_muon_changing_coupled_open_current.py": {
+      "bytes": 9147,
+      "sha256": "932636f0f6d578d051e93d23c898adafb5217d66412faf8560be5d7aaa96022e"
+    },
+    "src/bhsm/interface/muon_changing_coupled_open_current.py": {
+      "bytes": 9984,
+      "sha256": "6d5adedf4b23e83df153d7fa1a0afda369b5412b5df4b02036c6f46b21b1e0da"
+    },
+    "tests/test_muon_changing_coupled_open_current.py": {
+      "bytes": 2858,
+      "sha256": "b845512ce1bc1625221e368d49b849548de0be945c9149a95170fa7cc2ac3dbd"
+    }
+  }
+}

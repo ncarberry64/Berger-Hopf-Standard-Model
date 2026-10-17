@@ -1,0 +1,240 @@
+{
+  "action_parameters": {
+    "nu_squared_action": 4.0,
+    "surface_gamma": null
+  },
+  "actual_magnetic_derivative_applied": false,
+  "angular_basis": "full odd n1+n3 20 harmonics times all18 components (360); modesY/sqrt(V), external constant1/sqrt(V)",
+  "array_archives": {
+    "incoming_fermion_form.npz": {
+      "arrays": [
+        "fermion_Gram_orthonormal_eigenvectors",
+        "fermion_generalized_eigenvalues",
+        "fermion_normalized_operator",
+        "fermion_proper_time_Gram",
+        "fermion_weak_form"
+      ],
+      "bytes": 8323293,
+      "sha256": "8f39efd557161309d84812dea4191d06a85b8a5bf4aaa586eed0c2cfc4bd63d9"
+    },
+    "incoming_field_modes_0.npz": {
+      "arrays": [
+        "column_indices",
+        "field_Gram_orthonormal_eigenvectors"
+      ],
+      "bytes": 5647976,
+      "sha256": "259217583be3f8b632620eed30d4bc876d6cf3d414e6efcaf509f951045f4958"
+    },
+    "incoming_field_modes_1.npz": {
+      "arrays": [
+        "column_indices",
+        "field_Gram_orthonormal_eigenvectors"
+      ],
+      "bytes": 5648553,
+      "sha256": "20d9940ea5b2cbe0377de585a926e080f77e7bf39cadeb8dd3f20ec41966a802"
+    },
+    "incoming_result.npz": {
+      "arrays": [
+        "chronological_quadrature_samples",
+        "field_generalized_eigenvalues",
+        "signed_gaussian_open_exchange",
+        "source_norm_squared",
+        "source_projection_residual_norm_squared"
+      ],
+      "bytes": 8019,
+      "sha256": "e6f0e16259dafb37c50fc99fae427d083bfe2484a18104db62d62e8dd45b3475"
+    },
+    "incoming_source_0.npz": {
+      "arrays": [
+        "literal_left_vertex_map",
+        "source_adjoint_right_vertex_map",
+        "source_value_projection_map"
+      ],
+      "bytes": 1918333,
+      "sha256": "55f733cfaf57762f6a9cd23a10eff24164d86c89c07beb980b0ce03ff1d92a34"
+    },
+    "incoming_source_1.npz": {
+      "arrays": [
+        "literal_left_vertex_map",
+        "source_adjoint_right_vertex_map",
+        "source_value_projection_map"
+      ],
+      "bytes": 1918135,
+      "sha256": "c230419d507b64a498471d32d246dbabf20b0a06aead00c95792e9bc900f9d53"
+    },
+    "outgoing_fermion_form.npz": {
+      "arrays": [
+        "fermion_Gram_orthonormal_eigenvectors",
+        "fermion_generalized_eigenvalues",
+        "fermion_normalized_operator",
+        "fermion_proper_time_Gram",
+        "fermion_weak_form"
+      ],
+      "bytes": 8327689,
+      "sha256": "2accb2fc4d4599467293861d8c98579004c9d80825a134027824e9d62761695b"
+    },
+    "outgoing_field_modes_0.npz": {
+      "arrays": [
+        "column_indices",
+        "field_Gram_orthonormal_eigenvectors"
+      ],
+      "bytes": 5648806,
+      "sha256": "f56f19b349ce480ad66b9a8d4b6ab624254c3162709a146c37d3ef06d301d7e6"
+    },
+    "outgoing_field_modes_1.npz": {
+      "arrays": [
+        "column_indices",
+        "field_Gram_orthonormal_eigenvectors"
+      ],
+      "bytes": 5647072,
+      "sha256": "09d6701671d58a3c84590569c1f7651df18cab365f0d72d14ccd77b5699279c9"
+    },
+    "outgoing_result.npz": {
+      "arrays": [
+        "chronological_quadrature_samples",
+        "field_generalized_eigenvalues",
+        "signed_gaussian_open_exchange",
+        "source_norm_squared",
+        "source_projection_residual_norm_squared"
+      ],
+      "bytes": 8030,
+      "sha256": "7e90d9b730066121bcb9a0642c884677a5d034d90c65d348d6961a2238f218a3"
+    },
+    "outgoing_source_0.npz": {
+      "arrays": [
+        "literal_left_vertex_map",
+        "source_adjoint_right_vertex_map",
+        "source_value_projection_map"
+      ],
+      "bytes": 1918312,
+      "sha256": "a2f2fe499177d50da0050f149d7dd97647ec8728707e0d7e453839b713377a14"
+    },
+    "outgoing_source_1.npz": {
+      "arrays": [
+        "literal_left_vertex_map",
+        "source_adjoint_right_vertex_map",
+        "source_value_projection_map"
+      ],
+      "bytes": 1918735,
+      "sha256": "f97e3c21c10e425759470fbdfda5ccd3a8f3f3f3051a6898bdc39c69afb7dadc"
+    }
+  },
+  "classification": "EVALUATED_CHANGING_COUPLED_FIELD_FERMION_OPEN_EXCHANGE",
+  "common_cutoff": 1e-11,
+  "complete_P_strat_BRST_relative_statistics_or_physical_Wick_identity": false,
+  "error_scope": "Binary64 actual coefficient-time weak/source integration, Gram/eigen normalization and finite common-cutoff kernel. Temporal source projection remainder is evaluated, not a readout/continuum bound. Kernel algebraic truncation bound excludes entry/eigen/assembly rounding; no physical anomaly enclosure.",
+  "external_LSZ_or_normalized_soft_Pauli_completed": false,
+  "external_time_pairing": "external b/sqrt(int N b\u00b2), common proper Ndt measure once",
+  "factor": "A=partial_t/N+Omega_tau+W, actual coefficient-time weak integration; no separate -Wtau subtraction",
+  "gauge_DG_products_and_variable_coefficients_not_claimed_temporal_image_closed": true,
+  "independent_scalar_b_times_b_source_in_trial_exact": true,
+  "inherited_profile_value_time_radial_and_chronological_rates_retained": true,
+  "input_hashes": {
+    "artifacts/flagship_integration/BHSM_N12_C2_REFINED_RESET_ROOT_CENTER.npz": "59dd88661b15cbeec96bc19294f9d9c64f754cccbfbc385c32329fa9c864a8fe",
+    "artifacts/flagship_integration/BHSM_N12_FULL_RESET_ACTION_JACOBIAN.npz": "35bb2b67ff784206d3a5b9dc82881f5ffd8f844b55342f2032d29cdafb38a67a",
+    "artifacts/muon_birth_transfer_value_20261008/retained_reset/run_1/result.json": "d0fec0f8e8a05818fcce67e88ed8db73744484220a2cb213825893f481cb0a72",
+    "artifacts/muon_calibrated_pauli_20261009/inputs.json": "0b614ab6f26d169ca04a4878f767f78eb3668484840867e46aebbebf186369da",
+    "artifacts/muon_calibrated_weak_decay_20261010/run_1/weak_decay.json": "9c31575ce0889571790f8767cf53ffe043cb9906e0a45a96b194971320a0aad7",
+    "artifacts/muon_finite_normal_phase_20261011/incoming_run_1/application.npz": "254491c04531387f3ef3ae761cb4efccfbed54055683af00fbd8259a2520a8f9",
+    "artifacts/muon_finite_normal_phase_20261011/incoming_run_1/result.json": "8547be3232459deb8cb1d325a3d956bc0380ba0c767371ccce4bf7f5140b399f",
+    "artifacts/muon_inherited_finite_normal_phase_20261011/run_1/application.npz": "7a513c82e9e4f3e2560e2989867e00e8af3453e637a29559286c29eb7c184a59",
+    "artifacts/muon_inherited_finite_normal_phase_20261011/run_1/result.json": "d283c45cb81e86628ecec96159eae5327829d15f440bf01c78164f4b12434c51",
+    "artifacts/muon_matched_mechanical_source_20261002/replay_reference/matched_source_and_weak_actions.npz": "146435df28178967c321c0aa7e89a1511395d196f96b8715532aa98e3e312c2b",
+    "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1/application.npz": "c67363c17adfb519f399614463d5a13dbcd019aa53246d452421eea8ba982455",
+    "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1/result.json": "06867e31959910ec21385e8491bd5b794060c68e8404ae0524e3d0c9b544faa6",
+    "artifacts/muon_parent_positive_coupled_temporal_20261011/run_1/incoming_action.npz": "733af3e55351c328f6c2e25dabb49411c6b71f9cb708f23b22c50539ab6450bf",
+    "artifacts/muon_parent_positive_coupled_temporal_20261011/run_1/incoming_hilbert.npz": "aad70e09b1aa30ebebbdbc5f1758eb38fb674d056d65993b15fc3808d794397f",
+    "artifacts/muon_parent_positive_coupled_temporal_20261011/run_1/outgoing_action.npz": "ffd6e68a4eb311595afd57853fec6f09f6e799ee0549e6ca6e77740efa7b3582",
+    "artifacts/muon_parent_positive_coupled_temporal_20261011/run_1/outgoing_hilbert.npz": "bfaf401f20667eb0f7941f54f35afa1b40d92abd1901e4f800d6948f6015db53",
+    "artifacts/muon_parent_positive_coupled_temporal_20261011/run_1/result.json": "8ff9527a88b1c88036a38fa64e4d32444dd24baa272e4e4ec4e66fe566d90179",
+    "scripts/evaluate_muon_changing_coupled_open_current.py": "932636f0f6d578d051e93d23c898adafb5217d66412faf8560be5d7aaa96022e",
+    "scripts/evaluate_muon_parent_positive_coupled_field.py": "d6e1ed3bb197e49d4e67bd3502febc2480cb7e03e3b03a4e138f9abf3e23ccfc",
+    "scripts/evaluate_muon_parent_positive_coupled_temporal.py": "f676ef81ca6a3198fa5705172c468b362ce100b5043e9e4a46e0de8e960110a8",
+    "scripts/evaluate_muon_reached_trace_action.py": "f2ecf5b614f8b3b1b5f9bf2b73490e539321049633f7deb467bdf60a81e0c260",
+    "src/bhsm/interface/aether_canonical_momentum_action_jacobian.py": "d0ade20dc8a999e43073b45ca3ef59e05c65c55e37a1d6565d4e389176295cb1",
+    "src/bhsm/interface/aether_diagonal_sp1_m4_attachment_v15_50.py": "e6482614dcb54f4890a5e66fbe724d4c302405d575a4b73ddbb64a075cb1827e",
+    "src/bhsm/interface/aether_lorentzian_child_galerkin_v15_44.py": "574a9a6267d9228170c7309bd4be3cafb36b7515a6ee558509beb968e97bdab7",
+    "src/bhsm/interface/muon_birth_attached_phase.py": "948c1505e9b68cffbe8050be31dcb5727d8f8d4f25399f9037cfc94a9ae9fdeb",
+    "src/bhsm/interface/muon_birth_chronological_normal_inertia.py": "909f322d0b375ab03fc0b0a148c9d710ac77e371e029c5e92c9bfbde86883b05",
+    "src/bhsm/interface/muon_birth_coupled_primal_midpoint.py": "ce321f641fa51d98710d006e246aac5cf6bd046be93a74fab452808597c599ce",
+    "src/bhsm/interface/muon_birth_finite_geometric_trace_endpoint.py": "4f5c36144222d5d1e657061aa9352f8e86d5ae61a0ebdf05991a477e68d4be5f",
+    "src/bhsm/interface/muon_birth_finite_normal_phase.py": "660ed731bdbe0bbb71eda750c9dbffd20e7ce9f63be2a6087e5a385d76850361",
+    "src/bhsm/interface/muon_birth_finite_normal_trace_graph.py": "20eafd9a6abff3d3a89a2f6085d099584684ba19b600673dafda634cb56aad18",
+    "src/bhsm/interface/muon_birth_full_field_attachment.py": "58b3bd8a4ae5fe7c63b5551e4d0f26d82ab82a27d4389066c894a5e1b4728d03",
+    "src/bhsm/interface/muon_birth_inherited_finite_normal_phase.py": "86b082dfa0b525e9d8bb510a6c02e53c517d7ecdd8c6c9aec956d175d829add4",
+    "src/bhsm/interface/muon_birth_normal_constrained_action.py": "fe66a9116816e075cfc5e7c5f5f3c2c02d539311303b693a1d89cbc08ea62577",
+    "src/bhsm/interface/muon_birth_normal_trace_graph.py": "d012a0455d84be2ce7aae8d6833f8b482f9bbc1e9ee1b899042a421c2a782896",
+    "src/bhsm/interface/muon_birth_paired_attachment_endpoint.py": "71a69275ebeef226fd8dc7585745c5c8acac687e497a8441fe37a37553178f23",
+    "src/bhsm/interface/muon_birth_paired_field_endpoint.py": "f22b6a17b65c72b30571b3d9f721f347737a5916fa08e50bd833ad22df3cd035",
+    "src/bhsm/interface/muon_birth_phase_continuation.py": "9169a1c56bf5084d1f240043ca12d431c87e4adaff24fe09bdf7bf27fc5eb0be",
+    "src/bhsm/interface/muon_birth_trace_enriched_action.py": "c36c48482dd58ebe369ab935574b78b3693036f717fb49035dfac01164956dce",
+    "src/bhsm/interface/muon_birth_trace_enriched_phase.py": "591754957f1cc452bfd53d8adc1087308459902a822876105315b7423c2fd676",
+    "src/bhsm/interface/muon_birth_two_arm_assigned_action.py": "cf6c58dc68700315d701fb9a1e9e99e927d18d90016a6ae7f86470c36136c77a",
+    "src/bhsm/interface/muon_changing_coupled_open_current.py": "6d5adedf4b23e83df153d7fa1a0afda369b5412b5df4b02036c6f46b21b1e0da",
+    "src/bhsm/interface/muon_common_cutoff_green_kernel.py": "56eac066ec2a298206c57f674864f918e80ae1a1f1fa87cd8e501adb9183b6dc",
+    "src/bhsm/interface/muon_corrected_profile_magnetic_response.py": "8d09cd726393d59b6843553c085ffaf61f84f009b44678d1465fe7ebe645f1d8",
+    "src/bhsm/interface/muon_exact_material_response.py": "a530651e157a000dbe6935e9de1cedbce5679f98c599c6c7c641158b749307bf",
+    "src/bhsm/interface/muon_inherited_lepton_temporal_weak_action.py": "a68eb4bb3296c00a7da0c25c19eb4e2e3aca2a46a84d152cc7aa93f6a7e6034e",
+    "src/bhsm/interface/muon_intrinsic_higgs_gauge_action.py": "c19354209300ab06c0f1ab6bf4e111dbb5de0cd9e8d1d31a71af357a829118d4",
+    "src/bhsm/interface/muon_intrinsic_m4_normal_pullback.py": "43187eee35f2879a43fe0fd02ae447502811349ccf2f2a78aa14beb8aa706bf0",
+    "src/bhsm/interface/muon_intrinsic_scalar_regulator_correction.py": "acaa7e26c5a30dd2a984e44cb7e8888720cdc83c0e860d624614625c01ecb9e1",
+    "src/bhsm/interface/muon_intrinsic_scalar_temporal_image.py": "5ab91c5962d090677aeed6e25c3418266d3b94cb4c44551be4a7c66e5bfa4303",
+    "src/bhsm/interface/muon_magnetic_open_lepton_vertex.py": "08c637687e7279434bb1f91a37b57403778f7f1558229f41cb52f623dd61b526",
+    "src/bhsm/interface/muon_material_higgs_gauge_action.py": "8bca013820283614c6578be4f44c29c4ea1c919f516aa9a2783f0eb38127d035",
+    "src/bhsm/interface/muon_moving_geometric_action.py": "bf560fdb9766f563d97d3100ccb266e2a4350c910ac14a51d57576c2b5371392",
+    "src/bhsm/interface/muon_native_dirac_hamiltonian.py": "7344b1dfc0358962a281fffea59c8d40c1449a6fbcf9b171f514a28eb7b26ccd",
+    "src/bhsm/interface/muon_parent_gauge_geometry_correction.py": "fa29f5764dca39196c807d64e7976d5894589e7de3ffa9d4a5ddecfb136b4816",
+    "src/bhsm/interface/muon_parent_maxwell_background_euler.py": "fbb2c99d4b1c58247ac42a769fad3e1b16ccc76a1744fe0c5334e50c4a974bee",
+    "src/bhsm/interface/muon_parent_maxwell_full_weak.py": "c1fb703967a644306d3521d457a6d7c778a49d89c1e081b401487a25b7491565",
+    "src/bhsm/interface/muon_parent_maxwell_geometry_weak.py": "f0b4a49934e17ad18c40e9164b66c54e1b2cb146fb476f59b0e500f2dd6c9153",
+    "src/bhsm/interface/muon_parent_mean_causal_action.py": "2a84b1be22625b1a5ae88d10c76631d7a5b602d2b0e22e57f00201bb74a593ad",
+    "src/bhsm/interface/muon_parent_positive_brst_ghost.py": "3575d412199108bd9512b2d9e7c2804fe84cf0886224c04f7138b05c2d14331a",
+    "src/bhsm/interface/muon_parent_positive_coupled_field.py": "f26b1c395c8059555d1f3e217705998c5e0437122ab761354ce0f085d891d5c2",
+    "src/bhsm/interface/muon_parent_positive_coupled_temporal.py": "b663176869d7155a07e391505a59ac08fd88c7e63a20c0e07ebb1a536aed47b6",
+    "src/bhsm/interface/muon_parent_positive_gauge_form.py": "11d3c55d445d967d14e1f9d0b1be8dbc9abd014ac8d547237a3487ebc9e7cf25",
+    "src/bhsm/interface/muon_parent_retarded_hypercharge.py": "2eb97a704bce63f601cc0d6e0f647266d4b4aac7f746d34dceb41b72018c3510",
+    "src/bhsm/interface/muon_pointwise_full_field_action.py": "d57cd5953de00bcae857d0e458bbead1e463e5fffe8d947c5b9e71806aabaff6",
+    "src/bhsm/interface/muon_profile_preserving_phase_sample.py": "27ce99bf8c286b0e3fe56dc4d7f0f215dee51b228dcce1805006e1b2c8998418"
+  },
+  "physical_a_mu": null,
+  "physical_cutoff_selected": false,
+  "physical_g_mu": null,
+  "quantum_algebra_scope": "formal Gaussian open exchange sign -1 on the declared first-order-factor/real-field finite reference; not assigned full P_strat mixed-square/statistics completion",
+  "records": [
+    {
+      "common_kernel_approximation_upper": 0.0,
+      "cutoff": 1e-11,
+      "external_tent_Gram": 3.69475728718977e-06,
+      "fermion_generalized_eigen_residual": 6.100406607391352e-15,
+      "fermion_minimum_generalized_eigenvalue": 80935692394.5222,
+      "field_generalized_eigen_residual": 1.0882497256220517e-15,
+      "field_minimum_generalized_eigenvalue": 2.371224966651708,
+      "independent_scalar_source_projection_relative_norm": 3.7783132657345923e-16,
+      "normalized_fermion_symmetry_defect": 5.3854988715133615e-17,
+      "side": "incoming",
+      "signed_gaussian_open_exchange_Hermitian_defect": 2.6163478798402934e-09,
+      "signed_gaussian_open_exchange_norm": 1.372096049229107e-05,
+      "source_projection_relative_norm": 0.7873452182194288
+    },
+    {
+      "common_kernel_approximation_upper": 0.0,
+      "cutoff": 1e-11,
+      "external_tent_Gram": 2.3271322592849973e-06,
+      "fermion_generalized_eigen_residual": 1.3587850605555872e-14,
+      "fermion_minimum_generalized_eigenvalue": 204018608957.60962,
+      "field_generalized_eigen_residual": 1.0132302122010336e-15,
+      "field_minimum_generalized_eigenvalue": 2.293458558015656,
+      "independent_scalar_source_projection_relative_norm": 1.7012059961821832e-16,
+      "normalized_fermion_symmetry_defect": 4.504796052524259e-17,
+      "side": "outgoing",
+      "signed_gaussian_open_exchange_Hermitian_defect": 1.7979327220046812e-09,
+      "signed_gaussian_open_exchange_norm": 9.791682763189312e-06,
+      "source_projection_relative_norm": 0.7873452208103278
+    }
+  ],
+  "source_left": "literal int Ndt b_external deltaA_field V; temporal gauge anti-Hermitian vertex is not replaced by its adjoint",
+  "source_right": "int Ndt (A V)^dagger deltaA_field b_external; source adjoint acts before fermion inverse",
+  "temporal_gauge_vertex": "G/N in positive A; distinct from Lorentz Hcan -iG/N",
+  "temporal_trial": "SAME piecewise-linear Dirichlet tent b as changing1200 field; internal fermion Span{b,b\u00b2}, bprime/2bbprime retained",
+  "two_Green_kernel": "ONE coupled1200 gauge-H field generalized spectrum and full720 fermion FE spectrum; common total-time L2 kernel applied before contraction"
+}

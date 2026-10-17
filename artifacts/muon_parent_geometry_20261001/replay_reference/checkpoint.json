@@ -1,0 +1,90 @@
+{
+  "checkpoint_id": "BHSM_MUON_CURRENT_PARENT_LOCAL_VELOCITY_524ED906_20261001",
+  "completion_counterterm": null,
+  "contact": null,
+  "domain_boundary": null,
+  "earlier_derivations_or_tests_repeated": false,
+  "earlier_evidence_preserved": true,
+  "first_missing_map": {
+    "definition": "connection embedding of the SAME mechanical Sp(1) component amplitude and its retained neutral extension into the rank16 gauge connection used by D_strat[beta]",
+    "known_geometry": "A,B,C,lapse,radial shift and quotient scale are supplied and now evaluated",
+    "map": "jmath_EH_to_Q",
+    "new_Wick_or_domain_or_Wilson_choice_allowed": false,
+    "next_step": "materialize the existing action-owned connection attachment jmath_EH_to_Q and its normalization/source map; then evaluate the retained induced matching remainder rather than set it zero",
+    "normalization_equation": "Tr16(jmath(L_a)^dagger*jmath(L_b))=I_jmath*delta_ab; K_trace=K_comp/I_jmath; K_Q=K_comp*(16/3)/I_jmath",
+    "positive_functional_owner_selected": true,
+    "primitive_E8_geometric_density_computed": true,
+    "source_equation": "D_strat[beta]=D_strat[0]+sum_A beta_A*Xi_Q,A+... on the common domain, with Xi_Q,A from this same embedding",
+    "unresolved_classification": "the same-action mechanical-to-neutral/positive-source realization is unspecified in the inspected matching route; not an unfinished Maxwell geometry solve"
+  },
+  "full_native_bulk": null,
+  "github_scope": "reviewable predecessor velocity-density milestone; no physical muon anomaly",
+  "local_contributions_frozen": true,
+  "native_terms_added_to_local": false,
+  "replay": "python replay.py --input inputs.npz --output <new-directory>",
+  "result": {
+    "EM_attachment_index_selected": false,
+    "boundary_density_per_kappa1_cQ_first": 295.4015591094106,
+    "boundary_density_per_kappa1_cQ_last": 295.7531178752022,
+    "certified_fixed_input_values": [
+      {
+        "E_b_local_per_kappa1_cQ": "[79.5891574497777499015507896116173199106818548 +/- 2.13e-44]",
+        "K_component_per_kappa1": "[305.783600864488924787892907105629054811757911 +/- 1.11e-43]",
+        "classification": "CERTIFIED_ARITHMETIC_FOR_EXACT_CACHED_INPUTS__MATCHING_AND_HISTORY_ERRORS_NOT_INCLUDED",
+        "history_node": 0,
+        "relative_accuracy_bits": 184,
+        "rho": "pi*1/4"
+      },
+      {
+        "E_b_local_per_kappa1_cQ": "[295.401559109409930283772042072497461228960240 +/- 2.70e-43]",
+        "K_component_per_kappa1": "[308.016334513461744630377782696647283889507297 +/- 4.22e-45]",
+        "classification": "CERTIFIED_ARITHMETIC_FOR_EXACT_CACHED_INPUTS__MATCHING_AND_HISTORY_ERRORS_NOT_INCLUDED",
+        "history_node": 0,
+        "relative_accuracy_bits": 184,
+        "rho": "pi*1/2"
+      },
+      {
+        "E_b_local_per_kappa1_cQ": "[79.8150015496579789757651320231831841502291696 +/- 2.08e-44]",
+        "K_component_per_kappa1": "[305.680377427103902467026623198034960880738704 +/- 2.26e-43]",
+        "classification": "CERTIFIED_ARITHMETIC_FOR_EXACT_CACHED_INPUTS__MATCHING_AND_HISTORY_ERRORS_NOT_INCLUDED",
+        "history_node": 47,
+        "relative_accuracy_bits": 184,
+        "rho": "pi*1/4"
+      },
+      {
+        "E_b_local_per_kappa1_cQ": "[295.753117875202335636123294155240531432724094 +/- 1.73e-43]",
+        "K_component_per_kappa1": "[308.038954417653184812058967739519521229320658 +/- 7.58e-44]",
+        "classification": "CERTIFIED_ARITHMETIC_FOR_EXACT_CACHED_INPUTS__MATCHING_AND_HISTORY_ERRORS_NOT_INCLUDED",
+        "history_node": 47,
+        "relative_accuracy_bits": 184,
+        "rho": "pi*1/2"
+      }
+    ],
+    "classification": "EXECUTED_CURRENT_C2_GEOMETRIC_PREDECESSOR_MAXWELL_VELOCITY_DENSITY__FACTORED_NOT_COMPLETE_AE4_ELECTRIC_HESSIAN",
+    "complete_common_domain_residual": null,
+    "component_coefficient": "K_comp=kappa1*pi^2*L_F^5",
+    "curl_squared_restriction": "9 I8; full covariant magnetic operator not inferred from it",
+    "density_factor": "E_b=(kappa1*c_Q)*recorded_density; c_Q=Tr16(Q^2)/I_jmath",
+    "density_frame": "b; beta=b/sqrt(2*pi^2*R4), Haar-normalized eight photon angular modes",
+    "electric_angular_scalarity_reason": "cohomogeneity-one round quotient orbit, radial-only lapse/weight and supplied orthonormal mode lifts",
+    "electric_scalarity_inferred_from_curl": false,
+    "full_AE4_matching_remainder": null,
+    "history_nodes": 48,
+    "input_sha256": "3535f373df3ad4ec92c82ea8b50482747153e0645c82e53e940284deacac4494",
+    "native_shifted_resolvent_actions": 0,
+    "physical_a_mu": null,
+    "physical_g_mu": null,
+    "physical_soft_transfer_directions": 0,
+    "positivity_of_sampled_predecessor_density": true,
+    "preflight": "jmath: mechanical Sp(1) connection components -> retained rank16 neutral gauge connection; I_jmath and U(1) attachment must be matched to the same action",
+    "radial_sample_points": 65,
+    "raw_reference_RADIUS0_normalization_copied": false,
+    "sample_grid_max": 295.76991277871923,
+    "sample_grid_min": 0.0,
+    "samples_are_integrated_profile_contraction": false,
+    "source_parent_revision": "524ed90689bd5923c249bba2e699abf627e703cd"
+  },
+  "source_parent_revision": "524ed90689bd5923c249bba2e699abf627e703cd",
+  "state": null,
+  "strong_within_native": null
+}

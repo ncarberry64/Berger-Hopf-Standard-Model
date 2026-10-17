@@ -1,0 +1,201 @@
+{
+  "artifact": {
+    "path": "actual_frozen_family_and_exact_pair_spin_CAR_preparation.npz",
+    "sha256": "20db0b3b1a5cb09be1979b0fb24027bbb70f713d4001bd8c50e9807137a136d3"
+  },
+  "benchmark_id": "BHSM_NEW_COLLIDER_ELECTRON_POSITRON_TO_MUON_ANTIMUON_V1",
+  "classification": "NEW_TYPED_COLLIDER_PREPARATION_WITH_EXECUTED_FROZEN_FAMILY_AND_EXACT_TWO_PARTICLE_SPIN_CAR_BINDING",
+  "executable_rebind_APIs": {
+    "averaging": "The matrix contraction already includes 1/4. Pass initial_state_average=1 when its result is consumed, or supply an unaveraged spin sum with initial_state_average=4, never both.",
+    "beam": "validate_beam_mode_embedding(G,W,Q,metadata): actual positive Dirac Cauchy pairing, four packet-spin modes, charge operator and explicit new benchmark/background/positive-frequency/family/wavepacket provenance.",
+    "collision_readout": "Existing two_to_two_differential_cross_section/integrate_two_to_two_cross_section consume physical same-unit masses and action amplitude; they do not generate the amplitude or prepared Cauchy state.",
+    "spin_amplitude": "spin_averaged_amplitude_squared(M4x4)=Tr(M*(I4/4)*M^dagger). A physical action-derived amplitude is required; none defaulted."
+  },
+  "executed": {
+    "existing_CAR_validator_event_reality_residual": 0.0,
+    "existing_CAR_validator_order_margin": 0.5,
+    "family_checks": {
+      "electron_conjugate_sector_invariance": 0.0,
+      "electron_muon_overlap": 0.0,
+      "electron_rank": 1,
+      "muon_conjugate_sector_invariance": 0.0,
+      "muon_rank": 1
+    },
+    "identity_transport_used_only_as_coordinate_CAR_check_not_physical_reset": true,
+    "native_projector_and_charge_conjugate_constructor_executed": true,
+    "pair_statistics": {
+      "Fock_CAR_residual": 0.0,
+      "density_minimum_eigenvalue": 0.0,
+      "density_trace": 1.0,
+      "electron_number": 1.0,
+      "electron_number_variance": 0.0,
+      "exact_electron_up_down_joint_occupation": 0.0,
+      "exact_minus_quasifree_joint_occupation": -0.25,
+      "full_pair_state_is_quasifree": false,
+      "pair_state_even_parity": true,
+      "positron_number": 1.0,
+      "positron_number_variance": 0.0,
+      "same_covariance_quasifree_up_down_joint_occupation": 0.25,
+      "self_dual_CAR_residual": 0.0,
+      "total_charge": 0.0
+    }
+  },
+  "independent_remaining_inputs": [
+    "New benchmark regular-stratum collision background/geometry, active domains, action Cauchy pairing and tetrad/momentum map, with coupled constraints and asymptotic/finite-boundary preparation specified.",
+    "Electron and positron packet mode functions: spatial/energy spread, separation and encounter timing/overlap, longitudinal profile and phase/coherence data where observable; b=0 and equal central energies do not determine these functions.",
+    "Physical positive-frequency/antiparticle embedding and background matter covariance, with Hadamard/renormalization prescription only for state-sensitive contractions that use them; exact pair excitations are not inferred from free retarded propagation.",
+    "The native same-domain electron/muon manifestation/pole states, masses and residues in a common action unit. Frozen family labels alone are not those pole modes.",
+    "Same-action interacting gauge/Higgs/gravity/matter scattering amplitude or causal encounter solution and final muon pair/outgoing readout; universal phase-space helpers need these operands.",
+    "A numerical beam-energy scan range/grid once an owned energy unit and accessible threshold are bound; no phenomenological theory coefficient is fitted."
+  ],
+  "input_hashes": {
+    "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\AGENTS.md": "9af4237c9acf478143682fd00214db09c52053c7194a9682c4e042c8a3e024a9",
+    "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\artifacts\\action_extension\\BHSM_ACTION_AE3_RECIPROCAL_JOIN_LOCALIZATION.json": "858c24d806eae6574f17d8606caae63909e189641a09305b51aa0a95d73a63a1",
+    "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\ae31_c2_intrinsic_m4_lepton_action.py": "f3fee1ef24a3f13ef94d4ce5b146f9ac7a827045e369819b35ee8af5ccf0678a",
+    "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\ae31_c2_reset_hadamard_transport.py": "0e01844141c4e91ade8c4057b4f1b94903b1fd4c5395404ef5cc3464a5ab01c2",
+    "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\ae3_family_harmonic_energy_pullback.py": "a377d8f38fe217adaaa4dbc526bbc3e6ceac6556091770a0347a21762f0364d6",
+    "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\muon_birth_fermion_state_representation.py": "62824c456bea534b7ead28e6071fd361a1e78ac9caaaeec76eb580e3d3e6b0ee",
+    "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\universal_decay_collision.py": "00def9c14fcf183900049728c70d015a6093039f821c9b75624b8b611a61f79c",
+    "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\universal_momentum_map.py": "b8573c4f6bc10b4163e5df0c580a39bba572111ed0f9bbe8be9d531ad7ef5567"
+  },
+  "masses_couplings_or_action_parameters_inserted": false,
+  "old_C1_E1_or_muon_primal_or_tensor_spliced": false,
+  "outgoing_readout": {
+    "all_other_action_coupled_outgoing_and_radiation_channels_retained": true,
+    "final_zoo": "All other admitted action-coupled fields, particles, radiation and surviving enclosure/geometry degrees remain in the outgoing realization.",
+    "muon_pair_forced_as_only_final_state": false,
+    "target": "The muon-antimuon family component is an OUTPUT projection/readout of the action-derived outgoing state.",
+    "two_body_kinematic_scope": "The displayed opposite outgoing momenta and two-body phase-space helper describe the exclusive two-body muon-pair component when that readout applies; they are not a projection deleting real radiation or other output channels."
+  },
+  "pair_state_scope": {
+    "CAR_convention": "N_ij=<c_j^dagger c_i>; C_sd=diag(I-N,N^T); canonical antiunitary Gamma(v)=G*conjugate(v).",
+    "beam_mode_order": [
+      "electron_up",
+      "electron_down",
+      "positron_up",
+      "positron_down"
+    ],
+    "canonical_Nambu_conjugation_not_full_physical_spinor_charge_conjugation": true,
+    "continuum_Cauchy_state_or_Hadamard_background_selected": false,
+    "exact_preparation": "rho_pair=1/4 sum_(s,t) |e-_s,e+_t><e-_s,e+_t| on exactly-one-of-each charge sector.",
+    "family_antiparticle_owner": "Q_family=diag(P_family,conjugate(P_family)) from the existing constructor. Full spin/carrier charge-conjugation intertwiners still belong to the supplied physical packet embedding.",
+    "one_body_covariance_not_whole_state": "N=I4/2 and C_sd=I8/2 have the same two-point data as a quasifree half-occupation state, but the exact pair has <n_eup*n_edown>=0 rather than 1/4. Preserve rho_pair for four-point collision contractions."
+  },
+  "physical_Cauchy_collision_or_cross_section_prediction_admitted": false,
+  "physical_preparation": {
+    "channel_authority": "User selected electron-positron collider production of a muon-antimuon pair as the first predictive benchmark.",
+    "energy": "External beam-energy scan variable E_beam; no numerical energy or energy grid selected.",
+    "geometry_of_beam_centers": "Equal-energy head-on incoming beams; zero transverse impact parameter for the first baseline.",
+    "old_muon_run_reused_as_collider": false,
+    "polarization": "Unpolarized baseline assumption, explicitly replaceable: independent I_spin2/2 for each incoming species."
+  },
+  "process": "e- + e+ -> mu- + mu+",
+  "producer_sha256": "af20441573fc7d63407f90ad66a8ed714d7d0c3c467eb8c7226035a0e41b2c3c",
+  "selected_family_map": {
+    "electron": {
+      "charge_antiparticle": 1,
+      "charge_particle": -1,
+      "mode_label": [
+        9,
+        3
+      ],
+      "role": "light",
+      "sector": "charged_lepton",
+      "slot": 2
+    },
+    "frozen_order": [
+      "heavy",
+      "middle",
+      "light"
+    ],
+    "heavy_slot_not_electron": {
+      "mode_label": [
+        0,
+        0
+      ],
+      "role": "heavy",
+      "slot": 0
+    },
+    "labels_are_internal_family_modes_not_spatial_Dirac_levels": true,
+    "mapping_source": "Frozen MODE_ASSIGNMENTS/ROLE_ORDER and rank-one slot_projectors, cross-checked against preserved family-fiber rows. No mass screen reordered the slots.",
+    "muon": {
+      "charge_antiparticle": 1,
+      "charge_particle": -1,
+      "mode_label": [
+        5,
+        2
+      ],
+      "role": "middle",
+      "sector": "charged_lepton",
+      "slot": 1
+    }
+  },
+  "source_citations": {
+    "CAR_conjugation_convention": {
+      "first_line": 43,
+      "last_line": 52,
+      "path": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\ae31_c2_reset_hadamard_transport.py",
+      "sha256": "0e01844141c4e91ade8c4057b4f1b94903b1fd4c5395404ef5cc3464a5ab01c2"
+    },
+    "active_intrinsic_lepton_action": {
+      "first_line": 44,
+      "last_line": 56,
+      "path": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\ae31_c2_intrinsic_m4_lepton_action.py",
+      "sha256": "f3fee1ef24a3f13ef94d4ce5b146f9ac7a827045e369819b35ee8af5ccf0678a"
+    },
+    "angular_readout": {
+      "first_line": 492,
+      "last_line": 514,
+      "path": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\universal_decay_collision.py",
+      "sha256": "00def9c14fcf183900049728c70d015a6093039f821c9b75624b8b611a61f79c"
+    },
+    "collision_readout": {
+      "first_line": 411,
+      "last_line": 444,
+      "path": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\universal_decay_collision.py",
+      "sha256": "00def9c14fcf183900049728c70d015a6093039f821c9b75624b8b611a61f79c"
+    },
+    "family_charge_conjugation": {
+      "first_line": 46,
+      "last_line": 60,
+      "path": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\muon_birth_fermion_state_representation.py",
+      "sha256": "62824c456bea534b7ead28e6071fd361a1e78ac9caaaeec76eb580e3d3e6b0ee"
+    },
+    "free_retarded_state_scope": {
+      "first_line": 225,
+      "last_line": 236,
+      "path": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\muon_birth_fermion_state_representation.py",
+      "sha256": "62824c456bea534b7ead28e6071fd361a1e78ac9caaaeec76eb580e3d3e6b0ee"
+    },
+    "frozen_role_mode_map": {
+      "first_line": 22,
+      "last_line": 44,
+      "path": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\ae3_family_harmonic_energy_pullback.py",
+      "sha256": "a377d8f38fe217adaaa4dbc526bbc3e6ceac6556091770a0347a21762f0364d6"
+    },
+    "momentum_map": {
+      "first_line": 17,
+      "last_line": 47,
+      "path": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\universal_momentum_map.py",
+      "sha256": "b8573c4f6bc10b4163e5df0c580a39bba572111ed0f9bbe8be9d531ad7ef5567"
+    }
+  },
+  "symbolic_head_on_kinematics": {
+    "dimensionless_axis": "x=E_beam/m_mu_action is only a symbolic dimensionless control when the native muon pole is bound. No QED reference curve or empirical mass fixes the BHSM action, scale or packet.",
+    "equations": [
+      "p_in^2=E_beam^2-m_e_action^2",
+      "s=4*E_beam^2",
+      "p_out^2=E_beam^2-m_mu_action^2",
+      "outgoing central momenta are opposite"
+    ],
+    "frame": "Local orthonormal collider tetrad with +--- convention; no global flat geometry inferred.",
+    "incoming": [
+      "(E_beam,0,0,+p_in)",
+      "(E_beam,0,0,-p_in)"
+    ],
+    "incoming_mass_shell_identity_verified": true,
+    "s_identity_verified": "4*E_beam**2",
+    "tetrad_to_coordinate_momentum": "Requires a new benchmark background/tetrad and ActionMomentumMap from that action geometry; no old C2 geometry or unowned Minkowski physical map is inserted.",
+    "threshold": "E_beam>=max(m_e_action,m_mu_action) for the displayed two-body channel once physical same-action pole masses and common units are supplied."
+  }
+}

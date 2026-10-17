@@ -1,0 +1,117 @@
+{
+  "B54_required": null,
+  "action_scope": "adopted v14.45 common-A Dirac sector within one AE4 owner, no second determinant or new normalization",
+  "actual_overlap_T": null,
+  "bound": "abs(delta T)<=norm((I-|u><u|)phi)_J sqrt(Var_|v|^2(k)); symbolic derivative bound only",
+  "branch": "codex/muon-parent-maxwell-density-review",
+  "cached_metric_time_range": [
+    0.0,
+    0.00014753362308861907
+  ],
+  "checkpoint_id": "BHSM_MUON_CURRENT_ETA_ATTACHMENT_COTANGENT_20261003",
+  "checks": {
+    "actual_overlap_functional_kernel": {
+      "exact_residual": "0",
+      "passed": true
+    },
+    "finite_normal_mass_deformation": {
+      "exact_residual": "0",
+      "passed": true
+    },
+    "join_density_jacobian_and_cosine_terms": {
+      "exact_residual": "0",
+      "passed": true
+    },
+    "normal_mass_profile_tangent": {
+      "exact_residual": "0",
+      "passed": true
+    },
+    "normal_zero_mode_identity": {
+      "exact_residual": "0",
+      "passed": true
+    },
+    "normalized_mode_tangent": {
+      "exact_residual": "0",
+      "passed": true
+    },
+    "static_density_jacobian_term": {
+      "exact_residual": "0",
+      "passed": true
+    }
+  },
+  "classification": "resolved outgoing eta field identity and evaluated finite nodal collar mass coefficient; full source-support wall projection not yet realized",
+  "current_m_eta": "daughter_collar_profile.npz: m_eta_current on saved local curve",
+  "current_profile_selected": true,
+  "equations": {
+    "current_owner_chain_rule": "D_fjoin Gamma_owner includes D_m Gamma_owner [-partial_s(cot(f_child o X) delta(f_child o X))] and the induced interface/pairing/domain derivatives",
+    "fixed_pairing_profile_tangent": "k=h cot(f); mean_k=integral |v_f|^2 k ds; delta u_f=u_f (k-mean_k); delta m_eta=-partial_s k",
+    "join_probability_identity_if_matched": "|v_current|^2 ds=(sin(f_join)^2 cos(f_join)^2/Z_join) |dchi|; m_current=-(cot(f_join)-tan(f_join)) partial_s f_join -(1/2)partial_s log |partial_s chi|",
+    "kernel_in_h": "delta T_ij=integral dmu4 ds [sqrt(J) cos(f) phi_ij/sqrt(I_f) -sin(f) cos(f) T_ij(y)/I_f] h",
+    "mode": "u_f=J^(-1/2) v_f; v_f=sin(f)/sqrt(I_f); I_f=integral sin(f)^2 ds",
+    "nonlinear_diagnostic_family": "sin(f_epsilon)=exp(epsilon k) sin(f); v_epsilon=exp(epsilon k) v_f/sqrt(integral |v_f|^2 exp(2 epsilon k) ds); m_epsilon=m_f-epsilon partial_s k",
+    "normal_action": "D_perp,eps=i eps Gamma_perp [partial_s+(1/2)partial_s log J_current-partial_s log sin(f_child o X)]",
+    "normal_source_action": "delta D_perp,eps p_j=-i eps Gamma_perp (partial_s k) p_j",
+    "overlap": "T_ij=integral dmu4 ds J u_f^* (U54 e_i)^dagger p_j(X(s,y))",
+    "overlap_consumer": "M4 B_required=T; no arbitrary diagonal or interface penalty",
+    "overlap_kernel": "delta T_ij=integral dmu4 ds [J u_f^* phi_ij-|v_f|^2 T_ij(y)] k; phi_ij=(U54 e_i)^dagger p_j(X); T_ij(y)=integral ds J u_f^* phi_ij",
+    "restriction": "f_eta,current=f_child o X=chi o X=rho(X)/2 on the retained daughter eta-clock branch",
+    "same_source_jet": "delta_b m_eta=-delta_b partial_s log sin(f_child o X); differentiate the SAME outgoing field and collar/pairing/transport; delta_b Omega=T_b Y_A(-iQ) remains independent",
+    "static_probability_pullback_if_matched": "v_current^2 ds=sin(F(r_tex))^2 |partial_s r_tex| ds/I_static; m_current=-partial_s log sin(F(r_tex)) -(1/2)partial_s log |partial_s r_tex|",
+    "static_scalar_pullback_if_matched": "f_eta,current=F(r_tex(s,y)); m_eta,current=-F_r(r_tex) partial_s r_tex cot(F(r_tex))"
+  },
+  "error_scope": "exact algebra plus binary64 ODE in cached bilinear nodal metric; tolerances/norm residual do not certify absolute ODE or continuum error; normalization/chart/transport/domain/tail/soft errors unevaluated",
+  "evaluated_code_base_HEAD": "1eb713fa12e26858c78913951b600643027714d5",
+  "execution": {
+    "current_wall_overlap_evaluations": 0,
+    "daughter_normal_mass_evaluations": 33,
+    "exact_identity_checks": 7,
+    "exterior_shifted_solves": 0,
+    "finite_collar_curve_integrations": 1,
+    "historical_producer_executions": 0,
+    "native_heat_evaluations": 0,
+    "new_source_or_pairing_arrays": 0,
+    "old_replays": 0,
+    "physical_transfer_directions": 0,
+    "static_BVP_solves": 0
+  },
+  "finite_collar": {
+    "B54": null,
+    "actual_overlap_T": null,
+    "atol": 2e-12,
+    "classification": "evaluated daughter profile on one finite inward collar curve in the cached bilinear Lorentz metric",
+    "finite_chart_jacobian_evaluated": false,
+    "full_source_support_covered": false,
+    "m_eta_endpoints": [
+      0.5209738896552569,
+      0.5215383505509632
+    ],
+    "maximum_spacelike_unit_norm_residual": 7.127631818093505e-14,
+    "normalized_u0": null,
+    "ode_function_evaluations": 689,
+    "rho_range": [
+      1.5697543648492294,
+      1.5707963267948966
+    ],
+    "rtol": 2e-10,
+    "s_extent": 0.001,
+    "scope": "single curve, not a full-rank chart or global normal-mode normalization; solver tolerances and norm residual are not rigorous continuum bounds",
+    "solver": "DOP853",
+    "temporal_reconstruction": "cached bilinear nu/C/shift; repaired H source rate unchanged and not used as a replacement metric derivative",
+    "time_range": [
+      9.357921607859299e-05,
+      9.585390525338264e-05
+    ],
+    "wall_base_tau": 9.585390525338264e-05
+  },
+  "full_source_support_curve_computed": false,
+  "invariance_criterion": "delta T vanishes on every allowed k iff J u^* phi-|v|^2 T vanishes as a distribution on that tangent support",
+  "physical_a_mu": null,
+  "physical_g_mu": null,
+  "saved_source_support_rho_cell_envelope": [
+    0.5890486225480862,
+    0.9817477042468103
+  ],
+  "scientific_reference": "524ed90689bd5923c249bba2e699abf627e703cd",
+  "start_HEAD": "1eb713fa12e26858c78913951b600643027714d5",
+  "theorem_scope": "fixed compatible chart/pairing/transport; smooth compactly supported profile variations; no alternate full BHSM saddles asserted"
+}

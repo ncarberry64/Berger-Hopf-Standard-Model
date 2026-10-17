@@ -1,0 +1,157 @@
+{
+  "geometric_material": {
+    "no_double_counting": "geometric_trace_3x73 equals the existing local top block. It is NOT an additive R_trace_history. Direct action correction at fixed state is zero; any new full-system state response contributes T W^-1 Delta_J_joint.",
+    "physical_operator_replayed": false,
+    "rows": [
+      {
+        "channel": "trace 1",
+        "child_sign": 1,
+        "event_sign": -1,
+        "explicit_joint_heat_zeta_history_call": false,
+        "history_direct_scope": "No explicit heat/zeta call in this local producer; full nonlocal action corrections must be composed through its owned variational/dynamic route.",
+        "history_route": "geometric chain rule through the state/reset/history jet; no trace action seed",
+        "local_action_sector_dependence": false,
+        "owner": "_trace_jacobian_at_order + _child_rows_at_order",
+        "row": 1,
+        "state_dependence": "q only; constant trace map at chi=pi/4",
+        "type": "GEOMETRIC_COMPATIBILITY"
+      },
+      {
+        "channel": "trace 2",
+        "child_sign": 1,
+        "event_sign": -1,
+        "explicit_joint_heat_zeta_history_call": false,
+        "history_direct_scope": "No explicit heat/zeta call in this local producer; full nonlocal action corrections must be composed through its owned variational/dynamic route.",
+        "history_route": "geometric chain rule through the state/reset/history jet; no trace action seed",
+        "local_action_sector_dependence": false,
+        "owner": "_trace_jacobian_at_order + _child_rows_at_order",
+        "row": 2,
+        "state_dependence": "q only; constant trace map at chi=pi/4",
+        "type": "GEOMETRIC_COMPATIBILITY"
+      },
+      {
+        "channel": "trace 3",
+        "child_sign": 1,
+        "event_sign": -1,
+        "explicit_joint_heat_zeta_history_call": false,
+        "history_direct_scope": "No explicit heat/zeta call in this local producer; full nonlocal action corrections must be composed through its owned variational/dynamic route.",
+        "history_route": "geometric chain rule through the state/reset/history jet; no trace action seed",
+        "local_action_sector_dependence": false,
+        "owner": "_trace_jacobian_at_order + _child_rows_at_order",
+        "row": 3,
+        "state_dependence": "q only; constant trace map at chi=pi/4",
+        "type": "GEOMETRIC_COMPATIBILITY"
+      },
+      {
+        "channel": "momentum 1",
+        "child_sign": 1,
+        "event_sign": -1,
+        "explicit_joint_heat_zeta_history_call": false,
+        "history_direct_scope": "No explicit heat/zeta call in this local producer; full nonlocal action corrections must be composed through its owned variational/dynamic route.",
+        "history_route": "mixed action contraction plus moving Lv and full internal adjoint",
+        "local_action_sector_dependence": true,
+        "owner": "_canonical_pair_at_order + _child_rows_at_order",
+        "row": 4,
+        "state_dependence": "q,v,m through complete-action gradient/Hessian and moving Lv",
+        "type": "MATERIAL_ACTION_REACTION"
+      },
+      {
+        "channel": "momentum 2",
+        "child_sign": 1,
+        "event_sign": -1,
+        "explicit_joint_heat_zeta_history_call": false,
+        "history_direct_scope": "No explicit heat/zeta call in this local producer; full nonlocal action corrections must be composed through its owned variational/dynamic route.",
+        "history_route": "mixed action contraction plus moving Lv and full internal adjoint",
+        "local_action_sector_dependence": true,
+        "owner": "_canonical_pair_at_order + _child_rows_at_order",
+        "row": 5,
+        "state_dependence": "q,v,m through complete-action gradient/Hessian and moving Lv",
+        "type": "MATERIAL_ACTION_REACTION"
+      },
+      {
+        "channel": "dynamic flux 1",
+        "child_sign": -1,
+        "event_sign": 1,
+        "explicit_joint_heat_zeta_history_call": false,
+        "history_direct_scope": "No explicit heat/zeta call in this local producer; full nonlocal action corrections must be composed through its owned variational/dynamic route.",
+        "history_route": "mixed configuration-force contraction, conormal variation, and D2P[X,Pj]+DP[DX Pj]; no static basis substitution",
+        "local_action_sector_dependence": true,
+        "owner": "_canonical_pair_at_order + _metric_radial_flux_covector_at_order + _child_rows_at_order",
+        "row": 6,
+        "state_dependence": "q,v,m; Lq, radial, DP[X] and action-owned rate X",
+        "type": "MATERIAL_ACTION_REACTION"
+      },
+      {
+        "channel": "dynamic flux 2",
+        "child_sign": -1,
+        "event_sign": 1,
+        "explicit_joint_heat_zeta_history_call": false,
+        "history_direct_scope": "No explicit heat/zeta call in this local producer; full nonlocal action corrections must be composed through its owned variational/dynamic route.",
+        "history_route": "mixed configuration-force contraction, conormal variation, and D2P[X,Pj]+DP[DX Pj]; no static basis substitution",
+        "local_action_sector_dependence": true,
+        "owner": "_canonical_pair_at_order + _metric_radial_flux_covector_at_order + _child_rows_at_order",
+        "row": 7,
+        "state_dependence": "q,v,m; Lq, radial, DP[X] and action-owned rate X",
+        "type": "MATERIAL_ACTION_REACTION"
+      }
+    ],
+    "saved_arrays_sha256": "B8E236B9CAA572273A7858F7D4F27BB9924F14A5775A510127C7D4A8409B9596",
+    "saved_status": "THREE_GEOMETRIC_FOUR_MATERIAL_SPLIT_SOURCE_BOUND",
+    "seven_action_seed_requirement_retired": true,
+    "shapes": {
+      "local_required_material_4x73_mid_q": [
+        4,
+        73
+      ],
+      "trace_action_3x98_mid_q": [
+        3,
+        98
+      ]
+    }
+  },
+  "joint_port": {
+    "physical_operator_replayed": false,
+    "saved_arrays_sha256": "62C57C7D63653A550A961E3515DF3AC4B2BCCC9AB6B8D395FFFF482EA82400DE",
+    "saved_status": "HISTORICAL_SPLIT_RECOVERED_LOCAL_SEVEN_OUTPUT_ADJOINT_REPLAYED_JOINT_PORT_IDENTITY_OPEN",
+    "shapes": {
+      "local125_forcing_mid_q": [
+        125,
+        73
+      ],
+      "local125_port_normal_derivative_mid_q": [
+        7,
+        125
+      ]
+    }
+  },
+  "launch": {
+    "physical_operator_replayed": false,
+    "saved_arrays_sha256": "604545EDB6E8690799BE1CB88C384420FEB29A8F35538759ADC3B22349DD95AB",
+    "saved_status": "RECENTERED_LAUNCH_CHART_AND_NATIVE_SEVEN_ROW_COMPOSITION",
+    "shapes": {
+      "corrected_state_action_mid_q": [
+        98,
+        1
+      ],
+      "launch_action_mid_q": [
+        98,
+        73
+      ],
+      "native_event_7x98_mid_q": [
+        7,
+        98
+      ]
+    }
+  },
+  "residual_jet": {
+    "physical_operator_replayed": false,
+    "saved_arrays_sha256": "03D8AF00C7E00794BE898427A6267122F666643D15F491A76E4E452037A2205A",
+    "saved_status": "COUPLED_CENTER_UNIFORM_JACOBIAN_AND_FIBER_GRAPH_JET",
+    "shapes": {
+      "J125_mid_q": [
+        125,
+        125
+      ]
+    }
+  }
+}

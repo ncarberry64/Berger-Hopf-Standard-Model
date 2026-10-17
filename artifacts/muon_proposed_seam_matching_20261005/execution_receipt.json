@@ -1,0 +1,43 @@
+{
+  "new_work": "full-cap cache-only direct localized quadratic-action matching, no old parent production rerun",
+  "run1": {
+    "command": "C:\\Python314\\python.exe scripts/replay_muon_proposed_seam_matching.py --output artifacts/muon_proposed_seam_matching_20261005/run_1",
+    "exit_code": 0,
+    "status": "historical photon assumed unit radial lifting; exact source snapshot preserved",
+    "checks_command": "C:\\Python314\\python.exe -m pytest --noconftest -q tests/test_muon_proposed_seam_matching.py",
+    "checks_result": "4 passed in 0.97s before source-profile correction",
+    "reused_valid_checks": [
+      "test_full_cap_norm_and_actual_both_chiral_residues",
+      "test_one_canonical_transform_preserves_time_but_exposes_interactions",
+      "test_full_compact_source_identity_uses_reused_J_not_an_added_load"
+    ],
+    "superseded_check": "test_same_photon_vertex_changes_with_spatial_kinetic_not_charge"
+  },
+  "run2": {
+    "command": "C:\\Python314\\python.exe scripts/replay_muon_proposed_seam_matching.py --output artifacts/muon_proposed_seam_matching_20261005/run_2",
+    "exit_code": 0,
+    "wall_seconds": 1.422441,
+    "scientific_reason_for_affected_recalculation": "actual auxiliary photon L is unity only on compact probe support, not on full-cap localized field; correct full-cap source contraction and temporal partial without new production",
+    "checks_command": "C:\\Python314\\python.exe -m pytest --noconftest -q tests/test_muon_proposed_seam_matching.py::test_same_photon_auxiliary_lift_is_not_unit_radial_or_complete_vertex",
+    "checks_result": "1 passed in 1.15s",
+    "current_check_total": "3 unaffected passing receipts reused plus 1 corrected check executed",
+    "unchanged_scalar_results_verified": [
+      "joint_volume_norm",
+      "Z_L",
+      "Z_R",
+      "parent_time",
+      "parent_angular",
+      "parent_commonA",
+      "canonical_Yukawa_factor",
+      "spatial_ratio",
+      "raw_time_comparison_defect"
+    ]
+  },
+  "physical_operator_evaluations": 0,
+  "new_parent_solves": 0,
+  "native_transfer_directions": 0,
+  "old_checks_or_production_replayed": false,
+  "frozen_local_values_changed": false,
+  "arithmetic_error_scope": "192-bit scalar Arb frozen-model arithmetic; binary64 matrix representatives; no certified quadrature/history/continuum bound",
+  "next_one_operand": "same-owner action matching term: derived replacement/compensation or actual joint-domain complementary Schur action supplying simultaneous kinetic, Yukawa and full same-source matching; no such term installed"
+}

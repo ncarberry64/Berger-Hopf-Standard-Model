@@ -1,0 +1,33 @@
+{
+  "commands": [
+    {
+      "command": "python -m pytest -q tests/test_muon_parent_source_rate.py tests/test_muon_parent_dirac_cut.py::test_same_source_image_against_pointwise_group_directional_derivative",
+      "result": "4 passed in 3.01s"
+    },
+    {
+      "command": "python -m pytest -q tests/test_muon_corrected_spinor_conormal.py",
+      "result": "1 passed in 2.62s"
+    }
+  ],
+  "control_checks": "source-rate producer/certificate binding, affine repair, corrected pointwise mode action, inherited H finite-array enclosure, conormal change/density/orientations",
+  "execution_record": "tool-observed results; no fabricated rerun or raw stdout claim",
+  "full_suite": false,
+  "old_sixteen_hash_audit_rerun": false,
+  "previous_seven_checks_rerun": false,
+  "previous_symbolic_replay": false,
+  "scientific_runs": [
+    {
+      "count": 1,
+      "output": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_source_rate_repair_20261003\\run_1",
+      "scope": "additive repair only",
+      "script": "scripts/replay_muon_parent_source_rate.py"
+    },
+    {
+      "count": 1,
+      "output": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_source_rate_repair_20261003\\run_2_conormal",
+      "scope": "four canonical trial conormal coefficient actions",
+      "script": "scripts/replay_muon_corrected_spinor_conormal.py"
+    }
+  ],
+  "stationary_exterior_or_physical_operator_tests": 0
+}

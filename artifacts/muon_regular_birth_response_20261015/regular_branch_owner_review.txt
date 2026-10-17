@@ -1,0 +1,155 @@
+Regular muon E1 reset: action ownership and the next physical construction
+2026-10-15. Independent source review; no physical numerical solve is asserted.
+
+1. Correction to the previous broad model-definition-gap statement
+
+The current regular-stratum muon branch has a more specific owner than the
+generic AE4 reset-family adjudications. In
+src/bhsm/interface/covariant_bubble_interface_mechanics.py, ACTION_VERSION is
+BHSM-AE-3.2.16-COVARIANT-BUBBLE-INTERFACE-MECHANICS. Its build_payload owns
+the minimal area action, S_Sigma=-sum_s integral_W gamma_s dmu_h (lines 135ff),
+the selected density W_s=1 (142), and no new seam potential (151). The
+stiffness is gamma_s=alpha_FSC ell_s^(-m_s), with the retained symbolic scale
+and strength provenance; this does not provide a newly fitted number.
+
+The carrier_reset entry (269ff) says F_B is the event-to-child trace map
+induced by the solved worldvolume flow and its spin/bundle parallel transport.
+It gives q_e=C_s(F_B)q_c and the canonical momentum relation. The flag
+F_B_selected_now=False records that the physical coupled solution has not
+been instantiated; it does not erase the owner-selected construction law.
+
+muon_intrinsic_worldvolume_scalar_transport.py explicitly compares two charts
+at the SAME E1 birth. Its scalar trace identification is not future evolution
+of a child and does not assert that the interior dynamical Higgs is parallel.
+Consequently a separate freely chosen generic R_A law is not required just
+to write this regular local chart incidence. The prior generic reset no-go
+must not be applied as a stronger missing-theory gate for this owned branch.
+
+The current H is the dynamical intrinsic Higgs doublet. In
+muon_intrinsic_coupled_primal.py:136ff, p_H=wT D_t H and its Euler equation are
+explicit. This H is not the bare algebraic EC/HS auxiliary to which a rank-zero
+normal Legendre map applies. The old auxiliary-HS argument cannot remove the
+current p_H, scalar birth map, or mixed scalar/gauge contacts.
+
+2. Gauge connection incidence follows from the owned same-birth chart law
+
+Use anti-Hermitian connections, H_c(F(x))=U(x)H_p(x), and the inherited right
+frame E_a with [E_a,E_b]=-2 epsilon_ab^c E_c. Define
+  M_a^b = <E_b(F(x)), E_a F(x)>,  W_a=E_a U.
+Covariance of the same connection in the two chart descriptions requires
+  M_a^b A_c,b(F(x)) U - U A_p,a(x) + W_a = 0,
+or equivalently
+  R_a = M_a^b A_c,b(F(x)) - U A_p,a U^dagger + W_a U^dagger = 0.
+Indeed the derivative of H_c(F)=U H_p gives
+  M_a^b D_c,b H_c(F) = U D_p,a H_p
+after substituting precisely this affine incidence. The sign of W is fixed
+by D=d+A. It cannot be replaced by a homogeneous adjoint map when U varies.
+
+The same right-frame convention gives
+  F_ab=E_a A_b-E_b A_a+[A_a,A_b]+2 epsilon_ab^c A_c.
+The curvature identity is
+  M_a^c M_b^d F_c,cd(F)=U F_p,ab U^dagger.
+Dropping the +2 epsilon term would use a coordinate basis and give the wrong
+curvature for the retained right-invariant coframe. A finite sampled residual
+does not by itself certify this identity globally or close an angular cap.
+
+At fixed F,U the affine shift contributes no derivative with respect to the
+unknown connection trace. Its linear part supplies the canonical cotangent
+return. Moving coefficients/geometry must still differentiate the affine
+shift, M, and U. The selected area action has no direct H or A argument at
+fixed geometry; their independent seam load is zero on that precise scope,
+while their full bulk traction and induced geometry response remain present.
+
+3. Spatial first jets can be computed with the existing variational IVP
+
+worldvolume_scalar_transport_ivp already solves the material points Q,
+bundle transport U, Haar Jacobian J and proper clock, and its first tangent.
+For each initial material direction a, set the coefficient direction to zero
+and use initial tangent data
+  delta Q_0=E_a(Q_0), delta U_0=E_a U_0, delta J_0=E_a J_0.
+The output tangent gives E_a F, E_a U and E_a J; no new material-flow law is
+introduced. The initial spatial jet of U_0 is an owned condition or coupled
+unknown. It is not zero merely because an identity fundamental propagator is
+used to represent later transport. The same applies to F_0 and J_0.
+
+For a coefficient/energy/measuring-field variation delta,
+  delta R_a = delta M_a^b A_c,b(F)
+    + M_a^b [delta A_c,b(F)+(delta F)^c E_c A_c,b(F)]
+    - delta U A_p,a U^dagger - U delta A_p,a U^dagger
+    - U A_p,a delta U^dagger
+    + delta W_a U^dagger + W_a delta U^dagger,
+with any independent parent point/coframe motion included once in the parent
+field derivative and frame components. Mixed spatial/coefficient jets of
+the seeded IVP must be evaluated; they are not supplied by deleting delta M
+or delta W. These are incidence derivatives, not the full physical outgoing
+energy/field response or its 2e-10 acceptance test.
+The displayed derivative holds at fixed birth coordinate times. If the birth
+time or evaluation limits move, their literal time derivatives/endpoint
+contacts must also be included. The spatial trace law alone does not set
+the independent temporal gauge component or solve its Gauss/gauge constraint.
+
+4. What remains a numerical physical construction
+
+The present transport is a kinematic evaluation on one caller coefficient
+curve. It does not solve the coupled stress balance or the first future
+formation crossing. For the homogeneous representation,
+muon_birth_homogeneous_worldvolume.py explicitly obtains Q(t)=Q_0, J(t)=J_0,
+Udot=-A_t,ref U, proper_clock_dot=ell. Its zero material drift follows from
+the represented diagonal induced metric, not from vanishing spatial magnetic
+curvature, which the evaluator retains. This propagator cannot determine the
+unsolved initial physical F_0,U_0,J_0 or formation interval.
+
+muon_intrinsic_coupled_primal.py owns a common coefficient layout for H,p_H,
+q,m, normal chart and all gauge components on each arm. branch_fields builds
+DH with the same A_t and mechanical spatial connection. The scalar first-order
+Euler rows and geometry_euler_from_local_jet implement actual temporal Euler
+applications. residual_driven_newton consumes a supplied CLOSED residual and
+Jacobian; it does not assemble the absent full physical boundary application.
+Its binding guard explicitly reaches the incoming event load, worldvolume
+bundle conditions, and complete gauge response boundary application. Those
+are applications to construct from the retained owners, not permission to
+insert independently fitted data.
+
+muon_birth_optimized_two_arm_action.py is explicitly a 225-variable restricted
+initializer with zero independent gauge one-forms. Its same-slice isometry
+and unknown U2 identification are useful iterates. Its header and output do
+not claim full gauge Euler, formation, or a physical birth solution.
+
+The current next construction is therefore a same-action coupled per-arm
+Euler/constraint solution with the derived gauge/scalar/fermion E1 incidence,
+canonical flux and moving-frame contacts, and actual future/outgoing returns.
+The generic 536-component reset action must not be promoted to one simultaneous
+bulk-time Lagrangian. This is a pending physical solve and future continuation,
+not proof that a new regular-branch gauge/scalar reset primitive is missing.
+
+This local birth construction also is not an extra logical requirement to
+reconstruct an entire collider history before an intrinsic pole moment can be
+defined. A directly specified formed-muon action/background and retarded
+operator could instead supply that benchmark. The presently retained finite
+history has not established that completed physical background/operator.
+
+5. Scope of the finite-energy and Dirac-domain arguments
+
+On an already selected regular glued manifold with a common connection,
+F in L2 (or a positive quadratic normal-energy bound) excludes a genuine
+tangential connection jump: smoothing a fixed jump across width epsilon
+produces normal curvature norm squared proportional to 1/epsilon. The
+connection transition must first be expressed in one chart using F,U; pure
+gauge changes of trivialization are not physical jumps. This regularity
+argument supports the derived same-chart incidence after the common carrier
+has been selected. It does not solve the carrier/worldvolume, initial map,
+future continuation, or its moving-domain jets.
+
+AE2 spinor continuity alone would be weaker. Locally let
+  D=-i sigma1 d/dx+sigma2 a_side.
+For any bounded real jump Delta a, continuity of psi and D psi is compatible
+with psi'_c-psi'_p=sigma3 Delta a psi. Thus the squared Dirac domain can
+adjust normal derivatives instead of forcing equality of tangential a.
+This is an operator identity explaining why the older AE2 trace theorem
+alone could not establish gauge continuity. It is not a proposed physical
+Maxwell jump, new action law, or competing regular-muon branch. The current
+mechanics-owned same-birth connection incidence is the relevant stronger law.
+
+No physical exterior derivative pass, spin normalization, moment, or coupled
+correction is established by this source review. The nonzero spin and scalar
+terms remain in their respective action sectors.

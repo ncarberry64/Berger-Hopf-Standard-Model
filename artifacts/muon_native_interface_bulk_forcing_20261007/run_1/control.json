@@ -1,0 +1,52 @@
+{
+  "all_checks_pass": true,
+  "b_control": [
+    "16/55",
+    "19/91",
+    "-14/51",
+    "2/5",
+    "-3/7",
+    "132750/265031",
+    "136203/496961"
+  ],
+  "checks": {
+    "direct_physical_schur_exact": true,
+    "direct_schur_arb_overlap": true,
+    "mixed_derivative_exact": true,
+    "moving_port_full_product_rule": true,
+    "nonunitary_row_map_preserves_response": true,
+    "residual_row_schur_is_wrong": true,
+    "response_contains_exact": true,
+    "seven_components": true,
+    "signed_output_forward_adjoint": true,
+    "source_dependent_constraint_retained": true,
+    "stationary_residual_contains_zero": true
+  },
+  "classification": "EXACT_AND_ARB_FINITE_CONTROL__NOT_NATIVE_BHSM",
+  "counts": {
+    "full_7x73_recomputations": 0,
+    "heat_evaluations": 0,
+    "physical_forcing_columns": 0,
+    "solved_forcing_columns": 1
+  },
+  "direct_schur_difference": "[+/- 4.65e-76]",
+  "error_scope": "Arb rounding enclosures for prescribed exact finite entries only; no physical, continuum, history or soft-transfer error bound",
+  "f_control": [
+    "40693010978429/156025776167800",
+    "-21319993540613/125279520275910",
+    "-5532258921902717/54765047434897800"
+  ],
+  "impedance_control": "33909225550288382556011969153458207/4322391488434814678615750758740000",
+  "precision_bits": 256,
+  "response_control": [
+    "-17554056660327559/383355332044284600",
+    "323447523641647/2203191563472900",
+    "-17209274089267279/76671066408856920"
+  ],
+  "response_replay": [
+    "[+/- 7.92e-77]",
+    "[+/- 8.01e-77]",
+    "[+/- 2.41e-77]"
+  ],
+  "wrong_residual_row_impedance": "3582489546765747849476930954319637/454988577729980492485868500920000"
+}

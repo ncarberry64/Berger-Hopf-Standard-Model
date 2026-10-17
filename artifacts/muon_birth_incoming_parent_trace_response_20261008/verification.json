@@ -1,0 +1,272 @@
+{
+  "schema": "BHSM_INCOMING_PARENT_TRACE_RESPONSE_VERIFICATION_V1",
+  "date": "2026-10-08",
+  "baseline": "a51a2026c7080f98d64c8566ac193b3792ac0427",
+  "repository_worktree": "C:/Users/carbe/Downloads/BHSM_muon_parent_maxwell_worktree_20261001",
+  "branch": "codex/muon-parent-maxwell-density-review",
+  "python": "C:/Python314/python.exe",
+  "validation_passed": true,
+  "commands": [
+    {
+      "label": "git",
+      "command": "git status --short; git rev-parse HEAD; git remote get-url origin; git rev-parse origin/codex/muon-parent-maxwell-density-review",
+      "exit_code": 0,
+      "output": "a51a2026c7080f98d64c8566ac193b3792ac0427\nhttps://github.com/ncarberry64/Berger-Hopf-Standard-Model.git\na51a2026c7080f98d64c8566ac193b3792ac0427\n",
+      "wall_time_seconds": 0.2127213
+    },
+    {
+      "command": "$env:PYTHONPATH='src'; & 'C:\\Python314\\python.exe' -m pytest -q tests/test_muon_birth_incoming_parent_trace_response.py tests/test_muon_birth_incoming_parent_trace_replay.py tests/test_muon_birth_fermion_event_kkt_inputs.py tests/test_muon_birth_covariance_sensitivity.py tests/test_muon_birth_parametric_fermion_seam.py tests/test_muon_birth_c1_lr_form_response.py tests/test_muon_birth_c1_lr_scalar_contraction.py tests/test_muon_birth_c1_lr_replay.py",
+      "exit_code": 0,
+      "output": "........................................................................ [ 39%]\r\n........................................................................ [ 78%]\r\n.......................................                                  [100%]\r\n183 passed in 15.68s\r\n",
+      "wall_time_seconds": 10.00729
+    },
+    {
+      "command": "& 'C:\\Python314\\python.exe' scripts/replay_muon_birth_incoming_parent_trace_response.py --out artifacts/muon_birth_incoming_parent_trace_response_20261008/run_1",
+      "exit_code": 0,
+      "output": "{\"audit_passed\": true, \"complete_E1_CAR_verdict\": null, \"first_unavailable\": {\"argument\": \"parent_jet\", \"derivative_order\": 0, \"operand\": \"P_F\", \"tuple_index\": 0}, \"physical_LR_enclosure\": null, \"physical_parent_point_value\": null, \"preserved_milestone_files\": 72, \"products\": {\"incoming_parent_trace_response.json\": {\"bytes\": 367919, \"sha256\": \"a56d7f6f6ff1968c40a57e42eb8ad2b3fe3ef93b5e48ecfa95354097389fc3f6\"}, \"source_manifest.json\": {\"bytes\": 21776, \"sha256\": \"4540073a108a75edc8863efa2260bbc83c7a6e7791ad7871a6820ae8b0e1d895\"}}, \"reused_exact_controls\": 43, \"reused_pinned_sources\": 43}\r\n",
+      "wall_time_seconds": 3.6216247
+    },
+    {
+      "command": "& 'C:\\Python314\\python.exe' scripts/replay_muon_birth_incoming_parent_trace_response.py --out artifacts/muon_birth_incoming_parent_trace_response_20261008/run_1",
+      "exit_code": 0,
+      "output": "{\"audit_passed\": true, \"complete_E1_CAR_verdict\": null, \"first_unavailable\": {\"argument\": \"parent_jet\", \"derivative_order\": 0, \"operand\": \"P_F\", \"tuple_index\": 0}, \"physical_LR_enclosure\": null, \"physical_parent_point_value\": null, \"preserved_milestone_files\": 72, \"products\": {\"incoming_parent_trace_response.json\": {\"bytes\": 367919, \"sha256\": \"a56d7f6f6ff1968c40a57e42eb8ad2b3fe3ef93b5e48ecfa95354097389fc3f6\"}, \"source_manifest.json\": {\"bytes\": 21776, \"sha256\": \"9764e79e2e3d93a7b6988c12bf9bf8e0ee4a0768d1be3b0e146c69d0d8acbfac\"}}, \"reused_exact_controls\": 43, \"reused_pinned_sources\": 43}\r\n",
+      "wall_time_seconds": 3.4604353
+    },
+    {
+      "command": "& 'C:\\Python314\\python.exe' scripts/replay_muon_birth_incoming_parent_trace_response.py --out artifacts/muon_birth_incoming_parent_trace_response_20261008/run_2",
+      "exit_code": 0,
+      "output": "{\"audit_passed\": true, \"complete_E1_CAR_verdict\": null, \"first_unavailable\": {\"argument\": \"parent_jet\", \"derivative_order\": 0, \"operand\": \"P_F\", \"tuple_index\": 0}, \"physical_LR_enclosure\": null, \"physical_parent_point_value\": null, \"preserved_milestone_files\": 72, \"products\": {\"incoming_parent_trace_response.json\": {\"bytes\": 367919, \"sha256\": \"a56d7f6f6ff1968c40a57e42eb8ad2b3fe3ef93b5e48ecfa95354097389fc3f6\"}, \"source_manifest.json\": {\"bytes\": 21776, \"sha256\": \"9764e79e2e3d93a7b6988c12bf9bf8e0ee4a0768d1be3b0e146c69d0d8acbfac\"}}, \"reused_exact_controls\": 43, \"reused_pinned_sources\": 43}\r\n",
+      "wall_time_seconds": 3.4097459
+    },
+    {
+      "command": "& 'C:\\Python314\\python.exe' -c \"from pathlib import Path;from hashlib import sha256;import json;a=Path('artifacts/muon_birth_incoming_parent_trace_response_20261008');names=['incoming_parent_trace_response.json','source_manifest.json','output_hashes.json'];rows=[dict(path=n,bytes=len((a/'run_1'/n).read_bytes()),sha256=sha256((a/'run_1'/n).read_bytes()).hexdigest(),byte_identical=(a/'run_1'/n).read_bytes()==(a/'run_2'/n).read_bytes()) for n in names];assert all(r['byte_identical'] for r in rows);print(json.dumps(dict(passed=True,products=rows),sort_keys=True))\"",
+      "exit_code": 0,
+      "output": "{\"passed\": true, \"products\": [{\"byte_identical\": true, \"bytes\": 367919, \"path\": \"incoming_parent_trace_response.json\", \"sha256\": \"a56d7f6f6ff1968c40a57e42eb8ad2b3fe3ef93b5e48ecfa95354097389fc3f6\"}, {\"byte_identical\": true, \"bytes\": 21776, \"path\": \"source_manifest.json\", \"sha256\": \"9764e79e2e3d93a7b6988c12bf9bf8e0ee4a0768d1be3b0e146c69d0d8acbfac\"}, {\"byte_identical\": true, \"bytes\": 287, \"path\": \"output_hashes.json\", \"sha256\": \"6fd4e84531cc6dac1fc01ab04350d3fb1f8faded228f618a088c5b5e3c84499b\"}]}\r\n",
+      "wall_time_seconds": 0.1188565
+    },
+    {
+      "command": "& 'C:\\Python314\\python.exe' -c \"from pathlib import Path;from hashlib import sha256;import json;d=json.load(open('artifacts/muon_birth_incoming_parent_trace_response_20261008/incoming_lr_primal_receipt.json'));records=d['external_source_records'];assert all(sha256(Path(r['absolute_external_path']).read_bytes()).hexdigest()==r['raw_sha256'] for r in records);m=json.load(open('artifacts/muon_birth_incoming_parent_trace_response_20261008/run_1/source_manifest.json'));print(json.dumps(dict(passed=True,external_source_identities_verified=len(records),retained_repository_claim_sources_verified=len(m['retained_primal_claim_sources']),preserved_milestones=m['preserved_count'],external_scope='Named files only; not a physical absence theorem'),sort_keys=True))\"",
+      "exit_code": 0,
+      "output": "{\"external_scope\": \"Named files only; not a physical absence theorem\", \"external_source_identities_verified\": 6, \"passed\": true, \"preserved_milestones\": 72, \"retained_repository_claim_sources_verified\": 25}\r\n",
+      "wall_time_seconds": 0.1246746
+    },
+    {
+      "label": "status",
+      "command": "& 'C:\\Python314\\python.exe' tools/audit_bhsm_status.py --format json",
+      "exit_code": 0,
+      "output": "{\r\n  \"audit\": \"bhsm_status\",\r\n  \"checks\": {\r\n    \"candidate_architecture_complete\": true,\r\n    \"completion_payload_candidate_only\": true,\r\n    \"completion_payload_not_proven\": true,\r\n    \"dark_matter_not_solved\": true,\r\n    \"frozen_predictions_unchanged\": true,\r\n    \"full_bhsm_not_proven\": true,\r\n    \"mass_numerical_closure_open\": true,\r\n    \"official_predictions_unchanged\": true,\r\n    \"standard_model_not_fully_derived\": true\r\n  },\r\n  \"passed\": true,\r\n  \"verdict_labels\": [\r\n    \"BHSM_REPO_STATUS_REFRESH_COMPLETE\",\r\n    \"FULL_BHSM_STATUS_SYNCHRONIZED\",\r\n    \"SM_DERIVATION_REMAINS_OPEN\",\r\n    \"MASS_NUMERICAL_CLOSURE_REMAINS_OPEN\"\r\n  ]\r\n}\r\n",
+      "wall_time_seconds": 0.0000188
+    },
+    {
+      "label": "claims",
+      "command": "& 'C:\\Python314\\python.exe' tools/audit_forbidden_claims.py --format json",
+      "exit_code": 0,
+      "output": "{\r\n  \"allowed_example_paths\": [\r\n    \"docs/forbidden_claims.md\"\r\n  ],\r\n  \"audit\": \"forbidden_claims\",\r\n  \"findings\": [],\r\n  \"passed\": true,\r\n  \"verdict_labels\": [\r\n    \"FORBIDDEN_CLAIM_GUARDRAILS_ADDED\"\r\n  ]\r\n}\r\n",
+      "wall_time_seconds": 0.0000083
+    },
+    {
+      "label": "predictions",
+      "command": "& 'C:\\Python314\\python.exe' tools/audit_frozen_prediction_integrity.py --format json",
+      "exit_code": 0,
+      "output": "{\r\n  \"audit\": \"frozen_prediction_integrity\",\r\n  \"files\": [\r\n    {\r\n      \"actual_sha256\": \"9EA147C56537520C86D3C4F9B864C6BA98BAC9E64931EDAE96449F3B335A36C4\",\r\n      \"expected_sha256\": \"9EA147C56537520C86D3C4F9B864C6BA98BAC9E64931EDAE96449F3B335A36C4\",\r\n      \"path\": \"docs/frozen_predictions.md\",\r\n      \"unchanged\": true\r\n    },\r\n    {\r\n      \"actual_sha256\": \"F38210E0689871A25A9D5B0A1A4239883B7240CD7D0E25CDCF4C8CAB72A2CBE7\",\r\n      \"expected_sha256\": \"F38210E0689871A25A9D5B0A1A4239883B7240CD7D0E25CDCF4C8CAB72A2CBE7\",\r\n      \"path\": \"docs/frozen_predictions.json\",\r\n      \"unchanged\": true\r\n    }\r\n  ],\r\n  \"frozen_predictions_changed\": false,\r\n  \"passed\": true\r\n}\r\n",
+      "wall_time_seconds": 0.0000174
+    },
+    {
+      "label": "precision",
+      "command": "& 'C:\\Python314\\python.exe' tools/verify_precision.py",
+      "exit_code": 0,
+      "output": "PASS: precision gate verified (1.066e-14 <= 1.000e-13).\r\n",
+      "wall_time_seconds": 0.0968486
+    },
+    {
+      "label": "readiness_initial",
+      "command": "& 'C:\\Python314\\python.exe' tools/audit_public_readiness.py --format json",
+      "exit_code": 0,
+      "output": "{\r\n  \"audit\": \"bhsm_public_readiness\",\r\n  \"checks\": {\r\n    \"citation\": {\r\n      \"cff_version\": \"1.2.0\",\r\n      \"doi\": \"10.5281/zenodo.20663419\",\r\n      \"failures\": [],\r\n      \"license\": \"LicenseRef-AllRightsReserved\",\r\n      \"passed\": true,\r\n      \"release_date\": \"2026-06-26\",\r\n      \"release_tag\": \"v1.1.0\",\r\n      \"title\": \"Berger-Hopf Standard Model: Artifact-Backed Geometric Physics Research Framework\",\r\n      \"zenodo_archive_date\": \"2026-06-12\",\r\n      \"zenodo_archive_version\": \"v1.2.0\"\r\n    },\r\n    \"current_claims\": {\r\n      \"findings\": [],\r\n      \"passed\": true\r\n    },\r\n    \"frozen_predictions\": {\r\n      \"files\": [\r\n        {\r\n          \"actual_sha256\": \"9EA147C56537520C86D3C4F9B864C6BA98BAC9E64931EDAE96449F3B335A36C4\",\r\n          \"expected_sha256\": \"9EA147C56537520C86D3C4F9B864C6BA98BAC9E64931EDAE96449F3B335A36C4\",\r\n          \"path\": \"docs/frozen_predictions.md\",\r\n          \"unchanged\": true\r\n        },\r\n        {\r\n          \"actual_sha256\": \"F38210E0689871A25A9D5B0A1A4239883B7240CD7D0E25CDCF4C8CAB72A2CBE7\",\r\n          \"expected_sha256\": \"F38210E0689871A25A9D5B0A1A4239883B7240CD7D0E25CDCF4C8CAB72A2CBE7\",\r\n          \"path\": \"docs/frozen_predictions.json\",\r\n          \"unchanged\": true\r\n        }\r\n      ],\r\n      \"frozen_predictions_changed\": false,\r\n      \"passed\": true\r\n    },\r\n    \"hygiene\": {\r\n      \"allowed_large_artifact_limit_bytes\": 12582912,\r\n      \"allowed_large_artifacts\": [\r\n        {\r\n          \"bytes\": 10525866,\r\n          \"path\": \"artifacts/BHSM_aether_n3_fresh_sbp_fifth_v0_priority_v17_36.json\"\r\n        },\r\n        {\r\n          \"bytes\": 10722599,\r\n          \"path\": \"artifacts/BHSM_aether_n3_fresh_sbp_three_owner_priority_v17_47.json\"\r\n        },\r\n        {\r\n          \"bytes\": 12515555,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_C2_STOP_DOP853_ADAPTIVE_BORDERED_RHS_RESPONSE.json\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 15841669,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_C2_STOP_DOP853_ADAPTIVE_BORDERED_RHS_RESPONSE_CERTIFICATE.json\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 14094876,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_C2_STOP_DOP853_ADAPTIVE_SELECTED_PROJECTOR_GRAPH.json\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 17478672,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_C2_STOP_DOP853_BORDERED_RESPONSE_SECOND_VARIATION.json\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 15073608,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_C2_STOP_FULL_BORDERED_RHS_RESPONSE.json\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 25291911,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_C2_STOP_FULL_SELECTED_PROJECTOR_GRAPH.json\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 13925602,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_C2_STOP_HALF_STEP_FINE_HYBRID_GRAPH_JACOBIAN_RECONNAISSANCE.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 27774619,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_C2_STOP_QUARTER_STEP_FINE_HYBRID_GRAPH_JACOBIAN_RECONNAISSANCE.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 14361466,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_ARB_INTERACTION_TAYLOR26_MACRO_MAPS.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 72207241,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_BLOCK_NEWTON_PREDICTOR.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 22595029,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_NEWTON_ENDPOINT_CANDIDATE.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 98072216,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_CORRELATED_DESCRIPTOR_AUGMENTED_JACOBIANS.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 15882019,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_GREEN_COMPONENTWISE_TWO_RADIUS_SCREEN.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 55828875,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_GREEN_MIDPOINT_AMBIENT_DF.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 15728311,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_GREEN_MIXED_HS_CAUSAL_TRANSPORT.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 41722453,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_GREEN_MIXED_TRANSVERSE_ALL_ENDPOINTS.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 25304028,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_AFFINE_CENTER_BORDERED_RESPONSE_FIRST_VARIATION.json\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 33555226,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_AFFINE_CENTER_BORDERED_RESPONSE_SECOND_VARIATION.json\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 28974337,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_AFFINE_CENTER_BORDERED_RHS_RESPONSE.json\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 24911535,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_AFFINE_CENTER_SELECTED_PROJECTOR_GRAPH.json\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 56354452,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_SIGNED_FULL_TRANSVERSE_CURVATURE_NODES_00_23.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 56326421,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_SIGNED_FULL_TRANSVERSE_CURVATURE_NODES_24_47.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 15474079,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_FINITE_PROPAGATOR_Z1_RECONNAISSANCE.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 27774704,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_FIRST_HS_NEWTON_CENTER_GRAPH_JACOBIAN.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 20453304,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_FIRST_HS_NEWTON_ENDPOINT_TANGENT.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 27982884,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_FIRST_HS_NEWTON_MIDPOINT_GRAPH_JACOBIAN.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 55117636,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_HERMITE_SIMPSON_BLOCK_NEWTON_PREDICTOR.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 27983297,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_HERMITE_SIMPSON_MIDPOINT_GRAPH_JACOBIAN.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 55117625,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_RATE_CONSISTENT_BLOCK_NEWTON_PREDICTOR.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 36414592,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_RECENTERED_CONE_BORDERED_RESPONSE_FIRST_VARIATION.json\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 48333122,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_RECENTERED_CONE_BORDERED_RESPONSE_SECOND_VARIATION.json\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 41758016,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_RECENTERED_CONE_BORDERED_RHS_RESPONSE.json\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 24911532,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_RECENTERED_CONE_SELECTED_PROJECTOR_GRAPH.json\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 27774707,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_CURRENT_CENTER_GRAPH_JACOBIAN.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 55117900,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_HERMITE_SIMPSON_BLOCK_NEWTON_PREDICTOR.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 55678350,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_HS_NEWTON_LINE_SEARCH_PREDICTOR.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 55118294,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_RATE_CONSISTENT_BLOCK_NEWTON_PREDICTOR.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 27774560,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_RATE_CONSISTENT_CENTER_GRAPH_JACOBIAN.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 27983314,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_RATE_CONSISTENT_MIDPOINT_GRAPH_JACOBIAN.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 27774601,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_SIGNED_GREEN_CURRENT_CENTER_GRAPH_JACOBIAN.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 11125650,\r\n          \"path\": \"artifacts/muon_first_order_complement_20261006/run_2/first_order_compact_reduction.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        }\r\n      ],\r\n      \"credential_files\": [],\r\n      \"large_file_threshold_bytes\": 10485760,\r\n      \"malformed_lfs_pointers\": [],\r\n      \"merge_markers\": [],\r\n      \"passed\": true,\r\n      \"secret_findings\": [],\r\n      \"tracked_cache_or_build_junk\": [],\r\n      \"tracked_env_files\": [],\r\n      \"unexpected_large_files\": []\r\n    },\r\n    \"license_visibility\": {\r\n      \"failures\": [],\r\n      \"passed\": true\r\n    },\r\n    \"markdown_links\": {\r\n      \"broken\": [],\r\n      \"checked\": 60,\r\n      \"passed\": true\r\n    },\r\n    \"reproduction\": {\r\n      \"missing_cli_commands\": [],\r\n      \"missing_documented_commands\": [],\r\n      \"missing_scripts\": [],\r\n      \"passed\": true,\r\n      \"reviewer_smoke_target\": true\r\n    },\r\n    \"required_files\": {\r\n      \"empty\": [],\r\n      \"missing\": [],\r\n      \"passed\": true\r\n    },\r\n    \"science_alignment\": {\r\n      \"missing_phrases\": {},\r\n      \"passed\": true\r\n    }\r\n  },\r\n  \"external_urls\": [\r\n    \"https://doi.org/10.5281/zenodo.20663419\",\r\n    \"https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml/badge.svg\",\r\n    \"https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/institutional.yml/badge.svg\",\r\n    \"https://ncarberry64.github.io/Berger-Hopf-Standard-Model/\",\r\n    \"https://orcid.org/0009-0000-6650-3485\",\r\n    \"https://zenodo.org/badge/DOI/10.5281/zenodo.20663419.svg\"\r\n  ],\r\n  \"passed\": true,\r\n  \"verdict\": \"BHSM_REPOSITORY_PUBLIC_REVIEW_READY\",\r\n  \"version\": \"v6.21.0\"\r\n}\r\n",
+      "wall_time_seconds": 10.012485
+    }
+  ],
+  "scientific_result": {
+    "domain": "C1_branch23_E1_minus; zero-birth Dirichlet reference; positive-square carrier at z=-1",
+    "normalized_particle_shell_dimensions": [
+      8,
+      24,
+      48,
+      80
+    ],
+    "enclosed_diagonal_carrier_pairings": 160,
+    "exact_ordered_offdiagonal_carrier_entries": 25440,
+    "one_shared_positive_amplitude_family": true,
+    "lambda_or_covariance_or_angular_support_selected": false,
+    "finite_compression_is_full_physical_KKT_input": false,
+    "physical_parent_jet_0": null,
+    "first_unavailable": {
+      "argument": "parent_jet",
+      "operand": "P_F",
+      "derivative_order": 0,
+      "tuple_index": 0
+    },
+    "first_unavailable_primal_pairings": [
+      "V_ib r_j containing M_LR(H_C1)",
+      "p_i^dagger W r_j containing the same incoming LR coefficient"
+    ],
+    "interior_physical_RHS_or_solve_evaluated": false,
+    "LR_response_value_or_enclosure": null,
+    "physical_KKT_or_noether_called": false,
+    "complete_E1_CAR_projection_or_moment_span": null,
+    "actual_source_restriction_recovery_scope": "Named action/domain owners and bounded independent handoffs; no impossibility/absence theorem",
+    "new_owner_definition_gap": [],
+    "physical_a_mu": null,
+    "physical_g_mu": null
+  },
+  "checks": {
+    "focused_tests_passed": 183,
+    "new_normalized_trace_and_replay_tests": 20,
+    "preserved_CAR_tests": 23,
+    "preserved_point_input_tests": 26,
+    "all_prior_milestone_paths_preserved": 72,
+    "imported_exact_checks_reused": 43,
+    "imported_pinned_sources_verified": 43,
+    "old_producers_recomputed": false,
+    "new_response_manifest_and_hashlist_byte_identical": true,
+    "external_named_source_identities_verified": 6,
+    "repository_claim_source_identities_and_spans_verified": 25,
+    "five_required_repository_audits_passed": true,
+    "frozen_predictions_unchanged": true,
+    "report_distinguishes": [
+      "DERIVED",
+      "EVALUATED",
+      "CONTROL_ONLY",
+      "UNEVALUATED",
+      "OWNER_DEFINITION_GAP"
+    ]
+  },
+  "product_hashes": [
+    {
+      "byte_identical": true,
+      "bytes": 367919,
+      "path": "incoming_parent_trace_response.json",
+      "sha256": "a56d7f6f6ff1968c40a57e42eb8ad2b3fe3ef93b5e48ecfa95354097389fc3f6"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 21776,
+      "path": "source_manifest.json",
+      "sha256": "9764e79e2e3d93a7b6988c12bf9bf8e0ee4a0768d1be3b0e146c69d0d8acbfac"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 287,
+      "path": "output_hashes.json",
+      "sha256": "6fd4e84531cc6dac1fc01ab04350d3fb1f8faded228f618a088c5b5e3c84499b"
+    }
+  ],
+  "error_scope": {
+    "scientific_check_failures": [],
+    "expected_control_rejections": [
+      "Unstored numerical carrier rows",
+      "Deleting omitted constraint reactions",
+      "Using Hermitian complement couplings for a non-Hermitian retarded effective parent"
+    ],
+    "physical_unevaluated_scope": "Full-minus-carrier incoming LR base source/boundary pairings, not a straddling enclosure or failed numerical solve",
+    "precision_claim": "80-digit outward decimal serialization of exact rational carrier majorants; no physical LR or muon uncertainty claimed",
+    "corrected_before_verification": [
+      "Displayed lower bound must round down",
+      "General retarded complement has independent X/Y couplings"
+    ],
+    "read_only_recovery_diagnostics": [
+      {
+        "command": "Get-Content -LiteralPath AGENTS.md; Get-Content -LiteralPath artifacts/muon_birth_fermion_event_kkt_inputs_20261008/parent_operand_receipt.json artifacts/muon_birth_fermion_event_kkt_inputs_20261008/physical_input_inventory.json",
+        "exit_code": 1,
+        "scope": "PowerShell Get-Content positional-path read failed; corrected read then succeeded"
+      },
+      {
+        "scope": "One guessed historical representation filename did not exist; correct existing owner recovered by rg"
+      },
+      {
+        "scope": "Two apply_patch context mismatches in report editing; edits reapplied with exact context"
+      }
+    ]
+  },
+  "publication_preflight_commands": [
+    {
+      "label": "readiness_final",
+      "command": "& 'C:\\Python314\\python.exe' tools/audit_public_readiness.py --format json",
+      "exit_code": 0,
+      "output": "{\r\n  \"audit\": \"bhsm_public_readiness\",\r\n  \"checks\": {\r\n    \"citation\": {\r\n      \"cff_version\": \"1.2.0\",\r\n      \"doi\": \"10.5281/zenodo.20663419\",\r\n      \"failures\": [],\r\n      \"license\": \"LicenseRef-AllRightsReserved\",\r\n      \"passed\": true,\r\n      \"release_date\": \"2026-06-26\",\r\n      \"release_tag\": \"v1.1.0\",\r\n      \"title\": \"Berger-Hopf Standard Model: Artifact-Backed Geometric Physics Research Framework\",\r\n      \"zenodo_archive_date\": \"2026-06-12\",\r\n      \"zenodo_archive_version\": \"v1.2.0\"\r\n    },\r\n    \"current_claims\": {\r\n      \"findings\": [],\r\n      \"passed\": true\r\n    },\r\n    \"frozen_predictions\": {\r\n      \"files\": [\r\n        {\r\n          \"actual_sha256\": \"9EA147C56537520C86D3C4F9B864C6BA98BAC9E64931EDAE96449F3B335A36C4\",\r\n          \"expected_sha256\": \"9EA147C56537520C86D3C4F9B864C6BA98BAC9E64931EDAE96449F3B335A36C4\",\r\n          \"path\": \"docs/frozen_predictions.md\",\r\n          \"unchanged\": true\r\n        },\r\n        {\r\n          \"actual_sha256\": \"F38210E0689871A25A9D5B0A1A4239883B7240CD7D0E25CDCF4C8CAB72A2CBE7\",\r\n          \"expected_sha256\": \"F38210E0689871A25A9D5B0A1A4239883B7240CD7D0E25CDCF4C8CAB72A2CBE7\",\r\n          \"path\": \"docs/frozen_predictions.json\",\r\n          \"unchanged\": true\r\n        }\r\n      ],\r\n      \"frozen_predictions_changed\": false,\r\n      \"passed\": true\r\n    },\r\n    \"hygiene\": {\r\n      \"allowed_large_artifact_limit_bytes\": 12582912,\r\n      \"allowed_large_artifacts\": [\r\n        {\r\n          \"bytes\": 10525866,\r\n          \"path\": \"artifacts/BHSM_aether_n3_fresh_sbp_fifth_v0_priority_v17_36.json\"\r\n        },\r\n        {\r\n          \"bytes\": 10722599,\r\n          \"path\": \"artifacts/BHSM_aether_n3_fresh_sbp_three_owner_priority_v17_47.json\"\r\n        },\r\n        {\r\n          \"bytes\": 12515555,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_C2_STOP_DOP853_ADAPTIVE_BORDERED_RHS_RESPONSE.json\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 15841669,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_C2_STOP_DOP853_ADAPTIVE_BORDERED_RHS_RESPONSE_CERTIFICATE.json\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 14094876,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_C2_STOP_DOP853_ADAPTIVE_SELECTED_PROJECTOR_GRAPH.json\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 17478672,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_C2_STOP_DOP853_BORDERED_RESPONSE_SECOND_VARIATION.json\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 15073608,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_C2_STOP_FULL_BORDERED_RHS_RESPONSE.json\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 25291911,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_C2_STOP_FULL_SELECTED_PROJECTOR_GRAPH.json\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 13925602,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_C2_STOP_HALF_STEP_FINE_HYBRID_GRAPH_JACOBIAN_RECONNAISSANCE.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 27774619,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_C2_STOP_QUARTER_STEP_FINE_HYBRID_GRAPH_JACOBIAN_RECONNAISSANCE.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 14361466,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_ARB_INTERACTION_TAYLOR26_MACRO_MAPS.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 72207241,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_BLOCK_NEWTON_PREDICTOR.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 22595029,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_NEWTON_ENDPOINT_CANDIDATE.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 98072216,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_CORRELATED_DESCRIPTOR_AUGMENTED_JACOBIANS.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 15882019,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_GREEN_COMPONENTWISE_TWO_RADIUS_SCREEN.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 55828875,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_GREEN_MIDPOINT_AMBIENT_DF.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 15728311,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_GREEN_MIXED_HS_CAUSAL_TRANSPORT.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 41722453,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_GREEN_MIXED_TRANSVERSE_ALL_ENDPOINTS.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 25304028,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_AFFINE_CENTER_BORDERED_RESPONSE_FIRST_VARIATION.json\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 33555226,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_AFFINE_CENTER_BORDERED_RESPONSE_SECOND_VARIATION.json\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 28974337,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_AFFINE_CENTER_BORDERED_RHS_RESPONSE.json\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 24911535,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_AFFINE_CENTER_SELECTED_PROJECTOR_GRAPH.json\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 56354452,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_SIGNED_FULL_TRANSVERSE_CURVATURE_NODES_00_23.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 56326421,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_SIGNED_FULL_TRANSVERSE_CURVATURE_NODES_24_47.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 15474079,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_FINITE_PROPAGATOR_Z1_RECONNAISSANCE.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 27774704,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_FIRST_HS_NEWTON_CENTER_GRAPH_JACOBIAN.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 20453304,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_FIRST_HS_NEWTON_ENDPOINT_TANGENT.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 27982884,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_FIRST_HS_NEWTON_MIDPOINT_GRAPH_JACOBIAN.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 55117636,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_HERMITE_SIMPSON_BLOCK_NEWTON_PREDICTOR.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 27983297,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_HERMITE_SIMPSON_MIDPOINT_GRAPH_JACOBIAN.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 55117625,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_RATE_CONSISTENT_BLOCK_NEWTON_PREDICTOR.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 36414592,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_RECENTERED_CONE_BORDERED_RESPONSE_FIRST_VARIATION.json\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 48333122,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_RECENTERED_CONE_BORDERED_RESPONSE_SECOND_VARIATION.json\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 41758016,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_RECENTERED_CONE_BORDERED_RHS_RESPONSE.json\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 24911532,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_RECENTERED_CONE_SELECTED_PROJECTOR_GRAPH.json\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 27774707,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_CURRENT_CENTER_GRAPH_JACOBIAN.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 55117900,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_HERMITE_SIMPSON_BLOCK_NEWTON_PREDICTOR.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 55678350,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_HS_NEWTON_LINE_SEARCH_PREDICTOR.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 55118294,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_RATE_CONSISTENT_BLOCK_NEWTON_PREDICTOR.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 27774560,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_RATE_CONSISTENT_CENTER_GRAPH_JACOBIAN.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 27983314,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_RATE_CONSISTENT_MIDPOINT_GRAPH_JACOBIAN.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 27774601,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_SIGNED_GREEN_CURRENT_CENTER_GRAPH_JACOBIAN.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 11125650,\r\n          \"path\": \"artifacts/muon_first_order_complement_20261006/run_2/first_order_compact_reduction.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        }\r\n      ],\r\n      \"credential_files\": [],\r\n      \"large_file_threshold_bytes\": 10485760,\r\n      \"malformed_lfs_pointers\": [],\r\n      \"merge_markers\": [],\r\n      \"passed\": true,\r\n      \"secret_findings\": [],\r\n      \"tracked_cache_or_build_junk\": [],\r\n      \"tracked_env_files\": [],\r\n      \"unexpected_large_files\": []\r\n    },\r\n    \"license_visibility\": {\r\n      \"failures\": [],\r\n      \"passed\": true\r\n    },\r\n    \"markdown_links\": {\r\n      \"broken\": [],\r\n      \"checked\": 60,\r\n      \"passed\": true\r\n    },\r\n    \"reproduction\": {\r\n      \"missing_cli_commands\": [],\r\n      \"missing_documented_commands\": [],\r\n      \"missing_scripts\": [],\r\n      \"passed\": true,\r\n      \"reviewer_smoke_target\": true\r\n    },\r\n    \"required_files\": {\r\n      \"empty\": [],\r\n      \"missing\": [],\r\n      \"passed\": true\r\n    },\r\n    \"science_alignment\": {\r\n      \"missing_phrases\": {},\r\n      \"passed\": true\r\n    }\r\n  },\r\n  \"external_urls\": [\r\n    \"https://doi.org/10.5281/zenodo.20663419\",\r\n    \"https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml/badge.svg\",\r\n    \"https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/institutional.yml/badge.svg\",\r\n    \"https://ncarberry64.github.io/Berger-Hopf-Standard-Model/\",\r\n    \"https://orcid.org/0009-0000-6650-3485\",\r\n    \"https://zenodo.org/badge/DOI/10.5281/zenodo.20663419.svg\"\r\n  ],\r\n  \"passed\": true,\r\n  \"verdict\": \"BHSM_REPOSITORY_PUBLIC_REVIEW_READY\",\r\n  \"version\": \"v6.21.0\"\r\n}\r\n",
+      "wall_time_seconds": 10.013234899999999
+    },
+    {
+      "label": "fetch_precommit",
+      "command": "git -c gc.auto=0 -c maintenance.auto=false fetch origin",
+      "exit_code": 0,
+      "output": "",
+      "wall_time_seconds": 0.6505751
+    },
+    {
+      "label": "origin_precommit",
+      "command": "git rev-parse origin/codex/muon-parent-maxwell-density-review",
+      "exit_code": 0,
+      "output": "a51a2026c7080f98d64c8566ac193b3792ac0427\n",
+      "wall_time_seconds": 0.0000155
+    },
+    {
+      "label": "pr_precommit",
+      "command": "gh pr view 465 --json headRefOid,headRefName,url",
+      "exit_code": 0,
+      "output": "{\"headRefName\":\"codex/muon-parent-maxwell-density-review\",\"headRefOid\":\"a51a2026c7080f98d64c8566ac193b3792ac0427\",\"url\":\"https://github.com/ncarberry64/Berger-Hopf-Standard-Model/pull/465\"}\n",
+      "wall_time_seconds": 0.5449784
+    },
+    {
+      "label": "diff_check",
+      "command": "git diff --cached --check",
+      "exit_code": 0,
+      "output": "",
+      "wall_time_seconds": 0.1133495
+    }
+  ],
+  "source_hashes": [
+    {
+      "bytes": 5354,
+      "path": "scripts/replay_muon_birth_incoming_parent_trace_response.py",
+      "raw_sha256": "01d718f4ac866c30274f2ae6f7f81f6805d7f59b419a8d0e47278d50f7431eb7"
+    },
+    {
+      "bytes": 20058,
+      "path": "src/bhsm/interface/muon_birth_incoming_parent_trace_response.py",
+      "raw_sha256": "b39994efb89b1eb0a19d2d7ca393d3401efbea1e92730d6c63a0cd2c581e7424"
+    },
+    {
+      "bytes": 6368,
+      "path": "tests/test_muon_birth_incoming_parent_trace_response.py",
+      "raw_sha256": "5913cf5f221ec52d2cc30286f00bde98b9f7f6233b52e60d69df0d5971676de0"
+    },
+    {
+      "bytes": 3231,
+      "path": "tests/test_muon_birth_incoming_parent_trace_replay.py",
+      "raw_sha256": "0e47abd890ed1fcc5ce88d65a73a554e10a9289db68f7a0406a698b3acc3c1e2"
+    },
+    {
+      "bytes": 14185,
+      "path": "theory/muon_birth_incoming_parent_trace_response_20261008.md",
+      "raw_sha256": "ca4e1b1a787bc93e54ee8471da6501f3c32340acc9d7d79448f4c8841a6fa28f"
+    },
+    {
+      "bytes": 18764,
+      "path": "artifacts/muon_birth_incoming_parent_trace_response_20261008/incoming_lr_primal_receipt.json",
+      "raw_sha256": "50e052e6433ae5d05641f104e3f3f3a2123dab4e6896f010136d04e59be651b0"
+    },
+    {
+      "bytes": 13,
+      "path": "artifacts/muon_birth_incoming_parent_trace_response_20261008/.gitattributes",
+      "raw_sha256": "9e8f041ed812cb5288282cc6b187de804e96b688d56647fdae181c49fec71863"
+    }
+  ],
+  "publication": {
+    "starting_PR_head": "a51a2026c7080f98d64c8566ac193b3792ac0427",
+    "committed_scope": "Additive normalized incoming carrier component, exact consumer/reduction contract and precise primal-source receipt; not a completed physical E1 claim",
+    "final_commit_and_remote_head_receipt": "External publication receipt written after commit/push; avoids self-referential committed SHA",
+    "point_guard_and_previous_milestones_modified": false,
+    "final_public_readiness_recheck_pending": false
+  }
+}

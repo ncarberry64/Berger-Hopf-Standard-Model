@@ -1,0 +1,142 @@
+{
+  "classification": "VERIFIED_CONTINUED_CURRENT_RELATIVE_DOMAIN_HEAT_SOURCE_REPLAY",
+  "commands": [
+    {
+      "argv": [
+        "C:/Python314/python.exe",
+        "scripts/evaluate_muon_continued_current_boundary_heat.py",
+        "--output",
+        "artifacts/muon_continued_current_boundary_heat_20261011/run_1",
+        "--refinements",
+        "16",
+        "32",
+        "--cutoff-probe",
+        "1.0329133712274834e-11"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment": {
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "receipt": "artifacts/muon_continued_current_boundary_heat_20261011/execution_logs/run_1.command.json"
+    },
+    {
+      "argv": [
+        "C:/Python314/python.exe",
+        "scripts/evaluate_muon_continued_current_boundary_heat.py",
+        "--output",
+        "artifacts/muon_continued_current_boundary_heat_20261011/run_2",
+        "--refinements",
+        "16",
+        "32",
+        "--cutoff-probe",
+        "1.0329133712274834e-11"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment": {
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "receipt": "artifacts/muon_continued_current_boundary_heat_20261011/execution_logs/run_2.command.json"
+    },
+    {
+      "argv": [
+        "C:/Python314/python.exe",
+        "artifacts/muon_continued_current_boundary_heat_20261011/execution_logs/pairing_diagnostics.py",
+        "2"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment": {
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "receipt": "artifacts/muon_continued_current_boundary_heat_20261011/execution_logs/pairing_2.command.json"
+    },
+    {
+      "argv": [
+        "C:/Python314/python.exe",
+        "artifacts/muon_continued_current_boundary_heat_20261011/execution_logs/pairing_diagnostics.py",
+        "1"
+      ],
+      "capture_limitation": "The first direct command output was tool-truncated; its complete result JSON and array archive are preserved. Independent pairing2 captures complete stdout.",
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment": {
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "stdout": null
+    }
+  ],
+  "domain": "one homogeneous common-frame birth trace; past initial0 and future finalfree; additional finalDirichlet is a reference whose full spectral return is computed",
+  "error_scope": "binary64 spectral/eigensolver/current and source-contact diagnostics only; no certified action/eigen/continuum/contour/exterior/physical error",
+  "finite_cutoff_scope": "explicit numericalcprobe only; neither physicalc=I/R nor gamma/mode/scale selected",
+  "full_stratified_exterior_completion": false,
+  "measure_convention": "exact linear nodal integration in the declared piecewise-constant proper-clock density quadrature; actual continuousN(t) is approximated at cellmidpoints and refined16/32",
+  "pairing_numeric_records_identical": true,
+  "pairs": [
+    {
+      "byte_identical": true,
+      "paths": [
+        "artifacts/muon_continued_current_boundary_heat_20261011/run_1/joined_16.npz",
+        "artifacts/muon_continued_current_boundary_heat_20261011/run_2/joined_16.npz"
+      ],
+      "sha256": "b5d7a2c6a712e323d5372696c940b862387bafef5b0360e669579e96127a66dc"
+    },
+    {
+      "byte_identical": true,
+      "paths": [
+        "artifacts/muon_continued_current_boundary_heat_20261011/run_1/joined_32.npz",
+        "artifacts/muon_continued_current_boundary_heat_20261011/run_2/joined_32.npz"
+      ],
+      "sha256": "61a1ff8c8f070cb20b976a0b97352df90e8137197b0cb10028d4832aeeff1bb0"
+    },
+    {
+      "byte_identical": true,
+      "paths": [
+        "artifacts/muon_continued_current_boundary_heat_20261011/run_1/result.json",
+        "artifacts/muon_continued_current_boundary_heat_20261011/run_2/result.json"
+      ],
+      "sha256": "e99aab47886e420cd766948e802bada6a63caa3abee322bfc1323d00311d66c6"
+    },
+    {
+      "byte_identical": true,
+      "paths": [
+        "artifacts/muon_continued_current_boundary_heat_20261011/pairing_run_1/application.npz",
+        "artifacts/muon_continued_current_boundary_heat_20261011/pairing_run_2/application.npz"
+      ],
+      "sha256": "1f338f3270745939a0deefb777acab231c64dfd910bfc2f3df09094ba6914c0a"
+    }
+  ],
+  "peer_review": "downstream read-only review found no consequential generalized-square, spectralSchur, or magnetic numerator/source placement defect",
+  "physical_Pauli_completed": false,
+  "real_Euclidean_sectorial_contour_proved": false,
+  "source_contact_convention": "actual canonical deltaHcan, both directed A contacts, numerator source-dual contact; odd magnetic first direction has fixed even geometry and dM=0",
+  "source_dependencies_verified": true,
+  "tests": {
+    "argv": [
+      "C:/Python314/python.exe",
+      "-m",
+      "pytest",
+      "--noconftest",
+      "tests/test_muon_continued_current_boundary_heat.py",
+      "-q"
+    ],
+    "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+    "environment": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "PYTHONPATH": "src"
+    },
+    "exit_code": 0,
+    "stderr": "",
+    "stdout": "....                                                                     [100%]\n4 passed in 2.16s\n"
+  }
+}

@@ -1,0 +1,128 @@
+{
+  "deterministic_replay": {
+    "byte_identical": true,
+    "bytes": 10715,
+    "commands": [
+      {
+        "command": "C:\\Python314\\python.exe scripts/evaluate_muon_calibrated_bosonic_higgs_photon.py --output artifacts/muon_calibrated_bosonic_higgs_photon_20261010/run_1",
+        "exit_code": 0
+      },
+      {
+        "command": "C:\\Python314\\python.exe scripts/evaluate_muon_calibrated_bosonic_higgs_photon.py --output artifacts/muon_calibrated_bosonic_higgs_photon_20261010/run_2",
+        "exit_code": 0
+      }
+    ],
+    "sha256": "63e9522d0532a6ecf6a53ec44ec4a26c3f2a64bb3b182302dce952c5c0a90e86"
+  },
+  "focused_tests": {
+    "command": "C:\\Python314\\python.exe -m pytest --noconftest tests/test_muon_calibrated_bosonic_higgs_photon.py -q",
+    "exit_code": 0,
+    "initial_concurrent_session": "18 tests passed; global conftest restored a peer-mutated tracked verification receipt and forced exit1. Root was notified and is regenerating its receipt. No scientific test failure.",
+    "stdout": "18 passed in 1.34s"
+  },
+  "numerical_checks": "literal unsymmetrized70-digit integral and refined adaptive quadrature retained in each result; arithmetic/error estimates are not interval enclosures",
+  "scope": {
+    "complete_native": false,
+    "evaluated": "finite transverse W/Hgamma projection with fixed action Y_mu and calibrated on-shell inputs",
+    "finite_remainder_bound": null,
+    "full_bosonic_EW2": false
+  },
+  "source_records": [
+    {
+      "bytes": 5880,
+      "functions": [
+        {
+          "end_line": 29,
+          "line": 20,
+          "symbol": "_positive"
+        },
+        {
+          "end_line": 45,
+          "line": 32,
+          "symbol": "_log_quotient"
+        },
+        {
+          "end_line": 81,
+          "line": 48,
+          "symbol": "transverse_w_higgs_kernel"
+        },
+        {
+          "end_line": 131,
+          "line": 84,
+          "symbol": "bosonic_higgs_photon_w_projection"
+        }
+      ],
+      "path": "src/bhsm/interface/muon_calibrated_bosonic_higgs_photon.py",
+      "sha256": "0cb6bdf537c5a84ccc5028c55c5321b42c58bbb2a1b7570b97fe9861a22e3c8e"
+    },
+    {
+      "bytes": 11037,
+      "functions": [
+        {
+          "end_line": 34,
+          "line": 31,
+          "symbol": "_record"
+        },
+        {
+          "end_line": 42,
+          "line": 37,
+          "symbol": "_frozen"
+        },
+        {
+          "end_line": 176,
+          "line": 45,
+          "symbol": "evaluate"
+        },
+        {
+          "end_line": 190,
+          "line": 179,
+          "symbol": "main"
+        }
+      ],
+      "path": "scripts/evaluate_muon_calibrated_bosonic_higgs_photon.py",
+      "sha256": "14611fa840dcddefac316a02bdbd0cd18cc127f1ac7d0d01416e2183d131d563"
+    },
+    {
+      "bytes": 5513,
+      "functions": [
+        {
+          "end_line": 28,
+          "line": 24,
+          "symbol": "test_symmetrization_is_exact_primary_integral_identity"
+        },
+        {
+          "end_line": 51,
+          "line": 31,
+          "symbol": "test_selected_physical_projection_against_literal_high_precision"
+        },
+        {
+          "end_line": 74,
+          "line": 55,
+          "symbol": "test_removable_internal_thresholds_are_not_poles"
+        },
+        {
+          "end_line": 89,
+          "line": 81,
+          "symbol": "test_analytic_fixed_Y_partials_against_actual_formula"
+        },
+        {
+          "end_line": 100,
+          "line": 92,
+          "symbol": "test_fixed_Y_mass_scaling_is_linear_and_not_pole_Yukawa_substitution"
+        },
+        {
+          "end_line": 109,
+          "line": 107,
+          "symbol": "test_input_and_external_mass_hierarchy_guards"
+        },
+        {
+          "end_line": 126,
+          "line": 112,
+          "symbol": "test_executed_rematched_GF_and_shared_primitive_chain"
+        }
+      ],
+      "path": "tests/test_muon_calibrated_bosonic_higgs_photon.py",
+      "sha256": "6d3c87c8396ce0356a65a9351380b768250fdae12613265acd77313ae3599862"
+    }
+  ]
+}

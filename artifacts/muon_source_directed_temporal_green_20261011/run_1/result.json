@@ -1,0 +1,614 @@
+{
+  "action_parameters": {
+    "nu_squared_action": 4.0,
+    "surface_gamma": null
+  },
+  "classification": "EVALUATED_SOURCE_DIRECTED_CHANGING_TEMPORAL_OPEN_EXCHANGE",
+  "common_probe_cutoff": 1e-11,
+  "error_scope": "binary64 coefficient-time source/weak integration and Gram/eigen application; projection is an evaluated coordinate source norm, not a paired observable or continuum bound. Upstream assembly/eigen and physical matching errors remain separate.",
+  "exact_polynomial_ghost_and_affine_H_products_in_trial": true,
+  "exact_reductions": "fixed diagonal family Y and complete complex-Wigner spectator blocks; full odd20 times18 retained",
+  "field_quadrature_scope": "same preserved complete1200 coupled field form at its original order6; new source and fermion weak moments at declared refined order",
+  "input_hashes": {
+    "artifacts/flagship_integration/BHSM_N12_C2_REFINED_RESET_ROOT_CENTER.npz": "59dd88661b15cbeec96bc19294f9d9c64f754cccbfbc385c32329fa9c864a8fe",
+    "artifacts/flagship_integration/BHSM_N12_FULL_RESET_ACTION_JACOBIAN.npz": "35bb2b67ff784206d3a5b9dc82881f5ffd8f844b55342f2032d29cdafb38a67a",
+    "artifacts/muon_birth_transfer_value_20261008/retained_reset/run_1/result.json": "d0fec0f8e8a05818fcce67e88ed8db73744484220a2cb213825893f481cb0a72",
+    "artifacts/muon_calibrated_pauli_20261009/inputs.json": "0b614ab6f26d169ca04a4878f767f78eb3668484840867e46aebbebf186369da",
+    "artifacts/muon_calibrated_weak_decay_20261010/run_1/weak_decay.json": "9c31575ce0889571790f8767cf53ffe043cb9906e0a45a96b194971320a0aad7",
+    "artifacts/muon_changing_coupled_open_current_20261011/run_1/incoming_field_modes_0.npz": "259217583be3f8b632620eed30d4bc876d6cf3d414e6efcaf509f951045f4958",
+    "artifacts/muon_changing_coupled_open_current_20261011/run_1/incoming_field_modes_1.npz": "20d9940ea5b2cbe0377de585a926e080f77e7bf39cadeb8dd3f20ec41966a802",
+    "artifacts/muon_changing_coupled_open_current_20261011/run_1/incoming_result.npz": "e6f0e16259dafb37c50fc99fae427d083bfe2484a18104db62d62e8dd45b3475",
+    "artifacts/muon_changing_coupled_open_current_20261011/run_1/outgoing_field_modes_0.npz": "f56f19b349ce480ad66b9a8d4b6ab624254c3162709a146c37d3ef06d301d7e6",
+    "artifacts/muon_changing_coupled_open_current_20261011/run_1/outgoing_field_modes_1.npz": "09d6701671d58a3c84590569c1f7651df18cab365f0d72d14ccd77b5699279c9",
+    "artifacts/muon_changing_coupled_open_current_20261011/run_1/outgoing_result.npz": "7e90d9b730066121bcb9a0642c884677a5d034d90c65d348d6961a2238f218a3",
+    "artifacts/muon_changing_coupled_open_current_20261011/run_1/result.json": "4304f6c2d1b772b964ab2cf2a449e1928db3364368537c10c23f7c2d3e716481",
+    "artifacts/muon_finite_normal_phase_20261011/incoming_run_1/application.npz": "254491c04531387f3ef3ae761cb4efccfbed54055683af00fbd8259a2520a8f9",
+    "artifacts/muon_finite_normal_phase_20261011/incoming_run_1/result.json": "8547be3232459deb8cb1d325a3d956bc0380ba0c767371ccce4bf7f5140b399f",
+    "artifacts/muon_inherited_finite_normal_phase_20261011/run_1/application.npz": "7a513c82e9e4f3e2560e2989867e00e8af3453e637a29559286c29eb7c184a59",
+    "artifacts/muon_inherited_finite_normal_phase_20261011/run_1/result.json": "d283c45cb81e86628ecec96159eae5327829d15f440bf01c78164f4b12434c51",
+    "artifacts/muon_matched_mechanical_source_20261002/replay_reference/matched_source_and_weak_actions.npz": "146435df28178967c321c0aa7e89a1511395d196f96b8715532aa98e3e312c2b",
+    "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1/application.npz": "c67363c17adfb519f399614463d5a13dbcd019aa53246d452421eea8ba982455",
+    "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1/result.json": "06867e31959910ec21385e8491bd5b794060c68e8404ae0524e3d0c9b544faa6",
+    "artifacts/muon_parent_positive_coupled_temporal_20261011/run_1/incoming_action.npz": "733af3e55351c328f6c2e25dabb49411c6b71f9cb708f23b22c50539ab6450bf",
+    "artifacts/muon_parent_positive_coupled_temporal_20261011/run_1/incoming_hilbert.npz": "aad70e09b1aa30ebebbdbc5f1758eb38fb674d056d65993b15fc3808d794397f",
+    "artifacts/muon_parent_positive_coupled_temporal_20261011/run_1/outgoing_action.npz": "ffd6e68a4eb311595afd57853fec6f09f6e799ee0549e6ca6e77740efa7b3582",
+    "artifacts/muon_parent_positive_coupled_temporal_20261011/run_1/outgoing_hilbert.npz": "bfaf401f20667eb0f7941f54f35afa1b40d92abd1901e4f800d6948f6015db53",
+    "artifacts/muon_parent_positive_coupled_temporal_20261011/run_1/result.json": "8ff9527a88b1c88036a38fa64e4d32444dd24baa272e4e4ec4e66fe566d90179",
+    "scripts/evaluate_muon_changing_coupled_open_current.py": "932636f0f6d578d051e93d23c898adafb5217d66412faf8560be5d7aaa96022e",
+    "scripts/evaluate_muon_parent_positive_coupled_field.py": "d6e1ed3bb197e49d4e67bd3502febc2480cb7e03e3b03a4e138f9abf3e23ccfc",
+    "scripts/evaluate_muon_parent_positive_coupled_temporal.py": "f676ef81ca6a3198fa5705172c468b362ce100b5043e9e4a46e0de8e960110a8",
+    "scripts/evaluate_muon_reached_trace_action.py": "f2ecf5b614f8b3b1b5f9bf2b73490e539321049633f7deb467bdf60a81e0c260",
+    "scripts/evaluate_muon_source_directed_temporal_green.py": "8c95c3f80078571a16b65baa3705a4e9e159f2dfd6f72a5f4db07ba76c36b788",
+    "src/bhsm/interface/aether_canonical_momentum_action_jacobian.py": "d0ade20dc8a999e43073b45ca3ef59e05c65c55e37a1d6565d4e389176295cb1",
+    "src/bhsm/interface/aether_diagonal_sp1_m4_attachment_v15_50.py": "e6482614dcb54f4890a5e66fbe724d4c302405d575a4b73ddbb64a075cb1827e",
+    "src/bhsm/interface/aether_lorentzian_child_galerkin_v15_44.py": "574a9a6267d9228170c7309bd4be3cafb36b7515a6ee558509beb968e97bdab7",
+    "src/bhsm/interface/muon_birth_attached_phase.py": "948c1505e9b68cffbe8050be31dcb5727d8f8d4f25399f9037cfc94a9ae9fdeb",
+    "src/bhsm/interface/muon_birth_chronological_normal_inertia.py": "909f322d0b375ab03fc0b0a148c9d710ac77e371e029c5e92c9bfbde86883b05",
+    "src/bhsm/interface/muon_birth_coupled_primal_midpoint.py": "ce321f641fa51d98710d006e246aac5cf6bd046be93a74fab452808597c599ce",
+    "src/bhsm/interface/muon_birth_finite_geometric_trace_endpoint.py": "4f5c36144222d5d1e657061aa9352f8e86d5ae61a0ebdf05991a477e68d4be5f",
+    "src/bhsm/interface/muon_birth_finite_normal_phase.py": "660ed731bdbe0bbb71eda750c9dbffd20e7ce9f63be2a6087e5a385d76850361",
+    "src/bhsm/interface/muon_birth_finite_normal_trace_graph.py": "20eafd9a6abff3d3a89a2f6085d099584684ba19b600673dafda634cb56aad18",
+    "src/bhsm/interface/muon_birth_full_field_attachment.py": "58b3bd8a4ae5fe7c63b5551e4d0f26d82ab82a27d4389066c894a5e1b4728d03",
+    "src/bhsm/interface/muon_birth_inherited_finite_normal_phase.py": "86b082dfa0b525e9d8bb510a6c02e53c517d7ecdd8c6c9aec956d175d829add4",
+    "src/bhsm/interface/muon_birth_normal_constrained_action.py": "fe66a9116816e075cfc5e7c5f5f3c2c02d539311303b693a1d89cbc08ea62577",
+    "src/bhsm/interface/muon_birth_normal_trace_graph.py": "d012a0455d84be2ce7aae8d6833f8b482f9bbc1e9ee1b899042a421c2a782896",
+    "src/bhsm/interface/muon_birth_paired_attachment_endpoint.py": "71a69275ebeef226fd8dc7585745c5c8acac687e497a8441fe37a37553178f23",
+    "src/bhsm/interface/muon_birth_paired_field_endpoint.py": "f22b6a17b65c72b30571b3d9f721f347737a5916fa08e50bd833ad22df3cd035",
+    "src/bhsm/interface/muon_birth_phase_continuation.py": "9169a1c56bf5084d1f240043ca12d431c87e4adaff24fe09bdf7bf27fc5eb0be",
+    "src/bhsm/interface/muon_birth_trace_enriched_action.py": "c36c48482dd58ebe369ab935574b78b3693036f717fb49035dfac01164956dce",
+    "src/bhsm/interface/muon_birth_trace_enriched_phase.py": "591754957f1cc452bfd53d8adc1087308459902a822876105315b7423c2fd676",
+    "src/bhsm/interface/muon_birth_two_arm_assigned_action.py": "cf6c58dc68700315d701fb9a1e9e99e927d18d90016a6ae7f86470c36136c77a",
+    "src/bhsm/interface/muon_changing_coupled_open_current.py": "6d5adedf4b23e83df153d7fa1a0afda369b5412b5df4b02036c6f46b21b1e0da",
+    "src/bhsm/interface/muon_common_cutoff_green_kernel.py": "56eac066ec2a298206c57f674864f918e80ae1a1f1fa87cd8e501adb9183b6dc",
+    "src/bhsm/interface/muon_corrected_profile_magnetic_response.py": "8d09cd726393d59b6843553c085ffaf61f84f009b44678d1465fe7ebe645f1d8",
+    "src/bhsm/interface/muon_exact_material_response.py": "a530651e157a000dbe6935e9de1cedbce5679f98c599c6c7c641158b749307bf",
+    "src/bhsm/interface/muon_inherited_lepton_temporal_weak_action.py": "a68eb4bb3296c00a7da0c25c19eb4e2e3aca2a46a84d152cc7aa93f6a7e6034e",
+    "src/bhsm/interface/muon_intrinsic_higgs_gauge_action.py": "c19354209300ab06c0f1ab6bf4e111dbb5de0cd9e8d1d31a71af357a829118d4",
+    "src/bhsm/interface/muon_intrinsic_m4_normal_pullback.py": "43187eee35f2879a43fe0fd02ae447502811349ccf2f2a78aa14beb8aa706bf0",
+    "src/bhsm/interface/muon_intrinsic_scalar_regulator_correction.py": "acaa7e26c5a30dd2a984e44cb7e8888720cdc83c0e860d624614625c01ecb9e1",
+    "src/bhsm/interface/muon_intrinsic_scalar_temporal_image.py": "5ab91c5962d090677aeed6e25c3418266d3b94cb4c44551be4a7c66e5bfa4303",
+    "src/bhsm/interface/muon_magnetic_open_lepton_vertex.py": "08c637687e7279434bb1f91a37b57403778f7f1558229f41cb52f623dd61b526",
+    "src/bhsm/interface/muon_material_higgs_gauge_action.py": "8bca013820283614c6578be4f44c29c4ea1c919f516aa9a2783f0eb38127d035",
+    "src/bhsm/interface/muon_moving_geometric_action.py": "bf560fdb9766f563d97d3100ccb266e2a4350c910ac14a51d57576c2b5371392",
+    "src/bhsm/interface/muon_native_dirac_hamiltonian.py": "7344b1dfc0358962a281fffea59c8d40c1449a6fbcf9b171f514a28eb7b26ccd",
+    "src/bhsm/interface/muon_parent_gauge_geometry_correction.py": "fa29f5764dca39196c807d64e7976d5894589e7de3ffa9d4a5ddecfb136b4816",
+    "src/bhsm/interface/muon_parent_maxwell_background_euler.py": "fbb2c99d4b1c58247ac42a769fad3e1b16ccc76a1744fe0c5334e50c4a974bee",
+    "src/bhsm/interface/muon_parent_maxwell_full_weak.py": "c1fb703967a644306d3521d457a6d7c778a49d89c1e081b401487a25b7491565",
+    "src/bhsm/interface/muon_parent_maxwell_geometry_weak.py": "f0b4a49934e17ad18c40e9164b66c54e1b2cb146fb476f59b0e500f2dd6c9153",
+    "src/bhsm/interface/muon_parent_mean_causal_action.py": "2a84b1be22625b1a5ae88d10c76631d7a5b602d2b0e22e57f00201bb74a593ad",
+    "src/bhsm/interface/muon_parent_positive_brst_ghost.py": "3575d412199108bd9512b2d9e7c2804fe84cf0886224c04f7138b05c2d14331a",
+    "src/bhsm/interface/muon_parent_positive_coupled_field.py": "f26b1c395c8059555d1f3e217705998c5e0437122ab761354ce0f085d891d5c2",
+    "src/bhsm/interface/muon_parent_positive_coupled_temporal.py": "b663176869d7155a07e391505a59ac08fd88c7e63a20c0e07ebb1a536aed47b6",
+    "src/bhsm/interface/muon_parent_positive_gauge_form.py": "11d3c55d445d967d14e1f9d0b1be8dbc9abd014ac8d547237a3487ebc9e7cf25",
+    "src/bhsm/interface/muon_parent_retarded_hypercharge.py": "2eb97a704bce63f601cc0d6e0f647266d4b4aac7f746d34dceb41b72018c3510",
+    "src/bhsm/interface/muon_pointwise_full_field_action.py": "d57cd5953de00bcae857d0e458bbead1e463e5fffe8d947c5b9e71806aabaff6",
+    "src/bhsm/interface/muon_profile_preserving_phase_sample.py": "27ce99bf8c286b0e3fe56dc4d7f0f215dee51b228dcce1805006e1b2c8998418",
+    "src/bhsm/interface/muon_source_directed_temporal_green.py": "85b0cf0a9c0601efdc4914285c8c87f3e72a33b0a1844acc5b1745db3781fd94"
+  },
+  "normalization": "Y_h/sqrt(V), external constant1/sqrt(V), external b normalized in same Ndt; no extra V/e factor",
+  "numerical_files": {
+    "incoming_block_0.npz": {
+      "bytes": 194949,
+      "sha256": "ea80b496d47e5bd2e3f7f054aa13dcb5c00480be3abbbe9bcb3f553d197fd816"
+    },
+    "incoming_block_1.npz": {
+      "bytes": 194949,
+      "sha256": "ea80b496d47e5bd2e3f7f054aa13dcb5c00480be3abbbe9bcb3f553d197fd816"
+    },
+    "incoming_block_10.npz": {
+      "bytes": 688179,
+      "sha256": "d14e0819a1d2e05404b2cc57cba779b73d8bb67e8e38a3642b29763f82f66081"
+    },
+    "incoming_block_11.npz": {
+      "bytes": 688179,
+      "sha256": "d14e0819a1d2e05404b2cc57cba779b73d8bb67e8e38a3642b29763f82f66081"
+    },
+    "incoming_block_12.npz": {
+      "bytes": 195021,
+      "sha256": "f90e13919c0e0f0a843321b8b85157b3e5226b20c485b0a3a87b56e665d72c03"
+    },
+    "incoming_block_13.npz": {
+      "bytes": 195021,
+      "sha256": "f90e13919c0e0f0a843321b8b85157b3e5226b20c485b0a3a87b56e665d72c03"
+    },
+    "incoming_block_14.npz": {
+      "bytes": 688426,
+      "sha256": "efedea0540e187c38f9b7e13ac8aebabb15ddc780e513555417252ec8d1ac81c"
+    },
+    "incoming_block_15.npz": {
+      "bytes": 688426,
+      "sha256": "efedea0540e187c38f9b7e13ac8aebabb15ddc780e513555417252ec8d1ac81c"
+    },
+    "incoming_block_16.npz": {
+      "bytes": 688426,
+      "sha256": "efedea0540e187c38f9b7e13ac8aebabb15ddc780e513555417252ec8d1ac81c"
+    },
+    "incoming_block_17.npz": {
+      "bytes": 688426,
+      "sha256": "efedea0540e187c38f9b7e13ac8aebabb15ddc780e513555417252ec8d1ac81c"
+    },
+    "incoming_block_2.npz": {
+      "bytes": 688316,
+      "sha256": "fd148298d731ffd8a8a378abe4a1317a7a53a64fcdac0274cd8772f8f3946b0f"
+    },
+    "incoming_block_3.npz": {
+      "bytes": 688316,
+      "sha256": "fd148298d731ffd8a8a378abe4a1317a7a53a64fcdac0274cd8772f8f3946b0f"
+    },
+    "incoming_block_4.npz": {
+      "bytes": 688316,
+      "sha256": "fd148298d731ffd8a8a378abe4a1317a7a53a64fcdac0274cd8772f8f3946b0f"
+    },
+    "incoming_block_5.npz": {
+      "bytes": 688316,
+      "sha256": "fd148298d731ffd8a8a378abe4a1317a7a53a64fcdac0274cd8772f8f3946b0f"
+    },
+    "incoming_block_6.npz": {
+      "bytes": 194704,
+      "sha256": "89f8494aac12dd586bb461ecf0572c5cb85f333318765c9c67b1aaa7496f6098"
+    },
+    "incoming_block_7.npz": {
+      "bytes": 194704,
+      "sha256": "89f8494aac12dd586bb461ecf0572c5cb85f333318765c9c67b1aaa7496f6098"
+    },
+    "incoming_block_8.npz": {
+      "bytes": 688179,
+      "sha256": "d14e0819a1d2e05404b2cc57cba779b73d8bb67e8e38a3642b29763f82f66081"
+    },
+    "incoming_block_9.npz": {
+      "bytes": 688179,
+      "sha256": "d14e0819a1d2e05404b2cc57cba779b73d8bb67e8e38a3642b29763f82f66081"
+    },
+    "incoming_result.npz": {
+      "bytes": 4761,
+      "sha256": "40fe3033ef61442907ccd379a1523754272911238d9dc63a7b33c1268ff8c21a"
+    },
+    "outgoing_block_0.npz": {
+      "bytes": 193924,
+      "sha256": "e4bbd4fd6efb547bc60131adecd8a1e7b8db9198acb7ffd6e0111682f544c2b9"
+    },
+    "outgoing_block_1.npz": {
+      "bytes": 193924,
+      "sha256": "e4bbd4fd6efb547bc60131adecd8a1e7b8db9198acb7ffd6e0111682f544c2b9"
+    },
+    "outgoing_block_10.npz": {
+      "bytes": 686188,
+      "sha256": "fe55c4c1ae70aa45c7f903c4db22a86018c7ee19db39059d8f8dc5df3c5b6391"
+    },
+    "outgoing_block_11.npz": {
+      "bytes": 686188,
+      "sha256": "fe55c4c1ae70aa45c7f903c4db22a86018c7ee19db39059d8f8dc5df3c5b6391"
+    },
+    "outgoing_block_12.npz": {
+      "bytes": 193924,
+      "sha256": "4c868e644693214eaeef7a0408e70c43c0abcad2dc5a977b43f502a39b036188"
+    },
+    "outgoing_block_13.npz": {
+      "bytes": 193924,
+      "sha256": "4c868e644693214eaeef7a0408e70c43c0abcad2dc5a977b43f502a39b036188"
+    },
+    "outgoing_block_14.npz": {
+      "bytes": 686125,
+      "sha256": "154abfbcdb349d038453f294e8874fea6f29669d21a45f179b52ed646a0a33bd"
+    },
+    "outgoing_block_15.npz": {
+      "bytes": 686125,
+      "sha256": "154abfbcdb349d038453f294e8874fea6f29669d21a45f179b52ed646a0a33bd"
+    },
+    "outgoing_block_16.npz": {
+      "bytes": 686125,
+      "sha256": "154abfbcdb349d038453f294e8874fea6f29669d21a45f179b52ed646a0a33bd"
+    },
+    "outgoing_block_17.npz": {
+      "bytes": 686125,
+      "sha256": "154abfbcdb349d038453f294e8874fea6f29669d21a45f179b52ed646a0a33bd"
+    },
+    "outgoing_block_2.npz": {
+      "bytes": 686324,
+      "sha256": "f59fa3a459a4db507483cfa60943f2d919f9d68f27c80d190e8d7b1b386d9e8d"
+    },
+    "outgoing_block_3.npz": {
+      "bytes": 686324,
+      "sha256": "f59fa3a459a4db507483cfa60943f2d919f9d68f27c80d190e8d7b1b386d9e8d"
+    },
+    "outgoing_block_4.npz": {
+      "bytes": 686324,
+      "sha256": "f59fa3a459a4db507483cfa60943f2d919f9d68f27c80d190e8d7b1b386d9e8d"
+    },
+    "outgoing_block_5.npz": {
+      "bytes": 686324,
+      "sha256": "f59fa3a459a4db507483cfa60943f2d919f9d68f27c80d190e8d7b1b386d9e8d"
+    },
+    "outgoing_block_6.npz": {
+      "bytes": 193866,
+      "sha256": "432e95effb8b9dfb1872cfe175fb00d252cc2332237811799d8f406f4fe65767"
+    },
+    "outgoing_block_7.npz": {
+      "bytes": 193866,
+      "sha256": "432e95effb8b9dfb1872cfe175fb00d252cc2332237811799d8f406f4fe65767"
+    },
+    "outgoing_block_8.npz": {
+      "bytes": 686188,
+      "sha256": "fe55c4c1ae70aa45c7f903c4db22a86018c7ee19db39059d8f8dc5df3c5b6391"
+    },
+    "outgoing_block_9.npz": {
+      "bytes": 686188,
+      "sha256": "fe55c4c1ae70aa45c7f903c4db22a86018c7ee19db39059d8f8dc5df3c5b6391"
+    },
+    "outgoing_result.npz": {
+      "bytes": 4737,
+      "sha256": "225b3f765021a24521c65b63f2b591c8c139e50c727e3f3ace320b3016d38ea3"
+    }
+  },
+  "numerical_rank_or_small_mode_deletion": false,
+  "one_coupled_field_Green": true,
+  "operator": "A=partial_t/N+Omega_tau+W; source right (AV)^dagger deltaA precedes inverse; literal non-Hermitian source left retained",
+  "physical_a_mu": null,
+  "physical_g_mu": null,
+  "quantum_scope": "formal Gaussian sign -1 component on declared positive product/ADM reference; adopted P_strat mixed completion/LSZ/physical Wick identity not asserted",
+  "records": [
+    {
+      "block_records": [
+        {
+          "dimension": 96,
+          "exchange_norm": 1.1905499047573009e-06,
+          "family": 0,
+          "generalized_eigen_residual": 1.4226827013547806e-15,
+          "level": 1,
+          "minimum_generalized_eigenvalue": 80331583302.20004,
+          "spectator": 0
+        },
+        {
+          "dimension": 96,
+          "exchange_norm": 1.190549664245105e-06,
+          "family": 0,
+          "generalized_eigen_residual": 1.4226827013547806e-15,
+          "level": 1,
+          "minimum_generalized_eigenvalue": 80331583302.20004,
+          "spectator": 1
+        },
+        {
+          "dimension": 192,
+          "exchange_norm": 8.934739865271689e-07,
+          "family": 0,
+          "generalized_eigen_residual": 9.339663789261904e-16,
+          "level": 3,
+          "minimum_generalized_eigenvalue": 80331583310.15314,
+          "spectator": 0
+        },
+        {
+          "dimension": 192,
+          "exchange_norm": 8.934717983540795e-07,
+          "family": 0,
+          "generalized_eigen_residual": 9.339663789261904e-16,
+          "level": 3,
+          "minimum_generalized_eigenvalue": 80331583310.15314,
+          "spectator": 1
+        },
+        {
+          "dimension": 192,
+          "exchange_norm": 8.934717991223487e-07,
+          "family": 0,
+          "generalized_eigen_residual": 9.339663789261904e-16,
+          "level": 3,
+          "minimum_generalized_eigenvalue": 80331583310.15314,
+          "spectator": 2
+        },
+        {
+          "dimension": 192,
+          "exchange_norm": 8.934739847370773e-07,
+          "family": 0,
+          "generalized_eigen_residual": 9.339663789261904e-16,
+          "level": 3,
+          "minimum_generalized_eigenvalue": 80331583310.15314,
+          "spectator": 3
+        },
+        {
+          "dimension": 96,
+          "exchange_norm": 1.190548501250021e-06,
+          "family": 1,
+          "generalized_eigen_residual": 7.918711581298109e-16,
+          "level": 1,
+          "minimum_generalized_eigenvalue": 80331583302.20123,
+          "spectator": 0
+        },
+        {
+          "dimension": 96,
+          "exchange_norm": 1.1905482607269601e-06,
+          "family": 1,
+          "generalized_eigen_residual": 7.918711581298109e-16,
+          "level": 1,
+          "minimum_generalized_eigenvalue": 80331583302.20123,
+          "spectator": 1
+        },
+        {
+          "dimension": 192,
+          "exchange_norm": 8.934728932386265e-07,
+          "family": 1,
+          "generalized_eigen_residual": 9.624044218000982e-16,
+          "level": 3,
+          "minimum_generalized_eigenvalue": 80331583310.15533,
+          "spectator": 0
+        },
+        {
+          "dimension": 192,
+          "exchange_norm": 8.934707050701292e-07,
+          "family": 1,
+          "generalized_eigen_residual": 9.624044218000982e-16,
+          "level": 3,
+          "minimum_generalized_eigenvalue": 80331583310.15533,
+          "spectator": 1
+        },
+        {
+          "dimension": 192,
+          "exchange_norm": 8.934707058391941e-07,
+          "family": 1,
+          "generalized_eigen_residual": 9.624044218000982e-16,
+          "level": 3,
+          "minimum_generalized_eigenvalue": 80331583310.15533,
+          "spectator": 2
+        },
+        {
+          "dimension": 192,
+          "exchange_norm": 8.934728914487637e-07,
+          "family": 1,
+          "generalized_eigen_residual": 9.624044218000982e-16,
+          "level": 3,
+          "minimum_generalized_eigenvalue": 80331583310.15533,
+          "spectator": 3
+        },
+        {
+          "dimension": 96,
+          "exchange_norm": 1.1905484962015422e-06,
+          "family": 2,
+          "generalized_eigen_residual": 1.5237804759822407e-15,
+          "level": 1,
+          "minimum_generalized_eigenvalue": 80331583302.19931,
+          "spectator": 0
+        },
+        {
+          "dimension": 96,
+          "exchange_norm": 1.1905482556784447e-06,
+          "family": 2,
+          "generalized_eigen_residual": 1.5237804759822407e-15,
+          "level": 1,
+          "minimum_generalized_eigenvalue": 80331583302.19931,
+          "spectator": 1
+        },
+        {
+          "dimension": 192,
+          "exchange_norm": 8.934728893057225e-07,
+          "family": 2,
+          "generalized_eigen_residual": 9.77146142858944e-16,
+          "level": 3,
+          "minimum_generalized_eigenvalue": 80331583310.15466,
+          "spectator": 0
+        },
+        {
+          "dimension": 192,
+          "exchange_norm": 8.934707011372411e-07,
+          "family": 2,
+          "generalized_eigen_residual": 9.77146142858944e-16,
+          "level": 3,
+          "minimum_generalized_eigenvalue": 80331583310.15466,
+          "spectator": 1
+        },
+        {
+          "dimension": 192,
+          "exchange_norm": 8.934707019063099e-07,
+          "family": 2,
+          "generalized_eigen_residual": 9.77146142858944e-16,
+          "level": 3,
+          "minimum_generalized_eigenvalue": 80331583310.15466,
+          "spectator": 2
+        },
+        {
+          "dimension": 192,
+          "exchange_norm": 8.934728875158604e-07,
+          "family": 2,
+          "generalized_eigen_residual": 9.77146142858944e-16,
+          "level": 3,
+          "minimum_generalized_eigenvalue": 80331583310.15466,
+          "spectator": 3
+        }
+      ],
+      "common_kernel_approximation_upper": 0.0,
+      "complex_frame_unitary_residual": 9.930136612989092e-16,
+      "external_tent_Gram": 3.6947572871897696e-06,
+      "independent_scalar_projection_relative_norm": 6.934989276342058e-15,
+      "maximum_invariant_block_dimension": 192,
+      "reference_open_exchange_difference_norm": 5.019846257663569e-06,
+      "side": "incoming",
+      "signed_gaussian_open_exchange_Hermitian_defect": 1.827382583838075e-09,
+      "signed_gaussian_open_exchange_norm": 1.0313761744049888e-05,
+      "source_projection_relative_norm": 4.954511018916773e-13,
+      "spectator_off_block_max": 0.0,
+      "temporal_Gram_condition": 5492.228230593844,
+      "temporal_basis_count": 8,
+      "total_fermion_FE_dimension": 2880
+    },
+    {
+      "block_records": [
+        {
+          "dimension": 96,
+          "exchange_norm": 8.310620477232687e-07,
+          "family": 0,
+          "generalized_eigen_residual": 7.572079062443978e-16,
+          "level": 1,
+          "minimum_generalized_eigenvalue": 202495801244.0949,
+          "spectator": 0
+        },
+        {
+          "dimension": 96,
+          "exchange_norm": 8.310618946643377e-07,
+          "family": 0,
+          "generalized_eigen_residual": 7.572079062443978e-16,
+          "level": 1,
+          "minimum_generalized_eigenvalue": 202495801244.0949,
+          "spectator": 1
+        },
+        {
+          "dimension": 192,
+          "exchange_norm": 6.308883571902015e-07,
+          "family": 0,
+          "generalized_eigen_residual": 1.0074654269481042e-15,
+          "level": 3,
+          "minimum_generalized_eigenvalue": 202495801251.6893,
+          "spectator": 0
+        },
+        {
+          "dimension": 192,
+          "exchange_norm": 6.308890008876763e-07,
+          "family": 0,
+          "generalized_eigen_residual": 1.0074654269481042e-15,
+          "level": 3,
+          "minimum_generalized_eigenvalue": 202495801251.6893,
+          "spectator": 1
+        },
+        {
+          "dimension": 192,
+          "exchange_norm": 6.308889925108355e-07,
+          "family": 0,
+          "generalized_eigen_residual": 1.0074654269481042e-15,
+          "level": 3,
+          "minimum_generalized_eigenvalue": 202495801251.6893,
+          "spectator": 2
+        },
+        {
+          "dimension": 192,
+          "exchange_norm": 6.308883414657043e-07,
+          "family": 0,
+          "generalized_eigen_residual": 1.0074654269481042e-15,
+          "level": 3,
+          "minimum_generalized_eigenvalue": 202495801251.6893,
+          "spectator": 3
+        },
+        {
+          "dimension": 96,
+          "exchange_norm": 8.310611366070107e-07,
+          "family": 1,
+          "generalized_eigen_residual": 6.947920071620864e-16,
+          "level": 1,
+          "minimum_generalized_eigenvalue": 202495801244.0998,
+          "spectator": 0
+        },
+        {
+          "dimension": 96,
+          "exchange_norm": 8.310609835346818e-07,
+          "family": 1,
+          "generalized_eigen_residual": 6.947920071620864e-16,
+          "level": 1,
+          "minimum_generalized_eigenvalue": 202495801244.0998,
+          "spectator": 1
+        },
+        {
+          "dimension": 192,
+          "exchange_norm": 6.308877088232292e-07,
+          "family": 1,
+          "generalized_eigen_residual": 9.883552793159278e-16,
+          "level": 3,
+          "minimum_generalized_eigenvalue": 202495801251.6829,
+          "spectator": 0
+        },
+        {
+          "dimension": 192,
+          "exchange_norm": 6.308883525197803e-07,
+          "family": 1,
+          "generalized_eigen_residual": 9.883552793159278e-16,
+          "level": 3,
+          "minimum_generalized_eigenvalue": 202495801251.6829,
+          "spectator": 1
+        },
+        {
+          "dimension": 192,
+          "exchange_norm": 6.308883441428606e-07,
+          "family": 1,
+          "generalized_eigen_residual": 9.883552793159278e-16,
+          "level": 3,
+          "minimum_generalized_eigenvalue": 202495801251.6829,
+          "spectator": 2
+        },
+        {
+          "dimension": 192,
+          "exchange_norm": 6.308876930986015e-07,
+          "family": 1,
+          "generalized_eigen_residual": 9.883552793159278e-16,
+          "level": 3,
+          "minimum_generalized_eigenvalue": 202495801251.6829,
+          "spectator": 3
+        },
+        {
+          "dimension": 96,
+          "exchange_norm": 8.310611333504732e-07,
+          "family": 2,
+          "generalized_eigen_residual": 8.457488566780687e-16,
+          "level": 1,
+          "minimum_generalized_eigenvalue": 202495801244.09064,
+          "spectator": 0
+        },
+        {
+          "dimension": 96,
+          "exchange_norm": 8.310609802780942e-07,
+          "family": 2,
+          "generalized_eigen_residual": 8.457488566780687e-16,
+          "level": 1,
+          "minimum_generalized_eigenvalue": 202495801244.09064,
+          "spectator": 1
+        },
+        {
+          "dimension": 192,
+          "exchange_norm": 6.308877065024026e-07,
+          "family": 2,
+          "generalized_eigen_residual": 1.3908262104804258e-15,
+          "level": 3,
+          "minimum_generalized_eigenvalue": 202495801251.68353,
+          "spectator": 0
+        },
+        {
+          "dimension": 192,
+          "exchange_norm": 6.308883501989507e-07,
+          "family": 2,
+          "generalized_eigen_residual": 1.3908262104804258e-15,
+          "level": 3,
+          "minimum_generalized_eigenvalue": 202495801251.68353,
+          "spectator": 1
+        },
+        {
+          "dimension": 192,
+          "exchange_norm": 6.308883418220309e-07,
+          "family": 2,
+          "generalized_eigen_residual": 1.3908262104804258e-15,
+          "level": 3,
+          "minimum_generalized_eigenvalue": 202495801251.68353,
+          "spectator": 2
+        },
+        {
+          "dimension": 192,
+          "exchange_norm": 6.30887690777775e-07,
+          "family": 2,
+          "generalized_eigen_residual": 1.3908262104804258e-15,
+          "level": 3,
+          "minimum_generalized_eigenvalue": 202495801251.68353,
+          "spectator": 3
+        }
+      ],
+      "common_kernel_approximation_upper": 0.0,
+      "complex_frame_unitary_residual": 9.930136612989092e-16,
+      "external_tent_Gram": 2.327132259284996e-06,
+      "independent_scalar_projection_relative_norm": 8.645739632700219e-15,
+      "maximum_invariant_block_dimension": 192,
+      "reference_open_exchange_difference_norm": 3.493948244700351e-06,
+      "side": "outgoing",
+      "signed_gaussian_open_exchange_Hermitian_defect": 1.2557623068305849e-09,
+      "signed_gaussian_open_exchange_norm": 7.246193011138723e-06,
+      "source_projection_relative_norm": 1.748479489750768e-13,
+      "spectator_off_block_max": 0.0,
+      "temporal_Gram_condition": 5492.228230595441,
+      "temporal_basis_count": 8,
+      "total_fermion_FE_dimension": 2880
+    }
+  ],
+  "source_quadrature_order": 12,
+  "source_temporal_trial": "b*P_k(2u/L-1), k0..6, plus b\u00b2; all true weak coordinate rates; no rank/spectrum deletion",
+  "variable_coefficient_source_closure_claimed": false
+}

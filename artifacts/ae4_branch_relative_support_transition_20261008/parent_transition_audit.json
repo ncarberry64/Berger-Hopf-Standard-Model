@@ -1,0 +1,540 @@
+{
+  "A_actual_parent_branch": {
+    "cached_geometry": "48 nodes, 98 N12 geometry entries (q37, velocity37, multipliers24); source_parent_revision524ed906. These cached operator operands remain reusable at their original claim strength.",
+    "chronology": "E0(lambda_0) -> C1=Y_-(lambda_0) [T>0] -> E1=C_* -> C2=E_*",
+    "incoming_selected_line": 23,
+    "outgoing_selected_line": 24,
+    "sources": [
+      {
+        "canonical_LF_sha256": "c1aa5ae5df1483dc1437bdac0b94884cf75a3651608fa06e8fc8c88b2dd6f83b",
+        "lines": [
+          322,
+          328,
+          331,
+          422,
+          423,
+          424,
+          425,
+          426,
+          427,
+          429,
+          434,
+          435
+        ],
+        "source_path": "scripts/certify_n12_finite_terminal_two_sided_interface.py",
+        "symbol": "build_payload"
+      },
+      {
+        "canonical_LF_sha256": "6032fef36054b7297a0b756f7bf06a30f3f2dcbedb463d97d8c28d4ef44cee49",
+        "lines": [
+          16,
+          17,
+          19,
+          20,
+          21,
+          22,
+          27,
+          28,
+          31,
+          32
+        ],
+        "source_path": "src/bhsm/interface/muon_parent_maxwell_velocity.py",
+        "symbol": "current_parent_fields"
+      },
+      {
+        "canonical_LF_sha256": "01fdc71b39345c892d58588c2acb9c447feaeaa17d69e3fa8989dde305460340",
+        "lines": [
+          903
+        ],
+        "source_path": "src/bhsm/interface/current_semantic_normalization.py",
+        "symbol": "_ontology"
+      }
+    ],
+    "spatial_parent_distinction": "Current muon parent Maxwell/source/tail modules reconstruct the spatial S5 parent-bulk operator on the saved outgoing current-C2 branch24 history. Their parent-bulk label does not identify that C2 history as temporal precursor P.",
+    "status": "RETAINED_COMPONENT_IDENTIFIED__PHYSICAL_TRANSFER_VALUE_UNEVALUATED",
+    "temporal_candidate": "P=C1=Y_-(lambda_0), lambda_0>0 sufficiently small, on the retained constrained incoming N12 branch23; it reaches E1=C_* in T(lambda_0)>0. This identifies a retained local precursor component, not a new constituent species.",
+    "theory": [
+      {
+        "lines": [
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          36,
+          37,
+          38,
+          39
+        ],
+        "role": "Retained local chronology and no member selection",
+        "source_path": "theory/n12_finite_terminal_two_sided_interface.md"
+      },
+      {
+        "lines": [
+          9,
+          10,
+          11,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26
+        ],
+        "role": "Spatial current-C2 parent operator coefficient scope",
+        "source_path": "theory/muon_parent_maxwell_velocity_20261001.md"
+      }
+    ]
+  },
+  "B_parent_noncontinuation": {
+    "derived_noncontinuation": "Because c_psi(E)b_psi(E)<0 and the lambda-chart field is regular, its local continuation on either nonzero lambda side satisfies tau(lambda)<tau_E. Thus this same regular sheet cannot furnish a nearby future physical-time continuation through E. Equivalently, at lambda=0 the retained reduced action Hessian has H_red Psi=0 while Psi^dagger rhs=b_psi!=0; a finite regular derivative satisfying H_red dot_z=rhs is impossible by the range condition.",
+    "domain_assumptions": "Simple selected eigenline; invertible hard complement; retained smooth constrained action/domain; other metric, lapse, eta, inertia, trace and gauge margins stay positive after restricting the local neighborhood. The range obstruction concerns finite regular derivatives in that domain.",
+    "limitations": "This is a local component result, not universal reachability, global exclusion of all branches, proof that no singular/weak continuation exists in another domain, or proof that the interacting physical muon transition value packet has been evaluated. A descriptor zero or canonical-stop label alone would not establish this result.",
+    "retained_equations": [
+      "D_tau Y=(b_psi/lambda) Psi+V_hard(Y)",
+      "D_tau lambda=(c_psi b_psi)/lambda+R(Y)",
+      "dY/dlambda=(b_psi Psi+lambda V_hard)/(c_psi b_psi+lambda R)",
+      "dtau/dlambda=lambda/(c_psi b_psi+lambda R)",
+      "tau(lambda)=tau_E+lambda^2/(2 c_psi(E)b_psi(E))+o(lambda^2)"
+    ],
+    "retained_incoming_certificate": {
+      "hitting_product": "c_psi b_psi<0",
+      "interpretation": "Read from existing directed certificate, not recalculated.",
+      "root_b_psi_lower": 9.980854784304529e-05,
+      "root_c_psi_upper": -9.531024040866406e-12,
+      "selected_branch": 23
+    },
+    "sources": [
+      {
+        "canonical_LF_sha256": "9b302e4a1412814c59ae93daf1a0cefcd61764f1f6e38ce33a666606e27c9397",
+        "lines": [
+          133,
+          135,
+          138,
+          141,
+          142,
+          145,
+          148,
+          150,
+          154,
+          155,
+          162,
+          163,
+          166,
+          167,
+          178,
+          179,
+          180,
+          181,
+          185,
+          186,
+          187
+        ],
+        "source_path": "scripts/derive_n12_finite_encapsulation_local_branch.py",
+        "symbol": "build_payload"
+      },
+      {
+        "canonical_LF_sha256": "010d1ec07ee9d3f4b4f77234d25a352e640847d549df8a0919f5041b3d9983a6",
+        "lines": [
+          251,
+          252,
+          253,
+          254,
+          255,
+          257,
+          272,
+          278,
+          281,
+          283,
+          284,
+          285,
+          286,
+          322,
+          329
+        ],
+        "source_path": "scripts/certify_n12_finite_terminal_orientation.py",
+        "symbol": "build_payload"
+      },
+      {
+        "canonical_LF_sha256": "f83764b5c8468cdf21d47ab377a493d45a7cd559ce65d0eb059e234553aad53d",
+        "lines": [
+          82,
+          84,
+          90,
+          91,
+          92,
+          93,
+          94,
+          95,
+          96,
+          97,
+          98,
+          99,
+          106,
+          107,
+          109,
+          110,
+          112,
+          113,
+          114,
+          115
+        ],
+        "source_path": "src/bhsm/interface/aether_forward_c2_exact_fixed_s_field.py",
+        "symbol": "exact_fixed_s_field_action"
+      }
+    ],
+    "status": "DERIVED_LOCAL_SAME_REGULAR_BRANCH_NONCONTINUATION__PHYSICAL_BINDING_UNEVALUATED",
+    "theory": [
+      {
+        "lines": [
+          14,
+          18,
+          20,
+          21,
+          22,
+          24,
+          28,
+          30,
+          31,
+          32,
+          33,
+          34,
+          39,
+          41,
+          44
+        ],
+        "role": "Exact local normal form; noncontinuation is the conditional consequence stated in this audit",
+        "source_path": "theory/n12_finite_encapsulation_local_branch.md"
+      }
+    ]
+  },
+  "CDE_retained_transition_subclosures": {
+    "binding_limit": "The exact generic common-event incidence and positive-duration child family are reusable. A proof center/SVD basis or saved C2 operator history is not by itself the evaluated interacting muon realization. No separate family/species selection gate is added.",
+    "generic_event_child_relation": "CLOSED__57_ROW_ACTION_RELATION",
+    "generic_same_event_orientation": "CLOSED__SWAPPED_INCIDENCE_E1=C_*_TO_C2=E_*",
+    "physical_muon_transition_application": "UNEVALUATED",
+    "positive_duration_child": "CLOSED_LOCAL_EXISTENCE__73_PARAMETER_C2_HISTORY_FAMILY",
+    "relation_rows": "Event and child constraint/energy blocks, selected event row, three configuration traces plus attachment match, two child-minus-event canonical momenta.",
+    "sources": [
+      {
+        "canonical_LF_sha256": "4b0fc61bae583a6a178e4d80ce4751ba3bd12a2f0eb44a60c9f21b1241cb33a9",
+        "lines": [
+          248,
+          261,
+          273,
+          274,
+          400,
+          401,
+          402,
+          403,
+          404,
+          405,
+          406,
+          407,
+          409,
+          411
+        ],
+        "source_path": "src/bhsm/interface/aether_full_reset_action_jacobian.py",
+        "symbol": "full_reset_residual"
+      },
+      {
+        "canonical_LF_sha256": "e5ef0334ef26cc1402e24b309438d42285874e36e30cd3257ebf80218ded37fc",
+        "lines": [
+          105,
+          106,
+          108,
+          148,
+          149,
+          187,
+          190,
+          191,
+          192,
+          193,
+          195
+        ],
+        "source_path": "scripts/derive_n12_c2_1222_parametric_base_family.py",
+        "symbol": "build_payload"
+      }
+    ],
+    "theory": [
+      {
+        "lines": [
+          8,
+          9,
+          15,
+          16,
+          17,
+          18,
+          36,
+          37,
+          38,
+          39,
+          40,
+          41,
+          42,
+          43,
+          45,
+          46,
+          47,
+          51,
+          52,
+          53,
+          54
+        ],
+        "role": "Outgoing child eta and canonical current relation reused; canonical C2 history not promoted to solved physical muon state",
+        "source_path": "theory/muon_current_eta_profile_attachment_20261003.md"
+      }
+    ]
+  },
+  "audit_id": "BHSM_MUON_BIRTH_PARENT_TRANSITION_AUDIT_20261008",
+  "bounded_scope": {
+    "executions": "Source text/JSON reads, metadata hashing and AST source-reference validation only; no numerical producers, historical replays, Gate7 campaign, controls, or cached rows executed/changed.",
+    "inspected": "Listed retained current muon parent geometry/source/tail/endpoint/eta packets and the N12 finite event/child, local noncontinuation and later AE3/AE4 physical enclosure transport lineage. This audit states a bounded unevaluated application, not exhaustive absence from all BHSM history.",
+    "no_new_species_action_selector": "No species, scalar support amount, coupling, action term, arbitrary reset member, experimental lifetime or fitted transition introduced."
+  },
+  "current_I_phys_supersession": {
+    "current_carrier": "D_enc={sigma<0}, Sigma_enc={sigma=0}, Lambda=1-4sigma^2; LOCAL_SAME_SPACETIME_ENCLOSURE",
+    "current_closed": "Carrier, local matching identities, geometry/topology/state-fiber inheritance and frozen family/mode transport (PEI_11) already derived.",
+    "current_open_values": "PEI_06 domain/six-sector assembly closed, values open; PEI_07 identity derived, physical nonzero block balance open; PEI_09 geometry/topology/state fibers inherited, full-field values open. These are the value-level contents of the single missing transition packet.",
+    "current_transport": "T_enc_(r,n)=(P_D L_sigma tensor I_SpinGauge tensor I_Fr)(U_R tensor I_Fr)(I_carrierSpinGauge tensor Pi_(r,n)); T_enc Pi=Pi T_enc",
+    "historical_bridge_signature": "I_phys:(P_BHSM,H_parent,E_stop,R_EC,S_AE2)->(route,D_enc,Sigma_enc,C_child,M_SM(P_BHSM))",
+    "historical_bridge_status": "Earlier missing AE2 carrier and PEI_11b/c family/enclosure gaps are superseded by later AE3/AE4 integration; not current first gaps.",
+    "sources": [
+      {
+        "canonical_LF_sha256": "1507ed3554eec2d9c3b07289e5b57f0571b1e666087b2e8317acd2e39581e5b6",
+        "lines": [
+          24,
+          25,
+          26,
+          28,
+          29,
+          30,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          39
+        ],
+        "source_path": "src/bhsm/interface/ae4_current_c2_physical_enclosure_state_integration.py",
+        "symbol": "transport_composition_contract"
+      },
+      {
+        "canonical_LF_sha256": "1507ed3554eec2d9c3b07289e5b57f0571b1e666087b2e8317acd2e39581e5b6",
+        "lines": [
+          60,
+          61,
+          64,
+          65,
+          68,
+          69,
+          72,
+          73,
+          76,
+          77,
+          80,
+          81,
+          84,
+          85,
+          88,
+          89,
+          91,
+          92,
+          93
+        ],
+        "source_path": "src/bhsm/interface/ae4_current_c2_physical_enclosure_state_integration.py",
+        "symbol": "reconciled_identification_rows"
+      },
+      {
+        "canonical_LF_sha256": "1507ed3554eec2d9c3b07289e5b57f0571b1e666087b2e8317acd2e39581e5b6",
+        "lines": [
+          102,
+          103,
+          105,
+          106,
+          107,
+          109,
+          110,
+          111,
+          112,
+          113,
+          115,
+          116,
+          117
+        ],
+        "source_path": "src/bhsm/interface/ae4_current_c2_physical_enclosure_state_integration.py",
+        "symbol": "hindsight_supersession_contract"
+      },
+      {
+        "canonical_LF_sha256": "1507ed3554eec2d9c3b07289e5b57f0571b1e666087b2e8317acd2e39581e5b6",
+        "lines": [
+          137,
+          138,
+          139,
+          140,
+          141,
+          142,
+          143,
+          145,
+          146,
+          147,
+          148,
+          149,
+          150,
+          151,
+          152,
+          153,
+          154,
+          155,
+          156
+        ],
+        "source_path": "src/bhsm/interface/ae4_current_c2_physical_enclosure_state_integration.py",
+        "symbol": "claim_boundary"
+      }
+    ],
+    "theory": [
+      {
+        "lines": [
+          39,
+          40,
+          41,
+          44,
+          45,
+          46
+        ],
+        "role": "Historical typed bridge; old open rows are not promoted to current absence",
+        "source_path": "theory/n12_gate7_physical_encapsulation_identification_bridge.md"
+      },
+      {
+        "lines": [
+          11,
+          12,
+          13,
+          14,
+          15,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          53,
+          54,
+          55,
+          56,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          64,
+          65
+        ],
+        "role": "Current carrier and transport supersession with remaining interacting values",
+        "source_path": "theory/ae4_current_c2_physical_enclosure_state_integration.md"
+      }
+    ]
+  },
+  "downstream_physical_status": {
+    "Sigma_(P->mu)": null,
+    "b_psi_seven_port": null,
+    "child_side_energy_equality": null,
+    "ell_star_mu_squared": null,
+    "physical_a_mu": null,
+    "physical_g_mu": null,
+    "physical_stationary_KKT_base": null,
+    "psi_mu_plus": null,
+    "status": "UNEVALUATED__DEPENDENT_ON_FIRST_TRANSITION_VALUE",
+    "xi_psi": null,
+    "z_psi": null
+  },
+  "first_missing_transition_operand": {
+    "name": "I_PHYS_MUON_BIRTH_TRANSFER_VALUE",
+    "required_value": "Evaluate the already-derived physical transition/enclosure transport on the same incoming C1/E1 and outgoing muon-labeled C2 realization: inherited full-field muon child traces and nonzero sector blocks at E1+, compatible common event-domain pullback, and actual paired canonical/Noether-Hamiltonian balance at E1. Bind the temporal P realization and realized outgoing muon state on this one event. This is one transition value packet, not a new map, species, family selector, carrier definition, or scalar support variable.",
+    "status": "UNEVALUATED_IN_INSPECTED_REALIZATION",
+    "value": null,
+    "why_first": "The incoming local noncontinuation law, regular event-child relation, local carrier, frozen family transport, and positive-duration C2 family are already owned. Their complete interacting value-level application to this particular P->mu transition remains unevaluated."
+  },
+  "owner_definition": {
+    "birth": "tau_(P->mu)=tau_P^out=tau_mu^in; Sigma_star^mu=Sigma_(P->mu)",
+    "criterion": "B has no admissible realized forward continuation; action-admissible successor C is dynamically realized across the same event; inherited constraint, canonical, interface and Noether/current matching holds.",
+    "decay": "tau_(mu->D)=tau_mu^out=tau_D^in is a later separate application; no later C2 stop is automatically muon birth or decay.",
+    "name": "BRANCH_REALIZATION_TRANSFER_EVENT",
+    "status": "OWNER_SUPPLIED"
+  },
+  "retained_artifact_identities": [
+    {
+      "path": "artifacts/flagship_integration/BHSM_N12_FINITE_TERMINAL_ORIENTATION_CERTIFICATE.json",
+      "role": "RETAINED_ARTIFACT_READ_ONLY__PRODUCER_NOT_EXECUTED",
+      "sha256": "2fb7a89a7704d9a017511b2c76d9f3f80a2f1b41f970ac36d3dbf7b954a08aae"
+    },
+    {
+      "path": "artifacts/flagship_integration/BHSM_N12_FINITE_TERMINAL_TWO_SIDED_FORWARD_INTERFACE.json",
+      "role": "RETAINED_ARTIFACT_READ_ONLY__PRODUCER_NOT_EXECUTED",
+      "sha256": "0ba9d5c8fdf495cbf0565b5f1703907edb9f4450c28d0557c0aec9b79a5cf8f7"
+    },
+    {
+      "path": "artifacts/flagship_integration/BHSM_N12_FINITE_TERMINAL_RESET_STRATUM_CANDIDATE.npz",
+      "role": "RETAINED_ARTIFACT_READ_ONLY__PRODUCER_NOT_EXECUTED",
+      "sha256": "303bebe80e6033d398278935c9ad01cd1a8c72edee208d52c0005a252119d0cd"
+    },
+    {
+      "path": "artifacts/flagship_integration/BHSM_N12_C2_RESET_GENERATED_LAUNCH_CHART.json",
+      "role": "RETAINED_ARTIFACT_READ_ONLY__PRODUCER_NOT_EXECUTED",
+      "sha256": "570bc1093194ba6ca8ed91f6fe657d3bf965f76b30ec34cfc40704697be10842"
+    },
+    {
+      "path": "artifacts/flagship_integration/BHSM_N12_C2_1222_PARAMETRIC_BASE_FAMILY.json",
+      "role": "RETAINED_ARTIFACT_READ_ONLY__PRODUCER_NOT_EXECUTED",
+      "sha256": "f74c3044dedae07d5be2d56f7c839c6ab6ed0d5e4f1e14b19ded7ea25fafcea1"
+    },
+    {
+      "path": "artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_AFFINE_CONTINUOUS_FIRST_STOP.json",
+      "role": "RETAINED_ARTIFACT_READ_ONLY__PRODUCER_NOT_EXECUTED",
+      "sha256": "111c6fe1e8d297b68de6b19e2d257d5dc437bc7ec970db2c9dbf08737b40df5f"
+    },
+    {
+      "path": "artifacts/muon_parent_geometry_20261001/input_provenance.json",
+      "role": "RETAINED_ARTIFACT_READ_ONLY__PRODUCER_NOT_EXECUTED",
+      "sha256": "e0229212f8f5b713c4d00d9ffb928a24e928ef2f7202c346f874d79c70fe18bb"
+    },
+    {
+      "path": "artifacts/muon_parent_geometry_20261001/source_context.json",
+      "role": "RETAINED_ARTIFACT_READ_ONLY__PRODUCER_NOT_EXECUTED",
+      "sha256": "490d577b204c0becb1fa355196d7456a90a2d6cca2e07fc13be4ed06fb80a49c"
+    },
+    {
+      "path": "artifacts/muon_parent_geometry_20261001/inputs.npz",
+      "role": "RETAINED_ARTIFACT_READ_ONLY__PRODUCER_NOT_EXECUTED",
+      "sha256": "3535f373df3ad4ec92c82ea8b50482747153e0645c82e53e940284deacac4494"
+    },
+    {
+      "path": "artifacts/muon_parent_geometry_20261001/replay_reference/result.json",
+      "role": "RETAINED_ARTIFACT_READ_ONLY__PRODUCER_NOT_EXECUTED",
+      "sha256": "bd718452d6d6281c69e74df38016b826fc6e6bbe2a12e0965f9b0c143373f069"
+    },
+    {
+      "path": "artifacts/muon_eta_profile_attachment_20261003/replay_reference/result.json",
+      "role": "RETAINED_ARTIFACT_READ_ONLY__PRODUCER_NOT_EXECUTED",
+      "sha256": "47e64ae904a410d90672075ce773222413eb975f57648f5aa17c82f667295521"
+    },
+    {
+      "path": "artifacts/muon_joint_variational_attachment_20261005/inherited_parent_checkpoint.json",
+      "role": "RETAINED_ARTIFACT_READ_ONLY__PRODUCER_NOT_EXECUTED",
+      "sha256": "81d306687dadd930023778f48f03824a952b80f9186fdca2396be997233a3353"
+    }
+  ],
+  "schema_version": 1,
+  "scientific_reference": "524ed90689bd5923c249bba2e699abf627e703cd",
+  "source_reference_validation": {
+    "numerical_owner_functions_executed": 0,
+    "status": "EVALUATED__AST_SYMBOL_AND_LINE_BOUNDS_VERIFIED",
+    "unique_references": 12
+  },
+  "starting_head": "1e5933fe6e027eb25fdf2ee92f526f6025465ab1"
+}

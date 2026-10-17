@@ -1,0 +1,77 @@
+{
+  "classification": "VERIFIED_BYTE_IDENTICAL_CORRECTED_PROFILE_COUPLED_FIELD_APPLICATION",
+  "commands": [
+    {
+      "command": "$env:PYTHONPATH='src'; $env:OPENBLAS_NUM_THREADS='1'; C:\\Python314\\python.exe -m pytest --noconftest -q tests/test_muon_parent_positive_coupled_field.py",
+      "exit_code": 0,
+      "output": "..... [100%]\n5 passed in 3.87s"
+    },
+    {
+      "command": "$env:PYTHONPATH='src'; $env:OPENBLAS_NUM_THREADS='1'; C:\\Python314\\python.exe scripts/evaluate_muon_parent_positive_coupled_field.py --output artifacts/muon_parent_positive_coupled_field_20261011/run_1",
+      "exit_code": 0
+    },
+    {
+      "command": "$env:PYTHONPATH='src'; $env:OPENBLAS_NUM_THREADS='1'; C:\\Python314\\python.exe scripts/evaluate_muon_parent_positive_coupled_field.py --output artifacts/muon_parent_positive_coupled_field_20261011/run_2",
+      "exit_code": 0
+    }
+  ],
+  "first_test_failures": null,
+  "independent_equation_review": "downstream reviewed intrinsic boundary cross/mass/real2Re and temporal moments; no material defect found",
+  "paired_files": [
+    {
+      "byte_identical": true,
+      "bytes": 1191114,
+      "file": "incoming_action.npz",
+      "sha256": "0ee052e7b9953c56491c9ca7b18d0ee5e32859c0bb4248d0a8327e103a185483"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 5054201,
+      "file": "incoming_green.npz",
+      "sha256": "a52d261c3872f0ff0a4e4860359e7c128df0d4e03d66f7e8b904e56facf59c36"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 1008332,
+      "file": "incoming_hilbert.npz",
+      "sha256": "f0a8abb76a053a8c293252968c5930c68e723d056bfbbf383d73a3528d390e94"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 82072,
+      "file": "incoming_images.npz",
+      "sha256": "d39af945c2e5c5635d380a2c7616a54f46df28f36417be9a81f350d9fde58fc2"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 1190279,
+      "file": "outgoing_action.npz",
+      "sha256": "2b7df491a957f9c24d6c13c36176bad34a0ef1720950f965a3305410f99bceb3"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 5016656,
+      "file": "outgoing_green.npz",
+      "sha256": "17cf2d7708184ebcb5c1f926c6bf882b42d6b584f5203de81574f71e09c3be76"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 999717,
+      "file": "outgoing_hilbert.npz",
+      "sha256": "8f36a0577175f6a631cbb37e1692b617de8f190bec35a91fa7f250cfc7362311"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 82925,
+      "file": "outgoing_images.npz",
+      "sha256": "8e3076905dd4abe3ea4d7fc6947388de845d92432da567204c7b8260cc42aa63"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 12457,
+      "file": "result.json",
+      "sha256": "722c58862a28e0056bdc1312a1ec26f5f4986946ed07840683ec481610412449"
+    }
+  ],
+  "publication_audits_run_by_this_subagent": false
+}

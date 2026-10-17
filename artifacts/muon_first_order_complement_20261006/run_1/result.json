@@ -1,0 +1,164 @@
+{
+  "accepted_parent_solution_changed": false,
+  "classification": "DOMAIN_VALID_COMPACT_FIRST_ORDER_GALERKIN_REDUCTION_NOT_RETARDED_OR_NATIVE",
+  "domain": {
+    "complement": "not p-W Bvol p; actual bulk-only Q variations in independent H5+H4",
+    "material": "P G0 chi=0,Q_boundary G1 chi=0; each compact p trace is zero",
+    "other_faces": "zero trace on reset,past-prefix,true stop,pole by compact support; not new physical endpoint conditions",
+    "seam": "all mixed material seam terms zero for these compact Q tests, not zero on general Q domain",
+    "temporal": "phi0=x(1-x),phi1=x(1-x)(2x-1), extended by zero on inherited arc6..8 interior segment"
+  },
+  "error_scope": "binary64 model: existing512-point nodal spatial quadrature, linear interpolants of FIRST-ORDER weak moment densities on one retained element, exact degree-polynomial temporal quadrature; no interpolation/history/continuum bound",
+  "evaluated_points": [
+    {
+      "arc": 6.0,
+      "branch": 24,
+      "canonical_C": 0.6885943748030233,
+      "canonical_C_tau": 1.2326473095112482,
+      "clock_density": 1.329027080488902e-06,
+      "node": 3,
+      "normalization": "cached I/I_tau/u and WW Cauchy matrix; no mode re-normalization",
+      "signed_descriptor": 5.979978378310739e-10
+    },
+    {
+      "arc": 8.0,
+      "branch": 24,
+      "canonical_C": 0.6885953241506891,
+      "canonical_C_tau": -0.38059444838823875,
+      "clock_density": 1.5849531003187395e-06,
+      "node": 4,
+      "normalization": "cached I/I_tau/u and WW Cauchy matrix; no mode re-normalization",
+      "signed_descriptor": 6.753483472325699e-10
+    }
+  ],
+  "first_order_B": "Gamma0 D5 raw; A5=(B+Bformal)/2 for literal symmetric proposal",
+  "first_order_column_checks": [
+    {
+      "action_proof": {
+        "diagnostic_L2_not_used_as_first_order_inverse": true,
+        "first_order_time_density_skew_residual": 1.0742603758673405e-15,
+        "full_Euler_off_p_frame_L2_norm": 14.70139110190394,
+        "full_Euler_selected_L2_norm": 15.390139064034255,
+        "normal_Euler_outside_compact_p_support_L2_norm": 2.321645205111668,
+        "normal_Euler_selected_L2_norm": 2.7001328060545307,
+        "selected_cached_raw_actions": {
+          "n1": {
+            "raw_W_columns_vs_cache": 3.6666281482077093e-14,
+            "raw_p_columns_vs_cache": 1.6194094401781708e-14
+          },
+          "n3": {
+            "raw_W_columns_vs_cache": 4.9892760639995006e-14,
+            "raw_p_columns_vs_cache": 1.1416734809524845e-14
+          }
+        },
+        "symmetric_density_Hermitian_residual": 0.0
+      },
+      "coefficient_proof": {
+        "clock_producer_rerun": false,
+        "geometric_formal_dual_normal_divergence_residual": 0.0,
+        "geometric_formal_dual_time_divergence_residual": 1.9984014443252818e-15,
+        "normalization_producer_rerun": false,
+        "radial_probe_end_traces": [
+          0.0,
+          0.0
+        ],
+        "source_profile_reconstruction_residual": 1.1102230246251565e-16
+      }
+    },
+    {
+      "action_proof": {
+        "diagnostic_L2_not_used_as_first_order_inverse": true,
+        "first_order_time_density_skew_residual": 1.118980317434393e-15,
+        "full_Euler_off_p_frame_L2_norm": 18.03781284085109,
+        "full_Euler_selected_L2_norm": 22.258344059922248,
+        "normal_Euler_outside_compact_p_support_L2_norm": 2.3216282936491757,
+        "normal_Euler_selected_L2_norm": 2.7001136354768884,
+        "selected_cached_raw_actions": {
+          "n1": {
+            "raw_W_columns_vs_cache": 2.1999903283459972e-11,
+            "raw_p_columns_vs_cache": 1.388462833379556e-14
+          },
+          "n3": {
+            "raw_W_columns_vs_cache": 2.2076195062426352e-11,
+            "raw_p_columns_vs_cache": 1.0141044229523383e-14
+          }
+        },
+        "symmetric_density_Hermitian_residual": 0.0
+      },
+      "coefficient_proof": {
+        "clock_producer_rerun": false,
+        "geometric_formal_dual_normal_divergence_residual": 0.0,
+        "geometric_formal_dual_time_divergence_residual": 1.9984014443252818e-15,
+        "normalization_producer_rerun": false,
+        "radial_probe_end_traces": [
+          0.0,
+          0.0
+        ],
+        "source_profile_reconstruction_residual": 1.1102230246251565e-16
+      }
+    }
+  ],
+  "first_order_eta": "B_eta=i Gamma0 Gamma4 eta is skew; formal sign reverses; A5W=B5W-B_eta W on interior compacts",
+  "frozen_locals_changed": false,
+  "matching": {
+    "Yukawa_in_previous_canonical_convention": "unchanged once-owned C_L^sharp YH C_R; elimination has no extra explicit YH bridge here",
+    "complete_A_eff": null,
+    "correction_scope": "24 Q coordinates (two bubbles x twelve retained source columns), not the full Q domain; parent contribution only in A_eff_parent_restricted",
+    "direct_result_preserved": true,
+    "full_matching_outcome": "unevaluated; direct restriction remains nonmatching at its preserved scope",
+    "kinetic_coefficients_of_full_effective_action": null,
+    "nonlocal_kernel_not_discarded": true
+  },
+  "missing_action": {
+    "category": "unevaluated causal realization of unadopted proposal, not inferred physical absence or new vacuum datum",
+    "consumer": "a_RQ(v,X_Q^R w) in A_eff and total same-photon derivative",
+    "equation": "a_QQ(eta,X_Q^R w)=a_QR(eta,w) for every eta in Q_domain; support(X_Q^R w) in J_plus support(a_QR w)",
+    "material": "P G0 X=0,Q_boundary G1 X=0",
+    "name": "retarded complementary first-order Green action on reached normal/temporal/angular outputs",
+    "producer": "first-order Euler of proposed S5sym plus proposed material domain and inherited causal/reset continuation; numerical realization not supplied by squared-action tail cache",
+    "reset": "same inherited U_R trace graph",
+    "stop_scope": "saved stop supplies a nonnegative Friedrichs form closure, not an evaluated first-order retarded terminal relation; no new endpoint parameter asserted"
+  },
+  "native_operator_updated": false,
+  "old_checks_repeated": false,
+  "old_production_rerun": false,
+  "physical_a_mu": null,
+  "physical_g_mu": null,
+  "proposal_adopted": false,
+  "restricted_solve": {
+    "A_QQ_condition": 1.0000148622519727,
+    "actual_equation_backward_residual": 2.8425011989399757e-17,
+    "actual_equation_residual": 1.734723476235566e-18,
+    "full_retarded_complementary_action": false,
+    "matrix_equation_residual": 7.152448124033522e-18,
+    "positive_squared_inverse_used": false,
+    "regularizer_added": false,
+    "restricted_correction_contraction": [
+      3.999580799556881e-07,
+      1.1958478312002337e-22
+    ]
+  },
+  "same_owner_terms": {
+    "Yukawa": "once-owned wall bridge unchanged; no explicit Y/H term in compact QQ,QR,RQ at this fixed background/frame order",
+    "completion_and_subtraction": null,
+    "intrinsic_wall": "Q component zero; intrinsic term remains in A_RR once, not omitted from proposed action",
+    "parent_symmetric_first_order": "evaluated on compact trial subspace",
+    "proposed_seam": "included, zero by applicable traces",
+    "quantum_measure": null
+  },
+  "source_frame": {
+    "Gamma0_closure_residual": 6.544457946982077e-16,
+    "columns": 12,
+    "dependent_Gamma0_columns_not_added": true,
+    "physical_e_R_realization": false,
+    "unmatched_right_spin_LL_retained": true
+  },
+  "source_jet": {
+    "auxiliary_photon_result": "previous corrected L contraction preserved; not substituted for physical vertex",
+    "coordinate": "same photon b_A; beta=T_b b; A_Q=sqrt(2)beta; no rescaling or index2/3",
+    "physical_source_stationary_return": null,
+    "total_AQQ_A": null,
+    "total_AQR_A": null,
+    "total_ARQ_A": null
+  }
+}

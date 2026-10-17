@@ -1,0 +1,110 @@
+Real coupled muon continuation: reached action inputs and exact contacts
+2026-10-15. The requested physical solve has not been completed.
+
+The current regular interface owns its gauge/scalar incidence and its area
+action. No new reset law is required. The next task is numerical evaluation
+of the coupled physical action/background and its future outgoing operator.
+
+WHY THE AVAILABLE MIDPOINT DRIVER IS NOT THE REQUESTED PHYSICAL SOLVE
+
+muon_birth_coupled_primal_midpoint.materialize_midpoint obtains its initial
+raw state from endpoint_raw_from_assigned_application, which explicitly
+constructs the stored zero-independent-gauge initializer. The action then
+gets lambda_H from correction_representation.scalar_matching. That helper
+uses G_F*m_h^2/sqrt(2), labeled calibrated tree matching. Both old real phase
+and current complex shooting receipts assign nu_squared_action=4 and leave
+surface_gamma=None. The selected regular area term has therefore not been
+numerically bound in these finite problems.
+
+Running that materializer and relabeling its result as an action-derived
+physical muon would be incorrect. Replacing the missing values by zero,
+fitting them to the matching residual, or treating action coefficients as
+Euler unknowns would change the problem. No such continuation is launched.
+
+Consistent real launch data must solve L_v(x0,v0,y0)=p0 and L_y=0, together
+with Gauss, multiplier, gauge-frame and constraint-preservation equations.
+Setting p0=L_v at an arbitrary initializer does not enforce the rest.
+At the interface these data must also satisfy the actual trace/flux laws
+and complementary retarded returns. The same primal action/domain is needed
+for the future derivative and the original Maxwell/226-row validation.
+
+WHAT THE ACTION CURRENTLY SUPPLIES
+
+The AE4 microscopic owner fixes
+  Gamma=-(1/2)STr E1(ell_star^2 P_strat)+relative zeta/eta completion,
+  P_strat=D_strat^dagger D_strat on the zero-mode/BRST quotient.
+Its positive-order moments F_p=-ell_star^(-p)/p are fixed. A freely chosen
+regulator profile is not the present obstruction. Finite form-core source
+and Hessian evaluators also exist; they require their actual operator,
+domain and source/contact forms.
+
+The Higgs coefficient ledger requires the second/fourth variations and
+wavefunction residue of the same boundary functional along its normalized
+scalar direction. It does not supply a numerical lambda_H by calling that
+ledger. Current physical P_strat/domain, relative completion, scalar
+direction/residue, and the corresponding finite normalized derivatives
+have not been evaluated. These are pending action applications, not an
+authorization to insert independent coefficients.
+
+A formed-muon pole calculation on a completed background can define an
+intrinsic moment without reconstructing a collider history. The conditional
+local tree vacuum/pole template already exists. The absence of a collider
+history is not promoted to an extra gate on that route. Neither that tree
+template nor a finite Dirac spin pairing supplies the full BHSM outgoing
+operator and its magnetic response.
+
+NORMALIZATION AND UNITS
+
+For a simple pole, E_B=-(l Gamma_B r)/(l Gamma_E r). Arbitrary left/right
+spinor scalings and a common normalization of Gamma cancel. A common energy
+unit also cancels from dimensionless g when energy, magnetic field and
+charge normalization are transformed consistently. An unknown overall unit
+alone is therefore not a sufficient reason to deny a dimensionless g.
+
+Dimensionless action ratios survive. Lambda_H is dimensionless. Setting
+nu to one by units requires rescaling the geometry and all fields; nu*R
+is invariant. Varying nu at fixed retained cap is not a unit change. The
+relative surface coefficient likewise survives the common unit change.
+Canonical magnetic-field normalization cannot erase its dependence inside
+the full interacting operator. No magnetic vertex or spin term is set zero.
+
+NEW EXACT LOCAL APPLICATIONS
+
+The numerical packets use only the explicitly identified historical REAL
+finite state. They do not clip or substitute for current complex trial0000.
+
+One application differentiates the actual scalar potential coefficient
+polynomial and original area density. Unit coefficient components are basis
+extractions, not chosen physical couplings. The recorded nu_squared=4 is
+identified as an assigned historical value wherever used diagnostically.
+The nonzero potential/area cotangents show why those coefficients cannot be
+omitted from the current real coupled equations.
+
+A second application gives a local canonical scalar momentum direction
+parallel to H. It leaves all four scalar Gauss moment maps unchanged by
+generator antisymmetry, while its canonical energy has a strictly positive
+quadratic change. The temporal connection is retained. This is a local
+scalar-sector result; it does not establish a family of full gravitational,
+Maxwell or interface solutions. It shows that outgoing response and scalar
+Gauss alone do not specify the nonlinear background.
+
+Both applications are independently executed twice, with source/input hashes
+and exact numerical outputs preserved. They do not constitute a physical
+trajectory, an outgoing-domain derivative check or a prediction.
+
+UNCHANGED PHYSICAL GATES
+
+No full physical outgoing derivative passes 2e-10 here; no coupled matching
+correction is applied. Maxwell before-state magnitude remains
+2.4777309846820184. The best saved original226 maximum remains
+9.602842247524184e-7 at row226 common_normal_temporal_dual[0]. There is no
+new after-correction residual report. Both physical spin residues and the
+muon magnetic moment remain unevaluated. Frozen predictions and the prior
+regular-interface checkpoint remain unchanged.
+
+The next physical computation must instantiate the same-action spectral
+operator/domain and normalized scalar/geometry coefficients, or otherwise
+provide their already action-derived application, then solve the coupled
+real background and retarded Jacobi problem. Repeating the calibrated
+midpoint solve or tightening an internal finite residual cannot supply those
+missing action evaluations.

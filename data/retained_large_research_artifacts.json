@@ -1,7 +1,7 @@
 {
   "schema": "BHSM_RETAINED_LARGE_RESEARCH_ARTIFACTS_V1",
   "reviewed_public_main": "d0844d009fd12a10c97d79f21443df6764391203",
-  "purpose": "Retain reproducibility inputs already in public main; no blanket exemption for new large files. JSON hashes use LF, NPZ hashes use exact bytes.",
+  "purpose": "Retain individually reviewed historical reproducibility inputs. reviewed_public_main identifies the original public-main ledger; later entries record their branch provenance. No blanket exemption for new large files. JSON hashes use LF, NPZ hashes use exact bytes.",
   "physical_completion": false,
   "artifacts": [
     {
@@ -203,6 +203,20 @@
       "path": "artifacts/flagship_integration/BHSM_N12_GATE7_SIGNED_GREEN_CURRENT_CENTER_GRAPH_JACOBIAN.npz",
       "canonical_bytes": 27774601,
       "sha256": "6eab2efec9fe3460ff94de43d8fab3e9188b9e601c4c559f9ece8047a96ffedc"
+    },
+    {
+      "path": "artifacts/muon_first_order_complement_20261006/run_2/first_order_compact_reduction.npz",
+      "canonical_bytes": 11125650,
+      "sha256": "f35ae512a03639ccc887bdeead0350a8cdec147b15db5b66ed6f94da794bfdb2",
+      "classification": "HISTORICAL_SCIENTIFIC_EVIDENCE",
+      "reviewed_branch_head": "00fa89d62e4c74ee9fd0b41611b3468ad035b5db",
+      "historical_introduction_commit": "b0b5cdec48735f6e2ae40051a32662297882b7e4",
+      "scientific_reference": "524ed90689bd5923c249bba2e699abf627e703cd",
+      "provenance": "Saved run_2 output_hashes.json records these exact NPZ bytes; theory/muon_first_order_complement_20261006.md documents the proposed-seam compact first-order Galerkin reduction and its restricted scope.",
+      "preservation_reason": "Preserve the reproducible historical compact-action reduction and its retained first-order matrices; neither a full retarded/native realization nor a physical muon observable.",
+      "artifact_regenerated": false,
+      "consumed_as_new_physical_data": false,
+      "retention_review": "theory/muon_first_order_artifact_retention_20261007.md"
     }
   ]
 }

@@ -1,0 +1,136 @@
+REAL POSITIVE-COVECTOR CONORMAL SUPPLEMENT, 2026-10-16
+
+This supplements, and does not mutate, the completed full1920 covector
+binding pair/proof muon_real_d5_positive_covector_binding_20261016.txt.
+The SAME real positive-coframe/covector premise remains explicit. The new
+objects are the boundary CONTACT of Delta A only, not a full native wall
+operator, a selected outgoing domain or a physical energy insertion.
+
+1. Primitive positive-form conormal
+----------------------------------
+At fixed material rho, the frozen operator principal coefficients are
+
+    B^t=I/N,
+    beta=B^rho=-z I/N-i eps alpha4/C,
+    alpha4=Gamma0 Gamma4=alpha4^dagger.
+
+The coefficients N,C,R,z and their supplied time first are REAL; this is
+explicitly checked before differentiating the positive adjoint. This rule
+is not used for an independent complex analytic source axis.
+
+With delta=-(1+i)f0cot(f), d=delta psi, the actual zero-order contact is
+
+    Delta p_t=(mu/N)d,
+    Delta p_rho=mu beta^dagger d,
+    mu=N C R^3.
+
+Its complete real-time first is
+
+    (Delta p_t)_t=(mu_t/N-mu N_t/N^2)d+(mu/N)d_t,
+    (Delta p_rho)_t=mu_t beta^dagger d
+                    +mu (beta^dagger)_t d+mu beta^dagger d_t,
+    d_t=delta_t psi+delta psi_t,
+    (beta^dagger)_t=(-z_t/N+z N_t/N^2)I
+                    -i eps alpha4 C_t/C^2.
+
+Every contact is retained. The firsts use only the primary packet's actual
+reference-time axis, and the actual declared trial time derivative once.
+The archive includes the primitive density factors mu beta^dagger and mu/N
+and their time first, in addition to their full1920 trial applications.
+
+2. Normalization on the positive coframe, not a Lorentz wall clock
+----------------------------------------------------------------
+The underlying positive coframe is
+
+    e0=N dt, e4=C(d rho+z dt), ea=R theta_right^a.
+
+The fixed material face has induced positive clock and normal norm
+
+    ell_E=sqrt(N^2+C^2 z^2),
+    sqrt(g^{rho rho})=ell_E/(N C),
+    mu_Sigma,E=ell_E R^3.
+
+Consequently the unit-normal positive conormal CONTACT is
+
+    Delta Gamma1=beta^dagger d / sqrt(g^{rho rho}),
+    mu_Sigma,E Delta Gamma1=Delta p_rho.
+
+Both equalities and their full time first are checked on every saved node,
+branch and sheet. These are regular positive-coframe level-set quantities.
+They neither reuse the Lorentz surface_proper_clock_rate nor the earlier
+sigma-normal foliation; no sign of a Lorentz norm is replaced by an absolute
+value. Because the current coordinate rho=WALL is material-fixed, no extra
+wall velocity is added to z.
+
+The input/output density isometry s=sqrt(C R^3) gives
+
+    trace measure weight=mu_Sigma,E/s^2=ell_E/C,
+    Delta p_rho=s [N beta^dagger (s d)].
+
+The second equation and its complete first are checked numerically. It is
+a representation change of the positive weak-form boundary pairing. It
+does not specify which boundary values are admitted or identify the
+unsquared Dirac-bar seam with a positive-native mass. Zero-order Delta A
+does not change the unsquared Lorentz Green PRINCIPAL current.
+
+3. Actual operands and independent control
+-----------------------------------------
+The primary q5 coefficient/source packet is EXACTLY
+artifacts/muon_real_coupled_open_operator_20261016/source_first_run_1/
+application.npz SHA256
+7da8ddd5fa4bda397aa6a2d50e845338a3ef92fb3f0e837a5a6d0d166915e177.
+The base binding receipt is exactly
+4a159edd6d1c5c2d392c1dfe69b70b1c802a8b2bd385df1483fac5d9297a8779,
+its archive SHA exactly
+f6f31cf45e138a53188fb8286da870da791e87d3a74c0aa7157372170d7ec380.
+
+Wall trial values/time derivatives are evaluated by the existing PURE
+declared_trials polynomial function, not a D5 or source/profile calculation.
+Its owner audits/bhsm_real_full_d5_source_first_application_20261016.py has
+SHA256 c96814490c43faa21b35a4b2f14926d48929fa60cc6f2af774a148225dd65aa9.
+The same function's core trial and time values must match EVERY BYTE of
+the actual frozen pilot3 recovery inputs, separately for both sheets/arms.
+All full3families x2branches x4spin x16internal x5angular x3trial entries are
+kept. No projection/threshold or new spin-state normalization is introduced.
+
+An independent MP70 literal actual-WALL four-spin-vector product reconstructs
+the source-affine N,C,z,f,ft,fr,R and trial, then differentiates the entire
+mu beta^dagger delta psi expression with mpmath.diff. This is not a
+derivative of the assembled conormal formula. Both orientations/arms were
+checked; scaled value error <=3.22e-19 and time-first error <=5.57e-18 on
+those independent spin-vector controls. Surface/density identities were
+also checked on ALL full1920 entries, not only that sample.
+
+Actual declared full1920 WALL contact norms:
+incoming both orientations: radial 0.105169480335604,
+    radial time-first 0.749072369557 / 0.749072467385,
+    temporal 0.0883642028184654, time-first 0.00840154556540793.
+outgoing both orientations: radial 0.120088657909891,
+    radial time-first 0.809946523769 / 0.809947032071,
+    temporal 0.158679421919198, time-first 0.201823949689237.
+The sheet-dependent time first is retained rather than averaged.
+Full surface/density first identities are <=1.40e-16 entry-scaled.
+
+4. Exact pair and source inventory
+----------------------------------
+Canonical producer
+audits/bhsm_real_d5_covector_conormal_supplement_20261016.py
+SHA256 2b03eae4a58ed841f02ac4b64d2191e5555ad2a3267fb8aea873b1a059599b9d.
+
+WORK/outputs/bhsm_real_d5_covector_conormal_supplement_20261016/run_1 and
+run_2 repeat ALL THREE files byte-identically:
+actual_covector_positive_conormal_contacts.npz (12,074,606 bytes)
+  cce055b7d6889dd006fb5d58ca5dfd11a43ad4ef709d342079ba9405249de63e
+result.json
+  8401ead3cdd6b58aed4e8603cf84143ae4a371dc7fee23b64e4f0e8733b27edc
+executed_producer.py
+  2b03eae4a58ed841f02ac4b64d2191e5555ad2a3267fb8aea873b1a059599b9d.
+Each receipt pins295 exact consumed source/input paths, including all
+imported bhsm sources. The archive exceeds10MiB; publication should retain
+its exact bytes through the existing raw-chunk reconstruction convention,
+or preserve it externally. Do not silently resave it with different arrays.
+
+No full native wall action/conormal or outgoing domain is claimed, and no
+physical energy/field derivative, radial state convergence, spin pole,
+moment, Maxwell226-row pass or coupled correction follows from this local
+boundary-contact construction. Original coupled corrections applied:0.

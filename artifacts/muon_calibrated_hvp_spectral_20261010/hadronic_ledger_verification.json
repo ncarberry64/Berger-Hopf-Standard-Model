@@ -1,0 +1,36 @@
+{
+  "classification": "DETERMINISTIC_PHYSICAL_HADRONIC_LEDGER_VERIFICATION",
+  "committed": false,
+  "complete_native_remainder": false,
+  "frozen_inputs_modified": false,
+  "measured_anomaly_used": false,
+  "producer_commands": [
+    {
+      "command": "C:\\Python314\\python.exe scripts/evaluate_muon_calibrated_hadronic_ledger.py --output artifacts/muon_calibrated_hvp_spectral_20261010/hadronic_ledger_run_1",
+      "exit_code": 0
+    },
+    {
+      "command": "C:\\Python314\\python.exe scripts/evaluate_muon_calibrated_hadronic_ledger.py --output artifacts/muon_calibrated_hvp_spectral_20261010/hadronic_ledger_run_2",
+      "exit_code": 0
+    }
+  ],
+  "pushed": false,
+  "raw_bytes_identical": true,
+  "runs": [
+    {
+      "bytes": 59249,
+      "path": "artifacts/muon_calibrated_hvp_spectral_20261010/hadronic_ledger_run_1/physical_hadronic_ledger.json",
+      "sha256": "f4018839cbe7c9424b5d77c93d205e2a6106631a47e60799f880efbb23393f84"
+    },
+    {
+      "bytes": 59249,
+      "path": "artifacts/muon_calibrated_hvp_spectral_20261010/hadronic_ledger_run_2/physical_hadronic_ledger.json",
+      "sha256": "f4018839cbe7c9424b5d77c93d205e2a6106631a47e60799f880efbb23393f84"
+    }
+  ],
+  "tests": {
+    "command": "$env:PYTHONPATH='src'; C:\\Python314\\python.exe -m pytest tests/test_muon_calibrated_hadronic_ledger.py tests/test_muon_calibrated_hvp_nnlo.py tests/test_muon_calibrated_hvp_higher.py tests/test_muon_calibrated_hvp_spectral.py -q",
+    "exit_code": 0,
+    "stdout": "45 passed in 16.74s"
+  }
+}

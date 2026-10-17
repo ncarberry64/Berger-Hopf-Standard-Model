@@ -1,0 +1,81 @@
+FINAL GUARDED ea02 D4 PHASE BACKEND ADDENDUM, 2026-10-16
+
+This supplements the unchanged proof
+muon_original_ea02_d4_phase_operator_20261016.txt
+SHA256 30c8d52f1e041ad54170e83a8054771a744baa2a9cf8197534c5976166710e1d.
+Its original run_1/run_2 pair and all pilot bytes are preserved.
+
+The final canonical source
+audits/bhsm_original_ea02_d4_phase_operator_20261016.py now has SHA256
+c2f11bd4890631c03afee8b0db1fe8a93e505a12071da9cd2b9923744e8a5c6d.
+It adds the focused guards requested during read-only root review:
+
+1. BEFORE importing, enforce the reviewed packed scalar source SHA256
+   8fcc5e3a5c0e2724cf24789c8326fb9725601f5a991e4f5e0b3189a27c0ca5fe
+   and independent anchored material-chart4 source SHA256
+   0aca698c5906bccaf0ac022a31f3d5f78aa4ec6e245132e893bb50295c2be212.
+2. On EVERY existing fresh matvec, compare returned full point/density/wall
+   base coefficients with the exact frozen reviewed primal export. Worst
+   absolute upper differences are4.04e-62,9.59e-57,1.19e-65 respectively.
+   These are value-germ checks; the zero test h direction is not falsely
+   called the nonzero physical primal clock.
+3. Require the stated selected actual-direction, gauge, fresh original
+   preconditioned-candidate and frame controls to pass2e-10 explicitly.
+   The numerical tolerance is an explicit JSON value. Border reactions
+   remain separate and cannot supply an original Gauss pass.
+
+No extra direction/AD application beyond the existing three controlled
+matvec calls is needed by these guards. The final source was independently
+executed twice. ALL FOUR scientific NPZ archives are byte-identical to the
+original pair, so the guard changes did not alter any numerical operand.
+
+Final publication pair, ALL SIX files byte-identical:
+WORK/outputs/bhsm_original_ea02_d4_phase_operator_20261016/final_run_2
+WORK/outputs/bhsm_original_ea02_d4_phase_operator_20261016/final_run_3
+
+actual_native_D4_matrixfree_phase_backend_controls.npz (958517bytes)
+  bbd47299c543948c7c37b0aa72f3d959b82b9d8ee8f8b9a7e99da5c52e1620db
+fresh_native_actual_two_phase_matvecs.npz (689469bytes)
+  5cab913a4582accc4cec7a42a7671931173b60efe682c0aab3c8513c9dc4e018
+fresh_native_six_literal_temporal_gauge_matvecs.npz (697013bytes)
+  09e29029dc8f48b26c17365666dee543c9ce36af1a47d9ac368fe50ff9f05321
+fresh_native_preconditioned_candidate_two_matvecs.npz (710013bytes)
+  8aafd0129082162eb08cb0e327c565f4eab6fcd373499b19827bab57b0eb44f4
+result.json (47528bytes)
+  c49fc3a82f2226aa0df8b6891002dcf382af81b253f127aa93e674f345c6e1ee
+executed_producer.py (16094bytes)
+  c2f11bd4890631c03afee8b0db1fe8a93e505a12071da9cd2b9923744e8a5c6d.
+
+The intermediate final_run_1 retains the same numerical archives and the
+first guard version611e4cc6...; a metadata tolerance-label typo was corrected
+before the final publication pair. Its actual code threshold was2e-10 too.
+It is a preserved pilot, not an independent final-source repeat.
+
+Momentum convention clarified
+-----------------------------
+The open constitutive relation uses RESPONSE momentum pi_response:
+
+    H_v R-pi_response=0,      H_y R+r_y b=0.
+
+Bare primal Pi0=L_v0 is kept separate. If the consumer instead represents
+a TOTAL Newton momentum Pi_total, its velocity equation is
+
+    L_v0+H_v R-Pi_total=0,    Pi_total=L_v0+pi_response.
+
+No source g_v is added to pi_response again, and no mean correction has
+been applied by this backend. The fixed-cut four-history response flux
+-pi_response is similarly not the complete physical C0 or born-boundary
+residual. Moving-cut energy/domain contacts remain unevaluated.
+
+The fresh six gauge rows<=5.405e-15 are finite-direction checks. They do
+not prove an exact full gauge kernel, a Dirac bracket, a closed differential
+domain or outgoing Green realization. The word native in this backend
+refers to its original-variable MP material-chart action application; it
+does NOT identify this complex classical action Hessian with the separate
+AE4 positive Dirac-stratified spectral operator.
+
+Actual217 Cauchy complements remain unknowns in the coupled physical
+port/domain solve. A numerical finite3-port section is not permission to
+freeze all old canonical data as physical boundary conditions. No new
+physical source, arbitrary projection, terminal0, nonlinear mean/history,
+total derivative/spin normalization/moment or coupled correction is claimed.

@@ -1,0 +1,238 @@
+{
+  "executions": [
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "bhsm.interface.muon_birth_inherited_finite_normal_phase",
+        "--base-directory",
+        "artifacts/muon_area_coupled_endpoint_20261011/run_1",
+        "--output",
+        "artifacts/muon_area_coupled_endpoint_20261011/outgoing_phase_run_1",
+        "--span=1e-5",
+        "--steps",
+        "1",
+        "--max-iterations",
+        "12"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "stderr_path": "outgoing_phase_run_1.stderr.txt",
+      "stdout_path": "outgoing_phase_run_1.stdout.txt"
+    },
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "bhsm.interface.muon_birth_inherited_finite_normal_phase",
+        "--base-directory",
+        "artifacts/muon_area_coupled_endpoint_20261011/run_1",
+        "--output",
+        "artifacts/muon_area_coupled_endpoint_20261011/outgoing_phase_run_2",
+        "--span=1e-5",
+        "--steps",
+        "1",
+        "--max-iterations",
+        "12"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "stderr_path": "outgoing_phase_run_2.stderr.txt",
+      "stdout_path": "outgoing_phase_run_2.stdout.txt"
+    },
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "bhsm.interface.muon_birth_finite_normal_boundary_action",
+        "--phase-directory",
+        "artifacts/muon_area_coupled_endpoint_20261011/outgoing_phase_run_1",
+        "--output",
+        "artifacts/muon_area_coupled_endpoint_20261011/outgoing_boundary_run_1"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "stderr_path": "outgoing_boundary_run_1.stderr.txt",
+      "stdout_path": "outgoing_boundary_run_1.stdout.txt"
+    },
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "bhsm.interface.muon_birth_finite_normal_boundary_action",
+        "--phase-directory",
+        "artifacts/muon_area_coupled_endpoint_20261011/outgoing_phase_run_1",
+        "--output",
+        "artifacts/muon_area_coupled_endpoint_20261011/outgoing_boundary_run_2"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "stderr_path": "outgoing_boundary_run_2.stderr.txt",
+      "stdout_path": "outgoing_boundary_run_2.stdout.txt"
+    },
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "bhsm.interface.muon_birth_finite_normal_phase",
+        "--base-directory",
+        "artifacts/muon_area_coupled_endpoint_20261011/run_1",
+        "--output",
+        "artifacts/muon_area_coupled_endpoint_20261011/incoming_phase_run_1",
+        "--span=-1e-5",
+        "--steps",
+        "1",
+        "--max-iterations",
+        "12",
+        "--side",
+        "incoming"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "stderr_path": "incoming_phase_run_1.stderr.txt",
+      "stdout_path": "incoming_phase_run_1.stdout.txt"
+    },
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "bhsm.interface.muon_birth_finite_normal_phase",
+        "--base-directory",
+        "artifacts/muon_area_coupled_endpoint_20261011/run_1",
+        "--output",
+        "artifacts/muon_area_coupled_endpoint_20261011/incoming_phase_run_2",
+        "--span=-1e-5",
+        "--steps",
+        "1",
+        "--max-iterations",
+        "12",
+        "--side",
+        "incoming"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "stderr_path": "incoming_phase_run_2.stderr.txt",
+      "stdout_path": "incoming_phase_run_2.stdout.txt"
+    },
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "bhsm.interface.muon_birth_finite_normal_boundary_action",
+        "--phase-directory",
+        "artifacts/muon_area_coupled_endpoint_20261011/incoming_phase_run_1",
+        "--output",
+        "artifacts/muon_area_coupled_endpoint_20261011/incoming_boundary_run_1"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "stderr_path": "incoming_boundary_run_1.stderr.txt",
+      "stdout_path": "incoming_boundary_run_1.stdout.txt"
+    },
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "bhsm.interface.muon_birth_finite_normal_boundary_action",
+        "--phase-directory",
+        "artifacts/muon_area_coupled_endpoint_20261011/incoming_phase_run_1",
+        "--output",
+        "artifacts/muon_area_coupled_endpoint_20261011/incoming_boundary_run_2"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "stderr_path": "incoming_boundary_run_2.stderr.txt",
+      "stdout_path": "incoming_boundary_run_2.stdout.txt"
+    }
+  ],
+  "pairs": [
+    {
+      "application": "phase",
+      "byte_identical": true,
+      "bytes": 8574,
+      "filename": "result.json",
+      "sha256": "1fe3540c8ea8d9fff707abb5a1eac660367c8be7a493d5901518489d7fc5eb5a",
+      "side": "incoming"
+    },
+    {
+      "application": "phase",
+      "byte_identical": true,
+      "bytes": 542861,
+      "filename": "application.npz",
+      "sha256": "44dbb6b146ba94d54cecf67fc93948fd7a5deda7a630acb1bb91b9396a1fc5fa",
+      "side": "incoming"
+    },
+    {
+      "application": "boundary",
+      "byte_identical": true,
+      "bytes": 9665,
+      "filename": "result.json",
+      "sha256": "1db2748cad22b3783c3b0e8c0239ff8b147518da22935c33dcbf4d2ce5767b4c",
+      "side": "incoming"
+    },
+    {
+      "application": "boundary",
+      "byte_identical": true,
+      "bytes": 1689004,
+      "filename": "application.npz",
+      "sha256": "02c33224eb1b11bd052af40d79f541ee5cf9b249b983edd244a2780f467f1781",
+      "side": "incoming"
+    },
+    {
+      "application": "phase",
+      "byte_identical": true,
+      "bytes": 8259,
+      "filename": "result.json",
+      "sha256": "e3b415bb0b7d417b99d367a5a948b12e82740fb467616a5487f81d5b9dde7285",
+      "side": "outgoing"
+    },
+    {
+      "application": "phase",
+      "byte_identical": true,
+      "bytes": 533260,
+      "filename": "application.npz",
+      "sha256": "a6c245580c2febd09527c93d9243de4e824197c9db34dca22e18f920b08fd7b7",
+      "side": "outgoing"
+    },
+    {
+      "application": "boundary",
+      "byte_identical": true,
+      "bytes": 9810,
+      "filename": "result.json",
+      "sha256": "cb942ef400ef73eb703a78885e66790e1015240694df350a3bbbe64fa4b8cca0",
+      "side": "outgoing"
+    },
+    {
+      "application": "boundary",
+      "byte_identical": true,
+      "bytes": 1662894,
+      "filename": "application.npz",
+      "sha256": "a688fed6dff7491518942d98d32d93aa8d7ad12701f2f00d160e218d722eb8dc",
+      "side": "outgoing"
+    }
+  ]
+}

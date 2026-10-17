@@ -1,0 +1,158 @@
+{
+  "Gate7_closed": false,
+  "Gauss_relative_maximum": 1.433976067595686e-15,
+  "action_boundary_relative_defect": 4.3169209757920685e-16,
+  "action_parameters": {
+    "nu_squared_action": 4.0,
+    "surface_gamma": null
+  },
+  "action_selected": false,
+  "actual_nonlinear_phase_scaled_residual": 6.002684362816649e-13,
+  "actual_phase_span": -1e-05,
+  "adjoint_pairing_maximum_defect": 1.550963648536927e-25,
+  "array_archives": {
+    "adjoint.npz": {
+      "arrays": [
+        "adjoint_readout_map",
+        "advanced_adjoint",
+        "times"
+      ],
+      "bytes": 569509,
+      "sha256": "8a28e60ce86c649c2f3a3f057fcd91aa830fe19a1cfda12daca23582bc505873"
+    },
+    "contacts.npz": {
+      "arrays": [
+        "A_tau",
+        "Gauss_residual",
+        "action_boundary_pairing",
+        "action_temporal_endpoint",
+        "adjoint_output",
+        "adjoint_source_pairing",
+        "gauge_Euler_reaction_integrand",
+        "intrinsic_H_canonical_momenta",
+        "intrinsic_H_response",
+        "intrinsic_scalar_wall_current_pairing",
+        "paired_gauge_Euler_reaction",
+        "source_trace",
+        "source_trace_rate",
+        "times",
+        "wall_trace_reaction_pairing"
+      ],
+      "bytes": 1050160,
+      "sha256": "bf4bbaddd73b981b7386b39afacffbf565e0a4c12aef442d513e660f04e4b9c0"
+    },
+    "operators.npz": {
+      "arrays": [
+        "gauge_weak_rows",
+        "raw_B",
+        "raw_K",
+        "raw_M",
+        "scalar_B",
+        "scalar_K",
+        "scalar_M"
+      ],
+      "bytes": 446592,
+      "sha256": "8abe729f9bf00c3107bd04355c0bcc4ee4e0d4d52af8c479bb4ea9d5d3343f98"
+    },
+    "phase.npz": {
+      "arrays": [
+        "state",
+        "times"
+      ],
+      "bytes": 2844318,
+      "sha256": "337bc99e42a1e8c00144e0a6e3e9ba538c95e6e6889670c6eb79393a7fddd450"
+    },
+    "primal_and_source.npz": {
+      "arrays": [
+        "Q",
+        "Qdot",
+        "T_b",
+        "T_b_dot",
+        "b_source_coefficients",
+        "coordinate_times",
+        "gauge_basis",
+        "gauge_radial_basis",
+        "raw_fields",
+        "source_phase_jacobian",
+        "times",
+        "wall_trace_map"
+      ],
+      "bytes": 272154,
+      "sha256": "2e7944dbeb8771879ebeead430bee7064c3e6a72b647b691e193bb5a10a4ee09"
+    },
+    "velocity.npz": {
+      "arrays": [
+        "times",
+        "velocity"
+      ],
+      "bytes": 1414579,
+      "sha256": "817e551734cf046cd973d4f8ed4996ef5ea6f3b97040071dbdcecdff2fc7f896"
+    }
+  },
+  "classification": "EVALUATED_FRESH_COUPLED_REACHED_RESPONSE_ON_ACTUAL_ENRICHED_PHASE",
+  "complete_observable": false,
+  "complete_relative_native_domain": false,
+  "coordinate_time_interval": [
+    -1e-05,
+    0.0
+  ],
+  "error_scope": "finite ODE/quadrature/source-adjoint and Gauss checks on the exact saved numerical phase bridge; no continuum or physical Pauli bound",
+  "exact_affine_radial_background_image_retained": true,
+  "field_bridge": "same variational one-cell x(t) linear; actual v/y midpoint held; not an independently solved continuous history",
+  "gauge_Euler_reaction_norm": 0.004041484621334839,
+  "input_hashes": {
+    "artifacts/flagship_integration/BHSM_N12_C2_REFINED_RESET_ROOT_CENTER.npz": "59dd88661b15cbeec96bc19294f9d9c64f754cccbfbc385c32329fa9c864a8fe",
+    "artifacts/muon_birth_transfer_value_20261008/retained_reset/run_1/result.json": "d0fec0f8e8a05818fcce67e88ed8db73744484220a2cb213825893f481cb0a72",
+    "artifacts/muon_calibrated_pauli_20261009/inputs.json": "0b614ab6f26d169ca04a4878f767f78eb3668484840867e46aebbebf186369da",
+    "artifacts/muon_calibrated_weak_decay_20261010/run_1/weak_decay.json": "9c31575ce0889571790f8767cf53ffe043cb9906e0a45a96b194971320a0aad7",
+    "artifacts/muon_matched_mechanical_source_20261002/replay_reference/matched_source_and_weak_actions.npz": "146435df28178967c321c0aa7e89a1511395d196f96b8715532aa98e3e312c2b",
+    "artifacts/muon_parent_gauge_geometry_correction_20261010/enriched_phase_incoming_1steps_run_1/application.npz": "958dc8353823b362fd655c3a8562a8f2531019d2b0575ddc2338f2917ae96af8",
+    "artifacts/muon_parent_gauge_geometry_correction_20261010/enriched_phase_incoming_1steps_run_1/result.json": "6de4d0655947a1ba4053979accb669e018343991f5c15164c6d4a6bbc74e4edb",
+    "scripts/evaluate_muon_reached_trace_action.py": "f2ecf5b614f8b3b1b5f9bf2b73490e539321049633f7deb467bdf60a81e0c260",
+    "scripts/evaluate_muon_trace_enriched_reached_action.py": "2eeab115a042543eed277d85bc74def34242aa38ab7b34a5155901893304fb3c",
+    "src/bhsm/interface/aether_diagonal_sp1_m4_attachment_v15_50.py": "e6482614dcb54f4890a5e66fbe724d4c302405d575a4b73ddbb64a075cb1827e",
+    "src/bhsm/interface/aether_lorentzian_child_galerkin_v15_44.py": "574a9a6267d9228170c7309bd4be3cafb36b7515a6ee558509beb968e97bdab7",
+    "src/bhsm/interface/muon_birth_coupled_primal_midpoint.py": "ce321f641fa51d98710d006e246aac5cf6bd046be93a74fab452808597c599ce",
+    "src/bhsm/interface/muon_birth_paired_field_endpoint.py": "f22b6a17b65c72b30571b3d9f721f347737a5916fa08e50bd833ad22df3cd035",
+    "src/bhsm/interface/muon_birth_phase_continuation.py": "9169a1c56bf5084d1f240043ca12d431c87e4adaff24fe09bdf7bf27fc5eb0be",
+    "src/bhsm/interface/muon_birth_trace_enriched_action.py": "c36c48482dd58ebe369ab935574b78b3693036f717fb49035dfac01164956dce",
+    "src/bhsm/interface/muon_birth_trace_enriched_phase.py": "591754957f1cc452bfd53d8adc1087308459902a822876105315b7423c2fd676",
+    "src/bhsm/interface/muon_birth_two_arm_assigned_action.py": "cf6c58dc68700315d701fb9a1e9e99e927d18d90016a6ae7f86470c36136c77a",
+    "src/bhsm/interface/muon_current_source_motion_cubic.py": "32427cda80ec7e8089e8a88f0f594f7013b825d8b00ac458f7e11a034b5339b4",
+    "src/bhsm/interface/muon_intrinsic_higgs_gauge_action.py": "c19354209300ab06c0f1ab6bf4e111dbb5de0cd9e8d1d31a71af357a829118d4",
+    "src/bhsm/interface/muon_intrinsic_m4_normal_pullback.py": "43187eee35f2879a43fe0fd02ae447502811349ccf2f2a78aa14beb8aa706bf0",
+    "src/bhsm/interface/muon_material_higgs_gauge_action.py": "8bca013820283614c6578be4f44c29c4ea1c919f516aa9a2783f0eb38127d035",
+    "src/bhsm/interface/muon_moving_geometric_action.py": "bf560fdb9766f563d97d3100ccb266e2a4350c910ac14a51d57576c2b5371392",
+    "src/bhsm/interface/muon_parent_gauge_geometry_correction.py": "fa29f5764dca39196c807d64e7976d5894589e7de3ffa9d4a5ddecfb136b4816",
+    "src/bhsm/interface/muon_parent_maxwell_background_euler.py": "fbb2c99d4b1c58247ac42a769fad3e1b16ccc76a1744fe0c5334e50c4a974bee",
+    "src/bhsm/interface/muon_parent_maxwell_full_weak.py": "c1fb703967a644306d3521d457a6d7c778a49d89c1e081b401487a25b7491565",
+    "src/bhsm/interface/muon_parent_maxwell_geometry_weak.py": "f0b4a49934e17ad18c40e9164b66c54e1b2cb146fb476f59b0e500f2dd6c9153",
+    "src/bhsm/interface/muon_parent_mean_causal_action.py": "2a84b1be22625b1a5ae88d10c76631d7a5b602d2b0e22e57f00201bb74a593ad",
+    "src/bhsm/interface/muon_parent_retarded_hypercharge.py": "2eb97a704bce63f601cc0d6e0f647266d4b4aac7f746d34dceb41b72018c3510",
+    "src/bhsm/interface/muon_pointwise_full_field_action.py": "d57cd5953de00bcae857d0e458bbead1e463e5fffe8d947c5b9e71806aabaff6",
+    "src/bhsm/interface/muon_reached_trace_action.py": "7fed7f2520a6f66e31323905359e491897f7187ccf9871ecfc2ab95e415ffade",
+    "src/bhsm/interface/muon_trace_enriched_reached_action.py": "3721d05a2e82dfc04b75a0c570fd9946ee842e0e391704687ae9ebe29eb96e9a"
+  },
+  "intrinsic_H_canonical_norm": 0.0028688636383005102,
+  "intrinsic_H_response_norm": 5.2874948359666086e-11,
+  "minimum_interior_mass_eigenvalue": 278.1293504155652,
+  "numerical_integrator": {
+    "atol": 2e-11,
+    "evaluations": 3842,
+    "method": "DOP853",
+    "rtol": 2e-09
+  },
+  "old_source_or_H_response_substituted": false,
+  "physical_Pauli_value": false,
+  "physical_birth_formation_closed": false,
+  "response_radial_scope": "inherited interior polynomial plus explicit independent wall source; finite Galerkin response",
+  "scalar_wall_current_norm": 2.033305063874483e-05,
+  "side": "incoming",
+  "source_basis": "all inherited spatial full400x8 b test columns; Tb/Tbdot from actual phase geometry; no physical current/covariance selected",
+  "source_motion_before_Gauss": true,
+  "source_motion_count": 1,
+  "source_pulse_duration": 2.5e-06,
+  "source_pulse_scope": "compact numerical Green application inside the actual finite cell, not physical soft transfer or E0 selection",
+  "time_nodes": 5,
+  "time_steps": 64
+}
