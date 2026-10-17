@@ -1,0 +1,95 @@
+COMPLETE LOCAL-TENSOR NEUTRINO SPIN MARGINALS -- 2026-10-16
+
+This supplements derivation.txt and DOES NOT modify its frozen source or
+byte-identical run_1/run_2. The current C is the complete static local
+mu-minus tensor C_abcd*(nu_mu^dagger_a mu_b)*(e^dagger_c anti_nu_e_d).
+No V-A projection, external mass fit or interacting outgoing law is used.
+
+Tag either neutral daughter at p_tag=(E,E n), |n|=1. The other pair has
+q=(M-E,-E n), s=M^2-2ME, electron mass m and a massless neutral. Let
+z=m^2/s. In the pair rest frame, integrating its full solid angle gives
+
+  <k_e^alpha p_other^beta>
+    = (1-z)(1+2z) q^alpha q^beta/6
+        +s(1-z)^2 eta^alpha beta/12,
+  <p_other^alpha>=(1-z)q^alpha/2.
+
+For clarity the rest-frame 00 component is s(1-z^2)/4, and the spatial
+diagonal mixed product is -s(1-z)^2/12. These two numbers determine the
+covariant moment. No numerical pair-angle fit is involved.
+
+Write rho_e[g,c]=H_alpha[g,c] k_e^alpha +m J[g,c], where
+  H0=I4, Hi=diag(-sigmai,+sigmai), J=(0 I;I 0),
+and rho_other=B_alpha p_other^alpha, B=(I,-sigma).
+Then the exact pair spin-density product is
+
+  P[g,c,d,h]=a (H.q)[g,c](B.q)[d,h]
+       +b s sum_alpha eta_alpha H_alpha[g,c] B_alpha[d,h]
+       +m(1-z) J[g,c](B.q)[d,h]/2,
+  a=(1-z)(1+2z)/6, b=(1-z)^2/12.
+
+The final term is the charged-mass OFF-DIAGONAL completeness term. It
+must remain for a generic C with left and right charged slots. It is not
+recoverable by merely changing the pair velocity in a massless formula.
+
+With U=sqrt(M)(I;I), the nu_mu parent analyzer is
+  D[t,s]=C_abcd C^sharp_efgh U[b,s]U^*[f,t]
+                        rho_tag[e,a] P[g,c,d,h].
+For anti_nu_e it is
+  D[t,s]=C_abcd C^sharp_efgh U[b,s]U^*[f,t]
+                        P[g,c,e,a] rho_tag[d,h].
+Physical C^sharp=C^*; explicit analytic left values/firsts are independent.
+Each analyzer includes ALL parent 2x2 off-diagonal entries. The rate is
+
+  dGamma/(dE dOmega_tag/(4pi))
+       =E(1-z)/(64pi^3 M) Tr(rho_parent D).
+
+There is no initial spin average in D. A trace-one parent rho supplies
+its chosen spin state. The factor M/2 converts this density to the
+reduced variable y=2E/M; this is the factor used in the V-A comparisons.
+The massive endpoint E=(M^2-m^2)/(2M) has zero pair phase, while the
+massless null-pair endpoint is its regular algebraic moment limit.
+
+At fixed kinematics the exact first is the sum of the two bilinear
+products (dC,Csharp) and (C,dCsharp). No physical outgoing/domain/source
+field derivative is inferred from this local coefficient first.
+
+Runnable pure functions in generic_neutrino_spectrum.py:
+  neutrino_parent_analyzer(C,*,M,m,E,direction,species,left_tensor=None)
+  neutrino_parent_analyzer_first(C,dC,*,M,m,E,direction,species,
+                               left_tensor=None,left_first=None)
+  neutrino_phase_prefactor(*,M,m,E)
+Species are the actual mu-minus labels 'nu_mu' and 'anti_nu_e'.
+
+Independent controls use the SAME complete complex non-template C and
+dC retained in run_1/application.npz. They explicitly boost six Cartesian
+directions of the unequal-mass pair, form the charged4 and neutral2
+completenesses at EACH direction, and contract the original C twice.
+This degree-two spherical rule is exact for the static local squared
+amplitude; the implementation does not reuse P or its covariant moments.
+Both labels and electron masses 0,.07,.23,.63 are checked at three
+interior energies. Independent analytic-left firsts are also checked.
+
+In addition, the COMPLETE complex 2x2 parent analyzer of this arbitrary C
+is integrated over all tagged directions and energies three ways:
+electron, nu_mu, anti_nu_e. At m=.23 the neutral results agree with the
+electron result to 1.426e-15 and 1.901e-15. This includes spin coherence,
+not just a single unpolarized lifetime. The largest specified local
+control error is 4.411e-15, below 2e-10. No uniform physical error bound,
+native realization, exterior derivative or physical prediction follows.
+
+Final frozen files:
+ generic_neutrino_spectrum.py
+   d99ff54532f106a30c35738986be506e3ef2b0feb434f6c3f279bea9117e7f65
+ evaluate_generic_neutrino_controls.py
+   ef3a3723560d6be8225e9df5618856e9dc0f663af4d74641e9f7dcc07a1d1dec
+Final neutrino_run_1/2 each contain four byte-identical files:
+ result.json
+   c5f1a97847c0184a7f7c63f2ab8d6e6f32b2f47c92aa421a19ec3d87b152e6a7
+ application.npz
+   dde7e7de8e95134970b3de24b450507459d7c00a059d6bf4b5cfed5471101419
+ executed_producer.py, executed_math.py.
+
+The new functions remain invalid if a temporal/nonlocal C depends on the
+pair's individual energies or angles and is pulled outside this moment.
+Such an actual C must be integrated WITH its momentum dependence.
