@@ -67,7 +67,7 @@ def apply_incoming_packet_current(*, particle_modes, antiparticle_modes,
     first=algebra['bilinear_difference_expectation4x4']
     second=algebra['ordered_bilinear_product_expectation4x4x4x4']
     j=np.einsum('plij,ij->pl',K,first)
-    jj=np.einsum('plij,pmkl,ijkl->plm',K,K,second)
+    jj=np.einsum('paij,pbkl,ijkl->pab',K,K,second)
     field=np.einsum('pai,iuv->pauv',F,algebra['field_coefficient_operators4x16x16'])
     field_mean=np.einsum('uv,pavu->pa',np.asarray(pair_density),field)
     return dict(field_operators=field,field_expectation=field_mean,
