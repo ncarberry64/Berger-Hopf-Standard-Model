@@ -1,0 +1,24 @@
+{
+  "Gauss_equation": "integral[k <D_rho At,D_rho zeta>+e sum_i <[At,Ai]-beta(Ai_prime+[Ar,Ai]),[zeta,Ai]>]drho+delta_wall_Higgs[zeta]+ell[zeta]=0",
+  "classification": "FINITE_TRIAL_ENRICHMENT_NOT_PHYSICAL_DOMAIN_COMPLETION",
+  "complements": "For each channel evaluate (1-x^2)P_j(2x^2-1), j=0,1,2 with original action derivatives and positive temporal quadratic norms. These are tested directions, not complete continuum bounds.",
+  "conditional_selector_changed": false,
+  "historical_runs": {
+    "run_1": {
+      "reference_application.npz": "8bbf278fd26e2d42e3fe5fa69370f6948bff843f3eb27390a5447ce38ba8a768",
+      "result.json": "dbd65cf44609c0bc249bb53b68afa363162565b7b9f883315aeb848487382e66"
+    },
+    "run_2": {
+      "reference_application.npz": "8bbf278fd26e2d42e3fe5fa69370f6948bff843f3eb27390a5447ce38ba8a768",
+      "result.json": "dbd65cf44609c0bc249bb53b68afa363162565b7b9f883315aeb848487382e66"
+    }
+  },
+  "historical_source_manifest": "execution_owners/V1_OWNER_MANIFEST.json",
+  "physical_guard": 2e-10,
+  "reason": "The coexact spatial exponent alpha(alpha+3)=9 is not a temporal Gauss selection rule. The regular central temporal indicial branch is constant; pole regularity requires lim rho->0 k D_rho At=0, not At(0)=0.",
+  "schema": "bhsm.incoming-reference-trial-revision.v2",
+  "scope": "This removes an unsupported finite-trial restriction, not a proof of a different closed Friedrichs domain. Constants can belong to the old energy closure (pole cutoff cost O(epsilon^5)); noncentral commutators and complete continuum regularity remain.",
+  "trial": "Keep every original80 coordinate and test; append4 At coefficients multiplying phi=1-(rho/WALL)^alpha. Inherited wall trace unchanged; x^alpha+phi=1. No raw268 encoding for this enriched chart.",
+  "unknown_native_load_set_to_zero": false,
+  "wall_trace_or_inherited_Ar_changed": false
+}
