@@ -1,0 +1,225 @@
+{
+  "all_scoped_checks_pass": true,
+  "basis_derivative_intertwining_error": 2.220446049250313e-16,
+  "byte_identical_result_file_count": 46,
+  "check_group_count": 5,
+  "check_groups": [
+    "preserved magnetic-array and raw-field integrity",
+    "exact signed isometry, original Wigner values and derivative intertwining",
+    "exact n1 gradient/curl projectors and reused lambda9 radial identity",
+    "evaluated source images and nonzero gradient components on both retained walls",
+    "differentiated original spatial gauge identity with both contacts and independent angular rule"
+  ],
+  "classification": "EVALUATED_RETAINED_MAGNETIC_SOURCE_TO_EXISTING_ODD_ANGULAR_FRAME",
+  "complete_physical_odd_retarded_contraction_evaluated": false,
+  "coupled_corrections": 0,
+  "environment": {
+    "numpy": "2.3.5",
+    "sympy": "1.14.0"
+  },
+  "field_statistics_or_primordial_reference_selected": false,
+  "full_original_repository_archive_sha256_verified": false,
+  "new_source_sha256": {
+    "check_connection.py": "25809183e7f1b80fe9a932f54b151b4b06c75d2ba46b84a0d8eb02df6d08efb1",
+    "odd_response_bridge.py": "b1f3da77f6ed3d9b7497f482ae89ad722fa9bb3ba9cc7f3baa6ec6fe69649e1c"
+  },
+  "physical_a_mu": null,
+  "physical_g_mu": null,
+  "physical_outgoing_derivative_admitted": false,
+  "preserved_development_failure": "development_checks/FAILURE_AND_REPAIR.json",
+  "raw_arrays_match_preceding_manifest": {
+    "incoming_raw_fields.npy": "71026db93908c45149f37d5d96f1b781598f017ccf1a5d19af3b3604bd909d72",
+    "outgoing_raw_fields.npy": "69f4a1879b279ce3453c797c733de6029e94cfd913cdb5ee5192751ba59a2046"
+  },
+  "replay_files": {
+    "incoming_B0_first.npy": {
+      "byte_identical": true,
+      "sha256": "83d963717e25bbbb0310dfb9cd4f43a39e260f2c5743fea1048f1b28aa1552f1"
+    },
+    "incoming_B0_residual.npy": {
+      "byte_identical": true,
+      "sha256": "fdef68822df4c0d271672bd773d450796a3a18270487e471ccbd22ed46d560c3"
+    },
+    "incoming_B0_source_gauge_motion.npy": {
+      "byte_identical": true,
+      "sha256": "9c56e7d79bc8a6ddc8d661e964888585d345a5ac383637ca1a96172103c70ebe"
+    },
+    "incoming_B0_test_gauge_motion.npy": {
+      "byte_identical": true,
+      "sha256": "d0e3c447ac1fd8dd6446f3b28a96d31bcd3b1054df7243e804b7fbbe9bf1ee89"
+    },
+    "incoming_B1_first.npy": {
+      "byte_identical": true,
+      "sha256": "b705e401c5662b4c2411aa2e1ef4cce7eb78948b431aee9a6277dd3263079e56"
+    },
+    "incoming_B1_residual.npy": {
+      "byte_identical": true,
+      "sha256": "dc58a3f41d568f87951a312169bcf996139737f0d391977918f7d2b0f667acd1"
+    },
+    "incoming_B1_source_gauge_motion.npy": {
+      "byte_identical": true,
+      "sha256": "202399aa6fdf33e4346481e06968b4876db476c0b18609ea954b7372f7cc1fee"
+    },
+    "incoming_B1_test_gauge_motion.npy": {
+      "byte_identical": true,
+      "sha256": "e4e4a757f89e519085eee32ddc5e39afa95fdf271ff671a8b740e7b6975c61a3"
+    },
+    "incoming_B2_first.npy": {
+      "byte_identical": true,
+      "sha256": "63355b497f1738917611788ff15015c455ff99ad6165ef3b9bae3fb38971f747"
+    },
+    "incoming_B2_residual.npy": {
+      "byte_identical": true,
+      "sha256": "d907c723d6cc8710fad13ca9de05ec993d6144524cb2ef01b6bb100900271721"
+    },
+    "incoming_B2_source_gauge_motion.npy": {
+      "byte_identical": true,
+      "sha256": "7ed3764a5bca4a171cf5c03b7dd13f5eb61a2588772a9f63349745b88ed98637"
+    },
+    "incoming_B2_test_gauge_motion.npy": {
+      "byte_identical": true,
+      "sha256": "6acfcad340f5b38b034ab36b739d4da36dee99e6d035df3563274cc5ed0aadb9"
+    },
+    "incoming_coexact_source.npy": {
+      "byte_identical": true,
+      "sha256": "00020899b6d42f1ae703016a74bb8ee5a3f470332629f19b7430683e03144e6b"
+    },
+    "incoming_longitudinal_source.npy": {
+      "byte_identical": true,
+      "sha256": "24d95c2f85e477111aa44642629c341422e3de5787ac97d8d8f4128529097256"
+    },
+    "incoming_lower_spatial_hessian100x100.npy": {
+      "byte_identical": true,
+      "sha256": "80905abd8b315dd5f7525cf970af97c52b2771aaff215f491043bee8a87e0382"
+    },
+    "incoming_mixed80x20.npy": {
+      "byte_identical": true,
+      "sha256": "c863858d4bfebc5177113b059ce96f5d7bc2ade3dc4ce19678bb8a9ef4ee2d71"
+    },
+    "incoming_n1_covariant_gauge_tangent100x16.npy": {
+      "byte_identical": true,
+      "sha256": "34c15c2f04ae3de0605067107dd8c5c1de7a696989841216f0cfbde8526f489a"
+    },
+    "incoming_result.json": {
+      "byte_identical": true,
+      "sha256": "353cb18f1834a4adaf0dcc176ea09df914d1cec2ca9541d3faa51e50e29de015"
+    },
+    "incoming_source400x20.npy": {
+      "byte_identical": true,
+      "sha256": "96c7cf16693f314f9b6064f9ded89467ee250b499e72843023afdc19b1084a83"
+    },
+    "incoming_spatial_source12x4x20.npy": {
+      "byte_identical": true,
+      "sha256": "7aa8600b9671b1c06b560f7b083af6b8ae4a575e273e4e7a7f536be1f0a368d5"
+    },
+    "n1_coexact.npy": {
+      "byte_identical": true,
+      "sha256": "360888b7e432f667dd42e9338a25b65d00518466172cb09b99af91c00f7855e4"
+    },
+    "n1_curl.npy": {
+      "byte_identical": true,
+      "sha256": "4d44f0ff3c6455ec3e997b2eaa1291d3cf6e96940468b0441299c55b25cdb4de"
+    },
+    "n1_gradient.npy": {
+      "byte_identical": true,
+      "sha256": "192e8201461e9182f5a42be22936b361a620467a1a6f8c0d56dee33f4dadef26"
+    },
+    "n1_longitudinal.npy": {
+      "byte_identical": true,
+      "sha256": "6222cce2993ca541fe64a09553f0cb5d8169bc869cc20d51b9379f62fc71a11d"
+    },
+    "odd_isometry400x80.npy": {
+      "byte_identical": true,
+      "sha256": "83b9011292347598c9164604248a6dd983df0f922fbe026921f9e528076b49c3"
+    },
+    "outgoing_B0_first.npy": {
+      "byte_identical": true,
+      "sha256": "002e3c9b39513cd6f971420faa6d1577d6e57c6c3b5ab660d645b4be65ac21c6"
+    },
+    "outgoing_B0_residual.npy": {
+      "byte_identical": true,
+      "sha256": "4920ab0a6e5fca27dc1bdd86e7f7dacbba6a6086bc7f80c7f0c7df422239f9ea"
+    },
+    "outgoing_B0_source_gauge_motion.npy": {
+      "byte_identical": true,
+      "sha256": "5aae38ea332c4bb6e6de655226e17a81c1fba75ca39a259ec2fff732003da04f"
+    },
+    "outgoing_B0_test_gauge_motion.npy": {
+      "byte_identical": true,
+      "sha256": "6703c514c7df4e408a17fb736a8d2b275c5086c9ce559af05ca413f11b0aa706"
+    },
+    "outgoing_B1_first.npy": {
+      "byte_identical": true,
+      "sha256": "8b63685945b4488150faa23a997b0b7bf14c4ccf46b6dcda7f41529760c5f586"
+    },
+    "outgoing_B1_residual.npy": {
+      "byte_identical": true,
+      "sha256": "7a11de9ce15ae3856cfa6f6f864f0c39e808e01a5b552056d270dfaf4a8d4bdf"
+    },
+    "outgoing_B1_source_gauge_motion.npy": {
+      "byte_identical": true,
+      "sha256": "05d9830386df7332d30f2ce16cf50540fdaa8a908c116600e6e7e1463d54767e"
+    },
+    "outgoing_B1_test_gauge_motion.npy": {
+      "byte_identical": true,
+      "sha256": "716da0b3a5e9f732254cce5b69a73474e735419b79519030e0c168da5bee6555"
+    },
+    "outgoing_B2_first.npy": {
+      "byte_identical": true,
+      "sha256": "6fa2b2018a37d0b80433f79e565554426afb3a3d7ede82f4e1f21b7c6af876ee"
+    },
+    "outgoing_B2_residual.npy": {
+      "byte_identical": true,
+      "sha256": "0611efb28a3b1295f1834f7316f4e11723227bb76593c71e66a44f0cc7788388"
+    },
+    "outgoing_B2_source_gauge_motion.npy": {
+      "byte_identical": true,
+      "sha256": "6e45d0268bbafe05a1bc086faaa01927720ec611daf45c73eb89e3857de707a2"
+    },
+    "outgoing_B2_test_gauge_motion.npy": {
+      "byte_identical": true,
+      "sha256": "7492ca953294baa2b6583765d119799fa3ba51e8b3481710f73f46a87f28a7b7"
+    },
+    "outgoing_coexact_source.npy": {
+      "byte_identical": true,
+      "sha256": "1b866798e59cf5f3eae136decb2dec7ab4377c7c0859983a2896ac1ba50d79e7"
+    },
+    "outgoing_longitudinal_source.npy": {
+      "byte_identical": true,
+      "sha256": "a962a24af16ca437f56a5b286cf2466adbcbe8c9480d96bd5f167b45e4b58420"
+    },
+    "outgoing_lower_spatial_hessian100x100.npy": {
+      "byte_identical": true,
+      "sha256": "930e9eb834ace09db3a7f967022c70bc5774b6fb6288affc6d67d72e92f5d186"
+    },
+    "outgoing_mixed80x20.npy": {
+      "byte_identical": true,
+      "sha256": "13687a68a4e113011451662bc21b370e6e89759cd8cdbd71eede125051a60485"
+    },
+    "outgoing_n1_covariant_gauge_tangent100x16.npy": {
+      "byte_identical": true,
+      "sha256": "267c471eb374e6e0530183384a68de335863266e7b5e8c22788e1be00b4dca2c"
+    },
+    "outgoing_result.json": {
+      "byte_identical": true,
+      "sha256": "57a05c524fdd47c0b1bb6b99e2bd6d1a1ce644591371bf36cf2a64d6dacf96e1"
+    },
+    "outgoing_source400x20.npy": {
+      "byte_identical": true,
+      "sha256": "0811dd9fe74ff0a1b801622f7b37d7be33606e15bb6b90366f48140cda76cfcd"
+    },
+    "outgoing_spatial_source12x4x20.npy": {
+      "byte_identical": true,
+      "sha256": "c80d1861a15db33aed4fbb7e988e1bc8cf253351acd23477122c343765ae2670"
+    },
+    "result.json": {
+      "byte_identical": true,
+      "sha256": "cd5bd1e9348555edd03ca7129e3617c0fd298ef471fa4cbc3fa586d0ff08610a"
+    }
+  },
+  "repository_modified": false,
+  "source_revision": "70e82fd4dbe5f53ff27ae17f6aaac7a4727c1fde",
+  "total_uncertainty": null,
+  "windows_worktree_modified": false,
+  "worst_spatial_gauge_identity_absolute": 8.185452315956354e-12
+}
