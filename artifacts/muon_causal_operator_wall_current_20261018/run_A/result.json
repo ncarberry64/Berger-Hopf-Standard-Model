@@ -1,0 +1,403 @@
+{
+  "NEXT_OPERAND": "derive/consume same-domain physical current/reference, collision/interface/normal/native/exterior terms and source/domain jets; no zero-wall closure",
+  "classification": "EVALUATED_FIXED_GEOMETRY_CANONICAL_OPERATOR_MATTER_CURRENT_AND_CAUSAL_HIGGS_WALL_RETURN",
+  "input_package": "artifacts/muon_retained_response_20261018",
+  "input_provenance": {
+    "files": {
+      "inputs/history_metadata.json": {
+        "sha256": "121c83ca0f0c799db8c3effd2f2e039c9fe6bb43fffa7fa45366627eda33f225",
+        "source_path": "BHSM_finite_time_spin_response_20261017/inputs/metadata.json"
+      },
+      "inputs/incoming_direct_spin_result.npz": {
+        "sha256": "3cc7c9288ee7d52dcc26398f00200720f56469360b6b5d509c6ba2c00d68b216",
+        "source_path": "BHSM_finite_time_spin_response_20261017/replay_A/incoming_integrated_response.npz"
+      },
+      "inputs/incoming_hi.npz": {
+        "sha256": "25936d97dbccb1865e8261a158f6a9aef8395081d83b826ce1e010c45e412e2f",
+        "source_path": "BHSM_higgs_wall_coupled_response_20261017/inputs/incoming_hi.npz"
+      },
+      "inputs/incoming_higgs_coefficients.npz": {
+        "sha256": "5f5d3918b75b416eb53599006c8fb358583e5dd61a756baa9b5d319b7474aa79",
+        "source_path": "BHSM_higgs_wall_coupled_response_20261017/replay_A/incoming_higgs_coefficients.npz"
+      },
+      "inputs/incoming_higgs_response.npz": {
+        "sha256": "c220e60e2a73fd915e7ed278f6e29f7ef7dc7f79e4ab53e7af39d865ccc2f306",
+        "source_path": "BHSM_higgs_wall_coupled_response_20261017/replay_A/incoming_higgs_response.npz"
+      },
+      "inputs/incoming_history.npz": {
+        "sha256": "3f6f2d2dd1f47a0963fc67e17c2cdbae70a3cd1241a294053767d28399ccdf2c",
+        "source_path": "BHSM_finite_time_spin_response_20261017/inputs/incoming.npz"
+      },
+      "inputs/incoming_lo.npz": {
+        "sha256": "17e1fafb149691010a942856aa727e0f0c277b1f233692cd63a2ebf22144b7fd",
+        "source_path": "BHSM_higgs_wall_coupled_response_20261017/inputs/incoming_lo.npz"
+      },
+      "inputs/incoming_maxwell_maps.npz": {
+        "sha256": "5794b41cdc88fe1edcde123367925c9cc93dbd7dd528c625ed766deb58da6e48",
+        "source_path": "BHSM_higgs_wall_coupled_response_20261017/inputs/incoming_maxwell_causal_maps.npz"
+      },
+      "inputs/incoming_q000.npz": {
+        "sha256": "f201003fb3811a1702ff737749823040ea4229ad827c0eaad857a68a0212cf4c",
+        "source_path": "BHSM_higgs_wall_coupled_response_20261017/inputs/incoming_q000.npz"
+      },
+      "inputs/incoming_q001.npz": {
+        "sha256": "48f6c92a95531bfcbe5f8d00c79bb4627bbac6829ff37ba06cbfa8dfeb45f00b",
+        "source_path": "BHSM_higgs_wall_coupled_response_20261017/inputs/incoming_q001.npz"
+      },
+      "inputs/incoming_q002.npz": {
+        "sha256": "0afdbbdc0d95c2d8e4f4ead97dc43a81bbdf9d590b6784cd452c608c2920cd1d",
+        "source_path": "BHSM_higgs_wall_coupled_response_20261017/inputs/incoming_q002.npz"
+      },
+      "inputs/incoming_q003.npz": {
+        "sha256": "974866a58a6dd58113a08b96e270306346cc39f686650143a23b1f390ee216c1",
+        "source_path": "BHSM_higgs_wall_coupled_response_20261017/inputs/incoming_q003.npz"
+      },
+      "inputs/incoming_spin_operators.npz": {
+        "sha256": "061a8579cae3e548e83c2ef8f626d3395b15e56a20c5aac85d406f2fff264817",
+        "source_path": "BHSM_finite_time_spin_response_20261017/replay_A/incoming_time_operators.npz"
+      },
+      "inputs/outgoing_direct_spin_result.npz": {
+        "sha256": "46b4af67a8a3243e04be39d4deba5564b647629f10abb0717a72fe7b7e17245c",
+        "source_path": "BHSM_finite_time_spin_response_20261017/replay_A/outgoing_integrated_response.npz"
+      },
+      "inputs/outgoing_hi.npz": {
+        "sha256": "0d64c1ecd4a20ed1226c3ad9cf584b390b5be918845e3309cc9f536b3a86450c",
+        "source_path": "BHSM_higgs_wall_coupled_response_20261017/inputs/outgoing_hi.npz"
+      },
+      "inputs/outgoing_higgs_coefficients.npz": {
+        "sha256": "d58ec13184df42c95f710864ef95c28e71cd8f2d9dc3da54aa909224c7d917ad",
+        "source_path": "BHSM_higgs_wall_coupled_response_20261017/replay_A/outgoing_higgs_coefficients.npz"
+      },
+      "inputs/outgoing_higgs_response.npz": {
+        "sha256": "76cc6a131bca1fb1241fa6c01f760ae8715ca677065bb1d40fefe3c852511580",
+        "source_path": "BHSM_higgs_wall_coupled_response_20261017/replay_A/outgoing_higgs_response.npz"
+      },
+      "inputs/outgoing_history.npz": {
+        "sha256": "d381cd9dcf9795cdbb330c9bed5829d49f5bbf1425b9462b6497743c87eb197b",
+        "source_path": "BHSM_finite_time_spin_response_20261017/inputs/outgoing.npz"
+      },
+      "inputs/outgoing_lo.npz": {
+        "sha256": "deb92243f3a5b37577076cbecf87f8cae37b8cdaaf8a7204cf1dd6ded87f2846",
+        "source_path": "BHSM_higgs_wall_coupled_response_20261017/inputs/outgoing_lo.npz"
+      },
+      "inputs/outgoing_maxwell_maps.npz": {
+        "sha256": "a64cc6f0eda155762237a3922894c445bed7215f0df5e0faa5afbdc59298c669",
+        "source_path": "BHSM_higgs_wall_coupled_response_20261017/inputs/outgoing_maxwell_causal_maps.npz"
+      },
+      "inputs/outgoing_q000.npz": {
+        "sha256": "0e5dc59ed5f059683d234eeecdded21e0464ce67274002d9324689324711812e",
+        "source_path": "BHSM_higgs_wall_coupled_response_20261017/inputs/outgoing_q000.npz"
+      },
+      "inputs/outgoing_q001.npz": {
+        "sha256": "a4636d3e589b0b9a663203f41f584cf5da879f7808ee99004ee413ab6a5372fd",
+        "source_path": "BHSM_higgs_wall_coupled_response_20261017/inputs/outgoing_q001.npz"
+      },
+      "inputs/outgoing_q002.npz": {
+        "sha256": "a37d54b0fe14b54320dc0fd078371e9da62a6d42c25c6fad854f6e25ebe170a7",
+        "source_path": "BHSM_higgs_wall_coupled_response_20261017/inputs/outgoing_q002.npz"
+      },
+      "inputs/outgoing_q003.npz": {
+        "sha256": "afad7df84877335dbfd0d33256dc6bac99b3672edcb02305a07085590fe35277",
+        "source_path": "BHSM_higgs_wall_coupled_response_20261017/inputs/outgoing_q003.npz"
+      },
+      "inputs/outgoing_spin_operators.npz": {
+        "sha256": "fef8b70c23b3fd1fd5ee9e3fb9951995c049e8d00b65f03180787231dc2afeb3",
+        "source_path": "BHSM_finite_time_spin_response_20261017/replay_A/outgoing_time_operators.npz"
+      }
+    },
+    "live_owner_lf_sha256": {
+      "src/bhsm/interface/ae31_c2_intrinsic_m4_lepton_action.py": "74279094adab554f53aa288cdd344cc36a187630e721fc39b113e4e68b916d07",
+      "src/bhsm/interface/ae3_c2_hopf_semigroup_transport.py": "472fdd5da9491238cf75f699ddc340e78c4552cb7f98097b910af3015d62db02",
+      "src/bhsm/interface/muon_baton_zoo_original_validation.py": "2648292003efabe6880611bb2328b072cc3fe259bf8239feaa632ee3931482cb",
+      "src/bhsm/interface/muon_intrinsic_higgs_gauge_action.py": "c19354209300ab06c0f1ab6bf4e111dbb5de0cd9e8d1d31a71af357a829118d4",
+      "src/bhsm/interface/muon_intrinsic_higgs_weak_action.py": "6f61f85cadf99e8e4a049f6a4965b030db8fc8eaf9b1c1a903df77b1c7491be5",
+      "src/bhsm/interface/muon_intrinsic_lepton_primal.py": "42d4193340504fe47831b669bd7848f9fb1a794868b817e41eb14fe20e283027",
+      "src/bhsm/interface/muon_intrinsic_m4_normal_pullback.py": "43187eee35f2879a43fe0fd02ae447502811349ccf2f2a78aa14beb8aa706bf0",
+      "src/bhsm/interface/muon_material_higgs_gauge_action.py": "8bca013820283614c6578be4f44c29c4ea1c919f516aa9a2783f0eb38127d035",
+      "src/bhsm/interface/muon_native_dirac_hamiltonian.py": "7344b1dfc0358962a281fffea59c8d40c1449a6fbcf9b171f514a28eb7b26ccd",
+      "src/bhsm/interface/muon_native_product_factor_graph.py": "4a5feeb0e32edc0505a44b45a19d6bdc821220cc9cf5187e35f59fe7720a7c18",
+      "src/bhsm/interface/muon_parent_gauge_geometry_correction.py": "fa29f5764dca39196c807d64e7976d5894589e7de3ffa9d4a5ddecfb136b4816"
+    },
+    "maintained_source_sha256": {
+      "action_magnetic_kernel.py": "495375562d71edf2b29f790346f202906e399ab9d9d854a088496001683396a6",
+      "build_higgs_response.py": "351fedb15d9ec8cafdce48e6651671ba155f688ab8e2846de1fd84d3c67bf432",
+      "cascade_connection.py": "20f421abe1ff6c762a10082afa757331ea40330791a4b3f39859c1afe38e1106",
+      "compatible_source.py": "53067b4553c51ddf41b4d42ce852b81b14e9550c9dd7d58e49499d95ef60b51f",
+      "field_spin_connection.py": "5c6a952bd7b1c4755d0f4aa309bd7ecfc71db1677c65f3e1833ca5f0851a0796",
+      "finite_time_response.py": "67ee50896804951f4b73f80dc02634f9f459ac7262b39f45823bee6600a846f4",
+      "forced_canonical_source.py": "152892634985a74940233954b13af653aa3d0d78a198c0955001d18b2393219f",
+      "graph_action.py": "1bd6fde178eb1ee99ebc68398595409b60970bc252426f00853d403660842d6d",
+      "integrated_magnetic_hessian.py": "9b41c307149aef5ca58fa976485dd7623b93286f3f95c94a355fd06b5c7f1ce1",
+      "integrated_source.py": "557c2a10847c7b9d47159071c0da7121f5455ea7cd89a1582c518a8e538d9195",
+      "odd_response_bridge.py": "230133ec628d9086488e34af48b9f2afac4625a8fa39ede95d1c35a9bd77b462",
+      "port_response.py": "bcc11f1cbd321cb293318918f5787a770ee010dbc390e6e10c51459d409c83c2",
+      "probe_connection.py": "6ed559133eabe297240acdaaeb4b77176732b86c30a34dc2195db96f3a51f28e",
+      "retained_magnetic_application.py": "3b5e07000179a8dff3be864fb5a2a9339672853dd9494cc4bc3c5eaa61f86ffd"
+    },
+    "original_source_dependencies": {
+      "dependencies/action_magnetic_kernel.py": {
+        "sha256": "495375562d71edf2b29f790346f202906e399ab9d9d854a088496001683396a6",
+        "source_path": "BHSM_finite_time_spin_response_20261017/dependencies/action_magnetic_kernel.py"
+      },
+      "dependencies/compatible_source.py": {
+        "sha256": "44379cc1483fddc09c480ec26da5119756e99d1b8e60311a387ec7686367c83a",
+        "source_path": "BHSM_finite_time_spin_response_20261017/dependencies/compatible_source.py"
+      },
+      "dependencies/finite_time_response.py": {
+        "sha256": "1856b57c2df7c291b5157434a09d82e5ec89de312da5eff9e0b36feb8fddce34",
+        "source_path": "BHSM_finite_time_spin_response_20261017/finite_time_response.py"
+      },
+      "dependencies/retained_magnetic_application.py": {
+        "sha256": "babf07d7d4f811690b3427e4c5f133395605c470c862d4112ae7499afb919ffc",
+        "source_path": "BHSM_finite_time_spin_response_20261017/dependencies/retained_magnetic_application.py"
+      }
+    },
+    "source_manifests_verified": {
+      "BHSM_finite_time_spin_response_20261017": {
+        "count": 32,
+        "manifest_sha256": "90e5cf6fb2597f31aaaaf826c7f84690ca5b22f8eca92335f9d9bd875940a385"
+      },
+      "BHSM_higgs_wall_coupled_response_20261017": {
+        "count": 47,
+        "manifest_sha256": "9daafe5c88b3745e3fe1641f443c62ca6c90213f3821270d22a78ecd56f48dd6"
+      },
+      "BHSM_port_preserving_retarded_response_20261017": {
+        "count": 30,
+        "manifest_sha256": "3b7bde4fb28ea318437ae3b6389a991b05013df662848fd04f1757891a20c675"
+      }
+    },
+    "source_revision": "70e82fd4dbe5f53ff27ae17f6aaac7a4727c1fde"
+  },
+  "normalization": {
+    "canonical_coefficient": "psi=sqrt(2*pi^2)*R4^(-3/2)*phi_Haar*a",
+    "classical_action_scale": "S_hat=T*S_common",
+    "common_intrinsic_action": "S4_raw/(2*pi^2)^2",
+    "current_dual": "-T*J (J already integrates dt and includes At 1/T)",
+    "current_stage_source": "-T^2*(partial_h_conditioned h_t) in d tau",
+    "density": "unselected operator operand; no contraction performed",
+    "original_scalar_momentum": "p_original=J_H^(-T)*p_hat/T",
+    "unit_coefficient_action": "integral dt a_dagger*(i partial_t-h_t)*a"
+  },
+  "phase_A_publication_head": "de0dcc748bec0a097d599c984369257be0298aa8",
+  "physical_flags": {
+    "a_mu": null,
+    "arms_glued": false,
+    "coupled_physical_corrections": 0,
+    "density_or_reference_selected": false,
+    "g_mu": null,
+    "native_completion_evaluated": false,
+    "physical_collider_solved": false,
+    "physical_full_derivative_admitted": false,
+    "physical_wall_closed": false,
+    "uncertainty": null
+  },
+  "producer_source_sha256": {
+    "scripts/evaluate_muon_causal_operator_wall_current.py": "0b2a8a6e8bd6175cf3f6acd375a15935b8fa7f0673deec73cb105db02fd2d865",
+    "src/bhsm/interface/muon_causal_operator_wall_current.py": "e61791c0de8a40cf1b514f19fe405ff30d2f35372a0ec2ef045c7b69ab3aca0e",
+    "src/bhsm/interface/muon_charged_current_fermi_reduction.py": "6d112f9af0d89dcd625d12b7a141fda750d65eaab96885dc7ee99e26d07d0619",
+    "src/bhsm/interface/muon_static_coupled_charged_current.py": "990ecd35685878d69f02f1f4f7c5b70610fecd92a91fe1908479ddd55556d2e9"
+  },
+  "scope": "same provisional fixed-geometry n1 histories; four-stage classical rule; finite initial30 and reached84; only additional matter forcing solved",
+  "sides": {
+    "incoming": {
+      "T": 1e-05,
+      "all_scoped_checks_pass": true,
+      "artifact": {
+        "path": "incoming_causal_operator_current.npz",
+        "sha256": "b0da47bef8d3dee5bf96e097e590a2108d014ab8067f34b02e7f7e04b3bbbf02"
+      },
+      "checks": {
+        "Higgs_current_Hermiticity": true,
+        "causal_vs_pullback_including_endpoint": true,
+        "causal_wall_Hermiticity": true,
+        "independent_original_DAE_final_difference": true,
+        "independent_original_DAE_residual": true,
+        "independent_original_DAE_stage_difference": true,
+        "independent_original_point_current_contraction": true,
+        "new_canonical_stage_residual": true,
+        "same_rule_scalar_Green_identity": true,
+        "sample_U_unitarity": true,
+        "saved_current_dual_reuse12_difference": true,
+        "saved_unperturbed_propagator_difference": true
+      },
+      "metrics": {
+        "Higgs_current_Hermiticity": {
+          "Frobenius": 7.982711186186005e-29,
+          "maximum_entry_absolute": 2.524354896707238e-29
+        },
+        "canonical_stage_matrix_inf_norm": 1.9305664721722684,
+        "causal_vs_pullback_including_endpoint": {
+          "Frobenius": 1.4608439091865453e-21,
+          "maximum_entry_absolute": 1.2912157930190382e-22
+        },
+        "causal_wall_Hermiticity": {
+          "Frobenius": 6.433047590370634e-26,
+          "maximum_entry_absolute": 6.462348535758608e-27
+        },
+        "current_magnitude": {
+          "Frobenius": 4.8989794864745985e-05,
+          "maximum_entry_absolute": 3.872983346186054e-06
+        },
+        "independent_original_DAE_final_difference": {
+          "Frobenius": 1.5509896152763603e-28,
+          "maximum_entry_absolute": 2.524354896780706e-29
+        },
+        "independent_original_DAE_residual": {
+          "Frobenius": 5.508235481864879e-28,
+          "maximum_entry_absolute": 5.048709794002223e-29
+        },
+        "independent_original_DAE_stage_difference": {
+          "Frobenius": 6.481030102905189e-28,
+          "maximum_entry_absolute": 7.573064691689038e-29
+        },
+        "independent_original_point_current_contraction": {
+          "Frobenius": 3.703486594881563e-21,
+          "maximum_entry_absolute": 6.36135773361946e-22
+        },
+        "matter_time_rule12_vs16": {
+          "Frobenius": 7.958391886534866e-21,
+          "maximum_entry_absolute": 9.13711044831901e-22
+        },
+        "matter_time_rule4_vs12": {
+          "Frobenius": 8.320253808471112e-21,
+          "maximum_entry_absolute": 9.137110448131035e-22
+        },
+        "new_canonical_stage_residual": {
+          "Frobenius": 4.590630767010196e-28,
+          "maximum_entry_absolute": 5.048709794002223e-29
+        },
+        "omitted_scalar_endpoint_negative_control": {
+          "Frobenius": 3.049057839662935e-13,
+          "maximum_entry_absolute": 1.7966745621980382e-14
+        },
+        "quantum_endpoint_vs_stage4_bulk_quadrature_defect": {
+          "Frobenius": 7.96841490209921e-21,
+          "maximum_entry_absolute": 8.47032947352908e-22
+        },
+        "same_rule_scalar_Green_identity": {
+          "Frobenius": 2.6620520061529185e-28,
+          "maximum_entry_absolute": 1.8932661731426646e-29
+        },
+        "sample_U_unitarity": {
+          "Frobenius": 3.2138991103822735e-15,
+          "maximum_entry_absolute": 5.551115123125783e-16
+        },
+        "saved_current_dual_reuse12_difference": {
+          "Frobenius": 6.588370152365113e-21,
+          "maximum_entry_absolute": 4.235164736394761e-22
+        },
+        "saved_unperturbed_propagator_difference": {
+          "Frobenius": 0.0,
+          "maximum_entry_absolute": 0.0
+        },
+        "scalar_endpoint_itself": {
+          "Frobenius": 3.0490578396629366e-13,
+          "maximum_entry_absolute": 1.7966745621980398e-14
+        }
+      }
+    },
+    "outgoing": {
+      "T": 1e-05,
+      "all_scoped_checks_pass": true,
+      "artifact": {
+        "path": "outgoing_causal_operator_current.npz",
+        "sha256": "dd61f5d4b614d7de914f7fa5c347a29f2810edba5e06ae6d101fbc8fd28eb833"
+      },
+      "checks": {
+        "Higgs_current_Hermiticity": true,
+        "causal_vs_pullback_including_endpoint": true,
+        "causal_wall_Hermiticity": true,
+        "independent_original_DAE_final_difference": true,
+        "independent_original_DAE_residual": true,
+        "independent_original_DAE_stage_difference": true,
+        "independent_original_point_current_contraction": true,
+        "new_canonical_stage_residual": true,
+        "same_rule_scalar_Green_identity": true,
+        "sample_U_unitarity": true,
+        "saved_current_dual_reuse12_difference": true,
+        "saved_unperturbed_propagator_difference": true
+      },
+      "metrics": {
+        "Higgs_current_Hermiticity": {
+          "Frobenius": 3.091690735998075e-29,
+          "maximum_entry_absolute": 1.262177448390353e-29
+        },
+        "canonical_stage_matrix_inf_norm": 1.9305673710785027,
+        "causal_vs_pullback_including_endpoint": {
+          "Frobenius": 5.795275925321791e-22,
+          "maximum_entry_absolute": 5.122348632001987e-23
+        },
+        "causal_wall_Hermiticity": {
+          "Frobenius": 1.3392766836833069e-21,
+          "maximum_entry_absolute": 8.470329472543003e-22
+        },
+        "current_magnitude": {
+          "Frobenius": 4.8989794859266997e-05,
+          "maximum_entry_absolute": 3.872983346198942e-06
+        },
+        "independent_original_DAE_final_difference": {
+          "Frobenius": 6.678815278189829e-29,
+          "maximum_entry_absolute": 6.310887242502778e-30
+        },
+        "independent_original_DAE_residual": {
+          "Frobenius": 1.3174936590185596e-28,
+          "maximum_entry_absolute": 1.2621774485005557e-29
+        },
+        "independent_original_DAE_stage_difference": {
+          "Frobenius": 1.3119121291754156e-28,
+          "maximum_entry_absolute": 1.2621774485005557e-29
+        },
+        "independent_original_point_current_contraction": {
+          "Frobenius": 3.751870290113094e-21,
+          "maximum_entry_absolute": 8.474464366356547e-22
+        },
+        "matter_time_rule12_vs16": {
+          "Frobenius": 1.024725492048086e-20,
+          "maximum_entry_absolute": 1.720517590101153e-21
+        },
+        "matter_time_rule4_vs12": {
+          "Frobenius": 8.470269231940073e-21,
+          "maximum_entry_absolute": 1.667614198931187e-21
+        },
+        "new_canonical_stage_residual": {
+          "Frobenius": 1.435586298043097e-28,
+          "maximum_entry_absolute": 1.2621774485005557e-29
+        },
+        "omitted_scalar_endpoint_negative_control": {
+          "Frobenius": 1.9204403180055957e-13,
+          "maximum_entry_absolute": 1.1316303097677523e-14
+        },
+        "quantum_endpoint_vs_stage4_bulk_quadrature_defect": {
+          "Frobenius": 6.151932130858047e-21,
+          "maximum_entry_absolute": 8.47032947255841e-22
+        },
+        "same_rule_scalar_Green_identity": {
+          "Frobenius": 1.7769868916625467e-28,
+          "maximum_entry_absolute": 1.10440526752195e-29
+        },
+        "sample_U_unitarity": {
+          "Frobenius": 3.707214060791749e-15,
+          "maximum_entry_absolute": 6.661338147750939e-16
+        },
+        "saved_current_dual_reuse12_difference": {
+          "Frobenius": 6.776263578934012e-21,
+          "maximum_entry_absolute": 8.47032947255841e-22
+        },
+        "saved_unperturbed_propagator_difference": {
+          "Frobenius": 0.0,
+          "maximum_entry_absolute": 0.0
+        },
+        "scalar_endpoint_itself": {
+          "Frobenius": 1.9204403180055977e-13,
+          "maximum_entry_absolute": 1.1316303097677531e-14
+        }
+      }
+    }
+  },
+  "unchanged_limitations": [
+    "inherited calibrated scalar ancestry",
+    "prior Maxwell gauge-reconstruction nonpass",
+    "membrane finite-step nonpass",
+    "no continuum/time-error enclosure"
+  ]
+}
