@@ -1,0 +1,76 @@
+{
+  "canonical_file_sha256": {
+    "boundary_validation.json": "83b13fa2f9907de297846bca86033bcc5a775f6c8fb6ffc498fda81288837363",
+    "bulk_minus_LR.npz": "5336a080a0692ce6dc2f18cd98696cca8f2fb1638a33e9a825a16c21fe5719b2",
+    "bulk_minus_RL.npz": "aba268d32dcfc613c5782b17335c16129d8f7293cc2ac9699380e12b031a2444",
+    "bulk_minus_conjugate.npz": "accaec6e8375e470ca2e1919016119241a121a5c7125d2887a105f2b3e825f2f",
+    "bulk_minus_particle.npz": "5db3641b00a582b836e02213cc32b47815525fce9b4848b6a550c08cd70d15d2",
+    "bulk_minus_seed.npz": "4f8fa38b3ec8b7d09bc28118a9783205b94e8aca914eb218e7659664801a50a4",
+    "bulk_plus_conjugate.npz": "6a37a5d81c6a33a2d53ffd42e3163b535a7184c48780b72b918e0d2f251b3bee",
+    "bulk_plus_particle.npz": "631d5f82b765090c76e22b99d80e3b44538bf6e0be365ef80549a9299ebf9b3f",
+    "bulk_plus_seed.npz": "22474bf0e9ab3ea14f8845a8acb74587c645657217fdb406fcf4847da3b7db08",
+    "bulk_shared.npz": "6aa651a0e46bed3b5b0314f1e23277976c36e03077080fd16eae3b3eceeb726c",
+    "core_result.json": "a834348ae58f5f4beab38238827c3fd5424deab545c59a0b6db9512a7238d59a",
+    "result.json": "2f5cc63d8e59733f1259777cbae2472931ec4986f857f94f44f223339463280d",
+    "returned_minus_LR.npz": "c67fb9293f65b59aeaaa873ff9f59f1ff8d866cf5708b9299299f0c35ed16cf6",
+    "returned_minus_RL.npz": "aeedb354e762538f945a295510eccd4ea61be4aeadf451fe8bf6485dd4b1005a",
+    "returned_minus_seed.npz": "319bb58cdced4a1d9068c12be2e70404d004ff1c0fca0140cf02425e02d9f94f",
+    "returned_plus_seed.npz": "301fe92d38573affcdf15da91b08b88ac578eb8fa110802f19a99dd4d960b2a0",
+    "returned_shared.npz": "f4b3abcbf0583d7e42c8e9469364b1eb25df9bcc9e2e0c25129aff8955d2dd53"
+  },
+  "canonical_files_byte_identical": true,
+  "canonical_runs": [
+    "run_4",
+    "run_5"
+  ],
+  "focused_tests": {
+    "command": [
+      "C:\\Python314\\python.exe",
+      "-m",
+      "pytest",
+      "-q",
+      "tests/test_muon_d5_complement_bulk_response.py",
+      "tests/test_muon_d5_complement_event_return.py",
+      "tests/test_muon_d5_child_corner_incidence.py",
+      "tests/test_muon_full_d5_differential_form.py",
+      "tests/test_muon_full_d5_source_first.py"
+    ],
+    "elapsed_seconds": 14.2,
+    "exit_code": 0,
+    "passed": 25
+  },
+  "independent_core_executions": {
+    "all_core_arrays_and_record_identical": true,
+    "canonical_core_reused_without_resolve": true,
+    "completed_runs": [
+      "run_1",
+      "run_2"
+    ],
+    "core_record_sha256": "a834348ae58f5f4beab38238827c3fd5424deab545c59a0b6db9512a7238d59a"
+  },
+  "parent_head": "e02747f2cb98494a5743c75c53c2f7f6f83bc4eb",
+  "publication_audits": {
+    "all_exit_codes_zero": true,
+    "results_sha256": "6179dd2b649e6fffd948fd8cad73f851781907f48ce516a05ddd3997d6c5282b"
+  },
+  "review": {
+    "angular_normalization": "original unit-Haar coefficient; physical2*pi\u00b2 factor included once",
+    "full_physical_outer_event_child_BVP_solved": false,
+    "homogeneous_data": "all366 pertime6 plus sources held",
+    "independent_math_and_domain_review": "no blocking issue in finite incoming bulk-family scope",
+    "physical_admission": false,
+    "physical_guard": 2e-10
+  },
+  "schema": "bhsm.d5-bulk-publication-validation.v1",
+  "source_test_theory_sha256": {
+    "scripts/evaluate_muon_d5_complement_bulk_response.py": "0ef3f0766714b6663c7b5be1a0ad742d61d4ba3c86aa639896b75d20c66421dc",
+    "scripts/verify_muon_d5_complement_bulk_application.py": "eeef2cffa3661207efbd6ea8a1234db6360d23877b92f9741c1e06e2d4046b69",
+    "src/bhsm/interface/muon_d5_child_corner_incidence.py": "589d76330b5bb8b87cbabf1c0c5c7912534d3c36c453fd9da499eca71b136898",
+    "src/bhsm/interface/muon_d5_complement_bulk_response.py": "66258d8782c3f9f14fee4a2f961802a4c53f8086675688761a5ca32b2f5cfc7a",
+    "src/bhsm/interface/muon_d5_complement_event_return.py": "aa645b9d12ea0b392f5b7a7c2c9dbf9d2b60f28a3d7b32b95052575ed2b35be5",
+    "tests/test_muon_d5_child_corner_incidence.py": "3ac3c55417f01085b363f27c4ef1d9f6e68831d98b412c006126c45515972240",
+    "tests/test_muon_d5_complement_bulk_response.py": "bdf77c08a482ba7b74320a419f3a29f58ba180c524f5479e112e6237b6cd9ddf",
+    "tests/test_muon_d5_complement_event_return.py": "102150530c1d9dfc38f734b5572564db8e85af128d4aee13d502247631a78564",
+    "theory/muon_d5_complement_bulk_response_20261019.md": "3bcdbf21773a997978346a1990c1ab500234ac89f9f0f69407265f342aeceaa1"
+  }
+}
