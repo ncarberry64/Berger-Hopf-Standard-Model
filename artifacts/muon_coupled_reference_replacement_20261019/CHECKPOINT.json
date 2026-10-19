@@ -1,0 +1,135 @@
+{
+  "NEXT_OPERAND": "Evaluate the sourced native-minus-local-overlap/reference stress and wall/Higgs contractions with their same-action Lorentz continuation/domain and field derivatives; complete the common Cauchy incidence and normalized charged-current cF equation. Apply those actual loads to the retained coupled rows; do not infer their values from this off-shell particular or its Schur matrix.",
+  "classification": "EVALUATED_EXACT_REFERENCE_SUBTRACTION_AND_PROVISIONAL_COUPLED_KNOWN_SUBTOTAL_NEWTON_TRIAL",
+  "coupled_physical_correction": false,
+  "coupled_trial": {
+    "Higgs_step": [
+      2.925373743213134e-17,
+      0.010823753247230394,
+      -4.439971742369826e-17,
+      -7.793044864792963e-16
+    ],
+    "accepted": true,
+    "condensed_columns": 99,
+    "condensed_rows": 98,
+    "eliminated52_step_norm": 0.0003648495066405107,
+    "full_linearized_unscaled_residual_max": 4.799467490101961e-10,
+    "geometry_step_norm": 0.048021770105763424,
+    "held32_step_norm": 0.002374991833654525,
+    "log_unit_initializer_step": -0.0019439711127446913,
+    "max_scaled_step": 0.02,
+    "metric": "minimum Euclidean y in delta_b=diag(max(1,abs(seed_b)))*y; rows scaled by max(1,norm(K_schur*variable_scale)); this is a reduced99-coordinate metric, not full151 norm or a physical gauge quotient",
+    "numerical_rank": 93,
+    "rank_relative_tolerance": 1e-10,
+    "scaled_left_null_load_norm": 5.577595583983276e-17,
+    "trial_history": [
+      {
+        "accepted": true,
+        "damping": 0.0005725897598367019,
+        "known_merit_after": 7.3923395226845665,
+        "known_merit_before": 7.396582007015882
+      }
+    ]
+  },
+  "duplicate_materialization": "run_3",
+  "equations": {
+    "collider_incidence": "I_y^*h_Sigma=(hbar*c/exp(e))^2*(pulled-back action metric); geodesic chart and spin/gauge transport on the SAME assembled Sigma, with trace/traction/domain matching to the cap boundary",
+    "collider_incidence_resolved": false,
+    "executed": "R_known(z)=g_original(z)+d(Delta L)(z)=0 on150 original rows; one trust-limited Newton initializer trial. No seed-residual subtraction or chosen unknown force. Full R=R_known+gamma*R_area+ell remains unevaluated.",
+    "full": "g_original+g_subtraction+gamma*g_area+ell_native_minus_local_overlap+ell_reference/exterior/interface=0; all total derivatives required",
+    "full_Jacobian": "K_original+K_subtraction+gamma*K_area+D ell_native/reference/exterior/interface; K_known is not its inverse",
+    "physical_unit": "GF*exp(2e)-cF[y,Sigma_in,domain,normalized_external_legs]=0; derivative=2GF*exp(2e)de-DcF",
+    "unit_row_is_Euler_e": false
+  },
+  "error_scope": {
+    "continuum_time": "unresolved; no outward or continuum bound from this finite application",
+    "existing": "gauge reconstruction7.29e-10/6.33e-10, membrane finite step9.34e-8 and calibrated ancestry retained",
+    "finite": "48 radial /32 cap quadrature; finite inherited n0 weak field chart and stationary off-shell ansatz",
+    "incomplete_Jacobian": "D ell, gamma*K_area, physical-unit DcF and complete incidence/domain/state derivatives remain; their effect on this particular is unknown, not zero",
+    "native_continuation": "no unproved proper-Euclidean finite heat load inserted into Lorentz cap rows",
+    "numerical_rank": "all left/right nullspaces and unscaled linear residuals exported; no physical quotient or discarded physical row inferred"
+  },
+  "file_sha256": {
+    "artifacts/muon_coupled_reference_replacement_20261019/.gitattributes": "210b94334b70ce107146ade87fd5a08c375876032e68c236cf2b927137eb92a0",
+    "artifacts/muon_coupled_reference_replacement_20261019/REFERENCE_CONTRACTION_CONVENTION_v2.json": "2c349189db7d1a0abf9bdc39bd2bca32f12ad01d4845cac7349f8bce6c056992",
+    "artifacts/muon_coupled_reference_replacement_20261019/execution_owners/SOURCE_DIAGNOSTIC_V1_MANIFEST.json": "4e3372320da1549166360e0e4df1889a406eb5b242491e673d4681f3752ee853",
+    "artifacts/muon_coupled_reference_replacement_20261019/execution_owners/producer_v1.py": "ddc7650ec6321809bb4b23d7bec07b35a335971aea0afed50cafe729655290e7",
+    "artifacts/muon_coupled_reference_replacement_20261019/execution_owners/source_diagnostic_v1.py": "5bd83deac7ea469400d2d10e93f6dbf964d479a3b7f032af7120e55fcb721b72",
+    "artifacts/muon_coupled_reference_replacement_20261019/run_1/coupled_replacement.npz": "7e9f4cfe8cbbba0d97e9a66c7618d966b5cd0707616c225ff969c15b16e3e291",
+    "artifacts/muon_coupled_reference_replacement_20261019/run_1/result.json": "abd34b09648227fb05647505e33ad8d363b8b54072ffcb47823b4439d6258c0e",
+    "artifacts/muon_coupled_reference_replacement_20261019/run_2/coupled_replacement.npz": "2f945649514073c772b2f5db7e5d6a5361ca00036ad6acad17430e6d6cd3d5e1",
+    "artifacts/muon_coupled_reference_replacement_20261019/run_2/result.json": "a72bd8daf6ea37fec3a15e03efce1a1c858ce65a780f99db3d7b444752a83806",
+    "artifacts/muon_coupled_reference_replacement_20261019/run_3/coupled_replacement.npz": "2f945649514073c772b2f5db7e5d6a5361ca00036ad6acad17430e6d6cd3d5e1",
+    "artifacts/muon_coupled_reference_replacement_20261019/run_3/result.json": "a72bd8daf6ea37fec3a15e03efce1a1c858ce65a780f99db3d7b444752a83806",
+    "scripts/evaluate_muon_coupled_reference_replacement.py": "0d08aaeff6d377aa9bb0ae9615f5b2e02dc111e2ce86a4b15e61a668bd77ed42",
+    "src/bhsm/interface/muon_coupled_reference_replacement.py": "27e4bdc2134adce931d2f31906478e9f26746f65d45ca822d460b972d7a20ac8",
+    "tests/test_muon_coupled_reference_replacement.py": "a9a001c15ebfdc006b5692fb9d4cb9acb5d94dd18176cd32919e618ec7a902f0",
+    "theory/muon_coupled_reference_replacement_20261019.md": "fe2a1f96bb1dd4bd6f68121af7b76397189d516f5f615cce090e44d1db136886"
+  },
+  "held_and_unevaluated": {
+    "adopted_preparation": "unchanged500MeV/beam,100fm peraxis RMS,+/-1000fm centers, exact pair",
+    "cap_boundary_identified_with_entire_collider": false,
+    "common_energy_GeV_initializer_after": 83.16523531532756,
+    "common_energy_GeV_initializer_before": 83.32706337393809,
+    "intrinsic_wall_Higgs_reference_span": {
+      "equation": "ell_wall/H,a=Tr(C_reference V_a), with density/domain/time contacts; D ell=Tr(D C_reference V_a+C_reference D V_a)",
+      "higher_correlations": "interacting response and pair conversion can require higher state correlations; rank20 is not a bound on those requirements",
+      "rank_after": 20,
+      "rank_before": 20,
+      "values_of_required20_state_contractions": null
+    },
+    "native_heat_load_or_complete_Dell_evaluated": false,
+    "ordinary_reference_rates": "zero only in this stationary comparison ansatz; nonzero original canonical momenta exported",
+    "physical_GF_residual_after": null,
+    "physical_GF_residual_before": null,
+    "physical_cF_after": null,
+    "physical_cF_before": null,
+    "physical_four_sections_or_current_evaluated": false,
+    "physical_unit_admitted": false,
+    "quantum_replacement": "Gamma_heat minus already-retained local Maxwell/Higgs overlap plus state/domain/relative completion; rank20 contractions are a represented part, not another determinant",
+    "required_cF_at_initializer_after": 0.08067198558430065,
+    "required_cF_at_initializer_before": 0.08098624411711428,
+    "separate_bulk_native_remainder": "retained independently; zero intrinsic zero-trace vertices do not set bulk load or D bulk load to zero",
+    "surface_gamma": "unassigned; coefficient gradient/Hessian preserved, not adjusted to cancel a residual"
+  },
+  "known_residuals_after": {
+    "complete_physical_residual": null,
+    "complete_physical_residual_reason": "native-minus-local-overlap, inherited-state, exterior/interface and physical unit/domain rows remain unevaluated; no zero substituted",
+    "known_Higgs4_max": 2.4291480209972893e-06,
+    "known_active_interior52_max": 6.931784795969269e-06,
+    "known_geometry62_max": 258.64940382332156,
+    "known_held_radial_wall32_max": 0.7195718466916636,
+    "known_multiplier24_max": 27.638136783722548,
+    "known_multiplier_outside_area_max": 27.63919050148927,
+    "known_original150_max": 258.64940382332156
+  },
+  "known_residuals_before": {
+    "complete_physical_residual": null,
+    "complete_physical_residual_reason": "native-minus-local-overlap, inherited-state, exterior/interface and physical unit/domain rows remain unevaluated; no zero substituted",
+    "known_Higgs4_max": 6.749346657719831e-17,
+    "known_active_interior52_max": 7.105427357601002e-15,
+    "known_geometry62_max": 258.7976447797195,
+    "known_held_radial_wall32_max": 0.7199871046188747,
+    "known_multiplier24_max": 27.65396762765375,
+    "known_multiplier_outside_area_max": 27.655013253957243,
+    "known_original150_max": 258.7976447797195
+  },
+  "latest_completed_run": "run_2",
+  "magnetic_moment_or_uncertainty": null,
+  "new_contribution": {
+    "equation": "Delta L=+(59/30)*N_ambient/R4 = -L_retained_SM_zeta",
+    "independent_gauge_Higgs_unit_partial": "exact zero because this original term depends only on dimensionless geometry; total background/unit derivatives still chain through the geometry",
+    "initial_Hessian151_norm": 98.11737245769747,
+    "initial_geometry62_covector_norm": 11.140058928375385,
+    "initial_multiplier24_max": 2.2669036072036124,
+    "initial_value": 2.267664383622318,
+    "original_independent_twojet_defect": 3.552713678800501e-15,
+    "role": "exact removal of the zero-source SM determinant already in the attached action; full sourced heat minus retained local overlap remains required"
+  },
+  "parent_head": "42ce332a54a12ea8a8944bc535cee12c6518ff28",
+  "physical_derivative_admitted": false,
+  "physical_guard": 2e-10,
+  "physical_unit_and_collider_incidence_resolved": false,
+  "reference_contraction_convention": "REFERENCE_CONTRACTION_CONVENTION_v2.json; signed action occupation cotangent, not C_plus",
+  "schema": "bhsm.coupled-reference-checkpoint.v1"
+}
