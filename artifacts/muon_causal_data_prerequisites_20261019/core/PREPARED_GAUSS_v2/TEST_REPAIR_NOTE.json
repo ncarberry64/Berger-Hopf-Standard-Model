@@ -1,0 +1,40 @@
+{
+  "classification": "FOCUSED_TEST_FAILURE_AND_REPAIR_RECEIPT",
+  "command": "C:/Python314/python.exe -m pytest -q tests/test_muon_prepared_weak_gauss_dressing.py",
+  "initial_execution": {
+    "failed": 2,
+    "passed": 4,
+    "reported_duration_seconds": 11.66,
+    "failed_tests": [
+      "test_covariant_test_keeps_connection_even_when_H_is_angular_constant",
+      "test_exact_twojet_matches_independent_variations_and_gauge_matrix_commutator"
+    ],
+    "exception": "TypeError: bad operand type for abs(): 'list'",
+    "location": "charge_test_twojet return field spatial_covariant_derivative_nonzero",
+    "root_cause": "The owner function applied Python abs() to the list of computed Jet values while constructing a boolean reporting field. Both tests reached this same reporting exception before their numerical assertions. The tests did not reveal incorrect physical coefficient values or incorrect assertion assumptions."
+  },
+  "repair": {
+    "owner_code_changed": true,
+    "test_assertions_changed_for_this_failure": false,
+    "before": "np.max(abs([z.value for z in spatial]))",
+    "after": "np.max(np.abs([z.value for z in spatial]))",
+    "effect": "Elementwise absolute value is now applied through numpy. The charge/covariant derivative equations and numerical coefficient calculations are unchanged.",
+    "timing": "This reporting fix preceded execution of PREPARED_GAUSS_v1. Its preserved executed_owner.py already contains the fix."
+  },
+  "separate_v1_to_v2_scope_revision": {
+    "v1_executed_owner_sha256": "d27e0daa01a108c90c2a111a413ac881c7d295e305a7757946f7df5798104c9e",
+    "v2_executed_owner_sha256": "30c0520dc0f8c0166db40be47bb00af90d33bb171518c979a183f4c502c3e86b",
+    "change": "A later scientific scope review separated the required centroid/source target from achieved physical moments, relabeled the zero row as algebraic target substitution, and removed identification of scalar Gaussian number-position variance with full local quantum charge variance. The relevant scope assertions were updated to require achieved physical current/variance operands to remain null.",
+    "numerical_ancestor_solve_repeated": false,
+    "original_v1_files_and_hashes_changed": false
+  },
+  "final_focused_execution": {
+    "failed": 0,
+    "passed": 6,
+    "reported_duration_seconds": 6.66,
+    "source_sha256": "30c0520dc0f8c0166db40be47bb00af90d33bb171518c979a183f4c502c3e86b",
+    "test_sha256": "f0e5bb178fb21d98444f4d444dabe315f23adddad8335cee4fadc38cb94660ba",
+    "scope": "Focused owner tests only; this is not physical Gauss, prepared-state, continuum or 2e-10 admission."
+  },
+  "receipt_action": "Written from the existing execution output; no test, physics application or old artifact rerun and no existing output/result JSON changed."
+}
