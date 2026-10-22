@@ -59,7 +59,7 @@ def bhsm_interpretation(family,estimates=None,uncertainty=None,model=None,fit_st
     core_surface=json.loads(contract_path.read_text(encoding='utf8'))
     interpretation={
         'interpretation_schema_version':2,
-        'interpretation_revision':'2026-10-22',
+        'interpretation_revision':provenance.get('interpretation_revision','2026-10-22'),
         'framework':'BHSM',
         'project_citation':project_citation(),
         'model_role':'One compact-configuration optical response in the adopted BHSM Einstein/GHY sector, described in boundary/envelope language.',

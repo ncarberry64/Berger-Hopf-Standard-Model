@@ -1,12 +1,49 @@
-# BHSM Blackhole Tracker 0.2.0rc2
+# BHSM Blackhole Tracker 0.2.0rc3
 
 BHSM Blackhole Tracker reconstructs the effective gravitational mass, location and motion of a BHSM-described compact configuration from resolved image pairs, their magnification ratio and their delay. The ordinary lens response and the BHSM boundary/envelope interpretation use the **same optical potential, counted once**. Agreement with ordinary gravity is an allowed result; a non-GR deviation is not required to use this interpretation.
 
-The product provides a local browser app, command-line tools, a Python API, notebooks and reproducible synthetic validation. It also reports a spherical boundary representation of an ordinary fitted monopole at a fixed declared radius. The optional conditional R1 response evaluates a specific adopted scalar–tensor exterior and its normalized state-admission bound.
+The product provides a local browser app, command-line tools, a Python API, notebooks, reproducible synthetic validation, and a separately versioned native unresolved-photometry route. The latter has processed the frozen 100-event OGLE-III pilot and the corresponding 2022 historical benchmark. It leaves mass unavailable when angular and parallax information are absent. It also reports a spherical boundary representation of an ordinary fitted monopole at a fixed declared radius. The optional conditional R1 response evaluates a specific adopted scalar–tensor exterior and its normalized state-admission bound.
 
 The formal source and reviewer record are in the [BHSM GitHub repository](https://github.com/ncarberry64/Berger-Hopf-Standard-Model), under `products/blackhole_tracker/`; the paper is under `papers/bhsm_blackhole_tracker_20261021/`. App/package metadata and exported `project_citation` records cite that repository. Immutable historical provider/source citations retain their original locations.
 
-The fitted object is a **compact exterior**. Its BHSM interpretation does not uniquely identify the microscopic theory, establish a horizon or select an R1 deformation state. All bundled measurement sets are explicitly synthetic.
+The fitted object is a **compact exterior**. Its BHSM interpretation does not uniquely identify the microscopic theory, establish a horizon or select an R1 deformation state. Bundled resolved measurement examples are explicitly synthetic. Actual downloaded observations remain in the external data handoff; the paper includes the complete derived 100-event results, residual plots and protocol without redistributing those raw files.
+
+## Native unresolved observations: app, CLI, Python and notebook
+
+Use **Unresolved photometry** in the app, or open `http://127.0.0.1:8765/photometry`. Import an optimized OGLE-III `.dat` file, the corresponding benchmark OGLE/MOA files, or a saved `bhsm_unresolved_observations/1` JSON. The import preserves byte hashes, source-line identities, native magnitude/errors/time, filter/instrument calibration, literal source warnings and transformation history. Original files remain unchanged. The separate native page supports a 32 MB versioned input; the resolved page retains its 8 MB limit. The local server has a 40 MB total request limit.
+
+Validate, fit and inspect the observations and residuals before exporting the replay ZIP. The default is the reviewed 12-start native-magnitude PSPL likelihood with published errors, nonnegative source/blend flux and no clipping or thinning. A signed calibration blend or changed weights/noise is an explicitly labelled sensitivity. Numerical convergence, photometric flux admission, observational adequacy and parameter identification are separate decisions. The public `PHOTOMETRIC_FIT` status does not imply a measured lens mass; this route always retains `MASS_UNRESOLVED`.
+
+```text
+python -m bhtracker import-ogle3 /path/to/photBLG122.6.I.83113.dat --output observations.json
+python -m bhtracker validate observations.json
+python -m bhtracker fit-photometry observations.json --output native_fit
+python -m bhtracker replay native_fit --output native_replayed
+python -m bhtracker profile-photometry observations.json native_fit/result.json --timescales 150 200 250 300 350 --output timescale_profile.json
+```
+
+For the historical 2022 reduction, use `import-benchmark --ogle OGLE_file --moa MOA_file --output observations.json`. The native HJD origin arithmetic is recorded; an origin shift is not a clock-scale or heliocentric conversion. The additional limited relative-time assumption for combining the two instruments remains explicit. Their baseline, blend and residual diagnostics remain separate.
+
+```python
+from bhtracker.observations import load_ogle_photometry
+from bhtracker.photometry import fit_photometry
+from bhtracker.report import export_result, replay_analysis
+observations = load_ogle_photometry('/path/to/photBLG122.6.I.83113.dat')
+result = fit_photometry(observations, starts=12)
+assert result['mass_status'] == 'MASS_UNRESOLVED'
+export_result(result, 'native_fit')
+replay_analysis('native_fit', 'native_replayed')
+```
+
+The notebook `03_native_unresolved_photometry.ipynb` uses the actual external observations when `BHSM_DATA_ROOT` points to the handoff's `data` directory; its portable fallback is explicitly synthetic. The frozen measured pilot lives in the paper's `real_data_pilot_20261022/` directory. It processed **all 100 events / 76,344 rows**: 89 simple-model inadequate and 11 photometric fits. Two predeclared archival follow-up targets pass stricter checks, with no mass-supported black-hole candidate or new black-hole interpretation. Neither ranking nor duration is a black-hole probability. The benchmark remains photometric-model inadequate; released HST timing/frame conventions prevent a validated joint mass inference.
+
+The native model identifies only supported model-conditional photometric combinations. Since `tE = thetaE / mu_rel` and `thetaE^2 = kappa M pi_rel`, mass, distance, absolute angular proper motion, horizon and core state remain `null`. One effective optical potential has the explicit BHSM interpretation and is counted once. No inferred surface deformation or core dynamics are added to an inadequate light curve. See [UNRESOLVED_OBSERVATIONS.md](UNRESOLVED_OBSERVATIONS.md) for the likelihood and optional astrometric metadata gates.
+
+## Reviewed fitting corrections in rc3
+
+Resolved fits use a stable data-derived optimization epoch and scaling, then transform parameters, the full covariance and null directions to the supplied reporting epoch. Numerical reference mass and epoch impose no hidden positional box. `model.parameter_basis` and `physical_parameter_uncertainty` version this representation; unidentified public covariance is unavailable rather than a tiny pseudoinverse block. Low-significance identifiable motion retains finite covariance. [FITTING_CONTRACT_V2.md](FITTING_CONTRACT_V2.md) documents compact-quadrupole normalization, physical bounds and migration.
+
+Resolved profiles genuinely search physically admissible nuisance states and distinguish interior, boundary, numerical failure and unresolved physical-domain outcomes. Unresolved rows cannot supply interval crossings. Legacy internal profile coordinates require refitting the preserved raw input. Replay records raw-input refitting and rejects a silently changed historical default worldtube. The radial membrane source now explicitly states its fixed-background, constant-tension assumptions and pressure source, with both handoff versions and original documents reconciled in the BHSM source record.
 
 ## What the fitted quantities mean in BHSM
 
@@ -54,7 +91,7 @@ python -m bhtracker serve --port 8766 --open
 For development and notebook replay, use `python -m pip install -e ".[dev]"`. To install a supplied wheel, replace the path below with its actual location:
 
 ```text
-python -m pip install path/to/bhsm_blackhole_tracker-0.2.0rc2-py3-none-any.whl
+python -m pip install path/to/bhsm_blackhole_tracker-0.2.0rc3-py3-none-any.whl
 python -m bhtracker serve --open
 ```
 

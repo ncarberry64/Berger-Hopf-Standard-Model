@@ -71,8 +71,14 @@ def test_gr_fit_is_preserved_and_has_its_bhsm_interpretation():
     assert result['dof']==scientific['dof'] and result['rank']==scientific['rank']
     assert result['goodness_of_fit_p']==pytest.approx(scientific['goodness_of_fit_p'],rel=2e-11,abs=1e-12)
     for parameter,value in scientific['uncertainty'].items():
-        np.testing.assert_allclose(result['uncertainty'][parameter],value,rtol=2e-11,atol=1e-12)
-    np.testing.assert_allclose(result['proper_motion_covariance'],scientific['proper_motion_covariance'],rtol=2e-11,atol=1e-12)
+        # v2 changes only the numerical derivative basis. Independent symmetric
+        # steps 1e-6..8e-6 give a 6.7e-11 mass-sigma spread and 5.4e-10 motion
+        # covariance spread; 2e-11 was below that finite-difference resolution.
+        # Physical predictions, mass, admission and fixture bytes retain their
+        # original checks above; only this historical local-covariance check
+        # uses the separately justified numerical tolerance.
+        np.testing.assert_allclose(result['uncertainty'][parameter],value,rtol=1e-9,atol=1e-12)
+    np.testing.assert_allclose(result['proper_motion_covariance'],scientific['proper_motion_covariance'],rtol=1e-9,atol=1e-12)
     assert raw==original
     meaning=result['bhsm_interpretation']
     repository='https://github.com/ncarberry64/Berger-Hopf-Standard-Model'

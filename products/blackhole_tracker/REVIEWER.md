@@ -11,9 +11,9 @@ and open a terminal in its root, which contains `products/`, `papers/`,
 `tools/` and both license notices. The commands below work from that extracted
 root. A complete clone of the much larger BHSM repository is optional.
 
-The 108 upstream product files here are byte-exact Git-blob copies from
-workspace commit `ab0fd069195f63a864d74b0926d23311f1c3523e`, including the
-runtime, examples, two executed notebooks, tests, source pins and historical
+The 130 upstream product files here are byte-exact Git-blob copies from
+workspace commit `516161d98035eb37fce994d01ad4dee163caf322`, including the
+runtime, examples, three executed notebooks, tests, source pins and historical
 validation receipts. [FORMAL_PROVENANCE.json](FORMAL_PROVENANCE.json) records
 every source path, byte count and SHA-256. It excludes its own hash and the
 future BHSM commit, avoiding a self-referential receipt. This reviewer guide
@@ -32,8 +32,10 @@ Windows users can double-click `Start_Blackhole_Tracker.cmd` in this directory.
 The app is local. The [upstream user guide](README.md) documents the versioned
 measurement schema, full covariance ordering, CLI, Python API, export/replay,
 notebooks and inference-status meanings. Declared observed data remain distinct
-from the supplied synthetic examples. No survey acquisition or submission is
-performed. The root [license](../../LICENSE.md) applies; retained providers keep
+from the supplied synthetic examples. Native unresolved photometry is available at `/photometry`. The frozen
+100-event pilot and corresponding 2022 historical benchmark are in the paper
+directory, with external raw hashes and every unsuccessful case retained.
+No journal submission is performed. The root [license](../../LICENSE.md) applies; retained providers keep
 their source attribution and domain statements.
 
 Reviewer checks from the BHSM root:
@@ -44,7 +46,7 @@ cd products/blackhole_tracker
 python -m pytest -q tests
 python -m pip wheel --no-deps . --wheel-dir dist
 cd ../..
-python tools/smoke_blackhole_tracker_wheel.py --wheel products/blackhole_tracker/dist/bhsm_blackhole_tracker-0.2.0rc2-py3-none-any.whl
+python tools/smoke_blackhole_tracker_wheel.py --wheel products/blackhole_tracker/dist/bhsm_blackhole_tracker-0.2.0rc3-py3-none-any.whl
 ```
 
 The dedicated workflow runs the product tests on Linux and Windows with Node24
@@ -100,3 +102,15 @@ the packaged theory inputs in an isolated extracted copy. The committed,
 visually reviewed PDF remains unchanged. See
 [FORMAL_INTEGRATION_REVIEW.md](FORMAL_INTEGRATION_REVIEW.md) for findings,
 corrections and the scope of these checks.
+
+## Reviewed corrections and real observations (rc3)
+
+All 182 product tests pass. Fitting is independent of numerical reference choices,
+profiles seek admissible nuisance states, and unidentified reporting covariance
+is unavailable. The installed noneditable wheel passes ordinary and native
+export/replay checks; all three notebooks execute outside the checkout.
+The native pilot has 89 model-inadequate and 11 photometric-screen fits, with two
+archival follow-up targets and zero mass-supported black-hole candidates.
+The original HST numeric-time/frame metadata still block a precision joint
+astrometric mass fit. BHSM interpretation is explicit and counts one potential
+once. See FITTING_CONTRACT_V2.md and UNRESOLVED_OBSERVATIONS.md.

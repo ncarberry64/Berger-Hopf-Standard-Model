@@ -5,7 +5,7 @@ from importlib.metadata import version, PackageNotFoundError
 from pathlib import Path
 import platform
 
-VERSION='0.2.0rc2'
+VERSION='0.2.0rc3'
 REPOSITORY_URL='https://github.com/ncarberry64/Berger-Hopf-Standard-Model'
 
 def project_citation():
@@ -23,7 +23,7 @@ def software_provenance():
            for p in sorted(root.rglob('*')) if p.is_file() and
            '__pycache__' not in p.parts and p.suffix in ('.py','.json','.html','.css','.js','.tex')}
     dependencies={}
-    for name in ('numpy','scipy','matplotlib'):
+    for name in ('numpy','scipy','matplotlib','astropy'):
         try:dependencies[name]=version(name)
         except PackageNotFoundError:dependencies[name]='unavailable'
     return {'product_version':VERSION,'project_citation':project_citation(),'python':platform.python_version(),

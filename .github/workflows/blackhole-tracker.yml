@@ -35,7 +35,7 @@ jobs:
         working-directory: products/blackhole_tracker
         run: python -m pip wheel --no-deps . --wheel-dir dist
       - name: Fit and export replay from wheel outside checkout
-        run: python tools/smoke_blackhole_tracker_wheel.py --wheel products/blackhole_tracker/dist/bhsm_blackhole_tracker-0.2.0rc2-py3-none-any.whl
+        run: python tools/smoke_blackhole_tracker_wheel.py --wheel products/blackhole_tracker/dist/bhsm_blackhole_tracker-0.2.0rc3-py3-none-any.whl
       - uses: actions/upload-artifact@v4
         with:
           name: blackhole-tracker-wheel-${{ matrix.os }}

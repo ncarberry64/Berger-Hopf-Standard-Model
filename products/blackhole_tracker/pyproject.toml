@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "bhsm-blackhole-tracker"
-version = "0.2.0rc2"
-description = "Resolved compact-lens tracking and conditional R1 boundary-response inference"
+version = "0.2.0rc3"
+description = "BHSM compact-lens inference with resolved images and versioned native unresolved photometry"
 requires-python = ">=3.11"
 dependencies = ["numpy>=1.26", "scipy>=1.12", "matplotlib>=3.8"]
 
@@ -15,6 +15,7 @@ Issues = "https://github.com/ncarberry64/Berger-Hopf-Standard-Model/issues"
 
 [project.optional-dependencies]
 dev = ["pytest>=8", "nbformat>=5", "nbclient>=0.10", "ipykernel>=6", "build>=1"]
+astrometry = ["astropy>=6"]
 
 [project.scripts]
 blackhole-tracker = "bhtracker.cli:main"

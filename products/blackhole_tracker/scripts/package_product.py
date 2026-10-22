@@ -70,7 +70,9 @@ def wheel_contents(wheel):
     with zipfile.ZipFile(wheel) as artifact:
         names = set(artifact.namelist())
         required = ["bhtracker/web/index.html", "bhtracker/web/app.js", "bhtracker/web/style.css",
-                    "bhtracker/theory/ADAPTATION.json", "bhtracker/theory/provider/SOURCE_MANIFEST.json"]
+                    "bhtracker/theory/ADAPTATION.json", "bhtracker/theory/provider/SOURCE_MANIFEST.json",
+                    "bhtracker/web/photometry.html", "bhtracker/web/photometry.js",
+                    "bhtracker/observations.py", "bhtracker/photometry.py", "bhtracker/astrometry.py"]
         for name in required:
             if name not in names:
                 raise ValueError(f"wheel is missing {name}")
@@ -125,7 +127,7 @@ for item in manifest['files']:
         raise RuntimeError('installed provider mismatch: ' + item['path'])
     provider[item['path']] = actual
 web = {name: hashlib.sha256(root.joinpath('web/' + name).read_bytes()).hexdigest()
-       for name in ['index.html', 'app.js', 'style.css']}
+       for name in ['index.html', 'app.js', 'style.css', 'photometry.html', 'photometry.js']}
 raw, truth = make_example('nearby_motion', noise=False)
 data = load_dataset(raw)
 prediction = predict(data, truth)
@@ -147,7 +149,7 @@ thread = threading.Thread(target=server.serve_forever, daemon=True)
 thread.start()
 http_checks = {}
 try:
-    for path in ['/', '/app.js', '/style.css', '/api/health', '/api/examples']:
+    for path in ['/', '/app.js', '/style.css', '/photometry', '/photometry.js', '/api/health', '/api/examples']:
         with urlopen('http://127.0.0.1:' + str(server.server_port) + path, timeout=10) as response:
             body = response.read()
             if response.status != 200 or not body:

@@ -133,7 +133,7 @@ def load_dataset(source):
         if pf.shape!=(len(epochs),2) or not np.all(np.isfinite(pf)):
             raise ValueError('lens_parallax_factors must contain N finite two-vectors')
     if analysis.get('source_policy','free_per_epoch')!='free_per_epoch':raise ValueError('this version supports source_policy=free_per_epoch')
-    for key in ['r0_pc','reference_mass_msun']:
+    for key in ['r0_pc','reference_mass_msun','compact_quad_reference_mass_msun']:
         if key in analysis:_finite_number(analysis[key],f'analysis.{key}',positive=True)
     if 'mass_bounds_msun' in analysis:
         mb=_array(analysis['mass_bounds_msun'],'analysis.mass_bounds_msun')

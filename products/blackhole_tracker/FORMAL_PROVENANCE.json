@@ -3,9 +3,9 @@
   "canonical_repository": "https://github.com/ncarberry64/Berger-Hopf-Standard-Model",
   "canonical_path": "products/blackhole_tracker",
   "workspace_source_repository": "https://github.com/ncarberry64/Manuscript-Generation",
-  "workspace_source_commit": "ab0fd069195f63a864d74b0926d23311f1c3523e",
+  "workspace_source_commit": "516161d98035eb37fce994d01ad4dee163caf322",
   "workspace_source_prefix": "product/",
-  "snapshot_policy": "Every upstream tracked product file copied byte-for-byte from the stated Git commit; no scientific or numerical source edits",
+  "snapshot_policy": "Every upstream tracked product file copied byte-for-byte from immutable Git blobs; preserve formal additions and unrelated work.",
   "source_files": [
     {
       "path": ".gitattributes",
@@ -18,9 +18,14 @@
       "sha256": "c187b313045330911dfc42a510bf61f4612add6c6a936056118ab464cc4a107c"
     },
     {
+      "path": "FITTING_CONTRACT_V2.md",
+      "bytes": 7037,
+      "sha256": "6148d26ba1bbda4de57ccea8d7d012421b0bb2963103332d5a222687d72c4403"
+    },
+    {
       "path": "README.md",
-      "bytes": 39817,
-      "sha256": "e04e37f58519bedf0e5575f3e632a4a2f807c6173ad7ac57d3f8a6db024ab087"
+      "bytes": 45298,
+      "sha256": "45959464a5a959cb443d434e5160eec1cc52d34aac2d95c97834dbce454ffed5"
     },
     {
       "path": "RELEASE_NOTES.md",
@@ -33,9 +38,14 @@
       "sha256": "ffc145e5c7e92f635ae180de91c90c1f9677dbbe2d119239a5a19ffb5f24a205"
     },
     {
+      "path": "UNRESOLVED_OBSERVATIONS.md",
+      "bytes": 12101,
+      "sha256": "21e355b30c8bd7c97e3b9106b158d1e286cbd38683709aae0fd2249cd806c8f3"
+    },
+    {
       "path": "bhtracker/__init__.py",
-      "bytes": 283,
-      "sha256": "7554aba0148077d095bf520b5a4ce161ec4daabf2fdfa1b7d66aa4eedceb8eb7"
+      "bytes": 550,
+      "sha256": "270fb98a0bb0abd35a504ceb23405bfb32fbfc831e0536539def9a63c81e1d8f"
     },
     {
       "path": "bhtracker/__main__.py",
@@ -43,14 +53,19 @@
       "sha256": "cf7390a2508a0fcad4777a4a629fc5212ab655cb45845975995f835676a834e3"
     },
     {
+      "path": "bhtracker/astrometry.py",
+      "bytes": 15109,
+      "sha256": "a74dd19625f4bf463249ab9d3cb80ee8794e3e12c5d728f5fbdf5817f1002daa"
+    },
+    {
       "path": "bhtracker/cli.py",
-      "bytes": 3963,
-      "sha256": "724e286a1955e3a4ab5c678e9f8ca1fa1bafa4efab63be873444fd10d1870f86"
+      "bytes": 8900,
+      "sha256": "52a09545602a0b169510d5b05e97441aaa4994d1b40fae905904ccfe2511fcf5"
     },
     {
       "path": "bhtracker/data.py",
-      "bytes": 9217,
-      "sha256": "ab34e7783b015cd971477e9e5aa583d95c808151c6050e69089a99ac1510ed26"
+      "bytes": 9252,
+      "sha256": "6ef640052af40d95056ce4d15a508096d678737ba09afdb24c0df09df03d6b63"
     },
     {
       "path": "bhtracker/envelope.py",
@@ -114,8 +129,8 @@
     },
     {
       "path": "bhtracker/forward.py",
-      "bytes": 8297,
-      "sha256": "3dc51c57e56ff00633ca3d5e0766a37cd0eb7639d58a294373ac1e30df810e5d"
+      "bytes": 8670,
+      "sha256": "54035f500c3c8f1b8ae606e45c178c4e9b09e31b083b152f52d479654b7066f5"
     },
     {
       "path": "bhtracker/importers.py",
@@ -124,13 +139,23 @@
     },
     {
       "path": "bhtracker/inference.py",
-      "bytes": 16877,
-      "sha256": "77942f22714579ce97855e54d14702d57d72d26fd7c7b421463b2d377dd59eae"
+      "bytes": 30292,
+      "sha256": "3e2f5ed370c62b9c0d42e19600a1fd6c382a1947be6a76f75b3c1a28b93086bb"
     },
     {
       "path": "bhtracker/interpretation.py",
-      "bytes": 7218,
-      "sha256": "62dd634a4aab1a91d0ea7acbcca445e2107a9cb16da2df76ee324a0b429b2bb5"
+      "bytes": 7260,
+      "sha256": "8a87a192e7bd3558bd3ae0a04bce955de8140a872b380412ffa21240c63de010"
+    },
+    {
+      "path": "bhtracker/observations.py",
+      "bytes": 16302,
+      "sha256": "5c9b07c1887c9a299ca8505b323462d41f314457f2bff3b5b2b2ca1970a21c0b"
+    },
+    {
+      "path": "bhtracker/photometry.py",
+      "bytes": 28121,
+      "sha256": "e51e83a8754666fe3746d037a80f7cfc25818a846297357222f38f3d1033bdac"
     },
     {
       "path": "bhtracker/physics_admission.py",
@@ -139,8 +164,8 @@
     },
     {
       "path": "bhtracker/provenance.py",
-      "bytes": 1677,
-      "sha256": "82379b06ca1adc3ec48473846e956aa4442261b7ca626d9bbd6b725ba8080b03"
+      "bytes": 1687,
+      "sha256": "8eb8c97588928d741a83ad5e420dab0367cee8f49b2cce34b94774e81b543895"
     },
     {
       "path": "bhtracker/r1_runtime.py",
@@ -149,8 +174,8 @@
     },
     {
       "path": "bhtracker/report.py",
-      "bytes": 15959,
-      "sha256": "21a0457a8bf513fa0f28451bd0e05952c1580d7c033e3ff984a0a3fe258d2e6e"
+      "bytes": 17978,
+      "sha256": "9a60bb56b38a2d069300219e1ca3a22b991458cec2a55aab455fad19915e7b36"
     },
     {
       "path": "bhtracker/sample_bundle.py",
@@ -159,8 +184,8 @@
     },
     {
       "path": "bhtracker/server.py",
-      "bytes": 7240,
-      "sha256": "f4904330cf41fbd6afee06de60ab916158e0726d0d0d60ecd6159de621bd4cc8"
+      "bytes": 13300,
+      "sha256": "82e205faaceb9d9c44fce03dd90ce953e54636c3f0f96bb472416c7b2cda1470"
     },
     {
       "path": "bhtracker/theory/ADAPTATION.json",
@@ -169,13 +194,13 @@
     },
     {
       "path": "bhtracker/theory/BHSM_CORE_SURFACE_CONTRACT.json",
-      "bytes": 5340,
-      "sha256": "1b2a44d1d424cf1ad4786d57695c9ab5a9fa5946af7362f05c5e4fb52a251b97"
+      "bytes": 6677,
+      "sha256": "a0561d8fe7d1031daa2a56c433d46b99734b20f850e02e16d0e5095b32fc3507"
     },
     {
       "path": "bhtracker/theory/BHSM_INTERPRETATION_MANIFEST.json",
-      "bytes": 4339,
-      "sha256": "a6a9b1df9c99a1c9ad84370616ffe1fc955327ef852e4273ca80ec35d90eafa4"
+      "bytes": 4472,
+      "sha256": "e82a4d84533593576a0999753d9d2d1f95e2f6b214805a6829d93129a48dac64"
     },
     {
       "path": "bhtracker/theory/__init__.py",
@@ -194,13 +219,13 @@
     },
     {
       "path": "bhtracker/theory/bhsm_sources/BHSM_NORMAN_CORE_SURFACE_AMENDMENT_20261022.json",
-      "bytes": 9370,
-      "sha256": "a5df72ff970b098a8963ebeb0694227e0f6412e10a726529f0a1436414d5dae4"
+      "bytes": 12566,
+      "sha256": "48515f3eeb0179d724213b9e030410927d73a9fc97c022cc98853c37dd793256"
     },
     {
       "path": "bhtracker/theory/bhsm_sources/BHSM_NORMAN_CORE_SURFACE_AMENDMENT_20261022.md",
-      "bytes": 25657,
-      "sha256": "db244adeb07e5e5d5df1689986d542cd83a58268a1ba09c53bb8ca3ccbc720f7"
+      "bytes": 29328,
+      "sha256": "028158078ae6ac2c32f44f3539c2598ade810f5ef77fff66b7e854cb9d4f959a"
     },
     {
       "path": "bhtracker/theory/bhsm_sources/BHSM_Topographic_Galaxy_Encapsulation_Solution_v0_3.md",
@@ -248,19 +273,34 @@
       "sha256": "d7a90db765d89c9b56d5129a2bbb937238c364ddf09d8683c7b5bbfca0c17514"
     },
     {
+      "path": "bhtracker/unresolved_report.py",
+      "bytes": 12975,
+      "sha256": "3ff5cba6f550f1ee6aa4b5a39f52a5acb2d9c4fc5c1220e5c3a6cac5e52c5420"
+    },
+    {
       "path": "bhtracker/web/app.js",
-      "bytes": 61270,
-      "sha256": "98dab4751ea8765138d445076c589deac6e6994ef553b9c863ee02ab2f05ae7d"
+      "bytes": 61618,
+      "sha256": "131c41cb48c3118317fc53a894859761ae03796aa5a35cce70f2559e68f15cea"
     },
     {
       "path": "bhtracker/web/index.html",
-      "bytes": 16646,
-      "sha256": "fe80e694c7d5fc94f1d2fe9d8c66573f95c9c3d0d6df0f6d0a39bef164bf42db"
+      "bytes": 16924,
+      "sha256": "1226c0c3aa422d16c053ffa7cac8fbe955d0a8ba443206c48e83638e9ad7ab52"
+    },
+    {
+      "path": "bhtracker/web/photometry.html",
+      "bytes": 9483,
+      "sha256": "1838c4d3d90cc986302cd73f4942f0de76bd16bfb6868ba5a5badbc750043e11"
+    },
+    {
+      "path": "bhtracker/web/photometry.js",
+      "bytes": 13330,
+      "sha256": "4b374054b2d6eaa8992bfa3e6ee4ccf14e7f42f69ddfb607b621825badb559ff"
     },
     {
       "path": "bhtracker/web/style.css",
-      "bytes": 26625,
-      "sha256": "c17f1536e98a8b4938876c8209977465448b85fc6128914176ee05f83b139ab9"
+      "bytes": 27637,
+      "sha256": "1d1b092b6d852ace80c29915beb54f83518d59a2eae685b893cbbb987c90962f"
     },
     {
       "path": "examples/nearby_motion/README.md",
@@ -299,18 +339,23 @@
     },
     {
       "path": "notebooks/01_compact_mass_and_motion.ipynb",
-      "bytes": 95925,
-      "sha256": "b6a4a5dc564e230ce569259603251927ec5e1c820a019eb9671310d4ba1e1d4c"
+      "bytes": 97234,
+      "sha256": "8963837f43884c1aea7320422a8fe12fde0b4c67e49c76f71b3e3c3198d00e2a"
     },
     {
       "path": "notebooks/02_conditional_boundary_response.ipynb",
-      "bytes": 25203,
-      "sha256": "caa8b8fe01734062068d51563b83cb7553af11bf5f32fd9902114b8fe212cc39"
+      "bytes": 26696,
+      "sha256": "1ff779d20b8a04c6d42f2330edb3abc856a919ebc43d7ab513a4b6a89bd5cd39"
+    },
+    {
+      "path": "notebooks/03_native_unresolved_photometry.ipynb",
+      "bytes": 113909,
+      "sha256": "b972e7f57267574834bf2149ca32716369d4301790bcb1bf11c19ae3a152aef0"
     },
     {
       "path": "pyproject.toml",
-      "bytes": 967,
-      "sha256": "9763b725f5c5cc9169ec7e4750061467043b049ab7eec69e15a887e838684906"
+      "bytes": 1009,
+      "sha256": "8032f9d3cee5477adee3886be751aa689919024eb6565ef06bac22cff674c870"
     },
     {
       "path": "scripts/check_installed_wheel.py",
@@ -344,13 +389,23 @@
     },
     {
       "path": "scripts/make_notebooks.py",
-      "bytes": 8682,
-      "sha256": "76ef95d208615749db21826b295b7789af14b077ac9c87cd78d545ea54779dd2"
+      "bytes": 9023,
+      "sha256": "069f26626ceb6afb088398d0758ec1a6b74d668a0bf846214311208a622129e1"
+    },
+    {
+      "path": "scripts/make_unresolved_notebook.py",
+      "bytes": 6704,
+      "sha256": "b823782951bf7c10480d2b7a470809a407506ec882fa854d7971d77fe521b842"
     },
     {
       "path": "scripts/package_product.py",
-      "bytes": 14271,
-      "sha256": "e2bb93a7dbe1c9eaecdf36c780a95a315e144399a72c6c11e272b39c5fb66c2e"
+      "bytes": 14527,
+      "sha256": "645e0e41c144e31a3cac4e317162c3b84e5fead633c13438695ab5bd0a290920"
+    },
+    {
+      "path": "scripts/sync_bhsm_interpretation.py",
+      "bytes": 3992,
+      "sha256": "67b0bfa1db802ba0257374229147870d3f067c474a0fe02286eeda9e4c37a5f5"
     },
     {
       "path": "scripts/sync_theory.py",
@@ -361,6 +416,11 @@
       "path": "scripts/validate_product.py",
       "bytes": 1143,
       "sha256": "b3870766ab518576b25b2460acf52804e9e6649c9b18c926536aa0de60d00dfa"
+    },
+    {
+      "path": "scripts/validate_unresolved_observations.py",
+      "bytes": 7754,
+      "sha256": "4850a13c09fa0764379495921492e8d86e6e35c4d01ade24160aabc0448cecbb"
     },
     {
       "path": "tests/calibrate_product.py",
@@ -389,8 +449,8 @@
     },
     {
       "path": "tests/test_bhsm_interpretation.py",
-      "bytes": 6754,
-      "sha256": "bcff3a4b4f47b40ee05cd81f71eb2f4822d094c291c26530098117f93e8a2fa8"
+      "bytes": 7214,
+      "sha256": "774ae5828ded96ab26952fcf1448bf07865a9c91461380cf34f5dfd52b718f86"
     },
     {
       "path": "tests/test_csv_import.py",
@@ -406,6 +466,11 @@
       "path": "tests/test_local_app.py",
       "bytes": 3594,
       "sha256": "7b089cfd25d6b652c3a727305187a6cec8e8cbbdd8894a4ce5c07886dc7eea42"
+    },
+    {
+      "path": "tests/test_photometry_app.py",
+      "bytes": 7170,
+      "sha256": "5a44672296cf207f4be0cb530b18434efa7f5dad947d2e78c2173fa34834658f"
     },
     {
       "path": "tests/test_physics_admission.py",
@@ -428,9 +493,24 @@
       "sha256": "bf415536d0e8ec17568bc24f51ebe7028ad53bee7ae69aab427014562445d02d"
     },
     {
+      "path": "tests/test_reviewed_inference_corrections.py",
+      "bytes": 9116,
+      "sha256": "1dfddddbc16faf3f8f988c2e757943d9159cbde39c5ca07510c58377809b1543"
+    },
+    {
       "path": "tests/test_sample_bundle.py",
       "bytes": 2584,
       "sha256": "8ab817abc4710d5e6864f301d0181580ae6e9fae32299c9a7d395f90d8c439bb"
+    },
+    {
+      "path": "tests/test_unresolved_observations.py",
+      "bytes": 15004,
+      "sha256": "15f96decedec046e70cead9e30d63f6f4931cea1c1307ec1ca7dc816d58ae49c"
+    },
+    {
+      "path": "tests/test_unresolved_replay.py",
+      "bytes": 4136,
+      "sha256": "07f8b5d922a8fac0e42f74556c0b61a93f3a82cfd5228ddaf977a663a47fd27c"
     },
     {
       "path": "validation/bhsm_interpretation_ui_receipt.json",
@@ -444,13 +524,13 @@
     },
     {
       "path": "validation/notebook_receipt.json",
-      "bytes": 929,
-      "sha256": "88db550eb202a974ebc42e0187011c6a2ee93203f7ccab9869704bd017987244"
+      "bytes": 1966,
+      "sha256": "b0183099c442e331334fc8e8146a583113a064be3f5bf5f2d09853f2d3ad08a4"
     },
     {
       "path": "validation/package_install_receipt.json",
-      "bytes": 25306,
-      "sha256": "8b65ba40b58518a02040a8842200cb4037e7d74459852957271e69e59a22bca4"
+      "bytes": 27065,
+      "sha256": "40108581ca6925acc25ac252afca8cb2241de603831d637454e6e64b64d43758"
     },
     {
       "path": "validation/product_calibration_receipt.json",
@@ -491,6 +571,36 @@
       "path": "validation/rc2_product_tests.xml",
       "bytes": 17374,
       "sha256": "0976089655fa2aa3e70c943b504e8b6ac283d5f483091196ac4531ececcc297a"
+    },
+    {
+      "path": "validation/rc3_installed_browser_receipt.json",
+      "bytes": 1325,
+      "sha256": "8823469c61693e60346ef2a32763fc7edbf7286d4cbb617be2df705e57c7e9e1"
+    },
+    {
+      "path": "validation/rc3_installed_scientific_probe.json",
+      "bytes": 6763,
+      "sha256": "e9e2a68f09cdc9feadda2127785deefd84451482e33bc646612fb8a584f0965d"
+    },
+    {
+      "path": "validation/rc3_native_app_api_receipt.json",
+      "bytes": 3315,
+      "sha256": "f2514c25d76c779290e5a79546f8e379f0a27bb2ce5b04b67b3d6a69731a07fd"
+    },
+    {
+      "path": "validation/rc3_product_tests.xml",
+      "bytes": 24187,
+      "sha256": "66b2dd960dbc3d62584327ec3f430c69060728db73d05cb834d1e4bd15b05180"
+    },
+    {
+      "path": "validation/rc3_resolved_correction_receipt.json",
+      "bytes": 3123,
+      "sha256": "97484289b544125dcf22abc3ad42914b92e35a35b317bbe02280b0cc6024441f"
+    },
+    {
+      "path": "validation/rc3_resolved_corrections_tests.xml",
+      "bytes": 10246,
+      "sha256": "3e83792f2194c28dcf949d7a79f8f68112a41163351e08943038fe7b2b15b23b"
     },
     {
       "path": "validation/rc_four_interface_receipt.json",
@@ -553,5 +663,5 @@
     "REVIEWER.md"
   ],
   "self_hash_or_self_commit_included": false,
-  "theory_source_commit": "3c820fee74a5c715ef58bf30998edb1d7b26fe78"
+  "theory_source_commit": "705d4c7e2f9a832b457f63ff975e7d4dc8008645"
 }

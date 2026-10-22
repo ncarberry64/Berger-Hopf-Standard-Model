@@ -7,7 +7,9 @@ mathematical deductions; it introduces no action coefficient, physical rate,
 measured threshold or new primitive field. It is not observational confirmation.
 Historical files and their stage-specific verdicts remain preserved. The
 [machine-readable ledger](../artifacts/current_semantics/BHSM_NORMAN_CORE_SURFACE_AMENDMENT_20261022.json)
-pins the sources read at `00614fa0d479a2de78460ca061cc5304cdb610cf`.
+records the source lineage read at `00614fa0d479a2de78460ca061cc5304cdb610cf`,
+the current qualified mechanics text, and the separately recovered source
+versions described in section 4.
 
 ## 1. What is being defined
 
@@ -187,13 +189,34 @@ $S_\Sigma=-\sum_s\int_{W_s}\gamma_s d\mu_h$ with
 $\gamma_s=\alpha_{\rm FSC}\ell_s^{-m_s}$. The power and symbolic multiplier
 are fixed on that owner-authorized branch; no measured decimal FSC or fitted
 tension is inserted. GHY/Hayward and bulk stress are counted once. Variation
-gives the full traction jump and, for a symmetric spatial $p$-surface,
+gives the covariant traction jump. Its following radial special case assumes
+a **round spatial $p$-sphere on a fixed Minkowski background**, constant
+$\gamma_s$, units $c=1$, coordinate-time derivatives, and $|\dot R|<1$.
+With $\Omega_p$ the unit-sphere area, the membrane term is
+$L_{\rm mem}=-\gamma_s\Omega_pR^p\sqrt{1-\dot R^2}$.
+An applied normal pressure jump
+$\Delta P=\Delta P_{\rm event}+P_{\rm bulk,response}$ supplies the forcing.
+For constant $\Delta P$, the total Lagrangian includes pressure work
+$+\Delta P\,\Omega_pR^{p+1}/(p+1)$ and gives
 
 \[
 \gamma_s\left[\frac{\ddot R}{(1-\dot R^2)^{3/2}}
 +\frac{p}{R\sqrt{1-\dot R^2}}\right]
 =\Delta P_{\rm event}+P_{\rm bulk,response}. \tag{6}
 \]
+
+The pure membrane term alone gives the zero-traction equation, not the
+displayed forcing. Nonconstant/dynamical pressure requires the actual source
+variation. Spherical symmetry on regular geometry is insufficient for (6).
+For comparison, a regular static side
+$ds^2=-f(r)dt^2+dr^2/f(r)+r^2d\Omega_p^2$, $f(R)>0$, has outward-normal
+static curvature
+$K=f'(R)/(2\sqrt{f(R)})+p\sqrt{f(R)}/R$, reducing to $p/R$ for $f=1$.
+Curved or backreacting applications require the covariant traction equation
+with their actual induced metric and stress data. Varying tension requires
+its own variation terms; (6) omits those terms only under its stated constant-
+tension assumption. The later flat scalar-front restriction is a different
+calculation and supplies no additional domain for this membrane reduction.
 
 The same action generates
 $q_e=C_s(F_B)q_c$ and
@@ -270,12 +293,41 @@ The symbol $c$ here denotes regular child state, not $c_{\rm core}$.
 
 ## 4. What a front calculation actually proves
 
-The two requested historical conversation-deliverable filenames are blank in
-the received handoff. Targeted Downloads/source-name and recent conversation
-recovery did not identify their original editable files. This amendment
-preserves the handoff's scoped results without inventing their numerical
-witnesses. The following deductions are instead reconstructed explicitly from
-the retained polynomial eta density in v15.1 and the declared restriction.
+### Source recovery and version reconciliation
+
+The implementation handoff received earlier has SHA-256
+`d604c8c48f66d6753bbf0b95bbb3d0953fd7d5e0d2d134b4288e2eeed38c5240`;
+its two historical-deliverable filename bullets are blank. Those exact bytes
+have now been recovered from the original attachment and preserved as
+[the implementation handoff](source_recovery/20261022/originals/BHSM_Implementation_Handoff_d604_20261022.txt).
+The historical ledger's blank-filename/retrieval-gap account describes that
+version and is retained as a historical record.
+
+The separately supplied
+[named-file handoff](source_recovery/20261022/originals/BHSM_Core_Harmonics_Black_Hole_Tracker_Codex_Prompt_20261022.txt)
+has SHA-256
+`149ba5efafd46be01bde9fe9513c1c83788b8a5f41c2127a4e2e5e6ce358517c`.
+It names two now-recovered PDFs:
+
+| Recovered original | Exact byte SHA-256 | Scope |
+|---|---|---|
+| [Frame dragging and nonlinear fronts v0.1](source_recovery/20261022/originals/BHSM_Frame_Dragging_and_Nonlinear_Front_Derivation_v0_1.pdf) | `7bb85093bcf3d03ca30220fd6d52aa3306a2c4d1648e91679c3d5a65f9409e2e` | Ten-page prescribed-background eta/front calculation, dated 22 October 2026. |
+| [Galaxy envelope formation and persistence v0.1](source_recovery/20261022/originals/BHSM_Galaxy_Envelope_Formation_and_Persistence_v0_1.pdf) | `de228c96c612024e2bfd1d3c9907dc6223108dfb6ecfc4f7b7bffb65623450a4` | Thirteen-page conditional persistence/radial-source calculation, dated 21 October 2026. |
+
+All four source files were checked in raw bytes before reading. Their
+[recovery record and scoped comparison](source_recovery/20261022/README.md)
+distinguishes the original versions from this amendment. PDF text and all 23
+rendered pages were inspected, including equations encoded as graphics.
+The two different handoff hashes do not establish which version the earlier
+implementation agent received beyond the preserved original attachment;
+neither version is silently substituted for the other. The PDFs are recovered;
+their editable authoring sources remain unavailable. No original PDF is edited.
+
+The front PDF's frame-frequency, principal-symbol, rest-state nonlinearity,
+steepening, no-stationary-jump and null-wave statements agree with the scoped
+deductions below. These deductions were reconstructed from the retained
+polynomial eta density in v15.1 and the declared restriction; recovered source
+availability does not turn them into a coupled gravitational solution.
 
 Take a prescribed flat background, one target geodesic scalar $q$, constant
 $f_0>0$, $\kappa_1>0$, metric $(-,+)$, $c=1$ and
@@ -334,10 +386,12 @@ and $\omega$ together, preserving their difference. It cannot manufacture the
 physical differential. This is a regular-side observer statement, not a core
 frequency assignment.
 
-The handoff's sextic persistence normal form and conditional galaxy radial law
-remain conditional mathematical possibilities; their missing originals do not
-authorize physical coefficients, lifetimes, source amplitudes, metric slip or
-lensing. In the recovered action lineage [v15.47](BHSM_AETHER_POST_CUT_SELF_SIMILAR_PERSISTENCE_V15_47.md)
+The recovered galaxy PDF's sextic persistence normal form and conditional
+radial law remain conditional mathematical possibilities. Their explicit
+assumptions and formulas are compared in the recovery record and checked
+symbolically; they supply no physical coefficients, lifetimes, source
+amplitudes, metric slip or lensing. In the recovered action lineage
+[v15.47](BHSM_AETHER_POST_CUT_SELF_SIMILAR_PERSISTENCE_V15_47.md)
 the one-scale contracting cap has $\mathcal G(R)>0$ and no self-similar turning
 point in its stated test. This neither supplies a periodic orbit nor excludes
 the retained nonround shape/interface dynamics. It must not be replaced by a
@@ -428,11 +482,11 @@ residual to be usable; neither does it uniquely verify this microscopic ontology
 | Event category and nonunique positive completions | Exact result within v15.0--15.5 | Physical reversal/loops/state and clock remain unselected. |
 | Reciprocal matcher, Haar bound and corner variation | Exact within declared regular/domain models | No terminal cross-stratum transfer follows. |
 | Material Spin/scalar/gauge matching | Exact on selected regular material domain | Transmitting; not hard isolation or abstract-core matching. |
-| Minimal covariant interface action and (6) | Derived on owner-selected regular branch | Coupled IVP, first crossing and induced reset still needed. |
+| Minimal covariant interface action and (6) | Derived on owner-selected regular branch | Equation (6) additionally requires fixed Minkowski geometry, round sphere, constant tension and applied pressure; coupled IVP, first crossing and induced reset still needed. |
 | Weighted median and $-2/3$ derivative (7)--(8) | Exact conditional deduction | Supplied eta variation on fixed regular orbit; not a coupled physical response. |
 | AE4 local carrier/family transport and response jets | Derived at their stated levels | Complete interacting values/terminal loads remain inputs. |
 | Polynomial principal symbol, steepening, no stationary jump, null-wave energy | Exact in prescribed-background scalar restriction | Not a full shock, gravitational interface, persistence or star calculation. |
-| Sextic persistence / galaxy radial forms in handoff | Conditional supplied result; originals unidentified | No numerical physical coefficients imported. |
+| Recovered sextic persistence / galaxy radial forms | Exact within the original conditional normal form/source ansatz | Original PDFs recovered and compared; no physical coefficients, lifetimes or source export inferred. |
 | Hard-channel vanishing and (12) | Necessary operational/accounting requirements | Channel domains and terminal correspondence are not selected here. |
 | Collective galaxy/dark-matter mechanism | Hypothesis | Population, balance, pressure-supported and lensing tests required. |
 | Experimental interference examples [L1--L2] | Observational claims from primary literature | Constraints on interpretation; not BHSM validation. |

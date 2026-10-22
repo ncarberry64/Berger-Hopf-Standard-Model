@@ -4,7 +4,7 @@ import nbformat as nbf
 ROOT=Path(__file__).resolve().parents[1]
 out=ROOT/'notebooks';out.mkdir(exist_ok=True)
 def save(name,cells):
-    book=nbf.v4.new_notebook(cells=cells,metadata={'kernelspec':{'display_name':'Python 3 (BHSM Blackhole Tracker environment)','language':'python','name':'python3'},'language_info':{'name':'python'},'bhsm_interpretation':{'framework':'BHSM','product_version':'0.1.1','one_optical_potential':True,'requires_non_GR_deviation':False,'scope':'Ordinary and boundary descriptions represent the same fitted response, counted once; microscopic and horizon inference remain separate.'}})
+    book=nbf.v4.new_notebook(cells=cells,metadata={'kernelspec':{'display_name':'Python 3 (BHSM Blackhole Tracker environment)','language':'python','name':'python3'},'language_info':{'name':'python'},'bhsm_interpretation':{'framework':'BHSM','product_version':__import__('tomllib').loads((ROOT/'pyproject.toml').read_text(encoding='utf8'))['project']['version'],'one_optical_potential':True,'requires_non_GR_deviation':False,'scope':'Ordinary and boundary descriptions represent the same fitted response, counted once; microscopic and horizon inference remain separate.'}})
     nbf.write(book,out/name)
 md=nbf.v4.new_markdown_cell;code=nbf.v4.new_code_cell
 save('01_compact_mass_and_motion.ipynb',[
@@ -98,3 +98,7 @@ assert not rejected['allowed_physics_models']['r1_boundary_conditional']
 rejected['reasons']'''),
 md('An unresolved conditional surface family does not remove the BHSM interpretation of the ordinary mass, location and translation. The product uses one optical response within its declared domain. Separate microscopic, horizon-charge or deformation-dynamics inference requires the corresponding source/matching relations; these are not conditions for retaining the ordinary track.')])
 print('Two portable research notebooks authored.')
+
+# Keep the separate native route in a complete tutorial rebuild.
+import runpy
+runpy.run_path(str(ROOT/'scripts/make_unresolved_notebook.py'))

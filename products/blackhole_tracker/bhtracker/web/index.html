@@ -24,6 +24,7 @@
       <a href="#model-panel"><span class="nav-index">02</span> Model & fit</a>
       <a href="#results-panel"><span class="nav-index">03</span> Inference</a>
       <a href="#source-panel"><span class="nav-index">{ }</span> Inspect source</a>
+      <a href="/photometry"><span class="nav-index">↗</span> Unresolved photometry</a>
     </nav>
     <div class="rail-note"><span class="local-dot"></span> LOCAL APPLICATION<br><p>Reproducible fits.<br>Explicit uncertainty.<br>Declared model limits.</p></div>
     <div class="rail-footer">COMPACT LENSING<br><a href="https://github.com/ncarberry64/Berger-Hopf-Standard-Model" target="_blank" rel="noopener noreferrer">BHSM GitHub repository</a></div>
@@ -41,6 +42,7 @@
         <section id="data-panel" class="panel">
           <div class="panel-heading"><div><div class="section-kicker">01 / INPUT</div><h2>Choose a dataset</h2></div><span id="data-badge" class="badge neutral">No data</span></div>
           <p class="panel-intro">Resolved image positions in mas, log flux ratio and delay in seconds, with the full supplied error covariance.</p>
+          <p class="field-help">Using an OGLE light curve or the 2022 OGLE/MOA benchmark? Open <a href="/photometry">unresolved photometry</a> to retain native brightness measurements.</p>
           <p class="quick-start"><strong>First run:</strong> load the nearby example, validate it, then run the ordinary fit.</p>
           <label class="field-label" for="example-select">Built-in example</label>
           <div class="load-row"><select id="example-select" disabled><option>Loading examples…</option></select><button id="load-example" class="button secondary" disabled>Load</button></div>

@@ -1,0 +1,50 @@
+{
+  "scope": "Phase A resolved-mode F1,F2,F3 implementation; all numerical probes synthetic, not real-data discoveries.",
+  "status": "IMPLEMENTED_AND_FOCUSED_VERIFIED",
+  "owned_source_hashes": {
+    "bhtracker/inference.py": "3e2f5ed370c62b9c0d42e19600a1fd6c382a1947be6a76f75b3c1a28b93086bb",
+    "bhtracker/forward.py": "54035f500c3c8f1b8ae606e45c178c4e9b09e31b083b152f52d479654b7066f5",
+    "bhtracker/data.py": "6ef640052af40d95056ce4d15a508096d678737ba09afdb24c0df09df03d6b63",
+    "tests/test_reviewed_inference_corrections.py": "1dfddddbc16faf3f8f988c2e757943d9159cbde39c5ca07510c58377809b1543",
+    "tests/test_bhsm_interpretation.py": "774ae5828ded96ab26952fcf1448bf07865a9c91461380cf34f5dfd52b718f86",
+    "FITTING_CONTRACT_V2.md": "6148d26ba1bbda4de57ccea8d7d012421b0bb2963103332d5a222687d72c4403"
+  },
+  "focused_tests": {
+    "passed": 75,
+    "failed": 0,
+    "skipped": 0,
+    "seconds": 33.08,
+    "junit_xml": "after/resolved_corrections_tests.xml"
+  },
+  "historical_fixture_bytes_unchanged": {
+    "tests/fixtures/pre_interpretation_fit.json": "dfd06d5db4317b5f6b1eff3faf13dbd45df9bc1d734e3c65dd22c63d1d52a5a1",
+    "tests/fixtures/pre_core_surface_scientific_summary.json": "baf8ec0800f6b5834b0f82327a7337615fcbe909f639d196b22f06b71414a78b"
+  },
+  "F1": {
+    "before": "before/coordinate_domain_current.json",
+    "after": "after/coordinate_domain_current.json",
+    "all_four_variants": "TRACKED, mass10, chi2 <=4.62e-24",
+    "input_policy": "original dataset, reference epoch, covariance and ordering preserved; reporting basis transformed with full covariance and null tangent columns"
+  },
+  "F2": {
+    "before": "before/profile_admission_current.json",
+    "after": "after/profile_admission_current.json",
+    "conditional_R1_constrained_nuisance_positive_probe": "after/profile_R1_flux_nuisance.json",
+    "unresolved_R1_domain_regression": "test_conditional_r1_profile_physical_limit_is_unresolved_not_false_crossing",
+    "scope": "local constrained nuisance searches plus public physical admission; optimizer success is not an admission certificate; unresolved points excluded from physical ordinate/minimum/crossing"
+  },
+  "F3": {
+    "before": "before/null_motion_current.json",
+    "after": "after/null_motion_current.json",
+    "public_motion_covariance_when_unidentified": null,
+    "weak_identifiable_control": "finite covariance retained; low SNR is distinct from non-identifiability"
+  },
+  "numerical_covariance_resolution": "after/covariance_step_resolution.json",
+  "narrow_historical_assertion_change": "Only historical local uncertainty/covariance comparison uses1e-9 relative tolerance, justified by independent steps showing up to5.32e-10 numerical covariance spread; no physical/prediction/mass/admission tolerances or raw covariance changed.",
+  "integration_remaining_for_root": [
+    "result/replay release version schema and legacy treatment",
+    "CLI/web/report null and profile consumers",
+    "README links to FITTING_CONTRACT_V2.md",
+    "formal import, wheel/source build, installed verification, final CI"
+  ]
+}

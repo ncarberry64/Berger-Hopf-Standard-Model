@@ -580,12 +580,17 @@
     const fields = ['positive image x', 'positive image y', 'negative image x', 'negative image y', 'log flux ratio', 'delay'];
     const C = covariance(), measurementLabels = Array.from({ length: C.length }, (_, i) => `Row ${Math.floor(i / 6) + 1} ${fields[i % 6]}`);
     show($('measurement-correlations'), strongest(C, measurementLabels), 'No nonzero off-diagonal correlations are present in the supplied matrix.');
-    const names = result.model?.fitted_parameters || [], internal = result._internal || {};
-    const meanings = { log_mass: 'Mass', center_x: 'Center x', center_y: 'Center y', motion_x: 'Motion x', motion_y: 'Motion y',
-      shear_plus: 'Tidal shear 1', shear_cross: 'Tidal shear 2', compact_plus: 'Compact shape 1', compact_cross: 'Compact shape 2', convergence: 'Environmental focusing', log_flux: 'Scalar flux' };
+    const reporting = result.physical_parameter_uncertainty;
+    if (reporting?.schema !== 'bhtracker.reporting_covariance.v2') {
+      show($('parameter-correlations'), [], 'Reporting-coordinate covariance is unavailable in this legacy result. Internal optimization coordinates are not displayed as physical parameter correlations.');
+      return;
+    }
+    const names = reporting.names || [];
+    const meanings = { mass_msun: 'Mass', center_x: 'Center x at reporting epoch', center_y: 'Center y at reporting epoch', motion_x: 'Motion x', motion_y: 'Motion y',
+      shear_plus: 'Tidal shear 1', shear_cross: 'Tidal shear 2', compact_plus: 'Compact shape 1', compact_cross: 'Compact shape 2', convergence: 'Environmental focusing', flux_ratio: 'Scalar flux' };
     const indices = names.map((name, i) => meanings[name] ? i : -1).filter(i => i >= 0);
-    const pcov = indices.map(i => indices.map(j => internal.covariance?.[i]?.[j]));
-    const omitted = indices.map(i => internal.unidentified?.[i] === true);
+    const pcov = indices.map(i => indices.map(j => reporting.covariance?.[i]?.[j]));
+    const omitted = indices.map(i => reporting.unidentified?.[i] === true);
     show($('parameter-correlations'), strongest(pcov, indices.map(i => meanings[names[i]]), omitted),
       'No resolved nonzero correlations are available for the displayed lens parameters. Unidentified directions are excluded.');
   }

@@ -11,6 +11,8 @@ import numpy as np
 from .provenance import REPOSITORY_URL, project_citation
 
 def report_html(result):
+    from .unresolved_report import is_unresolved_result,report_html as unresolved_html
+    if is_unresolved_result(result):return unresolved_html(result)
     r=result;e=r['estimates'];u=r['uncertainty']
     escape=lambda value:html.escape(str(value))
     def fmt(v):
@@ -51,6 +53,8 @@ def report_html(result):
 <p><small>Product {escape(r['product_version'])}. A compact exterior fit does not identify a horizon. Synthetic examples and supplied uncertainties are not empirical detections or instrument forecasts. Full measurements, covariance, predictions and parameter covariance accompany the JSON export.</small></p></html>'''
 
 def export_result(result,directory):
+    from .unresolved_report import is_unresolved_result,export_result as export_unresolved
+    if is_unresolved_result(result):return export_unresolved(result,directory)
     dest=Path(directory);dest.mkdir(parents=True,exist_ok=True)
     from .data import load_dataset
     if 'dataset_input' not in result or 'analysis_configuration' not in result:
@@ -165,14 +169,23 @@ def replay_analysis(source,output):
         try:
             with zipfile.ZipFile(source) as archive:
                 infos=archive.infolist()
-                if sum(i.file_size for i in infos)>100_000_000:raise ValueError('replay ZIP exceeds 100 MB uncompressed limit')
                 if len({i.filename for i in infos})!=len(infos):raise ValueError('replay ZIP contains duplicate filenames')
+                manifest_info=archive.getinfo('manifest.json')
+                if manifest_info.file_size>1_000_000:raise ValueError('replay manifest exceeds 1 MB limit')
+                early=read_json(archive.read(manifest_info))
+                # The large native-observation route retains every benchmark row.
+                # Its versioned limit never changes the resolved bundle limit.
+                limit=256_000_000 if early.get('schema')=='bhtracker.unresolved_analysis_bundle.v1' else 100_000_000
+                if sum(i.file_size for i in infos)>limit:raise ValueError(f'replay ZIP exceeds {limit//1_000_000} MB uncompressed limit')
                 content={i.filename:archive.read(i) for i in infos}
         except zipfile.BadZipFile as error:raise ValueError('replay requires an exported analysis directory or valid ZIP') from error
         def read(name):
             if name not in content:raise ValueError(f'replay ZIP is missing {name}')
             return content[name]
         manifest=read_json(read('manifest.json'))
+    if manifest.get('schema')=='bhtracker.unresolved_analysis_bundle.v1':
+        from .unresolved_report import replay_analysis as replay_unresolved
+        return replay_unresolved(read,manifest,output)
     if manifest.get('schema')!='bhtracker.analysis_bundle.v1':raise ValueError('manifest is not a version-1 analysis replay bundle')
     for required in ('dataset.json','analysis_config.json','result.json','software_provenance.json'):
         if required not in manifest.get('files',{}):raise ValueError(f'manifest must include {required}')
@@ -194,6 +207,19 @@ def replay_analysis(source,output):
            'original_interpretation_schema_version':old.get('bhsm_interpretation',{}).get('interpretation_schema_version',1),
            'current_interpretation_schema_version':result['bhsm_interpretation']['interpretation_schema_version'],
            'same_interpretation':old.get('bhsm_interpretation')==result['bhsm_interpretation']}
+    old_basis=old.get('model',{}).get('parameter_basis')
+    check['parameter_basis_handling']={
+        'original':old_basis or 'LEGACY_RESOLVED_INTERNAL_BASIS_V1',
+        'current':result['model'].get('parameter_basis'),
+        'method':'Refit preserved raw observations/configuration. Saved internal coordinates are never interpreted in a new basis.',
+        'migration':old_basis!=result['model'].get('parameter_basis')}
+    old_worldtube=old.get('model',{}).get('r0_pc')
+    new_worldtube=result['model'].get('r0_pc')
+    check['same_physical_worldtube']=bool(old_worldtube is not None and new_worldtube is not None and
+        np.isclose(old_worldtube,new_worldtube,rtol=1e-12,atol=0))
+    if not check['same_physical_worldtube']:
+        check['passed']=False
+        check['model_migration_required']='The historical default worldtube differs. Retain the matching historical wheel, or explicitly refit with the intended physical worldtube as a new analysis.'
     export_result(result,output)
     (Path(output)/'replay_check.json').write_text(json.dumps(check,indent=2)+'\n',encoding='utf8')
     if not check['passed']:raise ValueError(f'replay differs from saved result: inspect {Path(output)/"replay_check.json"}')
