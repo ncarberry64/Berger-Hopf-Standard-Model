@@ -19,7 +19,7 @@ development workspace.
 
 The `0.2.0rc4` research candidate supplies resolved-image, native-photometry
 and separately versioned joint astrometry/parallax workflows, with four
-notebooks and 233 product tests. The frozen pilot still retains all 100
+notebooks and 244 product tests. The frozen pilot still retains all 100
 historical events and 76,344 measurements: 89 baseline model/noise screens
 were inadequate, 11 passed chi-square and two qualified for archival
 follow-up. Every pilot mass remains unresolved. All three declared models

@@ -159,32 +159,32 @@ const topics = {
       repoSource(
         'Formal product reviewer guide',
         'products/blackhole_tracker/REVIEWER.md',
-        '9f1768a7fbac1d16e0e25713f87b8191cbe02249',
+        '1a556d37a40ef89deb54f9c07d231b5496163838',
       ),
       repoSource(
         'Product user guide',
         'products/blackhole_tracker/README.md',
-        '9f1768a7fbac1d16e0e25713f87b8191cbe02249',
+        '1a556d37a40ef89deb54f9c07d231b5496163838',
       ),
       repoSource(
         'Manuscript and derivations',
         'papers/bhsm_blackhole_tracker_20261021/manuscript/main.tex',
-        '40e1d2d7aa3a193c4ba361eec7ed74616ec6a0f8',
+        'cb79f8693ba5f8e25f0858acc826b6718c974555',
       ),
       repoSource(
         'Pinned ordinary-lens forward calculation',
         'products/blackhole_tracker/bhtracker/forward.py',
-        '9f1768a7fbac1d16e0e25713f87b8191cbe02249',
+        '1a556d37a40ef89deb54f9c07d231b5496163838',
       ),
       repoSource(
         'Joint astrometry installation, source-pack import and replay',
         'products/blackhole_tracker/JOINT_RESEARCH.md',
-        '9f1768a7fbac1d16e0e25713f87b8191cbe02249',
+        '1a556d37a40ef89deb54f9c07d231b5496163838',
       ),
       repoSource(
         'Separate known-system failed alternatives and frozen protocols',
         'papers/bhsm_blackhole_tracker_20261021/joint_known_system_20261022/README.md',
-        '40e1d2d7aa3a193c4ba361eec7ed74616ec6a0f8',
+        'cb79f8693ba5f8e25f0858acc826b6718c974555',
       ),
       source(
         'Separate known-system failed candidates and exact evidence hashes',

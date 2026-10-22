@@ -11,7 +11,7 @@ records development history; it is not a separate source of reviewer authority.
 | Read the manuscript | [Reviewed 43-page PDF](../papers/bhsm_blackhole_tracker_20261021/manuscript/main.pdf), [paper guide](../papers/bhsm_blackhole_tracker_20261021/README.md), [result statement](../papers/bhsm_blackhole_tracker_20261021/RESULT_STATEMENT.md) |
 | Understand the contribution and limits | [Lay report](../papers/bhsm_blackhole_tracker_20261021/LAY_REPORT.md), [model chain and freedoms](../papers/bhsm_blackhole_tracker_20261021/CHAIN_AND_FREEDOMS.md), [validation](../papers/bhsm_blackhole_tracker_20261021/VALIDATION.md) |
 | Install the app or reproduce an analysis | [Formal product guide](../products/blackhole_tracker/REVIEWER.md), followed by the complete [user and measurement guide](../products/blackhole_tracker/README.md) |
-| Inspect current checks and prior reviews | [Product validation receipts](../products/blackhole_tracker/validation/), [formal product CI](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/blackhole-tracker.yml) and [paper review record](../papers/bhsm_blackhole_tracker_20261021/review/); the current product suite has 233 tests, and earlier rc3/rc2 receipts remain historical |
+| Inspect current checks and prior reviews | [Product validation receipts](../products/blackhole_tracker/validation/), [formal product CI](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/blackhole-tracker.yml) and [paper review record](../papers/bhsm_blackhole_tracker_20261021/review/); the current product suite has 244 tests, and earlier rc3/rc2 receipts remain historical |
 | Inspect all real observations and follow-up outcomes | [Frozen pilot and reproduction](../papers/bhsm_blackhole_tracker_20261021/real_data_pilot_20261022/README.md), [all 100 annotated results](../papers/bhsm_blackhole_tracker_20261021/real_data_pilot_20261022/literature_annotations_v1/all_100_results.csv) and [qualified archival ranking](../papers/bhsm_blackhole_tracker_20261021/real_data_pilot_20261022/literature_annotations_v1/followup_ranking.csv) |
 | Inspect the separate known-system test and calibration gaps | [2023 joint benchmark](../papers/bhsm_blackhole_tracker_20261021/joint_known_system_20261022/README.md), [plain-language result](../papers/bhsm_blackhole_tracker_20261021/joint_known_system_20261022/PLAIN_LANGUAGE_RESULT.txt), [joint app and source-pack guide](../products/blackhole_tracker/JOINT_RESEARCH.md) and [unsent manual calibration request](../papers/bhsm_blackhole_tracker_20261021/joint_known_system_20261022/MANUAL_CALIBRATION_DATA_REQUEST_TEMPLATE.txt) |
 | Inspect public explanation and animation | [Blackhole Tracker Museum exhibit](https://ncarberry64.github.io/Berger-Hopf-Standard-Model/#blackhole-tracker), [Museum source](../museum/) |
@@ -208,11 +208,11 @@ completion gates.
 ## Revisions, citations and repository layout
 
 The current rc4 product code is pinned at
-[`9f1768a7fbac1d16e0e25713f87b8191cbe02249`](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/tree/9f1768a7fbac1d16e0e25713f87b8191cbe02249/products/blackhole_tracker),
-with 170 byte-exact upstream source files. Its
+[`1a556d37a40ef89deb54f9c07d231b5496163838`](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/tree/1a556d37a40ef89deb54f9c07d231b5496163838/products/blackhole_tracker),
+with 176 byte-exact upstream source files. Its
 [formal provenance](../products/blackhole_tracker/FORMAL_PROVENANCE.json)
 records the immutable development source and every byte hash. The current manuscript/pilot/joint record is pinned at
-[`40e1d2d7aa3a193c4ba361eec7ed74616ec6a0f8`](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/tree/40e1d2d7aa3a193c4ba361eec7ed74616ec6a0f8/papers/bhsm_blackhole_tracker_20261021). The
+[`cb79f8693ba5f8e25f0858acc826b6718c974555`](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/tree/cb79f8693ba5f8e25f0858acc826b6718c974555/papers/bhsm_blackhole_tracker_20261021). The
 [manuscript/release record](../papers/bhsm_blackhole_tracker_20261021/provenance/FORMAL_REPOSITORY.json)
 binds the paper separately. Current theory/source interpretation is pinned at
 `705d4c7e2f9a832b457f63ff975e7d4dc8008645`.

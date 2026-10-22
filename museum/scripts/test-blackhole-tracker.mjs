@@ -154,7 +154,8 @@ test('public app downloads are exact reviewed artifacts with both canonical lice
   const manifest = JSON.parse(product.get('PRODUCT_MANIFEST.json').toString());
   assert(manifest, 'Portable source has its own manifest');
   assert.equal(manifest.formal_code_commit, trackerCodeRevision);
-  assert(Object.keys(manifest.files).length > 108);
+  assert.equal(Object.keys(manifest.files).length, receipt.product_source_file_count);
+  assert.equal(product.size, receipt.product_source_file_count + 3);
   for (const [name, digest] of Object.entries(manifest.files))
     assert.equal(sha(product.get(name)), digest, name);
   const wheel = zipEntries(
@@ -171,6 +172,8 @@ test('public app downloads are exact reviewed artifacts with both canonical lice
     ),
   );
   assert(metadata.includes(`Version: ${trackerVersion}`));
+  assert(metadata.includes('Provides-Extra: astrometry'));
+  assert(metadata.includes('Requires-Dist: astropy>=6; extra == "astrometry"'));
 });
 
 test('historical rc2 bytes remain immutable and separate from current downloads', async () => {

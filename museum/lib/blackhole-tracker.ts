@@ -12,8 +12,8 @@ export const trackerPilot = pilot;
 export const trackerJoint = joint;
 export const trackerVersion = '0.2.0rc4';
 export const trackerAnimationRevision = example.source_revision;
-export const trackerCodeRevision = '9f1768a7fbac1d16e0e25713f87b8191cbe02249';
-export const trackerPaperRevision = '40e1d2d7aa3a193c4ba361eec7ed74616ec6a0f8';
+export const trackerCodeRevision = '1a556d37a40ef89deb54f9c07d231b5496163838';
+export const trackerPaperRevision = 'cb79f8693ba5f8e25f0858acc826b6718c974555';
 
 export function trackerCenter(epoch: number): [number, number] {
   if (!Number.isFinite(epoch) || epoch < 2015 || epoch > 2025)
