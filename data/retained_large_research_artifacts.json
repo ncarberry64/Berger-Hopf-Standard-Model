@@ -1,7 +1,7 @@
 {
   "schema": "BHSM_RETAINED_LARGE_RESEARCH_ARTIFACTS_V1",
   "reviewed_public_main": "d0844d009fd12a10c97d79f21443df6764391203",
-  "purpose": "Retain reproducibility inputs already in public main; no blanket exemption for new large files. JSON hashes use LF, NPZ hashes use exact bytes.",
+  "purpose": "Retain reproducibility inputs already in public main and individually reviewed immutable release packets; no blanket exemption for new large files. JSON hashes use LF; binary artifacts use exact bytes.",
   "physical_completion": false,
   "artifacts": [
     {
@@ -203,6 +203,17 @@
       "path": "artifacts/flagship_integration/BHSM_N12_GATE7_SIGNED_GREEN_CURRENT_CENTER_GRAPH_JACOBIAN.npz",
       "canonical_bytes": 27774601,
       "sha256": "6eab2efec9fe3460ff94de43d8fab3e9188b9e601c4c559f9ece8047a96ffedc"
+    },
+    {
+      "path": "museum/public/research/blackhole-tracker/BHSM_Blackhole_Tracker_Source_0.2.0rc3.zip",
+      "canonical_bytes": 13399803,
+      "sha256": "8af0878d3ff647346de2ebb4bf8f0446d382b4ce3e5c2911bdd456c901af1166",
+      "reviewed_source_commit": "b80fd756c285844b6ea90110c4d58db47092830c",
+      "reviewed_distribution_commit": "a43680dd183439dae3e9dfad03cea3d8042c4123",
+      "review_pull_request": "https://github.com/ncarberry64/Berger-Hopf-Standard-Model/pull/471",
+      "inventory_members": 659,
+      "upstream_product_files": 130,
+      "scope": "Exact reviewed rc3 portable product and manuscript source packet; no raw observation series, mass confirmation or blanket size exemption."
     }
   ]
 }
