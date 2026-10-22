@@ -1,5 +1,6 @@
 import { cp, mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { spawn } from 'node:child_process';
+import { createHash } from 'node:crypto';
 import { dirname, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { slides } from '../lib/museum-slides.mjs';
@@ -16,6 +17,12 @@ const clientRoot = resolve(distRoot, 'client');
 const pagesRoot = resolve(distRoot, 'pages');
 const serverUrl = 'http://127.0.0.1:8787/';
 const publicUrl = 'https://ncarberry64.github.io/Berger-Hopf-Standard-Model/';
+const trackerDistribution = JSON.parse(await readFile(
+  resolve(museumRoot, 'public/research/blackhole-tracker/DISTRIBUTION.json'),
+  'utf8',
+));
+if (!/^\d+\.\d+\.\d+rc\d+$/.test(trackerDistribution.version))
+  throw new Error('Tracker distribution has no versioned release-candidate identity.');
 
 if (relative(distRoot, pagesRoot).startsWith('..')) {
   throw new Error('Refusing to export outside museum/dist.');
@@ -129,13 +136,29 @@ try {
     'Follow the lens. Test the interpretation.',
     'SYNTHETIC FORWARD VIEW',
     'Download the app',
-    './research/blackhole-tracker/BHSM_Blackhole_Tracker_Product_0.2.0rc3.zip',
-    './research/blackhole-tracker/BHSM_Blackhole_Tracker_0.2.0rc3.pdf',
+    `./research/blackhole-tracker/BHSM_Blackhole_Tracker_Product_${trackerDistribution.version}.zip`,
+    `./research/blackhole-tracker/BHSM_Blackhole_Tracker_${trackerDistribution.version}.pdf`,
     './research/blackhole-tracker/pilot-20261022-v1/all_100_results.csv',
     'MASS UNRESOLVED',
+    'Three declared models fail adequacy. No supported mass.',
+    'ADEQUACY FAILED',
+    './research/blackhole-tracker/BHSM_OB110462_2023_SourcePack_v1.zip',
+    './research/blackhole-tracker/joint-20261022-v2/JOINT_PROVENANCE.json',
   ]) {
     if (!written.includes(expected))
       throw new Error(`Static export is missing: ${expected}`);
+  }
+  const trackerRoot = resolve(pagesRoot, 'research/blackhole-tracker');
+  for (const item of trackerDistribution.files) {
+    const path = resolve(trackerRoot, item.file);
+    if (relative(trackerRoot, path).startsWith('..'))
+      throw new Error('Tracker artifact path leaves its distribution directory.');
+    const bytes = await readFile(path);
+    if (
+      bytes.length !== item.bytes ||
+      createHash('sha256').update(bytes).digest('hex') !== item.sha256
+    )
+      throw new Error(`Static tracker artifact differs from its reviewed hash: ${item.file}`);
   }
   const sections = slides.map(([id]) => id);
   const positions = sections.map((id) => written.indexOf(`id="${id}"`));

@@ -12,6 +12,7 @@ import {
   trackerAnimationRevision,
   trackerVersion,
   trackerPilot,
+  trackerJoint,
 } from '../lib/blackhole-tracker.ts';
 
 const sha = (bytes) => createHash('sha256').update(bytes).digest('hex');
@@ -134,7 +135,7 @@ test('public app downloads are exact reviewed artifacts with both canonical lice
     assert.equal(sha(bytes), item.sha256);
   }
   const product = zipEntries(
-    await readFile(new URL('BHSM_Blackhole_Tracker_Product_0.2.0rc3.zip', base)),
+    await readFile(new URL(`BHSM_Blackhole_Tracker_Product_${trackerVersion}.zip`, base)),
   );
   for (const notice of ['LICENSE.md', 'ACADEMIC_USE.md']) {
     assert.deepEqual(
@@ -158,7 +159,7 @@ test('public app downloads are exact reviewed artifacts with both canonical lice
     assert.equal(sha(product.get(name)), digest, name);
   const wheel = zipEntries(
     await readFile(
-      new URL('bhsm_blackhole_tracker-0.2.0rc3-py3-none-any.whl', base),
+      new URL(`bhsm_blackhole_tracker-${trackerVersion}-py3-none-any.whl`, base),
     ),
   );
   const metadata = [...wheel]
@@ -207,4 +208,101 @@ test('real-pilot downloads retain all100 cases and no mass or discovery claim', 
   assert.equal(csv.trim().split(/\r?\n/).length, 101);
   assert(csv.includes('OGLE3-ULENS-0337'));
   assert(csv.includes('MASS_UNRESOLVED'));
+});
+
+
+test('historical rc3 receipt and versioned artifacts retain their original bytes', async () => {
+  const base = new URL('../public/research/blackhole-tracker/', import.meta.url);
+  const receiptBytes = await readFile(new URL('DISTRIBUTION_0.2.0rc3.json', base));
+  assert.deepEqual(receiptBytes, await readFile(new URL('history/0.2.0rc3/DISTRIBUTION.json', base)));
+  const receipt = JSON.parse(receiptBytes.toString());
+  assert.equal(receipt.version, '0.2.0rc3');
+  assert.equal(receipt.reviewed_product_code_revision, '002b9ecfe2f1a778b68b7558581997c05919ae93');
+  assert.equal(receipt.reviewed_paper_revision, 'b80fd756c285844b6ea90110c4d58db47092830c');
+  const expected = {
+    'BHSM_Blackhole_Tracker_Product_0.2.0rc3.zip': 'accb46a03b79f86e9df74e1c4c2e7baf7062887b831a087856132f437e03b3e9',
+    'bhsm_blackhole_tracker-0.2.0rc3-py3-none-any.whl': '11fbbae7799858667c8b8c2e8956c126c9f5103276ee044f2d5bcf6457d8930f',
+    'BHSM_Blackhole_Tracker_Source_0.2.0rc3.zip': '8af0878d3ff647346de2ebb4bf8f0446d382b4ce3e5c2911bdd456c901af1166',
+    'BHSM_Blackhole_Tracker_0.2.0rc3.pdf': '94b4193e2b387452348870610f4c7c328234d936a4a59aae5e545c04818fcfb2',
+  };
+  for (const item of receipt.files) {
+    const bytes = await readFile(new URL(item.file, base));
+    assert.equal(bytes.length, item.bytes);
+    assert.equal(sha(bytes), item.sha256);
+    if (expected[item.file]) assert.equal(sha(bytes), expected[item.file]);
+  }
+});
+
+
+test('reviewed joint source pack retains exact third-party observations, header evidence and rights', async () => {
+  const base = new URL('../public/research/blackhole-tracker/', import.meta.url);
+  const bytes = await readFile(new URL('BHSM_OB110462_2023_SourcePack_v1.zip', base));
+  assert.equal(bytes.length, 764958);
+  assert.equal(sha(bytes), '71d36a03e4ba275e91bea62f4784a5193f34ad32d3777b637453f91151bafa99');
+  const files = zipEntries(bytes);
+  assert.equal(files.size, 98);
+  const prefix = 'portable_2023_benchmark_v1/';
+  const manifest = JSON.parse(files.get(`${prefix}ACQUISITION_MANIFEST.json`).toString());
+  assert.equal(manifest.files.length, 97);
+  assert.equal(manifest.raw_observations_unchanged, true);
+  const expected = new Set([`${prefix}ACQUISITION_MANIFEST.json`]);
+  for (const item of manifest.files) {
+    const name = `${prefix}${item.path}`;
+    expected.add(name);
+    const content = files.get(name);
+    assert.equal(content.length, item.bytes, name);
+    assert.equal(sha(content), item.sha256, name);
+  }
+  assert.deepEqual(new Set(files.keys()), expected);
+  assert.equal(manifest.files.filter((item) => item.role === 'bounded_public_HST_FITS_prefix').length, 82);
+  assert(manifest.files.some((item) => item.path === 'verify_or_refetch_2023_sources.py'));
+  const rights = JSON.parse(files.get(`${prefix}RIGHTS_EVIDENCE.json`).toString());
+  assert.match(rights.author_HST_tables, /CC-BY4\.0/);
+  assert.match(rights.corrected_OGLE, /CC-BY4\.0/);
+  assert.match(rights.third_party_override, /do not replace/);
+  const attribution = files.get(`${prefix}CITATIONS_AND_RIGHTS.md`).toString();
+  assert(attribution.includes('10.5281/zenodo.20056044'));
+  assert(attribution.includes('2308.03302v2'));
+});
+
+
+test('separate joint evidence keeps every inadequate candidate and no supported mass', async () => {
+  const base = new URL('../public/research/blackhole-tracker/joint-20261022-v2/', import.meta.url);
+  assert.equal(trackerJoint.formal_paper_revision, trackerPaperRevision);
+  assert.equal(trackerJoint.original_OGLE_rows_retained, 15533);
+  assert.equal(trackerJoint.selected_OGLE_photometric_rows, 12500);
+  assert.equal(trackerJoint.fit_photometric_rows, 12521);
+  assert.equal(trackerJoint.HST_photometric_rows, 21);
+  assert.equal(trackerJoint.HST_angular_rows, 21);
+  assert.equal(trackerJoint.HST_dated_visits, 11);
+  assert.equal(trackerJoint.bounded_exposure_header_prefixes, 82);
+  assert.equal(trackerJoint.adequate_candidates, 0);
+  assert.equal(trackerJoint.accepted_mass_intervals, 0);
+  assert.equal(trackerJoint.new_black_hole_interpretations, 0);
+  assert.equal(trackerJoint.supported_mass_msun, null);
+  assert.equal(trackerJoint.calibration_request_status, 'PREPARED_FOR_AUTHOR_REVIEW_NOT_SENT');
+  assert.deepEqual(trackerJoint.candidates.map((candidate) => candidate.id), ['G0', 'G1', 'G2']);
+  for (const candidate of trackerJoint.candidates) {
+    assert.equal(candidate.status, 'JOINT_MODEL_OR_NOISE_INADEQUATE');
+    assert.equal(candidate.accepted_mass, false);
+    assert.equal(candidate.accepted_black_hole_identification, false);
+    assert.equal(candidate.supported_mass_msun, null);
+    assert(candidate.failed_structure_bins > 0);
+  }
+  for (const item of trackerJoint.files) {
+    const bytes = await readFile(new URL(item.file, base));
+    assert.equal(bytes.length, item.bytes, item.file);
+    assert.equal(sha(bytes), item.sha256, item.file);
+  }
+  assert.deepEqual(JSON.parse(await readFile(new URL('JOINT_PROVENANCE.json', base), 'utf8')), trackerJoint);
+  const table = await readFile(new URL('baseline_summary.csv', base), 'utf8');
+  const lines = table.trim().split(/\r?\n/);
+  const columns = lines.shift().split(',');
+  assert.equal(lines.length, 3);
+  for (const line of lines) {
+    const fields = line.split(',');
+    assert.equal(fields[columns.indexOf('status')], 'JOINT_MODEL_OR_NOISE_INADEQUATE');
+    assert.equal(fields[columns.indexOf('accepted_mass')], 'False');
+    assert.equal(fields[columns.indexOf('accepted_BH')], 'False');
+  }
 });

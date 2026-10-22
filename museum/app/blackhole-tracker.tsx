@@ -11,6 +11,7 @@ import {
   trackerPaperRevision,
   trackerVersion,
   trackerPilot,
+  trackerJoint,
 } from '../lib/blackhole-tracker';
 
 const colors = ['#71e5eb', '#ffbc77', '#bda7f5'];
@@ -19,6 +20,7 @@ const productFiles = `${REPOSITORY}/blob/${trackerCodeRevision}/products/blackho
 const paper = `${REPOSITORY}/blob/${trackerPaperRevision}/papers/bhsm_blackhole_tracker_20261021`;
 const assets = './research/blackhole-tracker/';
 const pilotAssets = `${assets}pilot-20261022-v1/`;
+const jointAssets = `${assets}joint-20261022-v2/`;
 
 export function BlackholeTracker({
   motion,
@@ -62,7 +64,7 @@ export function BlackholeTracker({
       number="07"
       label="Blackhole Tracker · BHSM lensing"
       title="Follow the lens. Test the interpretation."
-      intro="Blackhole Tracker fits resolved lens measurements and native unresolved light curves through separate observation models. Resolved data can constrain a compact configuration’s mass and motion under supplied geometry. A light-curve duration alone leaves mass unresolved. Both routes retain the same-potential BHSM interpretation."
+      intro="Blackhole Tracker uses separate resolved-image, native-photometry and optional joint astrometry/parallax models. Supplied geometry can support a resolved compact-mass fit; duration alone leaves mass unresolved. The measured joint benchmark fails adequacy and accepts no reliable mass. Every route retains one optical potential in the BHSM interpretation."
       accent="cyan"
     >
       <div className="tracker-theatre" ref={ref}>
@@ -348,6 +350,61 @@ export function BlackholeTracker({
           failed simple fit establishes a BHSM core or envelope mechanism.
         </p>
       </section>
+      <section className="tracker-real-data" aria-labelledby="tracker-joint-title">
+        <p className="eyebrow">SEPARATE 2023 KNOWN-SYSTEM BENCHMARK · JOINT RESEARCH</p>
+        <h4 id="tracker-joint-title">
+          Three declared models fail adequacy. No supported mass.
+        </h4>
+        <p>
+          The joint route reads 12,500 selected corrected OGLE measurements,
+          21 HST magnitudes and 21 two-coordinate angular rows at 11 dated visits
+          for OGLE-2011-BLG-0462 / MOA-2011-BLG-191. All original 15,533 OGLE rows,
+          declared exclusions and calibrations remain in its source record.
+          This 2023 version is separate from the frozen pilot and the ambiguous
+          2022 HST export.
+        </p>
+        <div className="tracker-targets tracker-models">
+          {trackerJoint.candidates.map((candidate) => (
+            <article key={candidate.id}>
+              <h5>{candidate.id} · {candidate.label}</h5>
+              <strong>ADEQUACY FAILED</strong>
+              <p>{candidate.adequacy_reason}</p>
+            </article>
+          ))}
+        </div>
+        <p>
+          Import, fitting, export and saved-state replay work, but none of these
+          candidates supplies an accepted mass interval. A replay verifies a
+          recorded calculation; it does not validate its noise model. The
+          object’s published black-hole classification is prior literature
+          evidence. This run has not independently reproduced a reliable
+          known-black-hole mass or established a new black-hole interpretation.
+        </p>
+        <p>
+          Before a supported new target, the next evidence is specific:
+          photometric clocks and variance calibration; matched-star, seeing and
+          detector controls; angular covariance, frame transformations and
+          effective epoch weights; and independent lens/source flux limits.
+          Absolute distances and velocities also need an absolute reference frame.
+          The calibration-data request below is prepared for author review and
+          has not been sent.
+        </p>
+        <div className="tracker-actions">
+          <a href={`${assets}BHSM_OB110462_2023_SourcePack_v1.zip`} download>Reviewed 2023 native source pack · ZIP ↓</a>
+          <a href={`${jointAssets}joint_noise_diagnostics.png`}>Known-system residual diagnostics ↗</a>
+          <a href={`${jointAssets}JOINT_PROVENANCE.json`}>Counts, failed statuses and exact evidence hashes ↗</a>
+          <a href={`${jointAssets}SOURCEPACK_CITATIONS_AND_RIGHTS.md`}>Native data attribution and rights ↗</a>
+          <a href={`${paper}/joint_known_system_20261022/README.md`}>All failed alternatives and frozen evidence ↗</a>
+          <a href={`${jointAssets}MANUAL_CALIBRATION_DATA_REQUEST_TEMPLATE.txt`} download>Manual calibration-data request template ↓</a>
+        </div>
+        <p className="tracker-local-note">
+          BHSM interpretation stays explicit: one compact-lens optical exterior,
+          counted once. No reliable mass, horizon, core state or measured
+          membrane deformation follows from these inadequate fits. Native
+          source-pack observations retain their original authors’ attribution
+          and rights; BHSM licensing does not replace them.
+        </p>
+      </section>
       <section
         className="tracker-access"
         aria-labelledby="tracker-access-title"
@@ -367,7 +424,7 @@ export function BlackholeTracker({
           <div className="tracker-actions">
             <a
               className="tracker-primary"
-              href={`${assets}BHSM_Blackhole_Tracker_Product_0.2.0rc3.zip`}
+              href={`${assets}BHSM_Blackhole_Tracker_Product_0.2.0rc4.zip`}
               download
             >
               Download the app · portable source ZIP ↓
@@ -375,7 +432,7 @@ export function BlackholeTracker({
             <a href={`${productFiles}/REVIEWER.md`}>
               Installation &amp; reviewer guide ↗
             </a>
-            <a href={`${assets}BHSM_Blackhole_Tracker_0.2.0rc3.pdf`}>
+            <a href={`${assets}BHSM_Blackhole_Tracker_0.2.0rc4.pdf`}>
               Read the reviewed manuscript ↗
             </a>
           </div>
@@ -386,13 +443,19 @@ export function BlackholeTracker({
             <code>product/</code> and run{' '}
             <code>Start_Blackhole_Tracker.cmd</code> on Windows. Other systems:{' '}
             <code>python -m pip install .</code>, then{' '}
-            <code>python -m bhtracker serve --open</code>.
+            <code>python -m bhtracker serve --open</code>. For joint research,
+            explicitly choose <code>Start_Blackhole_Tracker_Joint.cmd</code> or
+            install <code>&quot;.[astrometry]&quot;</code> in that environment. This adds
+            Astropy only when requested.
           </li>
           <li>
             <b>Fit.</b> Load Nearby compact-mass track → Validate dataset → Run
             fit. Read status, uncertainties and the explicit BHSM
             interpretation. For actual light curves, open the separate
             unresolved photometry page and use the native observation route.
+            For the separate known-system test, open Joint astrometry research
+            and import the reviewed 2023 source-pack ZIP. Read the failed
+            adequacy checks before interpreting any conditional parameter.
           </li>
           <li>
             <b>Export and replay.</b> Download replay bundle. In the installed
@@ -415,13 +478,15 @@ export function BlackholeTracker({
           <p>
             Prefer an existing Python environment?{' '}
             <a
-              href={`${assets}bhsm_blackhole_tracker-0.2.0rc3-py3-none-any.whl`}
+              href={`${assets}bhsm_blackhole_tracker-0.2.0rc4-py3-none-any.whl`}
               download
             >
               Download the reviewed wheel
             </a>
             , install with <code>python -m pip install path/to/the.whl</code>,
-            then launch as above.
+            then launch as above. Joint research instead uses the explicit
+            extra: <code>python -m pip install &quot;path/to/the.whl[astrometry]&quot;</code>.
+            See <a href={`${productFiles}/JOINT_RESEARCH.md`}>joint setup and replay guidance</a>.
           </p>
           <p>
             <a href={`${assets}DISTRIBUTION.json`}>
@@ -438,7 +503,7 @@ export function BlackholeTracker({
               Synthetic measurements with covariance ↗
             </a>
             {' '}·{' '}
-            <a href={`${assets}BHSM_Blackhole_Tracker_Source_0.2.0rc3.zip`} download>
+            <a href={`${assets}BHSM_Blackhole_Tracker_Source_0.2.0rc4.zip`} download>
               Complete manuscript, code and pilot source packet ↓
             </a>
             {' '}·{' '}
@@ -451,7 +516,10 @@ export function BlackholeTracker({
             both notices with either download.
             {' '}<a href={`${assets}history/0.2.0rc2/DISTRIBUTION.json`}>
               Historical 0.2.0rc2 artifacts and hashes
-            </a> remain preserved.
+            </a> and the <a href={`${assets}DISTRIBUTION_0.2.0rc3.json`}>
+              exact 0.2.0rc3 receipt
+            </a> remain preserved. Versioned rc3 artifacts stay at the release
+            root beside that versioned receipt.
           </p>
           <p>
             Exhibit constants, geometry and declared truth are copied from the

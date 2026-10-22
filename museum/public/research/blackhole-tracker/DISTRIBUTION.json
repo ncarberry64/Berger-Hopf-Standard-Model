@@ -1,38 +1,40 @@
 {
   "schema": "bhsm-museum-product-distribution/v1",
   "product": "BHSM Blackhole Tracker",
-  "version": "0.2.0rc3",
-  "release_stage": "reviewable correction release candidate; publication follows the protected repository workflow",
+  "version": "0.2.0rc4",
+  "release_stage": "Reviewable draft research candidate; new Pages publication is not yet verified and follows the protected repository workflow.",
   "repository_url": "https://github.com/ncarberry64/Berger-Hopf-Standard-Model",
-  "reviewed_product_code_revision": "002b9ecfe2f1a778b68b7558581997c05919ae93",
-  "reviewed_paper_revision": "b80fd756c285844b6ea90110c4d58db47092830c",
-  "upstream_product_revision": "aa1759d07c97e25a2fb1a7ad24a053aa553d602a",
-  "paper_development_source_revision": "d92062efd807281a44a891a334e361426ff1581d",
+  "reviewed_product_code_revision": "9f1768a7fbac1d16e0e25713f87b8191cbe02249",
+  "reviewed_paper_revision": "40e1d2d7aa3a193c4ba361eec7ed74616ec6a0f8",
+  "upstream_product_revision": "09a8ee8c1ebd508757c88d94b9116ce111863301",
+  "paper_development_source_revision": "492f80b2db6efb2b5268a26687114f94075a6948",
   "animation_fixture_source_revision": "33f26a5113392c0d2c323d7e4a36c7e81bd3ee29",
-  "product_source_file_count": 130,
-  "source_packet_member_count": 659,
-  "paper_pages": 36,
-  "input_product_source_archive_sha256": "641dae606c988b3ae49eca8786d65b077756bec2eb8f3df3c19f326c317759c5",
+  "product_source_file_count": 170,
+  "source_packet_member_count": 741,
+  "paper_pages": 43,
+  "product_tests": 233,
+  "executed_notebooks": 4,
+  "input_product_source_archive_sha256": "9aee78c5d297149b0f364e209fad86671f08bce087dfac71994ba15d25c124b8",
   "files": [
     {
-      "file": "BHSM_Blackhole_Tracker_Product_0.2.0rc3.zip",
-      "bytes": 691657,
-      "sha256": "accb46a03b79f86e9df74e1c4c2e7baf7062887b831a087856132f437e03b3e9"
+      "file": "BHSM_Blackhole_Tracker_Product_0.2.0rc4.zip",
+      "bytes": 957135,
+      "sha256": "4a1c2ca8bcf2b0a496c2e65327abb5c2e2d01ba816ff4c8899fc397755c1806c"
     },
     {
-      "file": "bhsm_blackhole_tracker-0.2.0rc3-py3-none-any.whl",
-      "bytes": 234803,
-      "sha256": "11fbbae7799858667c8b8c2e8956c126c9f5103276ee044f2d5bcf6457d8930f"
+      "file": "bhsm_blackhole_tracker-0.2.0rc4-py3-none-any.whl",
+      "bytes": 288256,
+      "sha256": "95ce4f546924a3425c74efafe822ca213f6e51ad8a72e4c57a70ac7639711a99"
     },
     {
-      "file": "BHSM_Blackhole_Tracker_Source_0.2.0rc3.zip",
-      "bytes": 13399803,
-      "sha256": "8af0878d3ff647346de2ebb4bf8f0446d382b4ce3e5c2911bdd456c901af1166"
+      "file": "BHSM_Blackhole_Tracker_Source_0.2.0rc4.zip",
+      "bytes": 14303172,
+      "sha256": "24b9e17aa6461bd9811713ad6c331e84275dc105bd0671e046c821b8a11082a9"
     },
     {
-      "file": "BHSM_Blackhole_Tracker_0.2.0rc3.pdf",
-      "bytes": 976310,
-      "sha256": "94b4193e2b387452348870610f4c7c328234d936a4a59aae5e545c04818fcfb2"
+      "file": "BHSM_Blackhole_Tracker_0.2.0rc4.pdf",
+      "bytes": 1225952,
+      "sha256": "e2b0e3fc90560f08ab0dfa8a60e78c0de6e6e86b00d06cab5146682f1e3b2eea"
     },
     {
       "file": "LICENSE.md",
@@ -53,15 +55,30 @@
       "file": "pilot-20261022-v1/PILOT_PROVENANCE.json",
       "bytes": 4016,
       "sha256": "5b7d509bbbe8593254fc7e64931da02a1b88b00e70aac6bbe44249c086fa79cc"
+    },
+    {
+      "file": "BHSM_OB110462_2023_SourcePack_v1.zip",
+      "bytes": 764958,
+      "sha256": "71d36a03e4ba275e91bea62f4784a5193f34ad32d3777b637453f91151bafa99"
+    },
+    {
+      "file": "joint-20261022-v2/JOINT_PROVENANCE.json",
+      "bytes": 6598,
+      "sha256": "5b3ab4eb0bea92dd3146ee2d96e78b821dbbf4ebfa109ce1b959a2482aa5628b"
     }
   ],
-  "scope": "Exact corrected source/wheel/paper artifacts with canonical notices. The Museum retains an explicitly synthetic resolved-image animation and separately reports the actual100-event native-photometry pilot. All pilot masses remain unresolved; two historical archival followups and zero new black-hole interpretations. Fitting/export/replay run in the visitors own Python process. Native per-point third-party observations remain external.",
+  "scope": "Exact reviewed source, wheel and paper with canonical notices. The animation is explicitly synthetic. The unchanged 100-event pilot retains 76,344 measurements, 89 inadequate screens, 11 passing chi-square screens and two historical archival follow-ups; every mass remains unresolved. A distinct 2023 known-system source pack and three frozen joint model/noise alternatives all fail adequacy. No reliable known-system mass or new black-hole interpretation is accepted. Software import, fitting, export and replay are separate computational checks. Original pilot per-point observations remain external; the independently licensed 2023 native source pack is distributed unchanged.",
   "license_files": [
     "LICENSE.md",
     "ACADEMIC_USE.md"
   ],
-  "installation": "Extract portable product ZIP, open product directory; Python3.11+: Start_Blackhole_Tracker.cmd on Windows, or python -m pip install . then python -m bhtracker serve --open. Native unresolved photometry has its own interface and observation schema.",
-  "input_privacy": "Local app binds loopback; staticMuseum does not upload measurements or run inference.",
-  "historical_release": "history/0.2.0rc2/DISTRIBUTION.json",
-  "pilot_provenance": "pilot-20261022-v1/PILOT_PROVENANCE.json"
+  "native_observation_rights": "Source-pack CC-BY4.0 author data and public HST terms remain in the ZIP and SOURCEPACK_CITATIONS_AND_RIGHTS.md; BHSM licensing does not replace them.",
+  "installation": "Extract the portable product ZIP and open product/. Python 3.11+: Start_Blackhole_Tracker.cmd on Windows, or python -m pip install . then python -m bhtracker serve --open. Joint research explicitly uses Start_Blackhole_Tracker_Joint.cmd, --astrometry, or the source/wheel [astrometry] extra; opening a page never installs dependencies. Import the separate reviewed source-pack ZIP.",
+  "input_privacy": "Local app binds loopback; static Museum does not upload measurements or run inference.",
+  "historical_releases": [
+    "history/0.2.0rc2/DISTRIBUTION.json",
+    "DISTRIBUTION_0.2.0rc3.json"
+  ],
+  "pilot_provenance": "pilot-20261022-v1/PILOT_PROVENANCE.json",
+  "joint_provenance": "joint-20261022-v2/JOINT_PROVENANCE.json"
 }

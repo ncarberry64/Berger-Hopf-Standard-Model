@@ -44,11 +44,11 @@ export const reviewEntries = {
   },
   'blackhole-tracker': {
     classification:
-      'BHSM compact-lens interpretation · synthetic animation and separate real-data pilot',
+      'BHSM compact-lens interpretation · synthetic animation, real pilot and separate negative joint benchmark',
     statement:
-      'The resolved route can reconstruct effective compact-lens mass and motion under supplied geometry. The separate 100-event native-photometry pilot leaves every mass unresolved and recommends two historical archival follow-ups; it establishes no new black-hole interpretation. Both routes retain the same optical potential in the declared BHSM sector.',
+      'The resolved route reconstructs effective compact-lens mass and motion under supplied geometry. All 100 native-photometry pilot masses remain unresolved, with two historical archival follow-ups. The separate 2023 joint benchmark fails all three declared model/noise adequacy checks and accepts no reliable mass or new black-hole interpretation. Each route counts the same BHSM optical potential once.',
     question:
-      'Can you replay the correct observation route, reproduce all 100 pilot outcomes and their residuals, and distinguish fitted duration from measured mass and the BHSM interpretation from an independently identified boundary or horizon?',
+      'Can you replay the correct observation route, preserve every pilot outcome and distinguish a reproducible calculation from an adequate physical/noise model? Which missing calibration evidence would justify a new frozen joint analysis?',
   },
   'cosmology-original': {
     classification: 'BHSM cosmology proposal',

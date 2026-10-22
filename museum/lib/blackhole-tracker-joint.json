@@ -1,0 +1,150 @@
+{
+  "schema": "bhsm-museum-joint-known-system/1",
+  "role": "SEPARATELY_VERSIONED_2023_KNOWN_SYSTEM_DISTINCT_FROM_2022_BENCHMARK_AND_100_EVENT_PILOT",
+  "formal_paper_revision": "40e1d2d7aa3a193c4ba361eec7ed74616ec6a0f8",
+  "system_aliases": [
+    "OGLE-2011-BLG-0462",
+    "MOA-2011-BLG-191"
+  ],
+  "data_version": "Corrected OGLE / Lam and Lu2023 arXiv2308.03302v2, source-pack v1",
+  "original_OGLE_rows_retained": 15533,
+  "selected_OGLE_photometric_rows": 12500,
+  "HST_photometric_rows": 21,
+  "fit_photometric_rows": 12521,
+  "HST_angular_rows": 21,
+  "HST_two_coordinate_values": 42,
+  "HST_dated_visits": 11,
+  "bounded_exposure_header_prefixes": 82,
+  "candidate_count": 3,
+  "adequate_candidates": 0,
+  "accepted_mass_intervals": 0,
+  "new_black_hole_interpretations": 0,
+  "supported_mass_msun": null,
+  "published_classification_role": "INDEPENDENT_PRIOR_LITERATURE_NOT_REPRODUCED_RELIABLE_MASS_IN_THIS_CAMPAIGN",
+  "candidates": [
+    {
+      "id": "G0",
+      "label": "Native diagonal errors",
+      "status": "JOINT_MODEL_OR_NOISE_INADEQUATE",
+      "accepted_mass": false,
+      "accepted_black_hole_identification": false,
+      "supported_mass_msun": null,
+      "adequacy_reason": "Residual structure remains despite an acceptable global quadratic statistic.",
+      "failed_structure_bins": 15,
+      "converged_starts": 16,
+      "attempted_starts": 16,
+      "active_nonlinear_bounds": []
+    },
+    {
+      "id": "G1",
+      "label": "Native marginal correlation",
+      "status": "JOINT_MODEL_OR_NOISE_INADEQUATE",
+      "accepted_mass": false,
+      "accepted_black_hole_identification": false,
+      "supported_mass_msun": null,
+      "adequacy_reason": "Fitting temporal correlation does not remove the failed residual checks.",
+      "failed_structure_bins": 15,
+      "converged_starts": 16,
+      "attempted_starts": 16,
+      "active_nonlinear_bounds": []
+    },
+    {
+      "id": "G2",
+      "label": "Calibration competitor",
+      "status": "JOINT_MODEL_OR_NOISE_INADEQUATE",
+      "accepted_mass": false,
+      "accepted_black_hole_identification": false,
+      "supported_mass_msun": null,
+      "adequacy_reason": "Residual checks fail and the noise timescale reaches an artificial cap.",
+      "failed_structure_bins": 8,
+      "converged_starts": 16,
+      "attempted_starts": 16,
+      "active_nonlinear_bounds": [
+        "log_OGLE_GP_tau_days"
+      ]
+    }
+  ],
+  "calibration_request_status": "PREPARED_FOR_AUTHOR_REVIEW_NOT_SENT",
+  "next_evidence": [
+    "photometric clock and variance calibration",
+    "matched-star, seeing and detector controls",
+    "angular covariance, frame transformations and effective epoch weights",
+    "independent source/lens flux limits"
+  ],
+  "sourcepack": {
+    "file": "BHSM_OB110462_2023_SourcePack_v1.zip",
+    "bytes": 764958,
+    "sha256": "71d36a03e4ba275e91bea62f4784a5193f34ad32d3777b637453f91151bafa99",
+    "members": 98,
+    "rights": "Original author CC-BY4.0 and public HST rights retained; BHSM licensing does not replace them."
+  },
+  "files": [
+    {
+      "file": "baseline_summary.csv",
+      "bytes": 1009,
+      "sha256": "9ff321a5f0b9c0fc76a0a5d7be60efabfba3e5484789709f38d8a25a3688be71",
+      "source_path": "papers/bhsm_blackhole_tracker_20261021/joint_known_system_20261022/baseline_summary.csv"
+    },
+    {
+      "file": "prediction_summary.csv",
+      "bytes": 571,
+      "sha256": "6241d24153f06abec3f20f52942720f8e1f51e700b5c565ee4611d62ba71c42a",
+      "source_path": "papers/bhsm_blackhole_tracker_20261021/joint_known_system_20261022/prediction_summary.csv"
+    },
+    {
+      "file": "residual_bin_summary.csv",
+      "bytes": 7649,
+      "sha256": "d627facf672a8e98e9150d9cf91942708711993a8be768d5559f0b22be520902",
+      "source_path": "papers/bhsm_blackhole_tracker_20261021/joint_known_system_20261022/residual_bin_summary.csv"
+    },
+    {
+      "file": "joint_noise_diagnostics.png",
+      "bytes": 260893,
+      "sha256": "ddddc84da7cbea8731c16b1531277493d11b1f49f582b08bd7d5f265784dea69",
+      "source_path": "papers/bhsm_blackhole_tracker_20261021/joint_known_system_20261022/joint_noise_diagnostics.png"
+    },
+    {
+      "file": "MANUAL_CALIBRATION_DATA_REQUEST_TEMPLATE.txt",
+      "bytes": 6001,
+      "sha256": "ab5a7218a554256096e87fbeaaba64d3abf7ab3530e9094568da62aafa16fe34",
+      "source_path": "papers/bhsm_blackhole_tracker_20261021/joint_known_system_20261022/MANUAL_CALIBRATION_DATA_REQUEST_TEMPLATE.txt"
+    },
+    {
+      "file": "PLAIN_LANGUAGE_RESULT.txt",
+      "bytes": 3532,
+      "sha256": "9104d23195d35a331c0121acbd4ce0deefbdf282850d8bfe1c1ba99611628865",
+      "source_path": "papers/bhsm_blackhole_tracker_20261021/joint_known_system_20261022/PLAIN_LANGUAGE_RESULT.txt"
+    },
+    {
+      "file": "PROVENANCE_MANIFEST.json",
+      "bytes": 24625,
+      "sha256": "b6623697a392e8c3360c6f2d82d91c2bcd61e9cec95844394a771be35c17e7e0",
+      "source_path": "papers/bhsm_blackhole_tracker_20261021/joint_known_system_20261022/PROVENANCE_MANIFEST.json"
+    },
+    {
+      "file": "protocol/JOINT_MASS_BENCHMARK_PROTOCOL_V2.md",
+      "bytes": 10154,
+      "sha256": "0be8ca73923a78c898676d6326212740fd43ef8f26f25d43d34f85350b258783",
+      "source_path": "papers/bhsm_blackhole_tracker_20261021/joint_known_system_20261022/protocol/JOINT_MASS_BENCHMARK_PROTOCOL_V2.md"
+    },
+    {
+      "file": "protocol/JOINT_PROTOCOL_V2_FREEZE.json",
+      "bytes": 1620,
+      "sha256": "9dca7fe937b8b9604d09d3e37bc6f0f171105a7199238d3dd0a9b7b3877efc21",
+      "source_path": "papers/bhsm_blackhole_tracker_20261021/joint_known_system_20261022/protocol/JOINT_PROTOCOL_V2_FREEZE.json"
+    },
+    {
+      "file": "protocol/JOINT_VALIDATION_PARTITION_V2_1_FREEZE.json",
+      "bytes": 105401,
+      "sha256": "a5f3a04552074683aee87900e6354c49f0ac57f0bac1747d5a9e9a5ba7de1758",
+      "source_path": "papers/bhsm_blackhole_tracker_20261021/joint_known_system_20261022/protocol/JOINT_VALIDATION_PARTITION_V2_1_FREEZE.json"
+    },
+    {
+      "file": "SOURCEPACK_CITATIONS_AND_RIGHTS.md",
+      "bytes": 2795,
+      "sha256": "22ada8c70b86883f433662e1a00839838f1e6aa29823854373960ee8c7a5d477",
+      "source_path": "BHSM_OB110462_2023_SourcePack_v1.zip/portable_2023_benchmark_v1/CITATIONS_AND_RIGHTS.md"
+    }
+  ],
+  "scope": "Import, fitting, export and saved-state replay are computational workflows, not an accepted physical/noise model. Every declared candidate fails adequacy. No reliable mass, new black-hole interpretation, measured membrane state, horizon, lens distance or absolute motion is accepted. BHSM interpretation counts one optical potential once."
+}

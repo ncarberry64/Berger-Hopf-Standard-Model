@@ -17,14 +17,20 @@ paper, reviewed PDF, installable app, replay and supporting BHSM sources in one
 route. The formal research record is here; `Manuscript-Generation` is the
 development workspace.
 
-The `0.2.0rc3` correction candidate adds a genuine native-photometry route and
-repairs the resolved-fit coordinate, profile-admission and unidentified-motion
-contracts. Its frozen real-observation pilot retains all 100 historical events
-and 76,344 measurements: 89 baseline model/noise screens were inadequate,
-11 passed chi-square and two qualified for archival follow-up. Every pilot mass
-remains unresolved; no new black-hole interpretation is established. See the
-[complete pilot record](papers/bhsm_blackhole_tracker_20261021/real_data_pilot_20261022/README.md)
+The `0.2.0rc4` research candidate supplies resolved-image, native-photometry
+and separately versioned joint astrometry/parallax workflows, with four
+notebooks and 233 product tests. The frozen pilot still retains all 100
+historical events and 76,344 measurements: 89 baseline model/noise screens
+were inadequate, 11 passed chi-square and two qualified for archival
+follow-up. Every pilot mass remains unresolved. All three declared models
+in the separate 2023 known-system benchmark also fail adequacy: this run
+accepts no reliable mass or new black-hole interpretation. Successful
+software checks and replay remain distinct from scientific acceptance.
+See the [complete pilot record](papers/bhsm_blackhole_tracker_20261021/real_data_pilot_20261022/README.md),
+[negative joint benchmark](papers/bhsm_blackhole_tracker_20261021/joint_known_system_20261022/README.md)
 and [draft correction PR #471](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/pull/471).
+The joint route explicitly opts into Astropy and uses a reviewed native
+source pack; the BHSM interpretation counts one optical potential once.
 
 The [BHSM Museum](https://ncarberry64.github.io/Berger-Hopf-Standard-Model/)
 is the public-facing collection, with plain-language exhibits and visible

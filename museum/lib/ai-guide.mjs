@@ -150,31 +150,49 @@ const topics = {
   },
   'blackhole-tracker': {
     keywords:
-      'blackhole black hole tracker compact lens lensing gravitational mass motion astrometry magnification delay BHSM boundary envelope R1 research app export replay covariance OGLE unresolved photometry real observations pilot native magnitude timescale mass unresolved archival followup',
+      'blackhole black hole tracker compact lens lensing gravitational mass motion astrometry magnification delay BHSM boundary envelope R1 research app export replay covariance OGLE unresolved photometry real observations pilot native magnitude timescale mass unresolved archival followup joint known system negative benchmark astropy sourcepack calibration adequacy',
     summary:
-      'A computed, noise-free synthetic point-lens animation shows three fixed source positions, their image pairs and the declared 2015â€“2025 moving center. The separate actual OGLE-III pilot processed all 100 historical events and 76,344 native magnitude measurements: 89 simple-model/noise screens were inadequate, 11 passed the declared chi-square screen and two met conservative archival follow-up criteria. Local Python software offers separate resolved-image and unresolved-photometry fit/export/replay routes.',
+      'A computed, noise-free synthetic point-lens animation shows three fixed sources, their image pairs and the declared 2015 to 2025 moving center. The separate actual OGLE-III pilot retains all 100 historical events and 76,344 native measurements: 89 model/noise screens failed, 11 passed chi-square and two met archival follow-up criteria. A separately versioned 2023 joint astrometry/parallax benchmark fails all three declared adequacy tests. The local Python app has resolved-image, native-photometry and optional joint-research fit/export/replay workflows.',
     scope:
-      'The animation remains synthetic. The historical follow-up targets OGLE3-ULENS-0585 and OGLE3-ULENS-3092 have MASS_UNRESOLVED; event duration is not a mass measurement. No new black-hole interpretation is established. All 100 cases remain in the results, including failures of the simple model. HST timing/frame provenance blocks a validated joint benchmark mass fit. Ordinary Einstein/GHY lensing has an explicit BHSM same-potential interpretation; it does not establish a core, hard surface, horizon or envelope mechanism.',
+      'The animation remains synthetic. All pilot masses remain unresolved; duration is not mass. The separate known-system run accepts no reliable mass or new black-hole interpretation, even though import, optimization and replay work. Published classification is independent prior literature. The older 2022 HST timing/frame ambiguity stays unresolved and is not repaired by a guessed epoch. Joint research explicitly installs Astropy and preserves source-pack rights and calibration limitations. BHSM Einstein/GHY interpretation counts one optical potential once; no core, hard surface, horizon or measured membrane deformation is established.',
     sources: [
       repoSource(
         'Formal product reviewer guide',
         'products/blackhole_tracker/REVIEWER.md',
-        '002b9ecfe2f1a778b68b7558581997c05919ae93',
+        '9f1768a7fbac1d16e0e25713f87b8191cbe02249',
       ),
       repoSource(
         'Product user guide',
         'products/blackhole_tracker/README.md',
-        '002b9ecfe2f1a778b68b7558581997c05919ae93',
+        '9f1768a7fbac1d16e0e25713f87b8191cbe02249',
       ),
       repoSource(
         'Manuscript and derivations',
         'papers/bhsm_blackhole_tracker_20261021/manuscript/main.tex',
-        'b80fd756c285844b6ea90110c4d58db47092830c',
+        '40e1d2d7aa3a193c4ba361eec7ed74616ec6a0f8',
       ),
       repoSource(
         'Pinned ordinary-lens forward calculation',
         'products/blackhole_tracker/bhtracker/forward.py',
-        '002b9ecfe2f1a778b68b7558581997c05919ae93',
+        '9f1768a7fbac1d16e0e25713f87b8191cbe02249',
+      ),
+      repoSource(
+        'Joint astrometry installation, source-pack import and replay',
+        'products/blackhole_tracker/JOINT_RESEARCH.md',
+        '9f1768a7fbac1d16e0e25713f87b8191cbe02249',
+      ),
+      repoSource(
+        'Separate known-system failed alternatives and frozen protocols',
+        'papers/bhsm_blackhole_tracker_20261021/joint_known_system_20261022/README.md',
+        '40e1d2d7aa3a193c4ba361eec7ed74616ec6a0f8',
+      ),
+      source(
+        'Separate known-system failed candidates and exact evidence hashes',
+        'research/blackhole-tracker/joint-20261022-v2/JOINT_PROVENANCE.json',
+      ),
+      source(
+        'Native source-pack attribution and rights',
+        'research/blackhole-tracker/joint-20261022-v2/SOURCEPACK_CITATIONS_AND_RIGHTS.md',
       ),
       source(
         'Synthetic forward example and source hashes',

@@ -1,5 +1,6 @@
 import example from './blackhole-tracker-example.json' with { type: 'json' };
 import pilot from './blackhole-tracker-pilot.json' with { type: 'json' };
+import joint from './blackhole-tracker-joint.json' with { type: 'json' };
 
 // The same IAU nominal solar mass parameter and units as the pinned product.
 const GM_SUN = 1.3271244e20;
@@ -8,10 +9,11 @@ const PC = 3.085677581491367e16;
 const RAD_MAS = 206264806.24709636;
 export const trackerExample = example;
 export const trackerPilot = pilot;
-export const trackerVersion = '0.2.0rc3';
+export const trackerJoint = joint;
+export const trackerVersion = '0.2.0rc4';
 export const trackerAnimationRevision = example.source_revision;
-export const trackerCodeRevision = '002b9ecfe2f1a778b68b7558581997c05919ae93';
-export const trackerPaperRevision = 'b80fd756c285844b6ea90110c4d58db47092830c';
+export const trackerCodeRevision = '9f1768a7fbac1d16e0e25713f87b8191cbe02249';
+export const trackerPaperRevision = '40e1d2d7aa3a193c4ba361eec7ed74616ec6a0f8';
 
 export function trackerCenter(epoch: number): [number, number] {
   if (!Number.isFinite(epoch) || epoch < 2015 || epoch > 2025)
