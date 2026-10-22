@@ -12,7 +12,7 @@ and open a terminal in its root, which contains `products/`, `papers/`,
 root. A complete clone of the much larger BHSM repository is optional.
 
 The 130 upstream product files here are byte-exact Git-blob copies from
-workspace commit `516161d98035eb37fce994d01ad4dee163caf322`, including the
+workspace commit `aa1759d07c97e25a2fb1a7ad24a053aa553d602a`, including the
 runtime, examples, three executed notebooks, tests, source pins and historical
 validation receipts. [FORMAL_PROVENANCE.json](FORMAL_PROVENANCE.json) records
 every source path, byte count and SHA-256. It excludes its own hash and the

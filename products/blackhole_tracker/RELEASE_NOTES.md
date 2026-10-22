@@ -1,4 +1,22 @@
-# Blackhole Tracker 0.2.0rc2
+# Blackhole Tracker 0.2.0rc3
+
+The reviewed corrections make physical fits independent of numerical epoch and mass references, genuinely profile physically admitted nuisance states, and report unidentified motion covariance as unavailable. Reporting-basis and covariance contracts are versioned; legacy internal profiles require a raw-input refit. Explicit physical bounds and full measurement covariance remain enforced. The historical covariance-only regression tolerance is now 1e-9, justified by independent derivative-step resolution checks; optical/prediction and admission checks retain their original thresholds.
+
+A separate native unresolved-photometry route is available in the app at `/photometry`, CLI, Python and a third executed notebook. It preserves every native observation, error, time convention, calibration, source hash and row identity. Exports and replay retain the exact likelihood controls. Photometry leaves mass, distance, absolute angular motion, horizon and core quantities unavailable.
+
+The frozen supplied 100-event / 76,344-row pilot records 89 inadequate simple-model fits and 11 non-rejected photometric fits. Two historical archival follow-ups pass stricter checks; neither has a measured mass. Five photometry-only analyses of the corresponding 2022 benchmark remain inadequate. Specific HST time/frame metadata gaps block its precision joint mass inference. No mass-supported black-hole candidate or new black-hole interpretation is claimed.
+
+The BHSM radial membrane source now states its fixed Minkowski background, constant-tension and pressure-work assumptions. Both handoff versions and both original documents are preserved and reconciled in the formal repository. This changes no optical force or fitted core parameter: one potential is counted once.
+
+Validation: 182 product tests; clean noneditable wheel installation; resolved and actual native app fit/export/replay; unidentified-covariance replay; and three installed-wheel notebooks. Saved predictions replay exactly, with native row identities and BHSM interpretation unchanged. The new likelihood's actual-cadence injection checks are separate from historical synthetic coverage campaigns, which retain their original versions and limitations.
+
+```text
+python -m pip install bhsm_blackhole_tracker-0.2.0rc3-py3-none-any.whl
+python -m bhtracker serve --open
+python -m bhtracker replay analysis.zip --output replayed
+```
+
+## Previous release candidate 0.2.0rc2
 
 This release fixes the trajectory date-label rounding defect and integrates Norman P. Carberry's dated core/surface amendment through the shared BHSM interpretation. It preserves the ordinary compact-lens engine, one-potential accounting, supplied radius and the conditional R1 metric/source-mass distinction.
 
