@@ -1,5 +1,16 @@
 # BHSM Artifact Index
 
+## Norman core/surface amendment — 22 October 2026
+
+The [authoritative dated amendment](docs/BHSM_NORMAN_CORE_SURFACE_AMENDMENT_20261022.md)
+reconciles Norman P. Carberry's definitions with the pregeometric category,
+regular reciprocal/material/covariant matching and later AE3/AE4 successors.
+Its [claim/source ledger](artifacts/current_semantics/BHSM_NORMAN_CORE_SURFACE_AMENDMENT_20261022.json)
+records source hashes, scoped exact deductions and the remaining terminal
+correspondence. Reproduce its symbolic checks and deterministic ledger with
+`python tools/check_norman_core_surface_consequences.py --write`.
+This adds no physical rate, action coefficient, prediction or gate promotion.
+
 ## Current continuum-child and Qxi-ownership checkpoint
 
 - [`BHSM_CONTINUUM_EVENT_CHILD_CERTIFICATE.json`](artifacts/n12_continuum_majorant_effectiveness/BHSM_CONTINUUM_EVENT_CHILD_CERTIFICATE.json)

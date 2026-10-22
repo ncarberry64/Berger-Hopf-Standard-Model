@@ -1,6 +1,17 @@
 # BHSM Documentation Index
 
-## Current v15.10 campaign
+## Current navigation: core/surface amendment — 22 October 2026
+
+- [Norman's authoritative dated core/surface amendment](BHSM_NORMAN_CORE_SURFACE_AMENDMENT_20261022.md): definitions, current source succession, computed regular-interface response and precise terminal accounting.
+- [Current system integration map](../artifacts/current_semantics/BHSM_CURRENT_SYSTEM_INTEGRATION_MAP.json): active architecture and dependencies.
+- [Local enclosure/state integration](../theory/ae4_current_c2_physical_enclosure_state_integration.md), [response jets](../theory/ae4_event_response_jet_integration.md), and [current encapsulation scope](BHSM_CURRENT_ENCAPSULATION_SCOPE.md).
+- [Claim/source ledger](../artifacts/current_semantics/BHSM_NORMAN_CORE_SURFACE_AMENDMENT_20261022.json) and [current status](current_bhsm_status.md).
+
+Versioned campaign conclusions below are historical, domain-specific records;
+the amendment follows their later successors. The regular material carrier is
+not the nongeometric core, and no terminal core transfer is promoted.
+
+## Historical v15.10 campaign
 
 - [Aether-cycle sigma-coefficient reconstruction](BHSM_AETHER_CYCLE_SIGMA_COEFFICIENT_RECONSTRUCTION_V15_10.md)
 - [v15.9 cycle-driven eta upstream theorem](BHSM_CYCLE_DRIVEN_ETA_SPREAD_CONCENTRATION_V15_9.md)

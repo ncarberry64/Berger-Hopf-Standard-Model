@@ -25,6 +25,7 @@ connects reviewed derived results to these same public exhibits.
 | --- | --- |
 | University, laboratory, reviewer or teaching group | [Institutional start](docs/INSTITUTIONAL_START.md) — portable setup, offline checks and reporting |
 | Evaluate the scientific proposal | [Claim boundaries](CLAIMS.md), [current status](docs/current_bhsm_status.md), [theory ledger](theory/gate_ledger.md) |
+| Core, surface and terminal-transition hypothesis | [Norman's dated amendment](docs/BHSM_NORMAN_CORE_SURFACE_AMENDMENT_20261022.md) — recovered matching, computed regular response and precise terminal requirement |
 | Inspect particle-family and mass structure | [Charged-lepton action](theory/ae31_c2_intrinsic_m4_lepton_action.md), [quark normalization gap](theory/ae31_c2_quark_yukawa_normalization_no_go.md) |
 | Inspect enclosure and interacting-state construction | [Existing-state integration](theory/ae4_current_c2_physical_enclosure_state_integration.md), [response integration](theory/ae4_event_response_jet_integration.md) |
 | Examine the sandbox comparisons | [Complete source snapshot](docs/museum/sandbox_comparison_source_2026-09-02.md), [machine-readable values](data/museum/bhsm_sandbox_comparison_20260902.json) |

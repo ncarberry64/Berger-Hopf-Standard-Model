@@ -2,6 +2,11 @@
 
 Status: `OWNER_AUTHORIZED_ONTOLOGY`; it is not an action-derived equation.
 
+The [authoritative 22 October 2026 core/surface amendment](../docs/BHSM_NORMAN_CORE_SURFACE_AMENDMENT_20261022.md)
+adds the latest attributed harmonic-core, boundary-dominance and endpoint
+definitions, with current successor equations and a claim ledger. The earlier
+owner rules below remain part of their recorded action/observable context.
+
 1. Geometry is microscopic; Standard Model language is emergent and downstream.
 2. Advertised Standard Model observables must ultimately be reproduced, but never inserted upstream.
 3. Particles are persistent geometric mode/history equivalence classes.
