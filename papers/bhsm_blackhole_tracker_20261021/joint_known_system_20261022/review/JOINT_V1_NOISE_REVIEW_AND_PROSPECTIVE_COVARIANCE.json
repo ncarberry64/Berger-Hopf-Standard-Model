@@ -1,0 +1,102 @@
+{
+  "schema": "bhsm_independent_joint_noise_review/1",
+  "created_utc": "2026-10-22T20:33:31.074580+00:00",
+  "source_unchanged": "Frozen joint v1 code/protocol not modified; no new measured fit run by reviewer",
+  "v1_input_receipts": {
+    "JOINT_M0_DIAGONAL_16START_v1.json": "153cd06b482404b54577b02fc87167312fd9e7a3ef40ae9eb80077ad8097e025",
+    "JOINT_M1_OU_16START_v1.json": "281649bd7de9b5235282411a3a5d2606ce6296ecd619dea4f7eed056541c253b",
+    "JOINT_V1_PARAMETRIC_CONTROLS20.json": "7f6916be3cbb7f7fd7c10949921a82f7afe6ed175efb2802ead949eb215af0a1"
+  },
+  "primary_uncertainty_source": {
+    "url": "https://arxiv.org/html/2207.10729v2",
+    "archived_path": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_real_data_corrections_20261022\\benchmark_data_research\\Mroz2022v2_primary.html",
+    "sha256": "a7137ff1a898b20680e5151c1ce1246d9825d62434c20d657297667b0b5b4c43",
+    "section": "II OGLE-only Model, paragraph beginning First, we correct the photometric uncertainties",
+    "interpretation": "Authors empirically corrected pipeline errors to match observed scatter by magnitude/detector; median new-reduction error11mmag and diagonal reducedchi2 nearunity. No GP-white/conditional variance decomposition is provided. Treating suppliedsigmas as total reported marginal scatter is better motivated than assuming they exclude all correlated variance; neither covariance structure is supplied or certified.",
+    "scope_limit": "This supports testing a variance-preserving correlation allocation; it does not prove that all corrected errors are exact source-specific marginals or identify temporal covariance."
+  },
+  "M0": {
+    "mass_point_msun": 7.778969738683284,
+    "photometric_quadratic": 12573.198729741383,
+    "dof_approximate": 12510,
+    "lag1": 0.13006037353122907,
+    "conclusion": "Scalar variance screen passes, but residual serial dependence prevents a reliable independent-noise uncertainty claim. Correlation can reflect noise or a deficient deterministic mean, not uniquely new physics."
+  },
+  "M1": {
+    "mass_point_msun": 6.656115170985901,
+    "photometric_quadratic": 10720.228569814266,
+    "dof_approximate": 12508,
+    "lower_tail_conditional_chi_square_diagnostic": 6.880427193249249e-33,
+    "normal_standardized_deficit": -11.303242851155785,
+    "lag1": 0.018065257113385125,
+    "control_count": 20,
+    "control_Q_min": 12255.933759063722,
+    "control_Q_max": 12747.370493153941,
+    "control_lag_max": 0.010626616728194663,
+    "empirical_tail_resolution": 0.047619047619047616,
+    "conclusion": "Upper-tail-only NOT_REJECTED label misses severe lower-tail underdispersion. The additive-D-plus-OU family is not an adequate calibrated noise description here. Diagonal double-counting is a plausible structural explanation, not established as sole cause.",
+    "caution": "Post-fit chi-square distribution is approximate with fitted covariance. Twenty local parametric refits provide coarse diagnostics only; neither6.9e-33 nor1/21 is an exact globally calibrated pvalue."
+  },
+  "prospective_candidate": {
+    "status": "Proposed after v1 diagnostics; freeze separately before v2 measured fits, not external or whole-study preregistration",
+    "covariance": "C=diag(sigma_native) R diag(sigma_native); R=(1-f)I+f exp(-abs(t_i-t_j)/tau)",
+    "domain": "0<=f<=fmax<1; tau>0; preserve all native sigmas and rows",
+    "marginal_identity": "C_ii=sigma_native_i^2 exactly",
+    "objective": "Q+logdet(R), Q=(r/sigma_native)^T R^-1(r/sigma_native); nativeD determinant is parameter-independent baseline",
+    "innovation_operator": "L0 diagonal1, subdiagonal-a_i; a_i=exp(-delta_t/tau)",
+    "transformed_covariance": "L0 R L0^T tridiagonal: firstdiag1, subsequentdiag1+(1-2f)*a_i^2, subdiag-(1-f)*a_i",
+    "determinant": "det(L0)=1, so logdetR=2sum(log(diag(chol(tridiagonal)))); it is generally negative",
+    "least_squares_option": "If retaining least_squares, add residualsqrt(logdetR-N*log(1-fmax)); fixed positive offset must be reported/subtracted consistently. Do notsqrt(logdetR) or clamp it tozero.",
+    "existing_helper_correction": "OU helper on normalized residuals with whitesigma=sqrt(1-f), amplitude=sqrt(f) returns logdetR-Nlog(1-f); addNlog(1-f). Atf=0 use exactdiagonal branch.",
+    "boundary": "f=0 is legitimate null; tau then unidentified. No automatic Wilks coverage.",
+    "tests": [
+      {
+        "fraction": 0.0,
+        "max_native_diagonal_variance_error": 0.0,
+        "quadratic_error": 3.552713678800501e-15,
+        "logdet_error": 1.1102230246251565e-15,
+        "logdet_ratio_native": -1.1102230246251565e-15,
+        "shifted_sqrt_penalty_squared": 23.96585818843192,
+        "passed": true
+      },
+      {
+        "fraction": 0.1,
+        "max_native_diagonal_variance_error": 0.0,
+        "quadratic_error": 8.881784197001252e-16,
+        "logdet_error": 9.603429163007604e-15,
+        "logdet_ratio_native": -0.09486719099812041,
+        "shifted_sqrt_penalty_squared": 23.8709909974338,
+        "passed": true
+      },
+      {
+        "fraction": 0.5,
+        "max_native_diagonal_variance_error": 0.0,
+        "quadratic_error": 1.7763568394002505e-15,
+        "logdet_error": 4.884981308350689e-15,
+        "logdet_ratio_native": -1.7574166683335428,
+        "shifted_sqrt_penalty_squared": 22.208441520098376,
+        "passed": true
+      },
+      {
+        "fraction": 0.95,
+        "max_native_diagonal_variance_error": 0.0,
+        "quadratic_error": 0.0,
+        "logdet_error": 1.7763568394002505e-14,
+        "logdet_ratio_native": -9.20268015458944,
+        "shifted_sqrt_penalty_squared": 14.763178033842479,
+        "passed": true
+      }
+    ],
+    "all_analytic_checks_passed": true
+  },
+  "required_prospective_stopping_rules": [
+    "Retain every v1 outcome and explicit diagnostic failure; never select covariance by closeness to published mass",
+    "Pin new model, bounds, data, search/controls and code before first new measured fit",
+    "Use both lower/upper innovation variance diagnostics and residual time/season/seeing/brightness/error-bin checks; qualify multiplicity and finite MonteCarlo resolution",
+    "Generate/refit controls from the exact proposed normalizedcovariance, not v1 additivecovariance; retain failures in denominator",
+    "Mass profiling must retain competing admitted modes and numerical-cap failures; uncertainty support levels remain conditional",
+    "Complete clock, exposure-window/weight, filter correlation/jitter/frame-prior/lens-light, data-window and ephemeris sensitivities",
+    "If main model or any material admissible sensitivity lacks adequate residuals or mass support, report conditional/unresolved result rather than reliable recovery",
+    "Known-system mass support plus external darkness/single-lens evidence may support a conditional benchmark interpretation; this never creates a new-object discovery"
+  ]
+}

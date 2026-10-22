@@ -1,0 +1,58 @@
+{
+  "schema": "bhsm.portable_2023_sourcepack_verification/1",
+  "test_directory": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_real_data_corrections_20261022\\benchmark_data_research\\portable review with spaces 154222",
+  "source_pack_zip_sha256": "71d36a03e4ba275e91bea62f4784a5193f34ad32d3777b637453f91151bafa99",
+  "original_pack_unchanged": true,
+  "cases": [
+    {
+      "case": "offline verification from independent path with spaces",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "passed": true,
+      "stdout": "{\n  \"all_pass\": true,\n  \"checked_files\": 97,\n  \"refetched\": 0,\n  \"failed\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "case": "modified byte rejection",
+      "exit_code": 1,
+      "expected_exit_code": 1,
+      "passed": true,
+      "stdout": "{\n  \"all_pass\": false,\n  \"checked_files\": 97,\n  \"refetched\": 0,\n  \"failed\": [\n    {\n      \"path\": \"CITATIONS_AND_RIGHTS.md\",\n      \"passed\": false,\n      \"bytes\": 2815,\n      \"sha256\": \"f696d0d0733f003832dccde7755354b0978b311d7e7b05a61b0c1fb357fb3d14\",\n      \"refetched\": false\n    }\n  ]\n}\n",
+      "stderr": ""
+    },
+    {
+      "case": "exact source refetch MAST_header_prefixes/ibnc06f6q_flc.fits.prefix.bin",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "passed": true,
+      "stdout": "{\n  \"all_pass\": true,\n  \"checked_files\": 97,\n  \"refetched\": 1,\n  \"failed\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "case": "exact source refetch OGLE-2011-BLG-0462-new.txt",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "passed": true,
+      "stdout": "{\n  \"all_pass\": true,\n  \"checked_files\": 97,\n  \"refetched\": 1,\n  \"failed\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "case": "exact source refetch LamLu2023v2__hst_data_table.txt",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "passed": true,
+      "stdout": "{\n  \"all_pass\": true,\n  \"checked_files\": 97,\n  \"refetched\": 1,\n  \"failed\": []\n}\n",
+      "stderr": ""
+    },
+    {
+      "case": "final all-file verification",
+      "exit_code": 0,
+      "expected_exit_code": 0,
+      "passed": true,
+      "stdout": "{\n  \"all_pass\": true,\n  \"checked_files\": 97,\n  \"refetched\": 0,\n  \"failed\": []\n}\n",
+      "stderr": ""
+    }
+  ],
+  "all_pass": true,
+  "POSIX_contract": "All live I/O paths are manifest-relative POSIX components joined with nativepathlib. Historical Windows strings are not dereferenced. ActualLinux CI remains a separate environment check."
+}

@@ -28,25 +28,26 @@ pdfsubject={Formal source and reviewer repository: https://github.com/ncarberry6
 \maketitle
 \begin{center}\small Research article for \emph{Galaxies}: Strong Gravitational Lens Modeling\end{center}
 \begin{abstract}
-Blackhole Tracker provides reproducible lens inference with an explicit
-Berger--Hopf Standard Model (BHSM) boundary interpretation: one effective
+Blackhole Tracker provides reproducible lens inference with explicit
+Berger--Hopf Standard Model (BHSM) interpretation: one effective
 exterior is counted once. A local app, command line, Python package and
-executed notebooks support resolved image-pair data and a separate native
+notebooks support resolved image-pair data and native
 unresolved-photometry likelihood. An internally frozen pilot processes
-all 100 supplied OGLE-III events and 76\,344 native measurements.
+100 OGLE-III events and 76\,344 measurements.
 Eighty-nine fail the specified photometric adequacy screen; eleven are
-not rejected by that screen, and only two pass the stricter archival
-follow-up criteria. Both are previously published events. Their
+not rejected; two pass stricter archival
+follow-up criteria. Both are published events. Their
 timescales do not identify mass, distance or absolute motion; no new
-black-hole interpretation is established. A version-specific 2022
-known-system benchmark also rejects rectilinear photometry-only fits,
-while unresolved HST export-time and calibration metadata prevent
-precision joint mass inference. Earlier resolved-pair synthetic
-calibrations remain separately versioned evidence. Reviewed corrections
+black-hole interpretation is established. A 2022
+benchmark rejects rectilinear photometry-only fits.
+A separately versioned joint benchmark uses 12\,521 photometric measurements
+and 21 two-coordinate HST positions. Three frozen noise candidates converge
+but fail residual-structure checks; their masses remain conditional.
+Earlier resolved-pair synthetic calibrations remain separately versioned. Reviewed corrections
 remove numerical-reference dependence, admit physical nuisance profiles
 and preserve unavailable motion uncertainties. The optional
-scalar--tensor calculation gives a uniform sufficient boundary-state
-bound in its retained exterior, but two projected modes vanish and the
+scalar--tensor calculation bounds boundary states in its retained exterior,
+but two projected modes vanish and the
 leading apparent-mass response is degenerate with shear. The software
 supports auditable event screening and conditional response tests.
 Neither BHSM core dynamics, a detectable envelope, nor a horizon
@@ -456,6 +457,7 @@ not a repeated calibration of the revised rc3 kernel or native
 unresolved-photometry likelihood.
 \input{product_validation}
 \input{real_observations}
+\input{joint_known_system}
 
 \section{What could actually be tracked?}
 
@@ -464,7 +466,10 @@ declared synthetic measurement and covariance model. The separate
 observational pilot demonstrates native-data ingestion, audited
 photometric screening and honest unavailable mass outputs. It identifies
 two historical archival-follow-up targets, but no mass-supported new
-black-hole interpretation or detectable BHSM envelope. The earlier broad information
+black-hole interpretation or detectable BHSM envelope. The separate known-system
+joint benchmark also fails its declared noise-adequacy gates. Its conditional
+mass points do not establish a reliable known-black-hole measurement or
+reliability for unknown systems. The earlier broad information
 scan has a distinct limitation. For the illustrative cosmological mass and transverse
 speed $300$ km s$^{-1}$, ten observer years move the center only
 $0.00236$ pc, or $6.95\times10^{-6}r_E$. Traversing the broad synthetic
@@ -556,16 +561,26 @@ likelihood. The two historical follow-ups warrant archival and imaging
 feasibility checks; their ranking supplies no mass or BHSM-specific
 detection. No new telescope detection or journal submission is reported.
 
+The completed joint candidate set stops without an accepted mass. Its apparently
+satisfactory global quadratics and whole-night predictive screens cannot override
+failed residual structure or a numerical covariance-timescale cap. Valuable
+further evidence includes per-exposure variance, seeing/detector diagnostics,
+astrometric covariance and reference-frame information. A separate robust
+estimating-equation route would need its own justified mean/dependence assumptions
+and finite-sample validation; this campaign does not evaluate it. A known system's published classification
+is separately attributed and does not certify this engine; one successful system
+would also be insufficient to establish population reliability.
+
 \paragraph{Data and code availability.}
 The formal reviewer repository is
 \href{https://github.com/ncarberry64/Berger-Hopf-Standard-Model}{Berger--Hopf Standard Model},
-with the product under \texttt{products/blackhole\_tracker/} and this
-paper under \texttt{papers/bhsm\_blackhole\_tracker\_20261021/}.
-The rc3 integration branch is
-\href{https://github.com/ncarberry64/Berger-Hopf-Standard-Model/tree/codex/blackhole-tracker-real-data-20261022}{\texttt{codex/blackhole-tracker-real-data-20261022}};
+with the product under \nolinkurl{products/blackhole_tracker/} and this
+paper under \nolinkurl{papers/bhsm_blackhole_tracker_20261021/}.
+The integration branch is
+\href{https://github.com/ncarberry64/Berger-Hopf-Standard-Model/tree/codex/blackhole-tracker-real-data-20261022}{the real-data integration branch};
 the separate Manuscript-Generation repository is a development workspace.
-The rc3 product source is pinned to formal revision
-\href{https://github.com/ncarberry64/Berger-Hopf-Standard-Model/tree/002b9ecfe2f1a778b68b7558581997c05919ae93/products/blackhole_tracker}{\texttt{002b9ecfe2f1}}.
+The rc4 resolved, native-photometry and joint product source is pinned to formal revision
+\href{https://github.com/ncarberry64/Berger-Hopf-Standard-Model/tree/9f1768a7fbac1d16e0e25713f87b8191cbe02249/products/blackhole_tracker}{\texttt{9f1768a7fbac}}.
 The final release receipt pins the completed source revision, wheel,
 manuscript PDF and CI outcomes. The theory/source reconciliation is
 independently pinned to formal revision
@@ -575,7 +590,8 @@ versioned historical material.
 
 The original OGLE project supplies the native pilot observations
 \cite{Wyrzykowski2015}; the 2022 benchmark is Zenodo 6607578 version
-1.0.0, declared CC BY 4.0 \cite{Lam2022Data}. Native source files remain
+1.0.0, declared CC BY 4.0 \cite{Lam2022Data}. For this pilot and older
+benchmark, native source files remain
 external and unmodified; the distribution provides source URLs, required
 citations, hashes and fetch/replay instructions. Raw OGLE redistribution
 is not assumed from download access. The public
@@ -588,9 +604,19 @@ metadata gaps are documented with archived primary-source hashes.
 Theoretical replay uses \texttt{scripts/reproduce.py}; product validation
 and interface instructions are in the product README. The installed
 app's analysis export is replayable through
-\texttt{python -m bhtracker replay analysis.zip --output replayed};
+\texttt{python -m bhtracker replay analysis.zip -{}-output replayed};
 the native route preserves its data contract, original source identity,
 BHSM interpretation and unavailable mass fields.
+
+The separate \texttt{joint\_known\_system\_20261022/} audit provides the
+2023-data joint equations, fixed candidate protocol, partition correction,
+compact results and residual diagnostics, source-pack manifest and rights,
+independent computational reviews, and portable reproduction instructions.
+The source pack preserves the CC BY 4.0 author observations
+\cite{Mroz2022Data,LamLu2023} and separately attributed public HST header
+metadata. Its source version does not replace the frozen 2022 benchmark or
+100-event pilot. Final release metadata pins the formal BHSM code revision;
+the development-workspace scientific freeze is separately recorded in the audit.
 
 \paragraph{Author contributions.}
 Conceptualization, methodology, formal analysis and writing:

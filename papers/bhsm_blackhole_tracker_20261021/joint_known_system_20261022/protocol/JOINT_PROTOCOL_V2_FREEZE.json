@@ -1,0 +1,30 @@
+{
+  "schema": "bhtracker.joint_protocol_freeze.v2",
+  "frozen_utc": "2026-10-22T20:46:11.709048+00:00",
+  "before_first_measured_v2_fit": true,
+  "status": "INTERNALLY_FROZEN_POST_V1_EXPLORATORY_EXTENSION_NOT_EXTERNAL_PREREGISTRATION",
+  "git_commit": "5bb94198565fb25414f1f05908c00d49838c4b73",
+  "product_version": "0.2.0rc4",
+  "experimental": true,
+  "input_sha256": "d4fc2bfc9320c7eab8a33b93517f68f035a5d498ffb35ff548a638648143af96",
+  "input_hash_algorithm": "bhtracker.canonical_numeric_json.v2",
+  "files": {
+    "product/bhtracker/joint_mass_v2.py": "6eaf050481fc23aebf4b929e49fdab57e324ee80eb08e1547b69f056269eeaaa",
+    "product/bhtracker/joint_benchmark_v2.py": "83f599f7cdd616690fdcbf61f30ec05145719cc5b343d083cfe4c0a45ff940a6",
+    "product/bhtracker/joint_workflow_v2.py": "3597564b3f7cf628fd13d003ad18fb5aff7f03aea644e86ece0664d75b7e1698",
+    "product/tests/test_joint_mass_v2.py": "026ed1a95175ca51add6d01407c16d6ba8a42f82187ec8c86dc26d471d5eb042",
+    "product/docs/JOINT_MASS_BENCHMARK_PROTOCOL_V2.md": "0be8ca73923a78c898676d6326212740fd43ef8f26f25d43d34f85350b258783"
+  },
+  "preconditions": {
+    "focused_tests": "19PASS including actualNodeJSONroundtrip",
+    "independent_review": "theory_reconciliation PASS prospectiveG0/G1/G2, notmassacceptance",
+    "actual_cadence_geometry": "PASS",
+    "zero_parallax_mass_null": "PASS",
+    "noisy_controls_truth_profile_deltas": [
+      0.0666404823,
+      0.0630743988
+    ],
+    "portable_import": "12521photometry+21astrometry matchesexactsourcepack"
+  },
+  "retained_v1_failures": "JOINT_V1_ACCEPTANCE_RECEIPT.json"
+}

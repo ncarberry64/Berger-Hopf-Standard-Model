@@ -3,8 +3,8 @@
 
 The released research product makes the compact-lens measurement task
 operational. A local browser app, command line, importable Python package
-and three executed notebooks provide separate versioned resolved-pair and
-native-photometry contracts. This is an offline analysis tool; the
+and four executed notebooks provide separate versioned resolved-pair,
+native-photometry and joint astrometry/parallax contracts. This is an offline analysis tool; the
 resolved mode described here takes supplied primary-pair measurements.
 The native route and its measured-data pilot are treated in
 Section~\ref{sec:real-observations}. Its
@@ -36,7 +36,7 @@ reconstruction, survey acquisition or observational validation of those
 assumptions. No superiority or priority follows from these scope differences.
 
 \paragraph{Computational methods and generative AI.}
-The reproducible software is Blackhole Tracker, version 0.2.0rc3;
+The reproducible software is Blackhole Tracker, version 0.2.0rc4;
 the versioned source, environments and executable checks are supplied
 with the release. OpenAI ChatGPT and Codex (GPT-6 model family) assisted
 source recovery, mathematical derivation, code and test generation,
@@ -168,14 +168,23 @@ Both app and command line export a complete replay analysis: original
 input with full covariance and calibrations, fit configuration, installed
 software/source hashes, fitted parameters, predictions, diagnostics,
 interpretation, plots and a SHA-256 manifest. The command
-\texttt{python -m bhtracker replay analysis.zip --output replayed}
-verifies hashes and repeats inference. Its declared numerical comparison
+\texttt{python -m bhtracker replay analysis.zip -{}-output replayed}
+verifies hashes and repeats resolved/native-photometry inference. The
+resolved/native refit comparison
 requires unchanged scientific status and prediction differences below
 $10^{-3}$ of each supplied marginal standard deviation; this is not a
 rescaling of measurement error or a statistical detection threshold.
+For the separately versioned joint route, replay verifies the saved
+nonlinear state, profiled nuisances and predictions with its pinned
+scientific source. It does not repeat optimization or certify noise
+adequacy, mass support or black-hole classification.
 The first notebook reproduces
 mass/motion inference, a mass profile and the weak-motion control; the
-second evaluates conditional response and admission. Raw theory inputs
+second evaluates conditional response and admission. The third preserves
+native unresolved photometry. The fourth verifies the separately versioned
+joint likelihood, source-pack import and archived measured-state replay;
+its successful execution does not accept the measured benchmark's mass.
+Raw theory inputs
 are packaged and hash checked, so these interfaces do not depend on a
 private archive path or the author's checkout. A separate stellar-mass
 example adapts rounded parameters from \citet{Lu2025} into a declared

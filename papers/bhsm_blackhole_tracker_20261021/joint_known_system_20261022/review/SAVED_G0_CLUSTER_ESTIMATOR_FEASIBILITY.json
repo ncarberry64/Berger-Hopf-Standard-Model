@@ -1,0 +1,127 @@
+{
+  "schema": "bhtracker.saved_G0_cluster_feasibility.v1",
+  "operation": "Read saved residuals and saved geometry only; no parameter estimation, no bootstrap, no accepted mass interval.",
+  "source_result_sha256": "14a1f3ea6dfd1ae60d48171d0824122d69ef2837edec42112eb8f4dacc58a72c",
+  "OGLE_rows": 12500,
+  "local_noon_nights": 1326,
+  "night_sizes_min_median_max": [
+    1,
+    5.0,
+    49
+  ],
+  "adjacent_night_mean_correlation_all_gaps": 0.025473054063017503,
+  "adjacent_night_mean_correlation_gap_below1_5day": 0.10408847430159811,
+  "near_adjacent_night_pairs": 1093,
+  "night_mean_rms_mmag": 7.771939207438119,
+  "seasonal_means": [
+    {
+      "Julian_season": 2010,
+      "rows": 898,
+      "nights": 90,
+      "native_weighted_residual_mean_mmag": -1.0801809632990644,
+      "night_independence_conditional_sandwich_mean_scale_mmag": 0.6751249435275931,
+      "qualification": "Descriptive assumption-conditional scale, not a calibrated test; inter-night dependence and fitted-parameter uncertainty omitted."
+    },
+    {
+      "Julian_season": 2011,
+      "rows": 2025,
+      "nights": 211,
+      "native_weighted_residual_mean_mmag": 0.01224826042453041,
+      "night_independence_conditional_sandwich_mean_scale_mmag": 0.8020402932199504,
+      "qualification": "Descriptive assumption-conditional scale, not a calibrated test; inter-night dependence and fitted-parameter uncertainty omitted."
+    },
+    {
+      "Julian_season": 2012,
+      "rows": 2322,
+      "nights": 220,
+      "native_weighted_residual_mean_mmag": 0.4852166255154048,
+      "night_independence_conditional_sandwich_mean_scale_mmag": 0.3523267222915722,
+      "qualification": "Descriptive assumption-conditional scale, not a calibrated test; inter-night dependence and fitted-parameter uncertainty omitted."
+    },
+    {
+      "Julian_season": 2013,
+      "rows": 2324,
+      "nights": 212,
+      "native_weighted_residual_mean_mmag": -1.5842220281468005,
+      "night_independence_conditional_sandwich_mean_scale_mmag": 0.3099080582096948,
+      "qualification": "Descriptive assumption-conditional scale, not a calibrated test; inter-night dependence and fitted-parameter uncertainty omitted."
+    },
+    {
+      "Julian_season": 2014,
+      "rows": 2275,
+      "nights": 215,
+      "native_weighted_residual_mean_mmag": 0.9500572956314102,
+      "night_independence_conditional_sandwich_mean_scale_mmag": 0.25850887727848443,
+      "qualification": "Descriptive assumption-conditional scale, not a calibrated test; inter-night dependence and fitted-parameter uncertainty omitted."
+    },
+    {
+      "Julian_season": 2015,
+      "rows": 2183,
+      "nights": 205,
+      "native_weighted_residual_mean_mmag": 0.8455588041361964,
+      "night_independence_conditional_sandwich_mean_scale_mmag": 0.22995945739358323,
+      "qualification": "Descriptive assumption-conditional scale, not a calibrated test; inter-night dependence and fitted-parameter uncertainty omitted."
+    },
+    {
+      "Julian_season": 2016,
+      "rows": 473,
+      "nights": 173,
+      "native_weighted_residual_mean_mmag": -0.48059679062586136,
+      "night_independence_conditional_sandwich_mean_scale_mmag": 0.49514461039957486,
+      "qualification": "Descriptive assumption-conditional scale, not a calibrated test; inter-night dependence and fitted-parameter uncertainty omitted."
+    }
+  ],
+  "HST_visit_clusters": 11,
+  "HST_rows": 21,
+  "angular_linear_design_columns": 8,
+  "angular_linear_design_rank": 8,
+  "theta_E_fixed_geometry_partial_information_shares": [
+    {
+      "visit": "2022-09-13",
+      "theta_E_partial_information_fraction": 0.0027284059277757457
+    },
+    {
+      "visit": "2022-05-29",
+      "theta_E_partial_information_fraction": 6.039605045700158e-05
+    },
+    {
+      "visit": "2021-10-01",
+      "theta_E_partial_information_fraction": 0.005034403113898039
+    },
+    {
+      "visit": "2017-08-29",
+      "theta_E_partial_information_fraction": 0.004860251503325767
+    },
+    {
+      "visit": "2014-10-26",
+      "theta_E_partial_information_fraction": 0.008082935311125238
+    },
+    {
+      "visit": "2013-10-22",
+      "theta_E_partial_information_fraction": 0.03910094296126308
+    },
+    {
+      "visit": "2013-05-13",
+      "theta_E_partial_information_fraction": 0.14753415519631702
+    },
+    {
+      "visit": "2012-09-25",
+      "theta_E_partial_information_fraction": 0.06845675941779798
+    },
+    {
+      "visit": "2012-09-09",
+      "theta_E_partial_information_fraction": 0.1977485346481686
+    },
+    {
+      "visit": "2011-10-31",
+      "theta_E_partial_information_fraction": 0.01895940780673344
+    },
+    {
+      "visit": "2011-08-08",
+      "theta_E_partial_information_fraction": 0.5074338080631383
+    }
+  ],
+  "theta_E_fixed_geometry_inverse_Herfindahl_effective_visits": 3.076390158924816,
+  "angular_leverage_qualification": "Optimistic geometry/design diagnostic holding nonlinear trajectory fixed. This is not a robust covariance estimate or a finite-cluster coverage result.",
+  "interpretation": "Failed Gaussian variance structure alone does not invalidate correct-mean estimating equations. These descriptive checks do not establish inter-night independence or eliminate calibration/mean bias. A genuinely separate predeclared cluster/block estimator is mathematically possible, but no reliable mass support follows from existing G0 alone."
+}

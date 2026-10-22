@@ -1,0 +1,77 @@
+{
+  "schema": "bhtracker.independent_prediction_driver_review.v2.1",
+  "utc": "2026-10-22T20:51:38.561574+00:00",
+  "status": "PASS_EXACT_CONDITIONAL_GAUSSIAN_SCORE_AND_PROSPECTIVE_LOCAL_DAYTIME_PARTITION",
+  "measured_fits_run": false,
+  "driver_sha256": {
+    "run_v2_blocked_prediction.py": "cafdde87407f0a2555deaf99438ee505f3e21131f306b95fc5e74bf04caea2d8",
+    "run_v2_1_blocked_prediction.py": "d39ddc87ab63133e37c7cb4cce8834332f6a9b309e9cce51ca26c6df5e473ff4"
+  },
+  "scientific_source_sha256": "6eaf050481fc23aebf4b929e49fdab57e324ee80eb08e1547b69f056269eeaaa",
+  "partition_review": "JOINT_V2_1_PARTITION_INDEPENDENT_REVIEW.json",
+  "dense_schur_complement_checks": [
+    {
+      "family": "native_marginal_ou",
+      "f": 0.0,
+      "heldout_count": 4,
+      "Q_error": 1.6653345369377348e-16,
+      "relative_logdet_error": 0.0,
+      "passed": true
+    },
+    {
+      "family": "native_marginal_ou",
+      "f": 0.2,
+      "heldout_count": 4,
+      "Q_error": 1.3877787807814457e-16,
+      "relative_logdet_error": 1.3322676295501878e-15,
+      "passed": true
+    },
+    {
+      "family": "native_marginal_ou",
+      "f": 0.95,
+      "heldout_count": 4,
+      "Q_error": 5.329070518200751e-15,
+      "relative_logdet_error": 3.552713678800501e-15,
+      "passed": true
+    },
+    {
+      "family": "calibrated_marginal_ou",
+      "f": 0.0,
+      "heldout_count": 4,
+      "Q_error": 8.326672684688674e-17,
+      "relative_logdet_error": 5.995204332975845e-15,
+      "passed": true
+    },
+    {
+      "family": "calibrated_marginal_ou",
+      "f": 0.2,
+      "heldout_count": 4,
+      "Q_error": 3.0531133177191805e-16,
+      "relative_logdet_error": 7.105427357601002e-15,
+      "passed": true
+    },
+    {
+      "family": "calibrated_marginal_ou",
+      "f": 0.95,
+      "heldout_count": 4,
+      "Q_error": 1.199040866595169e-14,
+      "relative_logdet_error": 3.552713678800501e-15,
+      "passed": true
+    }
+  ],
+  "findings": [
+    "Actual driver evaluates all and training arrays with the same training-fitted nonlinear and covariance state, then subtracts photometric Q and relative log determinants only.",
+    "Dense Schur-complement conditional residual/covariance agrees, including train-held covariance, duplicate epochs, f=0/.2/.95 and calibration scale/floor.",
+    "Native held-out sigma determinant and N log(2pi) restore absolute negative twice Gaussian predictive density; native constants cancel for fixed-data candidate comparisons.",
+    "All HST stays in training. Reprofiled angular nuisance contributions are deliberately excluded from the photometric score difference.",
+    "Original midnight-based score is preserved as an exact conditional diagnostic, but its 154 short crossfold pairs invalidate the stated whole-night interpretation.",
+    "Version2.1 local-noon partition has2464 held-out measurements, no crossfold adjacent gap below0.25day, and identical IDs using independently sourced LCO longitude."
+  ],
+  "conditions_for_outcome_interpretation": [
+    "Training fit must converge and retain competing baseline modes; inspect failed/lower-objective states and use declared continuation if needed.",
+    "Plug-in conditional Q chi-square probabilities omit estimated mean/calibration uncertainty and are approximate; matching simulated/refitted controls are required for interpretation.",
+    "Training initialization from full-data modes is declared numerical mode discovery; final held-out score uses only the training objective fitted state.",
+    "Prediction success cannot override residual/structure/profile/systematics failures, and no numerical mass point is automatically a black-hole classification.",
+    "Never replace frozen partition IDs or model candidates based on predictive outcomes."
+  ]
+}

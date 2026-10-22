@@ -1,6 +1,14 @@
-# Validation and evidence: 0.2.0rc3 baseline
+# Validation and evidence: 0.2.0rc4
 
 Validation is separated into the reviewed physical-inference corrections, native unresolved observations, historical resolved-pair calibration, conditional theory, and installed workflows. A completed optimizer is not a scientifically adequate model. Internal agent checks are not external peer review.
+
+## Current installed release and joint validation
+
+The current product suite passes 233 tests; `product/validation/rc4_product_tests.xml` records the final run. The clean noneditable wheel passes the base-only and optional-astrometry installation probes. All four notebooks execute with that installed interpreter outside the checkout. Browser source-pack import, saved measured-state verification, native export/CLI replay and explicit unsuccessful-search diagnostics are checked. Current wheel/source hashes and final-head CI remain bound by release receipts rather than older historical files.
+
+The [separate 2023 joint audit](joint_known_system_20261022/README.md) retains frozen v1 and v2 algorithms, independent dense-covariance/Schur-complement checks, noiseless and zero-parallax controls, all three measured candidate baselines, 40 parametric controls, fixed-mass profiles, original limited UTC partition diagnostics and corrected local-noon whole-night validation. None of G0/G1/G2 is accepted: 15/15/8 residual bins fail, and G2 reaches the 100-day correlation cap. Conditional profile crossings have no accepted mass-interval status. The full calibration-sensitivity campaign is not required after the frozen all-models-fail stopping rule, and is not represented as performed. Internal checks are not external validation or general classification reliability.
+
+The following rc3 receipts remain historical evidence for the unchanged pilot and the five reviewed corrections.
 
 ## Reviewed corrections
 
@@ -48,7 +56,7 @@ The [literature annotation receipt](real_data_pilot_20261022/LITERATURE_ANNOTATI
 
 The corresponding 2022 Zenodo 6607578 v1.0.0 data contain 61,585 ground-based photometric rows and 16 HST rows at 8 shared visits. All five photometry-only fits converge with multistart confirmation, yet every one fails adequacy and has temporal/seasonal residual flags. Native reduced chi-square is 2.4515 jointly, 3.6754 OGLE-only, 2.0259 MOA-only, 2.4532 under the equal-instrument objective, and 2.4515 under signed blending.
 
-The equal-instrument photometric sensitivity is not Lam et al.'s published joint photometric/astrometric equal-weight likelihood. No mass recovery is claimed. Original HST export-time mapping/frame/calibration conventions remain unresolved; a naive MJD interpretation misses the matching F606W exposure windows. No guessed time shift or second filter correction is applied. Later 2023/2025 reductions are contextual literature, not substitutes for the supplied older inputs.
+The equal-instrument photometric sensitivity is not Lam et al.'s published joint photometric/astrometric equal-weight likelihood. No mass recovery is claimed. Original HST export-time mapping/frame/calibration conventions remain unresolved; a naive MJD interpretation misses the matching F606W exposure windows. No guessed time shift or second filter correction is applied. Later reductions do not substitute for the supplied older inputs. The rc4 analysis above uses a separately versioned primary 2023 reduction and source pack.
 
 ## Frozen sources and later documentation
 
@@ -58,7 +66,7 @@ The exact frozen kernels, protocol and driver are retained with [replay instruct
 
 The clean installed rc3 wheel retains the resolved GR/R1 workflows and imports the 734-row 0585 native file. Its native fit agrees with the frozen pilot (tE 268.172741 days), keeps BHSM interpretation explicit, and leaves every mass-derived quantity null. The actual browser-downloaded export replays through the installed CLI with maximum prediction difference 0.0 sigma, identical source-row identities and the same unavailable-mass fields.
 
-The [native app API receipt](product/validation/rc3_native_app_api_receipt.json) records nine focused interface checks. Final delivery receipts bind the actual installed wheel, notebook executions, PDF renders and final-head CI; earlier release receipts are historical and do not certify later bytes.
+The [native app API receipt](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/tree/9f1768a7fbac1d16e0e25713f87b8191cbe02249/products/blackhole_tracker/validation/rc3_native_app_api_receipt.json) records nine focused interface checks. Final delivery receipts bind the actual installed wheel, notebook executions, PDF renders and final-head CI; earlier release receipts are historical and do not certify later bytes.
 
 ## Historical resolved-pair and theoretical evidence
 
