@@ -2,8 +2,8 @@
 
 This BHSM repository is the formal reviewer home. `Manuscript-Generation`
 is the development workspace. Norman P. Carberry is the hypothesis and
-research author. The 170 upstream files are copied byte-for-byte from
-immutable development commit `09a8ee8c1ebd508757c88d94b9116ce111863301`.
+research author. The 176 upstream files are copied byte-for-byte from
+immutable development commit `3dedfc526cb534011ba28921df850bc2d1224fc3`.
 [FORMAL_PROVENANCE.json](FORMAL_PROVENANCE.json) records their paths, sizes
 and SHA-256. The [manuscript/release receipt](../../papers/bhsm_blackhole_tracker_20261021/provenance/FORMAL_REPOSITORY.json)
 records the formal product-code citation separately, avoiding a
@@ -15,7 +15,7 @@ Use the complete `BHSM_Blackhole_Tracker_Source.zip` or a matching
 `papers/`, `tools/` and both license notices. A full clone of the much larger
 BHSM repository is optional. The source includes four notebooks, the app,
 CLI/Python APIs, tests, pinned providers and historical validation records.
-The current product suite has **233 tests**. Software verification and replay
+The current product suite has **244 tests**. Software verification and replay
 do not establish scientific acceptance or journal acceptance.
 
 ## Install and run
