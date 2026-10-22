@@ -28,31 +28,32 @@ pdfsubject={Formal source and reviewer repository: https://github.com/ncarberry6
 \maketitle
 \begin{center}\small Research article for \emph{Galaxies}: Strong Gravitational Lens Modeling\end{center}
 \begin{abstract}
-Blackhole Tracker provides reproducible compact-lens inference with an
-explicit Berger--Hopf Standard Model (BHSM) boundary interpretation.
-Ordinary mass, center and motion describe one effective exterior in the
-adopted Einstein/GHY sector; its monopole also determines the principal
-extrinsic-curvature deficit and boundary energy of a declared enclosing sphere. One optical
-potential is counted once. A local app, command line, Python package and
-executed notebooks fit resolved image pairs, flux ratios and delays with
-full supplied covariance, nuisance profiling and explicit rejection or
-unresolved outcomes. In a fixed synthetic ten-year, three-source
-validation, all 64 noise realizations complete; nominal local 95\%
-interval coverage is 59--61 of 64 across five mass, center and motion
-components. Short cosmological tracks remain motion unresolved, and
-omitted shear produces a rejected fit. An optional scalar--tensor
-realization supplies a normalized boundary-to-lensing transfer and a
-uniform sufficient state bound throughout its retained exterior.
-Frozen full-line projection erases two quadrupole modes; the leading screened primary-pair
-delay response vanishes; a standard apparent-mass statistic confounds the
-leading response with shear. The admitted nearby envelope remains below
-the supplied noise. These results support candidate tracking and
-conditional response tests. No new black-hole detection, horizon
-classification, physical core-transfer law or selected deformation state
-is established.
+Blackhole Tracker provides reproducible lens inference with an explicit
+Berger--Hopf Standard Model (BHSM) boundary interpretation: one effective
+exterior is counted once. A local app, command line, Python package and
+executed notebooks support resolved image-pair data and a separate native
+unresolved-photometry likelihood. An internally frozen pilot processes
+all 100 supplied OGLE-III events and 76\,344 native measurements.
+Eighty-nine fail the specified photometric adequacy screen; eleven are
+not rejected by that screen, and only two pass the stricter archival
+follow-up criteria. Both are previously published events. Their
+timescales do not identify mass, distance or absolute motion; no new
+black-hole interpretation is established. A version-specific 2022
+known-system benchmark also rejects rectilinear photometry-only fits,
+while unresolved HST export-time and calibration metadata prevent
+precision joint mass inference. Earlier resolved-pair synthetic
+calibrations remain separately versioned evidence. Reviewed corrections
+remove numerical-reference dependence, admit physical nuisance profiles
+and preserve unavailable motion uncertainties. The optional
+scalar--tensor calculation gives a uniform sufficient boundary-state
+bound in its retained exterior, but two projected modes vanish and the
+leading apparent-mass response is degenerate with shear. The software
+supports auditable event screening and conditional response tests.
+Neither BHSM core dynamics, a detectable envelope, nor a horizon
+classification is measured by these observations.
 \end{abstract}
 \noindent\textbf{Keywords:} strong gravitational lensing; compact objects;
-Vainshtein screening; scalar--tensor gravity; boundary response; identifiability
+microlensing; native photometry; scalar--tensor gravity; boundary response; identifiability
 
 \section{Introduction: the Blackhole Tracker question}
 
@@ -78,6 +79,13 @@ physical contribution once. The name
 compact dark source. All rays in this paper lie far outside a declared
 worldtube, itself far outside the gravitational radius. Lensing on that
 domain does not establish a horizon or identify the compact interior.
+
+The real-observation extension adds a separate unresolved-photometry
+route and freezes its selection, likelihood and all-event reporting
+before fitting. It preserves the downloaded measurements instead of
+forcing them into a resolved-image contract. Its observational outcome is
+event screening with mass unresolved, including a retained negative
+benchmark result; it does not manufacture a black-hole classification.
 
 The central deliverable is a usable research product with an ordinary
 compact-lens tracking mode and an optional conditional boundary-response
@@ -440,13 +448,23 @@ amplitude. These bound omitted tails only. They do not bound every
 weak-field, cosmological or effective-theory correction.
 
 \input{product_workflow}
+\paragraph{Versioned historical calibration.}
+The following resolved-pair calibration retains its original 64-draw
+experiment and separate 128-draw follow-up, source versions and failed
+controls. It is historical evidence for that model and implementation,
+not a repeated calibration of the revised rc3 kernel or native
+unresolved-photometry likelihood.
 \input{product_validation}
+\input{real_observations}
 
 \section{What could actually be tracked?}
 
-The product demonstrates compact-lens inference under its declared synthetic
-measurement and covariance model. It does not demonstrate observational
-acquisition or a detectable BHSM envelope. The earlier broad information
+The resolved-pair product demonstrates compact-lens inference under its
+declared synthetic measurement and covariance model. The separate
+observational pilot demonstrates native-data ingestion, audited
+photometric screening and honest unavailable mass outputs. It identifies
+two historical archival-follow-up targets, but no mass-supported new
+black-hole interpretation or detectable BHSM envelope. The earlier broad information
 scan has a distinct limitation. For the illustrative cosmological mass and transverse
 speed $300$ km s$^{-1}$, ten observer years move the center only
 $0.00236$ pc, or $6.95\times10^{-6}r_E$. Traversing the broad synthetic
@@ -514,48 +532,65 @@ The addition combines their normalized R1 optical composition with an
 exterior-wide sufficient state cap and a runnable compact-lens inference
 workflow. Its theory exposes a delay-blind leading response, an exact
 apparent-mass/shear degeneracy and line-of-sight nulls. Its product retains
-full covariance and source freedom, and reports synthetic recovery with
-limited local-interval coverage checks together with weak-motion, mismatch and physically unresolved
-outcomes. The finite harmonic control makes a cause ambiguity exact
+full covariance and source freedom for resolved pairs, and reports
+historically versioned synthetic recovery with limited local-interval
+coverage checks. Its new unresolved route preserves native observations
+and carries every pilot outcome, including inadequate models and
+unavailable physical quantities, into the released table. The finite harmonic control makes a cause ambiguity exact
 rather than assigning every structured residual to BHSM.
 
 The result supports a theoretical and computational lens-modeling methods
-paper with a usable BHSM-interpreted research tool. Ordinary mass/motion
-recovery remains useful within that interpretation when no independent
-scalar deformation is resolved. Agreement with the Einstein-sector
+paper with a usable BHSM-interpreted research tool and a bounded
+observational screening pilot. Ordinary mass/motion recovery remains
+useful when identified by suitable data; unresolved light-curve
+timescales alone do not supply it. Agreement with the Einstein-sector
 response is allowed; it does not uniquely select the underlying theory. It does not yet establish
 a detectable BHSM deformation, horizon classification or a decisive new
 astrophysical discovery. Further R1 prediction needs a normalized
 black-hole/homogeneous-background boundary map selecting exterior flux
-and deformation dynamics. Observational use additionally requires actual
-resolved pairs, calibrated geometric fluxes and delays, and a model
-adequate for their environment. No telescope detection or journal
-submission is reported.
+and deformation dynamics. Resolved-pair use requires calibrated
+positions, geometric fluxes, delays and an adequate environmental model.
+Unresolved mass inference requires independent angular-scale and
+parallax information, verified clocks/frames and a validated joint
+likelihood. The two historical follow-ups warrant archival and imaging
+feasibility checks; their ranking supplies no mass or BHSM-specific
+detection. No new telescope detection or journal submission is reported.
 
 \paragraph{Data and code availability.}
-The complete source package contains the three preserved research
-projects, this manuscript, the \texttt{products/blackhole\_tracker/} package, executed
-notebooks, synthetic examples, source pins and numerical/review receipts.
-The paper's theoretical replay entry point is
-\texttt{scripts/reproduce.py}; the product's is
-\texttt{products/blackhole\_tracker/scripts/validate\_product.py}. Its README documents app,
-command-line and Python use and the data contract. All validation inputs
-are synthetic or theoretical; no fresh observational validation set is
-used. The formal reviewer repository is
+The formal reviewer repository is
 \href{https://github.com/ncarberry64/Berger-Hopf-Standard-Model}{Berger--Hopf Standard Model},
-with this paper under \texttt{papers/bhsm\_blackhole\_tracker\_20261021/}
-and the reviewable integration in
-\href{https://github.com/ncarberry64/Berger-Hopf-Standard-Model/pull/470}{draft PR 470}.
-The separate Manuscript-Generation repository is a development workspace.
-The inference code version for this release candidate is
-\texttt{bhsm-blackhole-tracker 0.2.0rc2}, code commit
-\href{https://github.com/ncarberry64/Berger-Hopf-Standard-Model/tree/33f26a5113392c0d2c323d7e4a36c7e81bd3ee29/products/blackhole_tracker}{\texttt{33f26a511339}}.
-The final release receipt binds the reviewed manuscript/source archive,
-wheel hashes and CI runs to the completed PR revision. A beginner can
-install the wheel, run \texttt{python -m bhtracker serve --open}, load the
-labeled nearby synthetic example and download its replay bundle.
-\texttt{python -m bhtracker replay analysis.zip --output replayed}
-repeats that saved configuration without an original private path.
+with the product under \texttt{products/blackhole\_tracker/} and this
+paper under \texttt{papers/bhsm\_blackhole\_tracker\_20261021/}.
+The rc3 integration branch is
+\href{https://github.com/ncarberry64/Berger-Hopf-Standard-Model/tree/codex/blackhole-tracker-real-data-20261022}{\texttt{codex/blackhole-tracker-real-data-20261022}};
+the separate Manuscript-Generation repository is a development workspace.
+The rc3 product source is pinned to formal revision
+\href{https://github.com/ncarberry64/Berger-Hopf-Standard-Model/tree/002b9ecfe2f1a778b68b7558581997c05919ae93/products/blackhole_tracker}{\texttt{002b9ecfe2f1}}.
+The final release receipt pins the completed source revision, wheel,
+manuscript PDF and CI outcomes. The theory/source reconciliation is
+independently pinned to formal revision
+\href{https://github.com/ncarberry64/Berger-Hopf-Standard-Model/tree/705d4c7e2f9a832b457f63ff975e7d4dc8008645}{\texttt{705d4c7e2f9a}}.
+Earlier synthetic/theoretical projects and their receipts remain
+versioned historical material.
+
+The original OGLE project supplies the native pilot observations
+\cite{Wyrzykowski2015}; the 2022 benchmark is Zenodo 6607578 version
+1.0.0, declared CC BY 4.0 \cite{Lam2022Data}. Native source files remain
+external and unmodified; the distribution provides source URLs, required
+citations, hashes and fetch/replay instructions. Raw OGLE redistribution
+is not assumed from download access. The public
+\texttt{real\_data\_pilot\_20261022/} directory contains the frozen protocol,
+source/kernel pins, compact all-event results, profiles and fit
+diagnostics, all 100 residual plots, historical benchmark results and
+separate literature annotations. Complete native rows and source-line
+identities are retained in external replay products. Source recovery and
+metadata gaps are documented with archived primary-source hashes.
+Theoretical replay uses \texttt{scripts/reproduce.py}; product validation
+and interface instructions are in the product README. The installed
+app's analysis export is replayable through
+\texttt{python -m bhtracker replay analysis.zip --output replayed};
+the native route preserves its data contract, original source identity,
+BHSM interpretation and unavailable mass fields.
 
 \paragraph{Author contributions.}
 Conceptualization, methodology, formal analysis and writing:
@@ -571,7 +606,8 @@ The author declares no conflicts of interest.
 
 \paragraph{Institutional review board and informed consent.}
 Not applicable. This theoretical and computational study uses synthetic
-measurements and introduces no human-participant or animal research.
+validation measurements and public archival astronomical observations;
+it introduces no human-participant or animal research.
 
 \paragraph{Acknowledgments and AI/tool disclosure.}
 During preparation of this manuscript and study, OpenAI ChatGPT and
@@ -587,5 +623,6 @@ with Norman P. Carberry.
 \appendix
 \input{estimator_derivation}
 \bibliographystyle{unsrtnat}
+\setlength{\bibsep}{2pt}
 \bibliography{refs}
 \end{document}

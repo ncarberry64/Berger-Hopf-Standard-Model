@@ -3,9 +3,11 @@
 
 The released research product makes the compact-lens measurement task
 operational. A local browser app, command line, importable Python package
-and two executed notebooks share the same versioned data contract and
-inference engine. This is an offline analysis tool for supplied resolved
-primary-pair measurements, not a sky-survey acquisition service. Its
+and three executed notebooks provide separate versioned resolved-pair and
+native-photometry contracts. This is an offline analysis tool; the
+resolved mode described here takes supplied primary-pair measurements.
+The native route and its measured-data pilot are treated in
+Section~\ref{sec:real-observations}. Its
 ordinary-lens mode estimates the mass, center and motion of the
 BHSM-described exterior, with the explicit boundary dictionary of
 Section~\ref{sec:bhsm-interpretation}. Its optional R1 mode evaluates the
@@ -34,7 +36,7 @@ reconstruction, survey acquisition or observational validation of those
 assumptions. No superiority or priority follows from these scope differences.
 
 \paragraph{Computational methods and generative AI.}
-The reproducible software is Blackhole Tracker, version 0.2.0rc2;
+The reproducible software is Blackhole Tracker, version 0.2.0rc3;
 the versioned source, environments and executable checks are supplied
 with the release. OpenAI ChatGPT and Codex (GPT-6 model family) assisted
 source recovery, mathematical derivation, code and test generation,
@@ -97,6 +99,28 @@ have unavailable uncertainties. Center-track bands propagate the
 center--motion cross covariance. Reoptimized one-coordinate likelihood
 profiles are available from the command line and notebook; their usual
 $\Delta\chi^2$ reference values do not guarantee nonregular coverage.
+
+The reviewed implementation optimizes near a data-derived epoch without
+finite numerical boxes on center or source positions. It reports the
+center at the supplied epoch using
+$\boldsymbol c_{\rm rep}=\boldsymbol c_{\rm opt}+
+\boldsymbol\mu(t_{\rm rep}-t_{\rm opt})$.
+The full identified-subspace covariance and null directions transform
+with the reporting Jacobian, including center--motion cross terms.
+Unidentified physical covariance is unavailable; a truncated inverse is
+not reported as precise motion uncertainty. Weak but identifiable motion
+retains finite covariance. Numerical reference mass changes do not alter
+the physical position domain or the separately fixed physical bounds of
+compact multipoles. Persisted basis metadata prevent reinterpretation of
+legacy internal coordinates.
+
+Each fixed-parameter profile genuinely searches admissible nuisance
+states under the public weak-field, worldtube, motion and conditional-R1
+constraints. Interior and boundary optima remain distinct from numerical
+failure and unresolved physical-domain searches. A failure to find an
+admissible state does not prove infeasibility. Only admitted solved rows
+relative to an admitted reference minimum can supply a physical
+likelihood crossing; unresolved rows have unavailable likelihood values.
 
 \subsection{Product decisions and the conditional extension}
 \texttt{FIT\_REJECTED} denotes solver failure, unacceptable residuals

@@ -1,0 +1,180 @@
+{
+  "hst_cross_filter": {
+    "applied_offset_in_this_work": null,
+    "interpretation": "Small residual weighted offsets are consistent with alignment having been applied, but do not certify all released-table transformations or bias/frame covariance",
+    "paper_basis": "Offsets computed after neighbor-bias correction",
+    "paper_section": "Lam2022 ApJS26055 section4.2.5 equations9-14",
+    "paper_shift_f606w_mas": {
+      "east": -0.57,
+      "north": 0.39
+    },
+    "released_table_pair_diagnostic": {
+      "east": {
+        "assumed_independent_standard_error_mas": 0.1778944475955437,
+        "assumption": "Diagonal independent reported errors only; not a supplied covariance",
+        "weighted_814_minus_606_mas": -0.0036006187651197175
+      },
+      "north": {
+        "assumed_independent_standard_error_mas": 0.17832704206601324,
+        "assumption": "Diagonal independent reported errors only; not a supplied covariance",
+        "weighted_814_minus_606_mas": 0.02875955930497852
+      }
+    },
+    "remaining_gap": "Exact export/reduction provenance specifying already-applied offsets, coordinate origins, sign conventions and shared-frame covariance"
+  },
+  "hst_time": {
+    "compared_shared_epochs": 8,
+    "header_evidence": [
+      {
+        "downloaded_prefix_bytes": 28800,
+        "header": {
+          "DATE-OBS": "2011-08-08",
+          "EXPEND": 55781.74279014,
+          "EXPSTART": 55781.69125072,
+          "EXPTIME": 285.0,
+          "FILTER": "F606W",
+          "INSTRUME": "WFC3",
+          "MJDREF": null,
+          "ROOTNAME": "ibnc06010",
+          "TARGNAME": "OGLE-2011-BLG-462",
+          "TIME-OBS": "16:35:24",
+          "TIMESYS": null,
+          "TIMEUNIT": null
+        },
+        "http_status": 206,
+        "sha256": "e058c85778499713b450b3dda0f0f1a9ec727b95c19119098fcdc51d7dbd58a6",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ibnc06010_drz.fits"
+      },
+      {
+        "downloaded_prefix_bytes": 28800,
+        "header": {
+          "DATE-OBS": "2017-08-29",
+          "EXPEND": 57994.75655345,
+          "EXPSTART": 57994.68640329,
+          "EXPTIME": 750.0,
+          "FILTER": "F606W",
+          "INSTRUME": "WFC3",
+          "MJDREF": null,
+          "ROOTNAME": "hst_14783_51_wfc3_uvis_f606w_idaj51",
+          "TARGNAME": "OGLE-2011-BLG-462",
+          "TIME-OBS": "18:05:16",
+          "TIMESYS": null,
+          "TIMEUNIT": null
+        },
+        "http_status": 206,
+        "sha256": "afb21ee2221aa662f48ae23718a2697f36367483a2f3e7ff0addd844dd710fd1",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/hst_14783_51_wfc3_uvis_f606w_idaj51_drc.fits"
+      },
+      {
+        "downloaded_prefix_bytes": 28800,
+        "header": {
+          "DATE-OBS": "2021-10-01",
+          "EXPEND": 59488.39178755,
+          "EXPSTART": 59488.3598085,
+          "EXPTIME": 2035.0,
+          "FILTER": "F606W",
+          "INSTRUME": "WFC3",
+          "MJDREF": null,
+          "ROOTNAME": "ieos01020",
+          "TARGNAME": "OGLE-2011-BLG-0462",
+          "TIME-OBS": "08:38:07",
+          "TIMESYS": null,
+          "TIMEUNIT": null
+        },
+        "http_status": 206,
+        "sha256": "39d4dee2d2839ad64914c9594262819c400db464e21db5ac67fc437ede3a9659",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ieos01020_drz.fits"
+      }
+    ],
+    "historical_reader": "2022-06-17 BAGLE converts private reduction FITS t via Time(...,format=jyear,scale=utc).mjd",
+    "mast_query": {
+      "instrument_name": "WFC3/UVIS",
+      "obs_collection": "HST",
+      "rows": 42,
+      "s_dec": [
+        -29.893,
+        -29.888
+      ],
+      "s_ra": [
+        267.916,
+        267.919
+      ]
+    },
+    "native_clock_label": "UTC, per Zenodo README",
+    "native_rows_inside_nearest_exposure_if_mjd": 0,
+    "next_required": "Exact reduction/export mapping and frame provenance, or author-validated corrected epoch table; no blanket one-day shift or guessed epoch origin",
+    "numeric_epoch_origin": "UNRESOLVED_FOR_THIS_EXPORTED_TABLE",
+    "provenance_limit": "Reader is contemporaneous independent corroboration; exact source FITS and ASCII export script tying these deposited bytes to the reader are not public/recovered",
+    "transformation_applied": null
+  },
+  "likelihood": {
+    "DW": "logL_ground_phot+logL_HST_phot+logL_HST_ast, with each datum weighted by its reported/model noise",
+    "EW_paper_equation31": "logL_ground/n_ground+logL_HST_phot/n_HST_phot+logL_HST_ast/n_HST_ast",
+    "GP_scope": "Supplement AppendixF describes magnitude GP+Gaussian likelihood, HST diagonal covariance; Table19 has no GP hyperparameters for OB110462, so do not claim an exact deposited OB110462 GP recovery without run configuration",
+    "historical_code_caveat": "20220617 weighted solver has phot_ast_equal and all_equal choices; all_equal includes an overall factor1e-3*n_data/n_sets in addition to1/n_i and counts astrometric coordinates twice. It is not evidence of which precise run configuration generated published samples",
+    "independent_fit_comparison": "A new rectilinear diagonal fit is a screening analysis with distinct likelihood/prior assumptions, not reproduction of the published parallax+joint posterior"
+  },
+  "photometric_time": {
+    "historical_reader_convention": "BAGLE labels OGLE JD numbers UTC; its MOA reader explicitly undoes heliocentric light-travel correction using observer location, coordinates and Time(jd,utc)",
+    "limit": "That code reads a different raw MOA6-column format, not the deposited3-column calibrated table; do not apply it blindly to deposited bytes",
+    "native_label": "HJD; OGLE3 has explicit2450000 offset, benchmark is full HJD",
+    "precision_annual_parallax": "Not validated for these data until relevant source timing conventions are established",
+    "rectilinear_relative_time": "Allowed under a documented limited relative-time convention; numeric origin changes are not a physical clock/heliocentric conversion",
+    "underlying_scale": "UNRESOLVED_IN_DEPOSIT_AND_OGLE_ARCHIVE_READMES"
+  },
+  "raw_observations_modified": false,
+  "review_date": "2026-10-22",
+  "rights": {
+    "ogle3": {
+      "archive": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/",
+      "finding": "Source project explicitly asks citation of Wyrzykowski etal; a dataset-wide redistribution license was not found in project page/packaged README. Public analysis and source attribution permitted by project use invitation; blanket republication rights not inferred",
+      "page": "https://ogle.astrouw.edu.pl/cont/4_main/len/bulge_o3/",
+      "release_policy": "Keep immutable raw files external/private reproducibility store; ship fetch/hash instructions and analysis products, not raw OGLE observations, absent clarified redistribution terms"
+    },
+    "zenodo6607578": {
+      "license_id": "cc-by-4.0",
+      "not_software_license": "Do not relabel third-party observations as BHSM code license",
+      "public_redistribution": "CC-BY-4.0 recorded by author-deposit metadata; preserve attribution, DOI, version, README, hashes and any changes"
+    }
+  },
+  "schema_version": 1,
+  "sources": [
+    {
+      "path": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_real_data_20261022\\metadata_research\\lam2022_apjs.pdf",
+      "sha256": "3521462e82a9087447bb951052c05824522795e6aac20947bc1bd22fa1febe4a",
+      "url": "https://ntrs.nasa.gov/api/citations/20230003522/downloads/Lam_2022_ApJS_260_55.pdf"
+    },
+    {
+      "path": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_real_data_20261022\\metadata_research\\lam2022_main.pdf",
+      "sha256": "4ad889766e8580393f0e2fe4df88673498f6ce8e79fe236b6468b9fa9cc12bc5",
+      "url": "https://assets.science.nasa.gov/content/dam/science/missions/hubble/releases/2022/06/STScI-01G4WSXF3BDFW593F2WS9KY0VQ.pdf"
+    },
+    {
+      "path": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_real_data_20261022\\metadata_research\\bagle_data_20220617.py",
+      "sha256": "e71f8effb73a556cf74ce20ec5eedd8656ddda140fc94bfa426d35e07694c413",
+      "url": "https://raw.githubusercontent.com/MovingUniverseLab/BAGLE_Microlensing/51e0f6e7220fc88cf6065ed1672a5db8be2b319e/src/bagle/data.py"
+    },
+    {
+      "path": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_real_data_20261022\\metadata_research\\bagle_model_fitter_20220617.py",
+      "sha256": "c37ab3886d8b85d8de0f0e2f60fa0953e80a153cc487abb05febfa82d9bb84f8",
+      "url": "https://raw.githubusercontent.com/MovingUniverseLab/BAGLE_Microlensing/51e0f6e7220fc88cf6065ed1672a5db8be2b319e/src/bagle/model_fitter.py"
+    },
+    {
+      "path": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_real_data_20261022\\metadata_research\\bagle_data.py",
+      "sha256": "b0bafe43274fa2addaafed422e0291efb49d070b2862f3f713bd4db7e5d10912",
+      "url": "https://raw.githubusercontent.com/MovingUniverseLab/BAGLE_Microlensing/346b011031bddecbdbe5570ab0859dc52c03762c/src/bagle/data.py"
+    },
+    {
+      "path": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_real_data_20261022\\metadata_research\\zenodo_metadata.json",
+      "sha256": "ba077b474f0cbc3cc00d4c97ee630999abc363fbf1c7e53a660a283cb8326ae5",
+      "url": "https://zenodo.org/api/records/6607578"
+    },
+    {
+      "path": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_real_data_20261022\\metadata_research\\mast_ob110462.csv",
+      "sha256": "246cbc20ebfd500fcfc9d05ef191d6b705ffd4d47f3da591245256ac7679cdf3",
+      "url": "https://mast.stsci.edu/api/v0/invoke [astroquery.mast Observations.query_criteria]"
+    }
+  ],
+  "status": "PHOTOMETRIC_RELATIVE_TIME_FIT_ALLOWED_PRECISION_JOINT_ASTROMETRY_UNRESOLVED",
+  "synthetic_or_posterior_files_used_as_observations": false
+}

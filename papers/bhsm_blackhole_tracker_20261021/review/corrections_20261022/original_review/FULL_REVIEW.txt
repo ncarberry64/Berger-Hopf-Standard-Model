@@ -1,0 +1,469 @@
+BHSM CORE/SURFACE AMENDMENT AND BLACK HOLE TRACKER
+Independent review of the completed update — 22 October 2026
+
+REVIEW OUTCOME
+
+The update forms a coherent research release: the formal BHSM repository,
+tracker source, installable wheel, manuscript and Museum exhibit agree about
+the release and its scientific scope. The existing product suite passes.
+The core/surface interpretation is carried into the tracker without inventing
+measurements of the core or counting the same gravitational contribution twice.
+
+Four substantive corrections are recommended: three reproducible software
+defects and one missing qualification on a theory equation. A fifth, lower
+priority item is a source-version reconciliation. These findings warrant a
+targeted correction release. They do not require reopening every historical
+BHSM calculation or treating all matching constructions as absent.
+
+Priority P2 below means a material correctness or interpretation issue that
+should be corrected before relying on the affected output for scientific
+inference. P3 denotes a provenance cleanup. No P0/P1 issue was established in
+the reviewed scope. This is a review, not an implementation of the fixes.
+
+Finding list:
+  F1 / P2: Coordinate conventions alter the fit's physical search domain.
+  F2 / P2: Likelihood profiles admit unmarked points outside the physical domain.
+  F3 / P2: Unidentified motion is exported with a near-zero public covariance.
+  F4 / P2: The radial membrane equation omits its flat/constant-tension assumptions.
+  F5 / P3: The source-gap record needs reconciliation with the named handoff.
+
+1. EXACT REVIEWED STATE
+
+Formal repository:
+  ncarberry64/Berger-Hopf-Standard-Model
+  merged PR #470
+  main: 2fb1eeac19337d59de72ef1d0493dd3e2f0eae69
+  reviewed PR head: 925b1ce0d7002757b682c55ab491b551806bb452
+  identical Git tree at both:
+    7b4dd12045790b26f97d2e173d5df07bd681ee44
+
+Development repository:
+  ncarberry64/Manuscript-Generation
+  PR #24 is still open and draft; this is separate from the merged formal PR.
+  reviewed head: 71768ad14cce05fc3be780445d4d35b975a9f831
+
+Product: bhsm_blackhole_tracker 0.2.0rc2.
+Paper: published 30-page tracker manuscript.
+The exact artifacts, hashes, environment and CI jobs are recorded in evidence/.
+All repository locations below refer to the pinned formal main commit.
+
+The review covered the changed theory amendment and its cited constructions,
+the interpretation contract, tracker inference and physical admission,
+scientific derivations in the manuscript, exports and replay, source/wheel
+consistency, CI results, paper presentation and the live Museum exhibit.
+It was not an audit of every historical BHSM theorem or an observational
+validation campaign. No repository content was edited, and no submission,
+deployment, merge or message to another person was made during this review.
+
+2. FINDINGS
+
+F1 / P2 — Coordinate conventions alter the physically permitted fit
+
+Location:
+  products/blackhole_tracker/bhtracker/inference.py:43–44, 64, 69–75
+  products/blackhole_tracker/bhtracker/forward.py:24–29
+
+The center coordinates are restricted to plus/minus 20 computational Einstein
+radii around the observed-image centroid. Source coordinates are restricted
+to plus/minus 30. The fitted center is nevertheless defined at the user's
+chosen reference epoch. Changing that epoch can move the correct reference
+center outside the numerical box even though its track at all observed epochs
+is unchanged. Changing the numerical reference mass changes the physical sizes
+of both boxes.
+
+This contradicts the intended role of a reference epoch and the documented
+description of reference_mass_msun as numerical normalization rather than a
+physical mass prior. Returning the optimizer's bounds does not make these
+coordinate-dependent restrictions into physical evidence against the track.
+
+Reproduction used the existing independently constructed exact 10-solar-mass
+point-lens fixture. The measurements, full covariance, physical mass bounds
+and explicitly supplied physical worldtube radius were held fixed:
+
+  t_ref     reference mass     fit mass       status          chi-square
+  2026      7                  10.000000      TRACKED         5.66e-25
+  2000      7                  10.304640      FIT_REJECTED    9628.77
+  2026      0.001              11.181477      FIT_REJECTED    26598.72
+  2026      100000             10.000000      TRACKED         3.89e-25
+
+In every case the correctly transformed physical truth passes the public
+forward model's physical checks and reproduces the measurements to a maximum
+absolute difference below 2.31e-14. The rejected cases report an active bound;
+they do not silently claim a valid detection. Their rejection still arises
+from parameterization rather than a change in data or physical validity.
+
+Recommended correction:
+  Fit a center at a stable internal epoch near the observations, then transform
+  the center and covariance to the requested reporting epoch. Define physical
+  positional bounds independently of numerical normalization, or transform
+  explicitly specified physical bounds consistently. Preserve genuine physical
+  mass, speed and worldtube constraints.
+
+Acceptance criterion:
+  Equivalent reference epochs and numerical normalizations must recover the
+  same admitted physical track and objective to the stated numerical tolerance.
+  Include a conventional distant reference epoch and small/large normalization
+  choices while keeping the physical worldtube fixed.
+
+Evidence: evidence/repro_coordinate_domain.py and its recorded JSON.
+Source: [S1], [S2], [S3].
+
+F2 / P2 — Likelihood profiles include physically inadmissible states
+
+Location:
+  products/blackhole_tracker/bhtracker/inference.py:238–247
+
+The profile objective calls calculate(..., admit=False). After each nuisance
+optimization it records parameter value, chi-square and numerical convergence,
+without checking the optimized state's physical admission. All rows enter the
+profile normalization. A converged optimizer result can therefore be presented
+as an ordinary physical likelihood point even when the public forward model
+rejects that same state.
+
+Reproduction starts with the noiseless nearby_motion example, nuisance='none',
+starts=1. It sets the declared weak-metric cap to the true minimum-image-impact
+GM/(c^2 b) ratio times 1.00001:
+  weak_metric_cap = 6.116157051213848e-08.
+
+The baseline is admitted and TRACKED at mass 100000 solar masses. The resulting
+mass profile includes these numerically converged points:
+
+  mass                 delta chi-square     independent physical admission
+  100000.000000        0                    accepted
+  100038.050144        1.000232831          rejected
+  100076.114767        4.001862924          rejected
+  100114.193873        9.006288306          rejected
+
+For the first rejected point, the actual weak ratio is
+6.116174562489037e-08. The public forward calculation rejects it with the
+worldtube_weak_metric condition. The profile row has no corresponding flag.
+
+The deliberately tight cap is a domain-boundary regression probe. It makes no
+claim about the size of an astrophysical approximation error. The existing
+warning about nonregular statistical coverage addresses a different issue:
+the physical domain must also be honored or reported explicitly.
+
+Recommended correction:
+  Solve the nuisance problem within the admitted physical domain, or mark and
+  exclude inadmissible unconstrained optima from physical interval inference.
+  Report physical-domain truncation separately from optimizer convergence and
+  numerical box truncation. Dropping an inadmissible nuisance optimum alone
+  does not compute the corresponding constrained optimum; label that situation
+  accurately if a constrained solve has not been performed.
+
+Acceptance criterion:
+  An admitted baseline whose profile reaches a physical boundary must not
+  return an unqualified physical delta-chi-square crossing outside that boundary.
+  Cover the ordinary weak-field and conditional R1 admission paths when fixing it.
+
+Evidence: evidence/profile_admission_repro.py and profile_admission_result.json.
+The wrapper only records optimized nuisance parameters; it does not change the
+objective or solver and restores the original function afterward.
+Source: [S1], [S3], [S4].
+
+F3 / P2 — Unidentified proper motion receives a near-zero exported covariance
+
+Location:
+  products/blackhole_tracker/bhtracker/inference.py:133–140, 164, 192
+
+With all observations at the reference epoch, proper motion has no effect on
+the predictions. The public forward model produces exactly identical values
+for two distinct admitted motions in the reproduction.
+
+The fit correctly reports PARTIALLY_IDENTIFIED, null motion standard errors,
+null motion signal-to-noise and two unidentified motion directions. However,
+the exported proper_motion_covariance is approximately:
+
+  [[9.597701500478059e-35, 5.502449251278180e-35],
+   [5.502449251278180e-35, 3.065847069228179e-34]]
+
+These values come from the truncated pseudoinverse on identified directions.
+They are not ordinary variances of the unconstrained physical motion. A user
+propagating this public matrix can assign essentially perfect precision to a
+quantity the observations cannot determine. Scalar errors and the GUI already
+handle the lack of identification correctly; the defect is the contradictory
+public covariance and its exported representation.
+
+Recommended correction:
+  Mark affected covariance entries, or the whole unidentified motion block,
+  unavailable. If a generalized inverse on the identifiable subspace is useful,
+  expose it separately with the relevant projector/null-space information.
+
+Acceptance criterion:
+  Repeated-epoch data must produce consistent unavailable uncertainty in all
+  public representations of motion. Preserve finite, valid covariance in an
+  ordinary identifiable-motion control.
+
+Evidence: evidence/repro_null_motion_covariance.py and its recorded JSON.
+Source: [S1], [S3].
+
+F4 / P2 — The membrane equation needs explicit background restrictions
+
+Location:
+  docs/BHSM_NORMAN_CORE_SURFACE_AMENDMENT_20261022.md:184–203
+  theory/bhsm_covariant_bubble_interface_mechanics.md:69–86
+
+Equation (6) presents the radial reduction
+
+  gamma [ R_ddot/(1-R_dot^2)^(3/2)
+          + p/(R sqrt(1-R_dot^2)) ] = Delta P.
+
+It follows from L = -gamma Omega_p R^p sqrt(1-R_dot^2), assuming a round
+spatial p-sphere, fixed Minkowski background, constant tension, coordinate-time
+derivatives and c=1. Spherical symmetry on regular geometry is insufficient.
+
+For example, on the regular static exterior
+
+  ds^2 = -f(r) dt^2 + dr^2/f(r) + r^2 dOmega_p^2,  f(R)>0,
+
+the induced Lagrangian is
+
+  L = -gamma Omega_p R^p sqrt(f(R) - R_dot^2/f(R)).
+
+Already at a static surface, the outward-normal mean-curvature contribution is
+
+  K = f'(R)/(2 sqrt(f(R))) + p sqrt(f(R))/R,
+
+which differs from p/R. A changing environmental tension or backreacting
+geometry also requires its own terms. The flat-background assumption later
+stated for the scalar front calculation qualifies a different derivation.
+
+Recommended correction:
+  Introduce Eq. (6) explicitly as the fixed-Minkowski, constant-tension special
+  case, with |R_dot|<1 and c=1. For curved or backreacting geometries, direct the
+  reader to the covariant traction equation evaluated with the actual induced
+  metric. Apply the same qualification to the inherited mechanics document.
+
+This is a scope defect in theory documentation. No current tracker numerical
+prediction error has been attributed to this membrane equation.
+Source: [S5], [S6].
+
+F5 / P3 — Reconcile the source-gap record without rewriting history
+
+Location:
+  docs/BHSM_NORMAN_CORE_SURFACE_AMENDMENT_20261022.md:273–278, 337–344
+  artifacts/current_semantics/BHSM_NORMAN_CORE_SURFACE_AMENDMENT_20261022.json
+  tools/check_norman_core_surface_consequences.py
+
+The published account says the received handoff had two blank historical
+filenames, and its ledger records two null filenames. The handoff available in
+this review explicitly names these two documents, both of which are available:
+
+  BHSM_Frame_Dragging_and_Nonlinear_Front_Derivation_v0_1.pdf
+  BHSM_Galaxy_Envelope_Formation_and_Persistence_v0_1.pdf
+
+The two handoff hashes differ:
+  review copy:
+    149ba5efafd46be01bde9fe9513c1c83788b8a5f41c2127a4e2e5e6ce358517c
+  hash recorded for the received implementation handoff:
+    d604c8c48f66d6753bbf0b95bbb3d0953fd7d5e0d2d134b4288e2eeed38c5240
+
+Consequently, the review cannot establish that the historical description of
+what the implementation agent received was false. This is a version/source
+reconciliation opportunity, not evidence of misconduct or a failed derivation.
+
+Recommended correction:
+  Preserve and identify the originally received version. Add the named-file
+  version, recover/hash the two original PDFs, compare their scoped results and
+  update the ledger's current recovery status. Do not silently replace historical
+  provenance or claim the original calculations are recovered without comparison.
+Source: [S5], [S7], and the prior handoff retained with this conversation.
+
+3. INDEPENDENT VALIDATION
+
+Product suite:
+  133 passed, 0 failed, 0 skipped, in 32.42 seconds in this review.
+  This was the released source test suite. Some test modules add the source
+  directory to imports, so it is not described as 133 installed-wheel-only tests.
+
+Packaging:
+  All 108 product source files match the formal source manifest in bytes/hash.
+  All 46 runtime files in the wheel are byte-identical to the source release.
+  The source ZIP, wheel and paper hashes match the reviewed distribution records.
+
+Separate installed-wheel exercise:
+  Imports were verified to resolve outside the source checkout.
+  The noiseless nearby_motion fit recovered mass 100000 with status TRACKED.
+  Its complete analysis was exported to ZIP and replayed successfully.
+  Prediction difference in supplied sigma units was exactly 0.
+  Package content and interpretation schema 2 data matched exactly.
+
+CI:
+  13 active formal product/paper/core/institutional jobs succeeded at the
+  reviewed PR head. Its Git tree is identical to merged main.
+  The optional full-historical-regression job was SKIPPED, not passed.
+  The separate development workspace's five current-head jobs succeeded.
+  Public Pages deployment succeeded at the merged main commit.
+  Remote job success was verified; the whole historical repository suite and
+  all development-workspace tests were not rerun locally for this review.
+
+Paper and Museum:
+  The 30-page PDF was rendered and all page contact sheets were inspected; no
+  clipping or overlapping layout was found at that review scale. The scientific
+  content was also checked from the manuscript source. This was not a full-size
+  glyph-by-glyph proofread of every page.
+  The live Museum's Blackhole Tracker deep link, epoch controls, mass control
+  and release panel worked. The exhibit labels the data as synthetic, the mass
+  as a forward-model input and the Einstein scale separately from a horizon.
+  The local app server/API was exercised by the product suite. Its browser UI
+  and the Museum's mobile layout were not independently retested in this pass.
+  Artifact bytes were checked from the pinned Git release; the review did not
+  assert a separate hash comparison of every live CDN response.
+
+These checks establish reproducible software behavior within the exercised
+domain. They do not establish an observed compact object or the physical truth
+of the new core and encapsulation hypotheses.
+
+4. SCIENTIFIC ASSESSMENT
+
+Core and regular spacetime
+
+The amendment preserves Norman P. Carberry's central distinction: the common
+core has no primitive spacetime metric, clock, trajectory, volume or propagation
+speed. Its proposed mode weights, representation relations and algebraic phases
+remain abstract. A mode label becomes a physical frequency or length only when
+a correspondence and spacetime-side calibration are supplied.
+
+This still permits mathematical structure in the core description. It avoids
+silently putting an ordinary geometric Laplacian or clock into the core, or
+relabeling an existing regular child variable as the nongeometric core. The
+existing regular incidence, reciprocal attachment and KKT constructions retain
+their own scope. The amendment's completion flags remain appropriately open.
+
+Formation, persistence and terminal transition
+
+The inherited spacetime differential, frame dragging, interface formation,
+boundary-supported persistence and exceptional terminal core transition remain
+distinct claims. The definitions preserve encapsulation as persistent boundary
+dominance at a stated scale/environment. The exceptional zero-daughter terminal
+route is not equated with ordinary persistent encapsulation.
+
+The restricted nonlinear scalar calculation does demonstrate a possible local
+steepening route for compressive data while its kinetic margin stays positive.
+It does not yet yield a selected shock continuation, closed stable skin, hard
+noninteraction, galaxy formation history or neutron-star endpoint. Its own
+source-free stationary-flux result also rules out a nontrivial derivative jump
+within the connected positive branch studied. Those are useful scoped results,
+and both should remain visible.
+
+The hard-boundary condition is stronger than a transmitting enclosure or a
+single input with zero outgoing signal. The terminal zero-daughter proposal
+still needs charge/flux accounting and a physical matching law. The quantum,
+three-quark and double-slit illustrations remain hypotheses/interpretations;
+the current tracker does not test their classification or a universal
+interference cutoff. Quiet radiation alone does not identify a horizon-free
+neutron-star transition.
+
+What the tracker establishes conditionally
+
+The ordinary fit reconstructs effective optical mass, reference location and
+observer proper motion under supplied distances, clock, image association,
+covariance, source freedom and lens/environment family. The BHSM Einstein/GHY
+interpretation can accompany this fit without requiring a non-GR residual.
+
+The boundary energy and principal extrinsic-curvature deficit are derived
+representations of the same mass at a declared radius. Their factors, units,
+inverse mass identities and local uncertainty propagation are consistent in
+the reviewed static Schwarzschild sector. They do not measure a hard boundary
+radius. The mass contribution is counted once. The conditional R1 response
+uses its separate declared conventions, and the Schwarzschild boundary identity
+is withheld for R1 rather than applied to a different mass definition.
+
+The conditional core-to-optical response formula is also correctly framed:
+if a physical correspondence F(Q,a)=0 and an appropriate constrained inverse
+K^-1 exist, then D_a Q = -K^-1 D_a F. The optical response follows by the chain
+rule, with explicit direct terms retained when relevant. Its distinguishable
+part must survive nuisance projection. These equations organize a calculation;
+they do not choose the missing physical correspondence. The software correctly
+uses unavailable/NOT_INFERRED for core state, transfer rates, daughter channels,
+horizon status and the neutron-star endpoint.
+
+Other mathematical checks
+
+No additional discrepancy was found in the checked weighted-median carrier
+derivative, regular Schur/KKT response jets, scalar principal symbol and
+nonlinearity calculation, connected-positive-branch flux argument, or nonzero
+null-wave energy at X=0.
+
+For the tracker manuscript, the checked uniform state bounds, state-inclusive
+characteristic-speed bound, rank-three screened STF full-line projection,
+two odd projection nulls, harmonic zero-flux rank reduction, first-order delay
+null and stated apparent-mass kernel identities were internally consistent
+within their assumptions. The bounds concern the retained frozen/quasistatic
+principal system. The projection statements concern the stipulated full-line
+projection and noncritical primary branches. They do not imply unrestricted
+microscopic reconstruction, coupled nonlinear stability or horizon completion.
+
+The galaxy-coherence/dark-matter interpretation remains a proposed physical
+connection. The present compact-lens product does not derive galaxy rotation
+curves from coherence, select a boundary-formation threshold or measure the
+past formation state of a galaxy. Those questions require their own forward
+response and observational comparison. They are future scientific work, not
+extra software gates needed to repair F1–F3.
+
+5. RECOMMENDED CORRECTION PACKAGE
+
+1. Correct reference-epoch/normalization invariance, profile admission and
+   unidentified-motion covariance. Add the corresponding invariant/domain
+   regression tests, with the present reproductions as witnesses.
+2. Qualify the radial membrane equation in both documents and reconcile the
+   two source versions and named PDFs.
+3. Build a new release candidate from the corrected source; update the wheel,
+   source ZIP, paper if wording changes, manifests and Museum release references
+   together. Keep prior release bytes and review history identifiable.
+4. Run the product suite and the new regressions once, check source/wheel
+   identity, and repeat an installed-wheel export/replay. Use the existing
+   required repository CI. Broaden testing only if a correction affects an
+   additional subsystem or a required gate demands it.
+
+After these targeted changes, the completed integration can be presented as a
+scoped, reproducible compact-exterior inference tool with an explicit BHSM
+interpretation and a research amendment that separates definitions, conditional
+derivations and remaining physical hypotheses.
+
+SOURCES AND TRACEABILITY
+
+[S1] Inference implementation, pinned formal source:
+https://github.com/ncarberry64/Berger-Hopf-Standard-Model/blob/2fb1eeac19337d59de72ef1d0493dd3e2f0eae69/products/blackhole_tracker/bhtracker/inference.py
+
+[S2] Forward model and numerical scales:
+https://github.com/ncarberry64/Berger-Hopf-Standard-Model/blob/2fb1eeac19337d59de72ef1d0493dd3e2f0eae69/products/blackhole_tracker/bhtracker/forward.py
+
+[S3] Public product contract and limitations:
+https://github.com/ncarberry64/Berger-Hopf-Standard-Model/blob/2fb1eeac19337d59de72ef1d0493dd3e2f0eae69/products/blackhole_tracker/README.md
+
+[S4] Manuscript product workflow:
+https://github.com/ncarberry64/Berger-Hopf-Standard-Model/blob/2fb1eeac19337d59de72ef1d0493dd3e2f0eae69/papers/bhsm_blackhole_tracker_20261021/manuscript/product_workflow.tex
+
+[S5] Dated core/surface amendment:
+https://github.com/ncarberry64/Berger-Hopf-Standard-Model/blob/2fb1eeac19337d59de72ef1d0493dd3e2f0eae69/docs/BHSM_NORMAN_CORE_SURFACE_AMENDMENT_20261022.md
+
+[S6] Covariant interface mechanics:
+https://github.com/ncarberry64/Berger-Hopf-Standard-Model/blob/2fb1eeac19337d59de72ef1d0493dd3e2f0eae69/theory/bhsm_covariant_bubble_interface_mechanics.md
+
+[S7] Amendment provenance ledger:
+https://github.com/ncarberry64/Berger-Hopf-Standard-Model/blob/2fb1eeac19337d59de72ef1d0493dd3e2f0eae69/artifacts/current_semantics/BHSM_NORMAN_CORE_SURFACE_AMENDMENT_20261022.json
+
+[S8] Tracker manuscript mathematical sources:
+https://github.com/ncarberry64/Berger-Hopf-Standard-Model/tree/2fb1eeac19337d59de72ef1d0493dd3e2f0eae69/papers/bhsm_blackhole_tracker_20261021/manuscript
+
+[S9] Formal merge and development PR:
+https://github.com/ncarberry64/Berger-Hopf-Standard-Model/pull/470
+https://github.com/ncarberry64/Manuscript-Generation/pull/24
+
+[S10] Formal CI runs, development CI and merged-main Pages deployment:
+https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/runs/39812760504
+https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/runs/39812760255
+https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/runs/39812760630
+https://github.com/ncarberry64/Manuscript-Generation/actions/runs/39797956794
+https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/runs/39821358794
+
+[S11] Live Museum exhibit inspected:
+https://ncarberry64.github.io/Berger-Hopf-Standard-Model/#blackhole-tracker
+
+The evidence directory contains original numerical witnesses, portable
+reproduction scripts, the local pytest record, installed-wheel replay result,
+artifact verification and job-level CI records. REPRODUCE.txt describes how to
+run the probes against the pinned release. Expected tiny floating-point
+differences across dependency/platform versions do not change the invariants
+being tested.
