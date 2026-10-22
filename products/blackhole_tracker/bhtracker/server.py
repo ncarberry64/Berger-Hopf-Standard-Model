@@ -11,7 +11,7 @@ from .data import load_dataset,read_json
 from .examples import example_names,make_example
 from .inference import fit,profile
 from .report import report_html,export_analysis_bundle
-from .provenance import VERSION
+from .provenance import VERSION, project_citation
 
 WEB=Path(__file__).resolve().parent/'web'
 
@@ -37,7 +37,7 @@ def make_server(port=8765):
             return origin is None or origin in {f'http://{h}' for h in hosts}
         def do_GET(self):
             if not self.local_request():self.send_json({'error':'Local origin required'},403);return
-            if self.path=='/api/health':self.send_json({'status':'ready','product':'BHSM Blackhole Tracker','version':VERSION,'dataset_file_limit_bytes':8_000_000,'request_limit_bytes':40_000_000});return
+            if self.path=='/api/health':self.send_json({'status':'ready','product':'BHSM Blackhole Tracker','version':VERSION,'project_citation':project_citation(),'dataset_file_limit_bytes':8_000_000,'request_limit_bytes':40_000_000});return
             if self.path=='/api/examples':self.send_json(example_names());return
             if self.path.startswith('/api/examples/'):
                 try:

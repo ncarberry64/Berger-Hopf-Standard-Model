@@ -4,6 +4,8 @@ BHSM Blackhole Tracker reconstructs the effective gravitational mass, location a
 
 The product provides a local browser app, command-line tools, a Python API, notebooks and reproducible synthetic validation. It also reports a spherical boundary representation of an ordinary fitted monopole at a fixed declared radius. The optional conditional R1 response evaluates a specific adopted scalar–tensor exterior and its normalized state-admission bound.
 
+The formal source and reviewer record are in the [BHSM GitHub repository](https://github.com/ncarberry64/Berger-Hopf-Standard-Model), under `products/blackhole_tracker/`; the paper is under `papers/bhsm_blackhole_tracker_20261021/`. App/package metadata and exported `project_citation` records cite that repository. Immutable historical provider/source citations retain their original locations.
+
 The fitted object is a **compact exterior**. Its BHSM interpretation does not uniquely identify the microscopic theory, establish a horizon or select an R1 deformation state. All bundled measurement sets are explicitly synthetic.
 
 ## What the fitted quantities mean in BHSM

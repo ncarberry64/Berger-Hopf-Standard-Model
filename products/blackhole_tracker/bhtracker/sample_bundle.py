@@ -6,6 +6,7 @@ import json
 import zipfile
 
 from .data import FIELDS, load_dataset
+from .provenance import project_citation, REPOSITORY_URL
 
 
 def _csv(rows):
@@ -32,6 +33,8 @@ def build_sample_bundle(dataset, title="BHSM Blackhole Tracker example"):
 This bundle contains one {kind} dataset, represented losslessly in two formats.
 It contains measurements and supplied covariance, not precomputed fit results.
 The provenance in dataset.json remains the authority for the input's origin.
+The software and reviewer source is the BHSM GitHub repository:
+{REPOSITORY_URL}
 
 ## First run in the local app
 
@@ -88,6 +91,7 @@ advanced conditional model and is not required for the ordinary interpretation.
         "README.md": guide.encode("utf-8"),
     }
     manifest = {"schema": "bhtracker.example_bundle.v1", "dataset_sha256": data.sha256,
+                "project_citation": project_citation(),
                 "provenance_kind": kind, "rows": data.n,
                 "files": {name: hashlib.sha256(payload).hexdigest() for name, payload in files.items()}}
     files["manifest.json"] = (json.dumps(manifest, indent=2) + "\n").encode("utf-8")

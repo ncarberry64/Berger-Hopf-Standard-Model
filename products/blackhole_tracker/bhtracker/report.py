@@ -8,6 +8,7 @@ from io import BytesIO
 import tempfile
 import zipfile
 import numpy as np
+from .provenance import REPOSITORY_URL, project_citation
 
 def report_html(result):
     r=result;e=r['estimates'];u=r['uncertainty']
@@ -39,6 +40,7 @@ def report_html(result):
     return f'''<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width">
 <title>Blackhole Tracker research report</title><style>body{{font:16px/1.55 system-ui;max-width:1050px;margin:3rem auto;padding:0 1.5rem;color:#172b40}}h1{{font-size:2.2rem}}table{{border-collapse:collapse;width:100%}}th,td{{padding:.7rem;border-bottom:1px solid #dce3e9;text-align:left}}pre{{background:#f1f5f8;padding:1rem;overflow:auto;white-space:pre-wrap}}small{{color:#4f657a}}.status{{padding:1rem;background:#edf6fa;border-left:4px solid #167e9b}}</style>
 <h1>BHSM Blackhole Tracker</h1><p class="status">{escape(r['status'])} · {escape(r['data_summary']['provenance']['kind'])} measurements</p>
+<p>Project source and reviewer record: <a href="{REPOSITORY_URL}">BHSM GitHub repository</a>.</p>
 <p>Reference epoch {fmt(r['reference_epoch_yr'])}; family {escape(r['model']['family'])}; nuisance {escape(r['model']['nuisance'])}.</p>
 <table><tr><th>Quantity</th><th>Estimate</th><th>Local 1σ</th></tr>{rows}</table>
 <p>χ² {fmt(r['chi2'])} for {r['dof']} degrees of freedom; goodness-of-fit p={fmt(r['goodness_of_fit_p'])}. Uncertainties are local known-covariance approximations; active bounds and nulls require the stated qualification.</p>
@@ -134,6 +136,7 @@ R1 information is an optional extension and does not select a black-hole charge.
     files=[dest/name for name in ('dataset.json','analysis_config.json','software_provenance.json',
         'result.json','report.html','predictions.csv','track_and_residuals.png','measurements_and_model.png','REPRODUCE.md')]
     (dest/'manifest.json').write_text(json.dumps({'schema':'bhtracker.analysis_bundle.v1','dataset_sha256':result['data_summary']['sha256'],
+        'project_citation':project_citation(),
         'files':{p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in files}},indent=2)+'\n')
     return str(dest.resolve())
 

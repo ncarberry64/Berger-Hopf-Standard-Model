@@ -30,16 +30,21 @@ def _finite_number(value,label,positive=False):
     return value
 
 def _array(value,label):
-    try:array=np.asarray(value,dtype=float)
+    # Inspect supplied cells before NumPy can coerce True or "1.0" into data.
+    # Object conversion preserves those distinctions for mixed JSON lists and
+    # still accepts real integer/float NumPy arrays through the Python API.
+    try:supplied=np.asarray(value,dtype=object)
     except (TypeError,ValueError,OverflowError) as error:
-        # Locate malformed cells rather than burying them in NumPy's conversion error.
-        if isinstance(value,list):
-            for i,row in enumerate(value):
-                for j,cell in enumerate(row if isinstance(row,list) else [row]):
-                    try:float(cell)
-                    except (TypeError,ValueError,OverflowError):
-                        raise ValueError(f'{label} row {i+1}, column {j+1} must be numeric') from error
-        raise ValueError(f'{label} must be a rectangular numeric array: {error}') from error
+        raise ValueError(f'{label} must be a rectangular numeric array') from error
+    for index,cell in np.ndenumerate(supplied):
+        if isinstance(cell,(list,tuple,np.ndarray)):
+            raise ValueError(f'{label} must be a rectangular numeric array')
+        if isinstance(cell,(bool,np.bool_)) or not isinstance(cell,(int,float,np.integer,np.floating)):
+            location=', '.join(f'{name} {int(v)+1}' for name,v in zip(('row','column'),index))
+            raise ValueError(f'{label} {location} must be numeric; supply a real number, not a boolean or string')
+    try:array=np.asarray(supplied,dtype=float)
+    except (TypeError,ValueError,OverflowError) as error:
+        raise ValueError(f'{label} must contain representable real numeric values') from error
     bad=np.argwhere(~np.isfinite(array))
     if len(bad):
         index=bad[0]
@@ -82,7 +87,8 @@ class Dataset:
 def load_dataset(source):
     if isinstance(source,Dataset): return source
     raw=read_json(Path(source).read_text(encoding='utf-8-sig')) if isinstance(source,(str,Path)) else copy.deepcopy(source)
-    if not isinstance(raw,dict) or raw.get('schema_version')!=1: raise ValueError('schema_version must be 1')
+    if not isinstance(raw,dict) or isinstance(raw.get('schema_version'),(bool,np.bool_)) or raw.get('schema_version')!=1:
+        raise ValueError('schema_version must be 1')
     geometry=raw.get('geometry',{})
     if not isinstance(geometry,dict):raise ValueError('geometry must be an object containing distances in pc and redshifts')
     for key in ['D_l_pc','D_s_pc','D_ls_pc']:

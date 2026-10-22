@@ -4,8 +4,8 @@ This BHSM repository is the authoritative reviewer-facing home of this
 research product. The `Manuscript-Generation` repository is its development
 workspace. Norman P. Carberry is the hypothesis and research author.
 
-The 107 upstream product files here are byte-exact Git-blob copies from
-workspace commit `bb68862018c1859df35fe9df22bf28c416469227`, including the
+The 108 upstream product files here are byte-exact Git-blob copies from
+workspace commit `ab0fd069195f63a864d74b0926d23311f1c3523e`, including the
 runtime, examples, two executed notebooks, tests, source pins and historical
 validation receipts. [FORMAL_PROVENANCE.json](FORMAL_PROVENANCE.json) records
 every source path, byte count and SHA-256. It excludes its own hash and the
@@ -35,7 +35,7 @@ Reviewer checks from the BHSM root:
 python tools/verify_blackhole_tracker_snapshot.py
 cd products/blackhole_tracker
 python -m pytest -q tests
-python -m pip wheel --no-deps --no-build-isolation . --wheel-dir dist
+python -m pip wheel --no-deps . --wheel-dir dist
 cd ../..
 python tools/smoke_blackhole_tracker_wheel.py --wheel products/blackhole_tracker/dist/bhsm_blackhole_tracker-0.2.0rc2-py3-none-any.whl
 ```
@@ -47,6 +47,14 @@ the tracker has its own Python3.11+ requirement. This does not hide or replace
 existing tests. `scripts/validate_product.py` also contains the historical
 Monte Carlo calibration replay; it is not needed for this unchanged-source
 publication and is not rerun by this integration's CI.
+
+Wheel building uses the declared isolated build-system requirements rather
+than depending on a preinstalled host backend. Reviewer fit/export/replay uses
+the vendored provider and source pins in this snapshot. The optional developer
+source-sync script requires the complete three-paper source tree; it is a
+provenance tool, not a prerequisite for using the installed product. The formal
+paper workflow checks source regeneration in an isolated copy when that tree
+is available, leaving this reviewed snapshot untouched.
 
 The ordinary workflow estimates one compact exterior's mass, center and motion
 under its supplied distances, calibrations, primary-pair association and full

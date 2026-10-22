@@ -42,7 +42,10 @@
       let payload;
       try { payload = await response.json(); }
       catch { throw new Error(`The local server returned an unreadable response (${response.status}).`); }
-      if (!response.ok || payload?.error) throw new Error(payload?.error || `Request failed (${response.status}).`);
+      if (!response.ok || payload?.error) {
+        const error = new Error(payload?.error || `Request failed (${response.status}).`);
+        error.status = response.status; throw error;
+      }
       return payload;
     } catch (error) {
       if (error.name === 'AbortError') throw new Error('The local server did not respond within 30 seconds.');
@@ -137,11 +140,13 @@
       dt.textContent = label; dd.textContent = value; row.append(dt, dd); values.append(row);
     }
   }
-  function setDataset(dataset, name) {
+  function setDataset(dataset, name, sourceText) {
     if (!dataset || typeof dataset !== 'object' || Array.isArray(dataset)) throw new Error('The dataset must be a JSON object.');
     state.dataset = dataset; state.validated = false;
     clearResults(); clearError();
-    $('source-json').value = JSON.stringify(dataset, null, 2);
+    // Preserve imported text until strict server validation: parsing and then
+    // stringifying would silently erase duplicate JSON object keys.
+    $('source-json').value = sourceText ?? JSON.stringify(dataset, null, 2);
     $('loaded-name').textContent = name || dataset.title || dataset.name || 'Imported dataset';
     $('loaded-file').hidden = false; $('dataset-summary').hidden = true;
     validationMessage('Input loaded. Validate its measurements, units and covariance.');
@@ -273,6 +278,14 @@
         throw new Error(`Unknown job status: ${String(job.status)}.`);
       }
     } catch (error) {
+      if (error.status === 404) {
+        clearResults(); state.jobId = null; finishBusy(); jobPhase('failed');
+        showError('The local server no longer has this job. It may have restarted; the unfinished result cannot be recovered. Your input is retained and you can run the fit again.');
+        runMessage('Job unavailable. Run the fit again or load another dataset.');
+        $('empty-results').querySelector('h2').textContent = 'No completed fit.';
+        $('empty-results').querySelector('.empty-footnote').textContent = 'The previous job is unavailable. No inference result is displayed.';
+        return;
+      }
       state.polling = false; stopElapsed();
       jobPhase('interrupted');
       showError(`Could not read the job status: ${error.message} The job may still be running on the local server. Use “Retry job status” to reconnect without starting another fit.`);
@@ -714,10 +727,11 @@
       measured.forEach(({ point: p, sigma: sig }) => { xs.push(p[0]); ys.push(p[1]); if (finite(sig[0])) xs.push(p[0] - sig[0], p[0] + sig[0]); if (finite(sig[1])) ys.push(p[1] - sig[1], p[1] + sig[1]); });
       const frame = plotFrame(container, 'Lens center trajectory with marginal uncertainties', extent(xs), extent(ys), 'x [mas]', 'y [mas]', true, 320);
       track.forEach((p, i) => errorBar(frame, p[0], p[1], trackSigma[i]?.[0], trackSigma[i]?.[1], '#3aa8b6'));
-      line(frame, track);
+      const ordered = track.map((point, i) => ({ point, i })).sort((a, b) => (epochs[a.i] ?? a.i) - (epochs[b.i] ?? b.i));
+      line(frame, ordered.map(item => item.point));
       measured.forEach(({ point: p, sigma: sig, index }) => { errorBar(frame, p[0], p[1], sig[0], sig[1]); marker(frame, p[0], p[1], { label: `Pair-derived GR center, epoch ${epochs[index] ?? index}: (${number(p[0])}, ${number(p[1])}) mas` }); });
       if (track.length > 1) {
-        [0, track.length - 1].forEach(i => { const p = track[i]; frame.svg.append(svgElement('text', { x: frame.x(p[0]) + 7, y: frame.y(p[1]) - 8, fill: '#007f93', 'font-size': 9 }, `t=${String(epochs[i] ?? i)}`)); });
+        [ordered[0], ordered[ordered.length - 1]].forEach(({ point: p, i }) => { frame.svg.append(svgElement('text', { x: frame.x(p[0]) + 7, y: frame.y(p[1]) - 8, fill: '#007f93', 'font-size': 9 }, `t=${String(epochs[i] ?? i)}`)); });
       }
       $('track-title').textContent = 'Lens-center trajectory';
       $('track-caption').textContent = 'Dots: centers inferred from the observed pairs using the isolated GR identity, a diagnostic rather than an independent observable. Cyan: fitted center track. Bars show marginal 1σ uncertainties where identified; the fit retains the full covariance.';
@@ -728,8 +742,7 @@
     const xs = [], ys = [];
     [...observed, ...predicted].forEach(row => { if (Array.isArray(row)) { xs.push(row[0], row[2]); ys.push(row[1], row[3]); } });
     const frame = plotFrame(container, 'Observed and fitted primary image positions', extent(xs), extent(ys), 'x [mas]', 'y [mas]', true, 320);
-    line(frame, predicted.map(row => [row[0], row[1]]));
-    line(frame, predicted.map(row => [row[2], row[3]]), '#007f93', '5 4');
+    predicted.forEach((row, i) => [0, 2].forEach(offset => marker(frame, row[offset], row[offset + 1], { hollow: true, color: '#007f93', radius: 4.6, label: `Fitted ${offset ? 'negative' : 'positive'}-parity image, epoch ${epochs[i] ?? i}` })));
     observed.forEach((row, i) => {
       const cov = blockCovariance(i);
       [0, 2].forEach(offset => {
@@ -740,7 +753,7 @@
       });
     });
     $('track-title').textContent = 'Observed and fitted image plane';
-    $('track-caption').textContent = 'Filled markers and solid line: positive-parity image. Open markers and dashed line: negative-parity image. Coordinate bars show supplied marginal 1σ uncertainty where available.';
+    $('track-caption').textContent = 'Dark filled/open markers: observed positive/negative-parity images. Cyan rings: fitted images. Different source rows are not connected into a trajectory. Coordinate bars show supplied marginal 1σ uncertainty where available.';
   }
   function renderSeries() {
     const container = $('series-chart'), { observed, predicted, epochs } = rows();
@@ -756,12 +769,11 @@
       return sigma;
     });
     const frame = plotFrame(container, `Observed and fitted ${labels[index]} over epochs`, extent(epochs), extent(values), 'Epoch [observer yr]', labels[index], false, 270);
-    const ordering = epochs.map((time, i) => ({ time, i })).sort((a, b) => a.time - b.time);
-    line(frame, ordering.filter(item => finite(predicted[item.i]?.[index])).map(item => [item.time, predicted[item.i][index]]));
+    predicted.forEach((row, i) => marker(frame, epochs[i], row[index], { hollow: true, color: '#007f93', radius: 4.6, label: `Epoch ${epochs[i]}: fitted ${number(row[index])}` }));
     observed.forEach((row, i) => { errorBar(frame, epochs[i], row[index], null, errors[i]); marker(frame, epochs[i], row[index], { label: `Epoch ${epochs[i]}: observed ${number(row[index])}${finite(errors[i]) ? ' ± ' + number(errors[i]) : ''}; fit ${number(predicted[i]?.[index])}` }); });
     $('series-caption').textContent = errors.some(finite)
-      ? 'Markers and bars: measured values with input marginal 1σ uncertainties. Cyan: fitted model. The inference uses the complete covariance, including correlations not shown by individual bars.'
-      : 'Markers: supplied measurements. Cyan: fitted model. The server did not supply marginal uncertainties for this display.';
+      ? 'Dark markers and bars: measured values with input marginal 1σ uncertainties. Cyan rings: fitted values for the same rows. Source positions are free per row; no continuous source trajectory is inferred. The inference uses the complete covariance, including correlations not shown by individual bars.'
+      : 'Dark markers: supplied measurements. Cyan rings: fitted values for the same independent rows. No continuous source trajectory is inferred. The server did not supply marginal uncertainties for this display.';
   }
   function renderCharts() { if (state.result) { renderTrack(); renderSeries(); renderWhitenedResiduals(); } }
   function download(content, filename, type) {
@@ -779,7 +791,7 @@
     try {
       if (file.size > 8_000_000) throw new Error('The dataset file exceeds 8 MB (8,000,000 bytes). Use the documented 3–80 row input with its full covariance.');
       const text = (await file.text()).replace(/^\uFEFF/, '');
-      setDataset(JSON.parse(text), file.name);
+      setDataset(JSON.parse(text), file.name, text);
     } catch (error) { showError(`Could not import the dataset: ${error.message}`); }
     finally { event.target.value = ''; state.loading = false; syncControls(); }
   });

@@ -11,6 +11,7 @@ import json
 from functools import lru_cache
 from pathlib import Path
 from .forward import C, GM_SUN, PC
+from .provenance import project_citation
 
 
 @lru_cache(maxsize=1)
@@ -60,6 +61,7 @@ def bhsm_interpretation(family,estimates=None,uncertainty=None,model=None,fit_st
         'interpretation_schema_version':2,
         'interpretation_revision':'2026-10-22',
         'framework':'BHSM',
+        'project_citation':project_citation(),
         'model_role':'One compact-configuration optical response in the adopted BHSM Einstein/GHY sector, described in boundary/envelope language.',
         'one_potential_rule':'Equivalent ordinary-gravity and BHSM envelope descriptions represent the same fitted lens potential and are counted once. A separately derived response is added only when it is a distinct term of the same physical model.',
         'parameter_meanings':[

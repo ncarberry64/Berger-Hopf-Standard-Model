@@ -42,6 +42,12 @@ assert result['status'] == 'TRACKED', result['diagnostics']
 assert result['bhsm_interpretation']['spherical_boundary']['status'] == 'AVAILABLE'
 meaning=result['bhsm_interpretation']
 assert meaning['interpretation_schema_version']==2
+repository='https://github.com/ncarberry64/Berger-Hopf-Standard-Model'
+assert meaning['project_citation']==result['software_provenance']['project_citation']
+assert meaning['project_citation']['repository_url']==repository
+assert f'href="{repository}"' in (root/'web/index.html').read_text(encoding='utf8')
+from importlib.metadata import metadata
+assert 'Repository, '+repository in metadata('bhsm-blackhole-tracker').get_all('Project-URL')
 assert meaning['core_surface']['status']=='PROPOSED_NOT_INFERRED'
 assert meaning['core_surface']['core_parameters_fitted'] is False
 assert all(v['value'] is None for v in meaning['core_surface']['unavailable_quantities'].values())

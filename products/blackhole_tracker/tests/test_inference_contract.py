@@ -179,6 +179,71 @@ def test_loader_file_dict_equivalence_and_input_immutability(point_fixture, tmp_
     assert raw == before
 
 
+@pytest.mark.parametrize('field', ['epochs_yr', 'observations', 'covariance',
+                                    'lens_parallax_factors', 'mass_bounds_msun'])
+@pytest.mark.parametrize('invalid_kind', ['boolean', 'numeric_string'])
+def test_numeric_arrays_reject_json_type_coercion(point_fixture, tmp_path, field, invalid_kind):
+    """A file or dict must not silently turn true or quoted numbers into data."""
+    raw, _ = point_fixture
+    raw = deepcopy(raw)
+    raw['analysis']['lens_parallax_factors'] = [[0., 0.] for _ in raw['epochs_yr']]
+    raw['analysis']['mass_bounds_msun'] = [1., 100.]
+    load_dataset(raw)  # A valid control precedes the single-cell mutation.
+    if field in ('lens_parallax_factors', 'mass_bounds_msun'):
+        array = raw['analysis'][field]
+        label = 'analysis.' + field
+    else:
+        array = raw[field]
+        label = field
+    row = 1
+    column = 2 if field in ('observations', 'covariance') else 0
+    if field in ('epochs_yr', 'mass_bounds_msun'):
+        original = array[row]
+        array[row] = True if invalid_kind == 'boolean' else str(original)
+        location = f'{label} row 2'
+    else:
+        original = array[row][column]
+        array[row][column] = True if invalid_kind == 'boolean' else str(original)
+        location = f'{label} row 2, column {column+1}'
+    path = tmp_path / 'typed_input.json'
+    path.write_text(json.dumps(raw), encoding='utf8')
+    for source in (raw, path):
+        with pytest.raises(ValueError) as error:
+            load_dataset(source)
+        assert str(error.value).startswith(location) and 'must be numeric' in str(error.value)
+
+
+def test_boolean_schema_version_is_not_integer_one(point_fixture, tmp_path):
+    raw, _ = point_fixture
+    raw = deepcopy(raw)
+    load_dataset(raw)
+    raw['schema_version'] = True
+    path = tmp_path / 'boolean_schema.json'
+    path.write_text(json.dumps(raw), encoding='utf8')
+    for source in (raw, path):
+        with pytest.raises(ValueError, match='schema_version must be 1'):
+            load_dataset(source)
+
+
+@pytest.mark.parametrize('dtype', [np.int64, np.float32, np.float64])
+def test_numeric_array_helper_preserves_numpy_real_inputs(dtype):
+    from bhtracker.data import _array
+    values = np.arange(12, dtype=dtype).reshape(4, 3)[::2]
+    before = values.copy()
+    actual = _array(values, 'api_array')
+    np.testing.assert_array_equal(actual, before)
+    np.testing.assert_array_equal(values, before)
+
+
+@pytest.mark.parametrize('values', [np.array([[True, False]]),
+                                    np.array([['1.0', '2.0']]),
+                                    np.array([[1., True]], dtype=object)])
+def test_numeric_array_helper_rejects_non_numeric_numpy_cells(values):
+    from bhtracker.data import _array
+    with pytest.raises(ValueError, match='must be numeric'):
+        _array(values, 'api_array')
+
+
 @pytest.mark.parametrize("case", [
     "schema", "geometry_zero", "geometry_nonfinite", "negative_redshift", "short_rows",
     "observation_shape", "nonfinite_observation", "covariance_shape", "asymmetric_covariance",

@@ -75,6 +75,11 @@ def test_gr_fit_is_preserved_and_has_its_bhsm_interpretation():
     np.testing.assert_allclose(result['proper_motion_covariance'],scientific['proper_motion_covariance'],rtol=2e-11,atol=1e-12)
     assert raw==original
     meaning=result['bhsm_interpretation']
+    repository='https://github.com/ncarberry64/Berger-Hopf-Standard-Model'
+    assert meaning['project_citation']==result['software_provenance']['project_citation']
+    assert meaning['project_citation']['repository_url']==repository
+    assert meaning['source_provenance']['formal_repository_url']==repository
+    assert f'href="{repository}"' in report_html(result)
     assert meaning['framework']=='BHSM' and meaning['spherical_boundary']['status']=='AVAILABLE'
     assert meaning['spherical_boundary']['reconstructed_monopole_msun']==pytest.approx(result['estimates']['mass_msun'])
     assert meaning['interpretation_schema_version']==2
