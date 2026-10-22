@@ -1,4 +1,22 @@
-# Blackhole Tracker 0.2.0rc3
+# Blackhole Tracker 0.2.0rc4
+
+This candidate adds a separately versioned joint photometry/parallax and angular-centroid research route, with CLI, Python, browser workspace and a fourth notebook. The app directly imports the hash-verified 2023 known-system source ZIP, preserves native rows, clocks, calibration and exclusions, and exports all-row diagnostics with pinned BHSM interpretation sources and software provenance. Lossless browser JSON transport retains archived v1 numeric hashes; v2 hashes canonicalize numeric meaning. Saved-state replay is explicitly distinct from a new fit or scientific validation.
+
+The known-system campaign retains all failed alternatives. All three declared v2 noise models fail at least one adequacy check, and a calibration competitor reaches an artificial correlation-time cap with unstable mass. No conditional point mass is promoted to a reliable black-hole measurement. The frozen 100-event pilot and its two mass-unresolved archival follow-ups remain unchanged. No new black-hole interpretation is established. See the separate protocol, validation and manuscript records for complete outcomes.
+
+Reopening and exporting a joint result now recomputes its diagnostic gates from the saved state and native residuals. Edited adequacy labels, cleared failed bins, invented distances and altered BHSM interpretation are rejected. Profile jobs include their complete retained mode search in their identity, and unsuccessful fits provide an explicit diagnostic download without displaying physical parameters.
+
+Windows launchers now read the actual package version. The explicit Joint launcher opts into Astropy; base installation remains usable without it. Linux/Windows CI tests both joint versions and checks a separate noneditable optional wheel installation. The proper-motion-only historical regression floor is 1e-11 mas/year, justified by the independent precision audit; predictions, mass, chi-square and original fixtures keep their strict checks.
+
+The ordinary compact-lens response retains its BHSM Einstein/GHY interpretation with one potential counted once. The joint route adds no core, envelope or membrane force and supplies no horizon, core-state, absolute lens-motion or lens-distance measurement. Software verification and scientific acceptance remain separate.
+
+```text
+python -m pip install "./bhsm_blackhole_tracker-0.2.0rc4-py3-none-any.whl[astrometry]"
+python -m bhtracker serve --open
+python -m bhtracker joint --help
+```
+
+## Previous release candidate 0.2.0rc3
 
 The reviewed corrections make physical fits independent of numerical epoch and mass references, genuinely profile physically admitted nuisance states, and report unidentified motion covariance as unavailable. Reporting-basis and covariance contracts are versioned; legacy internal profiles require a raw-input refit. Explicit physical bounds and full measurement covariance remain enforced. The historical covariance-only regression tolerance is now 1e-9, justified by independent derivative-step resolution checks; optical/prediction and admission checks retain their original thresholds.
 

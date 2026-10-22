@@ -11,6 +11,8 @@ import numpy as np
 from .provenance import REPOSITORY_URL, project_citation
 
 def report_html(result):
+    from .joint_report import is_joint_result,report_html as joint_html
+    if is_joint_result(result):return joint_html(result)
     from .unresolved_report import is_unresolved_result,report_html as unresolved_html
     if is_unresolved_result(result):return unresolved_html(result)
     r=result;e=r['estimates'];u=r['uncertainty']
@@ -53,6 +55,8 @@ def report_html(result):
 <p><small>Product {escape(r['product_version'])}. A compact exterior fit does not identify a horizon. Synthetic examples and supplied uncertainties are not empirical detections or instrument forecasts. Full measurements, covariance, predictions and parameter covariance accompany the JSON export.</small></p></html>'''
 
 def export_result(result,directory):
+    from .joint_report import is_joint_result,export_result as export_joint
+    if is_joint_result(result):return export_joint(result,directory)
     from .unresolved_report import is_unresolved_result,export_result as export_unresolved
     if is_unresolved_result(result):return export_unresolved(result,directory)
     dest=Path(directory);dest.mkdir(parents=True,exist_ok=True)
@@ -175,7 +179,7 @@ def replay_analysis(source,output):
                 early=read_json(archive.read(manifest_info))
                 # The large native-observation route retains every benchmark row.
                 # Its versioned limit never changes the resolved bundle limit.
-                limit=256_000_000 if early.get('schema')=='bhtracker.unresolved_analysis_bundle.v1' else 100_000_000
+                limit=256_000_000 if early.get('schema') in {'bhtracker.unresolved_analysis_bundle.v1','bhtracker.joint_analysis_bundle.v1'} else 100_000_000
                 if sum(i.file_size for i in infos)>limit:raise ValueError(f'replay ZIP exceeds {limit//1_000_000} MB uncompressed limit')
                 content={i.filename:archive.read(i) for i in infos}
         except zipfile.BadZipFile as error:raise ValueError('replay requires an exported analysis directory or valid ZIP') from error
@@ -186,6 +190,9 @@ def replay_analysis(source,output):
     if manifest.get('schema')=='bhtracker.unresolved_analysis_bundle.v1':
         from .unresolved_report import replay_analysis as replay_unresolved
         return replay_unresolved(read,manifest,output)
+    if manifest.get('schema')=='bhtracker.joint_analysis_bundle.v1':
+        from .joint_report import replay_bundle
+        return replay_bundle(read,manifest,output)
     if manifest.get('schema')!='bhtracker.analysis_bundle.v1':raise ValueError('manifest is not a version-1 analysis replay bundle')
     for required in ('dataset.json','analysis_config.json','result.json','software_provenance.json'):
         if required not in manifest.get('files',{}):raise ValueError(f'manifest must include {required}')

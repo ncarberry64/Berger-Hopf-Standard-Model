@@ -56,7 +56,7 @@ def source_archive(output):
         for path, relative in portable_files():
             target.write(path, (Path("product") / relative).as_posix())
             included.append(relative.as_posix())
-    for required in ["README.md", "pyproject.toml", "Start_Blackhole_Tracker.cmd",
+    for required in ["README.md", "pyproject.toml", "Start_Blackhole_Tracker.cmd", "Start_Blackhole_Tracker_Joint.cmd",
                      "scripts/package_product.py", "validation/package_install_receipt.json"]:
         if required not in included:
             raise ValueError(f"portable source is missing {required}")
@@ -72,7 +72,11 @@ def wheel_contents(wheel):
         required = ["bhtracker/web/index.html", "bhtracker/web/app.js", "bhtracker/web/style.css",
                     "bhtracker/theory/ADAPTATION.json", "bhtracker/theory/provider/SOURCE_MANIFEST.json",
                     "bhtracker/web/photometry.html", "bhtracker/web/photometry.js",
-                    "bhtracker/observations.py", "bhtracker/photometry.py", "bhtracker/astrometry.py"]
+                    "bhtracker/observations.py", "bhtracker/photometry.py", "bhtracker/astrometry.py",
+                    "bhtracker/web/joint.html", "bhtracker/web/joint.js", "bhtracker/joint_report.py",
+                    "bhtracker/joint_mass.py", "bhtracker/joint_mass_v2.py",
+                    "bhtracker/joint_workflow.py", "bhtracker/joint_workflow_v2.py",
+                    "bhtracker/joint_benchmark.py", "bhtracker/joint_benchmark_v2.py"]
         for name in required:
             if name not in names:
                 raise ValueError(f"wheel is missing {name}")
@@ -127,7 +131,7 @@ for item in manifest['files']:
         raise RuntimeError('installed provider mismatch: ' + item['path'])
     provider[item['path']] = actual
 web = {name: hashlib.sha256(root.joinpath('web/' + name).read_bytes()).hexdigest()
-       for name in ['index.html', 'app.js', 'style.css', 'photometry.html', 'photometry.js']}
+       for name in ['index.html', 'app.js', 'style.css', 'photometry.html', 'photometry.js', 'joint.html', 'joint.js']}
 raw, truth = make_example('nearby_motion', noise=False)
 data = load_dataset(raw)
 prediction = predict(data, truth)
@@ -149,7 +153,7 @@ thread = threading.Thread(target=server.serve_forever, daemon=True)
 thread.start()
 http_checks = {}
 try:
-    for path in ['/', '/app.js', '/style.css', '/photometry', '/photometry.js', '/api/health', '/api/examples']:
+    for path in ['/', '/app.js', '/style.css', '/photometry', '/photometry.js', '/joint', '/joint.js', '/api/health', '/api/examples']:
         with urlopen('http://127.0.0.1:' + str(server.server_port) + path, timeout=10) as response:
             body = response.read()
             if response.status != 200 or not body:

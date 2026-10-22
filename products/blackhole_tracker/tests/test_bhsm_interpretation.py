@@ -63,7 +63,14 @@ def test_gr_fit_is_preserved_and_has_its_bhsm_interpretation():
     assert result['estimates']['mass_msun']==pytest.approx(stored['estimates']['mass_msun'],rel=2e-11)
     assert result['chi2']==pytest.approx(stored['chi2'],rel=2e-11,abs=1e-12)
     for parameter,value in stored['estimates'].items():
-        np.testing.assert_allclose(result['estimates'][parameter],value,rtol=2e-11,atol=1e-12)
+        # Windows CI showed 2.64e-12 mas/year optimizer spread in mu_y.
+        # A 1e-11 mas/year floor is <1e-8 of its measured local sigma and
+        # propagates inside the unchanged strict prediction check above.
+        # See validation/ordinary_motion_precision_audit.json. Other physical
+        # parameters, predictions, mass, chi2 and original fixtures retain
+        # their previous checks and tolerances.
+        floor=1e-11 if parameter=='proper_motion_mas_yr' else 1e-12
+        np.testing.assert_allclose(result['estimates'][parameter],value,rtol=2e-11,atol=floor)
     assert result['status']==stored['status']=='TRACKED'
     scientific=json.loads((Path(__file__).resolve().parent/'fixtures/pre_core_surface_scientific_summary.json').read_text())
     assert _input_value_sha256(raw)==scientific['input_value_sha256']

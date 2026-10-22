@@ -1,5 +1,6 @@
 """Create the native-observation walkthrough without bundling third-party raw data."""
 from pathlib import Path
+import tomllib
 import nbformat as nbf
 
 root = Path(__file__).resolve().parents[1]
@@ -77,6 +78,6 @@ print(result['bhsm_interpretation']['one_potential_rule'])'''),
     md('''The identified photometric quantities are model-conditional peak time, crossing timescale, absolute impact parameter and instrument brightness/blend combinations when supported by rank, profiles and residuals. Since $t_E=\\theta_E/\\mu_{rel}$ and $\\theta_E^2=\\kappa M\\pi_{rel}$, photometry alone leaves mass, distance, angular proper motion, horizon and core state unavailable. A validated angular Einstein radius and parallax, with their degeneracies and systematics, are needed for a mass inference. The optional HST importer preserves native rows but blocks precision inference when timing/frame metadata are unresolved.''')
 ], metadata={'kernelspec': {'display_name': 'Python 3 (BHSM Blackhole Tracker)', 'language': 'python', 'name': 'python3'},
              'language_info': {'name': 'python'},
-             'bhsm_interpretation': {'framework': 'BHSM', 'product_version': '0.2.0rc3',
+             'bhsm_interpretation': {'framework': 'BHSM', 'product_version': tomllib.loads((root/'pyproject.toml').read_text(encoding='utf-8'))['project']['version'],
                 'one_optical_potential': True, 'mass_identified_by_photometry': False}})
 nbf.write(book, root / 'notebooks/03_native_unresolved_photometry.ipynb')

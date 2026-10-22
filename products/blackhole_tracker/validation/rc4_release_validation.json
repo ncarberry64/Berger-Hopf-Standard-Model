@@ -1,0 +1,28 @@
+{
+  "schema": "bhtracker.rc4_release_validation.v1",
+  "status": "LOCAL_SOFTWARE_CHECKS_PASSED",
+  "product_version": "0.2.0rc4",
+  "wheel": {
+    "filename": "bhsm_blackhole_tracker-0.2.0rc4-py3-none-any.whl",
+    "bytes": 288256,
+    "sha256": "95ce4f546924a3425c74efafe822ca213f6e51ad8a72e4c57a70ac7639711a99"
+  },
+  "full_product_tests": {
+    "passed": 233,
+    "failed": 0,
+    "seconds": 66.58,
+    "warnings": 0,
+    "receipt": "rc4_product_tests.xml"
+  },
+  "base_only_install_receipt": "package_install_receipt.json",
+  "optional_joint_install_receipt": "rc4_installed_joint_probe.json",
+  "notebooks": {
+    "executed": 4,
+    "receipt": "notebook_receipt.json",
+    "environment": "Clean noneditable installed wheel, kernel and cwd outside checkout"
+  },
+  "scientific_acceptance": "NOT_ESTABLISHED; every frozen measured joint noise candidate fails adequacy. Software checks and forward replay do not classify a black hole.",
+  "frozen_scientific_source_sha256": "6eaf050481fc23aebf4b929e49fdab57e324ee80eb08e1547b69f056269eeaaa",
+  "ci": "Final remote heads are recorded separately after push; this local receipt does not claim CI success.",
+  "known_historical_CI_precision_limitation": "Identical d92062e and b459f54 trees had passing push and failing merge strict prediction fixture checks. Instrumentation reproduces a near-tied stopping state; objective separation about1.5e-12 and predictions about1.4e-9. Sixteen fresh-process/thread/version combinations pass. Fixtures, strict prediction tolerance and ordinary inference remain unchanged. See ORDINARY_REFINEMENT_STUDY_2.5.4.json; final-head CI is recorded separately."
+}

@@ -102,3 +102,4 @@ print('Two portable research notebooks authored.')
 # Keep the separate native route in a complete tutorial rebuild.
 import runpy
 runpy.run_path(str(ROOT/'scripts/make_unresolved_notebook.py'))
+runpy.run_path(str(ROOT/'scripts/make_joint_notebook.py'))
