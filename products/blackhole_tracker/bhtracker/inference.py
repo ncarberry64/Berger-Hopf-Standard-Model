@@ -10,6 +10,61 @@ from scipy.stats import chi2 as chi2_distribution
 from .data import load_dataset
 from .forward import LensEngine,GM_SUN,C
 
+_FIT_OBJECTIVE_RTOL=1e-10
+
+
+def _projected_stationarity(solution):
+    """Unit-normalized first-order KKT residual, not a parameter-size prior."""
+    jac=np.asarray(solution.jac);residual=np.asarray(solution.fun)
+    active=np.asarray(solution.active_mask)
+    if (jac.ndim!=2 or not jac.shape[1] or residual.ndim!=1 or active.shape!=(jac.shape[1],)
+            or jac.shape[0]!=residual.size or not residual.size
+            or not all(np.all(np.isfinite(value)) for value in
+                       (jac,residual,active,np.asarray(getattr(solution,'x',[]))))):
+        return float('inf')
+    # Outward descent at a bound satisfies the one-sided KKT condition.
+    with np.errstate(over='ignore',invalid='ignore',divide='ignore'):
+        gradient=jac.T@residual
+        if not np.all(np.isfinite(gradient)):return float('inf')
+        gradient=np.where(((active<0)&(gradient>=0))|((active>0)&(gradient<=0)),0.,gradient)
+        norms=np.linalg.norm(jac,axis=0)
+        normalized=gradient/np.maximum(norms,1e-300)
+        score=float(np.linalg.norm(normalized,ord=np.inf))
+    return score if np.isfinite(score) and np.all(np.isfinite(norms)) else float('inf')
+
+
+def _select_multistart(solutions):
+    """Resolve objective ties at the already requested solver precision.
+
+    Material objective improvements retain precedence. Inside the declared
+    ftol band, prefer a converged state with the smaller first-order residual.
+    Column normalization removes dependence on parameter units; the canonical
+    data-derived optimization basis is independent of engine reference choices.
+    Stable seed order resolves an exact remaining tie.
+    """
+    with np.errstate(over='ignore',invalid='ignore'):
+        costs=[float(item.fun@item.fun) for item in solutions]
+    finite_costs=[value for value in costs if np.isfinite(value)]
+    if not finite_costs:raise ValueError('No multistart candidate has a finite objective.')
+    minimum=min(finite_costs);width=_FIT_OBJECTIVE_RTOL*max(1.,abs(minimum))
+    scores=[_projected_stationarity(item) for item in solutions]
+    near=[i for i,value in enumerate(costs) if np.isfinite(value) and
+          np.isfinite(scores[i]) and value<=minimum+width]
+    if not near:
+        raise ValueError('The minimum-objective multistart candidate is numerically invalid; no valid tied solution establishes the fit.')
+    converged=[i for i in near if solutions[i].success]
+    eligible=converged or near
+    index=min(eligible,key=lambda i:(scores[i],i))
+    return solutions[index],{'rule':'objective_ftol_tie_then_column_normalized_projected_KKT_gradient',
+        'relative_objective_tolerance':_FIT_OBJECTIVE_RTOL,'absolute_objective_tie_width':width,
+        'minimum_candidate_chi2':minimum,'selected_candidate_chi2':costs[index],
+        'selected_start':index,'eligible_starts':eligible,
+        'candidate_chi2':[value if np.isfinite(value) else None for value in costs],
+        'candidate_stationarity':[value if np.isfinite(value) else None for value in scores],
+        'numerically_invalid_starts':[i for i,value in enumerate(scores) if not np.isfinite(value) or not np.isfinite(costs[i])],
+        'stationarity_units':'whitened residual; column-normalized and projected at active bounds',
+        'qualification':'Numerical tie resolution within existing objective stopping precision; no statistical threshold or physical prior.'}
+
 def initial_parameters(data):
     """Inherited point-lens identities supply an initial state, not a prior."""
     o=data.observations;g=data.geometry
@@ -157,9 +212,9 @@ def fit(dataset,family='gr',starts=2,nuisance='shear',initial=None,max_nfev=160)
             if nuisance in ['shear','full']:x[5:7]+=rng.normal(size=2)*.002
         x=np.clip(x,mapping.lower+1e-7,mapping.upper-1e-7)
         solved=least_squares(residual,x,bounds=(mapping.lower,mapping.upper),jac='3-point',
-                 x_scale='jac',ftol=1e-10,xtol=1e-10,gtol=1e-8,max_nfev=max_nfev)
+                 x_scale='jac',ftol=_FIT_OBJECTIVE_RTOL,xtol=1e-10,gtol=1e-8,max_nfev=max_nfev)
         solutions.append(solved)
-    solved=min(solutions,key=lambda item:np.sum(item.fun**2))
+    solved,selection=_select_multistart(solutions)
     pars=mapping.decode(solved.x)
     pars['reference_mass_msun']=e.ref_mass
     pred,branch=e.calculate(pars,admit=False)
@@ -251,7 +306,8 @@ def fit(dataset,family='gr',starts=2,nuisance='shear',initial=None,max_nfev=160)
             'analysis_configuration':{'family':family,'nuisance':nuisance,'starts':starts,
                 'max_nfev':max_nfev,'initial':None if initial is None else json.loads(json.dumps(initial,default=lambda v:v.tolist()))},
             'software_provenance':copy.deepcopy(software_provenance()),
-            'multistart_chi2':[float(sol.fun@sol.fun) for sol in solutions],
+            'multistart_chi2':selection['candidate_chi2'],
+            'optimizer_selection':selection,
             'runtime_seconds':time.perf_counter()-beginning,
             'runtime':{'python':platform.python_version(),'numpy':np.__version__,'scipy':scipy.__version__},
             'conditional_envelope':{'status':'NOT_REQUESTED'},

@@ -1,0 +1,168 @@
+{
+  "schema": "bhtracker.multistart_dependency_thread_verification.v1",
+  "created_utc": "2026-10-22T22:11:52.116966+00:00",
+  "rule": "Existing objective ftol=1e-10 defines numerical ties; prefer converged then column-normalized projected KKT stationarity; seed index resolves exact remaining ties.",
+  "physical_prior_added": false,
+  "fixture_or_prediction_tolerance_changed": false,
+  "source_sha256": "35d0bba9db08feb22584d7234e62ea9bd6ef34d6feb325258892d51118f986f9",
+  "fixture_sha256": "dfd06d5db4317b5f6b1eff3faf13dbd45df9bc1d734e3c65dd22c63d1d52a5a1",
+  "all_strict_predictions_passed": true,
+  "all_analysis_configurations_unchanged": true,
+  "focused_tests": {
+    "command": "python -m pytest tests/test_multistart_selection.py tests/test_bhsm_interpretation.py -q",
+    "numpy_2_4_6_scipy_1_17_1": "17 passed in 1.36s; final JSON-finiteness assertion separately 6 passed in 1.01s",
+    "numpy_2_5_4_scipy_1_18_1": "17 passed in 1.17s",
+    "unchanged_reference_invariance_tests": "Included in earlier combined 27-case run before finite guards: 27 passed in 42.54s; final full-suite receipt is maintained separately."
+  },
+  "before_qualification": "Local legacy-selected fits already passed in the bounded investigation. A retained less-stationary first stopping state reproduces the hosted-Linux failure to about 2e-13 in logged predictions. The correction removes sensitivity to last-digit ordering within the existing objective stopping band; it does not claim that every legacy local run failed.",
+  "frozen_joint_science_changed": false,
+  "native_pilot_rerun": false,
+  "qualification": "Local Windows Python3.14/3.13 across two NumPy/SciPy versions and four thread settings; hosted Linux verification remains a separate CI gate. This numerical tie rule does not establish statistical uncertainty or a physical lens interpretation.",
+  "preserved_before": [
+    {
+      "path": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_real_data_corrections_20261022\\benchmark_data_research\\ORDINARY_TIE_SELECTION_STUDY_2.4.6.json",
+      "sha256": "60cc7ec5e4d413635efefb6bd69b34ca3a16f5b9712f3c6b73224685fd9c93aa",
+      "candidates": [
+        {
+          "cost": 36.39290573001042,
+          "scipy_optimality": 5.428698887365272e-06,
+          "normalized_gradient_max": 8.440924326690025e-11,
+          "projected_residual_norm": 4.40439057864474e-10,
+          "strict_prediction_passed": true,
+          "max_prediction_difference": 9.379164112033322e-13,
+          "rank": 25
+        },
+        {
+          "cost": 36.39290573001235,
+          "scipy_optimality": 3.038599052729296e-05,
+          "normalized_gradient_max": 1.7930209521982432e-09,
+          "projected_residual_norm": 1.206527885920062e-08,
+          "strict_prediction_passed": true,
+          "max_prediction_difference": 8.899903036763135e-11,
+          "rank": 25
+        }
+      ]
+    },
+    {
+      "path": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_real_data_corrections_20261022\\benchmark_data_research\\ORDINARY_TIE_SELECTION_STUDY_2.5.4.json",
+      "sha256": "5253b0fc638d18b0ef7cacfd63cae241bb2cd301f1d0befb9a6209d8a95b520f",
+      "candidates": [
+        {
+          "cost": 36.3929057300119,
+          "scipy_optimality": 0.0005079233655529404,
+          "normalized_gradient_max": 3.839074249820107e-08,
+          "projected_residual_norm": 2.6411029333752453e-07,
+          "strict_prediction_passed": false,
+          "max_prediction_difference": 1.406318617114266e-09,
+          "rank": 25
+        },
+        {
+          "cost": 36.39290573001043,
+          "scipy_optimality": 3.0019624546184787e-05,
+          "normalized_gradient_max": 1.7945102886302022e-09,
+          "projected_residual_norm": 1.1981725254959497e-08,
+          "strict_prediction_passed": true,
+          "max_prediction_difference": 8.823164421301044e-11,
+          "rank": 25
+        }
+      ]
+    }
+  ],
+  "fresh_process_count": 16,
+  "dependency_summaries": [
+    {
+      "numpy": "2.4.6",
+      "scipy": "1.17.1",
+      "selected_starts": [
+        0
+      ],
+      "maximum_absolute_prediction_difference": 9.379164112033322e-13,
+      "representative_candidates": [
+        {
+          "chi2": 36.39290573001042,
+          "converged": true,
+          "scipy_optimality": 5.428698887365272e-06,
+          "normalized_projected_gradient": 8.440926433715451e-11
+        },
+        {
+          "chi2": 36.39290573001235,
+          "converged": true,
+          "scipy_optimality": 3.038599052729296e-05,
+          "normalized_projected_gradient": 1.7930209368882525e-09
+        }
+      ],
+      "representative_selection": {
+        "rule": "objective_ftol_tie_then_column_normalized_projected_KKT_gradient",
+        "relative_objective_tolerance": 1e-10,
+        "absolute_objective_tie_width": 3.639290573001042e-09,
+        "minimum_candidate_chi2": 36.39290573001042,
+        "selected_candidate_chi2": 36.39290573001042,
+        "selected_start": 0,
+        "eligible_starts": [
+          0,
+          1
+        ],
+        "candidate_chi2": [
+          36.39290573001042,
+          36.39290573001235
+        ],
+        "candidate_stationarity": [
+          8.440926433715451e-11,
+          1.7930209368882525e-09
+        ],
+        "numerically_invalid_starts": [],
+        "stationarity_units": "whitened residual; column-normalized and projected at active bounds",
+        "qualification": "Numerical tie resolution within existing objective stopping precision; no statistical threshold or physical prior."
+      }
+    },
+    {
+      "numpy": "2.5.4",
+      "scipy": "1.18.1",
+      "selected_starts": [
+        1
+      ],
+      "maximum_absolute_prediction_difference": 8.822809149933164e-11,
+      "representative_candidates": [
+        {
+          "chi2": 36.3929057300119,
+          "converged": true,
+          "scipy_optimality": 0.0005079233655529404,
+          "normalized_projected_gradient": 3.8390742471524064e-08
+        },
+        {
+          "chi2": 36.39290573001043,
+          "converged": true,
+          "scipy_optimality": 3.0019624546184787e-05,
+          "normalized_projected_gradient": 1.794510298174138e-09
+        }
+      ],
+      "representative_selection": {
+        "rule": "objective_ftol_tie_then_column_normalized_projected_KKT_gradient",
+        "relative_objective_tolerance": 1e-10,
+        "absolute_objective_tie_width": 3.6392905730010435e-09,
+        "minimum_candidate_chi2": 36.39290573001043,
+        "selected_candidate_chi2": 36.39290573001043,
+        "selected_start": 1,
+        "eligible_starts": [
+          0,
+          1
+        ],
+        "candidate_chi2": [
+          36.3929057300119,
+          36.39290573001043
+        ],
+        "candidate_stationarity": [
+          3.8390742471524064e-08,
+          1.794510298174138e-09
+        ],
+        "numerically_invalid_starts": [],
+        "stationarity_units": "whitened residual; column-normalized and projected at active bounds",
+        "qualification": "Numerical tie resolution within existing objective stopping precision; no statistical threshold or physical prior."
+      }
+    }
+  ],
+  "full_external_receipt": {
+    "path": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_real_data_corrections_20261022\\benchmark_data_research\\ORDINARY_FINAL_TIE_SELECTION_DEPENDENCY_THREAD_RECEIPT.json",
+    "sha256": "b0b4c97ad66753fd68dc415ee5a98edcc601c6b09cb8ab121a78b8628855dd20"
+  }
+}

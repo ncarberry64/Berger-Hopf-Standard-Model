@@ -144,6 +144,58 @@ def test_legacy_profile_internal_state_requires_explicit_refit():
     with pytest.raises(ValueError,match='legacy or incompatible internal parameter basis'):
         profile(raw,result,points=7)
 
+def _assert_covariance_variance_resolution(candidate, reference, tolerance=1e-9):
+    """Bound fractional variance error for every linear reporting combination.
+
+    Entrywise relative errors have no invariant meaning near zero correlation.
+    If reference=L L.T, this instead requires
+    ||L^-1 (candidate-reference) L^-T||_2 <= tolerance. For symmetric matrices
+    this is exactly |v.T delta_C v| <= tolerance*v.T reference*v for every v.
+    Positive definiteness and symmetry are checked separately before whitening.
+    """
+    candidate, reference = np.asarray(candidate), np.asarray(reference)
+    assert candidate.shape == reference.shape
+    for covariance in [candidate, reference]:
+        assert np.isfinite(covariance).all()
+        symmetry_error = np.linalg.norm(covariance-covariance.T, ord=2)
+        assert symmetry_error <= 32*np.finfo(float).eps*np.linalg.norm(covariance, ord=2)
+        assert np.linalg.eigvalsh((covariance+covariance.T)/2).min() > 0
+    lower = np.linalg.cholesky(reference)
+    difference = np.linalg.solve(lower, candidate-reference)
+    difference = np.linalg.solve(lower, difference.T).T
+    fractional_variance_error = np.max(abs(np.linalg.eigvalsh((difference+difference.T)/2)))
+    assert fractional_variance_error <= tolerance, fractional_variance_error
+    return fractional_variance_error
+
+
+def test_covariance_resolution_accepts_zero_crossing_but_rejects_variance_changes():
+    # A tiny correlation can cross zero without a significant variance change.
+    reference = np.array([[1., 2e-10], [2e-10, 4.]])
+    candidate = reference.copy();candidate[0, 1] = candidate[1, 0] = -2e-10
+    error = _assert_covariance_variance_resolution(candidate, reference)
+    assert error == pytest.approx(2e-10, rel=1e-6)
+    # Both a changed marginal variance and a correlated variance direction must
+    # fail the SAME 1e-9 fractional-variance bound, even for zero reference cross covariance.
+    diagonal = np.diag([1., 4.])
+    for changed in [np.diag([1.+2e-9, 4.]), np.array([[1., 4e-9], [4e-9, 4.]])]:
+        with pytest.raises(AssertionError):
+            _assert_covariance_variance_resolution(changed, diagonal)
+    with pytest.raises(AssertionError):
+        _assert_covariance_variance_resolution(np.diag([1., 0.]), diagonal)
+
+
+def test_covariance_variance_resolution_is_reporting_basis_independent():
+    reference = np.diag([1., 4.])
+    candidate = np.array([[1., .04], [.04, 4.]])
+    # The +/- eigen-combinations have fractional variance errors exactly .02.
+    error = _assert_covariance_variance_resolution(candidate, reference, tolerance=.03)
+    assert error == pytest.approx(.02, rel=1e-14)
+    reporting = np.array([[1.e3, 2.e2], [-3.e-4, 2.e-3]])
+    transformed = _assert_covariance_variance_resolution(
+        reporting@candidate@reporting.T, reporting@reference@reporting.T, tolerance=.03)
+    assert transformed == pytest.approx(error, rel=1e-12)
+
+
 def test_reporting_covariance_resolution_across_independent_derivative_steps():
     """Numerical covariance tolerance, separate from physical fit/admission gates."""
     from bhtracker import load_dataset
@@ -163,4 +215,6 @@ def test_reporting_covariance_resolution_across_independent_derivative_steps():
         physical=transform@cov@transform.T
         assert rank==result['rank']
         assert np.sqrt(physical[0,0])==pytest.approx(result['uncertainty']['mass_msun'],rel=1e-9)
-        np.testing.assert_allclose(physical[3:5,3:5],result['proper_motion_covariance'],rtol=1e-9,atol=1e-18)
+        # Keep the 1e-9 fractional-variance requirement for every motion
+        # combination; do not demand relative precision in a small cross entry.
+        _assert_covariance_variance_resolution(physical[3:5,3:5],result['proper_motion_covariance'])
