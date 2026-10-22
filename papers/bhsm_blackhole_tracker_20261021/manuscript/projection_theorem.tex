@@ -1,0 +1,144 @@
+\section{Projection and the information retained by the tracker}
+\label{sec:projection-information}
+
+The screened multipole exponents and hypergeometric radial modes have cubic-Galileon precedents \cite{Chu2013,Brito2014,Kobayashi2026}. Here the input is the normalized exterior response of the preceding section, with its fixed scalar-to-metric coefficient. The statements below concern that conditional response, rather than a horizon-selected amplitude.
+
+\subsection{A normalized STF boundary state and its projected nulls}
+
+Let $\mathsf C$ be a real symmetric trace-free $3\times3$ matrix, normalized by $\operatorname{tr}\mathsf C^2=1$, and define
+\begin{equation}
+ Y_{\mathsf C}(\mathbf n)=N_{\rm STF} C_{ij}n_i n_j,
+ \qquad N_{\rm STF}=\sqrt{\frac{15}{8\pi}},\qquad
+ \int_{S^2}Y_{\mathsf C}^2\,d\Omega=1.
+\end{equation}
+Thus $a f_2(r)Y_{\mathsf C}$ has boundary $L^2$ norm $|a|$ at $r_0$.
+For $\mathsf C_+=\operatorname{diag}(1,-1,0)/\sqrt2$, this is precisely
+the transverse harmonic with $N_2=\sqrt{15/(16\pi)}$ used above;
+$N_{\rm STF}/\sqrt2=N_2$. Define $\mathcal W=\Phi+\Psi$.
+Its scalar-driven response is $\delta\mathcal W=\mathcal A_W f_2Y_{\mathsf C}$,
+with $\mathcal A_W=-\widehat\beta a$ for $\pi_T/M_{\rm Pl}$ normalization.
+This is the fixed action coefficient, not an additional photon coupling.
+
+For a frozen straight ray with $\mathbf x=(b\cos\varphi,b\sin\varphi,z)$, $b\ge r_0$, factor out $N_{\rm STF}\mathcal A_W$ and the known geometric prefactor. The remaining full-line projection is
+\begin{equation}
+ \mathcal P_f[\mathsf C](b,\varphi)
+ =\int_{-\infty}^{\infty} f(r)\frac{C_{ij}x_i x_j}{r^2}\,dz,
+ \qquad r^2=b^2+z^2.
+\end{equation}
+Parameterize the five STF components by
+\begin{equation}
+ \mathsf C=\begin{pmatrix}
+ -c/2+s_1&s_2&u\\ s_2&-c/2-s_1&v\\ u&v&c
+ \end{pmatrix},\qquad
+ \operatorname{tr}\mathsf C^2=\frac32c^2+2(s_1^2+s_2^2+u^2+v^2).
+\end{equation}
+Direct integration gives
+\begin{align}
+ \mathcal P_f[\mathsf C]&=cA_0(b)
+ +T(b)(s_1\cos2\varphi+s_2\sin2\varphi),\label{eq:stf-projection}\\
+ T(b)&=b^2\int_{-\infty}^{\infty}\frac{f(r)}{r^2}\,dz,\qquad
+ A_0(b)=\int_{-\infty}^{\infty}f(r)
+ \left(1-\frac{3b^2}{2r^2}\right)dz.\label{eq:radial-projections}
+\end{align}
+The $xz$ and $yz$ terms are odd in $z$ and vanish. This exact two-dimensional kernel prevents reconstruction of an unrestricted three-dimensional STF state from this one-view projection. If its three visible coefficients are inferred with the stated action normalization, they only imply
+\begin{equation}
+ a^2\ge\frac32(ac)^2+2[(as_1)^2+(as_2)^2].
+\end{equation}
+
+\paragraph{Conditional rank-three result.}
+For the isolated cubic response with
+\begin{equation}
+ K_r=C_0\sqrt{1+(r_V/r)^3},\quad
+ K_\Omega=K_r+\frac r2K_r',\quad C_0>0,\quad r_V>0,
+\end{equation}
+the normalized positive decaying solution obeys $T(b)>0$ and $A_0(b)>0$. Hence \eqref{eq:stf-projection} has rank three as a map into projected functions, with kernel exactly $(u,v)$. To prove the axial assertion, put $Y=r^3f$. The radial equation implies
+\begin{equation}
+ (K_r r^{-4}Y')'=6K_r'r^{-5}Y.
+\end{equation}
+Positivity of $f$ follows from the elliptic maximum principle. Since $K_r'<0$ and $K_r r^{-4}Y'\to0$ at infinity, integration from $r$ to infinity gives $Y'>0$. An integration by parts, using $zf(r)\to0$, then gives
+\begin{equation}
+ A_0(b)=\frac12\int_{-\infty}^{\infty}\frac{z^2}{r^2}
+ [rf'(r)+3f(r)]\,dz
+ =\frac12\int_{-\infty}^{\infty}\frac{z^2}{r^4}Y'(r)\,dz>0.
+\end{equation}
+The genuinely screened hypothesis matters: for $f=C_o/r^3$, $A_0\equiv0$ and $T=4C_o/(3b^2)$, so the rank is two. This harmonic limit agrees with the transverse STF mass-multipole projection \cite{Turyshev2022}. Rank in a projected representation does not by itself establish rank in lens data after monopole and source freedoms are fitted.
+
+These full-line statements use the isolated frozen exterior as a local matching model. Finite observer/source endpoints, nonconstant geometric weights, motion during ray crossing, and cosmological outer completion require their own projection. They cannot be assumed to remove the nulls without calculation.
+
+\subsection{Radial discrimination and its limitation}
+
+In a screened overlap $r_0\le b\ll r_V$, the matched $f\sim A_d/r$ gives
+\begin{equation}
+ T(b)\sim2A_d.
+\end{equation}
+The leading transverse potential is therefore constant in radius and spin two in angle. The deep axial integral, temporarily cut off at a symmetric $Z$, is
+\begin{equation}
+ A_0(b;Z)=A_d\left[2\operatorname{asinh}(Z/b)
+ -\frac{3Z}{\sqrt{Z^2+b^2}}\right]
+ \sim A_d[2\ln(2Z/b)-3].
+\end{equation}
+Outer matching fixes the constant and subleading corrections. The leading $-2A_d\ln b$ is degenerate with a point-mass potential. Its additive constant has no deflection or differential-delay signal. The numerical calculation uses the matched profile rather than extending $r^{-1}$ to infinity.
+
+At the potential level, a constant spin-two coefficient differs from an isolated compact harmonic quadrupole proportional to $b^{-2}$ and a uniform external shear proportional to $b^2$. If a calibrated spin-two potential amplitude is restricted to
+\begin{equation}
+ p_2(b)=q+\mu b^{-2}+\gamma b^2,\qquad D=b\partial_b,
+\end{equation}
+then
+\begin{equation}
+ (D^2-4)p_2=-4q.
+\end{equation}
+At three distinct positive radii, writing $x_i=b_i^2$, the design rows $(1,x_i^{-1},x_i)$ have determinant
+\begin{equation}
+ -\frac{(x_2-x_1)(x_3-x_1)(x_3-x_2)}{x_1x_2x_3}\ne0.
+\end{equation}
+Two radii cannot separate $q$ from both nuisance coefficients. For the actual transfer the first column is $T(b_i)$, and its determinant and conditioning must be evaluated. These are conditional potential-reconstruction statements. They are not a claim that three image radii directly measure three potential values. Internal/external multipole reconstruction already has an extensive lensing literature \cite{Trotter2000,Bernstein2009}.
+
+An arbitrary extended matter distribution is a stronger nuisance family: $\nabla_\perp^2[q\cos2\varphi]=-4q\cos2\varphi/b^2$, so an annular distributed quadrupolar density can reproduce this potential. A small quadrupolar perturbation can be supported by a positive monopole. Consequently the radial filter does not identify a gravity theory or exclude an ordinary extended envelope.
+
+\subsection{Timing blindness, scalar-estimator degeneracy, and image geometry}
+
+Use dimensionless reference potential $\psi_0=\ln r$, source $\mathbf y=u\mathbf e$, $s=\sqrt{u^2+4}$ and primary images $\mathbf x_+=a\mathbf e$, $\mathbf x_-=-d\mathbf e$, where $a=(u+s)/2$, $d=a^{-1}$. For a perturbation $q\cos2(\varphi-\varphi_q)$ constant in radius, both unperturbed image potentials agree. Fermat stationarity therefore gives zero first-order delay change at fixed source. Its log flux-ratio change is
+\begin{equation}
+ \delta\ln R=-4q\cos2(\varphi_s-\varphi_q)\frac{s}{u}.
+\end{equation}
+Tangential image displacements can retain the angular component absent from this scalar correction. These statements concern continued nonsingular primary branches, with perturbations small enough to avoid a critical crossing or flux-order reversal.
+
+The first-variation operator of the point-lens apparent-mass estimator satisfies
+\begin{equation}
+ \mathcal K_{1}(u)=\mathcal K_{r^2}(u)
+ =\frac{s^3}{u h(u)},\qquad
+ h(u)=\frac12us+2\operatorname{asinh}(u/2).
+\end{equation}
+Thus $(r^2-1)\cos2\varphi$ is an exact first-order null of this scalar statistic for every $u>0$. A deep constant spin-two response and external shear cannot be separated by that statistic alone. The point-lens delay/flux relation is established prior art \cite{Munoz2016}; the evaluated transfer response, rather than different radial powers by themselves, determines its information.
+The unit $r^2\cos2\varphi$ profile here has coefficient one in the
+potential. In the product's shear convention
+$\psi_{\rm shear}=\gamma_+r^2\cos2\varphi/2$, it corresponds to
+$\gamma_+=2$. The identity concerns a first variation of this scalar
+statistic, not an equality of finite perturbed lens models. The leading
+delay null likewise assumes the stated point-lens reference and fixed
+source; finite matching corrections to the constant radial profile can
+lift it.
+
+\paragraph{Fixed-data gradient proposition.}
+Let observed image positions $\boldsymbol\theta_\pm$ and reference Jacobians $A_\pm$ be fixed, and hold the time-delay prefactor fixed. A perturbing potential $p$ can preserve these positions with one freely shifted source if and only if
+\begin{equation}
+ \nabla p(\boldsymbol\theta_+)=\nabla p(\boldsymbol\theta_-)
+ =-\delta\boldsymbol\beta.\label{eq:pair-gradient-null}
+\end{equation}
+Under \eqref{eq:pair-gradient-null}, the remaining first-order null tests are
+\begin{align}
+ \delta\Delta\tau&=(\boldsymbol\theta_+-\boldsymbol\theta_-)
+ \cdot\delta\boldsymbol\beta+p_+-p_-,\\
+ \delta\ln R&=\operatorname{tr}(A_+^{-1}H p_+)
+ -\operatorname{tr}(A_-^{-1}H p_-).
+\end{align}
+The lens equations and Fermat stationarity prove these identities directly. In a forward calculation at fixed source, the images move and the flux derivative also includes the displaced background Hessian; that term cannot be dropped.
+
+For the scalar-estimator null $p=(r^2-1)\cos2\varphi$, direct differentiation gives
+\begin{equation}
+ \nabla p(a\mathbf e)-\nabla p(-d\mathbf e)
+ =2s\cos2\varphi_s\,\mathbf e.
+\end{equation}
+With a calibrated center, a free source alone cannot absorb this difference when $\cos2\varphi_s\ne0$. An added mass perturbation $\delta m\ln r$ cancels it only for $\delta m=-2\cos2\varphi_s$, which then changes the mass estimator by $\delta m$. Thus image geometry and the estimator distinguish this particular difference if mass is the only additional compensator and the time-distance conversion is fixed. Equivalently, the geometric angular-mass product of the two radii changes by zero for constant spin two and by $2\cos2\varphi_s$ for $r^2$ spin two. Comparing angular and physical masses requires distance calibration.
+
+For $\cos2\varphi_s=0$, the same difference is a genuine first-order joint null for a single freely positioned source: its gradients agree, its source shift is tangential, and both delay and flux-ratio variations vanish. Additional epochs with changing angle can change this rank. Moving centers, convergence, distance factors, ordinary multipoles, and calibration parameters must be included before profiling the full data Jacobian. More general source-position and multi-plane transformations impose further limits \cite{SchneiderSluse2014,Schneider1997,Schneider2019,Fleury2021}. No unrestricted reconstruction theorem follows from the potential-space filter.

@@ -1,0 +1,128 @@
+{
+  "status": "PASS",
+  "checks": {
+    "cubic_Y_equation": true,
+    "cubic_Y_integrating_factor": true,
+    "axial_integration_by_parts": true,
+    "deep_transverse_integral": true,
+    "harmonic_transverse_integral": true,
+    "harmonic_axial_null": true,
+    "three_radius_determinant": true,
+    "contrast_constant": true,
+    "contrast_internal": true,
+    "contrast_external": true,
+    "radial_filter_-2": true,
+    "radial_filter_0": true,
+    "radial_filter_2": true,
+    "constant_flux_cartesian": true,
+    "shear_flux_cartesian": true,
+    "constant_estimator_response": true,
+    "shear_estimator_response": true,
+    "estimator_null_r2_minus_1": true,
+    "geometry_mass_constant": true,
+    "geometry_mass_shear": true,
+    "pair_gradient_difference_0": true,
+    "pair_gradient_difference_1": true,
+    "matched_projection_positive": true,
+    "deep_projection_limit": true,
+    "finite_branch_estimator_and_geometry": true
+  },
+  "matched_projection": [
+    {
+      "b_over_rV": 0.003,
+      "T": 0.0019999173849953394,
+      "A0": 0.009623001606434266,
+      "deep_T_ratio": 0.9999585644923179
+    },
+    {
+      "b_over_rV": 0.01,
+      "T": 0.0019991246940269203,
+      "A0": 0.0072158578864531175,
+      "deep_T_ratio": 0.9995622190588448
+    },
+    {
+      "b_over_rV": 0.1,
+      "T": 0.0019339004051129633,
+      "A0": 0.0026790207854417206,
+      "deep_T_ratio": 0.9669500787765678
+    },
+    {
+      "b_over_rV": 1.0,
+      "T": 0.0005618212950955917,
+      "A0": 3.66367645954385e-05,
+      "deep_T_ratio": 0.2809106115882442
+    },
+    {
+      "b_over_rV": 10.0,
+      "T": 6.955652294626693e-06,
+      "A0": 5.75991628751982e-10,
+      "deep_T_ratio": 0.003477825702114597
+    }
+  ],
+  "exact_branch_finite_differences": [
+    {
+      "u": 0.3,
+      "profile": "constant",
+      "estimator_derivative": 45.78174384941541,
+      "expected": 45.78174384777281,
+      "geometry_mass_derivative": 0.0
+    },
+    {
+      "u": 0.3,
+      "profile": "shear",
+      "estimator_derivative": 45.78174385390913,
+      "expected": 45.78174384777281,
+      "geometry_mass_derivative": 2.0000000008901786
+    },
+    {
+      "u": 0.3,
+      "profile": "difference",
+      "estimator_derivative": 4.99600361079503e-09,
+      "expected": 0,
+      "geometry_mass_derivative": 2.0000000008901786
+    },
+    {
+      "u": 0.8,
+      "profile": "constant",
+      "estimator_derivative": 7.610163317558838,
+      "expected": 7.610163316661583,
+      "geometry_mass_derivative": 0.0
+    },
+    {
+      "u": 0.8,
+      "profile": "shear",
+      "estimator_derivative": 7.61016331562438,
+      "expected": 7.610163316661583,
+      "geometry_mass_derivative": 2.0000000000575113
+    },
+    {
+      "u": 0.8,
+      "profile": "difference",
+      "estimator_derivative": -1.6653345369367252e-09,
+      "expected": 0,
+      "geometry_mass_derivative": 2.0000000000575113
+    },
+    {
+      "u": 1.7,
+      "profile": "constant",
+      "estimator_derivative": 2.8191703790860525,
+      "expected": 2.8191703793199148,
+      "geometry_mass_derivative": 0.0
+    },
+    {
+      "u": 1.7,
+      "profile": "shear",
+      "estimator_derivative": 2.819170379086981,
+      "expected": 2.8191703793199148,
+      "geometry_mass_derivative": 2.0000000000575113
+    },
+    {
+      "u": 1.7,
+      "profile": "difference",
+      "estimator_derivative": 1.6653345369373562e-09,
+      "expected": 0,
+      "geometry_mass_derivative": 2.0000000000575113
+    }
+  ],
+  "scope": "Internal algebra and isolated frozen-exterior projection checks; no data, horizon, or source-amplitude certification."
+}

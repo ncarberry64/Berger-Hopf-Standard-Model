@@ -48,9 +48,13 @@ def verify(archive: Path, source_root: Path = ROOT) -> dict:
             records[name] = entry
         if set(names) != set(records) | {MANIFEST}:
             raise ValueError("Source ZIP membership differs from its manifest")
+        runtime = {PRODUCT + name for name in ("pyproject.toml", "bhtracker/__init__.py",
+                   "bhtracker/forward.py", "bhtracker/inference.py",
+                   "bhtracker/theory/BHSM_INTERPRETATION_MANIFEST.json")}
         required = {"LICENSE.md", "ACADEMIC_USE.md", PRODUCT + "FORMAL_PROVENANCE.json", PRODUCT + "REVIEWER.md",
-                    PRODUCT + "pyproject.toml", "tools/verify_blackhole_tracker_snapshot.py",
+                    "tools/verify_blackhole_tracker_snapshot.py",
                     "tools/smoke_blackhole_tracker_wheel.py", "tools/verify_blackhole_tracker_release.py"}
+        required.update(runtime)
         required.update("papers/" + paper + "/manuscript/main.tex" for paper in PAPERS)
         required.add("papers/bhsm_blackhole_tracker_20261021/manuscript/main.pdf")
         if not required.issubset(records):
@@ -67,6 +71,8 @@ def verify(archive: Path, source_root: Path = ROOT) -> dict:
         formal = json.loads(bundle.read(PRODUCT + "FORMAL_PROVENANCE.json"))
         if formal.get("canonical_repository") != manifest["formal_reviewer_repository"]:
             raise ValueError("Inner formal repository differs")
+        if formal.get("schema_version") != 1 or formal.get("canonical_path") != PRODUCT.rstrip("/"):
+            raise ValueError("Unsupported inner formal manifest contract")
         if not re.fullmatch(r"[0-9a-f]{40}", formal.get("workspace_source_commit", "")):
             raise ValueError("Inner source revision is not immutable")
         upstream = formal.get("source_files")
@@ -84,6 +90,8 @@ def verify(archive: Path, source_root: Path = ROOT) -> dict:
             data = bundle.read(name)
             if len(data) != entry["bytes"] or hashlib.sha256(data).hexdigest() != entry["sha256"]:
                 raise ValueError("Inner formal source byte mismatch: " + name)
+        if not runtime.issubset(seen):
+            raise ValueError("Inner source manifest omits required runtime entries")
     return {"passed": True, "archive_sha256": hashlib.sha256(archive.read_bytes()).hexdigest(),
             "manifest_sha256": hashlib.sha256(manifest_bytes).hexdigest(),
             "members": len(names), "upstream_files": len(upstream),

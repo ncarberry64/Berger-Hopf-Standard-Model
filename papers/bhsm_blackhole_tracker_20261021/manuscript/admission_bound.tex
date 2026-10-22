@@ -1,0 +1,151 @@
+\section{A uniform admission bound for boundary states}
+\label{sec:admission-bound}
+
+The exterior action gives a sufficient amplitude domain before any optical
+fit. Let $\mathcal H_0=\operatorname{Hess}_x\widehat\pi_0$ and
+$\delta\mathcal H=\operatorname{Hess}_x\delta\widehat\pi$, with derivatives
+in $x=r/L_0$. In an orthonormal real quadrupole basis, write
+\begin{equation}
+ \delta\widehat\pi=f_2\sum_{A=1}^5a_AY_A
+ =N_{\rm STF}f_2\,n^i\mathsf Q_{ij}n^j,\qquad
+ N_{\rm STF}=\sqrt{\frac{15}{8\pi}},\quad
+ \mathcal A=\|\boldsymbol a\|_2=\|\mathsf Q\|_F,
+ \label{eq:admission-state}
+\end{equation}
+where $\mathsf Q$ is symmetric and trace free and $f_2(x_0)=1$.
+The result covers all five coordinates, including the two erased by a
+symmetric line-of-sight projection. A smaller template family specifies
+its omitted coordinates separately. The product uses the two transverse
+and one axial coordinates, with the two odd coordinates fixed to zero;
+their absence is a model convention, not a measurement of their values.
+
+\begin{proposition}[Uniform retained-exterior control]
+\label{prop:admission-bound}
+Assume the isolated decaying branch, $\chi>0$, $P_0>0$, and
+$C,D_t,\widehat\lambda>0$. Put $P_0=x_0|p(x_0)|$,
+$B=12N_{\rm STF}$, $d_*=D_t/C$, and
+\begin{equation}
+ R_t=\begin{cases}
+ 6,&d_*\ge3/4,\\
+ 6t(2-t),\quad t=\sqrt{4d_*/3},&0<d_*<3/4.
+ \end{cases}
+ \label{eq:admission-time-minimum}
+\end{equation}
+At every $x\ge x_0$ and every angular direction,
+\begin{align}
+ \frac{\|\delta\mathcal H\|_F}{\|\mathcal H_0\|_F}
+ &\le\frac{B\mathcal A}{\sqrt2P_0},&
+ \frac{\|\delta Z\|_{\rm op}}{K_\Omega}
+ &\le\frac{2\sqrt2B\mathcal A}{P_0},\nonumber\\
+ \frac{|\delta K_t|}{K_t}
+ &\le\frac{4\sqrt3B\mathcal A}{R_tP_0}.&&
+ \label{eq:admission-uniform-bounds}
+\end{align}
+Here $\delta Z=-4[(\tr\delta\mathcal H)I-\delta\mathcal H]/
+\widehat\lambda$ and $\delta K_t=-4\tr\delta\mathcal H/
+\widehat\lambda$ are the retained principal perturbations.
+\end{proposition}
+
+\begin{proof}
+Set $k=K_\Omega/K_r\in[1/4,1]$ and
+$y=d\log f_2/d\log r$. Equation~\eqref{eq:ext-multipole} gives
+\begin{equation}
+ r^2f_2''+2krf_2'-6kf_2=0,\qquad
+ \frac{dy}{d\log r}=(1-2k)y+6k-y^2.
+\end{equation}
+At $y=-3$ and $-1$ the outward vector fields are respectively
+$12(k-1)\le0$ and $8k-2\ge0$. Thus $[-3,-1]$ is invariant under
+inward integration and contains the decaying far-field branch
+$y=-3+9(r_V/r)^3/8+O((r_V/r)^6)$. Hence $-3\le y\le-1$.
+The elliptic maximum principle gives positive $f_2$ and also
+\begin{equation}
+ f_2(x)\le f_1(x)=\frac{|p(x)|}{|p(x_0)|}.
+ \label{eq:admission-radial-comparison}
+\end{equation}
+Indeed $L_2f_1=-4K_\Omega f_1/r^2<0$, whereas $L_2f_2=0$;
+their normalized inner and decaying outer boundary data agree. Here
+$L_\ell f=r^{-2}(r^2K_rf')'-\ell(\ell+1)K_\Omega f/r^2$.
+
+Rotate the evaluation direction to the third axis. The Hessian map on
+the orthogonal $m=2,1,0$ matrix subspaces has singular coefficients
+\begin{equation}
+ 2,\qquad 2|y-1|,\qquad
+ \frac2{\sqrt3}\sqrt{1+2k^2}\,(3-y),
+\end{equation}
+after removing $N_{\rm STF}f_2/x^2$. Each is at most 12, so
+$\|\delta\mathcal H\|_F\le B\mathcal A f_2/x^2$.
+Now use Eq.~\eqref{eq:admission-radial-comparison},
+$\|\mathcal H_0\|_F\ge\sqrt2|p|/x$,
+$\|(\tr H)I-H\|_{\rm op}\le\sqrt2\|H\|_F$, and
+$K_\Omega\ge2|p|/(\widehat\lambda x)$.
+Finally, with $s=K_r/C\ge1$, Eq.~\eqref{eq:ext-principal} gives
+\begin{equation}
+ \frac{K_t}{|p|/(\widehat\lambda x)}
+ =6-\frac6s+\frac{8d_*}{s-1}\ge R_t.
+\end{equation}
+Taking the infimum over $s$ yields Eq.~\eqref{eq:admission-time-minimum};
+$|\tr H|\le\sqrt3\|H\|_F$ completes the result.
+\end{proof}
+
+For declared budgets $\epsilon_H>0$, $0<\epsilon_Z<1$ and
+$\eta_{\max}>0$, a sufficient state cap is
+\begin{equation}
+ \mathcal A\le\mathcal A_{\max}=P_0\min\left\{
+ \frac{\eta_{\max}}6,\frac{\sqrt2\epsilon_H}B,
+ \frac{\epsilon_Z}{2\sqrt2B},
+ \frac{\epsilon_ZR_t}{4\sqrt3B}\right\},\qquad
+ \eta=\frac{6\mathcal A}{P_0}.
+ \label{eq:admission-cap}
+\end{equation}
+This preserves the retained principal signs throughout the exterior and
+bounds the relative Hessian. These are approximation budgets, rather than
+a selected astrophysical amplitude. The cap is sufficient, not necessary:
+exceeding it is outside this guarantee and the product's declared admitted
+family; it does not establish physical impossibility or an actual change
+of principal sign. The exact quadratic scalar remainder
+obeys $|\mathcal R_2|\le4\|\delta\mathcal H\|_F^2/
+\widehat\lambda$; a residual bound alone is not an inverse-operator error
+estimate. The conormal map is exact for the linear exterior:
+\begin{equation}
+ \boldsymbol q=\Lambda_2\boldsymbol a,\qquad
+ \boldsymbol a=\boldsymbol q/\Lambda_2,\qquad
+ \frac{E_2}{M_{\rm Pl}^2L_0}=\frac12\Lambda_2\mathcal A^2.
+ \label{eq:admission-conormal}
+\end{equation}
+Thus specified conormal data are admitted when
+$\|\boldsymbol q\|_2\le\Lambda_2\mathcal A_{\max}$.
+This source pairing does not select a horizon flux or interior state.
+
+At $\chi=0$, the relative normalization $P_0$ vanishes but nonzero
+boundary states remain possible. Here $f_2=(x_0/x)^3$,
+$K_r=K_\Omega=C$, $K_t=D_t$, and $\Lambda_2=3Cx_0$. The absolute cap
+\begin{equation}
+ \mathcal A\le\epsilon_Z\widehat\lambda x_0^2
+ \min\left\{\frac{C}{4\sqrt2B},\frac{D_t}{4\sqrt3B}\right\}
+ \label{eq:admission-zero-flux}
+\end{equation}
+preserves the same retained principal signs; relative $\eta$ is undefined.
+
+Admission also requires weak metric potentials, rays with $b\ge r_0$,
+and a local patch whose background changes slowly. A useful uniform
+spatial-gradient control is
+$[(|p_0|+\sqrt6N_{\rm STF}\mathcal A/x_0)/|\widehat v|]^2\ll1$.
+For a patch scale $L$, the implemented drift estimate is
+$\max(|\widehat H|,2|\widehat d/\widehat v|)L/L_0$.
+The spherical-background sound-speed lower bound $c_{\rm bg}$ follows by minimizing
+$\min(4s^2,s^2+3)/[3(s-1)^2+4d_*s]$ over $s\ge1$.
+Here its minimum is $c_{\rm bg}^2$ in units of $c^2$.
+For a state with the spatial and time bounds $e_s<1,e_t$ in
+Eq.~\eqref{eq:admission-uniform-bounds}, the Rayleigh quotient instead gives
+$c_{\min}=c_{\rm bg}\sqrt{(1-e_s)/(1+e_t)}$.
+The implementation uses this conservative state-inclusive bound. Require
+$v_\perp/(cc_{\min})\ll1$ and
+$L/(cc_{\min}\tau_{\rm local})\ll1$ for intrinsic evolution.
+Observer proper motion gives $v_\perp=|\mu_{\rm obs}|D_l(1+z_l)$;
+the observer timescale is $\tau_{\rm obs}=(1+z_l)\tau_{\rm local}$.
+Fixed boundary coefficients are an explicit time assumption.
+The product uses IAU nominal $GM_\odot$ for its mass-length conversion;
+this unit convention leaves the equations and bounds unchanged.
+These controls apply to the retained local equations. Cosmological
+matching, the coupled horizon problem and ultraviolet completion require
+their own calculations.

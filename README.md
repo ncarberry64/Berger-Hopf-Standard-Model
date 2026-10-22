@@ -30,7 +30,7 @@ connects reviewed derived results to these same public exhibits.
 | Inspect enclosure and interacting-state construction | [Existing-state integration](theory/ae4_current_c2_physical_enclosure_state_integration.md), [response integration](theory/ae4_event_response_jet_integration.md) |
 | Examine the sandbox comparisons | [Complete source snapshot](docs/museum/sandbox_comparison_source_2026-09-02.md), [machine-readable values](data/museum/bhsm_sandbox_comparison_20260902.json) |
 | Reuse an external-runtime adapter | [Integration guide](integrations/README.md), [CERN ROOT](integrations/cern-root/README.md) |
-| Review or run the Blackhole Tracker | [Formal product source and reviewer guide](products/blackhole_tracker/REVIEWER.md) — installable source, covariance contracts, tests, notebooks and provenance |
+| Review or run the Blackhole Tracker | [Formal product guide](products/blackhole_tracker/REVIEWER.md), [central paper](papers/bhsm_blackhole_tracker_20261021/README.md) and [reviewed PDF](papers/bhsm_blackhole_tracker_20261021/manuscript/main.pdf) — installable source, covariance contracts, tests, notebooks and provenance |
 
 ## Scientific structure and present limits
 

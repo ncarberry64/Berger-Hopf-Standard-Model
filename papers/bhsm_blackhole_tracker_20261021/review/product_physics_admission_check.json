@@ -1,0 +1,271 @@
+{
+  "status": "pass",
+  "python": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+  "numpy": "2.4.6",
+  "scipy": "1.17.1",
+  "files_sha256": {
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-state-rotation-20261021\\product\\bhtracker\\physics_admission.py": "6dce22bee33a77414f61775197a1f61119eb3508112ee9855d74cd0cb6766655",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-state-rotation-20261021\\product\\bhtracker\\theory\\radial_response.py": "d7a90db765d89c9b56d5129a2bbb937238c364ddf09d8683c7b5bbfca0c17514",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-state-rotation-20261021\\product\\tests\\test_physics_admission.py": "ec3279d5f8d6cf3428baea00f9de61df227ed4cd544dc8aa4e947d817afe2de0"
+  },
+  "default_coefficients": {
+    "T": 0.09074930116451298,
+    "v": 0.2377644263710765,
+    "H": 1.1836105771853052,
+    "d": 0.2484715891238288,
+    "lambda_hat": 1.0,
+    "beta_hat": 0.11306384489513412,
+    "A": 4.245250275944938,
+    "C": 4.238858559433703,
+    "D": 4.39622102870814
+  },
+  "default_boundary_state": {
+    "amplitudes_plus_cross_axial": [
+      1.3780921455186215e-16,
+      0.0,
+      0.0
+    ],
+    "conormal_coefficients": [
+      4.0547115903745027e-19,
+      0.0,
+      0.0
+    ],
+    "amplitude_norm": 1.3780921455186215e-16,
+    "impedance_l2": 0.0029422644948379566,
+    "energy_over_Mpl2_L0": 2.7938830975192106e-35,
+    "eta": 0.001,
+    "eta_definition": "6*||a||/(x0*|p0|)",
+    "bound_kind": "uniform charged-background relative bound",
+    "amplitude_norm_max": 1.3780921455186215e-16,
+    "conormal_norm_max": 4.0547115903745027e-19,
+    "individual_sufficient_caps": {
+      "eta": 1.3780921455186215e-16,
+      "relative_hessian": 1.2613556588716158e-15,
+      "spatial_principal": 3.153389147179039e-16,
+      "time_principal": 7.724194371018849e-16
+    },
+    "uniform_hessian_absolute_bound": 252.75910911782975,
+    "uniform_hessian_relative_bound": 0.0010925484305920792,
+    "uniform_spatial_principal_fraction_bound": 0.004370193722368317,
+    "uniform_time_principal_fraction_bound": 0.0017841241161527714,
+    "uniform_nonlinear_remainder_over_principal_scale": 0.003090193616185517,
+    "nonlinear_principal_scale_definition": "Kangular * ||deltaPi||F; residual bound is not a solution-error bound",
+    "max_boundary_unit_state_tested_hessian": 7.487777556826528e+17,
+    "sampled_relative_hessian_per_unit_amplitude": 3051476892286.38,
+    "sampled_radii": 129,
+    "uniform_hessian_coefficient": 9.27058084855655,
+    "sampling_is_certificate": false
+  },
+  "default_scales": {
+    "mass_msun": 1000000000.0,
+    "m_pc": 4.7854158415878424e-05,
+    "r0_pc": 10.0,
+    "rV_pc": 45680.311759140604,
+    "L0_pc": 4447959317.507418,
+    "p0": -0.00036778186794260046,
+    "x0_abs_p0": 8.268552873111729e-13,
+    "weak_metric_bound_at_worldtube": 4.792631704311209e-06,
+    "weak_metric_at_minimum_impact": 4.785415841587842e-07,
+    "spatial_to_temporal_background_gradient_ratio_at_r0": 2.3926924210441333e-06,
+    "uniform_total_spatial_to_temporal_gradient_ratio_bound": 2.3942019290653316e-06,
+    "local_patch_scale_pc": 45680.311759140604,
+    "background_drift_ratio": 2.1464862400921376e-05,
+    "speed_over_c": 0.000413686745118014,
+    "characteristic_speed_lower_over_c": 0.5773502691896257,
+    "quasistatic_advection_ratio": 0.0007165264609621966,
+    "intrinsic_evolution_ratio": 0.0,
+    "intrinsic_evolution_assumption": "fixed prescribed state"
+  },
+  "zero_flux_amplitude_cap": 3.459635478247056e-21,
+  "galactic_zero_redshift_case": {
+    "geometry": {
+      "D_l_pc": 1000,
+      "D_s_pc": 8000,
+      "D_ls_pc": 7000,
+      "z_l": 0.0,
+      "z_s": 0.0
+    },
+    "parameters": {
+      "mass_msun": 10.0,
+      "proper_motion_mas_yr": [
+        5.0,
+        2.0
+      ]
+    },
+    "impact_pc": [
+      0.0001,
+      0.001
+    ],
+    "admission": {
+      "schema": "bhtracker.physics_admission.v1",
+      "scope": "retained weak-metric, frozen-background, quasistatic R1 exterior",
+      "horizon_matched_r1": false,
+      "eligible_physics_models": {
+        "baseline_point_mass": true,
+        "r1_spherical_conditional": true,
+        "r1_boundary_conditional": true,
+        "horizon_matched_r1": false
+      },
+      "allowed_physics_models": {
+        "baseline_point_mass": true,
+        "r1_spherical_conditional": true,
+        "r1_boundary_conditional": true,
+        "horizon_matched_r1": false
+      },
+      "checks": {
+        "geometry_valid": true,
+        "impact_domain_verified": true,
+        "impact_outside_worldtube": true,
+        "worldtube_weak_metric": true,
+        "weak_at_impacts": true,
+        "state_within_sufficient_cap": true,
+        "retained_spatial_principal_positive": true,
+        "retained_time_principal_positive": true,
+        "flux_provenance_selected": true,
+        "motion_units_verified": true,
+        "quasistatic_motion": true,
+        "quasistatic_intrinsic_evolution": true,
+        "frozen_background": true,
+        "small_spatial_background_gradient": true,
+        "baseline_point_mass_admitted": true
+      },
+      "reasons": [],
+      "hidden_boundary_components": "xz and yz fixed to zero in this template family",
+      "boundary_state": {
+        "amplitudes_plus_cross_axial": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "conormal_coefficients": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "amplitude_norm": 0.0,
+        "impedance_l2": 0.00036037829788320526,
+        "energy_over_Mpl2_L0": 0.0,
+        "eta": 0.0,
+        "eta_definition": "6*||a||/(x0*|p0|)",
+        "bound_kind": "uniform charged-background relative bound",
+        "amplitude_norm_max": 1.687938371233923e-23,
+        "conormal_norm_max": 6.08296357157031e-27,
+        "individual_sufficient_caps": {
+          "eta": 1.687938371233923e-23,
+          "relative_hessian": 1.5449551928047595e-22,
+          "spatial_principal": 3.862387982011899e-23,
+          "time_principal": 9.460879744587163e-23
+        },
+        "uniform_hessian_absolute_bound": 0.0,
+        "uniform_hessian_relative_bound": 0.0,
+        "uniform_spatial_principal_fraction_bound": 0.0,
+        "uniform_time_principal_fraction_bound": 0.0,
+        "uniform_nonlinear_remainder_over_principal_scale": 0.0,
+        "nonlinear_principal_scale_definition": "Kangular * ||deltaPi||F; residual bound is not a solution-error bound",
+        "max_boundary_unit_state_tested_hessian": 7.487777543183787e+29,
+        "sampled_relative_hessian_per_unit_amplitude": 2.4913355497236894e+19,
+        "sampled_radii": 129,
+        "uniform_hessian_coefficient": 9.27058084855655,
+        "sampling_is_certificate": false
+      },
+      "source_pairing": {
+        "flux_ratio": 1.0,
+        "flux_provenance": "regular_body_proxy",
+        "accepted_provenance": [
+          "regular_body_proxy",
+          "supplied_conditional_flux",
+          "supplied_worldtube_flux"
+        ],
+        "regular_body_proxy_is_bh_horizon_solution": false,
+        "boundary_condition": "specified Dirichlet or conormal worldtube state"
+      },
+      "scales": {
+        "mass_msun": 10.0,
+        "m_pc": 4.785415841587843e-13,
+        "r0_pc": 1e-05,
+        "rV_pc": 115.25049567676353,
+        "L0_pc": 4447959317.507418,
+        "p0": -4.504728723424933e-05,
+        "x0_abs_p0": 1.0127630227403538e-19,
+        "weak_metric_bound_at_worldtube": 4.8022189504750145e-08,
+        "weak_metric_at_minimum_impact": 4.7854158415878425e-09,
+        "spatial_to_temporal_background_gradient_ratio_at_r0": 2.3927079206716123e-08,
+        "uniform_total_spatial_to_temporal_gradient_ratio_bound": 2.3927079206716126e-08,
+        "local_patch_scale_pc": 115.25049567676353,
+        "background_drift_ratio": 3.47666559352475e-08,
+        "speed_over_c": 8.515295841591978e-05,
+        "characteristic_speed_lower_over_c": 0.5773502691896257,
+        "quasistatic_advection_ratio": 0.00014748925039117288,
+        "intrinsic_evolution_ratio": 0.0,
+        "intrinsic_evolution_assumption": "fixed prescribed state"
+      },
+      "coefficients": {
+        "T": 0.15515789149014628,
+        "v": 0.2912217444993124,
+        "H": 0.9999999999803847,
+        "d": 0.19537758069775224,
+        "lambda_hat": 1.0,
+        "beta_hat": 0.16962020893844557,
+        "A": 4.1112842787398085,
+        "C": 4.096898771099648,
+        "D": 4.537817456843682
+      },
+      "approximation_budgets": {
+        "eta_cap": 0.001,
+        "weak_metric_cap": 0.01,
+        "hessian_fraction_cap": 0.01,
+        "principal_fraction_cap": 0.01,
+        "quasistatic_speed_ratio_cap": 0.01,
+        "background_drift_cap": 0.01,
+        "spatial_gradient_ratio_cap": 0.01
+      },
+      "limits": [
+        "Bounds certify the retained local QS principal coefficients and perturbation size, not full covariant stability or observational accuracy.",
+        "Line-of-sight projection is the declared decaying local extension; cosmological matching and time corrections remain separate model errors.",
+        "No near-horizon boundary value or black-hole charge follows from regular-body or worldtube proxy provenance."
+      ]
+    }
+  },
+  "cartesian_fd": {
+    "seed": 1974,
+    "samples": 372,
+    "step_over_radius": 0.0002,
+    "maximum_actual_over_uniform": {
+      "hessian": 0.3115057254215699,
+      "spatial": 0.29173981915122277,
+      "time": 0.15786653857174104,
+      "gradient": 0.5343949406981966
+    }
+  },
+  "radial_comparison": {
+    "radii": 501,
+    "max_f2_over_f1": 1.0,
+    "min_log_slope": -3.000000000000001,
+    "max_log_slope": -1.0000000072740167
+  },
+  "coefficient_grid": {
+    "d_samples": 401,
+    "s_samples": 4001,
+    "minimum_time_bound_ratio": 1.0000000000011438,
+    "minimum_sound_bound_ratio": 1.0000000000030556
+  },
+  "api_cases": [
+    "capitalized distance contract",
+    "default admitted",
+    "inner impact rejected",
+    "missing impact conditional pending",
+    "unselected flux independent baseline",
+    "unsupported R1 redshift independent baseline",
+    "conormal source pairing",
+    "zero flux nonzero boundary state",
+    "finite JSON",
+    "observer proper-motion units",
+    "Galactic zero/zero supplied-distance contract",
+    "local zero/zero requires distances",
+    "physical outside-worldtube state",
+    "outside-worldtube fast state rejected",
+    "outside-worldtube excess boundary state rejected",
+    "IAU mass-unit weak-field boundary"
+  ],
+  "interpretation": "Numerical checks corroborate, but do not replace, the uniform analytic proof."
+}

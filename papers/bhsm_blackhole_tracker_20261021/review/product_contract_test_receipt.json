@@ -1,0 +1,35 @@
+{
+  "result": "PASS",
+  "test_count": 36,
+  "command": "python -m pytest tests/test_inference_contract.py -q --tb=short",
+  "cwd": "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-state-rotation-20261021\\product",
+  "runtime": {
+    "python": "3.14.3",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "pytest": "9.0.3"
+  },
+  "hashes": {
+    "product/tests/test_inference_contract.py": "82fb1914151351df49abdbbe73aaee2e126f76ff4fed2875bedb72a4b5a7e4d4",
+    "product/bhtracker/data.py": "832b6c210cf4eb4f18383ff7a3f47a12e6e7d9c87a767488e5db31affd633d04",
+    "product/bhtracker/forward.py": "1360f559dea673b4557e6f0eac444a4e7ef0c1738fa4f2796da8b4ae8ffe1d98",
+    "product/bhtracker/inference.py": "e231c91a95a82a469e57c22f3670eabfb8b0840321cc7196182d2cfe867101f0"
+  },
+  "limitations": [
+    "No R1 detectability claim",
+    "No ensemble uncertainty calibration",
+    "C6-C14 protocol not collectively completed by these contracts"
+  ],
+  "latest_replay_after_public_physics_admission": {
+    "result": "PASS",
+    "test_count": 36,
+    "pytest_wall_seconds": 0.96,
+    "source_sha256": {
+      "product/tests/test_inference_contract.py": "82fb1914151351df49abdbbe73aaee2e126f76ff4fed2875bedb72a4b5a7e4d4",
+      "product/bhtracker/data.py": "832b6c210cf4eb4f18383ff7a3f47a12e6e7d9c87a767488e5db31affd633d04",
+      "product/bhtracker/forward.py": "377d3601436e791cbedcd75e3e4d2943463b011bd171d77dbcaf63cc013ba1ed",
+      "product/bhtracker/inference.py": "5cd1e08f21725b88ac4c3ec4aeeea6c56d3c6ae81deae952571b43494dcd67a2",
+      "product/bhtracker/physics_admission.py": "14acd6dbd9ae2c305ea70482a280c85bc13070b87c20b512ebaca1c165634da9"
+    }
+  }
+}
