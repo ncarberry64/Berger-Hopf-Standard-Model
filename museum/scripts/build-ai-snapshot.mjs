@@ -66,7 +66,7 @@ await writeFile(
   new URL('../lib/ai-source-snapshot.json', import.meta.url),
   JSON.stringify(
     {
-      snapshot_date: '2026-09-30',
+      snapshot_date: '2026-10-22',
       description:
         'Verbatim excerpts. Each file carries its own source revision; this is not a complete repository or a live status lookup.',
       sources,
