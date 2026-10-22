@@ -1,0 +1,588 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[margin=24mm,headheight=15pt]{geometry}
+\usepackage{amsmath,amssymb,mathtools,bm}
+\usepackage{graphicx,booktabs,array}
+\usepackage{microtype}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue!45!black,citecolor=blue!45!black,
+ urlcolor=blue!45!black,pdftitle={Angular Selection Rules and Time-Delay Relations for Berger--Hopf Lensing in a Closed Cosmology},
+ pdfauthor={Norman P. Carberry}}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small Berger--Hopf angular light transfer}
+\fancyhead[R]{\small Author review draft}
+\fancyfoot[C]{\thepage}
+\setlength{\parskip}{0.35em}
+\setlength{\parindent}{1.1em}
+\setlength{\emergencystretch}{2em}
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\textfraction}{0.08}
+\renewcommand{\floatpagefraction}{0.8}
+\title{\textbf{Angular Selection Rules and Time-Delay Relations for
+Berger--Hopf Lensing in a Closed Cosmology}}
+\author{Norman P. Carberry\\[3pt]
+\small Independent Researcher, Oconomowoc, Wisconsin, USA\\
+\small \href{mailto:carberry8878130@hotmail.com}{carberry8878130@hotmail.com}\\
+\small ORCID: \href{https://orcid.org/0009-0000-6650-3485}{0009-0000-6650-3485}}
+\date{}
+
+\begin{document}
+\maketitle
+\begin{center}
+\small Research article draft for \emph{Galaxies}: Strong Gravitational Lens Modeling
+\end{center}
+\begin{abstract}
+We calculate angular light transfer and linked strong-lensing time delays
+in a conditional effective realization of the Berger--Hopf framework.
+The calculation retains the full nine-dimensional scalar $n=2$ harmonic
+space of a closed spatial geometry and six physical initial coordinates
+for each harmonic. Its observer-centered angular decomposition contains
+one monopole, three dipoles and five quadrupoles. Only the quadrupoles
+source first-order smooth tracefree beam deformation. We combine their
+normalized spatial Hessians with an action-derived temporal propagator
+to obtain the observer--lens, observer--source and lens--source response
+matrices. A specified quadrupole has a nodal central ray with vanishing
+first-order frequency and trace responses but nonzero tidal deformation.
+For a fixed physical singular isothermal lens and source displacement,
+the resulting relative-delay correction is proportional to
+$\cos(2\varphi)$ and to a difference of two propagation kernels.
+An illustrative normalized matter-density coefficient of $10^{-3}$ gives
+a $-0.353216$ s shift at $(z_l,z_s)=(0.3,1)$ along one screen axis,
+the opposite shift after a $90^\circ$ source rotation, and a first-order
+null at $45^\circ$. Independent angular-ray and stationary-image
+calculations check the result. We give an exact effective-potential
+representation and a restricted source-redshift consistency contrast.
+These are reproducible conditional predictions; neither an observed
+amplitude nor a unique microscopic state is selected.
+\end{abstract}
+\noindent\textbf{Keywords:} strong gravitational lensing; time delays;
+closed cosmology; scalar harmonics; Jacobi maps; Berger--Hopf framework
+
+\section{Introduction}
+
+Strong-lensing calculations connect a physical preparation of geometry and
+matter to image positions, beam distortions and arrival times. In the
+Berger--Hopf framework used here, the lensing encounter is interpreted as
+light traversing an envelope together with its environmental state. A
+useful calculation must therefore specify one common smooth environmental
+state for the incoming and outgoing propagation, together with the physical
+local encounter. Here the local lens is separately prescribed and held
+fixed. The calculation must determine which optical quantities this joint
+preparation fixes.
+This paper develops such a conditional forward calculation for an angular
+sector that supports nonzero tidal light transfer.
+
+The retained effective realization, denoted R1 in the accompanying source
+archive, is a cubic scalar--tensor action coupled to dust and radiation
+on a closed homogeneous background
+\cite{Carberry2026EnvironmentalSource,Carberry2026TransportSource}.
+We use its six-dimensional linear initial-value problem to supply the
+temporal metric responses. We then extend the optical calculation to the
+entire scalar $n=2$ spatial eigenspace. This gives a precise question:
+\emph{which angular beam distortions and relative arrival-time changes
+must accompany one specified preparation of this state?}
+The answer is a family of normalized response coefficients and, for one
+explicit preparation, a nonzero timing law.
+
+The mathematical ingredients have established precedents. Harmonics on
+the three-sphere provide the spatial mode decomposition
+\cite{Lindblom2017Harmonics}; scalar shear is a spin-two optical response
+\cite{Bernardeau2010FullSky}; and general distance-matrix lens theory
+supplies the physical arrival-time function
+\cite{Fleury2021Arbitrary,Schneider2019Multiplane}. The contribution here
+is their explicit composition with the declared six-state dynamics, the
+calculated redshift-dependent coefficients, and the linked angular
+shear--delay prediction. The monopole/dipole selection rule and the
+generic matrix Fermat construction are used as established geometry,
+with derivations included to fix normalization and signs.
+
+The interpretation also requires care. A calculated envelope response can
+have an ordinary effective lens-potential representation. Such a
+correspondence is compatible with the BHSM interpretation of the same
+surface contributions. We construct that representation explicitly;
+we do not require a discrepancy from conventional lensing for the forward
+calculation to be meaningful. Conversely, a nonzero conditional response
+does not by itself identify the physical state from observed images.
+Mass-sheet and source-position freedoms remain relevant
+\cite{Schneider2019Multiplane,SchneiderSluse2014SPT}.
+
+This is a separate theoretical and computational study. Its inputs are
+the stated effective action, frozen homogeneous background, normalized
+initial coordinates and prescribed thin-lens encounter. No quasar
+photometry, telescope pixels, astrometric fit, detector calibration or
+observationally fitted state amplitude enters the calculation.
+
+\section{Physical preparation and approximation}
+\label{sec:preparation}
+
+\subsection{Effective dynamics and state coordinates}
+
+With signature $(-,+,+,+)$, the effective action is
+\begin{equation}
+ S=\int d^4x\sqrt{-g}\left[
+ \frac{M_{\rm Pl}^2}{2}\mathcal R
+ -\frac12(\nabla T)^2
+ +\frac{(\nabla T)^2\Box T}{\Lambda^3}
+ -V(T)+\mathcal L_m+\mathcal L_r\right],
+ \qquad V(T)=V_0-\mu^3T.
+ \label{eq:effective-action}
+\end{equation}
+The cubic interaction belongs to the established kinetic-gravity-braiding
+and generalized scalar--tensor action class
+\cite{Deffayet2010Braiding,Kobayashi2011Generalized}.
+Its form is not claimed as a new interaction in this work.
+Here $T$ is the scalar field, $\mathcal R$ the spacetime Ricci scalar,
+and the two matter sectors are pressureless dust and radiation.
+The symbol $T$ used later for the time-delay \emph{matrix} is always
+distinguished by its matrix equation and context. The numerical provider
+uses $M_{\rm Pl}=H_0=c=1$, with rescaled cubic parameter
+$\lambda=\Lambda^3/(M_{\rm Pl}H_0^2)$ and slope
+$q_T=\mu^3/(M_{\rm Pl}H_0^2)$. Its parameters are
+\begin{equation}
+ \Omega_{m0}=0.31,\quad\Omega_{r0}=9\times10^{-5},\quad
+ \Omega_{k0}=-0.018,\quad K=0.018,\quad
+ \lambda=1,\quad q_T=3.
+ \label{eq:background-values}
+\end{equation}
+The frozen background uses $V_0=2.3986073449708067$ in
+$M_{\rm Pl}^2H_0^2$ units and the archived
+homogeneous initial conditions; it is reused without tuning to any lens.
+Appendix~\ref{app:action-provider} describes those conditions and the
+quadratic-action reduction.
+
+Each real normalized $n=2$ harmonic carries the physical initial vector
+at $z_i=2.1$,
+\begin{equation}
+ y=\left(\zeta,\Pi_{2,\mathrm{ref}},
+ \delta_m^{\mathrm{ADM}},\delta_r^{\mathrm{ADM}},
+ v_m^{\mathrm{ADM}},v_r^{\mathrm{ADM}}\right)_i^T.
+ \label{eq:physical-anchor}
+\end{equation}
+The labels specify the gauge and normalization of the input coordinates;
+they are not six independently fitted properties of a particular lens.
+The reference momentum $\Pi_{2,\mathrm{ref}}$ is converted to the full
+canonical state together with the other five inputs. It is not identified
+with the canonical momentum of the coupled scalar--matter system.
+Rotational symmetry of the homogeneous background makes the same
+temporal propagator applicable to every member of the $n=2$ eigenspace.
+It does not select their angular coefficients or a preferred axis.
+
+This effective action is a declared conditional realization within the
+BHSM research program. The paper does not derive it as a unique
+microscopic closure or compute a unique normalized local envelope state.
+The physical content of the results is consequently of the form:
+\emph{given this effective action and this initial preparation, these
+optical responses follow}. The explicitly retained dust and radiation
+coordinates permit environmental perturbations to participate in that
+prediction.
+
+\subsection{Optical experiment}
+
+Lengths in the field and propagation calculation are measured in $c/H_0$.
+The normalized harmonics and their coefficients use that same coordinate
+unit; numerical comparisons of different state coordinates therefore
+refer to the declared basis. A value $H_0=67.4\,
+\mathrm{km\,s^{-1}\,Mpc^{-1}}$ is used only to turn the illustrative
+distances, fixed physical source displacement and delays into conventional
+units. All lens/source redshifts in the examples lie below the initial
+surface at $z_i=2.1$.
+
+We retain terms linear in the smooth scalar perturbations and quadratic
+in paraxial transverse separations. A local weak-field thin lens supplies
+the strong-lensing encounter. ``Strong'' describes the multiple imaging;
+it does not require a strong local metric perturbation. The local
+potential is held fixed when the smooth environmental preparation is
+varied. In the numerical example it is a singular isothermal sphere
+(SIS), prescribed as an effective physical lens. Its microscopic source
+and a fully matched nonlinear body solution are not derived here.
+
+The observable delay is measured by the observer's clock at fixed
+measured lens and source redshifts. The comparison also fixes the
+transverse \emph{physical} source displacement and the physical lens
+strength. This choice is part of the experiment: fixing the angular
+source position instead changes the derivative. The smooth background
+Jacobi maps describe one common narrow beam; spatial variation across a
+finite field beyond the retained paraxial order is outside the calculation.
+All maps use one parallel-transported screen and nonconjugate vertex
+pairs. The measured redshifts specify the reference vertices; no
+image-specific endpoint retuning is performed. The SIS is a local
+encounter model, rather than a global finite-mass galaxy solution, and
+its structural reaction to a changing environment is outside this
+fixed-body experiment.
+
+\input{angular_transfer_section.tex}
+
+\section{Executed conditional predictions}
+\label{sec:numerical-results}
+
+\subsection{Six response rows}
+
+The constrained quadratic action is evolved from the six unit
+preparations in Eq.~\eqref{eq:physical-anchor}. A time-dependent linear
+map gives the two Newtonian metric potentials. The sum $\Phi+\Psi$ is
+then integrated separately for the $ol$, $os$ and $ls$ maps. This
+procedure preserves one common state through all segments while
+initializing each physical angle-to-separation map at its own vertex.
+Table~\ref{tab:response} gives the resulting response coefficients at
+$(z_l,z_s)=(0.3,1)$.
+
+\begin{table}[tbp]
+\centering\small
+\input{tables/response_coefficients.tex}
+\caption{Executed unit-state coefficients at $(z_l,z_s)=(0.3,1)$.
+The $g$ rows determine fractional shear through
+Eq.~\eqref{eq:shear-response}; $k_j$ determines the nodal SIS fractional
+delay at $\varphi=0$. Initial coordinates and $L^2$ spatial normalization
+are fixed by Eqs.~\eqref{eq:physical-anchor} and
+\eqref{eq:harmonic-normalization}. These columns are response derivatives
+in that basis, not independently assigned physical perturbation sizes.}
+\label{tab:response}
+\end{table}
+
+For example, the observer--source density-coordinate response is
+$g_{os,\delta_m}=-4.07274462\times10^{-4}$, while the
+observer--lens response is $-3.44476439\times10^{-5}$.
+Their difference produces
+$k_{\delta_m}=-5.27256743\times10^{-4}$.
+The nonzero result comes from the evolved environmental preparation
+and its integrated transverse Hessian; no measured delay is used to
+choose these coefficients.
+
+\subsection{A finite illustrative preparation}
+
+Choose the nodal quadrupole $C_\star$ of
+Section~\ref{sec:nodal-timing} and
+\begin{equation}
+ y_\star=(0,0,10^{-3},0,0,0)^T.
+ \label{eq:illustrative-state}
+\end{equation}
+The number $10^{-3}$ is the coefficient of the normalized harmonic in
+the initial ADM matter-density contrast. It does not mean a spatially
+uniform $0.1\%$ density perturbation. In particular, its initial spatial
+profile is $\delta_m^{\rm ADM}(\chi,n)=10^{-3}Q_{C_\star}(\chi,n)$.
+Other components need not stay zero during the coupled evolution.
+
+Set $\sigma_v=200\,\mathrm{km\,s^{-1}}$,
+$b=4\pi(\sigma_v/c)^2$, and $s=0.8$ kpc. At
+$(z_l,z_s)=(0.3,1)$ the background distances are
+\begin{equation}
+ (d_{ol},d_{os},d_{ls})
+ =(945.162839,1689.312240,1076.994348)\ \mathrm{Mpc}.
+\end{equation}
+The background source angle is $0.0976799$ arcsec and the Einstein angle
+is $0.7354566$ arcsec. The two unperturbed images on the chosen axis lie
+at $+0.8331365$ and $-0.6377768$ arcsec. Their baseline relative delay is
+$7.75362145$ days. Equation~\eqref{eq:quadrupole-delay-law} gives
+\begin{equation}
+ \delta\Delta t=-0.35321609\cos(2\varphi)\ \mathrm{s}
+ \quad [(z_l,z_s)=(0.3,1),\ y=y_\star].
+ \label{eq:executed-delay}
+\end{equation}
+The source rotation changes its orientation relative to the prepared
+quadrupole while keeping its physical displacement magnitude fixed.
+This is a family of controlled physical source configurations, not a
+rotation of an observed object with all other data held unchanged.
+
+\begin{table}[tbp]
+\centering\small
+\input{tables/delay_predictions.tex}
+\caption{Conditional first-order delay predictions for the same
+normalized preparation, physical SIS strength and physical source
+displacement. The source azimuth is measured in the fixed nodal screen.
+The $45^\circ$ values are exact first-order zeros; small nonzero values
+from a finite linear-map completion do not constitute second-order
+field predictions.}
+\label{tab:delays}
+\end{table}
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=0.98\linewidth]{figures/nodal_delay_angular_response.pdf}
+\caption{The calculated angular delay law for the four configurations
+in Table~\ref{tab:delays}. Every curve uses the single specified
+preparation in Eq.~\eqref{eq:illustrative-state}. The phase, null
+directions and sign reversal follow from the common quadrupolar shape;
+the amplitudes follow from the six-state propagation and background
+distances. The curves are theoretical forward responses.}
+\label{fig:angular-delay}
+\end{figure}
+
+The larger-redshift examples give larger responses for this chosen state
+(Table~\ref{tab:delays}); no universal monotonicity theorem is implied.
+Scaling $y_\star$ scales all first-order shifts together. Such a rescaling
+does not establish that the resulting amplitude is physically realized or
+measurable. At 2001 sampled radial points, exact angular maximization of
+the evolved seed gives maximum $2|\Phi|=3.27\times10^{-6}$ through
+$z=1$ and $2.04\times10^{-5}$ through $z=2$. The corresponding sampled
+first-order matter speeds are $4.89\times10^{-6}c$ and
+$1.72\times10^{-5}c$. These values support use of a weak perturbative
+illustration on the sampled domain. They are not certified continuous
+bounds or a calculation of nonlinear truncation errors.
+
+\subsection{Shared-state relations}
+
+Equation~\eqref{eq:common-profile-alignment} imposes collinearity of the
+smooth shear components whenever all six coordinates share one spatial
+tensor $C$. An explicit calculation at a generic line of sight and
+generic normalized $C$ produces pairwise two-component shear determinants
+below $1.01\times10^{-28}$ over the twelve reported propagation
+segments. This is a numerical check of the algebraic common-profile
+identity. It is not an additional independent constraint on arbitrary
+image ellipticities or a statement about noise covariance.
+
+The general preparation contains six independent coefficient sets in
+each of five quadrupole directions. For that larger family the useful
+restriction is the common temporal response design
+$S_{rA}=G_{rj}y_{jA}$. Angular information alone does not select the
+six temporal amplitudes. Any proposed inference must also evaluate the
+redshift design, its conditioning and the allowed physical nuisance
+parameters.
+
+\input{representation_section.tex}
+
+\begin{figure}[tbp]
+\centering
+\includegraphics[width=0.98\linewidth]{figures/shared_state_redshift_contrast.pdf}
+\caption{The calculated first-order nodal coefficient $B_{11,s}/p_s$
+for the same normalized density preparation and $z_l=0.3$, sampled at
+33 source redshifts. The dashed comparison is a single fixed physical
+quadratic potential at the main lens, matched at $z_s=1$. The contrast
+tests that restricted absorption criterion. It is not a direct observable
+or an exclusion of distributed gravitational structure, other lens
+profiles or generalized mass-sheet freedom.}
+\label{fig:redshift-contrast}
+\end{figure}
+
+\section{Verification and reproducibility}
+\label{sec:verification}
+
+The package separates inherited inputs, new analytic identities,
+executed response arrays, lens applications and independent checks.
+The inherited source files are exact blobs from a named commit; their
+Git identities, SHA-256 hashes and byte lengths are recorded. The
+historical manifest is retained for provenance, but only its frozen
+background fields enter this calculation. Historical observational
+entries in that file are inert.
+
+The main temporal integration uses 801 interpolation points, with a
+1601-point refinement and tighter integration tolerances. Each
+Green-function shear integral is compared with a separately integrated
+forced Jacobi equation. A further check integrates the original angular
+Euler momentum equation on the nodal geometry, rather than reusing the
+Green kernel. The angle and momentum variables satisfy
+\begin{equation}
+ \theta'=\frac{L}{S_K^2(\chi)},\qquad
+ L'=-w(\eta_o-\chi)\mathcal N\sin^2(\chi/R)\,h\theta,
+ \qquad h=\pm\sqrt2,
+ \label{eq:independent-angular-ray}
+\end{equation}
+with the appropriate independently initialized vertex conditions.
+Here $w=\sum_j(\phi_j+\psi_j)y_j$ is the temporal Weyl coefficient
+for the prepared state, and primes denote $d/d\chi$.
+Complex-step and real finite-difference derivatives agree with the
+kernel result. The apparent coordinate singularity at the observer is
+handled through the regular background initialization described in the
+executable audit.
+
+The strong-lensing calculation solves the two noncaustic image branches
+and evaluates the full matrix Fermat function. Four-point derivatives
+in independent map perturbations reproduce the stationary-image
+formula. A separate check reconstructs the SIS baseline directly in
+SI units and retains the time-matrix, source-angle and physical-impact
+variations before simplification. The effective-potential identity is
+checked both in its value, up to a source-only constant, and in its
+angular gradient.
+
+\begin{table}[tbp]
+\centering\small
+\begin{tabular}{p{0.68\linewidth}r}
+\toprule
+Check & Maximum discrepancy\\
+\midrule
+$S^3$ harmonic Gram matrix versus $I_9$ (volume quadrature)
+ & $3.49\times10^{-14}$\\
+Six physical anchors reconstructed from the canonical initial state
+ & $2.22\times10^{-16}$\\
+Original action constraints, scaled by $\max(1,\|\boldsymbol w\|_\infty)$
+ & $1.46\times10^{-11}$\\
+Green kernel versus forced Jacobi equation, absolute coefficient
+ & $1.45\times10^{-14}$\\
+Refined temporal integration, absolute kernel coefficient
+ & $1.47\times10^{-13}$\\
+Original angular-ray derivative versus kernel, complex-step
+ & $2.08\times10^{-15}$\\
+Original angular-ray derivative, real half-step comparison
+ & $5.70\times10^{-13}$\\
+Full image-solve fractional delay derivative versus analytic law
+ & $7.12\times10^{-12}$\\
+SI baseline reconstruction, relative delay discrepancy
+ & $6.24\times10^{-16}$\\
+Effective-potential Fermat/gradient identity, scaled
+ & $2.01\times10^{-16}$\\
+\bottomrule
+\end{tabular}
+\caption{Executed checks of the declared equations and their numerical
+application. The rows use the indicated normalizations; their values
+are not interchangeable observational uncertainties or bounds on
+omitted physical terms.}
+\label{tab:verification}
+\end{table}
+
+The finite-map experiment sets $D_{ab}=d_{ab}(I-\Gamma_{ab})$ at a
+small finite input and recomputes the images. It checks the derivative
+of that map construction. Products generated by this completion are
+not a second-order solution of Eq.~\eqref{eq:effective-action}.
+In particular, its nonzero residual at the $45^\circ$ first-order null
+is not promoted to a new physical prediction. Numerical precision is
+kept distinct from the approximation order and physical preparation.
+
+\section{Scientific interpretation and limits}
+\label{sec:discussion}
+
+The forward calculation establishes a concrete connection between the
+state and two kinds of light response. The spatial harmonic determines
+the screen tensor, while the same six-state temporal evolution fixes
+the segment-dependent amplitudes. The SIS experiment then reduces a
+full stationary arrival-time variation to a difference of two such
+amplitudes. The angular orientation of the quadrupole, its timing
+amplitude and its shear pattern cannot be assigned independently within this declared
+preparation.
+
+The special nodal geometry makes the result particularly transparent.
+The fiducial light ray has no first-order scalar frequency or radial
+shift, yet the neighboring rays feel a nonzero transverse tidal field.
+This permits a complete first-order relative-delay calculation within
+the specified paraxial experiment. A generic sightline would require
+the trace, endpoint and frequency responses as well. The tracefree
+kernel in Eq.~\eqref{eq:shear-kernel} remains useful there, but it cannot
+stand in for the missing scalar distance calculation.
+
+There are several distinct levels of physical specification. The
+effective action and homogeneous background are fixed inputs. The
+initial vector and spatial profile are explicit conditional choices.
+The SIS is a prescribed local physical encounter. No observed amplitude,
+unique microscopic envelope state, stable nonlinear completion or
+population-level distribution of quadrupole orientations is inferred.
+Each of these would add physical content beyond the calculations
+reported here.
+
+The representation result explains why a successful forward calculation
+need not appear as an extra contribution when expressed in familiar
+lens variables. Its effective potential already contains the propagated
+response. Adding an independent copy of the same surface contribution
+would double count it. The restricted redshift contrast gives a way to
+state one common-physical-lens condition precisely, while leaving the
+broader class of distributed gravitational representations available.
+
+Observational identification is a separate problem. Locally, let
+\begin{equation}
+ \delta\mathcal O=\mathsf B\,\delta y+
+ \mathsf N\,\delta\eta+\epsilon,
+ \qquad
+ \mathsf B_\perp=(I-P_{W\mathsf N})W\mathsf B,
+ \qquad W^TW=\mathsf C^{-1}.
+ \label{eq:identifiability}
+\end{equation}
+Here $\mathsf C$ is the observational covariance, $\eta$ denotes the
+allowed lens, source and environmental nuisance parameters, and
+$P_{W\mathsf N}$ projects onto their whitened response columns. The rank
+and conditioning of $\mathsf B_\perp$ determine which local state
+directions survive those freedoms. No such data covariance or fully
+specified observational nuisance design is supplied by the present
+forward example, so it supplies no detection significance or achievable
+parameter error. Generalized mass-sheet transformations can rescale
+relative delays together; multiple source redshifts or delay ratios
+alone do not guarantee identification \cite{Schneider2019Multiplane}.
+
+A useful next observational design would specify one common preparation
+for several source redshifts, a physically constrained main lens and
+line-of-sight environment, and independent information on the source
+or lens dynamics. The response rows calculated here would then be inputs
+to that design. Giving every image or source its own unconstrained
+initial state would remove the shared-state relation that motivates
+the calculation.
+
+\section{Conclusions}
+
+The full scalar $n=2$ family of the declared closed BHSM/R1 realization
+supports an explicit angular optical calculation. Its nine spatial
+modes decompose into $1+3+5$ sky sectors. The four monopole/dipole
+directions are absent from first-order smooth shear, while the five
+quadrupoles have a simple normalized transverse Hessian. Combining
+that Hessian with the six physical temporal responses gives the tracefree
+parts of the three propagation maps. On the specified nodal ray these
+also give the full first-order maps for the retained lens experiment.
+
+For one common nodal quadrupole and a fixed physical SIS/source
+preparation, the delay obeys
+$\delta\Delta t/\Delta t_0=
+\sqrt2[(g_{os}-g_{ol})\cdot y]\cos(2\varphi)$.
+The computed example gives a $0.353216$ s amplitude at
+$(z_l,z_s)=(0.3,1)$, with a specified sign, $90^\circ$ sign reversal
+and $45^\circ$ first-order null. Independent propagation, image solving
+and dimensional reconstruction check the result.
+
+An exact effective-potential correspondence preserves image equations
+and relative arrival times for one source plane. A calculated
+two-redshift contrast tests absorption into one fixed physical quadratic
+term at the main lens, without claiming general degeneracy breaking.
+The completed contribution is a reproducible family of conditional
+BHSM light-transfer and timing predictions, with the state selection
+and observational inference left as explicitly separate physical tasks.
+
+\appendix
+\input{action_provider_appendix.tex}
+
+\section{Reproduction and source provenance}
+\label{app:reproduction}
+
+The accompanying package contains the source, executed JSON receipts,
+temporal arrays, exact-identity checks, figures and this manuscript.
+The root \texttt{README.md} gives a single replay command and the
+individual stages. Python 3.12.14, NumPy 2.3.5, SciPy 1.17.0 and
+Matplotlib 3.10.8 were used. Reproduction reads no remote data and
+requires no telescope archive access.
+
+The inherited action/background/anchor provider is frozen at commit
+\href{https://github.com/ncarberry64/Manuscript-Generation/commit/06cf7c1b85d6605bfee0cc0d07fb2af86a66cae9}{\texttt{06cf7c1}} of the
+\emph{Manuscript-Generation} repository. The corresponding environmental
+derivation is referenced at commit
+\href{https://github.com/ncarberry64/Berger-Hopf-Standard-Model/commit/00614fa0d479a2de78460ca061cc5304cdb610cf}{\texttt{00614fa0}} of the
+\emph{Berger-Hopf-Standard-Model} repository. The new angular kernels,
+nodal timing application, shared-state contrast and manuscript are
+packaged separately. SHA-256 manifests allow the inherited inputs and
+new release files to be distinguished.
+
+\section*{Author and disclosure statements for review}
+
+\noindent\textbf{Author contribution.} Norman P. Carberry: conceptual
+direction and authorship. The author is responsible for review and
+approval of the submitted scientific claims.
+
+\noindent\textbf{Computational assistance.} AI-assisted tools were used
+to develop code, draft mathematical exposition and perform separate
+implementation reviews. Analytic identities, independent numerical
+formulations and executable receipts are supplied so that claims can
+be checked without relying on those tools' judgments.
+
+\noindent\textbf{Funding and competing interests.} Author confirmation
+is required before submission; no funding or conflict declaration is
+inferred from independent-researcher status.
+
+\noindent\textbf{Data availability.} All numerical results in this draft
+are synthetic forward calculations from the declared inputs. Their
+source and receipts are included in the accompanying reproducibility
+package. No human-subject or observational target data were analyzed.
+
+\begingroup
+\interlinepenalty=10000
+\bibliographystyle{unsrtnat}
+\bibliography{references}
+\endgroup
+\end{document}

@@ -1,6 +1,37 @@
 # BHSM Documentation Index
 
-## Current v15.10 campaign
+## Research entry points
+
+| Purpose | Maintained entry |
+| --- | --- |
+| Review the new Blackhole Tracker paper and product | [Blackhole Tracker researcher start](BLACKHOLE_TRACKER_RESEARCH_START.md): manuscript/PDF, app, CLI, notebooks, export/replay, source pins and interpretation limits |
+| Read or reproduce the broader BHSM program | [Institutional start](INSTITUTIONAL_START.md), [current status](current_bhsm_status.md), [claim boundaries](../CLAIMS.md), [gate ledger](../theory/gate_ledger.md) |
+| Follow the core/surface interpretation | [Dated amendment](BHSM_NORMAN_CORE_SURFACE_AMENDMENT_20261022.md), [source/claim ledger](../artifacts/current_semantics/BHSM_NORMAN_CORE_SURFACE_AMENDMENT_20261022.json), [current system map](../artifacts/current_semantics/BHSM_CURRENT_SYSTEM_INTEGRATION_MAP.json) |
+| Explore the public explanation | [Museum and Blackhole Tracker exhibit](https://ncarberry64.github.io/Berger-Hopf-Standard-Model/#blackhole-tracker) |
+| Find retained topic guides | [Supporting topic guides](#supporting-topic-guides), [Python interface](#python-interface), [artifact adapters](#artifact-backed-adapters) |
+
+This is a navigation index. Current status and a result's exact action/domain
+and source ledger govern its interpretation. Version numbers below identify
+retained campaigns; they do not make an older conclusion the current program
+status. The formal Blackhole Tracker reviewer record is this BHSM repository;
+`Manuscript-Generation` is the development workspace. Historical source paths,
+frozen artifacts and their citations remain preserved.
+
+## Current navigation: core/surface amendment — 22 October 2026
+
+- [Norman's authoritative dated core/surface amendment](BHSM_NORMAN_CORE_SURFACE_AMENDMENT_20261022.md): definitions, current source succession, computed regular-interface response and precise terminal accounting.
+- [Current system integration map](../artifacts/current_semantics/BHSM_CURRENT_SYSTEM_INTEGRATION_MAP.json): active architecture and dependencies.
+- [Local enclosure/state integration](../theory/ae4_current_c2_physical_enclosure_state_integration.md), [response jets](../theory/ae4_event_response_jet_integration.md), and [current encapsulation scope](BHSM_CURRENT_ENCAPSULATION_SCOPE.md).
+- [Claim/source ledger](../artifacts/current_semantics/BHSM_NORMAN_CORE_SURFACE_AMENDMENT_20261022.json) and [current status](current_bhsm_status.md).
+
+Versioned campaign conclusions below are historical, domain-specific records;
+the amendment follows their later successors. The regular material carrier is
+not the nongeometric core, and no terminal core transfer is promoted.
+
+<details>
+<summary>Retained v15.10, v15.9 and v11 campaign chronology</summary>
+
+## Historical v15.10 campaign
 
 - [Aether-cycle sigma-coefficient reconstruction](BHSM_AETHER_CYCLE_SIGMA_COEFFICIENT_RECONSTRUCTION_V15_10.md)
 - [v15.9 cycle-driven eta upstream theorem](BHSM_CYCLE_DRIVEN_ETA_SPREAD_CONCENTRATION_V15_9.md)
@@ -8,14 +39,14 @@
 - [Reviewer reproduction guide](reviewer_reproduction_guide.md)
 - [Artifact index](../ARTIFACT_INDEX.md)
 
-Current result: the invariant coefficient triple has an exact injective
+Campaign result: the invariant coefficient triple has an exact injective
 three-response inverse, but the present Aether/cycle state does not provide
 the physical sigma tangent derivative or nonlinear response. Constructive
 stable witnesses prove retained-action nonuniqueness. The v15.9 eta branch is
 preserved; physical sigma onset and Hopf continuation remain open.
 `FULL_BHSM_COMPLETE = FALSE`.
 
-Exact next object:
+Campaign next object:
 `ACTION_OWNED_AETHER_CYCLE_TO_REGULAR_SIGMA_RESPONSE_JET_MAP_PRODUCING_THE_PHYSICAL_SIGMA_TANGENT_PROPAGATOR_X_DERIVATIVE_AND_BACKREACTION_UNREDUCED_CANONICAL_QUARTIC_ON_THE_V15_9_BRANCH`.
 
 ## Historical v15.9 campaign
@@ -40,8 +71,8 @@ Historical next object:
 - [2026-08-03 Downloads progress review](BHSM_DOWNLOAD_PROGRESS_REVIEW_2026-08-03.md)
 - [Archived manual research packets](research_packets/2026-08-03/)
 
-Current verdict: `BHSM_FLAVOR_ACTION_CANDIDATES_ASSEMBLED_WITH_CHARGED_CURRENT_PROVENANCE_GATE_OPEN`.
-Next object: `PARENT_ACTION_DERIVATION_OR_UNIQUENESS_SELECTION_OF_THE_SPECTRAL_CHARGED_CURRENT_KERNEL`.
+Campaign verdict: `BHSM_FLAVOR_ACTION_CANDIDATES_ASSEMBLED_WITH_CHARGED_CURRENT_PROVENANCE_GATE_OPEN`.
+Campaign next object: `PARENT_ACTION_DERIVATION_OR_UNIQUENESS_SELECTION_OF_THE_SPECTRAL_CHARGED_CURRENT_KERNEL`.
 
 ## Historical v11.3 campaign
 
@@ -52,8 +83,8 @@ Next object: `PARENT_ACTION_DERIVATION_OR_UNIQUENESS_SELECTION_OF_THE_SPECTRAL_C
 - [Mark II completion gate](BHSM_MARK_II_COMPLETION_v11_3.md)
 - [Final completion report](BHSM_FINAL_COMPLETION_REPORT_v11_3.md)
 
-Current verdict: `BHSM_RECIPROCAL_ATTACHMENT_ACTION_AND_CURRENT_DERIVED_WITH_THREE_MODE_DOMAIN_CONDITIONAL`.
-Next object: `ACTION_NORMALIZED_CORE_WALL_RESPONSE_GRAM_HESSIAN_ON_COMMON_ATTACHMENT_DOMAIN`.
+Campaign verdict: `BHSM_RECIPROCAL_ATTACHMENT_ACTION_AND_CURRENT_DERIVED_WITH_THREE_MODE_DOMAIN_CONDITIONAL`.
+Campaign next object: `ACTION_NORMALIZED_CORE_WALL_RESPONSE_GRAM_HESSIAN_ON_COMMON_ATTACHMENT_DOMAIN`.
 
 ## Historical v11.2 campaign
 
@@ -80,10 +111,10 @@ Historical next object: `ACTION_OWNED_CORE_SURFACE_ATTACHMENT_TERM_FIXING_ATTACH
 - [Historical recovery audit](BHSM_HISTORICAL_RECOVERY_AUDIT_SUPPORT_REPRESENTATION_v11_1.md)
 - [Current status](current_bhsm_status.md)
 
-Current verdict: `BHSM_SUPPORT_FUNCTOR_PHYSICAL_EQUIVALENCE_QUOTIENT_BLOCKED_BY_ABSENT_COMPLETE_LOCAL_BOUNDARY_AND_CORE_ACTION_DATA`.
-Next object: `COMPLETE_LOCAL_SUPPORTED_ACTION_WITH_SUPPORT_DERIVATIVE_COUPLINGS_AND_BOUNDARY_CORE_CANONICAL_DOMAIN`.
+Campaign verdict: `BHSM_SUPPORT_FUNCTOR_PHYSICAL_EQUIVALENCE_QUOTIENT_BLOCKED_BY_ABSENT_COMPLETE_LOCAL_BOUNDARY_AND_CORE_ACTION_DATA`.
+Campaign next object: `COMPLETE_LOCAL_SUPPORTED_ACTION_WITH_SUPPORT_DERIVATIVE_COUPLINGS_AND_BOUNDARY_CORE_CANONICAL_DOMAIN`.
 
-Current v11.0 canonical integration:
+Historical v11.0 canonical integration:
 
 - [Canonical synthesis](BHSM_CANONICAL_SYNTHESIS_v11_0.md)
 - [Canonical dependency graph](BHSM_CANONICAL_DEPENDENCY_GRAPH_v11_0.md)
@@ -94,17 +125,21 @@ Use the top-level [STATUS.md](../STATUS.md) for current status and
 [CLAIMS.md](../CLAIMS.md) for claim boundaries. Files below provide supporting
 detail and historical evidence.
 
-BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. Current public status: v11.0 crystallizes the Relational Envelopment Holism ontology and derives the logarithmic depth `q_D=-lambda_D log(upsilon)` and inverse-square Haar kinetic metric from the author-specified multiplicative support law. Canonical doctrine is explicitly separated from action-derived theorem status. The regular depth sector has one healthy canonical pair, but the parent action does not fix the Haar scale or the support characters carried by its stratified sectors. The core endpoint is at infinite Haar field distance and has no action-owned transfer operator. No orbit, global scale, particle mass, mixing matrix, normalized M4 action, or quantum transition amplitude is emitted. Frozen predictions and prior no-go results remain unchanged.
+BHSM is an artifact-backed computational framework for Berger-Hopf boundary-mode physics. The historical v11.0 checkpoint crystallizes the Relational Envelopment Holism ontology and derives the logarithmic depth `q_D=-lambda_D log(upsilon)` and inverse-square Haar kinetic metric from the author-specified multiplicative support law. Canonical doctrine is explicitly separated from action-derived theorem status. The regular depth sector has one healthy canonical pair, but the parent action does not fix the Haar scale or the support characters carried by its stratified sectors. The core endpoint is at infinite Haar field distance and has no action-owned transfer operator. No orbit, global scale, particle mass, mixing matrix, normalized M4 action, or quantum transition amplitude is emitted. Frozen predictions and prior no-go results remain unchanged.
 
-Current campaign: [v11.0 multiplicative support action](bhsm_multiplicative_support_action_v11_0.md), [core stratum](bhsm_core_stratum_action_v11_0.md), [three-mode dynamics](bhsm_three_mode_dynamics_v11_0.md), [global geometry and scale](bhsm_global_geometry_and_scale_v11_0.md), [particle cycles](bhsm_particle_cycles_v11_0.md), [generations/masses/mixing](bhsm_generations_masses_and_mixing_v11_0.md), [effective Standard Model](bhsm_effective_standard_model_v11_0.md), [quantum core](bhsm_quantum_core_transition_v11_0.md), and [final completion report](bhsm_final_completion_report_v11_0.md). It derives logarithmic/Haar support kinematics and proves that the Haar scale, stratified-sector support characters, and core response remain action-unfixed.
+Historical campaign: [v11.0 multiplicative support action](bhsm_multiplicative_support_action_v11_0.md), [core stratum](bhsm_core_stratum_action_v11_0.md), [three-mode dynamics](bhsm_three_mode_dynamics_v11_0.md), [global geometry and scale](bhsm_global_geometry_and_scale_v11_0.md), [particle cycles](bhsm_particle_cycles_v11_0.md), [generations/masses/mixing](bhsm_generations_masses_and_mixing_v11_0.md), [effective Standard Model](bhsm_effective_standard_model_v11_0.md), [quantum core](bhsm_quantum_core_transition_v11_0.md), and [final completion report](bhsm_final_completion_report_v11_0.md). It derives logarithmic/Haar support kinematics and proves that the Haar scale, stratified-sector support characters, and core response remain action-unfixed.
 
 BHSM has conditional dimensionless neutrino propagation closure, a conditional neutral spectral-mass theorem, and conditional measurement-supported admissible neutral positivity. Physical eV/GeV neutrino mass closure remains open pending a numeric neutral stiffness length sqrt(A_nu/Z_nu), a physical K_neutral,eff map in m^-2, and complete-action derivation of the admissible response cone.
 
-The current minimal-action theory dictionary is documented in
+The retained v0.8 minimal-action theory dictionary is documented in
 [author_ontology_v0_8.md](author_ontology_v0_8.md) and encoded in
 `artifacts/BHSM_author_ontology_v0_8.json`.
 
-## Overview
+</details>
+
+<a id="overview"></a>
+
+## Supporting topic guides
 
 - [BHSM in plain language](bhsm_in_plain_language.md)
 - [Scientific contribution and PR achievement ledger](bhsm_scientific_contribution_ledger.md)

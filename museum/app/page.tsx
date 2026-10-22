@@ -23,6 +23,7 @@ import { MuseumDeck } from './museum-deck';
 import { BergerHopf } from './berger-hopf';
 import { AIAccess } from './ai-access';
 import { BigQuestions } from './big-questions';
+import { BlackholeTracker } from './blackhole-tracker';
 import { freshShareURL } from '../lib/social-preview.mjs';
 import {
   ExhibitStatement,
@@ -115,6 +116,7 @@ export default function Home() {
         <BergerHopf motion={motion} setMotion={setMotion} />
         <UnificationConsole motion={motion} setMotion={setMotion} />
         <PrototypeScience motion={motion} setMotion={setMotion} />
+        <BlackholeTracker motion={motion} setMotion={setMotion} />
         <section
           id="cosmology-original"
           className="other-work-wing"
@@ -193,7 +195,7 @@ export default function Home() {
         <ScienceGallery motion={motion} />
         <ScienceConsole
           id="research-exhibit"
-          number="10"
+          number="11"
           label="CMS · Data & discovery"
           title="More computation from a better coordinate map."
           intro="Follow real muons through two coordinate descriptions. The picture changes; the recorded event stays the same."

@@ -1,0 +1,44 @@
+{
+  "status": "PASS",
+  "scope": "stationary-nodal GREAT CIRCLE scalar geometry; not a squashed-spacetime optical prediction",
+  "exact_checks": {
+    "generic_skew_J_trace_identity": true,
+    "orthogonal_complex_family": true,
+    "charged_fraction": "(1+kappa**2)/2",
+    "charged_fraction_range": [
+      0.5,
+      1.0
+    ],
+    "Hopf_differential_operator_K2F_equals_minus4F2": true,
+    "Rayleigh_quotient_times_R2": "8+2*(a**2-1)*(1+kappa**2)",
+    "d_Rayleigh_d_a2_times_R2": "2*(1+kappa**2)",
+    "susceptibility_range_times_R2": [
+      2.0,
+      4.0
+    ]
+  },
+  "numerical_checks": {
+    "seed": 20261021,
+    "samples": 258,
+    "inverse_fibre_scales": [
+      0.4,
+      1.0,
+      1.157054135733433,
+      2.3
+    ],
+    "complex_orientation_counts": {
+      "positive": 130,
+      "negative": 128
+    },
+    "minimum_charged_fraction": 0.5,
+    "maximum_charged_fraction": 1.0,
+    "maximum_absolute_residuals": {
+      "trace_identity": 4.440892098500626e-16,
+      "charged_fraction": 6.661338147750939e-16,
+      "sector_orthogonality": 5.551115123125784e-16,
+      "rayleigh": 7.105427357601002e-15,
+      "complex_structure": 1.3322676295501878e-15,
+      "nodal_support": 0.0
+    }
+  }
+}

@@ -1,0 +1,224 @@
+.tracker-theatre {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(270px, 1fr);
+  gap: 1rem;
+}
+.tracker-scene,
+.tracker-instruments,
+.tracker-readouts > div,
+.tracker-meaning,
+.tracker-access {
+  background: #0a0c14;
+  border: 1px solid #363247;
+  border-radius: 12px;
+}
+.tracker-scene {
+  min-width: 0;
+  overflow: hidden;
+}
+.tracker-scene-cap {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  padding: 1rem;
+  color: #bda7f5;
+  font:
+    11px var(--font-geist-mono),
+    monospace;
+}
+.tracker-scene-cap span {
+  color: #71e5eb;
+}
+.tracker-scene svg {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+}
+.tracker-legend {
+  padding: 0 1rem 1rem;
+  margin: 0;
+  color: #cbbfd7;
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+.tracker-instruments {
+  padding: 1rem;
+  min-width: 0;
+}
+.tracker-controls {
+  display: grid;
+  gap: 0.7rem;
+}
+.tracker-controls label {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.4rem;
+  color: #d8cbe1;
+  font-size: 0.85rem;
+}
+.tracker-controls output {
+  color: #71e5eb;
+}
+.tracker-controls input {
+  width: 100%;
+  min-height: 30px;
+  accent-color: #71e5eb;
+}
+.tracker-epoch-buttons {
+  display: flex;
+  gap: 0.5rem;
+}
+.tracker-controls button {
+  min-height: 44px;
+  padding: 0.5rem 1rem;
+  border: 1px solid #645477;
+  border-radius: 6px;
+  color: #f2eaf8;
+  background: #211c2c;
+}
+.tracker-epoch-buttons button {
+  flex: 1;
+}
+.tracker-controls .tracker-play {
+  background: #71e5eb;
+  color: #071214;
+  border-color: #71e5eb;
+  font-weight: 600;
+}
+.tracker-controls small,
+.tracker-center-inset p {
+  color: #bcaecb;
+  font-size: 0.75rem;
+  line-height: 1.6;
+}
+.tracker-center-inset {
+  border-top: 1px solid #363247;
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+}
+.tracker-center-inset h4 {
+  font-size: 0.9rem;
+  color: #f0dff4;
+  margin: 0;
+}
+.tracker-center-inset svg {
+  width: 100%;
+  max-height: 150px;
+}
+.tracker-center-inset p {
+  margin: 0;
+}
+.tracker-readouts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin: 1rem 0;
+}
+.tracker-readouts > div {
+  padding: 1rem;
+  display: grid;
+  gap: 0.5rem;
+}
+.tracker-readouts small {
+  color: #bcaecb;
+  font-size: 0.75rem;
+}
+.tracker-readouts strong {
+  color: #71e5eb;
+  font:
+    500 1.4rem var(--font-geist-mono),
+    monospace;
+}
+.tracker-readouts span {
+  color: #c5b9cf;
+  font-size: 0.75rem;
+}
+.tracker-meaning,
+.tracker-access {
+  padding: 1.25rem;
+  margin: 1rem 0;
+  color: #d7cde2;
+  font-size: 0.9rem;
+  line-height: 1.75;
+}
+.tracker-meaning h4,
+.tracker-access h4 {
+  color: #f6e7e9;
+  font-size: 1.15rem;
+  margin: 0 0 0.5rem;
+}
+.tracker-meaning p:last-child {
+  margin-bottom: 0;
+}
+.tracker-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem 1.25rem;
+  margin: 1rem 0;
+}
+.tracker-actions a {
+  color: #71e5eb;
+}
+.tracker-actions .tracker-primary {
+  color: #091415;
+  background: #71e5eb;
+  border-radius: 6px;
+  padding: 0.7rem 1rem;
+  text-decoration: none;
+  font-weight: 600;
+}
+.tracker-access ol {
+  display: grid;
+  gap: 0.8rem;
+  padding-left: 1.4rem;
+}
+.tracker-access code {
+  overflow-wrap: anywhere;
+  font-size: 0.8rem;
+  color: #f1c9a0;
+}
+.tracker-access a {
+  overflow-wrap: anywhere;
+}
+.tracker-access details {
+  border-top: 1px solid #363247;
+  padding-top: 1rem;
+}
+.tracker-access summary {
+  cursor: pointer;
+  color: #c5b0ee;
+  min-height: 44px;
+}
+.tracker-local-note {
+  color: #bcaecb;
+  font-size: 0.8rem;
+}
+@media (max-width: 760px) {
+  .tracker-theatre {
+    grid-template-columns: 1fr;
+  }
+  .tracker-scene svg {
+    max-height: none;
+  }
+  .tracker-readouts {
+    grid-template-columns: 1fr;
+  }
+  .tracker-readouts > div {
+    grid-template-columns: 1fr auto;
+    align-items: center;
+  }
+  .tracker-readouts span {
+    grid-column: 1 / -1;
+  }
+  .tracker-meaning,
+  .tracker-access {
+    padding: 1rem;
+  }
+  .tracker-actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,347 @@
+\section{Source action, exterior boundary response and optical normalization}
+\label{app:exterior-derivation}
+
+This section defines the precise conditional exterior problem used by the
+tracker. The action, background and source pairing are supplied; a physical
+black-hole horizon relation and the microscopic BHSM-to-R1 identification
+are not inferred. The worldtube below is outside the unresolved compact
+interior and is not a horizon boundary condition.
+
+\subsection{Common action and local source}
+
+In signature $(-+++)$, initially setting $c=\hbar=1$ and
+$M_{\rm Pl}^{-2}=8\pi G$, the retained action is
+\begin{equation}
+ S=\int\sqrt{-g}\left[\frac{M_{\rm Pl}^2}{2}R
+ -\frac12(\nabla T)^2+\frac{(\nabla T)^2\Box T}{\lambda}
+ -V_0+\mu^3T\right]d^4x+S_m .
+ \label{eq:ext-action}
+\end{equation}
+Here physical $\lambda=\Lambda^3$, while the pinned numerical input is
+$\widehat\lambda=\lambda/(M_{\rm Pl}H_0^2)=1$. This is a cubic
+kinetic-braiding action in the established scalar--tensor setting
+\cite{Deffayet2010,Kimura2012}. With
+$\Pi_{\mu\nu}=\nabla_\mu\nabla_\nu T$, variation gives
+\begin{equation}
+ \Box T+\frac2\lambda\left[\Pi_{\mu\nu}\Pi^{\mu\nu}
+ -(\Box T)^2+R_{\mu\nu}\nabla^\mu T\nabla^\nu T\right]+\mu^3=0.
+ \label{eq:ext-scalar-euler}
+\end{equation}
+It reproduces the frozen homogeneous current equation
+$J=v+6Hv^2/\lambda$, $\dot J+3HJ=\mu^3$, where $v=\dot{\bar T}$.
+Thus the local source sign follows from the same action and background.
+
+For a minimally coupled point-matter model,
+$S_{\rm pp}=-M\int ds$ and
+$\delta S_{\rm pp}=\tfrac12\int\sqrt{-g}T^{\mu\nu}_{\rm pp}
+\delta g_{\mu\nu}d^4x$. In its nonrelativistic local limit the excess
+density is $M\delta^{(3)}(\boldsymbol r)$, with no direct scalar insertion
+$\delta S_{\rm pp}/\delta T$. Strongly self-gravitating horizon response
+does not follow from treating that point-matter action as a black hole.
+
+Subtract the homogeneous equations, write $T=\bar T(t)+\pi_T(r)$ and
+freeze $v$, $d=\ddot{\bar T}$ and $H$ during a local encounter. At the
+retained weak-metric, quasi-static order, keeping the nonlinear scalar
+Hessian terms, the scalar and metric rows are
+\begin{align}
+ A\Delta\pi_T-\frac2\lambda
+ [(\Delta\pi_T)^2-|\operatorname{Hess}\pi_T|^2]+b\Delta\Phi&=0,
+ \nonumber\\
+ 2M_{\rm Pl}^2\Delta\Phi&=\delta\rho-b\Delta\pi_T,
+ \qquad\Phi=\Psi,\nonumber\\
+ b=\frac{2v^2}{\lambda},\qquad
+ A&=1+\frac{4(d+2Hv)}{\lambda}.
+ \label{eq:ext-qs-rows}
+\end{align}
+The density is the local excess, not the homogeneous cosmic density
+counted again. Eliminating that same metric row gives
+\begin{equation}
+ C\Delta\pi_T-\frac2\lambda
+ [(\Delta\pi_T)^2-|\operatorname{Hess}\pi_T|^2]
+ =-\frac{b\,\delta\rho}{2M_{\rm Pl}^2},\qquad
+ C=A-\frac{b^2}{2M_{\rm Pl}^2}.
+ \label{eq:ext-debraided}
+\end{equation}
+For example, varying the static functional
+\begin{equation}
+ S_{\rm QS}=\int dt\,d^3r\left[-\frac C2|\nabla\pi_T|^2
+ +\frac{|\nabla\pi_T|^2\Delta\pi_T}{\lambda}
+ +\frac{b\,\delta\rho\,\pi_T}{2M_{\rm Pl}^2}\right]
+ \label{eq:ext-qs-functional}
+\end{equation}
+reproduces Eq.~\eqref{eq:ext-debraided}. Its last term is the consumed
+source pairing after metric elimination, not an additional covariant
+matter coupling. Higher weak-field orders need not retain $\Phi=\Psi$.
+
+\subsection{Spherical exterior, scales and open compact-object flux}
+
+Let $L_0=c/H_0$, $x=r/L_0$, $\widehat m=(GM/c^2)/L_0$,
+$\widehat v=v/(M_{\rm Pl}H_0)$, and
+$\widehat d=d/(M_{\rm Pl}H_0^2)$. Define
+\begin{equation}
+ \widehat\beta=\frac b{M_{\rm Pl}}
+ =\frac{2\widehat v^2}{\widehat\lambda},\quad
+ C=1+\frac{4(\widehat d+2\widehat H\widehat v)}{\widehat\lambda}
+ -\frac{\widehat\beta^2}{2},\qquad
+ p(x)=\frac{d(\pi_T/M_{\rm Pl})}{dx}.
+ \label{eq:ext-beta}
+\end{equation}
+Regular-origin matching for an ordinary finite matter source gives the
+exterior flux $-\widehat\beta\widehat m$. To expose the uncompleted
+compact-object matching, retain a supplied nonnegative flux ratio $\chi$:
+\begin{align}
+ Cx^2p-\frac4{\widehat\lambda}xp^2
+ &=-\chi\widehat\beta\widehat m,\nonumber\\
+ p(x)&=\frac{-2\chi\widehat\beta\widehat m}
+ {x^2\left[C+\sqrt{C^2+16\chi\widehat\beta\widehat m/
+ (\widehat\lambda x^3)}\right]},\nonumber\\
+ \Phi_x=\Psi_x&=\frac{\widehat m}{x^2}
+ -\frac{\widehat\beta}{2}p(x).
+ \label{eq:ext-radial-branch}
+\end{align}
+This root is continuous with the decaying linear response. The metric
+monopole mass remains $M$; $\chi$ changes the scalar flux, not the mass.
+The value $\chi=1$ is the regular-matter reference, not a derived
+black-hole charge. A horizon-regular, cosmologically matched solution is
+required to determine the physical horizon relation. A negative flux is
+outside the real, positive-discriminant branch implemented here.
+
+The exterior screening scale and extra force fraction are
+\begin{equation}
+ r_V^3=\frac{16\chi\widehat\beta\,(GM/c^2)L_0^2}
+ {\widehat\lambda C^2},\quad
+ \epsilon_\infty=\frac{\chi\widehat\beta^2}{2C},\quad
+ F(r)=\frac{\delta\Phi'}{(GM/c^2)/r^2}
+ =\frac{2\epsilon_\infty}{1+\sqrt{1+(r_V/r)^3}}.
+ \label{eq:ext-screening}
+\end{equation}
+The scalar field is not the provider's time-displacement column:
+$\pi_T=-v\pi_{\rm time}$ when reconstructing it from uniform-field gauge.
+Adding it directly as another gravitational potential would change both
+its normalization and the source equation.
+
+At $z_l=0.3$ the pinned background replay gives
+\begin{equation}
+ \widehat\beta=0.113063844895134,
+ \quad C=4.23885855943370,
+ \quad D_t=4.39622102870814,
+ \label{eq:ext-coeff-values}
+\end{equation}
+where $D_t=1+12\widehat H\widehat v/\widehat\lambda
++6\widehat v^4/\widehat\lambda^2$ is the homogeneous leading time
+principal coefficient. For $M=10^9M_\odot$, $H_0=67.4$ km/s/Mpc,
+$\chi=1$ and $r_0=10$ pc,
+$(L_0,GM/c^2,r_V)=(4.4479593175\times10^9,
+4.7854158416\times10^{-5},45680.3117591)$ pc.
+The compactness at the worldtube is $4.7854\times10^{-6}$ and
+$H_lr_V/c=1.2156\times10^{-5}$. These are local expansion parameters,
+not measured error bars. Near a horizon the weak-metric approximation
+fails; the worldtube must remain outside that domain.
+
+\subsection{Exact linear multipoles and canonical boundary response}
+
+Write the dimensionless scalar perturbation as
+$\delta\widehat\pi=a f_\ell(r)Y_{\ell m}$, with
+$\int|Y_{\ell m}|^2d\Omega=1$. Linearizing
+Eq.~\eqref{eq:ext-debraided} gives
+\begin{equation}
+ \delta E=Z^{ij}\partial_i\partial_j\delta\pi
+ =\partial_i(Z^{ij}\partial_j\delta\pi),\qquad
+ Z^{ij}=C\delta^{ij}-\frac4\lambda
+ [(\Delta\pi_0)\delta^{ij}-\Pi_0^{ij}],
+ \label{eq:ext-linear-operator}
+\end{equation}
+because $\partial_iZ^{ij}=0$. The anisotropic Hessian term is essential.
+The spherical eigenvalues satisfy
+\begin{equation}
+ K_r=C-\frac{8\pi_0'}{\lambda r},\quad
+ K_\Omega=C-\frac4\lambda(\pi_0''+\pi_0'/r),\quad
+ K_r'=\frac{2(K_\Omega-K_r)}r.
+\end{equation}
+Outside the source the normalized radial equation is therefore
+\begin{equation}
+ \frac1{r^2}(r^2K_rf_\ell')'
+ -\frac{\ell(\ell+1)K_\Omega}{r^2}f_\ell=0.
+ \label{eq:ext-multipole}
+\end{equation}
+An actual density multipole adds the fixed source
+$-b\delta\rho_{\ell m}/(2M_{\rm Pl}^2)$ to the right side and requires
+interior matching. A prescribed boundary value is not that interior solve.
+
+For $\rho=r/r_V$ and $u=\rho^{-3}$, the exact exterior coefficients are
+\begin{equation}
+ K_r=C\sqrt{1+u},\quad
+ K_\Omega=C\frac{1+u/4}{\sqrt{1+u}},\quad
+ K_t=D_t+\frac{3(S-C)^2}{4S}\ge D_t>0,
+ \quad S=C\sqrt{1+u}.
+ \label{eq:ext-principal}
+\end{equation}
+Thus this retained scalar problem is elliptic and has a positive leading
+time coefficient. This is not full-system stability or a horizon/UV
+certificate; its scalar characteristic speeds can exceed the metric
+light speed in part of the exterior.
+
+The decaying solution of Eq.~\eqref{eq:ext-multipole} is
+\begin{equation}
+ R_\ell(\rho)=\rho^{-\ell-1}
+ {}_2F_1\!\left(\frac{\ell+1}{2},\frac{\ell+2}{6};
+ \frac{2\ell+4}{3};-\rho^{-3}\right),\qquad
+ f_\ell(r)=\frac{R_\ell(r/r_V)}{R_\ell(r_0/r_V)}.
+ \label{eq:ext-hypergeometric}
+\end{equation}
+It follows by substituting $t=-\rho^{-3}$ in the radial equation.
+The deep-screened powers are $(\ell+1)/2$ and $-\ell/2$;
+the far powers are $\ell$ and $-\ell-1$. In particular the decaying
+quadrupole has $r^{-1}$ and $r^{-3}$ limits. For $\ell=1$,
+${}_2F_1(1,1/2;2;-u)=2/(1+\sqrt{1+u})$, so $f_1$ is exactly
+proportional to $-p$: translating the monopole reproduces the linear
+dipole equation. This supplies an independent field-equation check.
+The $\chi=0$ limit is $f_\ell=(r_0/r)^{\ell+1}$.
+
+The exterior quadratic energy, divided by its overall
+$M_{\rm Pl}^2L_0$ factor, is
+\begin{equation}
+ \frac12\int_{x_0}^\infty
+ [x^2K_r(\partial_x\delta\widehat\pi)^2
+ +\ell(\ell+1)K_\Omega\delta\widehat\pi^2]dx
+ =\frac12\Lambda_\ell a^2,\qquad
+ \Lambda_\ell=-x_0^2K_r(x_0)f_{\ell,x}(x_0)>0.
+ \label{eq:ext-impedance}
+\end{equation}
+The inner normal of the exterior domain is $-\partial_r$; its conjugate
+flux is $q_{\ell m}=\Lambda_\ell a$. Positivity establishes uniqueness
+of the zero-data decaying exterior solution. Holding $a$ fixed and
+holding $q_{\ell m}$ fixed are different source comparisons. Neither
+amplitude is selected by the action without an interior/boundary state.
+The numerical reference has $\Lambda_2=0.00294226449484$ in these
+dimensionless-$x$ conventions.
+
+The same metric constraint yields
+$\delta\Phi=\delta\Psi=\delta\Phi_N-
+\widehat\beta\delta\widehat\pi/2+H_{\rm match}$, where
+$\Delta H_{\rm match}=0$. Ordinary gravitational multipoles and outer
+matching remain independent until a common source fixes them. The
+implemented scalar-driven term adds no arbitrary metric quadrupole.
+
+\subsection{Projected phase, derivatives and finite matching}
+
+For a transverse real quadrupole choose
+\begin{equation}
+ Y_N=\sqrt{\frac{15}{16\pi}}(n_x^2-n_y^2)
+ \equiv N_2(n_x^2-n_y^2),\qquad
+ W\equiv\Phi+\Psi=-\widehat\beta a f_2(r)Y_N.
+\end{equation}
+For impact $b\ge r_0$, every integration point lies outside the worldtube.
+The scalar projected physical phase length is
+\begin{align}
+ \delta\widehat\psi(b,\varphi)&=a\,q(b)\cos2\varphi,\nonumber\\
+ q(b)&=-\widehat\beta N_2\int_{-\infty}^{\infty}
+ f_2(\sqrt{b^2+z^2})\frac{b^2}{b^2+z^2}\,dz\nonumber\\
+ &=-2\widehat\beta N_2 b\int_0^{\pi/2}f_2(b\sec\theta)d\theta.
+ \label{eq:ext-phase}
+\end{align}
+Both halves of the line are included. With $r=b\sec\theta$,
+\begin{align}
+ q'(b)&=-2\widehat\beta N_2\int_0^{\pi/2}(f_2+rf_2')d\theta,\nonumber\\
+ q''(b)&=-\frac{2\widehat\beta N_2}{b}
+ \int_0^{\pi/2}(r^2f_2''+2rf_2')d\theta.
+ \label{eq:ext-phase-derivatives}
+\end{align}
+The provider returns $q,q',q''$ in pc, dimensionless units and
+pc$^{-1}$, respectively. Exact hypergeometric connection formulae
+preserve the cancellation of the deep $r^{-1}$ contribution in these
+radial derivatives. Projection gives a deep phase plateau and a far
+$b^{-2}$ phase, rather than identifying a local force ratio with
+a projected photon deflection.
+
+An optional axial boundary coordinate uses the independently normalized
+$Y_{20}=N_0(3n_z^2-1)$, $N_0=\sqrt{5/(16\pi)}$. Its physical phase
+per unit axial boundary amplitude is
+\begin{equation}
+ q_0(b)=-2\widehat\beta N_0b\int_0^{\pi/2}
+ (2\sec^2\theta-3)f_2(b\sec\theta)d\theta.
+ \label{eq:ext-axial-phase}
+\end{equation}
+Its first and second radial derivatives replace $f_2$ by $f_2+rf_2'$
+and $r^2f_2''+2rf_2'$, respectively, with prefactors
+$-2\widehat\beta N_0$ and $-2\widehat\beta N_0/b$.
+This supplies a separately normalized radial nuisance when the axial
+state is not fixed. It is distinct from varying the spherical scalar
+flux. Its leading deep-screened phase is logarithmic and can be
+mass-like. In the exact zero-flux harmonic limit its full-line
+projection vanishes; the transverse phase is then exactly
+$q=-4\widehat\beta N_2r_0^3/(3b^2)$. The implementation uses these
+analytic zero-flux identities instead of an interpolation residual.
+
+The scalar monopole deflection is supplied separately:
+\begin{equation}
+ \delta\widehat\alpha_0(b)
+ =-\frac{\widehat\beta b}{L_0}\int_{-\infty}^{\infty}
+ \frac{p(r/L_0)}r\,dz
+ =\frac{4GM}{c^2b}\int_0^{\pi/2}F(b\sec\theta)\cos\theta\,d\theta.
+ \label{eq:ext-monopole-deflection}
+\end{equation}
+The ordinary $4GM/(c^2b)$ is counted once by the lens model. A relative
+spherical phase is obtained by integrating this deflection between
+impacts; its formally divergent absolute line potential is unnecessary.
+
+Infinity in these expressions is a matched thin-lens extension, not an
+exact static spacetime. A local overlap cutoff obeys
+$\max(b,r_V)\ll L\ll c/H_l,R_{\rm curvature}$. The scalar monopole
+tail, divided by $4GM/(c^2b)$, is bounded at leading order by
+$\epsilon_\infty b^2/(2L^2)$. If
+$A_2=r_V^3/R_2(r_0/r_V)$, the Euler integral of the hypergeometric
+function gives $f_2(r)\le A_2/r^3$ and hence
+\begin{equation}
+ |q_{|z|>L}|\le
+ \frac{\widehat\beta N_2 A_2 b^2}{2L^4}.
+ \label{eq:ext-phase-tail}
+\end{equation}
+These control the stated tail only. They do not bound coefficient time
+dependence, a changed environment, or a different physical outer state.
+
+\subsection{Perturbative example and actual numerical control}
+
+For the supplied state convention
+$a=\eta x_0|p(x_0)|/6$, $\eta=10^{-3}$, the numerical reference has
+$a=1.37809214552\times10^{-16}$. The closed R1 distances at
+$(z_l,z_s)=(0.3,1)$ give an Einstein impact $339.621287478$ pc and
+$a q(r_E)/(4GM/c^2)=-8.891115935\times10^{-13}$.
+These amplitudes are declared inputs, not horizon-selected values.
+
+On 65 radii from $r_0$ to $10r_V$ and 100 directions, the sampled
+maximum perturbation/background scalar-Hessian norm ratio is
+$3.742\times10^{-4}$. The exact linearized equation residual, scaled
+by its principal Hessian terms, is below $6.1\times10^{-15}$. The positive
+comparison scale used here is
+\begin{equation}
+ \mathcal S=\left[C+\frac4\lambda
+ (|\operatorname{tr}\Pi_0|+\|\Pi_0\|_F)\right]\|\delta\Pi\|_F .
+\end{equation}
+The retained nonlinear scalar remainder is exactly
+$-2[(\operatorname{tr}\delta\Pi)^2-\delta\Pi:\delta\Pi]/\lambda$;
+its sampled ratio to the stated principal-term scale is at most
+$8.57\times10^{-5}$. These are finite-sample diagnostics, not uniform
+interval certificates.
+
+Independent radial integration agrees with the special function to
+$2.25\times10^{-10}$ relative over the tested domain, with the outer
+decaying condition imposed at $1000r_V$. The exact translation check is
+within $1.23\times10^{-15}$. Independent original-line quadrature
+checks the projected quadrupole phase to $2.23\times10^{-16}$ pc and
+the scalar monopole deflection to $4.04\times10^{-27}$ at $b=1000$ pc.
+The code records Gauss-order refinement and Hermite interpolation
+discrepancies for every prepared table. Its fast potential, gradient
+and Hessian derive from one interpolating potential, preserving their
+mutual consistency.
+
+Slow source motion requires small velocity relative to the scalar
+characteristic speeds; a varying multipole additionally requires a
+quasi-static crossing condition such as $\omega r_V/c_{\rm scalar}\ll1$.
+The retained field equations omit higher weak-metric and time-dependent
+terms. A nonzero environmental scalar Hessian modifies the same
+operator and cannot generally be added by linear superposition. The
+paper's homogeneous-background exterior avoids that extra assumption.
+The positive principal coefficients, small illustrative amplitude and
+tiny formal delay do not establish physical precision at that delay,
+an observational forecast, or a solved black-hole boundary problem.

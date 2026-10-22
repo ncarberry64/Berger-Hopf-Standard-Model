@@ -1,5 +1,24 @@
 # Current BHSM status
 
+## Dated core/surface interpretation amendment — 22 October 2026
+
+[Norman P. Carberry's amendment](BHSM_NORMAN_CORE_SURFACE_AMENDMENT_20261022.md)
+records the no-spacetime core, abstract harmonic language, inherited differential,
+boundary dominance, daughter rules and distinct persistent/terminal routes as
+attributed definitions and hypotheses. It follows the later material-skin,
+covariant-interface, child KKT and AE4 carrier/response results instead of
+repeating historical blanket matching failures. A regular carrier is the
+normalized eta-weight median; the supplied fixed-domain eta variation has
+exact shape derivative `-2/3`. The restricted scalar principal-symbol,
+steepening, monotone stationary-flux and null-wave-energy deductions are
+explicitly separated from a coupled gravitational boundary solution.
+
+The [source/claim ledger](../artifacts/current_semantics/BHSM_NORMAN_CORE_SURFACE_AMENDMENT_20261022.json)
+identifies what is derived and the selected core representation/trace/transfer
+and charge projection still needed for a zero-daughter terminal transition.
+No inference threshold, physical coefficient, frozen prediction or active
+proof obligation changes; `FULL_BHSM_COMPLETE = FALSE`.
+
 ## Midpoint coordinate-error propagation — 7 September 2026
 
 The [pullback error bound](../theory/n12_gate7_midpoint_coordinate_pullback_error.md)

@@ -1,0 +1,202 @@
+\section{Normalized angular sectors and optical selection}
+\label{sec:angular-selection}
+
+Let $R=K^{-1/2}$, $u=\chi/R$, and
+$S_K(\chi)=R\sin u$.  The spatial metric is
+$\gamma=d\chi^2+S_K^2d\Omega^2$.
+Write the unit-sphere embedding coordinates as
+$X^0=\cos u$, $X^i=\sin u\,n^i$.
+For a real symmetric tracefree $4\times4$ matrix $A$, define
+\begin{equation}
+ Q_A=\mathcal N X^I A_{IJ}X^J,
+ \qquad \mathcal N=\sqrt{\frac{6}{\pi^2R^3}}.
+ \label{eq:normalized-harmonic}
+\end{equation}
+The ambient polynomial is homogeneous harmonic of degree two; hence
+$D^2Q_A=-8KQ_A$.  The fourth moment
+$\langle X_I X_J X_K X_L\rangle=
+(\delta_{IJ}\delta_{KL}+\delta_{IK}\delta_{JL}
++\delta_{IL}\delta_{JK})/24$ gives
+\begin{equation}
+ \int_{S^3(R)}Q_AQ_B\,dV_\gamma=\operatorname{Tr}(AB).
+ \label{eq:harmonic-normalization}
+\end{equation}
+A Frobenius-orthonormal matrix basis therefore supplies all nine normalized
+$n=2$ harmonics.  Decomposing
+$A_{ij}=C_{ij}-A_{00}\delta_{ij}/3$, $\operatorname{Tr}C=0$, yields
+\begin{align}
+ Q_A/\mathcal N={}&A_{00}(\cos^2u-\tfrac13\sin^2u)
+ +2A_{0i}\sin u\cos u\,n^i\nonumber\\
+ &+\sin^2u\,n^iC_{ij}n^j.
+ \label{eq:angular-decomposition}
+\end{align}
+These are the $1+3+5$ dimensions of the observer-centered angular sectors
+$\ell=0,1,2$.  The spatial harmonic index $n$ on $S^3$ and the angular
+index $\ell$ on the observer's sky are distinct.
+
+For a screen $E$ satisfying $E^TE=I_2$, $E^Tn=0$, the tracefree spatial
+Hessian of $f(\chi)Y_{\ell m}$ is
+\begin{equation}
+ (D_{\hat A}D_{\hat B}[fY])_{\mathrm{TF}}
+ =\frac{f}{S_K^2}
+ \left(\nabla_A\nabla_BY-\frac12s_{AB}\Delta_\Omega Y\right).
+ \label{eq:screen-hessian}
+\end{equation}
+The radial connection contribution is proportional to $I_2$.
+For $\ell=1$, $\nabla_A\nabla_BY=-s_{AB}Y$ and
+$\Delta_\Omega Y=-2Y$, so the bracket vanishes.
+The $\ell=0$ bracket also vanishes.  Thus the four monopole/dipole
+spatial modes do not source first-order smooth cosmological shear on
+observer-centered radial background rays.  This statement does not
+remove their trace, redshift or timing responses, and does not remove
+shear produced by the galaxy encounter.
+
+For a normalized quadrupole $Q_C=\mathcal N\sin^2u\,n^TCn$ with
+$\operatorname{Tr}(C^2)=1$, let
+\begin{equation}
+ H_C(n)=2E^TCE+(n^TCn)I_2.
+ \label{eq:quadrupole-screen-shape}
+\end{equation}
+This matrix is symmetric and tracefree.  The exact cancellation of the
+radial factor gives
+\begin{equation}
+ (D_{\hat A}D_{\hat B}Q_C)_{\mathrm{TF}}
+ =\mathcal N K H_C(n).
+ \label{eq:quadrupole-radial-cancellation}
+\end{equation}
+
+\section{State-derived tracefree propagation}
+\label{sec:tracefree-transfer}
+
+In the convention
+$ds^2=a^2[-(1+2\Phi)d\eta^2+(1-2\Psi)\gamma_{ij}dx^idx^j]$,
+write the current six temporal metric responses as
+$\phi_j(\eta)$ and $\psi_j(\eta)$, and let
+$w_j=\phi_j+\psi_j$.
+The initial coordinates are
+$(\zeta,\Pi_{2,\mathrm{ref}},\delta_m^{\rm ADM},\delta_r^{\rm ADM},
+v_m^{\rm ADM},v_r^{\rm ADM})$ for each normalized spatial harmonic.
+No equality between the two metric potentials is imposed.
+
+The background physical angle-to-separation map between vertices $a,b$ is
+$d_{ab}=a_bS_K(\chi_b-\chi_a)$.
+The physical initialization $D'_a=\omega_aI_2$, with one
+observer-normalized affine parameter, becomes a unit conformal derivative
+at $\chi_a$.  Linearizing the Sachs equation gives
+\begin{equation}
+ (\partial_\chi^2+K)\delta\widetilde D_{ab}^{\rm TF}
+ =-S_K(\chi-\chi_a)
+ [D_\perp D_\perp(\Phi+\Psi)]_{\rm TF}.
+ \label{eq:linearized-sachs-tf}
+\end{equation}
+Define shear by $\delta D_{ab}^{\rm TF}=-d_{ab}\Gamma_{ab}$.
+For an orthonormal STF three-matrix basis $C_A$, $A=1,\ldots,5$,
+the result is
+\begin{equation}
+ \Gamma_{ab}(n)=\sum_{j=1}^{6}\sum_{A=1}^{5}
+ g_{ab,j}y_{jA}H_{C_A}(n),
+ \label{eq:shear-response}
+\end{equation}
+\begin{equation}
+ g_{ab,j}=\frac{\mathcal NK}{S_K(\chi_b-\chi_a)}
+ \int_{\chi_a}^{\chi_b}S_K(\chi_b-\chi)S_K(\chi-\chi_a)
+ w_j(\eta_o-\chi)\,d\chi.
+ \label{eq:shear-kernel}
+\end{equation}
+The three maps $ol$, $os$, and $ls$ are independently initialized.
+The final scale $a_b$ cancels from this fractional shear, and no additional
+redshift multiplier belongs in the kernel.
+
+At fixed measured redshift, endpoint motion and moving-vertex terms
+multiply the background identity at first order.  Corrections to a
+first-order shear integral from those shifts are second order.  Local
+aberration is conformal on an infinitesimal celestial sphere and supplies
+no first-order spin-two term.  These facts establish the tracefree result;
+they do not replace the frequency, radial-event and local-scale terms
+required for a generic trace response.
+
+The full retained state has 54 coefficients, of which at most 30 enter
+this smooth-shear response.  For redshift/vertex labels $r$,
+the five angular coefficients satisfy $S_{rA}=G_{rj}y_{jA}$,
+$G_{rj}=g_{r,j}$.  A left-null vector of the actual kernel design
+therefore supplies a shared-state relation.  Its observational relevance
+depends on conditioning, units and the specified lens/source nuisance model.
+If all six state components share a single spatial quadrupole $C$,
+then $\Gamma_{ab}=(g_{ab}\cdot y)H_C$, and
+\begin{equation}
+ \gamma_{1,ab}\gamma_{2,cd}-\gamma_{2,ab}\gamma_{1,cd}=0.
+ \label{eq:common-profile-alignment}
+\end{equation}
+This profile restriction is not automatic for a generic six-by-five
+quadrupole preparation, and the deterministic identity is not a
+stochastic covariance prediction.
+
+\section{A complete conditional timing response on a nodal ray}
+\label{sec:nodal-timing}
+
+For a weak thin local potential $\widehat\psi$, use the standard
+distance-matrix arrival-time function
+\begin{align}
+ \beta&=D_{os}^{-1}X_s,
+ &T&=(1+z_l)D_{ol}^TD_{ls}^{-1}D_{os},\nonumber\\
+ ct(\theta)&=\tfrac12(\theta-\beta)^TT(\theta-\beta)
+ -(1+z_l)\widehat\psi(D_{ol}\theta)+f(\beta).
+ \label{eq:matrix-fermat}
+\end{align}
+This optical construction and its clock normalization are established
+distance-matrix lens theory \cite{Fleury2021Arbitrary,Schneider2019Multiplane}.
+Put $D_{ab}=d_{ab}(I_2+E_{ab})$ and
+$T_0=(1+z_l)d_{ol}d_{os}/d_{ls}$.
+At first order $\delta T/T_0=E_{ol}+E_{os}-E_{ls}$.
+For a stationary image, fixed measured redshifts, fixed transverse
+physical source $X_s$, and fixed local physical potential, the source
+variation is $\delta\beta=-E_{os}\beta$.
+Using the background lens equation and writing $v_i=\theta_i-\beta$,
+\begin{equation}
+ \frac{c\delta t_i-\delta f}{T_0}
+ =\tfrac12v_i^T(E_{os}-E_{ol}-E_{ls})v_i
+ +v_i^T(E_{os}-E_{ol})\beta.
+ \label{eq:stationary-delay-response}
+\end{equation}
+The expression includes the varying impact in the local potential.
+Image-position derivatives drop out by stationarity; the common $f$
+cancels in relative delays.
+
+Choose $C_\star=\operatorname{diag}(1,-1,0)/\sqrt2$, the central ray
+$n=e_z$, and screen $(e_x,e_y)$.
+Here $Q$ and its full first gradient vanish on the ray, the transverse
+Hessian has zero trace, and
+$H_{C_\star}=\sqrt2\operatorname{diag}(1,-1)$.
+The first-order frequency, radial-event, velocity, local-scale and Jacobi
+trace responses therefore vanish.  The first-order physical maps are
+fully specified by $E_{ab}=-\Gamma_{ab}$ for this preparation.
+These vanishing terms refer to the fiducial nodal ray. Actual images
+have small finite angular offsets; their leading tidal separation is
+included by the distance matrices. Higher finite-angle corrections
+are not bounded by this first-order paraxial calculation.
+
+Take a local SIS, $\widehat\psi(x)=b|x|$, and a source
+$X_s=s e$, $e=(\cos\varphi,\sin\varphi)$, with fixed $b,s>0$.
+The background values are $\beta=s/d_{os}$,
+$\theta_E=bd_{ls}/d_{os}$, and
+$\theta_\pm=(\beta\pm\theta_E)e$.
+For $0<\beta<\theta_E$ and fixed noncritical branches,
+\begin{equation}
+ \Delta t_0=t_- -t_+
+ =\frac{2(1+z_l)bs}{c}\frac{d_{ol}}{d_{os}}.
+ \label{eq:sis-background-delay}
+\end{equation}
+Since $v_\pm=\pm\theta_E e$, the quadratic term in
+Eq.~\eqref{eq:stationary-delay-response} cancels between images:
+\begin{equation}
+ \boxed{\frac{\delta\Delta t}{\Delta t_0}
+ =e^T(\Gamma_{os}-\Gamma_{ol})e
+ =\sqrt2[(g_{os}-g_{ol})\cdot y]\cos(2\varphi).}
+ \label{eq:quadrupole-delay-law}
+\end{equation}
+The $ls$ shear cancels for this fixed-physical-source SIS experiment.
+The result predicts the angular sign reversal and null directions for
+the declared preparation; it does not select the physical amplitude $y$.
+It is not a generic prediction for arbitrary galaxy profiles, fixed
+angular sources, finite-amplitude metric completions, or higher-order
+light propagation.

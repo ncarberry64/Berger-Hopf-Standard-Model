@@ -1,5 +1,31 @@
 # Museum asset provenance
 
+- The Blackhole Tracker exhibit uses a noise-free ordinary monopole forward
+  calculation with the declared geometry and nearby-motion truth at formal
+  product revision `33f26a5113392c0d2c323d7e4a36c7e81bd3ee29`.
+  `lib/blackhole-tracker-example.json` records source paths, raw Git-blob and
+  LF-normalized SHA-256 hashes, and all nine forward reference rows from
+  `products/blackhole_tracker/bhtracker/forward.py`. Regenerate only this
+  presentation fixture with `python scripts/build-blackhole-tracker-example.py`
+  from the Museum directory (NumPy/SciPy required); the script verifies the
+  immutable source first. No optimization or statistical campaign runs.
+  `lib/blackhole-tracker.ts` solves the ordinary point-lens image pair,
+  magnification ratio and delay using the same constants and units. Its Node
+  checks compare all nine rows with the product and verify the lens equation
+  throughout the interactive input range. The 2015–2025 display speed, reverse
+  replay and enlarged center inset are presentation choices, not physical time
+  evolution. No drawn circle identifies a physical surface or horizon.
+- `public/research/blackhole-tracker/` redistributes the exact already reviewed
+  0.2.0rc2 portable product ZIP and wheel, with both canonical license notices.
+  `DISTRIBUTION.json` records the byte counts, SHA-256 hashes, source revision,
+  paper revision and local installation instructions. The downloaded Python
+  product performs fitting/export/replay locally; the Museum provides no
+  measurement upload or hosted inference. Tests unpack both artifacts, verify
+  their fixed reviewed hashes and preserve all 108 original product files.
+  The manuscript links are pinned to formal review revision
+  `1fd11510cd217218d6b230cb50516776eb746e1a`; the development workspace is not
+  presented as the reviewer authority.
+
 - The five supplementary sandbox panels use the ten complete numerical pairs
   and four qualitative sentinels in
   `../data/museum/bhsm_sandbox_comparison_20260902.json`, copied identically to

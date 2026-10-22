@@ -1,0 +1,200 @@
+{
+  "schema": "bhtracker.rc2.independent_usability.v1",
+  "started_utc": "2026-10-22T14:10:26Z",
+  "python": "C:\\Users\\carbe\\AppData\\Local\\Temp\\bhtracker clean wheel fy7ds_pr\\venv\\Scripts\\python.exe",
+  "module": "C:\\Users\\carbe\\AppData\\Local\\Temp\\bhtracker clean wheel fy7ds_pr\\venv\\Lib\\site-packages\\bhtracker",
+  "cwd": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_blackhole_tracker_rc_20261021\\rc2_20261022",
+  "wheel_sha256": "adc790ea55debf65d6a894d47038cb2c2ff75728c05db37402c6dc703e30f894",
+  "checks": [
+    {
+      "name": "isolated installed rc2 import and local server version",
+      "passed": true,
+      "detail": {
+        "status": "ready",
+        "product": "BHSM Blackhole Tracker",
+        "version": "0.2.0rc2",
+        "dataset_file_limit_bytes": 8000000,
+        "request_limit_bytes": 40000000
+      }
+    },
+    {
+      "name": "all six installed interpretation/adapter source pins",
+      "passed": true,
+      "detail": [
+        {
+          "path": "bhsm_sources/BHSM_Galaxy_Gravity_Loaded_Schur_Hessian_v0_5.md",
+          "sha256": "718cdac692ae6030eb70c327771343267c4517c1a69a01454a32872579013816",
+          "commit": null
+        },
+        {
+          "path": "bhsm_sources/BHSM_Topographic_Galaxy_Encapsulation_Solution_v0_3.md",
+          "sha256": "c9eaee920746c024b695c722fc783aea53dfc9da5660a92150de4b05d9c7ba0a",
+          "commit": null
+        },
+        {
+          "path": "bhsm_sources/BHSM_ETA_SEAM_THRESHOLD_BY_v14_25.md",
+          "sha256": "6dba2dd7837b77ff24e7ea2c1a3733edf0b6ab8ac024a9a0d4481cadaf90046a",
+          "commit": null
+        },
+        {
+          "path": "BHSM_CORE_SURFACE_CONTRACT.json",
+          "sha256": "1b2a44d1d424cf1ad4786d57695c9ab5a9fa5946af7362f05c5e4fb52a251b97",
+          "commit": null
+        },
+        {
+          "path": "bhsm_sources/BHSM_NORMAN_CORE_SURFACE_AMENDMENT_20261022.md",
+          "sha256": "db244adeb07e5e5d5df1689986d542cd83a58268a1ba09c53bb8ca3ccbc720f7",
+          "commit": "3c820fee74a5c715ef58bf30998edb1d7b26fe78"
+        },
+        {
+          "path": "bhsm_sources/BHSM_NORMAN_CORE_SURFACE_AMENDMENT_20261022.json",
+          "sha256": "a5df72ff970b098a8963ebeb0694227e0f6412e10a726529f0a1436414d5dae4",
+          "commit": "3c820fee74a5c715ef58bf30998edb1d7b26fe78"
+        }
+      ]
+    },
+    {
+      "name": "packaged amendment bytes agree with pinned Git objects and later BHSM review head",
+      "passed": true,
+      "detail": [
+        {
+          "path": "docs/BHSM_NORMAN_CORE_SURFACE_AMENDMENT_20261022.md",
+          "pinned_commit": "3c820fee74a5c715ef58bf30998edb1d7b26fe78",
+          "final_review_head": "5a1e46be",
+          "same_bytes": true
+        },
+        {
+          "path": "artifacts/current_semantics/BHSM_NORMAN_CORE_SURFACE_AMENDMENT_20261022.json",
+          "pinned_commit": "3c820fee74a5c715ef58bf30998edb1d7b26fe78",
+          "final_review_head": "5a1e46be",
+          "same_bytes": true
+        }
+      ]
+    },
+    {
+      "name": "served UI assets byte-identical to clean installation and rc2 wheel",
+      "passed": true,
+      "detail": [
+        {
+          "name": "index.html",
+          "sha256": "b0adc25c6ccbe9dc3453691fe9653f99c3e8d7b5bfca9f4ce1849011f9117ee7"
+        },
+        {
+          "name": "app.js",
+          "sha256": "a7682057b5c5136b2f8cd35591981682f78104de11542ffd65047a8238137af6"
+        },
+        {
+          "name": "style.css",
+          "sha256": "41ee09f787768c53765cad5d44ef58366d98845c227e85bd2aa1c21be55cad4e"
+        }
+      ]
+    },
+    {
+      "name": "actual root-browser export hashes and shared schema2 contract",
+      "passed": true,
+      "detail": {
+        "zip_sha256": "a4b4e057044968342c68d6e5b8583784b92a0812a9f721a8c02cec54bac97dd3",
+        "files": 10,
+        "scientific_status": "TRACKED"
+      }
+    },
+    {
+      "name": "independent API fit equals actual GUI input/config, predictions, likelihood, uncertainties and interpretation",
+      "passed": true,
+      "detail": {
+        "status": "TRACKED",
+        "mass_msun": 99947.19893016024,
+        "mass_sigma_msun": 38.701188474124166,
+        "chi2": 36.39290573001082,
+        "maximum_prediction_difference": 0.0
+      }
+    },
+    {
+      "name": "independent installed CLI validate/fit agrees with API outside checkout",
+      "passed": true,
+      "detail": {
+        "maximum_prediction_difference": 0.0,
+        "interpretation_schema_version": 2
+      }
+    },
+    {
+      "name": "real API HTML report preserves shared theory ledger/provenance while retaining scientific fit status",
+      "passed": true,
+      "detail": {
+        "claims": 6
+      }
+    },
+    {
+      "name": "shared dictionary suppression matrix: ordinary/rejected/unresolved/R1 and no manufactured core values",
+      "passed": true,
+      "detail": [
+        {
+          "family": "gr",
+          "fit_status": "TRACKED",
+          "boundary_status": "AVAILABLE"
+        },
+        {
+          "family": "gr",
+          "fit_status": "FIT_REJECTED",
+          "boundary_status": "NOT_REPORTED_FOR_REJECTED_FIT"
+        },
+        {
+          "family": "gr",
+          "fit_status": "INSUFFICIENT_INFORMATION",
+          "boundary_status": "NOT_REPORTED_FOR_UNRESOLVED_MASS"
+        },
+        {
+          "family": "r1",
+          "fit_status": "TRACKED",
+          "boundary_status": "NOT_ASSUMED_FOR_R1_METRIC"
+        }
+      ]
+    },
+    {
+      "name": "genuine rc1 legacy report remains renderable and archived metadata is not silently rewritten",
+      "passed": true,
+      "detail": {
+        "old_product_version": "0.2.0rc1",
+        "old_interpretation_schema": 1
+      }
+    },
+    {
+      "name": "read root-executed rc1 replay migration: zero optical difference with explicit changed interpretation/provenance",
+      "passed": true,
+      "detail": {
+        "passed": true,
+        "maximum_prediction_difference_in_supplied_sigma": 0.0,
+        "tolerance_in_supplied_sigma": 0.001,
+        "same_status": true,
+        "original_version": "0.2.0rc1",
+        "current_version": "0.2.0rc2",
+        "same_package_content": false,
+        "original_interpretation_schema_version": 1,
+        "current_interpretation_schema_version": 2,
+        "same_interpretation": false
+      }
+    },
+    {
+      "name": "read attributed root browser/notebook/four-interface evidence, not independently operated here",
+      "passed": true,
+      "detail": {
+        "browser": {
+          "url": "http://127.0.0.1:8878/",
+          "svg_epoch_labels": [
+            "t=2015",
+            "t=2025"
+          ],
+          "fit_status": "Supported track",
+          "interpretation_status": "Proposed BHSM interpretation",
+          "theory_details_expanded": true,
+          "actual_analysis_download": "C:\\Users\\carbe\\Downloads\\bhsm-analysis-replay (2).zip",
+          "actual_input_download": "C:\\Users\\carbe\\Downloads\\Blackhole_Tracker_nearby_motion_example (1).zip"
+        },
+        "four_interface_receipt_passed": true,
+        "notebook_same_serialized_input_hash": false
+      }
+    }
+  ],
+  "passed": true,
+  "completed_utc": "2026-10-22T14:10:29Z"
+}

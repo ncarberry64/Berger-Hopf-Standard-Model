@@ -1,0 +1,46 @@
+{
+  "schema": "BHSM-ANGULAR-MANUSCRIPT-RELEASE-REVIEW-V1",
+  "status": "CONDITIONAL_SCIENCE_AND_NUMERICAL_REVIEW_COMPLETE",
+  "date": "2026-10-21",
+  "review_files": [
+    "review/final_manuscript_review.md",
+    "review/final_theory_review.md",
+    "review/final_numerical_review.md"
+  ],
+  "incorporated_corrections": [
+    "Prescribed fixed local SIS distinguished from common smooth environmental state",
+    "Unperturbed image positions and baseline delay explicitly identified",
+    "Generic tracefree maps distinguished from full nodal first-order maps",
+    "Dimensional Lambda^3 and mu^3 distinguished from rescaled lambda and q_T",
+    "Angular orientation distinguished from an uncomputed electromagnetic phase",
+    "Weyl coefficient and angular integration parameter explicitly defined",
+    "Original action residual normalization max(1,canonical infinity norm) specified",
+    "Fiducial nodal conditions distinguished from finite-angle image rays"
+  ],
+  "numerical_replay": "artifacts/replay/replay_receipt.json",
+  "pdf_pages": 15,
+  "visual_review": {
+    "pages_1_to_5": "pass",
+    "pages_6_to_10": "pass",
+    "pages_11_to_15": "pass",
+    "header_check": "Identical header pixel count on rendered pages 2 through 15; no missing PDF content",
+    "reference_paragraphs": "kept together across pages"
+  },
+  "build": {
+    "unresolved_references": false,
+    "overfull_boxes": false,
+    "underfull_bibliographic_url_lines": "present but visually readable"
+  },
+  "remote_write": {
+    "status": "BLOCKED",
+    "action": "create separate branch",
+    "response": "403 Resource not accessible by integration",
+    "new_remote_commit_or_pr_created": false
+  },
+  "author_confirmation_before_submission": [
+    "funding",
+    "competing interests",
+    "final scientific approval"
+  ],
+  "scope": "conditional effective realization; no observed state amplitude or detection claim"
+}

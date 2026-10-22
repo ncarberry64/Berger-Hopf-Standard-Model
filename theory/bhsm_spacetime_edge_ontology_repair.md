@@ -2,6 +2,11 @@
 
 Status: `OWNER_ONTOLOGY_NORMALIZED_ACTION_LEVEL_IDENTIFICATION_OPEN`.
 
+The [22 October 2026 amendment](../docs/BHSM_NORMAN_CORE_SURFACE_AMENDMENT_20261022.md)
+clarifies that *pure energy/Aether* below supplies no primitive core energy
+density, metric or clock. A geometric subsurface collar, proof cutoff,
+canonical stop and nongeometric terminal transition remain distinct.
+
 This note changes terminology and provenance only. It changes no action,
 equation, coefficient, numerical enclosure, frozen prediction, or Gate-7
 claim status.

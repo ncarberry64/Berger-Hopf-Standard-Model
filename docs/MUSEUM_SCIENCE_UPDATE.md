@@ -1,10 +1,34 @@
 # The permanent BHSM science collection
 
-The public Museum leads with collision theatre, magnetic moments in motion,
+The public Museum leads with collision theatre, the Blackhole Tracker research
+product, magnetic moments in motion,
 combined SM predictions/equivalence, force unification, common action and
 spectral forecasts. Five numbered comparison exhibits follow. CMS animation
 and numerical research remain in a separate data exhibit; cosmology follows
 the author. Publication copy addresses visitors, not the implementation brief.
+
+## Blackhole Tracker research-product exhibit
+
+The `blackhole-tracker` exhibit provides an animated synthetic compact-lens
+example, the reviewed local Python app, and links to the manuscript and
+reproducibility record. Its mass, center and motion use one BHSM-interpreted
+exterior optical potential. The ordinary fit and a conditional R1 response
+are distinct; neither the animation nor a supported track establishes a
+horizon, microscopic core modes, a physical core-transfer law, or a new
+observed black hole. A declared enclosing radius is not a measured hard
+boundary. This is a research-product exhibit, not a promoted physical
+prediction in `approved_science_outputs.json`.
+
+The Museum is static. It offers direct downloads and instructions for local
+inference; it does not run the Python fit on GitHub Pages. Distribute the
+reviewed product ZIP and wheel without rebuilding them, preserve their exact
+SHA-256 bindings and canonical research-license notices, and use immutable
+formal code/manuscript links while the integration is under review. Never
+make a visitor's app access depend on the author's local server or checkout.
+
+For setup and the complete run/export/replay path, see the
+[researcher start](BLACKHOLE_TRACKER_RESEARCH_START.md). For Museum development
+and publication, see the [Museum source guide](../museum/README.md).
 
 ## Current data and simulation boundaries
 

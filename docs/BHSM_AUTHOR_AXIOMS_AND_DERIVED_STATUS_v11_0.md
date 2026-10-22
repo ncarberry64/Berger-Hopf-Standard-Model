@@ -1,5 +1,10 @@
 # BHSM v11.0 Author Axioms and Derived Status
 
+Historical stage ledger. The [22 October 2026 attributed amendment](BHSM_NORMAN_CORE_SURFACE_AMENDMENT_20261022.md)
+controls the updated core/surface and endpoint meanings and follows later
+regular-matching and AE3/AE4 successors. This original table is preserved;
+its stage-specific open labels are not blanket verdicts on those successors.
+
 | Statement | Status | Current boundary |
 | --- | --- | --- |
 | Relational Envelopment Holism | `AUTHOR_AXIOM` | admissibility doctrine, not empirical result |

@@ -9,11 +9,11 @@ const raw =
   'https://raw.githubusercontent.com/ncarberry64/Berger-Hopf-Standard-Model/main/';
 const local = (path) => new URL(path, museumUrl).href;
 const source = (title, path) => ({ title, url: local(path) });
-const repoSource = (title, path) => ({
+const repoSource = (title, path, revision = 'main') => ({
   title,
   path,
-  url: raw + path,
-  github_url: `${repository}/blob/main/${path}`,
+  url: `https://raw.githubusercontent.com/ncarberry64/Berger-Hopf-Standard-Model/${revision}/${path}`,
+  github_url: `${repository}/blob/${revision}/${path}`,
 });
 
 export const retrievalPlan = {
@@ -148,6 +148,44 @@ const topics = {
       currentSources[0],
     ],
   },
+  'blackhole-tracker': {
+    keywords:
+      'blackhole black hole tracker compact lens lensing gravitational mass motion astrometry magnification delay BHSM boundary envelope R1 research app export replay covariance',
+    summary:
+      'A computed, noise-free synthetic point-lens animation shows three fixed source positions, their image pairs and the declared 2015–2025 moving center. Visitors can pause, choose an observer year and change the supplied mass. Downloadable Python research software performs the full fit, export and replay workflow; it runs on the visitor’s computer.',
+    scope:
+      'The animation is a forward illustration rather than an optimizer or observation. The ordinary Einstein/GHY exterior has an explicit BHSM same-potential interpretation. A supplied radius does not measure a hard surface or horizon, and an unresolved conditional R1 state is not a detected deformation. No new observed black-hole discovery is claimed.',
+    sources: [
+      repoSource(
+        'Formal product reviewer guide',
+        'products/blackhole_tracker/REVIEWER.md',
+        '33f26a5113392c0d2c323d7e4a36c7e81bd3ee29',
+      ),
+      repoSource(
+        'Product user guide',
+        'products/blackhole_tracker/README.md',
+        '33f26a5113392c0d2c323d7e4a36c7e81bd3ee29',
+      ),
+      repoSource(
+        'Manuscript and derivations',
+        'papers/bhsm_blackhole_tracker_20261021/manuscript/main.tex',
+        '1fd11510cd217218d6b230cb50516776eb746e1a',
+      ),
+      repoSource(
+        'Pinned ordinary-lens forward calculation',
+        'products/blackhole_tracker/bhtracker/forward.py',
+        '33f26a5113392c0d2c323d7e4a36c7e81bd3ee29',
+      ),
+      source(
+        'Synthetic forward example and source hashes',
+        'research/blackhole-tracker/forward-example.json',
+      ),
+      source(
+        'App download hashes and provenance',
+        'research/blackhole-tracker/DISTRIBUTION.json',
+      ),
+    ],
+  },
   'cosmology-original': {
     keywords:
       'cosmology original january cosmic cycle hypersphere light proposal universe expansion',
@@ -280,7 +318,7 @@ const topics = {
 export const catalog = {
   schema_version: '1.0',
   title: 'BHSM Museum AI navigation index',
-  updated: '2026-10-08',
+  updated: '2026-10-22',
   museum_url: museumUrl,
   repository_url: repository,
   guide_url: local('llms.txt'),

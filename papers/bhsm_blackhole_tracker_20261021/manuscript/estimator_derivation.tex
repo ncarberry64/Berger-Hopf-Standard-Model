@@ -1,0 +1,142 @@
+\section{First variation of the delay--flux mass estimator}
+\label{app:estimator-variation}
+
+The point-mass delay relation is standard; see, for example,
+Mu\~noz et al.~\cite{Munoz2016}. This appendix derives its first variation
+under a general local lens-potential perturbation, including the displacement
+of the images in the magnification calculation. The result is a thin-lens
+projection rule; it selects neither a horizon response nor a physical
+surface-state amplitude.
+
+Use the reference point-mass Einstein angle and observed time scale
+\begin{align}
+ \theta_E^2=\frac{4GM}{c^2}\frac{D_{ls}}{D_lD_s},
+ \qquad t_M=\frac{4GM}{c^3}(1+z_l),\notag\\
+ \qquad \boldsymbol x=\boldsymbol\theta/\theta_E,
+ \quad \boldsymbol y=\boldsymbol\beta/\theta_E.
+ \label{eq:estimator-scales}
+\end{align}
+Hold the physical source, body mass, distances, redshift and screen fixed
+while varying the dimensionless potential,
+\begin{equation}
+ \tau_\epsilon(\boldsymbol x;\boldsymbol y)
+ =\tfrac12|\boldsymbol x-\boldsymbol y|^2-\ln r
+  -\epsilon p(\boldsymbol x),\qquad r=|\boldsymbol x|.
+ \label{eq:estimator-fermat}
+\end{equation}
+For $u=|\boldsymbol y|>0$, put $s=\sqrt{u^2+4}$. On the source axis the
+reference images are $x_+=(u+s)/2>1$ and $x_-=-1/x_+<0$. Continue the
+positive-parity minimum and negative-parity saddle without crossing a
+critical curve or reversing their flux/time ordering. With
+$R=|\mu_+|/|\mu_-|>1$ and $\Delta t=t_M(\tau_--\tau_+)>0$,
+\begin{align}
+ \ln R_0=4\operatorname{asinh}(u/2),\qquad
+ h(u)=\tfrac12us+2\operatorname{asinh}(u/2),\notag\\
+ M_{\rm app}=\frac{c^3\Delta t}
+ {4G(1+z_l)h[2\sinh(\tfrac14\ln R)]}.
+ \label{eq:estimator-standard}
+\end{align}
+Indeed, the lens equation $x-u-1/x=0$ gives
+$\mu_+=x_+^4/(x_+^4-1)$, $\mu_-=-1/(x_+^4-1)$ and
+$\tau_--\tau_+=\tfrac12(x_+^2-x_+^{-2})+2\ln x_+=h(u)$.
+The distance factors in the physical time prefactor cancel against
+$\theta_E^2$, so $M_{\rm app}=M$ for every reference alignment. The
+aligned Einstein-ring limit is excluded from the two-image estimator.
+
+Let $\delta=\partial_\epsilon|_0$ and define
+\begin{equation}
+ H_0(\boldsymbol x)=D^2\ln r
+ =\frac{I}{r^2}-\frac{2\boldsymbol x\boldsymbol x^T}{r^4},
+ \qquad A_i=I-H_0(\boldsymbol x_i).
+\end{equation}
+Differentiating the stationary lens equation at fixed $\boldsymbol y$ yields
+\begin{align}
+ \delta\boldsymbol x_i=A_i^{-1}\nabla p(\boldsymbol x_i),\qquad
+ \delta A_i=-D^2p(\boldsymbol x_i)
+             -DH_0(\boldsymbol x_i)[\delta\boldsymbol x_i],\notag\\
+ \delta\ln|\mu_i|=-\operatorname{tr}(A_i^{-1}\delta A_i).
+ \label{eq:estimator-total-hessian}
+\end{align}
+The evaluation-point term is essential. Explicitly,
+\begin{align}
+ DH_0(\boldsymbol x)[\boldsymbol v]&
+ =-\frac{2(\boldsymbol x\cdot\boldsymbol v)I}{r^4}
+ -\frac{2(\boldsymbol v\boldsymbol x^T+\boldsymbol x\boldsymbol v^T)}{r^4}\notag\\
+ &\quad+\frac{8(\boldsymbol x\cdot\boldsymbol v)
+                 \boldsymbol x\boldsymbol x^T}{r^6}.
+\end{align}
+Stationarity removes image displacements from the first arrival-time
+variation, giving $\delta(\tau_--\tau_+)=p(\boldsymbol x_+)-p(\boldsymbol x_-)$.
+Since $h'=s$ and $(\ln R_0)'=4/s$, the total estimator variation is
+\begin{equation}
+ \boxed{\displaystyle
+ \delta\ln M_{\rm app}
+ =\frac{p(\boldsymbol x_+)-p(\boldsymbol x_-)}{h(u)}
+ -\frac{s^2}{4h(u)}
+ \bigl[\delta\ln|\mu_+|-\delta\ln|\mu_-|\bigr].}
+ \label{eq:estimator-general-variation}
+\end{equation}
+Thus a pure alignment displacement cancels. A changing physical mass or
+redshift prefactor is a separate variation; it must not be hidden in an
+unspecified potential normalization.
+
+For the quadrupole $p=q(r)\cos[2(\varphi-\varphi_q)]$, the two reference
+image angles differ by $\pi$. Write
+$c_2=\cos[2(\varphi_s-\varphi_q)]$, $r_+=(u+s)/2$, $r_-=1/r_+$,
+$a_r=1+r^{-2}$ and $a_t=1-r^{-2}$. The radial image displacement is
+$\delta x_r=q'c_2/a_r$. Equation~\eqref{eq:estimator-total-hessian} then gives
+\begin{align}
+ \delta\ln|\mu_i|&=c_2\mathcal F_q(r_i),\\
+ \mathcal F_q(r)&=
+ \frac{q''}{a_r}+\frac{q'/r-4q/r^2}{a_t}
+ +\frac{2q'}{r^3a_r}\left(\frac1{a_r}-\frac1{a_t}\right),
+ \label{eq:estimator-Fq}\\
+ \delta\ln M_{\rm app}&=c_2\mathcal K_q(u),\\
+ \mathcal K_q(u)&=
+ \frac{q(r_+)-q(r_-)}{h(u)}
+ -\frac{s^2}{4h(u)}\bigl[\mathcal F_q(r_+)-\mathcal F_q(r_-)\bigr].
+ \label{eq:estimator-Kq}
+\end{align}
+The final term of $\mathcal F_q$ is the radial evaluation-point contribution.
+Tangential displacements contribute off-diagonal terms whose trace vanishes
+in the reference radial/tangential eigenbasis. The physical action or
+worldtube source must supply $q,q',q''$ in the same lens units before this
+linear projection is applied.
+
+The following closed forms provide nuisance comparisons and independent
+checks. Defining $K_*=s^3/[u h(u)]$, direct substitution yields
+\begin{equation}
+ \mathcal K_{r^2}=K_*,\qquad
+ \mathcal K_{r^{-2}}=(u^2+1)K_*,\qquad
+ \mathcal K_1=K_*.
+ \label{eq:estimator-power-responses}
+\end{equation}
+Hence a compact projected quadrupole
+$B r^{-2}\cos[2(\varphi-\varphi_B)]$ contributes
+$B(u^2+1)K_*\cos[2(\varphi_s-\varphi_B)]$, while an external shear in the
+convention $(\gamma/2)r^2\cos[2(\varphi-\varphi_\gamma)]$ contributes
+$(\gamma/2)K_*\cos[2(\varphi_s-\varphi_\gamma)]$. At one alignment the
+amplitudes are degenerate; several alignments distinguish these two
+specified shapes only to the extent that the nuisance assumptions hold.
+
+Linearity also gives a nontrivial blind direction,
+\begin{equation}
+ \boxed{\mathcal K_{r^2-1}(u)=0\qquad\text{for every }u>0.}
+ \label{eq:estimator-blind-direction}
+\end{equation}
+This is an exact \emph{first-order} null of the statistic, not an exact
+finite-perturbation equivalence or a vanishing lens deformation. The potential
+$(r^2-1)\cos2\varphi$ generally changes images, delay and flux ratio.
+It is a local smooth-potential counterexample on image annuli; whether a
+specified physical source can generate it requires its own source/boundary
+analysis. Different radial potentials therefore do not automatically give
+identifiable tracker signals. An inference must compare the evaluated
+$\mathcal K_q$ with the justified nuisance response space, including its
+conditioning, rather than compare potential labels.
+
+These formulas concern quasistatic geometric optics and two noncritical
+continued primary images. They do not describe near-horizon strong-deflection
+images, new-image total flux, differential extinction or unmatched variable
+source emission. Exact symbolic identities, Cartesian total-Hessian checks
+and finite on-axis polynomial branch checks are supplied with the
+reproduction sources; they are internal consistency tests, not observations.

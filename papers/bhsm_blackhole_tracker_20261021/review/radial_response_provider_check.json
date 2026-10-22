@@ -1,0 +1,113 @@
+{
+  "status": "PASS_CONDITIONAL_EXTERIOR_PROVIDER_INTERNAL_CHECK",
+  "source": {
+    "status": "CONDITIONAL_R1_EXTERIOR_OPEN_BLACK_HOLE_FLUX",
+    "M_msun": 1000000000.0,
+    "z_l": 0.3,
+    "H0_km_s_Mpc": 67.4,
+    "r0_pc": 10.0,
+    "flux_ratio": 1.0,
+    "m_pc": 4.7854158415878424e-05,
+    "L0_pc": 4447959317.507418,
+    "rV_pc": 45680.311759140604,
+    "worldtube_compactness": 4.785415841587843e-06,
+    "H_rV_over_c": 1.2155619309382527e-05,
+    "N2": 0.5462742152960396,
+    "coefficients": {
+      "T": 0.09074930116451298,
+      "v": 0.2377644263710765,
+      "H": 1.1836105771853052,
+      "d": 0.2484715891238288,
+      "lambda_hat": 1.0,
+      "beta_hat": 0.11306384489513412,
+      "A": 4.245250275944938,
+      "C": 4.238858559433703,
+      "D": 4.39622102870814
+    },
+    "impedance_l2_dimensionless_x": 0.0029422644948379566,
+    "input_sha256": {
+      "code/action_native_matter_n2.py": "eee6ffc6f31d743cc36c31300c8a51c6a28cc50fbbb7526342b7f88978dfcb81",
+      "code/background.py": "9bf7107e0e9f716a8176baed6ae638f887c3aabb295b580bf09d6c51364aae89",
+      "code/closed_horndeski_n2.py": "0d7e596ae40bd01ba9331128afdda9d163e52c955096f70209f06975e197f36d",
+      "preregistration/prediction_manifest.json": "afaf697100a70d43eab2a6086931bad5efe1ced02f9a56d422b709896be51113"
+    },
+    "limitations": [
+      "supplied flux, worldtube amplitude and boundary state",
+      "weak metric, quasi-static leading cubic Hessian equations",
+      "scalar-driven metric only; ordinary multipoles remain independent",
+      "no horizon, photon ring, physical state selection or BHSM microscopic identification"
+    ]
+  },
+  "source_flux_relative_residual": 6.485116867879085e-16,
+  "translation_relative_error": 1.229946301116797e-15,
+  "independent_radial_ODE_relative_error": 2.2496637885893733e-10,
+  "independent_z_phase_absolute_error_pc": 2.220446049250313e-16,
+  "independent_z_monopole_deflection_absolute_error": 4.0389678347315804e-27,
+  "analytic_projection_derivative_relative_errors": [
+    4.702460643102313e-12,
+    1.9584334154387761e-13
+  ],
+  "axial_projection_at_1000pc": [
+    -4.030938800058792,
+    0.0014208439989684405,
+    -1.4313392748598807e-06
+  ],
+  "independent_original_z_axial_phase_error_pc": 5.329070518200751e-15,
+  "axial_analytic_derivative_relative_errors": [
+    1.4910295220715852e-12,
+    5.626610288800293e-12
+  ],
+  "zero_flux_axial_projection": [
+    0.0,
+    0.0,
+    0.0
+  ],
+  "deep_projection_plateau_relative_difference": 2.2729759319162213e-07,
+  "far_projection_limit_relative_difference": 1.0226538726954004e-08,
+  "zero_flux_projection_relative_error": 0.0,
+  "zero_flux_impedance_relative_error": 2.220446049250313e-16,
+  "eta_state": {
+    "eta": 0.001,
+    "a_definition": "eta*x0*abs(p0)/6",
+    "boundary_scalar_amplitude": 1.3780921455186215e-16,
+    "sampled_radius_count": 65,
+    "sampled_directions_count": 100,
+    "max_Hessian_perturbation_ratio": 0.00037416186581509103,
+    "max_scaled_linearized_equation_residual": 6.08976345948423e-15,
+    "max_quadratic_residual_over_principal_term_scale": 8.562025661957803e-05,
+    "interval_certificate": false,
+    "rE_pc_at_zl03_zs1": 339.62128747815126,
+    "epsilon_a_q_over_4m_at_rE": -8.891115934627166e-13
+  },
+  "table_report": {
+    "nodes": 241,
+    "b_min_pc": 10,
+    "b_max_pc": 100000.0,
+    "interval_certificate": false,
+    "quad_midpoint_max_abs_difference": [
+      1.904143509534606e-12,
+      1.7491488772024664e-15,
+      2.0876338391089316e-16
+    ],
+    "quad_midpoint_max_relative_difference": [
+      9.318868825293192e-12,
+      3.029151496601869e-08,
+      9.688797013346305e-08
+    ],
+    "mono_midpoint_max_abs_difference": [
+      3.468665576467481e-24,
+      8.551252212595768e-28,
+      1.0976555761891192e-26
+    ],
+    "mono_midpoint_max_relative_difference": [
+      1.0506367903281243e-12,
+      3.0535868791221176e-12,
+      2.2763652809315413e-08
+    ]
+  },
+  "finite_matching_tail": {
+    "monopole_extra_deflection_tail_over_GR": 8.696177418855932e-13,
+    "absolute_quadrupole_phase_tail_pc_per_boundary_amplitude": 3.878567302935511e-15,
+    "tail_only_not_total_approximation_error": true
+  }
+}
