@@ -96,13 +96,16 @@ def payload() -> dict:
     checks = exact_checks()
     if not all(checks.values()):
         raise AssertionError({k: v for k, v in checks.items() if not v})
-    digest = lambda p: hashlib.sha256((ROOT / p).read_bytes()).hexdigest()
+    # The source checkout may use CRLF; canonical LF matches the Git blobs
+    # and makes this text ledger portable across Windows and Linux.
+    digest = lambda p: hashlib.sha256((ROOT / p).read_bytes().replace(b"\r\n", b"\n")).hexdigest()
     return {
         "schema_version": 1,
         "artifact": "BHSM_NORMAN_CORE_SURFACE_AMENDMENT_20261022",
         "date": "2026-10-22", "hypothesis_author": "Norman P. Carberry",
         "status": "ATTRIBUTED_HYPOTHESIS_WITH_SCOPED_MATHEMATICAL_DEDUCTIONS",
         "source_base_commit": BASE,
+        "source_hash_basis": "UTF-8 text with CRLF normalized to LF; scientific source hashes equal the stated base Git blobs",
         "amendment": {"path": AMENDMENT, "sha256": digest(AMENDMENT)},
         "verification_tool": {"path": "tools/check_norman_core_surface_consequences.py",
             "sha256": digest("tools/check_norman_core_surface_consequences.py")},
