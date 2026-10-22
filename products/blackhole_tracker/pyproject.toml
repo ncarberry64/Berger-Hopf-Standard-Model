@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bhsm-blackhole-tracker"
+version = "0.2.0rc2"
+description = "Resolved compact-lens tracking and conditional R1 boundary-response inference"
+requires-python = ">=3.11"
+dependencies = ["numpy>=1.26", "scipy>=1.12", "matplotlib>=3.8"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "nbformat>=5", "nbclient>=0.10", "ipykernel>=6", "build>=1"]
+
+[project.scripts]
+blackhole-tracker = "bhtracker.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["bhtracker*"]
+
+[tool.setuptools.package-data]
+bhtracker = ["web/*", "examples/*.json", "theory/*.json", "theory/bhsm_sources/*", "theory/provider/code/*.py", "theory/provider/preregistration/*.json", "theory/provider/*.json"]

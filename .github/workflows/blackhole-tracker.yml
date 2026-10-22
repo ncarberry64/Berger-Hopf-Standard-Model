@@ -1,0 +1,42 @@
+name: Formal Blackhole Tracker
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  tracker-source-and-wheel:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Verify formal source bytes
+        run: python tools/verify_blackhole_tracker_snapshot.py
+      - name: Install product test and build dependencies
+        working-directory: products/blackhole_tracker
+        run: python -m pip install -e ".[dev]"
+      - name: Product contracts, browser fixture and replay
+        working-directory: products/blackhole_tracker
+        run: python -m pytest -q tests
+      - name: Build installable wheel
+        working-directory: products/blackhole_tracker
+        run: python -m pip wheel --no-deps --no-build-isolation . --wheel-dir dist
+      - name: Fit and export replay from wheel outside checkout
+        run: python tools/smoke_blackhole_tracker_wheel.py --wheel products/blackhole_tracker/dist/bhsm_blackhole_tracker-0.2.0rc2-py3-none-any.whl
+      - uses: actions/upload-artifact@v4
+        with:
+          name: blackhole-tracker-wheel-${{ matrix.os }}
+          path: products/blackhole_tracker/dist/*.whl

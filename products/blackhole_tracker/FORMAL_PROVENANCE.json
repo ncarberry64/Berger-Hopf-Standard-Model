@@ -1,0 +1,552 @@
+{
+  "schema_version": 1,
+  "canonical_repository": "https://github.com/ncarberry64/Berger-Hopf-Standard-Model",
+  "canonical_path": "products/blackhole_tracker",
+  "workspace_source_repository": "https://github.com/ncarberry64/Manuscript-Generation",
+  "workspace_source_commit": "bb68862018c1859df35fe9df22bf28c416469227",
+  "workspace_source_prefix": "product/",
+  "snapshot_policy": "Every upstream tracked product file copied byte-for-byte from the stated Git commit; no scientific or numerical source edits",
+  "source_files": [
+    {
+      "path": ".gitattributes",
+      "bytes": 116,
+      "sha256": "41e1b61b5f04bb785e23117848cdb98ea2a6e6843b485d9fdc954331469e982a"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 71,
+      "sha256": "c187b313045330911dfc42a510bf61f4612add6c6a936056118ab464cc4a107c"
+    },
+    {
+      "path": "README.md",
+      "bytes": 39418,
+      "sha256": "fc5ee322f60e4549f6ff23ab56bc48cb237fce39ffc90f3404c4b93dcf9594f5"
+    },
+    {
+      "path": "RELEASE_NOTES.md",
+      "bytes": 7304,
+      "sha256": "cfb62359b849d72f515684e910d2de679cd971d4215817e60daea4f4555a2958"
+    },
+    {
+      "path": "Start_Blackhole_Tracker.cmd",
+      "bytes": 720,
+      "sha256": "ffc145e5c7e92f635ae180de91c90c1f9677dbbe2d119239a5a19ffb5f24a205"
+    },
+    {
+      "path": "bhtracker/__init__.py",
+      "bytes": 283,
+      "sha256": "7554aba0148077d095bf520b5a4ce161ec4daabf2fdfa1b7d66aa4eedceb8eb7"
+    },
+    {
+      "path": "bhtracker/__main__.py",
+      "bytes": 29,
+      "sha256": "cf7390a2508a0fcad4777a4a629fc5212ab655cb45845975995f835676a834e3"
+    },
+    {
+      "path": "bhtracker/cli.py",
+      "bytes": 3963,
+      "sha256": "724e286a1955e3a4ab5c678e9f8ca1fa1bafa4efab63be873444fd10d1870f86"
+    },
+    {
+      "path": "bhtracker/data.py",
+      "bytes": 8684,
+      "sha256": "e24b0d31227c9923259a101214d21f96de94937021cbbcd0faf2712024e54e28"
+    },
+    {
+      "path": "bhtracker/envelope.py",
+      "bytes": 3474,
+      "sha256": "c08bbf41cf58878db0a825247812f19b642280c1cd908f4a8a099c7d16f7c285"
+    },
+    {
+      "path": "bhtracker/examples.py",
+      "bytes": 4621,
+      "sha256": "6694293c27930087cbc0866d83aa657ea70c6dd6cb2a6b1d6a59a693a6bf8f26"
+    },
+    {
+      "path": "bhtracker/examples/cosmological_short_track.json",
+      "bytes": 44598,
+      "sha256": "9585f83e2ba1f9a8ad845107d3451235ad4c229b4dc22547b07750dc80d1bed8"
+    },
+    {
+      "path": "bhtracker/examples/cosmological_short_track.truth.json",
+      "bytes": 899,
+      "sha256": "cb7850b81d9cf527cbb6bc277c9999b1d54f9b91696327dc1ab23b7b609eb0d9"
+    },
+    {
+      "path": "bhtracker/examples/nearby_motion.json",
+      "bytes": 46091,
+      "sha256": "dc0a6e871e4da6a37d4be74a8fc1fe966ebfe6abd17698122611339c30d84c26"
+    },
+    {
+      "path": "bhtracker/examples/nearby_motion.r1.result.json",
+      "bytes": 121289,
+      "sha256": "dd568febed6a36c258bdb450a15fdde98801b8cb90652c3436dc6648d49c4948"
+    },
+    {
+      "path": "bhtracker/examples/nearby_motion.result.json",
+      "bytes": 120513,
+      "sha256": "a88ac046d1661cc51ca80d59dccf9483e83a4a5325c94f4ff9331ce37131733a"
+    },
+    {
+      "path": "bhtracker/examples/nearby_motion.truth.json",
+      "bytes": 898,
+      "sha256": "bea9c83f8cb4432e3a220c687d14abe7bc600fd7553f4e723c08d6ab082cb99b"
+    },
+    {
+      "path": "bhtracker/examples/ordinary_shear.json",
+      "bytes": 46087,
+      "sha256": "22ab8120ee2686569b16a5699a8b206f3f1dcd8a3e62506aa475ae4d62c4ec6f"
+    },
+    {
+      "path": "bhtracker/examples/ordinary_shear.truth.json",
+      "bytes": 902,
+      "sha256": "6daf30e9be75e61205d5febd39a75c2a977055fb3c3ff7897fc246bc3ce9ff0f"
+    },
+    {
+      "path": "bhtracker/examples/stellar_benchmark.json",
+      "bytes": 82149,
+      "sha256": "9b202c825a1ddc3a35507da74e5cc207c8ee14af9c057bf49080e4c2cb097f2f"
+    },
+    {
+      "path": "bhtracker/examples/stellar_benchmark.truth.json",
+      "bytes": 1157,
+      "sha256": "76a1f89eb3370dad13d33028623cbf7d837b58813c186a51df42ecf2f50d2f93"
+    },
+    {
+      "path": "bhtracker/forward.py",
+      "bytes": 8297,
+      "sha256": "3dc51c57e56ff00633ca3d5e0766a37cd0eb7639d58a294373ac1e30df810e5d"
+    },
+    {
+      "path": "bhtracker/importers.py",
+      "bytes": 6965,
+      "sha256": "12c2c97700432f675f9c69eb74f2b3010ac318972dc2f04f7c172fa53a492396"
+    },
+    {
+      "path": "bhtracker/inference.py",
+      "bytes": 16877,
+      "sha256": "77942f22714579ce97855e54d14702d57d72d26fd7c7b421463b2d377dd59eae"
+    },
+    {
+      "path": "bhtracker/interpretation.py",
+      "bytes": 7130,
+      "sha256": "a21c7fa62cafdaeae8e5b46302c573e49c8ff090bcf7bdec3e7cdaa9d7a4b217"
+    },
+    {
+      "path": "bhtracker/physics_admission.py",
+      "bytes": 24635,
+      "sha256": "eb89ef40f95128078df390ce813c312ad302b1494424d57faea3191cafa58e60"
+    },
+    {
+      "path": "bhtracker/provenance.py",
+      "bytes": 1052,
+      "sha256": "e8152e37b26fdccd377a93430b72022db1e57a8233f8181c746668cab48373dd"
+    },
+    {
+      "path": "bhtracker/r1_runtime.py",
+      "bytes": 4016,
+      "sha256": "f3cc2074d915ad02ba6549209d0b0cd532304fa71d2930bb7cbc3d5fc2a39250"
+    },
+    {
+      "path": "bhtracker/report.py",
+      "bytes": 15757,
+      "sha256": "1439aea428b6ac2799a1fa50d7bb670e1b24441c734a787cc3bbd20285a82cd8"
+    },
+    {
+      "path": "bhtracker/sample_bundle.py",
+      "bytes": 4789,
+      "sha256": "2a69023a658722c24471fe78e10ac4cce734cef9e836f33acdd2e63557452eee"
+    },
+    {
+      "path": "bhtracker/server.py",
+      "bytes": 7184,
+      "sha256": "5fd1a9f8a7d7c6ac1caac35b8c69e327f164eadddda1b8a53a0a450dcbad0340"
+    },
+    {
+      "path": "bhtracker/theory/ADAPTATION.json",
+      "bytes": 338,
+      "sha256": "e35a9530a932522ee3ca5b8a85166c89e22f2f24e0b3c717cff948c2b216118b"
+    },
+    {
+      "path": "bhtracker/theory/BHSM_CORE_SURFACE_CONTRACT.json",
+      "bytes": 5340,
+      "sha256": "1b2a44d1d424cf1ad4786d57695c9ab5a9fa5946af7362f05c5e4fb52a251b97"
+    },
+    {
+      "path": "bhtracker/theory/BHSM_INTERPRETATION_MANIFEST.json",
+      "bytes": 4194,
+      "sha256": "aec9564c6cfd4921b59c533ab785bd9104e031e0a074b4c32b40cd1d4315a04e"
+    },
+    {
+      "path": "bhtracker/theory/__init__.py",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "bhtracker/theory/bhsm_sources/BHSM_ETA_SEAM_THRESHOLD_BY_v14_25.md",
+      "bytes": 5574,
+      "sha256": "6dba2dd7837b77ff24e7ea2c1a3733edf0b6ab8ac024a9a0d4481cadaf90046a"
+    },
+    {
+      "path": "bhtracker/theory/bhsm_sources/BHSM_Galaxy_Gravity_Loaded_Schur_Hessian_v0_5.md",
+      "bytes": 9708,
+      "sha256": "718cdac692ae6030eb70c327771343267c4517c1a69a01454a32872579013816"
+    },
+    {
+      "path": "bhtracker/theory/bhsm_sources/BHSM_NORMAN_CORE_SURFACE_AMENDMENT_20261022.json",
+      "bytes": 9370,
+      "sha256": "a5df72ff970b098a8963ebeb0694227e0f6412e10a726529f0a1436414d5dae4"
+    },
+    {
+      "path": "bhtracker/theory/bhsm_sources/BHSM_NORMAN_CORE_SURFACE_AMENDMENT_20261022.md",
+      "bytes": 25657,
+      "sha256": "db244adeb07e5e5d5df1689986d542cd83a58268a1ba09c53bb8ca3ccbc720f7"
+    },
+    {
+      "path": "bhtracker/theory/bhsm_sources/BHSM_Topographic_Galaxy_Encapsulation_Solution_v0_3.md",
+      "bytes": 9423,
+      "sha256": "c9eaee920746c024b695c722fc783aea53dfc9da5660a92150de4b05d9c7ba0a"
+    },
+    {
+      "path": "bhtracker/theory/provider/SOURCE_MANIFEST.json",
+      "bytes": 2389,
+      "sha256": "39e65bbe5dc57a371f4bf3221d7294f561fb2c0f9f6c5917028c1b235de9e4d3"
+    },
+    {
+      "path": "bhtracker/theory/provider/code/action_native_matter_n2.py",
+      "bytes": 12815,
+      "sha256": "eee6ffc6f31d743cc36c31300c8a51c6a28cc50fbbb7526342b7f88978dfcb81"
+    },
+    {
+      "path": "bhtracker/theory/provider/code/background.py",
+      "bytes": 3674,
+      "sha256": "9bf7107e0e9f716a8176baed6ae638f887c3aabb295b580bf09d6c51364aae89"
+    },
+    {
+      "path": "bhtracker/theory/provider/code/bhsm_optical_transfer.py",
+      "bytes": 4073,
+      "sha256": "63e660f0e97e42c5363740bcafe6407a9bd5e4eb2bcd7f9d36c059de64dd9c5d"
+    },
+    {
+      "path": "bhtracker/theory/provider/code/closed_horndeski_n2.py",
+      "bytes": 4724,
+      "sha256": "0d7e596ae40bd01ba9331128afdda9d163e52c955096f70209f06975e197f36d"
+    },
+    {
+      "path": "bhtracker/theory/provider/code/strong_lensing_transport.py",
+      "bytes": 23566,
+      "sha256": "eb67bf7c112257df80f2b9d2185c5ede3ae20f2f3a13c6bd348699d39cf419ed"
+    },
+    {
+      "path": "bhtracker/theory/provider/preregistration/prediction_manifest.json",
+      "bytes": 1239,
+      "sha256": "afaf697100a70d43eab2a6086931bad5efe1ced02f9a56d422b709896be51113"
+    },
+    {
+      "path": "bhtracker/theory/radial_response.py",
+      "bytes": 16625,
+      "sha256": "d7a90db765d89c9b56d5129a2bbb937238c364ddf09d8683c7b5bbfca0c17514"
+    },
+    {
+      "path": "bhtracker/web/app.js",
+      "bytes": 59901,
+      "sha256": "a7682057b5c5136b2f8cd35591981682f78104de11542ffd65047a8238137af6"
+    },
+    {
+      "path": "bhtracker/web/index.html",
+      "bytes": 16262,
+      "sha256": "b0adc25c6ccbe9dc3453691fe9653f99c3e8d7b5bfca9f4ce1849011f9117ee7"
+    },
+    {
+      "path": "bhtracker/web/style.css",
+      "bytes": 26484,
+      "sha256": "41ee09f787768c53765cad5d44ef58366d98845c227e85bd2aa1c21be55cad4e"
+    },
+    {
+      "path": "examples/nearby_motion/README.md",
+      "bytes": 2614,
+      "sha256": "3c5be288136e3b4928738594e5ffac479a4d5981fee1d8cb2932b62495695f49"
+    },
+    {
+      "path": "examples/nearby_motion/dataset.json",
+      "bytes": 42947,
+      "sha256": "c6eceba975fc29dd2c1866ec3bbaa3f433eb4fb109d05cc636ef7d70aafa9851"
+    },
+    {
+      "path": "examples/nearby_motion/full_covariance.csv",
+      "bytes": 19440,
+      "sha256": "f545bcdcd960a35267c9c1a5cef8cf86ac1721873c9124d98da880066c3891ac"
+    },
+    {
+      "path": "examples/nearby_motion/manifest.json",
+      "bytes": 647,
+      "sha256": "491f87916a5271761e34f65ebd28097d391329668c4ba5da63053fefa224a5b1"
+    },
+    {
+      "path": "examples/nearby_motion/measurements.csv",
+      "bytes": 1167,
+      "sha256": "525a894fff62317f35808783675b145d1f89c804b7b60c6c4d0c1269ffc41fea"
+    },
+    {
+      "path": "examples/nearby_motion/metadata.json",
+      "bytes": 765,
+      "sha256": "2c9a15e1b90954e933fffddb5f507b63dee4132b6379495ed15583603d7c4844"
+    },
+    {
+      "path": "examples/nearby_motion_bundle.zip",
+      "bytes": 5457,
+      "sha256": "9c5a2d36cd6d3662c4c08ba6fcb9eb1c740f3a1d72930a6797ac85444b869479"
+    },
+    {
+      "path": "notebooks/01_compact_mass_and_motion.ipynb",
+      "bytes": 95756,
+      "sha256": "8e51dcac9d97718d8e81994f3bb8704911e274be511b4028cf26906186ce2e13"
+    },
+    {
+      "path": "notebooks/02_conditional_boundary_response.ipynb",
+      "bytes": 25032,
+      "sha256": "eea6317e0dac4bb6a212f9f68300bc1ef907739da2cc367ca921442375fc8630"
+    },
+    {
+      "path": "pyproject.toml",
+      "bytes": 802,
+      "sha256": "e56c69a98f04890c3d6cbae6e3f3a4f59ac7479ef1fec9981cefde25385eb17d"
+    },
+    {
+      "path": "scripts/check_installed_wheel.py",
+      "bytes": 7098,
+      "sha256": "7af11a74846fa2e35ca60d063ed8fb72cf1d8a5f9f70388f7e46eb55a20300e7"
+    },
+    {
+      "path": "scripts/check_web_interpretation.mjs",
+      "bytes": 9222,
+      "sha256": "374acee7b6fd7361dd225bd879cb2d2c65a932cd517c171d377fe48de5e2ee76"
+    },
+    {
+      "path": "scripts/check_windows_launcher.py",
+      "bytes": 3775,
+      "sha256": "3ca89fae05b55905b8cc0b14775353bbb0f885dcbec8fde68c8503e51961184e"
+    },
+    {
+      "path": "scripts/compare_interfaces.py",
+      "bytes": 3310,
+      "sha256": "152ca8e3c0772e4229a1fde1a2a37a4e7d762eccf4ca7cf09c5a3695767aa940"
+    },
+    {
+      "path": "scripts/execute_notebooks.py",
+      "bytes": 1699,
+      "sha256": "225589603ecddd7c8a33e8d28058ef3ca9f68c118ad4eefda1be64ef70565e8f"
+    },
+    {
+      "path": "scripts/launch_local.py",
+      "bytes": 2070,
+      "sha256": "390e08fffd2810f2ad5efedd36750c60b5f5c68ca483aa1bbe3b4931fd8d6c8c"
+    },
+    {
+      "path": "scripts/make_notebooks.py",
+      "bytes": 8682,
+      "sha256": "76ef95d208615749db21826b295b7789af14b077ac9c87cd78d545ea54779dd2"
+    },
+    {
+      "path": "scripts/package_product.py",
+      "bytes": 14271,
+      "sha256": "e2bb93a7dbe1c9eaecdf36c780a95a315e144399a72c6c11e272b39c5fb66c2e"
+    },
+    {
+      "path": "scripts/sync_theory.py",
+      "bytes": 1761,
+      "sha256": "291da97c2148d2bef714b39333ccf96f4fe96eb541488c98457cff2eb32c7a42"
+    },
+    {
+      "path": "scripts/validate_product.py",
+      "bytes": 1143,
+      "sha256": "b3870766ab518576b25b2460acf52804e9e6649c9b18c926536aa0de60d00dfa"
+    },
+    {
+      "path": "tests/calibrate_product.py",
+      "bytes": 13214,
+      "sha256": "f2424a2b566b9579e8940d6a1830ad489a90d437255b2323d7e171ff350a253f"
+    },
+    {
+      "path": "tests/check_finite_harmonic_degeneracy.py",
+      "bytes": 6671,
+      "sha256": "965863f28cb9a190f99a899ce9a2a9c9ed2c833b1adaf250783d560df7a68199"
+    },
+    {
+      "path": "tests/fixtures/pre_core_surface_scientific_summary.json",
+      "bytes": 1338,
+      "sha256": "baf8ec0800f6b5834b0f82327a7337615fcbe909f639d196b22f06b71414a78b"
+    },
+    {
+      "path": "tests/fixtures/pre_interpretation_fit.json",
+      "bytes": 2325,
+      "sha256": "dfd06d5db4317b5f6b1eff3faf13dbd45df9bc1d734e3c65dd22c63d1d52a5a1"
+    },
+    {
+      "path": "tests/statistical_risk_review.py",
+      "bytes": 26070,
+      "sha256": "d68af366b4b908b306901e4992e1b3b507fc74c0b8386704db7ccc0d6ae58a19"
+    },
+    {
+      "path": "tests/test_bhsm_interpretation.py",
+      "bytes": 6381,
+      "sha256": "d353c432f4852fda072a6b946b7c7b35c4b9dd2fd82648a0d88415ecf1ed17c1"
+    },
+    {
+      "path": "tests/test_csv_import.py",
+      "bytes": 7284,
+      "sha256": "53798612f4bb924fd48bec220c24fcdd6ec322ffecd11293faa40a6e58e8d446"
+    },
+    {
+      "path": "tests/test_inference_contract.py",
+      "bytes": 15177,
+      "sha256": "82fb1914151351df49abdbbe73aaee2e126f76ff4fed2875bedb72a4b5a7e4d4"
+    },
+    {
+      "path": "tests/test_local_app.py",
+      "bytes": 3594,
+      "sha256": "7b089cfd25d6b652c3a727305187a6cec8e8cbbdd8894a4ce5c07886dc7eea42"
+    },
+    {
+      "path": "tests/test_physics_admission.py",
+      "bytes": 20613,
+      "sha256": "293bc4c49a816e1af64dc07ca8fd85a947fe63eefcf9157b5558214699d4e31f"
+    },
+    {
+      "path": "tests/test_r1_runtime.py",
+      "bytes": 14378,
+      "sha256": "54d359e73f7342a03e140fa2102a36824b92dfb5d3244a502539c47c33a06f42"
+    },
+    {
+      "path": "tests/test_replay.py",
+      "bytes": 2929,
+      "sha256": "8a469defa93e6b8df49cb90d49783dc1ba367c367856e6ab85eade07475b5a72"
+    },
+    {
+      "path": "tests/test_reproduction.py",
+      "bytes": 859,
+      "sha256": "bf415536d0e8ec17568bc24f51ebe7028ad53bee7ae69aab427014562445d02d"
+    },
+    {
+      "path": "tests/test_sample_bundle.py",
+      "bytes": 2584,
+      "sha256": "8ab817abc4710d5e6864f301d0181580ae6e9fae32299c9a7d395f90d8c439bb"
+    },
+    {
+      "path": "validation/bhsm_interpretation_ui_receipt.json",
+      "bytes": 1914,
+      "sha256": "22fa94831de6265dad1219385cc615cd9977422ab9e03a9c048628dd284cc51d"
+    },
+    {
+      "path": "validation/csv_cli_receipt.json",
+      "bytes": 164,
+      "sha256": "e02110e1877deb6864284d931c5d3ace4e7c2a6fd2c9d74ce647666b2ec7a3ac"
+    },
+    {
+      "path": "validation/notebook_receipt.json",
+      "bytes": 911,
+      "sha256": "5d21b97abbf97933c5694176f17fb57ff7c532738757b986c07fdf3624a9e6bc"
+    },
+    {
+      "path": "validation/package_install_receipt.json",
+      "bytes": 25306,
+      "sha256": "8b65ba40b58518a02040a8842200cb4037e7d74459852957271e69e59a22bca4"
+    },
+    {
+      "path": "validation/product_calibration_receipt.json",
+      "bytes": 224163,
+      "sha256": "aa95fd1a6f1f5918f2a31044cd565dd590ab71794ba39ec70a140a92beb028c7"
+    },
+    {
+      "path": "validation/product_finite_degeneracy_receipt.json",
+      "bytes": 3291,
+      "sha256": "13af014c0eacddb36a308741f8c960d5dd60c242632eec452cdfd3d1fa53ab8e"
+    },
+    {
+      "path": "validation/product_replay_receipt.json",
+      "bytes": 2699,
+      "sha256": "9605148f0faacda335f665fd99e4de00a2390cd3179d8fe991f2b6651d3fd7f1"
+    },
+    {
+      "path": "validation/rc2_four_interface_receipt.json",
+      "bytes": 2088,
+      "sha256": "51f072f9a7991beb0f110efdb2a3d04621993fd629aa4fb688bb1c10437f7991"
+    },
+    {
+      "path": "validation/rc2_installed_usability_receipt.json",
+      "bytes": 7357,
+      "sha256": "d7a072e524ac9201d3c970fb2a06e8b9a250cd823c433164afd5cc2b30c83d1e"
+    },
+    {
+      "path": "validation/rc2_installed_wheel.json",
+      "bytes": 6194,
+      "sha256": "a3abb977550eee0def55a2db3dec00984ab10005dfcdbbb1aceda4db36cbc089"
+    },
+    {
+      "path": "validation/rc2_product_tests.xml",
+      "bytes": 14950,
+      "sha256": "55f9ec2037c7ff90e9924f9b404c5a04bf6d2a8a72e8299e296392747a4e35e6"
+    },
+    {
+      "path": "validation/rc_four_interface_receipt.json",
+      "bytes": 1772,
+      "sha256": "f18a2d5214b08ef147b8e39d5c05948021e595e961e1ebb557602c7183b18c67"
+    },
+    {
+      "path": "validation/rc_product_tests.xml",
+      "bytes": 14797,
+      "sha256": "9591e7e8033171377a3dd411fcf473b76771953c0ea1656d18311e2a33d2c213"
+    },
+    {
+      "path": "validation/rc_windows_clean_wheel.json",
+      "bytes": 9503,
+      "sha256": "2da0ddacee8f99f9cd1fbbae23f40c5b73a188c543fe007ca9abed0826dffcd8"
+    },
+    {
+      "path": "validation/rc_windows_launcher.json",
+      "bytes": 5778,
+      "sha256": "78fbe8e992a246a4e77aab836be69b2618b4f3fad5ee52b20d066be11ca46826"
+    },
+    {
+      "path": "validation/report.md",
+      "bytes": 10465,
+      "sha256": "16dd1ac8d3f2b7c2461159672b0f52b25da658fe7cb00b15c758a4f52718748f"
+    },
+    {
+      "path": "validation/stage_1.txt",
+      "bytes": 183,
+      "sha256": "b9b4609c6dbf6e6220328caa4b9a15f51ebbc6b2ac287964f578db34a7511e0e"
+    },
+    {
+      "path": "validation/stage_2.txt",
+      "bytes": 2633,
+      "sha256": "3d0f2af928bfcc0026303717d3c0742d1d1b78a0d9199abcb1b546327720fb78"
+    },
+    {
+      "path": "validation/stage_3.txt",
+      "bytes": 3291,
+      "sha256": "13af014c0eacddb36a308741f8c960d5dd60c242632eec452cdfd3d1fa53ab8e"
+    },
+    {
+      "path": "validation/statistical_risk_protocol.md",
+      "bytes": 7586,
+      "sha256": "b316c22240954a4dc023a3864ff4276357e6f2e83084fc03e362967c775304f5"
+    },
+    {
+      "path": "validation/statistical_risk_receipt.json",
+      "bytes": 454236,
+      "sha256": "87729edd0383c8e9bfc2c4a7b161aa60d4ca42558dcd12702651672b1e2f74fe"
+    },
+    {
+      "path": "validation/ui_acceptance_receipt.json",
+      "bytes": 1100,
+      "sha256": "c2f4426fb9084093409636682c8b00f481d80dc10126e3157d834149a0641e58"
+    }
+  ],
+  "formal_additions_excluded_from_source_hashes": [
+    "FORMAL_PROVENANCE.json",
+    "REVIEWER.md"
+  ],
+  "self_hash_or_self_commit_included": false,
+  "theory_source_commit": "3c820fee74a5c715ef58bf30998edb1d7b26fe78"
+}
