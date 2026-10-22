@@ -2,7 +2,7 @@
 
 Blackhole Tracker is a runnable lens-inference research product with a local app, CLI, Python API, notebooks and replayable exports. Release candidate 0.2.0rc4 preserves resolved-pair inference, native unresolved photometry and a separately versioned joint astrometry/parallax research route. All three frozen joint noise models fail the known-system adequacy checks; no reliable black-hole mass is accepted.
 
-The **formal reviewer repository is [BHSM](https://github.com/ncarberry64/Berger-Hopf-Standard-Model)**, branch [codex/blackhole-tracker-real-data-20261022](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/tree/codex/blackhole-tracker-real-data-20261022). Formal product: `products/blackhole_tracker/`; paper: `papers/bhsm_blackhole_tracker_20261021/`. Manuscript-Generation is a development workspace. The rc4 product code is pinned to formal [9f1768a7fbac](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/tree/9f1768a7fbac1d16e0e25713f87b8191cbe02249/products/blackhole_tracker). Final release receipts pin actual source, wheel, PDF and CI revisions.
+The **formal reviewer repository is [BHSM](https://github.com/ncarberry64/Berger-Hopf-Standard-Model)**, branch [codex/blackhole-tracker-real-data-20261022](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/tree/codex/blackhole-tracker-real-data-20261022). Formal product: `products/blackhole_tracker/`; paper: `papers/bhsm_blackhole_tracker_20261021/`. Manuscript-Generation is a development workspace. The rc4 product code is pinned to formal [1a556d37a40e](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/tree/1a556d37a40ef89deb54f9c07d231b5496163838/products/blackhole_tracker). Final release receipts pin actual source, wheel, PDF and CI revisions.
 
 ## Start with the evidence
 
@@ -14,7 +14,7 @@ The **formal reviewer repository is [BHSM](https://github.com/ncarberry64/Berger
 - [2023 joint known-system audit](joint_known_system_20261022/README.md), including failed baselines, profiles, controls and reproduction instructions.
 - [2022 known-system benchmark](real_data_pilot_20261022/derived_v1/historical_benchmark/summary.json).
 - [Validation scope and receipts](VALIDATION.md), [native-data paper section](manuscript/real_observations.tex) and [BHSM interpretation](manuscript/bhsm_interpretation.tex).
-- [Product guide](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/tree/9f1768a7fbac1d16e0e25713f87b8191cbe02249/products/blackhole_tracker/README.md) and [prior-literature audit](review/REAL_DATA_PRIOR_LITERATURE_20261022.json).
+- [Product guide](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/tree/1a556d37a40ef89deb54f9c07d231b5496163838/products/blackhole_tracker/README.md) and [prior-literature audit](review/REAL_DATA_PRIOR_LITERATURE_20261022.json).
 
 The frozen pilot uses all 100 supplied historical OGLE-III events and 76,344 native numeric rows. All 109 raw hashes and exact selection verify. Eighty-nine fail the stated PSPL photometric adequacy screen; eleven are not rejected by that screen. Only 0585 and 3092 pass every stricter archival-follow-up rule. Neither is a new event or a measured black hole. All pilot mass, distance and absolute-motion fields remain unavailable.
 
@@ -37,7 +37,7 @@ python -m bhtracker fit-photometry C:/path/to/native.json --output C:/path/to/na
 python -m bhtracker replay C:/path/to/analysis.zip --output C:/path/to/replayed
 ```
 
-For the optional joint route install the wheel with `[astrometry]` (or run `Start_Blackhole_Tracker_Joint.cmd`) and open `/joint`. Import the hash-verified 2023 source ZIP or a calibrated versioned JSON. See the [joint guide](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/tree/9f1768a7fbac1d16e0e25713f87b8191cbe02249/products/blackhole_tracker/JOINT_RESEARCH.md). Four notebooks run against a clean installed wheel.
+For the optional joint route install the wheel with `[astrometry]` (or run `Start_Blackhole_Tracker_Joint.cmd`) and open `/joint`. Import the hash-verified 2023 source ZIP or a calibrated versioned JSON. See the [joint guide](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/tree/1a556d37a40ef89deb54f9c07d231b5496163838/products/blackhole_tracker/JOINT_RESEARCH.md). Four notebooks run against a clean installed wheel.
 
 The app supports native import, diagnostics, BHSM interpretation, export and replay. A photometric fit reports its model status and unavailable quantities. The resolved-image import contract remains separate and requires its actual positions/flux ratios/delays and supplied covariance.
 
