@@ -2,7 +2,7 @@
   "FULL_BHSM_COMPLETE": false,
   "amendment": {
     "path": "docs/BHSM_NORMAN_CORE_SURFACE_AMENDMENT_20261022.md",
-    "sha256": "db244adeb07e5e5d5df1689986d542cd83a58268a1ba09c53bb8ca3ccbc720f7"
+    "sha256": "028158078ae6ac2c32f44f3539c2598ade810f5ef77fff66b7e854cb9d4f959a"
   },
   "artifact": "BHSM_NORMAN_CORE_SURFACE_AMENDMENT_20261022",
   "author_handoff": {
@@ -93,26 +93,86 @@
   "core_metric_assigned": false,
   "date": "2026-10-22",
   "exact_symbolic_checks": {
+    "constant_pressure_work_supplies_radial_traction": true,
     "genuine_nonlinearity_directional_derivative": true,
     "null_wave_nonzero_energy": true,
     "positive_time_kinetic_implies_hyperbolic_factor": true,
     "principal_determinant": true,
     "principal_symbol_from_polynomial_Hessian": true,
+    "pure_membrane_has_no_applied_traction": true,
+    "recovered_radial_flux_and_seam": true,
+    "recovered_sextic_equal_energy": true,
+    "recovered_sextic_equal_energy_barrier": true,
+    "recovered_sextic_stationary_polynomial": true,
+    "recovered_total_circular_speed_counts_baryons_once": true,
     "regular_carrier_shape_derivative_minus_two_thirds": true,
     "regular_carrier_variation_integrals": true,
     "regular_carrier_weighted_median_at_identity": true,
     "regular_radial_membrane_Euler_equation": true,
+    "regular_static_curved_radial_traction": true,
     "rigid_relabeling_keeps_frequency_differential": true,
+    "static_curvature_flat_limit": true,
     "stationary_flux_strict_monotone_polynomial": true,
-    "stationary_gradient_flux_derivative_on_positive_branch": true
+    "stationary_gradient_flux_derivative_on_positive_branch": true,
+    "time_varying_tension_requires_extra_momentum_term": true
   },
   "hard_boundary_derived": false,
   "hypothesis_author": "Norman P. Carberry",
   "no_new_coefficients_or_rates": true,
   "numerical_prediction_changed": false,
-  "schema_version": 1,
+  "radial_equation_domain": {
+    "background": "FIXED_MINKOWSKI",
+    "constant_pressure_work_term": "+DeltaP Omega_p R^(p+1)/(p+1)",
+    "curved_or_backreacting_domain": "ACTUAL_INDUCED_METRIC_AND_BULK_TRACTION_REQUIRED",
+    "forcing": "APPLIED_NORMAL_PRESSURE_JUMP",
+    "pure_membrane_traction": "ZERO",
+    "spatial_surface": "ROUND_P_SPHERE",
+    "speed_domain": "abs(Rdot)<1",
+    "tension": "CONSTANT",
+    "time_derivative": "COORDINATE_TIME",
+    "units": "c=1",
+    "varying_tension": "OWN_VARIATION_TERMS_REQUIRED"
+  },
+  "schema_version": 2,
   "source_base_commit": "00614fa0d479a2de78460ca061cc5304cdb610cf",
-  "source_hash_basis": "UTF-8 text with CRLF normalized to LF; scientific source hashes equal the stated base Git blobs",
+  "source_hash_basis": "Current UTF-8 text with CRLF normalized to LF; unchanged scientific sources retain the historical base, qualified mechanics is the reviewed correction; recovered originals use raw bytes",
+  "source_reconciliation": {
+    "comparison_scope": "Frame frequency, polynomial scalar sector and rest-state steepening agree; recovered sextic/radial statements are exact only under their declared conditional assumptions; no physical coefficient, lifetime, source export or coupled solution follows",
+    "editable_pdf_authoring_sources_recovered": false,
+    "historical_implementation_handoff_preserved": true,
+    "named_handoff_is_separate_version": true,
+    "originals": [
+      {
+        "hash_basis": "UNMODIFIED_RAW_BYTES",
+        "path": "docs/source_recovery/20261022/originals/BHSM_Implementation_Handoff_d604_20261022.txt",
+        "sha256": "d604c8c48f66d6753bbf0b95bbb3d0953fd7d5e0d2d134b4288e2eeed38c5240"
+      },
+      {
+        "hash_basis": "UNMODIFIED_RAW_BYTES",
+        "path": "docs/source_recovery/20261022/originals/BHSM_Core_Harmonics_Black_Hole_Tracker_Codex_Prompt_20261022.txt",
+        "sha256": "149ba5efafd46be01bde9fe9513c1c83788b8a5f41c2127a4e2e5e6ce358517c"
+      },
+      {
+        "hash_basis": "UNMODIFIED_RAW_BYTES",
+        "path": "docs/source_recovery/20261022/originals/BHSM_Frame_Dragging_and_Nonlinear_Front_Derivation_v0_1.pdf",
+        "sha256": "7bb85093bcf3d03ca30220fd6d52aa3306a2c4d1648e91679c3d5a65f9409e2e"
+      },
+      {
+        "hash_basis": "UNMODIFIED_RAW_BYTES",
+        "path": "docs/source_recovery/20261022/originals/BHSM_Galaxy_Envelope_Formation_and_Persistence_v0_1.pdf",
+        "sha256": "de228c96c612024e2bfd1d3c9907dc6223108dfb6ecfc4f7b7bffb65623450a4"
+      }
+    ],
+    "pdf_pages_read_and_rendered": {
+      "front": 10,
+      "galaxy": 13
+    },
+    "record": {
+      "path": "docs/source_recovery/20261022/README.md",
+      "sha256": "2f634a46f6974f871b79aafcf1b331797be7d4ee69bd10c0f550310d93ffb5da"
+    },
+    "status": "BOTH_HANDOFF_VERSIONS_AND_NAMED_ORIGINAL_PDFS_RECOVERED_AND_COMPARED"
+  },
   "sources": [
     {
       "commit": "00614fa0d479a2de78460ca061cc5304cdb610cf",
@@ -190,9 +250,10 @@
       "sha256": "97f5e18cc9e8e27c2b1cb2bfbbefe27424e34ce0db803a54a8cb83120a2fa6ba"
     },
     {
-      "commit": "00614fa0d479a2de78460ca061cc5304cdb610cf",
+      "historical_base_commit": "00614fa0d479a2de78460ca061cc5304cdb610cf",
       "path": "theory/bhsm_covariant_bubble_interface_mechanics.md",
-      "sha256": "5ddf387e0a054af2e257f3b5ffcf4644b9260a156706a4d90aa8727b1c6fe9f6"
+      "revision_status": "QUALIFIED_RADIAL_EQUATION_CORRECTION",
+      "sha256": "26e216073bb19bead6c7a9ceef7e6058102f8e126d898aee53f0bc56aece06f3"
     },
     {
       "commit": "00614fa0d479a2de78460ca061cc5304cdb610cf",
@@ -211,11 +272,12 @@
       null
     ],
     "preserved_scope": "Handoff's sextic persistence and conditional radial-law statements remain conditional, without invented coefficients or claimed recovered editable source",
+    "record_scope": "HISTORICAL_IMPLEMENTATION_ACCOUNT_SUPERSEDED_BY_SOURCE_RECONCILIATION",
     "recovery_scope": "Targeted repository text and Downloads filenames; recent Galaxy dark matter explanation conversation; no drive-wide inventory or duplicate archive scan",
     "status": "FILENAMES_BLANK_ORIGINALS_NOT_IDENTIFIED"
   },
   "verification_tool": {
     "path": "tools/check_norman_core_surface_consequences.py",
-    "sha256": "a9e2a6195f86541592cc8bc8bc4061059e4b1a2e71288e4ee43263dfd412002d"
+    "sha256": "99b836eddff7495b8022e899b716e437fb0524002432d9e989b289a85ae8678d"
   }
 }
