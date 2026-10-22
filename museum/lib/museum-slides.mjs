@@ -6,6 +6,7 @@ export const slides = [
   ['science-predictions', 'Matter'],
   ['science-magnetic', 'Magnetism'],
   ['science-decays', 'Collisions'],
+  ['blackhole-tracker', 'Blackhole Tracker'],
   ['cosmology-original', 'Cosmology · the proposal'],
   ['other-work', 'Cosmology · testable response'],
   ['science-test', 'Comparisons'],

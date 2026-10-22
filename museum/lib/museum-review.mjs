@@ -42,6 +42,14 @@ export const reviewEntries = {
     question:
       'Does the exported transition record conserve the stated quantities, and which boundary inputs are needed to determine branch probabilities or rates?',
   },
+  'blackhole-tracker': {
+    classification:
+      'BHSM compact-lens interpretation · synthetic demonstration',
+    statement:
+      'Blackhole Tracker reconstructs an effective compact-lens mass, position and motion and interprets the same exterior response within the declared BHSM sector. A separate conditional response is tested only with its supplied matching data.',
+    question:
+      'Can you reproduce the mass and motion fit with its full covariance and replay bundle, and distinguish the same-potential BHSM interpretation from an independently identified boundary state or black-hole horizon?',
+  },
   'cosmology-original': {
     classification: 'BHSM cosmology proposal',
     statement:

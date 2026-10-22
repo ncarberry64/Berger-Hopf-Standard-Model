@@ -10,12 +10,14 @@ import {
 import { slides } from '../lib/museum-slides.mjs';
 import { reviewEntries } from '../lib/museum-review.mjs';
 
-test('science exhibits 1–10 have review questions; record exhibits retain statements', () => {
+test('science exhibits have review questions; record exhibits retain statements', () => {
   assert.deepEqual(
     Object.keys(reviewEntries),
     slides.slice(0, -1).map(([id]) => id),
   );
-  for (const entry of catalog.exhibits.slice(0, 10)) {
+  for (const entry of catalog.exhibits.filter(
+    (entry) => !['details', 'creator', 'museum-exit'].includes(entry.id),
+  )) {
     assert.equal(entry.statement, reviewEntries[entry.id].statement);
     assert(
       entry.classification &&
@@ -123,7 +125,9 @@ test('offline packet contains verifiable verbatim source text and provenance', a
     assert.match(source.revision, /^[0-9a-f]{40}$/);
     assert(source.source_url.includes(source.revision));
   }
-  for (const entry of catalog.exhibits.slice(10, 12))
+  for (const entry of catalog.exhibits.filter((entry) =>
+    ['details', 'creator'].includes(entry.id),
+  ))
     assert.equal(entry.question, null);
 });
 

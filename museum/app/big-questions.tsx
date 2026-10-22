@@ -35,7 +35,7 @@ export function BigQuestions({ motion }: { motion: boolean }) {
       aria-labelledby="big-questions-title"
     >
       <header className="questions-heading">
-        <p className="eyebrow">Exhibit 13 · Big Questions</p>
+        <p className="eyebrow">Exhibit 14 · Big Questions</p>
         <h2 id="big-questions-title">The questions that keep us curious.</h2>
         <p>
           {physicsQuestions.length} questions about reality, matter and the

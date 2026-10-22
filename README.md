@@ -11,11 +11,18 @@ separate quantities. Establishing that connection would be significant;
 the complete physical derivation and experimental validation remain open.
 
 This repository is the **academic record and reproducible research surface**.
+Researchers reviewing the new Blackhole Tracker manuscript should start with
+the [Blackhole Tracker research guide](docs/BLACKHOLE_TRACKER_RESEARCH_START.md):
+paper, reviewed PDF, installable app, replay and supporting BHSM sources in one
+route. The formal research record is here; `Manuscript-Generation` is the
+development workspace.
+
 The [BHSM Museum](https://ncarberry64.github.io/Berger-Hopf-Standard-Model/)
 is the public-facing collection, with plain-language exhibits and visible
 measurement, calculation, comparison and simulation labels. Its permanent
 science exhibits cover decays/collisions, magnetic moments, SM predictions,
-SM equivalence, force unification and spectral structure. Sandbox comparisons
+SM equivalence, force unification, spectral structure and the Blackhole
+Tracker's compact-lens mass/motion workflow. Sandbox comparisons
 are supplementary. The [Museum update contract](docs/MUSEUM_SCIENCE_UPDATE.md)
 connects reviewed derived results to these same public exhibits.
 
@@ -23,6 +30,7 @@ connects reviewed derived results to these same public exhibits.
 
 | Audience or task | Entry point |
 | --- | --- |
+| Review the new Blackhole Tracker manuscript or try its app | [Research start](docs/BLACKHOLE_TRACKER_RESEARCH_START.md), [reviewed PDF](papers/bhsm_blackhole_tracker_20261021/manuscript/main.pdf) and [Museum exhibit](https://ncarberry64.github.io/Berger-Hopf-Standard-Model/#blackhole-tracker) |
 | University, laboratory, reviewer or teaching group | [Institutional start](docs/INSTITUTIONAL_START.md) — portable setup, offline checks and reporting |
 | Evaluate the scientific proposal | [Claim boundaries](CLAIMS.md), [current status](docs/current_bhsm_status.md), [theory ledger](theory/gate_ledger.md) |
 | Core, surface and terminal-transition hypothesis | [Norman's dated amendment](docs/BHSM_NORMAN_CORE_SURFACE_AMENDMENT_20261022.md) — recovered matching, computed regular response and precise terminal requirement |
@@ -30,7 +38,11 @@ connects reviewed derived results to these same public exhibits.
 | Inspect enclosure and interacting-state construction | [Existing-state integration](theory/ae4_current_c2_physical_enclosure_state_integration.md), [response integration](theory/ae4_event_response_jet_integration.md) |
 | Examine the sandbox comparisons | [Complete source snapshot](docs/museum/sandbox_comparison_source_2026-09-02.md), [machine-readable values](data/museum/bhsm_sandbox_comparison_20260902.json) |
 | Reuse an external-runtime adapter | [Integration guide](integrations/README.md), [CERN ROOT](integrations/cern-root/README.md) |
-| Review or run the Blackhole Tracker | [Formal product guide](products/blackhole_tracker/REVIEWER.md), [central paper](papers/bhsm_blackhole_tracker_20261021/README.md) and [reviewed PDF](papers/bhsm_blackhole_tracker_20261021/manuscript/main.pdf) — installable source, covariance contracts, tests, notebooks and provenance |
+
+The [documentation index](docs/README.md) separates current entry points from
+the retained versioned research catalog. Start with the current status and the
+sources for the particular claim being reviewed; a historical campaign's
+conclusion applies to its stated action and domain.
 
 ## Scientific structure and present limits
 
@@ -104,6 +116,8 @@ and research achievements are collected in one separate Museum exhibit.
 | --- | --- |
 | `src/bhsm/interface/` | Scientific operators, conditional models and reporting interfaces |
 | `theory/`, `docs/` | Derivations, authority boundaries, reviews and source provenance |
+| `papers/bhsm_blackhole_tracker_20261021/` | New tracker manuscript, reviewed PDF, calculations, internal reviews and provenance |
+| `papers/bhsm_angular_lensing_20261021/`, `papers/bhsm_state_rotation_20261021/` | Preserved supporting lensing and Hopf research, with their own source and domain records |
 | `artifacts/` | Machine-readable evidence, certificates and open-gate records |
 | `tests/`, `tools/` | Focused reproduction, integrity audits and institutional checks |
 | `integrations/` | Optional ROOT, container and external-runtime adapters |

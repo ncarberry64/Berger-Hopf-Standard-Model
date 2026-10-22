@@ -76,7 +76,7 @@ export function ScienceGallery({ motion }: { motion: boolean }) {
     >
       <ScienceConsole
         id="science-test"
-        number="09"
+        number="10"
         label="Historical screens and reference data"
         title="Compare the calculation with the reference."
         intro="Choose a quantity to see the retained BHSM calculation, the published reference and their relative difference. Open the source record to inspect the inputs and reproduce the comparison."
