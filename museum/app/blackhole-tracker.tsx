@@ -9,6 +9,8 @@ import {
   trackerFrame,
   trackerCodeRevision,
   trackerPaperRevision,
+  trackerVersion,
+  trackerPilot,
 } from '../lib/blackhole-tracker';
 
 const colors = ['#71e5eb', '#ffbc77', '#bda7f5'];
@@ -16,6 +18,7 @@ const source = `${REPOSITORY}/tree/${trackerCodeRevision}/products/blackhole_tra
 const productFiles = `${REPOSITORY}/blob/${trackerCodeRevision}/products/blackhole_tracker`;
 const paper = `${REPOSITORY}/blob/${trackerPaperRevision}/papers/bhsm_blackhole_tracker_20261021`;
 const assets = './research/blackhole-tracker/';
+const pilotAssets = `${assets}pilot-20261022-v1/`;
 
 export function BlackholeTracker({
   motion,
@@ -59,7 +62,7 @@ export function BlackholeTracker({
       number="07"
       label="Blackhole Tracker · BHSM lensing"
       title="Follow the lens. Test the interpretation."
-      intro="Blackhole Tracker reconstructs a compact configuration’s effective mass, position and motion from resolved image pairs, magnification ratios and time delays, with the supplied full measurement covariance. Its BHSM description interprets this same exterior response once."
+      intro="Blackhole Tracker fits resolved lens measurements and native unresolved light curves through separate observation models. Resolved data can constrain a compact configuration’s mass and motion under supplied geometry. A light-curve duration alone leaves mass unresolved. Both routes retain the same-potential BHSM interpretation."
       accent="cyan"
     >
       <div className="tracker-theatre" ref={ref}>
@@ -296,25 +299,75 @@ export function BlackholeTracker({
           unresolved.
         </p>
       </div>
+      <section className="tracker-real-data" aria-labelledby="tracker-real-data-title">
+        <p className="eyebrow">REAL OBSERVATION PILOT · FROZEN 22 OCTOBER 2026</p>
+        <h4 id="tracker-real-data-title">
+          100 historical events. Two archival follow-up targets. No new black-hole interpretation.
+        </h4>
+        <p>
+          The separate native-magnitude route processed all 76,344 measurements
+          from the frozen OGLE-III pilot, including every inadequate or
+          unresolved case. Eleven events passed the declared diagonal-noise
+          chi-square screen; 89 require a better model or noise description.
+          The animation above remains a synthetic resolved-image illustration.
+        </p>
+        <div className="tracker-targets">
+          {trackerPilot.targets.map((target) => (
+            <article key={target.event_id}>
+              <h5>{target.event_id}</h5>
+              <strong>MASS UNRESOLVED</strong>
+              <p>
+                Fitted timescale {target.fitted_tE_days.toFixed(1)} days;
+                local conditional error ±{target.sigma_tE_days.toFixed(1)} days.
+                The timescale is not a black-hole mass.
+              </p>
+              <a href={`${pilotAssets}${target.residual_plot}`}>
+                View observed light curve and residuals ↗
+              </a>
+            </article>
+          ))}
+        </div>
+        <p>
+          These already published events merit archival calibration, modeling
+          and source-association checks under the frozen ranking rule. No
+          ongoing peak is assumed. OGLE3-ULENS-3092 is also
+          OGLE-2007-BLG-057 / MOA-2007-BLG-027 and has prior literature.
+          Complete novelty clearance remains unresolved. Every pilot lens mass,
+          distance, angular proper motion and horizon status is unavailable.
+        </p>
+        <div className="tracker-actions">
+          <a href={`${pilotAssets}all_100_results.csv`} download>All 100 results · CSV ↓</a>
+          <a href={`${pilotAssets}followup_ranking.csv`} download>Qualified follow-up ranking · CSV ↓</a>
+          <a href={`${pilotAssets}protocol_v1.json`}>Frozen protocol ↗</a>
+          <a href={`${paper}/real_data_pilot_20261022/README.md`}>Research evidence and reproduction ↗</a>
+        </div>
+        <p className="tracker-local-note">
+          The separate 2022 known-system benchmark was ingested, but its simple
+          photometric model is inadequate. HST timing/frame metadata prevent a
+          validated joint mass fit. Neither ordinary lensing agreement nor a
+          failed simple fit establishes a BHSM core or envelope mechanism.
+        </p>
+      </section>
       <section
         className="tracker-access"
         aria-labelledby="tracker-access-title"
       >
         <div>
-          <p className="eyebrow">RESEARCH APP · 0.2.0rc2</p>
+          <p className="eyebrow">RESEARCH APP · {trackerVersion}</p>
           <h4 id="tracker-access-title">
             Run a complete analysis on your computer.
           </h4>
           <p>
             The Museum animation runs in your browser. The Python app performs
             inference with uncertainties, diagnostics and a portable replay
-            record. All bundled examples are synthetic; new compact-lens
-            candidates require observational evidence and independent follow-up.
+            record. Bundled demonstrations are synthetic. The unresolved
+            photometry page accepts native brightness/error rows and preserves
+            their provenance; it does not invent resolved images or lens mass.
           </p>
           <div className="tracker-actions">
             <a
               className="tracker-primary"
-              href={`${assets}BHSM_Blackhole_Tracker_Product.zip`}
+              href={`${assets}BHSM_Blackhole_Tracker_Product_0.2.0rc3.zip`}
               download
             >
               Download the app · portable source ZIP ↓
@@ -322,7 +375,7 @@ export function BlackholeTracker({
             <a href={`${productFiles}/REVIEWER.md`}>
               Installation &amp; reviewer guide ↗
             </a>
-            <a href={`${paper}/manuscript/main.pdf`}>
+            <a href={`${assets}BHSM_Blackhole_Tracker_0.2.0rc3.pdf`}>
               Read the reviewed manuscript ↗
             </a>
           </div>
@@ -338,7 +391,8 @@ export function BlackholeTracker({
           <li>
             <b>Fit.</b> Load Nearby compact-mass track → Validate dataset → Run
             fit. Read status, uncertainties and the explicit BHSM
-            interpretation.
+            interpretation. For actual light curves, open the separate
+            unresolved photometry page and use the native observation route.
           </li>
           <li>
             <b>Export and replay.</b> Download replay bundle. In the installed
@@ -361,7 +415,7 @@ export function BlackholeTracker({
           <p>
             Prefer an existing Python environment?{' '}
             <a
-              href={`${assets}bhsm_blackhole_tracker-0.2.0rc2-py3-none-any.whl`}
+              href={`${assets}bhsm_blackhole_tracker-0.2.0rc3-py3-none-any.whl`}
               download
             >
               Download the reviewed wheel
@@ -375,20 +429,29 @@ export function BlackholeTracker({
             </a>{' '}
             · <a href={source}>Pinned product source ↗</a> ·{' '}
             <a
-              href={`${paper}/review/RC2_SCIENTIFIC_EDITORIAL_REVIEW_20261022.md`}
+              href={`${paper}/real_data_pilot_20261022/README.md`}
             >
-              Scientific review ↗
+              Correction and real-data evidence ↗
             </a>{' '}
             ·{' '}
             <a href={`${productFiles}/bhtracker/examples/nearby_motion.json`}>
               Synthetic measurements with covariance ↗
             </a>
+            {' '}·{' '}
+            <a href={`${assets}BHSM_Blackhole_Tracker_Source_0.2.0rc3.zip`} download>
+              Complete manuscript, code and pilot source packet ↓
+            </a>
+            {' '}·{' '}
+            <a href={`${paper}/manuscript/main.tex`}>Pinned manuscript source ↗</a>
           </p>
           <p>
             Research redistribution is subject to the included{' '}
             <a href={`${assets}LICENSE.md`}>repository license</a> and{' '}
             <a href={`${assets}ACADEMIC_USE.md`}>academic-use notice</a>. Keep
             both notices with either download.
+            {' '}<a href={`${assets}history/0.2.0rc2/DISTRIBUTION.json`}>
+              Historical 0.2.0rc2 artifacts and hashes
+            </a> remain preserved.
           </p>
           <p>
             Exhibit constants, geometry and declared truth are copied from the

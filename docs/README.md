@@ -4,7 +4,7 @@
 
 | Purpose | Maintained entry |
 | --- | --- |
-| Review the new Blackhole Tracker paper and product | [Blackhole Tracker researcher start](BLACKHOLE_TRACKER_RESEARCH_START.md): manuscript/PDF, app, CLI, notebooks, export/replay, source pins and interpretation limits |
+| Review the new Blackhole Tracker paper and product | [Blackhole Tracker researcher start](BLACKHOLE_TRACKER_RESEARCH_START.md): rc3 manuscript/PDF, app, CLI, notebooks, export/replay, source pins and the complete [100-event native-observation pilot](../papers/bhsm_blackhole_tracker_20261021/real_data_pilot_20261022/README.md) |
 | Read or reproduce the broader BHSM program | [Institutional start](INSTITUTIONAL_START.md), [current status](current_bhsm_status.md), [claim boundaries](../CLAIMS.md), [gate ledger](../theory/gate_ledger.md) |
 | Follow the core/surface interpretation | [Dated amendment](BHSM_NORMAN_CORE_SURFACE_AMENDMENT_20261022.md), [source/claim ledger](../artifacts/current_semantics/BHSM_NORMAN_CORE_SURFACE_AMENDMENT_20261022.json), [current system map](../artifacts/current_semantics/BHSM_CURRENT_SYSTEM_INTEGRATION_MAP.json) |
 | Explore the public explanation | [Museum and Blackhole Tracker exhibit](https://ncarberry64.github.io/Berger-Hopf-Standard-Model/#blackhole-tracker) |

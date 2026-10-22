@@ -19,6 +19,24 @@ observed black hole. A declared enclosing radius is not a measured hard
 boundary. This is a research-product exhibit, not a promoted physical
 prediction in `approved_science_outputs.json`.
 
+The 0.2.0rc3 correction adds a separate, explicitly labelled real-observation
+panel: all 100 historical OGLE-III events and 76,344 native measurements were
+processed without fabricated resolved-image data. Eighty-nine baseline
+PSPL/diagonal-noise screens were inadequate; eleven passed the declared
+chi-square screen and two met conservative archival follow-up criteria.
+OGLE3-ULENS-0585 and OGLE3-ULENS-3092 remain `MASS_UNRESOLVED`; duration is
+not a measured black-hole mass, and no new black-hole interpretation is
+established. The known-system HST precision fit remains blocked by unresolved
+timing/frame provenance. Neither a successful ordinary light curve nor a
+failed simple model establishes a BHSM-specific core/envelope mechanism.
+
+The public panel links all 100 annotated results, the frozen protocol,
+qualified ranking and derived residual plots. Native raw observations remain
+external, with hashes/acquisition/citation metadata in the paper's pilot
+record. The animated resolved-image example is still synthetic and retains
+its original independent source pin. Current versioned downloads and their
+receipt are distinct from the unchanged historical 0.2.0rc2 bytes.
+
 The Museum is static. It offers direct downloads and instructions for local
 inference; it does not run the Python fit on GitHub Pages. Distribute the
 reviewed product ZIP and wheel without rebuilding them, preserve their exact

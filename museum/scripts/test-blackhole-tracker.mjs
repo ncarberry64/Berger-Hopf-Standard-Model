@@ -9,13 +9,16 @@ import {
   trackerExample,
   trackerCodeRevision,
   trackerPaperRevision,
+  trackerAnimationRevision,
+  trackerVersion,
+  trackerPilot,
 } from '../lib/blackhole-tracker.ts';
 
 const sha = (bytes) => createHash('sha256').update(bytes).digest('hex');
 const near = (a, b) => assert(Math.abs(a - b) < 2e-11, `${a} != ${b}`);
 
 test('Museum point-lens view matches all nine pinned product forward rows', () => {
-  assert.equal(trackerExample.source_revision, trackerCodeRevision);
+  assert.equal(trackerExample.source_revision, trackerAnimationRevision);
   trackerExample.epochs_yr.forEach((epoch, row) => {
     const pair = trackerFrame(epoch).pairs[row % 3];
     const values = [
@@ -59,11 +62,13 @@ test('every allowed mass/year satisfies its lens equation; inputs stay distinct 
 });
 
 test('exhibit fixture preserves the pinned product geometry/truth and normalized source hashes', async () => {
+  const historicalProduct = zipEntries(await readFile(new URL(
+    '../public/research/blackhole-tracker/history/0.2.0rc2/BHSM_Blackhole_Tracker_Product.zip',
+    import.meta.url,
+  )));
   for (const record of trackerExample.source_records) {
-    const file = await readFile(
-      new URL(`../../${record.path}`, import.meta.url),
-      'utf8',
-    );
+    const path = record.path.replace('products/blackhole_tracker/', 'product/');
+    const file = historicalProduct.get(path).toString();
     assert.equal(
       sha(file.replaceAll('\r\n', '\n')),
       record.normalized_source_sha256,
@@ -122,20 +127,14 @@ test('public app downloads are exact reviewed artifacts with both canonical lice
   );
   assert.equal(receipt.reviewed_product_code_revision, trackerCodeRevision);
   assert.equal(receipt.reviewed_paper_revision, trackerPaperRevision);
-  const expected = {
-    'BHSM_Blackhole_Tracker_Product.zip':
-      '1dac4273060e7795bc025f104d53cb3106574a730f9a4c665b869e11adfa4c78',
-    'bhsm_blackhole_tracker-0.2.0rc2-py3-none-any.whl':
-      '323bcf675f6fe1c1262e85be49644d3736c2777788ecf2f92568f1cc6ba92ae3',
-  };
+  assert.equal(receipt.version, trackerVersion);
   for (const item of receipt.files) {
     const bytes = await readFile(new URL(item.file, base));
     assert.equal(bytes.length, item.bytes);
     assert.equal(sha(bytes), item.sha256);
-    if (expected[item.file]) assert.equal(item.sha256, expected[item.file]);
   }
   const product = zipEntries(
-    await readFile(new URL('BHSM_Blackhole_Tracker_Product.zip', base)),
+    await readFile(new URL('BHSM_Blackhole_Tracker_Product_0.2.0rc3.zip', base)),
   );
   for (const notice of ['LICENSE.md', 'ACADEMIC_USE.md']) {
     assert.deepEqual(
@@ -153,13 +152,13 @@ test('public app downloads are exact reviewed artifacts with both canonical lice
   }
   const manifest = JSON.parse(product.get('PRODUCT_MANIFEST.json').toString());
   assert(manifest, 'Portable source has its own manifest');
-  assert.equal(
-    [...product.keys()].filter((name) => name.startsWith('product/')).length,
-    108,
-  );
+  assert.equal(manifest.formal_code_commit, trackerCodeRevision);
+  assert(Object.keys(manifest.files).length > 108);
+  for (const [name, digest] of Object.entries(manifest.files))
+    assert.equal(sha(product.get(name)), digest, name);
   const wheel = zipEntries(
     await readFile(
-      new URL('bhsm_blackhole_tracker-0.2.0rc2-py3-none-any.whl', base),
+      new URL('bhsm_blackhole_tracker-0.2.0rc3-py3-none-any.whl', base),
     ),
   );
   const metadata = [...wheel]
@@ -170,4 +169,42 @@ test('public app downloads are exact reviewed artifacts with both canonical lice
       'https://github.com/ncarberry64/Berger-Hopf-Standard-Model',
     ),
   );
+  assert(metadata.includes(`Version: ${trackerVersion}`));
+});
+
+test('historical rc2 bytes remain immutable and separate from current downloads', async () => {
+  const base = new URL('../public/research/blackhole-tracker/history/0.2.0rc2/', import.meta.url);
+  const receipt = JSON.parse(await readFile(new URL('DISTRIBUTION.json', base), 'utf8'));
+  assert.equal(receipt.version, '0.2.0rc2');
+  const expected = {
+    'BHSM_Blackhole_Tracker_Product.zip': '1dac4273060e7795bc025f104d53cb3106574a730f9a4c665b869e11adfa4c78',
+    'bhsm_blackhole_tracker-0.2.0rc2-py3-none-any.whl': '323bcf675f6fe1c1262e85be49644d3736c2777788ecf2f92568f1cc6ba92ae3',
+  };
+  for (const item of receipt.files) {
+    const bytes = await readFile(new URL(item.file, base));
+    assert.equal(bytes.length, item.bytes); assert.equal(sha(bytes), item.sha256);
+    if (expected[item.file]) assert.equal(sha(bytes), expected[item.file]);
+  }
+});
+
+test('real-pilot downloads retain all100 cases and no mass or discovery claim', async () => {
+  assert.equal(trackerPilot.role, 'ACTUAL_HISTORICAL_OBSERVATIONS_DISTINCT_FROM_SYNTHETIC_ANIMATION');
+  assert.equal(trackerPilot.event_count, 100);
+  assert.equal(trackerPilot.native_measurement_count, 76344);
+  assert.equal(trackerPilot.inadequate_model_or_noise_screens, 89);
+  assert.equal(trackerPilot.adequate_diagonal_chi_square_screens, 11);
+  assert.equal(trackerPilot.new_black_hole_interpretations, 0);
+  assert.equal(trackerPilot.mass_status, 'MASS_UNRESOLVED');
+  assert.deepEqual(trackerPilot.targets.map((target) => target.event_id), ['OGLE3-ULENS-0585', 'OGLE3-ULENS-3092']);
+  assert(trackerPilot.targets.every((target) => target.mass_status === 'MASS_UNRESOLVED'));
+  const base = new URL('../public/research/blackhole-tracker/pilot-20261022-v1/', import.meta.url);
+  for (const item of trackerPilot.files) {
+    const bytes = await readFile(new URL(item.file, base));
+    assert.equal(bytes.length, item.bytes); assert.equal(sha(bytes), item.sha256);
+  }
+  assert.deepEqual(JSON.parse(await readFile(new URL('PILOT_PROVENANCE.json', base), 'utf8')), trackerPilot);
+  const csv = await readFile(new URL('all_100_results.csv', base), 'utf8');
+  assert.equal(csv.trim().split(/\r?\n/).length, 101);
+  assert(csv.includes('OGLE3-ULENS-0337'));
+  assert(csv.includes('MASS_UNRESOLVED'));
 });

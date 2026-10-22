@@ -44,11 +44,11 @@ export const reviewEntries = {
   },
   'blackhole-tracker': {
     classification:
-      'BHSM compact-lens interpretation · synthetic demonstration',
+      'BHSM compact-lens interpretation · synthetic animation and separate real-data pilot',
     statement:
-      'Blackhole Tracker reconstructs an effective compact-lens mass, position and motion and interprets the same exterior response within the declared BHSM sector. A separate conditional response is tested only with its supplied matching data.',
+      'The resolved route can reconstruct effective compact-lens mass and motion under supplied geometry. The separate 100-event native-photometry pilot leaves every mass unresolved and recommends two historical archival follow-ups; it establishes no new black-hole interpretation. Both routes retain the same optical potential in the declared BHSM sector.',
     question:
-      'Can you reproduce the mass and motion fit with its full covariance and replay bundle, and distinguish the same-potential BHSM interpretation from an independently identified boundary state or black-hole horizon?',
+      'Can you replay the correct observation route, reproduce all 100 pilot outcomes and their residuals, and distinguish fitted duration from measured mass and the BHSM interpretation from an independently identified boundary or horizon?',
   },
   'cosmology-original': {
     classification: 'BHSM cosmology proposal',

@@ -7,7 +7,8 @@
 .tracker-instruments,
 .tracker-readouts > div,
 .tracker-meaning,
-.tracker-access {
+.tracker-access,
+.tracker-real-data {
   background: #0a0c14;
   border: 1px solid #363247;
   border-radius: 12px;
@@ -144,7 +145,8 @@
   line-height: 1.75;
 }
 .tracker-meaning h4,
-.tracker-access h4 {
+.tracker-access h4,
+.tracker-real-data h4 {
   color: #f6e7e9;
   font-size: 1.15rem;
   margin: 0 0 0.5rem;
@@ -196,6 +198,34 @@
   color: #bcaecb;
   font-size: 0.8rem;
 }
+.tracker-real-data {
+  background: #0a0c14;
+  border: 1px solid #363247;
+  border-radius: 12px;
+}
+.tracker-targets {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+.tracker-targets article {
+  border: 1px solid #48405b;
+  border-radius: 8px;
+  padding: 1rem;
+}
+.tracker-targets h5 {
+  font-size: 1rem;
+  margin: 0 0 0.5rem;
+  color: #f0dff4;
+}
+.tracker-targets strong {
+  color: #ffbc77;
+  font-size: 0.75rem;
+}
+.tracker-targets a {
+  color: #71e5eb;
+  overflow-wrap: anywhere;
+}
 @media (max-width: 760px) {
   .tracker-theatre {
     grid-template-columns: 1fr;
@@ -214,8 +244,12 @@
     grid-column: 1 / -1;
   }
   .tracker-meaning,
-  .tracker-access {
+  .tracker-access,
+  .tracker-real-data {
     padding: 1rem;
+  }
+  .tracker-targets {
+    grid-template-columns: 1fr;
   }
   .tracker-actions {
     align-items: stretch;

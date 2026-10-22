@@ -129,7 +129,10 @@ try {
     'Follow the lens. Test the interpretation.',
     'SYNTHETIC FORWARD VIEW',
     'Download the app',
-    './research/blackhole-tracker/BHSM_Blackhole_Tracker_Product.zip',
+    './research/blackhole-tracker/BHSM_Blackhole_Tracker_Product_0.2.0rc3.zip',
+    './research/blackhole-tracker/BHSM_Blackhole_Tracker_0.2.0rc3.pdf',
+    './research/blackhole-tracker/pilot-20261022-v1/all_100_results.csv',
+    'MASS UNRESOLVED',
   ]) {
     if (!written.includes(expected))
       throw new Error(`Static export is missing: ${expected}`);

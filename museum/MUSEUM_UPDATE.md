@@ -1,5 +1,25 @@
 # Museum content update — 24 September 2026
 
+## Blackhole Tracker · corrections and real observations — 22 October 2026
+
+The current 0.2.0rc3 app adds a genuine native-magnitude observation route
+alongside the corrected resolved-image workflow. The Museum keeps its animated
+example explicitly synthetic and presents the separate actual 100-event pilot:
+76,344 measurements, all cases retained, 89 inadequate model/noise screens,
+11 passing chi-square screens and two qualified historical archival follow-ups.
+Both targets have unresolved mass and lens interpretation; duration is not a
+black-hole mass and no new black-hole interpretation is established. The
+known-system HST joint inference remains blocked by its specific timing/frame
+metadata. The explicit BHSM same-potential interpretation remains visible.
+
+Versioned downloads and their hashes, complete result/qualified-ranking CSVs,
+frozen protocol and derived residual plots are available directly. Original
+0.2.0rc2 artifact bytes and provenance remain preserved in the history folder.
+The synthetic animation's immutable fixture pin is distinct from current
+product/manuscript release pins. Tests check both distributions and all pilot
+download hashes. This update prepares a reviewable release; publication follows
+the normal protected repository workflow.
+
 ## Blackhole Tracker · researcher access — 22 October 2026
 
 Added an independent Blackhole Tracker exhibit after Collisions, with the same
