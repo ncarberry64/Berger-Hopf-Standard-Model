@@ -134,7 +134,13 @@ try {
     'The questions that keep us curious.',
     'physics-question-answer',
     'Follow the lens. Test the interpretation.',
-    'SYNTHETIC FORWARD VIEW',
+    'INDEPENDENT SYNTHETIC TEACHING MODEL',
+    'Gaia18ajz',
+    'Publication held for evidence review.',
+    'All eight published Gaia18ajz alternatives',
+    'OGLE-2007-BLG-224',
+    './research/blackhole-tracker/primary-target-20261023-v1/PRIMARY_TARGET_PROGRAM.json',
+    './research/blackhole-tracker/primary-target-20261023-v1/TARGET_EVIDENCE_STATUS.json',
     'Download the app',
     `./research/blackhole-tracker/BHSM_Blackhole_Tracker_Product_${trackerDistribution.version}.zip`,
     `./research/blackhole-tracker/BHSM_Blackhole_Tracker_${trackerDistribution.version}.pdf`,
@@ -155,6 +161,13 @@ try {
       throw new Error(`Static export is missing: ${expected}`);
   }
   const trackerRoot = resolve(pagesRoot, 'research/blackhole-tracker');
+  const targetRoot = resolve(trackerRoot, 'primary-target-20261023-v1');
+  const targetStatus = JSON.parse(await readFile(resolve(targetRoot, 'TARGET_EVIDENCE_STATUS.json'), 'utf8'));
+  const targetProgram = await readFile(resolve(targetRoot, 'PRIMARY_TARGET_PROGRAM.json'));
+  if (targetProgram.length !== targetStatus.program_bytes ||
+      createHash('sha256').update(targetProgram).digest('hex') !== targetStatus.program_sha256 ||
+      !targetProgram.equals(await readFile(resolve(museumRoot, 'lib/blackhole-tracker-target-program.json'))))
+    throw new Error('Static primary-target program differs from the reviewed snapshot.');
   for (const item of trackerDistribution.files) {
     const path = resolve(trackerRoot, item.file);
     if (relative(trackerRoot, path).startsWith('..'))

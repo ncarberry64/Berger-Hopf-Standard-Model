@@ -2,6 +2,7 @@ import example from './blackhole-tracker-example.json' with { type: 'json' };
 import pilot from './blackhole-tracker-pilot.json' with { type: 'json' };
 import joint from './blackhole-tracker-joint.json' with { type: 'json' };
 import atlas from './blackhole-tracker-atlas.json' with { type: 'json' };
+import targetProgram from './blackhole-tracker-target-program.json' with { type: 'json' };
 
 // The same IAU nominal solar mass parameter and units as the pinned product.
 const GM_SUN = 1.3271244e20;
@@ -12,11 +13,16 @@ export const trackerExample = example;
 export const trackerPilot = pilot;
 export const trackerJoint = joint;
 export const trackerAtlas = atlas;
-export const trackerVersion = '0.2.0rc5';
+export const trackerTargetProgram = targetProgram;
+// A target/evidence freeze is separate from an accepted physical result.
+export const trackerTargetProgramSha256 =
+  '175c4b11279bb0397b48eb76d38b556b30eb246ef005bb1cb1cfab510dd32f48';
+export const trackerVersion = '0.2.0rc6';
 export const trackerAnimationRevision = example.source_revision;
-export const trackerCodeRevision = '8ca349fa8eb5c54c661a022790ae915d05060b59';
-export const trackerPaperRevision = '5a785ea64fcdce58779a0f7431a6a218b3deadd4';
-export const trackerReviewerRevision = '1cdd464c9a70d211b37008ed7f912be346a58e8f';
+export const trackerCodeRevision = '4c71556f5ab4352064325601669bca91a5230690';
+export const trackerPaperRevision = 'e85d4fce2853997d6fedfd0bf75fc7d99bad3562';
+export const trackerReviewerRevision =
+  'e85d4fce2853997d6fedfd0bf75fc7d99bad3562';
 
 export function trackerCenter(epoch: number): [number, number] {
   if (!Number.isFinite(epoch) || epoch < 2015 || epoch > 2025)

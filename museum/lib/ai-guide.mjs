@@ -150,41 +150,64 @@ const topics = {
   },
   'blackhole-tracker': {
     keywords:
-      'blackhole black hole tracker candidate atlas source event sky directions catalog parallax cohort alias disputed Gaia metadata compact lens lensing gravitational mass motion astrometry magnification delay BHSM boundary envelope R1 research app export replay covariance OGLE unresolved photometry real observations pilot native magnitude timescale mass unresolved archival followup joint known system negative benchmark astropy sourcepack calibration adequacy',
+      'blackhole black hole tracker candidate atlas source event sky directions catalog parallax cohort alias disputed Gaia metadata compact extended dark matter mass profile lens lensing gravitational hypersurface hypersphere topography envelopment envelope-boundary differential frame dragging spin mass motion astrometry magnification delay BHSM boundary envelope R1 research app export replay covariance OGLE unresolved photometry real observations pilot native magnitude timescale mass unresolved archival followup joint known system negative benchmark astropy sourcepack calibration adequacy',
     summary:
-      'A computed, noise-free synthetic point-lens animation shows three fixed sources, their image pairs and the declared 2015 to 2025 moving center. The RC5 Candidate Atlas contains 155 distinct historical events: 100 frozen pilot events plus 59 published parallax events minus 4 verified overlaps. Three investigation targets comprise two frozen photometric follow-ups and one disputed prior-conditional literature possibility; they are not uniform BH evidence. All 89 inadequate pilot screens and 33 unavailable older native tables remain explicit. A separate published positive benchmark has unresolved tracker recovery. The frozen 2023 joint benchmark still fails all three declared adequacy tests. The local app supports inventory filtering/export/replay alongside resolved, native-photometry and optional joint research.',
+      'The BHSM tracker hunts for hypersurface gravitational topography and asks which kinds of envelopment produce an observed response. Compact, extended and dark-matter-like interpretations require explicit models and discriminating observations; the present release does not validate a new extended-halo classifier. The author-defined BHSM envelope-boundary differential is distinct from conventional rotational frame dragging. Gaia18ajz is the provisional previously published primary potential black hole, with all eight literature alternatives and independent native-data assessment open. OB110462 is a published black-hole reference and OGLE-2007-BLG-224 a published brown-dwarf comparison; neither has accepted independent engine recovery. A separate synthetic animation uses fixed source inputs and a declared 2015–2025 center track. The historical atlas preserves all failures and unavailable native tables.',
     scope:
-      'The animation remains synthetic. Atlas sky markers are catalog source/event directions, not present lens positions; lens mass, distance, absolute proper motion, position epoch and error regions remain unavailable. Duration is not mass. PAR-13 is disputed because BH-scale conditional interpretations depend on unreliable Gaia source astrometry and lower-mass alternatives remain. Zero new BH interpretations or independently recovered known-system masses are accepted. The published positive benchmark label comes from literature, not the engine. Byte hashes check consistency, not authenticity or physical adequacy. The older 2022 timing/frame ambiguity and frozen 2023 inadequacy are preserved. Joint research explicitly installs Astropy and preserves source rights. The BHSM Einstein/GHY exterior is one optical potential counted once; no core, hard surface, horizon or membrane deformation is measured.',
+      'The primary candidate/evidence freeze is pending and publication remains held. The author calls the spacetime differential at an envelope boundary the BHSM envelope-boundary differential; this usage does not make conventional rotational frame dragging exclusive to black holes. Ordinary rotating matter produces the conventional effect. The current tracker measures neither a boundary jump nor spin, global hypersphere radius or microscopic core coordinates. In the scalar weak-field, thin-lens model, an exterior point-mass response can also arise outside an ordinary finite circular projected mass distribution. Identical optical responses retain their degeneracy and count as one Einstein/GHY response, with no second mass or force. Conditional photometric nonrejection does not validate gravitational origin. Gaia18ajz engine mass, distance, angular Einstein scale and absolute motion remain null; its published branch weights are conditional within each mode/prior, not BH probabilities. No measured Gaia18ajz track is animated. All 1,808 historical model records have zero admitted measured lens tracks. Duration, proximity and speed do not determine identity. Zero established new BHs and zero accepted independent known-BH recoveries remain. Hashes check bytes, not physical adequacy.',
     sources: [
+      repoSource(
+        'Author-defined envelopment search and envelope-boundary differential: exact scope and response degeneracy',
+        'docs/BHSM_TRACKER_ENVELOPMENT_SEARCH_CLARIFICATION_20261023.md',
+        '7ebc9f226e0d9abc68e2ec61c90a8b262081c733',
+      ),
+      source(
+        'Provisional primary-target program, all eight alternatives and explicit engine unknowns',
+        'research/blackhole-tracker/primary-target-20261023-v1/PRIMARY_TARGET_PROGRAM.json',
+      ),
+      source(
+        'Primary target evidence-review status and exact snapshot hash',
+        'research/blackhole-tracker/primary-target-20261023-v1/TARGET_EVIDENCE_STATUS.json',
+      ),
       repoSource(
         'Formal product reviewer guide',
         'products/blackhole_tracker/REVIEWER.md',
-        '1cdd464c9a70d211b37008ed7f912be346a58e8f',
+        'e85d4fce2853997d6fedfd0bf75fc7d99bad3562',
+      ),
+      repoSource(
+        'RC6 primary program and portable measured-lens angular-track workflow',
+        'products/blackhole_tracker/SKYTRACK.md',
+        '4c71556f5ab4352064325601669bca91a5230690',
+      ),
+      repoSource(
+        'RC6 researcher start, complete release and retained negative results',
+        'docs/BLACKHOLE_TRACKER_RESEARCH_START.md',
+        'e85d4fce2853997d6fedfd0bf75fc7d99bad3562',
       ),
       repoSource(
         'Product user guide',
         'products/blackhole_tracker/README.md',
-        '8ca349fa8eb5c54c661a022790ae915d05060b59',
+        '4c71556f5ab4352064325601669bca91a5230690',
       ),
       repoSource(
         'Manuscript and derivations',
         'papers/bhsm_blackhole_tracker_20261021/manuscript/main.tex',
-        '5a785ea64fcdce58779a0f7431a6a218b3deadd4',
+        'e85d4fce2853997d6fedfd0bf75fc7d99bad3562',
       ),
       repoSource(
         'Pinned ordinary-lens forward calculation',
         'products/blackhole_tracker/bhtracker/forward.py',
-        '8ca349fa8eb5c54c661a022790ae915d05060b59',
+        '4c71556f5ab4352064325601669bca91a5230690',
       ),
       repoSource(
         'Joint astrometry installation, source-pack import and replay',
         'products/blackhole_tracker/JOINT_RESEARCH.md',
-        '8ca349fa8eb5c54c661a022790ae915d05060b59',
+        '4c71556f5ab4352064325601669bca91a5230690',
       ),
       repoSource(
         'RC5 Candidate Atlas filtering, evidence tiers and full-inventory replay',
         'products/blackhole_tracker/CANDIDATE_ATLAS.md',
-        '8ca349fa8eb5c54c661a022790ae915d05060b59',
+        '4c71556f5ab4352064325601669bca91a5230690',
       ),
       source(
         'Atlas counts, source directions, distinct evidence and separate benchmark',

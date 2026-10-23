@@ -44,11 +44,11 @@ export const reviewEntries = {
   },
   'blackhole-tracker': {
     classification:
-      'BHSM compact-lens interpretation · synthetic animation, candidate inventory and separate known-system benchmark',
+      'BHSM envelopment search · synthetic lensing, provisional target and separate benchmarks',
     statement:
-      'The resolved route reconstructs effective compact-lens mass and motion under supplied geometry. The RC5 atlas retains 155 distinct historical events, three investigation targets with different evidence and a separate published positive benchmark whose tracker recovery remains open. Its sky markers are source/event directions; lens mass, distance and absolute motion remain unavailable. All 100 pilot outcomes and all 59 published parallax events remain represented, including failures and unavailable data. The frozen 2023 joint benchmark still fails all three adequacy checks. No new black-hole interpretation is accepted. Each route counts the same BHSM optical exterior once.',
+      'The BHSM hunt constrains gravitational topography and asks which kinds of envelopment could produce it. The author-defined BHSM envelope-boundary differential is broader than conventional rotational frame dragging, which ordinary rotating matter can produce. Compact and extended or dark-matter-like interpretations require explicit response models and discriminating data; identical optical responses remain degenerate. One Einstein/GHY response is counted once. Gaia18ajz remains a previously published provisional primary potential black hole, with all eight alternatives and independent native assessment open. The published black-hole benchmark and brown-dwarf comparison have no accepted independent tracker recovery. The synthetic animation uses invented inputs; historical source directions are not lens tracks. Publication remains held for evidence review.',
     question:
-      'Can you distinguish catalog source direction from lens position, retain failed and unavailable events in an atlas replay, and separate photometric follow-up, disputed prior-conditional interpretation and a published known-system label from validated engine recovery? Which missing calibration and angular-scale evidence would justify physical identification?',
+      'Which observations and admitted response models could distinguish compact and extended kinds of envelopment rather than leave the same optical response degenerate? How would you separate that question from conventional rotational frame dragging, and which evidence would support Gaia18ajz beyond its provisional literature designation?',
   },
   'cosmology-original': {
     classification: 'BHSM cosmology proposal',
