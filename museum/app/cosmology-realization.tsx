@@ -120,7 +120,7 @@ export function CosmologyRealization({
   const [playing, setPlaying] = useState(true),
     [fixed, setFixed] = useState(1),
     [start, setStart] = useState(0);
-  const { ref, time } = useSceneClock(motion && playing);
+  const { ref, time } = useSceneClock(motion && playing, Infinity, 0, 'independent');
   const frame = Math.min(
     epochs.length - 1,
     fixed + Math.floor((time - start) / 2.2),

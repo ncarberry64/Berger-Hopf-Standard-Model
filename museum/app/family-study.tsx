@@ -90,13 +90,13 @@ export function FamilyStudy({ motion }: { motion: boolean }) {
       <details className="console-details family-context">
         <summary>What the family animation shows · modes and sources</summary>
         <p className="console-caption">
-          The tour changes family every four seconds and restores the original
-          linked Hopf-fiber views on both desktop and phone. These three views
-          vary the mathematical projection for illustration; they are not
-          computed family eigenfunctions or particle orbits. The reference
-          particle labels and frozen charged-lepton mode ledger are distinct
-          from the drawing. The current lepton slot is (k, j) = ({family.k},
-          {family.j}).{' '}
+          The tour cycles through the families with the music and restores the
+          original linked Hopf-fiber views on both desktop and phone. These
+          three views vary the mathematical projection for illustration; they
+          are not computed family eigenfunctions or particle orbits. The
+          reference particle labels and frozen charged-lepton mode ledger are
+          distinct from the drawing. The current lepton slot is (k, j) = (
+          {family.k},{family.j}).{' '}
           <a
             href={`${SCIENCE}/theory/ae3_family_mass_ontology_recovery_audit.md`}
           >

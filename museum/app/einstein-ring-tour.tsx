@@ -41,7 +41,7 @@ export function EinsteinRingTour({
   const stopAt =
     journey.time +
     (journey.target - journey.progress) * EINSTEIN_CROSSING_SECONDS;
-  // Let visitors reach the sky before spending the nine-second approach.
+  // Let visitors reach the sky before the musically paced approach begins.
   const { ref, time } = useSceneClock(motion && journey.playing, stopAt, 0.6);
   const elapsedProgress = journey.playing
     ? (time - journey.time) / EINSTEIN_CROSSING_SECONDS

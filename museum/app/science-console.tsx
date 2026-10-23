@@ -1,46 +1,14 @@
 'use client';
 /* oxlint-disable next/no-html-link-for-pages -- The evidence link reads a static Markdown file. */
 /* oxlint-disable jsx-a11y/prefer-tag-over-role -- Inline SVG needs image semantics; an HTML img cannot contain this interactive drawing. */
-import { Children, useEffect, useRef, useState, type ReactNode } from 'react';
+import { Children, type ReactNode } from 'react';
+import { useSceneClock } from './use-scene-clock';
 import { slides } from '../lib/museum-slides.mjs';
 import { ChildrenOfBHSM } from './children-of-bhsm';
 import { AIInterfaceButton } from './ai-access';
 import { ExhibitStatement, ExhibitReview } from './exhibit-review';
 
-// A shared scene clock stops outside the viewport and while the tab is hidden.
-export function useSceneClock(
-  running: boolean,
-  stopAt = Infinity,
-  minimumVisibility = 0,
-) {
-  const ref = useRef<HTMLDivElement>(null);
-  const elapsed = useRef(0);
-  const [time, setTime] = useState(0);
-  useEffect(() => {
-    if (!running) return;
-    let visible = false;
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        visible =
-          entry.isIntersecting && entry.intersectionRatio >= minimumVisibility;
-      },
-      { threshold: minimumVisibility },
-    );
-    if (ref.current) observer.observe(ref.current);
-    const timer = setInterval(() => {
-      if (visible && !document.hidden) {
-        elapsed.current = Math.min(stopAt, elapsed.current + 0.05);
-        setTime(elapsed.current);
-        if (elapsed.current >= stopAt) clearInterval(timer);
-      }
-    }, 50);
-    return () => {
-      observer.disconnect();
-      clearInterval(timer);
-    };
-  }, [running, stopAt, minimumVisibility]);
-  return { ref, time };
-}
+export { useSceneClock };
 
 export function ScienceConsole({
   id,

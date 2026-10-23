@@ -7,7 +7,7 @@ import { useSceneClock } from './science-console';
 
 export function MagneticLab({ motion }: { motion: boolean }) {
   const [paused, setPaused] = useState(false);
-  const { ref, time } = useSceneClock(motion && !paused);
+  const { ref, time } = useSceneClock(motion && !paused, Infinity, 0, 'independent');
   return (
     <div ref={ref} className="magnetic-lab">
       <div className="media-toolbar">
