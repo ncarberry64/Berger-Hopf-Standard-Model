@@ -5,6 +5,7 @@ import { startSoundtrackOnInteraction } from '../lib/start-soundtrack.ts';
 const settle = () => new Promise((resolve) => setImmediate(resolve));
 class AudioStub extends EventTarget {
   attempts = 0;
+  paused = true;
   rejectNext = false;
   play() {
     this.attempts++;
@@ -12,6 +13,7 @@ class AudioStub extends EventTarget {
       this.rejectNext = false;
       return Promise.reject(new Error('Playback denied'));
     }
+    this.paused = false;
     this.dispatchEvent(new Event('play'));
     return Promise.resolve();
   }
@@ -59,6 +61,7 @@ test('manual player use disarms the fallback and excluded controls do not double
   );
   target.dispatchEvent(new Event('click'));
   assert.equal(audio.attempts, 0);
+  audio.paused = false;
   audio.dispatchEvent(new Event('play'));
   target.dispatchEvent(new Event('keydown'));
   assert.equal(audio.attempts, 0);
@@ -70,4 +73,22 @@ test('unmount cleanup removes the interaction listeners', () => {
   startSoundtrackOnInteraction(target, audio)();
   target.dispatchEvent(new Event('click'));
   assert.equal(audio.attempts, 0);
+});
+
+test('a fulfilled no-op start leaves the next gesture available', async () => {
+  const target = new EventTarget(),
+    audio = new AudioStub();
+  const originalPlay = audio.play.bind(audio);
+  audio.play = () => {
+    audio.attempts++;
+    return Promise.resolve();
+  };
+  const dispose = startSoundtrackOnInteraction(target, audio);
+  target.dispatchEvent(new Event('click'));
+  await settle();
+  audio.play = originalPlay;
+  target.dispatchEvent(new Event('click'));
+  assert.equal(audio.attempts, 2);
+  assert.equal(audio.paused, false);
+  dispose();
 });

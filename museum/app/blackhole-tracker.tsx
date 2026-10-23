@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { ScienceConsole, useSceneClock } from './science-console';
 import { REPOSITORY } from './exhibits';
+import { EinsteinRingTour } from './einstein-ring-tour';
 import {
   trackerCenter,
   trackerExample,
@@ -62,6 +63,7 @@ export function BlackholeTracker({
       intro="Blackhole Tracker reconstructs a compact configuration’s effective mass, position and motion from resolved image pairs, magnification ratios and time delays, with the supplied full measurement covariance. Its BHSM description interprets this same exterior response once."
       accent="cyan"
     >
+      <EinsteinRingTour motion={motion} setMotion={setMotion} />
       <div className="tracker-theatre" ref={ref}>
         <div className="tracker-scene">
           <div className="tracker-scene-cap">

@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { physicsQuestions, questionTopics } from '../lib/physics-questions.mjs';
+import { slides } from '../lib/museum-slides.mjs';
 import {
   BigQuestionVisual,
   type BigQuestionVisualKind,
@@ -10,6 +11,9 @@ import { ExhibitReview } from './exhibit-review';
 
 const sourceBase =
   'https://github.com/ncarberry64/Berger-Hopf-Standard-Model/blob/main/';
+const exhibitNumber = String(
+  slides.findIndex(([id]) => id === 'big-questions') + 1,
+).padStart(2, '0');
 
 export function BigQuestions({ motion }: { motion: boolean }) {
   const [topic, setTopic] = useState(questionTopics[0].id);
@@ -35,7 +39,7 @@ export function BigQuestions({ motion }: { motion: boolean }) {
       aria-labelledby="big-questions-title"
     >
       <header className="questions-heading">
-        <p className="eyebrow">Exhibit 14 · Big Questions</p>
+        <p className="eyebrow">Exhibit {exhibitNumber} · Big Questions</p>
         <h2 id="big-questions-title">The questions that keep us curious.</h2>
         <p>
           {physicsQuestions.length} questions about reality, matter and the
