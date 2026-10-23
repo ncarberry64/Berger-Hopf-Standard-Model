@@ -1,17 +1,17 @@
 # Blackhole Tracker: researcher start
 
 **Blackhole Tracker: BHSM Boundary Interpretation of Compact-Lens Mass, Motion,
-and Conditional Response** accompanies the `0.2.0rc5` research candidate. This
+and Conditional Response** accompanies the `0.2.0rc6` research candidate. This
 repository is the formal reviewer record. The
 [Manuscript-Generation workspace](https://github.com/ncarberry64/Manuscript-Generation/pull/24)
 records development history; it is not a separate source of reviewer authority.
 
 | Review task | Start here |
 | --- | --- |
-| Read the manuscript | [Reviewed 45-page PDF](../papers/bhsm_blackhole_tracker_20261021/manuscript/main.pdf), [paper guide](../papers/bhsm_blackhole_tracker_20261021/README.md), [result statement](../papers/bhsm_blackhole_tracker_20261021/RESULT_STATEMENT.md) |
+| Read the manuscript | [Reviewed PDF](../papers/bhsm_blackhole_tracker_20261021/manuscript/main.pdf), [paper guide](../papers/bhsm_blackhole_tracker_20261021/README.md), [result statement](../papers/bhsm_blackhole_tracker_20261021/RESULT_STATEMENT.md) |
 | Understand the contribution and limits | [Lay report](../papers/bhsm_blackhole_tracker_20261021/LAY_REPORT.md), [model chain and freedoms](../papers/bhsm_blackhole_tracker_20261021/CHAIN_AND_FREEDOMS.md), [validation](../papers/bhsm_blackhole_tracker_20261021/VALIDATION.md) |
 | Install the app or reproduce an analysis | [Formal product guide](../products/blackhole_tracker/REVIEWER.md), followed by the complete [user and measurement guide](../products/blackhole_tracker/README.md) |
-| Inspect current checks and prior reviews | [Product validation receipts](../products/blackhole_tracker/validation/), [formal product CI](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/blackhole-tracker.yml) and [paper review record](../papers/bhsm_blackhole_tracker_20261021/review/); the current product suite has 257 tests plus 29 subtests, and earlier rc4/rc3/rc2 receipts remain historical |
+| Inspect current checks and prior reviews | [RC6 installed and browser checks](../products/blackhole_tracker/validation/rc6/), [formal product CI](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/blackhole-tracker.yml) and [paper review record](../papers/bhsm_blackhole_tracker_20261021/review/); source and isolated installed-product suites each passed 318 tests plus 66 subtests. Earlier release receipts remain historical. |
 | Inspect all real observations and follow-up outcomes | [Frozen pilot and reproduction](../papers/bhsm_blackhole_tracker_20261021/real_data_pilot_20261022/README.md), [all 100 annotated results](../papers/bhsm_blackhole_tracker_20261021/real_data_pilot_20261022/literature_annotations_v1/all_100_results.csv) and [qualified archival ranking](../papers/bhsm_blackhole_tracker_20261021/real_data_pilot_20261022/literature_annotations_v1/followup_ranking.csv) |
 | Inspect the separate known-system test and calibration gaps | [2023 joint benchmark](../papers/bhsm_blackhole_tracker_20261021/joint_known_system_20261022/README.md), [plain-language result](../papers/bhsm_blackhole_tracker_20261021/joint_known_system_20261022/PLAIN_LANGUAGE_RESULT.txt), [joint app and source-pack guide](../products/blackhole_tracker/JOINT_RESEARCH.md) and [unsent manual calibration request](../papers/bhsm_blackhole_tracker_20261021/joint_known_system_20261022/MANUAL_CALIBRATION_DATA_REQUEST_TEMPLATE.txt) |
 | Inspect public explanation and animation | [Blackhole Tracker Museum exhibit](https://ncarberry64.github.io/Berger-Hopf-Standard-Model/#blackhole-tracker), [Museum source](../museum/) |
@@ -30,6 +30,31 @@ The current [draft correction PR #471](https://github.com/ncarberry64/Berger-Hop
 preserves the earlier release and review history.
 
 ## Candidate selection and localization
+
+Open **Primary target** in the installed app for the source-pinned program.
+Previously published **Gaia18ajz** is the provisional lead for independent
+evaluation. All eight published model/prior/near--far alternatives are visible;
+their branch weights are not black-hole probabilities. The known OB110462
+benchmark and a published brown-dwarf comparison provide separate references.
+Native candidate adequacy and independent known-black-hole recovery remain
+unaccepted, so scientific publication is held. Read the
+[primary-target guide](../products/blackhole_tracker/research/primary_target_20261023/README.md)
+to verify or explicitly refetch the exact public context bytes. Context intake
+does not admit a source association or a candidate likelihood.
+
+The separate **Evidence spectrum** retains 1,808 model records, all modes and
+failures; these are not 1,808 unique objects. Search qualified catalog aliases,
+collect source-event context, export JSON or CSV, clear the view and replay.
+Hidden selected cases are retained. The **Moving lens** workspace and
+[sixth notebook](../products/blackhole_tracker/notebooks/06_moving_lens_and_primary_target.ipynb)
+provide an explicit synthetic fit/export/replay walkthrough. Actual inputs need
+measured lens angular positions, native epochs, calibration, supplied covariance
+and association evidence; no record in the frozen spectrum supplies an admitted
+lens track. Angular motion alone identifies neither mass nor a black hole.
+
+Supported gravitational geometry is interpreted as BHSM surface topography,
+with the same exterior optical response counted once. A conditional fitted
+curve alone does not validate its gravitational origin or identify its source.
 
 The [candidate atlas guide](../products/blackhole_tracker/CANDIDATE_ATLAS.md) and [portable metadata rebuild](../papers/bhsm_blackhole_tracker_20261021/candidate_atlas_20261023/README_INVENTORY_v3.txt) retain 155 source/event directions: 100 pilot + 59 parallax - 4 verified shared identities. Three investigation targets have different qualifications; no new black-hole interpretation is established. The separate published benchmark is a literature label, with independent engine recovery unresolved. No present-day lens position, mass, distance or absolute motion is supplied by this inventory.
 
@@ -130,7 +155,9 @@ raw hashes, magnitude errors, timing and calibration; it creates no image
 positions, image flux ratio, time delay, distances or supplied full covariance.
 Validate, fit, inspect model adequacy and residuals, then export and replay the
 native ZIP with the same `replay` command above. A converged photometric fit
-does not measure mass. The separate [native observation contract](../products/blackhole_tracker/UNRESOLVED_OBSERVATIONS.md)
+does not by itself validate a gravitational origin or measure mass. Its
+conditional timescale and blending constraints can guide further investigation.
+The separate [native observation contract](../products/blackhole_tracker/UNRESOLVED_OBSERVATIONS.md)
 documents the likelihood and the missing-metadata gates for precision astrometry.
 
 ```text
@@ -161,7 +188,7 @@ choose `Start_Blackhole_Tracker_Joint.cmd` in the complete Windows source
 package, or `Start_Blackhole_Tracker.cmd --astrometry`. For an existing source
 environment, close the app and run `python -m pip install ".[astrometry]"`
 with that environment's interpreter. A matching local wheel uses
-`python -m pip install "./bhsm_blackhole_tracker-0.2.0rc5-py3-none-any.whl[astrometry]"`.
+`python -m pip install "./bhsm_blackhole_tracker-0.2.0rc6-py3-none-any.whl[astrometry]"`.
 Dependency installation needs access to the configured package index; opening
 the joint page never installs dependencies.
 
@@ -186,9 +213,17 @@ requires a new frozen analysis, not retrospective replacement of this failure.
 
 ## What the BHSM result does and does not establish
 
+The [23 October author clarification](BHSM_AUTHOR_SURFACE_GEOMETRY_CLARIFICATION_20261023.md)
+includes gravitational topography itself in BHSM surface deformation, within a
+common frame across scales. When observations support a gravitational origin,
+the reconstructed exterior is interpreted as that surface geometry; no non-GR
+anomaly is required. Locating and characterizing configurations is useful
+before a unique object type is established. A conditional light-curve fit
+alone does not validate that origin or identify a black hole.
+
 The adopted Einstein/GHY sector describes one compact exterior. Ordinary
-mass, center and motion fit that same configuration; its spherical boundary
-representation counts the same gravitational potential once. A supplied
+mass, center and motion, when identified, fit that same configuration; its
+spherical boundary representation counts the same gravitational potential once. A supplied
 enclosing radius is not an observed hard surface. The optional R1 calculation
 has separate source/metric matching and admission assumptions. A supported
 track is evidence for the admitted optical model, not a unique microscopic

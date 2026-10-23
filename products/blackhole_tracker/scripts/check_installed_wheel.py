@@ -79,6 +79,27 @@ for args in (['atlas','export','--tier','BLACK_HOLE_SEARCH_TARGET','--output','a
              ['atlas','replay','atlas-replay.json','--output','atlas restored']):
     subprocess.run([sys.executable,'-I','-m','bhtracker',*args],check=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
 assert pathlib.Path('atlas restored/inventory.json').read_bytes()==inventory_text.encode()
+from bhtracker import spectrum
+assert spectrum.summary()['model_records']==1808
+assert spectrum.export_snapshot('spectrum originals')['verified']
+assert spectrum.verify_snapshot('spectrum originals')['files']==10
+from bhtracker.target_program import target_program
+program=target_program()
+assert program['primary_investigation_target']['event_id']=='Gaia18ajz'
+assert program['publication_gate']['ready'] is False
+assert program['known_black_hole_validation_benchmark']['independent_engine_recovery_accepted'] is False
+from bhtracker.skytrack import synthetic_example,fit_skytrack,replay_skytrack,export_skytrack
+track_input=json.dumps(synthetic_example(),indent=2)
+track=fit_skytrack(track_input)
+assert track['dataset_input_json']==track_input
+assert track['unavailable']['mass_msun'] is None
+assert track['unavailable']['lens_distance_pc'] is None
+assert replay_skytrack(track)['passed']
+export_skytrack(track,'synthetic moving lens')
+assert pathlib.Path('synthetic moving lens/dataset.json').read_bytes()==track_input.encode()
+for args in (['skytrack','validate','synthetic moving lens/dataset.json'],
+             ['skytrack','replay','synthetic moving lens/result.json']):
+    subprocess.run([sys.executable,'-I','-m','bhtracker',*args],check=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
 from bhtracker.report import export_analysis_bundle, replay_analysis
 pathlib.Path('analysis.zip').write_bytes(export_analysis_bundle(result))
 assert replay_analysis('analysis.zip','API replay')['passed']
@@ -93,7 +114,9 @@ try:
     assert 'ready at http://127.0.0.1:' in line,line
     url=line.split('ready at ',1)[1].strip()
     for endpoint in ('api/health','','app.js','style.css','api/examples/nearby_motion','api/examples/nearby_motion/bundle',
-                     'atlas','atlas/','atlas.js','atlas-core.js','atlas.css','atlas_data.json','atlas_manifest.json'):
+                     'atlas','atlas/','atlas.js','atlas-core.js','atlas.css','atlas_data.json','atlas_manifest.json',
+                     'skytrack','skytrack.js','skytrack.css','api/skytrack/example','spectrum/',
+                     'targets','targets.js','targets.css','api/targets'):
         with urllib.request.urlopen(url+endpoint,timeout=10) as response:
             assert response.status == 200
             assert len(response.read()) > 0
@@ -110,7 +133,9 @@ receipt={'status':'passed','python':sys.version,'executable':sys.executable,
  'packaged assets/examples','GR and R1 runtime providers','API/CLI prediction agreement',
  'CLI example validate fit export and replay','API ZIP export and replay',
  'six R1 and BHSM source pin checks','actual loopback HTTP startup and complete example download',
- 'candidate atlas155+1 records and3targets','candidate API/CLI lossless full-inventory replay'],
+ 'candidate atlas155+1 records and3targets','candidate API/CLI lossless full-inventory replay',
+ 'spectrum1808 exact ten-asset export/verification','synthetic measured angular track API/CLI/export/replay with physical nulls',
+ 'source-pinned primary target program with publication hold and independent-recovery status'],
  'packaged_files':{str(p.relative_to(root)):hashlib.sha256(p.read_bytes()).hexdigest()
   for p in sorted(root.rglob('*')) if p.is_file() and '__pycache__' not in p.parts}}
 pathlib.Path('receipt.json').write_text(json.dumps(receipt,indent=2),encoding='utf8')

@@ -199,10 +199,12 @@ def validate_replay(envelope):
 
 
 def summary(inventory, filters=None):
+    from .interpretation import surface_geometry_interpretation
     rows = filter_events(inventory, filters)
     return dict(schema_version=SCHEMA, events=len(inventory['events']), selected=len(rows),
         separate_benchmarks=len(inventory.get('benchmarks', [])),
         tiers={tier: sum(e['tier'] == tier for e in rows) for tier in TIERS},
         source_directions=sum(e['map_eligibility']['sky_marker'] for e in rows),
         independently_inferred_lens_mass=None, new_black_hole_interpretation=False,
-        formal_BHSM_repository=REPOSITORY, scientific_status=inventory['metadata'].get('status'))
+        formal_BHSM_repository=REPOSITORY, scientific_status=inventory['metadata'].get('status'),
+        surface_geometry_interpretation=surface_geometry_interpretation())

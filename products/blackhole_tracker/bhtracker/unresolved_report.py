@@ -34,6 +34,9 @@ def report_html(result):
     table = ''.join(f'<tr><th>{label}</th><td>{fmt(value)}</td><td>{fmt(error)}</td></tr>'
                     for label, value, error in quantities)
     meaning = result['bhsm_interpretation']
+    from .interpretation import surface_geometry_interpretation
+    geometry = surface_geometry_interpretation()
+    geometry_html = ''.join(f'<p>{escape(geometry[key])}</p>' for key in ('definition','summary','evidence_scope','unidentified_scope'))
     diagnostic = escape(json.dumps(result['diagnostics'], indent=2, allow_nan=False))
     timing = escape(json.dumps(result['dataset_input']['instruments'], indent=2, allow_nan=False))
     return f'''<!doctype html><html lang="en"><meta charset="utf-8">
@@ -48,8 +51,8 @@ def report_html(result):
 <h2>What is and is not identified</h2><p>tE = θE / μrel and θE² = κ M πrel. This light-curve route does not measure θE or microlens parallax, so duration does not supply a mass. It does not identify a black hole or horizon.</p>
 <p>{escape(result['uncertainty']['qualification'])}</p>
 <pre>{escape(json.dumps(result['timescale_uncertainty'], indent=2))}</pre>
-<h2>BHSM interpretation</h2><p>{escape(meaning['one_potential_rule'])}</p>
-<p>The unresolved brightness is the sum of the images of one effective optical configuration. Its BHSM interpretation counts that optical response once. This fit does not select a core state, boundary deformation, membrane radius, transition rate or conditional R1 state.</p>
+<h2>BHSM interpretation</h2>{geometry_html}<p>{escape(meaning['one_potential_rule'])}</p>
+<p>The unresolved brightness is the image-summed response of the declared lensing model. Only identified relative-time and brightness combinations are retained. Mass, a physical interface radius, transition rate and conditional R1 state remain unavailable from this light curve alone.</p>
 <h2>Fit and residual checks</h2><pre>{diagnostic}</pre>
 <h2>Timing, calibration and noise assumptions</h2><pre>{timing}</pre>
 <p>Published magnitude errors are retained. Independent diagonal Gaussian noise is an analysis assumption, not a supplied full covariance. Correlated/seasonal residuals and active bounds qualify uncertainty and model adequacy. Equal-instrument weights or a signed calibration blend, when requested, are sensitivities rather than recovered physical lens properties.</p>

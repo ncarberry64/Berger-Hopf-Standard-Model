@@ -27,7 +27,9 @@ def report_html(result):
            ('Proper motion (mas / observer year)',e['proper_motion_mas_yr'],u['proper_motion_mas_yr'])]
     rows=''.join(f'<tr><th>{label}</th><td>{fmt(value)}</td><td>{fmt(err)}</td></tr>' for label,value,err in items)
     diagnostics=''.join(f"<li><strong>{escape(item['code'])}</strong>: {escape(item['message'])}</li>" for item in r['diagnostics'])
-    from .interpretation import bhsm_interpretation
+    from .interpretation import bhsm_interpretation,surface_geometry_interpretation
+    geometry=surface_geometry_interpretation()
+    geometry_html=''.join(f'<p>{escape(geometry[key])}</p>' for key in ('definition','summary','evidence_scope','unidentified_scope'))
     interpretation=r.get('bhsm_interpretation') or bhsm_interpretation(r['model']['family'],e,u,r['model'],r['status'])
     meanings=''.join(f"<tr><th>{escape(item['parameter'])}</th><td>{escape(item['interpretation'])}<br><small>{escape(item['qualification'])}</small></td></tr>" for item in interpretation['parameter_meanings'])
     boundary=interpretation.get('spherical_boundary',{})
@@ -48,7 +50,7 @@ def report_html(result):
 <p>Reference epoch {fmt(r['reference_epoch_yr'])}; family {escape(r['model']['family'])}; nuisance {escape(r['model']['nuisance'])}.</p>
 <table><tr><th>Quantity</th><th>Estimate</th><th>Local 1σ</th></tr>{rows}</table>
 <p>χ² {fmt(r['chi2'])} for {r['dof']} degrees of freedom; goodness-of-fit p={fmt(r['goodness_of_fit_p'])}. Uncertainties are local known-covariance approximations; active bounds and nulls require the stated qualification.</p>
-<h2>BHSM interpretation</h2><p>{escape(interpretation['model_role'])}</p><p>{escape(interpretation['one_potential_rule'])}</p><p>{escape(interpretation['inference_scope'])}</p>{core_html}{boundary_html}<details><summary>Parameter interpretation</summary><table>{meanings}</table><p>{escape(interpretation['conditional_extension'])}</p></details>
+<h2>BHSM interpretation</h2>{geometry_html}<p>{escape(interpretation['one_potential_rule'])}</p><p>{escape(interpretation['inference_scope'])}</p>{core_html}{boundary_html}<details><summary>Parameter interpretation</summary><table>{meanings}</table><p>{escape(interpretation['conditional_extension'])}</p></details>
 <h2>Fit diagnostics</h2><ul>{diagnostics}</ul><h2>Conditional envelope</h2><pre>{escape(json.dumps(r['conditional_envelope'],indent=2))}</pre>
 <h2>Model and domain</h2><pre>{escape(json.dumps(r['model'],indent=2))}</pre><pre>{escape(json.dumps(r.get('physics_admission'),indent=2))}</pre>
 <h2>Reproduction</h2><pre>{escape(json.dumps(r['data_summary'],indent=2))}</pre><pre>{escape(json.dumps(r['runtime'],indent=2))}</pre>

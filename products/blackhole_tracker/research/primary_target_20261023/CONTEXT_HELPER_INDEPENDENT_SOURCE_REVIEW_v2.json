@@ -1,0 +1,120 @@
+{
+  "schema": "bhsm.independent_context_helper_source_and_stream_review.v2",
+  "created_utc": "2026-10-23T20:55:29.356342+00:00",
+  "status": "PASS_SOURCE_AND6_INVENTED_STREAM_CONTROLS",
+  "sources": {
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\scripts\\fetch_primary_target_context.py": {
+      "path": "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\scripts\\fetch_primary_target_context.py",
+      "bytes": 10467,
+      "sha256": "cddb32b0b7615d028389b503053b6076db650587860d1f7bad303d3580c423eb"
+    },
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\research\\primary_target_20261023\\README.md": {
+      "path": "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\research\\primary_target_20261023\\README.md",
+      "bytes": 5523,
+      "sha256": "59942673b569f81d17e018630dd14e8e9b3cf9b393ffdbd34aaad9aacaf7a78c"
+    },
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\research\\primary_target_20261023\\PRIMARY_NATIVE_INTAKE_PROTOCOL_v1.json": {
+      "path": "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\research\\primary_target_20261023\\PRIMARY_NATIVE_INTAKE_PROTOCOL_v1.json",
+      "bytes": 1144,
+      "sha256": "38d7085b2eeffae5c0e32537c1ca31f7a8cd57f94b153b13d468bc9553a39399"
+    }
+  },
+  "freeze": {
+    "path": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_real_data_corrections_20261022\\expanded_dataset_search_20261023\\primary_context_helper_independent_review_v1\\CORRECTED_STREAM_CONTROL_FREEZE_v2.json",
+    "bytes": 2223,
+    "sha256": "243d22c7fffcc7696e48a59e1176edc710cc05374f49eadc35bad5db2228f85d"
+  },
+  "preserved_prefixed_finding": {
+    "path": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_real_data_corrections_20261022\\expanded_dataset_search_20261023\\primary_context_helper_independent_review_v1\\CONTEXT_DEADLINE_PREFIX_FINDING_v1.json",
+    "bytes": 1412,
+    "sha256": "dc47d387049e0132face55704938b981c743eff1564b697b654e28094676858f"
+  },
+  "native_time_header_check": {
+    "path": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_real_data_corrections_20261022\\expanded_dataset_search_20261023\\primary_context_helper_independent_review_v1\\CONTEXT_NATIVE_CLOCK_HEADER_CHECK_v1.json",
+    "bytes": 1508,
+    "sha256": "ac35a702fa5faa84e890e6a2505c484b0d5e54355b438a9ad6579701aa1f4a69"
+  },
+  "controls": [
+    {
+      "case": "same_old_EOF_overrun_now_refused",
+      "complete": false,
+      "read_status": {
+        "read_limit_status": "ELAPSED_DEADLINE_REACHED_RESPONSE_INCOMPLETE"
+      },
+      "bytes": 37,
+      "reads": 2,
+      "elapsed": 46.0
+    },
+    {
+      "case": "late_nonempty_bytes_retained",
+      "complete": false,
+      "read_status": {
+        "read_limit_status": "ELAPSED_DEADLINE_REACHED_RESPONSE_INCOMPLETE"
+      },
+      "bytes": 19,
+      "reads": 1,
+      "elapsed": 46.0
+    },
+    {
+      "case": "12MB_plus1_virtual_source",
+      "complete": false,
+      "read_status": {
+        "read_limit_status": "BYTE_CAP_REACHED_RESPONSE_NOT_ACCEPTED"
+      },
+      "retained_prefix_bytes": 12000000,
+      "unread_source_bytes": 1,
+      "reads": 184,
+      "prefix_sha256": "4582bbf171449bd1ee6062b482fd89791cf44eaf44d8346f66cd70a9dacc120a"
+    },
+    {
+      "case": "bounded_EOF_succeeds",
+      "complete": true,
+      "read_status": {
+        "read_limit_status": "EOF_OBSERVED"
+      },
+      "bytes": 8,
+      "reads": 2,
+      "elapsed": 2.0
+    },
+    {
+      "case": "deadline_before_read",
+      "complete": false,
+      "read_status": {
+        "read_limit_status": "ELAPSED_DEADLINE_REACHED_RESPONSE_INCOMPLETE"
+      },
+      "bytes": 0,
+      "reads": 0,
+      "elapsed": 45
+    },
+    {
+      "case": "deadline_before_request",
+      "complete": false,
+      "receipt": {
+        "network_requests_attempted": 0,
+        "read_limit_status": "ELAPSED_DEADLINE_REACHED_BEFORE_REQUEST"
+      },
+      "network_calls": 0
+    }
+  ],
+  "assessment": [
+    "Both remote and local verification use the same capped stream; over-limit inputs retain explicitly incomplete prefixes and cannot pass even if a prefix hash coincides.",
+    "Received bytes are written before the post-read elapsed check, preserving evidence while rejecting late EOF/chunks. The pre-request check does not count a request that was never attempted.",
+    "Retained bytes are hashed in65536-byte chunks rather than an unbounded read_bytes allocation. Fresh output ownership and original read-only source policy remain.",
+    "No arguments make no network request; explicit download is one frozen public URL, redirects refused and0retries. Hash equality admits frozen byte identity only; no source/lens counterpart, calibration, BH identity, known recovery or publication acceptance is inferred.",
+    "README bounds and native HJD/MJD header attribution now match the checked source. Underlying time scale remains unavailable;45seconds is cooperative/socket timing, not an OS hard wall-clock promise."
+  ],
+  "scope_limits": [
+    "Source/pure stream review only; owner local-file/hash-mismatch/no-overwrite tests are separately recorded.",
+    "No new download/HTTP request or numerical observation row was read by this review; the prior separately pinned native-header-only check remains unchanged."
+  ],
+  "remaining_source_findings": [],
+  "http_calls": 0,
+  "main_parser_model_fit_replay_calls": 0,
+  "source_edits": false,
+  "all_sources_unchanged": true,
+  "script": {
+    "path": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_real_data_corrections_20261022\\expanded_dataset_search_20261023\\primary_context_helper_independent_review_v1\\review_corrected_helper_v2.py",
+    "bytes": 6788,
+    "sha256": "92a5ef0b98b6910eb79fe3ce77492275ffdfbca63c3aaa36c1587e9ad2ede4b4"
+  }
+}

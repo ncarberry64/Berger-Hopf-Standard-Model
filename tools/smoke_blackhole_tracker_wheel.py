@@ -1,4 +1,4 @@
-"""Install a tracker wheel outside the repository and verify a real fit/replay."""
+"""Verify synthetic fits and packaged research workflows outside the repository."""
 from pathlib import Path
 import argparse
 import os
@@ -19,10 +19,12 @@ def main() -> int:
         python = environment / ("Scripts/python.exe" if os.name == "nt" else "bin/python")
         env = os.environ.copy()
         env.pop("PYTHONPATH", None)
+        env.pop("PYTHONHOME", None)
         subprocess.run([str(python), "-m", "pip", "install", str(wheel)],
                        cwd=outside, env=env, check=True)
         code = r'''
 from pathlib import Path
+import json
 import sys
 import numpy as np
 import bhtracker
@@ -61,8 +63,28 @@ native_bundle=Path('native.zip');native_bundle.write_bytes(export_analysis_bundl
 native_check=replay_analysis(native_bundle,Path('native_replay'))
 assert native_check['passed'] and native_check['same_native_row_identities_and_order']
 print('FORMAL_INSTALLED_NATIVE_PHOTOMETRY_REPLAY_PASS_SYNTHETIC_ONLY')
+from bhtracker.spectrum import summary,export_snapshot,verify_snapshot
+assert summary()['model_records']==1808
+assert export_snapshot('spectrum_originals')['verified']
+assert verify_snapshot('spectrum_originals')['files']==10
+from bhtracker.target_program import target_program
+program=target_program()
+assert program['primary_investigation_target']['event_id']=='Gaia18ajz'
+assert len(program['primary_investigation_target']['literature_alternatives'])==8
+assert program['publication_gate']['ready'] is False
+assert program['known_black_hole_validation_benchmark']['independent_engine_recovery_accepted'] is False
+from bhtracker.skytrack import synthetic_example,fit_skytrack,export_skytrack,replay_skytrack
+track_text=json.dumps(synthetic_example(),indent=2)
+track=fit_skytrack(track_text)
+assert track['dataset_input_json']==track_text
+assert all(value is None for value in track['unavailable'].values())
+assert replay_skytrack(track)['passed']
+export_skytrack(track,'synthetic_track')
+assert Path('synthetic_track/dataset.json').read_bytes()==track_text.encode('utf8')
+assert replay_skytrack(json.loads(Path('synthetic_track/result.json').read_text(encoding='utf8')))['passed']
+print('FORMAL_INSTALLED_SPECTRUM_TARGET_PROGRAM_AND_SYNTHETIC_ANGULAR_TRACK_PASS')
 '''
-        subprocess.run([str(python), "-c", code], cwd=outside, env=env, check=True)
+        subprocess.run([str(python), "-I", "-c", code], cwd=outside, env=env, check=True)
     return 0
 
 

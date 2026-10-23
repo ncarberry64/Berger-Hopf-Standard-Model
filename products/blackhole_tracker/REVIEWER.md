@@ -1,9 +1,9 @@
-# Blackhole Tracker rc5: formal reviewer source
+# Blackhole Tracker rc6: formal reviewer source
 
 This BHSM repository is the formal reviewer home. `Manuscript-Generation`
 is the development workspace. Norman P. Carberry is the hypothesis and
-research author. The 193 upstream files are copied byte-for-byte from
-immutable development commit `9441367319045c471a99f36c38340a0de26ab308`.
+research author. The 266 upstream files are copied byte-for-byte from
+immutable development commit `6bd7bf40cbef58f240b46626a21b0c7820099da0`.
 [FORMAL_PROVENANCE.json](FORMAL_PROVENANCE.json) records their paths, sizes
 and SHA-256. The [manuscript/release receipt](../../papers/bhsm_blackhole_tracker_20261021/provenance/FORMAL_REPOSITORY.json)
 records the formal product-code citation separately, avoiding a
@@ -13,9 +13,9 @@ source files remain byte-exact.
 Use the complete `BHSM_Blackhole_Tracker_Source.zip` or a matching
 `blackhole-tracker-paper-and-source` CI artifact. Its root contains `products/`,
 `papers/`, `tools/` and both license notices. A full clone of the much larger
-BHSM repository is optional. The source includes five notebooks, the app,
+BHSM repository is optional. The source includes six notebooks, the app,
 CLI/Python APIs, tests, pinned providers and historical validation records.
-The current product suite has **257 tests plus 29 subtests**. Software verification and replay
+The suite includes spectrum transport, source-pinned target-program and synthetic measured-track checks. Exact run counts and outcomes belong to the matching release receipts. Software verification and replay
 do not establish scientific acceptance or journal acceptance.
 
 ## Install and run
@@ -36,6 +36,42 @@ research uses the separate **`Start_Blackhole_Tracker_Joint.cmd`** or the explic
 `--astrometry` flag. Dependencies install from the configured package index;
 opening a web page never installs them. See the [complete user guide](README.md)
 for virtual-environment, local-wheel, port and export/replay instructions.
+
+## Primary target and moving-lens investigation
+
+Open `/targets` for the source-pinned primary investigation program. Previously
+published Gaia18ajz is the provisional lead, with all eight published
+model/prior/near--far alternatives retained. A research priority is not a
+calibrated black-hole ranking or a new engine discovery. The separate
+OGLE-2011-BLG-0462 published positive reference and OGLE-2007-BLG-224
+brown-dwarf comparison have not been independently recovered by this engine.
+**Scientific publication remains held for independent evidence review.**
+
+The `/spectrum/` workspace retains all 1,808 model records and their native
+time groups, failures, modes and unavailable physical fields. Those model
+records are not 1,808 distinct objects. Its moving-lens filters and sequence
+collection do not turn source markers into foreground lens positions.
+JSON/CSV view export and replay preserve hidden selected cases and source
+bindings; `spectrum export` reproduces all ten original frozen files.
+
+The separate `/skytrack` workspace fits supplied lens angular positions and
+covariance. It preserves explicit native epochs, calibration, source rows
+and association assumptions. Read [SKYTRACK.md](SKYTRACK.md), use the moving
+lens launcher, or `blackhole-tracker serve --open --page skytrack`.
+Angular motion in the supplied frame does not supply mass, distance,
+physical speed or black-hole identity. Synthetic controls verify its
+implementation and replay; none is a measured black-hole recovery.
+Notebook `06_moving_lens_and_primary_target` walks through the target program,
+synthetic covariance/residual analysis and portable export/replay. The first
+five notebooks and their older execution receipt remain preserved.
+
+The [23 October author clarification](../../docs/BHSM_AUTHOR_SURFACE_GEOMETRY_CLARIFICATION_20261023.md)
+interprets supported gravitational geometry itself as BHSM surface
+topography. It augments the retained 22 October contract. One Einstein/GHY
+exterior is counted once; no additional force or non-GR residual is required
+for that interpretation. A conditional or nonrejected light curve does not
+by itself validate its gravitational origin. Object identity, a particular
+physical interface and a microscopic core state remain separate questions.
 
 ## Three observation routes and their limits
 
@@ -83,7 +119,7 @@ published object's classification is prior literature evidence. Read the
 [negative campaign record](../../papers/bhsm_blackhole_tracker_20261021/joint_known_system_20261022/README.md)
 and its [unsent manual calibration request](../../papers/bhsm_blackhole_tracker_20261021/joint_known_system_20261022/MANUAL_CALIBRATION_DATA_REQUEST_TEMPLATE.txt).
 New calibration/observations require a new frozen protocol. No mass is
-inferred from duration alone; no core mode, membrane deformation, horizon,
+inferred from duration alone; no core mode, distinct physical-interface dynamics, horizon,
 absolute lens motion, lens distance or new black-hole discovery is established.
 
 ## Verification and reproducibility
@@ -96,7 +132,7 @@ cd products/blackhole_tracker
 python -m pytest -q tests
 python -m pip wheel --no-deps . --wheel-dir dist
 cd ../..
-python tools/smoke_blackhole_tracker_wheel.py --wheel products/blackhole_tracker/dist/bhsm_blackhole_tracker-0.2.0rc5-py3-none-any.whl
+python tools/smoke_blackhole_tracker_wheel.py --wheel products/blackhole_tracker/dist/bhsm_blackhole_tracker-0.2.0rc6-py3-none-any.whl
 ```
 
 The dedicated workflow installs `[dev,astrometry]` for the full product suite
@@ -114,12 +150,12 @@ python -I /absolute/path/products/blackhole_tracker/scripts/probe_joint_install.
 
 `--sourcepack ZIP` and `--result RESULT.json` optionally add actual native
 import and saved-state export/replay checks. The safe CI default is synthetic;
-no measured-event acceptance is inferred from that control. The five notebooks
+no measured-event acceptance is inferred from that control. The first five notebooks
 are `01_compact_mass_and_motion`, `02_conditional_boundary_response`,
 `03_native_unresolved_photometry`, `04_joint_astrometry_and_parallax`
 and `05_candidate_atlas`.
 The [validation directory](validation/) retains matching receipts; historical
-rc2/rc3/rc4 evidence is not relabeled as final rc5 evidence.
+release evidence is not relabeled as RC6 evidence.
 
 The top-level BHSM core Python 3.10+ matrix is separate from the product's
 Python 3.11+ requirement. Its dispatch-only full historical corpus is not

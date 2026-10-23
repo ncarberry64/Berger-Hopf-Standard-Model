@@ -4,6 +4,7 @@ This changes source attribution/assumptions, never the optical likelihood.
 """
 import argparse
 import hashlib
+import html
 import json
 from pathlib import Path
 import re
@@ -11,6 +12,26 @@ import subprocess
 
 ROOT = Path(__file__).resolve().parents[1] / 'bhtracker/theory'
 REPOSITORY = 'https://github.com/ncarberry64/Berger-Hopf-Standard-Model'
+
+
+def sync_surface_geometry_views(contract):
+    """Materialize trusted contract text in every offline workspace.
+
+    Historical inventory/result bytes remain untouched. These paragraphs are
+    current author-defined interpretation, never an event evidence upgrade.
+    """
+    web = ROOT.parent / 'web'
+    geometry = contract['surface_geometry']
+    for name in ('index.html', 'photometry.html', 'joint.html', 'atlas.html'):
+        path = web / name
+        newline = '\r\n' if b'\r\n' in path.read_bytes() else '\n'
+        text = path.read_text(encoding='utf8')
+        for key in ('definition', 'summary', 'evidence_scope', 'unidentified_scope'):
+            pattern = r'(<p data-bhsm-surface="' + key + r'">).*?(</p>)'
+            text, count = re.subn(pattern, lambda match: match[1] + html.escape(geometry[key]) + match[2], text)
+            if count != 1:
+                raise ValueError(f'{name} must contain one surface interpretation slot for {key}')
+        path.write_bytes(text.replace('\n', newline).encode('utf8'))
 
 
 def main():
@@ -51,11 +72,13 @@ def main():
     amendment = next(e for e in manifest['sources'] if e['path'].endswith('AMENDMENT_20261022.md'))
     manifest['theory_amendment'].update(commit=args.commit, sha256=amendment['sha256'])
     manifest['theory_amendment'].pop('draft_pr', None)
-    manifest['interpretation_revision'] = '2026-10-22-reviewed-corrections'
+    geometry_contract = json.loads((ROOT / manifest['surface_geometry_contract_path']).read_text(encoding='utf8'))
+    manifest['interpretation_revision'] = geometry_contract['interpretation_revision']
     note = ' Reviewed corrections update source assumptions and provenance only; the frozen native-magnitude likelihood is unchanged.'
     if note not in manifest['packaging_note']:
         manifest['packaging_note'] += note
     manifest_path.write_text(json.dumps(manifest, indent=2) + '\n', encoding='utf8')
+    sync_surface_geometry_views(geometry_contract)
     print(json.dumps({'formal_commit': args.commit, 'sources_verified': len(manifest['sources'])}))
 
 

@@ -16,7 +16,7 @@ def main():
     parser.add_argument('--no-open',action='store_true',help='run without opening a browser')
     parser.add_argument('--check-install',action='store_true',help='install/check dependencies and exit')
     parser.add_argument('--astrometry',action='store_true',help='explicitly install/check optional Astropy support for joint research')
-    parser.add_argument('--page',choices=['resolved','photometry','joint','atlas'],default='resolved')
+    parser.add_argument('--page',choices=['resolved','photometry','joint','atlas','spectrum','skytrack'],default='resolved')
     args=parser.parse_args()
     python=ROOT/'.venv'/'Scripts'/'python.exe'
     env=os.environ.copy()

@@ -1,0 +1,205 @@
+BHSM unresolved photometry: observable-to-geometry dictionary before physical mass
+Research-only derivation, 23 October 2026. No observations have been fitted or reinterpreted here.
+
+1. Scope and source contract
+
+This is a conditional dictionary for the existing rectilinear, point-source,
+point-lens (PSPL), unresolved native-apparent-magnitude route. It is not a new
+force, optical potential, interface state, classifier, production adapter or
+claim of a new BHSM prediction. The attached source freeze pins the equations
+and native observation contract actually read. In the accepted author meaning,
+gravitational geometry belongs to BHSM spacetime-side surface topography. A
+validated gravitational imprint may therefore be interpreted in that common
+framework without a departure from GR. Conditioning a light curve on PSPL is
+distinct from establishing independently that its origin is gravitational.
+One compact exterior optical response is counted once.
+
+Source assertions: photometry.py lines19-35,41-76,111-132,143-151,206-237,
+292-404; observations.py lines1-5,30-74,85-101,120-160,174-194,207-233.
+The source-pin manifest gives exact file SHA256, bytes and repository context.
+The fit retains native m_i and sigma_i; the baseline objective assumes
+independent Gaussian errors in magnitude, not manufactured Gaussian flux errors.
+Flux algebra below is a deterministic mean-model relation. The nonlinear
+inverse does not turn noisy magnitudes into independent Gaussian u estimates.
+
+Assumptions: isolated single compact thin lens in its usual point-lens optical
+domain; geometric optics; point source; rectilinear relative motion; no finite-
+source, annual/satellite parallax, binary lens/source, variable source, occulting
+surface or evolving lens term. In each instrument the source/blend contributions
+are constant under the model. No assertion that a given observed curve satisfies
+these assumptions follows from writing or inverting the formula.
+
+2. Magnification is an invertible dimensionless geometry coordinate
+
+Write image coordinate x=theta/theta_E along the source-lens line and source
+coordinate u=|beta|/theta_E>0. The point-lens equation is u=x-1/x. Its two signed
+roots are x_+=(u+sqrt(u^2+4))/2 and x_-=(u-sqrt(u^2+4))/2. Summing absolute image
+Jacobian magnifications |1-x_+^(-4)|^(-1)+|1-x_-^(-4)|^(-1) gives
+
+    A(u)=(u^2+2)/(u sqrt(u^2+4)),
+    A'(u)=-8/[u^2 (u^2+4)^(3/2)]<0.
+
+As u increases from0 to infinity, A decreases continuously from infinity to1.
+Thus A:(0,infinity)->(1,infinity) is one-to-one and onto. Also
+
+    A^2-1=4/[u^2(u^2+4)].
+
+Putting s=sqrt(A^2-1), the positive solution is
+
+    u^2=2(A/s-1)=2/[s(A+s)].                         (G1)
+
+The second form rationalizes the high-A subtraction. If the input is an excess
+delta=A-1>0, calculate s=sqrt(delta(delta+2)), A=1+delta. A stable log form is
+
+    log s = [log delta + log(delta+2)]/2,
+    log A = log1p(delta),
+    log(A+s)=log A+log1p(exp(log s-log A)),
+    log u=[log2-log s-log(A+s)]/2.                    (G2)
+
+The research-only inverse implements G2, not the production model. It avoids
+forming delta^2 at extremes and avoids computing A-1 when delta is supplied.
+If A has already rounded to1, its missing excess cannot be recovered. A=1 has
+only u=infinity as a limit; A<1 has no exact positive PSPL inverse. No noisy row
+with A<=1 is clipped or removed by this work, and no uncertainty is invented.
+These statements are algebraic; a floating-point routine is not a certified
+interval enclosure and cannot promise all IEEE extreme combinations.
+The inverse sensitivity is du/dA=-u^2(u^2+4)^(3/2)/8. Relative conditioning with
+respect to A is (u^2+2)(u^2+4)/8, which diverges toward unit magnification.
+Using a separately represented excess avoids that subtraction, but cannot
+create a significant measured excess or overcome uncertain baseline/blending.
+
+3. Blended brightness is not the unblended A
+
+For instrument j, let F_bj=F_Sj+F_Bj be positive baseline total flux and
+f_j=F_Sj/F_bj. Ordinary nonnegative luminous blending gives0<f_j<=1. Then
+
+    F_j(t)=F_Sj A(u(t))+F_Bj,
+    R_j(t)=F_j(t)/F_bj=1+f_j[A(u(t))-1],
+    m_j(t)=m_bj-(2.5/ln10) log(1+f_j[A(u(t))-1]).     (G3)
+
+Hence, GIVEN a baseline and source fraction, a model magnitude supplies
+
+    delta(t)=expm1[-(ln10/2.5)(m_j(t)-m_bj)]/f_j,     (G4)
+
+and G1/G2 supplies u(t). This is conditional inversion, not an assertion that
+baseline/source fraction are known exactly. They are joint nuisance parameters
+in the native route and can be weakly identified by incomplete cadence or
+blending. For example a single peak ratio R_p>1 permits a continuum
+A_p=1+(R_p-1)/f, u_0=A^(-1)(A_p) as f ranges over(0,1]. A peak alone therefore
+does not identify impact parameter. This is an exact peak-only statement;
+it is not a claim of an exact universal degeneracy of every complete PSPL curve.
+
+F_Sj and F_Bj exported from a magnitude zero point are relative fluxes. The blend
+is unresolved light/calibration context, not an independently measured lens
+luminosity or lens-light exclusion. The explicit f>1 sensitivity is a signed
+calibration-offset blend, not negative stellar luminosity or evidence of a dark
+lens. A is the SUM of unresolved image flux magnifications, not an observed
+resolved-image flux ratio.
+
+4. Conditional trajectory information and remaining symmetries
+
+Define tau=(t-t_0)/t_E, t_E>0, u_0>0. The model trajectory can be written
+
+    vector u(t)=Q(tau, u_0), Q in O(2),
+    u(t)^2=u_0^2+(t-t_0)^2/t_E^2.                    (G5)
+
+Flux depends only on the norm. Every rotation/reflection Q produces the same
+photometric curve; the on-sky direction and sign of the impact parameter remain
+unidentified. The code convention reports u_0>0 and t_E>0; it has not measured
+those missing signs/orientations. The dimensionless speed is |d vector u/dt|=1/t_E.
+If baseline and blending are known and a sufficient noiseless curve is supplied,
+the recovered u(t)^2 is a quadratic in native relative time. Its vertex, minimum
+and quadratic coefficient yield t_0, u_0^2 and1/t_E^2. Actual finite noisy fits
+require rank/multimodality/bound/residual assessment. Parameter names or a local
+full-rank Jacobian are not a proof of global identification or calibrated coverage.
+
+t_0 is closest approach and peak of this positive-source model, in the declared
+native relative-day convention. t_E is an Einstein-radius crossing TIMESCALE;
+it is not a whole-event duration. For u_0<1, u=1 occurs at
+t=t_0 +/- t_E sqrt(1-u_0^2); for u_0>1 the path never crosses that circle.
+The numeric-origin change t'=t-C, t'_0=t_0-C leaves tau invariant. It is not a
+clock-scale, HJD/BJD or heliocentric/barycentric conversion. The source explicitly
+leaves undocumented HJD clock scales UNSPECIFIED and excludes precision annual
+parallax from that limited combination assumption.
+
+Poor peak/baseline coverage can create approximate additional freedoms. In a
+high-magnification segment A(u)=1/u+O(u), the leading flux is F_S/u+F_B.
+The transformation u_0->lambda u_0, t_E->t_E/lambda, F_S->lambda F_S leaves
+that leading segment invariant and preserves t_eff=u_0 t_E and F_S/u_0.
+It is NOT exact for full PSPL magnification or a separately measured baseline;
+all transformed u must remain small for the approximation. In far wings,
+A-1=2/u^4+O(u^-6); with |tau|>>u_0, the leading excess involves F_S t_E^4.
+These limits explain possible correlations, not revised fit results or error bars.
+
+The x_+/x_- formulas give possible dimensionless model image positions after
+choosing u. They are not measured resolved image positions, astrometry, flux
+ratios or delays. Existing unavailable observation/result fields stay null.
+
+5. Exact physical-scale degeneracy within the declared PSPL domain
+
+For a physical interpretation introduce angular theta_E, relative angular speed
+mu_rel, M and relative parallax pi_rel with a consistent observer/frame/time
+convention and positive D_L<D_S:
+
+    t_E=theta_E/mu_rel,
+    theta_E^2=kappa M pi_rel,
+    pi_rel=AU(1/D_L-1/D_S), kappa=4G/(c^2 AU),
+    pi_E=pi_rel/theta_E.                              (G6)
+
+Angles must use one consistent unit with the corresponding kappa; no numerical
+mas/radian conversion is inferred here. G6 uses the local/Galactic small-angle
+distance relation, not an automatic cosmological-distance prescription. Holding
+the photometric parameters fixed,
+take positive lambda,nu and transform
+
+    theta'_E=lambda theta_E, mu'_rel=lambda mu_rel,
+    pi'_rel=nu pi_rel, M'=lambda^2 M/nu,
+    pi'_E=(nu/lambda) pi_E.                           (G7)
+
+G6 and t_E are unchanged. Choose fixed D_S and
+D'_L=[1/D_S+pi'_rel/AU]^(-1) to realize the changed positive relative parallax.
+Every member remaining within the assumed compact/thin-lens/geometric-optics
+domain has the same u(t), magnification, blended magnitude predictions and
+native-magnitude likelihood. This is a forward-map symmetry, not a selected
+population prior. No mass-luminosity or population constraint is introduced into
+the free baseline/blend model. It proves that this route cannot identify angular scale,
+physical relative proper motion, mass or lens distance from timescale alone.
+No numerical t_E/u_0 search-box bound becomes a physical mass/height bound.
+
+With theta_E alone, one obtains a mass-distance relation M pi_rel=theta_E^2/kappa.
+With pi_E alone and no theta_E, M=pi_rel/(kappa pi_E^2) remains a distance family.
+With BOTH independently informative theta_E and pi_E, M=theta_E/(kappa pi_E)
+becomes available under an adequate model; source distance then constrains D_L.
+Relative orientation and an absolute source reference frame are additionally
+needed for absolute lens motion. Photometric O(2) freedom alone supplies neither.
+Source/event catalog coordinates are directions to search, not current lens
+coordinates, an observing epoch, distance, radial velocity or propagated track.
+
+6. What to report before mass identity
+
+SUPPLIED: native magnitudes/errors/time metadata, instrument/filter/calibration,
+source-row identities, catalog context with its actual association qualifications.
+CONDITIONAL MODEL CONSTRAINTS: t_0, t_E, |u_0|, baseline and source fraction only
+to the extent their joint likelihood/rank/profile diagnostics support them; u(t),
+A(u), flux-ratio-to-baseline and norm-trajectory relations inherit those conditions.
+NOT IDENTIFIED BY THIS ROUTE: angular/metric scale, M, D_L, absolute lens position
+or motion, lens-light exclusion, a material/microscopic interface shape, physical
+surface height, core state, hard isolation, terminal process or horizon.
+
+The useful intermediate result is a CONDITIONAL DIMENSIONLESS GEOMETRY FAMILY
+and a localized source/event direction. It can guide the next angular/parallax,
+calibration or competing-model observation. Independent gravitational-origin
+validation and BH identity remain separate inferences. Under the author-defined
+BHSM interpretation, validated exterior lensing constrains gravitational surface
+topography; this dictionary does not uniquely reconstruct the hypersurface's
+microscopic organization or establish BHSM uniquely against another theory.
+Mass/curvature/boundary-energy conversions at a chosen radius remain unavailable
+until their required physical inputs and domain are supplied. A chosen enclosing
+radius is neither a measured object skin nor a surface displacement.
+
+Reproduction uses only invented analytic controls, not actual observations or
+the product predictor/fitter. Source freeze and controls are supplied for root
+review before any production change. No claim of a newly discovered inversion
+law or new astrophysical identification is made.
+Formal scientific/software repository:
+https://github.com/ncarberry64/Berger-Hopf-Standard-Model

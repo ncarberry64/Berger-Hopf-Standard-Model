@@ -103,7 +103,7 @@
     const direction=detailSection(panel,'Where to look: source/event direction'); const d=e.source_direction;
     facts(direction,[['Right ascension',d.ra_hms || (d.ra_deg===null?null:d.ra_deg.toFixed(7)+'°')],['Declination',d.dec_dms || (d.dec_deg===null?null:d.dec_deg.toFixed(7)+'°')],['Coordinate frame',d.frame],['Equinox',d.equinox],['Observation epoch',d.epoch],['Direction uncertainty',d.uncertainty===null?null:JSON.stringify(d.uncertainty)]]);
     direction.append(node('p','The J2000 equinox does not establish an observation epoch or a motion correction. This direction is not an independently inferred present-day lens position.'));
-    const lens=detailSection(panel,'Lens quantities'); facts(lens,[['Inferred lens position',null],['Lens position date/error',null],['Lens distance',null],['Lens mass / bounds',null],['Absolute proper motion',null],['Radial velocity',null],['Core / membrane / horizon',null]]);
+    const lens=detailSection(panel,'Lens quantities'); facts(lens,[['Inferred lens position',null],['Lens position date/error',null],['Lens distance',null],['Lens mass / bounds',null],['Absolute proper motion',null],['Radial velocity',null],['Core / physical interface shape / horizon',null]]);
     const photo=detailSection(panel,'Photometric assessment'); const pa=e.photometric_assessment || {};
     facts(photo,[['Tracker fit status',pa.tracker_status?title(pa.tracker_status):null],['Frozen follow-up eligible',pa.followup_eligible===null||pa.followup_eligible===undefined?null:pa.followup_eligible?'Yes':'No'],
       ['Fitted crossing time',Number.isFinite(pa.fitted_tE_days)?pa.fitted_tE_days.toFixed(2)+' days':null],

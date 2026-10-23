@@ -1,4 +1,18 @@
-# Blackhole Tracker 0.2.0rc5
+# Blackhole Tracker 0.2.0rc6
+
+This candidate makes the author-defined BHSM surface interpretation explicit: supported gravitational geometry is surface topography, with one Einstein/GHY exterior response counted once. A nonrejected light curve remains conditional evidence and does not by itself validate a gravitational origin or identify a black hole. The original core/surface contract and numerical fitting kernels remain preserved.
+
+The installed evidence spectrum retains all 1,808 model records, their exact investigation categories, alternative modes, failed models and unavailable physical fields. Moving-lens filters distinguish available measurements from missing track data; short event duration is never substituted for angular speed, proximity, mass or black-hole identity. The frozen viewer and its JSON, CSV, source bindings and figures have byte-verified transport and export.
+
+The primary-target workspace designates previously published Gaia18ajz for independent investigation, preserves all eight published model/prior/near--far alternatives and keeps the known-black-hole benchmark and brown-dwarf comparison separate. This is a research priority, not a new discovery or calibrated black-hole ranking. The source-pinned program explicitly holds scientific publication for independent evidence review.
+
+A separate moving-lens workspace and Python/CLI route fit supplied lens angular positions and covariance across explicit native epochs. They report full motion covariance, residual and stationary-motion statistics, preserve uncertainty/frame/source assumptions and export a reproducible replay. Source directions and raw source centroids cannot silently become lens positions. Synthetic controls test the implementation; this release does not establish independent known-black-hole recognition or a new black hole.
+
+Qualified catalog-membership aliases are included in spectrum search. The v11 viewer revision is distinct from the unchanged v10 data; replay checks exact subset and record agreement. A source-package helper reproduces and hash-checks the frozen Gaia18ajz public context, retaining failed responses without adopting them as new observations.
+
+The historical pilot, joint benchmark failures and earlier releases remain versioned evidence. The release-specific receipt binds installation, export/replay, manuscript review and hosted CI to their exact revisions.
+
+## Previous release candidate 0.2.0rc5
 
 This candidate adds an offline candidate atlas to the local app, CLI and Python API. It retains 155 distinct historical source/event directions from the full 100-event pilot and all 59 published parallax events, reconciles four overlaps, and keeps the known published black-hole benchmark separate from the cohort and from engine validation.
 

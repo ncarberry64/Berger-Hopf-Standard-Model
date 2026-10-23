@@ -24,6 +24,30 @@ def _source_provenance():
     return manifest
 
 
+def surface_geometry_interpretation():
+    """Current author-defined geometry meaning, without changing a fit's status.
+
+    This also supplies the common interpretation for notebooks and archived
+    joint results whose scientific source and original metadata remain pinned.
+    It establishes neither gravitational-origin validation nor lens identity.
+    """
+    provenance = _source_provenance()
+    path = Path(__file__).resolve().parent/'theory'/provenance['surface_geometry_contract_path']
+    return deepcopy(json.loads(path.read_text(encoding='utf8'))['surface_geometry'])
+
+
+def with_surface_geometry_interpretation(result):
+    """Add current reporting context without editing an archived scientific record.
+
+    The original fit interpretation, scientific source hash, native inputs,
+    estimates, gates and unavailable fields are preserved. This is not replay,
+    a refit or an upgrade of the evidence classification.
+    """
+    if not isinstance(result, dict):
+        raise TypeError('a result object is required')
+    return {**result, 'surface_geometry_interpretation':surface_geometry_interpretation()}
+
+
 def spherical_boundary(mass_msun, radius_pc, sigma_mass_msun=None):
     """Same monopole in a static, spherical, flat-reference boundary description."""
     mass=float(mass_msun);radius=float(radius_pc)
@@ -62,7 +86,7 @@ def bhsm_interpretation(family,estimates=None,uncertainty=None,model=None,fit_st
         'interpretation_revision':provenance.get('interpretation_revision','2026-10-22'),
         'framework':'BHSM',
         'project_citation':project_citation(),
-        'model_role':'One compact-configuration optical response in the adopted BHSM Einstein/GHY sector, described in boundary/envelope language.',
+        'model_role':surface_geometry_interpretation()['summary'],
         'one_potential_rule':'Equivalent ordinary-gravity and BHSM envelope descriptions represent the same fitted lens potential and are counted once. A separately derived response is added only when it is a distinct term of the same physical model.',
         'parameter_meanings':[
             {'parameter':'mass_msun',
@@ -72,19 +96,20 @@ def bhsm_interpretation(family,estimates=None,uncertainty=None,model=None,fit_st
              'interpretation':'Reference position and observer-frame translation of that same boundary/envelope optical response.',
              'qualification':'This tracks the center of the adopted exterior template in the supplied frame; source freedom and environmental structure remain in the inference.'},
             {'parameter':'compact_quad',
-             'interpretation':'Projected compact angular structure, which can represent a coarse boundary/envelope deformation when its physical source is specified.',
-             'qualification':'A coefficient alone does not select a BHSM surface mode. An equivalent envelope quadrupole is not added again as an independent force.'},
+             'interpretation':'Projected nonspherical gravitational topography of the same exterior, which can represent boundary/envelope structure.',
+             'qualification':'A coefficient alone does not identify a unique physical interface shape or microscopic mode. An equivalent envelope quadrupole is not added again as an independent force.'},
             {'parameter':'shear / convergence',
              'interpretation':'Tidal and focusing terms of the surrounding optical environment.',
              'qualification':'They are fitted environmental freedoms, not automatically intrinsic deformations of the compact configuration.'},
         ],
-        'inference_scope':'The ordinary fit is usable with this BHSM interpretation. Agreement with the ordinary lens response is allowed; a non-GR residual is not required. The fit alone does not uniquely identify the microscopic theory or a horizon.',
+        'inference_scope':'The ordinary fit is usable as a BHSM surface-geometry interpretation without a non-GR residual. A fitted or nonrejected light curve alone does not validate a gravitational origin, uniquely verify BHSM or identify a black hole. Supported geometry and physical identity are separate inferences.',
         'conditional_extension':(
             'R1 evaluates an explicitly conditional scalar boundary-to-metric response from the adopted effective action. Its flux and boundary-state assumptions remain separate from the ordinary mass/motion interpretation.'
             if family=='r1' else
             'No separate scalar deformation was requested. The ordinary monopole, motion and admitted shape terms retain their BHSM interpretation without an additional envelope force.'),
         'weyl_convention':'The tracker propagates W_full=Phi+Psi. A BHSM source using W_topo=(Phi_topo+Psi_topo)/2 contributes 2*W_topo to that same full Weyl response, not a second copy of an already represented term.',
         'core_surface':core_surface,
+        'surface_geometry':surface_geometry_interpretation(),
     }
     if family=='r1':
         boundary={'status':'NOT_ASSUMED_FOR_R1_METRIC','reason':'The Schwarzschild boundary identity is not substituted into the modified R1 metric. Its total boundary energy needs the corresponding metric and reference subtraction.'}

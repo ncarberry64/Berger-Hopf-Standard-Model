@@ -6,7 +6,7 @@
 | --- | --- |
 | Review the new Blackhole Tracker paper and product | [Blackhole Tracker researcher start](BLACKHOLE_TRACKER_RESEARCH_START.md): rc4 manuscript/PDF, app, CLI, four notebooks, export/replay, source pins, the complete [100-event pilot](../papers/bhsm_blackhole_tracker_20261021/real_data_pilot_20261022/README.md) and the separate [negative known-system joint benchmark](../papers/bhsm_blackhole_tracker_20261021/joint_known_system_20261022/README.md) |
 | Read or reproduce the broader BHSM program | [Institutional start](INSTITUTIONAL_START.md), [current status](current_bhsm_status.md), [claim boundaries](../CLAIMS.md), [gate ledger](../theory/gate_ledger.md) |
-| Follow the core/surface interpretation | [Dated amendment](BHSM_NORMAN_CORE_SURFACE_AMENDMENT_20261022.md), [source/claim ledger](../artifacts/current_semantics/BHSM_NORMAN_CORE_SURFACE_AMENDMENT_20261022.json), [current system map](../artifacts/current_semantics/BHSM_CURRENT_SYSTEM_INTEGRATION_MAP.json) |
+| Follow the core/surface interpretation | [23 October surface-geometry clarification](BHSM_AUTHOR_SURFACE_GEOMETRY_CLARIFICATION_20261023.md), [22 October amendment](BHSM_NORMAN_CORE_SURFACE_AMENDMENT_20261022.md), [source/claim ledger](../artifacts/current_semantics/BHSM_NORMAN_CORE_SURFACE_AMENDMENT_20261022.json), [current system map](../artifacts/current_semantics/BHSM_CURRENT_SYSTEM_INTEGRATION_MAP.json) |
 | Explore the public explanation | [Museum and Blackhole Tracker exhibit](https://ncarberry64.github.io/Berger-Hopf-Standard-Model/#blackhole-tracker) |
 | Find retained topic guides | [Supporting topic guides](#supporting-topic-guides), [Python interface](#python-interface), [artifact adapters](#artifact-backed-adapters) |
 
@@ -20,6 +20,7 @@ frozen artifacts and their citations remain preserved.
 ## Current navigation: core/surface amendment — 22 October 2026
 
 - [Norman's authoritative dated core/surface amendment](BHSM_NORMAN_CORE_SURFACE_AMENDMENT_20261022.md): definitions, current source succession, computed regular-interface response and precise terminal accounting.
+- [23 October author clarification: gravitational topography and the common frame](BHSM_AUTHOR_SURFACE_GEOMETRY_CLARIFICATION_20261023.md): ordinary gravitational geometry is included in BHSM surface language; conditional configuration inference and black-hole identity remain separate.
 - [Current system integration map](../artifacts/current_semantics/BHSM_CURRENT_SYSTEM_INTEGRATION_MAP.json): active architecture and dependencies.
 - [Local enclosure/state integration](../theory/ae4_current_c2_physical_enclosure_state_integration.md), [response jets](../theory/ae4_event_response_jet_integration.md), and [current encapsulation scope](BHSM_CURRENT_ENCAPSULATION_SCOPE.md).
 - [Claim/source ledger](../artifacts/current_semantics/BHSM_NORMAN_CORE_SURFACE_AMENDMENT_20261022.json) and [current status](current_bhsm_status.md).

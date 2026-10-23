@@ -44,9 +44,11 @@ def main(argv=None):
     states=None
     if a.initial_result:states=[row['internal_state'] for row in read(a.initial_result)['all_starts'] if row.get('converged')]
     result=fit_joint(d,starts=a.starts,max_nfev=a.max_nfev,initial_states=states,**options)
+    from .interpretation import with_surface_geometry_interpretation
+    result=with_surface_geometry_interpretation(result)
     result['environment']={name:__import__(name).__version__ for name in ['numpy','scipy','astropy']};result['environment']['python']=platform.python_version()
     result['workflow_source_sha256']=hashlib.sha256(Path(__file__).read_bytes()).hexdigest()
     write(a.output,result)
-    print(json.dumps({'status':result['status'],'parameters':result.get('parameters'),'diagnostics':result.get('diagnostics'),'numerical_convergence':result.get('numerical_convergence')}))
+    print(json.dumps({'status':result['status'],'parameters':result.get('parameters'),'diagnostics':result.get('diagnostics'),'numerical_convergence':result.get('numerical_convergence'),'surface_geometry_interpretation':result['surface_geometry_interpretation']}))
 
 if __name__=='__main__':sys.exit(main())

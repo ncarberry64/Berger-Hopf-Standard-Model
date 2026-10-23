@@ -522,14 +522,14 @@
         'The analysis does not resolve all conditional envelope directions within the declared model.', true);
     } else if (status === 'INFORMATION_AVAILABLE') {
       card('Do the data resolve admitted states?', 'Local sensitivity available',
-        'The model retains conditional response information. This is a sensitivity result, not a deformation detection.', true);
+        'The model retains conditional response information. This assesses a distinct R1 boundary response; it does not identify microscopic interface dynamics. The ordinary gravitational imprint retains its BHSM surface-topography interpretation.', true);
     }
     if (cards.children.length) container.append(cards);
     if (envelope.unconstrained_estimate_inside_admitted_ball === false) {
       const note = document.createElement('div'); note.className = 'envelope-domain-note';
       const title = document.createElement('strong'), body = document.createElement('p');
       title.textContent = 'Unconstrained estimate outside the admitted domain';
-      body.textContent = 'That unrestricted fit value is not a physical boundary-state measurement. It must not be interpreted as a detected deformation.';
+      body.textContent = 'That unrestricted fit value is not an admitted physical interface-state measurement. It does not establish a distinct dynamical surface response; the ordinary gravitational imprint retains its BHSM surface-topography interpretation.';
       note.append(title, body); container.append(note);
     }
     const technical = document.createElement('details'); technical.className = 'envelope-technical';

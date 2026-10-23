@@ -46,7 +46,20 @@ def main(argv=None):
     prof=commands.add_parser('profile');prof.add_argument('dataset',type=Path);prof.add_argument('result',type=Path)
     prof.add_argument('--parameter',choices=['mass_msun','motion_x','motion_y'],default='mass_msun');prof.add_argument('--output',type=Path,required=True)
     serve=commands.add_parser('serve');serve.add_argument('--port',type=int,default=8765);serve.add_argument('--open',action='store_true')
-    serve.add_argument('--page',choices=['resolved','photometry','joint','atlas'],default='resolved')
+    serve.add_argument('--page',choices=['resolved','photometry','joint','atlas','spectrum','skytrack'],default='resolved')
+    spectrum=commands.add_parser('spectrum',help='inspect/export/verify the frozen read-only evidence spectrum; no fitting or classification')
+    spectrum_commands=spectrum.add_subparsers(dest='spectrum_command',required=True)
+    spectrum_commands.add_parser('summary')
+    spectrum_export=spectrum_commands.add_parser('export');spectrum_export.add_argument('--output',type=Path,required=True)
+    spectrum_verify=spectrum_commands.add_parser('verify');spectrum_verify.add_argument('directory',type=Path)
+    skytrack=commands.add_parser('skytrack',help='measured lens angular track with supplied covariance; no mass or black-hole identity inference')
+    sky_commands=skytrack.add_subparsers(dest='skytrack_command',required=True)
+    sky_example=sky_commands.add_parser('example');sky_example.add_argument('--output',type=Path,required=True)
+    sky_validate=sky_commands.add_parser('validate');sky_validate.add_argument('input',type=Path)
+    sky_fit=sky_commands.add_parser('fit');sky_fit.add_argument('input',type=Path);sky_fit.add_argument('--output',type=Path,required=True)
+    sky_fit.add_argument('--reference-native-time',type=float);sky_fit.add_argument('--alpha',type=float)
+    sky_replay=sky_commands.add_parser('replay');sky_replay.add_argument('result',type=Path);sky_replay.add_argument('--output',type=Path)
+    sky_export=sky_commands.add_parser('export');sky_export.add_argument('result',type=Path);sky_export.add_argument('--output',type=Path,required=True)
     atlas=commands.add_parser('atlas',help='catalog directions, evidence-qualified targets and lossless candidate-inventory replay; no physical fitting')
     atlas_commands=atlas.add_subparsers(dest='atlas_command',required=True)
     for name in ('list','export'):
@@ -61,7 +74,26 @@ def main(argv=None):
     atlas_replay.add_argument('--output',type=Path,help='fresh directory for exact inventory bytes and selected records')
     args=parser.parse_args(argv)
     try:
-        if args.command=='atlas':
+        if args.command=='skytrack':
+            from . import skytrack
+            if args.skytrack_command=='example':value=skytrack.synthetic_example()
+            elif args.skytrack_command=='validate':value=skytrack.validate_skytrack(args.input.read_bytes().decode('utf8'))
+            elif args.skytrack_command=='fit':value=skytrack.fit_skytrack(args.input.read_bytes().decode('utf8'),reference_native_time=args.reference_native_time,significance_alpha=args.alpha)
+            else:
+                saved=skytrack._document(args.result.read_bytes().decode('utf8'),max_bytes=96_000_000)[0]
+                value=skytrack.replay_skytrack(saved) if args.skytrack_command=='replay' else skytrack.export_skytrack(saved,args.output)
+            if args.skytrack_command in ('example','fit') or (args.skytrack_command=='replay' and args.output):
+                args.output.parent.mkdir(parents=True,exist_ok=True)
+                with args.output.open('xb') as stream:stream.write((json.dumps(value,indent=2,ensure_ascii=False,allow_nan=False)+'\n').encode('utf8'))
+                print(str(args.output.resolve()))
+            else:print(json.dumps(value,indent=2,ensure_ascii=False,allow_nan=False))
+        elif args.command=='spectrum':
+            from . import spectrum
+            if args.spectrum_command=='summary':value=spectrum.summary()
+            elif args.spectrum_command=='export':value=spectrum.export_snapshot(args.output)
+            else:value=spectrum.verify_snapshot(args.directory)
+            print(json.dumps(value,indent=2,allow_nan=False))
+        elif args.command=='atlas':
             from . import candidate_atlas as cat
             if args.atlas_command=='replay':
                 checked=cat.validate_replay(cat.read_json(args.bundle.read_bytes().decode('utf-8')))
@@ -126,7 +158,7 @@ def main(argv=None):
                 allow_negative_blend=args.allow_negative_blend)
             export_result(result,args.output)
             print(json.dumps({'status':result['status'],'mass_status':result['mass_status'],
-                              'parameters':result['parameters'],'output':str(args.output.resolve())},indent=2,allow_nan=False))
+                              'parameters':result['parameters'],'bhsm_interpretation':result['bhsm_interpretation'],'output':str(args.output.resolve())},indent=2,allow_nan=False))
         elif args.command=='profile-photometry':
             from .data import read_json
             from .photometry import profile_timescale

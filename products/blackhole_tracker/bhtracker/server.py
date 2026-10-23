@@ -19,6 +19,8 @@ from .provenance import VERSION, project_citation
 
 WEB=Path(__file__).resolve().parent/'web'
 PHOTOMETRY_DATASET_LIMIT=32_000_000
+SKYTRACK_DATASET_LIMIT=8_000_000
+SKYTRACK_REQUEST_LIMIT=80_000_000
 JOINT_SOURCEPACK_SHA256='71d36a03e4ba275e91bea62f4784a5193f34ad32d3777b637453f91151bafa99'
 
 def import_joint_sourcepack(content):
@@ -139,6 +141,9 @@ def make_server(port=8765):
                 with lock:jobs[name]={'status':'running'}
                 try:
                     value=operation()
+                    if isinstance(value,dict) and 'bhsm_interpretation' in value:
+                        from .interpretation import with_surface_geometry_interpretation
+                        value=with_surface_geometry_interpretation(value)
                     # A JSON string preserves numeric spelling for archived v1
                     # hashes through a JavaScript browser's number conversion.
                     item={'status':'complete',('result_json' if lossless_json else 'result'):
@@ -148,8 +153,16 @@ def make_server(port=8765):
             pool.submit(work);self.send_json({'job_id':name},202)
         def do_GET(self):
             if not self.local_request():self.send_json({'error':'Local origin required'},403);return
-            if self.path=='/api/health':self.send_json({'status':'ready','product':'BHSM Blackhole Tracker','version':VERSION,'project_citation':project_citation(),'dataset_file_limit_bytes':8_000_000,'photometry_dataset_file_limit_bytes':PHOTOMETRY_DATASET_LIMIT,'request_limit_bytes':40_000_000});return
+            if self.path=='/api/health':self.send_json({'status':'ready','product':'BHSM Blackhole Tracker','version':VERSION,'project_citation':project_citation(),'dataset_file_limit_bytes':8_000_000,'photometry_dataset_file_limit_bytes':PHOTOMETRY_DATASET_LIMIT,'skytrack_dataset_file_limit_bytes':SKYTRACK_DATASET_LIMIT,'skytrack_request_limit_bytes':SKYTRACK_REQUEST_LIMIT,'request_limit_bytes':40_000_000});return
             if self.path=='/api/examples':self.send_json(example_names());return
+            if self.path=='/api/targets':
+                from .target_program import target_program
+                try:self.send_json(target_program())
+                except (ValueError,OSError):self.send_json({'error':'The installed target program failed its evidence-integrity check.'},503)
+                return
+            if self.path=='/api/skytrack/example':
+                from .skytrack import synthetic_example
+                self.send_json({'dataset_json':json.dumps(synthetic_example(),indent=2,allow_nan=False)});return
             if self.path.startswith('/api/examples/'):
                 try:
                     if self.path.endswith('/bundle'):
@@ -163,9 +176,32 @@ def make_server(port=8765):
                 name=self.path.rsplit('/',1)[1]
                 with lock:item=jobs.get(name)
                 self.send_json(item or {'error':'Unknown job'},200 if item else 404);return
+            if self.path=='/spectrum':
+                self.send_response(302);self.send_header('Location','/spectrum/')
+                self.send_header('Content-Length','0');self.end_headers();return
+            if self.path.startswith('/spectrum/'):
+                from . import spectrum
+                name=self.path[len('/spectrum/'):] or 'index.html'
+                if name not in spectrum.NAMES:self.send_json({'error':'Not found'},404);return
+                try:
+                    blob=spectrum.read_asset(name)
+                    policy=spectrum.html_content_security_policy() if name=='index.html' else "default-src 'none'; sandbox"
+                except (ValueError,OSError,EOFError):
+                    self.send_json({'error':'The installed spectrum snapshot failed its byte-integrity check; no asset was admitted.'},503);return
+                self.send_response(200)
+                self.send_header('Content-Type',spectrum.MIME[Path(name).suffix])
+                self.send_header('Content-Length',str(len(blob)));self.send_header('Cache-Control','no-store')
+                self.send_header('X-Content-Type-Options','nosniff');self.send_header('Content-Security-Policy',policy)
+                if Path(name).suffix in ('.json','.csv','.txt','.svg'):
+                    self.send_header('Content-Disposition',f'attachment; filename="{name}"')
+                self.end_headers();self.wfile.write(blob);return
             path={'/':'index.html','/index.html':'index.html','/app.js':'app.js','/style.css':'style.css',
                   '/photometry':'photometry.html','/photometry/':'photometry.html','/photometry.js':'photometry.js',
                   '/joint':'joint.html','/joint/':'joint.html','/joint.js':'joint.js',
+                  '/skytrack':'skytrack.html','/skytrack/':'skytrack.html',
+                  '/skytrack.js':'skytrack.js','/skytrack.css':'skytrack.css',
+                  '/targets':'targets.html','/targets/':'targets.html',
+                  '/targets.js':'targets.js','/targets.css':'targets.css',
                   '/atlas':'atlas.html','/atlas/':'atlas.html','/atlas.html':'atlas.html',
                   '/atlas.js':'atlas.js','/atlas-core.js':'atlas-core.js','/atlas.css':'atlas.css',
                   '/atlas_data.json':'atlas_data.json','/atlas_manifest.json':'atlas_manifest.json'}.get(self.path)
@@ -182,12 +218,36 @@ def make_server(port=8765):
             if not self.local_request():self.send_json({'error':'Local origin required'},403);return
             try:
                 size=int(self.headers.get('Content-Length','0'))
-                if not 0<size<=40_000_000:raise ValueError('Request must contain at most 40 MB of JSON (resolved dataset files: 8 MB; unresolved JSON: 32 MB)')
+                limit=SKYTRACK_REQUEST_LIMIT if self.path.startswith('/api/skytrack/') else 40_000_000
+                if not 0<size<=limit:raise ValueError(f'Request must contain at most {limit//1_000_000} MB of JSON')
                 data=read_json(self.rfile.read(size))
                 if not isinstance(data,dict):raise ValueError('request body must be a JSON object')
                 if 'result_json' in data:
                     if 'result' in data:raise ValueError('provide result or lossless result_json, not both')
                     data['result']=read_json(data['result_json'])
+                if self.path in ('/api/skytrack/validate','/api/skytrack/fit'):
+                    from .skytrack import validate_skytrack,fit_skytrack
+                    if 'dataset_json' in data and 'dataset' in data:raise ValueError('provide dataset or lossless dataset_json, not both')
+                    raw=data['dataset_json'] if 'dataset_json' in data else data['dataset']
+                    raw_size=len((raw if isinstance(raw,str) else json.dumps(raw,ensure_ascii=False,allow_nan=False)).encode('utf-8'))
+                    if raw_size>SKYTRACK_DATASET_LIMIT:raise ValueError('The browser moving-lens input limit is 8 MB; use the documented Python/CLI route for larger supported covariance inputs')
+                    if self.path.endswith('/validate'):
+                        self.send_json({'valid':True,'summary':validate_skytrack(raw)});return
+                    options=data.get('options',{})
+                    if not isinstance(options,dict) or set(options)-{'reference_native_time','significance_alpha'}:
+                        raise ValueError('unsupported moving-lens fit options')
+                    result=fit_skytrack(raw,**options)
+                    self.send_json({'result_json':json.dumps(result,ensure_ascii=False,allow_nan=False)});return
+                if self.path in ('/api/skytrack/replay','/api/skytrack/export'):
+                    from .skytrack import replay_skytrack
+                    checked=replay_skytrack(data['result'])
+                    if self.path.endswith('/replay'):
+                        self.send_json({'verification':checked,'result_json':json.dumps(data['result'],ensure_ascii=False,allow_nan=False)});return
+                    blob=(json.dumps(data['result'],indent=2,ensure_ascii=False,allow_nan=False)+'\n').encode('utf-8')
+                    self.send_response(200);self.send_header('Content-Type','application/json; charset=utf-8')
+                    self.send_header('Content-Disposition','attachment; filename="BHSM_Moving_Lens_Replay.json"')
+                    self.send_header('Content-Length',str(len(blob)));self.send_header('Cache-Control','no-store')
+                    self.send_header('X-Content-Type-Options','nosniff');self.end_headers();self.wfile.write(blob);return
                 if self.path=='/api/validate':
                     raw=read_json(data['dataset_json']) if 'dataset_json' in data else data['dataset']
                     dataset=load_dataset(raw);self.send_json({'valid':True,'summary':dataset.summary()});return
@@ -309,7 +369,7 @@ def make_server(port=8765):
     return server
 
 def serve(port=8765,open_browser=False,page='resolved'):
-    route={'resolved':'/','photometry':'/photometry','joint':'/joint','atlas':'/atlas'}.get(page)
+    route={'resolved':'/','photometry':'/photometry','joint':'/joint','atlas':'/atlas','spectrum':'/spectrum/','skytrack':'/skytrack'}.get(page)
     if route is None:raise ValueError('Unknown local workspace page')
     server=make_server(port)
     url=f'http://127.0.0.1:{server.server_port}{route}'

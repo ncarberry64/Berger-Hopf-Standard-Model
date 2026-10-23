@@ -1,0 +1,68 @@
+{
+  "schema": "bhsm.independent_skytrack_raw_text_UI_source_gate.v1",
+  "created_utc": "2026-10-23T20:38:15.343869+00:00",
+  "status": "PASS_SOURCE_AND20_INVENTED_DOM_CONTROLS_ACTUAL_BROWSER_WORKFLOW_PENDING",
+  "source_and_evidence_pins_before_after": {
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\web\\skytrack.js": {
+      "path": "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\web\\skytrack.js",
+      "bytes": 9580,
+      "sha256": "fa9d7dc7694d2b2edd8e971713d44d863d1c232f956741366b0738cd45e49e48"
+    },
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\skytrack.py": {
+      "path": "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\skytrack.py",
+      "bytes": 34495,
+      "sha256": "e7890e414542da49873b4d1ad775520719872a845ff3bfe6a55c761ea840172a"
+    },
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_real_data_corrections_20261022\\expanded_dataset_search_20261023\\skytrack_raw_text_independent_review_v1\\skytrack_reviewed_raw_text_patch.js": {
+      "path": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_real_data_corrections_20261022\\expanded_dataset_search_20261023\\skytrack_raw_text_independent_review_v1\\skytrack_reviewed_raw_text_patch.js",
+      "bytes": 9513,
+      "sha256": "245624c22beb2b4d2cd9ea503cbdee9dd8e14372a95cefa29321674827f14316"
+    },
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_real_data_corrections_20261022\\expanded_dataset_search_20261023\\skytrack_raw_text_independent_review_v1\\skytrack_final_fa9d7dc7.js": {
+      "path": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_real_data_corrections_20261022\\expanded_dataset_search_20261023\\skytrack_raw_text_independent_review_v1\\skytrack_final_fa9d7dc7.js",
+      "bytes": 9580,
+      "sha256": "fa9d7dc7694d2b2edd8e971713d44d863d1c232f956741366b0738cd45e49e48"
+    },
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_real_data_corrections_20261022\\expanded_dataset_search_20261023\\skytrack_raw_text_independent_review_v1\\RAW_TEXT_CONTROL_FREEZE_v1.json": {
+      "path": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_real_data_corrections_20261022\\expanded_dataset_search_20261023\\skytrack_raw_text_independent_review_v1\\RAW_TEXT_CONTROL_FREEZE_v1.json",
+      "bytes": 2894,
+      "sha256": "3587204e47037e428611498b2cb58fe80448d7f89a744cf585064da6a72940fb"
+    },
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_real_data_corrections_20261022\\expanded_dataset_search_20261023\\skytrack_raw_text_independent_review_v1\\INDEPENDENT_RAW_TEXT_CONTROLS_245624c2.json": {
+      "path": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_real_data_corrections_20261022\\expanded_dataset_search_20261023\\skytrack_raw_text_independent_review_v1\\INDEPENDENT_RAW_TEXT_CONTROLS_245624c2.json",
+      "bytes": 3056,
+      "sha256": "31a5f721999d12a406cdd4d814d1f6418c8998ec7d9f2706286b9ae062328e71"
+    },
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_real_data_corrections_20261022\\expanded_dataset_search_20261023\\skytrack_raw_text_independent_review_v1\\INDEPENDENT_RAW_TEXT_CONTROLS_fa9d7dc7.json": {
+      "path": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_real_data_corrections_20261022\\expanded_dataset_search_20261023\\skytrack_raw_text_independent_review_v1\\INDEPENDENT_RAW_TEXT_CONTROLS_fa9d7dc7.json",
+      "bytes": 3106,
+      "sha256": "9c328f804895830b954b6cd610ffbe6e147d4dc31d10c4efa8284cfa9178aac1"
+    },
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_real_data_corrections_20261022\\expanded_dataset_search_20261023\\skytrack_raw_text_independent_review_v1\\test_raw_text_semantics_v1.cjs": {
+      "path": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_real_data_corrections_20261022\\expanded_dataset_search_20261023\\skytrack_raw_text_independent_review_v1\\test_raw_text_semantics_v1.cjs",
+      "bytes": 9220,
+      "sha256": "f44dbdd42d108aa0a385630b1bafc2f3edf029d579621792b37a978afa74c87b"
+    },
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_real_data_corrections_20261022\\expanded_dataset_search_20261023\\skytrack_raw_text_independent_review_v1\\close_raw_text_source_gate_v1.py": {
+      "path": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_real_data_corrections_20261022\\expanded_dataset_search_20261023\\skytrack_raw_text_independent_review_v1\\close_raw_text_source_gate_v1.py",
+      "bytes": 4801,
+      "sha256": "014e5d1a5bb6b7081ebc7e19fa78e079ae0a623ecc9bf7050e29c2b27c5846bf"
+    }
+  },
+  "all_unchanged": true,
+  "review": [
+    "The raw text override is separate from the normalized textarea display. File import uses bounded arrayBuffer plus fatal UTF8 decoding, retaining original valid UTF8 content including BOM and line endings. Validate/fit requests use the exact override until a real input event clears it.",
+    "Reset clears override/result/file display. Demo and replay restore exact text overrides. A saved result retains its exact dataset text after replay rather than taking the textarea normalized representation.",
+    "File limits precede decode/use; failed imports clear previous input/result. Generation checks suppress stale file/request completions and stale errors. Export checks generation before creating a downloadable object URL.",
+    "Both independently pinned versions pass the same20 invented mocked DOM/network controls. The old245624 witnesses stale invalid-UTF8 and asynchronous request errors replacing newer status; correctedfa9d suppresses both. No old state/data is admitted by either stale witness.",
+    "All renderer/plot/request/declaration code before bind is byte-text identical between245624 andfa9d. Every manual-input/demo/validate/fit/replay/export/reset handler is also identical. Only generic bind error status and file-read error generation scope changed in that correction.",
+    "The numerical method remains exact e7890e41; this source review makes no scientific model, covariance, classification or physical availability change. User strings remain assigned via textContent.",
+    "BOM remains in submitted raw text for backend policy. The skytrack dataset parser can remove leading U+FEFF for parsing while retaining its original text/hash; this review does not incorrectly require blanket BOM refusal."
+  ],
+  "control_scope": "Node20.11.1 mocked DOM with deliberately normalized textarea and invented network JSON only. No real browser, server, model, native astrometric/photometric data, fit or replay function call.",
+  "pending_separate_gate": "Actual installed browser CRLF input\u2192fit\u2192export\u2192reopen/replay byte/hash parity must still be verified by the parent release workflow.",
+  "history": "The archived245624 is before the stale-error guard, not the earlier textarea-only version. Its copied filename and freeze explicitly state that timing. No prepatch byte history is manufactured.",
+  "remaining_source_findings": [],
+  "reviewer_product_edits": false,
+  "reviewer_model_native_calls": 0
+}

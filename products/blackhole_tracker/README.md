@@ -1,4 +1,4 @@
-# BHSM Blackhole Tracker 0.2.0rc5
+# BHSM Blackhole Tracker 0.2.0rc6
 
 BHSM Blackhole Tracker reconstructs the effective gravitational mass, location and motion of a BHSM-described compact configuration from resolved image pairs, their magnification ratio and their delay. The ordinary lens response and the BHSM boundary/envelope interpretation use the **same optical potential, counted once**. Agreement with ordinary gravity is an allowed result; a non-GR deviation is not required to use this interpretation.
 
@@ -9,6 +9,8 @@ The formal source and reviewer record are in the [BHSM GitHub repository](https:
 The fitted object is a **compact exterior**. Its BHSM interpretation does not uniquely identify the microscopic theory, establish a horizon or select an R1 deformation state. Bundled resolved measurement examples are explicitly synthetic. Actual downloaded observations remain in the external data handoff; the paper includes the complete derived 100-event results, residual plots and protocol without redistributing those raw files.
 
 ## Candidate atlas: useful targets with mass unresolved
+
+Open **Primary target** at `/targets` for the source-pinned research program. Gaia18ajz is the provisional lead for independent evaluation, with all eight published model/prior/near--far alternatives visible. Its `Potential black hole` category is an investigation designation; it is a previously published candidate. The known OB110462 reference and a published brown-dwarf comparison remain separate from independent engine recovery. Publication readiness is false while the candidate's native-data evaluation and validation requirements remain unresolved. The [comparative review](research/primary_target_20261023/COMPARATIVE_PRIMARY_FOLLOWUP_REVIEW_v2.json) records the evidence, alternatives and source hashes. The [primary-target data guide](research/primary_target_20261023/README.md) supplies a one-command public-context verification/refetch helper with an immutable input hash. It preserves native bytes and conventions; source association and a candidate likelihood remain open.
 
 Open **Candidate sky atlas**, run `blackhole-tracker serve --open --page atlas`, or use `Start_Blackhole_Tracker_Atlas.cmd`. The offline inventory contains all 100 pilot events and all 59 published parallax events, with four verified overlaps counted once: **155 unique source/event directions**. A separate published black-hole benchmark has an explicitly unresolved tracker recovery. No catalog coordinate is presented as a current lens position.
 
@@ -49,7 +51,21 @@ replay_analysis('native_fit', 'native_replayed')
 
 The notebook `03_native_unresolved_photometry.ipynb` uses the actual external observations when `BHSM_DATA_ROOT` points to the handoff's `data` directory; its portable fallback is explicitly synthetic. The frozen measured pilot lives in the paper's `real_data_pilot_20261022/` directory. It processed **all 100 events / 76,344 rows**: 89 simple-model inadequate and 11 photometric fits. Two predeclared archival follow-up targets pass stricter checks, with no mass-supported black-hole candidate or new black-hole interpretation. Neither ranking nor duration is a black-hole probability. The original 2022 benchmark remains photometric-model inadequate; its released HST timing/frame conventions prevent a validated joint mass inference. The separate 2023 joint route above uses independently versioned observations and retains its own failed noise checks.
 
-The native model identifies only supported model-conditional photometric combinations. Since `tE = thetaE / mu_rel` and `thetaE^2 = kappa M pi_rel`, mass, distance, absolute angular proper motion, horizon and core state remain `null`. One effective optical potential has the explicit BHSM interpretation and is counted once. No inferred surface deformation or core dynamics are added to an inadequate light curve. See [UNRESOLVED_OBSERVATIONS.md](UNRESOLVED_OBSERVATIONS.md) for the likelihood and optional astrometric metadata gates.
+The native model identifies only supported model-conditional photometric combinations. Since `tE = thetaE / mu_rel` and `thetaE^2 = kappa M pi_rel`, mass, distance, absolute angular proper motion, horizon and core state remain `null`. BHSM surface topography includes gravitational spacetime geometry itself. When observations support a gravitational origin, the inferred exterior has that interpretation, with one optical response counted once and no required non-GR residual. A fitted or nonrejected light curve alone does not validate its gravitational origin. A unique physical interface shape, distinct dynamical deformation and core process remain separate inferences. Inadequate fits retain their status. See [UNRESOLVED_OBSERVATIONS.md](UNRESOLVED_OBSERVATIONS.md) for the likelihood and optional astrometric metadata gates.
+
+The common reporting contract is `bhtracker/theory/BHSM_SURFACE_GEOMETRY_CONTRACT.json`, pinned to Norman P. Carberry's 23 October author clarification in the formal BHSM repository. It leaves the 22 October core/surface contract and original theory bytes unchanged. Python and notebooks can inspect it with `from bhtracker import surface_geometry_interpretation`, then `surface_geometry_interpretation()`. To attach current reporting context to an archived result without changing its original scientific metadata, use `with_surface_geometry_interpretation(result)`. This returns a new outer object, preserves the original status, inputs, source hash and nulls, and adds only `surface_geometry_interpretation`; it is neither a refit nor evidence validation.
+
+Open the separate frozen evidence spectrum with `python -m bhtracker serve --open --page spectrum`, or use its link in any workspace. It preserves all 1,808 model records, including the exact `Potential black hole` investigation category, and distinguishes gravitational evidence from a conditional model and from black-hole identity. These are model/catalog memberships, not a count of unique objects or discoveries. The older 155-event atlas remains separate. The installed viewer uses the author-checked v11 viewer on frozen v10 data: the data JSON, CSV, binding/readme and four figures are unchanged. The v11 manifest binds that HTML change separately: searches include aliases already present on qualified catalog memberships, while contextual neighbors are excluded. View exports record the viewer revision separately from the data identity. Older views replay only when their exact subset and record values still agree. Text assets use deterministic gzip storage; the server verifies and serves the exact decoded originals, with only the frozen inline scripts/styles authorized by hashes and no client network/model calls. `python -m bhtracker spectrum summary` reports hashes/counts; `spectrum export --output FRESH_DIRECTORY` exports all ten originals; `spectrum verify DIRECTORY` checks their byte identity. Verification is not fit replay or scientific validation. Repackage those originals with `python scripts/package_spectrum_snapshot.py --source EXPORTED_DIRECTORY --output NEW_DIRECTORY`. Exact compressed-byte reproduction requires the recorded Python/zlib implementation; different compressors can produce different stored streams with identical original bytes. Installed wheels use the frozen recorded streams directly.
+
+## A moving lens across the sky
+
+Open **Moving lens**, run `python -m bhtracker serve --open --page skytrack`, or use `Start_Blackhole_Tracker_Moving_Lens.cmd`. Load the explicitly synthetic example to explore the interface. Actual inputs must identify lens angular positions, native epochs, a calibrated tangent-plane frame and supplied covariance. Catalog source directions and raw source photocenters are refused as lens positions. Full cross-epoch covariance is supported; independent epoch blocks require an explicit independence assumption.
+
+The four-parameter linear fit reports angular motion, the complete position/motion covariance, residual-adequacy statistics and a separate stationary-motion comparison. These refer to the supplied frame. A fitted lens-motion vector is not automatically relative lens-source motion. It does not supply distance, physical speed, mass, a horizon or black-hole identity. Two distinct epochs fit a line without testing a trajectory. Annual parallax, source motion, calibration and common-lens association require their own evidence.
+
+Export the result, clear the workspace, open the saved JSON and choose **Verify replay**. Input text, row identities, uncertainty declarations, source hashes, settings, BHSM interpretation and numerical state remain available. Numerical replay is a consistency check. [SKYTRACK.md](SKYTRACK.md) derives the method, defines its input and precision requirements, explains CLI/Python use and sets out the separate multi-event association calculation.
+
+The evidence spectrum's moving-lens filters retain unknown geometry instead of substituting source-star measurements. Collecting a sequence preserves its native model-time groups and historical source markers; it does not establish a common lens. Short duration, proximity or a small photometric amplitude alone cannot distinguish black holes from stellar or substellar lenses.
 
 ## Reviewed fitting corrections in rc3
 
@@ -92,7 +108,7 @@ For an existing source installation, close the app and run these PowerShell comm
 .\.venv\Scripts\python.exe -m bhtracker serve --open
 ```
 
-If the environment does not exist yet, use the explicit joint launcher or the environment-creation commands below first. A wheel installation uses its actual local path: `python -m pip install "./bhsm_blackhole_tracker-0.2.0rc5-py3-none-any.whl[astrometry]"`. Quoting keeps the path and extra together, including paths containing spaces. On Linux/macOS, use the interpreter in your chosen virtual environment with the same wheel-extra command.
+If the environment does not exist yet, use the explicit joint launcher or the environment-creation commands below first. A wheel installation uses its actual local path: `python -m pip install "./bhsm_blackhole_tracker-0.2.0rc6-py3-none-any.whl[astrometry]"`. Quoting keeps the path and extra together, including paths containing spaces. On Linux/macOS, use the interpreter in your chosen virtual environment with the same wheel-extra command.
 
 Open **Joint astrometry research** and follow [JOINT_RESEARCH.md](JOINT_RESEARCH.md) for the reviewed source-pack import, explicit clock/frame assumptions, fitting, export and replay. Enabling the dependency does not validate a noise model or establish a black-hole mass. The original 2022 ambiguous HST export and the separately versioned 2023 benchmark remain distinct.
 
@@ -118,7 +134,7 @@ python -m bhtracker serve --port 8766 --open
 For development and notebook replay, use `python -m pip install -e ".[dev]"`. To run the optional joint tests and notebooks, explicitly use `python -m pip install -e ".[dev,astrometry]"`. To install a supplied wheel, replace the path below with its actual location:
 
 ```text
-python -m pip install path/to/bhsm_blackhole_tracker-0.2.0rc5-py3-none-any.whl
+python -m pip install path/to/bhsm_blackhole_tracker-0.2.0rc6-py3-none-any.whl
 python -m bhtracker serve --open
 ```
 
@@ -392,13 +408,13 @@ In an R1 fit, `mass_msun` is the adopted action's **metric/source mass parameter
 
 `flux_ratio` in parameters or analysis always means **scalar-source normalization**, whereas the measurement `ln_flux_ratio` means image magnification ratio. Changing the R1 policy changes the statistical model; retain it in a comparison.
 
-The nonlinear R1 fit estimates its spherical exterior and ordinary nuisances. The boundary envelope is then a **local GLS information assessment** after source/lens and axial profiling, with an admitted amplitude cap. It is not an unconstrained nonlinear measurement of a surface deformation. Read `physics_admission.reasons`, `allowed_physics_models`, `model.flux_policy` and `conditional_envelope` together.
+The nonlinear R1 fit estimates its spherical exterior and ordinary nuisances. The boundary envelope is then a **local GLS information assessment** after source/lens and axial profiling, with an admitted amplitude cap. It does not independently measure a unique physical interface shape or distinct dynamical surface response. The fitted gravitational imprint retains its BHSM surface-topography interpretation. Read `physics_admission.reasons`, `allowed_physics_models`, `model.flux_policy` and `conditional_envelope` together.
 
 Envelope status `UNRESOLVED` means the admitted design has weak or rank-deficient information. `NOT_EVALUATED` means the baseline fit was rejected; no envelope sensitivity is interpreted. `NOT_ADMITTED` means the domain checks disallow that inference; `NOT_REQUESTED` is the GR default. `INFORMATION_AVAILABLE` describes local information under the declared model and cap; it is not a detection claim. An unconstrained amplitude estimate outside the admitted ball is not a physical R1 state measurement. The exact zero-flux harmonic/ordinary-compact degeneracy remains a cause ambiguity.
 
 ## Executed notebooks and validation
 
-The notebooks are saved with executed outputs; their cell counts and SHA-256 hashes are recorded in `validation/notebook_receipt.json`:
+The first five notebooks retain their versioned executed outputs and the historical `validation/notebook_receipt.json`. The RC6 moving-lens walkthrough has its own [final installed-wheel execution receipt](validation/notebook06_rc6_receipt_v2.json); earlier notebook runs are not relabeled as RC6 validation.
 
 | Notebook | Walkthrough |
 |---|---|
@@ -407,6 +423,7 @@ The notebooks are saved with executed outputs; their cell counts and SHA-256 has
 | `notebooks/03_native_unresolved_photometry.ipynb` | Native OGLE import, all-row fit/residuals and export/refit replay. Four code cells; actual external observations when configured. |
 | `notebooks/04_joint_astrometry_and_parallax.ipynb` | Verified 2023 source import, recorded conditional joint fit/profile audit, all-row plots and forward-state replay. Five code cells; no automatic measured fit or accepted mass claim. |
 | `notebooks/05_candidate_atlas.ipynb` | All 155 source/events, three differently qualified targets, separate literature benchmark, explicit unavailable lens quantities and exact UTF-8 inventory replay. Six code cells; no physical fit. |
+| `notebooks/06_moving_lens_and_primary_target.ipynb` | Source-pinned primary target and all published alternatives; synthetic angular-track fit, complete covariance, residual plot and export/replay. No native-observation fit or black-hole identification. |
 
 Open them in an editor with Jupyter support and select the environment in which this product is installed. With development dependencies installed, replay them and the product checks from this source directory:
 

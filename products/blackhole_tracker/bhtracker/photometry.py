@@ -361,7 +361,7 @@ def fit_photometry(dataset, *, initial=None, starts=12, max_nfev=1500, noise_sca
         "reason": "tE=thetaE/mu_rel; thetaE^2=kappa*M*pi_rel. A photometric timescale alone identifies neither mass, distance nor angular proper motion."}
     interpretation["parameter_meanings"] = [
         {"parameter": "t0 / tE_days / u0", "interpretation": "Relative-time trajectory of the single unresolved compact-configuration optical response.",
-         "qualification": "These dimensionless/relative-time lens parameters do not measure a BHSM core, physical boundary deformation, mass or horizon."},
+         "qualification": "These parameters constrain a conditional lensing imprint, interpreted as BHSM surface topography. A fitted or nonrejected light curve alone does not validate its gravitational origin. Physical interface shape, distinct deformation dynamics, core, mass and horizon remain unidentified."},
         {"parameter": "instrument baseline/source fraction", "interpretation": "Photometric calibration and unresolved luminous blending nuisance parameters.",
          "qualification": "Brightness is the image-summed flux; it is not the ratio of resolved images."}]
     status = "PHOTOMETRIC_FIT" if well_solved else "PHOTOMETRIC_FIT_UNRESOLVED"
