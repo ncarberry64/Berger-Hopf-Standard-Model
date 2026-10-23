@@ -53,17 +53,13 @@ export function BergerHopf({
   const [playing, setPlaying] = useState(true);
   const [selected, setSelected] = useState(0);
   const [auto, setAuto] = useState(true);
+  const [started, setStarted] = useState(0);
   const [scale, setScale] = useState(1);
   const [manualScale, setManualScale] = useState(false);
-  const {
-    ref,
-    time,
-    beat,
-    phraseTime: elapsed,
-    restartSequence,
-  } = useSceneClock(motion && playing, Infinity, 0, 'musical', 8);
-  const stage = auto ? (selected + Math.floor(elapsed / 8)) % 3 : selected;
-  const choreography = bergerMotion(time, elapsed, beat, stage);
+  const { ref, time } = useSceneClock(motion && playing, Infinity, 0, 'bass');
+  const elapsed = Math.max(0, time - started);
+  const stage = auto ? (selected + Math.floor(elapsed / 10)) % 3 : selected;
+  const choreography = bergerMotion(time, elapsed, stage);
   const fiberScale =
     stage === 0 ? 1 : manualScale ? scale : choreography.fiberScale;
   const chapter = chapters[stage];
@@ -115,7 +111,7 @@ export function BergerHopf({
       <div
         className="bh-theatre"
         ref={ref}
-        data-rendered-beat={beat ?? undefined}
+        data-motion-driver="bass"
         data-chapter={stage}
       >
         <div className="bh-projection">
@@ -162,7 +158,7 @@ export function BergerHopf({
                     <circle
                       cx={dot[0]}
                       cy={dot[1]}
-                      r={i === focus ? 4.5 + 1.2 * choreography.accent : 2.5}
+                      r={i === focus ? 4.5 : 2.5}
                       fill={colors[Math.floor(i / 6)]}
                     />
                   )}
@@ -196,7 +192,7 @@ export function BergerHopf({
             <circle
               cx={587 + base[0] * 60}
               cy={151 - base[2] * 60}
-              r={5 + choreography.accent}
+              r="5"
               fill="#bda7f5"
             />
             <text
@@ -276,8 +272,6 @@ export function BergerHopf({
         <button
           onClick={() => {
             if (!playing || !motion) {
-              setSelected(stage);
-              restartSequence();
               showScene();
             }
             if (!motion) {
@@ -292,7 +286,7 @@ export function BergerHopf({
         <button
           onClick={() => {
             setSelected(0);
-            restartSequence();
+            setStarted(time);
             setAuto(true);
             setManualScale(false);
             setPlaying(true);

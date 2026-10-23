@@ -105,9 +105,14 @@ export function useSceneClock<T extends HTMLElement = HTMLDivElement>(
       scene.dataset.sceneTime = next.toFixed(4);
       if (sequence) scene.dataset.phraseTime = phraseTime.toFixed(4);
       if (beat !== null) scene.dataset.musicBeat = beat.toFixed(4);
-      // Beat accents render on every display frame. Expensive ambient diagrams
+      // Beat and bass timing render on every display frame. Expensive ambient diagrams
       // keep their existing 20-fps budget while sampling the media every frame.
-      if (beat !== null || now - paintedAt >= 50 || next >= stopAt) {
+      if (
+        beat !== null ||
+        musicMode === 'bass' ||
+        now - paintedAt >= 50 ||
+        next >= stopAt
+      ) {
         setFrame({ time: next, beat, phraseTime });
         paintedAt = now;
       }

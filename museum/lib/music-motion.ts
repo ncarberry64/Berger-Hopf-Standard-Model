@@ -1,6 +1,7 @@
 import cues from './music-cues.json' with { type: 'json' };
+import bass from './exhibit3-bass.json' with { type: 'json' };
 
-export type MusicMotionMode = 'musical' | 'cadence' | 'independent';
+export type MusicMotionMode = 'musical' | 'bass' | 'cadence' | 'independent';
 export type MusicSample = {
   slideId: string;
   source: string;
@@ -19,6 +20,46 @@ const tracks = cues.tracks as Record<string, Cue>;
 const integrals = new Map<string, { values: number[]; mean: number }>();
 const clamp = (value: number, low: number, high: number) =>
   Math.max(low, Math.min(high, value));
+
+const bassIntegral = [0];
+for (let i = 1; i < bass.energy.length; i++)
+  bassIntegral.push(
+    bassIntegral[i - 1] +
+      ((bass.energy[i - 1] + bass.energy[i]) * bass.energyStepSeconds) / 2,
+  );
+const bassSpan = (bass.energy.length - 1) * bass.energyStepSeconds;
+const bassMean = bassIntegral.at(-1)! / bassSpan;
+// This gain controls presentation speed only. Keep it forward-moving even if
+// a future delivery has a louder average bass level.
+const bassGain = Math.min(1.25, 0.85 / Math.max(0.001, bassMean));
+
+function bassSample(seconds: number) {
+  const t = Math.max(0, Math.min(seconds, bassSpan));
+  const i = Math.min(
+    bass.energy.length - 2,
+    Math.floor(t / bass.energyStepSeconds),
+  );
+  const dt = t - i * bass.energyStepSeconds;
+  const slope = (bass.energy[i + 1] - bass.energy[i]) / bass.energyStepSeconds;
+  return { t, i, dt, slope, energy: bass.energy[i] + slope * dt };
+}
+
+export function exhibit3BassSpeed(seconds: number) {
+  if (seconds >= bassSpan) return 1;
+  return 1 + bassGain * (bassSample(seconds).energy - bassMean);
+}
+
+export function exhibit3BassPosition(seconds: number) {
+  const t = Math.max(0, seconds);
+  const sample = bassSample(t);
+  const area =
+    bassIntegral[sample.i] +
+    bass.energy[sample.i] * sample.dt +
+    (sample.slope * sample.dt * sample.dt) / 2;
+  // Integrate actual low-frequency energy: motion accelerates with the bass
+  // and relaxes between swells, without a metronome or a phase reset.
+  return t + bassGain * (area - bassMean * sample.t);
+}
 
 export function musicBeat(slideId: string, seconds: number) {
   const cue = tracks[slideId];
@@ -90,6 +131,8 @@ export function musicPosition(
 ) {
   const cue = tracks[slideId];
   const t = Math.max(0, seconds);
+  if (mode === 'bass' && slideId === 'berger-hopf')
+    return { position: exhibit3BassPosition(t), grid: false };
   if (!cue || mode !== 'musical') return { position: t, grid: false };
   if (
     cue.confidence === 'high' &&

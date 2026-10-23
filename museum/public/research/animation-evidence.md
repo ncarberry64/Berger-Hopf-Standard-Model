@@ -31,8 +31,8 @@ completion definition and gate ledger govern the claims.
 ## Music and presentation timing
 
 While an exhibit's music is playing, illustrative motion follows that audio
-element's playback position. Stable musical pulses gently align the geometry
-and comparison tours to phrases. For ambient or changing-tempo recordings,
+element's playback position. Stable musical pulses align the comparison
+tour to phrases. For ambient or changing-tempo recordings,
 motion follows the recorded swells instead of imposing a fixed beat. The
 collision theatre retains its eight-second approach, reveal and inspection
 cadence. Muting the music preserves synchronization; silent viewing retains
@@ -51,15 +51,20 @@ alignment hold take priority. Hidden and offscreen scenes freeze; returning
 never fast-forwards through material the visitor has not seen. Seeking or
 looping the music rebases the presentation without rewinding the scene.
 
-Beat-led geometry uses whole musical cycles: the Berger metric breath and
-selected Hopf-fiber lap span 16 beats, and the BHSM chapter's laps span eight.
-Small light accents land on individual beats. Their phase is read directly
-from media time on every display frame, independently of the continuous clock
-that preserves finite reveals and inspection holds. Comparison sequences use
+Exhibit 3 follows the recording's bass rather than its faster rhythmic layer.
+`museum/scripts/analyze-exhibit3-bass.py` measures the exact local MP3's
+30–160 Hz energy at 25 ms intervals, using zero-delay filtering and centered
+smoothing. This envelope varies the speed of the original motion continuously:
+the geometry moves faster with the bass and relaxes between swells. The native
+orbit, viewing rotation and metric formulas remain intact; there are no added
+light pulses, fixed beat laps or bar waits in this exhibit. Pauses, manual
+metric settings and replay retain their original behavior.
+
+Comparison sequences use
 four beats of lead-in, four of reveal and eight of reading hold. Automatic
 replays wait for the next bar before starting their reading sequence.
 
-Pulse offsets are refined against strong recorded attacks rather than the
+Comparison pulse offsets are refined against strong recorded attacks rather than the
 average spectral phase. Held-out attacks validate the fit. This reduces the
 small timing bias in the original cue estimates without introducing a guessed
 device-latency correction. Ambient diagrams retain their measured swells.
