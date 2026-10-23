@@ -6,6 +6,7 @@ import { collisionDemo } from '../lib/collision-demo';
 import { demos } from '../lib/collision-scenarios';
 import { buildTransitionRecord } from '../lib/bhsm-transition';
 import { BHSMTransition } from './bhsm-transition';
+import collisionCues from '../lib/collision-cues.json';
 import {
   invariantMass,
   trackPoints,
@@ -26,18 +27,22 @@ export function CollisionTheatre({ motion }: { motion: boolean }) {
   const [cms, setCms] = useState<CMSVector[]>([]),
     [failed, setFailed] = useState(false);
   const [baseIndex, setIndex] = useState(0),
-    [started, setStarted] = useState(0),
     [playing, setPlaying] = useState(true),
     [mode, setMode] = useState('all');
-  // Keep exhibit 7's established eight-second choreography while locking its
-  // clock to actual playback, including buffering, rather than timer ticks.
-  const { ref: sceneRef, time } = useSceneClock(
+  const {
+    ref: sceneRef,
+    impactTime,
+    restartImpacts,
+  } = useSceneClock(
     motion && playing,
     Infinity,
     0,
     'cadence',
+    undefined,
+    undefined,
+    collisionCues.impactTimesSeconds,
   );
-  const clock = (time - started) % 8;
+  const clock = impactTime % 8;
   useEffect(() => {
     fetch('./data/cms-four-vector-sample.json')
       .then((r) => {
@@ -60,8 +65,7 @@ export function CollisionTheatre({ motion }: { motion: boolean }) {
               : []),
           ]);
   const index =
-    (baseIndex + Math.floor((time - started) / 8)) %
-    Math.max(1, playlist.length);
+    (baseIndex + Math.floor(impactTime / 8)) % Math.max(1, playlist.length);
   const item = playlist[index % Math.max(1, playlist.length)];
   const current = item?.real
     ? cms.filter((v) => v.event_index === item.id)
@@ -105,10 +109,14 @@ export function CollisionTheatre({ motion }: { motion: boolean }) {
     !motion || (!playing && clock === 0) ? 1 : Math.min(1, clock / 1.4);
   const step = (delta: number) => {
     setIndex((index + delta + playlist.length) % Math.max(1, playlist.length));
-    setStarted(time);
+    restartImpacts();
   };
   return (
-    <div className="collision-theatre" ref={sceneRef}>
+    <div
+      className="collision-theatre"
+      ref={sceneRef}
+      data-impact-phase={clock.toFixed(4)}
+    >
       <div className="media-toolbar">
         <span className="data-label">
           {item?.real
@@ -122,7 +130,7 @@ export function CollisionTheatre({ motion }: { motion: boolean }) {
             onChange={(e) => {
               setMode(e.target.value);
               setIndex(0);
-              setStarted(time);
+              restartImpacts();
             }}
           >
             <option value="all">Guided tour · data + demonstrations</option>
@@ -226,7 +234,7 @@ export function CollisionTheatre({ motion }: { motion: boolean }) {
                 cy="270"
                 r={8 + Math.sin(Math.min(1, reveal) * Math.PI) * 70}
                 fill="#fff"
-                opacity={Math.max(0, 0.3 - reveal * 0.7)}
+                opacity={clock < 1.4 ? 0 : Math.max(0, 0.65 - reveal * 1.5)}
               />
               {Array.from({ length: 32 }, (_, i) => (
                 <path

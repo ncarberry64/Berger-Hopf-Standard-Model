@@ -43,12 +43,7 @@ const phases = [
   {
     start: 89,
     title: 'Evaporation and surface restoration',
-    text: 'The historical BHSM Bubble/Wave interpretation links black-hole evaporation with restoration of surface tension. Shrinking cores and expanding halos illustrate this unestablished link; no evaporation flux is calculated.',
-  },
-  {
-    start: 96,
-    title: 'Smooth surface / heat death',
-    text: 'After heat death, the proposed core–surface differential reaches zero. At that very instant, BHSM proposes that the whole cosmos becomes the one white-hole event. The animation holds this boundary briefly so it can be inspected; the proposal specifies no waiting period or spreading front.',
+    text: 'The historical BHSM Bubble/Wave interpretation links black-hole evaporation with restoration of surface tension. Shrinking black-hole entrance symbols and expanding halos illustrate this unestablished link; no evaporation flux is calculated. At heat death, the proposed zero core–surface differential becomes the whole-cosmos white-hole event in a single instant.',
   },
 ];
 const clamp = (v: number) => Math.max(0, Math.min(1, v));
@@ -79,9 +74,8 @@ export function CosmicEnclosure({ motion }: { motion: boolean }) {
   const phase =
     phases[active].start +
     (progress - active) *
-      ((phases[active + 1]?.start ?? 100) - phases[active].start);
-  const release = phase < 10,
-    smooth = phase >= 96;
+      ((phases[active + 1]?.start ?? 96) - phases[active].start);
+  const release = phase < 10;
   const turn = phase * 0.006,
     web = clamp((phase - 34) / 16) * (1 - clamp((phase - 74) / 22)),
     evap = clamp((phase - 89) / 7),
@@ -111,7 +105,9 @@ export function CosmicEnclosure({ motion }: { motion: boolean }) {
       <div className="cosmic-presentation">
         <button
           className="event-stage cosmic-stage"
+          style={{ background: release ? '#fff' : undefined }}
           ref={sceneRef}
+          data-white-event={release}
           aria-label="Next stage of the BHSM cosmic cycle"
           onClick={() => {
             setPlaying(false);
@@ -122,7 +118,11 @@ export function CosmicEnclosure({ motion }: { motion: boolean }) {
             viewBox="0 0 960 650"
             data-cycle-progress={progress.toFixed(4)}
             role="img"
-            aria-label={`Cosmic hypersphere: ${phases[active].title}. Irregular filaments, broad voids and dense cluster knots evolve into dark concentrations and finally a smooth surface.`}
+            aria-label={
+              release
+                ? 'The entire scene is uniformly white: the proposed instantaneous whole-cosmos white-hole event at heat death. There is no spreading front or intermediate heat-death stage.'
+                : `Cosmic hypersphere: ${phases[active].title}. Irregular filaments, broad voids and dense cluster knots evolve into many dark black-hole entrances connected to one white shared core.`
+            }
           >
             <defs>
               <radialGradient id="cosmic-nebula">
@@ -159,11 +159,11 @@ export function CosmicEnclosure({ motion }: { motion: boolean }) {
               cx="480"
               cy="310"
               r="260"
-              fill={smooth ? '#1b3044' : 'url(#cosmic-nebula)'}
+              fill="url(#cosmic-nebula)"
               stroke="#25313f"
               strokeWidth="1"
             />
-            {!smooth && (
+            {!release && (
               <g clipPath="url(#cosmic-surface-clip)">
                 {shellOpacity > 0 &&
                   webHubs.map((i) => {
@@ -389,16 +389,13 @@ export function CosmicEnclosure({ motion }: { motion: boolean }) {
                 )}
               </g>
             )}
-            {phase >= 68 && phase < 96 && (
-              <g
-                className="cosmic-shared-core"
-                opacity={clamp((phase - 68) / 5) * (1 - evap)}
-              >
+            {phase >= 68 && (
+              <g className="cosmic-shared-core">
                 {webHubs.map((i, k) => {
                   const p = point(i, turn);
                   const travel = (progress * 2 + k / webHubs.length) % 1;
                   return (
-                    <g key={i}>
+                    <g key={i} opacity={1 - evap}>
                       <path
                         d={`M${f(p[0])} ${f(p[1])} L480 310`}
                         fill="none"
@@ -419,15 +416,16 @@ export function CosmicEnclosure({ motion }: { motion: boolean }) {
                   cx="480"
                   cy="310"
                   r="32"
-                  fill="#060911"
-                  stroke="#c7b7f5"
+                  data-shared-core="true"
+                  fill="#fff"
+                  stroke="#fff"
                   strokeWidth="2"
                 />
                 <text
                   x="480"
                   y="315"
                   textAnchor="middle"
-                  fill="#eee6ff"
+                  fill="#172334"
                   fontSize="14"
                 >
                   ONE CORE
@@ -443,17 +441,6 @@ export function CosmicEnclosure({ motion }: { motion: boolean }) {
                 </text>
               </g>
             )}
-            {smooth && (
-              <text
-                x="480"
-                y="310"
-                textAnchor="middle"
-                fill="#f4ebd5"
-                fontSize="22"
-              >
-                Core–surface differential = 0
-              </text>
-            )}
             <text
               x="480"
               y="615"
@@ -463,6 +450,14 @@ export function CosmicEnclosure({ motion }: { motion: boolean }) {
             >
               {phases[active].title}
             </text>
+            {release && (
+              <rect
+                data-whole-cosmos-white="true"
+                width="960"
+                height="650"
+                fill="#fff"
+              />
+            )}
           </svg>
         </button>
         <div className="cosmic-panel-controls">
@@ -493,8 +488,9 @@ export function CosmicEnclosure({ motion }: { motion: boolean }) {
             <p>{phases[active].text}</p>
             <p className="cycle-legend">
               Pale filaments: matter density · warm knots: galaxy groups and
-              clusters · dark cores: enlarged black-hole symbols · diffuse
-              surface light: proposed white-hole release.
+              clusters · dark circles: black-hole entrances · one white center:
+              the shared core · all white: the proposed whole-cosmos white-hole
+              event.
             </p>
           </div>
         </div>
@@ -502,13 +498,14 @@ export function CosmicEnclosure({ motion }: { motion: boolean }) {
       <p className="console-caption">
         Continuous animation of the BHSM proposal. The visible tour follows the
         music&apos;s swells, or advances about every 1.5 seconds without music.
-        Select a stage to pause and inspect it. The brief hold at heat death
-        makes the boundary readable; BHSM proposes an instantaneous,
-        whole-cosmos white-hole event when the core–surface differential
-        vanishes. This is a conceptual visualization, not a computed cosmic
-        history or physical time scale. The numerical R1 response is animated in
-        the next exhibit. System reduced-motion and museum pause settings stop
-        automatic playback.
+        Select a stage to pause and inspect it. At heat death, the scene turns
+        entirely white at once: the proposed whole-cosmos white-hole event when
+        the core–surface differential vanishes. There is no intermediate
+        heat-death slide or spreading front. Select the white-hole event to
+        inspect the white frame. This is a conceptual visualization, not a
+        computed cosmic history or physical time scale. The numerical R1
+        response is animated in the next exhibit. System reduced-motion and
+        museum pause settings stop automatic playback.
       </p>
       <div className="cosmic-context">
         <div>

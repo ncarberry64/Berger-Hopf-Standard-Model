@@ -1,5 +1,22 @@
 # Museum content update — 24 September 2026
 
+## Music and cosmology presentation — 23 October 2026
+
+Collision contacts follow measured attacks in `Race The Sun`, keeping their
+approach and outgoing reveal while the reading hold absorbs the score's
+variable spacing. Blackhole Tracker now uses `Solace`; its lensing view and
+illustrative epoch playback follow the measured soundtrack, while positions
+at each observer year remain calculated from the same forward model.
+Comparisons run twice as fast, using eight measured beats per entry.
+
+The original cosmic cycle shows one white shared core among dark black-hole
+entrances. At heat death the whole scene turns uniformly white in one frame;
+the separate heat-death stage is removed. R1 globes now deform with the same
+normalized signed field used for their colors: cyan outward, gold inward,
+zero round. This displacement is illustrative, not a computed physical metric.
+Music paces the exact saved epochs without changing matrices or scientific
+readouts. Exhibit 3's piano-note chapter cues remain unchanged.
+
 ## Blackhole Tracker · researcher access — 22 October 2026
 
 Added an independent Blackhole Tracker exhibit after Collisions, with the same

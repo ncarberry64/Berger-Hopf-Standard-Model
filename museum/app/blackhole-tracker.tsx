@@ -28,7 +28,12 @@ export function BlackholeTracker({
   const [playing, setPlaying] = useState(true);
   const [anchor, setAnchor] = useState({ epoch: 2015, time: 0 });
   const [massScale, setMassScale] = useState(1);
-  const { ref, time } = useSceneClock(motion && playing, Infinity, 0, 'independent');
+  const { ref, time } = useSceneClock(
+    motion && playing,
+    Infinity,
+    0,
+    'musical',
+  );
   // A forward/back presentation loop. The declared trajectory remains linear;
   // the reverse leg is explicitly replay, not reversed physical motion.
   const phase = (anchor.epoch - 2015 + (time - anchor.time) * 0.5) % 20;
@@ -211,7 +216,7 @@ export function BlackholeTracker({
             <small>
               {!motion
                 ? 'Museum motion is off. Step through observer years manually.'
-                : 'Playback moves forward, then replays backward. Its speed is illustrative.'}
+                : 'Playback follows the music’s swells, then replays backward. Observer-year positions stay calculated; playback speed is illustrative.'}
             </small>
             <label htmlFor="tracker-mass">
               Declared mass{' '}
