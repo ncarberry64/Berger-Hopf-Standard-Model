@@ -1,0 +1,115 @@
+"""Evaluate actual reached source-cell birth cubic and canonical contacts."""
+from __future__ import annotations
+import argparse
+from hashlib import sha256
+import json
+from pathlib import Path
+import sys
+import numpy as np
+ROOT=Path(__file__).resolve().parents[1];sys.path.insert(0,str(ROOT/'src'))
+from evaluate_muon_native_product_factor_graph import record,serial,array_record,deterministic_npz
+from bhsm.interface.muon_current_source_motion_mean_load import (
+    enriched_reached_first_fields,
+)
+from bhsm.interface.muon_magnetic_source_mean_load import (
+    load_magnetic_reached_mean_inputs,magnetic_source_complete_mean_load,
+    magnetic_source_jet_at_node,magnetic_reached_first_fields,
+)
+from bhsm.interface.muon_parent_maxwell_full_q_application import retained_full_q_angular_space
+from bhsm.interface.muon_magnetic_open_lepton_vertex import magnetic_open_fields_at_node
+from bhsm.interface.muon_birth_trace_enriched_action import generic_coordinate_lift
+
+
+def evaluate(directories):
+    angular=retained_full_q_angular_space(ROOT);arrays={};rows=[];hashes={}
+    for side,directory in directories.items():
+        print(json.dumps(dict(stage='complete_same_phase_mean_load',side=side)),flush=True)
+        inputs=load_magnetic_reached_mean_inputs(directory,repository=ROOT)
+        if inputs['receipt']['side']!=side:raise ValueError('response side mismatch')
+        fields=magnetic_open_fields_at_node(inputs,inputs['times'][-1] if side=='incoming' else inputs['times'][0])
+        kwargs={name:fields[name] for name in ('first_gauge','first_gauge_rate','first_gauge_radial','first_wall_gauge','first_H','first_H_rate')}
+        source_jet=magnetic_source_jet_at_node(inputs,fields['response_time'])
+        applied=magnetic_source_complete_mean_load(fields['raw_fields'],inputs['representation'],angular,
+            source_jet,fields['profile'],fields['profile_rate'],**kwargs,
+            nu_squared_action=inputs['receipt']['action_parameters']['nu_squared_action'])
+        lift=generic_coordinate_lift(inputs['representation']['gauge_labels'])['lift']
+        master=np.einsum('rc,rAB->cAB',lift,applied['raw_mean_cotangent'])
+        arrays[side+'_mean_master_cotangent']=master
+        arrays[side+'_canonical_velocity_contact']=master[106:212]
+        arrays[side+'_algebraic_contact']=master[212:]
+        for name,value in applied.items():
+            if isinstance(value,np.ndarray):arrays[side+'_'+name]=value
+        for name,value in applied['geometry_application'].items():
+            if isinstance(value,np.ndarray):arrays[side+'_geometry_'+name]=value
+        arrays[side+'_raw268']=fields['raw_fields'];arrays[side+'_first_H']=fields['first_H'];arrays[side+'_first_H_rate']=fields['first_H_rate']
+        arrays[side+'_first_wall_gauge']=fields['first_wall_gauge']
+        hashes.update(inputs['input_hashes'])
+        names=('raw_mean_cotangent','Maxwell_gauge_value_cotangent','Maxwell_gauge_rate_cotangent',
+            'scalar_gauge_value_cotangent','scalar_value_cotangent','scalar_rate_cotangent')
+        rows.append(dict(side=side,response_time=fields['response_time'],coordinate_time=fields['coordinate_time'],
+            temporal_position='reached source-cell common birth node; incoming end/outgoing initial canonical source; background v/y held at each onecell midpoint',
+            saved_source_values_replaced=fields['saved_source_values_replaced'],
+            source_value_reconstruction_discrepancy=fields['source_value_reconstruction_discrepancy'],
+            source_rate_reconstruction_discrepancy=fields['source_rate_reconstruction_discrepancy'],
+            profile=fields['profile'],profile_rate=fields['profile_rate'],
+            source_temporal_scope='actual common birth plateau; profile1,rate0; inherited source fields/canonical data and source-motion contacts retained',
+            norms={name:float(np.linalg.norm(applied[name])) for name in names},
+            geometry_fixed_field_norm=float(np.linalg.norm(applied['geometry_application']['fixed_field_geometry_cubic'])),
+            legacy_Tb_motion_disabled=True,
+            actual_full_source_motion_norm=float(np.linalg.norm(applied['source_motion_cotangent'])),
+            actual_scalar_source_motion_norm=float(np.linalg.norm(applied['scalar_source_motion_cotangent'])),
+            first_H_norm=float(np.linalg.norm(fields['first_H'])),first_H_rate_norm=float(np.linalg.norm(fields['first_H_rate'])),
+            first_gauge_norm=float(np.linalg.norm(fields['first_gauge'])),first_gauge_rate_norm=float(np.linalg.norm(fields['first_gauge_rate'])),
+            pair_symmetry_relative=float(np.linalg.norm(applied['raw_mean_cotangent']-applied['raw_mean_cotangent'].swapaxes(-1,-2))/(1+np.linalg.norm(applied['raw_mean_cotangent']))),
+            At_time_derivative_scope=fields['At_time_derivative_scope']))
+    if set(directories)=={'incoming','outgoing'}:
+        arrays['paired_canonical_velocity_contact']=arrays['incoming_canonical_velocity_contact']-arrays['outgoing_canonical_velocity_contact']
+    sources=[record('src/bhsm/interface/muon_magnetic_open_lepton_vertex.py',('magnetic_open_fields_at_node',)),record('src/bhsm/interface/muon_current_source_motion_mean_load.py',
+        ('current_source_complete_mean_load','enriched_reached_first_fields')),
+        record('src/bhsm/interface/muon_magnetic_source_mean_load.py',
+            ('load_magnetic_reached_mean_inputs','magnetic_source_complete_mean_load','magnetic_reached_first_fields')),
+        record('src/bhsm/interface/muon_electromagnetic_source_mean_load.py',('source_jet_motion_contact',)),
+        record('src/bhsm/interface/muon_electromagnetic_soft_magnetic_source.py',('uniform_magnetic_source_first_jets',)),
+        record('scripts/evaluate_muon_magnetic_birth_mean_load.py',('evaluate',)),
+        record('src/bhsm/interface/muon_current_source_motion_cubic.py',('current_source_cubic_application',)),
+        record('src/bhsm/interface/muon_parent_maxwell_source_mean_forcing.py',('maxwell_mean_cotangents','higgs_mean_cotangents'))]
+    for item in sources:hashes[item['path']]=item['sha256']
+    if hashes!={name:sha256((ROOT/name).read_bytes()).hexdigest() for name in hashes}:raise RuntimeError('consumed owner changed during application')
+    return serial(dict(classification='EVALUATED_REACHED_SOURCE_CELL_BIRTH_CUBIC_AND_CANONICAL_CONTACTS',
+        true_full220_endpoint_background_rates_substituted=False,
+        background_scope='saved first-source producer linear x interpolation and midpoint-held future v/y; no relabeling as full220 true birth rate',
+        canonical_contact_equation='P_v^T D_AB d_raw L_parent minus P_v^T D_AB d_raw L_child in the reached common coefficient frame',
+        global_reset_geometry_bundle_mean_contacts_completed=False,
+        paired_constraint_or_energy_rows_completed=False,
+        input_hashes=hashes,source_records=sources,applications=rows,array_records={k:array_record(v) for k,v in arrays.items()},
+        raw_coordinate_order='q37,qdot37,m24,normal,normal_rate,gauge80,gauge_rate80,Hreal4,Hrate4',
+        action_chain_rule='D_z S_AB=D3S[z,u_A,u_B]+D2S[D_z u_A,u_B]+D2S[u_A,D_z u_B]',
+        normalization='Maxwell1/[8*(2piÃƒâ€šÃ‚Â²)^2], scalar1/(2piÃƒâ€šÃ‚Â²)^2; real2Re scalar and full Haar volume once',
+        all_solved_first_Gauss_gauge_and_H_fields_used=True,all_represented_mean_rows_retained=True,
+        source_coordinate_clock='incoming coordinate_time=u-L; outgoing coordinate_time=u; dcoordinate_time/du=+1; signed past phase step never reverses field derivatives',
+        At_Gauss_rows_removed=False,paired_derivative_divided_by_two=False,source_motion_count=1,
+        response_radial_scope='root fresh finite radial polynomial interior and actual Higgs-selected electromagnetic wall source; actual full220 attached80 background retained; outgoing source reset is not inferred',
+        homogeneous_geometry_first_variations_zero_scope='literal retained odd n1+n3 source sector has zero Haar projection to the represented homogeneous geometry100; unrepresented angular geometry not filled zero',
+        complete_angular_geometry_first_response_claimed=False,old_response_or_bare_source_substituted=False,
+        actual_H_selected_EM_source=True,actual_local_magnetic_first_jet=True,active_source_indices=[0,1,2],inactive_source_indices=[3,4,5,6,7],old_transported_Q8_source_substituted=False,
+        analytic_H_and_Hdot_source_motion_retained=True,
+        consumed_full_attachment=True,consumed_endpoint_scope='evaluated full220 action attachment; fixed computational representation',
+        midpoint_prescribed_source_native_heat_combined_with_total_mean_load=False,
+        joint_mean_response_solved=False,physical_birth_domain_completed=False,complete_native_or_Pauli=False,
+        error_scope='literal finite action third contractions in binary64 on saved48 radial quadrature and actual ODE response node; no continuum or rounding enclosure')),arrays
+
+
+def main():
+    p=argparse.ArgumentParser();p.add_argument('--incoming-response',type=Path,required=True);p.add_argument('--outgoing-response',type=Path);p.add_argument('--output',type=Path,required=True);a=p.parse_args()
+    if a.output.exists():raise FileExistsError('preserve earlier applications')
+    directories=dict(incoming=a.incoming_response)
+    if a.outgoing_response is not None:directories['outgoing']=a.outgoing_response
+    packet,arrays=evaluate(directories);data=deterministic_npz(arrays)
+    if len(data)>10*1024**2:raise ValueError('retain all arrays in lossless split archives')
+    a.output.mkdir(parents=True);(a.output/'birth_mean_load.npz').write_bytes(data)
+    packet['archive']=dict(path='birth_mean_load.npz',bytes=len(data),sha256=sha256(data).hexdigest())
+    raw=(json.dumps(packet,indent=2,sort_keys=True,allow_nan=False)+'\n').encode();(a.output/'birth_mean_load.json').write_bytes(raw)
+    print(json.dumps(dict(receipt_sha256=sha256(raw).hexdigest(),archive=packet['archive'],applications=packet['applications'])),flush=True)
+
+
+if __name__=='__main__':main()

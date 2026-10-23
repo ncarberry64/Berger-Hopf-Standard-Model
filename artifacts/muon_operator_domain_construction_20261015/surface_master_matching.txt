@@ -1,0 +1,248 @@
+BHSM COVARIANT SURFACE / MASTER-FUNCTIONAL MATCHING MAP
+Constructive analytic derivation from retained terms. No new finite probe.
+
+Repository: C:/Users/carbe/Downloads/BHSM_muon_parent_maxwell_worktree_20261001
+Source anchors below are relative to that repository. This file changes no
+repository source, physical coefficient, operator domain or matching state.
+
+RESULT
+
+The regular minimal-area action and substantial geometric incidence are
+already defined. Their geometric stress and full second-variation pullback
+can be constructed explicitly; a blanket assertion that the membrane law
+or all geometry incidence is absent is incorrect. The construction below
+does not supply the entire stratified Dirac domain, or a unique numerical
+alpha_FSC. The remaining distinction is between evaluating an existing
+regular classical law and specifying/realizing the full microscopic
+cross-stratum operator needed to match its induced coefficient.
+
+1. Retained law and actual geometric incidence
+
+covariant_bubble_interface_mechanics.py:137-195 selects
+
+  S_Sigma = - sum_s integral_(W_s) gamma_s sqrt(|det h|) d^m y,
+  gamma_s = alpha_FSC ell_s^(-m_s),
+  S_Sigma^(ab) = -gamma_s h^(ab).
+
+Here W_s is an actual regular worldvolume and ell_s is the action-owned
+environmental length. No ell_s=ell_star equality is implied. The scalar,
+gauge, fermion, ghost and HS fields supply existing bulk traction, not new
+independent copies of surface couplings. Its carrier_reset at lines 269-299
+derives the regular trace relation from the solved worldvolume flow and
+spin/bundle transport. The current same-E1 scalar/gauge transport helpers
+are genuine local instances; they must not be erased by an older generic
+reset-law absence statement.
+
+There is also an existing M8 -> M5 -> M4 GEOMETRY compatibility map:
+completion/tensor_differential_incidence_v14_69.py:161-239 gives
+
+  G = [[A,B],[B*,C]],        Q(G)=A-B C^(-1) B*,
+  h = T* Q(G) T,
+  delta h = T* DQ[delta G] T + 2 xi K.
+
+The last term is the moving normal embedding variation. The quotient is
+not ordinary restriction from an eight-dimensional manifold to a
+codimension-three embedded boundary. One must not replace its bundle
+quotient by such a trace. The numerical helper enforces SPD matrices; the
+displayed algebra extends to a nondegenerate Lorentzian horizontal block
+with invertible vertical C, but that extension is an equation, not a claim
+that the helper has solved a physical Lorentzian background.
+
+For P=C^(-1),
+
+  DQ[dG] = dA-dB P B*-B P dB*+B P dC P B*.
+
+For a symmetric/ Hermitian covector density Lambda5 conjugate to Q, the
+pointwise trace-pairing adjoint already owned at lines 189-205 is
+
+  DQ*[Lambda5] = [[Lambda5, -Lambda5 B P],
+                  [-P B* Lambda5, P B* Lambda5 B P]].
+
+This is an adjoint between tensor/covector densities, not permission to
+choose additional L2 weights. The canonical stratum/fibre measures and
+their disintegration remain part of the actual integrated incidence.
+
+2. The selected membrane stress has an explicit pullback
+
+At fixed gamma on one regular environment stratum define
+
+  Lambda4 = -(gamma/2) sqrt(|h|) h^(-1).
+
+The exact first variation of the selected area law is
+
+  delta S_Sigma = integral tr(Lambda4 delta h).
+
+Consequently the local metric covector on M5 is T Lambda4 T*, its M8
+quotient pullback is DQ*[T Lambda4 T*], and the normal embedding covector
+is 2 tr(Lambda4 K) = -gamma sqrt(|h|) tr(h^(-1)K). The active source
+-delta S_Sigma has the opposite sign, as in the owned canonical relation.
+These are the existing area stress and curvature traction expressed in the
+actual compatibility chain. When both caps vary, their two pullbacks enter
+with the already-owned orientations and reactions; a copy of the area
+action is not inserted independently at every vertex.
+
+For a general W_s the same construction uses its OWN induced metric and
+normal. The M4 seam worldvolume of an M5 cap and a seven-dimensional
+worldvolume in M8 are not automatically the same stratum. A quotient or
+coarea relation can relate their measures, but cannot silently equate
+their primitive coefficients or Hilbert spaces.
+
+3. Full membrane Hessian: the second incidence is indispensable
+
+Let h_1,h_2,h_12 denote the TOTAL first and mixed second variations of the
+induced metric along two action-owned perturbations. For fixed gamma,
+
+  D12 S_Sigma = -gamma integral sqrt(|h|) [
+       (1/2) tr(h^(-1) h_12)
+     + (1/4) tr(h^(-1)h_1) tr(h^(-1)h_2)
+     - (1/2) tr(h^(-1)h_1 h^(-1)h_2) ].
+
+If gamma varies, the complete product rule additionally contains
+ -integral [gamma_12 dmu + gamma_1 D2 dmu + gamma_2 D1 dmu].
+These jets belong to alpha_FSC and the ACTUAL ell_s, not automatically to
+the microscopic cutoff c=ell_star^2.
+
+At fixed T, with the metric blocks used as affine coordinates, the mixed
+second quotient differential required in h_12 is
+
+ D12 Q = -B1 P B2* - B2 P B1*
+       + B1 P C2 P B* + B2 P C1 P B*
+       + B P C1 P B2* + B P C2 P B1*
+       - B P C1 P C2 P B* - B P C2 P C1 P B*.
+
+If G itself is a nonlinear coefficient map, add DQ[G_12]. If the embedding
+or tangent frame moves, differentiate T and the normal/shape terms too;
+retaining only T*D12Q T would omit them. This is a concrete chain rule,
+not a new surface constitutive density.
+
+There is an exact failure test for using first metric incidence alone.
+The owned round seam has K=0 (v14.69 module docstring and lines 232-239).
+At fixed bulk metric a pure normal displacement then has h_1=0. Any
+putative Wentzell insertion obtained ONLY by composing a tensor Hessian
+with that first metric differential assigns zero response to this whole
+kernel. The area second variation is nevertheless nonzero in general:
+the h_12 term retains spatial/time gradients and ambient curvature of the
+normal displacement. The corresponding normal RESTORING form in the
+owned constrained formation problem is gamma J_Sigma with
+
+  J_Sigma = -Delta_Sigma-(|A|^2+Ric(n,n)),
+
+as recorded by covariant_bubble_interface_mechanics.py:213-224. This does
+not identify a Lorentzian action Hessian with a positive Euclidean energy
+Hessian or insert a new Wick prescription; the sign of D12 S above remains
+as displayed. On a general moving/nonminimal background use that complete
+second variation;
+do not delete the background traction or constraint contacts by replacing
+the entire Hessian with a minimal-surface Jacobi formula.
+
+4. What enters a Wentzell / Calderon equation
+
+The retained nonlinear canonical relation is
+
+  q_e=C(F_B)q_c,
+  Pi_c+C(F_B)*Pi_e = -delta S_Sigma/delta q_c.
+
+Its second-variation geometry block is determined by section 3, once the
+carrier, full incidence, state and coefficient arguments are supplied.
+At a fixed linear graph on a common reduced trace space the homogeneous
+linearized balance has the form
+
+  [N_c + C* N_e C + W_Sigma] delta q_c = delta J,
+
+where W_Sigma is the same surface second variation (with inherited sign
+and conormal conventions) and N_e,N_c are actual side responses. This is
+the natural form-derived Wentzell insertion, not an independent coupling.
+ae2_covariant_seam_response.py:26-77 already implements its bundle version
+M_e+U_R* M_c U_R+W_phys. Moving C and a nonzero background add the product
+rules and second-incidence contacts; the displayed fixed-graph matrix sum
+does not remove them. Eliminating other fields must use the full same-
+action constrained Schur complement, rather than a separate membrane fit.
+
+The historical 2D attachment response and its 20D symmetric-tensor lift
+are not that full insertion. v14.67:1-42 and v14.69:1-43 explicitly limit
+them to conditional curvatures and a metric-sector theorem class. Their
+exact geometric formulae are reusable; their diagnostic matrix placement
+is not the gauge/ghost/fermion/HS physical Calderon domain.
+
+5. Exact all-orders limitation of an intrinsic-only coefficient match
+
+This limitation is stronger than an a0 argument. In the owned quotient
+geometry consider a vertical scaling C(t)=exp(2t)C0 at fixed horizontal
+quotient q and fixed connection one-form omega. Set
+
+ G(t)=[[q+omega C(t)omega*, omega C(t)],
+       [C(t)omega*, C(t)]].
+
+Then Q(G(t))=q EXACTLY, including when omega is nonzero. Thus any intrinsic
+operator functional that factors only through fixed q, h and its fixed
+intrinsic field/Dirac data has zero t derivative at every spectral order,
+not merely at leading heat order. This statement does NOT assume that the
+complete D_strat actually factors this way.
+
+If an ambient W7 is the owned preimage of an M4 carrier under the regular
+three-dimensional fibre quotient, its measure instead scales as
+exp(3t). At fixed independent environmental gamma7,
+
+  S_area,7(t)=exp(3t)S_area,7(0),   dS_area,7/dt=3S_area,7 != 0.
+
+Hence the M4 functional alone cannot match that full ambient surface stress.
+The missing dependence has to come from the actual M8/M5/fibre operators,
+incidence and density dependence of the SAME action, or from an explicitly
+derived environmental-length variation. There is no permission to insert
+one of them by hand. This is a conditional factorization obstruction, not
+a theorem that the complete master action cannot match a membrane.
+
+6. Precise coefficient-matching equations and remaining mathematical data
+
+The AE4 owner (ae4_stratified_dirac_zeta_induced_owner.py:272-321) selects
+the canonical geometric graded direct sum and
+
+  Gamma = -(1/2)STr E1(c P_strat) + relative log/phase completion,
+  P_strat=D_strat*D_strat on its gauge/BRST/zero-mode quotient.
+
+It fixes the regulator and relative moment ratios; it does not turn a
+Hilbert-space direct-sum label into the differential operator, transmission
+domain, quotient maps and their variations. Its local expansions are not
+extra Wilson actions to add to that determinant. The current accounting
+remains Gamma_parent+Gamma_heat, or attached_zeta-Casimir_zeta+heat; an
+identical heat-reference subtraction is not implied.
+
+Suppose the actual master functional and its carrier restrictions have
+been realized, and let T_master^(ab) be the applicable surface variational
+stress after the existing bulk/corner ledger is kept exactly once. To
+identify a constant minimal-area coefficient one must have, as a local
+functional identity in the retained variation class,
+
+  T_master^(ab) = -gamma_s h^(ab),
+  gamma_s = -(1/m_s) h_ab T_master^(ab),
+  traceless(T_master)=0,
+
+together with the corresponding normal force, mixed metric/field/shape
+Hessian and environmental contacts. Taking a trace at one geometry is not
+this matching. Curvature, anisotropic, field and nonlocal surface terms
+belong to the full effective action; their stress cannot be relabeled a
+constant FSC tension.
+
+If P_strat and its domain depend on gamma through the very Wentzell block
+being matched, these are implicit functional equations for gamma. No
+uniqueness follows from dimensional scaling alone. The positive symbolic
+alpha_FSC of the current regular mechanics is not an independent Euler
+field: varying it in -alpha_FSC ell_s^(-m)Area would impose
+ell_s^(-m)Area=0 rather than derive a positive coefficient.
+
+CLASSIFICATION: the classical regular interface density, its stress law,
+its scalar/gauge bundle transport and the geometric quotient/trace
+differentials are PROVIDED, with physical full-field realizations still
+unevaluated. The complete microscopic D_strat, its full cross-stratum
+incidence/domain and the identification of its surface expansion with
+the FSC primitive are not specified by the displayed master-functional
+formula alone. Existing partial theorem-class operators do not establish
+their unique completion. If a later same-action construction supplies
+that full operator/incidence, the remaining spectral matching is an
+evaluation problem; absence of its numerical evaluation is not itself
+evidence for a new constitutive law.
+
+This derivation supplies the exact geometric surface pullback and required
+second-incidence equations. It does not select a new projector, boundary
+condition, length equality, fitted coupling or quiet state; no finite
+diagnostic, physical correction, pole normalization or moment is produced.

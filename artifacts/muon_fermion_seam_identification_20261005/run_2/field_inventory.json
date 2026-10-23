@@ -1,0 +1,501 @@
+{
+  "compatibility_action": "int_M5 <Lambda85,g5-Q_H(G8)>+<lambda_sigma,sigma5-P0 sigma8> +sum_epsilon int_M4 Lambda54,epsilon^{ab}(h_ab-iota_epsilon^*g_epsilon,ab)",
+  "extracted": {
+    "action_composition_contract": [
+      {
+        "action_term": "S_4_lH=integral_M4[|D H|^2-V_BH(H)+i*bar(L_L)*slash(D)*L_L+i*bar(e_R)*slash(D)*e_R-(bar(L_L)*Y_l_BH*H*e_R+h.c.)]",
+        "composition": "S_AE3_1=S_AE3_0+S_4_lH_BHSM",
+        "field_ownership": {
+          "C2_carrier": "AE3_PREDECESSOR_DOMAIN_FACTOR",
+          "H": "INTRINSIC_M4_ACTIVE_FIELD",
+          "L_L": "INTRINSIC_M4_ACTIVE_FIELD",
+          "T_l": "FIXED_INTERNAL_FAMILY_OPERATOR",
+          "e_R": "INTRINSIC_M4_ACTIVE_FIELD"
+        },
+        "imported_term_source": "V11_3_FINAL_PARENT_ACTION_LEPTON_MASS_COMPLETION_INTRINSIC_M4_BLOCK",
+        "independent_Y_e_retained": false,
+        "inherited_positive_radial_stiffness": "lambda_H>0",
+        "new_family_coefficient_added_by_transport": false,
+        "new_field_added_by_transport": false,
+        "potential": "V_BH=lambda_H*(H_dagger*H-nu_BH^2)^2,_lambda_H>0",
+        "same_C2_carrier_preserved": true,
+        "separate_post_EWSB_mass_term_added": false,
+        "stratum_moved": false,
+        "up_down_Yukawa_terms_added": false,
+        "why_up_down_untouched": "THE_FROZEN_RATIO_OPERATORS_ARE_ATTACHED_BUT_NO_MATCHING_HISTORICAL_ACTION_OWNED_UP_DOWN_PREFACTORS_ARE_TRANSPORTED_HERE"
+      },
+      {
+        "C2_carrier": "AE3_PREDECESSOR_DOMAIN_FACTOR",
+        "H": "INTRINSIC_M4_ACTIVE_FIELD",
+        "L_L": "INTRINSIC_M4_ACTIVE_FIELD",
+        "T_l": "FIXED_INTERNAL_FAMILY_OPERATOR",
+        "e_R": "INTRINSIC_M4_ACTIVE_FIELD"
+      }
+    ],
+    "action_definition": [
+      {
+        "bulk_action": "S_F_AE2=(1/2)*integral_(M_event_union_R_M_child)[barPsi*iD*Psi-overline(iD*Psi)*Psi]dmu_WITH_THE_RETAINED_CANONICAL_NORMALIZATION",
+        "common_reset_frame": "U_R=I_UP_TO_GLOBAL_SPIN_SIGN_AND_GAUGE_FRAME",
+        "configuration_space": "SECTIONS_OF_E_event_GLUED_TO_E_child_BY_THE_RESET_OWNED_Spin_TIMES_G_SM_LIFT_U_R_ON_THE_LAST_AND_FIRST_REGULAR_TRACES",
+        "independent_Cayley_phase": null,
+        "independent_normal_matter_boundary_action": "S_Sigma_F_AE2=0",
+        "new_continuous_coefficient": null,
+        "new_physical_scale": null,
+        "new_propagating_field": null,
+        "pregeometric_core_field_content": "NO_CONTINUOUS_SPINOR_TRACE_OR_FLUX",
+        "reset_lift": "U_R=rho(SpinLift(Lambda_R))_tensor_G_R_WITH_G_R_THE_RETURNED_GAUGE_BUNDLE_ISOMORPHISM",
+        "squared_operator_domain": "Dom(D_AE2^2)={Psi_in_Dom(D_AE2):D_AE2*Psi_in_Dom(D_AE2)}",
+        "squared_operator_flux_graph": "Gamma1_child(Psi)=-U_R*Gamma1_event(Psi)_ON_Dom(D_AE2^2)",
+        "trace_graph": "Gamma0_child(Psi)=U_R*Gamma0_event(Psi)",
+        "variation_graph": "Gamma0_child(deltaPsi)=U_R*Gamma0_event(deltaPsi)",
+        "why_zero_is_owned": "THE_RESET_LOCUS_IS_AN_INTERNAL_GLUE_OF_ONE_GLOBAL_FIELD_DOMAIN_AND_HAS_NO_DELTA_SUPPORTED_MATTER_DENSITY"
+      }
+    ],
+    "action_payload": [
+      {
+        "frozen_predictions_unchanged": true,
+        "intrinsic_metric_not_dressed": true,
+        "no_new_coefficient": true,
+        "no_new_field": true,
+        "no_new_mediator": true
+      },
+      {
+        "artifact": "BHSM_reciprocal_attachment_action_v11_3",
+        "classification": "AUTHOR_ACTION_SELECTION_AND_DERIVED_COMPLETION",
+        "core_variation": "delta_I_C S_attach=-int dmu5 <upsilon^(1/2)Lambda85,delta I_C>",
+        "embedding_equation": "the Q_H and trace adjoints insert the two dressed reactions into the inherited E8/E5 KKT embedding equations",
+        "exact_action": "S_attach=int_M5 dmu5 <Lambda85,upsilon^(-1/2) I_W-upsilon^(1/2) I_C>",
+        "frozen_limit": {
+          "A_D": 0,
+          "action": "exact inherited Lambda85 term",
+          "mismatch": "I_W-I_C",
+          "q_D": 0,
+          "upsilon": 1
+        },
+        "hermitian_completion": "the recovered metric pairing is real; for a complex associated incidence use Re<Lambda85,C_attach>, which adds no coefficient",
+        "incidence_identification": {
+          "I_C": "Q_H(G8)",
+          "I_W": "id_5(g5)"
+        },
+        "inherited_term": "int_M5 dmu5 <Lambda85,I_W-I_C>",
+        "multiplier_equation": "upsilon^(-1/2) I_W-upsilon^(1/2) I_C=0, equivalently I_W=upsilon I_C",
+        "new_coefficients": [],
+        "new_fields": [],
+        "new_parameters": [],
+        "q_D_equation": "Box_G q_D=J_shift,inherited+J_attach, with each inherited term included once",
+        "q_D_source": "J_attach=-(1/(2 lambda_D))<Lambda85,upsilon^(-1/2)I_W+upsilon^(1/2)I_C>",
+        "q_D_variation": "delta S_attach/delta q_D=(1/(2 lambda_D))<Lambda85,upsilon^(-1/2)I_W+upsilon^(1/2)I_C>",
+        "selection_principle": "BHSM_RECIPROCAL_CORE_SURFACE_ATTACHMENT_PRINCIPLE",
+        "sign_reason": "this ordering preserves the exact inherited g5-Q_H(G8) convention",
+        "unchanged_compatibility_terms": [
+          "lambda_sigma(sigma5-P0 sigma8)",
+          "Lambda54(h-iota^*g5)"
+        ],
+        "wall_variation": "delta_I_W S_attach=+int dmu5 <upsilon^(-1/2)Lambda85,delta I_W>"
+      },
+      {
+        "I_C": "Q_H(G8)",
+        "I_W": "id_5(g5)"
+      },
+      {
+        "A_D": 0,
+        "action": "exact inherited Lambda85 term",
+        "mismatch": "I_W-I_C",
+        "q_D": 0,
+        "upsilon": 1
+      }
+    ],
+    "authoritative_action": [
+      {
+        "S5_claimed_as_pi_pushforward_of_S8": false,
+        "architecture": "covariant source-target correspondence plus stratified M5 cap and M4 boundary-localized Wilson actions",
+        "boundary_SM_claimed_as_bulk_descendant": false,
+        "compatibility_action": "int_M5 <Lambda85,g5-Q_H(G8)>+<lambda_sigma,sigma5-P0 sigma8> +sum_epsilon int_M4 Lambda54,epsilon^{ab}(h_ab-iota_epsilon^*g_epsilon,ab)",
+        "formula": "S8[G,chi,sigma]+sum_epsilon(S5,epsilon[g_epsilon,sigma5]+S_GHY,epsilon)+S4,localized[h,A,Psi,H;I4]+S_compatibility[G,g_epsilon,sigma,sigma5,h,Lambda85,Lambda54]",
+        "name": "S_BHSM^strat",
+        "off_shell_fields_distinct": true,
+        "ownership_rule": "each term occurs once on its declared source, target, or boundary stratum; compatibility multipliers carry no kinetic term and their normalization is redundant",
+        "quantum_scope": "classical correspondence action with an M4 EFT stratum; no quantum-gravity completion claimed"
+      }
+    ],
+    "boundary_payload": [
+      {
+        "attachment_is_algebraic": true,
+        "differentiable_on_inherited_domain": true,
+        "inherited_GHY_preserved": true,
+        "inherited_Lambda54_seam_reaction_preserved": true,
+        "new_normal_momentum_zero": true,
+        "new_presymplectic_potential_zero": true
+      },
+      {
+        "artifact": "BHSM_attachment_boundary_variation_v11_3",
+        "attachment_boundary_condition": "pullback of I_W=upsilon I_C on the regular seam",
+        "boundary_flux_attachment": 0,
+        "boundary_support_operator_export": "linearized dressed matcher B_attach",
+        "bulk_variation_boundary_term": 0,
+        "classification": "DERIVED",
+        "inherited_completion": [
+          "capwise GHY",
+          "Lambda54 metric matcher",
+          "Dirac maximal-isotropic domain",
+          "declared trace/pullback maps"
+        ],
+        "normal_momentum_shift": 0,
+        "presymplectic_potential_attachment": 0
+      }
+    ],
+    "domain_and_hessian": [
+      {
+        "D0": "regular cap pole, fixed h, sigma|B1=0, exact matcher reaction; unchanged from v6.30",
+        "D0_recovered_without_modification": true,
+        "Dirac_domain": "H1 maximal-isotropic domain of the boundary Green pairing",
+        "KKT_Hessian": "[[H8,0,0,C85,8*,0],[0,H5,0,-C85,5*,C54,5*],[0,0,H4,0,-C54,4*],[C85,8,-C85,5,0,0,0],[0,C54,5,-C54,4,0,0]]",
+        "gauge_domain": "H2 coexact representatives modulo allowed gauge transformations",
+        "generic_pseudoinverse_used": false,
+        "inverse_domain": "closed-range complement of gauge, constraint, and Lyapunov-Schmidt kernels only",
+        "kernel_inverted": false,
+        "kernel_rule": "all Lyapunov-Schmidt kernel coordinates remain explicit",
+        "master_domain": "(D8/gauge8) x (D5,cap/ADM) x (D4,gauge x D4,Dirac x D4,scalar) x multiplier duals",
+        "neutral_domain": "declared closed response cone when DeltaS4 is enabled",
+        "reduced_Hessian": "H_eff=H_bb-H_bi H_ii,perp^-1 H_ib",
+        "status": "DOMAIN_AND_CONSTRAINED_SCHUR_INTERTWINER_EXPLICIT",
+        "unlicensed_Robin_domain_used": false
+      }
+    ],
+    "domain_provenance_reconciliation": [
+      {
+        "AE2_flux_graph": "Gamma1_child=-U_R*Gamma1_event_ON_Dom(D_AE2_squared)",
+        "AE2_successor_decision": "ONE_GLOBAL_SPIN_TIMES_G_SM_SECTION_WITH_TRACE_GRAPH_Gamma0_child=U_R*Gamma0_event",
+        "AE3_enclosure_is_terminal_boundary": false,
+        "AE3_enclosure_surface_type": "RESOLVED_INTERNAL_MATERIAL_LEVEL_SET",
+        "enclosure_fermion_law": "SMOOTH_TRACE_WITH_OPPOSITE_NORMAL_GREEN_FORMS_CANCELLING",
+        "independent_enclosure_fermion_boundary_parameter_required": false,
+        "legacy_master_v7_domain_rows": "HISTORICAL_PRE_AE2_GENERAL_DOMAIN_LEDGER_NOT_CURRENT_AE31_SEAM_AUTHORITY",
+        "old_phase_family_live_in_AE31": false,
+        "pre_AE2_no_go": "THE_UNCHANGED_RETAINED_ACTION_LEFT_A_U1_PARENT_TIMES_U1_CHILD_MAXIMAL_ISOTROPIC_BIRTH_PHASE_FAMILY",
+        "remaining_domain_question": "A_SINGLE_PHYSICAL_MEMBER_OR_MAXIMAL_CONTINUATION_OF_THE_CURRENT_C2_FAMILY_AND_ANY_ASYMPTOTIC_OR_FEYNMAN_STATE_DATA",
+        "why": "THE_OLD_RESOLVENT_WITNESS_COMPARED_DISTINCT_PRE_AE2_ACTION_DOMAINS;_THEY_ARE_NOT_MEMBERS_OF_THE_SINGLE_AE2_SUCCESSOR_DOMAIN"
+      }
+    ],
+    "field_transport": [
+      {
+        "classification": "GEOMETRICALLY_TRANSPORTED",
+        "field": "G8",
+        "lower_owner": "independent constrained g5",
+        "map": "Q_H horizontal metric plus vertical I_F and omega"
+      },
+      {
+        "classification": "RETAINED_SPECTRAL_MODE",
+        "field": "chi8",
+        "lower_owner": "bulk parent; no invented M4 carrier",
+        "map": "P0 or finite associated modes"
+      },
+      {
+        "classification": "BASIC_DIRECT_DESCENT",
+        "field": "sigma8",
+        "lower_owner": "M5 scalar",
+        "map": "P0 sigma8=sigma5 compatibility trace"
+      },
+      {
+        "classification": "GEOMETRICALLY_TRANSPORTED",
+        "field": "radion a_F",
+        "lower_owner": "diagnostic pi_!S8; not identified with sigma",
+        "map": "vertical metric determinant"
+      },
+      {
+        "classification": "GEOMETRICALLY_TRANSPORTED",
+        "field": "omega",
+        "lower_owner": "transport connection, not SM gauge field",
+        "map": "canonical Sp(1) associated-bundle connection"
+      },
+      {
+        "classification": "INDEPENDENT_TARGET_STRATUM_FIELD",
+        "field": "g5_epsilon",
+        "lower_owner": "cap action",
+        "map": "compatibility with Q_H(G8)"
+      },
+      {
+        "classification": "TRANSPORTED_BY_TRACE",
+        "field": "h",
+        "lower_owner": "common seam",
+        "map": "h=iota_epsilon^*g5_epsilon"
+      },
+      {
+        "classification": "BOUNDARY_LOCALIZED_FUNDAMENTAL",
+        "field": "A_SM",
+        "lower_owner": "M4",
+        "map": null
+      },
+      {
+        "classification": "BOUNDARY_LOCALIZED_FUNDAMENTAL",
+        "field": "Psi",
+        "lower_owner": "M4",
+        "map": null
+      },
+      {
+        "classification": "BOUNDARY_LOCALIZED_FUNDAMENTAL",
+        "field": "H",
+        "lower_owner": "M4",
+        "map": null
+      },
+      {
+        "classification": "CONDITIONAL_BOUNDARY_EXTENSION",
+        "field": "N_neu",
+        "lower_owner": "DeltaS4 only",
+        "map": null
+      }
+    ],
+    "first_variation_and_pole_gate": [
+      {
+        "Euler_H": "-D^2*H-2*lambda_H*(H_dagger*H-nu_BH^2)*H-bar(e_R)*Y_l_dagger*L_L=0",
+        "Euler_L_L": "i*slash(D)*L_L-Y_l*H*e_R=0",
+        "Euler_e_R": "i*slash(D)*e_R-Y_l_dagger*H_dagger*L_L=0",
+        "do_not_use": [
+          "THE_SEPARATE_CHIRAL_SQUARED_PENCILS_AS_IF_THEY_ALREADY_CONTAIN_M_l",
+          "A_FITTED_WAVEFUNCTION_RESIDUE",
+          "AN_OBSERVED_LEPTON_MASS_TO_SELECT_THE_BRANCH"
+        ],
+        "exact_next_operator": "CURRENT_C2_FIRST_ORDER_CHIRAL_BLOCK_[[D_L,M_l],[M_l_DAGGER,D_R]]_ON_THE_RETAINED_MAXIMAL_ISOTROPIC_DOMAIN_WITH_ITS_SIMPLE_POLES",
+        "matched_parent_Delta_H_xi_evaluated": false,
+        "same_current_C2_domain_determinant_evaluated": false,
+        "same_current_C2_first_order_LR_block_assembled": false,
+        "simple_pole_residues_evaluated": false,
+        "variation_is_family_noncentral": true
+      }
+    ],
+    "foundational_action_payload": [
+      {
+        "action_status_explicitly_foundational": true,
+        "canonical_kinetic_coefficient_is_field_definition_not_new_input": true,
+        "eta_mass_profile_has_no_new_localization_coefficient": true,
+        "seam_Higgs_normal_overlap_is_unit": true,
+        "two_oriented_sheets_supply_opposite_chiral_zero_modes": true
+      },
+      {
+        "artifact": "BHSM_foundational_eta_Dirac_action_v14_45",
+        "canonical_field_convention": "the overall positive fermion kinetic residue is absorbed into the definition of the local Grassmann field before physical bilinear couplings are read",
+        "eta_mass_profile": "m_eta(s)=-partial_s log(sin f_eta(s))",
+        "five_dimensional_collar_action": "S_F=sum_eps integral dmu4 ds J bar(Psi_eps) [i gamma^mu nabla_mu^total + i eps Gamma_perp (partial_s + 1/2 partial_s log J + m_eta)] Psi_eps + S_H",
+        "no_double_counting_role": "Psi is the second-quantized collective/topological sector; the same collective zero modes are excluded from the bosonic fluctuation determinant",
+        "normal_zero_mode": "u0=N J^(-1/2) sin(f_eta)",
+        "not_status": "DERIVED_FROM_THE_BOSONIC_PATH_B_ACTION",
+        "seam_bridge": "S_H=-integral dmu4 [bar(Psi_+) Y_f H Psi_- + h.c.]; the normal pullback leaves Y_f unchanged",
+        "status": "FOUNDATIONAL_EFFECTIVE_ACTION_ADOPTED",
+        "two_sided_chirality": "the same eta profile on the two opposite collar orientations gives the retained left/right pair"
+      }
+    ],
+    "global_spin_glue_payload": [
+      {
+        "common_gauge_phase_is_family_central": true,
+        "one_global_spin_bundle_removes_independent_seam_unitary": true,
+        "remaining_global_sign_is_field_redefinition": true,
+        "unique_spin_structure_on_I_times_S3_preserved": true
+      },
+      {
+        "artifact": "BHSM_global_spin_bundle_seam_glue_v14_45",
+        "foundational_geometry": "the two collar sheets are restrictions of one oriented, time-oriented parent spin manifold with one global spinor bundle",
+        "induced_transmission": "psi_-=rho(SpinLift(Lambda_cw)) psi_+; in a common parent coframe this is the identity transition up to the globally fixed spin sign",
+        "matcher_status": "FIXED_BY_THE_ADOPTED_GLOBAL_SPIN_BUNDLE",
+        "relative_Kosmann_operator": "V_rel=V_core-U_cw^dagger V_wall U_cw; it vanishes for identical core/wall geometry and becomes nonzero only from an actual differential frame",
+        "residual_freedom": "one overall spinor sign and common gauge transformations; neither is a relative family holonomy",
+        "self_adjointness": "the internal seam Green forms cancel because the outward normals are opposite"
+      }
+    ],
+    "incidence_rows": [
+      {
+        "measure": "oriented dmu_5 on M5 for C85; induced dmu_4 on M4 for C54",
+        "source_commit_or_pr": "27a9dee; merged PR #200 (97cb8d4e65da0dbdb7cf198324d763cba552cd32)",
+        "source_file": "src/bhsm/interface/master_action/reduction.py",
+        "support_character_before_v11_3": null
+      },
+      {
+        "adjoint": "Q_H^* in the KKT equation",
+        "boundary_term": "none beyond inherited GHY/trace completion",
+        "codomain": "M5 compatibility tensor bundle",
+        "domain": "M8 retained horizontal metric data",
+        "normalization": "geometric Q_H normalization from v7.1",
+        "object": "I_C=Q_H(G8)",
+        "pairing": "nondegenerate real tensor pairing with Lambda85",
+        "role": "core-facing incidence",
+        "tensor_type": "symmetric covariant two-tensor",
+        "variation": "C85,8^* Lambda85"
+      },
+      {
+        "adjoint": "identity",
+        "boundary_term": "inherited cap GHY and Lambda54 seam reaction",
+        "codomain": "M5 compatibility tensor bundle",
+        "domain": "independent M5 cap metric",
+        "normalization": "identity incidence",
+        "object": "I_W=id_5(g5)",
+        "pairing": "same pairing with Lambda85",
+        "role": "surface/wall-facing incidence",
+        "tensor_type": "symmetric covariant two-tensor",
+        "variation": "-C85,5^* Lambda85 after inherited sign convention"
+      },
+      {
+        "adjoint": "self-real pairing",
+        "boundary_term": "none; algebraic multiplier",
+        "codomain": "real action density",
+        "domain": "dual M5 compatibility bundle",
+        "normalization": "redundant and absorbed into Lambda85; no coefficient",
+        "object": "Lambda85",
+        "pairing": "<Lambda85,I_W-I_C>",
+        "role": "attachment multiplier",
+        "tensor_type": "dual symmetric tensor/density",
+        "variation": "I_W-I_C=0"
+      },
+      {
+        "adjoint": "real",
+        "boundary_term": "none",
+        "codomain": "real action density",
+        "domain": "M5 scalar dual",
+        "normalization": "redundant multiplier normalization",
+        "object": "lambda_sigma",
+        "pairing": "<lambda_sigma,sigma5-P0 sigma8>",
+        "role": "scalar compatibility multiplier retained unchanged",
+        "tensor_type": "scalar multiplier",
+        "variation": "sigma5-P0 sigma8=0"
+      },
+      {
+        "adjoint": "trace-map adjoint",
+        "boundary_term": "matcher supplies the seam reaction",
+        "codomain": "real M4 density",
+        "domain": "M4 dual symmetric tensors",
+        "normalization": "redundant multiplier normalization",
+        "object": "Lambda54,epsilon",
+        "pairing": "Lambda54^{ab}(h_ab-iota_epsilon^*g_epsilon,ab)",
+        "role": "wall-to-seam metric matcher retained unchanged",
+        "tensor_type": "contravariant multiplier density",
+        "variation": "h=iota^*g and equal/opposite seam reaction"
+      }
+    ],
+    "microscopic_owner_contract": [
+      {
+        "independent_M8_M5_M4_Wilson_owners_retained": false,
+        "independent_ZA_g_gprime_alpha_metric_cone_or_particle_fit_allowed": false,
+        "local_M8_M5_M4_actions_are": "ASYMPTOTIC_AND_BOUNDARY_EXPANSIONS_OF_ONE_MICROSCOPIC_FUNCTIONAL",
+        "measured_particle_data_used_to_select_owner": false,
+        "microscopic_functional": "-(1/2)STr E1(ell_star^2*P_strat),_with_relative_zeta/eta_completion_for_logarithmic_order_and_determinant_phase",
+        "owner_status": "SELECTED__GLOBAL_OPERATOR_DOMAIN_STILL_REQUIRED",
+        "positive_operator": "P_strat=D_strat^dagger*D_strat_on_the_zero_mode_and_BRST_quotient",
+        "stratified_Hilbert_architecture": "H8 direct_sum H5_plus direct_sum H5_minus direct_sum H4",
+        "trace_rule": "canonical_geometric_L2_direct_sum_supertrace_with_statistics_grading_and_BRST_ghost_multiplicities",
+        "zeta_completion_is_second_independent_determinant": false
+      }
+    ],
+    "unified_parent_boundary_functional": [
+      {
+        "boundary_effective_action": "Gamma_boundary=-log_integral_over_fixed-trace_bulk_fields_exp(-S5[A5,Psi5])",
+        "carrier_extension": "one_rank16_trace_extends_the_diagonal_Sp1_operator_to_(SU3_times_Sp1_times_U1Y)/Z6",
+        "one_loop_term": "Gamma_1loop=(1/2)*STr_log(H5_with_boundary_sources)",
+        "one_pushforward_only": true,
+        "parent_fields": "bulk_connection_A5_and_global_spinor_Psi5_with_wall_trace_B",
+        "single_boundary_trace": "B=(Dirichlet_trace,_normal_flux_trace,_normalized_wall_spinor_trace)",
+        "single_parent_quadratic_operator": "H5=diag(K_F^(5)*Delta_Maxwell5,_D5)_with_action-owned_domains",
+        "tree_Schur_term": "Gamma_tree=(K_F^(5)/2)<a,N_DtN*a>-(1/(2*K_F^(5)))<J,G_DtN*J>",
+        "wall_normalization": "integral_ds*J*abs(u0)^2=1"
+      }
+    ],
+    "yukawa_operator_factorization": [
+      {
+        "Y_f_entries_fixed_by_round_fiber_Dirac_spectrum": false,
+        "Y_f_entries_fixed_by_wall_normalization": false,
+        "action_provenance": "Y_f_are_foundational_intrinsic_M4_Wilson_operators_in_v14.45;_they_are_not_derived_from_the_bosonic_parent_Path-B_action",
+        "fiber_geometric_kernel": "Omega_f=I3_for_each_of_the_four_vertices",
+        "foundational_seam_term": "S_H=-integral_M4[bar(Psi_L)*Y_f*H*Psi_R+h.c.]",
+        "geometric_zero-input_specialization": "if_only_the_derived_fiber-invariant_multiplication_kernel_is_retained,_the_family_operator_is_proportional_to_I3",
+        "intrinsic_Yukawa_matrices": [
+          "Y_u",
+          "Y_d",
+          "Y_e",
+          "Y_nu"
+        ],
+        "normal_reduction": "Y_f_to_(integral_ds_J_abs(u0)^2)*Y_f=Y_f",
+        "reduced_matrix_element": "M_f(H)=H*Y_f_after_canonical_pullback",
+        "vertical_Dirac_levels_are_mass_matrix_entries": false
+      }
+    ],
+    "zero_mode_pullback_payload": [
+      {
+        "four_dimensional_kinetic_pullback_coefficient_is_one": true,
+        "normal_Kosmann_factor_is_one": true
+      },
+      {
+        "Kosmann_pullback": "for a tangential shift beta, <u0 chi_t|V_beta|u0 chi_s>_5D =<chi_t|V_beta|chi_s>_4D",
+        "artifact": "BHSM_eta_zero_mode_canonical_pullback_v14_45",
+        "exact_identity": "A_eta u0=0",
+        "exact_mode": "u0=N J^(-1/2) sin(f_eta)",
+        "four_dimensional_pullback": "integral ds J |u0|^2 bar(psi) i gamma^mu nabla_mu psi =bar(psi) i gamma^mu nabla_mu psi",
+        "normal_operator": "A_eta=partial_s+1/2 partial_s log J+m_eta, m_eta=-partial_s log sin(f_eta)",
+        "normalization_identity": "integral ds J |u0|^2=N^2 integral ds sin^2(f_eta)=1"
+      },
+      {
+        "jacobian": "J=1+sech(s)^2/4",
+        "profile": "sin(f)=sech(s)"
+      }
+    ]
+  },
+  "incidence": [
+    {
+      "adjoint": "Q_H^* in the KKT equation",
+      "boundary_term": "none beyond inherited GHY/trace completion",
+      "codomain": "M5 compatibility tensor bundle",
+      "domain": "M8 retained horizontal metric data",
+      "normalization": "geometric Q_H normalization from v7.1",
+      "object": "I_C=Q_H(G8)",
+      "pairing": "nondegenerate real tensor pairing with Lambda85",
+      "role": "core-facing incidence",
+      "tensor_type": "symmetric covariant two-tensor",
+      "variation": "C85,8^* Lambda85"
+    },
+    {
+      "adjoint": "identity",
+      "boundary_term": "inherited cap GHY and Lambda54 seam reaction",
+      "codomain": "M5 compatibility tensor bundle",
+      "domain": "independent M5 cap metric",
+      "normalization": "identity incidence",
+      "object": "I_W=id_5(g5)",
+      "pairing": "same pairing with Lambda85",
+      "role": "surface/wall-facing incidence",
+      "tensor_type": "symmetric covariant two-tensor",
+      "variation": "-C85,5^* Lambda85 after inherited sign convention"
+    },
+    {
+      "adjoint": "self-real pairing",
+      "boundary_term": "none; algebraic multiplier",
+      "codomain": "real action density",
+      "domain": "dual M5 compatibility bundle",
+      "normalization": "redundant and absorbed into Lambda85; no coefficient",
+      "object": "Lambda85",
+      "pairing": "<Lambda85,I_W-I_C>",
+      "role": "attachment multiplier",
+      "tensor_type": "dual symmetric tensor/density",
+      "variation": "I_W-I_C=0"
+    },
+    {
+      "adjoint": "real",
+      "boundary_term": "none",
+      "codomain": "real action density",
+      "domain": "M5 scalar dual",
+      "normalization": "redundant multiplier normalization",
+      "object": "lambda_sigma",
+      "pairing": "<lambda_sigma,sigma5-P0 sigma8>",
+      "role": "scalar compatibility multiplier retained unchanged",
+      "tensor_type": "scalar multiplier",
+      "variation": "sigma5-P0 sigma8=0"
+    },
+    {
+      "adjoint": "trace-map adjoint",
+      "boundary_term": "matcher supplies the seam reaction",
+      "codomain": "real M4 density",
+      "domain": "M4 dual symmetric tensors",
+      "normalization": "redundant multiplier normalization",
+      "object": "Lambda54,epsilon",
+      "pairing": "Lambda54^{ab}(h_ab-iota_epsilon^*g_epsilon,ab)",
+      "role": "wall-to-seam metric matcher retained unchanged",
+      "tensor_type": "contravariant multiplier density",
+      "variation": "h=iota^*g and equal/opposite seam reaction"
+    }
+  ],
+  "reciprocal_action": "S_attach=int_M5 dmu5 <Lambda85,upsilon^(-1/2) I_W-upsilon^(1/2) I_C>"
+}

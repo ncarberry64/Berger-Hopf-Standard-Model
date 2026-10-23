@@ -1,0 +1,212 @@
+{
+  "action_parameters": {
+    "nu_squared_action": 4.0,
+    "surface_gamma": null
+  },
+  "all_internal_Gauss_and_multiplier_jets_retained": true,
+  "consumed_coefficients_sha256": "52641c0208c16ea9cdbbb30431b4e4b792b6c96f1e5ce1ff4b52ff5a3be85f72",
+  "consumed_receipt_sha256": "e76e00f4a7fa013ab59c05ffa5cb9b073e0c29edff5f4dc234147cd76b605939",
+  "error_scope": "binary64 action/analytic twojets with quadrature and centered action differences; no rigorous continuum/rounding enclosure",
+  "fixed_q_physical_closure_assumed": false,
+  "graph_profile_projected": false,
+  "graph_scope": "anchored homogeneous affine mechanical-connection trace graph; parent/child q and all internal jets active; fixed computational radial frame",
+  "initial_application": "artifacts/muon_parent_gauge_geometry_correction_20261010/paired_attachment_endpoint_run_1",
+  "input_hashes": {
+    "artifacts/flagship_integration/BHSM_N12_C2_REFINED_RESET_ROOT_CENTER.npz": "59dd88661b15cbeec96bc19294f9d9c64f754cccbfbc385c32329fa9c864a8fe",
+    "artifacts/flagship_integration/BHSM_N12_FULL_RESET_ACTION_JACOBIAN.npz": "35bb2b67ff784206d3a5b9dc82881f5ffd8f844b55342f2032d29cdafb38a67a",
+    "artifacts/muon_birth_transfer_value_20261008/retained_reset/run_1/result.json": "d0fec0f8e8a05818fcce67e88ed8db73744484220a2cb213825893f481cb0a72",
+    "artifacts/muon_calibrated_pauli_20261009/inputs.json": "0b614ab6f26d169ca04a4878f767f78eb3668484840867e46aebbebf186369da",
+    "artifacts/muon_calibrated_weak_decay_20261010/run_1/weak_decay.json": "9c31575ce0889571790f8767cf53ffe043cb9906e0a45a96b194971320a0aad7",
+    "artifacts/muon_matched_mechanical_source_20261002/replay_reference/matched_source_and_weak_actions.npz": "146435df28178967c321c0aa7e89a1511395d196f96b8715532aa98e3e312c2b",
+    "src/bhsm/interface/aether_canonical_momentum_action_jacobian.py": "d0ade20dc8a999e43073b45ca3ef59e05c65c55e37a1d6565d4e389176295cb1",
+    "src/bhsm/interface/aether_diagonal_sp1_m4_attachment_v15_50.py": "e6482614dcb54f4890a5e66fbe724d4c302405d575a4b73ddbb64a075cb1827e",
+    "src/bhsm/interface/aether_lorentzian_child_galerkin_v15_44.py": "574a9a6267d9228170c7309bd4be3cafb36b7515a6ee558509beb968e97bdab7",
+    "src/bhsm/interface/muon_birth_attached_phase.py": "948c1505e9b68cffbe8050be31dcb5727d8f8d4f25399f9037cfc94a9ae9fdeb",
+    "src/bhsm/interface/muon_birth_coupled_primal_midpoint.py": "ce321f641fa51d98710d006e246aac5cf6bd046be93a74fab452808597c599ce",
+    "src/bhsm/interface/muon_birth_full_field_attachment.py": "58b3bd8a4ae5fe7c63b5551e4d0f26d82ab82a27d4389066c894a5e1b4728d03",
+    "src/bhsm/interface/muon_birth_normal_trace_graph.py": "d012a0455d84be2ce7aae8d6833f8b482f9bbc1e9ee1b899042a421c2a782896",
+    "src/bhsm/interface/muon_birth_paired_attachment_endpoint.py": "71a69275ebeef226fd8dc7585745c5c8acac687e497a8441fe37a37553178f23",
+    "src/bhsm/interface/muon_birth_paired_field_endpoint.py": "f22b6a17b65c72b30571b3d9f721f347737a5916fa08e50bd833ad22df3cd035",
+    "src/bhsm/interface/muon_birth_phase_continuation.py": "9169a1c56bf5084d1f240043ca12d431c87e4adaff24fe09bdf7bf27fc5eb0be",
+    "src/bhsm/interface/muon_birth_trace_enriched_action.py": "c36c48482dd58ebe369ab935574b78b3693036f717fb49035dfac01164956dce",
+    "src/bhsm/interface/muon_birth_trace_enriched_phase.py": "591754957f1cc452bfd53d8adc1087308459902a822876105315b7423c2fd676",
+    "src/bhsm/interface/muon_birth_two_arm_assigned_action.py": "cf6c58dc68700315d701fb9a1e9e99e927d18d90016a6ae7f86470c36136c77a",
+    "src/bhsm/interface/muon_intrinsic_higgs_gauge_action.py": "c19354209300ab06c0f1ab6bf4e111dbb5de0cd9e8d1d31a71af357a829118d4",
+    "src/bhsm/interface/muon_intrinsic_m4_normal_pullback.py": "43187eee35f2879a43fe0fd02ae447502811349ccf2f2a78aa14beb8aa706bf0",
+    "src/bhsm/interface/muon_material_higgs_gauge_action.py": "8bca013820283614c6578be4f44c29c4ea1c919f516aa9a2783f0eb38127d035",
+    "src/bhsm/interface/muon_moving_geometric_action.py": "bf560fdb9766f563d97d3100ccb266e2a4350c910ac14a51d57576c2b5371392",
+    "src/bhsm/interface/muon_parent_gauge_geometry_correction.py": "fa29f5764dca39196c807d64e7976d5894589e7de3ffa9d4a5ddecfb136b4816",
+    "src/bhsm/interface/muon_parent_maxwell_background_euler.py": "fbb2c99d4b1c58247ac42a769fad3e1b16ccc76a1744fe0c5334e50c4a974bee",
+    "src/bhsm/interface/muon_parent_maxwell_full_weak.py": "c1fb703967a644306d3521d457a6d7c778a49d89c1e081b401487a25b7491565",
+    "src/bhsm/interface/muon_parent_maxwell_geometry_weak.py": "f0b4a49934e17ad18c40e9164b66c54e1b2cb146fb476f59b0e500f2dd6c9153",
+    "src/bhsm/interface/muon_parent_mean_causal_action.py": "2a84b1be22625b1a5ae88d10c76631d7a5b602d2b0e22e57f00201bb74a593ad",
+    "src/bhsm/interface/muon_parent_retarded_hypercharge.py": "2eb97a704bce63f601cc0d6e0f647266d4b4aac7f746d34dceb41b72018c3510",
+    "src/bhsm/interface/muon_pointwise_full_field_action.py": "d57cd5953de00bcae857d0e458bbead1e463e5fffe8d947c5b9e71806aabaff6"
+  },
+  "literal_action_finite_difference": [
+    {
+      "first": 0.2531051875198642,
+      "first_defect": 3.751042682575978e-06,
+      "second": 789.1293972051017,
+      "second_defect": 4.5711499979006476e-05,
+      "step": 5e-05
+    },
+    {
+      "first": 0.2531023741525473,
+      "first_defect": 9.376753656864523e-07,
+      "second": 789.1294671935611,
+      "second_defect": 2.4276959493363393e-05,
+      "step": 2.5e-05
+    }
+  ],
+  "material_advection_count": 1,
+  "normal_scope": "common proper-amplitude lateral material-wall trial at birth; not temporal E1 Cauchy normal or selected mechanical mode",
+  "numerical_sha256": "c1f53808b0e92ed2ecd698d6a97c72ca97ba2ce0f753fc54fc618d15d862e9de",
+  "physical_Pauli_value": false,
+  "physical_formation_Hessian_evaluated": false,
+  "physical_native_heat_closed": false,
+  "quadrature_refinements": [
+    {
+      "Hessian_symmetry_defect": 3.637978807091713e-12,
+      "nonlinear_profile_contact_norm": 571.4403288143046,
+      "normal_first": [
+        0.25310143647718164,
+        -14.851174126355463
+      ],
+      "normal_mixed_norm": 1571.5458520777877,
+      "normal_profile_projection_diagnostic": [
+        0.01411669455894663,
+        0.006399230716213664,
+        0.003821717807256714,
+        -0.023292667216341545
+      ],
+      "normal_second": [
+        [
+          789.1294429166016,
+          -29.37081012574032
+        ],
+        [
+          -29.37081012574032,
+          6.574196200941147
+        ]
+      ],
+      "normal_surface_first_per_gamma": [
+        9.533513611290811e-15,
+        -1.9969172106290813e-15
+      ],
+      "normal_surface_second_per_gamma": [
+        [
+          446.4363205855147,
+          -73.97368309629219
+        ],
+        [
+          -73.97368309629219,
+          18.02437112954292
+        ]
+      ],
+      "points": 48,
+      "projection_consumed_in_action": false,
+      "scalar_wall_profile_contact_norm": 0.6341704809506388,
+      "source_image_L2_norm": 0.025238748142140336,
+      "unreached_radial_image_complement_L2_norm": 0.012608050475530291,
+      "value": 5.385770681361375
+    },
+    {
+      "Hessian_symmetry_defect": 3.637978807091713e-12,
+      "nonlinear_profile_contact_norm": 571.4403288083124,
+      "normal_first": [
+        0.25310143641272387,
+        -14.85117412635604
+      ],
+      "normal_mixed_norm": 1571.5458520493426,
+      "normal_profile_projection_diagnostic": [
+        0.014116694558946652,
+        0.006399230716213388,
+        0.0038217178072587556,
+        -0.023292667216342954
+      ],
+      "normal_second": [
+        [
+          789.1294429152268,
+          -29.370810125760983
+        ],
+        [
+          -29.370810125760983,
+          6.574196200943613
+        ]
+      ],
+      "normal_surface_first_per_gamma": [
+        9.533513611290811e-15,
+        -1.9969172106290813e-15
+      ],
+      "normal_surface_second_per_gamma": [
+        [
+          446.4363205855147,
+          -73.97368309629219
+        ],
+        [
+          -73.97368309629219,
+          18.02437112954292
+        ]
+      ],
+      "points": 64,
+      "projection_consumed_in_action": false,
+      "scalar_wall_profile_contact_norm": 0.6341704809506388,
+      "source_image_L2_norm": 0.02523874814214075,
+      "unreached_radial_image_complement_L2_norm": 0.012608050475531745,
+      "value": 5.3857706813611514
+    },
+    {
+      "Hessian_symmetry_defect": 7.275957614183426e-12,
+      "nonlinear_profile_contact_norm": 571.4403288082937,
+      "normal_first": [
+        0.2531014364127656,
+        -14.851174126356051
+      ],
+      "normal_mixed_norm": 1571.5458520492991,
+      "normal_profile_projection_diagnostic": [
+        0.014116694558946761,
+        0.0063992307162134,
+        0.0038217178072590162,
+        -0.023292667216343644
+      ],
+      "normal_second": [
+        [
+          789.1294429152119,
+          -29.370810125760805
+        ],
+        [
+          -29.3708101257608,
+          6.5741962009435735
+        ]
+      ],
+      "normal_surface_first_per_gamma": [
+        9.533513611290811e-15,
+        -1.9969172106290813e-15
+      ],
+      "normal_surface_second_per_gamma": [
+        [
+          446.4363205855147,
+          -73.97368309629219
+        ],
+        [
+          -73.97368309629219,
+          18.02437112954292
+        ]
+      ],
+      "points": 96,
+      "projection_consumed_in_action": false,
+      "scalar_wall_profile_contact_norm": 0.6341704809506388,
+      "source_image_L2_norm": 0.02523874814214077,
+      "unreached_radial_image_complement_L2_norm": 0.012608050475531792,
+      "value": 5.385770681361316
+    }
+  ],
+  "reference_pair_value_preserved": true,
+  "scope": "EVALUATED_EXACT_REACHED_MATERIAL_NORMAL_TRACE_GRAPH_ACTION_APPLICATION",
+  "selected_mechanical_normal_section": false,
+  "shared_equations": "gamma=alpha_FSC*ell_current^(-m); GF=cF/E_kappa^2; H_form simple oriented crossing with event drive remain common equations, not fitted here",
+  "spatial_normal_orientation": "increasing chi, +Cstar^-1 partial_chi; spacelike conormal raising has opposite sign in +---",
+  "temporal_junction_action_assembled": false,
+  "temporal_normal": "induced_lapse^-1 partial_t distinct from lateral material normal"
+}

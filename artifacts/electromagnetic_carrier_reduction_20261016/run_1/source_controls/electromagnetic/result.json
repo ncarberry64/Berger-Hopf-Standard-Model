@@ -1,0 +1,172 @@
+{
+  "numerical": {
+    "all_passed": true,
+    "group_count": 3,
+    "groups": {
+      "bosonic_reference_controls": {
+        "covariances_equal": false,
+        "hbar": 1,
+        "passed": true,
+        "primordial_reference_selected": false,
+        "same_retarded_evolution": true,
+        "states": [
+          {
+            "energy_control_units": 4.0,
+            "minimum_uncertainty_eigenvalue": 0.0,
+            "occupation_control_n": 0,
+            "stationarity_residual": 1.236726586479995e-17
+          },
+          {
+            "energy_control_units": 28.0,
+            "minimum_uncertainty_eigenvalue": 1.7028052091960062,
+            "occupation_control_n": 3,
+            "stationarity_residual": 8.963751526034389e-17
+          }
+        ],
+        "symplectic_residual": 4.94690634591998e-17
+      },
+      "normal_source_derivative": {
+        "error_ratios": [
+          4.000944835436806,
+          4.000236287148333,
+          4.000058861994505
+        ],
+        "passed": true,
+        "scope": "independent finite-difference control, not the physical outgoing derivative",
+        "table": [
+          {
+            "h": 0.02,
+            "max_absolute_error": 1.9220984066259383e-05
+          },
+          {
+            "h": 0.01,
+            "max_absolute_error": 4.804111242928677e-06
+          },
+          {
+            "h": 0.005,
+            "max_absolute_error": 1.2009568680637628e-06
+          },
+          {
+            "h": 0.0025,
+            "max_absolute_error": 3.002347989111698e-07
+          }
+        ]
+      },
+      "quadratic_bosonic_energy_bound": {
+        "checks": [
+          {
+            "dominating_bound": 3.226267650163207,
+            "energy": 4.0,
+            "quadratic_observable": 0.1124999999999999
+          },
+          {
+            "dominating_bound": 22.583873551142446,
+            "energy": 28.0,
+            "quadratic_observable": 0.7874999999999994
+          }
+        ],
+        "kappa": 0.8065669125408017,
+        "minimum_matrix_order_eigenvalue": -5.637851296924623e-17,
+        "muon_error_bound": null,
+        "passed": true,
+        "physical_energy_budget": null
+      }
+    }
+  },
+  "physical_status": {
+    "a_mu": null,
+    "coupled_correction_applied": false,
+    "full_BHSM_operator": false,
+    "g_mu": null,
+    "inherited_reference_selected": false,
+    "matching_guard": 2e-10,
+    "physical_collider_packets": false,
+    "terminal_response_admitted": false,
+    "total_uncertainty": null
+  },
+  "scope": "EXACT_CLASSICAL_CONTROL_AND_CONDITIONAL_REDUCTION_NOT_PHYSICAL_BHSM",
+  "script_sha256": "f76c648ffc716deb88146c59af4892adafd4bddd9dfb99a63e18cecebecffcbd",
+  "source_commit": "b6cb15f5ab6f6b44057f13895c5fd498ce928d83",
+  "symbolic": {
+    "all_passed": true,
+    "group_count": 10,
+    "groups": {
+      "dimension_specific_conformal_weight": {
+        "4D_Maxwell_weight": "a^0",
+        "8D_Maxwell_weight": "a^4",
+        "passed": true,
+        "scale_selected": false
+      },
+      "exact_volume_gram": {
+        "passed": true,
+        "radius_R_normalization": "alpha/sqrt(2*pi^2*R), for unit Maxwell kinetic coefficient",
+        "unit_sphere_unnormalized_gram": "2*pi^2 I4"
+      },
+      "full_equation_admission_not_just_reduced_rows": {
+        "BHSM_physical_residual": null,
+        "diagnostic_energy_derivative": "zero exactly",
+        "diagnostic_full_norm": 0.7861650943380503,
+        "diagnostic_full_norm_squared": "89/144",
+        "diagnostic_reduced_rows": "zero exactly",
+        "exact_source_free_locked_orbits": "sigma_dot=0, theta_dot=+/-Omega",
+        "normal_loads": [
+          "sqrt(b)*r*(Omega^2-theta_dot^2)",
+          "2*sqrt(b)*r*sigma_dot*theta_dot/sqrt(sigma^2+r^2)"
+        ],
+        "passed": true
+      },
+      "global_smooth_s3_forms": {
+        "number_of_forms": 4,
+        "passed": true
+      },
+      "nonlinear_constraints_identified": {
+        "constraints": [
+          "q3^2+q4^2=b*r^2",
+          "q1*q4-q2*q3=0"
+        ],
+        "imposed_by_source_free_Maxwell": false,
+        "passed": true
+      },
+      "offshell_second_map_contact": {
+        "explains_saved_muon_discrepancy": false,
+        "naive_theta_theta": "b*Omega^2*(sigma^2+r^2)",
+        "original_theta_theta": 0,
+        "passed": true,
+        "second_map_theta_theta": "-b*Omega^2*(sigma^2+r^2)"
+      },
+      "potential_comparison": {
+        "G0_generated_by_fixed_round_linear_Maxwell": false,
+        "Maxwell_potential": "b*Omega^2*(sigma^2+r^2)/2",
+        "missing_field_dependent_potential": "(A0-b*Omega^2)*sigma^2/2+G0*sigma^4/4",
+        "passed": true
+      },
+      "retained_scalar_kinetic_match": {
+        "coordinates": [
+          "sigma",
+          "theta"
+        ],
+        "passed": true,
+        "pullback_metric": "diag(b, Zchi*(1+g*sigma^2)) in (sigma,chi)",
+        "r": "1/sqrt(g)",
+        "scope": "homogeneous kinetic matrix; full local spacetime action reduction not established",
+        "theta": "sqrt(Zchi*g/b)*chi"
+      },
+      "tangent_normal_projectors_and_curvature": {
+        "gaussian_curvature": "-g/(b*(1+g*sigma^2)^2)",
+        "passed": true
+      },
+      "transversality_and_curl": {
+        "mode_has_nonzero_field_strength": true,
+        "passed": true,
+        "positive_square_eigenvalue": "4/R^2",
+        "unit_radius_curl_eigenvalues": [
+          -2,
+          -2,
+          2,
+          2
+        ]
+      }
+    }
+  },
+  "title": "Electromagnetic carrier: round-S3 modes and full-equation reduction test"
+}

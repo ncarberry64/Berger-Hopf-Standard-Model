@@ -1,0 +1,89 @@
+{
+  "executions": [
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "bhsm.interface.muon_magnetic_birth_mean_rows",
+        "--contact-directory",
+        "artifacts/muon_magnetic_true_birth_mean_load_20261011/run_1",
+        "--output",
+        "artifacts/muon_magnetic_birth_mean_rows_20261011/run_1",
+        "--difference-step",
+        "2e-5"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "stderr_path": "run_1.stderr.txt",
+      "stdout_path": "run_1.stdout.txt"
+    },
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "bhsm.interface.muon_magnetic_birth_mean_rows",
+        "--contact-directory",
+        "artifacts/muon_magnetic_true_birth_mean_load_20261011/run_1",
+        "--output",
+        "artifacts/muon_magnetic_birth_mean_rows_20261011/run_2",
+        "--difference-step",
+        "2e-5"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "stderr_path": "run_2.stderr.txt",
+      "stdout_path": "run_2.stdout.txt"
+    }
+  ],
+  "files": [
+    {
+      "bytes": 12318,
+      "path": "artifacts/muon_magnetic_birth_mean_rows_20261011/run_1/result.json",
+      "sha256": "56c15e2a998e081901af33e8e7a49010966474a463b4cfb2d0c9d256ccee09a6"
+    },
+    {
+      "bytes": 1268663,
+      "path": "artifacts/muon_magnetic_birth_mean_rows_20261011/run_1/application.npz",
+      "sha256": "28330fbeebab9c00cdda25818c81d66f1b69e37808fb4de896e069664a1819d7"
+    },
+    {
+      "bytes": 12318,
+      "path": "artifacts/muon_magnetic_birth_mean_rows_20261011/run_2/result.json",
+      "sha256": "56c15e2a998e081901af33e8e7a49010966474a463b4cfb2d0c9d256ccee09a6"
+    },
+    {
+      "bytes": 1268663,
+      "path": "artifacts/muon_magnetic_birth_mean_rows_20261011/run_2/application.npz",
+      "sha256": "28330fbeebab9c00cdda25818c81d66f1b69e37808fb4de896e069664a1819d7"
+    }
+  ],
+  "independent_replay_pairs": [
+    {
+      "byte_identical": true,
+      "filename": "result.json"
+    },
+    {
+      "byte_identical": true,
+      "filename": "application.npz"
+    }
+  ],
+  "physical_formation_or_Pauli_completed": false,
+  "tests": {
+    "argv": [
+      "C:\\Python314\\python.exe",
+      "-m",
+      "pytest",
+      "--noconftest",
+      "-q",
+      "tests/test_muon_magnetic_birth_mean_rows.py"
+    ],
+    "exit_code": 0,
+    "stdout": "3 passed in 1.54s"
+  }
+}

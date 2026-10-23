@@ -1,0 +1,245 @@
+{
+  "schema_version": "1.0",
+  "preparation_id": "BHSM_EE_MUMU_IDEAL_PREPARATION_V1",
+  "date": "2026-10-16",
+  "classification": "USER_AUTHORIZED_IDEALIZED_EXTERNAL_PREPARATION_SPECIFICATION",
+  "extends_benchmark": "BHSM_NEW_COLLIDER_ELECTRON_POSITRON_TO_MUON_ANTIMUON_V1",
+  "authorization": {
+    "owner": "Norman Carberry",
+    "scope": "Choose an idealized collider preparation with declared energy/packet parameters and no additional incoming radiation; calculate beam-generated, constraint-required and inherited fields.",
+    "parameters_are": "new theoretical design choices, not recovered measurements and not fitted BHSM coefficients",
+    "muon_magnetic_target_used_for_parameter_selection": false,
+    "repository_mutation_performed_by_this_package": false
+  },
+  "provenance": {
+    "repository": "ncarberry64/Berger-Hopf-Standard-Model",
+    "pull_request": 465,
+    "branch": "codex/muon-parent-maxwell-density-review",
+    "inspected_head": "823d070ac445989169a6bf63a2ef044035f2602f",
+    "preserve_newer_work": true,
+    "binding_path": "docs/muon_collider_preparation_binding_20261016.md",
+    "binding_blob_sha": "fde078bf5c29e7e14e8bd23f31af57c751879d54",
+    "pair_receipt": "artifacts/muon_collider_common_state_constraint_family_20261014/retained_preparation/result.json",
+    "pair_receipt_sha256": "4eb26ad104914e6d78cd686157aecbad83e8bb376e642eb514430377d35fe369",
+    "pair_spin_npz": "artifacts/muon_collider_common_state_constraint_family_20261014/retained_preparation/actual_frozen_family_and_exact_pair_spin_CAR_preparation.npz",
+    "pair_spin_sha256": "20db0b3b1a5cb09be1979b0fb24027bbb70f713d4001bd8c50e9807137a136d3",
+    "sources": [
+      "https://github.com/ncarberry64/Berger-Hopf-Standard-Model/blob/823d070ac445989169a6bf63a2ef044035f2602f/docs/muon_collider_preparation_binding_20261016.md",
+      "https://physics.nist.gov/cuu/Constants/Table/allascii.txt",
+      "https://arxiv.org/abs/1901.09935"
+    ]
+  },
+  "process": {
+    "selected_channel": "e- + e+ -> mu- + mu+",
+    "incoming_hard_particle_counts": {
+      "electron": 1,
+      "positron": 1
+    },
+    "other_action_coupled_outgoing_channels_and_radiation": "retain; selecting a readout channel does not set its production probability to one",
+    "species_slots": {
+      "electron": "frozen light slot",
+      "muon": "frozen middle slot"
+    },
+    "production_probability_evaluated": false,
+    "experimental_bunch_or_machine_model": false
+  },
+  "frame_and_geometry": {
+    "frame": "local collision center-of-momentum tetrad on the same inherited physical background",
+    "spatial_axes": "right-handed orthonormal X1,X2,X3; central electron moves +X3 and positron -X3",
+    "impact_parameter_fm": "0",
+    "initial_packet_centers_fm": {
+      "electron": [
+        "0",
+        "0",
+        "-1000"
+      ],
+      "positron": [
+        "0",
+        "0",
+        "1000"
+      ]
+    },
+    "initial_center_separation_fm": "2000",
+    "initial_slice_clock": "tau=0 in the local preparation frame; this is not the birth clock or the earlier complex terminal cut",
+    "nominal_encounter": "origin at d/(2 v_e) in the noninteracting narrow-packet reference only; actual event time is solved",
+    "global_flat_exterior_assumed": false,
+    "embedding_clock_scale_and_constraint_fields": "construct from the existing action and calibrated physical-unit map; retain inherited geometry"
+  },
+  "beam_energy": {
+    "central_total_energy_per_particle_MeV": "500",
+    "nominal_central_pair_energy_MeV": "1000",
+    "convention": "central on-shell total energy including rest energy, measured in the local collision tetrad",
+    "energy_is_primary": true,
+    "packet_mean_energy": "calculate after actual spectral construction; a packet has a spread and its mean need not equal the central-mode energy",
+    "exact_pair_invariant_energy_for_every_packet_component": false,
+    "action_momentum_binding": "solve the actual admissible incoming dispersion/pole relation at the selected energy; the free reference momentum is only a check"
+  },
+  "packets": {
+    "envelope": "isotropic Gaussian coherent packet for each incoming species",
+    "reference_probability_rms_width_each_axis_fm": [
+      "100",
+      "100",
+      "100"
+    ],
+    "width_convention": "1-sigma of the scalar probability envelope in the local preparation chart, not a particle radius or a rest-frame size",
+    "extra_quadratic_spectral_phase_chirp": "0",
+    "individual_overall_phases_rad": {
+      "electron": "0",
+      "positron": "0"
+    },
+    "coherence": "each momentum packet is coherent; spin sectors are incoherently averaged; incoming species packet coefficients factor before required field dressing",
+    "reference_momentum_variable": "k = p*c, measured in MeV",
+    "reference_sigma_k_MeV": "hbar_c_MeV_fm / (2*100 fm)",
+    "reference_spectral_amplitude": "g_a(k)=(2*pi*sigma_k^2)^(-3/4)*exp(-|k-k_a|^2/(4*sigma_k^2)-i*k.dot(X_a)/(hbar*c))",
+    "reference_normalization_measure": "d^3 k, delta-normalized scalar momentum basis; convert explicitly if using invariant mass-shell measure",
+    "reference_centers_k": "k_e=(0,0,+sqrt(E_beam^2-m_e^2)); k_p=(0,0,-sqrt(E_beam^2-m_e^2)) in natural energy units",
+    "physical_realization": "map the declared Gaussian into the action's physical particle/antiparticle mode spaces and gauge-covariant spin frames; use the full physical Cauchy Gram",
+    "physical_normalization": "one physical incoming particle per species; do not replace the full Cauchy Gram with pointwise or Euclidean norm",
+    "projection_scope": "report achieved centroids, energy/spread, RMS widths and projection error; do not relabel a free envelope as a solved full18 BHSM section",
+    "numerical_refinement": "hold this preparation fixed while refining numerical basis/quadrature; distinguish physical parameter variations from discretization"
+  },
+  "spin_state": {
+    "rho_spin": [
+      [
+        "0.25",
+        "0",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0.25",
+        "0",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0.25",
+        "0"
+      ],
+      [
+        "0",
+        "0",
+        "0",
+        "0.25"
+      ]
+    ],
+    "pair_density": "(1/4) sum_(s,t) |e-_s[g_e],e+_t[g_p]><e-_s[g_e],e+_t[g_p]|, with required gauge/constraint dressing",
+    "exact_pair_statistics_required": true,
+    "quasifree_replacement_from_one_body_covariance_allowed": false,
+    "outgoing_spin": "retain full muon spin density/matrices until the magnetic coefficient has been extracted"
+  },
+  "incoming_environment": {
+    "reference": "retain the current branch's same-action inherited reference geometry/field/sea state; do not replace it by globally empty Minkowski space",
+    "additional_incoming_radiative_state": "no independently injected coherent radiation and no extra thermal/squeezed/particle occupation over that reference; retain vacuum fluctuations and required charge dressing",
+    "external_machine_fields_in_local_interaction_region": "no additional externally imposed electric or magnetic field during production",
+    "longitudinal_and_near_fields": "solve the Gauss/constraint-consistent fields of the specified incoming packets, with their inherited couplings and temporal conormals",
+    "metric_Higgs_and_other_constraint_fields": "solve on the same background with the same packet sources; not independently zeroed",
+    "preparation_prescription": "use the existing admissible incoming dressed/scattering construction with no independent incoming homogeneous radiation; evaluate its induced Cauchy data on the chosen preparation slice",
+    "no_incoming_condition_is_complete_Cauchy_solution": false,
+    "reference_state_is_numerically_instantiated_by_this_file": false,
+    "reference_dependency_rule": "if the inherited quantum reference itself is not instantiated, identify its exact remaining action/state selector and proceed with existing definitions; do not request an experimental wavefunction file or invent a primordial population",
+    "outgoing_domain": "existing action-defined retarded/outgoing domain and coupled channels; no artificial reflecting cap or dropped physical delayed response",
+    "field_state_is_bare_charged_Fock_times_zero_photons": false,
+    "shared_sea_removed": false,
+    "fields_set_to_zero": false
+  },
+  "calibration_and_units": {
+    "policy": "use already-authorized independent calibration consistently; do not overwrite existing action relations or retune fixed Yukawas",
+    "electron_mass_energy_MeV": {
+      "value": "0.51099895069",
+      "standard_uncertainty": "0.00000000016",
+      "role_in_package": "CODATA 2022 reference kinematics only; not a supplied action pole"
+    },
+    "muon_mass_energy_MeV": {
+      "value": "105.6583755",
+      "standard_uncertainty": "0.0000023",
+      "role_in_package": "CODATA 2022 reference threshold check only; not a BHSM prediction"
+    },
+    "c_m_per_s": {
+      "value": "299792458",
+      "exact": true
+    },
+    "h_J_s": {
+      "value": "6.62607015e-34",
+      "exact": true
+    },
+    "e_C": {
+      "value": "1.602176634e-19",
+      "exact": true
+    },
+    "fm_m": {
+      "value": "1e-15",
+      "exact": true
+    },
+    "action_unit_conversion": "existing physically matched common unit; never set the chart unit equal to the beam energy by convention",
+    "target_anomaly_and_magnetic_moment_constants": "not included in this input package"
+  },
+  "magnetic_probe": {
+    "production_background_probe": "B_external=0",
+    "readout": "separate weak measuring-field derivative on the formed muon, then the charge-normalized soft Pauli limit",
+    "probe_axes": [
+      "local muon-rest-frame X1",
+      "local muon-rest-frame X2",
+      "local muon-rest-frame X3"
+    ],
+    "probe_limit": "B -> 0; use the owned weak source and its soft/domain limits, not a specified finite accelerator magnet",
+    "collision_s_equals_soft_q_squared": false,
+    "target": "a_mu=F2(0); g_mu=2*(1+a_mu), when the physical decomposition and normalization hold",
+    "possible_preparation_dependence": "preserve and report; establish an isolated-state limit before calling a state-dependent response a universal anomaly"
+  },
+  "later_sensitivity_controls_not_baseline_tuning": {
+    "order": "finish one baseline physical connection before starting the scan",
+    "central_energy_per_particle_MeV": [
+      "250",
+      "500",
+      "1000"
+    ],
+    "reference_rms_width_fm": [
+      "50",
+      "100",
+      "200"
+    ],
+    "separation_in_widths": [
+      "20",
+      "30"
+    ],
+    "rule": "one change at a time; do not choose the favorable run by agreement with measured a_mu; preserve all action-coupled channels"
+  },
+  "implementation_entry_points": {
+    "module": "audits/bhsm_collider_incoming_field_current.py",
+    "functions": [
+      "construct_action_packet_sections",
+      "validate_action_packet_Cauchy_Gram",
+      "apply_incoming_packet_current",
+      "original_material_Gauss_source"
+    ],
+    "additional_actions": [
+      "same-state Higgs/stress/angular/interface sources",
+      "Phi_coll and its source jets",
+      "connected chronological K_ZZ^R and K_EZ terminal return",
+      "same-domain physical pole/residue and magnetic readout"
+    ],
+    "two_trace_boundary_law": "src/bhsm/interface/muon_two_collar_weak_domain.py; interacting law only at nonzero surface source",
+    "regular_cap_c": "q(0), the central U(1) radial Gauss-flux integration constant; not the spectral cutoff"
+  },
+  "historical_diagnostics_not_recomputed": {
+    "Maxwell_abs_R_Z_zero_based_3_2": "2.4777309846820184",
+    "original_226_max": "9.602842247524184e-7",
+    "worst_one_based_row": 226,
+    "original_guard": "2e-10"
+  },
+  "execution_status": {
+    "external_numeric_choices_bound": true,
+    "analytic_reference_envelope_specified": true,
+    "field_preparation_prescription_declared": true,
+    "full_BHSM_packet_sections_evaluated": false,
+    "physical_Cauchy_fields_evaluated": false,
+    "retarded_terminal_return_evaluated": false,
+    "physical_derivative_admitted": false,
+    "nonlinear_coupled_correction_applied": false,
+    "muon_prediction_complete": false,
+    "scope": "input specification plus reference kinematic checks; not an executable physical collider solution"
+  }
+}

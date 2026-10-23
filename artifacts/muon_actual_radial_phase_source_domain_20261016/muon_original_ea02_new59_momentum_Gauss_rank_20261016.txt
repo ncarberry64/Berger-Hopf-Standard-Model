@@ -1,0 +1,150 @@
+ACTUAL ea02/D4 NEW59 MOMENTUM / TEMPORAL GAUSS RANK AND RANGE
+2026-10-16. Fixed supplied field/source; no canonical correction.
+
+Source and provenance
+---------------------
+Producer:
+C:/Users/carbe/Downloads/BHSM_muon_parent_maxwell_worktree_20261001/audits/bhsm_original_ea02_new59_momentum_Gauss_rank_20261016.py
+SHA256 7682206f2b824ed500e4091799feea246641163dacb6b3f849a2f2829d8e06c7
+
+It pins the original ea02 full368/primal/time/Pi158 archive, original
+553494b9 canonical seven-column source archive, corrected native D4
+point/wall maps, actual coefficient R/hR export, independent all60
+Gauss H_R, and reviewed central primal charge operands. Exact full
+field/source/epoch identities are checked; the old canonical Pi is
+never silently replaced by native action Pi.
+
+Owned temporal coefficient map:
+artifacts/muon_baton_zoo_radial_convergence_20261014/
+actual_common_cut_degree4_complete_phase_blocks_run_1/
+executed_bhsm_baton_zoo_current_covariant_phase_blocks.py:9-62.
+Columns j=4*p+c, p=0..8, c=0..3 are the nine retained ordinary temporal
+profiles in four U(2) channels. The SU2 velocity images use all compatible
+product coordinates; central images use the exact represented derivative
+complex; the Higgs image is -T_c H phi_p(wall).
+
+The rational derivative completion is owned by
+compatible_central_all_epochs_run_2/
+executed_bhsm_baton_zoo_compatible_radial_complex.py:15-45.
+The literal fixed-profile evaluator and saved reference/projection/norm
+constants are used unchanged. These are fixed-chart coefficient maps,
+not newly selected physical Cauchy data.
+
+Actual native Dphi check
+-----------------------
+The generator is reevaluated from the owner, not taken only from cached
+binary matrices. Its actual raw+native-extra velocity image is compared
+against the literal spatial Dphi and Higgs images at all original48
+nodes and the actual wall. Fresh-versus-cached generator difference is
+8.255244484176387e-32; native Dphi difference is 8.94843209450353e-31;
+Higgs difference is 3.460452451903165e-55; geometry velocity image is
+exactly zero. The exact 1/sqrt(2) versus frozen binary64 commutator
+factor discrepancy (6.268583589525109e-17) is disclosed, not fitted away.
+The temporal coordinate incidence is specifically [0_24; I_36].
+
+Rank certificate and its scope
+-----------------------------
+Let V be the 217x36 owned gauge-velocity matrix, and split its rows into
+old158 and added59 momentum coordinates:
+  B = V_new^T,  Vo = V_old.
+
+All 2096 inactive entries of the 36x59 B are certified is_zero() exactly,
+not merely zero-containing acb balls. The remaining28 entries occupy
+distinct rows and distinct columns and each interval excludes zero.
+The pivot minor has absolute determinant lower bound17.82535362629228.
+Thus rank(B)=28, without SVD, tolerance rank, pseudoinverse or projection.
+
+The first28 parameter rows (old seven profiles times four channels)
+have rank21 on new momenta. The remaining8 parameter rows have rank7
+on the kernel of those old28 rows because their seven nonzero pivot
+columns are disjoint. Hence preserving old28 leaves38 new momentum
+directions, and imposing all36 temporal rows leaves31.
+
+These31 are directions not fixed by THESE TEMPORAL GAUSS equations.
+They are not a proof that31 momenta remain free after mechanical,
+Legendre, source, boundary and physical outgoing equations. No values
+have been assigned to them.
+
+Exact zero parameter rows are3,7,11,15,19,23,27,31: the central channel
+of ordinary profiles p0..7. They form the full left cokernel of B.
+The missing one among the NEW8 rows is central phi P3 (row31).
+The other new central row, phi P4 (row35), is represented.
+
+Fixed-old-canonical-Pi load and source coupling
+----------------------------------------------
+The owner has G_temporal=-V^T Pi. Therefore the fixed-old-canonical-Pi
+question is
+  B Pi_new = b,  b = -Vo^T Pi_old,canonical.
+It has eight cokernel rows Lb. Their actual maximum is
+2.352435934599401e-12; each interval excludes zero. Hence an EXACT
+solution using only newPi while holding old canonicalPi fixed does not
+exist for the supplied encoded data. The obstruction is nevertheless
+below the requested2e-10 numerical tolerance.
+
+This is strictly a fixed-old-Pi diagnostic. It is not a BHSM
+nonexistence result or a requirement to freeze old/source momenta in
+the full coupled problem. Native action oldPi differs from the original
+stored canonicalPi by6.054428930217491e-11, and both remain separate.
+The native action check B Pi_new-native - b_native + rG_temporal is
+3.774396606987e-28.
+
+For a change to the actual seven affine trial Gauss residuals, the
+required new momentum equation is B deltaPi_new = rG_affine-seven.
+The eight-row cokernel maximum is7.945700056930942e-14, again exact
+nonzero intervals but below2e-10. Primal rG and K_G R are not combined
+until the owner's affine column0 placement; all old28 loads are retained.
+
+The missing phi P3 central charge uses old158 indices109,141,157:
+  Q_phiP3,Y = Pi157 + 20/(3 WALL) Pi109 + 70/(3 WALL) Pi141,
+where the three labels are Ar central d_rho(phiP1), phiP0, phiP2,
+respectively. This follows the rational Legendre derivative identity;
+phi=(1-y^2)^2 vanishes at the wall, so its Higgs image is zero
+analytically. The owned evaluated row retains four tiny zero-containing
+Higgs balls at102..105; none is overwritten or called exactzero.
+The full owned-minus-literal row interval contains zero and has upper
+1.0501840144936895e-56.
+
+The actual original seven canonical source momentum columns, whose
+field columns match the same retained R exactly, each have nonzero
+component in this missing charge. All three original combined proper
+tangent columns (and the affine column0) retain that component. Their
+maximum is3.887686347184456e-14. Thus the missing scalar charge belongs
+to an existing source/event canonical momentum contact; it is not a
+new independent physics parameter or a forced zero load.
+
+The isolated fixed-q old-momentum component image on all eight
+cokernel rows has rank4: a4x4 interval minor has absolute lower
+8.551098833530781e-94. Appending the fixed-oldPi load gives rank5:
+a5x5 minor has lower4.9044783638687156e-107. Thus the four recorded
+momentum COMPONENT columns alone cannot cancel all eight exact loads.
+This is not an obstruction to the full coupled source/domain problem:
+field-dependent deltaV(A,H), event/source/domain contacts and other
+existing outer unknowns are excluded from this fixed-q component test.
+Affine column0 is not promoted to a freely adjustable physical port.
+No source weights, correction, minimum norm or free momenta are chosen.
+
+Paired execution
+----------------
+Two independent executions are byte-identical:
+C:/Users/carbe/OneDrive/Documents/CODEX/outputs/bhsm_original_ea02_new59_momentum_Gauss_rank_20261016/final_run_1
+C:/Users/carbe/OneDrive/Documents/CODEX/outputs/bhsm_original_ea02_new59_momentum_Gauss_rank_20261016/final_run_2
+
+actual_new59_momentum_Gauss_rank_range_and_source_span.npz
+2733059 bytes, SHA256
+202df02e2978df08c5b4e682ca8ae2471434fe6a477e2fadece35c19f1ebfcf0
+result.json:16910 bytes, SHA256
+fa0b6dee7f376cd1cc4a0b3da3d38a5811fc71b85be757da8aa3f33637f914d6
+executed_producer.py:22968 bytes, source SHA above.
+Final inventory SHA256:
+054d0aea28bf004cd15bc1ca2fe56704e7d0e7a273bfa5a789264d73d3a1ceb5.
+
+Scientific limits
+-----------------
+This is a new coefficient/rank/range application at the original
+complex analytic off-shell cut. No field, action, history, D5 or
+canonical-solver campaign was replayed. No coupled correction was
+applied. It does not select a physical outgoing domain/load, complete
+the four histories or their terminal C0/Cj, establish physical radial
+convergence/full derivative/Maxwell226, normalize physical spins, or
+predict the muon moment. All corresponding flags remain false/None.
+

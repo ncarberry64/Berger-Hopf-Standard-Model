@@ -1,0 +1,17 @@
+From the repository root in PowerShell, use NEW result directories when
+repeating already materialized applications:
+
+$env:PYTHONPATH='src'
+$env:OPENBLAS_NUM_THREADS='1'
+C:\Python314\python.exe audits/bhsm_normalized_seam_boundary_response_20261015.py --output artifacts/muon_real_seam_boundary_response_20261015/application_run_1
+C:\Python314\python.exe audits/bhsm_normalized_seam_boundary_response_20261015.py --output artifacts/muon_real_seam_boundary_response_20261015/application_run_2
+C:\Python314\python.exe audits/bhsm_normalized_seam_schur_controls_20261015.py --output artifacts/muon_real_seam_boundary_response_20261015/controls_run_1
+C:\Python314\python.exe audits/bhsm_normalized_seam_schur_controls_20261015.py --output artifacts/muon_real_seam_boundary_response_20261015/controls_run_2
+C:\Python314\python.exe -m pytest --noconftest -q tests/test_muon_normalized_seam_schur_jets.py
+C:\Python314\python.exe artifacts/muon_real_seam_boundary_response_20261015/run_publication_checks.py
+C:\Python314\python.exe audits/bind_muon_real_seam_boundary_response_20261015.py --repository . --output artifacts/muon_real_seam_boundary_response_20261015/publication_manifest_run_1.json
+C:\Python314\python.exe audits/bind_muon_real_seam_boundary_response_20261015.py --repository . --output artifacts/muon_real_seam_boundary_response_20261015/publication_manifest_run_2.json
+
+These commands reuse old matrices. They do not rerun the D5, profile,
+source, normal-flow or history integration campaigns. Repeating a manifest
+is serialization, not an independent solver or numerical control.

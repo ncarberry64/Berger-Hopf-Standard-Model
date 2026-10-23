@@ -1,0 +1,428 @@
+{
+  "Gate7_closed": false,
+  "Gauss_relative_maximum": 2.33479116743416e-16,
+  "action_boundary_relative_defect": 1.1584577203368806e-14,
+  "action_parameters": {
+    "nu_squared_action": 4.0,
+    "surface_gamma": null
+  },
+  "action_selected": false,
+  "active_source_indices": [
+    0,
+    1,
+    2
+  ],
+  "actual_phase_span": 1e-05,
+  "adjoint_pairing_maximum_defect": 3.2311742677852644e-26,
+  "array_archives": {
+    "adjoint.npz": {
+      "arrays": [
+        "adjoint_readout_map",
+        "advanced_adjoint",
+        "times"
+      ],
+      "bytes": 167417,
+      "sha256": "899a3adf3be889951513fc7ae15219c58c1a7419ed43f8146ec863276105e0d2"
+    },
+    "contacts.npz": {
+      "arrays": [
+        "A_tau",
+        "Gauss_residual",
+        "action_boundary_pairing",
+        "action_temporal_endpoint",
+        "adjoint_output",
+        "adjoint_source_pairing",
+        "final_source_canonical_momentum",
+        "gauge_Euler_reaction_integrand",
+        "intrinsic_H_canonical_momenta",
+        "intrinsic_H_response",
+        "intrinsic_scalar_wall_current_pairing",
+        "paired_gauge_Euler_reaction",
+        "source_terminal_endpoint",
+        "source_trace",
+        "source_trace_rate",
+        "times",
+        "wall_trace_reaction_pairing"
+      ],
+      "bytes": 507792,
+      "sha256": "0104ac6cc3f0e7dae6043ce02b72612848aec1376b32a5b5797271d10e113eb0"
+    },
+    "local_point_jets.npz": {
+      "arrays": [
+        "coframe_derivative",
+        "coframe_structure_contact",
+        "expected_local_magnetic_curvature",
+        "full_curvature_at_point",
+        "mechanical_commutator_contact",
+        "potential_at_point"
+      ],
+      "bytes": 8514,
+      "sha256": "15f9a0613663d0e5176bb1e8582fe588a6abc49a1697f95e6217126c7601826b"
+    },
+    "operators.npz": {
+      "arrays": [
+        "gauge_weak_rows",
+        "raw_B",
+        "raw_K",
+        "raw_M",
+        "scalar_B",
+        "scalar_K",
+        "scalar_M"
+      ],
+      "bytes": 364950,
+      "sha256": "cda43d251f40890198dddfd15d1d199dcd10e423abe77ba06de0ea04d2fbe8ff"
+    },
+    "phase.npz": {
+      "arrays": [
+        "state",
+        "times"
+      ],
+      "bytes": 787630,
+      "sha256": "ea9107664958f14b4797506b6559ec8bea8c8c18a56b8cb0ad598684a425539a"
+    },
+    "primal_and_source.npz": {
+      "arrays": [
+        "H_aligned_source_rate",
+        "Q",
+        "Qdot",
+        "b_source_coefficients",
+        "canonical_magnetic_factor",
+        "canonical_magnetic_factor_rate",
+        "coordinate_times",
+        "electromagnetic_wavefunctions",
+        "gauge_basis",
+        "gauge_radial_basis",
+        "raw_fields",
+        "s_H",
+        "s_H_dot",
+        "source_phase_jacobian",
+        "times",
+        "wall_trace_map"
+      ],
+      "bytes": 284868,
+      "sha256": "30e6a33e3c1755fa81b3fa672acd963177a32a92d2df121d2f5854f56d64babf"
+    },
+    "source_first_jets.npz": {
+      "arrays": [
+        "Q_first_jet",
+        "Qdot_first_jet",
+        "charged_to_neutral_first_jet",
+        "primitive_Clifford_coefficients",
+        "times"
+      ],
+      "bytes": 324769,
+      "sha256": "ee485ab63c9aa34e433469108ea23f1a7b9d5ee7588fb27e18554ce998f7bffc"
+    },
+    "velocity.npz": {
+      "arrays": [
+        "times",
+        "velocity"
+      ],
+      "bytes": 348584,
+      "sha256": "05af960c9bdb7acaab4ed2ec782734dea3b0293690b37fabfd915025459c37ac"
+    }
+  },
+  "b_source_coefficients_time_dependent": true,
+  "birth_source_matching": {
+    "actual_source_initial_state_supplied_from_incoming_birth": true,
+    "canonical_dual_jump_norm": 1.4406723896623462e-12,
+    "copied_incoming_velocity": false,
+    "extra_metric_density_multiplied": false,
+    "field_graph_owner": "muon_birth_paired_field_endpoint.paired_field_endpoint_rows dynamic/H trace and canonical-dual equations",
+    "field_trace_coefficient_jump_norm": 0.0,
+    "future_velocity_jump_norm": 0.02572816875319775,
+    "global_worldvolume_bundle_reset_evaluated": false,
+    "outgoing_initial_Gauss_relative": 9.041540681940799e-13,
+    "pointwise_common_frame_graph_restriction": true,
+    "prescribed_birth_source_trace_jump_norm": 2.2025470150938637e-23
+  },
+  "canonical_current": "chi_hat=R4^(3/2)psi/(2pi\u00b2)",
+  "chronological_response_span": 1e-05,
+  "classification": "EVALUATED_COMMON_BIRTH_LOCAL_MAGNETIC_JET_FULL488_CONTINUATION",
+  "complete_a_mu": null,
+  "complete_g_mu": null,
+  "complete_observable": false,
+  "electric_charge": 0.30282212073695486,
+  "error_scope": "actual finite retarded/advanced action application with Gauss and temporal contacts; ODE/mesh diagnostics, not continuum/operator-rounding/soft-Pauli enclosure",
+  "external_LSZ_or_open_fermion_vertex_completed": false,
+  "external_soft_momentum_selected": false,
+  "field_bridge": "actual same chronological cell x linear, future v/y held at solved midpoint; finite temporal interpolation only",
+  "gauge_Euler_reaction_norm": 0.0010889551870568086,
+  "global_static_or_adiabatic_matching_proved": false,
+  "inactive_source_indices": [
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "inactive_source_reason": "only three magnetic axes inserted; five padded source columns identically zero by definition",
+  "input_hashes": {
+    "artifacts/flagship_integration/BHSM_N12_C2_REFINED_RESET_ROOT_CENTER.npz": "59dd88661b15cbeec96bc19294f9d9c64f754cccbfbc385c32329fa9c864a8fe",
+    "artifacts/flagship_integration/BHSM_N12_FULL_RESET_ACTION_JACOBIAN.npz": "35bb2b67ff784206d3a5b9dc82881f5ffd8f844b55342f2032d29cdafb38a67a",
+    "artifacts/muon_birth_transfer_value_20261008/retained_reset/run_1/result.json": "d0fec0f8e8a05818fcce67e88ed8db73744484220a2cb213825893f481cb0a72",
+    "artifacts/muon_calibrated_pauli_20261009/inputs.json": "0b614ab6f26d169ca04a4878f767f78eb3668484840867e46aebbebf186369da",
+    "artifacts/muon_calibrated_weak_decay_20261010/run_1/weak_decay.json": "9c31575ce0889571790f8767cf53ffe043cb9906e0a45a96b194971320a0aad7",
+    "artifacts/muon_electromagnetic_soft_magnetic_source_20261011/incoming_run_1/adjoint.npz": "0105cb17bec3bd027e2d13d9990a26e8418a6bfdfb24cd8d58c3e116d7497f03",
+    "artifacts/muon_electromagnetic_soft_magnetic_source_20261011/incoming_run_1/contacts.npz": "ddee932d67390a1e62ba042db6577ad47215c80e1fc3b03913ddc619b4afa5c3",
+    "artifacts/muon_electromagnetic_soft_magnetic_source_20261011/incoming_run_1/local_point_jets.npz": "b323f39b44dba40b8422fd4c23089627061b8c28316cf8dfe05f7dfecaff63d6",
+    "artifacts/muon_electromagnetic_soft_magnetic_source_20261011/incoming_run_1/operators.npz": "d86cca9655cc2beefca35022fa36ae7ae16f23451c819e804ad6d120ed5e16a1",
+    "artifacts/muon_electromagnetic_soft_magnetic_source_20261011/incoming_run_1/phase.npz": "4269eeaba1b55f3fcfd6e4dbc9953feaab480019776b504b64010426917eb50e",
+    "artifacts/muon_electromagnetic_soft_magnetic_source_20261011/incoming_run_1/primal_and_source.npz": "4229114564f4b2781ebe33bc59e7b8e253352445d9d70e09e7845224aca88a3b",
+    "artifacts/muon_electromagnetic_soft_magnetic_source_20261011/incoming_run_1/result.json": "1ff7126e5e472ed7a17bb26615fef422cc35d008174c044e84815cacb48fa84f",
+    "artifacts/muon_electromagnetic_soft_magnetic_source_20261011/incoming_run_1/source_first_jets.npz": "9f6fe17afb5703b7a8650e11a1dfb46f8a53564ddaffd3ad9cc91e2f721ea73b",
+    "artifacts/muon_electromagnetic_soft_magnetic_source_20261011/incoming_run_1/velocity.npz": "1619fca3973079cc086c62e2ac23acffb2496b53627e048a83b7ae08a8b8167a",
+    "artifacts/muon_matched_mechanical_source_20261002/replay_reference/matched_source_and_weak_actions.npz": "146435df28178967c321c0aa7e89a1511395d196f96b8715532aa98e3e312c2b",
+    "artifacts/muon_parent_gauge_geometry_correction_20261010/attached_phase_incoming_1steps_run_1/application.npz": "c1246e91c4e3eb8c5a72af04294ce0163f7423559e72c9659616c2d99ae38d7e",
+    "artifacts/muon_parent_gauge_geometry_correction_20261010/attached_phase_incoming_1steps_run_1/result.json": "b2a5410764b3db436fa41a868e21379df7010dd22924c5193d85c48e7d786372",
+    "artifacts/muon_parent_gauge_geometry_correction_20261010/attached_phase_outgoing_1steps_run_1/application.npz": "4a84d1f982b65b9b9b3e6cf4ea24b4a7be2aced8e42b239bcdd0de3ff47368a5",
+    "artifacts/muon_parent_gauge_geometry_correction_20261010/attached_phase_outgoing_1steps_run_1/result.json": "87b353e0efa1cf174a9b350c8e219f8818cc26e8b627fab98d140bfeb50c6926",
+    "scripts/evaluate_muon_electromagnetic_magnetic_birth_continuation.py": "219467314a9cef7589817bfcb661d64f417cafee6fde0425600e48a98dc851fd",
+    "scripts/evaluate_muon_electromagnetic_soft_magnetic_source.py": "051d7c25528951883424f30b4021ecc962f03fd18476e09e1a6e8a20f686c4ff",
+    "scripts/evaluate_muon_reached_trace_action.py": "f2ecf5b614f8b3b1b5f9bf2b73490e539321049633f7deb467bdf60a81e0c260",
+    "src/bhsm/interface/aether_canonical_momentum_action_jacobian.py": "d0ade20dc8a999e43073b45ca3ef59e05c65c55e37a1d6565d4e389176295cb1",
+    "src/bhsm/interface/aether_diagonal_sp1_m4_attachment_v15_50.py": "e6482614dcb54f4890a5e66fbe724d4c302405d575a4b73ddbb64a075cb1827e",
+    "src/bhsm/interface/aether_lorentzian_child_galerkin_v15_44.py": "574a9a6267d9228170c7309bd4be3cafb36b7515a6ee558509beb968e97bdab7",
+    "src/bhsm/interface/muon_birth_attached_phase.py": "948c1505e9b68cffbe8050be31dcb5727d8f8d4f25399f9037cfc94a9ae9fdeb",
+    "src/bhsm/interface/muon_birth_coupled_primal_midpoint.py": "ce321f641fa51d98710d006e246aac5cf6bd046be93a74fab452808597c599ce",
+    "src/bhsm/interface/muon_birth_full_field_attachment.py": "58b3bd8a4ae5fe7c63b5551e4d0f26d82ab82a27d4389066c894a5e1b4728d03",
+    "src/bhsm/interface/muon_birth_paired_attachment_endpoint.py": "71a69275ebeef226fd8dc7585745c5c8acac687e497a8441fe37a37553178f23",
+    "src/bhsm/interface/muon_birth_paired_field_endpoint.py": "f22b6a17b65c72b30571b3d9f721f347737a5916fa08e50bd833ad22df3cd035",
+    "src/bhsm/interface/muon_birth_phase_continuation.py": "9169a1c56bf5084d1f240043ca12d431c87e4adaff24fe09bdf7bf27fc5eb0be",
+    "src/bhsm/interface/muon_birth_trace_enriched_action.py": "c36c48482dd58ebe369ab935574b78b3693036f717fb49035dfac01164956dce",
+    "src/bhsm/interface/muon_birth_trace_enriched_phase.py": "591754957f1cc452bfd53d8adc1087308459902a822876105315b7423c2fd676",
+    "src/bhsm/interface/muon_birth_two_arm_assigned_action.py": "cf6c58dc68700315d701fb9a1e9e99e927d18d90016a6ae7f86470c36136c77a",
+    "src/bhsm/interface/muon_chronological_charged_current.py": "b2a01b0c23c494fdcc28940cf6b55077c2018ed490f0a4f082d786a31f6509e3",
+    "src/bhsm/interface/muon_current_source_motion_cubic.py": "32427cda80ec7e8089e8a88f0f594f7013b825d8b00ac458f7e11a034b5339b4",
+    "src/bhsm/interface/muon_electromagnetic_magnetic_birth_continuation.py": "51d9cd03cfa6047dfe0fafd249734b26172193c78c860af65d6a6b0148c7c9e4",
+    "src/bhsm/interface/muon_electromagnetic_soft_magnetic_source.py": "e0ec4c67e29e8f2ac9ce003559c3d9257d00a30a79a373bd2caff58f5dd4d231",
+    "src/bhsm/interface/muon_intrinsic_higgs_gauge_action.py": "c19354209300ab06c0f1ab6bf4e111dbb5de0cd9e8d1d31a71af357a829118d4",
+    "src/bhsm/interface/muon_intrinsic_m4_normal_pullback.py": "43187eee35f2879a43fe0fd02ae447502811349ccf2f2a78aa14beb8aa706bf0",
+    "src/bhsm/interface/muon_material_higgs_gauge_action.py": "8bca013820283614c6578be4f44c29c4ea1c919f516aa9a2783f0eb38127d035",
+    "src/bhsm/interface/muon_moving_geometric_action.py": "bf560fdb9766f563d97d3100ccb266e2a4350c910ac14a51d57576c2b5371392",
+    "src/bhsm/interface/muon_parent_gauge_geometry_correction.py": "fa29f5764dca39196c807d64e7976d5894589e7de3ffa9d4a5ddecfb136b4816",
+    "src/bhsm/interface/muon_parent_maxwell_background_euler.py": "fbb2c99d4b1c58247ac42a769fad3e1b16ccc76a1744fe0c5334e50c4a974bee",
+    "src/bhsm/interface/muon_parent_maxwell_full_weak.py": "c1fb703967a644306d3521d457a6d7c778a49d89c1e081b401487a25b7491565",
+    "src/bhsm/interface/muon_parent_maxwell_geometry_weak.py": "f0b4a49934e17ad18c40e9164b66c54e1b2cb146fb476f59b0e500f2dd6c9153",
+    "src/bhsm/interface/muon_parent_mean_causal_action.py": "2a84b1be22625b1a5ae88d10c76631d7a5b602d2b0e22e57f00201bb74a593ad",
+    "src/bhsm/interface/muon_parent_retarded_hypercharge.py": "2eb97a704bce63f601cc0d6e0f647266d4b4aac7f746d34dceb41b72018c3510",
+    "src/bhsm/interface/muon_pointwise_full_field_action.py": "d57cd5953de00bcae857d0e458bbead1e463e5fffe8d947c5b9e71806aabaff6",
+    "src/bhsm/interface/muon_primal_electromagnetic_source.py": "fe38cda80affb38820a64e704f9ee4c80b7c4ab58b08c8f925a655333053c91a",
+    "src/bhsm/interface/muon_primal_trace_enriched_lepton_operator.py": "c6956d8b195c80e8a4488b1ef2c2e4b2bd8544736b6e1735bc7de3108597ec2f",
+    "src/bhsm/interface/muon_reached_trace_action.py": "7fed7f2520a6f66e31323905359e491897f7187ccf9871ecfc2ab95e415ffade",
+    "src/bhsm/interface/muon_trace_enriched_reached_action.py": "3721d05a2e82dfc04b75a0c570fd9946ee842e0e391704687ae9ebe29eb96e9a"
+  },
+  "integration_step_reference_duration": 2.5e-06,
+  "intrinsic_H_canonical_norm": 0.004632788494818087,
+  "intrinsic_H_response_norm": 1.04434041625802e-10,
+  "minimum_interior_mass_eigenvalue": 442.9256723171155,
+  "nonlinear_angular_H_axis_response_included": false,
+  "numerical_integrator": {
+    "atol": 2e-11,
+    "evaluations": 3842,
+    "method": "DOP853",
+    "rtol": 2e-09
+  },
+  "old_transported_Q8_inverse_substituted": false,
+  "outgoing_common_birth_graph_restriction_applied": true,
+  "physical_Pauli_value": false,
+  "point_magnetic_curvature_defect_maximum": 1.6846847023466191e-15,
+  "point_potential_zero_defect_maximum": 3.821176203048703e-17,
+  "primitive_Clifford_tensor_zero_is_native_Pauli_zero": false,
+  "scalar_wall_current_norm": 7.697464505564022e-16,
+  "side": "outgoing",
+  "source_basis": "actual local H-selected Q_H=T_H+Y times three canonical uniform-B first jets in complete n1/right-coframe space including longitudinal complement; full400 before Gauss",
+  "source_coordinate": "Omega=-i e Q_H A_can; A_can=B cross X/2; e once; B is local action-unit magnetic curvature, not a Fourier q",
+  "source_final_rate": 0.0,
+  "source_final_value": 1.0,
+  "source_first_jets_are_analytic": true,
+  "source_frame_rate": "future coordinate Hdot and R4dot; Qdot=e R4 R4dot S(H)+(e R4\u00b2/2) D_H S(H)Hdot once",
+  "source_midpoint_rate": 0.0,
+  "source_midpoint_value": 1.0,
+  "source_motion_before_Gauss": true,
+  "source_motion_count": 1,
+  "source_phase_jacobian_chronological": true,
+  "source_pulse_duration": null,
+  "source_scope": "physical_local_magnetic_first_jet",
+  "source_temporal_profile": "constant_magnetic_trace_inherited_from_incoming_birth",
+  "sources": [
+    {
+      "H_rate_real": [
+        -1.7691240945128901e-15,
+        -7.060740822359462e-09,
+        1.1022278273632586e-15,
+        -1.6500937012060095e-08
+      ],
+      "H_real": [
+        2.786096509422029e-16,
+        1.068072360486792,
+        4.741423069082167e-16,
+        -4.947286099301131e-16
+      ],
+      "canonical_magnetic_factor": 0.14987564209493834,
+      "canonical_magnetic_factor_rate": 0.017217451180219855,
+      "coordinate_time": 0.0,
+      "local_charge_covariant_time_norm": 6.38404972926639e-17,
+      "local_charge_evolution_commutator_norm": 2.4346428661237676,
+      "mass_charge_commutator_defect": 1.8907002479835353e-33,
+      "old_source_span_relative_residual": 0.9354143466934854,
+      "primitive_Clifford_tensor_projection_norm": 4.4809185773380773e-17,
+      "response_time": 0.0,
+      "unit_Tr16_charge_coefficient_rate": [
+        4.684924707901757e-15,
+        2.9188763055186237e-15,
+        -2.3396201552909652e-24,
+        0.0
+      ],
+      "unit_Tr16_charge_coefficients": [
+        -7.378030956459142e-16,
+        1.2556049678485405e-15,
+        1.4142135623730951,
+        1.8257418583505538
+      ]
+    },
+    {
+      "H_rate_real": [
+        -1.7691240945128901e-15,
+        -7.060740822359462e-09,
+        1.1022278273632586e-15,
+        -1.6500937012060095e-08
+      ],
+      "H_real": [
+        2.786048394312981e-16,
+        1.0680723604867743,
+        4.741446326073652e-16,
+        -4.174707116928645e-14
+      ],
+      "canonical_magnetic_factor": 0.14987568513848643,
+      "canonical_magnetic_factor_rate": 0.01721738729695041,
+      "coordinate_time": 2.5e-06,
+      "local_charge_covariant_time_norm": 6.384049729348136e-17,
+      "local_charge_evolution_commutator_norm": 2.434639884640213,
+      "mass_charge_commutator_defect": 9.881504604993533e-32,
+      "old_source_span_relative_residual": 0.9354143466934852,
+      "primitive_Clifford_tensor_projection_norm": 4.4809140524175856e-17,
+      "response_time": 2.5e-06,
+      "unit_Tr16_charge_coefficient_rate": [
+        4.684924707902128e-15,
+        2.918876305518335e-15,
+        4.679240089509032e-24,
+        0.0
+      ],
+      "unit_Tr16_charge_coefficients": [
+        -7.377903539923557e-16,
+        1.2556111266734027e-15,
+        1.4142135623730951,
+        1.8257418583505538
+      ]
+    },
+    {
+      "H_rate_real": [
+        -1.7691240945128901e-15,
+        -7.060740822359462e-09,
+        1.1022278273632586e-15,
+        -1.6500937012060095e-08
+      ],
+      "H_real": [
+        2.7860002792039327e-16,
+        1.0680723604867568,
+        4.741469583065137e-16,
+        -8.299941372864278e-14
+      ],
+      "canonical_magnetic_factor": 0.1498757281818749,
+      "canonical_magnetic_factor_rate": 0.01721732341362531,
+      "coordinate_time": 5e-06,
+      "local_charge_covariant_time_norm": 6.384049729429449e-17,
+      "local_charge_evolution_commutator_norm": 2.4346369031589394,
+      "mass_charge_commutator_defect": 1.976075804346082e-31,
+      "old_source_span_relative_residual": 0.9354143466934854,
+      "primitive_Clifford_tensor_projection_norm": 4.480909527525384e-17,
+      "response_time": 5e-06,
+      "unit_Tr16_charge_coefficient_rate": [
+        4.684924707902495e-15,
+        2.918876305518046e-15,
+        -7.373673397194162e-32,
+        0.0
+      ],
+      "unit_Tr16_charge_coefficients": [
+        -7.377776123387966e-16,
+        1.2556172854982646e-15,
+        1.4142135623730951,
+        1.8257418583505538
+      ]
+    },
+    {
+      "H_rate_real": [
+        -1.7691240945128901e-15,
+        -7.060740822359462e-09,
+        1.1022278273632586e-15,
+        -1.6500937012060095e-08
+      ],
+      "H_real": [
+        2.7859521640948845e-16,
+        1.0680723604867393,
+        4.741492840056623e-16,
+        -1.2425175628799912e-13
+      ],
+      "canonical_magnetic_factor": 0.14987577122510354,
+      "canonical_magnetic_factor_rate": 0.017217259530244625,
+      "coordinate_time": 7.500000000000001e-06,
+      "local_charge_covariant_time_norm": 6.384049729511043e-17,
+      "local_charge_evolution_commutator_norm": 2.4346339216799504,
+      "mass_charge_commutator_defect": 7.763671808408093e-34,
+      "old_source_span_relative_residual": 0.9354143466934854,
+      "primitive_Clifford_tensor_projection_norm": 4.480905002661479e-17,
+      "response_time": 7.500000000000001e-06,
+      "unit_Tr16_charge_coefficient_rate": [
+        4.684924707902865e-15,
+        2.918876305517757e-15,
+        -7.37641946529052e-32,
+        0.0
+      ],
+      "unit_Tr16_charge_coefficients": [
+        -7.37764870685238e-16,
+        1.2556234443231266e-15,
+        1.4142135623730951,
+        1.8257418583505538
+      ]
+    },
+    {
+      "H_rate_real": [
+        -1.7691240945128901e-15,
+        -7.060740822359462e-09,
+        1.1022278273632586e-15,
+        -1.6500937012060095e-08
+      ],
+      "H_real": [
+        2.7859040489858363e-16,
+        1.0680723604867215,
+        4.741516097048107e-16,
+        -1.6550409884735544e-13
+      ],
+      "canonical_magnetic_factor": 0.1498758142681725,
+      "canonical_magnetic_factor_rate": 0.017217195646808296,
+      "coordinate_time": 1e-05,
+      "local_charge_covariant_time_norm": 6.384049729592562e-17,
+      "local_charge_evolution_commutator_norm": 2.4346309402032427,
+      "mass_charge_commutator_defect": 7.70372069590385e-34,
+      "old_source_span_relative_residual": 0.9354143466934854,
+      "primitive_Clifford_tensor_projection_norm": 4.4809004778258634e-17,
+      "response_time": 1e-05,
+      "unit_Tr16_charge_coefficient_rate": [
+        4.684924707903235e-15,
+        2.9188763055174688e-15,
+        -7.379165533386879e-32,
+        0.0
+      ],
+      "unit_Tr16_charge_coefficients": [
+        -7.377521290316794e-16,
+        1.2556296031479888e-15,
+        1.4142135623730951,
+        1.8257418583505538
+      ]
+    }
+  ],
+  "time_nodes": 5,
+  "time_steps": 64,
+  "turn_on_duration": null
+}

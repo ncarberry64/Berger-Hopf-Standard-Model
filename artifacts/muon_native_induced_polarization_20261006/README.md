@@ -1,0 +1,1 @@
+New cache-based source contacts and compact weak jets. Full native polarization remains unevaluated. See report.md, run_1/result.json and run_1/one_explicit_unprovided_operand.json. Prior component production was not replayed.

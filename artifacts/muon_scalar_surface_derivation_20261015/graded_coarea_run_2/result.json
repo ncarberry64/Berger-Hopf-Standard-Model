@@ -1,0 +1,109 @@
+{
+  "M4_coefficient_derivation": "(-1/4)*(-20)/(4*pi)^2 from F4 and declared C2 proper-time principal heat density",
+  "array_archive_sha256": "058ab6a9d46b27164eddd1705f15fa6d0996a4dde268e3e9f348ff0a4c775dbb",
+  "classification": "OWNED_C2_LEADING_M4_VOLUME_COMPONENT_WITH_ACTUAL_FINITE_COAREA_JETS",
+  "coarea_identity": "(A*B)^3=R4^3*L^3, L=sqrt(A^2+B^2), dmu7=dmu4*[Vol(S3_unit)*L^3]",
+  "coefficient_of_M4_volume_per_ell_star_minus4": 0.031662869888230555,
+  "completed_physical_operator_domain": false,
+  "coupled_matching_corrections": 0,
+  "declared_graded_angular_ledger": {
+    "Hubbard_Strattonovich": {
+      "degeneracy_per_species": "m^2",
+      "levels": "m>=1",
+      "spatial_eigenvalue": "m^2/R4(tau)^2",
+      "species": 4,
+      "supertrace_sign": 1
+    },
+    "Weyl": {
+      "degeneracy_per_species": "(n+1)*(n+2)",
+      "levels": "n>=0",
+      "spatial_eigenvalue": "(n+3/2)^2/R4(tau)^2",
+      "species": 48,
+      "squared_operator": "D_Weyl^dagger*D_Weyl",
+      "supertrace_sign": -1
+    },
+    "gauge_longitudinal_ghost": {
+      "net_supertrace_sign": 0,
+      "statement": "BRST_longitudinal_and_complex_ghost_blocks_cancel_mode_by_mode;_global_gauge_zero_modes_are_quotiented"
+    },
+    "gauge_transverse": {
+      "degeneracy_per_species": "2*(m^2-1)",
+      "levels": "m>=2",
+      "spatial_eigenvalue": "m^2/R4(tau)^2",
+      "species": 12,
+      "supertrace_sign": 1
+    }
+  },
+  "direct_boundary_component": "For local mixed D/Robin actual domain: -STr(chi)*ell_star^(-m)/[4*m*(4*pi)^(m/2)]. For matched transmittal leading a1 vanishes; no full stratified boundary condition selected here.",
+  "double_count_guard": "This is a component of the SAME Gamma_strat. Do not add it again if already represented by the intrinsic vacuum/scalar constant/area coefficient after matching and subtraction. No second matter determinant is introduced.",
+  "effective_C2_scalar_heat_density_coefficient": -20,
+  "effective_coefficient_is_not_a_claim_of_full_SM_fibre_rank": true,
+  "ell_s_equals_ell_star_assumed": false,
+  "exact_M4_coefficient": "5/(16*pi^2)",
+  "input_hashes": {
+    "artifacts/muon_inherited_finite_normal_phase_20261011/run_1/application.npz": "7a513c82e9e4f3e2560e2989867e00e8af3453e637a29559286c29eb7c184a59",
+    "artifacts/muon_inherited_finite_normal_phase_20261011/run_1/result.json": "d283c45cb81e86628ecec96159eae5327829d15f440bf01c78164f4b12434c51",
+    "src/bhsm/interface/ae4_stratified_dirac_zeta_induced_owner.py": "067438afb5cc01cfbf76b715e67d5aa35a097484184e99217354cb78abffd34c",
+    "src/bhsm/interface/aether_ae2_one_seam_descriptor.py": "c8a11efb1e3150f55bf28790042c863b061ab41f8fe48e073a1cb1f0c4e43b9e",
+    "src/bhsm/interface/aether_common_quantum_superdeterminant_v15_96.py": "275bdd409281ffc3699bd59471d8f5a22abc5de45305b25b63ab63565469adf7",
+    "src/bhsm/interface/muon_intrinsic_m4_normal_pullback.py": "43187eee35f2879a43fe0fd02ae447502811349ccf2f2a78aa14beb8aa706bf0",
+    "src/bhsm/interface/muon_literal_euclidean_wall_action.py": "f1aa0bbc7e3313bd6f147144125c7a4a1379387c828c24d792dc461ac5289878",
+    "src/bhsm/interface/muon_moving_geometric_action.py": "bf560fdb9766f563d97d3100ccb266e2a4350c910ac14a51d57576c2b5371392",
+    "theory/n12_forward_brst_heat_tail_cancellation.md": "b7db1147bd5a9e04c0266726604ca59bc3ab32596372aa42862c741e75352d89",
+    "theory/n12_gate7_1222_core_diagram_matching_audit.md": "e599cc0241e9e06fa1356ef8bdb4315148bcc7b51af813e9dbbb53774576c202"
+  },
+  "leading_shell_coefficients": {
+    "HS": 4,
+    "Weyl": -48,
+    "transverse": 24
+  },
+  "mapped_M8_wall_coefficient": "gamma7_component=[5/(32*pi^4)]*ell_star^(-4)*L^(-3)",
+  "numerical_ell_star_or_alpha_FSC_assigned": false,
+  "physical_muon_moment": null,
+  "physical_outgoing_E_B_derivative_gate_passed": false,
+  "physical_surface_gamma_derived": false,
+  "precision_scope": "exact coefficient/coarea algebra evaluated in binary64 on saved real geometry; no physical continuum error enclosure",
+  "producer_sha256": "0a23c0baaf28d5bfeab1795099c1d5141ac1f1db8dfc7c5e0836fc2ffd4d9782",
+  "records": [
+    {
+      "Lorentz_surface_density_coefficient_per_ell_star_minus4": -0.0010012353017627951,
+      "coarea_polynomial_Hessian_max_residual": 1.1368683772161603e-13,
+      "coarea_polynomial_gradient_max_residual": 1.4210854715202004e-14,
+      "coarea_polynomial_value_residual": 1.7763568394002505e-15,
+      "fibre_metric_length": 1.926929134968988,
+      "full_density_Hessian_identity_max_residual": 2.0816681711721685e-17,
+      "full_density_gradient_identity_max_residual": 8.673617379884035e-19,
+      "full_density_value_identity_residual": -2.168404344971009e-19,
+      "gamma7_coefficient_per_ell_star_minus4": 0.00022419364888096396,
+      "gamma7_geometry_Hessian_norm_per_ell_star_minus4": 0.032122095049869834,
+      "gamma7_geometry_gradient_norm_per_ell_star_minus4": 0.002385616183559265,
+      "omitted_fibre_first_contact_norm_if_gamma7_held": 0.01065401786071282,
+      "physical_fibre_volume": 141.23000382157133,
+      "quotient_radius": 0.9633777962755175,
+      "state": "initial"
+    },
+    {
+      "Lorentz_surface_density_coefficient_per_ell_star_minus4": -0.001001274630621376,
+      "coarea_polynomial_Hessian_max_residual": 1.1368683772161603e-13,
+      "coarea_polynomial_gradient_max_residual": 1.4210854715202004e-14,
+      "coarea_polynomial_value_residual": -8.881784197001252e-16,
+      "fibre_metric_length": 1.9269297715502078,
+      "full_density_Hessian_identity_max_residual": 2.7755575615628914e-17,
+      "full_density_gradient_identity_max_residual": 1.734723475976807e-18,
+      "full_density_value_identity_residual": -2.168404344971009e-19,
+      "gamma7_coefficient_per_ell_star_minus4": 0.00022419342668695134,
+      "gamma7_geometry_Hessian_norm_per_ell_star_minus4": 0.032121824543033924,
+      "gamma7_geometry_gradient_norm_per_ell_star_minus4": 0.0023856171770236037,
+      "omitted_fibre_first_contact_norm_if_gamma7_held": 0.010654451350456765,
+      "physical_fibre_volume": 141.23014379205,
+      "quotient_radius": 0.9633781352130533,
+      "state": "stage_0000"
+    }
+  ],
+  "relative_reference_scope": "This is the unsubtracted leading coefficient of the declared C2 ledger. A heat reference with identical leading local density cancels it in the relative heat difference. The actual common reference/subtraction prescription must be applied before claiming a net surface coefficient.",
+  "required_local_principal_scope": "same proper-time scalar/product-Dirac principal extension as the retained C2 ledger; not a completed interacting P_strat",
+  "retired_periodic_domain_not_reused": true,
+  "scale_contact_rule": "For gamma7=K c^(-2)L^(-3), gamma7_a/gamma7=-2*c_a/c-3*L_a/L. Full E/B jets require actual cutoff and fibre jets; arrays hold symbolic c fixed.",
+  "shared_normalization": "physical M4 and ambient-cap actions divided by the same Vol(S3_unit)^2; quotient factor retained once",
+  "source_profile_D5_history_or_graded_heat_campaign_replayed": false
+}

@@ -1,0 +1,797 @@
+diff --git a/scripts/complete_muon_photon_return_certificate.py b/scripts/complete_muon_photon_return_certificate.py
+new file mode 100644
+index 00000000..89335996
+--- /dev/null
++++ b/scripts/complete_muon_photon_return_certificate.py
+@@ -0,0 +1,44 @@
++"""Certify final returned-current multiplication without repeating any solve."""
++import argparse
++import hashlib
++import json
++from pathlib import Path
++import sys
++import time
++import numpy as np
++
++ROOT=Path(__file__).resolve().parents[1]
++sys.path.insert(0,str(ROOT/'src'))
++from bhsm.interface.muon_native_photon_response import certify_frozen_component
++
++
++def run(inputs,output):
++    if output.exists():raise FileExistsError('Use a fresh certificate output')
++    output.mkdir(parents=True)
++    start=time.perf_counter()
++    with np.load(inputs/'component_action_and_current.npz') as z:
++        data={k:np.array(z[k]) for k in z.files}
++    result=json.loads((inputs/'result.json').read_text())
++    action=dict(K_per_kappa1=data['K_per_kappa1'],M_geometric_scalar=float(data['M_geometric_scalar']))
++    current=dict(dual_current_basis=data['dual_current_basis'],mode_current_covector=data['mode_current_covector'])
++    certs=[]
++    for i,row in enumerate(result['shifts']):
++        with np.load(inputs/f'response_{i}.npz') as z:
++            record={k:np.array(z[k]) for k in z.files}
++        record['zeta_over_kappa1']=row['zeta_over_kappa1']
++        cert=certify_frozen_component(action,current,record)
++        cert['zeta_over_kappa1']=row['zeta_over_kappa1']
++        certs.append(cert)
++        (output/f'certificate_{i}.json').write_text(json.dumps(cert,indent=2,sort_keys=True)+'\n')
++    receipt=dict(scope='Completes final current-return rounding bounds and per-column relative residuals; no solve or source action repeated',
++        certificates=certs,inputs_sha256={p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in inputs.iterdir() if p.is_file()},
++        implementation_sha256=hashlib.sha256((ROOT/'src/bhsm/interface/muon_native_photon_response.py').read_bytes()).hexdigest(),
++        new_shifted_solves=0,elapsed_seconds=time.perf_counter()-start)
++    (output/'result.json').write_text(json.dumps(receipt,indent=2,sort_keys=True)+'\n')
++    print(json.dumps(dict(output=str(output),max_consumed_bound=max(c['current_return_frobenius_error_upper'] for c in certs),
++        max_relative_residual=max(x for c in certs for x in c['current_residual_relative_upper'] if x is not None),new_solves=0)))
++
++
++if __name__=='__main__':
++    p=argparse.ArgumentParser();p.add_argument('--input',type=Path,required=True);p.add_argument('--output',type=Path,required=True)
++    a=p.parse_args();run(a.input,a.output)
+diff --git a/scripts/replay_muon_native_photon_response.py b/scripts/replay_muon_native_photon_response.py
+new file mode 100644
+index 00000000..9665c1d5
+--- /dev/null
++++ b/scripts/replay_muon_native_photon_response.py
+@@ -0,0 +1,160 @@
++"""Execute NEW signed primitive angular responses; never replay old producers.
++
++This does not fulfill the full native photon solve. Use a fresh output path.
++Saved checkpoints separate the evaluated component from the absent owner
++remainder. No heat length, physical scale or boundary condition is selected.
++"""
++from __future__ import annotations
++import argparse
++import hashlib
++import json
++from pathlib import Path
++import subprocess
++import sys
++import time
++import numpy as np
++
++ROOT = Path(__file__).resolve().parents[1]
++sys.path.insert(0, str(ROOT / 'src'))
++from bhsm.interface import muon_native_photon_response as impl
++
++
++def save(path, value):
++    path.write_text(json.dumps(value, indent=2, sort_keys=True, allow_nan=False) + '\n', encoding='utf8')
++
++
++def sha(path):
++    return hashlib.sha256(path.read_bytes()).hexdigest()
++
++
++def load(path):
++    with np.load(path, allow_pickle=False) as z:
++        return {k: np.array(z[k]) for k in z.files}
++
++
++def run(output):
++    if output.exists():
++        raise FileExistsError('Preserve saved evidence; use a fresh output directory')
++    output.mkdir(parents=True)
++    start = time.perf_counter()
++    refs = dict(
++        primitive=ROOT/'artifacts/muon_matched_mechanical_source_20261002/replay_reference/matched_source_and_weak_actions.npz',
++        geometry=ROOT/'artifacts/muon_parent_geometry_20261001/replay_reference/local_parent_velocity_density.npz',
++        family=ROOT/'artifacts/muon_native_family_difference_20261006/run_1/family_source_actions.npz',
++        frozen=ROOT/'artifacts/muon_source_jet_20261002/frozen_local.json',
++        component_builder=Path(impl.__file__),
++        angular_builder=ROOT/'src/bhsm/interface/muon_matched_mechanical_source.py',
++        owner=ROOT/'src/bhsm/interface/ae4_stratified_dirac_zeta_induced_owner.py',
++        heat_kernel=ROOT/'src/bhsm/interface/arb_heat_pencil_contractions.py',
++        stop=ROOT/'src/bhsm/interface/ae4_current_c2_canonical_stop_domain_bridge.py',
++        source_builder=ROOT/'src/bhsm/interface/muon_local_source_jet.py',
++        replay=Path(__file__))
++    hashes={k:dict(path=str(p.relative_to(ROOT)), sha256=sha(p)) for k,p in refs.items()}
++    git=lambda *args:subprocess.check_output(['git',*args],cwd=ROOT,text=True).strip()
++    save(output/'input_hashes.json',hashes)
++    save(output/'starting_revision.json',dict(HEAD=git('rev-parse','HEAD'),branch=git('branch','--show-current'),
++        reference='524ed90689bd5923c249bba2e699abf627e703cd',status=git('status','--short')))
++    save(output/'checkpoint.json',dict(stage='saved input identities; old producers not replayed'))
++    action=impl.primitive_cut_action(load(refs['primitive']),load(refs['geometry']))
++    current=impl.reached_current(action,load(refs['family']))
++    np.savez_compressed(output/'component_action_and_current.npz',
++        **{k:v for k,v in action.items() if isinstance(v,(np.ndarray,float,int))},
++        **{k:v for k,v in current.items() if isinstance(v,(np.ndarray,float,int))})
++    response=impl.source_directed_component_response(action,current)
++    save(output/'checkpoint.json',dict(stage='component shifted solves complete; arithmetic certification pending',
++        enrichment=response['stages'],native_solve=False))
++    certificates=[]
++    for i,record in enumerate(response['records']):
++        np.savez_compressed(output/f'response_{i}.npz',**{k:v for k,v in record.items() if isinstance(v,np.ndarray)})
++        certificate=impl.certify_frozen_component(action,current,record)
++        certificate['zeta_over_kappa1']=record['zeta_over_kappa1']
++        certificates.append(certificate)
++        save(output/f'certificate_{i}.json',certificate)
++        save(output/'checkpoint.json',dict(stage=f'arithmetic certificate {i+1}/3 saved',native_solve=False))
++    np.savez_compressed(output/'enriched_frame.npz',M_orthonormal_frame=response['independent_frame'])
++    native_error=None
++    try:
++        impl.require_native_photon_action()
++    except NotImplementedError as e:
++        native_error=str(e)
++    required=dict(
++        name='completed same-owner polarization action on the reached current/response directions',
++        equation='R_ind(v,j)=delta_v delta_j Gamma_AE4[0]-H_local,already_owned(v,j)',
++        contact='(1/2) integral_[ell_star^2,infinity] dt STr(exp(-t P0) P_vj)',
++        paired='-(1/2) integral_[ell_star^2,infinity] dt integral_[0,t] du STr(exp(-(t-u) P0) P_v exp(-u P0) P_j)',
++        completion='relative-zeta/eta, moving Gram/length/domain and source-pullback terms required by the same owner',
++        producer='AE4 microscopic_owner_contract and its realized source/contact jets on the inherited BRST/reset/material/stop domain',
++        consumer='native K0Q action on current dual basis and action-generated complement before (K0Q+zeta M0Q) solve; then graded family-mixed heat',
++        input_space='these b-source/current directions plus the connected response, with temporal/radial continuation and quotient traces retained',
++        output_space='geometric photon form dual in the same domain',
++        status='UNEVALUATED prescribed action application; no missing jmath, common-A coefficient, or new seam postulate asserted',
++        native_spectral_length='ell_star remains symbolic; it enters the induced Hessian integral lower limit before its numerical photon form can be computed',
++        all_native_missing_terms_resolved=False)
++    entries={k:dict(classification='UNEVALUATED',paired_contribution=None) for k in
++        ('native_bulk_heat','state_variation','contact','domain_boundary','completion_counterterm','strong_within_native')}
++    entries['contact']['evaluated_subterm']='previous fixed-frame direct mass/photon contact only; unchanged'
++    result=dict(
++        classification='ACTUAL_CURRENT_FULL_AMBIENT_PRIMITIVE_ANGULAR_RESPONSE__NOT_NATIVE_PHOTON_SOLUTION',
++        requested_native_target_reached=False,acceptable_native_partial_claimed=False,
++        new_object='signed 240-dimensional angular density resolvent on actual retained current duals',
++        point=dict(rho=action['rho'],history='C2 step1222 artificial cut; first retained parent node',radial_index=64,
++            lambda_value=action['mechanical_lambda'],W=action['full_pointwise_weight']),
++        source=dict(coordinate='b_A, beta=T_b b, A_Q=sqrt(2) beta; not physical signed transfer',
++            current='f_R Gamma_bar_complete, 8 by (4*56); dual load satisfies Sdagger J=current',
++            f_R=action['f_R'],full_fermion_columns=224,
++            nonzero_fermion_columns=int(np.count_nonzero(np.linalg.norm(current['mode_current_covector'],axis=0)>0)),
++            source_coordinate_conversion_count=1,vertex_action_index_factor=False,
++            duality_residual=current['duality_residual'],charged_conjugate_trace_doubled=False),
++        pairing=dict(M_geometric_scalar=action['M_geometric_scalar'],
++            equation='M_geom=2 pi^2 nu C r T_b^2=nu C r/Rb; geometric one-form angular density',
++            photon_M_is_lepton_mass=False,source_load_multiplied_by_M=False),
++        operator=dict(ambient_dimension=240,levels=[1,3],internal_basis='unit primitive Tr16 weak-adjoint plus hypercharge',
++            equation='Khat_angular=-d/(16/3) [(C+(lambda-1)T)dagger(C+(lambda-1)T)+4lambda(lambda-1)B]',
++            Lorentz_angular_sign=-1,kappa1='symbolic; K_primitive=kappa1*Khat and zeta=kappa1*zeta_hat',
++            index_factor='K_Q=(2/3)K_component already inside d; undo Tr16 Q^2 once for the unit-trace basis',
++            M_scalar_identity=True,quotient='ambient spatial component; native BRST/constraint quotient NOT claimed',
++            primitive_angular_closed_levels=True,native_propagated_complement_certified=False,
++            full_positive_K_claimed=False,physical_scale_selected=False),
++        checks=action['checks'],
++        shifts=[dict(zeta_over_kappa1=x['zeta_over_kappa1'],
++            spectral_parameter_only=True,ambient_solve_difference_norm=x['ambient_solve_difference_norm'],
++            ambient_return_difference_norm=x['ambient_return_difference_norm'],
++            max_current_equation_residual=float(np.max(x['full_current_residuals'])),
++            current_return_frobenius_norm=float(np.linalg.norm(x['current_return'])),
++            current_return_trace_real=float(np.trace(x['current_return']).real),
++            current_return_Hermiticity_residual=float(np.linalg.norm(x['current_return']-x['current_return'].conj().T))) for x in response['records']],
++        enrichment=response['stages'],conditioning_frobenius_bound=response['conditioning_frobenius_bound'],
++        final_frame_M_Gram_residual=float(np.linalg.norm(action['M_geometric_scalar']*
++            response['independent_frame'].conj().T@response['independent_frame']-np.eye(response['independent_frame'].shape[1]))),
++        certificates=certificates,
++        ownership=dict(evaluated='primitive signed angular kinetic and curvature-contact density, full source-reached ambient complement; geometric one-form pairing',
++            known_but_not_assembled='temporal/radial/shift/moving-frame weak rows; inherited domain traces',
++            unknown_not_zero='completed induced photon polarization with native domain/constraint/completion actions',
++            old_parent_solve_reused_as_photon=False,primitive_added_to_full_owner=False),
++        native_action_attempt=dict(reached=False,first_unavailable_action=required,error=native_error),
++        heat_consumer=dict(invocations=0,ell_star_numerical=None,default_length_used=False,
++            reason='This component retains the Lorentz angular sign and omits native contributions; it is not an established positive native boson branch.',
++            family_mass_jets_replayed=False,paired_native_mu_e=None),
++        errors=dict(certified='residual and consumed-current contraction error for EXACT stored angular-component matrices only',
++            geometry_source_float_representation=None,history_interpolation=None,temporal_radial_quadrature=None,
++            BRST_domain_and_completion=None,continuum=None,native_error=None),
++        ledger=entries,frozen_local=json.loads(refs['frozen'].read_text()),
++        physical_a_mu=None,physical_g_mu=None,physical_transfer_directions=0,
++        execution=dict(old_production_replays=0,primitive_component_shifted_solves=3,full_native_shifted_solves=0,
++            new_operator_eigenspectra=0,elapsed_seconds=time.perf_counter()-start))
++    save(output/'result.json',result)
++    save(output/'missing_action.json',required)
++    save(output/'checkpoint.json',dict(id='BHSM_MUON_ACTUAL_CURRENT_PRIMITIVE_ANGULAR_RESPONSE_20261006',
++        stage='component response and outward arithmetic bounds saved; native owner application not executable',
++        result='result.json',next_action=required,native_solve=False,physical_a_mu=None,physical_g_mu=None))
++    save(output/'output_hashes.json',{p.name:sha(p) for p in sorted(output.iterdir()) if p.is_file()})
++    print(json.dumps(dict(output=str(output),dimension=240,enrichment=response['stages'],
++        max_residual=max(x['max_current_equation_residual'] for x in result['shifts']),
++        max_consumed_bound=max(x['current_return_frobenius_error_upper'] for x in certificates),
++        native_target_reached=False,seconds=result['execution']['elapsed_seconds'])))
++
++
++if __name__=='__main__':
++    parser=argparse.ArgumentParser()
++    parser.add_argument('--output',type=Path,required=True)
++    run(parser.parse_args().output)
+diff --git a/src/bhsm/interface/muon_native_photon_response.py b/src/bhsm/interface/muon_native_photon_response.py
+new file mode 100644
+index 00000000..c4afd1b6
+--- /dev/null
++++ b/src/bhsm/interface/muon_native_photon_response.py
+@@ -0,0 +1,235 @@
++"""Source-directed application of an AVAILABLE photon-action component.
++
++This muon realization uses the saved angular primitive at one actual cut
++point. It is not K_0,Q on the stratified domain. In particular, no temporal,
++radial, constraint, completion, or induced term is silently set to zero.
++The negative Lorentz angular sign is retained; no heat kernel is applied.
++"""
++from __future__ import annotations
++
++import numpy as np
++from scipy.linalg import block_diag
++
++from bhsm.interface.muon_matched_mechanical_source import angular_blocks
++
++
++QNORM = 16 / 3
++
++
++def primitive_cut_action(saved, geometry, *, radial_index=-1):
++    """Materialize the full n1+n3 angular density and geometric one-form Gram.
++
++    Coordinates are the saved b frame: a=T_b b, beta=T_b b. The internal
++    coefficient basis has unit Tr16 norm. Its source columns have Gram
++    Tr16 Q^2 I8. K is per kappa1; kappa1 is NOT assigned a physical value.
++    M is the geometric one-form pairing, not the Maxwell velocity Hessian.
++    """
++    lam = float(saved['mechanical_lambda'][radial_index])
++    density = float(saved['angular_density'][radial_index])
++    blocks, source, expected, gradient = [], [], [], []
++    for n in (1, 3):
++        C, T, B, J, ad = angular_blocks(n)
++        d = C + (lam - 1) * T
++        h = d.conj().T @ d + 4 * lam * (lam - 1) * B
++        # Spectator Wigner index is retained. No projection onto eight modes.
++        blocks.append(-density / QNORM * np.kron(h, np.eye(n + 1)))
++        source.append(saved[f'transformed_n{n}'].reshape(8, -1).T)
++        expected.append(saved[f'weak_angular_row_n{n}'][radial_index].reshape(8, -1).T)
++        G0 = np.einsum('imn,cd->icmdn', 2j * J, np.eye(4))
++        G1 = np.einsum('icd,mn->icmdn', ad, np.eye(n + 1))
++        G = (G0 - G1).reshape(12 * (n + 1), 4 * (n + 1))
++        gradient.append(np.kron(G, np.eye(n + 1)))
++    K = block_diag(*blocks)
++    # Encode the analytic Hermitian density as exactly Hermitian binary64
++    # input for the frozen-matrix certificate. This is not a regularizer.
++    K = (K + K.conj().T) / 2
++    upper = np.triu(K, 1)
++    K = upper + upper.conj().T + np.diag(K.diagonal().real)
++    S = np.vstack(source)
++    G = block_diag(*gradient)
++    nu = float(geometry['proper_lapse'][0, radial_index])
++    C = float(geometry['C_rho'][0, radial_index])
++    r = float(geometry['base_radius'][0, radial_index])
++    R = float(geometry['boundary_radius'][0])
++    m = nu * C * r / R
++    if not m > 0:
++        raise ValueError('nondegenerate saved cut point required')
++    Tb = float(saved['T_b'])
++    checks = dict(
++        primitive_saved_row_absolute_residual=float(np.linalg.norm(K @ S - np.vstack(expected))),
++        source_Gram_absolute_residual=float(np.linalg.norm(S.conj().T @ S - QNORM * np.eye(8))),
++        flat_reference_coexact_residual=float(np.linalg.norm(G.conj().T @ S)),
++        flat_reference_constraint_action_norm=float(np.linalg.norm(G.conj().T @ K @ S)),
++        Hermiticity_residual=float(np.linalg.norm(K - K.conj().T)),
++        source_frame_identity_residual=abs(2 * np.pi ** 2 * R * Tb ** 2 - 1),
++    )
++    return dict(K_per_kappa1=K, M_geometric_scalar=m, source_inclusion=S,
++                flat_reference_gradient=G, f_R=Tb / R,
++                radial_index=radial_index, rho=float(saved['rho'][radial_index]),
++                mechanical_lambda=lam, full_pointwise_weight=float(saved['full_pointwise_W'][radial_index]),
++                checks=checks)
++
++
++def reached_current(action, family):
++    """Extend the actual retained mode covector in the geometric angular dual.
++
++    S^dagger J = f_R Gamma_bar. This extension is sufficient for this component
++    diagnostic. It is not a proof that the native temporal/radial current has
++    no additional dual components. All 56 x 4 fermion labels are retained.
++    """
++    S = action['source_inclusion']
++    C = action['f_R'] * family['Gamma_bar_complete'].reshape(8, -1)
++    Jbasis = S @ np.linalg.solve(S.conj().T @ S, np.eye(8))
++    J = Jbasis @ C
++    return dict(mode_current_covector=C, dual_current_basis=Jbasis,
++                reached_current_dual=J,
++                duality_residual=float(np.linalg.norm(S.conj().T @ J - C)),
++                connected_fermion_labels=family['Gamma_bar_complete'].shape[1:])
++
++
++def _independent_columns(array, *, tolerance):
++    """Rank-revealing SVD of an action image; not an operator eigenspectrum."""
++    U, s, _ = np.linalg.svd(array, full_matrices=False)
++    return U[:, s > tolerance]
++
++
++def source_directed_component_response(action, current, *, multipliers=(1.25, 2., 4.), target=1e-12):
++    """Solve the available component, enriching from its ACTUAL residual.
++
++    Whiten the actual scalar geometric Gram. zeta_hat=zeta/kappa1 is a
++    spectral parameter chosen solely above a Frobenius conditioning bound.
++    The physical primitive response is u_hat/kappa1. No value of kappa1,
++    ell_star, p^2, or q^2 is inserted.
++    """
++    K, m = action['K_per_kappa1'], action['M_geometric_scalar']
++    A = K / m
++    B = current['dual_current_basis'] / np.sqrt(m)
++    C = current['mode_current_covector']
++    size = K.shape[0]
++    bound = float(np.linalg.norm(A, 'fro'))
++    shifts = np.asarray(multipliers) * bound
++    V = _independent_columns(B, tolerance=1e-13 * np.linalg.norm(B))
++    records, stages = [], []
++    for iteration in range(12):
++        projected = V.conj().T @ A @ V
++        Bs = V.conj().T @ B
++        records = []
++        for shift in shifts:
++            y = V @ np.linalg.solve(projected + shift * np.eye(len(projected)), Bs)
++            u = y / np.sqrt(m)
++            residual = (K + shift * m * np.eye(size)) @ u - current['dual_current_basis']
++            # Valid for the mathematical frozen Hermitian density; final
++            # output also receives an outward Arb arithmetic certificate.
++            alpha = m * (shift - bound)
++            consumed_bound = np.linalg.norm(current['dual_current_basis']) * np.linalg.norm(residual) / alpha
++            records.append(dict(zeta_over_kappa1=float(shift), basis_response=u,
++                basis_residual=residual, current_response=u @ C,
++                return_basis=current['dual_current_basis'].conj().T @ u,
++                consumed_basis_error_estimate=float(consumed_bound)))
++        stages.append(dict(iteration=iteration, dimension=V.shape[1],
++            maximum_consumed_basis_error_estimate=max(x['consumed_basis_error_estimate'] for x in records)))
++        if stages[-1]['maximum_consumed_basis_error_estimate'] <= target:
++            break
++        AV = A @ V
++        remainder = AV - V @ (V.conj().T @ AV)
++        remainder -= V @ (V.conj().T @ remainder)
++        extra = _independent_columns(remainder, tolerance=2e-12 * max(1., np.linalg.norm(AV)))
++        if extra.shape[1] == 0:
++            raise ArithmeticError('action image closed but consumed-error target not met')
++        V = np.column_stack((V, extra))
++        V, _ = np.linalg.qr(V)
++    else:
++        raise ArithmeticError('bounded source-directed enrichment exhausted')
++    # Independent solve in the complete AVAILABLE ambient angular component.
++    # This does not certify native domain, temporal/radial or induced tails.
++    for record in records:
++        H = K + record['zeta_over_kappa1'] * m * np.eye(size)
++        full = np.linalg.solve(H, current['dual_current_basis'])
++        record['ambient_solve_difference_norm'] = float(np.linalg.norm(full - record['basis_response']))
++        record['ambient_return_difference_norm'] = float(np.linalg.norm(
++            current['dual_current_basis'].conj().T @ (full - record['basis_response'])))
++        record['full_current_residuals'] = np.linalg.norm(H @ record['current_response'] - current['reached_current_dual'], axis=0)
++        record['current_return'] = C.conj().T @ current['dual_current_basis'].conj().T @ record['current_response']
++    return dict(records=records, stages=stages, independent_frame=V / np.sqrt(m),
++                conditioning_frobenius_bound=bound, consumed_target=target)
++
++
++def certify_frozen_component(action, current, record, *, precision=192):
++    """Outward residual/consumed-contraction bound for exact stored matrices.
++
++    This bound deliberately excludes source-representation, geometry,
++    continuum, history, native remainder and physical-input errors.
++    The exact right side is Jbasis*C; multiplication rounding is propagated.
++    """
++    from flint import arb, acb, acb_mat, ctx
++    ctx.prec = precision
++    def matrix(x):
++        return acb_mat([[acb(arb(float(v.real)), arb(float(v.imag))) for v in row] for row in np.asarray(x)])
++    def upper_norm(x):
++        value = arb(0)
++        for i in range(x.nrows()):
++            for j in range(x.ncols()):
++                value += abs(x[i, j]) ** 2
++        return value.sqrt().upper()
++    def column_norm(x, j):
++        return sum((abs(x[i, j]) ** 2 for i in range(x.nrows())), arb(0)).sqrt().upper()
++    def up(x):
++        return float(np.nextafter(float(x.upper()), np.inf))
++    K = matrix(action['K_per_kappa1'])
++    m = arb(action['M_geometric_scalar'])
++    shift = arb(record['zeta_over_kappa1'])
++    H = K + acb_mat(np.eye(K.nrows()).tolist()) * (m * shift)
++    alpha = m * shift - upper_norm(K)
++    if not alpha > 0:
++        raise ArithmeticError('conditioning lower bound not positive')
++    Jb, C = matrix(current['dual_current_basis']), matrix(current['mode_current_covector'])
++    Ub = matrix(record['basis_response'])
++    U = matrix(record['current_response'])
++    residual_basis = H * Ub - Jb
++    delta_multiply = U - Ub * C
++    rbound = upper_norm(residual_basis)
++    hbound = upper_norm(H)
++    source_norms, residuals, consumed_columns = [], [], []
++    jb_norm, c_norm = upper_norm(Jb), upper_norm(C)
++    source_exact = Jb * C
++    returned_exact = C.conjugate().transpose() * (Jb.conjugate().transpose() * U)
++    returned_rounding = matrix(record['current_return']) - returned_exact
++    source_lower_norms, relative_residuals, returned_rounding_bounds = [], [], []
++    for j in range(C.ncols()):
++        rho = rbound * column_norm(C, j) + hbound * column_norm(delta_multiply, j)
++        # Bound ||(Jb*C)^dagger (u_j-u_exact,j)||, the actual
++        # consumed output column, not merely the orthogonal residual.
++        rounding = column_norm(returned_rounding, j)
++        output_error = jb_norm * c_norm * rho / alpha + rounding
++        source_squared = sum((abs(source_exact[i, j]) ** 2 for i in range(source_exact.nrows())), arb(0))
++        source_lower = source_squared.sqrt().lower()
++        source_lower_norms.append(float(np.nextafter(float(source_lower), -np.inf)) if source_lower > 0 else 0.)
++        relative_residuals.append(up(rho / source_lower) if source_lower > 0 else None)
++        returned_rounding_bounds.append(up(rounding))
++        source_norms.append(up(column_norm(C, j)))
++        residuals.append(up(rho))
++        consumed_columns.append(up(output_error))
++    basis_consumed = upper_norm(Jb) * rbound / alpha
++    return dict(classification='CERTIFIED_FROZEN_ANGULAR_MATRIX_ARITHMETIC_ONLY',
++        precision_bits=precision, coercivity_lower_arb=str(alpha),
++        coercivity_lower=float(np.nextafter(float(alpha.lower()), -np.inf)),
++        basis_residual_frobenius_upper=up(rbound),
++        basis_consumed_return_error_upper=up(basis_consumed),
++        basis_bound_scope='exact expression Jbasis_dagger U_basis; excludes rounding of stored return_basis',
++        current_residual_absolute_upper=residuals,
++        consumed_current_column_error_upper=consumed_columns,
++        current_coefficient_column_norm_upper=source_norms,
++        current_source_norm_lower=source_lower_norms,
++        current_residual_relative_upper=relative_residuals,
++        returned_current_multiplication_error_upper=returned_rounding_bounds,
++        current_return_frobenius_error_upper=up(sum((arb(v) ** 2 for v in consumed_columns), arb(0)).sqrt()),
++        equation='||returned_j-Jdagger u_exact,j|| <= ||J|| rho_j/alpha + return_rounding_j; rho includes post-solve current multiplication error',
++        physical_or_native_error_bound=False)
++
++
++def require_native_photon_action():
++    """Fail rather than promote the available angular component to the owner."""
++    raise NotImplementedError(
++        'The completed same-owner polarization action R_ind(v,j) on these '
++        'source-reached directions is not supplied by the primitive arrays. '
++        'The angular component response is not the native photon response.')
+diff --git a/tests/test_muon_native_photon_response.py b/tests/test_muon_native_photon_response.py
+new file mode 100644
+index 00000000..c21348ba
+--- /dev/null
++++ b/tests/test_muon_native_photon_response.py
+@@ -0,0 +1,94 @@
++"""Targeted checks of NEW actual-current component responses, not native g-2."""
++import json
++from pathlib import Path
++import sys
++import numpy as np
++import pytest
++
++ROOT=Path(__file__).resolve().parents[1]
++sys.path.insert(0,str(ROOT/'src'))
++from bhsm.interface.muon_native_photon_response import require_native_photon_action
++
++RUN=ROOT/'artifacts/muon_native_photon_response_20261006/run_1'
++
++
++def arrays(path):
++    with np.load(path,allow_pickle=False) as z:return {k:np.array(z[k]) for k in z.files}
++
++
++def test_actual_source_dual_and_reference_coexact_pairing():
++    d=arrays(RUN/'component_action_and_current.npz')
++    S=d['source_inclusion'];G=d['flat_reference_gradient']
++    assert S.shape==(240,8)
++    assert np.linalg.norm(G.conj().T@S)<2e-14
++    assert np.linalg.norm(S.conj().T@d['reached_current_dual']-d['mode_current_covector'])<2e-14
++    assert d['mode_current_covector'].shape==(8,224)
++    # Reference coexactness does not remove the real background constraint.
++    assert np.linalg.norm(G.conj().T@d['K_per_kappa1']@S)>1e3
++
++
++def test_complete_primitive_rows_agree_and_keep_lorentz_sign():
++    d=arrays(RUN/'component_action_and_current.npz')
++    old=arrays(ROOT/'artifacts/muon_matched_mechanical_source_20261002/replay_reference/matched_source_and_weak_actions.npz')
++    expected=np.vstack([old[f'weak_angular_row_n{n}'][-1].reshape(8,-1).T for n in (1,3)])
++    actual=d['K_per_kappa1']@d['source_inclusion']
++    assert np.linalg.norm(actual-expected)<5e-12
++    assert np.linalg.norm(actual[48:])>1e3  # n3 kept before consumption
++    S=d['source_inclusion']
++    assert np.all(np.diag(S.conj().T@d['K_per_kappa1']@S).real<0)
++
++
++def test_all_current_columns_residual_and_postsolve_return_bounds():
++    d=arrays(RUN/'component_action_and_current.npz')
++    for i in range(3):
++        row=arrays(RUN/f'response_{i}.npz')
++        cert=json.loads((RUN/'return_certificate_completion'/f'certificate_{i}.json').read_text())
++        H=d['K_per_kappa1']+cert['zeta_over_kappa1']*float(d['M_geometric_scalar'])*np.eye(240)
++        residual=np.linalg.norm(H@row['current_response']-d['reached_current_dual'],axis=0)
++        bounds=np.asarray(cert['current_residual_absolute_upper'])
++        # NumPy residual contains subtraction rounding; certificate bounds
++        # exact frozen products and also includes current-product rounding.
++        assert np.all(residual<=bounds+5e-15)
++        assert len(cert['current_residual_relative_upper'])==224
++        assert max(x for x in cert['current_residual_relative_upper'] if x is not None)<4e-10
++        assert cert['current_return_frobenius_error_upper']<1.6e-14
++        assert cert['coercivity_lower']>0
++        assert cert['physical_or_native_error_bound'] is False
++
++
++def test_residual_driven_enrichment_controls_consumed_component():
++    result=json.loads((RUN/'result.json').read_text())
++    assert [x['dimension'] for x in result['enrichment']]==[8,16,24,32]
++    assert result['enrichment'][0]['maximum_consumed_basis_error_estimate']>1e-8
++    assert result['enrichment'][-1]['maximum_consumed_basis_error_estimate']<1e-12
++    d=arrays(RUN/'component_action_and_current.npz')
++    V=arrays(RUN/'enriched_frame.npz')['M_orthonormal_frame']
++    assert np.linalg.norm(float(d['M_geometric_scalar'])*V.conj().T@V-np.eye(32))<5e-14
++    for i,shift in enumerate(result['shifts']):
++        cert=json.loads((RUN/'return_certificate_completion'/f'certificate_{i}.json').read_text())
++        assert shift['ambient_return_difference_norm']<cert['basis_consumed_return_error_upper']
++
++
++def test_index_and_source_frame_reused_once_in_actual_load():
++    d=arrays(RUN/'component_action_and_current.npz')
++    old=arrays(ROOT/'artifacts/muon_matched_mechanical_source_20261002/replay_reference/matched_source_and_weak_actions.npz')
++    geom=arrays(ROOT/'artifacts/muon_parent_geometry_20261001/replay_reference/local_parent_velocity_density.npz')
++    family=arrays(ROOT/'artifacts/muon_native_family_difference_20261006/run_1/family_source_actions.npz')
++    R=geom['boundary_radius'][0];fR=float(old['T_b'])/R
++    assert np.array_equal(d['mode_current_covector'],fR*family['Gamma_bar_complete'].reshape(8,-1))
++    m=geom['proper_lapse'][0,-1]*geom['C_rho'][0,-1]*geom['base_radius'][0,-1]/R
++    assert float(d['M_geometric_scalar'])==m
++    assert np.linalg.norm(d['source_inclusion'].conj().T@d['source_inclusion']-(16/3)*np.eye(8))<5e-14
++
++
++def test_component_cannot_be_promoted_to_native_heat_or_transfer():
++    result=json.loads((RUN/'result.json').read_text())
++    assert result['operator']['Lorentz_angular_sign']==-1
++    assert result['requested_native_target_reached'] is False
++    assert result['execution']['full_native_shifted_solves']==0
++    assert result['heat_consumer']['invocations']==0
++    assert result['heat_consumer']['ell_star_numerical'] is None
++    assert result['physical_a_mu'] is None and result['physical_g_mu'] is None
++    assert all(x['spectral_parameter_only'] for x in result['shifts'])
++    with pytest.raises(NotImplementedError,match='polarization action'):
++        require_native_photon_action()
+diff --git a/theory/muon_native_photon_response_20261006.md b/theory/muon_native_photon_response_20261006.md
+new file mode 100644
+index 00000000..013cf5ad
+--- /dev/null
++++ b/theory/muon_native_photon_response_20261006.md
+@@ -0,0 +1,234 @@
++# Actual-current primitive photon response; native owner application unresolved
++
++6 October 2026. Starting PR #465 head:
++`e2e047795410c09d6ae9cccc0c16a4216ec51fc7`.
++Scientific reference: `524ed90689bd5923c249bba2e699abf627e703cd`.
++
++## New evaluated object and limits
++
++The signed primitive **angular density** resolvent was evaluated on the actual
++retained fermion/photon current at the material point of the saved C2 step1222
++cut. It keeps all 240 spatial/carrier coefficients at n1+n3, curvature contacts,
++the full pointwise event weight, and all 224 external/output fermion labels.
++The residual-directed space grew 8 ->16 ->24 ->32. No isolated eight-mode
++resolvent, free curl replacement, finite heat model, or new endpoint condition
++was used. Six new cache-based checks passed.
++
++**The requested complete native photon response was not obtained.** This
++component is an executed operator diagnostic and potential preconditioner,
++not the user's acceptable native partial result. It has no native-domain,
++BRST, temporal/radial, completion, or physical-error claim. Neither a physical
++`a_mu` nor `g_mu` is inferred. The existing family/time jets, parent solution,
++local QED/Higgs/weak contributions, and optional seam proposal are untouched.
++
++## Action and pairing actually applied
++
++The saved transported sources are stacked as S: C^8 ->C^240, with
++S^dagger S=(16/3)I8. The n1 and n3 spectator Wigner indices stay intact.
++`muon_matched_mechanical_source.angular_blocks` supplies the actual C,T,B
++matrices in the right coframe and unit primitive-Tr16 internal basis. At the
++saved point,
++
++    rho = pi/2
++    lambda = 0.5066207222913062
++    W = Lambda(1+X_eta^3) = 6.708224570486777
++    d = 1334.6139541462244  (per kappa1)
++
++the applied form is
++
++\[
++ \widehat K_{\rm ang}=-{d\over16/3}
++ [(C+(\lambda-1)T)^\dagger(C+(\lambda-1)T)
++       +4\lambda(\lambda-1)B].
++\]
++
++The Lorentz minus sign is preserved. Positive spectral shifts make these
++particular *shifted* systems well conditioned; this does not make K positive.
++The background-curvature B contact is included. K_Q=(2/3)K_component is already
++inside d. Dividing by Tr16 Q^2 converts the unit-trace carrier basis once;
++there is no second mode/family factor or vertex multiplier. Agreement of the
++complete K S output with the old saved primitive weak rows has absolute
++binary64 residual 3.424315e-12. No old weak-row production was repeated.
++
++The one-form geometric Gram comes from the actual angular metric/pairing:
++
++\[
++ m_{\rm ang}=2\pi^2\nu C rT_b^2={\nu C r\over R_b}
++             =0.959045109007034.
++\]
++
++Here a=T_b b in the unit-S3 coframe, beta=T_b b and
++T_b^2=1/(2 pi^2 R_b). The metric factor r^-2 contracts the one-form, so the
++volume factor r^3 leaves r. This M is neither the electric Hessian nor the
++charged-lepton mass matrix. It is the local geometric one-form Gram; it is
++not asserted to be the complete native direct-sum mass form.
++
++The saved family source maps have their unit-angular normalization. Their
++actual cut b-vertex conversion is applied once:
++
++\[
++ C_\gamma=f_R\Gamma_{\rm bar},\quad f_R=T_b/R_b
++             =0.22680626023337117,
++\]
++\[
++ J_b=S(S^\dagger S)^{-1},\quad J=J_b C_\gamma,
++ \qquad S^\dagger J=C_\gamma.
++\]
++
++All solves use the dual load, without multiplying it by M again. Source
++duality residual is 2.393982e-16. The 224 labels include 32 nonzero current
++columns and their exact zero companions. No conjugate-charge doubling of the
++physical trace is introduced. This is a covector-preserving angular extension
++of the saved current, not an assertion that its full stratified continuation
++has no other dual components.
++
++The flat transported-reference coexact check gives
++||G_ref^dagger S||=1.155572e-15. In contrast,
++||G_ref^dagger K_ang S||=10475.613247140414. The primitive angular application
++therefore has nonzero **flat-reference** scalar constraint output. This is
++not a measurement of the lambda-dependent physical covariant constraint.
++Reference coexactness alone
++does **not** establish the physical covariant BRST quotient or justify deleting
++those responses. The ambient calculation retains them. Neither this check
++nor a local Ward residual is a new background-selection argument.
++
++## Executed source-directed solves and consumed error
++
++The primitive coefficient kappa1 remains symbolic. The recorded solves are
++
++\[
++ (\widehat K_{\rm ang}+\widehat\zeta m_{\rm ang})\widehat u=J,
++ \qquad \zeta=\kappa_1\widehat\zeta,
++ \quad u_{\rm primitive}=\widehat u/\kappa_1.
++\]
++
++No kappa1=1 physical choice is made. The shifts are 1.25,2,4 times a
++Frobenius conditioning bound for the whitened angular action. They are
++spectral parameters, with no p^2, q^2, photon mass, or observable interpretation.
++The frame is explicitly M-orthonormal, and residual images of the actual
++primitive K generate enrichment. An independent 240-dimensional solve checks
++the final consumed return. There is no full operator eigenspectrum campaign.
++
++The reported trace is **Tr(J^dagger u_hat)** in this angular component, with
++units/factors inherited from the saved geometric normalization; it is not
++dimensionless g-2 and must still be divided by symbolic kappa1 for the
++primitive response. It is neither the native heat coefficient nor F2(0).
++
++| zeta/kappa1 | component trace Tr(J^dagger u_hat) | certified consumed-matrix Frobenius error |
++|---:|---:|---:|
++| 93420.48007025628 | 3.5391356579032634e-6 | 1.565760e-14 |
++| 149472.76811241003 | 2.1894811648609800e-6 | 5.789518e-16 |
++| 298945.53622482007 | 1.0855589761340900e-6 | 1.175984e-17 |
++
++These are **certified arithmetic bounds for the exact stored Hermitian
++binary64 component matrix**. They do not enclose the analytic-coefficient
++rounding, source-representation, geometry/history, continuum, physical input,
++domain, or omitted native action errors. An initial certificate bounded the
++solution contribution; the appended `return_certificate_completion` also
++encloses final output-multiplication rounding and per-column relative
++residuals. It reused the saved solutions and performed zero further solves.
++The first execution/source version and all original certificates are retained.
++
++For H=Khat+zeta_hat M, a 192-bit Arb calculation proves
++alpha=zeta_hat m-||Khat||_F>0. With the exact factorized current J_b C_gamma,
++the residual bound for a stored current solution column is
++
++\[
++ \rho_j\le\|H U_b-J_b\|_F\|(C_\gamma)_j\|
++       +\|H\|_F\|(U-U_bC_\gamma)_j\|,
++\]
++\[
++ \|J^\dagger(u_j-u_j^{\rm exact})\|
++ \le \|J\|_F\rho_j/\alpha.
++\]
++
++The certified output-multiplication rounding is then added. This is an error
++in the **consumed contraction**, not only a projection or equation residual.
++All 224 current-column bounds are saved. The maximum relative residual bound
++on nonzero columns is 3.213889e-10; zero columns are marked explicitly rather
++than dividing by a zero norm. The final-frame M-Gram residual is 2.609562e-15.
++The source-only eight-dimensional approximation has consumed basis-error
++estimate 5.874440e-7; enrichment reduces that to 9.511818e-15. Thus its
++replacement by an eight-mode response was not justified.
++
++## First unexecuted native action, with its consumer
++
++The first unavailable *contracted* action is
++
++\[
++ \mathcal R_{\rm ind}(v,j)
++ =\delta_v\delta_j\Gamma_{\rm AE4}[0]
++  -H_{\rm local,already\ owned}(v,j)
++\]
++
++on the actual current directions and their generated complement. It is the
++same-owner induced matching remainder, not another determinant or Wilson
++coefficient. At fixed length and a common-domain source pullback its bulk
++part is explicitly
++
++\[
++ {1\over2}\int_{\ell_*^2}^{\infty}dt\,
++      \operatorname{STr}(e^{-tP_0}P_{vj})
++ -{1\over2}\int_{\ell_*^2}^{\infty}dt\int_0^tdu\,
++      \operatorname{STr}(e^{-(t-u)P_0}P_v e^{-uP_0}P_j).
++\]
++
++Relative-zeta/eta completion and applicable moving Gram, length, domain and
++source-map derivatives belong to this same functional. The generalized
++mixed jet retains
++
++    A_vj = solve(M, K_vj - M_vj A - M_v A_j - M_j A_v).
++
++The saved scalar moment weights in `ae4_stratified_dirac_zeta_induced_owner`
++do not evaluate these two contracted terms. `HeatPencil` can assemble them
++from supplied K,M/jets, but generates neither those operands nor the source
++domain. The old AE3 shape constructs curl-2 blocks and the stop/BRST witness
++constructs a three-mode scalar boundary response; neither is substituted for
++the reached source action. The actual original local `photon_body.py` is a
++Lambda-only radial primitive, explicitly not a canonical quantum kernel, and
++was inspected without replaying it.
++
++This identifies an uncomputed application of the adopted owner, **not** a
++new missing common-A coupling, jmath index, eta profile, seam postulate, or
++full-history reconstruction demand. Only the required contact/resolvent
++contractions need be supplied. The native length first enters their lower
++integration limit ell_star^2; no helper default ell=1 is used.
++
++The saved temporal/radial/moving-frame rows and inherited reset/material/stop
++traces are known pieces that still require native weak assembly. They are not
++silently suppressed. The single first-unavailable action above should not be
++read as a claim that all later native/domain/state operands have been solved.
++
++The consumer is the completed photon form action on J_b and its connected
++response before the full (K0Q+zeta M0Q) solve. The current angular action
++retains the Lorentz sign and is only a density subterm; it cannot be inserted into the
++positive generalized native heat pencil. Native heat calls and physical
++signed-transfer evaluations are both zero. Every full paired ledger entry
++remains UNEVALUATED; the previously proved direct fixed-frame mass/photon
++contact zero is preserved as its specific subterm only. Strong terms remain
++a subset of native, never an extra addend.
++
++## Reproducibility and continuation
++
++Accepted arrays: `artifacts/muon_native_photon_response_20261006/run_1/`.
++Accepted final rounding/relative-residual certificates:
++`run_1/return_certificate_completion/`. The source/domain equations, actual
++hashes, contribution ledger and compact checkpoint accompany them.
++The preserved first executed source snapshot verifies the original run hash.
++
++Reproduce the new component alone in a fresh directory:
++
++```powershell
++python scripts/replay_muon_native_photon_response.py --output <unused-directory>
++python -m pytest --noconftest -q tests/test_muon_native_photon_response.py
++```
++
++The current replay directly includes the completed return-rounding bound;
++the separate completion script records what was actually executed in this
++milestone. No old family checks or production calculations were repeated.
++The standalone local launcher is saved in Downloads. Git provenance records
++the starting commit, intended diff, publication commit and verified PR head.
++
++Next: evaluate the two same-owner contact/paired heat contractions defining
++R_ind on the reached current/response directions, with the matching subtraction
++and required completion, and consume that action in the full photon weak solve.

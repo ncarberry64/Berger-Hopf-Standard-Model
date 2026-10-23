@@ -1,0 +1,129 @@
+INDEPENDENT ACTUAL TEMPORAL GAUSS MIXED CLOCK, ALL36x7
+2026-10-16. This is a new fixed-source classical polynomial derivative
+application. No state, source/history, action/Hessian solve, retraction
+or original coupled correction is performed.
+
+1. Actual independent construction
+
+The new producer consumes the exact same ea02/D4 value,h,R,hR and Rdot
+coefficient exports. It evaluates the temporal Gauss covector directly,
+using only VALUES of the following explicit weak polynomial. No charge
+or Noether identity, derivative AD class or packed action evaluator is
+used to construct any Gauss derivative.
+
+Let
+ X=partial_t Ar-partial_r At+[At,Ar],
+ Y_i=partial_t Ai+[At,Ai]-beta(partial_r Ai+[Ar,Ai]).
+Ad-invariance of the unit-basis bilinear pairing gives
+ G_At[phi_p T_c] = sum_nodes w {phi_p g0_c+phi_p,r gr_c}
+                    +phi_p(wall) PiH dot T_c H,
+ g0=k[Ar,X]+e sum_i[Ai,Y_i], gr=-kX,
+ PiH=(2 wT/VOLUME)(Hdot+O_At H).
+The bulk w contains the original MAXWELL_TO_CAP and radial quadrature.
+All actual gauge/Higgs/shift/density and inherited source terms remain.
+The original frozen1/sqrt(2) action coefficient is preserved.
+
+All9 ordinary temporal profiles times4 U2 channels are evaluated. Thus
+this covers36x7 first and mixed source-clock rows, including the full
+27x7 SU2 request and9 central rows. The fixed left phi/phi_r/wall tests
+are the retained parameter chart; they have no extra time derivative.
+Actual right Th/Wh chart incidence and sourceDot are already in hR and
+Rdot coefficient operands, and are not added again.
+
+The other24 retained Gauss/auxiliary rows are lapse/shift mechanical
+constraints, including the geometric cap action. They are not this
+temporal Gauss polynomial and are explicitly not computed or set0 by
+this application. This is not a claim of a full60-row mixed derivative.
+
+2. Why the finite polynomial extraction is exact for the supplied jet
+
+Each term of the literal temporal Gauss functional has coefficient degree
+at most5. The highest bulk term is e Ai beta [Ar,Ai]; scalar-wall terms
+have degree at most4 in the independent coefficient entries.
+
+For each retained right j choose the explicit coefficient germ
+ c(x,y)=c0+x c_h+y c_Rj+xy c_hRj.
+This is just a bilinear representation of the supplied mixed jet, not a
+new physical mean/history continuation. Terms of higher order in x or y
+in another smooth representative cannot alter d_x d_y at0. Because the
+Gauss functional has degree<=5, its value on this representative has
+bidegree<=5 in x and y.
+
+The central fourth-order derivative stencil has points(-2,-1,1,2) and
+weights(1,-8,8,-1)/(12s). It annihilates powers0,2,3,4 and selects powers
+1 and5. Its tensor product on both axes therefore gives EXACTLY
+ D(s)=a+b s^4+c s^8,
+where a is the actual mixed derivative. The three predeclared dyadic
+scales s=2^-12,2^-18,2^-24 determine a by Lagrange evaluation at t=s^4=0.
+The Rdot first derivative is similarly extracted from the supplied affine
+coefficient germ c0+y c_Rdotj; its FD4 is already linear in s^4.
+
+This uses the proved finite coefficient-degree bound. It is not a fit to
+a physical solution, a converged infinite-series extrapolation, a selected
+favorable step, or a correction parameter. Every scale and failure is
+retained, and all arithmetic propagates256-bit acb intervals from the
+exact dyadic coefficient exports. In particular the coarse Rdot derivative
+errors3.05179728 and1.81901293e-7 are not hidden. The finest raw Rdot error
+is1.08421619e-14; polynomial extraction uses all three scales.
+
+3. Independent comparisons and actual nonzero load
+
+The first R derivative of all36 temporal functionals is compared with the
+projection of the separately evaluated all60-row native-material H_G R:
+ upper2.7919544675808336e-32.
+
+The independent mixed derivative plus the separately evaluated Rdot
+derivative gives the total Gauss source clock. Its SU2 rows plus the
+previous directly computed physical deltaQ clock agree to
+ upper3.368270239684603e-36.
+The newly differentiated Gauss clock also agrees with the earlier literal
+product-rule Gauss clock to the same bound. This upgrades that earlier
+clock identity control with a separate explicit Gauss-polynomial
+derivative application; it does not retroactively modify the old packet.
+
+The actual full36 temporal source-clock magnitude is nonzero:
+ .0021161999527615693.
+It is exported, not zero-filled. The new derivative comparisons do not
+make the retained enlarged field/response satisfy their constraints.
+Prior source-corner and position trial residuals remain unchanged,
+including the central affine3.8597e-9, combined-four SU2 3.0242e-10 and
+large higher-radial position rows. No correction is selected or applied.
+
+4. Source, exact paired data and reproducibility
+
+Canonical producer:
+ audits/bhsm_original_ea02_literal_temporal_Gauss_clock_20261016.py
+ SHAa0634e1b7d31568bf2485ce26cbd961bb2bf63475f972a43bc6e63bda7f07efd
+ 13779B.
+
+The producer requires the exact frozen coefficient exporter c744590f...,
+SU2 corner3504d6dd... and independent all60 Gauss source51937127..., their
+executed source/archive byte hashes, identical full master368/time, and
+identical complete retained seven R. The target remains the original
+complex analytic ea02 CUT, not a real physical background or another
+same-clock branch. No physical E/B/source/domain variation is invented.
+
+WORK output base:
+ C:/Users/carbe/OneDrive/Documents/CODEX/outputs/bhsm_original_ea02_literal_temporal_Gauss_clock_20261016
+run_1 and run_2 repeat all3 files byte-identically:
+ independent_literal_temporal36x7_Gauss_mixed_clock.npz
+  603727B SHA85622441b81340665722018b95dbd1a26f65637a63f791239f51327147f95484
+ result.json
+  5808B SHAc8448a8d56b4689da5823bed620264bda131627aca5d57d609d1871c40a56f47
+ executed_producer.py
+  13779B SHAa0634e1b7d31568bf2485ce26cbd961bb2bf63475f972a43bc6e63bda7f07efd.
+The sibling paired_inventory.json has
+ SHAedf09e000550a4998b9b5ce08c85b3c0937e0f286a4fcc0cada9bf51d4d07644.
+The NPZ retains exact dyadic interval exports of all first/mixed/Rdot/
+total-clock rows and each raw fixed-scale evaluation.
+
+5. Physical scope remains open
+
+These are actual classical temporal gauge-constraint source jets on the
+retained finite field. The remaining mechanical constraints, microscopic
+graded induced current, full physical reset/ghost and outgoing domain,
+retarded Y_R/s_R and physical C0/Cj with their full derivatives remain
+unevaluated. No unsquared/native-square energy dictionary is inferred.
+Whole physical derivative, one coupled correction, Maxwell/all226 AFTER,
+physical radial solution convergence, normalized two-spin state and muon
+magnetic moment gates remain false/unperformed. Original correction count0.

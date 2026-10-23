@@ -1,0 +1,36 @@
+{
+  "action": "BHSM-AE-4.0.0; adopted v14.45 eta-bound effective Dirac action, common-A prescription retained",
+  "branch": "codex/muon-parent-maxwell-density-review",
+  "checkpoint_id": "BHSM_MUON_SOURCE_PAIRING_CURRENT_PROFILE_COEFFICIENT_20261003",
+  "contribution_ledger": "native_ledger.json",
+  "current_wall_overlap_evaluations": 0,
+  "domain": "saved local canonical cut sections; wall inclusion/isometry and full exterior interface form not realized",
+  "exterior_shifted_solves": 0,
+  "frozen_locals": "frozen_local.json",
+  "history": "C2 step1222 artificial past cut, physical past prefix and canonical future stop; true material wall rho=pi/2",
+  "missing_operand": "missing_operand.json",
+  "native_heat_evaluations": 0,
+  "new_results": [
+    "actual p_Ak and mu5*p_Ak at cut, full n1/n3",
+    "source geometric Gram density and wall M4 density/time derivative",
+    "initial normal coordinate jet with time/shift",
+    "exact nodal polynomial radial-slice signature certificate"
+  ],
+  "new_targeted_checks": 4,
+  "original_five_checks_rerun": false,
+  "partial_exterior_KM": "exterior_KM_partial.json",
+  "physical_a_mu": null,
+  "physical_g_mu": null,
+  "physical_transfer_directions": 0,
+  "replay_command": "python scripts/replay_muon_wall_source_pairing.py --output <fresh-directory>",
+  "result_paths": [
+    "replay_reference/result.json",
+    "replay_reference/radial_slice_causal_certificate.json"
+  ],
+  "resume": "Load saved p and weighted-p arrays, M4/M5 densities and certificate. Next supply current eta normal-profile restriction; do not rerun H/contact/body/conormal/profile witness.",
+  "scientific_reference": "524ed90689bd5923c249bba2e699abf627e703cd",
+  "source_Gram_inversion": false,
+  "source_coordinate": "b with inherited beta=T_b b, A_Q=sqrt(2) beta; no 2/3 vertex factor",
+  "start_HEAD": "e983e4cfd98de81679d74106d181325e7b618935",
+  "state": "canonical computational trial coordinates, not a selected physical muon state"
+}

@@ -1,0 +1,45 @@
+{
+  "all_input_hashes_current": true,
+  "classification": "VERIFIED_POSITIVE_INTRINSIC_HIGGS_MIXED_GREEN_APPLICATION",
+  "commands": [
+    {
+      "command": "$env:PYTHONPATH=\"src\"; $env:OPENBLAS_NUM_THREADS=\"1\"; C:/Python314/python.exe -m pytest --noconftest -q tests/test_muon_intrinsic_higgs_positive_green.py",
+      "exit_code": 0,
+      "output": ".... [100%]\n4 passed in4.35s"
+    },
+    {
+      "command": "$env:PYTHONPATH=\"src\"; $env:OPENBLAS_NUM_THREADS=\"1\"; C:/Python314/python.exe scripts/evaluate_muon_intrinsic_higgs_positive_green.py --output artifacts/muon_intrinsic_higgs_positive_green_20261011/run_1",
+      "exit_code": 0
+    },
+    {
+      "command": "$env:PYTHONPATH=\"src\"; $env:OPENBLAS_NUM_THREADS=\"1\"; C:/Python314/python.exe scripts/evaluate_muon_intrinsic_higgs_positive_green.py --output artifacts/muon_intrinsic_higgs_positive_green_20261011/run_2",
+      "exit_code": 0
+    }
+  ],
+  "native_factor_order_review": "P^-1 A_dagger retained; no A_dagger P^-1 reorder",
+  "physical_graded_selfenergy_or_Pauli_completed": false,
+  "prior_tests": [
+    {
+      "cause": "overly narrow2e-15 per-entry inverse rounding threshold; then whole80-matrix residualcriterion1e-13 and BLAS contraction refactor",
+      "exit_code": 1,
+      "output": "1 failed,3passed in82.41s"
+    },
+    {
+      "cause": "same inverse threshold before correction",
+      "exit_code": 1,
+      "output": "1 failed,3passed in4.61s"
+    }
+  ],
+  "replay_files": {
+    "application.npz": {
+      "byte_identical": true,
+      "bytes": 397060,
+      "sha256": "1b03535269f856831b9bf6ae6cee8a52e915e5d1d2e910283e62fd684057efd1"
+    },
+    "result.json": {
+      "byte_identical": true,
+      "bytes": 11777,
+      "sha256": "d543bb457f0f19e960f1f77c00ff1fd13f14c6bf4404d05eccc1c9780153054f"
+    }
+  }
+}

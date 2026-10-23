@@ -1,0 +1,1758 @@
+...F.FF.....................EEEEEEEEEEE.........EEE.EEEEE............... [ 30%]
+............................................EEEE.EF..................... [ 60%]
+.....FF.FF.............................................................. [ 90%]
+......EEEEEEEE...E.....                                                  [100%]
+=================================== ERRORS ====================================
+_ ERROR at setup of test_actual_amputated_source_matches_derivative_of_the_same_propagator[0] _
+
+    @pytest.fixture(scope='module')
+    def actual():
+        b=ROOT/'artifacts/muon_parent_gauge_geometry_correction_20261010';endpoint=b/'paired_field_endpoint_enriched_run_1'
+>       receipt=json.loads((endpoint/'result.json').read_bytes())
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_muon_charged_current_cell_amputation.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Python314\Lib\pathlib\__init__.py:777: in read_bytes
+    with self.open(mode='rb', buffering=0) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/carbe/Downloads/BHSM_common_domain_regeneration_smoke_20261012_0455/artifacts/muon_parent_gauge_geometry_correction_20261010/paired_field_endpoint_enriched_run_1/result.json')
+mode = 'rb', buffering = 0, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\carbe\\Downloads\\BHSM_common_domain_regeneration_smoke_20261012_0455\\artifacts\\muon_parent_gauge_geometry_correction_20261010\\paired_field_endpoint_enriched_run_1\\result.json'
+
+C:\Python314\Lib\pathlib\__init__.py:771: FileNotFoundError
+_ ERROR at setup of test_actual_amputated_source_matches_derivative_of_the_same_propagator[37] _
+
+    @pytest.fixture(scope='module')
+    def actual():
+        b=ROOT/'artifacts/muon_parent_gauge_geometry_correction_20261010';endpoint=b/'paired_field_endpoint_enriched_run_1'
+>       receipt=json.loads((endpoint/'result.json').read_bytes())
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_muon_charged_current_cell_amputation.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Python314\Lib\pathlib\__init__.py:777: in read_bytes
+    with self.open(mode='rb', buffering=0) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/carbe/Downloads/BHSM_common_domain_regeneration_smoke_20261012_0455/artifacts/muon_parent_gauge_geometry_correction_20261010/paired_field_endpoint_enriched_run_1/result.json')
+mode = 'rb', buffering = 0, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\carbe\\Downloads\\BHSM_common_domain_regeneration_smoke_20261012_0455\\artifacts\\muon_parent_gauge_geometry_correction_20261010\\paired_field_endpoint_enriched_run_1\\result.json'
+
+C:\Python314\Lib\pathlib\__init__.py:771: FileNotFoundError
+_ ERROR at setup of test_actual_amputated_source_matches_derivative_of_the_same_propagator[74] _
+
+    @pytest.fixture(scope='module')
+    def actual():
+        b=ROOT/'artifacts/muon_parent_gauge_geometry_correction_20261010';endpoint=b/'paired_field_endpoint_enriched_run_1'
+>       receipt=json.loads((endpoint/'result.json').read_bytes())
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_muon_charged_current_cell_amputation.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Python314\Lib\pathlib\__init__.py:777: in read_bytes
+    with self.open(mode='rb', buffering=0) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/carbe/Downloads/BHSM_common_domain_regeneration_smoke_20261012_0455/artifacts/muon_parent_gauge_geometry_correction_20261010/paired_field_endpoint_enriched_run_1/result.json')
+mode = 'rb', buffering = 0, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\carbe\\Downloads\\BHSM_common_domain_regeneration_smoke_20261012_0455\\artifacts\\muon_parent_gauge_geometry_correction_20261010\\paired_field_endpoint_enriched_run_1\\result.json'
+
+C:\Python314\Lib\pathlib\__init__.py:771: FileNotFoundError
+_ ERROR at setup of test_actual_amputated_source_matches_derivative_of_the_same_propagator[98] _
+
+    @pytest.fixture(scope='module')
+    def actual():
+        b=ROOT/'artifacts/muon_parent_gauge_geometry_correction_20261010';endpoint=b/'paired_field_endpoint_enriched_run_1'
+>       receipt=json.loads((endpoint/'result.json').read_bytes())
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_muon_charged_current_cell_amputation.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Python314\Lib\pathlib\__init__.py:777: in read_bytes
+    with self.open(mode='rb', buffering=0) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/carbe/Downloads/BHSM_common_domain_regeneration_smoke_20261012_0455/artifacts/muon_parent_gauge_geometry_correction_20261010/paired_field_endpoint_enriched_run_1/result.json')
+mode = 'rb', buffering = 0, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\carbe\\Downloads\\BHSM_common_domain_regeneration_smoke_20261012_0455\\artifacts\\muon_parent_gauge_geometry_correction_20261010\\paired_field_endpoint_enriched_run_1\\result.json'
+
+C:\Python314\Lib\pathlib\__init__.py:771: FileNotFoundError
+_ ERROR at setup of test_actual_amputated_source_matches_derivative_of_the_same_propagator[100] _
+
+    @pytest.fixture(scope='module')
+    def actual():
+        b=ROOT/'artifacts/muon_parent_gauge_geometry_correction_20261010';endpoint=b/'paired_field_endpoint_enriched_run_1'
+>       receipt=json.loads((endpoint/'result.json').read_bytes())
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_muon_charged_current_cell_amputation.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Python314\Lib\pathlib\__init__.py:777: in read_bytes
+    with self.open(mode='rb', buffering=0) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/carbe/Downloads/BHSM_common_domain_regeneration_smoke_20261012_0455/artifacts/muon_parent_gauge_geometry_correction_20261010/paired_field_endpoint_enriched_run_1/result.json')
+mode = 'rb', buffering = 0, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\carbe\\Downloads\\BHSM_common_domain_regeneration_smoke_20261012_0455\\artifacts\\muon_parent_gauge_geometry_correction_20261010\\paired_field_endpoint_enriched_run_1\\result.json'
+
+C:\Python314\Lib\pathlib\__init__.py:771: FileNotFoundError
+_ ERROR at setup of test_actual_amputated_source_matches_derivative_of_the_same_propagator[140] _
+
+    @pytest.fixture(scope='module')
+    def actual():
+        b=ROOT/'artifacts/muon_parent_gauge_geometry_correction_20261010';endpoint=b/'paired_field_endpoint_enriched_run_1'
+>       receipt=json.loads((endpoint/'result.json').read_bytes())
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_muon_charged_current_cell_amputation.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Python314\Lib\pathlib\__init__.py:777: in read_bytes
+    with self.open(mode='rb', buffering=0) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/carbe/Downloads/BHSM_common_domain_regeneration_smoke_20261012_0455/artifacts/muon_parent_gauge_geometry_correction_20261010/paired_field_endpoint_enriched_run_1/result.json')
+mode = 'rb', buffering = 0, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\carbe\\Downloads\\BHSM_common_domain_regeneration_smoke_20261012_0455\\artifacts\\muon_parent_gauge_geometry_correction_20261010\\paired_field_endpoint_enriched_run_1\\result.json'
+
+C:\Python314\Lib\pathlib\__init__.py:771: FileNotFoundError
+_ ERROR at setup of test_actual_amputated_source_matches_derivative_of_the_same_propagator[160] _
+
+    @pytest.fixture(scope='module')
+    def actual():
+        b=ROOT/'artifacts/muon_parent_gauge_geometry_correction_20261010';endpoint=b/'paired_field_endpoint_enriched_run_1'
+>       receipt=json.loads((endpoint/'result.json').read_bytes())
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_muon_charged_current_cell_amputation.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Python314\Lib\pathlib\__init__.py:777: in read_bytes
+    with self.open(mode='rb', buffering=0) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/carbe/Downloads/BHSM_common_domain_regeneration_smoke_20261012_0455/artifacts/muon_parent_gauge_geometry_correction_20261010/paired_field_endpoint_enriched_run_1/result.json')
+mode = 'rb', buffering = 0, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\carbe\\Downloads\\BHSM_common_domain_regeneration_smoke_20261012_0455\\artifacts\\muon_parent_gauge_geometry_correction_20261010\\paired_field_endpoint_enriched_run_1\\result.json'
+
+C:\Python314\Lib\pathlib\__init__.py:771: FileNotFoundError
+_ ERROR at setup of test_actual_amputated_source_matches_derivative_of_the_same_propagator[260] _
+
+    @pytest.fixture(scope='module')
+    def actual():
+        b=ROOT/'artifacts/muon_parent_gauge_geometry_correction_20261010';endpoint=b/'paired_field_endpoint_enriched_run_1'
+>       receipt=json.loads((endpoint/'result.json').read_bytes())
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_muon_charged_current_cell_amputation.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Python314\Lib\pathlib\__init__.py:777: in read_bytes
+    with self.open(mode='rb', buffering=0) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/carbe/Downloads/BHSM_common_domain_regeneration_smoke_20261012_0455/artifacts/muon_parent_gauge_geometry_correction_20261010/paired_field_endpoint_enriched_run_1/result.json')
+mode = 'rb', buffering = 0, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\carbe\\Downloads\\BHSM_common_domain_regeneration_smoke_20261012_0455\\artifacts\\muon_parent_gauge_geometry_correction_20261010\\paired_field_endpoint_enriched_run_1\\result.json'
+
+C:\Python314\Lib\pathlib\__init__.py:771: FileNotFoundError
+_ ERROR at setup of test_actual_amputated_source_matches_derivative_of_the_same_propagator[261] _
+
+    @pytest.fixture(scope='module')
+    def actual():
+        b=ROOT/'artifacts/muon_parent_gauge_geometry_correction_20261010';endpoint=b/'paired_field_endpoint_enriched_run_1'
+>       receipt=json.loads((endpoint/'result.json').read_bytes())
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_muon_charged_current_cell_amputation.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Python314\Lib\pathlib\__init__.py:777: in read_bytes
+    with self.open(mode='rb', buffering=0) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/carbe/Downloads/BHSM_common_domain_regeneration_smoke_20261012_0455/artifacts/muon_parent_gauge_geometry_correction_20261010/paired_field_endpoint_enriched_run_1/result.json')
+mode = 'rb', buffering = 0, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\carbe\\Downloads\\BHSM_common_domain_regeneration_smoke_20261012_0455\\artifacts\\muon_parent_gauge_geometry_correction_20261010\\paired_field_endpoint_enriched_run_1\\result.json'
+
+C:\Python314\Lib\pathlib\__init__.py:771: FileNotFoundError
+_ ERROR at setup of test_fixed_Y_H_source_is_reached_without_fitting_Y_or_selecting_a_spinor _
+
+    @pytest.fixture(scope='module')
+    def actual():
+        b=ROOT/'artifacts/muon_parent_gauge_geometry_correction_20261010';endpoint=b/'paired_field_endpoint_enriched_run_1'
+>       receipt=json.loads((endpoint/'result.json').read_bytes())
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_muon_charged_current_cell_amputation.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Python314\Lib\pathlib\__init__.py:777: in read_bytes
+    with self.open(mode='rb', buffering=0) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/carbe/Downloads/BHSM_common_domain_regeneration_smoke_20261012_0455/artifacts/muon_parent_gauge_geometry_correction_20261010/paired_field_endpoint_enriched_run_1/result.json')
+mode = 'rb', buffering = 0, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\carbe\\Downloads\\BHSM_common_domain_regeneration_smoke_20261012_0455\\artifacts\\muon_parent_gauge_geometry_correction_20261010\\paired_field_endpoint_enriched_run_1\\result.json'
+
+C:\Python314\Lib\pathlib\__init__.py:771: FileNotFoundError
+________ ERROR at setup of test_coordinate_N_variation_is_counted_once ________
+
+    @pytest.fixture(scope='module')
+    def actual():
+        b=ROOT/'artifacts/muon_parent_gauge_geometry_correction_20261010';endpoint=b/'paired_field_endpoint_enriched_run_1'
+>       receipt=json.loads((endpoint/'result.json').read_bytes())
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_muon_charged_current_cell_amputation.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Python314\Lib\pathlib\__init__.py:777: in read_bytes
+    with self.open(mode='rb', buffering=0) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/carbe/Downloads/BHSM_common_domain_regeneration_smoke_20261012_0455/artifacts/muon_parent_gauge_geometry_correction_20261010/paired_field_endpoint_enriched_run_1/result.json')
+mode = 'rb', buffering = 0, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\carbe\\Downloads\\BHSM_common_domain_regeneration_smoke_20261012_0455\\artifacts\\muon_parent_gauge_geometry_correction_20261010\\paired_field_endpoint_enriched_run_1\\result.json'
+
+C:\Python314\Lib\pathlib\__init__.py:771: FileNotFoundError
+_ ERROR at setup of test_actual_full220_endpoints_and_midpoint_rates_are_preserved[incoming] _
+
+    @pytest.fixture(scope='module')
+    def actual():
+        base=ROOT/'artifacts/muon_parent_gauge_geometry_correction_20261010'
+>       endpoint=load_attached_endpoint(base/'paired_attachment_endpoint_run_1',side='incoming')
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_muon_chronological_charged_current.py:17: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\bhsm\interface\muon_birth_attached_phase.py:57: in load_attached_endpoint
+    raw_receipt=(source/'result.json').read_bytes();receipt=json.loads(raw_receipt)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Python314\Lib\pathlib\__init__.py:777: in read_bytes
+    with self.open(mode='rb', buffering=0) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/carbe/Downloads/BHSM_common_domain_regeneration_smoke_20261012_0455/artifacts/muon_parent_gauge_geometry_correction_20261010/paired_attachment_endpoint_run_1/result.json')
+mode = 'rb', buffering = 0, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\carbe\\Downloads\\BHSM_common_domain_regeneration_smoke_20261012_0455\\artifacts\\muon_parent_gauge_geometry_correction_20261010\\paired_attachment_endpoint_run_1\\result.json'
+
+C:\Python314\Lib\pathlib\__init__.py:771: FileNotFoundError
+_ ERROR at setup of test_actual_full220_endpoints_and_midpoint_rates_are_preserved[outgoing] _
+
+    @pytest.fixture(scope='module')
+    def actual():
+        base=ROOT/'artifacts/muon_parent_gauge_geometry_correction_20261010'
+>       endpoint=load_attached_endpoint(base/'paired_attachment_endpoint_run_1',side='incoming')
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_muon_chronological_charged_current.py:17: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\bhsm\interface\muon_birth_attached_phase.py:57: in load_attached_endpoint
+    raw_receipt=(source/'result.json').read_bytes();receipt=json.loads(raw_receipt)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Python314\Lib\pathlib\__init__.py:777: in read_bytes
+    with self.open(mode='rb', buffering=0) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/carbe/Downloads/BHSM_common_domain_regeneration_smoke_20261012_0455/artifacts/muon_parent_gauge_geometry_correction_20261010/paired_attachment_endpoint_run_1/result.json')
+mode = 'rb', buffering = 0, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\carbe\\Downloads\\BHSM_common_domain_regeneration_smoke_20261012_0455\\artifacts\\muon_parent_gauge_geometry_correction_20261010\\paired_attachment_endpoint_run_1\\result.json'
+
+C:\Python314\Lib\pathlib\__init__.py:771: FileNotFoundError
+_ ERROR at setup of test_endpoint_reversal_is_the_same_literal_nonlinear_action_not_a_rate_reversal_CONTROL_ONLY _
+
+    @pytest.fixture(scope='module')
+    def actual():
+        base=ROOT/'artifacts/muon_parent_gauge_geometry_correction_20261010'
+>       endpoint=load_attached_endpoint(base/'paired_attachment_endpoint_run_1',side='incoming')
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_muon_chronological_charged_current.py:17: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\bhsm\interface\muon_birth_attached_phase.py:57: in load_attached_endpoint
+    raw_receipt=(source/'result.json').read_bytes();receipt=json.loads(raw_receipt)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Python314\Lib\pathlib\__init__.py:777: in read_bytes
+    with self.open(mode='rb', buffering=0) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/carbe/Downloads/BHSM_common_domain_regeneration_smoke_20261012_0455/artifacts/muon_parent_gauge_geometry_correction_20261010/paired_attachment_endpoint_run_1/result.json')
+mode = 'rb', buffering = 0, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\carbe\\Downloads\\BHSM_common_domain_regeneration_smoke_20261012_0455\\artifacts\\muon_parent_gauge_geometry_correction_20261010\\paired_attachment_endpoint_run_1\\result.json'
+
+C:\Python314\Lib\pathlib\__init__.py:771: FileNotFoundError
+_ ERROR at setup of test_actual_chronological_incoming_current_matches_direct_propagator_derivative[37] _
+
+    @pytest.fixture(scope='module')
+    def actual():
+        base=ROOT/'artifacts/muon_parent_gauge_geometry_correction_20261010'
+>       endpoint=load_attached_endpoint(base/'paired_attachment_endpoint_run_1',side='incoming')
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_muon_chronological_charged_current.py:17: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\bhsm\interface\muon_birth_attached_phase.py:57: in load_attached_endpoint
+    raw_receipt=(source/'result.json').read_bytes();receipt=json.loads(raw_receipt)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Python314\Lib\pathlib\__init__.py:777: in read_bytes
+    with self.open(mode='rb', buffering=0) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/carbe/Downloads/BHSM_common_domain_regeneration_smoke_20261012_0455/artifacts/muon_parent_gauge_geometry_correction_20261010/paired_attachment_endpoint_run_1/result.json')
+mode = 'rb', buffering = 0, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\carbe\\Downloads\\BHSM_common_domain_regeneration_smoke_20261012_0455\\artifacts\\muon_parent_gauge_geometry_correction_20261010\\paired_attachment_endpoint_run_1\\result.json'
+
+C:\Python314\Lib\pathlib\__init__.py:771: FileNotFoundError
+_ ERROR at setup of test_actual_chronological_incoming_current_matches_direct_propagator_derivative[98] _
+
+    @pytest.fixture(scope='module')
+    def actual():
+        base=ROOT/'artifacts/muon_parent_gauge_geometry_correction_20261010'
+>       endpoint=load_attached_endpoint(base/'paired_attachment_endpoint_run_1',side='incoming')
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_muon_chronological_charged_current.py:17: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\bhsm\interface\muon_birth_attached_phase.py:57: in load_attached_endpoint
+    raw_receipt=(source/'result.json').read_bytes();receipt=json.loads(raw_receipt)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Python314\Lib\pathlib\__init__.py:777: in read_bytes
+    with self.open(mode='rb', buffering=0) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/carbe/Downloads/BHSM_common_domain_regeneration_smoke_20261012_0455/artifacts/muon_parent_gauge_geometry_correction_20261010/paired_attachment_endpoint_run_1/result.json')
+mode = 'rb', buffering = 0, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\carbe\\Downloads\\BHSM_common_domain_regeneration_smoke_20261012_0455\\artifacts\\muon_parent_gauge_geometry_correction_20261010\\paired_attachment_endpoint_run_1\\result.json'
+
+C:\Python314\Lib\pathlib\__init__.py:771: FileNotFoundError
+_ ERROR at setup of test_actual_chronological_incoming_current_matches_direct_propagator_derivative[100] _
+
+    @pytest.fixture(scope='module')
+    def actual():
+        base=ROOT/'artifacts/muon_parent_gauge_geometry_correction_20261010'
+>       endpoint=load_attached_endpoint(base/'paired_attachment_endpoint_run_1',side='incoming')
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_muon_chronological_charged_current.py:17: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\bhsm\interface\muon_birth_attached_phase.py:57: in load_attached_endpoint
+    raw_receipt=(source/'result.json').read_bytes();receipt=json.loads(raw_receipt)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Python314\Lib\pathlib\__init__.py:777: in read_bytes
+    with self.open(mode='rb', buffering=0) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/carbe/Downloads/BHSM_common_domain_regeneration_smoke_20261012_0455/artifacts/muon_parent_gauge_geometry_correction_20261010/paired_attachment_endpoint_run_1/result.json')
+mode = 'rb', buffering = 0, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\carbe\\Downloads\\BHSM_common_domain_regeneration_smoke_20261012_0455\\artifacts\\muon_parent_gauge_geometry_correction_20261010\\paired_attachment_endpoint_run_1\\result.json'
+
+C:\Python314\Lib\pathlib\__init__.py:771: FileNotFoundError
+_ ERROR at setup of test_actual_chronological_incoming_current_matches_direct_propagator_derivative[260] _
+
+    @pytest.fixture(scope='module')
+    def actual():
+        base=ROOT/'artifacts/muon_parent_gauge_geometry_correction_20261010'
+>       endpoint=load_attached_endpoint(base/'paired_attachment_endpoint_run_1',side='incoming')
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_muon_chronological_charged_current.py:17: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\bhsm\interface\muon_birth_attached_phase.py:57: in load_attached_endpoint
+    raw_receipt=(source/'result.json').read_bytes();receipt=json.loads(raw_receipt)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Python314\Lib\pathlib\__init__.py:777: in read_bytes
+    with self.open(mode='rb', buffering=0) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/carbe/Downloads/BHSM_common_domain_regeneration_smoke_20261012_0455/artifacts/muon_parent_gauge_geometry_correction_20261010/paired_attachment_endpoint_run_1/result.json')
+mode = 'rb', buffering = 0, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\carbe\\Downloads\\BHSM_common_domain_regeneration_smoke_20261012_0455\\artifacts\\muon_parent_gauge_geometry_correction_20261010\\paired_attachment_endpoint_run_1\\result.json'
+
+C:\Python314\Lib\pathlib\__init__.py:771: FileNotFoundError
+________ ERROR at setup of test_incomplete_or_nonreal_cell_is_rejected ________
+
+    @pytest.fixture(scope='module')
+    def actual():
+        base=ROOT/'artifacts/muon_parent_gauge_geometry_correction_20261010'
+>       endpoint=load_attached_endpoint(base/'paired_attachment_endpoint_run_1',side='incoming')
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_muon_chronological_charged_current.py:17: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\bhsm\interface\muon_birth_attached_phase.py:57: in load_attached_endpoint
+    raw_receipt=(source/'result.json').read_bytes();receipt=json.loads(raw_receipt)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Python314\Lib\pathlib\__init__.py:777: in read_bytes
+    with self.open(mode='rb', buffering=0) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/carbe/Downloads/BHSM_common_domain_regeneration_smoke_20261012_0455/artifacts/muon_parent_gauge_geometry_correction_20261010/paired_attachment_endpoint_run_1/result.json')
+mode = 'rb', buffering = 0, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\carbe\\Downloads\\BHSM_common_domain_regeneration_smoke_20261012_0455\\artifacts\\muon_parent_gauge_geometry_correction_20261010\\paired_attachment_endpoint_run_1\\result.json'
+
+C:\Python314\Lib\pathlib\__init__.py:771: FileNotFoundError
+_ ERROR at setup of test_normal_coordinates_have_positive_identity_derivative _
+
+    @pytest.fixture(scope='module')
+    def actual():
+>       b=retained_phase_source_inputs('artifacts/muon_parent_gauge_geometry_correction_20261010/attached_phase_incoming_1steps_run_1')
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_muon_electromagnetic_soft_magnetic_source.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\bhsm\interface\muon_primal_electromagnetic_source.py:200: in retained_phase_source_inputs
+    receipt=json.loads(receipt_path.read_bytes())
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Python314\Lib\pathlib\__init__.py:777: in read_bytes
+    with self.open(mode='rb', buffering=0) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/carbe/Downloads/BHSM_common_domain_regeneration_smoke_20261012_0455/artifacts/muon_parent_gauge_geometry_correction_20261010/attached_phase_incoming_1steps_run_1/result.json')
+mode = 'rb', buffering = 0, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\carbe\\Downloads\\BHSM_common_domain_regeneration_smoke_20261012_0455\\artifacts\\muon_parent_gauge_geometry_correction_20261010\\attached_phase_incoming_1steps_run_1\\result.json'
+
+C:\Python314\Lib\pathlib\__init__.py:771: FileNotFoundError
+_ ERROR at setup of test_actual_covariant_magnetic_jet_sign_and_normalization _
+
+    @pytest.fixture(scope='module')
+    def actual():
+>       b=retained_phase_source_inputs('artifacts/muon_parent_gauge_geometry_correction_20261010/attached_phase_incoming_1steps_run_1')
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_muon_electromagnetic_soft_magnetic_source.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\bhsm\interface\muon_primal_electromagnetic_source.py:200: in retained_phase_source_inputs
+    receipt=json.loads(receipt_path.read_bytes())
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Python314\Lib\pathlib\__init__.py:777: in read_bytes
+    with self.open(mode='rb', buffering=0) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/carbe/Downloads/BHSM_common_domain_regeneration_smoke_20261012_0455/artifacts/muon_parent_gauge_geometry_correction_20261010/attached_phase_incoming_1steps_run_1/result.json')
+mode = 'rb', buffering = 0, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\carbe\\Downloads\\BHSM_common_domain_regeneration_smoke_20261012_0455\\artifacts\\muon_parent_gauge_geometry_correction_20261010\\attached_phase_incoming_1steps_run_1\\result.json'
+
+C:\Python314\Lib\pathlib\__init__.py:771: FileNotFoundError
+_ ERROR at setup of test_exact_source_rate_and_jets_with_higgs_and_radius_motion _
+
+    @pytest.fixture(scope='module')
+    def actual():
+>       b=retained_phase_source_inputs('artifacts/muon_parent_gauge_geometry_correction_20261010/attached_phase_incoming_1steps_run_1')
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_muon_electromagnetic_soft_magnetic_source.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\bhsm\interface\muon_primal_electromagnetic_source.py:200: in retained_phase_source_inputs
+    receipt=json.loads(receipt_path.read_bytes())
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Python314\Lib\pathlib\__init__.py:777: in read_bytes
+    with self.open(mode='rb', buffering=0) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/carbe/Downloads/BHSM_common_domain_regeneration_smoke_20261012_0455/artifacts/muon_parent_gauge_geometry_correction_20261010/attached_phase_incoming_1steps_run_1/result.json')
+mode = 'rb', buffering = 0, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\carbe\\Downloads\\BHSM_common_domain_regeneration_smoke_20261012_0455\\artifacts\\muon_parent_gauge_geometry_correction_20261010\\attached_phase_incoming_1steps_run_1\\result.json'
+
+C:\Python314\Lib\pathlib\__init__.py:771: FileNotFoundError
+____________ ERROR at setup of test_electric_charge_inserted_once _____________
+
+    @pytest.fixture(scope='module')
+    def actual():
+>       b=retained_phase_source_inputs('artifacts/muon_parent_gauge_geometry_correction_20261010/attached_phase_incoming_1steps_run_1')
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_muon_electromagnetic_soft_magnetic_source.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\bhsm\interface\muon_primal_electromagnetic_source.py:200: in retained_phase_source_inputs
+    receipt=json.loads(receipt_path.read_bytes())
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Python314\Lib\pathlib\__init__.py:777: in read_bytes
+    with self.open(mode='rb', buffering=0) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/carbe/Downloads/BHSM_common_domain_regeneration_smoke_20261012_0455/artifacts/muon_parent_gauge_geometry_correction_20261010/attached_phase_incoming_1steps_run_1/result.json')
+mode = 'rb', buffering = 0, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\carbe\\Downloads\\BHSM_common_domain_regeneration_smoke_20261012_0455\\artifacts\\muon_parent_gauge_geometry_correction_20261010\\attached_phase_incoming_1steps_run_1\\result.json'
+
+C:\Python314\Lib\pathlib\__init__.py:771: FileNotFoundError
+_______ ERROR at setup of test_no_fallback_field_or_claimed_soft_vertex _______
+
+    @pytest.fixture(scope='module')
+    def actual():
+>       b=retained_phase_source_inputs('artifacts/muon_parent_gauge_geometry_correction_20261010/attached_phase_incoming_1steps_run_1')
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_muon_electromagnetic_soft_magnetic_source.py:18: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\bhsm\interface\muon_primal_electromagnetic_source.py:200: in retained_phase_source_inputs
+    receipt=json.loads(receipt_path.read_bytes())
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Python314\Lib\pathlib\__init__.py:777: in read_bytes
+    with self.open(mode='rb', buffering=0) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/carbe/Downloads/BHSM_common_domain_regeneration_smoke_20261012_0455/artifacts/muon_parent_gauge_geometry_correction_20261010/attached_phase_incoming_1steps_run_1/result.json')
+mode = 'rb', buffering = 0, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\carbe\\Downloads\\BHSM_common_domain_regeneration_smoke_20261012_0455\\artifacts\\muon_parent_gauge_geometry_correction_20261010\\attached_phase_incoming_1steps_run_1\\result.json'
+
+C:\Python314\Lib\pathlib\__init__.py:771: FileNotFoundError
+_____ ERROR at setup of test_same_actual_coordinate_time_action_source[0] _____
+
+    @pytest.fixture(scope='module')
+    def actual():
+        base=ROOT/'artifacts/muon_parent_gauge_geometry_correction_20261010'
+        folder=base/'paired_field_endpoint_enriched_run_1'
+>       receipt=json.loads((folder/'result.json').read_bytes())
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_muon_trace_enriched_charged_current_response.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Python314\Lib\pathlib\__init__.py:777: in read_bytes
+    with self.open(mode='rb', buffering=0) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/carbe/Downloads/BHSM_common_domain_regeneration_smoke_20261012_0455/artifacts/muon_parent_gauge_geometry_correction_20261010/paired_field_endpoint_enriched_run_1/result.json')
+mode = 'rb', buffering = 0, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\carbe\\Downloads\\BHSM_common_domain_regeneration_smoke_20261012_0455\\artifacts\\muon_parent_gauge_geometry_correction_20261010\\paired_field_endpoint_enriched_run_1\\result.json'
+
+C:\Python314\Lib\pathlib\__init__.py:771: FileNotFoundError
+____ ERROR at setup of test_same_actual_coordinate_time_action_source[74] _____
+
+    @pytest.fixture(scope='module')
+    def actual():
+        base=ROOT/'artifacts/muon_parent_gauge_geometry_correction_20261010'
+        folder=base/'paired_field_endpoint_enriched_run_1'
+>       receipt=json.loads((folder/'result.json').read_bytes())
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_muon_trace_enriched_charged_current_response.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Python314\Lib\pathlib\__init__.py:777: in read_bytes
+    with self.open(mode='rb', buffering=0) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/carbe/Downloads/BHSM_common_domain_regeneration_smoke_20261012_0455/artifacts/muon_parent_gauge_geometry_correction_20261010/paired_field_endpoint_enriched_run_1/result.json')
+mode = 'rb', buffering = 0, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\carbe\\Downloads\\BHSM_common_domain_regeneration_smoke_20261012_0455\\artifacts\\muon_parent_gauge_geometry_correction_20261010\\paired_field_endpoint_enriched_run_1\\result.json'
+
+C:\Python314\Lib\pathlib\__init__.py:771: FileNotFoundError
+____ ERROR at setup of test_same_actual_coordinate_time_action_source[98] _____
+
+    @pytest.fixture(scope='module')
+    def actual():
+        base=ROOT/'artifacts/muon_parent_gauge_geometry_correction_20261010'
+        folder=base/'paired_field_endpoint_enriched_run_1'
+>       receipt=json.loads((folder/'result.json').read_bytes())
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_muon_trace_enriched_charged_current_response.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Python314\Lib\pathlib\__init__.py:777: in read_bytes
+    with self.open(mode='rb', buffering=0) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/carbe/Downloads/BHSM_common_domain_regeneration_smoke_20261012_0455/artifacts/muon_parent_gauge_geometry_correction_20261010/paired_field_endpoint_enriched_run_1/result.json')
+mode = 'rb', buffering = 0, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\carbe\\Downloads\\BHSM_common_domain_regeneration_smoke_20261012_0455\\artifacts\\muon_parent_gauge_geometry_correction_20261010\\paired_field_endpoint_enriched_run_1\\result.json'
+
+C:\Python314\Lib\pathlib\__init__.py:771: FileNotFoundError
+____ ERROR at setup of test_same_actual_coordinate_time_action_source[100] ____
+
+    @pytest.fixture(scope='module')
+    def actual():
+        base=ROOT/'artifacts/muon_parent_gauge_geometry_correction_20261010'
+        folder=base/'paired_field_endpoint_enriched_run_1'
+>       receipt=json.loads((folder/'result.json').read_bytes())
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_muon_trace_enriched_charged_current_response.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Python314\Lib\pathlib\__init__.py:777: in read_bytes
+    with self.open(mode='rb', buffering=0) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/carbe/Downloads/BHSM_common_domain_regeneration_smoke_20261012_0455/artifacts/muon_parent_gauge_geometry_correction_20261010/paired_field_endpoint_enriched_run_1/result.json')
+mode = 'rb', buffering = 0, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\carbe\\Downloads\\BHSM_common_domain_regeneration_smoke_20261012_0455\\artifacts\\muon_parent_gauge_geometry_correction_20261010\\paired_field_endpoint_enriched_run_1\\result.json'
+
+C:\Python314\Lib\pathlib\__init__.py:771: FileNotFoundError
+____ ERROR at setup of test_same_actual_coordinate_time_action_source[140] ____
+
+    @pytest.fixture(scope='module')
+    def actual():
+        base=ROOT/'artifacts/muon_parent_gauge_geometry_correction_20261010'
+        folder=base/'paired_field_endpoint_enriched_run_1'
+>       receipt=json.loads((folder/'result.json').read_bytes())
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_muon_trace_enriched_charged_current_response.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Python314\Lib\pathlib\__init__.py:777: in read_bytes
+    with self.open(mode='rb', buffering=0) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/carbe/Downloads/BHSM_common_domain_regeneration_smoke_20261012_0455/artifacts/muon_parent_gauge_geometry_correction_20261010/paired_field_endpoint_enriched_run_1/result.json')
+mode = 'rb', buffering = 0, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\carbe\\Downloads\\BHSM_common_domain_regeneration_smoke_20261012_0455\\artifacts\\muon_parent_gauge_geometry_correction_20261010\\paired_field_endpoint_enriched_run_1\\result.json'
+
+C:\Python314\Lib\pathlib\__init__.py:771: FileNotFoundError
+____ ERROR at setup of test_same_actual_coordinate_time_action_source[160] ____
+
+    @pytest.fixture(scope='module')
+    def actual():
+        base=ROOT/'artifacts/muon_parent_gauge_geometry_correction_20261010'
+        folder=base/'paired_field_endpoint_enriched_run_1'
+>       receipt=json.loads((folder/'result.json').read_bytes())
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_muon_trace_enriched_charged_current_response.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Python314\Lib\pathlib\__init__.py:777: in read_bytes
+    with self.open(mode='rb', buffering=0) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/carbe/Downloads/BHSM_common_domain_regeneration_smoke_20261012_0455/artifacts/muon_parent_gauge_geometry_correction_20261010/paired_field_endpoint_enriched_run_1/result.json')
+mode = 'rb', buffering = 0, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\carbe\\Downloads\\BHSM_common_domain_regeneration_smoke_20261012_0455\\artifacts\\muon_parent_gauge_geometry_correction_20261010\\paired_field_endpoint_enriched_run_1\\result.json'
+
+C:\Python314\Lib\pathlib\__init__.py:771: FileNotFoundError
+____ ERROR at setup of test_same_actual_coordinate_time_action_source[260] ____
+
+    @pytest.fixture(scope='module')
+    def actual():
+        base=ROOT/'artifacts/muon_parent_gauge_geometry_correction_20261010'
+        folder=base/'paired_field_endpoint_enriched_run_1'
+>       receipt=json.loads((folder/'result.json').read_bytes())
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_muon_trace_enriched_charged_current_response.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Python314\Lib\pathlib\__init__.py:777: in read_bytes
+    with self.open(mode='rb', buffering=0) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/carbe/Downloads/BHSM_common_domain_regeneration_smoke_20261012_0455/artifacts/muon_parent_gauge_geometry_correction_20261010/paired_field_endpoint_enriched_run_1/result.json')
+mode = 'rb', buffering = 0, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\carbe\\Downloads\\BHSM_common_domain_regeneration_smoke_20261012_0455\\artifacts\\muon_parent_gauge_geometry_correction_20261010\\paired_field_endpoint_enriched_run_1\\result.json'
+
+C:\Python314\Lib\pathlib\__init__.py:771: FileNotFoundError
+_ ERROR at setup of test_two_analytic_profiles_survive_nonpolynomial_enrichment _
+
+    @pytest.fixture(scope='module')
+    def actual():
+        base=ROOT/'artifacts/muon_parent_gauge_geometry_correction_20261010'
+        folder=base/'paired_field_endpoint_enriched_run_1'
+>       receipt=json.loads((folder/'result.json').read_bytes())
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_muon_trace_enriched_charged_current_response.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Python314\Lib\pathlib\__init__.py:777: in read_bytes
+    with self.open(mode='rb', buffering=0) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/carbe/Downloads/BHSM_common_domain_regeneration_smoke_20261012_0455/artifacts/muon_parent_gauge_geometry_correction_20261010/paired_field_endpoint_enriched_run_1/result.json')
+mode = 'rb', buffering = 0, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\carbe\\Downloads\\BHSM_common_domain_regeneration_smoke_20261012_0455\\artifacts\\muon_parent_gauge_geometry_correction_20261010\\paired_field_endpoint_enriched_run_1\\result.json'
+
+C:\Python314\Lib\pathlib\__init__.py:771: FileNotFoundError
+_ ERROR at setup of test_enriched_actual_allfamily_current_and_scoped_zero_rows _
+
+    @pytest.fixture(scope='module')
+    def actual():
+        base=ROOT/'artifacts/muon_parent_gauge_geometry_correction_20261010'
+        folder=base/'paired_field_endpoint_enriched_run_1'
+>       receipt=json.loads((folder/'result.json').read_bytes())
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_muon_trace_enriched_charged_current_response.py:20: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Python314\Lib\pathlib\__init__.py:777: in read_bytes
+    with self.open(mode='rb', buffering=0) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/carbe/Downloads/BHSM_common_domain_regeneration_smoke_20261012_0455/artifacts/muon_parent_gauge_geometry_correction_20261010/paired_field_endpoint_enriched_run_1/result.json')
+mode = 'rb', buffering = 0, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\carbe\\Downloads\\BHSM_common_domain_regeneration_smoke_20261012_0455\\artifacts\\muon_parent_gauge_geometry_correction_20261010\\paired_field_endpoint_enriched_run_1\\result.json'
+
+C:\Python314\Lib\pathlib\__init__.py:771: FileNotFoundError
+================================== FAILURES ===================================
+___ test_actual_joint_graph_keeps_both_Gauss_sectors_and_normal_constraints ___
+
+    def test_actual_joint_graph_keeps_both_Gauss_sectors_and_normal_constraints():
+        root = Path(__file__).resolve().parents[1]
+        base = root/'artifacts/muon_parent_gauge_geometry_correction_20261010'
+>       receipt = json.loads((base/'paired_attachment_endpoint_run_1/result.json').read_text())
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_muon_birth_normal_constrained_action.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+C:\Python314\Lib\pathlib\__init__.py:787: in read_text
+    with self.open(mode='r', encoding=encoding, errors=errors, newline=newline) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/carbe/Downloads/BHSM_common_domain_regeneration_smoke_20261012_0455/artifacts/muon_parent_gauge_geometry_correction_20261010/paired_attachment_endpoint_run_1/result.json')
+mode = 'r', buffering = -1, encoding = 'locale', errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\carbe\\Downloads\\BHSM_common_domain_regeneration_smoke_20261012_0455\\artifacts\\muon_parent_gauge_geometry_correction_20261010\\paired_attachment_endpoint_run_1\\result.json'
+
+C:\Python314\Lib\pathlib\__init__.py:771: FileNotFoundError
+__ test_actual_profile_jets_include_both_geometry_blocks_and_embedding_once ___
+
+    def test_actual_profile_jets_include_both_geometry_blocks_and_embedding_once():
+>       raw, rep, _ = actual_pair()
+                      ^^^^^^^^^^^^^
+
+tests\test_muon_birth_normal_trace_graph.py:43: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_muon_birth_normal_trace_graph.py:18: in actual_pair
+    p = load_attached_endpoint(INPUT, side='incoming', repository=ROOT, radial_points=points, cap_points=48)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\bhsm\interface\muon_birth_attached_phase.py:57: in load_attached_endpoint
+    raw_receipt=(source/'result.json').read_bytes();receipt=json.loads(raw_receipt)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Python314\Lib\pathlib\__init__.py:777: in read_bytes
+    with self.open(mode='rb', buffering=0) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/carbe/Downloads/BHSM_common_domain_regeneration_smoke_20261012_0455/artifacts/muon_parent_gauge_geometry_correction_20261010/paired_attachment_endpoint_run_1/result.json')
+mode = 'rb', buffering = 0, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\carbe\\Downloads\\BHSM_common_domain_regeneration_smoke_20261012_0455\\artifacts\\muon_parent_gauge_geometry_correction_20261010\\paired_attachment_endpoint_run_1\\result.json'
+
+C:\Python314\Lib\pathlib\__init__.py:771: FileNotFoundError
+____ test_actual_graph_action_normal_second_matches_literal_scalar_action _____
+
+    def test_actual_graph_action_normal_second_matches_literal_scalar_action():
+>       raw, rep, parameters = actual_pair()
+                               ^^^^^^^^^^^^^
+
+tests\test_muon_birth_normal_trace_graph.py:64: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_muon_birth_normal_trace_graph.py:18: in actual_pair
+    p = load_attached_endpoint(INPUT, side='incoming', repository=ROOT, radial_points=points, cap_points=48)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\bhsm\interface\muon_birth_attached_phase.py:57: in load_attached_endpoint
+    raw_receipt=(source/'result.json').read_bytes();receipt=json.loads(raw_receipt)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Python314\Lib\pathlib\__init__.py:777: in read_bytes
+    with self.open(mode='rb', buffering=0) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/carbe/Downloads/BHSM_common_domain_regeneration_smoke_20261012_0455/artifacts/muon_parent_gauge_geometry_correction_20261010/paired_attachment_endpoint_run_1/result.json')
+mode = 'rb', buffering = 0, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\carbe\\Downloads\\BHSM_common_domain_regeneration_smoke_20261012_0455\\artifacts\\muon_parent_gauge_geometry_correction_20261010\\paired_attachment_endpoint_run_1\\result.json'
+
+C:\Python314\Lib\pathlib\__init__.py:771: FileNotFoundError
+_________________ test_outgoing_independent_turn_on_rejected __________________
+
+    def test_outgoing_independent_turn_on_rejected():
+>       from scripts.evaluate_muon_electromagnetic_soft_magnetic_source import materialize
+E       ModuleNotFoundError: No module named 'scripts.evaluate_muon_electromagnetic_soft_magnetic_source'
+
+tests\test_muon_electromagnetic_soft_magnetic_source.py:97: ModuleNotFoundError
+_ test_literal_lambda_source_matches_original_full_action_parameter_application[incoming] _
+
+side = 'incoming'
+
+    @pytest.mark.parametrize('side',['incoming','outgoing'])
+    def test_literal_lambda_source_matches_original_full_action_parameter_application(side):
+        # This independent retained application rebuilt the whole cap/Maxwell/H
+        # action at three stiffness values, not this potential-only helper.
+        path=ROOT/'artifacts/muon_local_lifetime_scalar_matching_20261011/run_1'/f'{side}_application.npz'
+>       with np.load(path,allow_pickle=False)as f:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_muon_lambda_coupled_birth_continuation.py:16: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+file = WindowsPath('C:/Users/carbe/Downloads/BHSM_common_domain_regeneration_smoke_20261012_0455/artifacts/muon_local_lifetime_scalar_matching_20261011/run_1/incoming_application.npz')
+mmap_mode = None, allow_pickle = False, fix_imports = True, encoding = 'ASCII'
+
+    @set_module('numpy')
+    def load(file, mmap_mode=None, allow_pickle=False, fix_imports=True,
+             encoding='ASCII', *, max_header_size=_MAX_HEADER_SIZE):
+        """
+        Load arrays or pickled objects from ``.npy``, ``.npz`` or pickled files.
+    
+        .. warning:: Loading files that contain object arrays uses the ``pickle``
+                     module, which is not secure against erroneous or maliciously
+                     constructed data. Consider passing ``allow_pickle=False`` to
+                     load data that is known not to contain object arrays for the
+                     safer handling of untrusted sources.
+    
+        Parameters
+        ----------
+        file : file-like object, string, or pathlib.Path
+            The file to read. File-like objects must support the
+            ``seek()`` and ``read()`` methods and must always
+            be opened in binary mode.  Pickled files require that the
+            file-like object support the ``readline()`` method as well.
+        mmap_mode : {None, 'r+', 'r', 'w+', 'c'}, optional
+            If not None, then memory-map the file, using the given mode (see
+            `numpy.memmap` for a detailed description of the modes).  A
+            memory-mapped array is kept on disk. However, it can be accessed
+            and sliced like any ndarray.  Memory mapping is especially useful
+            for accessing small fragments of large files without reading the
+            entire file into memory.
+        allow_pickle : bool, optional
+            Allow loading pickled object arrays stored in npy files. Reasons for
+            disallowing pickles include security, as loading pickled data can
+            execute arbitrary code. If pickles are disallowed, loading object
+            arrays will fail. Default: False
+        fix_imports : bool, optional
+            Only useful when loading Python 2 generated pickled files,
+            which includes npy/npz files containing object arrays. If `fix_imports`
+            is True, pickle will try to map the old Python 2 names to the new names
+            used in Python 3.
+        encoding : str, optional
+            What encoding to use when reading Python 2 strings. Only useful when
+            loading Python 2 generated pickled files, which includes
+            npy/npz files containing object arrays. Values other than 'latin1',
+            'ASCII', and 'bytes' are not allowed, as they can corrupt numerical
+            data. Default: 'ASCII'
+        max_header_size : int, optional
+            Maximum allowed size of the header.  Large headers may not be safe
+            to load securely and thus require explicitly passing a larger value.
+            See :py:func:`ast.literal_eval()` for details.
+            This option is ignored when `allow_pickle` is passed.  In that case
+            the file is by definition trusted and the limit is unnecessary.
+    
+        Returns
+        -------
+        result : array, tuple, dict, etc.
+            Data stored in the file. For ``.npz`` files, the returned instance
+            of NpzFile class must be closed to avoid leaking file descriptors.
+    
+        Raises
+        ------
+        OSError
+            If the input file does not exist or cannot be read.
+        UnpicklingError
+            If ``allow_pickle=True``, but the file cannot be loaded as a pickle.
+        ValueError
+            The file contains an object array, but ``allow_pickle=False`` given.
+        EOFError
+            When calling ``np.load`` multiple times on the same file handle,
+            if all data has already been read
+    
+        See Also
+        --------
+        save, savez, savez_compressed, loadtxt
+        memmap : Create a memory-map to an array stored in a file on disk.
+        lib.format.open_memmap : Create or load a memory-mapped ``.npy`` file.
+    
+        Notes
+        -----
+        - If the file contains pickle data, then whatever object is stored
+          in the pickle is returned.
+        - If the file is a ``.npy`` file, then a single array is returned.
+        - If the file is a ``.npz`` file, then a dictionary-like object is
+          returned, containing ``{filename: array}`` key-value pairs, one for
+          each file in the archive.
+        - If the file is a ``.npz`` file, the returned value supports the
+          context manager protocol in a similar fashion to the open function::
+    
+            with load('foo.npz') as data:
+                a = data['a']
+    
+          The underlying file descriptor is closed when exiting the 'with'
+          block.
+    
+        Examples
+        --------
+        >>> import numpy as np
+    
+        Store data to disk, and load it again:
+    
+        >>> np.save('/tmp/123', np.array([[1, 2, 3], [4, 5, 6]]))
+        >>> np.load('/tmp/123.npy')
+        array([[1, 2, 3],
+               [4, 5, 6]])
+    
+        Store compressed data to disk, and load it again:
+    
+        >>> a=np.array([[1, 2, 3], [4, 5, 6]])
+        >>> b=np.array([1, 2])
+        >>> np.savez('/tmp/123.npz', a=a, b=b)
+        >>> data = np.load('/tmp/123.npz')
+        >>> data['a']
+        array([[1, 2, 3],
+               [4, 5, 6]])
+        >>> data['b']
+        array([1, 2])
+        >>> data.close()
+    
+        Mem-map the stored array, and then access the second row
+        directly from disk:
+    
+        >>> X = np.load('/tmp/123.npy', mmap_mode='r')
+        >>> X[1, :]
+        memmap([4, 5, 6])
+    
+        """
+        if encoding not in ('ASCII', 'latin1', 'bytes'):
+            # The 'encoding' value for pickle also affects what encoding
+            # the serialized binary data of NumPy arrays is loaded
+            # in. Pickle does not pass on the encoding information to
+            # NumPy. The unpickling code in numpy._core.multiarray is
+            # written to assume that unicode data appearing where binary
+            # should be is in 'latin1'. 'bytes' is also safe, as is 'ASCII'.
+            #
+            # Other encoding values can corrupt binary data, and we
+            # purposefully disallow them. For the same reason, the errors=
+            # argument is not exposed, as values other than 'strict'
+            # result can similarly silently corrupt numerical data.
+            raise ValueError("encoding must be 'ASCII', 'latin1', or 'bytes'")
+    
+        pickle_kwargs = {'encoding': encoding, 'fix_imports': fix_imports}
+    
+        with contextlib.ExitStack() as stack:
+            if hasattr(file, 'read'):
+                fid = file
+                own_fid = False
+            else:
+>               fid = stack.enter_context(open(os.fspath(file), "rb"))
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E               FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\carbe\\Downloads\\BHSM_common_domain_regeneration_smoke_20261012_0455\\artifacts\\muon_local_lifetime_scalar_matching_20261011\\run_1\\incoming_application.npz'
+
+..\..\AppData\Roaming\Python\Python314\site-packages\numpy\lib\_npyio_impl.py:454: FileNotFoundError
+_ test_literal_lambda_source_matches_original_full_action_parameter_application[outgoing] _
+
+side = 'outgoing'
+
+    @pytest.mark.parametrize('side',['incoming','outgoing'])
+    def test_literal_lambda_source_matches_original_full_action_parameter_application(side):
+        # This independent retained application rebuilt the whole cap/Maxwell/H
+        # action at three stiffness values, not this potential-only helper.
+        path=ROOT/'artifacts/muon_local_lifetime_scalar_matching_20261011/run_1'/f'{side}_application.npz'
+>       with np.load(path,allow_pickle=False)as f:
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_muon_lambda_coupled_birth_continuation.py:16: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+file = WindowsPath('C:/Users/carbe/Downloads/BHSM_common_domain_regeneration_smoke_20261012_0455/artifacts/muon_local_lifetime_scalar_matching_20261011/run_1/outgoing_application.npz')
+mmap_mode = None, allow_pickle = False, fix_imports = True, encoding = 'ASCII'
+
+    @set_module('numpy')
+    def load(file, mmap_mode=None, allow_pickle=False, fix_imports=True,
+             encoding='ASCII', *, max_header_size=_MAX_HEADER_SIZE):
+        """
+        Load arrays or pickled objects from ``.npy``, ``.npz`` or pickled files.
+    
+        .. warning:: Loading files that contain object arrays uses the ``pickle``
+                     module, which is not secure against erroneous or maliciously
+                     constructed data. Consider passing ``allow_pickle=False`` to
+                     load data that is known not to contain object arrays for the
+                     safer handling of untrusted sources.
+    
+        Parameters
+        ----------
+        file : file-like object, string, or pathlib.Path
+            The file to read. File-like objects must support the
+            ``seek()`` and ``read()`` methods and must always
+            be opened in binary mode.  Pickled files require that the
+            file-like object support the ``readline()`` method as well.
+        mmap_mode : {None, 'r+', 'r', 'w+', 'c'}, optional
+            If not None, then memory-map the file, using the given mode (see
+            `numpy.memmap` for a detailed description of the modes).  A
+            memory-mapped array is kept on disk. However, it can be accessed
+            and sliced like any ndarray.  Memory mapping is especially useful
+            for accessing small fragments of large files without reading the
+            entire file into memory.
+        allow_pickle : bool, optional
+            Allow loading pickled object arrays stored in npy files. Reasons for
+            disallowing pickles include security, as loading pickled data can
+            execute arbitrary code. If pickles are disallowed, loading object
+            arrays will fail. Default: False
+        fix_imports : bool, optional
+            Only useful when loading Python 2 generated pickled files,
+            which includes npy/npz files containing object arrays. If `fix_imports`
+            is True, pickle will try to map the old Python 2 names to the new names
+            used in Python 3.
+        encoding : str, optional
+            What encoding to use when reading Python 2 strings. Only useful when
+            loading Python 2 generated pickled files, which includes
+            npy/npz files containing object arrays. Values other than 'latin1',
+            'ASCII', and 'bytes' are not allowed, as they can corrupt numerical
+            data. Default: 'ASCII'
+        max_header_size : int, optional
+            Maximum allowed size of the header.  Large headers may not be safe
+            to load securely and thus require explicitly passing a larger value.
+            See :py:func:`ast.literal_eval()` for details.
+            This option is ignored when `allow_pickle` is passed.  In that case
+            the file is by definition trusted and the limit is unnecessary.
+    
+        Returns
+        -------
+        result : array, tuple, dict, etc.
+            Data stored in the file. For ``.npz`` files, the returned instance
+            of NpzFile class must be closed to avoid leaking file descriptors.
+    
+        Raises
+        ------
+        OSError
+            If the input file does not exist or cannot be read.
+        UnpicklingError
+            If ``allow_pickle=True``, but the file cannot be loaded as a pickle.
+        ValueError
+            The file contains an object array, but ``allow_pickle=False`` given.
+        EOFError
+            When calling ``np.load`` multiple times on the same file handle,
+            if all data has already been read
+    
+        See Also
+        --------
+        save, savez, savez_compressed, loadtxt
+        memmap : Create a memory-map to an array stored in a file on disk.
+        lib.format.open_memmap : Create or load a memory-mapped ``.npy`` file.
+    
+        Notes
+        -----
+        - If the file contains pickle data, then whatever object is stored
+          in the pickle is returned.
+        - If the file is a ``.npy`` file, then a single array is returned.
+        - If the file is a ``.npz`` file, then a dictionary-like object is
+          returned, containing ``{filename: array}`` key-value pairs, one for
+          each file in the archive.
+        - If the file is a ``.npz`` file, the returned value supports the
+          context manager protocol in a similar fashion to the open function::
+    
+            with load('foo.npz') as data:
+                a = data['a']
+    
+          The underlying file descriptor is closed when exiting the 'with'
+          block.
+    
+        Examples
+        --------
+        >>> import numpy as np
+    
+        Store data to disk, and load it again:
+    
+        >>> np.save('/tmp/123', np.array([[1, 2, 3], [4, 5, 6]]))
+        >>> np.load('/tmp/123.npy')
+        array([[1, 2, 3],
+               [4, 5, 6]])
+    
+        Store compressed data to disk, and load it again:
+    
+        >>> a=np.array([[1, 2, 3], [4, 5, 6]])
+        >>> b=np.array([1, 2])
+        >>> np.savez('/tmp/123.npz', a=a, b=b)
+        >>> data = np.load('/tmp/123.npz')
+        >>> data['a']
+        array([[1, 2, 3],
+               [4, 5, 6]])
+        >>> data['b']
+        array([1, 2])
+        >>> data.close()
+    
+        Mem-map the stored array, and then access the second row
+        directly from disk:
+    
+        >>> X = np.load('/tmp/123.npy', mmap_mode='r')
+        >>> X[1, :]
+        memmap([4, 5, 6])
+    
+        """
+        if encoding not in ('ASCII', 'latin1', 'bytes'):
+            # The 'encoding' value for pickle also affects what encoding
+            # the serialized binary data of NumPy arrays is loaded
+            # in. Pickle does not pass on the encoding information to
+            # NumPy. The unpickling code in numpy._core.multiarray is
+            # written to assume that unicode data appearing where binary
+            # should be is in 'latin1'. 'bytes' is also safe, as is 'ASCII'.
+            #
+            # Other encoding values can corrupt binary data, and we
+            # purposefully disallow them. For the same reason, the errors=
+            # argument is not exposed, as values other than 'strict'
+            # result can similarly silently corrupt numerical data.
+            raise ValueError("encoding must be 'ASCII', 'latin1', or 'bytes'")
+    
+        pickle_kwargs = {'encoding': encoding, 'fix_imports': fix_imports}
+    
+        with contextlib.ExitStack() as stack:
+            if hasattr(file, 'read'):
+                fid = file
+                own_fid = False
+            else:
+>               fid = stack.enter_context(open(os.fspath(file), "rb"))
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E               FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\carbe\\Downloads\\BHSM_common_domain_regeneration_smoke_20261012_0455\\artifacts\\muon_local_lifetime_scalar_matching_20261011\\run_1\\outgoing_application.npz'
+
+..\..\AppData\Roaming\Python\Python314\site-packages\numpy\lib\_npyio_impl.py:454: FileNotFoundError
+____________ test_field_and_geometric_cross_is_literal_derivative _____________
+
+    def test_field_and_geometric_cross_is_literal_derivative():
+>       with np.load(ROOT/'artifacts/muon_local_lifetime_scalar_matching_20261011/run_1/incoming_application.npz',allow_pickle=False)as f:x=f['raw_fields']
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_muon_lambda_coupled_birth_continuation.py:38: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+file = WindowsPath('C:/Users/carbe/Downloads/BHSM_common_domain_regeneration_smoke_20261012_0455/artifacts/muon_local_lifetime_scalar_matching_20261011/run_1/incoming_application.npz')
+mmap_mode = None, allow_pickle = False, fix_imports = True, encoding = 'ASCII'
+
+    @set_module('numpy')
+    def load(file, mmap_mode=None, allow_pickle=False, fix_imports=True,
+             encoding='ASCII', *, max_header_size=_MAX_HEADER_SIZE):
+        """
+        Load arrays or pickled objects from ``.npy``, ``.npz`` or pickled files.
+    
+        .. warning:: Loading files that contain object arrays uses the ``pickle``
+                     module, which is not secure against erroneous or maliciously
+                     constructed data. Consider passing ``allow_pickle=False`` to
+                     load data that is known not to contain object arrays for the
+                     safer handling of untrusted sources.
+    
+        Parameters
+        ----------
+        file : file-like object, string, or pathlib.Path
+            The file to read. File-like objects must support the
+            ``seek()`` and ``read()`` methods and must always
+            be opened in binary mode.  Pickled files require that the
+            file-like object support the ``readline()`` method as well.
+        mmap_mode : {None, 'r+', 'r', 'w+', 'c'}, optional
+            If not None, then memory-map the file, using the given mode (see
+            `numpy.memmap` for a detailed description of the modes).  A
+            memory-mapped array is kept on disk. However, it can be accessed
+            and sliced like any ndarray.  Memory mapping is especially useful
+            for accessing small fragments of large files without reading the
+            entire file into memory.
+        allow_pickle : bool, optional
+            Allow loading pickled object arrays stored in npy files. Reasons for
+            disallowing pickles include security, as loading pickled data can
+            execute arbitrary code. If pickles are disallowed, loading object
+            arrays will fail. Default: False
+        fix_imports : bool, optional
+            Only useful when loading Python 2 generated pickled files,
+            which includes npy/npz files containing object arrays. If `fix_imports`
+            is True, pickle will try to map the old Python 2 names to the new names
+            used in Python 3.
+        encoding : str, optional
+            What encoding to use when reading Python 2 strings. Only useful when
+            loading Python 2 generated pickled files, which includes
+            npy/npz files containing object arrays. Values other than 'latin1',
+            'ASCII', and 'bytes' are not allowed, as they can corrupt numerical
+            data. Default: 'ASCII'
+        max_header_size : int, optional
+            Maximum allowed size of the header.  Large headers may not be safe
+            to load securely and thus require explicitly passing a larger value.
+            See :py:func:`ast.literal_eval()` for details.
+            This option is ignored when `allow_pickle` is passed.  In that case
+            the file is by definition trusted and the limit is unnecessary.
+    
+        Returns
+        -------
+        result : array, tuple, dict, etc.
+            Data stored in the file. For ``.npz`` files, the returned instance
+            of NpzFile class must be closed to avoid leaking file descriptors.
+    
+        Raises
+        ------
+        OSError
+            If the input file does not exist or cannot be read.
+        UnpicklingError
+            If ``allow_pickle=True``, but the file cannot be loaded as a pickle.
+        ValueError
+            The file contains an object array, but ``allow_pickle=False`` given.
+        EOFError
+            When calling ``np.load`` multiple times on the same file handle,
+            if all data has already been read
+    
+        See Also
+        --------
+        save, savez, savez_compressed, loadtxt
+        memmap : Create a memory-map to an array stored in a file on disk.
+        lib.format.open_memmap : Create or load a memory-mapped ``.npy`` file.
+    
+        Notes
+        -----
+        - If the file contains pickle data, then whatever object is stored
+          in the pickle is returned.
+        - If the file is a ``.npy`` file, then a single array is returned.
+        - If the file is a ``.npz`` file, then a dictionary-like object is
+          returned, containing ``{filename: array}`` key-value pairs, one for
+          each file in the archive.
+        - If the file is a ``.npz`` file, the returned value supports the
+          context manager protocol in a similar fashion to the open function::
+    
+            with load('foo.npz') as data:
+                a = data['a']
+    
+          The underlying file descriptor is closed when exiting the 'with'
+          block.
+    
+        Examples
+        --------
+        >>> import numpy as np
+    
+        Store data to disk, and load it again:
+    
+        >>> np.save('/tmp/123', np.array([[1, 2, 3], [4, 5, 6]]))
+        >>> np.load('/tmp/123.npy')
+        array([[1, 2, 3],
+               [4, 5, 6]])
+    
+        Store compressed data to disk, and load it again:
+    
+        >>> a=np.array([[1, 2, 3], [4, 5, 6]])
+        >>> b=np.array([1, 2])
+        >>> np.savez('/tmp/123.npz', a=a, b=b)
+        >>> data = np.load('/tmp/123.npz')
+        >>> data['a']
+        array([[1, 2, 3],
+               [4, 5, 6]])
+        >>> data['b']
+        array([1, 2])
+        >>> data.close()
+    
+        Mem-map the stored array, and then access the second row
+        directly from disk:
+    
+        >>> X = np.load('/tmp/123.npy', mmap_mode='r')
+        >>> X[1, :]
+        memmap([4, 5, 6])
+    
+        """
+        if encoding not in ('ASCII', 'latin1', 'bytes'):
+            # The 'encoding' value for pickle also affects what encoding
+            # the serialized binary data of NumPy arrays is loaded
+            # in. Pickle does not pass on the encoding information to
+            # NumPy. The unpickling code in numpy._core.multiarray is
+            # written to assume that unicode data appearing where binary
+            # should be is in 'latin1'. 'bytes' is also safe, as is 'ASCII'.
+            #
+            # Other encoding values can corrupt binary data, and we
+            # purposefully disallow them. For the same reason, the errors=
+            # argument is not exposed, as values other than 'strict'
+            # result can similarly silently corrupt numerical data.
+            raise ValueError("encoding must be 'ASCII', 'latin1', or 'bytes'")
+    
+        pickle_kwargs = {'encoding': encoding, 'fix_imports': fix_imports}
+    
+        with contextlib.ExitStack() as stack:
+            if hasattr(file, 'read'):
+                fid = file
+                own_fid = False
+            else:
+>               fid = stack.enter_context(open(os.fspath(file), "rb"))
+                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E               FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\carbe\\Downloads\\BHSM_common_domain_regeneration_smoke_20261012_0455\\artifacts\\muon_local_lifetime_scalar_matching_20261011\\run_1\\incoming_application.npz'
+
+..\..\AppData\Roaming\Python\Python314\site-packages\numpy\lib\_npyio_impl.py:454: FileNotFoundError
+_____ test_actual_coupled_loader_retains_new_stiffness_and_changed_fields _____
+
+    def test_actual_coupled_loader_retains_new_stiffness_and_changed_fields():
+        path='artifacts/muon_lambda_coupled_birth_continuation_20261011/run_2'
+>       a=load_lambda_coupled_birth(path,side='outgoing',repository=ROOT)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_muon_lambda_coupled_birth_continuation.py:47: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\bhsm\interface\muon_lambda_coupled_birth_continuation.py:87: in load_lambda_coupled_birth
+    b=(path/'result.json').read_bytes();md=json.loads(b)
+      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+C:\Python314\Lib\pathlib\__init__.py:777: in read_bytes
+    with self.open(mode='rb', buffering=0) as f:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = WindowsPath('C:/Users/carbe/Downloads/BHSM_common_domain_regeneration_smoke_20261012_0455/artifacts/muon_lambda_coupled_birth_continuation_20261011/run_2/result.json')
+mode = 'rb', buffering = 0, encoding = None, errors = None, newline = None
+
+    def open(self, mode='r', buffering=-1, encoding=None,
+             errors=None, newline=None):
+        """
+        Open the file pointed to by this path and return a file object, as
+        the built-in open() function does.
+        """
+        if "b" not in mode:
+            encoding = io.text_encoding(encoding)
+>       return io.open(self, mode, buffering, encoding, errors, newline)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\carbe\\Downloads\\BHSM_common_domain_regeneration_smoke_20261012_0455\\artifacts\\muon_lambda_coupled_birth_continuation_20261011\\run_2\\result.json'
+
+C:\Python314\Lib\pathlib\__init__.py:771: FileNotFoundError
+============================== warnings summary ===============================
+tests/test_muon_safeguarded_complex_constitutive.py::test_optimizer_termination_does_not_promote_unresolved_action_source
+  C:\Python314\Lib\site-packages\scipy\optimize\_lsq\common.py:113: RuntimeWarning: invalid value encountered in divide
+    p_norm = norm(suf / denom)
+
+tests/test_muon_safeguarded_complex_constitutive.py::test_optimizer_termination_does_not_promote_unresolved_action_source
+  C:\Python314\Lib\site-packages\scipy\optimize\_lsq\common.py:115: RuntimeWarning: invalid value encountered in divide
+    phi_prime = -np.sum(suf ** 2 / denom**3) / p_norm
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/test_muon_birth_normal_constrained_action.py::test_actual_joint_graph_keeps_both_Gauss_sectors_and_normal_constraints
+FAILED tests/test_muon_birth_normal_trace_graph.py::test_actual_profile_jets_include_both_geometry_blocks_and_embedding_once
+FAILED tests/test_muon_birth_normal_trace_graph.py::test_actual_graph_action_normal_second_matches_literal_scalar_action
+FAILED tests/test_muon_electromagnetic_soft_magnetic_source.py::test_outgoing_independent_turn_on_rejected
+FAILED tests/test_muon_lambda_coupled_birth_continuation.py::test_literal_lambda_source_matches_original_full_action_parameter_application[incoming]
+FAILED tests/test_muon_lambda_coupled_birth_continuation.py::test_literal_lambda_source_matches_original_full_action_parameter_application[outgoing]
+FAILED tests/test_muon_lambda_coupled_birth_continuation.py::test_field_and_geometric_cross_is_literal_derivative
+FAILED tests/test_muon_lambda_coupled_birth_continuation.py::test_actual_coupled_loader_retains_new_stiffness_and_changed_fields
+ERROR tests/test_muon_charged_current_cell_amputation.py::test_actual_amputated_source_matches_derivative_of_the_same_propagator[0]
+ERROR tests/test_muon_charged_current_cell_amputation.py::test_actual_amputated_source_matches_derivative_of_the_same_propagator[37]
+ERROR tests/test_muon_charged_current_cell_amputation.py::test_actual_amputated_source_matches_derivative_of_the_same_propagator[74]
+ERROR tests/test_muon_charged_current_cell_amputation.py::test_actual_amputated_source_matches_derivative_of_the_same_propagator[98]
+ERROR tests/test_muon_charged_current_cell_amputation.py::test_actual_amputated_source_matches_derivative_of_the_same_propagator[100]
+ERROR tests/test_muon_charged_current_cell_amputation.py::test_actual_amputated_source_matches_derivative_of_the_same_propagator[140]
+ERROR tests/test_muon_charged_current_cell_amputation.py::test_actual_amputated_source_matches_derivative_of_the_same_propagator[160]
+ERROR tests/test_muon_charged_current_cell_amputation.py::test_actual_amputated_source_matches_derivative_of_the_same_propagator[260]
+ERROR tests/test_muon_charged_current_cell_amputation.py::test_actual_amputated_source_matches_derivative_of_the_same_propagator[261]
+ERROR tests/test_muon_charged_current_cell_amputation.py::test_fixed_Y_H_source_is_reached_without_fitting_Y_or_selecting_a_spinor
+ERROR tests/test_muon_charged_current_cell_amputation.py::test_coordinate_N_variation_is_counted_once
+ERROR tests/test_muon_chronological_charged_current.py::test_actual_full220_endpoints_and_midpoint_rates_are_preserved[incoming]
+ERROR tests/test_muon_chronological_charged_current.py::test_actual_full220_endpoints_and_midpoint_rates_are_preserved[outgoing]
+ERROR tests/test_muon_chronological_charged_current.py::test_endpoint_reversal_is_the_same_literal_nonlinear_action_not_a_rate_reversal_CONTROL_ONLY
+ERROR tests/test_muon_chronological_charged_current.py::test_actual_chronological_incoming_current_matches_direct_propagator_derivative[37]
+ERROR tests/test_muon_chronological_charged_current.py::test_actual_chronological_incoming_current_matches_direct_propagator_derivative[98]
+ERROR tests/test_muon_chronological_charged_current.py::test_actual_chronological_incoming_current_matches_direct_propagator_derivative[100]
+ERROR tests/test_muon_chronological_charged_current.py::test_actual_chronological_incoming_current_matches_direct_propagator_derivative[260]
+ERROR tests/test_muon_chronological_charged_current.py::test_incomplete_or_nonreal_cell_is_rejected
+ERROR tests/test_muon_electromagnetic_soft_magnetic_source.py::test_normal_coordinates_have_positive_identity_derivative
+ERROR tests/test_muon_electromagnetic_soft_magnetic_source.py::test_actual_covariant_magnetic_jet_sign_and_normalization
+ERROR tests/test_muon_electromagnetic_soft_magnetic_source.py::test_exact_source_rate_and_jets_with_higgs_and_radius_motion
+ERROR tests/test_muon_electromagnetic_soft_magnetic_source.py::test_electric_charge_inserted_once
+ERROR tests/test_muon_electromagnetic_soft_magnetic_source.py::test_no_fallback_field_or_claimed_soft_vertex
+ERROR tests/test_muon_trace_enriched_charged_current_response.py::test_same_actual_coordinate_time_action_source[0]
+ERROR tests/test_muon_trace_enriched_charged_current_response.py::test_same_actual_coordinate_time_action_source[74]
+ERROR tests/test_muon_trace_enriched_charged_current_response.py::test_same_actual_coordinate_time_action_source[98]
+ERROR tests/test_muon_trace_enriched_charged_current_response.py::test_same_actual_coordinate_time_action_source[100]
+ERROR tests/test_muon_trace_enriched_charged_current_response.py::test_same_actual_coordinate_time_action_source[140]
+ERROR tests/test_muon_trace_enriched_charged_current_response.py::test_same_actual_coordinate_time_action_source[160]
+ERROR tests/test_muon_trace_enriched_charged_current_response.py::test_same_actual_coordinate_time_action_source[260]
+ERROR tests/test_muon_trace_enriched_charged_current_response.py::test_two_analytic_profiles_survive_nonpolynomial_enrichment
+ERROR tests/test_muon_trace_enriched_charged_current_response.py::test_enriched_actual_allfamily_current_and_scoped_zero_rows
+8 failed, 198 passed, 2 warnings, 33 errors in 90.67s (0:01:30)

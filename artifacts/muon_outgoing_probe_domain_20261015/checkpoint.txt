@@ -1,0 +1,106 @@
+BHSM outgoing response and radial refinement, 2026-10-15
+
+New numerical progress: the original same-epoch weak-field coefficients and
+their full interior retarded response were radially refined, with the exact
+four retained radial profiles, their projection/normalization, all 336 signed
+field rows, wall/frame maps, nonzero self-fields, spin and Higgs terms held
+fixed. No completed source, D5, profile, history, canonical-map or pairing
+campaign was restarted. The 48-point reassembly reproduces the saved
+coefficient matrices bit-for-bit; only new integration nodes/weights change.
+
+The 48-to64 coefficient K change is about 5.70e-6 relative; 64-to96 is about
+3.28e-8; 96-to128 is about 4.03e-13. The actual 64-to96 propagated336-field
+endpoint changes by 7.48e-8 and its coordinate rate by 4.06e-7. In the new
+128-to192 comparison the largest sampled relative field/rate difference is 2.594e-12.
+Actual canonical z polynomial coefficients stabilize to 5.909e-13 relative and full 336
+field polynomial coefficients to 2.397e-12 relative. Reconstruction of those polynomials
+against original MP field/canonical samples agrees within 2.524e-24 relative.
+The shifted w=z-B1Q coefficient comparison still changes by 3.936e-8 and its
+original broad all-reported criterion remains FAILED in the archived report.
+The separate MP256 reconstruction of actual z and original full fields
+distinguishes this changing shift chart from the canonical response. Neither
+failed diagnostic nor old evidence was discarded or relabeled as a pass.
+See the radial binding for exact per-piece, coefficient and sample comparisons.
+The numerical quadrature stabilization is for this fixed finite radial
+space and supplied finite background. It is not an outward continuum bound,
+a test of increasing the radial basis, or convergence of a physical exterior.
+
+Prescribed wall gauge data make the weak-field lepton response nearly
+unchanged across these quadratures. This wall equality is not used as an
+interior convergence certificate. The interior fields, their rates and
+canonical remainders are compared separately. The finite polynomial field
+solution preserves its nonzero final state and original336 sampled-row
+checks. Its same supplied-field B derivative remains 2.498739683535549e-13;
+the natural Higgs response remains nonzero, norm 1.6831957557696175e-31.
+Neither quantity is a new physical outgoing derivative or a magnetic moment.
+
+New implementation: src/bhsm/interface/muon_outgoing_trace_probe_jet.py
+consumes the explicit same-domain C,V,T jets through E/B/EB. For Gamma=C T,
+C V=0 and T R=V a, it keeps
+  L C(T_EB R-V_EB a)
+  +L C_E(T_B R-V_B a)+L C_B(T_E R-V_E a)
+and the full off-pole/nonannihilating remainder. Removing the first-domain
+contacts changes an algebraic test response by 0.09084. The complete mixed
+sum is invariant under nonconstant changes of the allowed-trace basis within
+5.56e-17; an independent polynomial difference check gives 4.23e-13. These are
+test-fixture values, not physical boundary data. The EB pairing holds the
+left/right pole frames fixed and is not a total moving-pole-path derivative.
+The implementation requires every jet; it selects no outgoing state.
+
+New actual-pole diagnostic: both complete 128-carrier point-characteristic
+images are nonzero for each of the four retained finite poles on both eta
+sheets. The minimum MP256 frozen-input norm lower bound is 0.7837397535275492.
+This excludes deleting an entire reached characteristic image to choose an
+outgoing condition. It does not prove nonzero or zero exterior mixing.
+
+A second diagnostic measures sensitivity to the missing boundary jets on
+those same four frozen poles. For z=l Gamma_E r, the algebraic matrix
+D=(Gamma_E r)(l Gamma_E)/z has l D r=z. An unassigned additive magnetic jet
+tD would change the energy slope by-t; an additive energy jet tD changes
+the kinetic pairing bytz. The identities hold within 4.50e-16, with literal
+analytic left covectors and equation-row covariance. This is a difference-
+only identifiability test, not an action-produced exterior or a claim that
+physical boundary jets are freely adjustable. No zero magnetic baseline or
+fitted moment is introduced. The finite pole data and finite derivative
+checks alone cannot bound these absent projected contributions.
+
+The physical calculation is still unevaluated. The first missing application
+is Q_ext,-+(s,E,B)Y_+(s,E,B) beyond the supplied canonical history/collar,
+with its energy/field-dependent source, domain, frame and quantum contacts.
+The local evolution law is implemented, but the exterior field continuation
+and radiation/transmission germ required to apply it are not supplied by
+the retained producers. The provider evidence records exact source anchors:
+the global stratified operator/domain, future-child block and complete
+Calderon/current-C2 realization are still open. Source anchors are interpreted
+with their surrounding docstrings; neither a local frozen-frequency Green
+function nor conditional Friedrichs square closure supplies this unsquared
+physical outgoing map. No terminal-zero/reflected completion is substituted.
+
+The finite simple poles already have separately normalized complex kinetic
+pairings. Their labels 0/1 do not independently identify physical spin
+orientation, and their D5 boundary rows cannot be contracted with an S4
+lepton insertion without the action-owned compatibility map. A physical
+unstable pole uses its actual outgoing complex residue, not an extra positive
+finite-collar-L2 requirement. Its outgoing energy/magnetic jets are missing,
+so both physical spin states and the muon magnetic moment remain uncomputed.
+No mass, anomaly or spin orientation is fitted from experiment.
+
+Full physical derivative pass at 2e-10: not achieved.
+Coupled matching corrections applied: zero.
+New physical Maxwell/all 226 after-correction pass: not asserted.
+The old Maxwell magnitude 2.4777309847 and best saved all 226 maximum
+9.602842247524184e-7 remain before-state evidence, not corrected results.
+The authoritative common-cut SHA256 is unchanged:
+ea02ed6aee45310c5651fef5c8f103e868007d4f125582ab2b64ff7651f76b2b.
+
+Reproducibility: binding_run_1.json enumerates actual independent numerical
+repeat pairs separately from deterministic manifest serialization. Original
+workspace producer/test bytes are retained under sources. The installed
+mixed-domain consumer matches the evaluated helper bytes exactly; its four
+repository tests plus three new missing-jet tests passed. Radial producer
+paths retain the original local input histories. Selected lower-order
+diagnostics remain locally available with hashes; final refined fields and
+responses are archived. Large reduced maps are split into 4MiB exact chunks;
+restore_radial_reduced_maps.py verifies them before reassembly into an
+explicit destination. See the radial binding, tests_run.json and
+publication_checks/result.json for scopes and actual verification evidence.

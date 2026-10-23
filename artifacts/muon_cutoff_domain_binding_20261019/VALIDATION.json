@@ -1,0 +1,104 @@
+{
+  "byte_identical_runs": [
+    2,
+    3
+  ],
+  "current_input_pins_verified": 325,
+  "historical_v1_sources_resolved": true,
+  "initial_attempt": "producer initially stopped because existing scalar Jet rejects half-integer powers; replaced with explicit analytic power two-jet. No physical rule changed. Earlier unresponsive test process was terminated and restarted with bounded BLAS threads; completed test results reported here.",
+  "initial_untracked_paths_preserved": 47918,
+  "native0_recomputed": false,
+  "physical_derivative_admitted": false,
+  "physical_guard": 2e-10,
+  "publication_audits": [
+    {
+      "command": [
+        "C:\\Python314\\python.exe",
+        "tools/audit_bhsm_status.py",
+        "--format",
+        "json"
+      ],
+      "returncode": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "67dcb4844fb5ae22fa81b02fe4297a270cb8895184979d7e4fe1920f0ec1958e"
+    },
+    {
+      "command": [
+        "C:\\Python314\\python.exe",
+        "tools/audit_forbidden_claims.py",
+        "--format",
+        "json"
+      ],
+      "returncode": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "ab19067cf15e0a20b3e28374c77f15f1dbd1277938c682f675d8726d2dc1460a"
+    },
+    {
+      "command": [
+        "C:\\Python314\\python.exe",
+        "tools/audit_frozen_prediction_integrity.py",
+        "--format",
+        "json"
+      ],
+      "returncode": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "97694acc837bc21d90c8390c12cd39ba5bdc76e6e7209601e985561136d5b884"
+    },
+    {
+      "command": [
+        "C:\\Python314\\python.exe",
+        "tools/verify_precision.py"
+      ],
+      "returncode": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "9aeba488a47f2f68d79b46c5cb04fea049e2ffccd6b5411d475e43a748ade6e2"
+    },
+    {
+      "command": [
+        "C:\\Python314\\python.exe",
+        "tools/audit_public_readiness.py",
+        "--format",
+        "json"
+      ],
+      "returncode": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "41a27a67a9a5854ad960e49e5a8707c5039b8a50833b6a5f0b4f9b9f9ae621ff"
+    }
+  ],
+  "read_only_reviews": {
+    "domain": "independent original36 source and analytic-left solves, complete Green first/second source jets and c/lambda chart separation reviewed",
+    "publication_claims": "no physical cutoff, cutoff jet, physical event domain, inherited state, correction or readout claimed",
+    "surface_and_original_action": "proper-normal kinetic/contact formula matches original moving-cap area; independent moving-child value/gradient/Hessian defects0,3.55e-15,8.53e-14"
+  },
+  "reproduction_sha256": {
+    "cutoff_domain_binding.npz": "4dd12722a43575b7bfb83ae752dc88dd730bc6d137ae7315df9a273d641111f4",
+    "result.json": "14fb41162dc2e93b499fec8c04ed0a3bb990ebbd1876bcc2b9308eb0882b9f85"
+  },
+  "schema": "bhsm.cutoff-domain-binding-validation.v1",
+  "tests": {
+    "command": "C:\\Python314\\python.exe -m pytest -q tests/test_muon_cutoff_domain_binding.py tests/test_ae4_stratified_dirac_zeta_induced_owner.py tests/test_covariant_bubble_interface_mechanics.py tests/test_muon_material_higgs_gauge_action.py tests/test_muon_native_support_loss_cutoff.py tests/test_muon_owned_native_product_connection.py",
+    "exit_code": 0,
+    "passed": 33,
+    "reported_seconds": 8.55,
+    "test_sha256": {
+      "tests/test_ae4_stratified_dirac_zeta_induced_owner.py": "7f4f5458a36e695e4c5252b8e529ecaced0a3c21fa8a6712da7a6da1cfdeb5b0",
+      "tests/test_covariant_bubble_interface_mechanics.py": "97d7496af6294138b2d9b4e5c873a647260ceb77bc555608953ea09c109f9473",
+      "tests/test_muon_cutoff_domain_binding.py": "8f412fd34bee0cf5c5101a8f2fe01fc74d7d916fb3cbf23347d8ea333b56d477",
+      "tests/test_muon_material_higgs_gauge_action.py": "caa765975f84401278e4cd4620e7c944ce351a7070baf1ee9977761410bf1d8e",
+      "tests/test_muon_native_support_loss_cutoff.py": "a87bc4005a47fb4d2488c4574f44f2985fa32d32e299ff31e80abbdbd416487c",
+      "tests/test_muon_owned_native_product_connection.py": "5c3458fec58af30eeb6d248e6b431619f316f90df8c972ddd13ca6f655babe1e"
+    },
+    "threads": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1"
+    }
+  },
+  "unrelated_tracked_hashes_preserved": {
+    ".gitattributes": "5e165f7c67d7017848f7cb8f9c55c78048a82838a879732b60d04a974bdb04de",
+    "artifacts/muon_observable_combination_20261011/contribution_error_table.json": "19b7ce5b3a863a0b79bd952e20ab7e0a0e553a92a607f0d34db2a9ba864cce36",
+    "artifacts/muon_observable_combination_20261011/contribution_error_table.md": "18961d0f32d86a39977c58737fa693208f48110e0baa78d15f7c8fb610b12869",
+    "scripts/verify_muon_changing_source_publication.py": "4c526bcefe3de405d5103197332de129737e2aaf15d3722066d88e516584a47a",
+    "src/bhsm/interface/ae4_stratified_dirac_zeta_induced_owner.py": "ab0537e52db679979bc85109f27b85d534507459dde256bd24ac7742b2d5efe2",
+    "src/bhsm/interface/aether_quantum_functional_accounting_v16_00.py": "8ea906a9b3dd489474b45da8117398547dcf32a1dae96defebb6891998b64f3e"
+  }
+}

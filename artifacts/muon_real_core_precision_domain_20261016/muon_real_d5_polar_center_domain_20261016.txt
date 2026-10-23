@@ -1,0 +1,261 @@
+REAL COMBINED-f D5 OPERATOR: SMOOTH POLAR FRAME AND CENTER FORM DOMAIN
+2026-10-16. Conditional local derivation; no physical outgoing/pole/state claim.
+
+1. OWNED GEOMETRY AND THE ENDPOINT UNDER DISCUSSION
+
+This is the REGULAR spatial pole chi=0 of the M5 cap, not the separate
+pregeometric core/infinite-Haar-distance endpoint described by
+completion/core_asymptotic_domain_v11_2.py. The latter audit is not a
+boundary-condition selection for this smooth pole.
+
+Actual coefficient owners are muon_moving_geometric_action._fields:91-123;
+muon_holomorphic_d5_trace_action.d5_trial_stage_coefficients:24-137;
+muon_exact_material_response.anchored_join_coefficients:94-136; and the
+actual right-body angular maps in muon_intrinsic_scalar_discretization:
+88-103. The unsquared angular spin coefficient is explicitly
+-3i Gamma1 Gamma2 Gamma3/(2R) in d5_unsquared_weak_trace:419-486.
+The combined primary eta coefficient is muon_combined_f_eta_contact.
+
+Write C_rho for the RADIAL COFRAME COEFFICIENT, not a derivative of C.
+The source chart is chi=j(t)rho, j=chi_wall/WALL, C_rho=C_chi*j.
+Its cosine modes are even and the shape window sin(2chi)^2 is O(chi^2).
+Consequently, on a regular real time segment,
+  C_rho=C0(t)+O(rho^2), N=N0(t)+O(rho^2), z=z1(t)rho+O(rho^3),
+  R=C0(t)rho+O(rho^3), C0,N0>0.
+Indeed A=A0+O(chi^2), B=A0 chi+O(chi^3), C_chi=A0+O(chi^2),
+and R=AB/sqrt(A^2+B^2). Thus there is no independent cone angle.
+With actual radial arclength r=int_0^rho C_rho(t,s)ds,
+  R=r+O(r^3), Cauchy measure=C_rho R^3 d rho dOmega=R^3 dr dOmega.
+The positive spacetime measure is N R^3 dt dr dOmega.
+
+The exact anchored real monotone profile is
+f=chi+a1 sin(2chi)+a3 sin(6chi), with f_chi(0)=1+2a1+6a3>0.
+The real owner checks the sufficient lower bound 1-2|a1|-6|a3|>0.
+Hence f=k(t)r+O(r^3), k>0, sin(f)=k r+O(r^3). Therefore
+  cot(f) f4=1/r+O(r), cot(f) f0=O(1),
+where f4=partial_r f and f0 is its actual coframe time derivative.
+The coefficient k cancels from the leading eta singularity; it is not an
+extra core amplitude or an independently chosen boundary parameter.
+
+2. ALL SPIN/CARRIER BRANCHES AND THE ANGULAR INDICIAL MATRIX
+
+Use the source five-dimensional Clifford matrices, signature(+----),
+with sheet eps=+/-1. Put omega=Gamma1 Gamma2 Gamma3 Gamma4. It is Hermitian,
+omega^2=I. With source right-body E_a=2i J_a on scalar Peter-Weyl sections,
+the leading minimal spatial Dirac expression is
+  D_min,sp=i eps Gamma4[partial_r+(3/2+K)/r],
+  K=-eps Gamma4[sum_a Gamma_a E_a-(3/2)Gamma123].
+K is Hermitian; alpha=eps Gamma0 Gamma4 is Hermitian/unitary and
+{alpha,K}=0. No spinor chirality or angular branch is discarded.
+
+On scalar PW level n, each fixed spin chirality carries spin1/2 tensor
+orbital n/2 and spectator multiplicity n+1. The exact eigenvalues are
+  +/- (n+3/2), multiplicity(n+1)(n+2) EACH;
+  +/- (n+1/2), multiplicity n(n+1) EACH, when n>=1.
+This is the ordinary angular spin addition, not identification of scalar
+PW n with a single spinor harmonic. In particular every eigenvalue has
+|kappa|>=3/2. Equivalently the complete spectrum is +/- (ell+3/2), with
+both PW/chirality realizations retained. Direct actual gamma/E controls
+for n=0,...,4 give this spectrum with Hermitian defect exactly zero.
+
+Each particle and conjugate spin4 branch is kept, with the source's actual
+conjugate Clifford representation. Their internal16 and family3 factors
+are identities for this geometric leading calculation, not omitted
+physical states: the combined coefficient space is all384h. No physical
+spin projection, two-spin eigenstate, or muon normal-mode amplitude is
+selected by this diagonalization.
+
+3. EXPLICIT SOURCE-CONVENTION POLAR SPIN ROTATION
+
+Let q=q4 I+i q_a sigma_a in SU2=S3, sum q_A^2=1. In the actual source
+right-body convention,
+  E_a q4=q_a, E_a q_b=-q4 delta_ab-epsilon_abc q_c.
+Put P_eps=(I+eps omega)/2 and define on each spin4 branch
+  S_eps(q)=P_eps+[q4 I+eps q_a Gamma_a Gamma4]P_-eps.
+The projected generators J_a=eps Gamma_a Gamma4 P_-eps obey
+  J_a^dagger=-J_a,
+  J_a J_b=-delta_ab P_-eps+epsilon_abc J_c.
+Thus S_eps is unitary, commutes with Gamma0, and is a Spin4 lift of the
+quaternion polar orthonormal frame. Crucially its connection satisfies
+  E_a S_eps=-S_eps J_a,
+  sum Gamma_a S_eps^-1 E_a S_eps
+      =3 eps Gamma4/2-3 Gamma123/2.
+These are EXACTLY the radial3/(2r) and right-body round-spin terms already
+in the supplied action. This derives the smooth polar inclusion from the
+owned expression; it does not choose a new spin connection or phase.
+The source constant source_spin_frame is the Dirac-to-LR basis change;
+moving_d5_material_trace_frame is the wall Lorentz boost. Neither by itself
+is this spatial polar rotation. Existing gamma, SU2 values and Gaunt/PW
+multiplication maps are sufficient to implement it without new data.
+
+A smooth Cartesian spinor psi_cart near the pole has polar coefficient
+u=S_eps^-1 psi_cart. This is a UNITARY spin-frame rotation in the original
+positive geometric current pairing. It is NOT the sin(f) similarity.
+The nonconstant chiral block of S contains level1 functions, so applying
+the spin-frame inclusion generally maps PW n to n+/-1. A finite cutoff
+must retain that actual output; projecting it back cannot be called the
+untruncated smooth-spin identification. On the full Hilbert space it is
+the source-owned smooth-cap spin bundle trivialization.
+
+Generic smooth spinors are not required to equal sin(f) times another
+smooth spinor. The exact local identity
+  D_eta=sin(f) D_min sin(f)^-1
+is NONUNITARY and singular at the pole. It remains a useful coefficient
+identity, but does not identify the positive squares/domains or justify
+deleting eta or imposing an additional vanishing condition on u.
+
+4. ACTUAL ETA CHANGES THE INDICIAL EQUATION, NOT THE SPIN FRAME
+
+The combined coefficient is
+  Eta=-i cot(f)[Gamma0 f0+eps Gamma4 f4].
+Its leading radial part subtracts i eps Gamma4/r from D_min, so
+  D_eta,sp=i eps Gamma4[partial_r+(1/2+K)/r]+subleading terms.
+At frozen time, first-order zero solutions in a K eigenchannel have
+  u~r^(-1/2-kappa).
+For kappa=-(ell+3/2) this is r^(ell+1); for positive kappa it is
+r^(-ell-2), which is not in L2(r^3 dr), including logarithmic divergence
+for ell=0. This is a first-order ZERO-SOLUTION statement only. It does
+not describe every finite-action field or every vector in Dom(A^dagger A).
+
+After the GEOMETRIC radial density isometry U=r^(3/2)u at leading order,
+the radial native factor is T_kappa=partial_r+(kappa-1)/r. Its radial
+positive square is
+  T_kappa^dagger T_kappa=-partial_r^2+kappa(kappa-1)/r^2
+in L2(dr). The coefficient is at least3/4 for every actual angular branch.
+The two zero-energy Frobenius exponents for U are kappa and1-kappa.
+For positive kappa=ell+3/2 the allowed positive-square branch gives
+u~r^ell; for negative kappa=-(ell+3/2) it gives u~r^(ell+1).
+The other branch is not L2. At coefficient3/4 it is r^-1/2 in U and
+still logarithmically nonintegrable. Thus the frozen scalar radial square
+is LIMIT-POINT in every channel, not a free self-adjoint boundary family.
+
+FORM and STRONG OPERATOR domains are different here. For example a smooth
+Cartesian constant spinor's kappa=-3/2 polar channel has U~r^(3/2). Its
+native form energy is finite, but P U~r^(-1/2) is not L2(dr). The regular
+strong-P root in that channel is U~r^(5/2), versus its excluded root
+r^(-3/2). In kappa=+3/2 the two strong roots are r^(3/2),r^(-1/2).
+Thus the form closure of smooth spinors does NOT assert that every smooth
+spinor is in Dom(P), or require all physical fields to equal sin(f) times
+a minimal-operator zero mode. The closed square is defined from the
+closed positive form, with its own strong operator domain.
+
+5. FULL TIME/ANGULAR NATIVE FORM CONTROL
+
+The already-owned native placement is A=D_tau+W, not Lorentz D_L^dagger D_L.
+After geometric density/frame isometry and frozen center proper clock,
+the leading Fourier-time operator on U is
+  A0=i tau-i alpha[partial_r+(K-1)/r].
+Its full quadratic form on compactly supported tests is
+  ||U'||^2+<U,[tau^2+(K^2-K)/r^2+2 tau alpha/r]U>.
+The cross term is retained: W^dagger-W=-2i alpha/r. Eta is not Hermitian
+and no Hermitian-W simplification is applied.
+
+In a +/-kappa pair the non-scalar term -K+2(tau r)alpha has eigenvalues
+  +/- sqrt(kappa^2+4(tau r)^2).
+For x=tau r and kappa>=3/2,
+  sqrt(kappa^2+4x^2)/(kappa^2+x^2)
+       <=2/(sqrt(3)kappa)<=4/(3sqrt(3))<1.
+The maximum occurs at x^2=kappa^2/2. Therefore, uniformly in ALL angular
+branches and frozen time frequency,
+  q0(U)>=||U'||^2+c[ tau^2||U||^2+||K U/r||^2 ],
+  c=1-4/(3sqrt(3))>0.
+The analogous upper bound is immediate. The smooth minimal spinor form
+has the same equivalent norm (its radial coefficient is K(K+1), also
+bounded below by3/4). Thus the original geometric H1 smooth-spin norm
+and the leading eta native graph norm are equivalent. This statement
+uses the unitary polar Spin4 inclusion and a geometric density isometry,
+not a scalar sin(f) change of Hilbert pairing.
+
+6. ACTUAL REGULAR REMAINDERS AND WHAT CAN BE CONCLUDED
+
+The actual metric differs from the leading smooth round pole by O(r^2)
+in its positive radial/angular principal coefficients. The angular
+remainder is O(r)E; uniformly E is bounded by a constant times |K| on the
+source PW decomposition, so it is small relative to |K|/r near the pole.
+The actual moving-coordinate shift is O(r)partial_r, also small relative
+to the controlled radial derivative. Half-divergence time contacts and
+cot(f) f0 are bounded; radial eta's remaining contact is O(r). All are
+RETAINED in the operator, not set to zero by the indicial calculation.
+
+The actual mechanical spatial connection is lambda-1=O(r^2), hence its
+Dirac coefficient divided by R is O(r). The retained independent gauge
+profiles are O(r^alpha), alpha=(-3+sqrt45)/2>1, including the frozen affine
+source complement plus O(r^2) terms. Their spatial Dirac coefficients
+are bounded O(r^(alpha-1)); material At/Ar terms are bounded as well.
+Bounded smooth internal connections on the full carrier obey the same
+lower-order estimate. The intrinsic Higgs is a seam action; it is not
+silently inserted as a singular bulk mass at the center.
+
+On any compact regular real time/coefficient neighborhood with these
+source-owned bounds and positive C0,N0,k, localization makes the principal
+remainders small and the zero-order remainders graph bounded. Adding the
+L2 norm gives the same local H1 form closure of smooth Cartesian spinors.
+The point has zero H1 capacity in four spatial dimensions: cutting out
+a radius-epsilon ball costs O(epsilon^2) for bounded smooth spinors.
+Therefore the smooth core including the point and its punctured compact
+smooth core have the SAME local native form closure. There is no extra
+point trace or arbitrary Dirichlet/free origin choice to append to this
+finite-action closure. The frozen radial square's limit-point result
+likewise exhibits no radial center extension parameter.
+
+This is a local center FORM-domain construction, CONDITIONAL on the
+regular combined-f continuation and positive C0,N0,k just stated. These
+premises are supplied by the regular cap chart; the primary proper-normal
+interpretation alone was originally a regular-collar statement, so this
+does not silently assert a global unit-normal extension through the cap.
+It is not a theorem about a complete
+global maximal D_strat operator through degenerating metrics, eta nodes
+elsewhere, events, the material wall, noncompact future or every possible
+rough background. Actual global trace/adjoint/outgoing domains remain
+their existing action-owned problems. Source/domain first jets still
+differentiate those same constructions; none is declared zero here.
+
+7. WHAT THIS MEANS FOR THE OPEN P1 COMPUTATION
+
+A fixed P1 radial spinor coefficient with arbitrary value at rho=0 and a
+finite smooth PW angular function can have finite native form energy:
+its angular/eta terms behave as1/r and int r^3/r^2 dr is finite. In polar
+coordinates its pointwise angular limit need not represent a smooth
+Cartesian spinor at the single point, but it is approximable in the local
+H1/native form norm by smooth spinors that cut out that point. Hence no
+new physical Dirichlet or free-boundary law is justified just from those
+P1 endpoint coefficients.
+
+Such P1 fields need not satisfy the STRONG operator Frobenius expansion;
+Galerkin form trials need not lie in Dom(P). Quadrature stabilization on
+a fixed P1 space does not prove radial-space convergence or physical
+outgoing realization. The center construction removes only a point-boundary
+parameter in this regular form problem; it does not normalize the muon
+state, select a pole, evaluate the remaining boundary return, apply a
+coupled correction or predict its magnetic moment.
+
+8. INDEPENDENT DETERMINISTIC SOURCE CONTROLS
+
+Canonical audit producer:
+  audits/bhsm_real_d5_polar_center_controls_20261016.py
+  SHA256 5e38f7d911a8bd1ef4b003e07d607034d586ea62ea18724754ab113b25de5e5f
+Independent WORK output directories:
+  outputs/bhsm_real_d5_polar_center_20261016/run_1
+  outputs/bhsm_real_d5_polar_center_20261016/run_2
+Each contains byte-identical controls.npz (32,685 bytes), SHA256
+42f10978d39171931b428715e79cd1b90bb9afd2c95370502726cb82aa66f233,
+and result.json (63,091 bytes), SHA256
+0fdaf549ba807d893be045a20672ce4af5d2e7f1dfea51c79e9ba0dfb9acaf4a.
+
+The 20 source angular records use both actual particle/conjugate gamma
+representations, both eps orientations, and complete scalar-PW blocks
+n=0,...,4. Their maximum Hermitian defect is0, spectrum disagreement
+2.398081733190338e-14, and {alpha,K} residual2.460825748783307e-16.
+The 20 frame records reconstruct quaternion derivatives from the actual
+scalar_basis_values times scalar_angular_derivative_matrices, independently
+of the closed coordinate vector-field formula. Their maximum source
+round-Dirac-contact identity residual is5.146648412882023e-15. All three
+literal four-point SU2-flow derivative steps are retained at every axis
+and point; their maximum absolute error is8.208836338192822e-13.
+The exact all-frequency leading coercivity constant evaluated at MP80 is
+0.2301996410804989806544682926640567258031976649731641653085302313546964.
+These controls verify the source convention/algebra supporting the local
+proof; they are not a field-solution derivative gate or radial convergence
+certificate. Both output runs preserve zero matching corrections and no
+physical moment/state/output-domain claim. All recorded current source
+hashes were independently checked after the two executions.

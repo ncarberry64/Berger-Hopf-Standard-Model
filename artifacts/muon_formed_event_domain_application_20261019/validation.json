@@ -1,0 +1,57 @@
+{
+  "byte_identical": true,
+  "deterministic_runs": [
+    "run_2",
+    "run_3"
+  ],
+  "focused_tests": {
+    "command": [
+      "C:\\Python314\\python.exe",
+      "-m",
+      "pytest",
+      "-q",
+      "tests/test_muon_native_event_incidence_contacts.py",
+      "tests/test_muon_formed_event_domain_application.py",
+      "tests/test_muon_two_collar_weak_domain.py",
+      "tests/test_muon_full_d5_localized_lepton_trace.py"
+    ],
+    "elapsed_seconds": 20.97,
+    "exit_code": 0,
+    "passed": 16,
+    "scope": "new incidence calculus, actual seam forcing/time jets and affected original fullD5/two-collar regressions; not physical formation admission"
+  },
+  "npz_sha256": "c2a795bf134c549a23f681234b5f901bf1a4b1f154a1699f28f6d7401910105a",
+  "parent_head": "9738fc5ad9c82a6d7b3e5a9e0ecc21cdf33e5291",
+  "publication_audits": {
+    "all_exit_codes_zero": true,
+    "external_run": "publication_audits_v2",
+    "results_sha256": "1e25b4bf8e2de02b740526783cc06db45cc68a362e48ad9478ca015966432bf5"
+  },
+  "result_sha256": "9cb2d3f858df0642bad0119f3e6bd5bdfd7b5ea6645ab48449381c843efc886a",
+  "review": {
+    "independent_read_only_reviews": 2,
+    "mathematical_corrections": [
+      "boundary point-trace projector distinguished from interior projector",
+      "normalization LR/RL factors kept independent and right-normal cancellation derived",
+      "conditional T=dV contact retains Vdot and commutator",
+      "canonical chain-rule residual used"
+    ],
+    "physical_admission": false,
+    "physical_guard": 2e-10,
+    "unresolved": [
+      "mechanical formation KKT and nonlinear constrained branch",
+      "same-branch D5 normal/interior complement and inherited-state equations",
+      "physical event transmission and analytic causal native corner incidence"
+    ]
+  },
+  "schema": "bhsm.formed-event-domain-validation.v1",
+  "source_test_theory_sha256": {
+    "scripts/evaluate_muon_formed_event_domain_application.py": "8c2174e7acdb91f05ec5957c8742845a9ff0cf84b245609b032be41f11bf4496",
+    "src/bhsm/interface/muon_formed_event_domain_application.py": "6b755a5ca03c6b5e76afc696583cd36fe9720cc9de3cf67d78d3db9ed021ae17",
+    "src/bhsm/interface/muon_native_event_incidence_contacts.py": "d2c0890f2f9894572d51b1975a970c3197ddb24a503313d4a57f0adbc44921bc",
+    "tests/test_muon_formed_event_domain_application.py": "0c595b5776604e5575e56673f76992e6ac01e67aef8980eabf4fdf313602a397",
+    "tests/test_muon_native_event_incidence_contacts.py": "e16f73526541299efbb175a5666a14963028773d6d0cfd955e01fdc641e481e9",
+    "theory/muon_formed_event_domain_application_20261019.md": "8f57d2a0c45613ae9195919e6f50f1398a106af12c178ff699f3703533081a74"
+  },
+  "validated_current_input_pins": 324
+}

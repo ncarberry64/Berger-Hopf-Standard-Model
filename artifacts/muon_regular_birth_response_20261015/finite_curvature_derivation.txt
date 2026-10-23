@@ -1,0 +1,76 @@
+Actual retained finite connection curvature-memory application, 2026-10-15
+
+This is a new readout on the real historical outgoing phase
+artifacts/muon_inherited_finite_normal_phase_20261011/run_1. Its saved interval
+is [0,1e-5] with one represented midpoint cell and affine parent/reference
+first germs. No source, profile, history, D5, pole or matching campaign was
+restarted. The current trial0000 complex germ was not consumed or clipped.
+
+For the actual homogeneous component the induced-ADM drift b vanishes.
+Material A_t is included once. With anti-Hermitian A, define the fundamental
+Wilson propagator Udot=-A_t U, U(0)=I, and a_a=U^dagger A_a U. Then
+  dot a_a=U^dagger F_ta U,
+  F_ta=dot A_a+[A_t,A_a],
+so
+  U(T)^dagger A_a(T)U(T)-A_a(0)
+    =integral_0^T U(t)^dagger F_ta(t)U(t)dt.
+The original A_a(0) is extracted from the same retained phase and is nonzero.
+The identity initial Wilson propagator does not select an initial event/child
+bundle identification. That separate physical identification remains an
+unknown or owned condition in the birth solve.
+
+The spatial frame obeys [E_a,E_b]=-2 epsilon_ab^c E_c. The full spatial
+curvature is consequently [A_a,A_b]+2 epsilon_ab^c A_c for this actual
+homogeneous component. It is evaluated and saved, although its contraction
+with the actual zero material drift is zero in this memory identity. The
+non-Abelian spatial curvature is not discarded.
+
+The inherited connection profile is retained exactly. Its wall coefficient
+is lambda_parent-lambda_child-lambda_refparent+lambda_refchild, while the
+intrinsic mechanical connection contributes lambda_child-1. Their sum is
+lambda_parent-lambda_refparent+lambda_refchild-1. This exact cancellation
+removes no current or physical field. Independent full original-owner
+applications at t=0,T/2,T reproduce the composed wall connection within
+4.44e-16 and its analytic interpolation spatial time derivative within
+6.38e-16. The derivative uses the actual raw interpolation derivative and
+all three affine parent/reference germs, not a held profile.
+
+Two separate DOP853 runs per materialization refine rtol/atol from
+8e-12/1e-25 to 3e-13/1e-27. The propagator stores U-I directly; temporal
+commutator memory is integrated separately from the larger time derivative
+memory so it is not rounded away. Independent 16/32-point Gauss-Legendre
+integration uses the fine Wilson solution and re-evaluates the actual
+connection/curvature at its quadrature nodes.
+
+Observed results in the retained dimensionless coordinate convention:
+  initial-subtracted connection memory norm: 1.703324567107944e-6;
+  nonzero temporal-commutator memory norm: 1.2853191193751093e-19;
+  sampled full spatial-curvature norm maximum: 1.7316573538156264;
+  direct endpoint subtraction vs Volterra maximum difference: 8.867037353389555e-17;
+  DOP853 tolerance refinement maximum difference: 2.72109334305444e-20;
+  GL16 versus GL32 memory maximum difference: 1.2705494208814505e-21.
+These are floating arithmetic comparisons, not outward interval or continuum
+error certificates. The direct endpoint check uses a compensated identity
+that explicitly subtracts the original initial connection.
+
+Two independent materializations are byte-identical:
+  WORK/outputs/bhsm_muon_actual_finite_curvature_memory_20261016/run_1
+  WORK/outputs/bhsm_muon_actual_finite_curvature_memory_20261016/run_2
+The result manifest pins the actual historical phase, its dependencies and
+the producer. The saved array packet retains the endpoint, time/commutator
+memory pieces, quadrature results and full spatial-curvature samples.
+
+The Volterra law transports a supplied initial connection using its supplied
+curvature. It does not determine an uncomputed future curvature. In a full
+coupled continuation that curvature is produced by the same-action Maxwell
+Legendre/Euler equations and constraints, with the physical retarded return.
+Energy/field variations must differentiate the curvature, Wilson factors,
+moving material map and endpoint limits. They have not been evaluated here.
+
+This finite result supplies an actual connection response on the historical
+real interval and corrects any claim that temporal parallel transport alone
+would identify the later spatial connection with its initial value. It is
+not a physical future continuation, not the current complex trial's return,
+not a completed formed-muon operator, and not a 2e-10 full derivative pass.
+Both physical spin residues and the muon magnetic moment remain unevaluated.
+Zero coupled matching corrections were applied by this producer.

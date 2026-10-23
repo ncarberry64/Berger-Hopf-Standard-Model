@@ -1,0 +1,13 @@
+{
+  "Pauli_jet": "partial_s partial_t R=<L_s,Gamma_t>+<L,Gamma_st>+external_state/normalization/pullback terms",
+  "covariant_jets": "D_cov=gamma0 B_H; D_cov,s=-kappa Delta_r S; D_cov,b=Xi=gamma0_out V",
+  "family_form": "Delta K_mass=kappa a_bg Delta_r C_bg+kappa^2 Delta(r^2) P_ch",
+  "implemented_B": "B_H=i partial_tau-H, H=R^-1 diag(-D3,+D3)+kappa r(s) T+H_commonA",
+  "implemented_jets": "B_H,s=-kappa Delta_r T; B_H,b=V; B_H,sb=0",
+  "native_A_sb": "M^-1(K_sb-M_sb A-M_s A_b-M_b A_s)",
+  "native_Gamma_sb": "STr(DQ[A_b] A_s+Q A_sb); retain open Grassmann pair and physical signed Pauli transfer",
+  "no_native_heat_default_length": true,
+  "positive_square": "P=D^dagger D; retain actual dual; no positive square inferred from raw Lorentz Hamiltonian",
+  "retained_target": "D_plus(s)=D0+m(s) tau_x in the structural chiral convention; family interpolation is mathematical only",
+  "state_pair": "ReTr(W_mu^- X_mu)-ReTr(W_e^- X_e); equal coefficients do not cancel independent variations"
+}

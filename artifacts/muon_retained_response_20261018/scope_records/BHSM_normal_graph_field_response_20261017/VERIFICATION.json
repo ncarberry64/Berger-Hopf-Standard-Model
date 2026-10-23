@@ -1,0 +1,477 @@
+{
+  "a_mu": null,
+  "actual_retained_samples": 12,
+  "all_last_recorded_finite_step_checks_below_2e_10": false,
+  "all_new_scoped_checks_pass": true,
+  "classification": "EVALUATED_INTRINSIC_NORMAL_GRAPH_HIGGS_AND_SYMBOLIC_AREA_RESPONSE",
+  "coupled_background_corrections": 0,
+  "environment": {
+    "mpmath": "1.3.0",
+    "numpy": "2.3.5",
+    "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+    "scipy": "1.17.0",
+    "torch": "2.10.0+cpu"
+  },
+  "error_scope": "finite local/temporal consistency; no continuum, temporal, radial, physical state/domain or total error enclosure",
+  "g_mu": null,
+  "git_writes": false,
+  "independent_checks": [
+    {
+      "area_gradient_coefficient": -7.673656758503802,
+      "area_homogeneous_plus_angular_identity_difference": 8.526512829121202e-14,
+      "area_homogeneous_plus_angular_values": [
+        198.5127861953162,
+        -29.952225237145754,
+        5.79669143586183
+      ],
+      "independent_high_precision": [
+        {
+          "direction": "normal_value",
+          "finite_difference_sweep": [
+            {
+              "absolute_to_binary64_hessian": [
+                2.0823561764743667e-07,
+                2.391822521229408e-05
+              ],
+              "step": 0.002,
+              "truncation_to_mp_derivative": [
+                2.0823561760325626e-07,
+                2.3918225302753437e-05
+              ]
+            },
+            {
+              "absolute_to_binary64_hessian": [
+                1.3003870050449848e-08,
+                1.4946335378143689e-06
+              ],
+              "step": 0.001,
+              "truncation_to_mp_derivative": [
+                1.3003870006269425e-08,
+                1.4946336282737266e-06
+              ]
+            },
+            {
+              "absolute_to_binary64_hessian": [
+                8.125725192246107e-10,
+                9.341054231713961e-08
+              ],
+              "step": 0.0005,
+              "truncation_to_mp_derivative": [
+                8.125724750441872e-10,
+                9.341063277649743e-08
+              ]
+            }
+          ],
+          "mp_hessian": [
+            2.6002415508543613,
+            198.5127861953162
+          ],
+          "original_minus_assembled": [
+            4.418042340314267e-17,
+            9.045935781786526e-14
+          ]
+        },
+        {
+          "direction": "normal_rate",
+          "finite_difference_sweep": [
+            {
+              "absolute_to_binary64_hessian": [
+                7.40555342067627e-12,
+                5.215830424954764e-10
+              ],
+              "step": 0.002,
+              "truncation_to_mp_derivative": [
+                7.405548111239093e-12,
+                5.215864689009828e-10
+              ]
+            },
+            {
+              "absolute_to_binary64_hessian": [
+                4.628371700768662e-13,
+                3.259467872590899e-11
+              ],
+              "step": 0.001,
+              "truncation_to_mp_derivative": [
+                4.628318606396877e-13,
+                3.2598105131415374e-11
+              ]
+            },
+            {
+              "absolute_to_binary64_hessian": [
+                2.893206798120286e-14,
+                2.033938772478325e-12
+              ],
+              "step": 0.0005,
+              "truncation_to_mp_derivative": [
+                2.8926758544024304e-14,
+                2.0373651779847107e-12
+              ]
+            }
+          ],
+          "mp_hessian": [
+            0.08230212989364227,
+            5.79669143586183
+          ],
+          "original_minus_assembled": [
+            5.3094371785550914e-18,
+            3.4264055063855265e-15
+          ]
+        },
+        {
+          "direction": "mixed_field_graph",
+          "finite_difference_sweep": [
+            {
+              "absolute_to_binary64_hessian": [
+                1.0368875407862861e-08,
+                1.394078716611792e-06
+              ],
+              "step": 0.002,
+              "truncation_to_mp_derivative": [
+                1.0368875795093193e-08,
+                1.3940787581850267e-06
+              ]
+            },
+            {
+              "absolute_to_binary64_hessian": [
+                6.478588398918858e-10,
+                8.713235604187345e-08
+              ],
+              "step": 0.001,
+              "truncation_to_mp_derivative": [
+                6.478592271222165e-10,
+                8.713239761510802e-08
+              ]
+            },
+            {
+              "absolute_to_binary64_hessian": [
+                4.0487761175825596e-11,
+                5.445772138386645e-09
+              ],
+              "step": 0.0005,
+              "truncation_to_mp_derivative": [
+                4.0488148406156277e-11,
+                5.445813711621201e-09
+              ]
+            }
+          ],
+          "mp_hessian": [
+            0.9734404536662548,
+            75.68416290725831
+          ],
+          "original_minus_assembled": [
+            3.8723033068089974e-16,
+            4.1573234555220227e-14
+          ]
+        }
+      ],
+      "omission_controls": {
+        "diagonal_metric_hessian_difference": 0.003479568203226247,
+        "frozen_fiber_area_hessian_difference": 3.984318306276691
+      },
+      "side": "incoming"
+    },
+    {
+      "area_gradient_coefficient": -4.879933797618941,
+      "area_homogeneous_plus_angular_identity_difference": 8.526512829121202e-14,
+      "area_homogeneous_plus_angular_values": [
+        139.54820127188478,
+        -32.1137068783994,
+        9.292288449969819
+      ],
+      "independent_high_precision": [
+        {
+          "direction": "normal_value",
+          "finite_difference_sweep": [
+            {
+              "absolute_to_binary64_hessian": [
+                2.1695855784861342e-07,
+                2.0951619546223656e-05
+              ],
+              "step": 0.002,
+              "truncation_to_mp_derivative": [
+                2.169585593447774e-07,
+                2.0951619625263347e-05
+              ]
+            },
+            {
+              "absolute_to_binary64_hessian": [
+                1.3550209227854524e-08,
+                1.3089437150591669e-06
+              ],
+              "step": 0.001,
+              "truncation_to_mp_derivative": [
+                1.3550210724018494e-08,
+                1.3089437940988582e-06
+              ]
+            },
+            {
+              "absolute_to_binary64_hessian": [
+                8.467354386219186e-10,
+                8.18006160736959e-08
+              ],
+              "step": 0.0005,
+              "truncation_to_mp_derivative": [
+                8.467369347858883e-10,
+                8.180069511338727e-08
+              ]
+            }
+          ],
+          "mp_hessian": [
+            1.8004844033496996,
+            139.54820127188478
+          ],
+          "original_minus_assembled": [
+            1.496163969717568e-15,
+            7.903969135905756e-14
+          ]
+        },
+        {
+          "direction": "normal_rate",
+          "finite_difference_sweep": [
+            {
+              "absolute_to_binary64_hessian": [
+                8.540793838839201e-11,
+                6.015449013068608e-09
+              ],
+              "step": 0.002,
+              "truncation_to_mp_derivative": [
+                8.540799045832079e-11,
+                6.015454594566095e-09
+              ]
+            },
+            {
+              "absolute_to_binary64_hessian": [
+                5.337468671167996e-12,
+                3.759266175078401e-10
+              ],
+              "step": 0.001,
+              "truncation_to_mp_derivative": [
+                5.337520741096782e-12,
+                3.759321990053263e-10
+              ]
+            },
+            {
+              "absolute_to_binary64_hessian": [
+                3.3353549809845186e-13,
+                2.3489654229419727e-11
+              ],
+              "step": 0.0005,
+              "truncation_to_mp_derivative": [
+                3.3358756802723827e-13,
+                2.3495235726905936e-11
+              ]
+            }
+          ],
+          "mp_hessian": [
+            0.13193278592571944,
+            9.292288449969819
+          ],
+          "original_minus_assembled": [
+            5.206992878641518e-17,
+            5.581497486207399e-15
+          ]
+        },
+        {
+          "direction": "mixed_field_graph",
+          "finite_difference_sweep": [
+            {
+              "absolute_to_binary64_hessian": [
+                1.0012713565687413e-08,
+                1.0440373434940893e-06
+              ],
+              "step": 0.002,
+              "truncation_to_mp_derivative": [
+                1.0012714090144565e-08,
+                1.0440373756352597e-06
+              ]
+            },
+            {
+              "absolute_to_binary64_hessian": [
+                6.257034060485029e-10,
+                6.525294333387667e-08
+              ],
+              "step": 0.001,
+              "truncation_to_mp_derivative": [
+                6.257039305056548e-10,
+                6.525297547504724e-08
+              ]
+            },
+            {
+              "absolute_to_binary64_hessian": [
+                3.910455570615158e-11,
+                4.078288969125823e-09
+              ],
+              "step": 0.0005,
+              "truncation_to_mp_derivative": [
+                3.91050801633035e-11,
+                4.078321110296387e-09
+              ]
+            }
+          ],
+          "mp_hessian": [
+            0.6568092087728854,
+            52.19526881912632
+          ],
+          "original_minus_assembled": [
+            5.244571519151201e-16,
+            3.214117056359141e-14
+          ]
+        }
+      ],
+      "omission_controls": {
+        "diagonal_metric_hessian_difference": 0.006278548179575309,
+        "frozen_fiber_area_hessian_difference": 3.6193968699363097
+      },
+      "side": "outgoing"
+    }
+  ],
+  "independent_mp_decimal_precision": 65,
+  "independent_mp_local_Hessian_max_absolute": 9.045935781786526e-14,
+  "initial_physical_state_selected": false,
+  "input_manifests": {
+    "BHSM_RETAINED_HISTORY_INPUTS_20261017": {
+      "manifest_sha256": "769c152b86b352b4d509b406fe0415d561708ac0f932bd811a506d7952a8d3a1",
+      "verified_count": 47
+    },
+    "BHSM_higgs_wall_coupled_response_20261017": {
+      "manifest_sha256": "9daafe5c88b3745e3fe1641f443c62ca6c90213f3821270d22a78ecd56f48dd6",
+      "verified_count": 47
+    }
+  },
+  "last_recorded_finite_step_comparison_max": 9.341054231713961e-08,
+  "membrane_strength_selected": false,
+  "mixed_gauge_shape_identity_max": 9.000509852183101e-18,
+  "new_graph_drive_columns": 8,
+  "normal_Maxwell_geometry_eta_GHY_native_completed": false,
+  "numerical_method": "four-stage Gauss collocation on supplied nodes, original local graph Hessian, independent original scalar DAE and complex action derivative",
+  "old_Higgs_response_columns_reused": 166,
+  "physical_Maxwell_all226_admitted": false,
+  "physical_outgoing_derivative_admitted": false,
+  "physical_wall_equation_closed": false,
+  "previous_Maxwell_gauge_reconstruction_failure_resolved": false,
+  "replay_byte_identical": true,
+  "replay_comparisons": [
+    {
+      "byte_identical": true,
+      "path": "replay_A/incoming_graph_coefficients.npz",
+      "repeat": "replay_B/incoming_graph_coefficients.npz",
+      "sha256": "0a1676b606c0c7098e4c2f31a9217a11650c84118179c736ee566b063a061976"
+    },
+    {
+      "byte_identical": true,
+      "path": "replay_A/incoming_graph_response.npz",
+      "repeat": "replay_B/incoming_graph_response.npz",
+      "sha256": "ebcf262e5658d4ab2dc6b79c91e6539a1872d5829c5d42262ca0e8a71782e816"
+    },
+    {
+      "byte_identical": true,
+      "path": "replay_A/outgoing_graph_coefficients.npz",
+      "repeat": "replay_B/outgoing_graph_coefficients.npz",
+      "sha256": "eefc32d86333b804761df4a8cbcb667a9435a57b3c2d1d737fb526b3bd05e68c"
+    },
+    {
+      "byte_identical": true,
+      "path": "replay_A/outgoing_graph_response.npz",
+      "repeat": "replay_B/outgoing_graph_response.npz",
+      "sha256": "e17591ca2706341bbb293254e3b83c0fad4fe42246add6aaff0303589823c05c"
+    },
+    {
+      "byte_identical": true,
+      "path": "replay_A/result.json",
+      "repeat": "replay_B/result.json",
+      "sha256": "95c4f8abb6d5dca331979eb9bb01a1da46c46aee27d99664845cd6ca5d642406"
+    },
+    {
+      "byte_identical": true,
+      "path": "check_A/checks.json",
+      "repeat": "check_B/checks.json",
+      "sha256": "6425913a8045a98405133cac6a1ecf0b209dd19284905e82ba6a09725c520299"
+    },
+    {
+      "byte_identical": true,
+      "path": "gauge_A/checks.json",
+      "repeat": "gauge_B/checks.json",
+      "sha256": "d99220532dfa60cd47853b6ebc106758ed6766abdf7d9bb4afa4f5c80358e962"
+    }
+  ],
+  "results": [
+    {
+      "measures": {
+        "angular_rule_max": 8.526512829121202e-14,
+        "area_graph_endpoint_max_per_gamma": 5.796436923268648,
+        "area_graph_weak_max_per_gamma": 5.7964144246273674,
+        "area_weak_symmetry": 0.0,
+        "first_sample_area_coefficients_per_gamma": {
+          "B": -29.952225237145743,
+          "K": 198.51278619531612,
+          "M": 5.796691435861827
+        },
+        "first_sample_normal_Higgs_cross_max": 0.19075156492299003,
+        "gauge_to_graph_wall_max": 1.3138067061213858e-08,
+        "graph_drive_stage_residual": 2.6469779601696886e-23,
+        "graph_endpoint_momentum_max": 0.08229841322342027,
+        "graph_to_gauge_wall_max": 1.3138067062235835e-08,
+        "graph_to_scalar_final_max": 1.217265349856862e-07,
+        "independent_original_final_difference": 5.293955920339377e-23,
+        "independent_original_stage_difference": 4.929156345506421e-23,
+        "independent_original_stage_residual": 2.6758333930610154e-23,
+        "legacy_blocks_max": 4.440892098500626e-16,
+        "legacy_final_byte_preserved": true,
+        "legacy_stages_byte_preserved": true,
+        "legacy_wall_difference": 0.0,
+        "literal_base_max": 4.440892098500626e-15,
+        "neutral_shape_gauge_cross_max": 1.734723475976807e-18,
+        "scalar_momentum_residual": 2.220446049250313e-16,
+        "wall_temporal_Green": 4.876755296330851e-19
+      },
+      "side": "incoming"
+    },
+    {
+      "measures": {
+        "angular_rule_max": 2.842170943040401e-14,
+        "area_graph_endpoint_max_per_gamma": 9.29199685610131,
+        "area_graph_weak_max_per_gamma": 9.291982088950949,
+        "area_weak_symmetry": 0.0,
+        "first_sample_area_coefficients_per_gamma": {
+          "B": -32.11370687839938,
+          "K": 139.5482012718847,
+          "M": 9.292288449969814
+        },
+        "first_sample_normal_Higgs_cross_max": 0.12209929930550391,
+        "gauge_to_graph_wall_max": 2.37078250528665e-08,
+        "graph_drive_stage_residual": 2.6469779601696886e-23,
+        "graph_endpoint_momentum_max": 0.13192800900876853,
+        "graph_to_gauge_wall_max": 2.370782505337994e-08,
+        "graph_to_scalar_final_max": 1.7430196795126073e-07,
+        "independent_original_final_difference": 5.293955920339377e-23,
+        "independent_original_stage_difference": 5.293955920339377e-23,
+        "independent_original_stage_residual": 5.293955920339377e-23,
+        "legacy_blocks_max": 4.440892098500626e-16,
+        "legacy_final_byte_preserved": true,
+        "legacy_stages_byte_preserved": true,
+        "legacy_wall_difference": 0.0,
+        "literal_base_max": 2.6645352591003757e-15,
+        "neutral_shape_gauge_cross_max": 8.673617379884035e-19,
+        "scalar_momentum_residual": 1.1102230246251565e-16,
+        "wall_temporal_Green": 1.0935052988473765e-18
+      },
+      "side": "outgoing"
+    }
+  ],
+  "scoped_check_group_count": 10,
+  "scoped_checks": {
+    "boundary_and_temporal_Green_identity": true,
+    "complete_scalar_canonical_momentum": true,
+    "direct_neutral_Higgs_shape_cancellation": true,
+    "homogeneous_area_plus_angular_identity": true,
+    "independent_original_high_precision_local_derivative": true,
+    "independent_original_scalar_stage_equations": true,
+    "independent_quadratic_angular_rule": true,
+    "input_integrity": true,
+    "legacy_columns_unchanged": true,
+    "mixed_gauge_shape_identity": true
+  },
+  "source_revision": "70e82fd4dbe5f53ff27ae17f6aaac7a4727c1fde",
+  "topology_changing_cascade_evaluated": false,
+  "total_uncertainty": null
+}

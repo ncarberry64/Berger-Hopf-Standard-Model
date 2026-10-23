@@ -1,0 +1,70 @@
+{
+  "compared_files": [
+    {
+      "bytes": 10279,
+      "path": "checkpoint.json",
+      "sha256": "9041d9efc4533b0ea6d254ce1ddcfadbc466b3c31ba107ba4db7b75793e2d1b6"
+    },
+    {
+      "bytes": 99037,
+      "path": "independent_source_quotient.npz",
+      "sha256": "f0941f3e102b30612918b22f87c03a8124e66f59d108939c65b980b1d7c53ecb"
+    },
+    {
+      "bytes": 290547,
+      "path": "inherited_parent_weak_coefficients.npz",
+      "sha256": "609d893a9670117d930499abf463da3fa89d14bfa278355b291b54fccc9a7120"
+    },
+    {
+      "bytes": 3695,
+      "path": "missing_operand.json",
+      "sha256": "5a65a24da40bbcad975528538af76f8abc01d11d9d2eafa96c46d1d024a11deb"
+    },
+    {
+      "bytes": 837,
+      "path": "output_hashes.json",
+      "sha256": "09a3acf6b8d823bec38d85cdc35153bc3463228ce6165c01625d2f211c3c2477"
+    },
+    {
+      "bytes": 5344,
+      "path": "result.json",
+      "sha256": "88b858a4f17114b222267841ff41b7c1a785c3b1eca79bf88a504e5b2bfa529e"
+    },
+    {
+      "bytes": 1454,
+      "path": "stage_receipt.json",
+      "sha256": "d171604b5582f47f4359dfc32067432658700911c56ea46817aa5d246f6ea29b"
+    }
+  ],
+  "error_scope": "exact retained representation identities and analytic determinant/flux algebra; binary64 contraction residuals at fixed cached inputs. No outward full-form, history, interpolation, quadrature, native matching, domain, or theory uncertainty bound.",
+  "final_materializations_identical": true,
+  "final_numerical_arrays_reused": true,
+  "full_suite_run": false,
+  "independent_review": "Constant Phi=FC and J*dqJ descent, both flux signs and connected output reviewed. Metadata nullity corrected36-16=20. Plus stratum not Euclidean; positive P does not establish positive induced gauge Hessian, and positive matching is not a new gate before causal stationarity.",
+  "initial_handoff_preparation_error": "Syntax error in copy-list tuple fixed before any numerical calculation.",
+  "initial_test_failure": {
+    "correction": "32-epsilon absolute pre-cancellation term bound; subsequent3passed2.86s; final metadata/nullity check3passed2.94s.",
+    "failed": 1,
+    "passed": 2,
+    "reason": "Relative output-based tolerance did not account for cancellation in radial traction.",
+    "seconds": 4.29
+  },
+  "module_sha256": "9fb8483b1fa591d7b1788f8cf9c3e3ce30b63f73a189168604cd37cbefe44274",
+  "native_E1_evaluations": 0,
+  "native_shifted_resolvent_applications": 0,
+  "numerical_evaluation_runs": 1,
+  "old_audit_receipt_sha256": "4175b9dc59e494dfbd7f80b66549b8794e5e9ef46f8cafa6c4d5faeada1918be",
+  "old_publication_audits_preserved_not_rerun": true,
+  "old_source_contact_normalization_covariance_replayed": false,
+  "parent_extensions_evaluated": 0,
+  "physical_transfer_directions": 0,
+  "report_sha256": "979434c3a6f7f0707b1c9423764a461ea73babf4728a148a9ec189680af622c1",
+  "reuse_scope": "Final run4/run5 materializations reuse the two verified run1 numerical arrays; only nullity/weak-boundary/complement metadata clarified. No old producer calculation was rerun.",
+  "script_sha256": "d4a55fb0baf3a7f6b7400056acc556a889e2020938dacac7d3df888be6abec43",
+  "targeted_repository_tests": {
+    "command": "python -m pytest tests/test_muon_source_weak_extension.py -q",
+    "passed": 3,
+    "seconds": 2.94
+  },
+  "targeted_test_sha256": "df9b1ebef86a509c6ccba304a0818a82a4f4f56aa50abe20cb2ed34932127db5"
+}

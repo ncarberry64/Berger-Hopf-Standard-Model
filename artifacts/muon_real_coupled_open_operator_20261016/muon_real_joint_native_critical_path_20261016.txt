@@ -1,0 +1,224 @@
+REAL JOINT BACKGROUND: EVALUABLE STATE EQUATIONS AND NATIVE OPERATOR INPUTS
+2026-10-16. Read-only source audit; no new solve, coefficient, gate or correction.
+
+Repository: C:/Users/carbe/Downloads/BHSM_muon_parent_maxwell_worktree_20261001
+
+1. THE REAL NONLINEAR FIELD EQUATIONS ARE ALREADY CONSTRUCTIBLE
+
+muon_pointwise_full_field_action.py:33-139 evaluates the actual real raw228
+cap/independent-Maxwell/intrinsic-H action, gradient and full Hessian, with
+all lapse/shift/multiplier, At/Gauss and geometric mixed blocks. Its
+coefficient_time_euler_application:177+ gives L_x-d_t L_v and L_y at actual
+supplied rates, without silently assigning zero acceleration. Thus an
+unknown real field or momentum is a SOLVER VARIABLE, not a missing law.
+
+The direct real two-arm owner already exists in
+muon_birth_finite_normal_trace_graph.finite_normal_trace_graph_action_
+two_jet:134-230, with an independent literal value at100-131. For N=80 it
+acts on raw536, including all200 parent/child geometry contacts in the
+inherited profile, original Maxwell subtraction, scalar wall second-map
+contact, and unprojected parent/child mixed Hessian. Its returned raw
+gradient/Hessian can be pulled back by generic_coordinate_lift on each
+arm to master504=(x212,v212,y80). It is the strongest direct REAL
+finite-chart backend; no complex-to-real projection is needed to use it.
+
+The later muon_holomorphic_two_arm_action.holomorphic_two_arm_action:
+29-151 supplies the complexified current two-arm graph and further
+source/cotangent bookkeeping. The saved complex germ must not be
+projected onto a real chart. A physical comparison of the current real
+and complex chart representations must retain their actual source maps,
+not assume their different retained finite normal parametrizations agree.
+In either graph the parent and child are both variables. Holding the
+parent affine, as some historical applications do, does not solve it.
+
+Existing temporal assembly mechanisms already distinguish these roles:
+muon_coupled_temporal_weak_action.temporal_geometry_weak_application:32+
+retains paired endpoint momentum rows and actual test derivatives;
+muon_birth_coupled_primal_midpoint.nonlinear_midpoint_rows:25-48 implements
+un-subtracted local canonical/Legendre/Gauss equations and exact Jacobian.
+Its current public driver is the older real228, single-arm component.
+muon_nonlinear_chronological_n0_action:99-155 assembles a whole directed
+chronological graph, but only the84 field rows with geometry held fixed
+and its historical complex time/clock pullback. It is not the full real
+x212/v212/y80 global background solve.
+
+For temporal basis/test maps J_j and their ACTUAL time derivatives, the
+existing local gradient g_j and Hessian H_j give the finite weak action
+and Hessian by sum_j w_j J_j^T g_j and sum_j w_j J_j^T H_j J_j, plus the
+owned endpoint/reset/constraint rows and moving-map contacts. This is a
+substantive global assembly of the existing action, not an instantaneous
+Hessian inverse or a new dynamical law. Retain both arms and all cross
+blocks; do not replace a physical matching residual by a small projected
+least-squares norm.
+
+Clock incidence is part of that pullback. The literal inherited-profile
+owner uses a common COORDINATE clock for parent lambda_tau inserted into
+the child connection. Different proper lapses are already allowed. A
+different parent/child coordinate-time parametrization additionally needs
+the actual source-rate pullback (including reference rates and all jets);
+different action integration weights alone do not implement it. The new
+whole-temporal backend consequently guards equal coordinate steps for its
+default owner instead of inventing that extra incidence.
+
+Important solver trap: muon_nonlinear_n0_field_action.
+nonlinear_source_directed_newton:121+ uses g_class(x)-g_class(0)+g_native(x).
+That is an explicitly background-subtracted equation. It cannot be called
+the un-subtracted physical mean merely because its iteration converges.
+
+2. THE NEW FULL D5 FERMION COMPONENT NEEDS NO NEW LOCAL COEFFICIENT CHOICE
+
+The original D5 coefficient owner is muon_holomorphic_d5_trace_action:
+d5_trial_stage_coefficients, d5_sigma_foliation_eta and
+d5_unsquared_weak_trace. muon_full_d5_localized_lepton_trace:19-101 supplies
+the actual particle/conjugate/family384 representation and selected18
+trace embedding. The new muon_full_d5_differential_form executes the
+whole original differential expression for arbitrary time/radial/angular
+trial maps. No gamma_perp is guessed on18, nor is the348 complement lost.
+
+The plus product factor is already owned: ae4_current_c2_factorized_hs_
+calderon:24-66, muon_native_dirac_hamiltonian:214-280, and more strongly
+muon_owned_native_product_connection.owned_native_product_node:34-77.
+The latter binds Omega_factor=Omega_L,t/N and A=(partial_t+Omega_L,t)/N+W
+on the real common-A positive pairing. Its generic older contract's None
+slot is NOT a new missing local temporal law. The real full-D5 extension
+A=D_tau+W is locally constructible on mu=N C R^3 with the actual
+half-divergence contacts; W_eta need not be Hermitian for A^dagger A.
+See the independent derivation muon_real_d5_native_factor_ellipticity_
+20261016.txt. A separate arbitrary Wick contour, zero-spin approximation,
+or Hermitian-W replacement is not required for this local component.
+
+Consequently the next executable native assembly is the full384 A form
+on a REAL same-vector coefficient history, with complete time/radial/Haar
+maps and the owned normalized seam and square-adjoint/conormal graph.
+Its generalized K/M and actual source vertices then replace the older
+18-only coefficient-cell forms. All physical sources must include the
+history, trace, metric, domain and native cutoff contacts. The saved
+real finite-normal initial/stage data are valid INITIAL ITERATES for this
+assembly; they are not already a stationary formed-muon solution.
+
+The exact retained REAL files, without rerunning their solve, are:
+  artifacts/muon_finite_normal_phase_20261011/incoming_run_1/application.npz
+    SHA256 254491c04531387f3ef3ae761cb4efccfbed54055683af00fbd8259a2520a8f9
+  artifacts/muon_inherited_finite_normal_phase_20261011/run_1/application.npz
+    SHA256 7a513c82e9e4f3e2560e2989867e00e8af3453e637a29559286c29eb7c184a59
+Each is one cell of coordinate length1e-5, past incoming/future outgoing.
+The child inherited-profile asset supersedes the older outgoing asset
+which omitted that profile. The existing exact interpolation convention
+is muon_inherited_lepton_temporal_weak_action.inherited_cell_raw_at_time:
+x linear, v/y at the stored midpoint. The full child profile uses
+muon_birth_inherited_finite_normal_phase.inherited_child_finite_normal_
+action:63+, retaining the supplied affine parent/reference germs. Those
+germs and the finite temporal ends are computational initial data, not
+a solved physical outgoing boundary or an invented zero external load.
+
+No full M8 spin16 extension is a prerequisite to calculate this actual
+D5 fermion/exterior component. M8 remains in the full native functional;
+it cannot be removed from final coefficient matching or mean balance.
+
+3. WHAT THE COMPLETE NATIVE MEAN ACTUALLY STILL NEEDS
+
+The functional/statistics normalization is selected, not arbitrary:
+ae4_stratified_dirac_zeta_induced_owner.microscopic_owner_contract:272-303
+defines geometric direct-sum H8+H5plus+H5minus+H4, the BRST quotient and
+Gamma=-(1/2)STr E1(c P), P=D^dagger D, with the owned log/phase completion.
+The same source:38-71 evaluates every positive heat moment F_p=-ell^-p/p.
+It does NOT evaluate D_strat[Phi] or its heat/resolvent germ for general
+nonzero Phi. This follows from its executable function bodies, not solely
+from an archived status flag. The selected functional fixes moments once
+the actual common operator is supplied; moments alone do not supply its
+noncommuting lower-order/trace insertions.
+
+Current concrete pieces are stronger than that older declaration:
+  * full384 D5 differential and real positive local factor;
+  * normalized18 point action, full complement and seam graph;
+  * geometric M8/M5 quotient/coarea/KK and full16 geometric Clifford body;
+  * actual nonzero parent gauge/H/FP point forms and Ward contacts in
+    muon_parent_positive_coupled_temporal.one_form_point_row:23-62,
+    paired_scalar_orbit_maps:65-83 and intrinsic_coupled_point_form:86-113;
+  * explicit rank16 SM charges/families, noncentral charged-lepton Y, and
+    unit EC-HS vertices. None of these needs to be rebuilt or fitted.
+
+However, those local bodies are not yet one implemented joint field-to-
+closed-operator map across ALL the graded H8/H5/H4 blocks. In particular:
+the M8 geometric Spin16 body and R85 geometric mode/metric functor do not
+yet provide the evaluated graded M8 field/bundle block AND its actual
+cross-stratum spin/gauge/H/ghost trace incidence on the joint domain.
+master_action/reduction.reduction_85:148-196 gives P_ret on supplied
+equivariant modes and retains Phi_perp; it does not evaluate a numerical
+full graded P85 on those carriers. Later geometric quotient/trace and
+normalized D5 point-action owners close genuine pieces, so it would be
+wrong to call all incidence absent. It would also be wrong to tensor the
+new Spin16 block with arbitrary SM copies and call its trace weight fixed.
+
+For a full native mean the precise consumer operands are the common
+K[Phi], M[Phi], trace/domain maps, quotient and relative log/phase data,
+with their TOTAL source derivatives. These are constitutive operator
+maps to construct from the existing owners, not newly free scalar
+parameters. There is no proof here that multiple completed operators
+satisfy all later owners; no nonuniqueness theorem is asserted.
+
+The older executable aether_n3_replacement_global_kkt_v16_11:216-259,321-350
+does supply a real geometry-only replacement saddle. Its heat force is
+zero-source and uses radius/proper-duration matrices. The underlying
+aether_common_quantum_superdeterminant_v15_96:36-196 uses periodic proper
+S1 and free spatial spectra; rank16_u1_hs_vertex_matrices_v16_01:105-184
+adds concrete source vertices on that periodic background. They are
+valuable owners, not the varying full formed-muon outgoing realization.
+The zero-background longitudinal/ghost cancellation must not be imported
+as a proof that all nonzero joint gauge/H/ghost blocks cancel.
+
+4. SELF-CONSISTENT COEFFICIENT MATCHING IS AN OUTPUT, NOT A FIT
+
+The exact derivative relation is already given by
+aether_unified_m5_m4_pushforward_v15_69.common_derivative_ledger:52-78.
+On the same intrinsic canonical radial convention H=(0,phi/sqrt2), the
+quartic truncation at the origin yields
+  lambda_can=U''''(0)/(6 Z_H^2),
+  nu_can^2=-3 Z_H U''(0)/U''''(0).
+These formulas do not identify composite unit-HS and intrinsic Y-weighted
+H directions; both and their mixed contact terms remain in the operator.
+Native c is the same-branch contraction i/r, evaluated by
+ae4_stratified_dirac_zeta_induced_owner.native_heat_length_squared:140-175,
+with full surface Jacobi AND bulk impedance. These contractions/mode are
+unsolved fields and spectral outputs, not a freely chosen cutoff.
+
+The existing representation constructor currently imports calibrated
+lambda_H and a historical assigned nu^2; the actual producer is
+muon_parent_gauge_geometry_correction.retained_scalar_matching_
+coefficients:58-67. Its explicit source is G_F*m_h^2/sqrt2. Those numbers
+cannot close the requested no-measured-input solve. The already-owned
+matching identities should replace that provisional source after the
+joint native response is evaluated. There is no new absolute-unit gate
+for the normalized magnetic-moment slope.
+
+Similarly a scalar constant gamma times the original cap area is not the
+whole induced surface variation. covariant_bubble_interface_mechanics:
+21-35,157-175 supplies gamma=alpha_FSC ell_s^-m and its intended regular
+surface action. The common heat/coarea stress must be evaluated with
+scale and incidence derivatives and compared on that same stratum;
+an a0 density cannot automatically be relabeled isotropic constant gamma.
+No gamma or lambda numeric value is assigned by this audit.
+
+5. EXECUTABLE NEXT SOLVE AND STOP CONDITION
+
+Do not ask for a new collider history or particle calibration. Construct
+the real full-D5 time/radial/angular form and its actual regular/outgoing
+domain on the existing real candidate chart, and its coupled first force
+before attempting a physical correction. In parallel the existing full
+classical two-arm action can be globally assembled in the same real
+variables, retaining all algebraic/endpoint/reset rows. The new unknown
+fields are solved by those equations; they need no new theory choice.
+
+The physical joint Newton residual is the full, un-subtracted same-owner
+mean plus constraints, using the retained replacement/no-double-counting
+ledger (old attached Casimir is replaced by native heat, not added again).
+Its Jacobian must include the whole nonlocal native response; a frozen
+heat load or a local-window force is a different equation. Until the
+remaining common graded field-to-operator map is actually assembled,
+the full physical mean residual is not numerically available. Solving
+the already-evaluable D5/classical components is useful progress, but
+does not license labeling a restricted saddle the full BHSM solution.
+
+No physical derivative gate, coupled matching correction, Maxwell/226
+validation, two-spin normalization, or muon magnetic moment was claimed
+or calculated in this source audit.

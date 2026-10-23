@@ -1,0 +1,382 @@
+{
+  "classification": "ACTUAL_ORIGINAL_CURRENT_ACTION_BODY_ENERGY_REPLAY_RUNTIME",
+  "commands": [
+    {
+      "command": [
+        "C:/Python314/python.exe",
+        "scripts/evaluate_muon_chronological_n1_field_action.py",
+        "--output",
+        "artifacts/muon_chronological_n1_field_action_20261011/run_1"
+      ],
+      "completion_chunk": "bfdbe1",
+      "environment": {
+        "OPENBLAS_NUM_THREADS": "4",
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "C:/Python314/python.exe",
+        "scripts/evaluate_muon_chronological_n1_field_action.py",
+        "--output",
+        "artifacts/muon_chronological_n1_field_action_20261011/run_2"
+      ],
+      "completion_chunk": "d421c8",
+      "environment": {
+        "OPENBLAS_NUM_THREADS": "4",
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "C:/Python314/python.exe",
+        "scripts/evaluate_muon_chronological_current_body.py",
+        "--action-folder",
+        "artifacts/muon_chronological_n1_field_action_20261011/run_1",
+        "--output",
+        "artifacts/muon_chronological_current_body_20261011/run_1"
+      ],
+      "completion_chunk": "7651f1",
+      "environment": {
+        "OPENBLAS_NUM_THREADS": "4",
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "C:/Python314/python.exe",
+        "scripts/evaluate_muon_chronological_current_body.py",
+        "--action-folder",
+        "artifacts/muon_chronological_n1_field_action_20261011/run_1",
+        "--output",
+        "artifacts/muon_chronological_current_body_20261011/run_2"
+      ],
+      "completion_chunk": "60e345",
+      "environment": {
+        "OPENBLAS_NUM_THREADS": "4",
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "C:/Python314/python.exe",
+        "scripts/evaluate_muon_chronological_literal_current.py",
+        "--action-folder",
+        "artifacts/muon_chronological_n1_field_action_20261011/run_1",
+        "--source-side",
+        "incoming",
+        "--family",
+        "1",
+        "--current-kind",
+        "literal",
+        "--output",
+        "artifacts/muon_chronological_literal_current_20261011/incoming_family_1_run_1"
+      ],
+      "completion_chunk": "d164ab",
+      "environment": {
+        "OPENBLAS_NUM_THREADS": "4",
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "C:/Python314/python.exe",
+        "scripts/evaluate_muon_chronological_literal_current.py",
+        "--action-folder",
+        "artifacts/muon_chronological_n1_field_action_20261011/run_1",
+        "--source-side",
+        "incoming",
+        "--family",
+        "1",
+        "--current-kind",
+        "literal",
+        "--output",
+        "artifacts/muon_chronological_literal_current_20261011/incoming_family_1_run_2"
+      ],
+      "completion_chunk": "258d7b",
+      "environment": {
+        "OPENBLAS_NUM_THREADS": "4",
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "C:/Python314/python.exe",
+        "scripts/evaluate_muon_chronological_literal_current.py",
+        "--action-folder",
+        "artifacts/muon_chronological_n1_field_action_20261011/run_1",
+        "--source-side",
+        "outgoing",
+        "--family",
+        "1",
+        "--current-kind",
+        "literal",
+        "--output",
+        "artifacts/muon_chronological_literal_current_20261011/outgoing_family_1_run_1"
+      ],
+      "completion_chunk": "fb1728",
+      "environment": {
+        "OPENBLAS_NUM_THREADS": "4",
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "C:/Python314/python.exe",
+        "scripts/evaluate_muon_chronological_literal_current.py",
+        "--action-folder",
+        "artifacts/muon_chronological_n1_field_action_20261011/run_1",
+        "--source-side",
+        "outgoing",
+        "--family",
+        "1",
+        "--current-kind",
+        "literal",
+        "--output",
+        "artifacts/muon_chronological_literal_current_20261011/outgoing_family_1_run_2"
+      ],
+      "completion_chunk": "a0b4fe",
+      "environment": {
+        "OPENBLAS_NUM_THREADS": "4",
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "C:/Python314/python.exe",
+        "scripts/evaluate_muon_chronological_current_energy.py",
+        "--current-folder",
+        "artifacts/muon_chronological_literal_current_20261011/incoming_family_1_run_1",
+        "--action-folder",
+        "artifacts/muon_chronological_n1_field_action_20261011/run_1",
+        "--output",
+        "artifacts/muon_chronological_current_energy_20261011/incoming_family_1_run_1"
+      ],
+      "completion_chunk": "3e9a6b",
+      "environment": {
+        "OPENBLAS_NUM_THREADS": "4",
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "C:/Python314/python.exe",
+        "scripts/evaluate_muon_chronological_current_energy.py",
+        "--current-folder",
+        "artifacts/muon_chronological_literal_current_20261011/incoming_family_1_run_1",
+        "--action-folder",
+        "artifacts/muon_chronological_n1_field_action_20261011/run_1",
+        "--output",
+        "artifacts/muon_chronological_current_energy_20261011/incoming_family_1_run_2"
+      ],
+      "completion_chunk": "f6a641",
+      "environment": {
+        "OPENBLAS_NUM_THREADS": "4",
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "C:/Python314/python.exe",
+        "scripts/evaluate_muon_chronological_current_amputation.py",
+        "--action-folder",
+        "artifacts/muon_chronological_n1_field_action_20261011/run_1",
+        "--body-folder",
+        "artifacts/muon_chronological_current_body_20261011/run_1",
+        "--output",
+        "artifacts/muon_chronological_current_amputation_20261011/run_1"
+      ],
+      "completion_chunk": "3de644",
+      "environment": {
+        "OPENBLAS_NUM_THREADS": "4",
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "C:/Python314/python.exe",
+        "scripts/evaluate_muon_chronological_current_amputation.py",
+        "--action-folder",
+        "artifacts/muon_chronological_n1_field_action_20261011/run_1",
+        "--body-folder",
+        "artifacts/muon_chronological_current_body_20261011/run_1",
+        "--output",
+        "artifacts/muon_chronological_current_amputation_20261011/run_2"
+      ],
+      "completion_chunk": "7f162d",
+      "environment": {
+        "OPENBLAS_NUM_THREADS": "4",
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0
+    }
+  ],
+  "current_original_row_and_componentwise_defects_retained": true,
+  "independent_replays": [
+    {
+      "all_files_byte_identical": true,
+      "complete_file_count": 321,
+      "left": "artifacts/muon_chronological_n1_field_action_20261011/run_1",
+      "result_sha256": "6783017668877b9903fe315e26a5fff1036b871b8ec1ad086404755beba2acbf",
+      "right": "artifacts/muon_chronological_n1_field_action_20261011/run_2"
+    },
+    {
+      "all_files_byte_identical": true,
+      "complete_file_count": 61,
+      "left": "artifacts/muon_chronological_current_body_20261011/run_1",
+      "result_sha256": "f597667c7a762d90d97c5ac1b43e504bfdec4be13bd92673a41dc036e68227d7",
+      "right": "artifacts/muon_chronological_current_body_20261011/run_2"
+    },
+    {
+      "all_files_byte_identical": true,
+      "complete_file_count": 1742,
+      "left": "artifacts/muon_chronological_literal_current_20261011/incoming_family_1_run_1",
+      "result_sha256": "8854526d64b393d6a1eace1f9db9b9c5f0a35280f76c273493819d463e809a4e",
+      "right": "artifacts/muon_chronological_literal_current_20261011/incoming_family_1_run_2"
+    },
+    {
+      "all_files_byte_identical": true,
+      "complete_file_count": 1742,
+      "left": "artifacts/muon_chronological_literal_current_20261011/outgoing_family_1_run_1",
+      "result_sha256": "b4710302e6b9478006e92b114c64fc176f5d0a5ab39ef87b581de18821ceac67",
+      "right": "artifacts/muon_chronological_literal_current_20261011/outgoing_family_1_run_2"
+    },
+    {
+      "all_files_byte_identical": true,
+      "complete_file_count": 8,
+      "left": "artifacts/muon_chronological_current_energy_20261011/incoming_family_1_run_1",
+      "result_sha256": "757f878e81781852770326b34f6dafc520ee224aa8ea43fd01d0f9c3f35711bf",
+      "right": "artifacts/muon_chronological_current_energy_20261011/incoming_family_1_run_2"
+    },
+    {
+      "all_files_byte_identical": true,
+      "complete_file_count": 21,
+      "left": "artifacts/muon_chronological_current_amputation_20261011/run_1",
+      "result_sha256": "7fafcd028a93d6a3133d5df2c589bab688eee85ab46df68878f4c9b2f875b045",
+      "right": "artifacts/muon_chronological_current_amputation_20261011/run_2"
+    }
+  ],
+  "independent_science_review": "Validation reviewed harmonic action/source, energy legs and amputation order/signs clean. Body value matches original source exactly; independent time-germ and complex-action controls pass. Root independent complete288 transfer and source charge/body checks are separately evaluated.",
+  "source_energy_and_edge_amputation_are_distinct_operators": true,
+  "tests": [
+    {
+      "command": [
+        "C:/Python314/python.exe",
+        "-m",
+        "pytest",
+        "--noconftest",
+        "-q",
+        "tests/test_muon_chronological_harmonic_field_action.py"
+      ],
+      "completion_chunk": "ccdf1e",
+      "duration_seconds": 1.94,
+      "environment": {
+        "OPENBLAS_NUM_THREADS": "4",
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "passed": 2
+    },
+    {
+      "command": [
+        "C:/Python314/python.exe",
+        "-m",
+        "pytest",
+        "--noconftest",
+        "-q",
+        "tests/test_muon_chronological_current_body.py"
+      ],
+      "completion_chunk": "a789ee",
+      "duration_seconds": 4.58,
+      "environment": {
+        "OPENBLAS_NUM_THREADS": "4",
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "passed": 2
+    },
+    {
+      "command": [
+        "C:/Python314/python.exe",
+        "-m",
+        "pytest",
+        "--noconftest",
+        "-q",
+        "tests/test_muon_chronological_literal_current_source.py"
+      ],
+      "completion_chunk": "a37b84",
+      "duration_seconds": 1.02,
+      "environment": {
+        "OPENBLAS_NUM_THREADS": "4",
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "passed": 2
+    },
+    {
+      "command": [
+        "C:/Python314/python.exe",
+        "-m",
+        "pytest",
+        "--noconftest",
+        "-q",
+        "tests/test_muon_chronological_current_factor.py"
+      ],
+      "completion_chunk": "fd1ded",
+      "duration_seconds": 0.9,
+      "environment": {
+        "OPENBLAS_NUM_THREADS": "4",
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "passed": 2
+    },
+    {
+      "command": [
+        "C:/Python314/python.exe",
+        "-m",
+        "pytest",
+        "--noconftest",
+        "-q",
+        "tests/test_muon_chronological_current_energy.py"
+      ],
+      "completion_chunk": "d6ca71",
+      "duration_seconds": 0.84,
+      "environment": {
+        "OPENBLAS_NUM_THREADS": "4",
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "passed": 2
+    },
+    {
+      "command": [
+        "C:/Python314/python.exe",
+        "-m",
+        "pytest",
+        "--noconftest",
+        "-q",
+        "tests/test_muon_chronological_current_amputation.py"
+      ],
+      "completion_chunk": "04f346",
+      "duration_seconds": 0.82,
+      "environment": {
+        "OPENBLAS_NUM_THREADS": "4",
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "passed": 2
+    }
+  ]
+}

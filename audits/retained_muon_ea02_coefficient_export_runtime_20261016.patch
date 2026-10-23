@@ -1,0 +1,95 @@
+--- new620_fresh_actual_native_MP_scalar_imported_runtime.py
++++ retained_muon_ea02_coefficient_export_runtime_20261016.py
+@@ -430,7 +430,8 @@
+         export_point_jacobians=False,include_parent_action=True,
+         raw_pair_low=None,reference_pair_low=None,extra_base_low=None,
+         export_exact_action_balls=False,direction_exact=None,right_exact=None,
+-        raw_pair_exact=None,reference_pair_exact=None,extra_base_exact=None,reference_direction_exact=None):
++        raw_pair_exact=None,reference_pair_exact=None,extra_base_exact=None,reference_direction_exact=None,
++        coefficient_export_only=False):
+     """Evaluate same scalar, its full phase gradient and J*h*R contraction."""
+     import numpy as np
+     from flint import ctx,acb,acb_mat
+@@ -481,7 +482,7 @@
+             v=acb(complex(raw[arm,i]))+acb(complex(rawlo[arm,i]))if rawexact is None else rawexact[arm,i]
+             if h[i,0]==0 and all(G[i,j]==0 for j in range(len(tests)))and all(rr[i,j]==0 for j in range(R.ncols())):
+                 seeds.append(PhaseJet(v))
+-            else:seeds.append(PhaseJet(v,acb_mat([[G[i,j]]for j in range(len(tests))]),h[i,0],
++            else:seeds.append(PhaseJet(v,None if coefficient_export_only else acb_mat([[G[i,j]]for j in range(len(tests))]),h[i,0],
+                 acb_mat([[rr[i,j]for j in range(R.ncols())]])))
+         rawseeds.append(seeds)
+     refh=np.zeros((2,268),complex)if reference_direction is None else np.asarray(reference_direction,complex)
+@@ -519,6 +520,73 @@
+         rp,rc=(G.holomorphic_geometry_rows(x[:100],rep['rho'],connection_only=True)['rows']for x in refs)
+         pw=G.holomorphic_geometry_rows(rawseeds[0][:100],[WALL],connection_only=True)['rows'][0]
+         rw=[G.holomorphic_geometry_rows(x[:100],[WALL],connection_only=True)['rows'][0]for x in refs]
++        if coefficient_export_only:
++            # Separate explicit early mode. The regular action path below is
++            # unchanged; this return precedes cap/action density assembly.
++            if len(tests) or include_parent_action:
++                raise ValueError('Coefficient-only export requires zero J tests and child inherited source mode')
++            from bhsm_exact_action_balls import export_acb_exact_dyadic
++            x=rawseeds[1]
++            built=G.holomorphic_geometry_rows(x[:100],rep['rho']);geo=built['rows']
++            points=[];densities=[]
++            for ir,row in enumerate(geo):
++                eff={k:pp[ir][k]-rp[ir][k]+rc[ir][k]
++                    for k in('connection_lambda','lambda_tau','lambda_rho')}
++                packed=([_linear(gb[ir,:,j],x[100:180])for j in range(20)]+
++                    [_linear(gb[ir,:,j],x[180:260])for j in range(20)]+
++                    [_linear(gr[ir,:,j],x[100:180])for j in range(20)])
++                packed=[a+_linear_moving_basis(T[ir,j],None if Th is None else Th[ir,j],zs)for j,a in enumerate(packed)]
++                for k,key in enumerate(('connection_lambda','lambda_tau','lambda_rho')):
++                    for j,m in enumerate(M.reshape(-1)):
++                        packed[k*20+8+j]+=complex(m)*(eff[key]-(1 if k==0 else 0))
++                points.append(packed)
++                densities.append([row[name]for name in('electric','radial','angular','electric_radial','shift')])
++            effw=pw['connection_lambda']-rw[0]['connection_lambda']+rw[1]['connection_lambda']
++            wall=[[_linear(original_wall[f,c],x[100:180])for c in range(4)]for f in range(5)]
++            if Wextra is not None:
++                for f in range(5):
++                    for c in range(4):wall[f][c]+=_linear_moving_basis(Wextra[f*4+c],None if Wh is None else Wh[f*4+c],zs)
++            for j,m in enumerate(M.reshape(-1)):wall[2+j//4][j%4]+=complex(m)*(effw-1)
++            # Pure boundary weight extraction: the final owned formulas of
++            # holomorphic_cap_and_weights, without its bulk/FR/action loop.
++            q,v,m,delta,dr,wallchi,Cstar=G._geometry_variables(x[:100])
++            F=G._fields(12,q,v,m,wallchi);A,B,N=(F[k]for k in('A','B','N'))
++            R4=A*B/G._sqrt(A*A+B*B);U=F['C']*(dr+F['beta'])/N
++            lapse=N*G._sqrt(1-U*U)
++            weights=[R4**3/lapse,lapse*R4,lapse*R4**3,R4,lapse,U]
++            result=dict(coefficient_export_only=True,action_density_or_gradient_or_Hessian_assembled=False,
++                zero_J_test_count=np.asarray(0),right_count=np.asarray(R.ncols()),
++                inherited_source_parent_minus_reference_parent_plus_reference_child_once=True,
++                actual_total_clock_basis_motion_retained_once=Th is not None or Wh is not None,
++                cap_weights_extracted_without_cap_action_loop=True,
++                arithmetic_precision_bits=np.asarray(int(precision_bits)))
++            def export_jets(name,table):
++                values=acb_mat([[z.value for z in row]for row in table])
++                hs=acb_mat([[z.h for z in row]for row in table])
++                rs=acb_mat([[z.r[0,j]for j in range(R.ncols())]for row in table for z in row])
++                hrs=acb_mat([[z.hR[0,j]for j in range(R.ncols())]for row in table for z in row])
++                for suffix,matrix in(('',values),('_h',hs),('_R',rs),('_hR',hrs)):
++                    key=name+suffix;result[key+'_high'],result[key+'_low']=_split(matrix)
++                    result.update(export_acb_exact_dyadic(matrix,key+'_exact'))
++            for name,table in(('point',points),('density',densities),('wall',[sum(wall,[])]),
++                ('boundary_weights',[weights]),('material_coordinates',[[delta,dr,wallchi,Cstar]]),
++                ('raw_child',[x]),('raw_parent',[rawseeds[0]]),('raw_references',[sum(refs,[])])):
++                export_jets(name,table)
++            for key in('coefficients','derivatives','normalization','normalization_derivatives','implicit_Taylor_residual','implicit_jacobian'):
++                value=built['response_chart'][key]
++                if isinstance(value,acb_mat):matrix=acb_mat(value)
++                else:
++                    value=np.asarray(value,dtype=object)
++                    if value.ndim==0:value=value.reshape(1,1)
++                    elif value.ndim==1:value=value.reshape(1,-1)
++                    matrix=acb_mat(value.tolist())
++                name='implicit_material_'+key
++                result[name+'_high'],result[name+'_low']=_split(matrix)
++                result.update(export_acb_exact_dyadic(matrix,name+'_exact'))
++            for key,matrix in(('actual_complete_right',R),('actual_total_clock',H),('reference_clock_once',refhc)):
++                result[key+'_high'],result[key+'_low']=_split(matrix)
++                result.update(export_acb_exact_dyadic(matrix,key+'_exact'))
++            return result
+         total=PhaseJet(0);branches={};child_points=[];child_densities=[];child_wall=None
+         arms=[0,1]if include_parent_action and any(t<252 for t in tests)else[1]
+         for arm in arms:

@@ -1,0 +1,50 @@
+{
+  "classification": "FINITE_OWNER_KKT_CONTROL_VALIDATION__PHYSICAL_SOURCE_UNEVALUATED",
+  "comparisons": {
+    "control.json": {
+      "byte_identical": true,
+      "sha256": "ebf5bab9a4df8bf57018e7fc76c0bb6b0af694d214ad30a1241c61c34a66e0b0"
+    },
+    "input_hashes.json": {
+      "byte_identical": true,
+      "sha256": "9caf6b10d66099d309fb69666915bf0334d929c0d39c4e31599a1bc559526d4b"
+    },
+    "result.json": {
+      "byte_identical": true,
+      "sha256": "29eb3f960662356e0519809c73785d4175c195caf3a4019184bee4082dc49122"
+    }
+  },
+  "deterministic_final_runs": [
+    "run_3",
+    "run_4"
+  ],
+  "independent_review": {
+    "fixed_cases": [
+      "recursive interval rejection before scalar/matrix/current/vertex conversion",
+      "finite provider output validation",
+      "UNEVALUATED missing Pauli fields"
+    ],
+    "reproductions_rechecked": true
+  },
+  "initial_replays": {
+    "directories": [
+      "run_1",
+      "run_2"
+    ],
+    "meaning": "Preserved controls before downstream input-guard hardening; use run_3/run_4 for final source identities"
+  },
+  "physical_values_evaluated": false,
+  "public_readiness_inherited_hygiene_blocker": {
+    "bytes": 11125650,
+    "historical_file_preserved": true,
+    "path": "artifacts/muon_first_order_complement_20261006/run_2/first_order_compact_reduction.npz",
+    "starting_HEAD_git_blob": "cbb84336588c458c3a082ce04bb424a67bb9c2fb"
+  },
+  "starting_HEAD": "da155f24a2663d1570d9d78acc9771197fc16670",
+  "targeted_and_adjacent_tests": {
+    "command": "python -m pytest --noconftest -q tests/test_muon_native_kkt_interface_source.py tests/test_muon_native_kkt_downstream.py tests/test_muon_native_interface_bulk_forcing.py tests/test_muon_native_support_loss_cutoff.py tests/test_muon_native_impedance_energy_response.py tests/test_muon_native_induced_polarization.py tests/test_muon_native_photon_response.py tests/test_muon_native_family_difference.py",
+    "failed": 0,
+    "new_tests": 56,
+    "passed": 100
+  }
+}

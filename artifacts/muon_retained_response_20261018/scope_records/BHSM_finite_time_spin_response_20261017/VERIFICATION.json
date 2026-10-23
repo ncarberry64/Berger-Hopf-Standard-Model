@@ -1,0 +1,209 @@
+{
+  "actual_retained_component_H_evaluated": true,
+  "all_scoped_checks_pass": true,
+  "classification": "RETAINED_TIME_DEPENDENT_INTRINSIC_LEPTON_DIRECT_MAGNETIC_KERNEL_NOT_PHYSICAL_MUON",
+  "complete_physical_derivative_admitted": false,
+  "coupled_background_corrections": 0,
+  "environment": {
+    "numpy": "2.3.5",
+    "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+    "scipy": "1.17.0",
+    "sympy": "1.14.0"
+  },
+  "error_scope": "source coefficient reconstruction, stated finite Hilbert subspace and explicit time interpolants; no physical packet, domain, native, state, or full-history error enclosure",
+  "git_writes": false,
+  "initial_quantum_state_selected": false,
+  "input_history_hashes_verified": 47,
+  "open_system_controls": {
+    "magnetic_survival_quotient_identity": 1.3877787807814457e-17,
+    "numerical_conditional_Bloch": 5.551115123125783e-17,
+    "omitted_magnetic_survival_derivative_error": 0.1250407447262814,
+    "scalar_loss_cancels_in_normalized_spin_response": 6.938893903907228e-18,
+    "scope": "CONSTRUCTED_2SPIN_CONTROLS_NOT_BHSM_DECAY_PARAMETERS",
+    "singular_time_local_generator_rejected": true,
+    "symbolic_conditional_Bloch_identity": true
+  },
+  "physical_a_mu": null,
+  "physical_decay_or_cascade_evaluated": false,
+  "physical_g_mu": null,
+  "physical_muon_prediction_evaluated": false,
+  "physical_uncertainty": null,
+  "replays": [
+    {
+      "byte_identical": true,
+      "file": "incoming_causal_kernel.npz",
+      "sha256": "3a6aff17e24d69a0a4a1da9e8e77ca9a66699aa8550025cfabd59fb2b4bac8af"
+    },
+    {
+      "byte_identical": true,
+      "file": "incoming_integrated_response.npz",
+      "sha256": "3cc7c9288ee7d52dcc26398f00200720f56469360b6b5d509c6ba2c00d68b216"
+    },
+    {
+      "byte_identical": true,
+      "file": "incoming_time_operators.npz",
+      "sha256": "061a8579cae3e548e83c2ef8f626d3395b15e56a20c5aac85d406f2fff264817"
+    },
+    {
+      "byte_identical": true,
+      "file": "outgoing_causal_kernel.npz",
+      "sha256": "8e93d9bcc61228fe2f4e1c06cd294fa7d3bc88c1d7019e7a454c3fb494a8f522"
+    },
+    {
+      "byte_identical": true,
+      "file": "outgoing_integrated_response.npz",
+      "sha256": "46b4af67a8a3243e04be39d4deba5564b647629f10abb0717a72fe7b7e17245c"
+    },
+    {
+      "byte_identical": true,
+      "file": "outgoing_time_operators.npz",
+      "sha256": "fef8b70c23b3fd1fd5ee9e3fb9951995c049e8d00b65f03180787231dc2afeb3"
+    },
+    {
+      "byte_identical": true,
+      "file": "progress.json",
+      "sha256": "431e0e9be0fb94114613527b0eaefd906d92512e11dcb28491d67d90dbfe4a20"
+    },
+    {
+      "byte_identical": true,
+      "file": "result.json",
+      "sha256": "16e19d7ee35daa334c81ccae7cd7799bf76d1aa7c945583f02c7fb06dd559f1f"
+    }
+  ],
+  "repository_source_revision": "70e82fd4dbe5f53ff27ae17f6aaac7a4727c1fde",
+  "results": [
+    {
+      "decay_kernel_evaluated": false,
+      "finite_difference_checks": [
+        {
+          "propagator_first_max": 8.18233827103273e-18,
+          "spin_readout_first_max": 3.2733588247082183e-17,
+          "step": 1.0
+        },
+        {
+          "propagator_first_max": 2.0451610512772048e-18,
+          "spin_readout_first_max": 8.182761787059957e-18,
+          "step": 0.5
+        },
+        {
+          "propagator_first_max": 5.116079001761426e-19,
+          "spin_readout_first_max": 2.0468551170674882e-18,
+          "step": 0.25
+        }
+      ],
+      "measurements": {
+        "angular_Gram": 4.440893411732372e-15,
+        "complete_frame_kernel": 1.11384219503639e-16,
+        "complete_frame_propagator": 3.376611507232129e-16,
+        "direct_propagator_first_max": 4.359411732210669e-06,
+        "distinct_time_H_commutator": 1.9533976501229233e-05,
+        "even_input_even_spin_readout": 0.0,
+        "exact_CG_vs_Haar": 1.5560463116398992e-15,
+        "four_vs_six_node_interpolant_final_difference": 4.065758147255336e-20,
+        "full18_family_invariance": 0.0,
+        "hamiltonian_hermiticity": 0.0,
+        "independent_frame_derivative": 7.772738572711108e-12,
+        "independent_proper_time_evolution": 1.11022304323672e-16,
+        "initial_coordinate_source_max": 0.4359408656550222,
+        "initial_lapse": 1.1084271382196522,
+        "initial_proper_source_max": 0.393296817285823,
+        "integrated_insertion_rule12_vs24": 1.6940658945086007e-21,
+        "integrated_spin_response_max": 4.359411729879721e-06,
+        "kernel_hermiticity": 1.1102230251421444e-16,
+        "observable_kernel_max": 0.4359414807479585,
+        "omitted_frame_connection_kernel_difference": 0.08925121786942379,
+        "original_point_H_application": 6.095276231102658e-16,
+        "original_point_magnetic_application": 9.047210765559601e-17,
+        "parity_H": 0.0,
+        "parity_V": 0.0,
+        "proper_duration_in_unmatched_action_units": 1.1084271861566383e-05,
+        "six_sample_H_change": 6.386402161773219e-06,
+        "six_sample_magnetic_source_change": 6.153237757655639e-07,
+        "source_H_axis": 3.944304526105059e-31,
+        "source_hermiticity": 5.551115123125783e-17,
+        "unitarity": 5.551115123125783e-16
+      },
+      "physical_state_selected": false,
+      "scoped_checks": {
+        "independent_field_derivative": true,
+        "kernel_integration": true,
+        "moving_spin_frame": true,
+        "original_hermiticity_and_family": true,
+        "parity_diagnostic": true,
+        "proper_clock_consistency": true,
+        "retarded_kernel_hermiticity": true,
+        "source_representation": true,
+        "two_spin_conditional_controls": true,
+        "unitary_finite_evolution": true
+      },
+      "side": "incoming"
+    },
+    {
+      "decay_kernel_evaluated": false,
+      "finite_difference_checks": [
+        {
+          "propagator_first_max": 2.0441022600136615e-18,
+          "spin_readout_first_max": 8.179161896924347e-18,
+          "step": 1.0
+        },
+        {
+          "propagator_first_max": 5.126666913391316e-19,
+          "spin_readout_first_max": 2.0462198423295784e-18,
+          "step": 0.5
+        },
+        {
+          "propagator_first_max": 1.2811373327573492e-19,
+          "spin_readout_first_max": 5.118196583784116e-19,
+          "step": 0.25
+        }
+      ],
+      "measurements": {
+        "angular_Gram": 4.440893411732372e-15,
+        "complete_frame_kernel": 8.360486490450084e-17,
+        "complete_frame_propagator": 5.613217783960923e-16,
+        "direct_propagator_first_max": 2.7457657368253077e-06,
+        "distinct_time_H_commutator": 6.631129120027168e-06,
+        "even_input_even_spin_readout": 0.0,
+        "exact_CG_vs_Haar": 1.5560463116398992e-15,
+        "four_vs_six_node_interpolant_final_difference": 3.049318610148624e-20,
+        "full18_family_invariance": 0.0,
+        "hamiltonian_hermiticity": 0.0,
+        "independent_frame_derivative": 7.772738572711108e-12,
+        "independent_proper_time_evolution": 1.1102230665011743e-16,
+        "initial_coordinate_source_max": 0.2745764361162278,
+        "initial_lapse": 0.698139573567991,
+        "initial_proper_source_max": 0.39329733840032366,
+        "integrated_insertion_rule12_vs24": 8.470329472604633e-22,
+        "integrated_spin_response_max": 2.7457657362428853e-06,
+        "kernel_hermiticity": 5.551115125710722e-17,
+        "observable_kernel_max": 0.27457671123849875,
+        "omitted_frame_connection_kernel_difference": 0.056214663315960776,
+        "original_point_H_application": 3.356589068483857e-16,
+        "original_point_magnetic_application": 7.757919228897728e-17,
+        "parity_H": 0.0,
+        "parity_V": 0.0,
+        "proper_duration_in_unmatched_action_units": 6.9813967778521315e-06,
+        "six_sample_H_change": 2.5855521976758666e-06,
+        "six_sample_magnetic_source_change": 2.751799493272422e-07,
+        "source_H_axis": 3.944304526105059e-31,
+        "source_hermiticity": 5.551115123125783e-17,
+        "unitarity": 6.661338147750939e-16
+      },
+      "physical_state_selected": false,
+      "scoped_checks": {
+        "independent_field_derivative": true,
+        "kernel_integration": true,
+        "moving_spin_frame": true,
+        "original_hermiticity_and_family": true,
+        "parity_diagnostic": true,
+        "proper_clock_consistency": true,
+        "retarded_kernel_hermiticity": true,
+        "source_representation": true,
+        "two_spin_conditional_controls": true,
+        "unitary_finite_evolution": true
+      },
+      "side": "outgoing"
+    }
+  ],
+  "scoped_checks_each_arm": 10
+}

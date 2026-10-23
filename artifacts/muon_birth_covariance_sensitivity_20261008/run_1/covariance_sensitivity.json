@@ -1,0 +1,1233 @@
+{
+  "branch": "codex/muon-parent-maxwell-density-review",
+  "canonical_row": {
+    "D_E": "(D H_eff)q+H_eff Dq+DJ+(D C_response)^dagger lambda+C_response^dagger Dlambda",
+    "D_H_eff": "D H_pp-(D H_pc)G H_cp-H_pc G(D H_cp)+H_pc G(D H_cc^R)G H_cp",
+    "D_Noether": "2 Re <D(Tq),E>+2 Re <Tq,D E>",
+    "E": "H_eff q+J+C_response^dagger lambda",
+    "G": "(H_cc^R)^(-1)",
+    "H_eff": "H_pp-H_pc G H_cp",
+    "Noether": "2 Re <Tq,E>",
+    "Noether_is_contraction_not_additional_action": true,
+    "contacts_booked_once_in_canonical_row": true,
+    "on_shell_solution_is_not_uniform_CAR_kernel_identity": true
+  },
+  "claim_statuses": {
+    "CONTROL_ONLY": "Exact finite matrices in focused tests verify the entire supplied tangent space; none is an E1 physical kernel or selected state",
+    "DERIVED": "Full affine CAR dual projection, minimal independent moment span, symmetric Dirac density product rule and complete canonical-row derivative; conditional on supplied kernels",
+    "EVALUATED": "Exact symbolic density residual and source/hash/line scope audit; frozen zero identities read without recomputation",
+    "OWNER_DEFINITION_GAP": "None asserted by this audit; existing theory/action/composition owners are defined",
+    "UNDETERMINED_OPERATOR": "Complete same-E1 physical directional row-kernel values remain unpopulated in the inspected producers; no impossibility of deriving them is claimed",
+    "UNEVALUATED": "Actual complete E1 row kernels, their projected sensitivity/rank/moments, full physical birth and downstream quantities"
+  },
+  "classification": "EXACT_CAR_SENSITIVITY_QUOTIENT_DERIVED__COMPLETE_E1_OPERATOR_UNEVALUATED",
+  "common_event": "C1_branch23_E1_minus_to_C2_branch24_E1_plus",
+  "complete_operator_owner_receipt": {
+    "classification": "SOURCE_BOUND_OPERATOR_AND_TOTAL_RESPONSE_INVENTORY__ACTUAL_WHOLE_E1_KERNEL_VALUES_UNBOUND",
+    "complete_canonical_row": {
+      "arbitrary_supplied_KKT_matrix_is_actual_E1_physical": false,
+      "citations": [
+        "event:assemble_stratified_direct_sum",
+        "event:solve_retarded_event_kkt",
+        "event:assembly_contract",
+        "event:claim_boundary",
+        "event_theory:complete_canonical_Noether_rows",
+        "event_theory:physical_value_scope"
+      ],
+      "equations": {
+        "adjoint_scope": "The finite retained implementation uses H_cp=H_pc^dagger in the common pairing. Moving pairing/domain identifications must be included in actual physical jets; they cannot be silently frozen by notation.",
+        "child": "H_cp q+H_cc^R c=0",
+        "elimination": "c=-G H_cp q; H_eff=H_pp-H_pc G H_cp; E=H_eff q+J+C_response^dagger lambda",
+        "parent": "E=Pi_parent+Pi_child_return+J+C_response^dagger lambda=H_pp q+H_pc c+J+C_response^dagger lambda",
+        "response": "C_response q=d"
+      },
+      "independent_originating_terms": [
+        {
+          "name": "parent_bulk",
+          "origin": "Same-owner parent derivative.",
+          "value": "H_pp q"
+        },
+        {
+          "name": "returned_future_child",
+          "origin": "Same-owner retarded child elimination; counted once.",
+          "value": "H_pc c"
+        },
+        {
+          "name": "explicit_source",
+          "origin": "Action-owned source/current insertion. A source contact arising from this variation is booked here or within its action-origin row, never copied to a second independent row.",
+          "value": "J"
+        },
+        {
+          "name": "response_multiplier",
+          "origin": "Variation of action-owned response constraints, including their geometry/profile contacts; counted once.",
+          "value": "C_response^dagger lambda"
+        }
+      ],
+      "notation": {
+        "C_response": "Action response operator; distinct from C_cov.",
+        "D": "Total derivative in a reached action/source/interface direction on a common identified domain; not an arbitrary inserted control jet.",
+        "G": "(H_cc^R)^-1 with the retained retarded prescription.",
+        "c": "Future-child coordinate; not the CAR covariance.",
+        "lambda": "Action response multiplier.",
+        "q": "Parent event trace coordinate; not the muon mechanical normal mode."
+      },
+      "sector_order": [
+        "geometry_eta_sigma",
+        "gauge_transverse",
+        "gauge_constraint",
+        "BRST_ghost",
+        "fermion_family",
+        "HS_scalar"
+      ],
+      "solver_zero_scope": "Solving the supplied finite KKT system returns E=0 and a matching Noether contraction for those supplied inputs. This conditional on-shell identity is not a proof that the actual physical E1 covariance-sensitivity kernel vanishes.",
+      "status": "FORMAL_COMPLETE_CANONICAL_COMPOSITION_OWNED; ACTUAL_WHOLE_E1_PHYSICAL_INPUT_BLOCKS_AND_JETS_UNBOUND"
+    },
+    "covariance_sensitivity_contract": {
+      "action_auxiliary_scope": "For fixed supplied Dirac/retained gauge-HS auxiliary/background rows, the ordered one-body expectation is affine in C. Any eliminated retained gauge-current/HS reaction must keep its actual Wick and total-response dependence. The excluded AE3.2 EC candidate is not used to infer an active quartic birth contribution.",
+      "actual_Delta_Noether": null,
+      "actual_Delta_contacts": null,
+      "actual_Delta_stress": null,
+      "actual_projected_sensitivity_S_B": null,
+      "actual_sensitivity_rank": null,
+      "actual_total_Delta_B": null,
+      "admissible_tangent": {
+        "actual_tangent_projection_matrix": null,
+        "domain_pairing_requirement": "Use the same identified E1 domain/pairing and doubled conjugate-charge projector as the retained state representation.",
+        "state_independence_test": "Every consumed independent row must annihilate every admissible tangent: S_B=projection_(T_C^*) Delta_B=0.",
+        "symbolic_conditions": [
+          "X=X^dagger",
+          "Gamma X Gamma=-X",
+          "charge compatibility",
+          "muon/family-sector compatibility where actually consumed",
+          "reset compatibility X_plus=U_R X_minus U_R^dagger",
+          "Hadamard-smoothing character"
+        ],
+        "testing_one_arbitrary_X_is_complete_test": false
+      },
+      "complete_state_independence_proved": false,
+      "complete_state_sensitivity_proved": false,
+      "complete_verdict": "UNEVALUATED_ACTUAL_WHOLE_E1_KERNEL_VALUES",
+      "covariance_selector_requested": false,
+      "minimal_surviving_state_contractions": null,
+      "ordinary_particle_convention": {
+        "absolute_Wick_subtraction_inserted": false,
+        "definition": "C_plus=<chi chi^dagger>; N=I-C_plus.",
+        "differential": "D_C B_alpha[X]=-Tr(K_alpha X)",
+        "exact_self_dual_factors": "Use the retained doubled charge/conjugation representation and its factors before converting this particle-coordinate formula to a self-dual contraction.",
+        "mismatch_convention": "If Delta_alpha is defined as minus the ordered pulled-back row kernel, the same derivative is +Tr(X Delta_alpha). The sign must follow the retained convention; +Tr(K_alpha C_plus) is not substituted.",
+        "ordered_one_body": "<chi^dagger K_alpha chi>=Tr(K_alpha N)",
+        "relative_row": "B_alpha[C1]-B_alpha[C0]=-Tr(K_alpha (C1_plus-C0_plus)) for a fixed finite/smeared ordered quadratic row operator.",
+        "relative_smooth_contractions_do_not_require_new_subtraction": true
+      },
+      "selected_covariance_is_current_blocker": false,
+      "state_notation": "C_cov denotes the physical CAR covariance; neither the response matrix C_response nor the contorsion C_tor.",
+      "whole_row_rule": "All parent, geometrically pulled-back returned child, explicit source and response/multiplier contacts are composed into the row kernel before contraction. Total source/background reaction uses the response jets above."
+    },
+    "execution_scope": {
+      "covariance_selected": false,
+      "geometric_reset_recomputed": false,
+      "method": "Read retained action, operator, event-composition and claim-boundary source; bind AST spans and raw-file identities. The formulas below are source-bound composition identities, not evaluations of actual whole-E1 physical kernels.",
+      "new_control_or_campaign_performed": false,
+      "only_output_path": "artifacts/muon_birth_covariance_sensitivity_20261008/operator_owner_receipt.json",
+      "scientific_numerical_evaluation_performed": false,
+      "state_selection_attempted": false
+    },
+    "first_unbound_value": {
+      "actual_reached_row_value_packet_bound": false,
+      "actual_value": null,
+      "arbitrary_numeric_KKT_inputs_accepted_as_actual_E1": false,
+      "citations": [
+        "AE4:microscopic_owner_contract",
+        "unified_outputs:existing_variable_completion_handoffs",
+        "unified_outputs:one_operator_completion_graph",
+        "event:claim_boundary",
+        "event_jet:solve_retarded_event_kkt_jet",
+        "event_jet:canonical_noether_flux_balance_jet"
+      ],
+      "consumer_sequence": "Actual row kernels -> correctly signed complete pulled-back mismatch Delta_B -> full admissible-tangent projection S_B -> state-independent versus state-sensitive verdict -> only then minimal surviving state contractions, if any.",
+      "description": "Actual fermionic row operators and reached total-response jets of the complete consumed sourced E1 event/traction/Hamiltonian balance on the fixed retained incoming23/outgoing24 background.",
+      "formal_producer": "For each independently consumed action row alpha, extract the fermionic row coefficient from D_barPsi D_Psi delta_alpha(Gamma_AE4+sum_a lambda_a R_a), with the owned retarded child elimination and total source/domain/pairing response. For any actually consumed eliminated gauge-HS reaction, retain its action-owned quasifree and Frechet dependence rather than replacing it by an arbitrary one-body matrix. The excluded AE3.2 EC action is not part of this producer.",
+      "id": "E1_COMPLETE_FERMION_BIRTH_ROW_OPERATOR_VALUE",
+      "minimum_requested": "Only the independent birth rows and reached source directions actually consumed on this event. No complete branch history, generic full covariance, repeated controls or unrelated later vertex campaign is requested.",
+      "missing_value_is_missing_new_theory": false,
+      "required_scope": [
+        "Correctly oriented metric/interface row including spin connection, measure, Higgs/mass and domain variations where required.",
+        "Same-owner canonical sum Pi_parent+Pi_child_return+J+C_response^dagger lambda, including actual source and multiplier/constraint contacts.",
+        "Actual retarded child response and its total derivative; moving source, response and target jets in precisely the consumed source directions.",
+        "Actual consumed lapse/shift/Hamiltonian rows and Noether contractions, with common originating variations booked once.",
+        "Same E1 pairing, U_R, geometric child pullbacks and existing conjugate-charge doubled family sector."
+      ],
+      "theory_and_composition_owner_defined": true
+    },
+    "frozen_event_binding": {
+      "geometric_reset": {
+        "complete_PEI06_PEI07_or_I_phys_pass_inferred": false,
+        "component_enclosures": null,
+        "l2_norm": 7.64107108345298e-15,
+        "max_abs": 5.628594097932515e-15,
+        "numbers_copied_from_retained_receipt": true,
+        "precision_scope": "Unchanged quadrature96 geometric producer at retained binary64 center; Decimal60 internal action/eigenpair/momentum path and binary64 returned rows. Arithmetic crosscheck is not a rigorous full-field or continuum error enclosure.",
+        "rows": 57,
+        "status": "FROZEN_RETAINED_FINITE_GEOMETRIC_COMPONENT"
+      },
+      "input_identities": [
+        {
+          "bytes": 92783,
+          "hash_scope": "RAW_FILE_BYTES",
+          "path": "artifacts/flagship_integration/BHSM_N12_C2_REFINED_RESET_ROOT_CENTER.npz",
+          "sha256": "59dd88661b15cbeec96bc19294f9d9c64f754cccbfbc385c32329fa9c864a8fe"
+        },
+        {
+          "bytes": 58537,
+          "hash_scope": "RAW_FILE_BYTES",
+          "path": "artifacts/muon_birth_transfer_value_20261008/retained_reset/run_1/result.json",
+          "sha256": "d0fec0f8e8a05818fcce67e88ed8db73744484220a2cb213825893f481cb0a72"
+        },
+        {
+          "bytes": 98680,
+          "hash_scope": "RAW_FILE_BYTES",
+          "path": "artifacts/muon_birth_fermion_state_representation_20261008/run_1/fermion_state_representation.json",
+          "sha256": "fff05d191f0b76c47579ddab98f8d1ad06bdfc289118c7581fce2b9da2f5cca0"
+        }
+      ],
+      "root_center_npz": {
+        "finite_time_displacement": 0,
+        "incoming_C1_E1_minus": {
+          "branch": 23,
+          "indices_zero_based_half_open": [
+            98,
+            196
+          ],
+          "role": "Original retained child C_* becomes incoming E1."
+        },
+        "key": "state",
+        "one_common_event": true,
+        "outgoing_C2_E1_plus": {
+          "branch": 24,
+          "indices_zero_based_half_open": [
+            0,
+            98
+          ],
+          "role": "Original retained event E_* becomes outgoing C2."
+        },
+        "path": "artifacts/flagship_integration/BHSM_N12_C2_REFINED_RESET_ROOT_CENTER.npz",
+        "retained_normalization": "Same retained state_weights, branch_reference and normalization_coordinates; no alternative center or normalization inserted.",
+        "shape": [
+          196
+        ],
+        "side_layout": {
+          "lapse_shift_multipliers": [
+            74,
+            98
+          ],
+          "q": [
+            0,
+            37
+          ],
+          "velocity": [
+            37,
+            74
+          ]
+        }
+      },
+      "value_binding_contract": [
+        "Same incoming and outgoing E1 traces, U_R, orientations, source background, family module and action-normalized pairing.",
+        "Child metric/interface/normal/measure pullbacks belong to each child row operator before addition to its incoming row.",
+        "Retarded future-child elimination and all source/response/multiplier dependencies must use the same retained action and reached source directions.",
+        "A carrier or a mechanical normal formation mode is not a physical matter-field state or covariance."
+      ]
+    },
+    "inherited_state_uniform_subcases": {
+      "AE2_Green": {
+        "citations": [
+          "ae2:opposite_normal_green_residual",
+          "ae2:action_definition"
+        ],
+        "covariance_sensitivity": 0,
+        "operator_law": "J_green,+ = -U_R J_green,- U_R^dagger",
+        "pulled_back_mismatch": "J_green,-+U_R^dagger J_green,+ U_R=0",
+        "rerun_performed": false,
+        "status": "FROZEN_EXACT_STATE_UNIFORM_ZERO"
+      },
+      "extension_to_full_sourced_stress_contact_Noether": "Not inferred. The exact two zero subcases remain zero entries in the complete operator ledger.",
+      "internal_EM_normal_flux": {
+        "charge_generator": "Q_l=-I_spin tensor I_family on the charged particle module; the doubled conjugate-charge module carries the corresponding opposite charge.",
+        "citations": [
+          "ae2:action_definition",
+          "chiral:family_reset_intertwiner_certificate"
+        ],
+        "covariance_sensitivity": 0,
+        "individual_current_value_or_full_sourced_KKT_closure_inferred": false,
+        "owned_relation": "The internal EM normal current is the same-action Dirac normal Green kernel composed with the charged-lepton generator, with the retained canonical Green/current convention.",
+        "pulled_back_mismatch": "A_Q,-+U_R^dagger A_Q,+ U_R=0",
+        "rerun_performed": false,
+        "status": "FROZEN_EXACT_STATE_UNIFORM_ZERO",
+        "status_reference": "Inherited owned_internal_EM_normal_flux in the frozen fermion_state_representation.json identified above.",
+        "transport": "Q_+=U_R Q_- U_R^dagger; A_Q,+ = -U_R A_Q,- U_R^dagger."
+      }
+    },
+    "noether_hamiltonian_and_booking": {
+      "canonical_noether": {
+        "actual_E1_sourced_Noether_kernel": null,
+        "citations": [
+          "event:canonical_noether_flux_balance",
+          "event_jet:canonical_noether_flux_balance_jet"
+        ],
+        "derivative_fixed_T": "D B_T=2 Re <T Dq,E>+2 Re <Tq,DE>",
+        "derivative_moving_T": "D B_T=2 Re <(DT)q+T Dq,E>+2 Re <Tq,DE>",
+        "equation": "B_T=2 Re <Tq,E>=sum_i 2 Re <Tq,Pi_i> for an anti-Hermitian generator T.",
+        "implementation_scope": "canonical_noether_flux_balance_jet differentiates the same canonical tractions with a fixed generator; it includes moving trace and traction.",
+        "integrated_composite_minus_parent_Hamiltonian_readout": null
+      },
+      "citations": [
+        "event:solve_retarded_event_kkt",
+        "event:canonical_noether_flux_balance",
+        "event_jet:canonical_noether_flux_balance_jet",
+        "resolved:interface_variation_ledger"
+      ],
+      "once_only_rule": [
+        "B_F is a typed collection of the independent PEI06/PEI07 action rows actually consumed by birth identification; it is not an untyped sum of every diagnostic scalar.",
+        "The Noether contraction is a readout of E, not a second action contribution added on top of E.",
+        "A stress/metric row and a Noether contraction can both be retained as distinct consumers, but their common originating action is varied once in each independent row. Do not add an independent stress-plus-Noether scalar when one is a contraction of the other row.",
+        "Source/current and multiplier/contact pieces are decompositions of the same complete canonical variation; each occurrence keeps its original signed booking.",
+        "Retarded child terms and their response jets are included before forming a complete row mismatch or projecting onto covariance tangents."
+      ],
+      "schematic_total_delta": "Delta_B denotes the operator-valued collection/composition of the actual consumed independent rows after signed booking. A sum Delta_stress+Delta_Noether+Delta_contacts is meaningful only after identifying distinct originating row directions and removing repeated contractions.",
+      "stress_and_Hamiltonian": {
+        "citations": [
+          "ae2:action_definition",
+          "LH:action_composition_contract",
+          "resolved:interface_variation_ledger",
+          "common_A:first_order_parent_action",
+          "old_cut:cut_metric_dirac_actions",
+          "unified_outputs:one_operator_completion_graph"
+        ],
+        "originating_rows": "Metric/interface variation and lapse/shift or Hamiltonian/constraint variations of the same retained action and response terms, including spin connection, measure, Higgs/mass, source and domain variations where they occur.",
+        "principal_symbol_matching_is_complete_stress_match": false,
+        "source_local_old_cut_actions_are_whole_E1_stress_kernel": false,
+        "status": "ROW_ORIGINS_DEFINED; ACTUAL_WHOLE_E1_VALUE_KERNELS_UNBOUND",
+        "stress_symbolic_orientation": "Delta_T=T_event+U_R^dagger pullback_geom(T_child) U_R; the child operator includes the oriented normal and geometric measure/pairing pullback."
+      }
+    },
+    "owner_action_ledger": [
+      {
+        "booking": "One bulk Dirac action on an internal glued domain; no additional delta-supported matter seam density.",
+        "citations": [
+          "ae2:action_definition",
+          "ae2:opposite_normal_green_residual"
+        ],
+        "domain": "Gamma0_child(Psi)=U_R Gamma0_event(Psi); variations obey the same graph. On Dom(D_AE2^2), Gamma1_child=-U_R Gamma1_event.",
+        "id": "AE2_CANONICAL_DIRAC_BULK_AND_RESET_DOMAIN",
+        "independent_normal_matter_boundary_action": 0,
+        "originating_action": "S_F_AE2=(1/2) integral_(M_event union_R M_child) [barPsi iD Psi - overline(iD Psi) Psi] dmu",
+        "row_scope": "Dirac Green boundary form is owned. Its cancellation does not by itself establish the complete stress, Hamiltonian or sourced event response kernel."
+      },
+      {
+        "booking": "Higgs/Yukawa lower-order variations remain part of the same originating action; a separately counted mass stress/contact would duplicate this term.",
+        "citations": [
+          "LH:action_composition_contract",
+          "LH:charged_lepton_yukawa_operator",
+          "chiral:chiral_operator_assembly"
+        ],
+        "evaluated_whole_E1_variation_kernel": null,
+        "id": "INTRINSIC_M4_LEPTON_HIGGS_ACTION",
+        "mass_ownership": "Y_l=(16 sqrt(2pi)/3969) T_l; the inherited family operator is fixed. No separate post-EWSB mass term is added.",
+        "originating_action": "S_AE3.1=S_AE3.0+S_4_lH; S_4_lH=integral_M4 [|DH|^2-V_BH(H)+i barL_L slashD L_L+i bare_R slashD e_R-(barL_L Y_l^BH H e_R+h.c.)]"
+      },
+      {
+        "booking": "Family mass is bounded lower-order data, not a replacement for the Dirac principal domain; the family-central reset preserves its existing family projectors.",
+        "citations": [
+          "chiral:domain_provenance_reconciliation",
+          "chiral:chiral_operator_assembly",
+          "chiral:family_reset_intertwiner_certificate"
+        ],
+        "id": "CHIRAL_FAMILY_DOMAIN",
+        "originating_operator": "D_l,C2=[[D_L,M_l],[M_l^dagger,D_R]] on the inherited AE2 domain and smooth enclosure domain.",
+        "scope_limit": "Principal-symbol, family and mass intertwining are not a calculation of the complete sourced stress/contact response at E1."
+      },
+      {
+        "adoption_status": "CLOSED_ADOPTED_COMMON_A_EFFECTIVE_ATTACHMENT",
+        "booking": "Canonical associated-bundle coupling coefficient is one. Spin connection and mechanical weak connection act on their own factors. Mechanical curvature energy is not duplicated as a second classical energy.",
+        "citations": [
+          "common_A:first_order_parent_action",
+          "common_A_theory:common_A_adoption",
+          "common_A_application:mechanical_background_action",
+          "common_A_application:apply_saved_child_profiles",
+          "common_A_application:regular_parent_background_prefactor"
+        ],
+        "common_connection": "nabla_total=nabla_spin tensor I16 tensor I3+Ispin tensor rho16*(A5) tensor I3; A5=iota_* omega_mech+a5.",
+        "historical_R_A_definition_gap_promoted": false,
+        "historical_expression_scope": "The quoted v15.75 parent functional is a provenance expression for common-A ownership. It does not promote every historical weighted Einstein or Einstein-Cartan term into the retained AE4 action.",
+        "historical_parent_action_display": "S5=(K_G5/2) integral W e e_A^M e_B^N R_MN^AB(omega)+(K_F5/4) integral W Tr_16(F_A^2)+S_Dirac[e,omega,A,Psi]",
+        "id": "COMMON_A_AND_SPIN_CONNECTION",
+        "originating_action": "Adopted S_Dirac[e,omega,A,Psi] minimal common-A associated-bundle coupling, inherited with its canonical coefficient.",
+        "scope_limit": "Saved background/profile actions and canonical coupling are reusable. They are not an evaluation of the whole M5 wall elimination or all sourced E1 response jets."
+      },
+      {
+        "active_in_retained_AE4_predecessor": false,
+        "citations": [
+          "EC_exclusion:action_completion_contract",
+          "EC_exclusion:historical_collapse_domain_comparison",
+          "EC_exclusion:claim_boundary",
+          "AE4:microscopic_owner_contract",
+          "common_A:contorsion_schur_complement"
+        ],
+        "common_A_adoption_unchanged": true,
+        "exclusion": "AE4 explicitly retains predecessor BHSM-AE-3.1.0. AE3.2 global action promotion before its domain test is false; the current-C2 retained zero-mode/global EC stationary action domain is not established. Historical full event-weighted Einstein ownership was superseded.",
+        "historical_candidate": "The AE3.2 first-order lift would reduce to S_AE3.1+Gamma_EC, with Gamma_EC=-(1/2)<J_S,M_C[W]^-1 J_S>.",
+        "historical_contorsion_quartic_automatically_activated_by_common_A": false,
+        "id": "EINSTEIN_CARTAN_EXTENSION_EXCLUSION",
+        "included_in_Delta_B": false,
+        "status": "EXCLUDED_CANDIDATE_NOT_ACTIVE_BIRTH_TERM"
+      },
+      {
+        "Einstein_Cartan_global_kernel_used": false,
+        "auxiliary_identity": "exp(+O^dagger K_LR O) proportional to integral DH exp(-H^dagger K_LR^-1 H+H^dagger O+O^dagger H)",
+        "bare_auxiliary_Hessian": "K_LR^-1=G_C2^-1 diag(5/14,5/13)",
+        "booking": "Use either the exact auxiliary representation or its equivalent eliminated current interaction; do not add both as independent action terms. Preserve only actual reached cross-sector/source dependencies in the complete E1 row.",
+        "channel_scope": "O=(barQ_L u_R,barQ_L d_R)^T in the retained up/down incidence; family action I3. This is not an independently added muon LR-HS or Higgs mixing term.",
+        "citations": [
+          "gauge_HS:action_owned_gauge_hs_contract",
+          "gauge_HS:current_c2_domain_and_trace_transport",
+          "gauge_HS:intrinsic_higgs_mixing_boundary",
+          "gauge_HS:claim_boundary"
+        ],
+        "domain": "Positive coexact current-C2 DtN modes with G_C2>0.",
+        "eliminated_auxiliary_scope": "If the retained auxiliary is eliminated or varied, its exact current interaction and total auxiliary/constraint reaction may have nonlinear quasifree covariance dependence. Derive this response from the exact rewrite; do not assume a globally affine interacting row.",
+        "evaluated_whole_E1_contact_or_cross_sector_response_kernel": null,
+        "fixed_auxiliary_scope": "At a fixed retained auxiliary/background value the fermion vertex is quadratic, and its ordered one-body expectation is affine in the covariance.",
+        "id": "RETAINED_CURRENT_C2_GAUGE_HS_AUXILIARY_REWRITE",
+        "intrinsic_to_composite_mixing_derived": false,
+        "originating_action_object": "CURRENT_C2_STATIC_NONLOCAL_GAUGE_CURRENT_KERNEL",
+        "physical_single_Higgs_direction_selected": false,
+        "source_kernel": "K_LR=2 G_C2 diag(7/5,13/10)",
+        "status": "ACTION_OWNED_EXACT_REWRITE_ON_DECLARED_GAUGE_DOMAIN",
+        "transport": "D_C2 tensor I_internal; I_radial tensor (I_up direct_sum I_down); retained radial, reset/birth and family domain/trace transport is preserved.",
+        "unit_LR_vertex_scope": "Coefficient placement in the exact rewrite, not a fitted or canonically normalized physical Yukawa residue."
+      },
+      {
+        "booking": "These are the resolved smooth-interface variation laws. Their metric, profile, source and response contacts belong to their originating rows.",
+        "citations": [
+          "resolved:interface_variation_ledger",
+          "resolved:dependency_ledgers"
+        ],
+        "id": "AE3_RESOLVED_ENCLOSURE_LEDGER",
+        "originating_domain": "Sigma_enc={sigma=0}, D_enc={sigma<0}; one smooth internal material level set.",
+        "owned_laws": [
+          "Opposite-normal canonical geometry, eta, sigma and gauge flux matching.",
+          "Opposite-normal fermion Green cancellation.",
+          "[T_nn]_resolved=0 with all profile stress included.",
+          "[n_A J_Noether^A]=0 for each owned smooth current.",
+          "Internal GHY/Brown-York cancellation; no independent surface contact or tension parameter."
+        ],
+        "scope_limit": "Sigma_enc is explicitly not the reset locus or a terminal boundary. Its structural ledger cannot substitute for actual whole sourced E1 kernel values."
+      },
+      {
+        "booking": "Local M8/M5/M4 actions are expansions of one microscopic owner, not independent Wilson owners. Zeta completion is not a second determinant.",
+        "citations": [
+          "AE4:microscopic_owner_contract",
+          "unified_outputs:one_operator_completion_graph"
+        ],
+        "full_actual_E1_operator_domain_realized_by_this_receipt": false,
+        "id": "AE4_SINGLE_GRADED_OPERATOR_OWNER",
+        "originating_functional": "Gamma_AE4=-(1/2) STr E1(ell_star^2 P_strat), P_strat=D_strat^dagger D_strat on zero-mode/BRST quotient, with relative zeta/eta completion.",
+        "pairing": "Canonical geometric L2 direct-sum supertrace with statistics grading and BRST multiplicities.",
+        "strata": "H8 direct_sum H5_plus direct_sum H5_minus direct_sum H4"
+      }
+    ],
+    "reusable_operand_and_producer_scope": [
+      {
+        "citations": [
+          "common_A_application:mechanical_background_action",
+          "common_A_application:apply_saved_child_profiles",
+          "common_A_application:regular_parent_background_prefactor",
+          "common_A_theory:common_A_adoption"
+        ],
+        "consumer": "Same-owner Dirac operator and its metric/source response; these values may enter the actual E1 kernel producer.",
+        "id": "CANONICAL_COMMON_A_SAVED_ACTIONS",
+        "limitation": "These local fixed-profile/background values do not supply all event/source/response/retarded-child jets.",
+        "producer": "mechanical_background_action; apply_saved_child_profiles; regular_parent_background_prefactor",
+        "reusable": "Saved child sigma0/coframe action and the distinct regular-parent sigma1 prefactor; adopted associated-bundle kinetic coupling."
+      },
+      {
+        "citations": [
+          "old_cut:local_mixed_contact",
+          "old_cut:evaluate_cut",
+          "old_cut:cut_metric_dirac_actions"
+        ],
+        "consumer": "Same-action source/contact or metric coefficient bookkeeping.",
+        "id": "OLD_CUT_SOURCE_CONTACT",
+        "limitation": "An old-cut packet is not the actual whole nonzero sourced E1 kernel or complete E1 Hamiltonian/Noether readout. Its existing action coupling is not reopened as a definition gap.",
+        "producer": "local_mixed_contact; evaluate_cut; cut_metric_dirac_actions",
+        "reusable": "Retained old-cut coefficient, derivative and local Dirac action packets at their declared backgrounds."
+      },
+      {
+        "citations": [
+          "particle_carrier:product_dirac_friedrichs_weyl_first_jet",
+          "particle_carrier:attach_preserved_particle_fibers"
+        ],
+        "consumer": "Actual physical fixed-domain fermion block and response construction.",
+        "id": "CURRENT_C2_PRODUCT_DIRAC_CARRIER",
+        "limitation": "A carrier first-jet attachment is not an evaluation of the complete sourced E1 stress/Noether/contact mismatch on the retained event.",
+        "producer": "product_dirac_friedrichs_weyl_first_jet; attach_preserved_particle_fibers",
+        "reusable": "Retarded product-Dirac/Friedrichs carrier response and preserved particle/family factor bookkeeping."
+      },
+      {
+        "citations": [
+          "HS_jet:generalized_e1_coordinate_jet",
+          "HS_jet:claim_boundary"
+        ],
+        "consumer": "Same-owner constrained HS/fermion response blocks when their actual values and domains are bound.",
+        "id": "LOCAL_HS_FRECHET_COMPOSITION",
+        "limitation": "Claim boundary retains the physical maximal/HS background scope; a formula on supplied data is not a completed physical E1 Hessian.",
+        "producer": "generalized_e1_coordinate_jet",
+        "reusable": "Supplied local Galerkin/HS coordinate Frechet response formula."
+      },
+      {
+        "citations": [
+          "event:assemble_stratified_direct_sum",
+          "event:solve_retarded_event_kkt",
+          "event_jet:solve_retarded_event_kkt_jet",
+          "event:canonical_noether_flux_balance",
+          "event_jet:canonical_noether_flux_balance_jet",
+          "event_materializer:theorem_witness",
+          "jet_materializer:build_payload"
+        ],
+        "consumer": "Physical E1 row operator and total covariance response after binding actual fixed-domain inputs.",
+        "id": "RETARDED_EVENT_AND_NOETHER_COMPOSITION",
+        "limitation": "Finite theorem witnesses and materializer values establish implementation/composition identities. Their supplied matrices are not actual E1 physical kernels.",
+        "producer": "assemble_stratified_direct_sum; solve_retarded_event_kkt; solve_retarded_event_kkt_jet; canonical_noether_flux_balance; canonical_noether_flux_balance_jet",
+        "reusable": "Complete six-sector composition with four traction pieces, retarded child reaction and mandatory moving source/response/multiplier jets."
+      }
+    ],
+    "schema": "BHSM_MUON_BIRTH_COVARIANCE_OPERATOR_OWNER_RECEIPT_V1",
+    "scientific_reference": "524ed90689bd5923c249bba2e699abf627e703cd",
+    "source_refs": [
+      {
+        "bytes": 8073,
+        "hash_scope": "RAW_FILE_BYTES",
+        "id": "ae2",
+        "path": "src/bhsm/interface/action_extension_global_spin_reset_ae2.py",
+        "sha256": "cc46df6372196e610ebfe0921cbb7f438f08d645f5b144faebdf1c6d2a991ccb",
+        "span_validation": "PYTHON_AST",
+        "symbols": {
+          "action_definition": [
+            156,
+            194
+          ],
+          "opposite_normal_green_residual": [
+            63,
+            85
+          ]
+        }
+      },
+      {
+        "bytes": 10856,
+        "hash_scope": "RAW_FILE_BYTES",
+        "id": "LH",
+        "path": "src/bhsm/interface/ae31_c2_intrinsic_m4_lepton_action.py",
+        "sha256": "f3fee1ef24a3f13ef94d4ce5b146f9ac7a827045e369819b35ee8af5ccf0678a",
+        "span_validation": "PYTHON_AST",
+        "symbols": {
+          "action_composition_contract": [
+            29,
+            63
+          ],
+          "charged_lepton_yukawa_operator": [
+            66,
+            88
+          ]
+        }
+      },
+      {
+        "bytes": 8799,
+        "hash_scope": "RAW_FILE_BYTES",
+        "id": "chiral",
+        "path": "src/bhsm/interface/ae31_c2_chiral_green_domain.py",
+        "sha256": "98fdf6a943a8934c7d2bf82f3510fc5ea30226aac60a24a965e7aa28874ac146",
+        "span_validation": "PYTHON_AST",
+        "symbols": {
+          "chiral_operator_assembly": [
+            62,
+            90
+          ],
+          "domain_provenance_reconciliation": [
+            25,
+            59
+          ],
+          "family_reset_intertwiner_certificate": [
+            93,
+            114
+          ]
+        }
+      },
+      {
+        "bytes": 31411,
+        "hash_scope": "RAW_FILE_BYTES",
+        "id": "resolved",
+        "path": "src/bhsm/interface/ae3_reciprocal_join_localization.py",
+        "sha256": "1c73e9b6ff5a6d15ca0f103013364b2bc5de9815cf0408c1825ebdf03866603c",
+        "span_validation": "PYTHON_AST",
+        "symbols": {
+          "dependency_ledgers": [
+            270,
+            321
+          ],
+          "interface_variation_ledger": [
+            237,
+            267
+          ]
+        }
+      },
+      {
+        "bytes": 12946,
+        "hash_scope": "RAW_FILE_BYTES",
+        "id": "event",
+        "path": "src/bhsm/interface/ae4_c2_stratified_event_flux_assembly.py",
+        "sha256": "145486b4b279dccf1994c5a0991fd29a57290d20e5460ba193810e0b260b6bce",
+        "span_validation": "PYTHON_AST",
+        "symbols": {
+          "assemble_stratified_direct_sum": [
+            60,
+            103
+          ],
+          "assembly_contract": [
+            244,
+            260
+          ],
+          "canonical_noether_flux_balance": [
+            207,
+            241
+          ],
+          "claim_boundary": [
+            263,
+            291
+          ],
+          "solve_retarded_event_kkt": [
+            106,
+            204
+          ]
+        }
+      },
+      {
+        "bytes": 10230,
+        "hash_scope": "RAW_FILE_BYTES",
+        "id": "event_jet",
+        "path": "src/bhsm/interface/ae4_event_response_jet_integration.py",
+        "sha256": "45be4cbe20c99ef075ed4336b4f9439cbfca0b725f091f22819f3e712eb28f09",
+        "span_validation": "PYTHON_AST",
+        "symbols": {
+          "canonical_noether_flux_balance_jet": [
+            132,
+            167
+          ],
+          "solve_retarded_event_kkt_jet": [
+            18,
+            129
+          ]
+        }
+      },
+      {
+        "bytes": 15673,
+        "expected_line_text": {
+          "PREDECESSOR_ACTION_VERSION": "PREDECESSOR_ACTION_VERSION = \"BHSM-AE-3.1.0\""
+        },
+        "hash_scope": "RAW_FILE_BYTES",
+        "id": "AE4",
+        "line_spans": {
+          "PREDECESSOR_ACTION_VERSION": [
+            25,
+            25
+          ]
+        },
+        "path": "src/bhsm/interface/ae4_stratified_dirac_zeta_induced_owner.py",
+        "sha256": "067438afb5cc01cfbf76b715e67d5aa35a097484184e99217354cb78abffd34c",
+        "span_validation": "PYTHON_AST",
+        "symbols": {
+          "microscopic_owner_contract": [
+            272,
+            302
+          ]
+        }
+      },
+      {
+        "bytes": 23053,
+        "hash_scope": "RAW_FILE_BYTES",
+        "id": "unified_outputs",
+        "path": "src/bhsm/interface/ae4_existing_asset_system_integration.py",
+        "sha256": "48f083dfe39a1f9a4b4aac85020d4867cbc6e7f16515ad2567383c2a14de18b5",
+        "span_validation": "PYTHON_AST",
+        "symbols": {
+          "existing_variable_completion_handoffs": [
+            329,
+            375
+          ],
+          "one_operator_completion_graph": [
+            378,
+            411
+          ]
+        }
+      },
+      {
+        "bytes": 9272,
+        "hash_scope": "RAW_FILE_BYTES",
+        "id": "common_A",
+        "path": "src/bhsm/interface/aether_einstein_cartan_joint_pushforward_v15_75.py",
+        "sha256": "44e6512c6ed7646a74f438ed160420d829dcb8dbbe32ceb8bcff218a1a86acb0",
+        "span_validation": "PYTHON_AST",
+        "symbols": {
+          "contorsion_schur_complement": [
+            48,
+            61
+          ],
+          "first_order_parent_action": [
+            30,
+            45
+          ],
+          "lr_fierz_projection": [
+            64,
+            78
+          ]
+        }
+      },
+      {
+        "bytes": 4543,
+        "hash_scope": "RAW_FILE_BYTES",
+        "id": "common_A_application",
+        "path": "src/bhsm/interface/muon_owned_connection_application.py",
+        "sha256": "2f5b82ee6135208e61ce7a98aeef57310c7a739d7a7ee96e0f266a93da4ad97c",
+        "span_validation": "PYTHON_AST",
+        "symbols": {
+          "apply_saved_child_profiles": [
+            58,
+            84
+          ],
+          "mechanical_background_action": [
+            31,
+            55
+          ],
+          "regular_parent_background_prefactor": [
+            87,
+            93
+          ]
+        }
+      },
+      {
+        "bytes": 16988,
+        "hash_scope": "RAW_FILE_BYTES",
+        "id": "old_cut",
+        "path": "src/bhsm/interface/muon_parent_source_contact.py",
+        "sha256": "ea7da3b3ef38c3aa72f6fa4bd509d6d864e137b74dfd683f03443c1f762c82cc",
+        "span_validation": "PYTHON_AST",
+        "symbols": {
+          "cut_metric_dirac_actions": [
+            228,
+            328
+          ],
+          "evaluate_cut": [
+            99,
+            170
+          ],
+          "local_mixed_contact": [
+            25,
+            35
+          ]
+        }
+      },
+      {
+        "bytes": 8628,
+        "hash_scope": "RAW_FILE_BYTES",
+        "id": "particle_carrier",
+        "path": "src/bhsm/interface/ae4_current_c2_affine72_particle_fiber_calderon.py",
+        "sha256": "9feb2ded493d013e47765231526892c43f0938d96af3cdbd3f072c617010c8e6",
+        "span_validation": "PYTHON_AST",
+        "symbols": {
+          "attach_preserved_particle_fibers": [
+            114,
+            189
+          ],
+          "product_dirac_friedrichs_weyl_first_jet": [
+            27,
+            111
+          ]
+        }
+      },
+      {
+        "bytes": 8877,
+        "hash_scope": "RAW_FILE_BYTES",
+        "id": "HS_jet",
+        "path": "src/bhsm/interface/ae4_current_c2_hs_frechet_hessian.py",
+        "sha256": "3ad93c2e6550f04c3b21084ac8e8229276e6c567b3ce8c3ae199179ebf3b33eb",
+        "span_validation": "PYTHON_AST",
+        "symbols": {
+          "claim_boundary": [
+            182,
+            206
+          ],
+          "generalized_e1_coordinate_jet": [
+            79,
+            143
+          ]
+        }
+      },
+      {
+        "bytes": 4799,
+        "hash_scope": "RAW_FILE_BYTES",
+        "id": "heat",
+        "path": "src/bhsm/interface/arb_heat_pencil_contractions.py",
+        "sha256": "04d59793892439a824b68b66f461ce7d6adce9054ffe7569cea8d927ebdd374e",
+        "span_validation": "PYTHON_AST",
+        "symbols": {
+          "first_operator": [
+            66,
+            68
+          ],
+          "mixed": [
+            103,
+            110
+          ],
+          "mixed_direction": [
+            89,
+            101
+          ]
+        }
+      },
+      {
+        "bytes": 13005,
+        "hash_scope": "RAW_FILE_BYTES",
+        "id": "event_materializer",
+        "path": "scripts/materialize_ae4_c2_stratified_event_flux_assembly.py",
+        "sha256": "9084bf7e66899501bb3ad1fc0b5f15900fee73c63dfa9d61b050bdd11a7b0f7c",
+        "span_validation": "PYTHON_AST",
+        "symbols": {
+          "theorem_witness": [
+            73,
+            103
+          ]
+        }
+      },
+      {
+        "bytes": 5735,
+        "hash_scope": "RAW_FILE_BYTES",
+        "id": "jet_materializer",
+        "path": "scripts/materialize_ae4_event_response_jet_integration.py",
+        "sha256": "46f05a8e50c0fb02d006cb24a87b374ae1d6eba5eb33c96b66b967e444a7274c",
+        "span_validation": "PYTHON_AST",
+        "symbols": {
+          "build_payload": [
+            32,
+            98
+          ]
+        }
+      },
+      {
+        "bytes": 17356,
+        "hash_scope": "RAW_FILE_BYTES",
+        "id": "common_A_theory",
+        "md_spans": {
+          "common_A_adoption": [
+            99,
+            175
+          ]
+        },
+        "path": "theory/muon_owned_horizontal_connection_20261002.md",
+        "sha256": "d60d57326d0e697694afd191c7415665a643575c429df8aaf5e2d54d8781810d"
+      },
+      {
+        "bytes": 3593,
+        "hash_scope": "RAW_FILE_BYTES",
+        "id": "event_theory",
+        "md_spans": {
+          "complete_canonical_Noether_rows": [
+            14,
+            50
+          ],
+          "physical_value_scope": [
+            56,
+            84
+          ]
+        },
+        "path": "theory/ae4_c2_stratified_event_flux_assembly.md",
+        "sha256": "0e9fb825e875ce0ef2b92049b241d4096c1c09b12880c36c8d62f30c3695912e"
+      },
+      {
+        "bytes": 7448,
+        "hash_scope": "RAW_FILE_BYTES",
+        "id": "gauge_HS",
+        "path": "src/bhsm/interface/ae31_c2_gauge_composite_hs_action.py",
+        "sha256": "5e6c9566e7065d318e2ad5d3f5550ca2d4873f7c9fb994fdd9b82acefb9befb7",
+        "span_validation": "PYTHON_AST",
+        "symbols": {
+          "action_owned_gauge_hs_contract": [
+            53,
+            76
+          ],
+          "claim_boundary": [
+            162,
+            177
+          ],
+          "current_c2_domain_and_trace_transport": [
+            108,
+            125
+          ],
+          "intrinsic_higgs_mixing_boundary": [
+            128,
+            147
+          ]
+        }
+      },
+      {
+        "bytes": 18848,
+        "hash_scope": "RAW_FILE_BYTES",
+        "id": "EC_exclusion",
+        "path": "src/bhsm/interface/ae32_c2_einstein_cartan_lr_action.py",
+        "sha256": "2a31ac046db06876f4a8f41ac5d199f7f2fc14fc3163e0ef760259a3b157de6e",
+        "span_validation": "PYTHON_AST",
+        "symbols": {
+          "action_completion_contract": [
+            25,
+            53
+          ],
+          "claim_boundary": [
+            407,
+            434
+          ],
+          "historical_collapse_domain_comparison": [
+            119,
+            146
+          ]
+        }
+      }
+    ],
+    "starting_head": "a6e3ceebb0a9b8322be333c7be116a01ca6b837d",
+    "state_unification_and_downstream": {
+      "fixed_entire_family_heat": {
+        "citations": [
+          "heat:first_operator",
+          "heat:mixed_direction",
+          "heat:mixed"
+        ],
+        "complete_heat_uncertainty_inferred_from_unselected_C": false,
+        "scope": "The intrinsic supplied complete K/M/jet HeatPencil action is independent of a selected quasifree covariance. Physical background, source, formation mode or domain selection can still consume the complete birth operator values.",
+        "status": "PRESERVED_COVARIANCE_INDEPENDENT_AT_SUPPLIED_COMPLETE_BACKGROUND"
+      },
+      "formation_mode_is_matter_covariance": false,
+      "full_physical_transfer_identified": false,
+      "interpretation": "One upstream covariance and its transported/restricted child covariance, not an independently chosen child vacuum. This relation is retained; no selection is attempted before the full sensitivity verdict.",
+      "later_LSZ_Pauli_or_external_ray_consumers_included": false,
+      "physical_KKT_owner_branch_evaluated": false,
+      "state_uniform_Green_and_EM_promoted_to_whole_I_phys": false,
+      "upstream_to_child_relation": "C_mu,Sigma^BHSM=Q_mu V_C2 U_R C_C1,E1-minus^BHSM U_R^dagger V_C2^dagger Q_mu, with the retained conjugate-charge doubled family restriction."
+    },
+    "target": "Complete consumed fermionic PEI06/PEI07 birth balance at the retained C1/E1 to C2/E1 event; smooth-covariance sensitivity before any covariance selection.",
+    "total_returned_child_and_event_response": {
+      "citations": [
+        "event_jet:solve_retarded_event_kkt_jet",
+        "unified_outputs:existing_variable_completion_handoffs"
+      ],
+      "common_fixed_domain_identification_required": true,
+      "identities": {
+        "child_state": "D c=-G(D H_cp)q-G H_cp Dq+G(D H_cc^R)G H_cp q",
+        "complete_row": "D E=(D H_eff)q+H_eff Dq+DJ+(D C_response)^dagger lambda+C_response^dagger Dlambda",
+        "constraint": "D(C_response q-d)=(D C_response)q+C_response Dq-Dd",
+        "inverse": "D G=-G (D H_cc^R) G",
+        "multiplier": "Dlambda is solved from the differentiated reduced KKT system; it is not prescribed to be zero.",
+        "reduced_block": "D H_eff=D H_pp-(D H_pc)G H_cp-H_pc G(D H_cp)+H_pc G(D H_cc^R)G H_cp",
+        "returned_child": "D(H_pc c)=(D H_pc)c+H_pc Dc"
+      },
+      "implementation_scope": "Value, first and second derivatives in one real source direction; derivatives are not Taylor coefficients. Matrix order, child reaction, source and response/multiplier jets are retained.",
+      "physical_sector_values_certified_by_supplied_composition": false,
+      "producer_inputs": [
+        "parent_jet=(H_pp,DH_pp,D2H_pp)",
+        "coupling_jet=(H_pc,DH_pc,D2H_pc)",
+        "child_retarded_jet=(H_cc^R,DH_cc^R,D2H_cc^R)",
+        "response_jet=(C_response,DC_response,D2C_response)",
+        "source_jet=(J,DJ,D2J)",
+        "response_target_jet=(d,Dd,D2d)"
+      ],
+      "unknown_derivatives_default_to_zero": false
+    },
+    "verification": {
+      "current_claim": "Defined common action/row owners and total derivative composition; unbound actual whole-E1 row-kernel values. No full state-independence or sensitivity result has been asserted.",
+      "frozen_center_identity_checked_without_recomputing_reset": true,
+      "mode": "READ_ONLY_INPUT_IDENTITY_AND_AST_SPAN_VALIDATION; SINGLE_NEW_RECEIPT",
+      "publication_or_full_readiness_status_inferred": false,
+      "python_AST_symbol_spans_bound": true,
+      "raw_file_bytes_and_sha256_bound": true
+    }
+  },
+  "convention": {
+    "AE31": "W_plus=U_t*C_plus*U_s_dagger; W_minus=U_t*(I-C_plus)*U_s_dagger",
+    "absolute_local_Wick_prescription_owned": false,
+    "blind_Tr_C_A_used": false,
+    "external_body": "N_ij=<chi_j_dagger*chi_i>; N=I-C_plus on ordinary particle block",
+    "finite_relative_state_difference": "delta <chi_dagger*A*chi>=-Tr(A*delta C_plus)",
+    "kinetic_action_half_is_quantum_doubling_half": false,
+    "ordered_bilinear": "chi_dagger*A*chi -> Tr(A*N)",
+    "retarded": "G_R=-i*theta(t-s)*U_t*U_s_dagger; state independent for fixed free Dirac dynamics",
+    "time_ordered": "G_F=-i*U_t*(C_plus-theta(s-t)*I)*U_s_dagger",
+    "time_ordered_state_difference": "delta G_F=-i*U_t*delta C_plus*U_s_dagger"
+  },
+  "covariance_sensitivity": {
+    "Delta_C": "-K for the ordinary occupation convention; no quantum doubling factor inferred",
+    "charged_blocks": "In canonical Gamma-swap coordinates and H=Herm(Delta): X=diag(A,-conjugate(A)); K_mu=Pi_mu(H_pp-conjugate(H_hh))Pi_mu",
+    "continuum_caveat": "Relative smoothing contractions need an owned domain; finite zero alone does not certify continuum tails",
+    "derivative": "D_C B_alpha[X]=-Tr(X K_alpha)",
+    "gamma": "Gamma=G conjugation; Gamma X Gamma=-X",
+    "general_Gamma": "G=[[0,V],[V^T,0]]: lower X=-V^T conjugate(A) conjugate(V); K_mu=Pi_mu(H_pp-V conjugate(H_hh)V^dagger)Pi_mu",
+    "iff_scope": "All admissible finite affine mixed-interior tangents in normalized CAR coordinates, with commuting symmetry projections",
+    "minimal_moment_count": "dim_R span{projected particle kernels of independent consumed rows}",
+    "minimal_moment_count_is_operator_rank": false,
+    "no_fixed_charge_expectation_or_pure_state_assumed": true,
+    "ordered_particle_row": "B_alpha[C]-B_alpha[C_ref]=-Tr((C_plus-C_plus_ref) K_alpha)",
+    "paired_projection": "In canonical Gamma-swap coordinates: S_B=diag(K_mu/2,-conjugate(K_mu)/2); Re Tr(X Delta)=Tr(A K_mu)",
+    "projection": "S_B=Q_mu E_charge((Herm(Delta_B)-G conjugate(Herm(Delta_B)) G^dagger)/2) Q_mu",
+    "pulled_back_K": "K_event+U_R^dagger K_child_oriented U_R+K_return_source_constraint_domain",
+    "pure_state_caveat": "Local pure projection C S(I-C)+(I-C)S C can vanish at one C without global state independence",
+    "reset": "X_child=U_R X_event U_R^dagger; [X_event,U_R]=0 is NOT required",
+    "scope": "Relative smooth/smeared differences at one supplied fixed sourced background/domain; no absolute Wick subtraction"
+  },
+  "density_derivation": {
+    "actual_E1_coefficients_evaluated": false,
+    "boundary_and_domain_terms_dropped": false,
+    "boundary_terms_in_bulk_formula": false,
+    "classification": "DERIVED_FORMAL_FIXED_FIELD_DENSITY_IDENTITY",
+    "compact_test_strong_kernel": "K_v=1/2[(b beta+delta_beta)P+beta delta_P-P^dagger_mu(b beta+delta_beta)-delta_P^dagger_mu beta]",
+    "delta_density": "-delta_w*Pf_dagger*beta*g/2 + delta_w*f_dagger*beta*P_g/2 - w*Pf_dagger*delta_beta*g/2 - w*deltaPf_dagger*beta*g/2 + w*f_dagger*beta*deltaP_g/2 + w*f_dagger*delta_beta*P_g/2",
+    "includes_mass_Higgs_variation": true,
+    "includes_measure": true,
+    "includes_spin_and_gauge_connection": true,
+    "includes_symbol": true,
+    "kinetic_operator_variation": "delta_P=i delta_gamma^M nabla_M+i gamma^M delta_Omega_M; delta_Omega includes spin and the adopted gauge connection",
+    "measure_ordering": "b=delta(mu)/mu; multiplication b remains inside P^dagger_mu, including its derivatives",
+    "moving_interface": "Reynolds surface term or equivalent pulled-back Lie derivatives, booked once",
+    "normalized_formula": "delta S_D=1/2 integral mu [f^dagger((b beta+delta_beta)P+beta delta_P)g-(Pf)^dagger(b beta+delta_beta)g-(delta_P f)^dagger beta g]",
+    "required_domain_variation": "Gamma0_child delta_Psi_child=U_R Gamma0_event delta_Psi_event+(delta_U_R) Gamma0_event Psi_event+U_R(delta_Gamma0_event)Psi_event-(delta_Gamma0_child)Psi_child",
+    "residual": "0",
+    "separate_Yukawa_variation": "K_v,Y=-(b beta M_H+delta_beta M_H+beta delta_M_H), from the separate additive AE3.1 Yukawa owner. Absorption into P requires a proved action-to-operator equivalence; it is not inferred from the Hermitian chiral mass template",
+    "spin_connection_jet": "d delta_e^A+delta_omega^A_B wedge e^B+omega^A_B wedge delta_e^B=0, with antisymmetry"
+  },
+  "dependency_result": {
+    "actual_question_answered": false,
+    "covariance_selection_can_replace_missing_operator": false,
+    "exact_first_unpopulated_operand": "K_E1,alpha^complete: the one-sided full action-variation kernel on the reset-pulled common CAR domain, with returned-child/source/constraint/domain contacts for each independent consumed PEI06/PEI07 row",
+    "new_independent_seam_or_action_added": false,
+    "nonzero_old_probe_promoted_to_physical_sensitivity": false,
+    "reason": "Projection is linear in the COMPLETE kernel. Exact zeros of two summands and a conditional solved KKT residual fix neither that kernel nor its projection.",
+    "selected_covariance_is_proven_birth_blocker": false,
+    "unknown_kernel_assigned_zero": false
+  },
+  "excluded_quartic_candidate": {
+    "AE32_EC_globally_promoted": false,
+    "AE4_predecessor": "BHSM-AE-3.1.0",
+    "EC_quartic_silently_added_to_retained_birth": false,
+    "affine_scope": "Uneliminated fixed supplied auxiliary background; eliminating fields or self-consistent induced response is not automatically affine in C",
+    "retained_gauge_HS_interactions_erased": false
+  },
+  "frozen_calculations_recomputed": 0,
+  "heat_and_downstream": {
+    "AE4_heat": null,
+    "Pauli": null,
+    "R_ind": null,
+    "covariance_uncertainty_automatically_propagated_to_heat": false,
+    "fixed_complete_sourced_HeatPencil_has_independent_C_operand": false,
+    "full_inertia": null,
+    "h_psi": null,
+    "mechanical_mode": null,
+    "native_photon": null,
+    "paired_heat": null,
+    "physical_KKT": null,
+    "physical_birth_promoted": false,
+    "physical_cutoff": null,
+    "r_i_jets": null,
+    "relative_zeta_eta": null,
+    "seven_port": null,
+    "six_derivatives": null,
+    "xi_psi": null,
+    "z_psi": null
+  },
+  "physical_values": {
+    "Delta_Green": 0,
+    "Delta_Noether": null,
+    "Delta_contacts": null,
+    "Delta_internal_EM_normal_flux": 0,
+    "Delta_stress": null,
+    "S_B": null,
+    "complete_physical_birth_identified": false,
+    "consumed_moment_span_dimension": null,
+    "independent_fermion_reset_density": 0,
+    "minimal_state_moments": null,
+    "outcome_A_state_independent": null,
+    "outcome_B_state_sensitive": null,
+    "physical_operator_rank": null,
+    "physical_operator_status": "UNDETERMINED_OPERATOR",
+    "total_Delta_B": null
+  },
+  "scientific_reference": "524ed90689bd5923c249bba2e699abf627e703cd",
+  "selected_covariances": 0,
+  "source_references": [
+    {
+      "lines": [
+        156,
+        194
+      ],
+      "path": "src/bhsm/interface/action_extension_global_spin_reset_ae2.py",
+      "raw_sha256": "cc46df6372196e610ebfe0921cbb7f438f08d645f5b144faebdf1c6d2a991ccb",
+      "symbol": "action_definition"
+    },
+    {
+      "lines": [
+        29,
+        63
+      ],
+      "path": "src/bhsm/interface/ae31_c2_intrinsic_m4_lepton_action.py",
+      "raw_sha256": "f3fee1ef24a3f13ef94d4ce5b146f9ac7a827045e369819b35ee8af5ccf0678a",
+      "symbol": "action_composition_contract"
+    },
+    {
+      "lines": [
+        148,
+        173
+      ],
+      "path": "src/bhsm/interface/ae31_c2_intrinsic_m4_lepton_action.py",
+      "raw_sha256": "f3fee1ef24a3f13ef94d4ce5b146f9ac7a827045e369819b35ee8af5ccf0678a",
+      "symbol": "first_variation_and_pole_gate"
+    },
+    {
+      "lines": [
+        62,
+        90
+      ],
+      "path": "src/bhsm/interface/ae31_c2_chiral_green_domain.py",
+      "raw_sha256": "98fdf6a943a8934c7d2bf82f3510fc5ea30226aac60a24a965e7aa28874ac146",
+      "symbol": "chiral_operator_assembly"
+    },
+    {
+      "lines": [
+        237,
+        267
+      ],
+      "path": "src/bhsm/interface/ae3_reciprocal_join_localization.py",
+      "raw_sha256": "1c73e9b6ff5a6d15ca0f103013364b2bc5de9815cf0408c1825ebdf03866603c",
+      "symbol": "interface_variation_ledger"
+    },
+    {
+      "lines": [
+        106,
+        204
+      ],
+      "path": "src/bhsm/interface/ae4_c2_stratified_event_flux_assembly.py",
+      "raw_sha256": "145486b4b279dccf1994c5a0991fd29a57290d20e5460ba193810e0b260b6bce",
+      "symbol": "solve_retarded_event_kkt"
+    },
+    {
+      "lines": [
+        207,
+        241
+      ],
+      "path": "src/bhsm/interface/ae4_c2_stratified_event_flux_assembly.py",
+      "raw_sha256": "145486b4b279dccf1994c5a0991fd29a57290d20e5460ba193810e0b260b6bce",
+      "symbol": "canonical_noether_flux_balance"
+    },
+    {
+      "lines": [
+        18,
+        129
+      ],
+      "path": "src/bhsm/interface/ae4_event_response_jet_integration.py",
+      "raw_sha256": "45be4cbe20c99ef075ed4336b4f9439cbfca0b725f091f22819f3e712eb28f09",
+      "symbol": "solve_retarded_event_kkt_jet"
+    },
+    {
+      "lines": [
+        132,
+        167
+      ],
+      "path": "src/bhsm/interface/ae4_event_response_jet_integration.py",
+      "raw_sha256": "45be4cbe20c99ef075ed4336b4f9439cbfca0b725f091f22819f3e712eb28f09",
+      "symbol": "canonical_noether_flux_balance_jet"
+    },
+    {
+      "lines": [
+        228,
+        328
+      ],
+      "path": "src/bhsm/interface/muon_parent_source_contact.py",
+      "raw_sha256": "ea7da3b3ef38c3aa72f6fa4bd509d6d864e137b74dfd683f03443c1f762c82cc",
+      "symbol": "cut_metric_dirac_actions"
+    },
+    {
+      "lines": [
+        68,
+        100
+      ],
+      "path": "src/bhsm/interface/ae31_c2_fermion_hadamard_state_class.py",
+      "raw_sha256": "fcc2372382f794383208ea7164704b42e985b291df17f32f90846ab48961591d",
+      "symbol": "cauchy_covariance_selection_contract"
+    },
+    {
+      "lines": [
+        42,
+        110
+      ],
+      "path": "src/bhsm/interface/arb_heat_pencil_contractions.py",
+      "raw_sha256": "04d59793892439a824b68b66f461ce7d6adce9054ffe7569cea8d927ebdd374e",
+      "symbol": "HeatPencil"
+    },
+    {
+      "lines": [
+        92,
+        134
+      ],
+      "path": "src/bhsm/interface/completion/foundational_dirac_spin_glue_v14_45.py",
+      "raw_sha256": "ad05ede643af517ded29823b6f5d3076ae64bc2e985ebf500ba48564ad8c8015",
+      "symbol": "foundational_action_payload"
+    },
+    {
+      "lines": [
+        272,
+        302
+      ],
+      "path": "src/bhsm/interface/ae4_stratified_dirac_zeta_induced_owner.py",
+      "raw_sha256": "067438afb5cc01cfbf76b715e67d5aa35a097484184e99217354cb78abffd34c",
+      "symbol": "microscopic_owner_contract"
+    },
+    {
+      "lines": [
+        25,
+        53
+      ],
+      "path": "src/bhsm/interface/ae32_c2_einstein_cartan_lr_action.py",
+      "raw_sha256": "2a31ac046db06876f4a8f41ac5d199f7f2fc14fc3163e0ef760259a3b157de6e",
+      "symbol": "action_completion_contract"
+    },
+    {
+      "lines": [
+        407,
+        434
+      ],
+      "path": "src/bhsm/interface/ae32_c2_einstein_cartan_lr_action.py",
+      "raw_sha256": "2a31ac046db06876f4a8f41ac5d199f7f2fc14fc3163e0ef760259a3b157de6e",
+      "symbol": "claim_boundary"
+    },
+    {
+      "lines": [
+        53,
+        76
+      ],
+      "path": "src/bhsm/interface/ae31_c2_gauge_composite_hs_action.py",
+      "raw_sha256": "5e6c9566e7065d318e2ad5d3f5550ca2d4873f7c9fb994fdd9b82acefb9befb7",
+      "symbol": "action_owned_gauge_hs_contract"
+    },
+    {
+      "lines": [
+        108,
+        125
+      ],
+      "path": "src/bhsm/interface/ae31_c2_gauge_composite_hs_action.py",
+      "raw_sha256": "5e6c9566e7065d318e2ad5d3f5550ca2d4873f7c9fb994fdd9b82acefb9befb7",
+      "symbol": "current_c2_domain_and_trace_transport"
+    }
+  ],
+  "starting_head": "a6e3ceebb0a9b8322be333c7be116a01ca6b837d"
+}

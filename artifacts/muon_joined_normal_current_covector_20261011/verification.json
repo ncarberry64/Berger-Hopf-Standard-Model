@@ -1,0 +1,43 @@
+{
+  "all_pins_current": true,
+  "classification": "VERIFIED_JOINED_CANONICAL_NORMAL_CURRENT_APPLICATION",
+  "compared_files": [
+    {
+      "byte_identical": true,
+      "bytes": 270429,
+      "name": "application.npz",
+      "sha256": "be214217099553c1dbb2c778005cba0219513ef30bb01b3747271041d170dfb4"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 52912,
+      "name": "result.json",
+      "sha256": "54b2f942843b4a8eb9fc9b16dd3f70f5862e706f00cdc32c7834a71a2c442083"
+    }
+  ],
+  "current_inverse_component_identified_as_Sigma": false,
+  "environment": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "PYTHONPATH": "src"
+  },
+  "focused_tests": {
+    "command": "python -m pytest --noconftest -q tests/test_muon_changing_normal_current_readout.py",
+    "exit_code": 0,
+    "passed": 10,
+    "runtime_chunk": "8871b6"
+  },
+  "input_hash_count": 88,
+  "physical_Pauli_completed": false,
+  "runs": [
+    {
+      "command": "python scripts/evaluate_muon_joined_normal_current_covector.py --output artifacts/muon_joined_normal_current_covector_20261011/run_1",
+      "exit_code": 0,
+      "runtime_chunk": "82638f"
+    },
+    {
+      "command": "python scripts/evaluate_muon_joined_normal_current_covector.py --output artifacts/muon_joined_normal_current_covector_20261011/run_2",
+      "exit_code": 0,
+      "runtime_chunk": "4a753f"
+    }
+  ]
+}

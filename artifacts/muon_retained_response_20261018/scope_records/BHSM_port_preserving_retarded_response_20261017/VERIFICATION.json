@@ -1,0 +1,108 @@
+{
+  "a_mu": null,
+  "actual_provisional_matrix_response_executed": true,
+  "all_primary_finite_checks_pass": true,
+  "byte_identical": true,
+  "classification": "EVALUATED_FINITE_CAUSAL_MAXWELL_WALL_RESPONSE_WITH_OPEN_TRACE_INPUTS",
+  "coupled_corrections": 0,
+  "environment": {
+    "numpy": "2.3.5",
+    "python": "3.13.5",
+    "scipy": "1.17.0"
+  },
+  "g_mu": null,
+  "git_writes": false,
+  "input_revision": "70e82fd4dbe5f53ff27ae17f6aaac7a4727c1fde",
+  "physical_exterior_or_collider_solved": false,
+  "physical_outgoing_derivative_admitted": false,
+  "primary_finite_check_categories_each_arm": 8,
+  "quantum_reference_selected": false,
+  "replay_files": [
+    {
+      "byte_identical": true,
+      "path": "incoming_causal_maps.npz",
+      "sha256": "5794b41cdc88fe1edcde123367925c9cc93dbd7dd528c625ed766deb58da6e48"
+    },
+    {
+      "byte_identical": true,
+      "path": "incoming_gauge_comparison.npz",
+      "sha256": "ad1bee7ad4181da9f4d921bb1ba4c58bad099a75ff1d434e3081e98055c6ebb0"
+    },
+    {
+      "byte_identical": true,
+      "path": "incoming_magnetic_columns.npz",
+      "sha256": "9e7da662390ea6e90330f11a2cf6e061766af14f32185f0092aaca4608d5ea18"
+    },
+    {
+      "byte_identical": true,
+      "path": "outgoing_causal_maps.npz",
+      "sha256": "a64cc6f0eda155762237a3922894c445bed7215f0df5e0faa5afbdc59298c669"
+    },
+    {
+      "byte_identical": true,
+      "path": "outgoing_gauge_comparison.npz",
+      "sha256": "8f0eea91bdfb1cea6241d281e56f6e2894046e1dee68484acd94bae4c662d826"
+    },
+    {
+      "byte_identical": true,
+      "path": "outgoing_magnetic_columns.npz",
+      "sha256": "6d748b0fa69a60ea934582bb3c90d08bf5c1986fa4ff1549b63e6587b55d1ec8"
+    },
+    {
+      "byte_identical": true,
+      "path": "progress.json",
+      "sha256": "6bfed16f3e9182c12407236cede4344c677bb89a55582a4ebea50dc092881566"
+    },
+    {
+      "byte_identical": true,
+      "path": "result.json",
+      "sha256": "e37af25269b5915de632ad9780f2bdd68c9b1cd612ed60e548ffe7e205066541"
+    }
+  ],
+  "results": [
+    {
+      "field_gauge_reconstruction_max": 7.293187081813812e-10,
+      "measures": {
+        "alternative_gauge_wall_Euler_difference": 4.211284099220336e-13,
+        "alternative_gauge_wall_weak_difference": 3.514410984450933e-13,
+        "canonical_vs_original_final_difference": 5.540012892879531e-12,
+        "canonical_vs_original_stage_difference": 1.173217079042388e-11,
+        "discrete_wall_temporal_Green": 3.3492089310249717e-15,
+        "homogeneous_symplectic": 3.3306690738754696e-16,
+        "original_DAE_system_absolute": 4.253597474246362e-12,
+        "original_DAE_system_backward": 1.056391733100969e-17,
+        "original_interior_Euler": 1.0061396160665481e-16,
+        "original_interior_Gauss": 6.821210263296962e-13,
+        "original_interior_momentum": 1.0757061907895604e-11,
+        "point_Hamiltonian_identity": 8.673617379884035e-19,
+        "stage_system_absolute": 1.3322676295501878e-15,
+        "stage_system_backward": 1.8537853944440636e-16,
+        "wall_antisymmetry_without_temporal": 1.884415515304022e-05
+      },
+      "side": "incoming"
+    },
+    {
+      "field_gauge_reconstruction_max": 6.327126175165177e-10,
+      "measures": {
+        "alternative_gauge_wall_Euler_difference": 7.300271498422717e-13,
+        "alternative_gauge_wall_weak_difference": 7.300271498422717e-13,
+        "canonical_vs_original_final_difference": 7.556066883296353e-12,
+        "canonical_vs_original_stage_difference": 9.117595567431636e-12,
+        "discrete_wall_temporal_Green": 6.030332483364376e-15,
+        "homogeneous_symplectic": 6.661338147750939e-16,
+        "original_DAE_system_absolute": 5.930811397547586e-12,
+        "original_DAE_system_backward": 1.611970282311574e-17,
+        "original_interior_Euler": 1.0234868508263162e-16,
+        "original_interior_Gauss": 1.1368683772161603e-12,
+        "original_interior_momentum": 9.117595567431636e-12,
+        "point_Hamiltonian_identity": 1.734723475976807e-18,
+        "stage_system_absolute": 1.3322676295501878e-15,
+        "stage_system_backward": 1.3946971850953129e-16,
+        "wall_antisymmetry_without_temporal": 1.8970117067043657e-05
+      },
+      "side": "outgoing"
+    }
+  ],
+  "stricter_field_gauge_reconstruction_at_2e_10": false,
+  "total_uncertainty": null
+}

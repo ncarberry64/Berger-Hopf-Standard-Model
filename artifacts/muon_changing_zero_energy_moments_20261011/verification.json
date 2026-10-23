@@ -1,0 +1,37 @@
+{
+  "all_pins_current": true,
+  "classification": "VERIFIED_EXACT_MIDDLE_LIGHT_ZERO_FREQUENCY_ENERGY_CONTACTS",
+  "compared_files": [
+    {
+      "byte_identical": true,
+      "bytes": 16107,
+      "name": "application.npz",
+      "sha256": "36d893d598bb7739f2bb0245ac6e2377340c64498b79e4c84e3584facda169ec"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 51782,
+      "name": "result.json",
+      "sha256": "1aa6819ac94494c1172e5aca761af80670a36e8943b06ec0fae199675807f508"
+    }
+  ],
+  "environment": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "PYTHONPATH": "src"
+  },
+  "input_hash_count": 273,
+  "physical_on_shell_Pauli_completed": false,
+  "runs": [
+    {
+      "command": "python scripts/evaluate_muon_changing_zero_energy_moments.py --output artifacts/muon_changing_zero_energy_moments_20261011/run_1",
+      "exit_code": 0,
+      "runtime_chunk": "7b4741"
+    },
+    {
+      "command": "python scripts/evaluate_muon_changing_zero_energy_moments.py --output artifacts/muon_changing_zero_energy_moments_20261011/run_2",
+      "exit_code": 0,
+      "runtime_chunk": "b3ca24"
+    }
+  ],
+  "unchanged_math_suite": "tests/test_muon_changing_current_energy_moments.py: four tests previously passed; pinned core verification in artifacts/muon_changing_current_energy_moments_20261011/verification.json"
+}

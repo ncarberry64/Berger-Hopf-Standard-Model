@@ -1,0 +1,77 @@
+NORMAL TRACE CONGRUENCE AND ACTION-OWNED SHAPE INTEGRAL
+2026-10-16. REPO=C:/Users/carbe/Downloads/BHSM_muon_parent_maxwell_worktree_20261001
+
+Constructive elimination: do not postpone raw bulk assembly for u
+The full-complement border in muon_holomorphic_d5_trace_action.normalized_two_sheet_point_action (:272-337) and the exact normalized_seam_schur_jets identity permit a useful separation. No numerical model or u=1 physical normalization is needed.
+
+Let B0=[PL Bplus_num,PR Bminus_num] and C0=[Cplus_num PL;Cminus_num PR] be the already evaluated full384 trace numerators. They include the actual boosts, the once-only original Dirac-bar Gamma0 and all complement rows. On the selected18 trace define
+ R_u=diag(u_R,plus I12,u_R,minus I6),
+ L_u=diag(u_L,plus I12,u_L,minus I6).
+The source-owned normalized maps are B=R_u^-1 B0 and C=C0 L_u^-1. Left/right values and source jets are independent analytic operands. No conjugation of source coefficients is implied.
+
+For the SAME complete bulk operator K and SAME already supplied bulk/domain/exterior, form its raw-trace border
+ [K C0; B0 0] [U0;Lambda0]=[0;I], Gamma0=-Lambda0.
+The normalized bare solution is U=U0 R_u and Lambda=L_u Lambda0 R_u. Hence
+ Gamma_bulk,norm=L_u Gamma_bulk,raw R_u.
+Including the actual once-only action K_full=K-rho C M B gives exactly
+ Gamma_norm=L_u Gamma_bulk,raw R_u-rho M,
+ Gamma_raw,full=Gamma_bulk,raw-rho L_u^-1 M R_u^-1,
+ Gamma_norm=L_u Gamma_raw,full R_u.
+The constrained Poisson U remains U0 R_u. This preserves all complement rows; no reduced18 bulk operator has been substituted. Thus the raw full-complement bulk Poisson/Schur can be assembled ONCE without assigning u. Normal values/jets enter only finite trace-coordinate, seam-mass and source/readout contacts. It is unnecessary to rerun the bulk solve for every scalar normalization value. This is an algebraic construction on an already declared full K/domain; it does not supply an exterior or heat K from a source compression.
+
+At the source-normalized intrinsic seam, u cancels completely from the bare Higgs term, as already evaluated: -rho M in the Lorentz source equation, +rho M in its weak Hamiltonian output. It does not cancel from the remaining normalized bulk response at fixed M.
+
+Exact source/energy/field contacts
+For any axis x,
+ Gamma_norm,x=L_x Gamma0 R+L Gamma0,x R+L Gamma0 R_x-rho_x M-rho M_x.
+The mixed xy derivative of the first product has ALL nine terms:
+ L_xy Gamma0 R + L_x Gamma0,y R + L_x Gamma0 R_y
+ +L_y Gamma0,x R + L Gamma0,xy R + L Gamma0,x R_y
+ +L_y Gamma0 R_x + L Gamma0,y R_x + L Gamma0 R_xy.
+Subtract rho_xy M+rho_x M_y+rho_y M_x+rho M_xy. This includes changes in normal normalization, clock, field and trace incidence; no missing jet is assigned zero. Existing normalized_seam_schur_jets already retains moving B/C/rho/M derivatives, so this is a factorization of its exact action, not a new seam law.
+
+The inverse relation is Gamma_norm^-1=R^-1 Gamma_raw,full^-1 L^-1. A readout J_L Gamma_norm^-1 J_R is unchanged when its raw row/source are J_L R^-1 and L^-1 J_R. Likewise a generalized pair transforms together: K_norm=L K_raw R and G_norm=L G_raw R imply G_norm^-1 K_norm=R^-1 G_raw^-1 K_raw R. At a real Hilbert point L=R^dagger gives the corresponding positive congruence. Independent analytic source jets still use the action dual, not conjugated source parameters.
+
+This is coordinate invariance ONLY when seam mass, source/readout, Gram and every derivative contact transform together. Changing u but holding the normalized M and all raw couplings fixed changes the actual raw seam coefficient L^-1 M R^-1; it cannot be declared a harmless normalization. Nor does congruence justify heating the small Gamma matrix instead of the originating full generalized operator. A time-dependent change of field coordinates also requires its induced connection derivatives; this note transforms boundary-response coordinates and does not omit those terms by asserting a bulk similarity.
+
+What fixes the scalar amplitude in the adopted action
+completion/foundational_dirac_spin_glue_v14_45.py:102-128 adopts
+ A_eta=partial_s+(1/2)partial_s log J-partial_s log sin(f_eta),
+ u=N J^-1/2 sin(f_eta).
+Its zero_mode_pullback_payload (:197-216) explicitly owns
+ integral ds J|u|^2=N^2 integral ds sin^2(f_eta)=1.
+Therefore I_eta=integral_(a_eta)^(b_eta) sin^2(f_eta(X_eta(s))) ds and N=I_eta^-1/2 on the real positive branch. In particular
+ u_wall=sin(f_wall)/sqrt(J_wall I_eta),
+ d log u_wall=cot(f_wall) d f_wall-(1/2)d log J_wall-(1/2)d log I_eta.
+The amplitude is not a new free coefficient. It is a derived functional of the same real field, normal curve and domain. A mode phase is a field-coordinate convention with the accompanying coupling/source transformations, not an extra adjustable coupling. The left analytic branch is continued independently from its real action value.
+
+What proper-normal data are actually owned at the SAME REAL wall
+aether_eta_wall_material_response_v15_26.lowest_order_odd_scalar_audit (:172-201) identifies the orientation carrier as grad(f_eta)/|grad(f_eta)| on the REGULAR WALL COLLAR and the probability one-form J|u|^2 ds. muon_combined_f_eta_contact explicitly preserves the local coefficient through cancellation of the normalizing root; it does not construct a global spacelike Gaussian collar or normalized physical mode.
+
+Using the supplied real coframe E0=(partial_t-zeta partial_rho)/N and E4=partial_rho/C,
+ f0=(f_t-zeta f_rho)/N, f4=f_rho/C, Q=f4^2-f0^2.
+On a regular spacelike-gradient patch Q>0 the increasing-f proper-normal vector has n0=-f0/sqrt(Q), n4=f4/sqrt(Q), and its actual curve is
+ dt/ds=n0/N,
+ d rho/ds=n4/C-zeta n0/N,
+ g(X_s,X_s)=-1, d f(X(s))/ds=sqrt(Q).
+Opposite orientation changes the signed direction consistently. These are not fixed-t radial lines when n0 is nonzero. Proper ds is determined by this curve and the metric, not silently replaced by C(t0,rho) d rho.
+
+The normal Jacobian is the pullback density of the same original mu5=N C R^3: dmu5=dmu4 J ds, and along the normal flow d_s log J=div_mu5 X_s. muon_holomorphic_d5_trace_action.d5_sigma_normal_flow_germ (:229-269) implements this characteristic/divergence rule for the separately declared SIGMA normal; it is a first germ, not a complete f-normal history. One must not identify f and sigma normals by their names. For a flow initialized on a material wall rho=rho_wall fixed, with original dmu4=ell_L R_wall^3 dt dOmega, the initial Jacobian is the actual pullback J_wall=(N C |X_s^rho|)/ell_L. It equals1 for the genuine orthogonal unit normal to that wall; it must not be set1 for an arbitrary f-normal flow without checking its incidence. This is computable from a realized same-wall flow/coframe, not an extra normalization parameter.
+
+The frozen SAME REAL source_first archive provides actual N,C,R,zeta,f,f_t,f_rho and first jets at the original four Gauss interior nodes plus separate wall, at each retained one-cell midpoint. Its real affine histories cover the retained incoming/inherited-child one-cell time intervals. Those data determine local regular wall characteristic germs and local f coefficients. They do NOT contain a completed proper-normal trajectory X_eta(s), its transported J(s), endpoints a_eta,b_eta, or f along that entire curve including any portion outside those retained history cells. No such complete real normal-domain object is instantiated by the current source owners used here.
+
+Two tempting substitutions are excluded by their actual source meaning:
+1. muon_holomorphic_d5_trace_action.d5_current_normal_inclusion (:373-416) evaluates I_rho=sum w C sin^2(f) on a FIXED-T radial representation with J_rho=(N/N_wall)(R/R_wall)^3, its analytic radial identity and a quadrature norm. Its docstring and return flags explicitly distinguish this from a continuum/exterior mode admission. It cannot substitute for I_eta on a moving proper-normal curve without the missing flow/J/domain identification.
+2. foundational_dirac_spin_glue_v14_45._eta_profile_arrays (:136-184) uses f(s)=2atan(exp(s)) on the disclosed numerical interval[-12,12] as an ANALYTIC WITNESS. Its sech profile, Jacobian and endpoints are not the actual collider/muon field preparation or this same-real wall. Older complex normalized profiles likewise do not supply this real normal integral.
+
+The adopted combined-f local operator can remain regular where Q=0; that root cancellation does not globally extend a spacelike unit-normal chart through such points, prove its integration endpoints, or authorize deleting eta. This is a distinction between a local differential coefficient and a realized normal-domain geometry, not a no-solution theorem.
+
+Exact remaining operand and next solve
+The residual normalization operand is the derived field functional I_eta over the action-selected full normal domain (and its moving source/energy/field derivatives), with the correct wall-incidence J_wall. It is not a free u, empirical scale, new coupling or independent user-selected profile. The raw full384 bulk operator/trace and its full-complement response can proceed without choosing that amplitude; use the congruence identities above to carry the derived I_eta/J_wall factors until the same physical field/domain solution supplies them. No old normal/source/profile campaign was rerun, no fixed-time radial integral was relabeled proper-normal, and no new numerical toy was evaluated. Physical full native/outgoing domain, derivative gate, correction, spin normalization and moment remain open.
+
+Relevant current actual receipts
+Real source-first archive: artifacts/muon_real_coupled_open_operator_20261016/source_first_run_1/application.npz
+ SHA7da8ddd5fa4bda397aa6a2d50e845338a3ef92fb3f0e837a5a6d0d166915e177.
+Lorentz normalized seam coefficients: source3339d14ade6a8dd9bc2cdc008390de70251874aa2bb3c46814b922d625171fe0.
+Hamiltonian seam coefficients: sourcebbffa99bae4707f508c01d91a028dbc4726b40f762651175504e68a97331c593.
+The present note is a source-anchored algebra/normal-domain derivation only. Original coupled matching corrections=0.

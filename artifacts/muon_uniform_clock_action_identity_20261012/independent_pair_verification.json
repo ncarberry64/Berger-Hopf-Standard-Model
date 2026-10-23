@@ -1,0 +1,78 @@
+{
+  "all_output_byte_identical": true,
+  "all_output_count": 2,
+  "all_output_sha256": {
+    "application.npz": "8cc0fc63cf1f3594826336e392bc908ce2503d88d63177352db629375e245313",
+    "result.json": "7b606393e9442ecf158413d0f369daf5c918617b64b93f3536b503e9a174d3c9"
+  },
+  "classification": "INDEPENDENT_REPLAY_OF_CONDITIONAL_CANONICAL_ACTION_DIAGNOSTIC",
+  "executions": [
+    {
+      "argv": [
+        "C:/Python314/python.exe",
+        "scripts/evaluate_muon_uniform_clock_action_identity.py",
+        "--output",
+        "artifacts/muon_uniform_clock_action_identity_20261012/run_1"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment": {
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "PYTHONPATH": "src;scripts"
+      },
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "C:/Python314/python.exe",
+        "scripts/evaluate_muon_uniform_clock_action_identity.py",
+        "--output",
+        "artifacts/muon_uniform_clock_action_identity_20261012/run_2"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment": {
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "PYTHONPATH": "src;scripts"
+      },
+      "exit_code": 0
+    }
+  ],
+  "full_ancestor_rematerialization_executed": false,
+  "input_pin_count": 365,
+  "input_pins_current": true,
+  "new_physical_constraint_or_error_bound_claimed": false,
+  "stdout": {
+    "run_1.stdout.txt": {
+      "bytes": 683,
+      "capture": "Complete actual PowerShell Tee-Object bytes",
+      "sha256": "50dd4024eea33ea91f2a95f66bffd6ff6cb96da6afd1ea83b1414b7d0d2de6e5"
+    },
+    "run_2.stdout.txt": {
+      "bytes": 683,
+      "capture": "Complete actual PowerShell Tee-Object bytes",
+      "sha256": "50dd4024eea33ea91f2a95f66bffd6ff6cb96da6afd1ea83b1414b7d0d2de6e5"
+    }
+  },
+  "test": {
+    "argv": [
+      "C:/Python314/python.exe",
+      "-m",
+      "pytest",
+      "--noconftest",
+      "-q",
+      "tests/test_muon_uniform_clock_action_identity.py"
+    ],
+    "environment": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "PYTHONPATH": "src;scripts"
+    },
+    "exit_code": 0,
+    "result": "1 passed in6.97s",
+    "stdout_path": "artifacts/muon_uniform_clock_action_identity_20261012/tests.stdout.txt",
+    "stdout_sha256": "ebde893f0be18e7056f9143e3ce3b7b12283c67724086c219d39cebc269330f7",
+    "test_source_sha256": "e59ffdc523c04c194cef9119ea216416b7c2d80de1d54ebf6bd83e76082262e2"
+  },
+  "verifier_source_sha256": "cd75dc33c18ce38e2615d1ffa0ac7d462e1c38f66c4122fffe898fa5aed206a0"
+}

@@ -1,0 +1,62 @@
+{
+  "BHSM_complete_native_remainder": false,
+  "action_matching_condition": "only minimal on-shell hadronic four-current projection; any BHSM additional photons/interface/formation corrections and differing kernels require separate matching",
+  "alpha_scaling_at_fixed_correlator": "exact cubic; requires binding source alpha0 normalization before numeric rescaling",
+  "classification": "INDEPENDENT_PUBLISHED_CONNECTED_HADRONIC_FOUR_CURRENT_PAULI_PROJECTION",
+  "current_normalization": "minimal electromagnetic quark current; on-shell physical muon; alpha(0)^3 perturbative HLbL order",
+  "dimensionless_units": true,
+  "exact_selected_metrology_rematch_evaluated": false,
+  "independent_inputs": "hadronic transition form factors/cross sections/decay widths and theoretical short-distance constraints; measured muon anomaly not used",
+  "mass_scaling": "T_i kernels depend on muon mass; no universal exact m_mu^2 rescaling or derivative bound from published scalar alone",
+  "measured_anomaly_used": false,
+  "nearby_metrology_approximation": {
+    "absolute_published_sector_sum": 1.593e-09,
+    "allowance_factor": 100,
+    "alpha_dependence": "exact cubic at fixed four-current function and mass; source alpha0 numeric not given in the two inspected primary papers",
+    "exact_alternative_producer": "re-evaluate2412.00190 Eq4 kernels T_i(Sigma,r,phi;mselected) on source12Pi_bar functions/TFF/SDC inputs",
+    "formula": "2*(abs(m-selected minus m-representative)+sigma_m)/m-representative*sum_abs_published_sectors; generous estimate multiplies100",
+    "generous_sensitivity_allowance_estimate": 4.2405338922142075e-13,
+    "justification": "massive Euclidean lepton kernels are smooth near the physical muon mass; leading m^2/log behavior gives order-unity logarithmic sensitivity and100 is a deliberately generous modeling allowance",
+    "leading_dimensional_sensitivity_estimate": 4.2405338922142075e-15,
+    "limitation": "no actual HLbL tensor derivative norm integrated; this is a nearby-mass modeling estimate, NOT an exact derivative or rigorous bound; published center is not rescaled",
+    "reference_role": "known configured MuLan2013 reference only, NOT attributed to HLbL paper",
+    "representative_older_muon_mass_GeV": 0.1056583715,
+    "selected_muon_mass_GeV": 0.10565842526040435,
+    "selected_muon_mass_standard_uncertainty_GeV": 8.686982331492701e-08
+  },
+  "overlap": {
+    "HVP_two_current": "disjoint connected four-current topology",
+    "light_pseudoscalar_poles": "subtracted from OPE/pQCD regions before adding exclusive poles; counted once",
+    "neutral_Higgs_one_loop": "disjoint topology",
+    "pure_leptonic_QED": "disjoint hadronic current content"
+  },
+  "primary_result_equation": "2412.00190v2 Eq8",
+  "primary_sources": [
+    {
+      "bytes": 1078971,
+      "path": "C:\\Users\\carbe\\Downloads\\BHSM_MUON_SPECTRAL_INPUTS_20261010\\2412.00190v2.pdf",
+      "sha256": "39275986075ab3db0538bd6242e138ad48aae779270d71acd1fc8a06cab551d5",
+      "url": "https://arxiv.org/pdf/2412.00190v2"
+    },
+    {
+      "bytes": 5871839,
+      "path": "C:\\Users\\carbe\\Downloads\\BHSM_MUON_SPECTRAL_INPUTS_20261010\\2412.00178v2.pdf",
+      "sha256": "f1b1d67bc8d014bddc27a0a0b5177cebc95873749a2ce24ef3c2c8e923b3ae86",
+      "url": "https://arxiv.org/pdf/2412.00178v2"
+    }
+  ],
+  "projected_value": 1.019e-09,
+  "projection_equation": "Eq4: alpha^3/(432*pi^2) int_0^infty dSigma Sigma^3 int_0^1 dr r*sqrt(1-r^2) int_0^2pi dphi sum_i=1^12 T_i(Sigma,r,phi;m_mu)*Pi_bar_i",
+  "published_alpha_inverse_0": null,
+  "published_component_values_1e11": {
+    "charm_loop": 3.0,
+    "exclusive_poles_boxes_rescattering": 65.7,
+    "subleading_and_short_distance_matched": 33.2
+  },
+  "published_muon_mass_GeV": null,
+  "published_standard_uncertainty": 7.9e-11,
+  "selected_input_derivative_m_mu_GeV": null,
+  "source_uncertainty": "experimental TFF fits plus matching scale variation, U3/tensor assumptions, effective-pole/short-distance modeling and charm uncertainty; not a rigorous enclosure",
+  "status": "PUBLISHED_NUMERICAL_CURRENT_CORRELATOR_PROJECTION_AVAILABLE_AT_SOURCE_CONVENTION",
+  "whole_SM_total_used": false
+}

@@ -1,0 +1,126 @@
+{
+  "baseline_dependency": "The portable producer requires the pinned frozen24/48 baseline archive; this remains an explicit input, not silently removed by compact export.",
+  "classification": "ISOLATED_PAIRED_ACTUAL_MAXWELL_FIXED_FIELD_GEOMETRY_PARTIAL",
+  "coupled_corrections": 0,
+  "full_physical_gate": false,
+  "independent_execution_pairs": [
+    {
+      "byte_identical": true,
+      "first": {
+        "bytes": 4947518,
+        "path": "run_1/geometry_application.npz",
+        "sha256": "e352b4859fd10d7c383a4f2014211d4b9ef5c9cf41acce0c3b836e6abd69506a"
+      },
+      "second": {
+        "bytes": 4947518,
+        "path": "run_2/geometry_application.npz",
+        "sha256": "e352b4859fd10d7c383a4f2014211d4b9ef5c9cf41acce0c3b836e6abd69506a"
+      }
+    },
+    {
+      "byte_identical": true,
+      "first": {
+        "bytes": 138034,
+        "path": "run_1/result.json",
+        "sha256": "9e1213886a357c2be27515f6075a70e3f8867c5f5e391ecc1251a42ee1ceb7bd"
+      },
+      "second": {
+        "bytes": 138034,
+        "path": "run_2/result.json",
+        "sha256": "9e1213886a357c2be27515f6075a70e3f8867c5f5e391ecc1251a42ee1ceb7bd"
+      }
+    },
+    {
+      "byte_identical": true,
+      "first": {
+        "bytes": 90198,
+        "path": "run_1/partial_result.json",
+        "sha256": "5626d54bc98515baa19df0269153a83613abec5b18cb32dc89a7d873d8df9918"
+      },
+      "second": {
+        "bytes": 90198,
+        "path": "run_2/partial_result.json",
+        "sha256": "5626d54bc98515baa19df0269153a83613abec5b18cb32dc89a7d873d8df9918"
+      }
+    },
+    {
+      "byte_identical": true,
+      "first": {
+        "bytes": 145603,
+        "path": "portable_refinement_run_1/compact_geometry_application.npz",
+        "sha256": "12a7c0e26426c59af0d888a1e44cd90633d2b7f464191c31fb2a2ff121c729d3"
+      },
+      "second": {
+        "bytes": 145603,
+        "path": "portable_refinement_run_2/compact_geometry_application.npz",
+        "sha256": "12a7c0e26426c59af0d888a1e44cd90633d2b7f464191c31fb2a2ff121c729d3"
+      }
+    },
+    {
+      "byte_identical": true,
+      "first": {
+        "bytes": 4514697,
+        "path": "portable_refinement_run_1/work_only_geometry_hessians.npz",
+        "sha256": "d8f9965a307c2d394c3dbec702d16f775c4a5beb5a8a78f5c96494fda11829d6"
+      },
+      "second": {
+        "bytes": 4514697,
+        "path": "portable_refinement_run_2/work_only_geometry_hessians.npz",
+        "sha256": "d8f9965a307c2d394c3dbec702d16f775c4a5beb5a8a78f5c96494fda11829d6"
+      }
+    },
+    {
+      "byte_identical": true,
+      "first": {
+        "bytes": 93610,
+        "path": "portable_refinement_run_1/result.json",
+        "sha256": "6632435313736906c9351534c0ec02737356757246ba782eada1fa654f394a51"
+      },
+      "second": {
+        "bytes": 93610,
+        "path": "portable_refinement_run_2/result.json",
+        "sha256": "6632435313736906c9351534c0ec02737356757246ba782eada1fa654f394a51"
+      }
+    },
+    {
+      "byte_identical": true,
+      "first": {
+        "bytes": 47467,
+        "path": "portable_refinement_run_1/partial_result.json",
+        "sha256": "ae0f3bdeee8ea40d3fd70e84726fdda2f7720e104970eff3881cda41033d6566"
+      },
+      "second": {
+        "bytes": 47467,
+        "path": "portable_refinement_run_2/partial_result.json",
+        "sha256": "ae0f3bdeee8ea40d3fd70e84726fdda2f7720e104970eff3881cda41033d6566"
+      }
+    }
+  ],
+  "large_hessians_work_only": true,
+  "original24_48_sweep_preserved": true,
+  "portable_final96_192_pair_complete": true,
+  "preferred_compact_publication": "portable_refinement_run_1/compact_geometry_application.npz",
+  "repository_files_modified_by_this_agent": false,
+  "sources_and_proof": [
+    {
+      "bytes": 16232,
+      "path": "evaluate_em_geometry.py",
+      "sha256": "43476aa10597491656098b354e35101ceae46c56e1d046c48beb451a8115a2b6"
+    },
+    {
+      "bytes": 11810,
+      "path": "refine_em_geometry.py",
+      "sha256": "067bb36f2c8c7de9d1a164bd07a566d755fc22c9c28fb9b9f9aefdd5c4d5dac4"
+    },
+    {
+      "bytes": 14412,
+      "path": "evaluate_em_geometry_refinement_20261016.py",
+      "sha256": "72c7af88652d72010a58feef905136c72b2a80e1b65df22dc2630fcfa9213530"
+    },
+    {
+      "bytes": 9888,
+      "path": "EM_GEOMETRY_PROOF_20261016.txt",
+      "sha256": "89ce7a789c648702adea409be136b380121b6e2006bb7a6ffd54c79521682061"
+    }
+  ]
+}

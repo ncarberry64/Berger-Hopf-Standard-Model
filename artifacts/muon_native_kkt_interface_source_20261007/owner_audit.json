@@ -1,0 +1,391 @@
+{
+  "classification": "BOUNDED_READ_ONLY_PRODUCER_AUDIT__CURRENT_OWNER_SOURCE_NOT_EVALUATED",
+  "starting_HEAD": "da155f24a2663d1570d9d78acc9771197fc16670",
+  "scientific_reference": "524ed90689bd5923c249bba2e699abf627e703cd",
+  "current_owner": {
+    "action_version": "BHSM-AE-4.0.0",
+    "producer": "src/bhsm/interface/ae4_stratified_dirac_zeta_induced_owner.py",
+    "symbols": [
+      "microscopic_owner_contract",
+      "native_spectral_length_contract",
+      "native_heat_length_squared_jets"
+    ],
+    "functional": "-(1/2)STr E1(ell_star^2 P_strat), with relative zeta/eta completion",
+    "cutoff_owner_tag": "BHSM-AE4-MODE-FREQUENCY-CUTOFF-2026-10-07",
+    "rule": "Continuously transport the action-selected formation branch to the first future AE4 support-loss event; c=i/r on the same branch and domain.",
+    "owner_selection_status": "SELECTED__GLOBAL_OPERATOR_DOMAIN_STILL_REQUIRED",
+    "physical_source_realization_status": "UNEVALUATED",
+    "evidence": [
+      "artifacts/muon_native_interface_bulk_forcing_20261007/run_1/result.json",
+      "artifacts/muon_native_interface_bulk_forcing_20261007/augmentation_contract.json",
+      "artifacts/muon_native_support_loss_cutoff_20261007/run_1/next_operand.json",
+      "artifacts/muon_native_support_loss_cutoff_20261007/run_1/owner_contract.json"
+    ]
+  },
+  "audited_producers": [
+    {
+      "path": "src/bhsm/interface/geometric_material_port.py",
+      "symbols": [
+        "geometric_trace_jet",
+        "required_material_jet"
+      ],
+      "evaluable": "Exactly three trace, two momentum and two dynamic-flux entries from supplied common-frame state, shape, momentum, force, conormal and momentum-rate directional operands.",
+      "formula": "b_psi=[T u_psi+(D_psi T)q; D_psi P; D_psi F-D_psi G-D2P[X,u_psi]-DP[D_psi X]]",
+      "limitation": "Does not generate or select xi_psi, source displacement pullback, owner KKT dual or support-loss base."
+    },
+    {
+      "path": "src/bhsm/interface/joint_boundary_port_reduction.py",
+      "symbols": [
+        "moving_port_jet",
+        "reduce_seven_port"
+      ],
+      "evaluable": "Supplied seven-port product rule and general implicit output adjoint.",
+      "formula": "D(B Lambda)[xi_psi]=(DB[xi_psi])Lambda+B D Lambda[xi_psi]",
+      "limitation": "Output derivatives are not owner KKT source covectors."
+    },
+    {
+      "path": "src/bhsm/interface/gate7_current_action.py",
+      "symbols": [
+        "ActionBase",
+        "ActionSector",
+        "ConstraintSector",
+        "ImplicitAction",
+        "evaluate_gate7_current_action"
+      ],
+      "evaluable": "Signed supplied objective derivative sectors, multiplier-owned constraint contacts and contracted implicit H/B products.",
+      "limitation": "Requires all action/constraint derivatives and callbacks as operands; caller assembles multiplier equations. It does not produce the current full KKT residual or select the physical interface source."
+    },
+    {
+      "path": "src/bhsm/interface/aether_n3_exact_full_local_action_jet_v17_60.py",
+      "symbols": [
+        "exact_full_action_jet_at_state"
+      ],
+      "source_commit": "f5ff34c534b4b2ef3f295a5d49b4f53495187fd2",
+      "evaluable": "Retained local scalar action, gradient and Hessian in supplied q, velocity and lapse/shift multiplier coordinates.",
+      "owner_kind": "HISTORICAL_RETAINED_LOCAL_ACTION",
+      "limitation": "Fixed radial quadrature and fixed equatorial boundary. No independent source s, moving-boundary source map, selected xi_psi or same current AE4 owner/domain identification."
+    },
+    {
+      "path": "src/bhsm/interface/aether_jax_full_local_action.py",
+      "symbols": [
+        "_action",
+        "action_value",
+        "action_gradient",
+        "action_hessian",
+        "action_hessian_directional"
+      ],
+      "evaluable": "Same retained 96-point local expression and its JAX derivatives in supplied retained-state directions.",
+      "owner_kind": "HISTORICAL_RETAINED_LOCAL_ACTION",
+      "limitation": "A state-direction derivative is not a physical normal displacement partial without its independently owned source pullback. Local fixed expression lacks the current all-sector support-loss owner identity."
+    },
+    {
+      "path": "src/bhsm/interface/retained_n12_action_expansion_adapter.py",
+      "symbols": [
+        "audit_retained_n12_action_equivalence",
+        "retained_n12_local_action_expansion"
+      ],
+      "source_commit": "2b0aeb26aa9726529a84a53a14d43e96ec17bd8d",
+      "evaluable": "Analytic/JAX local action equivalence and matrix-free directional action contractions.",
+      "limitation": "Explicitly a local-kernel adapter; history gluing, Fourier/momentum assembly and seam terms are separate downstream inputs."
+    },
+    {
+      "path": "src/bhsm/interface/prescribed_arb_action_jet.py",
+      "symbols": [
+        "prescribed_action_jet",
+        "batched_scalar_curvature"
+      ],
+      "evaluable": "Existing retained scalar action along a completely supplied polynomial state path; prescribed mixed derivatives can avoid generic full tensors.",
+      "limitation": "Prescribed path and all nonzero derivatives must be supplied. Omitted polynomial masks are exact zeros for that declared path, not evidence of zero missing physical sectors."
+    },
+    {
+      "path": "src/bhsm/interface/universal_physical_action_expansion.py",
+      "symbols": [
+        "DirectionalActionOracle",
+        "CallableDirectionalActionOracle",
+        "JaxDirectionalActionOracle",
+        "PhysicalActionExpansion"
+      ],
+      "evaluable": "Directional derivatives through order four of one supplied action/background; no dense fourth tensor required.",
+      "limitation": "Does not construct a current owner, geometric source map, stationary base, constraints, multipliers or pairing."
+    },
+    {
+      "path": "src/bhsm/interface/aether_n3_analytic_kkt_covector_v16_12.py",
+      "symbols": [
+        "replacement_action_covector",
+        "analytic_kkt_residual"
+      ],
+      "evaluable": "Callable historical 376-coordinate anchored N=3 KKT residual [grad(Gamma_replacement+rho E),E].",
+      "owner_kind": "HISTORICAL_ANCHORED_N3_REPLACEMENT_ACTION_AND_ORDERED_TERMINAL_EULER_DIRAC_EVENT",
+      "limitation": "No source s or xi_psi injection. The old rank16 common heat/period/fixed-radial-boundary owner is not identified with current AE4 support loss."
+    },
+    {
+      "path": "src/bhsm/interface/aether_n3_replacement_global_kkt_v16_11.py",
+      "symbols": [
+        "replacement_action_from_base",
+        "event_value_from_base",
+        "kkt_residual"
+      ],
+      "evaluable": "Finite-difference counterpart of the historical anchored N=3 action/event KKT residual.",
+      "owner_kind": "HISTORICAL_ANCHORED_N3_REPLACEMENT_ACTION_AND_ORDERED_TERMINAL_EULER_DIRAC_EVENT",
+      "limitation": "Has no physical moving-boundary source coordinate and no current owner/domain identification."
+    },
+    {
+      "path": "src/bhsm/interface/aether_n3_exact_local_jet_sbp_covector_v17_61.py",
+      "symbols": [
+        "exact_local_jet_sbp_action_covector",
+        "exact_local_jet_sbp_projected_residual_and_vector"
+      ],
+      "evaluable": "Exact-local-jet historical SBP action covector with common heat and period derivatives.",
+      "owner_kind": "HISTORICAL_ANCHORED_N3_SBP_ACTION",
+      "limitation": "The projected residual analytically updates the event multiplier. It must not substitute for the requested fixed-lambda source partial or retained lambda-response solve."
+    },
+    {
+      "path": "src/bhsm/interface/aether_n3_exact_action_hessian_assembly_v18_18.py",
+      "symbols": [
+        "exact_sbp_action_hessian"
+      ],
+      "evaluable": "Historical global SBP scalar-action Hessian.",
+      "owner_kind": "HISTORICAL_ANCHORED_N3_SBP_ACTION",
+      "limitation": "No selected support-loss source coordinate or same current owner/domain identification."
+    },
+    {
+      "path": "src/bhsm/interface/aether_n3_exact_square_kkt_response_v18_19.py",
+      "symbols": [
+        "exact_square_kkt_response"
+      ],
+      "evaluable": "Historical 376x376 explicit-event-multiplier KKT matrix [[Gamma_xx+rho E_xx,E_x],[E_x^T,0]].",
+      "owner_kind": "HISTORICAL_ANCHORED_N3_SBP_ACTION_AND_ORDERED_TERMINAL_EULER_DIRAC_EVENT",
+      "limitation": "Retains its event multiplier correctly for its historical owner; does not supply physical support-loss lambda, h_psi or L_ss."
+    },
+    {
+      "path": "src/bhsm/interface/aether_full_reset_action_jacobian.py",
+      "symbols": [
+        "full_reset_residual",
+        "sector_constraint_action_jacobian",
+        "full_reset_action_jacobian"
+      ],
+      "evaluable": "Historical normalized 57-row event/child reset and action-coordinate derivatives.",
+      "limitation": "Requires historical state, weights, branch reference, ordered scale and normalization; no independent moving-interface source partial is supplied."
+    },
+    {
+      "path": "src/bhsm/interface/aether_canonical_momentum_action_jacobian.py",
+      "symbols": [
+        "_attachment_action_derivatives",
+        "canonical_momentum_action_jacobian"
+      ],
+      "evaluable": "Historical canonical momentum derivative including derivative of the attachment lift.",
+      "limitation": "Not a source generator; consumed physical direction and current owner pullback remain required."
+    },
+    {
+      "path": "src/bhsm/interface/aether_cross_resolution_reconnaissance_v21_35.py",
+      "symbols": [
+        "_trace_jacobian_at_order",
+        "_attachment_jacobian_at_order",
+        "_canonical_pair_at_order",
+        "_metric_radial_flux_covector_at_order",
+        "_child_rows_at_order"
+      ],
+      "evaluable": "Historical retained local trace, momentum, radial conormal and child/material row producers.",
+      "limitation": "These supply historical kinematic ingredients but no physical current support-loss xi_psi or same-owner KKT source."
+    },
+    {
+      "path": "src/bhsm/interface/covariant_bubble_interface_mechanics.py",
+      "symbols": [
+        "build_payload",
+        "interface_stiffness",
+        "curvature_traction",
+        "relativistic_radial_membrane_traction"
+      ],
+      "evaluable": "Selected minimal regular-stratum membrane law and supplied numerical dimensional/radial checks.",
+      "formula": "I_lambda D_tau^2 a_lambda+[gamma_s j_lambda+Z_lambda]a_lambda=f_event,lambda",
+      "limitation": "Z_lambda is named as the environmental/bulk Hessian; physical carrier and F_B instantiation remain false. This does not select or evaluate the present normal source."
+    },
+    {
+      "path": "src/bhsm/interface/muon_native_support_loss_cutoff.py",
+      "symbols": [
+        "quadratic_form_branch_jets",
+        "cutoff_from_total_contractions",
+        "lower_limit_coefficients"
+      ],
+      "evaluable": "Total supplied form/embedding jets and exact c=i/r lower-limit algebra.",
+      "limitation": "Does not generate a physical branch, support-loss event, inertia, resistance or heat action."
+    }
+  ],
+  "missing_physical_operands": {
+    "xi_psi": {
+      "status": "UNEVALUATED",
+      "value": null,
+      "required_provenance": "Action-selected normal-interface displacement on the continuously transported branch at AE4 first future support loss; descriptor, launch, SVD and right-inverse substitutes are forbidden."
+    },
+    "b_psi": {
+      "status": "UNEVALUATED",
+      "value": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      "canonical_order": [
+        "trace_1",
+        "trace_2",
+        "trace_3",
+        "canonical_momentum_1",
+        "canonical_momentum_2",
+        "dynamic_flux_1",
+        "dynamic_flux_2"
+      ]
+    },
+    "stationary_base": {
+      "status": "UNEVALUATED",
+      "value": null,
+      "required_equations": [
+        "L_eta=0",
+        "R=0"
+      ],
+      "owner_identity_proved": false
+    },
+    "lambda": {
+      "status": "UNEVALUATED",
+      "value": null,
+      "scope": "Same-owner stationary multiplier coordinates; historical lapse/shift/event multipliers cannot be identified by name alone."
+    },
+    "L_etaeta": {
+      "status": "UNEVALUATED",
+      "value": null
+    },
+    "R_eta": {
+      "status": "UNEVALUATED",
+      "value": null
+    },
+    "H_KKT": {
+      "status": "UNEVALUATED",
+      "value": null,
+      "formula": "[[L_etaeta,R_eta^dagger],[R_eta,0]]"
+    },
+    "S_eta_s": {
+      "status": "UNEVALUATED",
+      "value": null
+    },
+    "R_eta_s": {
+      "status": "UNEVALUATED",
+      "value": null
+    },
+    "R_s": {
+      "status": "UNEVALUATED",
+      "value": null
+    },
+    "L_ss": {
+      "status": "UNEVALUATED",
+      "value": null
+    },
+    "h_psi": {
+      "status": "UNEVALUATED",
+      "value": null,
+      "formula": "[S_eta_s+R_eta_s^dagger lambda;R_s]",
+      "fixed_coordinates": [
+        "eta",
+        "lambda"
+      ],
+      "lambda_s_in_forcing": false
+    },
+    "delta_psi": {
+      "status": "UNEVALUATED",
+      "value": null,
+      "formula": "solve(H_KKT,-h_psi)",
+      "retained_response_coordinates": [
+        "delta_eta_psi",
+        "delta_lambda_psi"
+      ]
+    },
+    "z_psi": {
+      "status": "UNEVALUATED",
+      "value": null,
+      "formula": "L_ss+h_psi^dagger delta_psi",
+      "pairing": "Actual same-owner action/KKT dual; no naive cached-row contraction."
+    }
+  },
+  "signed_action_sectors": [
+    {
+      "name": "bulk_geometric",
+      "status": "UNEVALUATED",
+      "value": null
+    },
+    {
+      "name": "reset",
+      "status": "UNEVALUATED",
+      "value": null
+    },
+    {
+      "name": "trace_momentum_conormal",
+      "status": "UNEVALUATED",
+      "value": null
+    },
+    {
+      "name": "dynamic_flux",
+      "status": "UNEVALUATED",
+      "value": null
+    },
+    {
+      "name": "Wentzell",
+      "status": "UNEVALUATED",
+      "value": null
+    },
+    {
+      "name": "scalar_topographic",
+      "status": "UNEVALUATED",
+      "value": null
+    },
+    {
+      "name": "gauge_BRST_constraints",
+      "status": "UNEVALUATED",
+      "value": null
+    },
+    {
+      "name": "contact",
+      "status": "UNEVALUATED",
+      "value": null
+    },
+    {
+      "name": "multiplier_owned_constraint_terms",
+      "status": "UNEVALUATED",
+      "value": null
+    }
+  ],
+  "source_assembly_policy": {
+    "evaluate_direction": "Only the consumed xi_psi source direction; no generic second tensors.",
+    "signed_sector_counting": "Each owned sector exactly once; unknown sectors remain UNEVALUATED and are never zero.",
+    "required_constraint_contacts": [
+      "R_s",
+      "R_eta_s^dagger lambda",
+      "lambda^dagger R_ss in L_ss when present"
+    ],
+    "no_lambda_response_in_fixed_source": true,
+    "cached_F_p_consumed_as_physical_forcing": false,
+    "cached_g_n_consumed_as_physical_forcing": false,
+    "historical_gate7_producers_invoked": false
+  },
+  "downstream_status": {
+    "r": "UNEVALUATED",
+    "i": "UNEVALUATED",
+    "total_branch_jets": "UNEVALUATED",
+    "c": "UNEVALUATED",
+    "AE4_heat": "UNEVALUATED",
+    "relative_zeta_eta": "UNEVALUATED",
+    "R_ind": "UNEVALUATED",
+    "completed_native_photon_response": "UNEVALUATED",
+    "paired_electron_muon_native_heat": "UNEVALUATED",
+    "Pauli_readout": "UNEVALUATED"
+  },
+  "audit_scope": {
+    "inspected": "Named source producers and current muon owner/continuation artifacts in the starting checkout; primary historical kinematic producer records inspected read-only.",
+    "conclusion": "Callable historical actions and KKT residuals exist, but no audited producer supplies the required current same-owner support-loss source/base/domain pairing.",
+    "exhaustive_scientific_absence_claim": false,
+    "physical_nonidentifiability_claim": false,
+    "no_missing_sector_replaced_by_zero": true,
+    "numerical_action_evaluations": 0,
+    "caches_changed": false
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "applies_to_receipts": [
+    "run_1/result.json",
+    "run_2/result.json",
+    "run_3/result.json"
+  ],
+  "derivative": "D ell_a=-D N Tr(N_occ V_a)-N Tr((D N_occ)V_a+N_occ D V_a)+remaining measure/domain contacts.",
+  "literal_fixed_measure_Lorentz_field_term": "ell_a=-N_induced Tr(N_occ V_a); N_occ=I-C_plus in the positive-frequency convention. Include the appropriate original action normalization and volume/normal inclusion, with separate moving measure/domain/clock contacts.",
+  "numeric_reference_contractions_evaluated": false,
+  "physical_reference_or_occupations_selected": false,
+  "purpose": "Clarify the meaning of the unevaluated reference-cotangent shorthand; no numerical load or saved result is changed.",
+  "schema": "bhsm.reference-contraction-convention.v2",
+  "shorthand_definition": "C_reference in Tr(C_reference V_a) means the signed action-weighted occupation cotangent, with original carrier/normalization and contacts; it is NOT C_plus.",
+  "unchanged_receipt_sha256": {
+    "run_1/result.json": "abd34b09648227fb05647505e33ad8d363b8b54072ffcb47823b4439d6258c0e",
+    "run_2/result.json": "a72bd8daf6ea37fec3a15e03efce1a1c858ce65a780f99db3d7b444752a83806",
+    "run_3/result.json": "a72bd8daf6ea37fec3a15e03efce1a1c858ce65a780f99db3d7b444752a83806"
+  },
+  "vertex_definition": "V_a = partial_a H_can from canonical_open_field_vertices; unit canonical current Gram, material At, unit-S3 Ai and realH4."
+}

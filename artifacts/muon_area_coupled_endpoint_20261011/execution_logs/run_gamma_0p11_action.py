@@ -1,0 +1,30 @@
+"""Actual nonlinear area member followed by its full two-arm trace action."""
+from pathlib import Path
+import json,os,subprocess,sys
+
+ROOT=Path(__file__).resolve().parents[3];folder=Path(__file__).resolve().parents[1]
+env=dict(os.environ,PYTHONPATH='src');executions=[]
+base='artifacts/muon_area_coupled_endpoint_20261011/gamma_0p11_run_1'
+commands=[('gamma_0p11_run_1',[sys.executable,'-m','bhsm.interface.muon_birth_area_coupled_endpoint',
+    '--base-directory','artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1',
+    '--area-response-directory','artifacts/muon_area_endpoint_response_20261011/run_1','--output',base,'--gamma','0.11','--max-iterations','8'])]
+for side in ('incoming','outgoing'):
+    output=f'artifacts/muon_area_coupled_endpoint_20261011/gamma_0p11_{side}_phase_run_1'
+    mod='muon_birth_finite_normal_phase'if side=='incoming'else'muon_birth_inherited_finite_normal_phase'
+    args=[sys.executable,'-m','bhsm.interface.'+mod,'--base-directory',base,'--output',output,'--steps','1','--span='+('-1e-5'if side=='incoming'else'1e-5'),'--max-iterations','12']
+    if side=='incoming':args.extend(['--side','incoming'])
+    commands.append((f'gamma_0p11_{side}_phase_run_1',args))
+    commands.append((f'gamma_0p11_{side}_boundary_run_1',[sys.executable,'-m','bhsm.interface.muon_birth_finite_normal_boundary_action','--phase-directory',output,
+        '--output',f'artifacts/muon_area_coupled_endpoint_20261011/gamma_0p11_{side}_boundary_run_1']))
+commands.append(('gamma_0p11_common_run_1',[sys.executable,'-m','bhsm.interface.muon_common_normal_boundary_form',
+    '--incoming-boundary','artifacts/muon_area_coupled_endpoint_20261011/gamma_0p11_incoming_boundary_run_1',
+    '--child-boundary','artifacts/muon_area_coupled_endpoint_20261011/gamma_0p11_outgoing_boundary_run_1',
+    '--output','artifacts/muon_common_normal_boundary_form_20261011/gamma_0p11_run_1']))
+for name,argv in commands:
+    proc=subprocess.run(argv,cwd=ROOT,env=env,capture_output=True,text=True)
+    for stream in ('stdout','stderr'):(folder/'execution_logs'/f'{name}.{stream}.txt').write_text(getattr(proc,stream),encoding='utf8',newline='\n')
+    md=dict(argv=argv,cwd=str(ROOT),environment_overrides={'PYTHONPATH':'src'},exit_code=proc.returncode,stdout_path=f'{name}.stdout.txt',stderr_path=f'{name}.stderr.txt')
+    executions.append(md);(folder/'execution_logs'/f'{name}.command.json').write_text(json.dumps(md,indent=2,sort_keys=True)+'\n',encoding='utf8',newline='\n')
+    print(json.dumps(md),flush=True)
+    if proc.returncode:raise SystemExit(proc.returncode)
+(folder/'gamma_0p11_action_verification.json').write_text(json.dumps(dict(executions=executions),indent=2,sort_keys=True)+'\n',encoding='utf8',newline='\n')

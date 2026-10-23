@@ -1,0 +1,296 @@
+COMMON STRATIFIED FORM DOMAIN: CONSTRUCTIVE CLOSED-KERNEL RESULT
+2026-10-15. Source-level derivation; no new operator coefficient or theory.
+
+RESULT
+
+The owned regular reset and surface generating action can construct a
+closed coupled quadratic form, not merely a list of formal boundary
+conditions. Its represented operator has exactly the weighted flux plus
+surface-Hessian/Wentzell law. This result is conditional on the actual
+local native forms and physical incidence having the regularity stated
+below. It does not identify a Lorentz action Hessian with AE4 P=D^dagger D.
+It preserves every spin/family/stratum component and does not add a
+surface term in a sector whose owned surface action is zero.
+
+1. ACTION AND SOURCE OWNERS
+
+All paths in this document are relative to the repository.
+
+* src/bhsm/interface/ae4_stratified_dirac_zeta_induced_owner.py:277-299
+  selects H8 direct_sum H5+ direct_sum H5- direct_sum H4, canonical
+  geometric L2 statistics/BRST trace, and P_strat=D_strat^dagger D_strat.
+  The positive form and statistics trace are different objects: negative
+  fermion/ghost supertrace weights must not be inserted into the Hilbert
+  norm or used to make a positive energy form indefinite.
+
+* action_extension_global_spin_reset_ae2.py:156-190 owns a single global
+  spin/gauge section, Gamma0_child=U_R Gamma0_event, and the iterated
+  squared-domain condition D Psi in Dom(D). The direct independent
+  normal matter surface action is exactly zero. This excludes inserting
+  an arbitrary fermion membrane mass or a new Cayley phase.
+
+* covariant_bubble_interface_mechanics.py:273-291 owns the regular
+  generating relation q_e=C(F_B)q_c and
+  Pi_c+C(F_B)^*Pi_e=-delta S_Sigma/delta q_c. Lines215-238 supply the
+  constrained Jacobi form and its surface plus bulk impedance terms.
+  This is a regular carrier relation, not the singular AE4 transition
+  identified by a scalar value or an invented reflection condition.
+
+* muon_regular_reset_brst_domain.py:59-138 supplies the actual regular
+  FP cross-Green factorization and adjoint graph, with C^*=J Ad(U^dagger),
+  J=F*dmu_child/dmu_parent. Independent antighost is a primal field;
+  cotangent density transport is different. Its linear internal BRST
+  intertwiner is not a full nonlinear/diffeomorphism BRST theorem.
+
+* muon_surface_incidence_second_jet.py:58-94 supplies the geometric
+  horizontal quotient Q(G)=A-B C^(-1)B^T and h=T^T Q T. Lines96-154
+  supply the signed area, complete mixed second incidence and its metric/
+  embedding covector pullbacks. These are genuine geometric maps and
+  are retained in the construction below; they are not arbitrary missing
+  geometry. They do not by themselves choose a spinor/ghost field map.
+
+2. THE ACTUAL STRONGEST EXISTING NATIVE COMPONENT IS ALREADY NONZERO
+
+muon_native_product_factor_graph.py:512-541 constructs the finite native
+positive form on each full requested Peter-Weyl family shell:
+  A_h=(partial_t+Omega_t)/N+W+(angular principal part)/R,
+  K_ij=int N dt dOmega (A_h phi_i)^dagger(A_h phi_j),
+  M_ij=int N dt dOmega phi_i^dagger phi_j.
+The proper-time normalization is applied once; Omega_t/N is explicit.
+The code assembles K and M from actual samples, retains all six entries
+per family/harmonic, and checks the generalized eigensystem K v=lambda M v.
+Lines544-575 retain both first-source placements and the Xi^dagger Xi
+mixed contact. Lines577-641 bind the full n0 projected heat derivative
+and complete n1/n3 intermediates with the declared two-face Dirichlet
+numerical core. They explicitly do not select the physical reset,
+canonical stop, exterior, native cutoff or global Wick continuation.
+
+The later muon_owned_native_product_connection.py supplies the stronger
+real common-A component on both arms with a shared birth trace, initial
+trace fixed and final natural row retained. Its same actual anti-Hermitian
+Omega_factor=Omega_L,t/N and temporal source conversion are explicit. The
+corrected reflected-coframe positive form is separately supplied by
+muon_transported_native_pairing.py. These are existing local realizations,
+with their declared distinct pairings/domains, not new temporal choices.
+
+Thus it would be incorrect to infer from the generic
+muon_native_dirac_hamiltonian.py:278 factor_temporal_native_binding=None
+that every positive product form lacks a temporal connection. The
+finite actual component has one. The generic contract, lines243-281,
+leaves its complete common physical Lorentz/native/domain identification
+open. product_factor_form_jets, lines285 onward, already gives the exact
+positive K, M and all fixed-core source-square contacts for supplied
+full factor maps. Its direct 18-component pairing is retained.
+
+On each finite restricted actual native form, M>0 and K>=0 make the
+finite-dimensional form closed immediately. Its actual declared graph,
+measure and source contacts can therefore be reused. This statement
+does not extend its artificial finite-face condition to the physical
+outgoing boundary, enlarge its angular image without proof or truncate
+the full-stratum problem to that component.
+
+3. CLOSED-KERNEL CONSTRUCTION
+
+Use all action-owned stratum and field-sector Hilbert spaces H_a, with
+their actual positive pairings, and form spaces V_a. They include M8,
+both M5 sides and M4, all spin/family entries, and the complete gauge,
+constraint, ghost and distinct intrinsic/HS scalar spaces. Include only
+already-owned surface/attachment variables w with their actual kinetic
+pairing K_Sigma; no universal new surface field is introduced.
+
+Let H=direct_sum H_a and V0=direct_sum V_a. For every actual regular
+incidence let Gamma_e:V_a->G_e be its continuous trace/correspondence
+map and let T_e be the already-owned value identification into the
+common trace coordinate. Collect the linearized value constraints as
+  C u=0,
+for example Gamma_child u_child-C(F,U)Gamma_parent u_parent=0,
+or Gamma_e u_e-T_e w=0 when that dynamic surface variable is owned.
+Define
+  V=ker C within V0, H_phys=closure_H(V).
+No outward conormal constraint is imposed at form-domain level. It is
+derived as the natural operator condition below. Imposing both value
+and flux as essential form constraints would generally overconstrain it.
+
+Suppose the following actual properties are established:
+  (i) each reference native q_a is densely defined, closed and lower
+      bounded, and its form norm controls the required Gamma_e;
+  (ii) C is bounded for the direct-sum form norm;
+  (iii) include any closed positive tangential surface summand in the
+      reference form/domain first; the remaining symmetric surface/mixed
+      perturbation b has absolute relative form bound a<1, namely
+      |b(u,u)|<=a q0(u,u)+b0||u||^2 after a reference proof shift;
+  (iv) the intended physical Hilbert space is H_phys (equal to the full
+      direct sum only when the owned incidence makes V dense there).
+Then
+  q(u,v)=sum_a q_a(u_a,v_a)+b(u,v), u,v in V,
+is a densely defined closed lower-bounded form on H_phys.
+
+Proof: after a sufficiently large proof shift beta, the direct-sum
+reference q0+beta||.||^2 is a complete norm. Since C is bounded, ker C
+is complete in that norm. An absolute relative bound below one makes
+the shifted full norm equivalent to a complete reference norm (or use
+the enlarged positive reference form for higher tangential derivatives).
+Thus q is closed; density follows by the definition of H_phys. Its
+coercively shifted Riesz problem q(u,v)+beta<u,v>=<f,v> has a unique
+solution and defines the resolvent of one lower-bounded self-adjoint
+represented operator L. beta is a proof shift, not a modification of
+the physical action or an inserted mass. Nonnegativity of actual q is
+an additional fact if L is to equal a positive P without a shift.
+
+This proof constructs the domain and operator from the actual forms and
+incidence. It neither requires a new self-adjoint extension parameter
+nor allows an arbitrary Wentzell load. Finite exact action forms meet
+the closedness requirement on their declared finite spaces. The actual
+continuum/maximal native forms need the stated norm and endpoint bounds.
+
+4. EXACT OPERATOR DOMAIN AND WENTZELL LAW
+
+For clarity display an owned local dynamic surface coordinate w and
+adjacent positive bulk blocks, with a positive native surface pairing
+K_Sigma on its constrained image. Suppose integration by parts gives
+  q_a(u_a,v_a)=<L_a u_a,v_a>_a+<p_a,Gamma_a v_a>_Sigma,
+and b gives <L_Sigma w,z>_Sigma, with every cross-field contact included.
+For allowed variations Gamma_a v_a=T_a z, the boundary term is
+  <sum_a T_a^* p_a+L_Sigma w,z>_Sigma.
+Consequently the represented operator has
+  (L u)_a=L_a u_a,
+  (L u)_Sigma=K_Sigma^(-1)(L_Sigma w+sum_a T_a^* p_a),
+with value incidence Gamma_a u_a=T_a w. If a sector has no independent
+surface Hilbert coordinate, its natural condition is instead
+  sum_a T_a^* p_a+L_Sigma w=0.
+The weak-domain statement is exact without assuming H2 regularity:
+  Dom(L)={u in V: there exists f in H_phys with
+                   q(u,v)=<f,v> for every v in V}, L u=f.
+On regular coefficients/collars it yields the displayed strong laws.
+Degenerate K_Sigma is treated on the action-owned constrained image,
+not inverted by adding a regulator or deleting a physical spin mode.
+
+The dual T_a^* uses the actual side measures. For the regular bundle
+graph it is J U^dagger p U (or the appropriate spin representation),
+exactly the weighted adjoint in the FP module. J is counted once for
+scalar Riesz conormals; an already density-valued momentum is not
+multiplied by J again. Two outward conormals enter with the same plus
+sign in the flux sum. No independent antighost sign is selected.
+
+At spectral parameter z, eliminating the bulk gives
+  [L_Sigma-z K_Sigma+sum_a T_a^* N_a(z)T_a]w=source.
+This is the dynamic Wentzell/Calderon pencil derived from the form.
+There is no arbitrary independently chosen frequency-dependent W(z).
+The Lorentzian variational counterpart contributes its actual
+K_Sigma,L D_tau^2 w and connection/convective terms. Identifying its
+native positive realization is not assumed by that statement. v17.90 derives
+precisely that dynamic Cauchy structure: static W(0)w=0 is not required.
+For the AE2 spinor seam the direct matter surface action is zero; its
+regular transmission and opposite-normal Green cancellation remain,
+not a new membrane term. The full existing spin/gauge mass operators
+and all indirect metric/embedding variations are nevertheless retained.
+
+5. GEOMETRIC QUOTIENT AND DENSITY ARE NOT AN ORDINARY CODIMENSION-THREE TRACE
+
+aether_diagonal_sp1_m4_attachment_v15_50.py:36-60 owns the free diagonal
+Sp1 quotient (B4 x S3)/Sp1=B4, M5=R_t x B4 and M4=R_t x S3_boundary.
+Lines63-97 explicitly integrate the fibre volume and derive the gauge
+coefficient from the EH term. The horizontal quotient and the subsequent
+M5/M4 boundary inclusion are different maps. A generic point-restriction
+argument from an 8D H1 space to a codimension-three submanifold is not
+their field correspondence and supplies no no-go for this construction.
+
+When the actual field map is fibre-mode extraction, an already owned
+normalized carrier u0 defines an embedding W f=u0 f and adjoint W^dagger.
+The normalization integral J|u0|^2=1 gives W^dagger W=I and, directly by
+Cauchy-Schwarz, ||W^dagger psi||<=||psi||. Differentiating this map keeps
+the derivatives of u0, J, horizontal connection and bundle transport;
+smooth bounded coefficients yield the corresponding form-norm bounds.
+This is a constructive route to the required boundedness when that
+carrier/map is supplied, not a choice of a new carrier or fibre factor.
+aether_unified_m5_m4_pushforward_v15_69.py:24-47 owns the normalized wall
+trace and the common bulk pushforward. Its pairing must be used once.
+
+There is an important density distinction. A codimension-one trace graph
+can be dense in bulk-plus-boundary L2 (thin collar extensions realize
+boundary data with arbitrarily small bulk L2 norm). In contrast, if an
+M8/M5 field relation is an L2-bounded fibre projection B and one imposes
+u5=B u8 as a hard graph constraint, that graph is already closed in the
+full L2 direct sum and is generally not dense there. The represented
+operator then acts on its action-owned Hilbert closure, or the action
+must supply a coupling instead of that hard constraint. A metric quotient
+alone cannot silently decide which field relation and trace counting is
+owned. This is why density (iv) is part of the exact theorem. It does
+not introduce a new trace choice or an independent normalization.
+
+6. MOVING INCIDENCE, PAIRING AND THE COMPLETE SURFACE HESSIAN
+
+For a real two-source family C(theta) and an actual material/bundle
+transport S(theta):V_ref->ker C(theta), differentiate C S=0:
+  C S_x=-C_x S,
+  C S_xy=-C_xy S-C_x S_y-C_y S_x.
+These identities are the moving-domain source conditions. They are not
+obtained by setting reset-map derivatives or the temporal connection to
+zero. The transport must be a bounded isomorphism of the actual nearby
+form spaces; no such physical S/F/U is selected here.
+
+Pull the form back as q_tilde(theta)(u,v)=q(theta)(S u,S v). Its mixed
+derivative has all nine terms:
+  q_xy(Su,Sv)
+  +q_x(S_yu,Sv)+q_x(Su,S_yv)
+  +q_y(S_xu,Sv)+q_y(Su,S_xv)
+  +q(S_xyu,Sv)+q(Su,S_xyv)
+  +q(S_xu,S_yv)+q(S_yu,S_xv).
+The same rule applies to the Hilbert Gram M(theta), so generalized
+native spectra come from the pulled K-z M pencil, not K alone. Metric,
+measure, normal, connection, density J and source-square contacts belong
+to q_x/q_xy and S jets as owned. Native c(theta)=i(theta)/r(theta) and
+its full source jets enter E1(c P) after this same identification.
+
+For the actual geometric incidence iota from M8 coefficients and moving
+embedding into h=T^T Q(G)T, the full surface Hessian is
+  D2(S_Sigma composed iota)[a,b]
+    =D2S_Sigma[D iota a,D iota b]+DS_Sigma[D2 iota[a,b]].
+The second term survives when the first metric incidence vanishes, for
+example a normal flat-graph displacement at K=0. The integrated module
+muon_surface_incidence_second_jet retains it, including gamma and tangent
+inclusion jets. Keeping only a pulled metric Hessian would therefore
+change the Wentzell form. This statement concerns the actual action
+density/measure, not an arbitrarily normalized mode-area surrogate.
+
+7. EXACT MATCH TO AE4, AND WHAT THE CONSTRUCTION DOES NOT ASSUME
+
+The theorem supplies L from the owned coupled quadratic form. To identify
+it with the selected AE4 positive operator P, one must establish on the
+same dense core and pairing
+  q(u,v)=<D_strat u,D_strat v>,
+with the same closure, quotient, endpoint/reset domain and source family.
+Then uniqueness of the represented closed form yields L=D_strat^dagger
+D_strat. A Lorentz Euler Hessian is not that identity: it can have an
+indefinite gravitational Legendre form. aether_n3_dynamic_child_wentzell_
+cauchy_v17_90.py:147-158 explicitly permits indefinite gravitational
+signature and tests invertibility, not positivity, for its Cauchy law.
+Neither squaring an Euler force nor adding a proof shift constructs the
+physical P. A Dirac doubling or new boundary penalty is not authorized
+by this theorem.
+
+The existing finite operator-valued Wentzell extension at
+completion/operator_valued_calderon_wentzell_v14_66.py:299-346 verifies
+the same continuity/flux algebra and AB*=BA* criterion for Hermitian W.
+Its diagnostic tangential blocks and uniform attachment insertions are
+not substituted for the present action surface form. The finite sector
+assembly in ae4_c2_stratified_event_flux_assembly.py:61-109 preserves six
+supplied sector-diagonal blocks, and its retarded Schur elimination does
+not require reciprocal reflection. Its direct-sum helper does not
+represent unproved-zero cross-sector couplings. The current coupled
+gauge/Higgs/geometry problem requires those full off-diagonal blocks in
+one joint form and outgoing solve; this helper cannot replace it.
+
+The new result is the exact closed-kernel form construction, its weak
+operator domain, the derived density-weighted Wentzell pencil and the
+complete moving-domain/Hessian source rule. Reusing the actual finite
+native forms supplies real closed components immediately. Extending
+them to the common physical operator requires their actual continuum
+coercivity/closure, bounded dense incidence and native positive-form
+identification; global heat trace/relative-completion convergence is a
+further spectral property, not implied by self-adjointness alone.
+
+No old source/D5/profile campaign is replayed. No spin or temporal term,
+HS/intrinsic distinction, stratum or density is deleted. No physical
+map, cutoff, coefficient, outgoing response, derivative pass, coupled
+correction, normalized spin pair or magnetic moment is claimed here.

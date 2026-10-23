@@ -1,0 +1,23 @@
+{
+  "byte_identical": {
+    "application.npz": true,
+    "result.json": true
+  },
+  "classification": "EXECUTED_CONDITIONAL_PREPARATION_REPLAY_AND_FOCUSED_REVIEW",
+  "completed_physical_correction_count": 0,
+  "focused_tests": {
+    "command": "python -m pytest tests/test_muon_provisional_packet_gauss.py tests/test_muon_provisional_preparation_application.py -q",
+    "exit_code": 0,
+    "passed": 11
+  },
+  "physical_admission": false,
+  "physical_guard": 2e-10,
+  "published_runs": [
+    "run_2",
+    "run_3"
+  ],
+  "review": {
+    "independent_review_completed": true,
+    "scope": "canonical action source normalization, full-family sign sections, original residuals, domain restrictions, native rejection and no physical admission"
+  }
+}

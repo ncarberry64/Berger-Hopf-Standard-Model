@@ -1,0 +1,31 @@
+PROJECTION SCOPE CLARIFICATION -- 2026-10-16
+
+Applies to the frozen source8d4a7fe4fe24501c6d2e00681ed9ca4f1e2b5eb9d0793b3e775bab4c92b58574,
+its independent open-clock run_2/run_3 pair, and proofc7d79b1e7d160893ec0ea4e9295ac7e48a930725d4da854c09d5df70a7c05dbd.
+Those bytes remain unchanged.
+
+chi=Z^T f is a freshly evaluated PROJECTION OF THE CLOCK RHS. It is not by
+itself a solvability obstruction or a residual of an attempted full clock
+solution. The actual projected equation remains
+
+    Z^T H_phase omega = chi.
+
+The value1.0925678628280227e-7 exceeds2e-10 when compared tozero, but no exact
+full left-null certificate Z^T H_phase=0 has been established. The six prior
+fresh HZ controls, whose upper bound is approximately5.4e-15, are insufficient
+to prove that certificate. An unknown possibly large phase clock can contract
+with nonzero Z^T H_phase. It is therefore invalid to enforce chi=0, reject an
+existing solution solely fromchi, or conclude that q/source/domain contacts
+must be changed merely to cancel this number.
+
+The original proof's phrase 'all36 clock condition DOES NOT pass2e-10' denotes
+only this projection-tozero comparison; it is not an admission criterion for
+the full277 equation. The proof's exact relation retaining Z^T H_phase omega,
+and its conditional Noether reduction requiring exact null/source identities,
+control the mathematical interpretation. All36 rows, eight selected rows and
+offshell/source terms remain exported, with no claimed physical completion.
+
+A subsequent candidate diagnostic may use the cached border only to
+precondition the saved RHS, then freshly check all277 original rows, frame
+rows and nonzero reactions. Such a candidate/reaction result also cannot
+exclude another unframed physical solution or select the outgoing domain.

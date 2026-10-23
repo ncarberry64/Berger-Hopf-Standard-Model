@@ -1,0 +1,270 @@
+{
+  "Gamma_B": null,
+  "actual_full_finite_null_residue_max": 1.8825697562770138e-11,
+  "actual_scientific_repeat_pairs": [
+    {
+      "byte_identical_files": {
+        "result.json": "4172b2cf7752241716b4b5d5f9514cae2840ae863414ad92fec4ff691267cd04",
+        "stage_0000_branch_0_actual_finite_simple_pole.npz": "97446beba4205e8e95df84e3da9d60098759d3f15316d709a28f36e5806db0fe",
+        "stage_0000_branch_1_actual_finite_simple_pole.npz": "781d0c3fdfe731cbcd27dad0d70844e589fe23c3eb3644f1f9407593c699c82f",
+        "stage_0001_branch_0_actual_finite_simple_pole.npz": "c7a41116d74d64037396d8eaefbf9ed68cbfec3c1e08425a1b1b5e9ed11deae7",
+        "stage_0001_branch_1_actual_finite_simple_pole.npz": "f902698ae08818726747984db3fa2b67ca2c39015902feb1bba860fb8532eefe"
+      },
+      "component": "split_poles",
+      "independently_evaluated_runs": [
+        "run_1",
+        "run_2"
+      ]
+    },
+    {
+      "byte_identical_files": {
+        "result.json": "80fb3e46306230198e0d482c33e980f654f994623e8eb30f0e827f1cc7858b27"
+      },
+      "component": "outgoing_domain",
+      "independently_evaluated_runs": [
+        "run_1",
+        "run_2"
+      ]
+    },
+    {
+      "byte_identical_files": {
+        "actual_pole_contractions.npz": "177df2e1ab90178da4faa0e9f22da5a6d0548e6ba35b4ec21b0d7198382798a3",
+        "executed_producer.py": "23d35967645c5095f5b5c2e1f497e2a3668d9d68cb48bb64b3672bee8e2fd9b1",
+        "result.json": "5d3d88f6e4b40e650647428cb30415a3e33a241ce23a092c6e01e2b37a14bcc0"
+      },
+      "component": "em_readout",
+      "independently_evaluated_runs": [
+        "run_2",
+        "run_3"
+      ]
+    },
+    {
+      "byte_identical_files": {
+        "result.json": "34b56e6fba5b17ae14be766fbd1fb6cb6a78fd5920af76f81f8d02a47c8cf474"
+      },
+      "component": "energy_pairing",
+      "independently_evaluated_runs": [
+        "energy_pairing_run_1",
+        "energy_pairing_run_2"
+      ]
+    }
+  ],
+  "classification": "FINITE_SPLIT_POLES_NORMALIZED_PHYSICAL_OUTGOING_AND_MAGNETIC_RESPONSE_OPEN",
+  "finite_two_branches_separately_normalized": true,
+  "focused_tests": {
+    "command": [
+      "C:\\Python314\\python.exe",
+      "-m",
+      "pytest",
+      "--noconftest",
+      "-q",
+      "tests/test_muon_outgoing_trace_energy_jet.py",
+      "tests/test_bhsm_outgoing_tail_domain_20261015.py",
+      "tests/test_bhsm_split_pole_em_observable_20261015.py"
+    ],
+    "conftest_scope": "Bypass repository-wide tracked-file snapshot fixture for non-writing algebra tests.",
+    "execution_evidence": "Actual tool execution recorded in this chat; no tests rerun by manifest binding.",
+    "observed_exit_code": 0,
+    "observed_result": "14 passed in 1.51s"
+  },
+  "fresh_physical_Maxwell_and_all226_after_validation": false,
+  "input_snapshots_are_not_new_action_evaluations": true,
+  "manifest_repeat_scope": "Two byte-identical serializations of this binding only. Independent scientific evaluations are identified separately.",
+  "measured_mass_anomaly_or_spin_fit_consumed": false,
+  "nonzero_spin_charge_and_complex_response_terms_preserved": true,
+  "packet_sha256": {
+    ".gitattributes": "32966c8f89acc0110f6a39bf66f2c0cfe327afcaf642ca8546e36bdad19f1e18",
+    "checkpoint.txt": "bf96c5cd6b3a647aa5005653247c0356c367635c03ee196974b3ba5ec6cf32c6",
+    "em_readout/actual_four_finite_poles_manifest.json": "781d7caea892f8f5367fb000e6f5d2539caccdec3e499b19a8c94d6ef77a2b0f",
+    "em_readout/run_2/actual_pole_contractions.npz": "177df2e1ab90178da4faa0e9f22da5a6d0548e6ba35b4ec21b0d7198382798a3",
+    "em_readout/run_2/executed_producer.py": "23d35967645c5095f5b5c2e1f497e2a3668d9d68cb48bb64b3672bee8e2fd9b1",
+    "em_readout/run_2/result.json": "5d3d88f6e4b40e650647428cb30415a3e33a241ce23a092c6e01e2b37a14bcc0",
+    "em_readout/run_3/actual_pole_contractions.npz": "177df2e1ab90178da4faa0e9f22da5a6d0548e6ba35b4ec21b0d7198382798a3",
+    "em_readout/run_3/executed_producer.py": "23d35967645c5095f5b5c2e1f497e2a3668d9d68cb48bb64b3672bee8e2fd9b1",
+    "em_readout/run_3/result.json": "5d3d88f6e4b40e650647428cb30415a3e33a241ce23a092c6e01e2b37a14bcc0",
+    "energy_pairing_run_1/result.json": "34b56e6fba5b17ae14be766fbd1fb6cb6a78fd5920af76f81f8d02a47c8cf474",
+    "energy_pairing_run_2/result.json": "34b56e6fba5b17ae14be766fbd1fb6cb6a78fd5920af76f81f8d02a47c8cf474",
+    "finalization_script.py": "0de1ff7d00c50f6281ac57a0577c3c54e9f1163a6f703fc59fdb60634bec7bbf",
+    "focused_tests.json": "64bc09ff5819a115eb495755fb0c6882b77c8e93d85095657a463aa7e58d19a4",
+    "outgoing_domain/run_1/result.json": "80fb3e46306230198e0d482c33e980f654f994623e8eb30f0e827f1cc7858b27",
+    "outgoing_domain/run_2/result.json": "80fb3e46306230198e0d482c33e980f654f994623e8eb30f0e827f1cc7858b27",
+    "packaging_script.py": "bec802e700a33f1b22cebb8ba6bbbbe3d3655a69227626f1951b27abe70ac412",
+    "publication_checks/audit_bhsm_status.py.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "publication_checks/audit_bhsm_status.py.stdout.txt": "67dcb4844fb5ae22fa81b02fe4297a270cb8895184979d7e4fe1920f0ec1958e",
+    "publication_checks/audit_forbidden_claims.py.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "publication_checks/audit_forbidden_claims.py.stdout.txt": "ab19067cf15e0a20b3e28374c77f15f1dbd1277938c682f675d8726d2dc1460a",
+    "publication_checks/audit_frozen_prediction_integrity.py.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "publication_checks/audit_frozen_prediction_integrity.py.stdout.txt": "97694acc837bc21d90c8390c12cd39ba5bdc76e6e7209601e985561136d5b884",
+    "publication_checks/audit_public_readiness.py.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "publication_checks/audit_public_readiness.py.stdout.txt": "b1194330cae3525eea23c6be9e634ff2425ff419ab79908f1d1732d2b70ada80",
+    "publication_checks/result.json": "7f8ecc4f709da627a70d1df87d8d1d9de3c7401d4903548d501147f3843e3dad",
+    "publication_checks/verify_precision.py.stderr.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "publication_checks/verify_precision.py.stdout.txt": "9aeba488a47f2f68d79b46c5cb04fea049e2ffccd6b5411d475e43a748ade6e2",
+    "retained_inputs/causal_prefix/result.json": "0b04e6dd5ca9de1787839530c8d818a706996000e90232b215c63c0a5f14e0c3",
+    "retained_inputs/d5_coefficients/result.json": "3647c939e8ee150d79483f1e32066e08cee261cac82ef0ef29eecf009a5f75f2",
+    "retained_inputs/d5_coefficients/stage_0000_current_geometry_normal_and_material_trace.npz": "174bfd8299fe1efadf417bc337e1f976ccd1e0bf72dc5ddaee5702054602f282",
+    "retained_inputs/d5_coefficients/stage_0000_eta_+1_conjugate_original_radial_field_action.npz": "7ee0d4a77c5ae1115bb7f32b1cb161afe6c404a50d11b274e4615d3ab8162a2c",
+    "retained_inputs/d5_coefficients/stage_0000_eta_+1_particle_original_radial_field_action.npz": "d95b930b47c243959d25ac39bf0c3ff783cec65211e45b6cd364a098914ff25f",
+    "retained_inputs/d5_coefficients/stage_0000_eta_-1_conjugate_original_radial_field_action.npz": "c370dc2c09886adb5c410e209e8997004fff925d98498ca9f684a9c825391dee",
+    "retained_inputs/d5_coefficients/stage_0000_eta_-1_particle_original_radial_field_action.npz": "5c1a256845c2d5024e20b93f8366c09e2599ba3c7cf937e6525e6fb9f6996441",
+    "retained_inputs/d5_coefficients/stage_0001_current_geometry_normal_and_material_trace.npz": "0beed92be90c39a3d2a9756f971c472dcdfc6bac25e2fb8ec119393269c6721b",
+    "retained_inputs/d5_coefficients/stage_0001_eta_+1_conjugate_original_radial_field_action.npz": "4cc2fe77a71f66aff371a137b7b7303167ca1c7a6a363027e2ca880a22070530",
+    "retained_inputs/d5_coefficients/stage_0001_eta_+1_particle_original_radial_field_action.npz": "49f3b329df78c7a69b9192340414c284c93184579f06467d604720749fce8c72",
+    "retained_inputs/d5_coefficients/stage_0001_eta_-1_conjugate_original_radial_field_action.npz": "369828d49ab30a54e041e0aaf9b0151b093b9ccc2d6f8e4f929728a88de52301",
+    "retained_inputs/d5_coefficients/stage_0001_eta_-1_particle_original_radial_field_action.npz": "fa615447eca1a09ae52e0381783b93813482f1bab6402b7be6b7c89e7a5c1eea",
+    "retained_inputs/normal_prefix/result.json": "cdbc0d028e3ef0ee6e597e3d95c502152b46833561207687b6dee2ec77e69504",
+    "retained_inputs/old_pole_center/result.json": "0049c686cb4bd15f38042d261038a69eb56f2b6cae20c1ed51dfc897a316c5fc",
+    "retained_inputs/old_pole_center/stage_0000_finite_trace_pole_and_clock_rows.npz": "eebcda870e70b0939df981d46ce50eaedf4f9d8f4567048e302089caed986d58",
+    "retained_inputs/old_pole_center/stage_0001_finite_trace_pole_and_clock_rows.npz": "7d3790f33057f54ff0395f116f11420b21910ab1adaf80ad4bd8dc7fbcd28e42",
+    "split_poles/run_1/result.json": "4172b2cf7752241716b4b5d5f9514cae2840ae863414ad92fec4ff691267cd04",
+    "split_poles/run_1/stage_0000_branch_0_actual_finite_simple_pole.npz": "97446beba4205e8e95df84e3da9d60098759d3f15316d709a28f36e5806db0fe",
+    "split_poles/run_1/stage_0000_branch_1_actual_finite_simple_pole.npz": "781d0c3fdfe731cbcd27dad0d70844e589fe23c3eb3644f1f9407593c699c82f",
+    "split_poles/run_1/stage_0001_branch_0_actual_finite_simple_pole.npz": "c7a41116d74d64037396d8eaefbf9ed68cbfec3c1e08425a1b1b5e9ed11deae7",
+    "split_poles/run_1/stage_0001_branch_1_actual_finite_simple_pole.npz": "f902698ae08818726747984db3fa2b67ca2c39015902feb1bba860fb8532eefe",
+    "split_poles/run_2/result.json": "4172b2cf7752241716b4b5d5f9514cae2840ae863414ad92fec4ff691267cd04",
+    "split_poles/run_2/stage_0000_branch_0_actual_finite_simple_pole.npz": "97446beba4205e8e95df84e3da9d60098759d3f15316d709a28f36e5806db0fe",
+    "split_poles/run_2/stage_0000_branch_1_actual_finite_simple_pole.npz": "781d0c3fdfe731cbcd27dad0d70844e589fe23c3eb3644f1f9407593c699c82f",
+    "split_poles/run_2/stage_0001_branch_0_actual_finite_simple_pole.npz": "c7a41116d74d64037396d8eaefbf9ed68cbfec3c1e08425a1b1b5e9ed11deae7",
+    "split_poles/run_2/stage_0001_branch_1_actual_finite_simple_pole.npz": "f902698ae08818726747984db3fa2b67ca2c39015902feb1bba860fb8532eefe"
+  },
+  "physical_a_mu": null,
+  "physical_coupled_matching_corrections_applied": 0,
+  "physical_g_mu": null,
+  "physical_magnetic_moment": null,
+  "physical_outgoing_energy_jet": null,
+  "physical_two_spin_muon_state": null,
+  "producer_portability": "Exact executed producer snapshots preserve historical local paths. retained_inputs maps historical input bytes; no complete physical solver or exterior is implied.",
+  "publication_checks": {
+    "audit_bhsm_status.py": {
+      "actual_check_executed": true,
+      "command": [
+        "C:\\Python314\\python.exe",
+        "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\tools\\audit_bhsm_status.py"
+      ],
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "67dcb4844fb5ae22fa81b02fe4297a270cb8895184979d7e4fe1920f0ec1958e"
+    },
+    "audit_forbidden_claims.py": {
+      "actual_check_executed": true,
+      "command": [
+        "C:\\Python314\\python.exe",
+        "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\tools\\audit_forbidden_claims.py"
+      ],
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "ab19067cf15e0a20b3e28374c77f15f1dbd1277938c682f675d8726d2dc1460a"
+    },
+    "audit_frozen_prediction_integrity.py": {
+      "actual_check_executed": true,
+      "command": [
+        "C:\\Python314\\python.exe",
+        "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\tools\\audit_frozen_prediction_integrity.py"
+      ],
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "97694acc837bc21d90c8390c12cd39ba5bdc76e6e7209601e985561136d5b884"
+    },
+    "audit_public_readiness.py": {
+      "actual_check_executed": true,
+      "command": [
+        "C:\\Python314\\python.exe",
+        "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\tools\\audit_public_readiness.py",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "b1194330cae3525eea23c6be9e634ff2425ff419ab79908f1d1732d2b70ada80"
+    },
+    "verify_precision.py": {
+      "actual_check_executed": true,
+      "command": [
+        "C:\\Python314\\python.exe",
+        "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\tools\\verify_precision.py"
+      ],
+      "exit_code": 0,
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stdout_sha256": "9aeba488a47f2f68d79b46c5cb04fea049e2ffccd6b5411d475e43a748ade6e2"
+    }
+  },
+  "retained_input_snapshots": {
+    "artifacts/muon_d5_finite_trace_pole_match_20261012/trial_0000_stage_pair_run_3/result.json": {
+      "archived_at": "retained_inputs/old_pole_center/result.json",
+      "sha256": "0049c686cb4bd15f38042d261038a69eb56f2b6cae20c1ed51dfc897a316c5fc"
+    },
+    "artifacts/muon_d5_finite_trace_pole_match_20261012/trial_0000_stage_pair_run_3/stage_0000_finite_trace_pole_and_clock_rows.npz": {
+      "archived_at": "retained_inputs/old_pole_center/stage_0000_finite_trace_pole_and_clock_rows.npz",
+      "sha256": "eebcda870e70b0939df981d46ce50eaedf4f9d8f4567048e302089caed986d58"
+    },
+    "artifacts/muon_d5_finite_trace_pole_match_20261012/trial_0000_stage_pair_run_3/stage_0001_finite_trace_pole_and_clock_rows.npz": {
+      "archived_at": "retained_inputs/old_pole_center/stage_0001_finite_trace_pole_and_clock_rows.npz",
+      "sha256": "7d3790f33057f54ff0395f116f11420b21910ab1adaf80ad4bd8dc7fbcd28e42"
+    },
+    "artifacts/muon_joined_d5_causal_tail_action_20261013/run_2/result.json": {
+      "archived_at": "retained_inputs/causal_prefix/result.json",
+      "sha256": "0b04e6dd5ca9de1787839530c8d818a706996000e90232b215c63c0a5f14e0c3"
+    },
+    "artifacts/muon_sigma_normal_collar_transport_20261012/trial_0000_run_2/result.json": {
+      "archived_at": "retained_inputs/normal_prefix/result.json",
+      "sha256": "cdbc0d028e3ef0ee6e597e3d95c502152b46833561207687b6dee2ec77e69504"
+    },
+    "artifacts/muon_trial_d5_trace_action_20261012/trial_0000_corrected_sigma_energy_0_run_2/result.json": {
+      "archived_at": "retained_inputs/d5_coefficients/result.json",
+      "sha256": "3647c939e8ee150d79483f1e32066e08cee261cac82ef0ef29eecf009a5f75f2"
+    },
+    "artifacts/muon_trial_d5_trace_action_20261012/trial_0000_corrected_sigma_energy_0_run_2/stage_0000_current_geometry_normal_and_material_trace.npz": {
+      "archived_at": "retained_inputs/d5_coefficients/stage_0000_current_geometry_normal_and_material_trace.npz",
+      "sha256": "174bfd8299fe1efadf417bc337e1f976ccd1e0bf72dc5ddaee5702054602f282"
+    },
+    "artifacts/muon_trial_d5_trace_action_20261012/trial_0000_corrected_sigma_energy_0_run_2/stage_0000_eta_+1_conjugate_original_radial_field_action.npz": {
+      "archived_at": "retained_inputs/d5_coefficients/stage_0000_eta_+1_conjugate_original_radial_field_action.npz",
+      "sha256": "7ee0d4a77c5ae1115bb7f32b1cb161afe6c404a50d11b274e4615d3ab8162a2c"
+    },
+    "artifacts/muon_trial_d5_trace_action_20261012/trial_0000_corrected_sigma_energy_0_run_2/stage_0000_eta_+1_particle_original_radial_field_action.npz": {
+      "archived_at": "retained_inputs/d5_coefficients/stage_0000_eta_+1_particle_original_radial_field_action.npz",
+      "sha256": "d95b930b47c243959d25ac39bf0c3ff783cec65211e45b6cd364a098914ff25f"
+    },
+    "artifacts/muon_trial_d5_trace_action_20261012/trial_0000_corrected_sigma_energy_0_run_2/stage_0000_eta_-1_conjugate_original_radial_field_action.npz": {
+      "archived_at": "retained_inputs/d5_coefficients/stage_0000_eta_-1_conjugate_original_radial_field_action.npz",
+      "sha256": "c370dc2c09886adb5c410e209e8997004fff925d98498ca9f684a9c825391dee"
+    },
+    "artifacts/muon_trial_d5_trace_action_20261012/trial_0000_corrected_sigma_energy_0_run_2/stage_0000_eta_-1_particle_original_radial_field_action.npz": {
+      "archived_at": "retained_inputs/d5_coefficients/stage_0000_eta_-1_particle_original_radial_field_action.npz",
+      "sha256": "5c1a256845c2d5024e20b93f8366c09e2599ba3c7cf937e6525e6fb9f6996441"
+    },
+    "artifacts/muon_trial_d5_trace_action_20261012/trial_0000_corrected_sigma_energy_0_run_2/stage_0001_current_geometry_normal_and_material_trace.npz": {
+      "archived_at": "retained_inputs/d5_coefficients/stage_0001_current_geometry_normal_and_material_trace.npz",
+      "sha256": "0beed92be90c39a3d2a9756f971c472dcdfc6bac25e2fb8ec119393269c6721b"
+    },
+    "artifacts/muon_trial_d5_trace_action_20261012/trial_0000_corrected_sigma_energy_0_run_2/stage_0001_eta_+1_conjugate_original_radial_field_action.npz": {
+      "archived_at": "retained_inputs/d5_coefficients/stage_0001_eta_+1_conjugate_original_radial_field_action.npz",
+      "sha256": "4cc2fe77a71f66aff371a137b7b7303167ca1c7a6a363027e2ca880a22070530"
+    },
+    "artifacts/muon_trial_d5_trace_action_20261012/trial_0000_corrected_sigma_energy_0_run_2/stage_0001_eta_+1_particle_original_radial_field_action.npz": {
+      "archived_at": "retained_inputs/d5_coefficients/stage_0001_eta_+1_particle_original_radial_field_action.npz",
+      "sha256": "49f3b329df78c7a69b9192340414c284c93184579f06467d604720749fce8c72"
+    },
+    "artifacts/muon_trial_d5_trace_action_20261012/trial_0000_corrected_sigma_energy_0_run_2/stage_0001_eta_-1_conjugate_original_radial_field_action.npz": {
+      "archived_at": "retained_inputs/d5_coefficients/stage_0001_eta_-1_conjugate_original_radial_field_action.npz",
+      "sha256": "369828d49ab30a54e041e0aaf9b0151b093b9ccc2d6f8e4f929728a88de52301"
+    },
+    "artifacts/muon_trial_d5_trace_action_20261012/trial_0000_corrected_sigma_energy_0_run_2/stage_0001_eta_-1_particle_original_radial_field_action.npz": {
+      "archived_at": "retained_inputs/d5_coefficients/stage_0001_eta_-1_particle_original_radial_field_action.npz",
+      "sha256": "fa615447eca1a09ae52e0381783b93813482f1bab6402b7be6b7c89e7a5c1eea"
+    }
+  },
+  "shared_energy_rank_two_degeneracy_previously_unjustified": true,
+  "source_D5_coefficient_profile_canonical_pairing_campaigns_restarted": false,
+  "source_sha256": {
+    "audits/bhsm_baton_zoo_outgoing_tail_domain_20261015.py": "c572b97c55d827d95ba92b8975e7bb6cfdf189a3526ec75218954dabbe1536b6",
+    "audits/bhsm_muon_finite_d5_split_spin_poles_20261015.py": "4faa3c6374051fd0bf3d664233f73a82d3acd015ca98458dbf7ec6d62fb6c307",
+    "audits/bhsm_muon_split_pole_em_observable_20261015.py": "23d35967645c5095f5b5c2e1f497e2a3668d9d68cb48bb64b3672bee8e2fd9b1",
+    "audits/evaluate_muon_outgoing_energy_pairing.py": "5562bb2405b699a7d70315293ed878b5f13bffc01ffa61d26dc5bc6b0186e2d4",
+    "src/bhsm/interface/muon_outgoing_trace_energy_jet.py": "621c7adf3113e5c301d0e87f176d693b387463a64aca0029c312d7d5c52667f1",
+    "tests/test_bhsm_outgoing_tail_domain_20261015.py": "a8d8f5b9c364ddec742a65caea44f3cf89bc11e1f6a0cc36a3ef1b4d62f48e14",
+    "tests/test_bhsm_split_pole_em_observable_20261015.py": "dad839a23fda8a260a6e1dc5d0067269a2656a4914c6fa80772b8aee00bfd20b",
+    "tests/test_muon_outgoing_trace_energy_jet.py": "7d5fa7dd17adb07ff06f51b0f7b9749ed2e4d7bcfb14ef08948bcd332ae55545"
+  },
+  "unchanged_original_common_cut_sha256": "ea02ed6aee45310c5651fef5c8f103e868007d4f125582ab2b64ff7651f76b2b"
+}

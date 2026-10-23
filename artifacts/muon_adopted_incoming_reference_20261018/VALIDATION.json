@@ -1,0 +1,83 @@
+{
+  "CI": "No hosted result claimed here. Verify against actual post-push research head; separate PR469 repair is not a pass for PR465.",
+  "classification": "PROVISIONAL_CLASSICAL_BLOCK_REVIEW_ONLY",
+  "independent_review": {
+    "claims": "No blockers; provisional classical block, unknown loads and unevaluated physical stages explicit",
+    "duplicate_artifacts": "run5/run6 byte-identical; every current source pin and archived historical execution-owner pin checked",
+    "source_lift": "84 mixed-chart original Maxwell weak rows plus independent Higgs gauge gradient; max defect5.3291e-15 at gradient scale12.2404"
+  },
+  "physical_admission": false,
+  "preservation": {
+    "historical_unadopted_hashes": "all4 adoption_v1 pins unchanged",
+    "original_status_paths_present": 17544,
+    "root_gitattributes_staged": false,
+    "unrelated_tracked_hashes_unchanged": {
+      ".gitattributes": "5e165f7c67d7017848f7cb8f9c55c78048a82838a879732b60d04a974bdb04de",
+      "artifacts/muon_observable_combination_20261011/contribution_error_table.json": "19b7ce5b3a863a0b79bd952e20ab7e0a0e553a92a607f0d34db2a9ba864cce36",
+      "artifacts/muon_observable_combination_20261011/contribution_error_table.md": "18961d0f32d86a39977c58737fa693208f48110e0baa78d15f7c8fb610b12869",
+      "scripts/verify_muon_changing_source_publication.py": "4c526bcefe3de405d5103197332de129737e2aaf15d3722066d88e516584a47a",
+      "src/bhsm/interface/ae4_stratified_dirac_zeta_induced_owner.py": "ab0537e52db679979bc85109f27b85d534507459dde256bd24ac7742b2d5efe2",
+      "src/bhsm/interface/aether_quantum_functional_accounting_v16_00.py": "8ea906a9b3dd489474b45da8117398547dcf32a1dae96defebb6891998b64f3e"
+    }
+  },
+  "publication_audits": {
+    "forbidden_claims": {
+      "arguments": [
+        "tools/audit_forbidden_claims.py",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "log_sha256": "ab19067cf15e0a20b3e28374c77f15f1dbd1277938c682f675d8726d2dc1460a"
+    },
+    "frozen_integrity": {
+      "arguments": [
+        "tools/audit_frozen_prediction_integrity.py",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "log_sha256": "97694acc837bc21d90c8390c12cd39ba5bdc76e6e7209601e985561136d5b884"
+    },
+    "precision": {
+      "arguments": [
+        "tools/verify_precision.py"
+      ],
+      "exit_code": 0,
+      "log_sha256": "9aeba488a47f2f68d79b46c5cb04fea049e2ffccd6b5411d475e43a748ade6e2"
+    },
+    "public_readiness": {
+      "arguments": [
+        "tools/audit_public_readiness.py",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "log_sha256": "41a27a67a9a5854ad960e49e5a8707c5039b8a50833b6a5f0b4f9b9f9ae621ff"
+    },
+    "status": {
+      "arguments": [
+        "tools/audit_bhsm_status.py",
+        "--format",
+        "json"
+      ],
+      "exit_code": 0,
+      "log_sha256": "67dcb4844fb5ae22fa81b02fe4297a270cb8895184979d7e4fe1920f0ec1958e"
+    }
+  },
+  "schema": "bhsm.adopted-reference-validation.v1",
+  "tests": {
+    "command": [
+      "python",
+      "-m",
+      "pytest",
+      "-q",
+      "tests/test_muon_adopted_incoming_reference.py",
+      "tests/test_muon_nonlinear_chronological_n0_action.py",
+      "tests/test_muon_nonlinear_n0_field_action.py",
+      "tests/test_muon_incoming_polarization_candidate.py"
+    ],
+    "exit_code": 0,
+    "passed": 17
+  }
+}

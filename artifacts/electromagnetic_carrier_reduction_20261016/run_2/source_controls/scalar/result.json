@@ -1,0 +1,75 @@
+{
+  "CAR": {
+    "affine_interval": [
+      -8.240266102303861,
+      4.687583160972556
+    ],
+    "affine_width": 12.927849263276418,
+    "classification": "FINITE_ALGORITHM_CONTROL_NOT_PHYSICAL_STATE",
+    "continuum_tail_certified": false,
+    "errors": {
+      "lower_witness_CAR_residual": 3.0754470826429736e-15,
+      "max_sample_outside_interval": 0.0,
+      "odd_symmetry_residual": 0.0,
+      "projection_pairing_error": 2.2247786310271853e-16,
+      "sharp_lower_error": 3.552713678800501e-15,
+      "sharp_upper_error": 2.6645352591003757e-15,
+      "upper_witness_CAR_residual": 3.1073445229717334e-15
+    },
+    "finite_dimension": 8,
+    "physical_M_effective_evaluated": false,
+    "pure_tangent_counterexample_offdiagonal_norm": 0.0,
+    "same_counterexample_full_CAR_width": 20.0
+  },
+  "Fock": {
+    "Fock_dimension": 16,
+    "anomalous_covariances_identical": true,
+    "classification": "EXACT_FOCK_COUNTEREXAMPLE_NOT_BHSM_SEA",
+    "complex_modes": 4,
+    "conclusion": "Covariance-level insensitivity alone does not cover higher connected state dependence.",
+    "exact_total_particle_number": 2,
+    "normal_covariances_identical": true,
+    "quartic_expectation_A": "1/2",
+    "quartic_expectation_B": "0"
+  },
+  "all_checks_passed": true,
+  "nonlinear_remainder": {
+    "classification": "EXACT_NONLINEAR_REMAINDER_CONTROL_NOT_PHYSICAL_BACKGROUND",
+    "conclusion": "Zero complete sensitivity at one point does not prove finite-family independence.",
+    "finite_observable_change": "1/4",
+    "initial_full_first_derivative_zero": true,
+    "rigorous_control_model_remainder_bound": "25/64",
+    "total_second_derivative": "-2*beta**2*(3*y**2 - 1)/(3*y**2 + 1)**3"
+  },
+  "physical_status": {
+    "FULL_BHSM_COMPLETE": false,
+    "Gate7_closed": false,
+    "a_mu_physical": null,
+    "g_mu_physical": null,
+    "ground_state_assumption_adopted": false,
+    "inherited_reference_selected": false,
+    "native_operator_reproduces_full_action": false,
+    "physical_muon_vertex_evaluated": false,
+    "physical_reference_sensitivity_evaluated": false,
+    "physical_total_uncertainty": null
+  },
+  "scalar": {
+    "A0_required": "b**2/(g*h) - 4*b/(3*ell**2)",
+    "G0_required": "b**2/h",
+    "additional_constant_R_coefficient": "b/(12*g)",
+    "additional_sigma_squared_R_coefficient": "b/12",
+    "all_symbolic_checks_passed": true,
+    "classification": "EXACT_LOCAL_INVERSE_CONSTRUCTION_NOT_NATIVE_BHSM_REALIZATION",
+    "domain": "Zchi>0, Zsigma=b>0, g>0, ell>0; local Riemannian field chart",
+    "full_action_match": false,
+    "h_native": "nu/(2048*pi**4*ell**4)",
+    "normalized_Phi_squared": "b*(sigma**2 + 1/g)/(2*h)",
+    "omega_squared": "Zchi*g/b",
+    "physical_statistics_multiplicity_selected": false,
+    "total_branch_cutoff_jets_evaluated": false,
+    "trial_internal_dimension": 4,
+    "trial_spin_dimension_in_M8": 16
+  },
+  "scope": "NEW SYMBOLIC DERIVATIONS AND DELIBERATELY CONSTRUCTED ALGORITHM CONTROLS",
+  "source_commit": "b6cb15f5ab6f6b44057f13895c5fd498ce928d83"
+}

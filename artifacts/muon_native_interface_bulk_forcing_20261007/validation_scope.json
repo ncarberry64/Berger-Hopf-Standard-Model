@@ -1,0 +1,26 @@
+{
+  "extraction_method_tests_not_physical_prediction": true,
+  "launcher": {
+    "path": "C:\\Users\\carbe\\Downloads\\BHSM_muon_interface_bulk_forcing_20261007.py",
+    "sha256": "b25f31ef44852510d72d8e4516275d04ea16fcf0dcdbe5b118126d600f8a7789"
+  },
+  "new_finite_control_checks": 11,
+  "new_model_assumptions_installed": [],
+  "old_production_replays": 0,
+  "physical_native_evaluations": 0,
+  "physical_requirements": {
+    "finite_control_direct_mixed_forcing": "PASS",
+    "finite_control_direct_schur": "PASS: source-dependent constraint and multiplier retained",
+    "finite_control_response_replay": "PASS: Arb consistency enclosure plus exact rational identity",
+    "full_7x73_recomputed": "NO",
+    "physical_moving_boundary_kinematics": "UNEVALUATED: complete formula recovered, physical operands absent",
+    "same_action_base_domain_Fn_Fb": "NOT_ESTABLISHED: cached residual is interval13 constraints/HS/descriptor; no same-owner row/dual identification",
+    "seven_component_physical_b_psi": "UNEVALUATED: no action-selected normal column bound to retained state/material maps"
+  },
+  "targeted_tests": {
+    "command": "C:\\Python314\\python.exe -m pytest --noconftest -q tests/test_muon_native_interface_bulk_forcing.py",
+    "final_passed": 12,
+    "initial_failed": 1,
+    "initial_failure": "Test API only: Arb.contains does not accept str; explicit scalar conversion corrected it"
+  }
+}

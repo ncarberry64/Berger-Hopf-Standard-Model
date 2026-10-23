@@ -1,0 +1,307 @@
+{
+  "classification": "COLLIDER_ELECTRON_POSITRON_TO_MUON_PAIR_ORIGINAL_EVENT_INCIDENCE_AND_AVAILABLE_TRANSPORT_REVIEW",
+  "exact_required_original_action_pullback": {
+    "bulk_action_Hessian": "H_coll=(D Phi_coll)^T H_original(D Phi_coll)+sum_a g_original,a D^2 Phi_coll,a.",
+    "bulk_action_gradient": "g_coll=(D Phi_coll)^T g_original in the declared realified/analytic coordinate convention.",
+    "event_matrices": "The owned decomposition of H_coll and its actual retarded complement must produce P_coll,B_coll,L_coll^R,C_coll,J_coll,d_coll, including cross-event/interbranch terms, all six sectors and boundary/source contacts.",
+    "event_topology": "If the realized solution genuinely has several geometric incoming or successor branches, its actual branch incidence and signed trace maps must be supplied by the existing branch-transfer action. The generic allowance of one or more successors is not an evaluated four-branch event.",
+    "external_kinematics": "Evaluate the Lorentz/half-density/source map from equal-energy head-on e-/e+ momenta and the energy scan into these common field traces; original raw268 q/v entries are not beam four-momenta.",
+    "first_unavailable_in_this_numeric_matcher": "The value-level Phi_coll/common-domain collision incidence and its induced original-action P/B/L/C/J/d, rather than a missing general Schur solver.",
+    "jet_requirement": "Supply value/u/v/uv for those six operands from the same collision geometry/source/domain, with moving trace/coframe/source/constraint curvature contacts. Fixed-domain PR derivatives alone do not perform this pullback.",
+    "no_new_action_term_or_boundary_condition_proposed": true,
+    "no_new_projector_or_state_assignment_here": true,
+    "nonstationary_contact": "The g*D2Phi term is mandatory at the retained nonstationary base; no zero-gradient shortcut or duplicated worldtube source is allowed.",
+    "object": "An evaluated collision embedding/incidence Phi_coll from the prepared incoming pair and outgoing detector/projector trace data into ONE common original full-field event domain, with actual embeddings/coframes/normal orientations and common action identity.",
+    "observable": "For a collider cross section, also retain the connected four-external-leg/LSZ or equivalent admitted source-response and asymptotic normalization. A small classical KKT residual is not that amplitude.",
+    "quantum_state_incidence": "Use the existing electron/positron and muon/antimuon one-particle embeddings plus the charge-conjugate CAR/Fock two-particle construction on that common domain. Particles are excitations/occupations; particle count is not the number of classical cap snapshots.",
+    "source_binding": "The actual pair-preparation/annihilation and pair-detection source functionals must be pulled through the retained interacting gauge/fermion action and connected propagator prescription; a one-particle reset lift alone only transports a trace and cannot substitute for a connected four-leg transition."
+  },
+  "general_AE4_and_PR468": {
+    "algebra_accepts_combined_future_space_if_owned": true,
+    "all_unknown_mixed_leaves_remain_mandatory": true,
+    "arguments": [
+      "parent_jet",
+      "coupling_jet",
+      "child_retarded_jet",
+      "response_jet",
+      "source_jet",
+      "response_target_jet"
+    ],
+    "callback": "bhsm.interface.ae4_mixed_event_response.solve_retarded_event_kkt_mixed_jet",
+    "convention": "Hermitian parent jets and conjugate-transpose real-source pairing. The active muon complex-germ action uses analytic transpose; a proven realification/pairing conversion is required before reuse.",
+    "dimensions": {
+      "B": "n x m",
+      "C": "r x n",
+      "J": "n",
+      "L_ret": "m x m",
+      "P": "n x n",
+      "d": "r"
+    },
+    "draft": true,
+    "equations": [
+      "P q+B c+C^dagger lambda+J=0",
+      "B^dagger q+L_ret c=0",
+      "C q=d"
+    ],
+    "head_sha": "b51ed0e318e162dc9919698fb9ed6d8aeafb13d3",
+    "jet_order": [
+      "value",
+      "D_u",
+      "D_v",
+      "D_uD_v"
+    ],
+    "no_n_m_r_species_assignment_or_four_leg_incidence_from_dimensions": true,
+    "pr_url": "https://github.com/ncarberry64/Berger-Hopf-Standard-Model/pull/468",
+    "sectors": [
+      "geometry_eta_sigma",
+      "gauge_transverse",
+      "gauge_constraint",
+      "BRST_ghost",
+      "fermion_family",
+      "HS_scalar"
+    ],
+    "squared_unsquared": "PR universal pole convention is squared; active muon unsquared boundary-pencil values are not silently identified with it.",
+    "state_at_review": "open",
+    "u_v": "Two independent real source parameters on one fixed common domain, not two physical particles or incoming arms."
+  },
+  "identity_compatibility_checklist": [
+    "Common action version and mathematical scalar, background/event identity, actual global domain and selected time/retarded prescription.",
+    "Same carrier/family/charge-conjugation maps and full source normalization; no square-matrix dimension identification between inequivalent spaces.",
+    "Opposite branch normals and actual signed cotangent pullback at the same event; material wall and proper-normal conversion counted once.",
+    "Actual initial transverse/environmental field functions or a complete globally retarded past source selector; outgoing-only labels do not choose them.",
+    "Declared real/complex pairing and squared/unsquared spectral conventions; no Hermitianization or dropped rows."
+  ],
+  "input_hashes": {
+    "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\artifacts\\muon_baton_zoo_collider_event_domain_20261014\\pinned_pr468_source_run_1\\BHSM_WHOLE_SYSTEM_PUZZLE_20261013.md": "ee054e540974b4bbbbbcaaf4af768f06a04f0024622be1fe1fa97c841ab01ef0",
+    "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\artifacts\\muon_baton_zoo_collider_event_domain_20261014\\pinned_pr468_source_run_1\\ae4_mixed_event_response.py": "a5404e97a05f7d0ed54a6ab84833c3f0db02ddea9f0d646c0db87239ae8a4670",
+    "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\artifacts\\muon_baton_zoo_collider_event_domain_20261014\\pinned_pr468_source_run_1\\pr468_changed_files.json": "9ad17c0b779d6c489011dc147629c146b8972ea6bd158d4a4ac13d16fcbc8687",
+    "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\artifacts\\muon_baton_zoo_collider_event_domain_20261014\\pinned_pr468_source_run_1\\pr468_metadata.json": "29b3319607dea673bb571ec3f5f310beaf8a8178629128ceb5b549f6f5334e5a",
+    "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\action_extension_global_spin_reset_ae2.py": "cc46df6372196e610ebfe0921cbb7f438f08d645f5b144faebdf1c6d2a991ccb",
+    "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\ae4_branch_relative_support_transition.py": "e017b2f49c37e02f7ff513ce2d2f8f08ec5cea217c35db40e4b6dc4fccc407e0",
+    "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\ae4_c2_stratified_event_flux_assembly.py": "145486b4b279dccf1994c5a0991fd29a57290d20e5460ba193810e0b260b6bce",
+    "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\muon_birth_fermion_event_kkt_inputs.py": "286ac459ec88c2c739cd6cdd829cdf2234518ed224e35140349a6ca14dbb5592",
+    "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\muon_complex_coupled_reset_continuation.py": "88c80fb3a5700c97eb907949bee1d8d747def0298977655ab3eea79a2f1d9087",
+    "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\muon_direct_source_coupled_reset_application.py": "f63141e6cad3a52232623161b4119d358356edabdcf26c35c802b8e827b9273b",
+    "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\muon_holomorphic_two_arm_action.py": "3c2b8360697d16d4837c59054e05a2982d7f6cb51b4769ff8d7e873a5440a2e8",
+    "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\muon_holomorphic_two_arm_reset.py": "bd86a63514a76b9f7e707137f5cfb3c21d429b420467862eeb2b59c7e4606c48",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\bhsm_baton_zoo_actual_birth_corner_chronological_transport.py": "93341f76d776e5cd8f7066cf6ef536a3e10819c78d948b4eb0a494744f52f468"
+  },
+  "main_conclusion": "The existing common AE4 event algebra can be reused after a same-action collider pullback is evaluated. The original226 two-arm numerical matcher and PR468 two-source labels cannot be relabeled as two incoming/two outgoing particles.",
+  "no_new_conditional_Gauss_test_or_collision_integration_or_fit": true,
+  "no_original_226_equation_or_particle_assignment_changed": true,
+  "no_physical_four_leg_event_or_amplitude_or_full_derivative_or_correction_admitted": true,
+  "original226": {
+    "arms": "incoming C1 branch23 at E1-minus and newly realized C2 branch24 at E1-plus",
+    "common_proper_trial": "six arm trace rows with a6x3 common-amplitude map; not a four-leg scattering phase space",
+    "constraints": {
+      "Higgs_temporal_dual": 4,
+      "Higgs_trace": 4,
+      "arm_energies": 2,
+      "child_constraints": 40,
+      "gauge_temporal_dual": 64,
+      "gauge_trace": 64,
+      "incoming_constraints": 40,
+      "moving_geometric_trace": 4,
+      "normal_position_trace": 1,
+      "proper_natural_attachment": 2,
+      "proper_natural_normal": 1
+    },
+    "duplication_into_four268_or_two_electron_arms_is_not_valid": true,
+    "energy_rows": "Own-parent and child signed Legendre/reference-clock energy rows; these are not an existing external COM sqrt(s) or four-momentum insertion map.",
+    "joint_phase_dimension": 292,
+    "master_dimension": 504,
+    "no_action_owned_multi_particle_to_raw268_conversion_found_in_this_API": true,
+    "no_four_external_leg_trace_argument": true,
+    "no_species_or_charge_conjugation_argument": true,
+    "one_arm_master": "x106,v106,y40=m24+At16",
+    "raw_shape": [
+      2,
+      268
+    ],
+    "total_rows": 226
+  },
+  "producer_sha256": "31d2fe710e4e9ea4336e8e03f9301aa31591249cf6cd3110f3700b6ea051697c",
+  "requested_benchmark": {
+    "beam_choice": "equal-energy head-on",
+    "channel": "e- e+ -> mu- mu+",
+    "energy_scan_selected_by_user": true
+  },
+  "saved_birth_transport_code_review": {
+    "classification": "READ_ONLY_FORMULA_AND_COORDINATE_REVIEW_NO_NEW_NUMERICAL_APPLICATION",
+    "columns": "0:3 actual homogeneous birth seed;3:6 actual retarded Up source;6:15 h-major T*Dhseed;15:24 h-major forced R*DhUp.",
+    "dimensions": "Old joint352=parent146+child206; child360=(x154,v154,y52), canonical308. These do not identify current368/316 or product410/358.",
+    "full_derivative_or_exterior_admitted": false,
+    "product_rule_scope": "T*Dhseed and forced R*DhUp are valid additive pieces only. Missing DhM/DhR, baseline Euler-force first, cut/step/frame/source/clock and endpoint/domain contacts are explicitly retained as missing.",
+    "proper_h_not_time_clock": true,
+    "scope_pass": true,
+    "seed_source_ownership": "Initial values are the saved action-derived child seed and parent Up. Theta is a natural/adjoint readout, not a state impulse. No conditional c0 repair or CAR/environment fallback is inserted.",
+    "source_citations": {
+      "actual_seed_and_jet": {
+        "anchor": "seed=exact(birth,'child_source_complete_canonical_pair')",
+        "first_line": 27,
+        "last_line": 35,
+        "path": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\bhsm_baton_zoo_actual_birth_corner_chronological_transport.py",
+        "sha256": "93341f76d776e5cd8f7066cf6ef536a3e10819c78d948b4eb0a494744f52f468"
+      },
+      "direct_source_return": {
+        "anchor": "returned=_matrix([[h]])[0,0]*J.transpose()",
+        "first_line": 66,
+        "last_line": 71,
+        "path": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\bhsm_baton_zoo_actual_birth_corner_chronological_transport.py",
+        "sha256": "93341f76d776e5cd8f7066cf6ef536a3e10819c78d948b4eb0a494744f52f468"
+      },
+      "full_derivative_not_supplied": {
+        "anchor": "derivative_formula='DhQ_N=",
+        "first_line": 147,
+        "last_line": 154,
+        "path": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\bhsm_baton_zoo_actual_birth_corner_chronological_transport.py",
+        "sha256": "93341f76d776e5cd8f7066cf6ef536a3e10819c78d948b4eb0a494744f52f468"
+      },
+      "source_column_assignment": {
+        "anchor": "put(parent,J*Up,3);put(parent,J*DUp,15)",
+        "first_line": 51,
+        "last_line": 56,
+        "path": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\bhsm_baton_zoo_actual_birth_corner_chronological_transport.py",
+        "sha256": "93341f76d776e5cd8f7066cf6ef536a3e10819c78d948b4eb0a494744f52f468"
+      },
+      "trial_domain_contact": {
+        "anchor": "if component=='parent_section_first':value+=",
+        "first_line": 123,
+        "last_line": 126,
+        "path": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\bhsm_baton_zoo_actual_birth_corner_chronological_transport.py",
+        "sha256": "93341f76d776e5cd8f7066cf6ef536a3e10819c78d948b4eb0a494744f52f468"
+      }
+    },
+    "source_return": "sum_i h_i J_i^T(Hpc_i eta_i+Hpp_CHILD_i J_i Up), with direct CHILD leaf, not OWN subtraction or duplicated parent bulk.",
+    "terminology": "X^T Pi is a canonical trace-cotangent pairing. It is not by itself the antisymmetric Green form X^T Pi-Pi^T X or a complete physical terminal flux/load.",
+    "trial_first": "(DhUp)^T source_return is right trial/domain motion counted once; the independent source adjoint stays fixed."
+  },
+  "source_citations": {
+    "PR468_common_owner_scope": {
+      "anchor": "The first shared value-level operand",
+      "first_line": 111,
+      "last_line": 121,
+      "path": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\artifacts\\muon_baton_zoo_collider_event_domain_20261014\\pinned_pr468_source_run_1\\BHSM_WHOLE_SYSTEM_PUZZLE_20261013.md",
+      "sha256": "ee054e540974b4bbbbbcaaf4af768f06a04f0024622be1fe1fa97c841ab01ef0"
+    },
+    "PR468_dimensions": {
+      "anchor": "n, m, r = p[0].shape[0]",
+      "first_line": 100,
+      "last_line": 116,
+      "path": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\artifacts\\muon_baton_zoo_collider_event_domain_20261014\\pinned_pr468_source_run_1\\ae4_mixed_event_response.py",
+      "sha256": "a5404e97a05f7d0ed54a6ab84833c3f0db02ddea9f0d646c0db87239ae8a4670"
+    },
+    "PR468_full_callback": {
+      "anchor": "def solve_retarded_event_kkt_mixed_jet(",
+      "first_line": 70,
+      "last_line": 95,
+      "path": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\artifacts\\muon_baton_zoo_collider_event_domain_20261014\\pinned_pr468_source_run_1\\ae4_mixed_event_response.py",
+      "sha256": "a5404e97a05f7d0ed54a6ab84833c3f0db02ddea9f0d646c0db87239ae8a4670"
+    },
+    "PR468_not_physical_domain": {
+      "anchor": "\"physical_terminal_load_or_jets_selected\": False",
+      "first_line": 156,
+      "last_line": 162,
+      "path": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\artifacts\\muon_baton_zoo_collider_event_domain_20261014\\pinned_pr468_source_run_1\\ae4_mixed_event_response.py",
+      "sha256": "a5404e97a05f7d0ed54a6ab84833c3f0db02ddea9f0d646c0db87239ae8a4670"
+    },
+    "PR468_source_parameters": {
+      "anchor": "Every supplied jet is ordered",
+      "first_line": 3,
+      "last_line": 8,
+      "path": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\artifacts\\muon_baton_zoo_collider_event_domain_20261014\\pinned_pr468_source_run_1\\ae4_mixed_event_response.py",
+      "sha256": "a5404e97a05f7d0ed54a6ab84833c3f0db02ddea9f0d646c0db87239ae8a4670"
+    },
+    "all_six_sectors": {
+      "anchor": "SECTOR_ORDER = (",
+      "first_line": 22,
+      "last_line": 30,
+      "path": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\ae4_c2_stratified_event_flux_assembly.py",
+      "sha256": "145486b4b279dccf1994c5a0991fd29a57290d20e5460ba193810e0b260b6bce"
+    },
+    "branch_value_not_supplied": {
+      "anchor": "exact_object='Value-level application",
+      "first_line": 168,
+      "last_line": 173,
+      "path": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\ae4_branch_relative_support_transition.py",
+      "sha256": "e017b2f49c37e02f7ff513ce2d2f8f08ec5cea217c35db40e4b6dc4fccc407e0"
+    },
+    "current_branch_transfer": {
+      "anchor": "retained_geometry_transition='E0->C1(branch23)->E1->C2(branch24)'",
+      "first_line": 157,
+      "last_line": 166,
+      "path": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\ae4_branch_relative_support_transition.py",
+      "sha256": "e017b2f49c37e02f7ff513ce2d2f8f08ec5cea217c35db40e4b6dc4fccc407e0"
+    },
+    "direct_original_constraints": {
+      "anchor": "for arm,name in enumerate(('incoming_constraints','child_constraints')):",
+      "first_line": 28,
+      "last_line": 33,
+      "path": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\muon_direct_source_coupled_reset_application.py",
+      "sha256": "f63141e6cad3a52232623161b4119d358356edabdcf26c35c802b8e827b9273b"
+    },
+    "direct_original_temporal_duals": {
+      "anchor": "for name,ids in(('gauge_temporal_dual'",
+      "first_line": 42,
+      "last_line": 47,
+      "path": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\muon_direct_source_coupled_reset_application.py",
+      "sha256": "f63141e6cad3a52232623161b4119d358356edabdcf26c35c802b8e827b9273b"
+    },
+    "generic_event_api": {
+      "anchor": "def solve_retarded_event_kkt(",
+      "first_line": 106,
+      "last_line": 131,
+      "path": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\ae4_c2_stratified_event_flux_assembly.py",
+      "sha256": "145486b4b279dccf1994c5a0991fd29a57290d20e5460ba193810e0b260b6bce"
+    },
+    "original226_groups": {
+      "anchor": "for arm,name in enumerate(('incoming','child')):",
+      "first_line": 111,
+      "last_line": 141,
+      "path": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\muon_holomorphic_two_arm_reset.py",
+      "sha256": "bd86a63514a76b9f7e707137f5cfb3c21d429b420467862eeb2b59c7e4606c48"
+    },
+    "original292_phase": {
+      "anchor": "F=np.zeros((4,292)",
+      "first_line": 24,
+      "last_line": 30,
+      "path": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\muon_complex_coupled_reset_continuation.py",
+      "sha256": "88c80fb3a5700c97eb907949bee1d8d747def0298977655ab3eea79a2f1d9087"
+    },
+    "original_master_and_phase": {
+      "anchor": "n=106;vi=np.r_",
+      "first_line": 129,
+      "last_line": 133,
+      "path": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\muon_holomorphic_two_arm_action.py",
+      "sha256": "3c2b8360697d16d4837c59054e05a2982d7f6cb51b4769ff8d7e873a5440a2e8"
+    },
+    "original_raw_pair": {
+      "anchor": "if raw.shape!=(2,268)",
+      "first_line": 38,
+      "last_line": 41,
+      "path": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\muon_holomorphic_two_arm_action.py",
+      "sha256": "3c2b8360697d16d4837c59054e05a2982d7f6cb51b4769ff8d7e873a5440a2e8"
+    },
+    "physical_event_identity": {
+      "anchor": "if (receipt[\"incoming\"] != dict(branch=23",
+      "first_line": 150,
+      "last_line": 155,
+      "path": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\muon_birth_fermion_event_kkt_inputs.py",
+      "sha256": "286ac459ec88c2c739cd6cdd829cdf2234518ed224e35140349a6ca14dbb5592"
+    },
+    "reset_is_single_bundle_graph": {
+      "anchor": "\"trace_graph\": \"Gamma0_child(Psi)",
+      "first_line": 180,
+      "last_line": 188,
+      "path": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\action_extension_global_spin_reset_ae2.py",
+      "sha256": "cc46df6372196e610ebfe0921cbb7f438f08d645f5b144faebdf1c6d2a991ccb"
+    },
+    "zero_independent_fermion_seam": {
+      "anchor": "\"independent_normal_matter_boundary_action\":",
+      "first_line": 175,
+      "last_line": 183,
+      "path": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\action_extension_global_spin_reset_ae2.py",
+      "sha256": "cc46df6372196e610ebfe0921cbb7f438f08d645f5b144faebdf1c6d2a991ccb"
+    }
+  }
+}

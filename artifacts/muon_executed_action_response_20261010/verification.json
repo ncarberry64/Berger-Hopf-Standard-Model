@@ -1,0 +1,894 @@
+{
+  "Gate7_closed": false,
+  "action_selected": false,
+  "additional_focused_test_groups": [
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "pytest",
+        "--noconftest",
+        "-q",
+        "tests/test_muon_parent_maxwell_corrected_retarded.py",
+        "tests/test_muon_native_product_factor_graph.py"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "OPENBLAS_NUM_THREADS": "1",
+        "PYTHONPATH": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src"
+      },
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "...........................                                              [100%]\n27 passed in 73.25s (0:01:13)\n",
+      "tested_source_identities": [
+        {
+          "bytes": 41759,
+          "path": "src/bhsm/interface/muon_parent_maxwell_corrected_retarded.py",
+          "sha256": "00bf7053e289297afd4f10dc0ef9522ac8326f2bd07609c9979bb9f5f6f74a4d"
+        },
+        {
+          "bytes": 44797,
+          "path": "src/bhsm/interface/muon_native_product_factor_graph.py",
+          "sha256": "4a5feeb0e32edc0505a44b45a19d6bdc821220cc9cf5187e35f59fe7720a7c18"
+        }
+      ]
+    },
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "pytest",
+        "--noconftest",
+        "-q",
+        "tests/test_muon_birth_coupled_constraint_retraction.py"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "OPENBLAS_NUM_THREADS": "1",
+        "PYTHONPATH": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src"
+      },
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "....                                                                     [100%]\n4 passed in 5.15s\n",
+      "tested_source_identities": [
+        {
+          "bytes": 12725,
+          "path": "src/bhsm/interface/muon_birth_coupled_constraint_retraction.py",
+          "sha256": "394f113ad87cdc2a524987fcc0492bb45bc93fa85815fc03de013fb13e235625"
+        }
+      ]
+    },
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "pytest",
+        "--noconftest",
+        "-q",
+        "tests/test_muon_native_coupled_source_heat.py"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "OPENBLAS_NUM_THREADS": "1",
+        "PYTHONPATH": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src"
+      },
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": ".....                                                                    [100%]\n5 passed in 2.62s\n",
+      "tested_source_identities": [
+        {
+          "bytes": 14499,
+          "path": "src/bhsm/interface/muon_native_coupled_source_heat.py",
+          "sha256": "6b37426c0564b5b87b78048a65e1b020c1b64710f1fc766f9e9f9f7f9be47dfe"
+        }
+      ]
+    }
+  ],
+  "additive_ledger_verification": {
+    "bytes": 6801,
+    "path": "artifacts/muon_calibrated_finite_projection_ledger_20261010/verification.json",
+    "sha256": "a4daf7e282f1a14fef816ec109f48c6a7b074a58624d556e0fbe8a368e176d8c"
+  },
+  "calibrated_projection_verification": {
+    "bytes": 4008,
+    "path": "artifacts/muon_calibrated_bosonic_higgs_photon_20261010/verification.json",
+    "sha256": "3e46d58bf22bd143537c9199081d2856bd92ef6cfa51e8879aac0f391ee92c50"
+  },
+  "complete_observable": false,
+  "coupled_first_heat_verification": {
+    "bytes": 1781,
+    "path": "artifacts/muon_native_coupled_source_heat_20261010/verification.json",
+    "sha256": "cf5b74d4157e7f6c416bb8ae5c12e7251208c6f738f5f638097378e922941de1"
+  },
+  "coupled_response_verification": {
+    "bytes": 2424,
+    "path": "artifacts/muon_parent_maxwell_corrected_retarded_20261010/verification.json",
+    "sha256": "cee1083abab7d7b46f5063b50cf869438e227ae7be93e09651f3c850cbb8f3ae"
+  },
+  "error_scope": {
+    "canonical_Lorentz_temporal_vertex_not_positive_factor_temporal_vertex": true,
+    "finite_Galerkin_stationarity_not_complete_physical_stationarity": true,
+    "finite_ODE_and_Newton_residuals_are_not_continuum_bounds": true,
+    "finite_eight_Q_heat_not_whole_native_supertrace": true,
+    "full_observable_uncertainty_not_established": true,
+    "heat_cutoff_probes_not_physical_birth_cutoff": true,
+    "historical_constraint_density_key_is_CAP_only": true,
+    "material_multiplier_density_not_set_zero_by_Galerkin_residual": true,
+    "mesh_difference_estimate_not_continuum_enclosure": true,
+    "nonzero_gauge_consistency_reaction_retained": true,
+    "numerical_replay_not_observable_enclosure": true,
+    "old_wall_mean_mixed_chart_run_not_corrected_material_stationary_base": true,
+    "positive_product_factor_not_Lorentz_Euler_heat": true,
+    "scalar_parameter_trial_not_physical_scale_matching": true,
+    "source_square_contact_not_full_native_response": true
+  },
+  "finite_graph_heat_verification": {
+    "bytes": 1820,
+    "path": "artifacts/muon_native_product_factor_graph_20261010/verification.json",
+    "sha256": "ccee0cb9c17d62603cdbe8aa2eef8a170d57b04d9cdcd34784e9ffb894d91721"
+  },
+  "finite_sector_verification": {
+    "bytes": 33429,
+    "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_sector_verification.json",
+    "sha256": "aab73d0a89e4f4e40fe2e2dfc8f97ae376d99bfa4877f02e2981277370dbbf71"
+  },
+  "focused_tests": {
+    "argv": [
+      "C:\\Python314\\python.exe",
+      "-m",
+      "pytest",
+      "--noconftest",
+      "-q",
+      "tests/test_muon_parent_gauge_geometry_correction.py",
+      "tests/test_muon_parent_maxwell_full_retarded.py",
+      "tests/test_muon_native_dirac_hamiltonian.py",
+      "tests/test_muon_calibrated_bosonic_higgs_photon.py",
+      "tests/test_muon_finite_normal_schur.py",
+      "tests/test_muon_frozen_normal_schur_certificate.py",
+      "tests/test_muon_material_higgs_gauge_action.py",
+      "tests/test_muon_finite_orientation_ward.py",
+      "tests/test_muon_parent_temporal_enrichment.py"
+    ],
+    "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+    "environment_overrides": {
+      "OPENBLAS_NUM_THREADS": "1",
+      "PYTHONPATH": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src"
+    },
+    "exit_code": 0,
+    "stderr": "",
+    "stdout": "........................................................................ [ 86%]\n...........                                                              [100%]\n83 passed in 74.79s (0:01:14)\n"
+  },
+  "inherited_verification": {
+    "bytes": 31718,
+    "path": "artifacts/muon_coupled_action_application_20261010/verification.json",
+    "sha256": "dd25a7fde03a34a0a6029a880311952c86f6ea4c801af59f65e55569ee73fdb1"
+  },
+  "interior_replay_verification": {
+    "bytes": 1336,
+    "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/interior_replay_verification.json",
+    "sha256": "2f0a9169ebbaf19a86f99ec944c20c62e73d86bc73a6efa6553a7139aa418771"
+  },
+  "material_orientation_verification": {
+    "bytes": 4771,
+    "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/orientation_material_verification.json",
+    "sha256": "9e30cdceaffaadcabee53729e0ef5bc45f4243538523692595ee05170088ae1b"
+  },
+  "normal_arithmetic_verification": {
+    "bytes": 17906,
+    "path": "artifacts/muon_frozen_normal_schur_certificate_20261010/verification.json",
+    "sha256": "8c93fc7bfdff903d5baa31e8861780cffcd9030321533f1ff5565d156b26d093"
+  },
+  "publication_audits": {
+    "claims": {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "tools/audit_forbidden_claims.py",
+        "--format",
+        "json"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "OPENBLAS_NUM_THREADS": "1",
+        "PYTHONPATH": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src"
+      },
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "{\n  \"allowed_example_paths\": [\n    \"docs/forbidden_claims.md\"\n  ],\n  \"audit\": \"forbidden_claims\",\n  \"findings\": [],\n  \"passed\": true,\n  \"verdict_labels\": [\n    \"FORBIDDEN_CLAIM_GUARDRAILS_ADDED\"\n  ]\n}\n"
+    },
+    "frozen": {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "tools/audit_frozen_prediction_integrity.py",
+        "--format",
+        "json"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "OPENBLAS_NUM_THREADS": "1",
+        "PYTHONPATH": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src"
+      },
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "{\n  \"audit\": \"frozen_prediction_integrity\",\n  \"files\": [\n    {\n      \"actual_sha256\": \"9EA147C56537520C86D3C4F9B864C6BA98BAC9E64931EDAE96449F3B335A36C4\",\n      \"expected_sha256\": \"9EA147C56537520C86D3C4F9B864C6BA98BAC9E64931EDAE96449F3B335A36C4\",\n      \"path\": \"docs/frozen_predictions.md\",\n      \"unchanged\": true\n    },\n    {\n      \"actual_sha256\": \"F38210E0689871A25A9D5B0A1A4239883B7240CD7D0E25CDCF4C8CAB72A2CBE7\",\n      \"expected_sha256\": \"F38210E0689871A25A9D5B0A1A4239883B7240CD7D0E25CDCF4C8CAB72A2CBE7\",\n      \"path\": \"docs/frozen_predictions.json\",\n      \"unchanged\": true\n    }\n  ],\n  \"frozen_predictions_changed\": false,\n  \"passed\": true\n}\n"
+    },
+    "precision": {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "tools/verify_precision.py"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "OPENBLAS_NUM_THREADS": "1",
+        "PYTHONPATH": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src"
+      },
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "PASS: precision gate verified (1.066e-14 <= 1.000e-13).\n"
+    },
+    "public": {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "tools/audit_public_readiness.py",
+        "--format",
+        "json"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "OPENBLAS_NUM_THREADS": "1",
+        "PYTHONPATH": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src"
+      },
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "{\n  \"audit\": \"bhsm_public_readiness\",\n  \"checks\": {\n    \"citation\": {\n      \"cff_version\": \"1.2.0\",\n      \"doi\": \"10.5281/zenodo.20663419\",\n      \"failures\": [],\n      \"license\": \"LicenseRef-AllRightsReserved\",\n      \"passed\": true,\n      \"release_date\": \"2026-06-26\",\n      \"release_tag\": \"v1.1.0\",\n      \"title\": \"Berger-Hopf Standard Model: Artifact-Backed Geometric Physics Research Framework\",\n      \"zenodo_archive_date\": \"2026-06-12\",\n      \"zenodo_archive_version\": \"v1.2.0\"\n    },\n    \"current_claims\": {\n      \"findings\": [],\n      \"passed\": true\n    },\n    \"frozen_predictions\": {\n      \"files\": [\n        {\n          \"actual_sha256\": \"9EA147C56537520C86D3C4F9B864C6BA98BAC9E64931EDAE96449F3B335A36C4\",\n          \"expected_sha256\": \"9EA147C56537520C86D3C4F9B864C6BA98BAC9E64931EDAE96449F3B335A36C4\",\n          \"path\": \"docs/frozen_predictions.md\",\n          \"unchanged\": true\n        },\n        {\n          \"actual_sha256\": \"F38210E0689871A25A9D5B0A1A4239883B7240CD7D0E25CDCF4C8CAB72A2CBE7\",\n          \"expected_sha256\": \"F38210E0689871A25A9D5B0A1A4239883B7240CD7D0E25CDCF4C8CAB72A2CBE7\",\n          \"path\": \"docs/frozen_predictions.json\",\n          \"unchanged\": true\n        }\n      ],\n      \"frozen_predictions_changed\": false,\n      \"passed\": true\n    },\n    \"hygiene\": {\n      \"allowed_large_artifact_limit_bytes\": 12582912,\n      \"allowed_large_artifacts\": [\n        {\n          \"bytes\": 10525866,\n          \"path\": \"artifacts/BHSM_aether_n3_fresh_sbp_fifth_v0_priority_v17_36.json\"\n        },\n        {\n          \"bytes\": 10722599,\n          \"path\": \"artifacts/BHSM_aether_n3_fresh_sbp_three_owner_priority_v17_47.json\"\n        },\n        {\n          \"bytes\": 12515555,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_C2_STOP_DOP853_ADAPTIVE_BORDERED_RHS_RESPONSE.json\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 15841669,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_C2_STOP_DOP853_ADAPTIVE_BORDERED_RHS_RESPONSE_CERTIFICATE.json\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 14094876,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_C2_STOP_DOP853_ADAPTIVE_SELECTED_PROJECTOR_GRAPH.json\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 17478672,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_C2_STOP_DOP853_BORDERED_RESPONSE_SECOND_VARIATION.json\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 15073608,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_C2_STOP_FULL_BORDERED_RHS_RESPONSE.json\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 25291911,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_C2_STOP_FULL_SELECTED_PROJECTOR_GRAPH.json\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 13925602,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_C2_STOP_HALF_STEP_FINE_HYBRID_GRAPH_JACOBIAN_RECONNAISSANCE.npz\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 27774619,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_C2_STOP_QUARTER_STEP_FINE_HYBRID_GRAPH_JACOBIAN_RECONNAISSANCE.npz\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 14361466,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_ARB_INTERACTION_TAYLOR26_MACRO_MAPS.npz\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 72207241,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_BLOCK_NEWTON_PREDICTOR.npz\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 22595029,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_NEWTON_ENDPOINT_CANDIDATE.npz\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 98072216,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_CORRELATED_DESCRIPTOR_AUGMENTED_JACOBIANS.npz\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 15882019,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_GREEN_COMPONENTWISE_TWO_RADIUS_SCREEN.npz\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 55828875,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_GREEN_MIDPOINT_AMBIENT_DF.npz\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 15728311,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_GREEN_MIXED_HS_CAUSAL_TRANSPORT.npz\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 41722453,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_GREEN_MIXED_TRANSVERSE_ALL_ENDPOINTS.npz\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 25304028,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_AFFINE_CENTER_BORDERED_RESPONSE_FIRST_VARIATION.json\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 33555226,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_AFFINE_CENTER_BORDERED_RESPONSE_SECOND_VARIATION.json\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 28974337,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_AFFINE_CENTER_BORDERED_RHS_RESPONSE.json\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 24911535,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_AFFINE_CENTER_SELECTED_PROJECTOR_GRAPH.json\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 56354452,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_SIGNED_FULL_TRANSVERSE_CURVATURE_NODES_00_23.npz\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 56326421,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_SIGNED_FULL_TRANSVERSE_CURVATURE_NODES_24_47.npz\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 15474079,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_FINITE_PROPAGATOR_Z1_RECONNAISSANCE.npz\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 27774704,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_FIRST_HS_NEWTON_CENTER_GRAPH_JACOBIAN.npz\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 20453304,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_FIRST_HS_NEWTON_ENDPOINT_TANGENT.npz\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 27982884,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_FIRST_HS_NEWTON_MIDPOINT_GRAPH_JACOBIAN.npz\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 55117636,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_HERMITE_SIMPSON_BLOCK_NEWTON_PREDICTOR.npz\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 27983297,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_HERMITE_SIMPSON_MIDPOINT_GRAPH_JACOBIAN.npz\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 55117625,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_RATE_CONSISTENT_BLOCK_NEWTON_PREDICTOR.npz\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 36414592,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_RECENTERED_CONE_BORDERED_RESPONSE_FIRST_VARIATION.json\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 48333122,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_RECENTERED_CONE_BORDERED_RESPONSE_SECOND_VARIATION.json\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 41758016,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_RECENTERED_CONE_BORDERED_RHS_RESPONSE.json\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 24911532,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_RECENTERED_CONE_SELECTED_PROJECTOR_GRAPH.json\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 27774707,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_CURRENT_CENTER_GRAPH_JACOBIAN.npz\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 55117900,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_HERMITE_SIMPSON_BLOCK_NEWTON_PREDICTOR.npz\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 55678350,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_HS_NEWTON_LINE_SEARCH_PREDICTOR.npz\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 55118294,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_RATE_CONSISTENT_BLOCK_NEWTON_PREDICTOR.npz\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 27774560,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_RATE_CONSISTENT_CENTER_GRAPH_JACOBIAN.npz\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 27983314,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_RATE_CONSISTENT_MIDPOINT_GRAPH_JACOBIAN.npz\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 27774601,\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_SIGNED_GREEN_CURRENT_CENTER_GRAPH_JACOBIAN.npz\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        },\n        {\n          \"bytes\": 11125650,\n          \"path\": \"artifacts/muon_first_order_complement_20261006/run_2/first_order_compact_reduction.npz\",\n          \"retention\": \"EXACT_REVIEWED_HASH\"\n        }\n      ],\n      \"credential_files\": [],\n      \"large_file_threshold_bytes\": 10485760,\n      \"malformed_lfs_pointers\": [],\n      \"merge_markers\": [],\n      \"passed\": true,\n      \"secret_findings\": [],\n      \"tracked_cache_or_build_junk\": [],\n      \"tracked_env_files\": [],\n      \"unexpected_large_files\": []\n    },\n    \"license_visibility\": {\n      \"failures\": [],\n      \"passed\": true\n    },\n    \"markdown_links\": {\n      \"broken\": [],\n      \"checked\": 60,\n      \"passed\": true\n    },\n    \"reproduction\": {\n      \"missing_cli_commands\": [],\n      \"missing_documented_commands\": [],\n      \"missing_scripts\": [],\n      \"passed\": true,\n      \"reviewer_smoke_target\": true\n    },\n    \"required_files\": {\n      \"empty\": [],\n      \"missing\": [],\n      \"passed\": true\n    },\n    \"science_alignment\": {\n      \"missing_phrases\": {},\n      \"passed\": true\n    }\n  },\n  \"external_urls\": [\n    \"https://doi.org/10.5281/zenodo.20663419\",\n    \"https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml/badge.svg\",\n    \"https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/institutional.yml/badge.svg\",\n    \"https://ncarberry64.github.io/Berger-Hopf-Standard-Model/\",\n    \"https://orcid.org/0009-0000-6650-3485\",\n    \"https://zenodo.org/badge/DOI/10.5281/zenodo.20663419.svg\"\n  ],\n  \"passed\": true,\n  \"verdict\": \"BHSM_REPOSITORY_PUBLIC_REVIEW_READY\",\n  \"version\": \"v6.21.0\"\n}\n"
+    },
+    "status": {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "tools/audit_bhsm_status.py",
+        "--format",
+        "json"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "OPENBLAS_NUM_THREADS": "1",
+        "PYTHONPATH": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src"
+      },
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "{\n  \"audit\": \"bhsm_status\",\n  \"checks\": {\n    \"candidate_architecture_complete\": true,\n    \"completion_payload_candidate_only\": true,\n    \"completion_payload_not_proven\": true,\n    \"dark_matter_not_solved\": true,\n    \"frozen_predictions_unchanged\": true,\n    \"full_bhsm_not_proven\": true,\n    \"mass_numerical_closure_open\": true,\n    \"official_predictions_unchanged\": true,\n    \"standard_model_not_fully_derived\": true\n  },\n  \"passed\": true,\n  \"verdict_labels\": [\n    \"BHSM_REPO_STATUS_REFRESH_COMPLETE\",\n    \"FULL_BHSM_STATUS_SYNCHRONIZED\",\n    \"SM_DERIVATION_REMAINS_OPEN\",\n    \"MASS_NUMERICAL_CLOSURE_REMAINS_OPEN\"\n  ]\n}\n"
+    }
+  },
+  "publication_preflight_correction": {
+    "failed_path": "artifacts/muon_native_coupled_source_heat_20261010/verification.json",
+    "first_byte_check_exit_code": 1,
+    "initial_commit_was_unpublished": true,
+    "recheck_exit_code": 0,
+    "recheck_stdout": "All 109 publication paths preserve exact working bytes in the Git index.",
+    "repair_argv": [
+      "git",
+      "-c",
+      "gc.auto=0",
+      "-c",
+      "maintenance.auto=false",
+      "add",
+      "--renormalize",
+      "--",
+      "artifacts/muon_native_product_factor_graph_20261010/verification.json",
+      "artifacts/muon_native_coupled_source_heat_20261010/verification.json"
+    ],
+    "scope": "Two CRLF verification JSON files were already staged through the prior LF filter; changing attributes alone did not replace their cached blobs. No scientific values or source bytes changed.",
+    "stdout_capture_scope": "Completed tool text transcribed."
+  },
+  "replays": [
+    {
+      "byte_identical": true,
+      "directory": "muon_parent_maxwell_full_retarded_20261010",
+      "files": [
+        {
+          "first": {
+            "bytes": 2198099,
+            "path": "artifacts/muon_parent_maxwell_full_retarded_20261010/run_1/application.npz",
+            "sha256": "9ac7b7d8e0cd9e41bbb2e8b34a7aa17066e28306cbbd0e4a851410ed179302de"
+          },
+          "second": {
+            "bytes": 2198099,
+            "path": "artifacts/muon_parent_maxwell_full_retarded_20261010/run_2/application.npz",
+            "sha256": "9ac7b7d8e0cd9e41bbb2e8b34a7aa17066e28306cbbd0e4a851410ed179302de"
+          }
+        },
+        {
+          "first": {
+            "bytes": 3885,
+            "path": "artifacts/muon_parent_maxwell_full_retarded_20261010/run_1/result.json",
+            "sha256": "46da90757206829fbd2010794d09d3e5465d1449a1dd6dbb69767020f8512e22"
+          },
+          "second": {
+            "bytes": 3885,
+            "path": "artifacts/muon_parent_maxwell_full_retarded_20261010/run_2/result.json",
+            "sha256": "46da90757206829fbd2010794d09d3e5465d1449a1dd6dbb69767020f8512e22"
+          }
+        }
+      ]
+    },
+    {
+      "byte_identical": true,
+      "directory": "muon_parent_gauge_geometry_correction_20261010",
+      "files": [
+        {
+          "first": {
+            "bytes": 1039574,
+            "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/canonical_interior_run_1/application.npz",
+            "sha256": "c2819f23fc3e51efffe5fcd65ccf1ffa6dec7f5dfe2395c4896f8a3b97a16eea"
+          },
+          "second": {
+            "bytes": 1039574,
+            "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/canonical_interior_run_2/application.npz",
+            "sha256": "c2819f23fc3e51efffe5fcd65ccf1ffa6dec7f5dfe2395c4896f8a3b97a16eea"
+          }
+        },
+        {
+          "first": {
+            "bytes": 14335,
+            "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/canonical_interior_run_1/result.json",
+            "sha256": "fea9213b954c1b6e224a97d5ba579fe47c282401fad2eba95630dfbf26a4760e"
+          },
+          "second": {
+            "bytes": 14335,
+            "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/canonical_interior_run_2/result.json",
+            "sha256": "fea9213b954c1b6e224a97d5ba579fe47c282401fad2eba95630dfbf26a4760e"
+          }
+        }
+      ]
+    },
+    {
+      "byte_identical": true,
+      "directory": "muon_parent_gauge_geometry_correction_20261010",
+      "files": [
+        {
+          "first": {
+            "bytes": 1684390,
+            "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/canonical_wall_mean_run_1/application.npz",
+            "sha256": "0a4ab74a1e6b97439452d638d20ef1c861b4d1389889b9781742439ae657e0e7"
+          },
+          "second": {
+            "bytes": 1684390,
+            "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/canonical_wall_mean_run_2/application.npz",
+            "sha256": "0a4ab74a1e6b97439452d638d20ef1c861b4d1389889b9781742439ae657e0e7"
+          }
+        },
+        {
+          "first": {
+            "bytes": 17449,
+            "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/canonical_wall_mean_run_1/result.json",
+            "sha256": "8cf88a0061560c89ddecf54d0580417b165fbb8c69fe228d065e59ab4908beed"
+          },
+          "second": {
+            "bytes": 17449,
+            "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/canonical_wall_mean_run_2/result.json",
+            "sha256": "8cf88a0061560c89ddecf54d0580417b165fbb8c69fe228d065e59ab4908beed"
+          }
+        }
+      ]
+    },
+    {
+      "byte_identical": true,
+      "directory": "muon_native_dirac_hamiltonian_20261010",
+      "files": [
+        {
+          "first": {
+            "bytes": 470426,
+            "path": "artifacts/muon_native_dirac_hamiltonian_20261010/run_3/operator_coefficients.json",
+            "sha256": "e0dffc7dd9e6275cfb76c1b9d9e3caf913f97a2d136d4a9ef460cbc0f2f4cc3d"
+          },
+          "second": {
+            "bytes": 470426,
+            "path": "artifacts/muon_native_dirac_hamiltonian_20261010/run_4/operator_coefficients.json",
+            "sha256": "e0dffc7dd9e6275cfb76c1b9d9e3caf913f97a2d136d4a9ef460cbc0f2f4cc3d"
+          }
+        }
+      ]
+    },
+    {
+      "byte_identical": true,
+      "directory": "muon_calibrated_bosonic_higgs_photon_20261010",
+      "files": [
+        {
+          "first": {
+            "bytes": 10715,
+            "path": "artifacts/muon_calibrated_bosonic_higgs_photon_20261010/run_1/bosonic_higgs_photon.json",
+            "sha256": "63e9522d0532a6ecf6a53ec44ec4a26c3f2a64bb3b182302dce952c5c0a90e86"
+          },
+          "second": {
+            "bytes": 10715,
+            "path": "artifacts/muon_calibrated_bosonic_higgs_photon_20261010/run_2/bosonic_higgs_photon.json",
+            "sha256": "63e9522d0532a6ecf6a53ec44ec4a26c3f2a64bb3b182302dce952c5c0a90e86"
+          }
+        }
+      ]
+    },
+    {
+      "byte_identical": true,
+      "directory": "muon_calibrated_finite_projection_ledger_20261010",
+      "files": [
+        {
+          "first": {
+            "bytes": 55396,
+            "path": "artifacts/muon_calibrated_finite_projection_ledger_20261010/run_1/finite_projection_ledger.json",
+            "sha256": "00b998a3349256b32e13a2dbe0de9a78abe72e52a4aba68c29e13a6d006b87a3"
+          },
+          "second": {
+            "bytes": 55396,
+            "path": "artifacts/muon_calibrated_finite_projection_ledger_20261010/run_2/finite_projection_ledger.json",
+            "sha256": "00b998a3349256b32e13a2dbe0de9a78abe72e52a4aba68c29e13a6d006b87a3"
+          }
+        }
+      ]
+    },
+    {
+      "byte_identical": true,
+      "directory": "muon_frozen_normal_schur_certificate_20261010",
+      "files": [
+        {
+          "first": {
+            "bytes": 1672,
+            "path": "artifacts/muon_frozen_normal_schur_certificate_20261010/interior_run_3/certificate.json",
+            "sha256": "a56a7a771ae2a3d8649b069a1a618c833aca4efcb8433864d90ec5416bd9b760"
+          },
+          "second": {
+            "bytes": 1672,
+            "path": "artifacts/muon_frozen_normal_schur_certificate_20261010/interior_run_4/certificate.json",
+            "sha256": "a56a7a771ae2a3d8649b069a1a618c833aca4efcb8433864d90ec5416bd9b760"
+          }
+        }
+      ]
+    },
+    {
+      "byte_identical": true,
+      "directory": "muon_parent_gauge_geometry_correction_20261010",
+      "files": [
+        {
+          "first": {
+            "bytes": 844242,
+            "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/material_wall_mean_run_1/application.npz",
+            "sha256": "4a16d56ec64eeb6c2db10000debf9695f24f7bef634e793011066ed88f8b9383"
+          },
+          "second": {
+            "bytes": 844242,
+            "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/material_wall_mean_run_2/application.npz",
+            "sha256": "4a16d56ec64eeb6c2db10000debf9695f24f7bef634e793011066ed88f8b9383"
+          }
+        },
+        {
+          "first": {
+            "bytes": 12609,
+            "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/material_wall_mean_run_1/result.json",
+            "sha256": "3137302eb7b92d7c6b5f999095e82f84f55996ed20b2a47ec35a56c96495539c"
+          },
+          "second": {
+            "bytes": 12609,
+            "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/material_wall_mean_run_2/result.json",
+            "sha256": "3137302eb7b92d7c6b5f999095e82f84f55996ed20b2a47ec35a56c96495539c"
+          }
+        }
+      ]
+    },
+    {
+      "byte_identical": true,
+      "directory": "muon_parent_gauge_geometry_correction_20261010",
+      "files": [
+        {
+          "first": {
+            "bytes": 189760,
+            "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/normal_interior_run_1/application.npz",
+            "sha256": "d4ee812f4121d1ef5bb754563e27173c38a9a8b3945555853402c3638efb92a5"
+          },
+          "second": {
+            "bytes": 189760,
+            "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/normal_interior_run_2/application.npz",
+            "sha256": "d4ee812f4121d1ef5bb754563e27173c38a9a8b3945555853402c3638efb92a5"
+          }
+        },
+        {
+          "first": {
+            "bytes": 4602,
+            "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/normal_interior_run_1/result.json",
+            "sha256": "21acd7912fade8a0eb6c4bd1524d5c5d1721c5effdcb1adce816534a5ddcbbab"
+          },
+          "second": {
+            "bytes": 4602,
+            "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/normal_interior_run_2/result.json",
+            "sha256": "21acd7912fade8a0eb6c4bd1524d5c5d1721c5effdcb1adce816534a5ddcbbab"
+          }
+        }
+      ]
+    },
+    {
+      "byte_identical": true,
+      "directory": "muon_parent_gauge_geometry_correction_20261010",
+      "files": [
+        {
+          "first": {
+            "bytes": 690776,
+            "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/orientation_material_run_3/application.npz",
+            "sha256": "ef49382a862584f0c63e1fdee6325079dca62f0f001b323002b10c9a75ccbd75"
+          },
+          "second": {
+            "bytes": 690776,
+            "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/orientation_material_run_4/application.npz",
+            "sha256": "ef49382a862584f0c63e1fdee6325079dca62f0f001b323002b10c9a75ccbd75"
+          }
+        },
+        {
+          "first": {
+            "bytes": 1494,
+            "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/orientation_material_run_3/result.json",
+            "sha256": "e1258fabe641e9a5b8f7a4b372d0c9351b28dfa88a7d2f541457d46a850b65cf"
+          },
+          "second": {
+            "bytes": 1494,
+            "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/orientation_material_run_4/result.json",
+            "sha256": "e1258fabe641e9a5b8f7a4b372d0c9351b28dfa88a7d2f541457d46a850b65cf"
+          }
+        }
+      ]
+    },
+    {
+      "byte_identical": true,
+      "directory": "muon_native_product_factor_graph_20261010",
+      "files": [
+        {
+          "first": {
+            "bytes": 1064577,
+            "path": "artifacts/muon_native_product_factor_graph_20261010/run_1/product_factor_graph_and_heat.json",
+            "sha256": "aac59f831b5e5cd328e352993427159ca1d4c89ebde25d1687e3a036b9510197"
+          },
+          "second": {
+            "bytes": 1064577,
+            "path": "artifacts/muon_native_product_factor_graph_20261010/run_2/product_factor_graph_and_heat.json",
+            "sha256": "aac59f831b5e5cd328e352993427159ca1d4c89ebde25d1687e3a036b9510197"
+          }
+        },
+        {
+          "first": {
+            "bytes": 1291807,
+            "path": "artifacts/muon_native_product_factor_graph_20261010/run_1/source_paired_graph.npz",
+            "sha256": "1e5a972e91456e2cbdb9abcbf5afbb6c3734ed19321097665a8e15c8d52f2824"
+          },
+          "second": {
+            "bytes": 1291807,
+            "path": "artifacts/muon_native_product_factor_graph_20261010/run_2/source_paired_graph.npz",
+            "sha256": "1e5a972e91456e2cbdb9abcbf5afbb6c3734ed19321097665a8e15c8d52f2824"
+          }
+        }
+      ]
+    },
+    {
+      "byte_identical": true,
+      "directory": "muon_parent_gauge_geometry_correction_20261010",
+      "files": [
+        {
+          "first": {
+            "bytes": 207984,
+            "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/endpoint_constraint_run_1/application.npz",
+            "sha256": "7042d475b686796986bac335a8aff9c511d7ba4932d957af8557c5a4ebcbc37e"
+          },
+          "second": {
+            "bytes": 207984,
+            "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/endpoint_constraint_run_2/application.npz",
+            "sha256": "7042d475b686796986bac335a8aff9c511d7ba4932d957af8557c5a4ebcbc37e"
+          }
+        },
+        {
+          "first": {
+            "bytes": 5401,
+            "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/endpoint_constraint_run_1/result.json",
+            "sha256": "f68b8de9c299ebf6a120965816ae5c2f71602525c5e3009b7c4dc37342033d48"
+          },
+          "second": {
+            "bytes": 5401,
+            "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/endpoint_constraint_run_2/result.json",
+            "sha256": "f68b8de9c299ebf6a120965816ae5c2f71602525c5e3009b7c4dc37342033d48"
+          }
+        }
+      ]
+    },
+    {
+      "byte_identical": true,
+      "directory": "muon_parent_gauge_geometry_correction_20261010",
+      "files": [
+        {
+          "first": {
+            "bytes": 3728850,
+            "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/material_temporal_order2_run_1/application.npz",
+            "sha256": "765b87f3caec88d2a977d79a7590e2e759422ecc24336290c131777d552933ce"
+          },
+          "second": {
+            "bytes": 3728850,
+            "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/material_temporal_order2_run_2/application.npz",
+            "sha256": "765b87f3caec88d2a977d79a7590e2e759422ecc24336290c131777d552933ce"
+          }
+        },
+        {
+          "first": {
+            "bytes": 13093,
+            "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/material_temporal_order2_run_1/result.json",
+            "sha256": "2aa991f36650290a3367184af39873589a72943b66f560fe436ec2e48864f663"
+          },
+          "second": {
+            "bytes": 13093,
+            "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/material_temporal_order2_run_2/result.json",
+            "sha256": "2aa991f36650290a3367184af39873589a72943b66f560fe436ec2e48864f663"
+          }
+        }
+      ]
+    },
+    {
+      "byte_identical": true,
+      "directory": "muon_parent_maxwell_corrected_retarded_20261010",
+      "files": [
+        {
+          "first": {
+            "bytes": 9510663,
+            "path": "artifacts/muon_parent_maxwell_corrected_retarded_20261010/run_3/application.npz",
+            "sha256": "7908eb2bb8faf3f054fad2b9b6e65751f3589adf04e823da69283fe9dbb775f1"
+          },
+          "second": {
+            "bytes": 9510663,
+            "path": "artifacts/muon_parent_maxwell_corrected_retarded_20261010/run_4/application.npz",
+            "sha256": "7908eb2bb8faf3f054fad2b9b6e65751f3589adf04e823da69283fe9dbb775f1"
+          }
+        },
+        {
+          "first": {
+            "bytes": 4900380,
+            "path": "artifacts/muon_parent_maxwell_corrected_retarded_20261010/run_3/operator.npz",
+            "sha256": "a54ca77e1b5815517c9fc42578528d3b2fc8d173c683089428854d9d5449ac0e"
+          },
+          "second": {
+            "bytes": 4900380,
+            "path": "artifacts/muon_parent_maxwell_corrected_retarded_20261010/run_4/operator.npz",
+            "sha256": "a54ca77e1b5815517c9fc42578528d3b2fc8d173c683089428854d9d5449ac0e"
+          }
+        },
+        {
+          "first": {
+            "bytes": 9736,
+            "path": "artifacts/muon_parent_maxwell_corrected_retarded_20261010/run_3/result.json",
+            "sha256": "f94bf8920356f27176de9a00278c13f5d90cedcb207e7a78d67f6ac7f082de93"
+          },
+          "second": {
+            "bytes": 9736,
+            "path": "artifacts/muon_parent_maxwell_corrected_retarded_20261010/run_4/result.json",
+            "sha256": "f94bf8920356f27176de9a00278c13f5d90cedcb207e7a78d67f6ac7f082de93"
+          }
+        }
+      ]
+    },
+    {
+      "byte_identical": true,
+      "directory": "muon_native_coupled_source_heat_20261010",
+      "files": [
+        {
+          "first": {
+            "bytes": 3621134,
+            "path": "artifacts/muon_native_coupled_source_heat_20261010/run_1/coupled_source_heat.json",
+            "sha256": "70e0a8acdfe9fa4ff48b131a8b52684621ff3b7f65a2dd24f544edccfa098e36"
+          },
+          "second": {
+            "bytes": 3621134,
+            "path": "artifacts/muon_native_coupled_source_heat_20261010/run_2/coupled_source_heat.json",
+            "sha256": "70e0a8acdfe9fa4ff48b131a8b52684621ff3b7f65a2dd24f544edccfa098e36"
+          }
+        },
+        {
+          "first": {
+            "bytes": 87816,
+            "path": "artifacts/muon_native_coupled_source_heat_20261010/run_1/source_mass_vertices.npz",
+            "sha256": "a2ec6ab31603658829b1f3f739166a0739ee26de975cee505ddbe701447a8491"
+          },
+          "second": {
+            "bytes": 87816,
+            "path": "artifacts/muon_native_coupled_source_heat_20261010/run_2/source_mass_vertices.npz",
+            "sha256": "a2ec6ab31603658829b1f3f739166a0739ee26de975cee505ddbe701447a8491"
+          }
+        }
+      ]
+    }
+  ],
+  "runtime": {
+    "executable": "C:\\Python314\\python.exe",
+    "packages": {
+      "mpmath": "1.3.0",
+      "numpy": "2.4.6",
+      "pytest": "9.0.3",
+      "python-flint": "0.9.0",
+      "scipy": "1.17.1",
+      "sympy": "1.14.0"
+    },
+    "python": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]"
+  },
+  "scientific_classification": {
+    "CONTROL_ONLY": "Local time/radial trial representation and nu-squared parameter trial; superseded130 mixed-chart run; primitive-independence covariance illustration",
+    "DERIVED": "Material one-form trace cancels Eulerian radial advection once; same-action Gauss Schur elimination; all-family fixed-Y canonical Dirac applications with distinct covariant factor; finite orientation Ward identity; outward stored normal contraction; common-input signed Pauli ledger",
+    "EVALUATED": "Material-chart common coefficient Newton corrections and TOTAL assigned multiplier density; coupled photon-Higgs retarded and advanced applications; all-family canonical source vertices; actual eight-Q finite-core contact and both heat insertions with full n1/n3 complements; finite transverse W/Hgamma projection",
+    "OWNER_DEFINITION_GAP": "none established",
+    "UNEVALUATED": "Complete interacting E1 base and physical quotient; physical formation cutoff; full stratified native two-insertion and completed Pauli remainder; remaining finite weak terms"
+  },
+  "source_hashes": [
+    {
+      "bytes": 47783,
+      "path": "src/bhsm/interface/muon_parent_gauge_geometry_correction.py",
+      "sha256": "fa29f5764dca39196c807d64e7976d5894589e7de3ffa9d4a5ddecfb136b4816"
+    },
+    {
+      "bytes": 21203,
+      "path": "src/bhsm/interface/muon_parent_maxwell_full_retarded.py",
+      "sha256": "1ecf85a6da94b84b69af1ff4394301232d9d4cad4b0f0bc08de56d5943e0c478"
+    },
+    {
+      "bytes": 20369,
+      "path": "src/bhsm/interface/muon_native_dirac_hamiltonian.py",
+      "sha256": "7344b1dfc0358962a281fffea59c8d40c1449a6fbcf9b171f514a28eb7b26ccd"
+    },
+    {
+      "bytes": 5880,
+      "path": "src/bhsm/interface/muon_calibrated_bosonic_higgs_photon.py",
+      "sha256": "0cb6bdf537c5a84ccc5028c55c5321b42c58bbb2a1b7570b97fe9861a22e3c8e"
+    },
+    {
+      "bytes": 7291,
+      "path": "src/bhsm/interface/muon_finite_normal_schur.py",
+      "sha256": "276173414949fe7d0bb44851d9eff9b29811b9f1c70df4704e9e2a601fe1deba"
+    },
+    {
+      "bytes": 6396,
+      "path": "src/bhsm/interface/muon_frozen_normal_schur_certificate.py",
+      "sha256": "2810cd2eeda39190faf002c6579387cd745c467c9de96a08dd6602b526bba670"
+    },
+    {
+      "bytes": 2322,
+      "path": "src/bhsm/interface/muon_material_higgs_gauge_action.py",
+      "sha256": "8bca013820283614c6578be4f44c29c4ea1c919f516aa9a2783f0eb38127d035"
+    },
+    {
+      "bytes": 7094,
+      "path": "src/bhsm/interface/muon_finite_orientation_ward.py",
+      "sha256": "7a218d47c1718902bad4562c3d789c460dfe854aaf31112837d70aa241775bbd"
+    },
+    {
+      "bytes": 21889,
+      "path": "src/bhsm/interface/muon_parent_temporal_enrichment.py",
+      "sha256": "546c6eb3e0132375d0b010053f449046a0cc3bc735a5be3e29e9a968839fc0c8"
+    },
+    {
+      "bytes": 41759,
+      "path": "src/bhsm/interface/muon_parent_maxwell_corrected_retarded.py",
+      "sha256": "00bf7053e289297afd4f10dc0ef9522ac8326f2bd07609c9979bb9f5f6f74a4d"
+    },
+    {
+      "bytes": 44797,
+      "path": "src/bhsm/interface/muon_native_product_factor_graph.py",
+      "sha256": "4a5feeb0e32edc0505a44b45a19d6bdc821220cc9cf5187e35f59fe7720a7c18"
+    },
+    {
+      "bytes": 12725,
+      "path": "src/bhsm/interface/muon_birth_coupled_constraint_retraction.py",
+      "sha256": "394f113ad87cdc2a524987fcc0492bb45bc93fa85815fc03de013fb13e235625"
+    },
+    {
+      "bytes": 14499,
+      "path": "src/bhsm/interface/muon_native_coupled_source_heat.py",
+      "sha256": "6b37426c0564b5b87b78048a65e1b020c1b64710f1fc766f9e9f9f7f9be47dfe"
+    },
+    {
+      "bytes": 8743,
+      "path": "tests/test_muon_parent_gauge_geometry_correction.py",
+      "sha256": "af914835372a7a3a5f4119664923e8e6b5c1fa39fb1f34c8a7256d360eab3f6c"
+    },
+    {
+      "bytes": 6906,
+      "path": "tests/test_muon_parent_maxwell_full_retarded.py",
+      "sha256": "5b1789f2e7b3f48bcc67d90106c070afa270d375eb30fd2d4d82d434d855aaf1"
+    },
+    {
+      "bytes": 11724,
+      "path": "tests/test_muon_native_dirac_hamiltonian.py",
+      "sha256": "679ae54e183486e98f6481b39474c29a377a70f9b9136d93513555c8c325b97c"
+    },
+    {
+      "bytes": 5513,
+      "path": "tests/test_muon_calibrated_bosonic_higgs_photon.py",
+      "sha256": "6d3c87c8396ce0356a65a9351380b768250fdae12613265acd77313ae3599862"
+    },
+    {
+      "bytes": 2358,
+      "path": "tests/test_muon_finite_normal_schur.py",
+      "sha256": "786287e5fba470768ebce7ef874d296d037bca0579cc42aee359528696006214"
+    },
+    {
+      "bytes": 1444,
+      "path": "tests/test_muon_frozen_normal_schur_certificate.py",
+      "sha256": "6a280639b9add5b891885cf12d7077209989f832830119d1d6614bfd2e05d7cd"
+    },
+    {
+      "bytes": 3679,
+      "path": "tests/test_muon_material_higgs_gauge_action.py",
+      "sha256": "caa765975f84401278e4cd4620e7c944ce351a7070baf1ee9977761410bf1d8e"
+    },
+    {
+      "bytes": 2081,
+      "path": "tests/test_muon_finite_orientation_ward.py",
+      "sha256": "485fbb99832d62a73b447c9c8d6bcccd45b1b398ea830c7db90c967feaf87f14"
+    },
+    {
+      "bytes": 5239,
+      "path": "tests/test_muon_parent_temporal_enrichment.py",
+      "sha256": "4fd5c57553aad94437cb939886492ea8c53db9e863fe93d52f4facd744c8b1da"
+    },
+    {
+      "bytes": 16503,
+      "path": "tests/test_muon_parent_maxwell_corrected_retarded.py",
+      "sha256": "8326e56429211296b7ddc88ce3baf73797048bed2867ec02427c2b47a07e84d8"
+    },
+    {
+      "bytes": 14276,
+      "path": "tests/test_muon_native_product_factor_graph.py",
+      "sha256": "fb3061e3de6815898199aac9c116ac4e2e488f8777545df680921e1e4b17b4e2"
+    },
+    {
+      "bytes": 3249,
+      "path": "tests/test_muon_birth_coupled_constraint_retraction.py",
+      "sha256": "18f29731e9410e3f39935ba283f859ed874c1fce5e916740396fa6b6a076b7bf"
+    },
+    {
+      "bytes": 4479,
+      "path": "tests/test_muon_native_coupled_source_heat.py",
+      "sha256": "d9bd23814f03162bf3d2a4d9e92a771e8e55d1a0e3726d7600cbce5dc7b92921"
+    },
+    {
+      "bytes": 10348,
+      "path": "scripts/verify_muon_executed_action_response.py",
+      "sha256": "f982631a908c7f7f4f90763ace21aceaab6f49715cff1867d2174824716ceb54"
+    },
+    {
+      "bytes": 5320,
+      "path": "scripts/evaluate_muon_native_dirac_hamiltonian.py",
+      "sha256": "ac86a3c8f40a6467c8d13b6e38ad57668f46e3d4b14a380fe1f4752af5faff21"
+    },
+    {
+      "bytes": 11037,
+      "path": "scripts/evaluate_muon_calibrated_bosonic_higgs_photon.py",
+      "sha256": "14611fa840dcddefac316a02bdbd0cd18cc127f1ac7d0d01416e2183d131d563"
+    },
+    {
+      "bytes": 4991,
+      "path": "scripts/evaluate_muon_calibrated_finite_projection_ledger.py",
+      "sha256": "09ad6072065c7eae20c3fad3f42ae248c0f349ad5b1558812614b20012ff3cde"
+    },
+    {
+      "bytes": 2034,
+      "path": "scripts/verify_muon_finite_projection_ledger.py",
+      "sha256": "dd544fd1d06ddfaf74ae44b36d3423d7cb7b409ce210cd2855ab4bdef837a689"
+    },
+    {
+      "bytes": 293,
+      "path": "scripts/certify_muon_frozen_normal_schur.py",
+      "sha256": "7b7644ea504e92d471482f399c8c127df503c72c4be286f42a96cd63fd8e6aba"
+    },
+    {
+      "bytes": 14143,
+      "path": "scripts/evaluate_muon_native_product_factor_graph.py",
+      "sha256": "c86e277a9c7b9f9ed1229f3a147e1fd402821b036fe7fdecae074fa2b8c566a9"
+    },
+    {
+      "bytes": 8986,
+      "path": "scripts/evaluate_muon_native_coupled_source_heat.py",
+      "sha256": "9ec586d2ba27e6d95e989a9690181a91c1aab551ecf9c9f1bf61f8429e9d4be3"
+    },
+    {
+      "bytes": 21185,
+      "path": "theory/muon_executed_action_response_20261010.md",
+      "sha256": "c34f0cc11e4b167f213f0edafa18f5ea0230d522810818217d10788b41fa81ec"
+    }
+  ]
+}

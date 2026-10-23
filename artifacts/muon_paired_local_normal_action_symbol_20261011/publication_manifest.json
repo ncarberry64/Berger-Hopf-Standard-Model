@@ -1,0 +1,306 @@
+{
+  "actual_physical_R_I_drive_c_or_Pauli_selected": false,
+  "classification": "FROZEN_POSITIVE_BASE_SOURCE_AND_FULL_CHRONOLOGICAL_LOCAL_ACTION_SYMBOLS",
+  "clock": "single common-coordinate paired action, read in child-plus proper clock; no independent arm clock summation",
+  "common_graph": "full inherited536 action restricted to x212/v212/y80; shared attachments/proper-normal trace before internal reduction",
+  "density_identity": "Axx=Lxx+i\u03c9(Lxv\u2212Lvx)+\u03c9\u00b2Lvv; Axy=Lxy\u2212i\u03c9Lvy; Ayx=Lyx+i\u03c9Lyv; Ayy=Lyy",
+  "dependencies": {
+    "artifacts/flagship_integration/BHSM_N12_C2_REFINED_RESET_ROOT_CENTER.npz": "59dd88661b15cbeec96bc19294f9d9c64f754cccbfbc385c32329fa9c864a8fe",
+    "artifacts/flagship_integration/BHSM_N12_FULL_RESET_ACTION_JACOBIAN.npz": "35bb2b67ff784206d3a5b9dc82881f5ffd8f844b55342f2032d29cdafb38a67a",
+    "artifacts/muon_area_coupled_endpoint_20261011/gamma_0p11_incoming_phase_run_1/application.npz": "ccd1fa3b5cdc46f140f06298dd11eb8c72c42801a08f1cb4ed6c97eb52b1eccc",
+    "artifacts/muon_area_coupled_endpoint_20261011/gamma_0p11_incoming_phase_run_1/result.json": "9b6e05514c0a0aa3937c4a444606bb1dcaa766e74e7d7012a5dfdd8d83b2b356",
+    "artifacts/muon_area_coupled_endpoint_20261011/gamma_0p11_outgoing_phase_run_1/application.npz": "e3a8ef208990b5e5d25be89463a0c905c0fc411ec9cadbee3b5f71109fcd4f5e",
+    "artifacts/muon_area_coupled_endpoint_20261011/gamma_0p11_outgoing_phase_run_1/result.json": "e85883d0411ca2e1a9e3378e280f0d9df9a209b3d523ce0ccbbc86789cb0cf5c",
+    "artifacts/muon_area_coupled_endpoint_20261011/gamma_0p11_run_1/application.npz": "78c0f68d05d45ca091b74832824d586a0691e33aec1c17ad1c162652e3dc79b8",
+    "artifacts/muon_area_coupled_endpoint_20261011/gamma_0p11_run_1/result.json": "2dacad861a2f811b8d02cfb3c600b6c3d8da6af35720741034c57808d0e27aad",
+    "artifacts/muon_area_endpoint_response_20261011/run_1/application.npz": "7a279035502273e8962cd36dcaf1f1f21610fc2e03a4b659bc2a7d778f5df502",
+    "artifacts/muon_area_endpoint_response_20261011/run_1/result.json": "b2c5db5a61894fb1b351bc06f28c7fed05760bee32f7c03521cc53c774ddcc42",
+    "artifacts/muon_birth_transfer_value_20261008/retained_reset/run_1/result.json": "d0fec0f8e8a05818fcce67e88ed8db73744484220a2cb213825893f481cb0a72",
+    "artifacts/muon_calibrated_pauli_20261009/inputs.json": "0b614ab6f26d169ca04a4878f767f78eb3668484840867e46aebbebf186369da",
+    "artifacts/muon_calibrated_weak_decay_20261010/run_1/weak_decay.json": "9c31575ce0889571790f8767cf53ffe043cb9906e0a45a96b194971320a0aad7",
+    "artifacts/muon_matched_mechanical_source_20261002/replay_reference/matched_source_and_weak_actions.npz": "146435df28178967c321c0aa7e89a1511395d196f96b8715532aa98e3e312c2b",
+    "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1/application.npz": "c67363c17adfb519f399614463d5a13dbcd019aa53246d452421eea8ba982455",
+    "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1/result.json": "06867e31959910ec21385e8491bd5b794060c68e8404ae0524e3d0c9b544faa6",
+    "src/bhsm/interface/aether_canonical_momentum_action_jacobian.py": "d0ade20dc8a999e43073b45ca3ef59e05c65c55e37a1d6565d4e389176295cb1",
+    "src/bhsm/interface/aether_diagonal_sp1_m4_attachment_v15_50.py": "e6482614dcb54f4890a5e66fbe724d4c302405d575a4b73ddbb64a075cb1827e",
+    "src/bhsm/interface/aether_lorentzian_child_galerkin_v15_44.py": "574a9a6267d9228170c7309bd4be3cafb36b7515a6ee558509beb968e97bdab7",
+    "src/bhsm/interface/muon_birth_area_coupled_endpoint.py": "06393328c3885535ca9b0cb3697674ce119b2ccbb6f50b4bfec62bb60530b294",
+    "src/bhsm/interface/muon_birth_area_endpoint_response.py": "6d8b723f1b73e917ae08bf627fb29f4b768e9ee50f636c0ffc7b3434159bc1ba",
+    "src/bhsm/interface/muon_birth_attached_phase.py": "948c1505e9b68cffbe8050be31dcb5727d8f8d4f25399f9037cfc94a9ae9fdeb",
+    "src/bhsm/interface/muon_birth_chronological_normal_inertia.py": "909f322d0b375ab03fc0b0a148c9d710ac77e371e029c5e92c9bfbde86883b05",
+    "src/bhsm/interface/muon_birth_coupled_primal_midpoint.py": "ce321f641fa51d98710d006e246aac5cf6bd046be93a74fab452808597c599ce",
+    "src/bhsm/interface/muon_birth_finite_geometric_trace_endpoint.py": "4f5c36144222d5d1e657061aa9352f8e86d5ae61a0ebdf05991a477e68d4be5f",
+    "src/bhsm/interface/muon_birth_finite_normal_boundary_action.py": "49c1fe4ba6d39e23c3f014cabcd64065ae1a79680ae8e079dbce4727b65557f8",
+    "src/bhsm/interface/muon_birth_finite_normal_phase.py": "660ed731bdbe0bbb71eda750c9dbffd20e7ce9f63be2a6087e5a385d76850361",
+    "src/bhsm/interface/muon_birth_finite_normal_trace_graph.py": "20eafd9a6abff3d3a89a2f6085d099584684ba19b600673dafda634cb56aad18",
+    "src/bhsm/interface/muon_birth_full_field_attachment.py": "58b3bd8a4ae5fe7c63b5551e4d0f26d82ab82a27d4389066c894a5e1b4728d03",
+    "src/bhsm/interface/muon_birth_inherited_finite_normal_phase.py": "86b082dfa0b525e9d8bb510a6c02e53c517d7ecdd8c6c9aec956d175d829add4",
+    "src/bhsm/interface/muon_birth_normal_constrained_action.py": "fe66a9116816e075cfc5e7c5f5f3c2c02d539311303b693a1d89cbc08ea62577",
+    "src/bhsm/interface/muon_birth_normal_trace_graph.py": "d012a0455d84be2ce7aae8d6833f8b482f9bbc1e9ee1b899042a421c2a782896",
+    "src/bhsm/interface/muon_birth_paired_attachment_endpoint.py": "71a69275ebeef226fd8dc7585745c5c8acac687e497a8441fe37a37553178f23",
+    "src/bhsm/interface/muon_birth_paired_field_endpoint.py": "f22b6a17b65c72b30571b3d9f721f347737a5916fa08e50bd833ad22df3cd035",
+    "src/bhsm/interface/muon_birth_phase_continuation.py": "9169a1c56bf5084d1f240043ca12d431c87e4adaff24fe09bdf7bf27fc5eb0be",
+    "src/bhsm/interface/muon_birth_trace_enriched_action.py": "c36c48482dd58ebe369ab935574b78b3693036f717fb49035dfac01164956dce",
+    "src/bhsm/interface/muon_birth_trace_enriched_phase.py": "591754957f1cc452bfd53d8adc1087308459902a822876105315b7423c2fd676",
+    "src/bhsm/interface/muon_birth_two_arm_assigned_action.py": "cf6c58dc68700315d701fb9a1e9e99e927d18d90016a6ae7f86470c36136c77a",
+    "src/bhsm/interface/muon_exact_material_response.py": "a530651e157a000dbe6935e9de1cedbce5679f98c599c6c7c641158b749307bf",
+    "src/bhsm/interface/muon_intrinsic_higgs_gauge_action.py": "c19354209300ab06c0f1ab6bf4e111dbb5de0cd9e8d1d31a71af357a829118d4",
+    "src/bhsm/interface/muon_intrinsic_m4_normal_pullback.py": "43187eee35f2879a43fe0fd02ae447502811349ccf2f2a78aa14beb8aa706bf0",
+    "src/bhsm/interface/muon_local_normal_action_symbol.py": "21875ecee230f78355e0af47a72f63f0047f5521b2663e6d9a6e350b1eb09d58",
+    "src/bhsm/interface/muon_magnetic_birth_ward_mean.py": "0f9bb71b00af43dd6723db3334675173fe7c1f7b065a56cd58f6092b742df439",
+    "src/bhsm/interface/muon_material_higgs_gauge_action.py": "8bca013820283614c6578be4f44c29c4ea1c919f516aa9a2783f0eb38127d035",
+    "src/bhsm/interface/muon_moving_geometric_action.py": "bf560fdb9766f563d97d3100ccb266e2a4350c910ac14a51d57576c2b5371392",
+    "src/bhsm/interface/muon_paired_local_normal_action_symbol.py": "febc4b6b5afdf3c9c22ffa27d01cea92b7f20b847fee4a5c5a5c2fabfe59ac7e",
+    "src/bhsm/interface/muon_parent_gauge_geometry_correction.py": "fa29f5764dca39196c807d64e7976d5894589e7de3ffa9d4a5ddecfb136b4816",
+    "src/bhsm/interface/muon_parent_maxwell_background_euler.py": "fbb2c99d4b1c58247ac42a769fad3e1b16ccc76a1744fe0c5334e50c4a974bee",
+    "src/bhsm/interface/muon_parent_maxwell_full_weak.py": "c1fb703967a644306d3521d457a6d7c778a49d89c1e081b401487a25b7491565",
+    "src/bhsm/interface/muon_parent_maxwell_geometry_weak.py": "f0b4a49934e17ad18c40e9164b66c54e1b2cb146fb476f59b0e500f2dd6c9153",
+    "src/bhsm/interface/muon_parent_mean_causal_action.py": "2a84b1be22625b1a5ae88d10c76631d7a5b602d2b0e22e57f00201bb74a593ad",
+    "src/bhsm/interface/muon_parent_retarded_hypercharge.py": "2eb97a704bce63f601cc0d6e0f647266d4b4aac7f746d34dceb41b72018c3510",
+    "src/bhsm/interface/muon_pointwise_full_field_action.py": "d57cd5953de00bcae857d0e458bbead1e463e5fffe8d947c5b9e71806aabaff6",
+    "src/bhsm/interface/muon_positive_area_endpoint_response.py": "e1957a20a5552a0706aee469e1f438b73958660fde2df6020ca48a421b56ad80"
+  },
+  "files": {
+    "artifacts/muon_local_normal_action_symbol_20261011/execution_logs/focused_tests.command.json": {
+      "bytes": 439,
+      "sha256": "f55cce5a1f847681884ffc41b258104b232eb71b637f0eb2997a7f5356316d49"
+    },
+    "artifacts/muon_local_normal_action_symbol_20261011/execution_logs/focused_tests.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "artifacts/muon_local_normal_action_symbol_20261011/execution_logs/focused_tests.stdout.txt": {
+      "bytes": 98,
+      "sha256": "d48a58c1c02393343bd55f586135f5afc939b24920f9b4e15f042f5b9160497c"
+    },
+    "artifacts/muon_local_normal_action_symbol_20261011/execution_logs/incoming_run_1.command.json": {
+      "bytes": 597,
+      "sha256": "800de36e7410b4116b68144811ad8d8a4fa3618df864d8437930c98704fc68ef"
+    },
+    "artifacts/muon_local_normal_action_symbol_20261011/execution_logs/incoming_run_1.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "artifacts/muon_local_normal_action_symbol_20261011/execution_logs/incoming_run_1.stdout.txt": {
+      "bytes": 9247,
+      "sha256": "db9bd1354340c33137ab433a07e6481d829003ec507346e4ff2b77ea969788a8"
+    },
+    "artifacts/muon_local_normal_action_symbol_20261011/execution_logs/incoming_run_2.command.json": {
+      "bytes": 597,
+      "sha256": "408d62217efa72e20dc89e379cc236c4a646958b03ea8876fc3969cf7a764ff4"
+    },
+    "artifacts/muon_local_normal_action_symbol_20261011/execution_logs/incoming_run_2.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "artifacts/muon_local_normal_action_symbol_20261011/execution_logs/incoming_run_2.stdout.txt": {
+      "bytes": 9247,
+      "sha256": "db9bd1354340c33137ab433a07e6481d829003ec507346e4ff2b77ea969788a8"
+    },
+    "artifacts/muon_local_normal_action_symbol_20261011/execution_logs/outgoing_run_1.command.json": {
+      "bytes": 597,
+      "sha256": "3d8dc331153205682bac31c0a272aeeb876e5256fe47bd0f218073e78b6a7e77"
+    },
+    "artifacts/muon_local_normal_action_symbol_20261011/execution_logs/outgoing_run_1.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "artifacts/muon_local_normal_action_symbol_20261011/execution_logs/outgoing_run_1.stdout.txt": {
+      "bytes": 9377,
+      "sha256": "8aed5d8d9ac4cc3fc1e6959bd57ee6f99a8580dcff8237a193f7ccb7670564c4"
+    },
+    "artifacts/muon_local_normal_action_symbol_20261011/execution_logs/outgoing_run_2.command.json": {
+      "bytes": 597,
+      "sha256": "f0cb64b42ac2e7381d189695083730c824288bafd2b6920600f781519fa10c29"
+    },
+    "artifacts/muon_local_normal_action_symbol_20261011/execution_logs/outgoing_run_2.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "artifacts/muon_local_normal_action_symbol_20261011/execution_logs/outgoing_run_2.stdout.txt": {
+      "bytes": 9377,
+      "sha256": "8aed5d8d9ac4cc3fc1e6959bd57ee6f99a8580dcff8237a193f7ccb7670564c4"
+    },
+    "artifacts/muon_local_normal_action_symbol_20261011/execution_logs/run_local_symbols.py": {
+      "bytes": 1777,
+      "sha256": "2baf0ff658c82920db18956b8b21a810bb915a7c5b8638be03f4e57bc24532d8"
+    },
+    "artifacts/muon_local_normal_action_symbol_20261011/incoming_run_1/application.npz": {
+      "bytes": 1421008,
+      "sha256": "0b3404fe78388ebbbd8cbbcae077a4ec5428d418710577a979634ea5641cb723"
+    },
+    "artifacts/muon_local_normal_action_symbol_20261011/incoming_run_1/result.json": {
+      "bytes": 9703,
+      "sha256": "d2ed2adb1317e566c9a788508d6ba31dfcd8ded77a3dce1c75671c05d4efffd5"
+    },
+    "artifacts/muon_local_normal_action_symbol_20261011/incoming_run_2/application.npz": {
+      "bytes": 1421008,
+      "sha256": "0b3404fe78388ebbbd8cbbcae077a4ec5428d418710577a979634ea5641cb723"
+    },
+    "artifacts/muon_local_normal_action_symbol_20261011/incoming_run_2/result.json": {
+      "bytes": 9703,
+      "sha256": "d2ed2adb1317e566c9a788508d6ba31dfcd8ded77a3dce1c75671c05d4efffd5"
+    },
+    "artifacts/muon_local_normal_action_symbol_20261011/outgoing_run_1/application.npz": {
+      "bytes": 1398737,
+      "sha256": "68e8a53bb3dce11af507d7a176b043cdb84fc393c9b82bcf3d635a8599efc28d"
+    },
+    "artifacts/muon_local_normal_action_symbol_20261011/outgoing_run_1/result.json": {
+      "bytes": 9837,
+      "sha256": "3e0b21ef57c60dde2e193b6ee4227382ef4f83fc0db3eff3bcea74b50cd44ae9"
+    },
+    "artifacts/muon_local_normal_action_symbol_20261011/outgoing_run_2/application.npz": {
+      "bytes": 1398737,
+      "sha256": "68e8a53bb3dce11af507d7a176b043cdb84fc393c9b82bcf3d635a8599efc28d"
+    },
+    "artifacts/muon_local_normal_action_symbol_20261011/outgoing_run_2/result.json": {
+      "bytes": 9837,
+      "sha256": "3e0b21ef57c60dde2e193b6ee4227382ef4f83fc0db3eff3bcea74b50cd44ae9"
+    },
+    "artifacts/muon_local_normal_action_symbol_20261011/verification.json": {
+      "bytes": 3434,
+      "sha256": "e594046b7bd4638f94a0aeafcdb786b91025ce96879c441354f0d2b39e361ac4"
+    },
+    "artifacts/muon_paired_local_normal_action_symbol_20261011/execution_logs/focused_tests.command.json": {
+      "bytes": 446,
+      "sha256": "0d5d3540eb6a6c0646d8067b82ca054786ecac2aa7076b45010326a28dedbbd0"
+    },
+    "artifacts/muon_paired_local_normal_action_symbol_20261011/execution_logs/focused_tests.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "artifacts/muon_paired_local_normal_action_symbol_20261011/execution_logs/focused_tests.stdout.txt": {
+      "bytes": 98,
+      "sha256": "24b1729532d7fbe630d6ce5009fc6b3e47e90e0ae21e8d54c16b67477e68a109"
+    },
+    "artifacts/muon_paired_local_normal_action_symbol_20261011/execution_logs/freeze_completed_symbols.py": {
+      "bytes": 3564,
+      "sha256": "7304c0ada99d81b40da79c3bb650ccc6f93d4c2604747a709bda36a6a07beaf2"
+    },
+    "artifacts/muon_paired_local_normal_action_symbol_20261011/execution_logs/run_1.command.json": {
+      "bytes": 568,
+      "sha256": "b41111c77b31a1d8587b0f2191effed5549349142c5bac6922f746bc1dddb0ce"
+    },
+    "artifacts/muon_paired_local_normal_action_symbol_20261011/execution_logs/run_1.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "artifacts/muon_paired_local_normal_action_symbol_20261011/execution_logs/run_1.stdout.txt": {
+      "bytes": 8999,
+      "sha256": "839bdb0c9a897c204c9ba7e3241289321416a6b99b3060053a89409971db079c"
+    },
+    "artifacts/muon_paired_local_normal_action_symbol_20261011/execution_logs/run_2.command.json": {
+      "bytes": 568,
+      "sha256": "fbd0c2f56472c7b302949cc13f34804b0a87bcd1216d58bbe7022c639dc38caa"
+    },
+    "artifacts/muon_paired_local_normal_action_symbol_20261011/execution_logs/run_2.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "artifacts/muon_paired_local_normal_action_symbol_20261011/execution_logs/run_2.stdout.txt": {
+      "bytes": 8999,
+      "sha256": "839bdb0c9a897c204c9ba7e3241289321416a6b99b3060053a89409971db079c"
+    },
+    "artifacts/muon_paired_local_normal_action_symbol_20261011/execution_logs/run_paired_symbols.py": {
+      "bytes": 1506,
+      "sha256": "aa1d2b4f14c36b7aa60db81a972db25dc51941bfd851567fad6219dfb0e3a614"
+    },
+    "artifacts/muon_paired_local_normal_action_symbol_20261011/pair_verification.json": {
+      "bytes": 2527,
+      "sha256": "dec3374094e001042b6a76f8a994d92fe5950293047d3c4636d18358c84d891b"
+    },
+    "artifacts/muon_paired_local_normal_action_symbol_20261011/run_1/application.npz": {
+      "bytes": 3491764,
+      "sha256": "004d6463e5332c27dbe6879eec4f9a630347916130454dcc3114bdb10cb0c8db"
+    },
+    "artifacts/muon_paired_local_normal_action_symbol_20261011/run_1/result.json": {
+      "bytes": 9447,
+      "sha256": "58d7d18796edb070af029c7411c30b04eca50370a67d280fb150002ca6da5c9f"
+    },
+    "artifacts/muon_paired_local_normal_action_symbol_20261011/run_2/application.npz": {
+      "bytes": 3491764,
+      "sha256": "004d6463e5332c27dbe6879eec4f9a630347916130454dcc3114bdb10cb0c8db"
+    },
+    "artifacts/muon_paired_local_normal_action_symbol_20261011/run_2/result.json": {
+      "bytes": 9447,
+      "sha256": "58d7d18796edb070af029c7411c30b04eca50370a67d280fb150002ca6da5c9f"
+    },
+    "artifacts/muon_paired_local_normal_action_symbol_20261011/verification.json": {
+      "bytes": 1822,
+      "sha256": "e815f54c8a07a2d252acabe20ac1cf03bdaa40a9581c9117d8cbb8e65eb0172b"
+    },
+    "artifacts/muon_positive_area_endpoint_response_20261011/execution_logs/run_1.command.json": {
+      "bytes": 564,
+      "sha256": "002c315679bba1fdb1e2653c915afad4c290474aaf9a04dddea677f39954a6d4"
+    },
+    "artifacts/muon_positive_area_endpoint_response_20261011/execution_logs/run_1.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "artifacts/muon_positive_area_endpoint_response_20261011/execution_logs/run_1.stdout.txt": {
+      "bytes": 7627,
+      "sha256": "0d1fd41163641bcc7f3f85bee7a83c945e466733ab9b442c57e94bc04876dedd"
+    },
+    "artifacts/muon_positive_area_endpoint_response_20261011/execution_logs/run_2.command.json": {
+      "bytes": 564,
+      "sha256": "faa49391f476e6ca564bc622eab05b5d59077f0e21bd041169910cffcaf2487c"
+    },
+    "artifacts/muon_positive_area_endpoint_response_20261011/execution_logs/run_2.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "artifacts/muon_positive_area_endpoint_response_20261011/execution_logs/run_2.stdout.txt": {
+      "bytes": 7627,
+      "sha256": "0d1fd41163641bcc7f3f85bee7a83c945e466733ab9b442c57e94bc04876dedd"
+    },
+    "artifacts/muon_positive_area_endpoint_response_20261011/execution_logs/run_positive_checks.py": {
+      "bytes": 1331,
+      "sha256": "d8ae45e655ae235622de6228b084b8e2bb1296a150b5966c08aec2316be8d3e3"
+    },
+    "artifacts/muon_positive_area_endpoint_response_20261011/run_1/application.npz": {
+      "bytes": 1088850,
+      "sha256": "00dbbea770818c8ec0cde07416934c0d6fee3b07933548e55c97905eb003c901"
+    },
+    "artifacts/muon_positive_area_endpoint_response_20261011/run_1/result.json": {
+      "bytes": 7959,
+      "sha256": "be82cca72c07195fbad200bb119164cd48e7549dbb613ff99033c871b700aea0"
+    },
+    "artifacts/muon_positive_area_endpoint_response_20261011/run_2/application.npz": {
+      "bytes": 1088850,
+      "sha256": "00dbbea770818c8ec0cde07416934c0d6fee3b07933548e55c97905eb003c901"
+    },
+    "artifacts/muon_positive_area_endpoint_response_20261011/run_2/result.json": {
+      "bytes": 7959,
+      "sha256": "be82cca72c07195fbad200bb119164cd48e7549dbb613ff99033c871b700aea0"
+    },
+    "artifacts/muon_positive_area_endpoint_response_20261011/verification.json": {
+      "bytes": 1299,
+      "sha256": "c53a61c26a8f50b79f926ade06393f7608fa0c2b57b4a51cbb9daa5ff88f8da5"
+    },
+    "src/bhsm/interface/muon_local_normal_action_symbol.py": {
+      "bytes": 9915,
+      "sha256": "21875ecee230f78355e0af47a72f63f0047f5521b2663e6d9a6e350b1eb09d58"
+    },
+    "src/bhsm/interface/muon_paired_local_normal_action_symbol.py": {
+      "bytes": 7999,
+      "sha256": "febc4b6b5afdf3c9c22ffa27d01cea92b7f20b847fee4a5c5a5c2fabfe59ac7e"
+    },
+    "src/bhsm/interface/muon_positive_area_endpoint_response.py": {
+      "bytes": 6793,
+      "sha256": "e1957a20a5552a0706aee469e1f438b73958660fde2df6020ca48a421b56ad80"
+    },
+    "tests/test_muon_local_normal_action_symbol.py": {
+      "bytes": 2189,
+      "sha256": "2011eb96f5161df3bf091fe3cc54b9bd89d378d803c4a9ea5832d9e06ddca51f"
+    },
+    "tests/test_muon_paired_local_normal_action_symbol.py": {
+      "bytes": 1481,
+      "sha256": "943256405382e61252fe00fdd73c167a4cbb7575ff7639591893e0fd12bf11bf"
+    },
+    "tests/test_muon_positive_area_endpoint_response.py": {
+      "bytes": 1255,
+      "sha256": "60ae4c8078740af0efcc8485ec7ccadfc550969767015bfc89a69cd91acaccd5"
+    }
+  },
+  "scope": "constant-coefficient reached quadratic action germ, not full physical time-dependent E0/event operator"
+}

@@ -1,0 +1,72 @@
+ACTION-DERIVED COMMON1200 WEAK HAMILTONIAN HIGGS SEAM
+2026-10-16. REPO=C:/Users/carbe/Downloads/BHSM_muon_parent_maxwell_worktree_20261001
+WORK=C:/Users/carbe/OneDrive/Documents/CODEX
+
+New exact action component
+The same original full two-eta-sheet Lorentz seam has now been converted to its weak Hamiltonian scalar coefficient, including the original source-time and density contacts. The normalized intrinsic/surface scalar term agrees exactly with the existing native scalar W owner. This is an action-derived full384 trace/source extension of that original seam, not a reduced18 matrix installed as a D5 bulk mass. The complete known coefficient map covers all1200 original common directions and the connected55 angular output modes. Ambient normal amplitudes/source jets remain factored and unassigned. No global native domain, outgoing solution, physical energy map or original coupled matching correction is selected.
+
+Source derivation and conventions
+muon_holomorphic_d5_trace_action.normalized_two_sheet_point_action (src/bhsm/interface/muon_holomorphic_d5_trace_action.py:272-337) owns
+ K_L,seam=-rho_L Cbar M(H) B,
+with PL rank12 and PR rank6 linking PLUS and MINUS eta sheets. It retains all complementary bulk rows. These sheets are distinct from the temporal incoming/inherited-child arms.
+muon_full_d5_differential_form.full_d5_differential_coefficients (same directory, :58-102) owns
+ D_L=Gamma0(i D_tau-W),
+so the scalar seam's exact weak Hamiltonian output is
+ W_seam=-Gamma0 K_L,seam=+rho_L Gamma0 Cbar M(H) B.
+This output Gamma0 is a change of the Euler-output convention. It is NOT a second Gamma0 inserted into the original Dirac-bar normalized trace.
+
+The fixed scalar placement is independently owned, not inferred from the above sign alone: muon_owned_native_product_connection.native_real_action_vertices (:17-31) places the four real fixed-Y mass vertices in native W, and owned_native_product_node (:34-77) exports A=(partial_t+Omega_t)/N+W. muon_continued_action_reality._higgs_mass_realified (:48-57) supplies the analytic realification. The new audit calls the existing native_real_action_vertices at the actual saved wall radius and Lorentz induced lapse and compares vertices20:24 to the four stored intrinsic-Higgs vertices. Both actual arms agree BIT-EXACTLY. Radius and lapse are finite, strictly positive and exactly real before extracting their real parts. No scalar phase or empirical coupling is introduced.
+
+The native owner's scalar statement applies on its declared intrinsic/surface stratum. The ambient extension comes from the original full384 normalized two-sheet weak seam, not from extending a reduced point operator arbitrarily. No Higgs mass is appended to the bulk D5 expression, and no second intrinsic D4 kinetic term is added. The full384 particle/conjugate carrier, all three families and the saved complement remain explicit.
+
+Ambient normalization and independent analytic sources
+The frozen coefficients give B_sigma=D S_sigma^-1/u_R,sigma and Cbar_sigma=S_sigma Gamma0 W/u_L,sigma, with independent u_L/u_R and their source jets. The evaluated Hamiltonian LR numerator is -Gamma0 times the saved Lorentz LR numerator; similarly RL. Unknown factors remain
+ alpha_LR=1/(u_L,plus u_R,minus),
+ alpha_RL=1/(u_L,minus u_R,plus),
+ alpha_dot=-alpha(u_Ldot/u_L+u_Rdot/u_R).
+No normal value is set to one or imported from another source epoch. At a real branch, u_L,sigma=conj(u_R,sigma) is the condition under which Gamma0 Cbar=B^dagger and LR/RL are adjoints. The audit checks the known numerator version of this relation, but does not assign the normal condition or infer full-operator self-adjointness. The actual full eta/covector body can remain non-self-adjoint.
+
+Independent mode recovery does not require choosing those amplitudes. The Hamiltonian analytic left mode numerator is E_L,H=E_L,bar Gamma0, while the right mode numerator is the original E_R. Their pullback yields
+ E_L,H W_LR E_R=rho_L PL M PR,
+ E_L,H W_RL E_R=rho_L PR M PL.
+After the mode/trace normal factors cancel, their sum is +rho_L M. The actual time derivative retains all three product-rule placements (left mode, coefficient and right mode); it recovers +rho_L_dot M at a fixed real scalar-coordinate vertex. Background time includes +rho_L_dot M(H)+rho_L M(Hdot). Common source-time maps also retain -eta_dot H-eta Hdot, the independent H80 tent, and both one-sided tent slopes. Complex common sources are combined linearly after the four fixed real-coordinate matrices are built; they are never conjugated by the left-source construction.
+
+rho_L=ell_L R^3 is the ORIGINAL timelike Lorentz surface measure. The existing bulk density isometry s=sqrt(C R^3) pulls the weak numerator to W/s^2 with derivative W_dot/s^2-2 s_dot W/s^3. Both mode lifts acquire s, so the normalized intrinsic coefficient stays +rho_L M. The representation coefficient rho_L/s^2=ell_L/C is not a replacement of the Lorentz wall clock by the positive coframe ell_E. A separately justified global native wall conormal/domain remains necessary; no arbitrary i phase or positive-surface measure is inserted here.
+
+Numerical application and independent controls
+Only frozen seam/source operands are consumed. No history, field, profile, source, D5 action, radial integral or spectrum is replayed. For incoming t=-5e-6 and inherited child t=+5e-6:
+* Original stored Lorentz numerator -> -Gamma0 output is compared to independently assembled rho_L B_left^dagger M B_right at its fixed real base, including the source-time product rule.
+* The independent analytic left/right mode pullback, native scalar vertex, density pullback and background Hdot are checked for both channels.
+* Full80x80 operator coefficient Grams (including all55 output/input angular products and all384 rows) reconstruct every original1200 column norm and its time first. All320 dependent gradient images and independentH80 are kept; exact profile zeros are not deleted coordinates. Norms are diagnostics, not spectral/statistical multiplicities.
+* An independent MP80 literal weak polynomial contracts fixed independent complex test rows, full384 maps and a fixed complex common1200 direction. The affine coefficient germ gives degree4 in the time parameter; FD4 at each fixed step2^-5,2^-11,2^-17 differentiates it exactly up to MP arithmetic. Every step is retained. No physical state or source dual is inferred from these test vectors.
+
+All coefficient identities: maximum scaled error5.338563721020737e-16; maximum absolute error3.410605131648481e-13 (time norm accumulation). Native intrinsic scalar matrices match exactly. The independent MP80 weak FD4 maximum scaled error is2.342866801782909e-80; saved compact coefficient versus literal weak time maximum scaled error1.6520328799182953e-15. These control the declared frozen binary64 coefficient map; MP arithmetic does not certify upstream physical field/root/quadrature accuracy.
+
+The retained binary64 Gamma0 square differs from identity by4.440892098500626e-16. The audit records this original residual and retains every entry; it does not normalize the Clifford or drop tiny entries. pilot_run_1/source+failure.txt preserves the first overstrict bit-equality guard failure, before coefficient application. pilot_run_2 is the successful prefinal metadata version. Final source differs only by recording the Clifford residual and checking finite/zero-imag/positive actual wall radius and lapse before real extraction. No numerical formula changed after that successful pilot.
+
+Final executable and source receipts
+audits/bhsm_real_hamiltonian_higgs_seam_coefficients_20261016.py
+ SHA bbffa99bae4707f508c01d91a028dbc4726b40f762651175504e68a97331c593
+The input_and_source_hashes map pins the actual invoked owners and frozen archive bytes.
+Primary real source epoch:
+ artifacts/muon_real_coupled_open_operator_20261016/source_first_run_1/application.npz
+ SHA7da8ddd5fa4bda397aa6a2d50e845338a3ef92fb3f0e837a5a6d0d166915e177.
+Frozen Lorentz seam input:
+ WORK/outputs/bhsm_real_common_higgs_seam_insertion_20261016/run_1/result.json
+ SHAbac39253088ff2d69363ceb79163b2d6809cd1d8cc1f7b69199d59c47cf3ba8c;
+ executed source3339d14ade6a8dd9bc2cdc008390de70251874aa2bb3c46814b922d625171fe0.
+
+Two independent final executions
+WORK/outputs/bhsm_real_hamiltonian_higgs_seam_coefficients_20261016/run_1
+WORK/outputs/bhsm_real_hamiltonian_higgs_seam_coefficients_20261016/run_2
+All three files are byte-identical (316163 bytes/run; largest232156):
+ actual_common1200_weak_Hamiltonian_Higgs_seam_coefficients.npz,232156 bytes
+ SHA57212e31603d930dda89a624d54357a39e60c0ceff79000deba1422f5970ecc9
+ executed_producer.py,18765 bytes (SHA matches final source)
+ result.json,65242 bytes
+ SHAd93b715426d6c16ac3992eaaf522231682712d9ae6b1bc1ee3702f0d02260ab4.
+final_pair_verification.json SHA1bc71f0ece0ba0e3f5c254c2778c411f291549a232599b87f8c1b510a6493222.
+Root independently reviewed the algebra/scope of the producer before final executions. This audit-only extension adds no reusable module or new test fixture and changes no existing source. No test or numerical job remains active.
+
+Global-domain limit
+This exact weak scalar coefficient alone does not prove a global coercive transmission realization. A distribution supported on the seam cannot be squared as an ordinary multiplication matrix, nor can one assume an unchanged H1 domain. The selected first-order domain/adjoint graph (or action-derived enlarged bulk+surface output realization), the same normalized ambient trace and the realized exterior must be bound before D^dagger D is a full common native operator. Existing regular closed-form and Lorentz isotropic-transmission arguments remain useful components; the positive-coframe conormal must still be matched to this same moving trace before promoting those arguments to the global native domain. This is unproved here, not a new adjustable coefficient or new theory requirement. Physical full outgoing energy/field/source/domain derivative pass=False; original matching corrections=0; Maxwell/all226 after pass=False; physical normalized two-spin state and magnetic moment=None.

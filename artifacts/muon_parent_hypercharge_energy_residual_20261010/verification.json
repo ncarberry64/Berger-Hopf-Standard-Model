@@ -1,0 +1,96 @@
+{
+  "artifact_records": [
+    {
+      "bytes": 29090,
+      "path": "src/bhsm/interface/muon_parent_hypercharge_energy_residual.py",
+      "sha256": "1bc7f44815f365cf8698ec8f945b1666b25605f4acb673ed806f22dc81621604"
+    },
+    {
+      "bytes": 9551,
+      "path": "tests/test_muon_parent_hypercharge_energy_residual.py",
+      "sha256": "a650a390830b2f377943c94f89f85af6631bd44e3d6500d3d5dbcf291bfcf0fb"
+    },
+    {
+      "bytes": 30186,
+      "path": "artifacts/muon_parent_hypercharge_energy_residual_20261010/run_1/energy_residual.json",
+      "sha256": "44ad43e709ee7ae6d7a30a472a9c88ca75370d8f8825036dab77e1bce546a1aa"
+    },
+    {
+      "bytes": 30186,
+      "path": "artifacts/muon_parent_hypercharge_energy_residual_20261010/run_2/energy_residual.json",
+      "sha256": "44ad43e709ee7ae6d7a30a472a9c88ca75370d8f8825036dab77e1bce546a1aa"
+    }
+  ],
+  "byte_identical_independent_processes": true,
+  "canonical_LF_JSON": true,
+  "claim_scope": {
+    "common_normalization_assigned": false,
+    "continuum_error_enclosed": false,
+    "continuum_residual_evaluated": true,
+    "native_heat_evaluated": false,
+    "physical_Pauli_contraction": false,
+    "quadrature_refinements_are_enclosures": false,
+    "uniform_extrema_certified": false
+  },
+  "earlier_test_failures": [
+    {
+      "cause": "Independent energy identity integration exposed a scalar-to-array broadcasting bug in normal_energy_growth_rates; np.stack(axis=-1) corrected it. Next run: 11 passed in 1.37s.",
+      "output": "1 failed, 10 passed in 1.57s"
+    },
+    {
+      "cause": "Fail-closed producer hash guard rejected refined_run_2 after retained producer LF normalization. Bound canonical_run_2 and advanced run_4 after reproducible canonical replay; no validation bypass.",
+      "output": "1 failed, 12 passed in 2.02s"
+    }
+  ],
+  "focused_tests": {
+    "command": "C:\\Python314\\python.exe -m pytest --noconftest -q tests/test_muon_parent_hypercharge_energy_residual.py",
+    "exit_code": 0,
+    "output": "............. [100%]\n13 passed in 2.01s"
+  },
+  "no_historical_artifact_modified": true,
+  "producer_commands": [
+    "$env:PYTHONPATH='src'\n$env:OPENBLAS_NUM_THREADS='1'\nC:\\Python314\\python.exe -m bhsm.interface.muon_parent_hypercharge_energy_residual --output artifacts/muon_parent_hypercharge_energy_residual_20261010/run_1/energy_residual.json",
+    "$env:PYTHONPATH='src'\n$env:OPENBLAS_NUM_THREADS='1'\nC:\\Python314\\python.exe -m bhsm.interface.muon_parent_hypercharge_energy_residual --output artifacts/muon_parent_hypercharge_energy_residual_20261010/run_2/energy_residual.json"
+  ],
+  "producer_exit_codes": [
+    0,
+    0
+  ],
+  "scientific_trajectory_rerun_by_energy_producer": false,
+  "selected_result": {
+    "advanced_energy_remainder_estimate": 83.89722499776684,
+    "advanced_residual_contraction": -0.5205848801228211,
+    "advanced_sampled_growth_constant": 40.74152741170125,
+    "advanced_strong_residual_L2_time_space": 1.8168946894225646,
+    "bound_premises": [
+      "Cback >= supremum of reversed-shift energy rates",
+      "kmin <= infimum V/e",
+      "certified strong residual norms and time integrals"
+    ],
+    "bound_premises_certified": false,
+    "continuum_pairing_enclosed": false,
+    "direct_conormal_trace_pairing": 147.2822181993774,
+    "direct_plus_advanced_residual_correction": 146.7616333192546,
+    "end_time": 0.33163890548792924,
+    "endpoint_terms": "zero retarded initial data, zero advanced terminal data, equal prescribed wall trace, Friedrichs pole",
+    "finite_weak_correction": -1.6337146080402931e-09,
+    "finite_weak_plus_goal_correction": 146.76163332109908,
+    "finite_weak_trace_pairing": 146.7616333227328,
+    "goal_formula": "F_exact=F_direct_num+integral z_num R+integral (z-z_num)R",
+    "growth_grid": 8193,
+    "native_heat_evaluated": false,
+    "numerical_Galerkin_orthogonality_is_physical_cancellation": false,
+    "physical_Pauli_contraction": false,
+    "primal_strong_residual_L2_time_space": 1376.265678204233,
+    "radial_quadrature": 1280,
+    "relative_remainder_estimate": 0.5716563866066725,
+    "remainder_formula": "abs(remainder)<=integral norm(R(t))_(1/e)*sqrt(2 E_z_error(t)/inf(V/e)) dt",
+    "sampled_potential_over_electric_minimum": 6.650733298245271,
+    "scope": "EVALUATED_GOAL_SPECIFIC_CONTINUUM_PAIRING_ESTIMATE_FOR_CONTROL_TRACE",
+    "strong_weak_green_identity_defect": 1.8444870075740027e-09,
+    "temporal_quadrature": 4,
+    "time_samples": 8192,
+    "trace_lift_residual_contraction": -0.5205848784891065
+  },
+  "worktree": "C:/Users/carbe/Downloads/BHSM_muon_parent_maxwell_worktree_20261001"
+}

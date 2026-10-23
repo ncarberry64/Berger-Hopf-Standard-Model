@@ -1,0 +1,491 @@
+{
+  "Lorenz_fixing": "complete integrated one-form/ghost Gram map; no Rxi scalar mass",
+  "action_parameters": {
+    "nu_squared_action": 4.0,
+    "surface_gamma": null
+  },
+  "angular_image": "n1 magnetic source times odd n1+n3 reaches complete n0+n2+n4; n3 source allzero checked before this restriction",
+  "classification": "EVALUATED_COMPLETE_EVEN_CHANGING_COUPLED_FIELD_GREEN",
+  "error_scope": "binary64 coefficient-time/radial weak integration and inverse/eigen diagnostics; stored Neumann arithmetic does not enclose source producer/eigen/continuum errors or physical matching",
+  "exact_reduction": "real |k| Wigner spectators of the homogeneous angular body; entire2100 rows retained; gauge/H/DG sectors composed before inversion",
+  "full_even_harmonics": 35,
+  "full_field_count": 2100,
+  "geometry_clock": "same chronological x-linear/vy-midpoint saved phase; child inherited value/time/radial image counted once",
+  "input_hashes": {
+    "artifacts/flagship_integration/BHSM_N12_C2_REFINED_RESET_ROOT_CENTER.npz": "59dd88661b15cbeec96bc19294f9d9c64f754cccbfbc385c32329fa9c864a8fe",
+    "artifacts/flagship_integration/BHSM_N12_FULL_RESET_ACTION_JACOBIAN.npz": "35bb2b67ff784206d3a5b9dc82881f5ffd8f844b55342f2032d29cdafb38a67a",
+    "artifacts/muon_birth_transfer_value_20261008/retained_reset/run_1/result.json": "d0fec0f8e8a05818fcce67e88ed8db73744484220a2cb213825893f481cb0a72",
+    "artifacts/muon_calibrated_pauli_20261009/inputs.json": "0b614ab6f26d169ca04a4878f767f78eb3668484840867e46aebbebf186369da",
+    "artifacts/muon_calibrated_weak_decay_20261010/run_1/weak_decay.json": "9c31575ce0889571790f8767cf53ffe043cb9906e0a45a96b194971320a0aad7",
+    "artifacts/muon_corrected_profile_magnetic_response_20261011/run_1/incoming_contacts.npz": "427094c0d93147bc143a1378f007e5eeb287dd5fac2eefcac962ff28e9f897a5",
+    "artifacts/muon_corrected_profile_magnetic_response_20261011/run_1/outgoing_contacts.npz": "b6e9d323f3c55cd2c6eb0fff84a68a52393c017bf4a50adff82686bdcc3baa6e",
+    "artifacts/muon_corrected_profile_magnetic_response_20261011/run_1/result.json": "67d10f7d2064219916ba4abc9caf66f7e673dfc96453aba3c91458363624740b",
+    "artifacts/muon_finite_normal_phase_20261011/incoming_run_1/application.npz": "254491c04531387f3ef3ae761cb4efccfbed54055683af00fbd8259a2520a8f9",
+    "artifacts/muon_finite_normal_phase_20261011/incoming_run_1/result.json": "8547be3232459deb8cb1d325a3d956bc0380ba0c767371ccce4bf7f5140b399f",
+    "artifacts/muon_inherited_finite_normal_phase_20261011/run_1/application.npz": "7a513c82e9e4f3e2560e2989867e00e8af3453e637a29559286c29eb7c184a59",
+    "artifacts/muon_inherited_finite_normal_phase_20261011/run_1/result.json": "d283c45cb81e86628ecec96159eae5327829d15f440bf01c78164f4b12434c51",
+    "artifacts/muon_matched_mechanical_source_20261002/replay_reference/matched_source_and_weak_actions.npz": "146435df28178967c321c0aa7e89a1511395d196f96b8715532aa98e3e312c2b",
+    "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1/application.npz": "c67363c17adfb519f399614463d5a13dbcd019aa53246d452421eea8ba982455",
+    "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1/result.json": "06867e31959910ec21385e8491bd5b794060c68e8404ae0524e3d0c9b544faa6",
+    "scripts/evaluate_muon_corrected_profile_magnetic_response.py": "7921658039c4a2890151c331ad8516f8a651686c35f14ef51fa95e7ecf5b7b8d",
+    "scripts/evaluate_muon_even_coupled_temporal_field.py": "b9ec2f37438b567267bfe76ac57cffa131e491d7420f4ff81204c4c171e2a41a",
+    "scripts/evaluate_muon_reached_trace_action.py": "f2ecf5b614f8b3b1b5f9bf2b73490e539321049633f7deb467bdf60a81e0c260",
+    "src/bhsm/interface/aether_canonical_momentum_action_jacobian.py": "d0ade20dc8a999e43073b45ca3ef59e05c65c55e37a1d6565d4e389176295cb1",
+    "src/bhsm/interface/aether_diagonal_sp1_m4_attachment_v15_50.py": "e6482614dcb54f4890a5e66fbe724d4c302405d575a4b73ddbb64a075cb1827e",
+    "src/bhsm/interface/aether_lorentzian_child_galerkin_v15_44.py": "574a9a6267d9228170c7309bd4be3cafb36b7515a6ee558509beb968e97bdab7",
+    "src/bhsm/interface/muon_birth_attached_phase.py": "948c1505e9b68cffbe8050be31dcb5727d8f8d4f25399f9037cfc94a9ae9fdeb",
+    "src/bhsm/interface/muon_birth_chronological_normal_inertia.py": "909f322d0b375ab03fc0b0a148c9d710ac77e371e029c5e92c9bfbde86883b05",
+    "src/bhsm/interface/muon_birth_coupled_primal_midpoint.py": "ce321f641fa51d98710d006e246aac5cf6bd046be93a74fab452808597c599ce",
+    "src/bhsm/interface/muon_birth_finite_geometric_trace_endpoint.py": "4f5c36144222d5d1e657061aa9352f8e86d5ae61a0ebdf05991a477e68d4be5f",
+    "src/bhsm/interface/muon_birth_finite_normal_phase.py": "660ed731bdbe0bbb71eda750c9dbffd20e7ce9f63be2a6087e5a385d76850361",
+    "src/bhsm/interface/muon_birth_finite_normal_trace_graph.py": "20eafd9a6abff3d3a89a2f6085d099584684ba19b600673dafda634cb56aad18",
+    "src/bhsm/interface/muon_birth_full_field_attachment.py": "58b3bd8a4ae5fe7c63b5551e4d0f26d82ab82a27d4389066c894a5e1b4728d03",
+    "src/bhsm/interface/muon_birth_inherited_finite_normal_phase.py": "86b082dfa0b525e9d8bb510a6c02e53c517d7ecdd8c6c9aec956d175d829add4",
+    "src/bhsm/interface/muon_birth_normal_constrained_action.py": "fe66a9116816e075cfc5e7c5f5f3c2c02d539311303b693a1d89cbc08ea62577",
+    "src/bhsm/interface/muon_birth_normal_trace_graph.py": "d012a0455d84be2ce7aae8d6833f8b482f9bbc1e9ee1b899042a421c2a782896",
+    "src/bhsm/interface/muon_birth_paired_attachment_endpoint.py": "71a69275ebeef226fd8dc7585745c5c8acac687e497a8441fe37a37553178f23",
+    "src/bhsm/interface/muon_birth_paired_field_endpoint.py": "f22b6a17b65c72b30571b3d9f721f347737a5916fa08e50bd833ad22df3cd035",
+    "src/bhsm/interface/muon_birth_phase_continuation.py": "9169a1c56bf5084d1f240043ca12d431c87e4adaff24fe09bdf7bf27fc5eb0be",
+    "src/bhsm/interface/muon_birth_trace_enriched_action.py": "c36c48482dd58ebe369ab935574b78b3693036f717fb49035dfac01164956dce",
+    "src/bhsm/interface/muon_birth_trace_enriched_phase.py": "591754957f1cc452bfd53d8adc1087308459902a822876105315b7423c2fd676",
+    "src/bhsm/interface/muon_birth_two_arm_assigned_action.py": "cf6c58dc68700315d701fb9a1e9e99e927d18d90016a6ae7f86470c36136c77a",
+    "src/bhsm/interface/muon_corrected_profile_magnetic_response.py": "8d09cd726393d59b6843553c085ffaf61f84f009b44678d1465fe7ebe645f1d8",
+    "src/bhsm/interface/muon_coupled_field_angular_images.py": "16c9a1dd9f36832b9507087d49b8ad7edb366337d3c972a09010a4228a62e578",
+    "src/bhsm/interface/muon_coupled_higgs_magnetic_source.py": "2d0c1f4e6231ba258c3e1afa52437735c41a65c3739cf6592265ede90c0244fb",
+    "src/bhsm/interface/muon_electromagnetic_magnetic_birth_continuation.py": "51d9cd03cfa6047dfe0fafd249734b26172193c78c860af65d6a6b0148c7c9e4",
+    "src/bhsm/interface/muon_electromagnetic_soft_magnetic_source.py": "e0ec4c67e29e8f2ac9ce003559c3d9257d00a30a79a373bd2caff58f5dd4d231",
+    "src/bhsm/interface/muon_even_coupled_temporal_field.py": "d865825ebb22f138e30c1e068e6e2c6ce1e99d33a11b7cd0c4ac56c11a6474df",
+    "src/bhsm/interface/muon_exact_material_response.py": "a530651e157a000dbe6935e9de1cedbce5679f98c599c6c7c641158b749307bf",
+    "src/bhsm/interface/muon_intrinsic_higgs_gauge_action.py": "c19354209300ab06c0f1ab6bf4e111dbb5de0cd9e8d1d31a71af357a829118d4",
+    "src/bhsm/interface/muon_intrinsic_m4_normal_pullback.py": "43187eee35f2879a43fe0fd02ae447502811349ccf2f2a78aa14beb8aa706bf0",
+    "src/bhsm/interface/muon_material_higgs_gauge_action.py": "8bca013820283614c6578be4f44c29c4ea1c919f516aa9a2783f0eb38127d035",
+    "src/bhsm/interface/muon_moving_geometric_action.py": "bf560fdb9766f563d97d3100ccb266e2a4350c910ac14a51d57576c2b5371392",
+    "src/bhsm/interface/muon_parent_gauge_geometry_correction.py": "fa29f5764dca39196c807d64e7976d5894589e7de3ffa9d4a5ddecfb136b4816",
+    "src/bhsm/interface/muon_parent_maxwell_background_euler.py": "fbb2c99d4b1c58247ac42a769fad3e1b16ccc76a1744fe0c5334e50c4a974bee",
+    "src/bhsm/interface/muon_parent_maxwell_corrected_retarded.py": "00bf7053e289297afd4f10dc0ef9522ac8326f2bd07609c9979bb9f5f6f74a4d",
+    "src/bhsm/interface/muon_parent_maxwell_full_retarded.py": "1ecf85a6da94b84b69af1ff4394301232d9d4cad4b0f0bc08de56d5943e0c478",
+    "src/bhsm/interface/muon_parent_maxwell_full_weak.py": "c1fb703967a644306d3521d457a6d7c778a49d89c1e081b401487a25b7491565",
+    "src/bhsm/interface/muon_parent_maxwell_geometry_weak.py": "f0b4a49934e17ad18c40e9164b66c54e1b2cb146fb476f59b0e500f2dd6c9153",
+    "src/bhsm/interface/muon_parent_mean_causal_action.py": "2a84b1be22625b1a5ae88d10c76631d7a5b602d2b0e22e57f00201bb74a593ad",
+    "src/bhsm/interface/muon_parent_positive_coupled_field.py": "f26b1c395c8059555d1f3e217705998c5e0437122ab761354ce0f085d891d5c2",
+    "src/bhsm/interface/muon_parent_retarded_hypercharge.py": "2eb97a704bce63f601cc0d6e0f647266d4b4aac7f746d34dceb41b72018c3510",
+    "src/bhsm/interface/muon_pointwise_full_field_action.py": "d57cd5953de00bcae857d0e458bbead1e463e5fffe8d947c5b9e71806aabaff6",
+    "src/bhsm/interface/muon_profile_preserving_phase_sample.py": "27ce99bf8c286b0e3fe56dc4d7f0f215dee51b228dcce1805006e1b2c8998418",
+    "src/bhsm/interface/muon_reached_trace_action.py": "7fed7f2520a6f66e31323905359e491897f7187ccf9871ecfc2ab95e415ffade"
+  },
+  "literal_YM_curvature_and_offshell_DH_contacts_retained": true,
+  "numerical_files": {
+    "incoming_block_0_action.npz": {
+      "bytes": 27673,
+      "sha256": "f8700ad98a94d2a4a00827e6315b48caacac53e06083e62ad3de09fffdc07800"
+    },
+    "incoming_block_0_green.npz": {
+      "bytes": 96782,
+      "sha256": "7bdf8f47a692e3dac99a56803031d4b2449367639df411704a6e4e035340d9b0"
+    },
+    "incoming_block_0_hilbert.npz": {
+      "bytes": 7318,
+      "sha256": "ebcf9e590342f2856882503962be7af5c9d11445f6ef22893196c9c36af59407"
+    },
+    "incoming_block_1_action.npz": {
+      "bytes": 122369,
+      "sha256": "0ae7231119b564f1b7aae445bc6653119c31138fed6e8cee5bc23d0d75f28591"
+    },
+    "incoming_block_1_green.npz": {
+      "bytes": 870494,
+      "sha256": "fb2728581f6dfdbdfa3a923ad510e37dc2f9e872f95987def98b8863e3cbf9bc"
+    },
+    "incoming_block_1_hilbert.npz": {
+      "bytes": 19270,
+      "sha256": "acd086efaf8673ac5d250975715696628e6522a5257b10b2eb63c5bcd69c96c1"
+    },
+    "incoming_block_2_action.npz": {
+      "bytes": 247614,
+      "sha256": "b0cef690f6aafd88c624b1be578ad077ac0ea679b081cd267e2b114e7f772eae"
+    },
+    "incoming_block_2_green.npz": {
+      "bytes": 2466211,
+      "sha256": "a590f3fe3b59dd017dd293a69bd629a34664b8940181ea93956868bfbd05f7c7"
+    },
+    "incoming_block_2_hilbert.npz": {
+      "bytes": 34880,
+      "sha256": "fa9367eb805b7524ff740e75ff351ce5d64ca0078d65b15235dbf87f6b0df545"
+    },
+    "incoming_block_3_action.npz": {
+      "bytes": 254799,
+      "sha256": "84dd9a699bc6d8c1cff99331f0b6b61951ffc1780d769bde67f843fa4eb2a030"
+    },
+    "incoming_block_3_green.npz": {
+      "bytes": 2367374,
+      "sha256": "ae2ee5a8ae5694fc7e3f261021f05b6da1415ef13e1888857ca55169de05d631"
+    },
+    "incoming_block_3_hilbert.npz": {
+      "bytes": 33382,
+      "sha256": "640066a6ade509581bf9ea3ea30b2e85073f82ecaef0baa19204e7fe5d1142e2"
+    },
+    "incoming_block_4_action.npz": {
+      "bytes": 497901,
+      "sha256": "33eb95b226aedd1a20d15b60469141f6059e0255cd1a046c7a2fa0bc0d99df16"
+    },
+    "incoming_block_4_green.npz": {
+      "bytes": 6897608,
+      "sha256": "12c813e4af2e5357e13a46144496cc44e2e0d21477935a582a9605d99e121ba9"
+    },
+    "incoming_block_4_hilbert.npz": {
+      "bytes": 63471,
+      "sha256": "0121c17b1926b3e634c2d9cab0c76ed42aa950eb3857f36df02fdc4dd1877a22"
+    },
+    "incoming_block_5_action.npz": {
+      "bytes": 486027,
+      "sha256": "16dc0f534c482ca139b9cfee2d4daa13c835bb966bf6b1604753703fa18d3d8e"
+    },
+    "incoming_block_5_green.npz": {
+      "bytes": 6846377,
+      "sha256": "cdb4c37bce89e62b4d3eb506591fb0a316c7136ffe4cb1f7139fe844e08adb45"
+    },
+    "incoming_block_5_hilbert.npz": {
+      "bytes": 63035,
+      "sha256": "2349fd07316365b4c3ad18c609afd0d47c72595d0065ce8b6a69c9a11e234b04"
+    },
+    "incoming_samples.npz": {
+      "bytes": 981,
+      "sha256": "37fcb1c4bfd7c45fb06f8d904acb7605866038f653fa012db075d505a6b0cc1f"
+    },
+    "outgoing_block_0_action.npz": {
+      "bytes": 27880,
+      "sha256": "6493d73cbeeeea6a64a85bfe60936b08e3b7b623b77e83553e246194840ba7b3"
+    },
+    "outgoing_block_0_green.npz": {
+      "bytes": 97147,
+      "sha256": "c7ded6eddeda35268dc31941837e66608d717f962e348b24049505629ae03d73"
+    },
+    "outgoing_block_0_hilbert.npz": {
+      "bytes": 7352,
+      "sha256": "d6cc1193abc040283b10b994bfe2c8425c768b95e04ba2401ef342c5ef945fef"
+    },
+    "outgoing_block_1_action.npz": {
+      "bytes": 122391,
+      "sha256": "4b1074dbb7f358d38500f6a9ec9a37204bd95eefd6979b8dd99226bb3db4e7c5"
+    },
+    "outgoing_block_1_green.npz": {
+      "bytes": 869856,
+      "sha256": "7dea08799da507d0a78e4050e28481b94bfbea2a1026c922779c1d5d90f47ee4"
+    },
+    "outgoing_block_1_hilbert.npz": {
+      "bytes": 19312,
+      "sha256": "1aa7076d8dfd6062fbe73b0dbbf6420ad21f3c33508d36f378c1f60a51ee90da"
+    },
+    "outgoing_block_2_action.npz": {
+      "bytes": 247449,
+      "sha256": "f8ba2f1f7a19ad2a9ca132db65b9a3a0d2ccca5cd048fdd5e7017d7ca39893c3"
+    },
+    "outgoing_block_2_green.npz": {
+      "bytes": 2485466,
+      "sha256": "1174206785afc946f21cd74c24649f21446f4213799fbd3782bd398d1805deb7"
+    },
+    "outgoing_block_2_hilbert.npz": {
+      "bytes": 34938,
+      "sha256": "8925a8a264c9a630625c113122e5bd19a22bd98ac704710bd4b2f4c01d1ba495"
+    },
+    "outgoing_block_3_action.npz": {
+      "bytes": 255468,
+      "sha256": "8d2f0dbb5e6fb49f8949fd77047ab6ba453bc1f81d47bbdcc0402d8005006eef"
+    },
+    "outgoing_block_3_green.npz": {
+      "bytes": 2382536,
+      "sha256": "c150777e2bb018eadf14977627a1d77d5481fba3974115886e9751989c092ad3"
+    },
+    "outgoing_block_3_hilbert.npz": {
+      "bytes": 33609,
+      "sha256": "6772c5b7b849ce9d5661b1d42668b9f70eda41eb41a017749db4e22c7dd4b22c"
+    },
+    "outgoing_block_4_action.npz": {
+      "bytes": 498161,
+      "sha256": "ab7e299a5e60453857bc1b6c38ea28cef39f00f233f9a535d5d9211564c025d2"
+    },
+    "outgoing_block_4_green.npz": {
+      "bytes": 6863345,
+      "sha256": "a273fc2e6e9b24201066fab60d1a06550b9c90cee324757b89dd3cc085b77b01"
+    },
+    "outgoing_block_4_hilbert.npz": {
+      "bytes": 63753,
+      "sha256": "8b76251d2553dc6ea27ea0106da04090495563ea337a9552caa969858080016a"
+    },
+    "outgoing_block_5_action.npz": {
+      "bytes": 486223,
+      "sha256": "5a62ca380c412b1d8510c99724500e6ff99ffc98b598a29f16975bbde28f689e"
+    },
+    "outgoing_block_5_green.npz": {
+      "bytes": 6811074,
+      "sha256": "ce01dfebcebc04a5bb6ce0dd7c32b5b2e5f157509ad6c3ce06df5c24f92d44d5"
+    },
+    "outgoing_block_5_hilbert.npz": {
+      "bytes": 63294,
+      "sha256": "a8639c23ae0f352ca9ee2ef7caa489745e076e424cda07e89c1a51172364a22d"
+    },
+    "outgoing_samples.npz": {
+      "bytes": 984,
+      "sha256": "c6a36a12516dc39dd2aa5e77ba1be5ae53acf89bd3207f4b0edd7746f69dacc2"
+    }
+  },
+  "paired_DG_scalar_and_Hdot_images_retained": true,
+  "physical_LSZ_or_Pauli_completed": false,
+  "physical_P_strat_BRST_statistics_or_Wick_identification": false,
+  "physical_a_mu": null,
+  "physical_g_mu": null,
+  "quadrature_order": 6,
+  "records": [
+    {
+      "block_records": [
+        {
+          "absolute_spectator": 0,
+          "coordinate_count": 60,
+          "exact_stored_normalized_inverse_neumann_diagnostic": {
+            "defect_infinity_upper": 0.060073871375068776,
+            "exact_stored_inverse_difference_infinity_upper": 0.21099453689918019,
+            "exact_stored_inverse_infinity_upper": 3.512251367684369,
+            "gamma_guard": 2.8421709430404815e-14,
+            "operator_or_Gram_production_error_included": false,
+            "preconditioner_infinity_upper": 3.3012568307851886
+          },
+          "generalized_eigen_residual": 3.098721286083908e-16,
+          "harmonic_count": 1,
+          "level": 0,
+          "maximum_generalized_eigenvalue": 773297410977.653,
+          "minimum_generalized_eigenvalue": 0.4640393150803045,
+          "normalized_inverse_residual": 5.857652196860535e-05,
+          "normalized_symmetry_defect": 6.321975397336004e-16,
+          "original_inverse_residual": 4.4739005031441925
+        },
+        {
+          "absolute_spectator": 0,
+          "coordinate_count": 180,
+          "exact_stored_normalized_inverse_neumann_diagnostic": {
+            "defect_infinity_upper": 0.014047308709067794,
+            "exact_stored_inverse_difference_infinity_upper": 0.00377454719123676,
+            "exact_stored_inverse_infinity_upper": 0.2687025158634281,
+            "gamma_guard": 8.17124146124182e-14,
+            "operator_or_Gram_production_error_included": false,
+            "preconditioner_infinity_upper": 0.26492796867219126
+          },
+          "generalized_eigen_residual": 7.196548834170484e-16,
+          "harmonic_count": 3,
+          "level": 2,
+          "maximum_generalized_eigenvalue": 773297410992.1986,
+          "minimum_generalized_eigenvalue": 5.6159290647630975,
+          "normalized_inverse_residual": 1.3637493716124465e-05,
+          "normalized_symmetry_defect": 6.642295090150303e-16,
+          "original_inverse_residual": 1.1692610300290172
+        },
+        {
+          "absolute_spectator": 2,
+          "coordinate_count": 360,
+          "exact_stored_normalized_inverse_neumann_diagnostic": {
+            "defect_infinity_upper": 0.033261413382907695,
+            "exact_stored_inverse_difference_infinity_upper": 0.01091860101711939,
+            "exact_stored_inverse_infinity_upper": 0.3282662973886196,
+            "gamma_guard": 1.6164847238544892e-13,
+            "operator_or_Gram_production_error_included": false,
+            "preconditioner_infinity_upper": 0.3173476963715002
+          },
+          "generalized_eigen_residual": 9.004248230614048e-16,
+          "harmonic_count": 6,
+          "level": 2,
+          "maximum_generalized_eigenvalue": 773297410992.1993,
+          "minimum_generalized_eigenvalue": 5.615913905517376,
+          "normalized_inverse_residual": 2.5676458860396622e-05,
+          "normalized_symmetry_defect": 6.864885042317048e-16,
+          "original_inverse_residual": 1.7356800334268243
+        },
+        {
+          "absolute_spectator": 0,
+          "coordinate_count": 300,
+          "exact_stored_normalized_inverse_neumann_diagnostic": {
+            "defect_infinity_upper": 0.005233605264895916,
+            "exact_stored_inverse_difference_infinity_upper": 0.00030613537311687135,
+            "exact_stored_inverse_infinity_upper": 0.05849416561280528,
+            "gamma_guard": 1.3500311979443726e-13,
+            "operator_or_Gram_production_error_included": false,
+            "preconditioner_infinity_upper": 0.0581880302396884
+          },
+          "generalized_eigen_residual": 8.508369399153335e-16,
+          "harmonic_count": 5,
+          "level": 4,
+          "maximum_generalized_eigenvalue": 773297411017.944,
+          "minimum_generalized_eigenvalue": 25.53210693139897,
+          "normalized_inverse_residual": 7.078835936902549e-06,
+          "normalized_symmetry_defect": 5.274618160944656e-16,
+          "original_inverse_residual": 0.9081953076269491
+        },
+        {
+          "absolute_spectator": 2,
+          "coordinate_count": 600,
+          "exact_stored_normalized_inverse_neumann_diagnostic": {
+            "defect_infinity_upper": 0.011591936776881733,
+            "exact_stored_inverse_difference_infinity_upper": 0.0007614612901313302,
+            "exact_stored_inverse_infinity_upper": 0.06568887536118581,
+            "gamma_guard": 2.6822988274950976e-13,
+            "operator_or_Gram_production_error_included": false,
+            "preconditioner_infinity_upper": 0.06492741407105447
+          },
+          "generalized_eigen_residual": 9.896640381113195e-16,
+          "harmonic_count": 10,
+          "level": 4,
+          "maximum_generalized_eigenvalue": 773297411017.944,
+          "minimum_generalized_eigenvalue": 25.53197339121715,
+          "normalized_inverse_residual": 1.3075860325704934e-05,
+          "normalized_symmetry_defect": 7.087626980580856e-16,
+          "original_inverse_residual": 0.8463909749880545
+        },
+        {
+          "absolute_spectator": 4,
+          "coordinate_count": 600,
+          "exact_stored_normalized_inverse_neumann_diagnostic": {
+            "defect_infinity_upper": 0.011591936776881733,
+            "exact_stored_inverse_difference_infinity_upper": 0.0007614612901313302,
+            "exact_stored_inverse_infinity_upper": 0.06568887536118581,
+            "gamma_guard": 2.6822988274950976e-13,
+            "operator_or_Gram_production_error_included": false,
+            "preconditioner_infinity_upper": 0.06492741407105447
+          },
+          "generalized_eigen_residual": 9.93987895810006e-16,
+          "harmonic_count": 10,
+          "level": 4,
+          "maximum_generalized_eigenvalue": 773297411017.944,
+          "minimum_generalized_eigenvalue": 25.53197339121715,
+          "normalized_inverse_residual": 1.3075860325704934e-05,
+          "normalized_symmetry_defect": 7.087626980580856e-16,
+          "original_inverse_residual": 0.8463909749880545
+        }
+      ],
+      "off_block_derivative_max": 0.0,
+      "side": "incoming"
+    },
+    {
+      "block_records": [
+        {
+          "absolute_spectator": 0,
+          "coordinate_count": 60,
+          "exact_stored_normalized_inverse_neumann_diagnostic": {
+            "defect_infinity_upper": 0.11265528878048343,
+            "exact_stored_inverse_difference_infinity_upper": 0.45000402462051636,
+            "exact_stored_inverse_infinity_upper": 3.994521957130482,
+            "gamma_guard": 2.8421709430404815e-14,
+            "operator_or_Gram_production_error_included": false,
+            "preconditioner_infinity_upper": 3.544517932509965
+          },
+          "generalized_eigen_residual": 7.092132265255131e-16,
+          "harmonic_count": 1,
+          "level": 0,
+          "maximum_generalized_eigenvalue": 1356572688100.2732,
+          "minimum_generalized_eigenvalue": 0.43640551181842924,
+          "normalized_inverse_residual": 0.00024930928321632845,
+          "normalized_symmetry_defect": 4.589742985194574e-16,
+          "original_inverse_residual": 20.694262378954534
+        },
+        {
+          "absolute_spectator": 0,
+          "coordinate_count": 180,
+          "exact_stored_normalized_inverse_neumann_diagnostic": {
+            "defect_infinity_upper": 0.025519157664349593,
+            "exact_stored_inverse_difference_infinity_upper": 0.007278095268683729,
+            "exact_stored_inverse_infinity_upper": 0.28520123447692275,
+            "gamma_guard": 8.17124146124182e-14,
+            "operator_or_Gram_production_error_included": false,
+            "preconditioner_infinity_upper": 0.27792313920823897
+          },
+          "generalized_eigen_residual": 7.16586074687278e-16,
+          "harmonic_count": 3,
+          "level": 2,
+          "maximum_generalized_eigenvalue": 1356572688115.4534,
+          "minimum_generalized_eigenvalue": 5.4125428336004315,
+          "normalized_inverse_residual": 3.200376797362801e-05,
+          "normalized_symmetry_defect": 7.016672157719348e-16,
+          "original_inverse_residual": 1.5289688921893325
+        },
+        {
+          "absolute_spectator": 2,
+          "coordinate_count": 360,
+          "exact_stored_normalized_inverse_neumann_diagnostic": {
+            "defect_infinity_upper": 0.06054407958590539,
+            "exact_stored_inverse_difference_infinity_upper": 0.0215061856387701,
+            "exact_stored_inverse_infinity_upper": 0.35521533708767,
+            "gamma_guard": 1.6164847238544892e-13,
+            "operator_or_Gram_production_error_included": false,
+            "preconditioner_infinity_upper": 0.33370915144889984
+          },
+          "generalized_eigen_residual": 8.844992015609765e-16,
+          "harmonic_count": 6,
+          "level": 2,
+          "maximum_generalized_eigenvalue": 1356572688115.4548,
+          "minimum_generalized_eigenvalue": 5.4126514045391,
+          "normalized_inverse_residual": 4.352087725431941e-05,
+          "normalized_symmetry_defect": 6.209186400852887e-16,
+          "original_inverse_residual": 4.071617291665387
+        },
+        {
+          "absolute_spectator": 0,
+          "coordinate_count": 300,
+          "exact_stored_normalized_inverse_neumann_diagnostic": {
+            "defect_infinity_upper": 0.009209518925206817,
+            "exact_stored_inverse_difference_infinity_upper": 0.0005573002019142058,
+            "exact_stored_inverse_infinity_upper": 0.0605134976582602,
+            "gamma_guard": 1.3500311979443726e-13,
+            "operator_or_Gram_production_error_included": false,
+            "preconditioner_infinity_upper": 0.05995619745634599
+          },
+          "generalized_eigen_residual": 7.920943757310132e-16,
+          "harmonic_count": 5,
+          "level": 4,
+          "maximum_generalized_eigenvalue": 1356572688142.465,
+          "minimum_generalized_eigenvalue": 25.15868136830236,
+          "normalized_inverse_residual": 1.473319451120868e-05,
+          "normalized_symmetry_defect": 5.732548342109241e-16,
+          "original_inverse_residual": 1.58640270064569
+        },
+        {
+          "absolute_spectator": 2,
+          "coordinate_count": 600,
+          "exact_stored_normalized_inverse_neumann_diagnostic": {
+            "defect_infinity_upper": 0.020435917467117336,
+            "exact_stored_inverse_difference_infinity_upper": 0.001398209468691052,
+            "exact_stored_inverse_infinity_upper": 0.06841921684900412,
+            "gamma_guard": 2.6822988274950976e-13,
+            "operator_or_Gram_production_error_included": false,
+            "preconditioner_infinity_upper": 0.06702100738031305
+          },
+          "generalized_eigen_residual": 9.292026278368836e-16,
+          "harmonic_count": 10,
+          "level": 4,
+          "maximum_generalized_eigenvalue": 1356572688142.465,
+          "minimum_generalized_eigenvalue": 25.158434675218366,
+          "normalized_inverse_residual": 2.5785700111994066e-05,
+          "normalized_symmetry_defect": 5.724960331975716e-16,
+          "original_inverse_residual": 2.24947091902857
+        },
+        {
+          "absolute_spectator": 4,
+          "coordinate_count": 600,
+          "exact_stored_normalized_inverse_neumann_diagnostic": {
+            "defect_infinity_upper": 0.020435917467117336,
+            "exact_stored_inverse_difference_infinity_upper": 0.001398209468691052,
+            "exact_stored_inverse_infinity_upper": 0.06841921684900412,
+            "gamma_guard": 2.6822988274950976e-13,
+            "operator_or_Gram_production_error_included": false,
+            "preconditioner_infinity_upper": 0.06702100738031305
+          },
+          "generalized_eigen_residual": 9.354442793937116e-16,
+          "harmonic_count": 10,
+          "level": 4,
+          "maximum_generalized_eigenvalue": 1356572688142.465,
+          "minimum_generalized_eigenvalue": 25.158434675218366,
+          "normalized_inverse_residual": 2.5785700111994066e-05,
+          "normalized_symmetry_defect": 5.724960331975716e-16,
+          "original_inverse_residual": 2.24947091902857
+        }
+      ],
+      "off_block_derivative_max": 0.0,
+      "side": "outgoing"
+    }
+  ]
+}

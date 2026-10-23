@@ -1,0 +1,25 @@
+{
+  "T_coefficient": "[(log i)_vJ-(log r)_vJ]/2",
+  "c": "i/r",
+  "c_J": "-i*r_J/r**2 + i_J/r",
+  "c_v": "-i*r_v/r**2 + i_v/r",
+  "c_vJ": "2*i*r_J*r_v/r**3 + i_vJ/r - (i*r_vJ + i_J*r_v + i_v*r_J)/r**2",
+  "classification": "EXACT_SYMBOLIC_CONSUMPTION__NOT_PHYSICAL_HEAT_EVALUATION",
+  "coefficients": {
+    "c": "i/r",
+    "coefficient_H_P": "(-i*r_J + i_J*r)*(i*r_v - i_v*r)/(2*i*r**3)",
+    "coefficient_H_x": "(i*r_J - i_J*r)/(2*r**2)",
+    "coefficient_H_y": "(i*r_v - i_v*r)/(2*r**2)",
+    "coefficient_T": "-r_vJ/(2*r) + r_J*r_v/(2*r**2) + i_vJ/(2*i) - i_J*i_v/(2*i**2)",
+    "scope": "EXACT_CONDITIONAL_LENGTH_TERM__NATIVE_HEAT_COTANGENTS_NOT_GENERATED"
+  },
+  "composed_term": "H_J*(i*r_v - i_v*r)/(2*r**2) + H_P*(-i*r_J + i_J*r)*(i*r_v - i_v*r)/(2*i*r**3) + H_v*(i*r_J - i_J*r)/(2*r**2) + T*(-r_vJ/(2*r) + r_J*r_v/(2*r**2) + i_vJ/(2*i) - i_J*i_v/(2*i**2))",
+  "heat_trace_meanings": {
+    "H_J": "STr(exp(-cP)P_J)",
+    "H_P": "STr(P exp(-cP))",
+    "H_v": "STr(exp(-cP)P_v)",
+    "T": "STr exp(-cP)"
+  },
+  "identity_residual": "0",
+  "native_cotangents_evaluated": false
+}

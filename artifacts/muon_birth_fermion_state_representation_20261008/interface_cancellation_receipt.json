@@ -1,0 +1,659 @@
+{
+  "classification": "READ_ONLY_PEI06_PEI07_FERMION_COVARIANCE_CONSUMER_AND_CANCELLATION_ADJUDICATION",
+  "starting_head": "1d94ce8ed77f8bfe1f13c729dd3d8885dbee5b69",
+  "scientific_reference": "524ed90689bd5923c249bba2e699abf627e703cd",
+  "target": "I_PHYS_MUON_BIRTH_TRANSFER_VALUE",
+  "scope": {
+    "existing_57_row_geometric_reset_frozen": true,
+    "reset_recomputed": false,
+    "numerical_covariance_selected": false,
+    "numerical_spinor_ray_selected": false,
+    "control_state_or_matrix_introduced": false,
+    "physical_full_field_transfer_passed": false,
+    "receipt_kind": "SOURCE_AUDIT_AND_EXACT_CONDITIONAL_ALGEBRA__NO_NUMERICAL_STATE_OR_OPERATOR_KERNEL_EVALUATION"
+  },
+  "representation_adjudication": {
+    "owned_physical_fermion_field": "Second-quantized collective/topological Grassmann sector with canonically defined positive kinetic residue.",
+    "owned_state_datum": "A self-dual CAR Cauchy covariance C on the completed action-owned Dirac Cauchy-data Hilbert space, not a c-number one-point field.",
+    "conditions": [
+      "C=C^dagger",
+      "0<=C<=I",
+      "C+Gamma C Gamma=I",
+      "C^2=C only for a pure state",
+      "Hadamard positive-frequency principal symbol modulo smoothing",
+      "frozen family projector compatibility",
+      "AE2 reset compatibility"
+    ],
+    "linear_trace_role": "Gamma0 Psi and transmit_trace specify the operator-valued field/variation domain. A vector accepted by a finite helper does not select the physical quantum state representation.",
+    "external_one_particle_ray_required_by_PEI06_or_PEI07": false,
+    "proof_of_external_ray_requirement_present": false,
+    "zero_one_point_implies_absent_muon": false,
+    "arbitrary_nonzero_one_point_manufactures_particle": false,
+    "first_quantized_ray_must_not_be_inferred_from": [
+      "family mode (5,2)",
+      "eta radial zero mode",
+      "odd-FR collective rotor",
+      "mechanical formation normal",
+      "arbitrary basis column"
+    ],
+    "citations": [
+      "foundational_fermion:foundational_action_payload",
+      "state_class:cauchy_covariance_selection_contract",
+      "reset_car:reset_hadamard_transport_theorem"
+    ]
+  },
+  "covariance_and_CAR_conventions": {
+    "retained_two_point_convention": [
+      "W_plus(t,s)=V_t C V_s^dagger",
+      "W_minus(t,s)=V_t (I-C) V_s^dagger",
+      "G_R(t,s)=-i theta(t-s) V_t V_s^dagger",
+      "G_F(t,s)=-i V_t [C-theta(s-t) I] V_s^dagger",
+      "delta G_F=-i V_t delta C V_s^dagger"
+    ],
+    "caution": "The retained unordered and time-ordered formulas determine where C versus I-C occurs. Do not replace every barPsi A Psi by Tr(C A) without obtaining its ordering, CAR conjugation, geometric dual, and self-dual doubling from the actual action kernel.",
+    "action_normalization": "The overall positive kinetic residue is absorbed in the local Grassmann field definition; AE2 uses the retained symmetrized Dirac density and no independent seam matter density.",
+    "exact_absolute_renormalized_current_or_stress_trace_formula_claimed": false,
+    "exact_normal_ordering_or_point_split_subtraction_selected_here": false,
+    "relative_state_response": "For an already derived finite/smeared affine observable F(C)=k+Tr(B C), delta F=Tr(B delta C). This is a conditional response representation, not an identification of every BHSM bilinear with this trace.",
+    "conditional_cancellation_needs_no_new_ordering": "An exact zero oriented kernel cancels before a covariance is selected. Matched covariant subtraction/local counterterms must be transported too for an absolute renormalized value claim.",
+    "citations": [
+      "observable_audit:causal_and_time_ordered_conventions",
+      "observable_audit:affine_response",
+      "foundational_fermion:foundational_action_payload",
+      "ae2:action_definition"
+    ]
+  },
+  "classified_consumers": [
+    {
+      "id": "AE2_GAMMA0_TRANSMISSION",
+      "classification": [
+        "LINEAR_TRACE"
+      ],
+      "actual_consumer": "Gamma0_child(Psi)=U_R Gamma0_event(Psi), with the same law on admissible variations; transmit_trace(event_trace, reset_lift).",
+      "state_requirement": "Operator/domain relation; no nonzero classical one-point or selected covariance needed to state it.",
+      "value_status": "OWNED_TRANSMISSION_LAW__NO_ACTION_SELECTED_STATE_VALUE",
+      "citations": [
+        "ae2:transmit_trace",
+        "ae2:action_definition"
+      ]
+    },
+    {
+      "id": "AE2_DIRAC_INTERNAL_GREEN_FORM",
+      "classification": [
+        "GREEN_PAIRING"
+      ],
+      "actual_consumer": "psi_-^dagger J_- phi_-+(U psi_-)^dagger J_+(U phi_-), J_+=-U J_- U^dagger.",
+      "state_requirement": "None for cancellation; identity holds for every pair of admissible traces and therefore every admissible covariance contraction.",
+      "value_status": "EXACT_OWNED_CANCELLATION",
+      "citations": [
+        "ae2:opposite_normal_green_residual",
+        "ae2:action_definition"
+      ]
+    },
+    {
+      "id": "GAUGE_AND_GLOBAL_CHARGE_FERMION_SOURCE",
+      "classification": [
+        "BILINEAR_CURRENT",
+        "TWO_POINT/COVARIANCE"
+      ],
+      "actual_consumer": "J_plus=bar(Psi_L) gamma T_plus Psi_L; J_minus=J_plus^dagger; charged-lepton electromagnetic Q_l=-I4_spinor tensor I3_family.",
+      "state_requirement": "Quantum expectation uses the ordered two-point function, even when the one-point expectation vanishes. Individual current values can depend on the smooth covariance completion.",
+      "value_status": "CURRENT_OPERATORS_OWNED__ACTUAL_QUANTUM_CURRENT_VALUES_UNEVALUATED",
+      "matched_flux_status": "CONDITIONAL_CANCELLATION_IF_CURRENT_GENERATORS_NORMAL_FORMS_AND_PAIRINGS_ARE_MATCHED; electromagnetic centrality supplies charge-generator compatibility, not all sourced event rows.",
+      "citations": [
+        "weak_current:weak_charged_representation_ledger",
+        "weak_current:lowest_weyl_coexact_su2l_charged_source_jets",
+        "em_current:charged_lepton_qem_ledger"
+      ]
+    },
+    {
+      "id": "FERMION_NORMAL_STRESS_AND_TRACTION",
+      "classification": [
+        "STRESS_ENERGY",
+        "TWO_POINT/COVARIANCE"
+      ],
+      "actual_consumer": "Metric/domain variation of the same Dirac action; [T_nn]_resolved=0 including profile stress on the resolved smooth Sigma_enc.",
+      "state_requirement": "Renormalized stress expectations consume differentiated two-point data and its smooth completion unless the consumed oriented response annihilates all allowed variations.",
+      "value_status": "RESOLVED_INTERNAL_INTERFACE_LAW_OWNED__FULL_E1_RESET_STRESS_KERNEL_NOT_EVALUATED",
+      "matched_flux_status": "CONDITIONAL_CANCELLATION_REQUIRES_FULL_OPERATOR_DERIVATIVE_BACKGROUND_MEASURE_AND_DOMAIN_CONTACT_INTERTWINING",
+      "citations": [
+        "resolved_interface:interface_variation_ledger",
+        "m4_action:action_composition_contract",
+        "foundational_fermion:foundational_action_payload"
+      ]
+    },
+    {
+      "id": "PEI07_FULL_CANONICAL_EVENT_BALANCE",
+      "classification": [
+        "LINEAR_TRACE",
+        "BILINEAR_CURRENT",
+        "STRESS_ENERGY",
+        "TWO_POINT/COVARIANCE"
+      ],
+      "actual_consumer": "H_pp q+H_pc c+C_response^dagger lambda+J=0; H_cp q+H_cc^R c=0; C_response q=d. Pi_parent+Pi_child_return+J+C_response^dagger lambda=0.",
+      "state_requirement": "Physical nonzero sector blocks, sources, response data and same-domain contacts. This assembled equation is not only the free internal AE2 Green seam.",
+      "value_status": "IDENTITY_DERIVED__FULL_PHYSICAL_NONZERO_BLOCKS_AND_VALUES_UNEVALUATED",
+      "citations": [
+        "event_flux:solve_retarded_event_kkt",
+        "event_flux:assembly_contract",
+        "enclosure_state:reconciled_identification_rows"
+      ]
+    },
+    {
+      "id": "PEI07_SYMMETRY_NOETHER_CONTRACTION",
+      "classification": [
+        "BILINEAR_CURRENT",
+        "STRESS_ENERGY",
+        "TWO_POINT/COVARIANCE"
+      ],
+      "actual_consumer": "For anti-Hermitian T, each term is 2 Re <Tq,Pi_i>; sum_i Pi_i is the full event traction balance.",
+      "state_requirement": "After obtaining the physical traction/source response kernel, its covariance expectation and/or allowed covariance sensitivity. The classical finite q helper does not prove that q is the physical fermion one-particle state.",
+      "value_status": "CONTRACTION_IDENTITY_DERIVED__PHYSICAL_KERNEL_AND_VALUES_UNEVALUATED",
+      "matched_flux_status": "CONDITIONAL_ZERO_IF_TOTAL_ORIENTED_PHYSICAL_KERNEL_IS_ZERO_OR_ANNIHILATES_ALL_ALLOWED_COVARIANCE_VARIATIONS",
+      "citations": [
+        "event_flux:canonical_noether_flux_balance",
+        "event_flux:solve_retarded_event_kkt"
+      ]
+    },
+    {
+      "id": "CURRENT_C2_DRESSED_TWO_POINT_AND_FINITE_DETERMINANT",
+      "classification": [
+        "TWO_POINT/COVARIANCE"
+      ],
+      "actual_consumer": "One common boundary state for finite fermion determinants, dressed charged-lepton two-point operator and finite HS response.",
+      "state_requirement": "Selected covariance or target-specific proof of independence from every allowed smooth completion.",
+      "value_status": "STATE_CLASS_AND_PRINCIPAL_SYMBOL_OWNED__FINITE_COMPLETION_UNSELECTED",
+      "citations": [
+        "outer_state_contract:physical_outer_calderon_contract",
+        "state_class:cauchy_covariance_selection_contract",
+        "c2_dirac:green_operator_feasibility"
+      ]
+    },
+    {
+      "id": "LATER_NATIVE_PAULI_EXTERNAL_LEGS",
+      "classification": [
+        "EXTERNAL_ONE_PARTICLE_STATE"
+      ],
+      "actual_consumer": "Moving on-shell injection, normalization, mass-dependent dual and external-state/source-pullback terms in a physical signed-transfer Pauli extraction.",
+      "state_requirement": "Action-owned on-shell normalized external-state/pole data when that readout is performed; not a reason to install a classical nonzero incoming birth field.",
+      "value_status": "LATER_READOUT_DEPENDENCY_UNEVALUATED__NOT_A_PEI06_OR_PEI07_EXTERNAL_RAY_OWNER",
+      "citations": [
+        "native_family:external_state_pullback",
+        "c2_dirac:green_operator_feasibility"
+      ]
+    }
+  ],
+  "exact_owned_green_cancellation": {
+    "hypotheses": [
+      "The owned AE2 field and admissible-variation graph use the same unitary U.",
+      "The child outward-normal Green form is J_+=-U J_- U^dagger."
+    ],
+    "identity": "U^dagger J_+ U+J_-=0.",
+    "proof": "(U psi)^dagger[-U J_- U^dagger](U phi)=-psi^dagger J_- phi by U^dagger U=I.",
+    "covariance_lift": "For any compatible covariance C_+=U C_- U^dagger, the oriented Green contraction is zero by the same zero kernel; no smooth Hadamard completion is selected.",
+    "independent_fermion_seam_density": "S_Sigma,F,AE2=0 is owned because the reset is internal glue; this does not set bulk currents, stress, response kernels or all contact jets to zero.",
+    "status": "EXACT_OWNED_INTERNAL_GREEN_LAW__DO_NOT_BLOCK_ON_STATE_SELECTION",
+    "citations": [
+      "ae2:opposite_normal_green_residual",
+      "ae2:action_definition"
+    ]
+  },
+  "conditional_current_traction_noether_cancellation": {
+    "notation": "A_- and A_+ are the actual one-body/smeared response kernels including outward orientation and the compatible Green/Hilbert pairings. U=U_R tensor I_family with the CAR conjugate-charge extension.",
+    "required_oriented_kernel": "Delta_A=A_-+U^dagger A_+ U.",
+    "sufficient_condition": "Delta_A=0, equivalently A_+=-U A_- U^dagger when outward-normal signs are already in A.",
+    "alternate_unoriented_convention": "If A_child=U A_event U^dagger denotes the unoriented operator, use opposite-normal subtraction; the same oriented Delta_A is zero.",
+    "covariance_algebra": "Tr(C_- A_-)+Tr(C_+ A_+)=Tr[C_-(A_-+U^dagger A_+U)] for a legitimately trace-class/smeared affine contraction and C_+=U C_- U^dagger.",
+    "ordering_independence": "The I-C ordered contraction cancels under the same zero kernel too. In a self-dual quadratic representation, all fixed normalization/conjugate-charge factors are carried consistently on both sides.",
+    "state_independence_test": "For a nonzero Delta_A, the remaining smooth dependence is tested by its action-derived response on every admissible smoothing X: X=X^dagger, Gamma X Gamma=-X, and the required family/charge compatibility. A nonzero kernel alone does not prove dependence if it annihilates this allowed variation space.",
+    "limitations": [
+      "A selected covariance does not establish operator intertwining.",
+      "A finite witness or one real Bogoliubov angle does not prove full Hadamard-class independence.",
+      "Full derivative/contact kernels can be nonlinear in the state or background; do not freeze a gradient and apply an affine theorem globally.",
+      "In continuum contractions use the actual smearing, pairing and matched subtraction; cyclicity of an undefined divergent trace is not a proof."
+    ],
+    "status": "EXACT_CONDITIONAL_ALGEBRA__NOT_A_FULL_PHYSICAL_E1_OPERATOR_MATCH_CERTIFICATE",
+    "citations": [
+      "observable_audit:affine_response",
+      "observable_audit:physical_response_scope",
+      "event_flux:canonical_noether_flux_balance"
+    ]
+  },
+  "unknown_full_event_kernel": {
+    "status": "UNEVALUATED__NOT_IDENTIFIED_WITH_THE_OWNED_GREEN_NORMAL_FORM",
+    "known": [
+      "AE2 spin/gauge bundle reset and Dirac principal-symbol intertwining",
+      "frozen family-projector and family-mass commutation",
+      "resolved internal material-interface smooth action laws",
+      "full six-sector event stationarity and Noether assembly identities"
+    ],
+    "not_established_here": [
+      "Actual E1 parent/child full current/traction/Noether response kernels obey Delta_A=0.",
+      "Full lower-order covariant derivative/background/Higgs/gauge pullbacks and their metric/source/domain derivatives intertwine at this exact birth reset.",
+      "Returned future-child, explicit source, response-multiplier and mixed/contact terms cancel solely from U_R unitarity.",
+      "Matched absolute renormalized subtraction/contact terms have been evaluated on this physical E1 full-field domain.",
+      "Any surviving full event response annihilates every allowed smooth covariance variation."
+    ],
+    "logical_next_step": "Evaluate or derive the actual consumed oriented kernel/allowed covariance response before declaring this birth combination state-dependent. If it vanishes, it needs no selected state. If a dependence survives, its input is the single action-selected incoming covariance described below.",
+    "selected_covariance_sufficient_to_pass_PEI06_PEI07": false,
+    "owned_green_matching_reopened": false,
+    "physical_full_field_domain_claimed_complete": false,
+    "citations": [
+      "event_flux:assemble_stratified_direct_sum",
+      "event_flux:solve_retarded_event_kkt",
+      "event_flux:canonical_noether_flux_balance",
+      "enclosure_state:reconciled_identification_rows",
+      "c2_dirac:chiral_operator_assembly"
+    ]
+  },
+  "state_dependence_classes": [
+    {
+      "class": "STATE_INDEPENDENT",
+      "objects": [
+        "AE2 linear field/variation domain",
+        "maximal-isotropic/opposite-normal Green cancellation",
+        "free quadratic CAR anticommutator and retarded propagator on a fixed owned Dirac history",
+        "a fully matched zero oriented observable kernel"
+      ],
+      "limits": "Interacting/dressed/composite retarded responses are not covered by the free quadratic identity.",
+      "citations": [
+        "ae2:action_definition",
+        "ae2:opposite_normal_green_residual",
+        "observable_audit:causal_and_time_ordered_conventions"
+      ]
+    },
+    {
+      "class": "HADAMARD_PRINCIPAL_OR_SINGULAR_PART_ONLY",
+      "objects": [
+        "positive-frequency Dirac principal-symbol class",
+        "local universal short-distance singularity class",
+        "reset transport of that singularity/polarization class"
+      ],
+      "limits": "These do not choose the finite smooth bisolution or establish complete finite current/stress/dressed-pole values.",
+      "citations": [
+        "state_class:cauchy_covariance_selection_contract",
+        "reset_car:reset_hadamard_transport_theorem"
+      ]
+    },
+    {
+      "class": "SMOOTH_COVARIANCE_COMPLETION_CAN_SURVIVE",
+      "objects": [
+        "individual quantum bilinear current expectations",
+        "renormalized stress/traction finite parts",
+        "time-ordered Feynman kernel",
+        "finite scalar/fermion determinant responses",
+        "dressed poles/residues and unknown native injection/domain/relative completion"
+      ],
+      "limits": "Dependence of each particular target must be established from its consumed response; the actual birth combination has not been proved to depend or be independent.",
+      "citations": [
+        "observable_audit:causal_and_time_ordered_conventions",
+        "observable_audit:physical_response_scope",
+        "outer_state_contract:physical_outer_calderon_contract",
+        "native_family:state_and_paired_sensitivity"
+      ]
+    },
+    {
+      "class": "EXTERNAL_ONE_PARTICLE_STATE",
+      "objects": [
+        "later pole-normalized on-shell external legs used by physical Pauli extraction"
+      ],
+      "limits": "A covariance state and an external one-particle insertion are different types. No retained PEI06/07 consumer proves the need for a classical incoming ray.",
+      "citations": [
+        "native_family:external_state_pullback",
+        "c2_dirac:green_operator_feasibility"
+      ]
+    }
+  ],
+  "reset_family_and_localization_types": {
+    "reset_law": "C_E1^+=U_reset C_C1,E1^- U_reset^dagger; U_reset=U_R tensor I_family, with its self-dual/conjugate-charge extension.",
+    "reset_Gamma_intertwining": "U_reset Gamma_-=Gamma_+ U_reset (antiunitary relation); matrix form U G_-=G_+ conjugate(U).",
+    "reset_preserves": [
+      "Hermiticity",
+      "0<=C<=I",
+      "self-dual CAR",
+      "purity if input pure",
+      "frozen family compatibility",
+      "Hadamard principal/wavefront class"
+    ],
+    "family_restriction": "C_mu=Pi_hat_mu C Pi_hat_mu on H_mu=range(Pi_hat_mu), where Pi_hat_mu includes the corresponding conjugate-charge/self-dual sector and is Gamma-invariant.",
+    "family_restricted_CAR_identity": "C_mu+Gamma_mu C_mu Gamma_mu=I_H_mu=Pi_hat_mu, not ambient I.",
+    "family_purity": "If the owned family-compatible state satisfies [C,Pi_hat_mu]=0, pure C restricts to a pure C_mu. Compression without this compatibility need not preserve purity.",
+    "localization_weight_caution": "T_enc=(P_D L_sigma) U_reset Pi_hat_mu is not generally unitary or isometric. T_enc C T_enc^dagger is a localized/compressed two-point kernel with induced anticommutator T_enc T_enc^dagger, not automatically a canonical CAR covariance with ambient identity. Its physical interpretation must use the owned induced pairing/restriction; do not promote L_sigma to a unitary state automorphism.",
+    "new_family_selector_or_localization_parameter_added": false,
+    "citations": [
+      "reset_car:transport_self_dual_covariance",
+      "reset_car:reset_hadamard_transport_theorem",
+      "enclosure_state:transport_composition_contract"
+    ]
+  },
+  "upstream_covariance_unification": {
+    "conditional_surviving_state_operand": "C_C1,E1^-^BHSM",
+    "type": "Action-selected self-dual CAR Cauchy covariance on the incoming C1 E1^- slice in the already-owned Dirac Hilbert space.",
+    "actual_selected_incoming_covariance": null,
+    "actual_selected_child_covariance": null,
+    "one_source_chain": "C1 incoming Cauchy covariance -> AE2 same-event unitary reset -> C2 causal Cauchy evolution -> charged-lepton muon family restriction.",
+    "notation": "V_C2(Sigma,E1^+) is the action-owned causal Cauchy evolution on the same physical C2 history; Sigma here is a Cauchy slice, distinct from the material level set Sigma_enc.",
+    "equation": "C_mu,Sigma^BHSM=Pi_hat_mu V_C2(Sigma,E1^+) U_reset C_C1,E1^-^BHSM U_reset^dagger V_C2(Sigma,E1^+)^dagger Pi_hat_mu.",
+    "retained_operand_relation": "C_mu,Sigma^BHSM names the muon restriction of the existing missing current-C2 Cauchy covariance. The existing source contract already requires reset compatibility and C2 evolution; this equation locates its upstream source, rather than creating a second independent selector.",
+    "equation_scope": "Conditional on one fixed same-action physical history/domain and the already-owned reset and causal propagation. No numerical selected covariance or actual complete interacting propagator is fabricated.",
+    "transport_selects_unique_state": false,
+    "independent_C1_and_C2_state_selection_problems": 1,
+    "selected_covariance_alone_supplies_physical_birth_or_mechanical_formation_mode": false,
+    "mechanical_mode_distinction": "Mechanical psi_mu^+ must be independently selected from the complete same-domain formation/kinetic operator; it is neither the covariance C nor an operator-valued matter trace Psi.",
+    "citations": [
+      "state_class:cauchy_covariance_selection_contract",
+      "reset_car:reset_hadamard_transport_theorem",
+      "transport_theory:reset_and_causal_transport",
+      "transport_theory:selection_is_not_transport",
+      "c2_dirac:green_operator_feasibility",
+      "outer_state_contract:physical_outer_calderon_contract"
+    ]
+  },
+  "retained_selector_scope": {
+    "audit_status": "NO_SELECTED_COVARIANCE_ADDED",
+    "existing_absence_result": "The retained classical action has no C or smooth K configuration variable and no Euler-Lagrange equation selecting its smooth covariance part.",
+    "audited_candidates": [
+      "reset unitary",
+      "time orientation",
+      "Hadamard condition",
+      "instantaneous diagonalization",
+      "finite-order adiabatic vacuum",
+      "KMS temperature",
+      "Euclidean cap/reflection positivity",
+      "in/out asymptotic condition",
+      "proper-history resolvent parameter"
+    ],
+    "chosen_candidate": null,
+    "downstream_implication": "If state dependence survives in an actual consumed physical response, the existing single upstream/current-C2 state-selection operand remains open. It is not required for the exact Green cancellation and is not sufficient by itself to close the remaining active sector/block/domain/contact conditions.",
+    "citations": [
+      "state_class:retained_state_selector_audit",
+      "selector_no_go:fermion_selector_configuration_space"
+    ]
+  },
+  "source_refs": [
+    {
+      "id": "ae2",
+      "path": "src/bhsm/interface/action_extension_global_spin_reset_ae2.py",
+      "sha256": "cc46df6372196e610ebfe0921cbb7f438f08d645f5b144faebdf1c6d2a991ccb",
+      "bytes": 8073,
+      "spans": {
+        "transmit_trace": [
+          51,
+          60
+        ],
+        "opposite_normal_green_residual": [
+          63,
+          85
+        ],
+        "action_definition": [
+          156,
+          194
+        ]
+      },
+      "hash_scope": "RAW_FILE_BYTES"
+    },
+    {
+      "id": "reset_car",
+      "path": "src/bhsm/interface/ae31_c2_reset_hadamard_transport.py",
+      "sha256": "0e01844141c4e91ade8c4057b4f1b94903b1fd4c5395404ef5cc3464a5ab01c2",
+      "bytes": 9713,
+      "spans": {
+        "transport_self_dual_covariance": [
+          36,
+          144
+        ],
+        "reset_hadamard_transport_theorem": [
+          183,
+          217
+        ]
+      },
+      "hash_scope": "RAW_FILE_BYTES"
+    },
+    {
+      "id": "state_class",
+      "path": "src/bhsm/interface/ae31_c2_fermion_hadamard_state_class.py",
+      "sha256": "fcc2372382f794383208ea7164704b42e985b291df17f32f90846ab48961591d",
+      "bytes": 8416,
+      "spans": {
+        "cauchy_covariance_selection_contract": [
+          68,
+          100
+        ],
+        "retained_state_selector_audit": [
+          103,
+          168
+        ]
+      },
+      "hash_scope": "RAW_FILE_BYTES"
+    },
+    {
+      "id": "resolved_interface",
+      "path": "src/bhsm/interface/ae3_reciprocal_join_localization.py",
+      "sha256": "1c73e9b6ff5a6d15ca0f103013364b2bc5de9815cf0408c1825ebdf03866603c",
+      "bytes": 31411,
+      "spans": {
+        "interface_variation_ledger": [
+          237,
+          267
+        ],
+        "dependency_ledgers": [
+          270,
+          321
+        ]
+      },
+      "hash_scope": "RAW_FILE_BYTES"
+    },
+    {
+      "id": "event_flux",
+      "path": "src/bhsm/interface/ae4_c2_stratified_event_flux_assembly.py",
+      "sha256": "145486b4b279dccf1994c5a0991fd29a57290d20e5460ba193810e0b260b6bce",
+      "bytes": 12946,
+      "spans": {
+        "assemble_stratified_direct_sum": [
+          60,
+          103
+        ],
+        "solve_retarded_event_kkt": [
+          106,
+          204
+        ],
+        "canonical_noether_flux_balance": [
+          207,
+          241
+        ],
+        "assembly_contract": [
+          244,
+          260
+        ]
+      },
+      "hash_scope": "RAW_FILE_BYTES"
+    },
+    {
+      "id": "weak_current",
+      "path": "src/bhsm/interface/ae31_c2_coexact_su2l_charged_current.py",
+      "sha256": "52199e2d6e98524d2086a35cd7fd338e9ed93a1c4fb7c342a36c004d888ecf59",
+      "bytes": 6179,
+      "spans": {
+        "weak_charged_representation_ledger": [
+          21,
+          52
+        ],
+        "lowest_weyl_coexact_su2l_charged_source_jets": [
+          55,
+          91
+        ]
+      },
+      "hash_scope": "RAW_FILE_BYTES"
+    },
+    {
+      "id": "em_current",
+      "path": "src/bhsm/interface/ae31_c2_local_em_ward_identity.py",
+      "sha256": "0834b09f176c76efab17a95d7de3374184afe25b961ef24a1c1c3d6c71c4d5ef",
+      "bytes": 7869,
+      "spans": {
+        "charged_lepton_qem_ledger": [
+          53,
+          81
+        ]
+      },
+      "hash_scope": "RAW_FILE_BYTES"
+    },
+    {
+      "id": "c2_dirac",
+      "path": "src/bhsm/interface/ae31_c2_chiral_green_domain.py",
+      "sha256": "98fdf6a943a8934c7d2bf82f3510fc5ea30226aac60a24a965e7aa28874ac146",
+      "bytes": 8799,
+      "spans": {
+        "domain_provenance_reconciliation": [
+          25,
+          59
+        ],
+        "chiral_operator_assembly": [
+          62,
+          90
+        ],
+        "green_operator_feasibility": [
+          117,
+          169
+        ]
+      },
+      "hash_scope": "RAW_FILE_BYTES"
+    },
+    {
+      "id": "outer_state_contract",
+      "path": "src/bhsm/interface/ae31_c2_calderon_trace_skeleton.py",
+      "sha256": "9e715d41286b2e96a526226d2c83163a34409d6fd603a353fd3d5cdfb9961fc1",
+      "bytes": 8360,
+      "spans": {
+        "physical_outer_calderon_contract": [
+          123,
+          157
+        ]
+      },
+      "hash_scope": "RAW_FILE_BYTES"
+    },
+    {
+      "id": "m4_action",
+      "path": "src/bhsm/interface/ae31_c2_intrinsic_m4_lepton_action.py",
+      "sha256": "f3fee1ef24a3f13ef94d4ce5b146f9ac7a827045e369819b35ee8af5ccf0678a",
+      "bytes": 10856,
+      "spans": {
+        "action_composition_contract": [
+          29,
+          63
+        ],
+        "charged_lepton_yukawa_operator": [
+          66,
+          88
+        ]
+      },
+      "hash_scope": "RAW_FILE_BYTES"
+    },
+    {
+      "id": "selector_no_go",
+      "path": "src/bhsm/interface/ae31_c2_outer_calderon_action_no_go.py",
+      "sha256": "36b1f993d5b271460f879a1b79f86c4e211406c4a2ee0442a0eccfbd2f042083",
+      "bytes": 7851,
+      "spans": {
+        "fermion_selector_configuration_space": [
+          39,
+          81
+        ]
+      },
+      "hash_scope": "RAW_FILE_BYTES"
+    },
+    {
+      "id": "enclosure_state",
+      "path": "src/bhsm/interface/ae4_current_c2_physical_enclosure_state_integration.py",
+      "sha256": "b4fb189c0b5c0e9cebd84b6ff46a102e6d5fc9b40f26dfe0fe14e59fc97ba46c",
+      "bytes": 7402,
+      "spans": {
+        "transport_composition_contract": [
+          20,
+          44
+        ],
+        "reconciled_identification_rows": [
+          47,
+          95
+        ]
+      },
+      "hash_scope": "RAW_FILE_BYTES"
+    },
+    {
+      "id": "foundational_fermion",
+      "path": "src/bhsm/interface/completion/foundational_dirac_spin_glue_v14_45.py",
+      "sha256": "ad05ede643af517ded29823b6f5d3076ae64bc2e985ebf500ba48564ad8c8015",
+      "bytes": 20770,
+      "spans": {
+        "foundational_action_payload": [
+          92,
+          134
+        ]
+      },
+      "hash_scope": "RAW_FILE_BYTES"
+    },
+    {
+      "id": "observable_audit",
+      "path": "theory/ae31_c2_state_observable_audit.md",
+      "sha256": "f312a13a2381e93f7ad03a899d2dd0022bdd9fe51500e1d62b49f4610718019a",
+      "bytes": 9388,
+      "spans": {
+        "affine_response": [
+          61,
+          108
+        ],
+        "causal_and_time_ordered_conventions": [
+          134,
+          164
+        ],
+        "physical_response_scope": [
+          166,
+          192
+        ]
+      },
+      "hash_scope": "RAW_FILE_BYTES"
+    },
+    {
+      "id": "native_family",
+      "path": "theory/muon_native_family_difference_20261006.md",
+      "sha256": "2cdae3cb415fa5c1be23f67f3c84f4e62c8a8019253ebe53e680621967e5c929",
+      "bytes": 14781,
+      "spans": {
+        "state_and_paired_sensitivity": [
+          233,
+          248
+        ],
+        "external_state_pullback": [
+          250,
+          262
+        ]
+      },
+      "hash_scope": "RAW_FILE_BYTES"
+    },
+    {
+      "id": "transport_theory",
+      "path": "theory/ae31_c2_reset_hadamard_transport.md",
+      "sha256": "8180236b5543f87b99250dd19e6722a3150b00a94de57f129211e55a143716e4",
+      "bytes": 2999,
+      "spans": {
+        "reset_and_causal_transport": [
+          5,
+          38
+        ],
+        "selection_is_not_transport": [
+          41,
+          79
+        ]
+      },
+      "hash_scope": "RAW_FILE_BYTES"
+    }
+  ],
+  "validation_scope": {
+    "static_source_bytes_and_symbols_only": true,
+    "no_state_or_matrix_control_evaluation": true,
+    "no_new_reset_replay": true,
+    "conditional_identities_proved_by_unitarity_and_the_owned_trace_graph": true,
+    "full_physical_cancellation_computed": false,
+    "physical_a_mu_or_g_mu_computed": false
+  }
+}

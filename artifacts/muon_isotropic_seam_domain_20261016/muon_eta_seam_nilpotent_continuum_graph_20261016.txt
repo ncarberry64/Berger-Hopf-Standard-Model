@@ -1,0 +1,338 @@
+NORMALIZED ETA-HIGGS SEAM: EXACT NILPOTENT WEAK JUMP AND ITS DOMAIN SCOPE
+
+This derives a concrete regular first-order transmission graph from the
+provided trace action under its distributional Euler interpretation. It
+also checks that interpretation against the literal older global-spin
+transmission statement. No new coefficient, trace average, Legendre term,
+UV fermion, numerical control, or retarded exterior is selected.
+
+Repository:
+C:/Users/carbe/Downloads/BHSM_muon_parent_maxwell_worktree_20261001
+
+1. Strongest originating operands
+
+completion/foundational_dirac_spin_glue_v14_45.py:93-135 supplies the D5
+collar action and the once-only ordered seam
+
+ S_H=-integral dmu4 [bar(Psi_+) Y H Psi_- + h.c.].
+
+Its full localized matrix M18 is off-diagonal between the rank12 L and
+rank6 e_R sectors. It is not a second bulk Higgs mass. The normal-mode
+pullback already gives the intrinsic kinetic operator and unchanged Y.
+
+muon_full_d5_localized_lepton_trace.py:156-204 supplies the unbounded
+normalized WALL POINT trace, with the full384 carrier and its complement:
+
+ B_eta=W^dagger S_eta^-1/u_R,eta,    E_eta=u_R,eta S_eta W.
+
+The dagger on the fixed real W here equals its literal transpose. Source
+coefficients and analytic left fields are not conjugated by this notation.
+At line207 the explicit Dirac-bar left map is Cbar_eta=S_eta Gamma0 W/u_L,eta.
+Exactly one Gamma0 is used in its canonical/Riesz conversion. On a real
+physical slice, with u_L=u_R^*, Gamma0 Cbar_eta=B_eta^dagger. This identity
+uses S^dagger Gamma0=Gamma0 S^-1. It is not a prescription for conjugating
+independent complex analytic source slots.
+
+muon_holomorphic_d5_trace_action.py:272-337 explicitly constructs
+
+ B_tot=[P_L B_+, P_R B_-],
+ Cbar_tot=[Cbar_+ P_L; Cbar_- P_R],
+ seam=-rho Cbar_tot M18 B_tot.
+
+P_L+P_R=I18, with ranks12 and6. The finite full-field border retains every
+2d-18 complementary row. The flag once_only_Higgs_seam_no_second_kinetic
+is true. No independent intrinsic kinetic action is appended below.
+
+The actual bulk first-order Green coefficient is independently exported
+at lines489-518. In the fixed material radial chart it is
+
+ Jbar=i R^3 Gamma0(eps N Gamma4-C shift Gamma0).
+
+On the real timelike wall this equals i rho Gamma0 Gamma_N in the same
+proper wall measure convention. This fixes its orientation and density;
+neither an arbitrary J nor a bare radial derivative is substituted.
+
+2. Common geometric fibre and the exact one-sided source trace
+
+Let T_cw be the existing geometric Spin-times-SM transition from the plus
+fibre to the minus fibre. It is a chart/bundle map, not yet a physical
+limiting-trace jump. Use the plus fibre as the common384-dimensional one:
+
+ x=gamma_+ Psi_+,                  y=T_cw^-1 gamma_- Psi_-.
+
+Let J denote the plus outward Green matrix, with the normal coordinate
+increasing from the plus region into the minus region. The other outward
+form, pulled to this fibre with its actual measure, is -J:
+
+ T_cw^dagger J_- T_cw=-J.
+
+The action's actual, asymmetric one-sided trace is
+
+ q=P_L B_+ x+P_R B_- T_cw y.                              (1)
+
+Define the common map
+
+ B0=P_L B_+ + P_R B_- T_cw.                               (2)
+
+For a smooth globally transmitted LEFT test, both limiting values are
+the same common test v, so its normalized trace is B0 v. Accordingly the
+surface Euler source in the common bulk pairing is B0^dagger rho M18 q
+on the real slice. This is obtained by differentiating the original
+ordered seam once in its left argument. There is no factor1/2 on M18
+and no extra Gamma0.
+
+The scalar density rho here is the same surface_density used by the
+action. J already has its proper wall density. Thus later J^-1 rho is
+not an extra normalization. Coordinate changes must pull both to the
+same wall measure, rather than rescaling a field to force equality.
+
+3. Source-derived isotropy gives nilpotency, including the full LR trace
+
+The companion derivation muon_owned_current_trace_polarization_20261016.txt
+proves B_eta J_eta^-1 B_eta^dagger=0 from the owned current and W. Thus
+both diagonal terms of B0 J^-1 B0^dagger vanish after geometric transport.
+Its cross terms vanish as well: P_L selects the particle L carrier while
+P_R selects conjugate e_R in a different internal block; the normal
+Clifford and the existing Spin-times-SM chart transition preserve these
+distinct SM carrier blocks. No spin/family component is truncated.
+Consequently
+
+ B0 J^-1 B0^dagger=0.                                    (3)
+
+In the explicit adapted spin representation T_cw=S_- S_+^-1 (with any
+already-owned common gauge-frame transition applied consistently),
+
+ B0=(P_L/u_R,+ + P_R/u_R,-) W^dagger S_+^-1.
+
+The corresponding common lift is
+
+ E0=S_+ W(u_R,+ P_L+u_R,- P_R),        B0 E0=I18.
+
+This is only a useful evaluation of the existing chart map. It does not
+choose u_R,eta, a normal extent, a background, or a relative spin phase.
+
+4. Exact distributional stationary equation: no trace average is needed
+
+For a piecewise bulk field the original first-order expression has the
+distributional density
+
+ L_dist Psi=L_pw Psi+J(y-x) delta_Sigma.
+
+Here J is defined with the orientation in section2, so this sign is fixed:
+integration by parts on the plus region gives +v^dagger J x, on the minus
+region -v^dagger J y. Testing the global distribution against a smooth
+common v therefore gives the interface Euler equation
+
+ J(y-x)=B0^dagger rho M18 q.                              (4)
+
+All nonzero temporal/spin/gauge and eta terms remain in L_pw. They do not
+create an additional delta coefficient unless that SAME coefficient has
+an independently specified singularity; none is assumed or removed here.
+
+This uses the original bulk ACTION EULER expression L, with its supplied
+Dirac-bar convention, extended as a GLOBAL DISTRIBUTION. A left variation
+of the once-only quadratic seam is -rho M18 q. The smooth transmitted test
+has no artificial internal test jump. No boundary Legendre term is added.
+Whether this distributional extension and its PRIMAL jumps are admitted
+by the literal current action domain is checked separately in section7.
+
+The distinction from a broken-piece symmetrized expression is essential.
+In the formal-symmetry convention of the companion Green derivation,
+for smooth global v and discontinuous u one instead has
+
+ 1/2[<v,L_pw u>+<L v,u>]
+   =<v,L_pw u>+1/2 v_Sigma^dagger J(y-x).
+
+Adding the displayed SH to THIS broken-piece weak expression would give
+J(y-x)=2 B0^dagger rho M18 q. In contrast, in the FULL DISTRIBUTIONAL
+symmetrized expression the first term contains the additional
+v_Sigma^dagger J(y-x)/2 from L_dist u, giving exactly (4). Both expressions
+agree on the old continuous smooth core, but they are different extensions
+to discontinuous fields. One must not derive (4) by silently dropping that
+distinction or assume an extra boundary term. A smooth-global thin-layer
+limit can justify the distributional extension if that limiting procedure
+is part of the originating realization; it is not selected by a finite
+point border or by the name 'symmetrized' alone.
+
+Multiplying (4) by B0 J^-1 and using (3) gives
+
+ B0 y=B0 x.                                              (5)
+
+Because P_L B0=P_L B_+ and P_R B0=P_R B_- T_cw, the original one-sided
+expression (1) now satisfies
+
+ q=B0 x=B0 y.
+
+Thus a single q is a CONSEQUENCE of the weak equation, not an assumed
+arithmetic average. Substitution into (4) gives the explicit full-fibre
+graph
+
+ y=(I384+N) x,
+ N=J^-1 B0^dagger rho M18 B0,       N^2=0,
+ (I+N)^-1=I-N.                                           (6)
+
+No Cayley denominator, extra phase or regulator parameter is required.
+M18 is the existing complete LR bridge, including its Hermitian-conjugate
+piece once. Its signs are unchanged. Reversing the normal reverses J and
+the orientation of the jump together.
+
+This calculation can equally use the original independent analytic left
+map C0 in place of B0^dagger, after the source's single Dirac-bar conversion.
+The analogous identity B0 J^-1 C0=0 follows from the same fixed W normal
+isotropy and the literal analytic spin inverses, with factors1/(u_L u_R).
+It is an analytic matrix identity; no conjugation of analytic source jets
+is licensed. The real current/conservation assertions below concern the
+real slice and its actual Riesz pairing.
+
+5. Selected conjugate jump, full complement, and local Green balance
+
+Use the current-derived E0,F0,R0 construction in the common384 fibre,
+with F0=J^-1 B0^dagger, p=E0^dagger J psi and r=R0 psi. Equations (4)-(6)
+become
+
+ q_y=q_x,
+ p_y-p_x=rho M18 q,
+ r_y=r_x.                                                (7)
+
+There are18 selected q directions,18 conjugate F0 directions, and348
+common-fibre complementary directions. The complement and both spins
+are preserved, not set to zero. The graph in the two-sided768-dimensional
+trace space has rank384. This count differs from the older unconstrained
+two-sheet E/F/R decomposition, whose residual space has dimension732.
+
+When the real originating bridge has M18^dagger=M18, let V=B0^dagger rho M18 B0.
+Then JN=V, N^dagger J=-V and N^dagger JN=0 by (3). Therefore
+
+ (I+N)^dagger J(I+N)=J.                                  (8)
+
+The two outward Green forms cancel on (6). Together with its half trace
+dimension, this proves algebraic maximal isotropy of this local graph.
+It follows from the real action and (3); it was not imposed to make the
+retarded exterior self-adjoint. It does not assert self-adjointness,
+elliptic H1 regularity, or retarded well-posedness of the global operator.
+
+6. What regular continuum closedness can actually be proved
+
+On a regular collar patch assume the ACTUAL coefficients and their first
+derivatives are bounded, the normal principal J is invertible, and the
+owned chart/trace/mass multipliers are sufficiently regular to act on
+H^-1/2(Sigma). This excludes the unevaluated singular/endpoints; it does
+not choose a physical normal extent or continue outside supplied fields.
+
+Let Dmax,pw={U in H5,+ direct_sum H5,- : L_pw U in H5,+ direct_sum H5,-}
+with its maximal distributional graph norm
+
+ ||U||_max^2=||U||_H5^2+||L_pw U||_H5^2.
+
+The original first-order Green formula defines J gamma U continuously
+in H^-1/2: for any boundary H^1/2 test use an H1 extension v, and bound
+
+ |<v,L U>-<L^sharp v,U>|
+ <=C ||v||_H1 (||U||_H5+||L U||_H5).
+
+The result is independent of the extension, since zero-trace tests have
+zero boundary pairing. Invertibility of J gives a continuous weak gamma.
+No elliptic graph-to-H1 estimate is used or claimed.
+
+The regular transmission domain
+
+ Dom D_N={U in Dmax,pw :
+     T_cw^-1 gamma_- U-(I+N)gamma_+ U=0 in H^-1/2(Sigma)}
+
+is a CLOSED subspace of that graph space. The restriction
+D_N U=L_pw U is therefore a closed first-order operator, after also
+including any already-owned CLOSED external/corner conditions. Its
+interior compactly supported smooth functions are dense in the bulk L2
+Hilbert space. This proves a dense closed regular realization of the
+specified weak jump; it does not prove that a particular smooth action
+core is a graph core for it, or establish a global retarded inverse.
+
+If the canonical H4 slot is represented by the constrained trace q,
+require q=B0 gamma U to belong to the ACTUAL H4 current Hilbert space.
+The proper complete trace-graph norm is then
+
+ ||(U,q)||_trace^2=
+     ||U||_H5^2+||L_pw U||_H5^2+||q||_H4^2,
+ ||q||_H4^2=integral_Sigma q^dagger G4 q dmu4,
+
+with the originating positive G4 and physical measure, not an arbitrary
+H1 norm or numerical quadrature weight. Weak-trace continuity makes this
+trace graph complete. Its L2 configuration graph can be dense because the
+point trace is UNBOUNDED: smooth two-sided boundary layers satisfying (6)
+can have prescribed q and bulk L2 norm tending to zero. The E0 right inverse
+shows all18 q directions are reached. This is not a second UV field.
+One must still supply the actual H4 OPERATOR OUTPUT if claiming the full
+D_strat on the canonical direct sum; this norm alone does not invent one,
+append a second D4 kinetic, or equate a trace graph with a full stratified
+microscopic operator.
+
+For a genuinely closed dense D_N, D_N^dagger D_N has its canonical positive
+closed quadratic form. That does not make this local construction the
+completed physical native operator, nor choose the outgoing domain, BRST
+quotient, relative determinant or physical energy/field jets.
+
+7. Adversarial check against the literal adopted global-spin transmission
+
+The same foundational source, global_spin_glue_payload at lines248-279,
+does not merely name a spin bundle. It explicitly writes
+
+ foundational_geometry: the two collar sheets are restrictions of one
+ oriented, time-oriented parent spin manifold with one global spinor bundle;
+ induced_transmission: psi_-=rho(SpinLift(Lambda_cw)) psi_+; in a common
+ parent coframe this is the identity transition up to the fixed spin sign;
+ self_adjointness: internal seam Green forms cancel because outward
+ normals are opposite.
+
+Its witness at lines230-245 tests the SAME field values on the two sides.
+The later normalized point-trace producer at line202 says the original
+fullD5 complement and other trace equations are retained. The later
+finite seam action supplies no explicit supersession of that limiting
+trace statement or a continuum discontinuous-field variation class.
+
+If induced_transmission is imposed literally as the unchanged FULL
+physical limiting-trace equation even at nonzero SH, then y=x. Equation
+(4) would then require
+
+ B0^dagger rho M18 q=0, hence M18 q=0,                    (9)
+
+since B0 has a right inverse and B0^dagger is injective. For nonzero
+charged-lepton Yukawa/Higgs entries this excludes their massive trace
+components. This is a precise compatibility condition for THAT simultaneous
+bulk-only distributional interpretation, not a claim that the complete
+BHSM has no massive solution.
+
+A distributional section of the same global bundle may have the jump
+(6) while keeping T_cw as the geometric chart transition. But this is not
+the same limiting-trace domain as the literal y=x condition. N mixes the
+selected Higgs LR sectors and is not a new Spin-times-SM chart transition.
+It cannot be silently absorbed into Lambda_cw or called an old spin sign.
+
+Thus (6) is an exact constructive distributional completion of the given
+trace action, with a regular closed graph and no free local coefficient.
+Adopting it as the CURRENT physical eta domain additionally requires
+reconciling that explicit global-spin trace statement with the nonzero SH
+variation. This note does not reinterpret or retire the older owner by
+fiat. An action-owned H4-output realization could instead change how the
+surface Euler term is represented; it must be derived with the same
+variables/measure and once-only kinetic counting, not guessed here.
+
+8. Operational inputs versus continuum interpretation
+
+Unevaluated but action-defined physical operands include the real coupled
+background, sigma-normal histories and normalization values u_R/L, their
+moving chart/source jets, and the actual retarded external realization.
+Those are calculations, not free coefficients. No new Y, magnetic coupling,
+collider-history prerequisite, or empirical moment datum is requested.
+
+The narrower source reconciliation in section7 is different: the examined
+sources simultaneously give a nonzero normalized seam functional and an
+explicit unchanged global limiting-trace rule, but do not state how their
+full continuum stationary domain is combined. Numerical evaluation of u
+or the real background alone cannot decide that interpretation. A stronger
+existing full-action domain construction may resolve it; the finite border
+does not itself provide that proof. This is not an exhaustive assertion
+that no such owner exists elsewhere, or a choice between invented BHSM
+models.
+
+No physical outgoing derivative admission, coupled correction, Maxwell/226
+validation, two-spin pole normalization or muon magnetic moment is claimed.

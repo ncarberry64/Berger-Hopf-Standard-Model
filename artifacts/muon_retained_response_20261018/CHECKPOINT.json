@@ -1,0 +1,40 @@
+{
+  "stage": "REVIEWED_INTEGRATION_READY_FOR_PR465_PUBLICATION",
+  "source_revision": "70e82fd4dbe5f53ff27ae17f6aaac7a4727c1fde",
+  "bundle_sha256": "4298911e92b6bb4f86c9ce9d9ac069674c9b104650ddf7b1505fea869dacb5ca",
+  "archives": 15,
+  "recorded_hashes_verified": 620,
+  "existing_status_entries": 17544,
+  "preserved_preexisting_tracked": {
+    ".gitattributes": "5e165f7c67d7017848f7cb8f9c55c78048a82838a879732b60d04a974bdb04de",
+    "artifacts/muon_observable_combination_20261011/contribution_error_table.json": "19b7ce5b3a863a0b79bd952e20ab7e0a0e553a92a607f0d34db2a9ba864cce36",
+    "artifacts/muon_observable_combination_20261011/contribution_error_table.md": "18961d0f32d86a39977c58737fa693208f48110e0baa78d15f7c8fb610b12869",
+    "scripts/verify_muon_changing_source_publication.py": "4c526bcefe3de405d5103197332de129737e2aaf15d3722066d88e516584a47a",
+    "src/bhsm/interface/ae4_stratified_dirac_zeta_induced_owner.py": "ab0537e52db679979bc85109f27b85d534507459dde256bd24ac7742b2d5efe2",
+    "src/bhsm/interface/aether_quantum_functional_accounting_v16_00.py": "8ea906a9b3dd489474b45da8117398547dcf32a1dae96defebb6891998b64f3e"
+  },
+  "inputs": "inputs/PROVENANCE.json",
+  "equations": "scope_records/BHSM_field_to_spin_response_20261018/DERIVATION.md",
+  "two_run": "REPLAY.json",
+  "known_nonpasses": {
+    "Maxwell_gauge_reconstruction_incoming_approx": 7.29e-10,
+    "Maxwell_gauge_reconstruction_outgoing_approx": 6.33e-10,
+    "membrane_last_step_approx": 9.34e-08
+  },
+  "physical_guard": 2e-10,
+  "physical_flags": {
+    "physical_wall_feedback_solved": false,
+    "physical_reference_selected": false,
+    "physical_collider_solved": false,
+    "physical_outgoing_derivative_admitted": false,
+    "coupled_background_corrections": 0,
+    "physical_a_mu": null,
+    "physical_g_mu": null,
+    "physical_uncertainty": null
+  },
+  "NEXT_OPERAND": "Commit and push this reviewed integration through existing PR465, verify remote and PR heads; then run new canonical matter-current-to-Higgs-to-wall application with temporal endpoint contacts.",
+  "publication_audits": "publication_checks/results.json",
+  "tests": "TESTS.json",
+  "source_identity_guards": "inputs/PROVENANCE.json and result BINDING.json reject stale live owners, source, inputs and arrays",
+  "final_public_readiness_log_sha256": "41a27a67a9a5854ad960e49e5a8707c5039b8a50833b6a5f0b4f9b9f9ae621ff"
+}

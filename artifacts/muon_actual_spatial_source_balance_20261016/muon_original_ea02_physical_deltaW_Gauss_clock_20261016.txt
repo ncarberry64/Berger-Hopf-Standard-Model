@@ -1,0 +1,117 @@
+ACTUAL UNPROJECTED deltaW*G ON THE ORIGINAL ea02/D4 CUT
+2026-10-16. No field/action/clock solve or outer correction.
+
+Canonical source:
+C:/Users/carbe/Downloads/BHSM_muon_parent_maxwell_worktree_20261001/audits/bhsm_original_ea02_physical_deltaW_Gauss_clock_20261016.py
+SHA256 e24c29222001f4ec1fd16b73612cb232cee1978058bbae62bb0ba876d73265ea
+
+The source consumes the same retained exact coefficient c744590f...,
+clock8d4a7fe4..., and physical deltaV/Euler979045f0... packets.
+It compiles the EXACT literal context block of the last source, with
+explicit namespace and full owner/block hashes. It does not mutate that
+owner or inspect ambient call frames. Context block SHA256:
+c8a9d5f7a1aed6b81e3a5577d45b9ffab06c72c639f5c9f9cba3524b546eba0c.
+
+1. Evaluated weak source term
+
+W=[A0,phi T_a] uses the TEMPORAL CONNECTION A0 (point columns0:4),
+not the point time-derivative block20:24. Its variation is
+  deltaW=[deltaA0_R,phi T_a],
+  (deltaW)_rho=[deltaA0_rho_R,phi T_a]
+               +[deltaA0_R,phi_rho T_a].
+The actual wall commutator is retained.
+
+For arbitrary temporal test theta, the original weak Gauss functional is
+  G(theta)= sum_r weight_r {
+       p_r dot (-theta_rho+[theta,A_r])
+       + sum_a p_a dot [theta,A_a] }
+       + PiH dot O(theta_wall,H),
+where p_r=kX, p_a=eY_a, PiH=2wT DtH/V. The original density and material
+quadrature are counted once; no extra Haar/normalization is inserted.
+
+Applying this to deltaW evaluates deltaW*G directly on every36x7
+parameter/right combination, without projecting the new theta into the
+finite At basis or adding it as a state coordinate. Bulk and scalar
+pieces remain separate.
+
+2. Exact temporal-potential provenance guard
+
+The new computational particular has allAt frame change0. This alone
+is not assumed sufficient: the source independently applies the full
+original raw gauge basis and corrected native extra point/radial/wall
+maps to R_updated-R_original.
+
+Actual differences at every original48 node and actual wall:
+  A0 potential                  upper0
+  A0 radial derivative          upper0
+  wall A0 potential             upper0
+  allAt frame                   upper0.
+All difference balls contain0. Therefore the original exact c744
+point_R/wall_R temporal-potential germs can be reused; no potential,
+load or source clock is inserted or zeroed.
+
+3. Independent actual controls and result
+
+The arbitrary-test functional is first checked against ALL36 actual
+represented temporal Gauss rows from the independently evaluated bare
+gradient. Maximum difference:
+  3.6934557039007276e-32.
+This checks its sign, density normalization, radial product and scalar
+current against the actual action, not a Noether-derived fill.
+
+Actual newly evaluated term:
+  max |deltaW*G|                1.829956428893948e-16
+  bulk maximum                 1.829956428893948e-16
+  scalar maximum               3.3566777409563746e-20.
+The nonzero values remain in the archive. Actual unprojected primal
+W*G is also evaluated and retained, maximum1.2085735654497456e-18.
+
+The cumulative decomposition reads
+  max |chi+deltaV*E|            6.257739236974885e-15
+  max |chi+deltaV*E+deltaW*G|    6.2893648454376955e-15.
+The latter is an actual unresolved REMAINDER, not zero. Its norm need
+not decrease when adding a new signed contribution.
+
+4. Mathematical scope
+
+The full product-rule identity retains
+  Z^T Hphase omega - chi - W*A_G
+   = deltaV*E + deltaW*G
+     + Dt(deltaP)-deltaS+b(DtP-S).
+
+This supplement evaluates only the new deltaW*G piece (and primal
+W*G). W*A_G, source/domain defects and projected operator terms remain
+separate. No magnitude is used to assign them individually zero.
+Exact Z left-nullity is not established, so chi is not imposedzero
+and is not declared an unframed solvability obstruction.
+
+No phase clock, free31 coordinates/clocks, source correction, outgoing
+domain or original coupled correction is selected. Bare Euler need not
+be stationary. This is the finite classical YM/Higgs source functional,
+not a native heat/graded operator or complete physical terminal solve.
+
+5. Pair, pins and preserved diagnostics
+
+Two independent executions are byte-identical:
+C:/Users/carbe/OneDrive/Documents/CODEX/outputs/bhsm_original_ea02_physical_deltaW_Gauss_clock_20261016/final_run_1
+C:/Users/carbe/OneDrive/Documents/CODEX/outputs/bhsm_original_ea02_physical_deltaW_Gauss_clock_20261016/final_run_2
+
+actual_unprojected_deltaW_Gauss_and_clock_remainder.npz
+259104 bytes, SHA256
+7fc855345c6c6b8c7ed0c086925897826529a3aeacab2c91075cd25e34ad2914
+result.json:49073 bytes, SHA256
+b4829156768f6bd5cd4e2b3c4f55161871e1b72526ca0fbe329952e1967a3e75
+executed_producer.py:12617 bytes, source SHA above.
+
+final_paired_inventory.json SHA256
+5c3beedffcb619e46851846cf1843c489c4c588f2d469689fd4a9173df8779f8.
+
+Pilot1 preserves a pre-evaluation missing namespace RADIAL failure;
+pilot2 completed after adding that explicit constant to the compiled
+context. No numerical action, source, map or tolerance changed. Root
+and scalar independent source/math reviews passed.
+
+No coefficient/AD/action/history campaign was replayed. Physical
+outgoing derivative, radial convergence, Maxwell/all226 AFTER,
+normalized two-spin state and muon moment remain unevaluated.
+

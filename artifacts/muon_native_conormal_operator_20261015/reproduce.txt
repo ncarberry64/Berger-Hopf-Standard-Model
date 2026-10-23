@@ -1,0 +1,15 @@
+From the repository root in PowerShell, use a NEW output directory for
+each application (existing deterministic outputs are preserved):
+
+$env:PYTHONPATH='src'
+$env:OPENBLAS_NUM_THREADS='1'
+C:\Python314\python.exe audits/bhsm_reflected_native_conormal_application_20261015.py --output artifacts/muon_native_conormal_operator_20261015/application_run_1
+C:\Python314\python.exe audits/bhsm_reflected_native_conormal_application_20261015.py --output artifacts/muon_native_conormal_operator_20261015/application_run_2
+C:\Python314\python.exe -m pytest --noconftest -q tests/test_muon_reflected_native_conormal_graph.py
+C:\Python314\python.exe artifacts/muon_native_conormal_operator_20261015/run_publication_checks.py
+C:\Python314\python.exe audits/bind_muon_native_conormal_operator_20261015.py --repository . --output artifacts/muon_native_conormal_operator_20261015/publication_manifest_run_1.json
+C:\Python314\python.exe audits/bind_muon_native_conormal_operator_20261015.py --repository . --output artifacts/muon_native_conormal_operator_20261015/publication_manifest_run_2.json
+
+Manifest repetition is serialization, not another physical solve. These
+commands apply a strong local representation to already saved operands;
+they do not recompute old source, profile, pairing, or history campaigns.

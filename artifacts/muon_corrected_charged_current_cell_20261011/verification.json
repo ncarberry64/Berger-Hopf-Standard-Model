@@ -1,0 +1,46 @@
+{
+  "all_pins_current": true,
+  "classification": "VERIFIED_CORRECTED_SAME_ACTION_CHARGED_CURRENT_APPLICATION",
+  "compared_files": [
+    {
+      "byte_identical": true,
+      "bytes": 1607898,
+      "name": "application.npz",
+      "sha256": "eb2847d0fa4aa92c1c45780874f2ea70b7da31ee8f717cb10775c9fe5e47df1e"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 60425,
+      "name": "result.json",
+      "sha256": "3cd1b47e55d54f9d296d6c124cecda6a403937165311c84c315dafe4ca636e86"
+    }
+  ],
+  "environment": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "PYTHONPATH": "src"
+  },
+  "error_scope": "Exact-stored bordered current/template interval; action source and finite representation production not enclosed. Nonzero Fermi-template remainder retained.",
+  "excluded_diagnostic": "run_1 preserves an earlier source-pin selection; math output unchanged but canonical publication uses run_2/run_3",
+  "focused_tests": {
+    "command": "python -m pytest --noconftest -q tests/test_muon_corrected_charged_current_cell.py",
+    "exit_code": 0,
+    "passed": 2,
+    "runtime_chunk": "4d0486"
+  },
+  "input_hash_count": 55,
+  "original_current_rows": 358,
+  "physical_E_kappa": null,
+  "physical_low_energy_Fermi_coefficient": null,
+  "runs": [
+    {
+      "command": "python scripts/evaluate_muon_corrected_charged_current_cell.py --output artifacts/muon_corrected_charged_current_cell_20261011/run_2",
+      "exit_code": 0,
+      "runtime_chunk": "2a973a"
+    },
+    {
+      "command": "python scripts/evaluate_muon_corrected_charged_current_cell.py --output artifacts/muon_corrected_charged_current_cell_20261011/run_3",
+      "exit_code": 0,
+      "runtime_chunk": "7b4ad3"
+    }
+  ]
+}
