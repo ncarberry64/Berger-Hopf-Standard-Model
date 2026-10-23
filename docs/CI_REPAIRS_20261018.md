@@ -59,3 +59,31 @@ or streaming. Git long-path support does not certify every downstream Windows
 tool. Local controls do not substitute for a fresh hosted Windows checkout or
 the actual PR merge-tree CI. No scientific prediction, calibration, archive,
 physical admission threshold or unresolved physical nonpass is changed.
+
+## Current-main refresh, 2026-10-23
+
+The repair remained unmerged when main reached
+`3b104f565a2c41b77b87496575703376571a5a38`. Its two repaired source blobs
+were still absent from that tree. The existing clean repair branch was updated
+by a normal merge of that exact main commit, retaining the original repair
+commit `8e944bf0080007bdbaa97613c377abda4f3747ff`. No branch was reset,
+rebased or force-pushed. Active research and tracker worktrees, including their
+uncommitted changes, were left intact.
+
+Main had also added a second Windows job in
+`.github/workflows/blackhole-tracker.yml`. It now enables `core.longpaths`
+before checkout, with the same Windows-only condition as institutional CI.
+The regression control checks both Windows jobs. The source assertion still
+queries distinct literal citations; the large-index negative control still
+reproduces the original buffer failure. The tracker product, physical model,
+frozen results and numerical tolerances are unchanged by this repair.
+
+Refreshed local validation passed 21 focused pytest tests, all 74 museum
+science tests, TypeScript checking, the full Pages build, and the five
+repository audits listed above. Precision remains `1.066e-14 <= 1e-13`.
+Python 3.14.3, Node 24.19.0 and Git for Windows 2.54.0 were used. The build
+and pytest ran serially. Six generated museum files were restored to their
+clean pre-build checkout representation; their Git content had not changed.
+Independent review found no issue in the five-file diff against current main.
+Historical hosted passes above remain evidence for the old head only; the
+refreshed head requires its own hosted CI result.

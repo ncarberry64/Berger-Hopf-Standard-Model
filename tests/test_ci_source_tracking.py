@@ -87,13 +87,22 @@ def test_tracked_but_missing_working_file_still_fails(source_index):
     assert _check(source_index, ["docs/literal1.md"]).returncode != 0
 
 
-def test_longpaths_is_windows_only_and_precedes_checkout():
-    workflow = (ROOT / ".github/workflows/institutional.yml").read_text(encoding="utf-8")
-    portable = workflow.split("  portable-core:\n", 1)[1].split("  review-container:\n", 1)[0]
-    steps = portable.split("    steps:\n", 1)[1]
+@pytest.mark.parametrize(
+    "filename, windows_job, next_job",
+    [
+        ("institutional.yml", "portable-core", "review-container"),
+        ("blackhole-tracker.yml", "tracker-source-and-wheel", "tracker-paper-and-source"),
+    ],
+)
+def test_longpaths_is_windows_only_and_precedes_checkout(filename, windows_job, next_job):
+    workflow = (ROOT / ".github/workflows" / filename).read_text(encoding="utf-8")
+    job = workflow.split(f"  {windows_job}:\n", 1)[1].split(f"  {next_job}:\n", 1)[0]
+    assert "windows-latest" in job
+    steps = job.split("    steps:\n", 1)[1]
     longpaths, checkout = steps.split("      - uses: actions/checkout@v4", 1)
     assert "if: runner.os == 'Windows'" in longpaths
     assert "run: git config --global core.longpaths true" in longpaths
     assert "core.longpaths" not in checkout
     assert workflow.count("core.longpaths") == 1
-    assert "tests/test_ci_source_tracking.py" in checkout
+    if filename == "institutional.yml":
+        assert "tests/test_ci_source_tracking.py" in checkout
