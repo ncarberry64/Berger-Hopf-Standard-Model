@@ -51,14 +51,20 @@ alignment hold take priority. Hidden and offscreen scenes freeze; returning
 never fast-forwards through material the visitor has not seen. Seeking or
 looping the music rebases the presentation without rewinding the scene.
 
-Exhibit 3 follows the recording's bass rather than its faster rhythmic layer.
-`museum/scripts/analyze-exhibit3-bass.py` measures the exact local MP3's
-30–160 Hz energy at 25 ms intervals, using zero-delay filtering and centered
-smoothing. This envelope varies the speed of the original motion continuously:
-the geometry moves faster with the bass and relaxes between swells. The native
-orbit, viewing rotation and metric formulas remain intact; there are no added
-light pulses, fixed beat laps or bar waits in this exhibit. Pauses, manual
-metric settings and replay retain their original behavior.
+Exhibit 3's three chapters change on the recording's strong low piano attacks.
+`museum/scripts/analyze-exhibit3-chapters.py` measures the exact local MP3's
+deep-note starts. The first note at 0.767 s establishes Hopf; the notes at
+8.979 s and 17.796 s start Berger and BHSM, and 25.631 s returns to Hopf.
+Each later selected note advances one chapter. The 24 measured cues are
+spaced for reading; secondary notes and faster percussion do not trigger cuts.
+There is no invented cue in the quiet outro after the final selected attack.
+The original geometry moves at its native speed between these cuts. The
+chapter scheduler reads actual media time on every display frame, independently
+of the continuous geometry clock. Music pause and buffering hold the chapter;
+an animation pause or offscreen return waits for the next note without skipping
+unseen chapters. Replay starts at Hopf and follows subsequent notes. Manual
+chapter or metric selection holds until Replay. A silent first visit retains
+the ten-second chapter tour until music is first played.
 
 Comparison sequences use
 four beats of lead-in, four of reveal and eight of reading hold. Automatic
@@ -68,3 +74,10 @@ Comparison pulse offsets are refined against strong recorded attacks rather than
 average spectral phase. Held-out attacks validate the fit. This reduces the
 small timing bias in the original cue estimates without introducing a guessed
 device-latency correction. Ambient diagrams retain their measured swells.
+
+The other exhibit timers were reviewed alongside this correction. Comparisons
+already changes entries every 16 measured beats. Common Frame, Matter,
+the original cosmology proposal and CMS chart morphs have narrative pacing
+that follows waveform swells; their scene changes are not claimed to fall on
+particular notes. Collision theatre retains its eight-second sequence.
+Scientific and recorded replay clocks remain independent as described above.
