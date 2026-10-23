@@ -29,7 +29,14 @@ export function CollisionTheatre({ motion }: { motion: boolean }) {
     [started, setStarted] = useState(0),
     [playing, setPlaying] = useState(true),
     [mode, setMode] = useState('all');
-  const { ref: sceneRef, time } = useSceneClock(motion && playing);
+  // Keep exhibit 7's established eight-second choreography while locking its
+  // clock to actual playback, including buffering, rather than timer ticks.
+  const { ref: sceneRef, time } = useSceneClock(
+    motion && playing,
+    Infinity,
+    0,
+    'cadence',
+  );
   const clock = (time - started) % 8;
   useEffect(() => {
     fetch('./data/cms-four-vector-sample.json')
