@@ -10,6 +10,7 @@ import {
   type Pattern,
 } from '../lib/cosmology-realization';
 import { useSceneClock } from './science-console';
+import { cosmologySurfacePoint } from '../lib/cosmology-surface';
 
 const epochs = transfer.rows;
 const samples = Array.from({ length: 900 }, (_, i) => {
@@ -18,6 +19,29 @@ const samples = Array.from({ length: 900 }, (_, i) => {
     a = i * Math.PI * (3 - Math.sqrt(5));
   return [r * Math.cos(a), y, r * Math.sin(a)];
 });
+const wirePaths = [
+  ...[-Math.PI / 3, -Math.PI / 6, 0, Math.PI / 6, Math.PI / 3].map((latitude) =>
+    Array.from({ length: 73 }, (_, i) => {
+      const longitude = (i * Math.PI) / 36;
+      return [
+        Math.cos(latitude) * Math.cos(longitude),
+        Math.sin(latitude),
+        Math.cos(latitude) * Math.sin(longitude),
+      ];
+    }),
+  ),
+  ...Array.from({ length: 10 }, (_, meridian) =>
+    Array.from({ length: 49 }, (_, i) => {
+      const latitude = -Math.PI / 2 + (i * Math.PI) / 48,
+        longitude = (meridian * Math.PI) / 5;
+      return [
+        Math.cos(latitude) * Math.cos(longitude),
+        Math.sin(latitude),
+        Math.cos(latitude) * Math.sin(longitude),
+      ];
+    }),
+  ),
+];
 const number = (v: number) => (v === 0 ? '0' : v.toExponential(3));
 
 function Globe({
@@ -35,7 +59,7 @@ function Globe({
     if (!ctx) return;
     const size = 440,
       middle = size / 2,
-      radius = 178;
+      radius = 154;
     ctx.clearRect(0, 0, size, size);
     const atmosphere = ctx.createRadialGradient(
       middle,
@@ -50,38 +74,62 @@ function Globe({
     atmosphere.addColorStop(1, '#07111500');
     ctx.fillStyle = atmosphere;
     ctx.fillRect(0, 0, size, size);
-    ctx.strokeStyle = '#45616c';
+    // The dashed circle is the undeformed unit-radius reference.
+    ctx.strokeStyle = '#45616c80';
     ctx.lineWidth = 1;
+    ctx.setLineDash([3, 5]);
     ctx.beginPath();
     ctx.arc(middle, middle, radius, 0, 2 * Math.PI);
     ctx.stroke();
+    ctx.setLineDash([]);
     const c = Math.cos(turn),
       s = Math.sin(turn),
       slice = Math.sqrt(3) / 2;
-    const points = samples.map((p) => {
-      const value = field(coefficients, [
-        slice * p[0],
-        slice * p[1],
-        slice * p[2],
-        0.5,
-      ]);
+    const sampleField = (p: number[]) =>
+      field(coefficients, [slice * p[0], slice * p[1], slice * p[2], 0.5]);
+    const values = samples.map(sampleField);
+    const scale = Math.max(...values.map(Math.abs));
+    const project = (p: number[], value: number) => {
+      const { point, signed } = cosmologySurfacePoint(p, value, scale);
       return {
-        x: c * p[0] + s * p[2],
-        y: p[1],
-        depth: -s * p[0] + c * p[2],
-        value,
+        x: c * point[0] + s * point[2],
+        y: point[1],
+        depth: -s * point[0] + c * point[2],
+        front: (-s * p[0] + c * p[2] + 1) / 2,
+        signed,
       };
-    });
-    const scale = Math.max(...points.map((p) => Math.abs(p.value)), 1e-20);
+    };
+    // Follow the same field with surface lines so inward and outward lobes are
+    // visible as shape, rather than only as differently colored points.
+    ctx.strokeStyle = '#71929e';
+    ctx.globalAlpha = 0.28;
+    for (const path of wirePaths) {
+      ctx.beginPath();
+      let connected = false;
+      for (const direction of path) {
+        const p = project(direction, sampleField(direction));
+        if (p.depth < 0) {
+          connected = false;
+          continue;
+        }
+        const x = middle + radius * p.x,
+          y = middle - radius * p.y;
+        if (connected) ctx.lineTo(x, y);
+        else ctx.moveTo(x, y);
+        connected = true;
+      }
+      ctx.stroke();
+    }
+    const points = samples.map((p, i) => project(p, values[i]));
     points.sort((a, b) => a.depth - b.depth);
     for (const p of points) {
-      const signal = Math.abs(p.value) / scale,
-        front = (p.depth + 1) / 2;
+      const signal = Math.abs(p.signed),
+        front = p.front;
       ctx.globalAlpha = 0.12 + 0.82 * front;
       ctx.fillStyle =
         signal < 0.005
           ? '#54707e'
-          : p.value >= 0
+          : p.signed >= 0
             ? `hsl(183 78% ${28 + signal * 42}%)`
             : `hsl(36 88% ${26 + signal * 43}%)`;
       ctx.beginPath();
@@ -102,7 +150,7 @@ function Globe({
       width={440}
       height={440}
       role="img"
-      aria-label={`${name}: illustrative n=2 field on a fixed slice of the three-sphere. Cyan positive, gold negative; brightness normalized separately.`}
+      aria-label={`${name}: normalized n=2 field illustration. Cyan positive values displace outward, gold negative values inward, and zero stays round. The dashed circle is the undeformed reference. This displacement is illustrative, not a computed metric or physical expansion.`}
     />
   );
 }
@@ -120,7 +168,12 @@ export function CosmologyRealization({
   const [playing, setPlaying] = useState(true),
     [fixed, setFixed] = useState(1),
     [start, setStart] = useState(0);
-  const { ref, time } = useSceneClock(motion && playing, Infinity, 0, 'independent');
+  const { ref, time } = useSceneClock(
+    motion && playing,
+    Infinity,
+    0,
+    'cadence',
+  );
   const frame = Math.min(
     epochs.length - 1,
     fixed + Math.floor((time - start) / 2.2),
@@ -272,11 +325,13 @@ export function CosmologyRealization({
         topographic components as the reference model evolves.
       </p>
       <p className="r1-legend">
-        <span className="r1-positive">● Positive</span>
-        <span className="r1-negative">● Negative</span>
+        <span className="r1-positive">● Positive · outward</span>
+        <span className="r1-negative">● Negative · inward</span>
         <span>
-          Each globe rescales color separately to reveal shape. Rotation changes
-          only the view.
+          Color and radial displacement show the same signed field, normalized
+          separately for each globe. Zero stays round; the dashed circle marks
+          the undeformed reference. Displacement is illustrative, not a computed
+          metric or physical expansion. Rotation changes only the view.
         </span>
       </p>
       <div className="r1-transport-controls">
@@ -307,7 +362,8 @@ export function CosmologyRealization({
         </span>
       </div>
       <label className="r1-timeline">
-        Audited epoch · equal playback spacing, not equal cosmic time
+        Audited epoch · equal presentation spacing, paced by music playback when
+        playing, not equal cosmic time
         <input
           type="range"
           min={0}
@@ -418,7 +474,9 @@ export function CosmologyRealization({
           later epochs. No interpolated epoch is presented as an audited result.
         </p>
         <p>
-          The globes are the fixed X₄ = ½ slice of unit S³, not sky maps. They
+          Field values are evaluated on the fixed X₄ = ½ slice of unit S³, not
+          sky maps. Color and illustrative radial displacement use those same
+          values; the deformed drawing is not a computed metric. The fields
           evaluate nine trace-free quadratic polynomials; the examples use h₁ =
           X₁² − X₂² and h₃ = 2X₁X₃. Density and velocity use h₁ together when
           aligned, and h₁/h₃ when independent. Coefficient norms are Euclidean

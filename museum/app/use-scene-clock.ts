@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { slides } from '../lib/museum-slides.mjs';
 import { createChapterSequence } from '../lib/chapter-cues';
+import { createImpactSequence } from '../lib/impact-sequence';
 import {
   createSceneTransport,
   createPhraseSequence,
@@ -19,6 +20,7 @@ export function useSceneClock<T extends HTMLElement = HTMLDivElement>(
   musicMode: MusicMotionMode = 'musical',
   phraseSeconds?: number,
   chapterCues?: readonly number[],
+  impactCues?: readonly number[],
 ) {
   const ref = useRef<T>(null);
   const [clock] = useState(() => createSceneTransport(musicMode));
@@ -28,16 +30,21 @@ export function useSceneClock<T extends HTMLElement = HTMLDivElement>(
   const [chapters] = useState(() =>
     chapterCues ? createChapterSequence(chapterCues) : null,
   );
+  const [impacts] = useState(() =>
+    impactCues ? createImpactSequence(impactCues) : null,
+  );
   const [frame, setFrame] = useState<{
     time: number;
     beat: number | null;
     phraseTime: number;
     chapter: number;
+    impactTime: number;
   }>({
     time: 0,
     beat: null,
     phraseTime: 0,
     chapter: 0,
+    impactTime: 0,
   });
   const rhythm = useRef<{
     beat: number;
@@ -57,6 +64,7 @@ export function useSceneClock<T extends HTMLElement = HTMLDivElement>(
           clock.suspend();
           sequence?.suspend();
           chapters?.suspend();
+          impacts?.suspend();
         }
       },
       { threshold: minimumVisibility },
@@ -73,6 +81,7 @@ export function useSceneClock<T extends HTMLElement = HTMLDivElement>(
         clock.suspend();
         sequence?.suspend();
         chapters?.suspend();
+        impacts?.suspend();
         scene.dataset.musicSync = 'off';
         return;
       }
@@ -128,6 +137,24 @@ export function useSceneClock<T extends HTMLElement = HTMLDivElement>(
           scene.dataset.chapterChangedAt = mediaSeconds.toFixed(4);
         else delete scene.dataset.chapterChangedAt;
       }
+      const impactTime =
+        impacts?.tick(
+          next,
+          synchronized
+            ? {
+                slideId: slideId!,
+                source: audio.currentSrc || audio.src,
+                seconds: mediaSeconds,
+                seeking: audio.seeking,
+              }
+            : undefined,
+        ) ?? next;
+      if (impacts) {
+        const last = Number(scene.dataset.impactSequenceTime ?? 0);
+        if (last % 8 < 1.4 && impactTime % 8 >= 1.4 && synchronized)
+          scene.dataset.collisionAt = mediaSeconds.toFixed(4);
+        scene.dataset.impactSequenceTime = impactTime.toFixed(4);
+      }
       scene.dataset.musicSync = synchronized ? 'on' : 'off';
       scene.dataset.sceneTime = next.toFixed(4);
       if (sequence) scene.dataset.phraseTime = phraseTime.toFixed(4);
@@ -137,10 +164,11 @@ export function useSceneClock<T extends HTMLElement = HTMLDivElement>(
       if (
         beat !== null ||
         chapters !== null ||
+        impacts !== null ||
         now - paintedAt >= 50 ||
         next >= stopAt
       ) {
-        setFrame({ time: next, beat, phraseTime, chapter });
+        setFrame({ time: next, beat, phraseTime, chapter, impactTime });
         paintedAt = now;
       }
       if (next >= stopAt) window.cancelAnimationFrame(request);
@@ -152,6 +180,7 @@ export function useSceneClock<T extends HTMLElement = HTMLDivElement>(
       clock.suspend();
       sequence?.suspend();
       chapters?.suspend();
+      impacts?.suspend();
       scene.dataset.musicSync = 'off';
     };
   }, [
@@ -162,6 +191,7 @@ export function useSceneClock<T extends HTMLElement = HTMLDivElement>(
     clock,
     sequence,
     chapters,
+    impacts,
   ]);
   function restartSequence() {
     sequence?.restart();
@@ -171,5 +201,9 @@ export function useSceneClock<T extends HTMLElement = HTMLDivElement>(
     chapters?.restart();
     setFrame((previous) => ({ ...previous, chapter: 0 }));
   }
-  return { ref, ...frame, restartSequence, restartChapters };
+  function restartImpacts() {
+    impacts?.restart();
+    setFrame((previous) => ({ ...previous, impactTime: 0 }));
+  }
+  return { ref, ...frame, restartSequence, restartChapters, restartImpacts };
 }

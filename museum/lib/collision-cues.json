@@ -1,0 +1,496 @@
+{
+  "slideId": "science-decays",
+  "trackTitle": "Race The Sun",
+  "source": "./audio/scott-buckley-race-the-sun.mp3",
+  "audioSha256": "ac30f5bd1b42dba8de518474a8c3e4f9841b77656024c4237b9094032e3930c8",
+  "durationSeconds": 291.656145,
+  "method": "Local MP3 decoded mono at 11025 Hz. Fourth-order Butterworth bandpasses at 35-180, 180-2000 and 2000-5000 Hz are applied forward/backward (zero group delay), followed by centered Gaussian RMS with 8 ms sigma. At 5 ms analysis steps, each band's positive 60 ms RMS rise is divided by that band's whole-recording 98th-percentile rise. The combined attack score weights low percussion 0.5, orchestral range 0.25 and bright range 0.25. Candidate crests require score>=0.2, prominence>=0.15 and separation>=250 ms. Strongest-neighbour exclusion retains actual strong accents with at least six seconds between crests for approach, reveal and inspection. The impact is the last 10% crossing of the combined local RMS rise before the crest, using a 20th-percentile baseline from 120 to 60 ms before the crest and linear interpolation; 5% and 20% crossings document timing sensitivity. No BPM, tempo grid, fixed interval, synthetic opening event or guessed latency lead is used. Presentation timing only, not scientific data.",
+  "confidence": {
+    "timing": "Measured recorded-attack starts; 5 ms analysis resolution with per-impact threshold sensitivity below",
+    "instrument": "Mixed low percussion and orchestral rises; isolated instrument stems are unavailable",
+    "selection": "Sparse strongest-neighbour accents leave reading time; weaker intervening notes and the quiet outro do not create extra collisions"
+  },
+  "analysisStepSeconds": 0.005,
+  "minimumCueGapSeconds": 6.0,
+  "fixedTempoBpm": null,
+  "bandRangesHz": [
+    [
+      35,
+      180
+    ],
+    [
+      180,
+      2000
+    ],
+    [
+      2000,
+      5000
+    ]
+  ],
+  "bandWeights": [
+    0.5,
+    0.25,
+    0.25
+  ],
+  "bandRiseNormalizationPercentile": 98,
+  "bandRiseNormalizationRms": [
+    0.069584961,
+    0.04248266,
+    0.0131776
+  ],
+  "impactTimesSeconds": [
+    8.892,
+    16.784,
+    24.64,
+    32.441,
+    40.21,
+    47.074,
+    54.887,
+    61.226,
+    69.022,
+    78.291,
+    84.642,
+    93.53,
+    100.082,
+    106.575,
+    118.301,
+    126.095,
+    132.977,
+    140.733,
+    148.539,
+    154.878,
+    161.224,
+    169.03,
+    176.847,
+    182.926,
+    193.861,
+    200.234,
+    210.981,
+    217.301,
+    223.664,
+    232.904,
+    239.246,
+    250.0,
+    258.776,
+    264.882
+  ],
+  "selectedAttackEvidence": [
+    {
+      "timeSeconds": 8.892,
+      "fivePercentRiseSeconds": 8.89,
+      "twentyPercentRiseSeconds": 8.896,
+      "riseCrestSeconds": 8.95,
+      "normalizedAttackStrength": 0.38,
+      "normalizedBandRise": [
+        0.578,
+        0.177,
+        0.188
+      ]
+    },
+    {
+      "timeSeconds": 16.784,
+      "fivePercentRiseSeconds": 16.739,
+      "twentyPercentRiseSeconds": 16.788,
+      "riseCrestSeconds": 16.82,
+      "normalizedAttackStrength": 0.648,
+      "normalizedBandRise": [
+        1.191,
+        0.213,
+        0.0
+      ]
+    },
+    {
+      "timeSeconds": 24.64,
+      "fivePercentRiseSeconds": 24.639,
+      "twentyPercentRiseSeconds": 24.642,
+      "riseCrestSeconds": 24.69,
+      "normalizedAttackStrength": 0.444,
+      "normalizedBandRise": [
+        0.646,
+        0.176,
+        0.307
+      ]
+    },
+    {
+      "timeSeconds": 32.441,
+      "fivePercentRiseSeconds": 32.437,
+      "twentyPercentRiseSeconds": 32.449,
+      "riseCrestSeconds": 32.495,
+      "normalizedAttackStrength": 0.677,
+      "normalizedBandRise": [
+        1.138,
+        0.221,
+        0.212
+      ]
+    },
+    {
+      "timeSeconds": 40.21,
+      "fivePercentRiseSeconds": 40.207,
+      "twentyPercentRiseSeconds": 40.233,
+      "riseCrestSeconds": 40.27,
+      "normalizedAttackStrength": 0.988,
+      "normalizedBandRise": [
+        0.393,
+        1.082,
+        2.084
+      ]
+    },
+    {
+      "timeSeconds": 47.074,
+      "fivePercentRiseSeconds": 47.07,
+      "twentyPercentRiseSeconds": 47.079,
+      "riseCrestSeconds": 47.11,
+      "normalizedAttackStrength": 1.217,
+      "normalizedBandRise": [
+        1.503,
+        0.612,
+        1.248
+      ]
+    },
+    {
+      "timeSeconds": 54.887,
+      "fivePercentRiseSeconds": 54.884,
+      "twentyPercentRiseSeconds": 54.891,
+      "riseCrestSeconds": 54.915,
+      "normalizedAttackStrength": 1.412,
+      "normalizedBandRise": [
+        1.739,
+        0.916,
+        1.254
+      ]
+    },
+    {
+      "timeSeconds": 61.226,
+      "fivePercentRiseSeconds": 61.22,
+      "twentyPercentRiseSeconds": 61.231,
+      "riseCrestSeconds": 61.26,
+      "normalizedAttackStrength": 0.971,
+      "normalizedBandRise": [
+        1.095,
+        0.703,
+        0.991
+      ]
+    },
+    {
+      "timeSeconds": 69.022,
+      "fivePercentRiseSeconds": 69.02,
+      "twentyPercentRiseSeconds": 69.026,
+      "riseCrestSeconds": 69.065,
+      "normalizedAttackStrength": 1.128,
+      "normalizedBandRise": [
+        1.619,
+        0.401,
+        0.873
+      ]
+    },
+    {
+      "timeSeconds": 78.291,
+      "fivePercentRiseSeconds": 78.289,
+      "twentyPercentRiseSeconds": 78.294,
+      "riseCrestSeconds": 78.33,
+      "normalizedAttackStrength": 0.942,
+      "normalizedBandRise": [
+        1.208,
+        0.448,
+        0.906
+      ]
+    },
+    {
+      "timeSeconds": 84.642,
+      "fivePercentRiseSeconds": 84.641,
+      "twentyPercentRiseSeconds": 84.645,
+      "riseCrestSeconds": 84.695,
+      "normalizedAttackStrength": 0.806,
+      "normalizedBandRise": [
+        0.85,
+        0.935,
+        0.589
+      ]
+    },
+    {
+      "timeSeconds": 93.53,
+      "fivePercentRiseSeconds": 93.528,
+      "twentyPercentRiseSeconds": 93.533,
+      "riseCrestSeconds": 93.575,
+      "normalizedAttackStrength": 1.065,
+      "normalizedBandRise": [
+        1.567,
+        0.826,
+        0.297
+      ]
+    },
+    {
+      "timeSeconds": 100.082,
+      "fivePercentRiseSeconds": 100.078,
+      "twentyPercentRiseSeconds": 100.092,
+      "riseCrestSeconds": 100.11,
+      "normalizedAttackStrength": 0.742,
+      "normalizedBandRise": [
+        1.047,
+        0.874,
+        0.0
+      ]
+    },
+    {
+      "timeSeconds": 106.575,
+      "fivePercentRiseSeconds": 106.572,
+      "twentyPercentRiseSeconds": 106.58,
+      "riseCrestSeconds": 106.605,
+      "normalizedAttackStrength": 1.212,
+      "normalizedBandRise": [
+        1.698,
+        0.549,
+        0.901
+      ]
+    },
+    {
+      "timeSeconds": 118.301,
+      "fivePercentRiseSeconds": 118.298,
+      "twentyPercentRiseSeconds": 118.306,
+      "riseCrestSeconds": 118.35,
+      "normalizedAttackStrength": 1.12,
+      "normalizedBandRise": [
+        0.972,
+        1.614,
+        0.924
+      ]
+    },
+    {
+      "timeSeconds": 126.095,
+      "fivePercentRiseSeconds": 126.091,
+      "twentyPercentRiseSeconds": 126.098,
+      "riseCrestSeconds": 126.145,
+      "normalizedAttackStrength": 1.035,
+      "normalizedBandRise": [
+        1.541,
+        0.534,
+        0.525
+      ]
+    },
+    {
+      "timeSeconds": 132.977,
+      "fivePercentRiseSeconds": 132.976,
+      "twentyPercentRiseSeconds": 132.978,
+      "riseCrestSeconds": 132.99,
+      "normalizedAttackStrength": 0.99,
+      "normalizedBandRise": [
+        1.131,
+        0.429,
+        1.271
+      ]
+    },
+    {
+      "timeSeconds": 140.733,
+      "fivePercentRiseSeconds": 140.73,
+      "twentyPercentRiseSeconds": 140.737,
+      "riseCrestSeconds": 140.77,
+      "normalizedAttackStrength": 1.484,
+      "normalizedBandRise": [
+        1.492,
+        1.524,
+        1.426
+      ]
+    },
+    {
+      "timeSeconds": 148.539,
+      "fivePercentRiseSeconds": 148.536,
+      "twentyPercentRiseSeconds": 148.542,
+      "riseCrestSeconds": 148.565,
+      "normalizedAttackStrength": 1.46,
+      "normalizedBandRise": [
+        1.279,
+        1.635,
+        1.649
+      ]
+    },
+    {
+      "timeSeconds": 154.878,
+      "fivePercentRiseSeconds": 154.877,
+      "twentyPercentRiseSeconds": 154.881,
+      "riseCrestSeconds": 154.92,
+      "normalizedAttackStrength": 0.985,
+      "normalizedBandRise": [
+        1.089,
+        0.606,
+        1.154
+      ]
+    },
+    {
+      "timeSeconds": 161.224,
+      "fivePercentRiseSeconds": 161.222,
+      "twentyPercentRiseSeconds": 161.227,
+      "riseCrestSeconds": 161.27,
+      "normalizedAttackStrength": 1.108,
+      "normalizedBandRise": [
+        1.522,
+        0.304,
+        1.083
+      ]
+    },
+    {
+      "timeSeconds": 169.03,
+      "fivePercentRiseSeconds": 169.025,
+      "twentyPercentRiseSeconds": 169.036,
+      "riseCrestSeconds": 169.085,
+      "normalizedAttackStrength": 1.345,
+      "normalizedBandRise": [
+        2.042,
+        0.8,
+        0.495
+      ]
+    },
+    {
+      "timeSeconds": 176.847,
+      "fivePercentRiseSeconds": 176.846,
+      "twentyPercentRiseSeconds": 176.85,
+      "riseCrestSeconds": 176.87,
+      "normalizedAttackStrength": 0.99,
+      "normalizedBandRise": [
+        0.967,
+        1.016,
+        1.01
+      ]
+    },
+    {
+      "timeSeconds": 182.926,
+      "fivePercentRiseSeconds": 182.924,
+      "twentyPercentRiseSeconds": 182.929,
+      "riseCrestSeconds": 182.975,
+      "normalizedAttackStrength": 0.987,
+      "normalizedBandRise": [
+        1.773,
+        0.401,
+        0.0
+      ]
+    },
+    {
+      "timeSeconds": 193.861,
+      "fivePercentRiseSeconds": 193.858,
+      "twentyPercentRiseSeconds": 193.866,
+      "riseCrestSeconds": 193.925,
+      "normalizedAttackStrength": 1.192,
+      "normalizedBandRise": [
+        1.656,
+        1.012,
+        0.446
+      ]
+    },
+    {
+      "timeSeconds": 200.234,
+      "fivePercentRiseSeconds": 200.225,
+      "twentyPercentRiseSeconds": 200.246,
+      "riseCrestSeconds": 200.28,
+      "normalizedAttackStrength": 1.894,
+      "normalizedBandRise": [
+        2.892,
+        0.528,
+        1.264
+      ]
+    },
+    {
+      "timeSeconds": 210.981,
+      "fivePercentRiseSeconds": 210.978,
+      "twentyPercentRiseSeconds": 210.984,
+      "riseCrestSeconds": 211.01,
+      "normalizedAttackStrength": 2.0,
+      "normalizedBandRise": [
+        2.344,
+        1.423,
+        1.889
+      ]
+    },
+    {
+      "timeSeconds": 217.301,
+      "fivePercentRiseSeconds": 217.295,
+      "twentyPercentRiseSeconds": 217.317,
+      "riseCrestSeconds": 217.345,
+      "normalizedAttackStrength": 2.091,
+      "normalizedBandRise": [
+        2.152,
+        2.367,
+        1.692
+      ]
+    },
+    {
+      "timeSeconds": 223.664,
+      "fivePercentRiseSeconds": 223.663,
+      "twentyPercentRiseSeconds": 223.667,
+      "riseCrestSeconds": 223.71,
+      "normalizedAttackStrength": 1.625,
+      "normalizedBandRise": [
+        2.004,
+        1.86,
+        0.632
+      ]
+    },
+    {
+      "timeSeconds": 232.904,
+      "fivePercentRiseSeconds": 232.901,
+      "twentyPercentRiseSeconds": 232.91,
+      "riseCrestSeconds": 232.95,
+      "normalizedAttackStrength": 2.001,
+      "normalizedBandRise": [
+        1.951,
+        2.497,
+        1.606
+      ]
+    },
+    {
+      "timeSeconds": 239.246,
+      "fivePercentRiseSeconds": 239.243,
+      "twentyPercentRiseSeconds": 239.271,
+      "riseCrestSeconds": 239.29,
+      "normalizedAttackStrength": 1.517,
+      "normalizedBandRise": [
+        2.12,
+        0.708,
+        1.118
+      ]
+    },
+    {
+      "timeSeconds": 250.0,
+      "fivePercentRiseSeconds": 249.996,
+      "twentyPercentRiseSeconds": 250.007,
+      "riseCrestSeconds": 250.04,
+      "normalizedAttackStrength": 1.079,
+      "normalizedBandRise": [
+        1.548,
+        0.819,
+        0.402
+      ]
+    },
+    {
+      "timeSeconds": 258.776,
+      "fivePercentRiseSeconds": 258.747,
+      "twentyPercentRiseSeconds": 258.781,
+      "riseCrestSeconds": 258.805,
+      "normalizedAttackStrength": 2.044,
+      "normalizedBandRise": [
+        1.69,
+        2.934,
+        1.864
+      ]
+    },
+    {
+      "timeSeconds": 264.882,
+      "fivePercentRiseSeconds": 264.881,
+      "twentyPercentRiseSeconds": 264.885,
+      "riseCrestSeconds": 264.9,
+      "normalizedAttackStrength": 1.471,
+      "normalizedBandRise": [
+        1.784,
+        0.778,
+        1.54
+      ]
+    }
+  ],
+  "summary": {
+    "candidateCount": 636,
+    "selectedCount": 34,
+    "medianCueGapSeconds": 7.794,
+    "minimumCueGapSeconds": 6.079,
+    "maximumCueGapSeconds": 11.726,
+    "firstImpactSeconds": 8.892,
+    "holdFinalEventAfterSeconds": 264.882
+  }
+}
