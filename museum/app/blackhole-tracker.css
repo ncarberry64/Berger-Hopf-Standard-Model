@@ -229,6 +229,37 @@
   color: #71e5eb;
   overflow-wrap: anywhere;
 }
+.tracker-atlas {
+  background: #0a0c14;
+  border: 1px solid #363247;
+  border-radius: 12px;
+  padding: 1.25rem;
+}
+.tracker-atlas h4 {
+  margin-top: 0;
+}
+.tracker-atlas-map {
+  margin: 1.25rem 0;
+}
+.tracker-atlas-map img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+.tracker-atlas-map figcaption {
+  margin-top: 0.7rem;
+  color: #bcaecb;
+  font-size: 0.85rem;
+}
+.tracker-atlas-targets {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.tracker-atlas code {
+  color: #f1c9a0;
+  font-size: 0.8rem;
+  overflow-wrap: anywhere;
+}
 @media (max-width: 760px) {
   .tracker-theatre {
     grid-template-columns: 1fr;
@@ -248,6 +279,7 @@
   }
   .tracker-meaning,
   .tracker-access,
+  .tracker-atlas,
   .tracker-real-data {
     padding: 1rem;
   }

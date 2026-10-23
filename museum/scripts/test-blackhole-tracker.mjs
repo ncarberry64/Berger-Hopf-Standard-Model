@@ -13,6 +13,8 @@ import {
   trackerVersion,
   trackerPilot,
   trackerJoint,
+  trackerAtlas,
+  trackerReviewerRevision,
 } from '../lib/blackhole-tracker.ts';
 
 const sha = (bytes) => createHash('sha256').update(bytes).digest('hex');
@@ -128,6 +130,7 @@ test('public app downloads are exact reviewed artifacts with both canonical lice
   );
   assert.equal(receipt.reviewed_product_code_revision, trackerCodeRevision);
   assert.equal(receipt.reviewed_paper_revision, trackerPaperRevision);
+  assert.equal(receipt.reviewer_guide_revision, trackerReviewerRevision);
   assert.equal(receipt.version, trackerVersion);
   for (const item of receipt.files) {
     const bytes = await readFile(new URL(item.file, base));
@@ -271,7 +274,9 @@ test('reviewed joint source pack retains exact third-party observations, header 
 
 test('separate joint evidence keeps every inadequate candidate and no supported mass', async () => {
   const base = new URL('../public/research/blackhole-tracker/joint-20261022-v2/', import.meta.url);
-  assert.equal(trackerJoint.formal_paper_revision, trackerPaperRevision);
+  // The frozen rc4 evidence retains its historical provenance, independently
+  // of the latest paper/reviewer presentation pins.
+  assert.equal(trackerJoint.formal_paper_revision, 'cb79f8693ba5f8e25f0858acc826b6718c974555');
   assert.equal(trackerJoint.original_OGLE_rows_retained, 15533);
   assert.equal(trackerJoint.selected_OGLE_photometric_rows, 12500);
   assert.equal(trackerJoint.fit_photometric_rows, 12521);
@@ -307,5 +312,75 @@ test('separate joint evidence keeps every inadequate candidate and no supported 
     assert.equal(fields[columns.indexOf('status')], 'JOINT_MODEL_OR_NOISE_INADEQUATE');
     assert.equal(fields[columns.indexOf('accepted_mass')], 'False');
     assert.equal(fields[columns.indexOf('accepted_BH')], 'False');
+  }
+});
+
+test('historical rc4 receipt and every referenced artifact retain their exact reviewed bytes', async () => {
+  const base = new URL('../public/research/blackhole-tracker/', import.meta.url);
+  const bytes = await readFile(new URL('DISTRIBUTION_0.2.0rc4.json', base));
+  assert.equal(sha(bytes), '75ed7ca39eb0d5f0d56ff1db36dcd2ad985065ecd8424413226a0949c0e16cf6');
+  assert.deepEqual(bytes, await readFile(new URL('history/0.2.0rc4/DISTRIBUTION.json', base)));
+  const receipt = JSON.parse(bytes.toString());
+  assert.equal(receipt.version, '0.2.0rc4');
+  for (const item of receipt.files) {
+    const content = await readFile(new URL(item.file, base));
+    assert.equal(content.length, item.bytes, item.file);
+    assert.equal(sha(content), item.sha256, item.file);
+  }
+});
+
+test('static atlas is a faithful subset of the complete155-event inventory, with separate benchmark and unavailable lens quantities', async () => {
+  const base = new URL('../public/research/blackhole-tracker/', import.meta.url);
+  const metadata = await readFile(new URL('BHSM_Candidate_Atlas_Metadata_v3.zip', base));
+  assert.equal(sha(metadata), '84d91dbd3f50edacddb0871f1d63783ca58154225795cc9b509d516c99bef53f');
+  const members = zipEntries(metadata);
+  assert.equal(members.size, 25);
+  const inventoryBytes = members.get('inventory_v3.json');
+  assert.equal(sha(inventoryBytes), trackerAtlas.inventory_utf8_sha256);
+  const inventory = JSON.parse(inventoryBytes.toString());
+  const formal = await readFile(new URL('../../products/blackhole_tracker/bhtracker/web/atlas_data.json', import.meta.url));
+  assert.deepEqual(formal, inventoryBytes);
+  assert.equal(trackerAtlas.formal_product_revision, trackerCodeRevision);
+  assert.equal(trackerAtlas.repository_url, 'https://github.com/ncarberry64/Berger-Hopf-Standard-Model');
+  assert.equal(inventory.events.length, 155);
+  assert.equal(new Set(inventory.events.map((event) => event.event_id)).size, 155);
+  assert.equal(inventory.events.filter((event) => event.cohorts.includes('FROZEN_100_EVENT_PILOT_V1')).length, 100);
+  assert.equal(inventory.events.filter((event) => event.cohorts.includes('WYRZYKOWSKI_2016_PARALLAX_59')).length, 59);
+  assert.deepEqual(trackerAtlas.counts, inventory.metadata.counts);
+  assert.equal(trackerAtlas.counts.pilot_inadequate_simple_model, 89);
+  assert.equal(trackerAtlas.counts.older_native_unavailable, 33);
+  assert.equal(trackerAtlas.counts.new_BH_interpretations, 0);
+  const targets = inventory.events.filter((event) => event.tier === 'BLACK_HOLE_SEARCH_TARGET');
+  assert.deepEqual(targets.map((event) => event.event_id), ['OGLE3-ULENS-0585', 'OGLE3-ULENS-3092', 'OGLE3-ULENS-PAR-13']);
+  for (let index = 0; index < targets.length; index++) {
+    const source = targets[index], shown = trackerAtlas.targets[index];
+    for (const key of Object.keys(shown)) assert.deepEqual(shown[key], source[key], key);
+    assert.equal(shown.source_direction.role, 'SOURCE_EVENT_DIRECTION');
+    assert.equal(shown.source_direction.epoch, null);
+    assert.equal(shown.source_direction.uncertainty, null);
+  }
+  assert.equal(targets.filter((event) => event.photometric_assessment.followup_eligible === true).length, 2);
+  assert(targets[2].quality_flags.includes('GAIA_SOURCE_ASTROMETRIC_SOLUTION_UNRELIABLE'));
+  for (const event of [...inventory.events, ...inventory.benchmarks])
+    assert(Object.values(event.lens).every((value) => value === null));
+  assert.equal(inventory.benchmarks.length, 1);
+  assert.equal(trackerAtlas.benchmark.classification_source, 'LITERATURE');
+  assert.match(trackerAtlas.benchmark.tracker_recovery_status, /^NOT_ESTABLISHED/);
+  assert.deepEqual(trackerAtlas, JSON.parse(await readFile(new URL('candidate-atlas-20261023-v3/ATLAS_PROVENANCE.json', base), 'utf8')));
+  const figure = await readFile(new URL('candidate-atlas-20261023-v3/candidate_inventory_sky.png', base));
+  assert.equal(sha(figure), 'a28ac499e7658227ad2884d9f8f2bb89e3d61af2de6439b7ac5c4fc547b6d483');
+});
+
+test('atlas app download includes offline assets, complete inventory and actual launcher, with no hosted inference link', async () => {
+  const base = new URL('../public/research/blackhole-tracker/', import.meta.url);
+  const files = zipEntries(await readFile(new URL(`BHSM_Blackhole_Tracker_Product_${trackerVersion}.zip`, base)));
+  const manifest = JSON.parse(files.get('PRODUCT_MANIFEST.json').toString());
+  assert.equal(manifest.input_source_archive_sha256, '972e8f2a60a21bcbf487c013eb07d34ab315660c56f139eee4e6edbdb0d92d3e');
+  assert.equal(sha(files.get('product/bhtracker/web/atlas_data.json')), trackerAtlas.inventory_utf8_sha256);
+  const launcher = files.get('product/Start_Blackhole_Tracker_Atlas.cmd').toString();
+  assert.match(launcher, /--page atlas/);
+  for (const name of ['atlas.html', 'atlas.js', 'atlas-core.js', 'atlas.css']) {
+    const source = files.get(`product/bhtracker/web/${name}`).toString();
+    assert.doesNotMatch(source, /https:\/\/[^\s"']+\.(?:js|css)\b/);
   }
 });

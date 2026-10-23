@@ -150,36 +150,49 @@ const topics = {
   },
   'blackhole-tracker': {
     keywords:
-      'blackhole black hole tracker compact lens lensing gravitational mass motion astrometry magnification delay BHSM boundary envelope R1 research app export replay covariance OGLE unresolved photometry real observations pilot native magnitude timescale mass unresolved archival followup joint known system negative benchmark astropy sourcepack calibration adequacy',
+      'blackhole black hole tracker candidate atlas source event sky directions catalog parallax cohort alias disputed Gaia metadata compact lens lensing gravitational mass motion astrometry magnification delay BHSM boundary envelope R1 research app export replay covariance OGLE unresolved photometry real observations pilot native magnitude timescale mass unresolved archival followup joint known system negative benchmark astropy sourcepack calibration adequacy',
     summary:
-      'A computed, noise-free synthetic point-lens animation shows three fixed sources, their image pairs and the declared 2015 to 2025 moving center. The separate actual OGLE-III pilot retains all 100 historical events and 76,344 native measurements: 89 model/noise screens failed, 11 passed chi-square and two met archival follow-up criteria. A separately versioned 2023 joint astrometry/parallax benchmark fails all three declared adequacy tests. The local Python app has resolved-image, native-photometry and optional joint-research fit/export/replay workflows.',
+      'A computed, noise-free synthetic point-lens animation shows three fixed sources, their image pairs and the declared 2015 to 2025 moving center. The RC5 Candidate Atlas contains 155 distinct historical events: 100 frozen pilot events plus 59 published parallax events minus 4 verified overlaps. Three investigation targets comprise two frozen photometric follow-ups and one disputed prior-conditional literature possibility; they are not uniform BH evidence. All 89 inadequate pilot screens and 33 unavailable older native tables remain explicit. A separate published positive benchmark has unresolved tracker recovery. The frozen 2023 joint benchmark still fails all three declared adequacy tests. The local app supports inventory filtering/export/replay alongside resolved, native-photometry and optional joint research.',
     scope:
-      'The animation remains synthetic. All pilot masses remain unresolved; duration is not mass. The separate known-system run accepts no reliable mass or new black-hole interpretation, even though import, optimization and replay work. Published classification is independent prior literature. The older 2022 HST timing/frame ambiguity stays unresolved and is not repaired by a guessed epoch. Joint research explicitly installs Astropy and preserves source-pack rights and calibration limitations. BHSM Einstein/GHY interpretation counts one optical potential once; no core, hard surface, horizon or measured membrane deformation is established.',
+      'The animation remains synthetic. Atlas sky markers are catalog source/event directions, not present lens positions; lens mass, distance, absolute proper motion, position epoch and error regions remain unavailable. Duration is not mass. PAR-13 is disputed because BH-scale conditional interpretations depend on unreliable Gaia source astrometry and lower-mass alternatives remain. Zero new BH interpretations or independently recovered known-system masses are accepted. The published positive benchmark label comes from literature, not the engine. Byte hashes check consistency, not authenticity or physical adequacy. The older 2022 timing/frame ambiguity and frozen 2023 inadequacy are preserved. Joint research explicitly installs Astropy and preserves source rights. The BHSM Einstein/GHY exterior is one optical potential counted once; no core, hard surface, horizon or membrane deformation is measured.',
     sources: [
       repoSource(
         'Formal product reviewer guide',
         'products/blackhole_tracker/REVIEWER.md',
-        '1a556d37a40ef89deb54f9c07d231b5496163838',
+        '1cdd464c9a70d211b37008ed7f912be346a58e8f',
       ),
       repoSource(
         'Product user guide',
         'products/blackhole_tracker/README.md',
-        '1a556d37a40ef89deb54f9c07d231b5496163838',
+        '8ca349fa8eb5c54c661a022790ae915d05060b59',
       ),
       repoSource(
         'Manuscript and derivations',
         'papers/bhsm_blackhole_tracker_20261021/manuscript/main.tex',
-        'cb79f8693ba5f8e25f0858acc826b6718c974555',
+        '5a785ea64fcdce58779a0f7431a6a218b3deadd4',
       ),
       repoSource(
         'Pinned ordinary-lens forward calculation',
         'products/blackhole_tracker/bhtracker/forward.py',
-        '1a556d37a40ef89deb54f9c07d231b5496163838',
+        '8ca349fa8eb5c54c661a022790ae915d05060b59',
       ),
       repoSource(
         'Joint astrometry installation, source-pack import and replay',
         'products/blackhole_tracker/JOINT_RESEARCH.md',
-        '1a556d37a40ef89deb54f9c07d231b5496163838',
+        '8ca349fa8eb5c54c661a022790ae915d05060b59',
+      ),
+      repoSource(
+        'RC5 Candidate Atlas filtering, evidence tiers and full-inventory replay',
+        'products/blackhole_tracker/CANDIDATE_ATLAS.md',
+        '8ca349fa8eb5c54c661a022790ae915d05060b59',
+      ),
+      source(
+        'Atlas counts, source directions, distinct evidence and separate benchmark',
+        'research/blackhole-tracker/candidate-atlas-20261023-v3/ATLAS_PROVENANCE.json',
+      ),
+      source(
+        'Complete155-event metadata and offline reconstruction',
+        'research/blackhole-tracker/BHSM_Candidate_Atlas_Metadata_v3.zip',
       ),
       repoSource(
         'Separate known-system failed alternatives and frozen protocols',
@@ -348,7 +361,7 @@ const topics = {
 export const catalog = {
   schema_version: '1.0',
   title: 'BHSM Museum AI navigation index',
-  updated: '2026-10-22',
+  updated: '2026-10-23',
   museum_url: museumUrl,
   repository_url: repository,
   guide_url: local('llms.txt'),

@@ -1,6 +1,7 @@
 'use client';
 /* oxlint-disable jsx-a11y/prefer-tag-over-role -- SVG contains the accessible computed diagram. */
 import { useState } from 'react';
+import Image from 'next/image';
 import { ScienceConsole, useSceneClock } from './science-console';
 import { REPOSITORY } from './exhibits';
 import {
@@ -12,15 +13,19 @@ import {
   trackerVersion,
   trackerPilot,
   trackerJoint,
+  trackerAtlas,
+  trackerReviewerRevision,
 } from '../lib/blackhole-tracker';
 
 const colors = ['#71e5eb', '#ffbc77', '#bda7f5'];
 const source = `${REPOSITORY}/tree/${trackerCodeRevision}/products/blackhole_tracker`;
 const productFiles = `${REPOSITORY}/blob/${trackerCodeRevision}/products/blackhole_tracker`;
+const reviewerGuide = `${REPOSITORY}/blob/${trackerReviewerRevision}/products/blackhole_tracker/REVIEWER.md`;
 const paper = `${REPOSITORY}/blob/${trackerPaperRevision}/papers/bhsm_blackhole_tracker_20261021`;
 const assets = './research/blackhole-tracker/';
 const pilotAssets = `${assets}pilot-20261022-v1/`;
 const jointAssets = `${assets}joint-20261022-v2/`;
+const atlasAssets = `${assets}candidate-atlas-20261023-v3/`;
 
 export function BlackholeTracker({
   motion,
@@ -64,7 +69,7 @@ export function BlackholeTracker({
       number="07"
       label="Blackhole Tracker · BHSM lensing"
       title="Follow the lens. Test the interpretation."
-      intro="Blackhole Tracker uses separate resolved-image, native-photometry and optional joint astrometry/parallax models. Supplied geometry can support a resolved compact-mass fit; duration alone leaves mass unresolved. The measured joint benchmark fails adequacy and accepts no reliable mass. Every route retains one optical potential in the BHSM interpretation."
+      intro="Review 155 historical events in the Candidate Atlas, with three investigation targets and a separate published benchmark whose tracker recovery remains open. Sky markers locate source events; lens mass and present position remain unresolved. Separate resolved-image, native-photometry and optional joint routes retain one optical exterior in the BHSM interpretation."
       accent="cyan"
     >
       <div className="tracker-theatre" ref={ref}>
@@ -301,6 +306,95 @@ export function BlackholeTracker({
           unresolved.
         </p>
       </div>
+      <section className="tracker-atlas" aria-labelledby="tracker-atlas-title">
+        <p className="eyebrow">CANDIDATE ATLAS · SOURCE / EVENT DIRECTIONS</p>
+        <h4 id="tracker-atlas-title">155 historical events. Three investigation targets.</h4>
+        <p>
+          The complete inventory combines the frozen 100-event pilot with 59
+          published parallax events, removing four verified overlaps:
+          100 + 59 − 4 = 155. It retains all 89 inadequate pilot screens and
+          all 33 unavailable native tables in the older cohort. Review flags
+          remain visible. These three targets have different evidence; none
+          is a new black-hole identification or a measured black-hole mass.
+        </p>
+        <figure className="tracker-atlas-map">
+          <a href={`${atlasAssets}candidate_inventory_sky.png`}>
+            <Image
+              src={`${atlasAssets}candidate_inventory_sky.png`}
+              width="1800"
+              height="1225"
+              loading="lazy"
+              unoptimized
+              alt="Catalog source/event directions for 155 historical events, highlighting three investigation targets; a separate published black-hole benchmark has unresolved engine recovery. No present lens position, depth, motion or error region is shown."
+            />
+          </a>
+          <figcaption>
+            Catalog directions locate the source/event on the sky. They do not
+            locate the unseen lens today. Lens position, epoch, uncertainty,
+            distance, mass and absolute proper motion remain unavailable.
+          </figcaption>
+        </figure>
+        <div className="tracker-targets tracker-atlas-targets">
+          {trackerAtlas.targets.map((target) => (
+            <article key={target.event_id}>
+              <h5>{target.event_id}</h5>
+              <strong>
+                {target.event_id.endsWith('PAR-13')
+                  ? 'DISPUTED, PRIOR-CONDITIONAL POSSIBILITY'
+                  : 'PHOTOMETRIC FOLLOW-UP SCREEN ONLY'}
+              </strong>
+              <p>
+                Source/event direction: RA {target.source_direction.ra_hms},
+                Dec {target.source_direction.dec_dms} · J2000 catalog equatorial.
+                Position epoch and angular uncertainty: unavailable.
+              </p>
+              <p>
+                {target.event_id.endsWith('PAR-13')
+                  ? 'Published BH-scale possibilities depend on unreliable Gaia source astrometry. An alternative OGLE source-motion estimate supports a lower conditional mass. This event has not been fit with a validated tracker parallax route.'
+                  : 'Qualified by the frozen historical photometric screen. Neither the light-curve timescale nor passing that screen discriminates a black hole from other lens or source models.'}
+              </p>
+              <p className="tracker-local-note">
+                {target.event_id.endsWith('3092')
+                  ? 'Known aliases include OGLE-2007-BLG-057 / MOA-2007-BLG-027; prior literature is retained.'
+                  : target.event_id.endsWith('PAR-13')
+                    ? 'Known alias: OGLE-2002-BLG-061. Source-motion, native reduction and calibration checks remain open.'
+                    : 'Archival parallax, angular-scale, lens-light and alternative-model checks are needed.'}
+              </p>
+            </article>
+          ))}
+        </div>
+        <p>
+          <b>Separate published benchmark: OGLE-2011-BLG-0462 / OB110462.</b>{' '}
+          Published HST astrometry, photometric parallax and lens-light limits
+          support its black-hole interpretation. That literature label is
+          separate from these 155 events. The tracker has not independently
+          established a reliable recovery: its 2025 numerical stage remains
+          unresolved, and the frozen 2023 alternatives below fail adequacy.
+        </p>
+        <p>
+          In BHSM, any eventual adequate compact-lens inference describes one
+          Einstein/GHY optical exterior, counted once. This inventory does not
+          measure a core, horizon, membrane position or surface deformation.
+        </p>
+        <div className="tracker-actions">
+          <a className="tracker-primary" href={`${assets}BHSM_Blackhole_Tracker_Product_${trackerVersion}.zip`} download>
+            Download the app with Candidate Atlas ↓
+          </a>
+          <a href={`${assets}BHSM_Candidate_Atlas_Metadata_v3.zip`} download>Complete metadata and offline reconstruction ↓</a>
+          <a href={`${atlasAssets}ATLAS_PROVENANCE.json`}>Atlas counts, directions and provenance ↗</a>
+          <a href={`${productFiles}/CANDIDATE_ATLAS.md`}>Filtering, export and replay guide ↗</a>
+          <a href="https://doi.org/10.3847/1538-4357/adbe6e">Published known-system evidence ↗</a>
+          <a href="https://arxiv.org/html/2107.13701v1">Later conditional parallax reanalysis ↗</a>
+        </div>
+        <p className="tracker-local-note">
+          Open <code>Start_Blackhole_Tracker_Atlas.cmd</code> after installation,
+          or run <code>python -m bhtracker serve --page atlas --open</code>.
+          The local atlas supports search, evidence tiers, quality flags,
+          an optional separate benchmark marker, CSV export and a full-inventory
+          JSON replay. SHA-256 checks byte consistency; it does not establish
+          source authenticity or validate a physical model.
+        </p>
+      </section>
       <section className="tracker-real-data" aria-labelledby="tracker-real-data-title">
         <p className="eyebrow">REAL OBSERVATION PILOT · FROZEN 22 OCTOBER 2026</p>
         <h4 id="tracker-real-data-title">
@@ -417,22 +511,23 @@ export function BlackholeTracker({
           <p>
             The Museum animation runs in your browser. The Python app performs
             inference with uncertainties, diagnostics and a portable replay
-            record. Bundled demonstrations are synthetic. The unresolved
+            record. The Candidate Atlas adds reviewed historical metadata;
+            the resolved-image demonstrations are synthetic. The unresolved
             photometry page accepts native brightness/error rows and preserves
             their provenance; it does not invent resolved images or lens mass.
           </p>
           <div className="tracker-actions">
             <a
               className="tracker-primary"
-              href={`${assets}BHSM_Blackhole_Tracker_Product_0.2.0rc4.zip`}
+              href={`${assets}BHSM_Blackhole_Tracker_Product_${trackerVersion}.zip`}
               download
             >
               Download the app · portable source ZIP ↓
             </a>
-            <a href={`${productFiles}/REVIEWER.md`}>
+            <a href={reviewerGuide}>
               Installation &amp; reviewer guide ↗
             </a>
-            <a href={`${assets}BHSM_Blackhole_Tracker_0.2.0rc4.pdf`}>
+            <a href={`${assets}BHSM_Blackhole_Tracker_${trackerVersion}.pdf`}>
               Read the reviewed manuscript ↗
             </a>
           </div>
@@ -447,6 +542,9 @@ export function BlackholeTracker({
             explicitly choose <code>Start_Blackhole_Tracker_Joint.cmd</code> or
             install <code>&quot;.[astrometry]&quot;</code> in that environment. This adds
             Astropy only when requested.
+            For inventory review without fitting, choose{' '}
+            <code>Start_Blackhole_Tracker_Atlas.cmd</code> or{' '}
+            <code>python -m bhtracker serve --page atlas --open</code>.
           </li>
           <li>
             <b>Fit.</b> Load Nearby compact-mass track → Validate dataset → Run
@@ -465,6 +563,9 @@ export function BlackholeTracker({
               replayed
             </code>
             . Inspect <code>replayed/replay_check.json</code>.
+            Candidate Atlas exports use their separate JSON workflow:{' '}
+            <code>python -m bhtracker atlas replay BHSM_candidate_atlas_replay.json</code>.
+            This preserves every inventory record and flag and does not refit data.
           </li>
         </ol>
         <p className="tracker-local-note">
@@ -478,7 +579,7 @@ export function BlackholeTracker({
           <p>
             Prefer an existing Python environment?{' '}
             <a
-              href={`${assets}bhsm_blackhole_tracker-0.2.0rc4-py3-none-any.whl`}
+              href={`${assets}bhsm_blackhole_tracker-${trackerVersion}-py3-none-any.whl`}
               download
             >
               Download the reviewed wheel
@@ -503,7 +604,7 @@ export function BlackholeTracker({
               Synthetic measurements with covariance ↗
             </a>
             {' '}·{' '}
-            <a href={`${assets}BHSM_Blackhole_Tracker_Source_0.2.0rc4.zip`} download>
+            <a href={`${assets}BHSM_Blackhole_Tracker_Source_${trackerVersion}.zip`} download>
               Complete manuscript, code and pilot source packet ↓
             </a>
             {' '}·{' '}
@@ -519,7 +620,9 @@ export function BlackholeTracker({
             </a> and the <a href={`${assets}DISTRIBUTION_0.2.0rc3.json`}>
               exact 0.2.0rc3 receipt
             </a> remain preserved. Versioned rc3 artifacts stay at the release
-            root beside that versioned receipt.
+            root beside that versioned receipt. The{' '}
+            <a href={`${assets}DISTRIBUTION_0.2.0rc4.json`}>exact 0.2.0rc4 receipt</a>{' '}
+            and its versioned artifacts are preserved alongside them.
           </p>
           <p>
             Exhibit constants, geometry and declared truth are copied from the

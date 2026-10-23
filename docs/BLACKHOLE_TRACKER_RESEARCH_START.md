@@ -218,7 +218,7 @@ The current rc5 product code is pinned at
 with 193 byte-exact upstream source files. Its
 [formal provenance](../products/blackhole_tracker/FORMAL_PROVENANCE.json)
 records the immutable development source and every byte hash. The current manuscript/pilot/joint record is pinned at
-[`8d146d4a86b8931cebdd26df3508f7b9154280af`](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/tree/8d146d4a86b8931cebdd26df3508f7b9154280af/papers/bhsm_blackhole_tracker_20261021). The
+[`5a785ea64fcdce58779a0f7431a6a218b3deadd4`](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/tree/5a785ea64fcdce58779a0f7431a6a218b3deadd4/papers/bhsm_blackhole_tracker_20261021). The
 [manuscript/release record](../papers/bhsm_blackhole_tracker_20261021/provenance/FORMAL_REPOSITORY.json)
 binds the paper separately. Current theory/source interpretation is pinned at
 `705d4c7e2f9a832b457f63ff975e7d4dc8008645`.

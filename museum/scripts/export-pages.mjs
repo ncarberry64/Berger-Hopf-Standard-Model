@@ -144,6 +144,12 @@ try {
     'ADEQUACY FAILED',
     './research/blackhole-tracker/BHSM_OB110462_2023_SourcePack_v1.zip',
     './research/blackhole-tracker/joint-20261022-v2/JOINT_PROVENANCE.json',
+    '155 historical events. Three investigation targets.',
+    'DISPUTED, PRIOR-CONDITIONAL POSSIBILITY',
+    'Start_Blackhole_Tracker_Atlas.cmd',
+    './research/blackhole-tracker/BHSM_Candidate_Atlas_Metadata_v3.zip',
+    './research/blackhole-tracker/candidate-atlas-20261023-v3/ATLAS_PROVENANCE.json',
+    './research/blackhole-tracker/candidate-atlas-20261023-v3/candidate_inventory_sky.png',
   ]) {
     if (!written.includes(expected))
       throw new Error(`Static export is missing: ${expected}`);

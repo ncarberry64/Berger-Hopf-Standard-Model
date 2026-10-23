@@ -44,11 +44,11 @@ export const reviewEntries = {
   },
   'blackhole-tracker': {
     classification:
-      'BHSM compact-lens interpretation · synthetic animation, real pilot and separate negative joint benchmark',
+      'BHSM compact-lens interpretation · synthetic animation, candidate inventory and separate known-system benchmark',
     statement:
-      'The resolved route reconstructs effective compact-lens mass and motion under supplied geometry. All 100 native-photometry pilot masses remain unresolved, with two historical archival follow-ups. The separate 2023 joint benchmark fails all three declared model/noise adequacy checks and accepts no reliable mass or new black-hole interpretation. Each route counts the same BHSM optical potential once.',
+      'The resolved route reconstructs effective compact-lens mass and motion under supplied geometry. The RC5 atlas retains 155 distinct historical events, three investigation targets with different evidence and a separate published positive benchmark whose tracker recovery remains open. Its sky markers are source/event directions; lens mass, distance and absolute motion remain unavailable. All 100 pilot outcomes and all 59 published parallax events remain represented, including failures and unavailable data. The frozen 2023 joint benchmark still fails all three adequacy checks. No new black-hole interpretation is accepted. Each route counts the same BHSM optical exterior once.',
     question:
-      'Can you replay the correct observation route, preserve every pilot outcome and distinguish a reproducible calculation from an adequate physical/noise model? Which missing calibration evidence would justify a new frozen joint analysis?',
+      'Can you distinguish catalog source direction from lens position, retain failed and unavailable events in an atlas replay, and separate photometric follow-up, disputed prior-conditional interpretation and a published known-system label from validated engine recovery? Which missing calibration and angular-scale evidence would justify physical identification?',
   },
   'cosmology-original': {
     classification: 'BHSM cosmology proposal',
