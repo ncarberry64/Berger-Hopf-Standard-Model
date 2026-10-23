@@ -54,8 +54,12 @@ test('every question has an answer, scientific scope and supported animation', (
 
 test('supporting sources exist in the tracked scientific record', async () => {
   const repoRoot = new URL('../../', import.meta.url);
+  const citedPaths = [
+    ...new Set(physicsQuestions.flatMap(({ sources }) => sources.map(({ path }) => path))),
+  ];
+  assert(citedPaths.length, 'No supporting source paths were requested');
   const tracked = new Set(
-    execFileSync('git', ['ls-files', '-z'], {
+    execFileSync('git', ['--literal-pathspecs', 'ls-files', '-z', '--', ...citedPaths], {
       cwd: repoRoot,
       encoding: 'utf8',
     }).split('\0'),
