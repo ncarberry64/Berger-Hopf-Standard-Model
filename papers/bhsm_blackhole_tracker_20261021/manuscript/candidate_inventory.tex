@@ -101,7 +101,11 @@ benchmark \cite{Sahu2025}. Its strong identification is labeled
 The published full analysis is not certified by importing that label.
 BHSM interpretation remains one ordinary compact-lens Einstein/GHY
 exterior response counted once; these directions and screening results
-identify no core state, membrane deformation or horizon.
+do not reconstruct a microscopic membrane, core state or horizon.
+Conditional light-curve screens alone do not validate a gravitational
+origin. Where the evidence supports that origin, its inferred exterior
+is interpreted as BHSM surface topography without thereby identifying
+the lens as a black hole.
 
 \subsection{Usable and auditable metadata replay}
 
@@ -118,3 +122,86 @@ inventory. SHA-256 establishes byte consistency, not authenticity,
 scientific adequacy or black-hole certification. The software,
 metadata and reviewer materials cite the
 \href{https://github.com/ncarberry64/Berger-Hopf-Standard-Model}{formal BHSM repository}.
+
+\subsection{A moving-lens investigation filter}
+
+A common moving lens can produce a sequence of lensing effects across a
+background field, as considered in mesolensing studies
+\cite{DiStefano2005Mesolensing}. This motivates a sky-track investigation
+filter, rather than a black-hole identity rule. Fast, nearby lenses need
+not be black holes: terrestrial parallax identified the lens in
+OGLE-2007-BLG-224 as a brown dwarf \cite{Gould2009BrownDwarf}.
+The duration relation $t_E=\theta_E/\mu_{\rm rel}$ does not identify
+angular motion, distance or mass on its own. A small photometric
+amplitude is also not a measurement of a small angular Einstein radius.
+
+The separate moving-lens software route accepts measured or explicitly
+attributed inferred lens positions, with native epochs, an identified
+tangent-plane frame and supplied angular covariance. For stacked
+two-coordinate measurements $\boldsymbol y$, it fits
+\begin{equation}
+ \boldsymbol y_i=\boldsymbol p_{\rm ref}
+       +\boldsymbol\mu(t_i-t_{\rm ref}),\qquad
+ \chi^2=(\boldsymbol y-A\boldsymbol\vartheta)^T
+           C^{-1}(\boldsymbol y-A\boldsymbol\vartheta),
+ \quad
+ \boldsymbol\vartheta=(p_E,p_N,\mu_E,\mu_N)^T .
+ \label{eq:angular-skytrack}
+\end{equation}
+Cholesky whitening and a full-rank linear solve retain the supplied
+covariance, including cross-epoch correlations when available.
+Independent epoch blocks require an explicit independence assumption.
+Numerical centering does not constrain the physical track; changing
+the reporting epoch transports the full parameter covariance.
+Stationary-motion and residual-adequacy tests remain distinct and
+conditional on the supplied Gaussian noise and frame assumptions.
+Two distinct epochs can fit a line but do not test a trajectory;
+parallax, acceleration, calibration error or incorrect association
+can invalidate a rectilinear model without excluding a black hole.
+
+Catalog source directions are not admitted as lens positions.
+Associating several photometric events with one foreground object
+requires source propagation, lens--source offsets, time conventions,
+uncertainties and an assessment of chance alignment.
+
+A possible future association calculation follows from
+closest-approach geometry. In a common small angular field, let
+$q_i=|u_{0,i}|t_{E,i}$, let $J$ rotate vectors by $90^\circ$, and let
+$\sigma_i=\pm1$ retain the unknown side of the track. Positions and motions
+refer to one common tangent frame; $t_i=t_{0,i}$ is the rectilinear
+closest-approach epoch. Express $t_{E,i}$ and all time differences in
+Julian years when motions are in mas per Julian year. For rectilinear
+relative motion without annual parallax,
+$L(t_i)-S_i(t_i)=\sigma_iq_iJ(\mu_L-\mu_{S,i})$. Substituting
+$L(t_i)=L_{\rm ref}+\mu_L(t_i-t_{\rm ref})$ gives
+\begin{equation}
+ S_i(t_i)-\sigma_iq_iJ\mu_{S,i}
+ =L_{\rm ref}+\big[(t_i-t_{\rm ref})I-\sigma_iq_iJ\big]\mu_L .
+ \label{eq:common-lens-association}
+\end{equation}
+Time times angular proper motion has angular units. The relation could
+constrain a conditional common-lens track without separately supplying
+$\theta_E$, but requires propagated source positions and motions,
+joint angular and photometric uncertainty, adequate event models and
+all sign and photometric modes. Source motion cannot silently be zeroed,
+and a parallax-model time anchor need not be a rectilinear
+closest-approach epoch. This relation has not been fitted to the
+observations reported here.
+
+The extended
+evidence viewer retains its 1,808 model records and unknown physical
+fields; none supplies an admitted measured lens track in that snapshot.
+The new route is verified with synthetic controls, not represented as
+a successful known-black-hole recovery or a new observed trajectory.
+In the stated BHSM interpretation, supported lens motion translates
+the same exterior surface-topographic configuration, with no added
+optical response, fitted core state or implied black-hole identity.
+
+The prospective primary investigation target is the previously published
+candidate Gaia18ajz \cite{Howil2025Gaia18ajz}. Its parallax and lens-light
+analysis motivates follow-up, but stellar/remnant priors retain different
+near/far and lower-mass alternatives. This designation is a research
+priority, not a new tracker detection. Its independent native-data
+evaluation remains a separate prerequisite before any tracker candidate
+claim; the published OB110462 positive reference and the brown-dwarf
+comparison do not count as successful independent engine recoveries.

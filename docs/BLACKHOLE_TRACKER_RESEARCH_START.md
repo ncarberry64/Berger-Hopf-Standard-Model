@@ -55,6 +55,12 @@ lens track. Angular motion alone identifies neither mass nor a black hole.
 Supported gravitational geometry is interpreted as BHSM surface topography,
 with the same exterior optical response counted once. A conditional fitted
 curve alone does not validate its gravitational origin or identify its source.
+The later [author clarification](BHSM_TRACKER_ENVELOPMENT_SEARCH_CLARIFICATION_20261023.md)
+defines the **BHSM envelope-boundary differential** and makes distinguishing
+different envelopments the organizing question. This usage is distinct from
+conventional rotational frame dragging. The paper explains a conditional
+compact-versus-extended bending-profile diagnostic; it does not add a
+dark-matter classifier, a measured spin or a global hypersphere radius.
 
 The [candidate atlas guide](../products/blackhole_tracker/CANDIDATE_ATLAS.md) and [portable metadata rebuild](../papers/bhsm_blackhole_tracker_20261021/candidate_atlas_20261023/README_INVENTORY_v3.txt) retain 155 source/event directions: 100 pilot + 59 parallax - 4 verified shared identities. Three investigation targets have different qualifications; no new black-hole interpretation is established. The separate published benchmark is a literature label, with independent engine recovery unresolved. No present-day lens position, mass, distance or absolute motion is supplied by this inventory.
 
