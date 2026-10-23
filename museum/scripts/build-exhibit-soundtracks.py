@@ -21,7 +21,8 @@ from mutagen.mp3 import MP3
 ROOT = Path(__file__).resolve().parents[1]
 LIBRARY = "https://www.scottbuckley.com.au/library/"
 LICENSE = "https://creativecommons.org/licenses/by/4.0/"
-BITRATES_KBPS = {"decoherence": 128}
+BITRATES_KBPS = {}
+RETRIEVAL_DATES = {"solace": "2026-10-23"}
 TRACKS = [
     ("potential", "Call To Adventure", "call-to-adventure", "2023/01/CallToAdventure.mp3"),
     ("bhsm-lifecycle", "Helios", "helios", "2020/05/sb_helios.mp3"),
@@ -30,7 +31,7 @@ TRACKS = [
     ("science-predictions", "Discovery", "discovery", "2020/01/sb_discovery.mp3"),
     ("science-magnetic", "Artemis", "artemis", "2022/09/Artemis.mp3"),
     ("science-decays", "Race The Sun", "race-the-sun", "2022/04/sb_racethesun.mp3"),
-    ("blackhole-tracker", "Decoherence", "decoherence", "2022/03/sb_decoherence.mp3"),
+    ("blackhole-tracker", "Solace", "solace", "2020/05/sb_solace.mp3"),
     ("cosmology-original", "Celestial", "celestial", "2021/06/sb_celestial.mp3"),
     ("other-work", "Starfire", "starfire", "2026/01/Starfire.mp3"),
     ("science-test", "Horizons", "horizons", "2020/02/sb_horizons.mp3"),
@@ -76,7 +77,7 @@ def materialize(row, cache):
         "slideId": slide, "title": title, "artist": "Scott Buckley",
         "source": f"./audio/{output.name}", "creditUrl": LIBRARY + slug + "/",
         "licenseUrl": LICENSE, "license": "CC BY 4.0",
-        "originalUrl": source_url, "retrievedOn": "2026-10-22",
+        "originalUrl": source_url, "retrievedOn": RETRIEVAL_DATES.get(slug, "2026-10-22"),
         "changes": f"Transcoded to {bitrate} kbps stereo MP3 at 44.1 kHz; composition unedited.",
         "durationSeconds": round(info.length, 3), "bytes": output.stat().st_size,
         "sha256": digest(output), "originalSha256": digest(original),
@@ -126,8 +127,7 @@ th,td{padding:14px 12px;border-bottom:1px solid #28404b}th{color:#f6d29a}small{c
 <p>Each museum exhibit has its own instrumental theme. These original compositions are by
 <a href="https://www.scottbuckley.com.au/">Scott Buckley</a> and are used under
 <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International</a>.
-The tracks were transcoded to 128–160 kbps stereo MP3 at 44.1 kHz for background playback
-(Decoherence at 128 kbps; all other tracks at 160 kbps);
+The tracks were transcoded to 160 kbps stereo MP3 at 44.1 kHz for background playback;
 the compositions have not been edited. No endorsement by the composer is implied.</p>
 <div class="table"><table><thead><tr><th scope="col">Exhibit</th><th scope="col">Composition / source</th><th scope="col">Composer</th><th scope="col">License</th></tr></thead><tbody>
 ''' + rows + '''
@@ -138,7 +138,7 @@ the compositions have not been edited. No endorsement by the composer is implied
 <a href="https://pixabay.com/music/main-title-epic-cinematic-victory-155790/">Epic Cinematic Victory</a>
 by <a href="https://pixabay.com/users/paulyudin-30043746/">PaulYudin</a> were the museum's original soundtrack.
 Their retained assets are used under the <a href="https://pixabay.com/service/license-summary/">Pixabay Content License</a>.</p>
-<small>Source records verified 22 October 2026. <a href="https://www.scottbuckley.com.au/library/using-this-music/">Composer's music usage terms</a>.</small>
+<small>Source records verified 22–23 October 2026. <a href="https://www.scottbuckley.com.au/library/using-this-music/">Composer's music usage terms</a>.</small>
 </main></html>
 '''
     (ROOT / "public" / "soundtrack-credits.html").write_text(document, encoding="utf-8")

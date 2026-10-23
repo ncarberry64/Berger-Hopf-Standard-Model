@@ -117,10 +117,11 @@
   `public/soundtrack-credits.html` supplies a source link and full attribution
   for each composition. `public/audio/exhibit-soundtracks.json` records the
   original URL, retrieval date, original SHA-256, delivery SHA-256, duration,
-  modification notice, and slide assignment. Only MP3 transcoding to 128–160 kbps,
-  stereo, 44.1 kHz was performed; compositions were not edited. Decoherence uses
-  128 kbps to remain within the repository's 10 MiB asset limit; the other tracks
-  remain at 160 kbps. Rebuild with
+  modification notice, and slide assignment. Only MP3 transcoding to 160 kbps,
+  stereo, 44.1 kHz was performed; compositions were not edited. On October 23,
+  exhibit 8 changed from Decoherence to [Solace](https://www.scottbuckley.com.au/library/solace/),
+  whose calm strings, synth, piano and glass marimba accompany the lensing tour.
+  All active tracks remain within the repository's 10 MiB asset limit. Rebuild with
   `scripts/build-exhibit-soundtracks.py` and Python packages `imageio-ffmpeg`
   and `mutagen`, keeping the original-download cache outside this Site.
   The original PaulYudin assets and credits remain preserved.

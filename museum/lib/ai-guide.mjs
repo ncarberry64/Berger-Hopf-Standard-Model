@@ -115,7 +115,7 @@ const topics = {
     keywords:
       'forces strong weak electromagnetic electromagnetism gravity aether spacetime fine structure constant fsc origin',
     summary:
-      'Five reference-science and mathematics studies show quarkâ€“gluon exchange, the Coulomb law, neutron beta decay, Newtonian gravity and an SÂ³ projection. The static force lines retain the supplied BHSM ontology; their moving highlight is a reading guide.',
+      'Five reference-science and mathematics studies show quark–gluon exchange, the Coulomb law, neutron beta decay, Newtonian gravity and an S³ projection. The static force lines retain the supplied BHSM ontology; their moving highlight is a reading guide.',
     scope:
       'Qualitative BHSM interpretation, without calibrated force strengths or action-derived interaction rates.',
     sources: [
@@ -130,7 +130,7 @@ const topics = {
     keywords:
       'matter particles mass masses spectrum standard model generations yukawa mixing neutrino ledger',
     summary:
-      'Explore three linked Hopf-fiber views, reference particle families and the authorâ€™s mass-bubble formation sequence: virtual particle field alone, emerging quarks and shared clearing, bound proton, then electron attraction and a hydrogen atom. The bubble holds back the field. This conceptual sequence retains the composite-minus-matched-parent rest-energy mass contract.',
+      'Explore three linked Hopf-fiber views, reference particle families and the author’s mass-bubble formation sequence: virtual particle field alone, emerging quarks and shared clearing, bound proton, then electron attraction and a hydrogen atom. The bubble holds back the field. This conceptual sequence retains the composite-minus-matched-parent rest-energy mass contract.',
     scope:
       'Conditional structural results and historical screens do not establish physical masses or mixing predictions.',
     sources: [
@@ -285,7 +285,7 @@ const topics = {
     keywords:
       'cosmology original january cosmic cycle hypersphere light proposal universe expansion',
     summary:
-      'The original cosmology exhibit continuously animates the BHSM cosmic cycle, with about 1.5 seconds per stage. All black holes are proposed to lead to the same core/singularity. After heat death, at zero coreâ€“surface differential, the entire cosmos becomes a white hole instantaneously in one global event. Playback and the brief heat-death hold are explanatory, not computed cosmic evolution. The original January illustration is expandable below; the shared-core and white-hole interpretation follows the authorâ€™s clarification of 1 October 2026.',
+      'The original cosmology exhibit continuously animates the BHSM cosmic cycle through six stages, with about 1.5 seconds per stage without music. All black holes are proposed to lead to the same core/singularity, shown as one white core among dark entrances. After heat death, at zero core–surface differential, the entire scene turns uniformly white at once: one whole-cosmos white-hole event with no separate heat-death slide or spreading front. Playback is explanatory, not computed cosmic evolution. The original January illustration is expandable below; the interpretation follows the author’s clarification of 1 October 2026 and the visual correction of 23 October 2026.',
     scope:
       'Historical conceptual illustration, not a sky map, current numerical fit or demonstrated physical cosmic cycle.',
     sources: [
@@ -442,7 +442,7 @@ export const catalog = {
 export const aiHandoff = {
   schema: 'bhsm-ai-handoff/v2',
   purpose:
-    'Use the public BHSM GitHub scientific record to answer my questions about the Bergerâ€“Hopf Standard Model.',
+    'Use the public BHSM GitHub scientific record to answer my questions about the Berger–Hopf Standard Model.',
   initial_task:
     'Start with a short plain-language overview of BHSM supported by the embedded source excerpts, then invite my specific question. If browsing is disabled, use the excerpts already in this message; do not answer with only an access-limitation notice.',
   repository: {

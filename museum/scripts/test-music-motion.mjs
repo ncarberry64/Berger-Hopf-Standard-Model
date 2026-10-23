@@ -250,10 +250,10 @@ test('the Einstein ring annotation stops at exact alignment and stays there', ()
   assert.equal(transport.tick(40, sample('blackhole-tracker', 40), alignment), alignment);
 });
 
-test('exhibit seven retains its eight-second choreography with actual media progress', () => {
+test('cadence transport retains media seconds for authored presentation sequences', () => {
   const transport = createSceneTransport('cadence');
   const position = runTimeline(transport, 8, [0.047, 0.093, 0.17], (now) => sample('science-decays', 42 + now));
-  near(position, 8, 'one collision cycle lasts eight playing seconds');
+  near(position, 8, 'cadence advances by eight actually played seconds');
   for (const [id] of highTracks) {
     const coordinate = musicPosition(id, 8, 'cadence');
     assert.equal(coordinate.grid, false);

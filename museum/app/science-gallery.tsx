@@ -55,16 +55,16 @@ export function ScienceGallery({ motion }: { motion: boolean }) {
     ref: stageRef,
     phraseTime,
     restartSequence,
-  } = useSceneClock(motion && playing, Infinity, 0, 'musical', 8);
-  const elapsed = phraseTime % 8;
+  } = useSceneClock(motion && playing, Infinity, 0, 'musical', 4);
+  const elapsed = phraseTime % 4;
   const index =
-    (baseIndex + Math.floor(phraseTime / 8)) % comparison.rows.length;
+    (baseIndex + Math.floor(phraseTime / 4)) % comparison.rows.length;
   const chosen = comparison.rows[index];
   const gallery = galleries.find((g) => g.id === chosen.group)!;
   const ref = references.comparisons.find((r) => r.id === chosen.id)!;
   const residual = (100 * (chosen.bhsm - ref.value)) / ref.value;
   const reveal =
-    !motion || !playing ? 1 : Math.min(1, Math.max(0, (elapsed - 2) / 2));
+    !motion || !playing ? 1 : Math.min(1, Math.max(0, elapsed - 1));
   const x = (n: number) => 450 + 17 * n;
   const select = (i: number) => {
     setIndex(i);
