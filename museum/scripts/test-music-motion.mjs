@@ -5,7 +5,9 @@ import { createHash } from 'node:crypto';
 import cues from '../lib/music-cues.json' with { type: 'json' };
 import { exhibitSoundtracks } from '../lib/exhibit-soundtracks.mjs';
 import { EINSTEIN_CROSSING_SECONDS } from '../lib/einstein-ring.ts';
-import { createSceneTransport, musicPosition } from '../lib/music-motion.ts';
+import { createPhraseSequence, createSceneTransport, musicBeat, musicPosition } from '../lib/music-motion.ts';
+import { bergerMotion } from '../lib/berger-motion.ts';
+import { bergerLevel, hopfBase, hopfPoint } from '../lib/berger-hopf.ts';
 
 const highTracks = Object.entries(cues.tracks).filter(([, cue]) => cue.confidence === 'high');
 const ambientTracks = Object.entries(cues.tracks).filter(([, cue]) => cue.confidence !== 'high');
@@ -50,7 +52,7 @@ test('only trustworthy pulse grids place each measured beat on a half-second sce
   for (const [id] of ambientTracks) assert.equal(musicPosition(id, 30).grid, false, `${id} must not invent a steady pulse`);
 });
 
-test('pulse easing moves forward throughout a beat without overshooting its next accent', () => {
+test('the linear pulse clock moves forward throughout a beat without overshooting its next accent', () => {
   for (const [id, cue] of highTracks) {
     let previous = 2;
     for (let frame = 1; frame <= 120; frame++) {
@@ -60,6 +62,165 @@ test('pulse easing moves forward throughout a beat without overshooting its next
       previous = next;
     }
     near(previous, 2.5, `${id} lands on the following beat`);
+  }
+});
+
+test('raw musical phase preserves the first onset and remains on the recording after a minute', () => {
+  assert.equal(musicBeat('missing-exhibit', 20), null);
+  for (const [id] of ambientTracks) assert.equal(musicBeat(id, 20), null, `${id} has no reliable beat phase`);
+  for (const [id, cue] of highTracks) {
+    const onset = musicBeat(id, cue.beatOffsetSeconds);
+    assert.equal(onset.tempoBpm, cue.tempoBpm);
+    near(onset.beat, 0, `${id} first measured attack`);
+    assert.ok(musicBeat(id, 0).beat < 0, 'pre-onset phase must not be clamped into an early attack');
+    const minute = musicBeat(id, cue.beatOffsetSeconds + 60);
+    near(minute.beat, cue.tempoBpm, `${id} has no phase drift after sixty playing seconds`);
+    const laterOnset = musicBeat(id, cue.beatOffsetSeconds + 137 * 60 / cue.tempoBpm);
+    near(laterOnset.beat, 137, `${id} later attacks still have integer phase`);
+  }
+});
+
+test('Hopf and Berger lights complete an orbit in sixteen audible beats and the metric returns with them', () => {
+  const cue = cues.tracks['berger-hopf'];
+  const onBeat = (beat) => musicBeat('berger-hopf', cue.beatOffsetSeconds + beat * 60 / cue.tempoBpm).beat;
+  for (const stage of [0, 1]) {
+    const start = bergerMotion(7.31, 2.75, onBeat(0), stage);
+    for (const [beat, x, y] of [[4, 0, 1], [8, -1, 0], [12, 0, -1], [16, 1, 0]]) {
+      const motion = bergerMotion(7.31 + beat / 2, 2.75 + beat / 2, onBeat(beat), stage);
+      near(Math.cos(motion.orbit), x, `stage ${stage}, beat ${beat}: visible orbit x`);
+      near(Math.sin(motion.orbit), y, `stage ${stage}, beat ${beat}: visible orbit y`);
+    }
+    const returned = bergerMotion(999, 345, onBeat(16), stage);
+    near(returned.orbit - start.orbit, Math.PI * 2, 'one phrase is exactly one light orbit');
+    near(returned.fiberScale, start.fiberScale, 'the fiber ruler returns on the same musical phrase');
+    near(bergerLevel(2, 0, returned.fiberScale), bergerLevel(2, 0, start.fiberScale), 'the displayed metric response also returns');
+    near(start.fiberScale, 1.3, 'metric maximum lands on the phrase attack');
+    near(bergerMotion(0, 0, onBeat(8), stage).fiberScale, 0.7, 'metric minimum lands eight beats later');
+  }
+});
+
+test('the BHSM lights complete their faster orbit in exactly eight audible beats', () => {
+  const cue = cues.tracks['berger-hopf'];
+  const beatAt = (beat) => musicBeat('berger-hopf', cue.beatOffsetSeconds + beat * 60 / cue.tempoBpm).beat;
+  const start = bergerMotion(12.9, 3.2, beatAt(0), 2);
+  for (const [beat, x, y] of [[2, 0, 1], [4, -1, 0], [6, 0, -1], [8, 1, 0]]) {
+    const motion = bergerMotion(12.9 + beat / 2, 3.2 + beat / 2, beatAt(beat), 2);
+    near(Math.cos(motion.orbit), x, `BHSM beat ${beat}: light orbit x`);
+    near(Math.sin(motion.orbit), y, `BHSM beat ${beat}: light orbit y`);
+  }
+  near(bergerMotion(100, 60, beatAt(8), 2).orbit - start.orbit, Math.PI * 2, 'BHSM returns after eight beats rather than an arbitrary angular speed');
+});
+
+test('each recorded attack peaks the light accent and each intervening half beat dims it', () => {
+  const cue = cues.tracks['berger-hopf'];
+  for (const stage of [0, 1, 2]) {
+    for (const attack of [-2, 0, 1, 16, 128]) {
+      const at = (beat) => musicBeat('berger-hopf', cue.beatOffsetSeconds + beat * 60 / cue.tempoBpm).beat;
+      near(bergerMotion(51.72, 4.13, at(attack), stage).accent, 1, `stage ${stage} lights peak on beat ${attack}`);
+      near(bergerMotion(51.97, 4.38, at(attack + 0.5), stage).accent, 0, `stage ${stage} lights dim halfway after beat ${attack}`);
+    }
+  }
+});
+
+test('arbitrary scene entry and replay origins cannot change the visual phase of a playing beat', () => {
+  for (const stage of [0, 1, 2]) {
+    for (const beat of [0, 7.125, 19.75, 137]) {
+      const initial = bergerMotion(0, 0, beat, stage);
+      assert.deepEqual(bergerMotion(157.39, 3.27, beat, stage), initial, 'scene entry follows the recording rather than a new local oscillator');
+      assert.deepEqual(bergerMotion(512.81, 0.001, beat, stage), initial, 'replaying a chapter cannot shift the beat or the orbit');
+    }
+  }
+});
+
+test('reading sequences launch at an actual four-beat bar despite an unrelated local clock', () => {
+  const sequence = createPhraseSequence(8);
+  assert.equal(sequence.tick(7.3, 40.8), 0);
+  assert.equal(sequence.tick(8, 41.6), 0, 'a local two-second boundary cannot launch an offbeat chapter');
+  assert.equal(sequence.tick(9, 43.2), 0);
+  assert.equal(sequence.tick(9.3, 43.99), 0);
+  assert.equal(sequence.tick(9.31, 44), 0, 'the next actual bar launches at beat 44');
+  near(sequence.tick(9.9, 45), 0.5, 'progress comes from the playing beat after launch');
+});
+
+test('continuous chapter changes land every sixteen audible beats without local-clock drift', () => {
+  const sequence = createPhraseSequence(8);
+  sequence.tick(7.3, 40.8);
+  sequence.tick(8, 42);
+  sequence.tick(8.1, 44);
+  for (let halfBeat = 1; halfBeat <= 96; halfBeat++) {
+    const beat = 44 + halfBeat / 2;
+    const position = sequence.tick(8.1 + halfBeat * 0.173, beat);
+    near(position, halfBeat / 4, `reading sequence at beat ${beat}`);
+    if (halfBeat % 32 === 0) {
+      near(position % 8, 0, 'each chapter starts exactly on its sixteen-beat phrase');
+      assert.equal(Math.floor(position / 8), halfBeat / 32);
+    }
+  }
+});
+
+test('buffering holds both an upcoming phrase launch and an active chapter', () => {
+  const sequence = createPhraseSequence(8);
+  assert.equal(sequence.tick(10, 40.8), 0);
+  for (const time of [10.1, 11, 15, 20])
+    assert.equal(sequence.tick(time, 40.8), 0, 'waiting for the bar follows media rather than wall time');
+  sequence.tick(20.1, 42);
+  sequence.tick(20.2, 44);
+  assert.equal(sequence.tick(20.3, 45), 0.5);
+  for (const time of [21, 25, 30])
+    assert.equal(sequence.tick(time, 45), 0.5, 'a stalled recording cannot consume the reading interval');
+  assert.equal(sequence.tick(30.1, 46), 1);
+});
+
+test('suspension, skipped audio and looping repeat the current entry at a fresh bar rather than skipping it', () => {
+  for (const interruption of ['suspend', 'seek', 'loop']) {
+    const sequence = createPhraseSequence(8);
+    sequence.tick(0, 0);
+    for (let beat = 1; beat <= 21; beat++) sequence.tick(beat / 2, beat);
+    if (interruption === 'suspend') sequence.suspend();
+    const arrival = interruption === 'loop' ? 1.2 : 200.8;
+    const bar = interruption === 'loop' ? 4 : 204;
+    assert.equal(sequence.tick(100, arrival), 10.5, `${interruption} preserves the inspected point until the fresh bar`);
+    sequence.tick(100.1, arrival + 1);
+    assert.equal(sequence.tick(100.2, bar - 0.01), 10.5, 'unseen music does not advance to a different entry');
+    assert.equal(sequence.tick(100.3, bar), 8, 'the current entry starts again at the next actual bar');
+    assert.equal(sequence.tick(100.4, bar + 1), 8.5);
+    assert.equal(Math.floor(sequence.tick(100.5, bar + 2) / 8), 1, 'the same entry remains readable');
+  }
+});
+
+test('replay restarts on the next actual bar and silent sequences retain a usable presentation clock', () => {
+  const sequence = createPhraseSequence(8);
+  sequence.tick(0, 0);
+  for (let beat = 1; beat <= 21; beat++) sequence.tick(beat / 2, beat);
+  sequence.restart();
+  assert.equal(sequence.tick(71.3, 103.1), 0);
+  assert.equal(sequence.tick(72, 103.8), 0, 'an unrelated local bar cannot restart the reading sequence');
+  assert.equal(sequence.tick(72.3, 104), 0);
+  assert.equal(sequence.tick(72.4, 104.5), 0.25);
+
+  const silent = createPhraseSequence(8);
+  assert.equal(silent.tick(1, null), 0);
+  assert.equal(silent.tick(1.5, null), 0.5);
+  assert.equal(silent.tick(9.5, null), 8.5);
+  silent.suspend();
+  assert.equal(silent.tick(100, null), 8.5, 'returning to a silent scene discards unseen wall time');
+  assert.equal(silent.tick(100.25, null), 8.75);
+  assert.equal(silent.tick(100.3, 40.8), 8.75, 'starting music holds the current entry until an actual bar');
+  silent.tick(100.4, 42);
+  assert.equal(silent.tick(100.5, 44), 8, 'music joins by repeating the current entry, preserving reading time');
+});
+
+test('the new musical orbit still follows a Hopf fiber with a fixed mathematical base point', () => {
+  const eta = 0.58, phi = Math.PI;
+  const base = hopfBase(hopfPoint(eta, phi, 0));
+  for (const stage of [0, 1, 2]) {
+    for (const beat of [0, 0.5, 1, 2, 4, 8, 16, 31.75, 128]) {
+      const { orbit } = bergerMotion(237.42, 4.1, beat, stage);
+      const point = hopfPoint(eta, phi, orbit);
+      near(point.reduce((sum, value) => sum + value * value, 0), 1, 'musical motion stays on S3');
+      const mapped = hopfBase(point);
+      mapped.forEach((value, axis) => near(value, base[axis], `stage ${stage}, beat ${beat}: Hopf base axis ${axis} remains fixed`));
+    }
   }
 });
 
