@@ -1,11 +1,13 @@
 # Galaxies submission files
 
+The [current RC5 manual package preparation](rc5/README.md) binds the formal product revision,198-word plain-text abstract and visually reviewed45-page PDF. The [initial RC5 text draft](rc5_text_draft/README.md) and existing metadata/cover letter in this directory preserve earlier preparation history. Their hashes do not certify the current RC5 files. Final hosted CI remains separately recorded against exact remote heads.
+
 The target is the live **Strong Gravitational Lens Modeling** call in *Galaxies*: <https://www.mdpi.com/journal/galaxies/special_issues/50J931CL3Q>. The formal reviewer source is the [BHSM repository](https://github.com/ncarberry64/Berger-Hopf-Standard-Model); Manuscript-Generation is a development workspace.
 
 After compiling and visually reviewing the manuscript, run from this paper directory:
 
 ```text
-python submission/prepare_submission.py /path/to/submission-files
+python submission/rc5/prepare_submission.py /path/to/new/submission-files
 ```
 
 This verifies the exact abstract, the BHSM code citation and the reviewed PDF hash. It prepares the PDF, a focused source ZIP with every manuscript/figure source, the metadata and an explicitly unapproved cover-letter draft. Its receipt checks archive members and hashes. To recompile the focused archive, extract it and run `latexmk -cd -pdf -interaction=nonstopmode -halt-on-error manuscript/main.tex`. The separate complete reviewer archive also includes the runnable product, supporting papers, provenance, tests and receipts.

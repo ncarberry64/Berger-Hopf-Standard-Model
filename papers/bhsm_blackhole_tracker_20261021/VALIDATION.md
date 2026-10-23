@@ -1,10 +1,20 @@
-# Validation and evidence: 0.2.0rc4
+# Validation and evidence: RC5 atlas and retained RC4 analyses
 
 Validation is separated into the reviewed physical-inference corrections, native unresolved observations, historical resolved-pair calibration, conditional theory, and installed workflows. A completed optimizer is not a scientifically adequate model. Internal agent checks are not external peer review.
 
-## Current installed release and joint validation
+## RC5 candidate-inventory and replay component checks
 
-The current product suite passes 244 tests; `product/validation/rc4_product_tests.xml` records the final run. The clean noneditable wheel passes the base-only and optional-astrometry installation probes. All four notebooks execute with that installed interpreter outside the checkout. Browser source-pack import, saved measured-state verification, native export/CLI replay and explicit unsuccessful-search diagnostics are checked. Current wheel/source hashes and final-head CI remain bound by release receipts rather than older historical files.
+The atlas is a metadata route, not a new physical fit. The [portable inventory](candidate_atlas_20261023/inventory_v3.json) has SHA-256 `4a76300f0e0e3883a0c9c343e1e0c5fbead595c9b4f333aaa01ec05c9ec9debc`: 155 distinct cohort records, with the separately labeled literature benchmark outside that denominator. The original 100 pilot outcomes, 59 parallax entries, four shared identities, 142 degenerate published model summaries, 13 historical dark-remnant-consistent labels and 26 available/33 unavailable older observation records are retained.
+
+The [owner verification](candidate_atlas_20261023/INVENTORY_VERIFICATION_v3.json) records 18 focused tests and two byte-identical assemblies. The [independent portable review](candidate_atlas_20261023/INDEPENDENT_PORTABLE_INVENTORY_REVIEW.json) repeats the rebuild and tests after relocation on Python 3.11.9. A confinement test forbids reads of original source paths. Sixteen factual metadata snapshots suffice to rerun classification and exact-identity association rules; no native light curves, full article HTML, full 2015 catalog or complete 2025 observed input is redistributed by this pack. Optional reacquired-source hash checks are separate from offline metadata verification.
+
+Source-pinned Python/browser checks reject contradictory summary counts, source-hash mismatches, unsupported location claims, malformed benchmark separation, duplicate JSON keys and integers beyond browser exact precision. Large identifiers must be strings; booleans are not numeric counts or map flags. Eleven focused Python product tests and independent CLI checks pass at the reviewed component revision. Bidirectional browser/Python replay preserves exact UTF-8 and CRLF inventory bytes, including unselected records. Five filters on the actual inventory agree in ordering and count (155 all events, three search targets, one MOA alias match, 59 parallax-cohort records and 33 unavailable-table records). The saved actual browser replay retains 155 events plus one separate benchmark and three selected targets; an intentionally tampered replay is rejected. Fresh export/replay succeeds, and existing files/directories are refused without mutation.
+
+The sky figure script checks the exact inventory hash and performs no likelihood call. Two runs yield identical PNG/PDF bytes with PDF dates disabled; the rendered PDF has been visually inspected. These component checks do not establish black-hole recovery, classification reliability or calibrated mass intervals. Full RC5 installation, final hosted CI, exact product-source revision and the complete reviewed manuscript PDF require final release-specific receipts. Earlier RC4 evidence must not be presented as validation of changed RC5 bytes.
+
+## Historical RC4 installed release and joint validation
+
+The RC4 product suite passes 244 tests; `product/validation/rc4_product_tests.xml` records that historical run. Its clean noneditable wheel passes the base-only and optional-astrometry installation probes. All four then-current notebooks execute with that installed interpreter outside the checkout. Browser source-pack import, saved measured-state verification, native export/CLI replay and explicit unsuccessful-search diagnostics are checked at that revision. RC4 wheel/source hashes and final-head CI remain bound by their own release receipts.
 
 The [separate 2023 joint audit](joint_known_system_20261022/README.md) retains frozen v1 and v2 algorithms, independent dense-covariance/Schur-complement checks, noiseless and zero-parallax controls, all three measured candidate baselines, 40 parametric controls, fixed-mass profiles, original limited UTC partition diagnostics and corrected local-noon whole-night validation. None of G0/G1/G2 is accepted: 15/15/8 residual bins fail, and G2 reaches the 100-day correlation cap. Conditional profile crossings have no accepted mass-interval status. The full calibration-sensitivity campaign is not required after the frozen all-models-fail stopping rule, and is not represented as performed. Internal checks are not external validation or general classification reliability.
 
@@ -14,15 +24,15 @@ The following rc3 receipts remain historical evidence for the unchanged pilot an
 
 ## Reviewed corrections
 
-The fresh full product suite passes **182 tests**, recorded in `product/validation/rc3_product_tests.xml` (54.02 s). The focused F1–F3 set passes **75 tests** (33.08 s), with `product/validation/rc3_resolved_correction_receipt.json` and `rc3_resolved_corrections_tests.xml`.
+The fresh full product suite passes **182 tests**, recorded in `product/validation/rc3_product_tests.xml` (54.02 s). The focused F1Ã¢â‚¬â€œF3 set passes **75 tests** (33.08 s), with `product/validation/rc3_resolved_correction_receipt.json` and `rc3_resolved_corrections_tests.xml`.
 
 1. **Numerical reference invariance:** physical fit domains no longer depend on a chosen reference mass, coordinate normalization or epoch. Stellar and very massive regressions compare the same physical predictions and likelihoods across reference choices.
 2. **Physical profiles:** fixed mass/motion profile points reoptimize nuisance coordinates inside the declared admitted domain. Inadmissible states and failed/unresolved points retain explicit outcomes; a grid edge is not a measured limit.
 3. **Unidentified motion:** rank/null projection determines which local coordinate uncertainties exist. A pseudoinverse zero is not reported as perfect motion precision. Repeated-epoch data retain unavailable motion components.
 4. **Radial mechanics:** the membrane equation requires a round spatial p-sphere, fixed Minkowski background, constant tension, c=1, coordinate-time derivatives and subluminal radial speed. A constant applied pressure needs its pressure-work term. The pure membrane gives zero traction; curved/backreacting geometry, variable tension and dynamic forcing require their actual covariant variations.
-5. **Source reconciliation:** the historical d604… handoff is preserved separately from the named 149b… handoff and original front/galaxy PDFs. All four raw hashes verify. Both PDFs were read and all 23 pages inspected. Their results retain their prescribed-background/conditional domains.
+5. **Source reconciliation:** the historical d604Ã¢â‚¬Â¦ handoff is preserved separately from the named 149bÃ¢â‚¬Â¦ handoff and original front/galaxy PDFs. All four raw hashes verify. Both PDFs were read and all 23 pages inspected. Their results retain their prescribed-background/conditional domains.
 
-F4–F5 formal theory/source revision is [705d4c7e](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/tree/705d4c7e2f9a832b457f63ff975e7d4dc8008645): **22 symbolic checks** and **10 focused tests** pass. Repeat generation gives identical ledgers, and the narrow formal audits retain their own receipts. No unrelated historical campaign is represented as rerun.
+F4Ã¢â‚¬â€œF5 formal theory/source revision is [705d4c7e](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/tree/705d4c7e2f9a832b457f63ff975e7d4dc8008645): **22 symbolic checks** and **10 focused tests** pass. Repeat generation gives identical ledgers, and the narrow formal audits retain their own receipts. No unrelated historical campaign is represented as rerun.
 
 ## New native-observation likelihood
 
@@ -77,3 +87,9 @@ The preserved64-draw calibration uses a ten-year, three-source synthetic design 
 Historical weak-motion and omitted-shear controls retain partial/rejected outcomes. The conditional R1 calculation preserves the exterior-wide sufficient quadrupole state cap, zero-flux treatment, source pairing and source-pinned provider checks. Its retained local principal-sign guarantees are not full coupled stability, horizon regularity or a selected physical amplitude. The screened leading delay null, shear ambiguity and two projected STF nulls remain explicit. The earlier 54-observable/30-nuisance experiment is an information design, not realistic observing feasibility.
 
 The updated paper states all these distinctions. Compilation and visual verification must bind the final PDF bytes; old PDF receipts do not certify changed pages.
+
+## RC5 installed release binding
+
+Formal product [8ca349fa8eb5](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/tree/8ca349fa8eb5c54c661a022790ae915d05060b59/products/blackhole_tracker) retains193 exact upstream files. The fresh noneditable wheel has SHA-256 `93c8d8fe51f80e31f73c3461f80be6af968ae0e1b9839d989d6400508d1d91e2`. Outside-checkout installed testing passes 257 ordinary tests plus 29 subtests (286 JUnit cases), with zero failures or skips. All five notebooks execute with the installed interpreter; native03 and saved-joint04 also execute against unchanged actual inputs. The actual browser exports three targets, resets and replays them with all 155 records retained; Python verifies the browser export and CSV, and all 68 runtime files match source/wheel/install bytes. Temporary mobile navigation wraps without document overflow.
+
+The [latest PDF review](provenance/RC5_PDF_VISUAL_QA.json) covers all 45 rendered pages, zero overfull boxes and zero undefined citations/references. The [versioned manual preparation](submission/rc5/README.md) verifies the 198-word plain-text abstract and27 focused source members. These are local software/layout checks. Final hosted CI is reported separately; no physical acceptance or independent known-BH recovery follows from these passes.

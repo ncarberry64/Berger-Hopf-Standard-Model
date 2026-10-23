@@ -1,0 +1,676 @@
+{
+  "schema": "bhsm.complementary_published_parallax_cohort_inventory.v1",
+  "created_utc": "2026-10-23T02:13:00.275915+00:00",
+  "scientific_cutoff": "2026-10-22",
+  "local_timezone": "America/Chicago",
+  "formal_BHSM_repository": "https://github.com/ncarberry64/Berger-Hopf-Standard-Model",
+  "status": "PRIMARY_SOURCE_INVENTORY_ONLY_NO_FIT_OR_PHYSICAL_ACCEPTANCE",
+  "primary_59_cohort": {
+    "declaration_file": "COHORT59_PREACQUISITION_DECLARATION.json",
+    "declaration_sha256": "8404f58033086662c9e55bca80bbbef679a2d49b6557691bb48f6859c87d2447",
+    "all59_retained": true,
+    "published_parallax_model_metadata_mode_rows": 142,
+    "measured_thetaE_available_in_cohort": false,
+    "independent_mass_available": false,
+    "raw_older_version_tables_acquired": 26,
+    "raw_older_version_rows_acquired": 19068,
+    "remaining33_status": "No exact-ID2015 catalog match in bounded acquisition; dedicated complete2016 native measurement version not recovered. Retained, not silently excluded.",
+    "native_acquisition_receipt": "OLDER2015_NATIVE_ACQUISITION.json",
+    "native_acquisition_sha256": "b9a221bee21e029a7814fe8e72f639e9bcac8162cf25b2efebe80ef36ba77643",
+    "published_length_is_not_tE_or_mass": true,
+    "selection": "Historical golden sample from91OGLEIIIfields, originally chosen by authors after database cuts and visual inspection. This inventory keeps all59, including the46 outside the13 highlighted dark-remnant candidates.",
+    "calibration": "Author2016 describes DIA/re-reduction, field/chip error corrections and outlier removal. Acquired older2015 ClassA-optimized/ClassB files remain a separate version; no equivalence to exact2016 masks is asserted.",
+    "clocks": "Native public older tables declare HJD-2450000; underlying UTC/TT/TDB not specified in audited README. No conversion adopted.",
+    "rights": "Public author data/citation request; explicit raw-table redistribution license absent in audited README. External inventory only; no bundling under BHSM or Zenodo licenses."
+  },
+  "complementary_spitzer9": {
+    "publication": "Rybickietal2024,ApJ975216,doi10.3847/1538-4357/ad7bb1",
+    "primary_source": "https://arxiv.org/html/2407.13740v1",
+    "cohort_definition": "All9 historical authorsubset chosen from720 PSPL-compatible events among~950Spitzer targets, using timescale/parallax/Gaia coverage. Prior-selected candidate cohort, not an unbiased new census.",
+    "events": [
+      {
+        "event_id": "OGLE-2015-BLG-0145",
+        "paper_alias": "OB150145",
+        "other_aliases": [],
+        "primary_table_row_id": "Rybicki2024:arxiv2407.13740v1:S3.T3.4:row:2",
+        "adopted_source_counterpart_metadata": {
+          "epoch": "J2016",
+          "RA_deg": 270.17782,
+          "Dec_deg": -35.15408,
+          "Gaia_DR3_source_id": "4041998223399082752",
+          "role": "Source/unresolved counterpart, not a measured lens."
+        },
+        "paper_used_photometry_counts_and_error_factors_native_cells": [
+          [
+            "OB150145",
+            "OGLE",
+            "1.4",
+            "554"
+          ],
+          [
+            "",
+            "Spitzer",
+            "1.6",
+            "48"
+          ],
+          [
+            "",
+            "Gaia",
+            "1.7",
+            "31"
+          ]
+        ],
+        "photometric_piE_status": "Earth-Spitzer parallax fitted, with event-specific degeneracy/upper-limit/systematic caveats; posterior is not an independent observation.",
+        "thetaE_measured": null,
+        "mass_measured_without_Galactic_or_motion_prior": null,
+        "Gaia_astrometric_series_in_this_paper": "Simulations/predictions, not observed epoch astrometry.",
+        "Gaia_alert_photometry_native_sigma_status": "Not supplied in GSA photometric stream; paper estimates errors. No errors assigned here.",
+        "complete_paper_native_reduced_table_status": "Not located in audited author HTML/CDS catalog/KMT DataByPaper list. Publisher metadata request returned a CAPTCHA, preserved as such.",
+        "raw_data_masks_calibration_and_time_scale": null,
+        "already_published_not_new": true,
+        "accepted_BH": false
+      },
+      {
+        "event_id": "OGLE-2015-BLG-0149",
+        "paper_alias": "OB150149",
+        "other_aliases": [],
+        "primary_table_row_id": "Rybicki2024:arxiv2407.13740v1:S3.T3.4:row:3",
+        "adopted_source_counterpart_metadata": {
+          "epoch": "J2016",
+          "RA_deg": 270.28819,
+          "Dec_deg": -32.55773,
+          "Gaia_DR3_source_id": "4042928139682133120",
+          "role": "Source/unresolved counterpart, not a measured lens."
+        },
+        "paper_used_photometry_counts_and_error_factors_native_cells": [
+          [
+            "OB150149",
+            "OGLE",
+            "1.4",
+            "1653"
+          ],
+          [
+            "",
+            "Spitzer",
+            "4.5",
+            "50"
+          ],
+          [
+            "",
+            "Gaia",
+            "5.0",
+            "41"
+          ]
+        ],
+        "photometric_piE_status": "Earth-Spitzer parallax fitted, with event-specific degeneracy/upper-limit/systematic caveats; posterior is not an independent observation.",
+        "thetaE_measured": null,
+        "mass_measured_without_Galactic_or_motion_prior": null,
+        "Gaia_astrometric_series_in_this_paper": "Simulations/predictions, not observed epoch astrometry.",
+        "Gaia_alert_photometry_native_sigma_status": "Not supplied in GSA photometric stream; paper estimates errors. No errors assigned here.",
+        "complete_paper_native_reduced_table_status": "Not located in audited author HTML/CDS catalog/KMT DataByPaper list. Publisher metadata request returned a CAPTCHA, preserved as such.",
+        "raw_data_masks_calibration_and_time_scale": null,
+        "already_published_not_new": true,
+        "accepted_BH": false
+      },
+      {
+        "event_id": "OGLE-2015-BLG-0211",
+        "paper_alias": "OB150211",
+        "other_aliases": [],
+        "primary_table_row_id": "Rybicki2024:arxiv2407.13740v1:S3.T3.4:row:4",
+        "adopted_source_counterpart_metadata": {
+          "epoch": "J2016",
+          "RA_deg": 262.35909,
+          "Dec_deg": -30.98178,
+          "Gaia_DR3_source_id": "4058004814930630912",
+          "role": "Source/unresolved counterpart, not a measured lens."
+        },
+        "paper_used_photometry_counts_and_error_factors_native_cells": [
+          [
+            "OB150211",
+            "OGLE",
+            "1.2",
+            "937"
+          ],
+          [
+            "",
+            "Spitzer",
+            "4.7",
+            "109"
+          ],
+          [
+            "",
+            "Gaia",
+            "1.5",
+            "28"
+          ]
+        ],
+        "photometric_piE_status": "Earth-Spitzer parallax fitted, with event-specific degeneracy/upper-limit/systematic caveats; posterior is not an independent observation.",
+        "thetaE_measured": null,
+        "mass_measured_without_Galactic_or_motion_prior": null,
+        "Gaia_astrometric_series_in_this_paper": "Simulations/predictions, not observed epoch astrometry.",
+        "Gaia_alert_photometry_native_sigma_status": "Not supplied in GSA photometric stream; paper estimates errors. No errors assigned here.",
+        "complete_paper_native_reduced_table_status": "Not located in audited author HTML/CDS catalog/KMT DataByPaper list. Publisher metadata request returned a CAPTCHA, preserved as such.",
+        "raw_data_masks_calibration_and_time_scale": null,
+        "already_published_not_new": true,
+        "accepted_BH": false
+      },
+      {
+        "event_id": "OGLE-2016-BLG-0293",
+        "paper_alias": "OB160293",
+        "other_aliases": [],
+        "primary_table_row_id": "Rybicki2024:arxiv2407.13740v1:S3.T3.4:row:5",
+        "adopted_source_counterpart_metadata": {
+          "epoch": "J2016",
+          "RA_deg": 268.1614,
+          "Dec_deg": -32.4896,
+          "Gaia_DR3_source_id": "4043504794840743040",
+          "role": "Source/unresolved counterpart, not a measured lens."
+        },
+        "paper_used_photometry_counts_and_error_factors_native_cells": [
+          [
+            "OB160293",
+            "OGLE",
+            "1.6",
+            "2718"
+          ],
+          [
+            "",
+            "Spitzer",
+            "3.1",
+            "24"
+          ],
+          [
+            "",
+            "Gaia",
+            "1.9",
+            "32"
+          ],
+          [
+            "",
+            "KMTS",
+            "1.0",
+            "1404"
+          ],
+          [
+            "",
+            "MOA",
+            "2.2",
+            "1798"
+          ]
+        ],
+        "photometric_piE_status": "Earth-Spitzer parallax fitted, with event-specific degeneracy/upper-limit/systematic caveats; posterior is not an independent observation.",
+        "thetaE_measured": null,
+        "mass_measured_without_Galactic_or_motion_prior": null,
+        "Gaia_astrometric_series_in_this_paper": "Simulations/predictions, not observed epoch astrometry.",
+        "Gaia_alert_photometry_native_sigma_status": "Not supplied in GSA photometric stream; paper estimates errors. No errors assigned here.",
+        "complete_paper_native_reduced_table_status": "Not located in audited author HTML/CDS catalog/KMT DataByPaper list. Publisher metadata request returned a CAPTCHA, preserved as such.",
+        "raw_data_masks_calibration_and_time_scale": null,
+        "already_published_not_new": true,
+        "accepted_BH": false
+      },
+      {
+        "event_id": "OGLE-2016-BLG-0689",
+        "paper_alias": "OB160689",
+        "other_aliases": [],
+        "primary_table_row_id": "Rybicki2024:arxiv2407.13740v1:S3.T3.4:row:6",
+        "adopted_source_counterpart_metadata": {
+          "epoch": "J2016",
+          "RA_deg": 261.14944,
+          "Dec_deg": -30.13245,
+          "Gaia_DR3_source_id": "4059051309459806208",
+          "role": "Source/unresolved counterpart, not a measured lens."
+        },
+        "paper_used_photometry_counts_and_error_factors_native_cells": [
+          [
+            "OB160689",
+            "OGLE",
+            "1.4",
+            "1162"
+          ],
+          [
+            "",
+            "Spitzer",
+            "2.7",
+            "16"
+          ],
+          [
+            "",
+            "Gaia",
+            "1.7",
+            "21"
+          ],
+          [
+            "",
+            "KMTA",
+            "1.1",
+            "442"
+          ],
+          [
+            "",
+            "KMTC",
+            "1.0",
+            "726"
+          ],
+          [
+            "",
+            "KMTS",
+            "1.1",
+            "662"
+          ]
+        ],
+        "photometric_piE_status": "Earth-Spitzer parallax fitted, with event-specific degeneracy/upper-limit/systematic caveats; posterior is not an independent observation.",
+        "thetaE_measured": null,
+        "mass_measured_without_Galactic_or_motion_prior": null,
+        "Gaia_astrometric_series_in_this_paper": "Simulations/predictions, not observed epoch astrometry.",
+        "Gaia_alert_photometry_native_sigma_status": "Not supplied in GSA photometric stream; paper estimates errors. No errors assigned here.",
+        "complete_paper_native_reduced_table_status": "Not located in audited author HTML/CDS catalog/KMT DataByPaper list. Publisher metadata request returned a CAPTCHA, preserved as such.",
+        "raw_data_masks_calibration_and_time_scale": null,
+        "already_published_not_new": true,
+        "accepted_BH": false
+      },
+      {
+        "event_id": "OGLE-2018-BLG-0410",
+        "paper_alias": "OB180410",
+        "other_aliases": [
+          "Gaia18cho"
+        ],
+        "primary_table_row_id": "Rybicki2024:arxiv2407.13740v1:S3.T3.4:row:7",
+        "adopted_source_counterpart_metadata": {
+          "epoch": "J2016",
+          "RA_deg": 272.2277,
+          "Dec_deg": -27.16974,
+          "Gaia_DR3_source_id": "4063011505688647296",
+          "role": "Source/unresolved counterpart, not a measured lens."
+        },
+        "paper_used_photometry_counts_and_error_factors_native_cells": [
+          [
+            "OB180410",
+            "OGLE",
+            "1.7",
+            "2660"
+          ],
+          [
+            "",
+            "Spitzer",
+            "1.9",
+            "29"
+          ],
+          [
+            "",
+            "Gaia",
+            "1.1",
+            "80"
+          ],
+          [
+            "",
+            "KMTA",
+            "3.1",
+            "190"
+          ],
+          [
+            "",
+            "KMTC",
+            "1.6",
+            "369"
+          ],
+          [
+            "",
+            "KMTS",
+            "1.9",
+            "179"
+          ]
+        ],
+        "photometric_piE_status": "Earth-Spitzer parallax fitted, with event-specific degeneracy/upper-limit/systematic caveats; posterior is not an independent observation.",
+        "thetaE_measured": null,
+        "mass_measured_without_Galactic_or_motion_prior": null,
+        "Gaia_astrometric_series_in_this_paper": "Simulations/predictions, not observed epoch astrometry.",
+        "Gaia_alert_photometry_native_sigma_status": "Not supplied in GSA photometric stream; paper estimates errors. No errors assigned here.",
+        "complete_paper_native_reduced_table_status": "Not located in audited author HTML/CDS catalog/KMT DataByPaper list. Publisher metadata request returned a CAPTCHA, preserved as such.",
+        "raw_data_masks_calibration_and_time_scale": null,
+        "already_published_not_new": true,
+        "accepted_BH": false
+      },
+      {
+        "event_id": "OGLE-2018-BLG-0483",
+        "paper_alias": "OB180483",
+        "other_aliases": [
+          "Gaia18ayh"
+        ],
+        "primary_table_row_id": "Rybicki2024:arxiv2407.13740v1:S3.T3.4:row:8",
+        "adopted_source_counterpart_metadata": {
+          "epoch": "J2016",
+          "RA_deg": 262.64177,
+          "Dec_deg": -27.49183,
+          "Gaia_DR3_source_id": "4061439448723558016",
+          "role": "Source/unresolved counterpart, not a measured lens."
+        },
+        "paper_used_photometry_counts_and_error_factors_native_cells": [
+          [
+            "OB180483",
+            "OGLE",
+            "1.4",
+            "1170"
+          ],
+          [
+            "",
+            "Spitzer",
+            "1.9",
+            "27"
+          ],
+          [
+            "",
+            "Gaia",
+            "0.6",
+            "39"
+          ]
+        ],
+        "photometric_piE_status": "Earth-Spitzer parallax fitted, with event-specific degeneracy/upper-limit/systematic caveats; posterior is not an independent observation.",
+        "thetaE_measured": null,
+        "mass_measured_without_Galactic_or_motion_prior": null,
+        "Gaia_astrometric_series_in_this_paper": "Simulations/predictions, not observed epoch astrometry.",
+        "Gaia_alert_photometry_native_sigma_status": "Not supplied in GSA photometric stream; paper estimates errors. No errors assigned here.",
+        "complete_paper_native_reduced_table_status": "Not located in audited author HTML/CDS catalog/KMT DataByPaper list. Publisher metadata request returned a CAPTCHA, preserved as such.",
+        "raw_data_masks_calibration_and_time_scale": null,
+        "already_published_not_new": true,
+        "accepted_BH": false
+      },
+      {
+        "event_id": "OGLE-2018-BLG-0662",
+        "paper_alias": "OB180662",
+        "other_aliases": [
+          "Gaia18cej"
+        ],
+        "primary_table_row_id": "Rybicki2024:arxiv2407.13740v1:S3.T3.4:row:9",
+        "adopted_source_counterpart_metadata": {
+          "epoch": "J2016",
+          "RA_deg": 266.87754,
+          "Dec_deg": -32.52442,
+          "Gaia_DR3_source_id": "4054012488194100096",
+          "role": "Source/unresolved counterpart, not a measured lens."
+        },
+        "paper_used_photometry_counts_and_error_factors_native_cells": [
+          [
+            "OB180662",
+            "OGLE",
+            "2.3",
+            "952"
+          ],
+          [
+            "",
+            "Spitzer",
+            "2.4",
+            "44"
+          ],
+          [
+            "",
+            "Gaia",
+            "0.5",
+            "59"
+          ],
+          [
+            "",
+            "KMTA",
+            "1.4",
+            "395"
+          ],
+          [
+            "",
+            "KMTC",
+            "1.1",
+            "821"
+          ],
+          [
+            "",
+            "KMTS",
+            "1.3",
+            "359"
+          ]
+        ],
+        "photometric_piE_status": "Earth-Spitzer parallax fitted, with event-specific degeneracy/upper-limit/systematic caveats; posterior is not an independent observation.",
+        "thetaE_measured": null,
+        "mass_measured_without_Galactic_or_motion_prior": null,
+        "Gaia_astrometric_series_in_this_paper": "Simulations/predictions, not observed epoch astrometry.",
+        "Gaia_alert_photometry_native_sigma_status": "Not supplied in GSA photometric stream; paper estimates errors. No errors assigned here.",
+        "complete_paper_native_reduced_table_status": "Not located in audited author HTML/CDS catalog/KMT DataByPaper list. Publisher metadata request returned a CAPTCHA, preserved as such.",
+        "raw_data_masks_calibration_and_time_scale": null,
+        "already_published_not_new": true,
+        "accepted_BH": false
+      },
+      {
+        "event_id": "OGLE-2019-BLG-0169",
+        "paper_alias": "OB190169",
+        "other_aliases": [
+          "Gaia19drv"
+        ],
+        "primary_table_row_id": "Rybicki2024:arxiv2407.13740v1:S3.T3.4:row:10",
+        "adopted_source_counterpart_metadata": {
+          "epoch": "J2016",
+          "RA_deg": 265.98559,
+          "Dec_deg": -32.87095,
+          "Gaia_DR3_source_id": "4054032245075925760",
+          "role": "Source/unresolved counterpart, not a measured lens."
+        },
+        "paper_used_photometry_counts_and_error_factors_native_cells": [
+          [
+            "OB190169",
+            "OGLE",
+            "5.0",
+            "955"
+          ],
+          [
+            "",
+            "Spitzer",
+            "2.5",
+            "33"
+          ],
+          [
+            "",
+            "Gaia",
+            "1.6",
+            "52"
+          ],
+          [
+            "",
+            "KMTS",
+            "2.1",
+            "3610"
+          ]
+        ],
+        "photometric_piE_status": "Earth-Spitzer parallax fitted, with event-specific degeneracy/upper-limit/systematic caveats; posterior is not an independent observation.",
+        "thetaE_measured": null,
+        "mass_measured_without_Galactic_or_motion_prior": null,
+        "Gaia_astrometric_series_in_this_paper": "Simulations/predictions, not observed epoch astrometry.",
+        "Gaia_alert_photometry_native_sigma_status": "Not supplied in GSA photometric stream; paper estimates errors. No errors assigned here.",
+        "complete_paper_native_reduced_table_status": "Not located in audited author HTML/CDS catalog/KMT DataByPaper list. Publisher metadata request returned a CAPTCHA, preserved as such.",
+        "raw_data_masks_calibration_and_time_scale": null,
+        "already_published_not_new": true,
+        "accepted_BH": false
+      }
+    ],
+    "measured_thetaE": null,
+    "mass_interpretation": "Galactic/source-motion priors plus photometric parallax; inferred thetaE/mass values and predicted Gaia astrometry are not direct native angular observations.",
+    "error_calibration": "Paper rescales photometric errors and iteratively removes outliers; native per-row errors/masks/reduced time arrays must be recovered before any exact reproduction. No second correction applied here.",
+    "rights": "arXivv1 explicitly CC-BY-NC-ND4.0, distinct from any journal or data-license terms. Do not infer raw-observation redistribution rights. KMT public policy permits post-proprietary publication with required citation/acknowledgment; automatic event data are not the paper-specific re-reduction.",
+    "availability_gaps": [
+      "Full reduced OGLE/MOA/KMT/Spitzer native rows, masks and covariance not recovered in this bounded inventory.",
+      "GSA photometry lacks supplied sigma; no invented sigma assigned.",
+      "No measured Gaia epoch astrometry supplied by this paper; simulations are excluded as observations."
+    ]
+  },
+  "prospective_keck4": {
+    "publication": "Hustonetal2026,arxiv2609.28420v1,submitted AAS journals",
+    "primary_source": "https://arxiv.org/html/2609.28420v1",
+    "all4_retained": true,
+    "events": [
+      {
+        "event_id": "OGLE-2012-BLG-0169",
+        "paper_alias": "OB120169",
+        "other_aliases": [],
+        "RA_J2000_hms": "17:49:51.38",
+        "Dec_J2000_dms": "-35:22:28.0",
+        "source_row_id": "Huston2026:arxiv2609.28420v1:Table1:row:2",
+        "study_status": "Public preprint submitted to AAS journals as of2026-10-22; not asserted peer-reviewed publication.",
+        "observed_angular_followup": "Keck NIRC2/OSIRIS Kp relative astrometry and photometry described by authors.",
+        "native_target_epoch_arrays_publicly_located": false,
+        "native_target_error_or_covariance_publicly_located": false,
+        "Table2_sigma_meaning": "Median errors of reference stars in combined images, not supplied target coordinate sigma.",
+        "native_epoch_clock_scale": null,
+        "reduction_version_for_import": null,
+        "published_interpretation_only": "Authors favor a non-BH lens; not independently certified truth for this engine.",
+        "independent_confirmed_isolated_BH": false,
+        "new_BH_interpretation": null
+      },
+      {
+        "event_id": "OGLE-2014-BLG-0613",
+        "paper_alias": "OB140613",
+        "other_aliases": [
+          "MOA-2015-BLG-041"
+        ],
+        "RA_J2000_hms": "17:53:57.68",
+        "Dec_J2000_dms": "-28:34:21.6",
+        "source_row_id": "Huston2026:arxiv2609.28420v1:Table1:row:3",
+        "study_status": "Public preprint submitted to AAS journals as of2026-10-22; not asserted peer-reviewed publication.",
+        "observed_angular_followup": "Keck NIRC2/OSIRIS Kp relative astrometry and photometry described by authors.",
+        "native_target_epoch_arrays_publicly_located": false,
+        "native_target_error_or_covariance_publicly_located": false,
+        "Table2_sigma_meaning": "Median errors of reference stars in combined images, not supplied target coordinate sigma.",
+        "native_epoch_clock_scale": null,
+        "reduction_version_for_import": null,
+        "published_interpretation_only": "Authors favor a non-BH lens; not independently certified truth for this engine.",
+        "independent_confirmed_isolated_BH": false,
+        "new_BH_interpretation": null
+      },
+      {
+        "event_id": "OGLE-2015-BLG-0029",
+        "paper_alias": "OB150029",
+        "other_aliases": [
+          "MOA-2015-BLG-170"
+        ],
+        "RA_J2000_hms": "17:59:46.60",
+        "Dec_J2000_dms": "-28:38:41.8",
+        "source_row_id": "Huston2026:arxiv2609.28420v1:Table1:row:4",
+        "study_status": "Public preprint submitted to AAS journals as of2026-10-22; not asserted peer-reviewed publication.",
+        "observed_angular_followup": "Keck NIRC2/OSIRIS Kp relative astrometry and photometry described by authors.",
+        "native_target_epoch_arrays_publicly_located": false,
+        "native_target_error_or_covariance_publicly_located": false,
+        "Table2_sigma_meaning": "Median errors of reference stars in combined images, not supplied target coordinate sigma.",
+        "native_epoch_clock_scale": null,
+        "reduction_version_for_import": null,
+        "published_interpretation_only": "Authors favor a non-BH lens; not independently certified truth for this engine.",
+        "independent_confirmed_isolated_BH": false,
+        "new_BH_interpretation": null
+      },
+      {
+        "event_id": "OGLE-2015-BLG-0211",
+        "paper_alias": "OB150211",
+        "other_aliases": [],
+        "RA_J2000_hms": "17:29:26.18",
+        "Dec_J2000_dms": "-30:58:54.3",
+        "source_row_id": "Huston2026:arxiv2609.28420v1:Table1:row:5",
+        "study_status": "Public preprint submitted to AAS journals as of2026-10-22; not asserted peer-reviewed publication.",
+        "observed_angular_followup": "Keck NIRC2/OSIRIS Kp relative astrometry and photometry described by authors.",
+        "native_target_epoch_arrays_publicly_located": false,
+        "native_target_error_or_covariance_publicly_located": false,
+        "Table2_sigma_meaning": "Median errors of reference stars in combined images, not supplied target coordinate sigma.",
+        "native_epoch_clock_scale": null,
+        "reduction_version_for_import": null,
+        "published_interpretation_only": "Poorly constrained BH/NS possibility remains, not confirmed.",
+        "independent_confirmed_isolated_BH": false,
+        "new_BH_interpretation": null
+      }
+    ],
+    "native_data_gap": "Target time-series centroids/photometry/errors not located in paper tables or linked archive. Raw image/reduction work is different from having native target epochs.",
+    "software_link_exclusion": {
+      "url": "https://doi.org/10.5281/zenodo.6677744",
+      "verified_title": "Keck-DataReductionPipelines/KAI: v1.0.0 Release of KAI",
+      "archive_bytes": 254135287,
+      "downloaded": false,
+      "reason": "Reduction software, not native astrometric data; exceeds bounded acquisition budget."
+    },
+    "caveats": "Relative-frame/crowding/PSF and photometry-astrometry tension are described by authors. Reference-star median errors cannot supply target covariance. OB150211 overlaps the2024Spitzer cohort; it is one known event, not a new independent confirmation.",
+    "rights": "Author arXivv1 CC-BY4.0. No new native observational data license located."
+  },
+  "known_isolated_BH_microlensing_benchmarks": [
+    {
+      "event_id": "OGLE-2011-BLG-0462",
+      "aliases": [
+        "MOA-2011-BLG-191",
+        "OB110462",
+        "OGLE-11-462"
+      ],
+      "role": "Only literature-confirmed isolated stellar-mass BH found in this bounded microlensing inventory, with multiple reductions of ONE event.",
+      "primary_confirmation_sources": [
+        "https://doi.org/10.3847/1538-4357/ac739e",
+        "https://doi.org/10.3847/1538-4357/aced4a",
+        "https://doi.org/10.3847/1538-4357/adbe6e"
+      ],
+      "known_positive_literature_evidence": "Angular microlensing plus photometric parallax and lens-light limits; published mass is not imported as a measurement or optimizer target.",
+      "engine_mass_acceptance_in_this_inventory": false,
+      "separate_native_versions": [
+        {
+          "version": "Lam2022 five-system release",
+          "url": "https://doi.org/10.5281/zenodo.6607578",
+          "existing_readonly_input": "additional_joint_2022_route_review_pending/COHORT2022_NATIVE_INPUT_v1.review_pending.json",
+          "file_sha256": "44aaab7dabba0591b4cb8296f5884b784ee64e8b1cccf843dd3d560dd9b98efe",
+          "content": "Combined-filter epoch relative E/N mas, supplied coordinate/magnitude errors; native HST t serialization unresolved as scientific epoch; ground HJD scale unspecified.",
+          "covariance": null,
+          "aggregation_weights": null,
+          "rights": "Zenodo native files CC-BY-4.0, retained author attribution."
+        },
+        {
+          "version": "LamLu2023v2 Table2 plus correctedOGLE2022 reduction",
+          "HST_url": "https://arxiv.org/src/2308.03302v2",
+          "OGLE_url": "https://doi.org/10.5281/zenodo.20056044",
+          "existing_readonly_pack": "benchmark_data_research/BHSM_OB110462_2023_SourcePack_v1.zip",
+          "HST_content": "21 calibrated filter rows over11 visits, native supplied uncertainties with published corrections already applied. Calendar dates, actual header windows; original centroid weights unavailable.",
+          "OGLE_content": "15533 native HJD,magnitude,error,seeing rows; the earlier benchmark has its own frozen12500-row selection plus21 HST photometric points. Do not confuse them with a complete unselected cohort.",
+          "covariance": null,
+          "rights": "Author arXivv2 and correctedOGLE deposit explicitly CC-BY-4.0; MAST public metadata separate attribution."
+        },
+        {
+          "version": "Sahu2025 DBF5 individual exposures",
+          "url": "https://content.cld.iop.org/journals/0004-637X/983/2/104/revision1/apjadbe6ef5.tar.gz",
+          "existing_readonly_table": "future_data_2025/published_DBF5/dbf5.txt",
+          "native_file_sha256": "b1573d619873ebbe62bda586666de2665739c6b52506c269372fff2e47107469",
+          "content": "82 XMO/YMO pixel rows,76 author Q1 and6 Q0 zero placeholders,11 visits. +X West/+Y North,40mas/pixel,.001pixel serialization. Native exposure-start MJD linked to actual headers.",
+          "supplied_row_errors": null,
+          "supplied_covariance": null,
+          "descriptive_precision_is_measured_error": false,
+          "rights": "Publisher article/source terms retained in existing acquisition evidence; not relicensed by this inventory."
+        }
+      ]
+    }
+  ],
+  "known_positive_count": 1,
+  "additional_independently_confirmed_isolated_BH_found": false,
+  "positive_count_evidence": [
+    "Huston2026 sections1,7 explicitly describe only one confirmed isolatedBH, OB110462.",
+    "Sep2026 GalacticBH census arxiv2609.14154 includes one isolatedBH; no additional microlensing positive was located by the bounded primary search."
+  ],
+  "search_limits": "Not a proof of absence of every publication/catalog. This is a source-bounded inventory as of2026-10-22. No unrelated X-ray/dynamical/GW binaries or simulations are substituted as microlensing truth.",
+  "existing_readonly_reference_hashes": [
+    {
+      "path_from_existing_outputs": "additional_joint_2022_route_review_pending/INDEPENDENT_NATIVE_ADAPTER_REVIEW.json",
+      "sha256": "66633cdfa399f01ab95565015b5ba934f60a783e3e225b7b9da6473b4d4bda9e"
+    },
+    {
+      "path_from_existing_outputs": "benchmark_data_research/portable_2023_benchmark_v1/CITATIONS_AND_RIGHTS.md",
+      "sha256": "22ada8c70b86883f433662e1a00839838f1e6aa29823854373960ee8c7a5d477"
+    },
+    {
+      "path_from_existing_outputs": "future_data_2025/published_DBF5/PRESERVATION_AND_MAPPING_RECEIPT.json",
+      "sha256": "44af288e2addc1415cd027c0b3d818b676c5cc3f37ad378f51a117240eff827f"
+    },
+    {
+      "path_from_existing_outputs": "metadata_research/PILOT_PRIOR_PARALLAX59_CROSSMATCH.json",
+      "sha256": "9434d87c1dc587e94de59b440d9a5e79f5c78810baeab623e377ddf4661dcc6d"
+    }
+  ],
+  "observations_fitted": 0,
+  "derived_accepted_mass": null,
+  "accepted_BH_interpretation": false,
+  "followup_ranking_produced": false,
+  "novel_lens_or_discovery_claim": false,
+  "next_admissible_work": "Separately validate a photometric parallax route on all59 with each native version/failed availability explicit; mass needs actual angular information or independently measured relative lens-source motion. Recover complete angular/native metadata for any new joint cohort before freezing its likelihood. No published mass becomes a datum or target.",
+  "BHSM_interpretation": "One ordinary compact-lens Einstein/GHY optical exterior counted once; no added core/envelope potential. Photometric parallax alone does not identify mass, horizon, core, absolute distance or membrane deformation."
+}
