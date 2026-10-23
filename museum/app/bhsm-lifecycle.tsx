@@ -108,6 +108,7 @@ function LifecycleScene({ stage, scale, time, progress }: { stage: number; scale
     ['Structures', 'Radiation', 'Dispersed'],
   ][scale];
   return (
+    // oxlint-disable-next-line jsx-a11y/prefer-tag-over-role -- This computed SVG is the image; an HTML img cannot contain its drawing.
     <svg className="lifecycle-scene" viewBox="0 0 760 310" role="img" aria-labelledby="lifecycle-scene-title lifecycle-scene-desc">
       <title id="lifecycle-scene-title">{`${stages[stage].name} at the ${scales[scale].name.toLowerCase()} scale`}</title>
       <desc id="lifecycle-scene-desc">A conceptual spacetime-side animation. The envelope forms around organization, boundary support strengthens, decay transforms the parent and reveals daughter products within the decay scene, two incoming histories collide, and an opening contour represents de-encapsulation. No physical time, size, core interior or calculated rate is shown.</desc>
@@ -189,9 +190,9 @@ export function BHSMLifecycle({ motion, setMotion }: { motion: boolean; setMotio
     <ScienceConsole id="bhsm-lifecycle" number="02" label="Fundamental BHSM · the common frame" title="One frame. Across the scales." intro="Excitation, maintained organization and boundary change: BHSM uses a common frame to connect signals, matter, stars and cosmic structure. Follow the same questions as the scale changes." accent="cyan">
       <div className="lifecycle" ref={ref} data-stage={stage} data-scale={scale} data-playing={tour && motion}>
         <p className="lifecycle-proposal">BHSM — theory in work · 22 October 2026</p>
-        <div className="lifecycle-scale" role="group" aria-label="Choose a scale">
+        <fieldset className="lifecycle-scale" aria-label="Choose a scale">
           {scales.map((s, i) => <button key={s.name} type="button" onClick={() => hold(i, stage)} aria-pressed={scale === i}>{s.name}</button>)}
-        </div>
+        </fieldset>
         <div className="lifecycle-playback" aria-live="polite"><span>{tour && motion ? 'Auto-playing' : 'Paused'} · {scales[scale].name} · {stage + 1} / {stages.length}</span><span>Next scale: {scales[(scale + 1) % scales.length].name}</span></div>
         <div className="lifecycle-theatre">
           <LifecycleScene stage={stage} scale={scale} time={time} progress={progress} />
@@ -209,9 +210,9 @@ export function BHSMLifecycle({ motion, setMotion }: { motion: boolean; setMotio
           </div>
         </div>
         <p className="lifecycle-diagram-caption">Spacetime-side schematic · shapes identify the selected scale; no physical size or time scale is shown.</p>
-        <div className="lifecycle-stages" role="group" aria-label="Explore the common frame">
+        <fieldset className="lifecycle-stages" aria-label="Explore the common frame">
           {stages.map((s, i) => <button type="button" key={s.name} aria-pressed={stage === i} onClick={() => hold(scale, i)}>{s.name}{i === 3 && <small>Result: daughters</small>}</button>)}
-        </div>
+        </fieldset>
         <div className="lifecycle-tour">
           <p>The tour starts automatically, then repeats at the next scale. Select a scene or scale to pause and inspect it. Presentation order is a reading guide; physical histories can branch.</p>
           <button type="button" onClick={toggleTour} aria-pressed={tour && motion}>{tour && motion ? 'Pause tour' : 'Play tour'}</button>
@@ -234,6 +235,7 @@ export function BHSMLifecycle({ motion, setMotion }: { motion: boolean; setMotio
           <p>A hard boundary means bilateral noninteraction through the specified interior/exterior channels. An ordinary transmitting surface is different. Exterior gravity and boundary response are separate questions.</p>
           <p>The exceptional terminal proposal can have exactly zero newly produced spacetime daughters. It requires a derived core correspondence and conservation accounting; it does not erase earlier radiation or matter, and cannot be inferred from silence in a detector.</p>
           <p>These are configuration, environment and scale regimes, not exclusive particle-statistics classes or a mandatory sequence. The animation supplies no physical rate, lifetime or threshold.</p>
+          {/* oxlint-disable-next-line next/no-html-link-for-pages -- This source is a static Markdown file, not a Next.js page. */}
           <a href="./research/lifecycle-core-surface-amendment-20261022.md">Read the complete October 22 core/surface source ↗</a>
         </details>
         <div className="lifecycle-next"><a href="#berger-hopf">Explore the geometry behind the frame →</a><a href="#science-decays">Follow collisions and daughters →</a><a href="#cosmology-original">Explore the cosmic proposal →</a></div>
