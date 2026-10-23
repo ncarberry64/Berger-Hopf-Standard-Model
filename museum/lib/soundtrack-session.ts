@@ -16,6 +16,7 @@ export function manageSoundtrackSession({
   owner,
   onChange,
   onSuspend,
+  onBeforeSuspend,
 }: {
   windowTarget: EventTarget;
   documentTarget: EventTarget;
@@ -25,6 +26,7 @@ export function manageSoundtrackSession({
   owner: string;
   onChange: (playing: boolean) => void;
   onSuspend: () => void;
+  onBeforeSuspend?: () => void;
 }) {
   let disposed = false;
   const update = () => {
@@ -32,6 +34,8 @@ export function manageSoundtrackSession({
   };
   function suspend() {
     const wasPlaying = players.some((player) => !player.paused);
+    // Cancel pending requests too, even if no play event has arrived yet.
+    if (!disposed) onBeforeSuspend?.();
     players.forEach((player) => player.pause());
     update();
     if (!disposed && wasPlaying) onSuspend();
@@ -43,6 +47,7 @@ export function manageSoundtrackSession({
         suspend();
         return;
       }
+      if (player.paused) return;
       players.forEach((other) => {
         if (other !== player) other.pause();
       });

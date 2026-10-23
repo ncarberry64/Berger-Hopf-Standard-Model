@@ -9,6 +9,8 @@ import {
 } from 'react';
 
 import { slides } from '../lib/museum-slides.mjs';
+import { announceExhibit } from '../lib/exhibit-navigation';
+import { MuseumSoundtrack } from './museum-soundtrack';
 const aliases: Record<string, string> = {
   top: 'potential',
   exhibits: 'science-predictions',
@@ -20,6 +22,7 @@ export function MuseumDeck({ children }: { children: ReactNode }) {
   const numberLinks = useRef<HTMLElement>(null);
   const activeIndex = useRef(0);
   const trackWidth = useRef(0);
+  const navigationTarget = useRef<number | null>(null);
   const [active, setActive] = useState(0);
   const go = useCallback((index: number, smooth = true) => {
     const element = track.current;
@@ -30,6 +33,8 @@ export function MuseumDeck({ children }: { children: ReactNode }) {
     const adjacent = Math.abs(next - activeIndex.current) === 1;
     setActive(next);
     activeIndex.current = next;
+    navigationTarget.current = next;
+    announceExhibit(window, slides[next][0]);
     const reduce = window.matchMedia(
       '(prefers-reduced-motion: reduce)',
     ).matches;
@@ -73,6 +78,7 @@ export function MuseumDeck({ children }: { children: ReactNode }) {
       go(index, false);
     };
     fromHash();
+    announceExhibit(window, slides[activeIndex.current][0]);
     window.addEventListener('hashchange', fromHash);
     document.addEventListener('click', click);
     trackWidth.current = element.clientWidth;
@@ -81,10 +87,21 @@ export function MuseumDeck({ children }: { children: ReactNode }) {
       go(activeIndex.current, false);
     });
     resize.observe(element);
+    const settled = () => {
+      navigationTarget.current = null;
+      const index = Math.round(element.scrollLeft / element.clientWidth);
+      if (index < 0 || index >= slides.length) return;
+      activeIndex.current = index;
+      setActive(index);
+      announceExhibit(window, slides[index][0]);
+      history.replaceState(null, '', `#${slides[index][0]}`);
+    };
+    element.addEventListener('scrollend', settled);
     return () => {
       window.removeEventListener('hashchange', fromHash);
       document.removeEventListener('click', click);
       resize.disconnect();
+      element.removeEventListener('scrollend', settled);
     };
   }, [go]);
 
@@ -118,7 +135,7 @@ export function MuseumDeck({ children }: { children: ReactNode }) {
   }, [active]);
 
   return (
-    <div className="museum-deck">
+    <div className="museum-deck" data-active-slide={slides[active][0]}>
       <nav className="deck-controls" aria-label="Exhibit slides">
         <button
           onClick={() => go(active - 1)}
@@ -187,12 +204,30 @@ export function MuseumDeck({ children }: { children: ReactNode }) {
           if (!el) return;
           if (el.clientWidth !== trackWidth.current) return;
           const index = Math.round(el.scrollLeft / el.clientWidth);
+          // Smooth next/previous movement must not briefly select the slide
+          // being left. A new swipe releases this destination immediately.
+          if (
+            navigationTarget.current !== null &&
+            Math.abs(
+              el.scrollLeft - navigationTarget.current * el.clientWidth,
+            ) >= 2
+          )
+            return;
+          navigationTarget.current = null;
           if (index >= 0 && index < slides.length) {
             activeIndex.current = index;
             setActive(index);
+            announceExhibit(window, slides[index][0]);
             if (Math.abs(el.scrollLeft - index * el.clientWidth) < 2)
               history.replaceState(null, '', `#${slides[index][0]}`);
           }
+        }}
+        onPointerDown={() => {
+          navigationTarget.current = null;
+        }}
+        onWheel={(event) => {
+          if (Math.abs(event.deltaX) > Math.abs(event.deltaY))
+            navigationTarget.current = null;
         }}
         onKeyDown={(event) => {
           if (
@@ -210,6 +245,7 @@ export function MuseumDeck({ children }: { children: ReactNode }) {
         {children}
       </section>
       {/* oxlint-enable jsx-a11y/no-noninteractive-element-interactions, jsx-a11y/no-noninteractive-tabindex */}
+      <MuseumSoundtrack />
       <span className="sr-only" aria-live="polite">
         {slides[active][1]}, exhibit {active + 1} of {slides.length}
       </span>

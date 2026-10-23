@@ -12,6 +12,8 @@ import './exhibit-review.css';
 import './evidence-features.css';
 import './phone-experience.css';
 import './blackhole-tracker.css';
+import './einstein-ring-tour.css';
+import './bhsm-lifecycle.css';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',

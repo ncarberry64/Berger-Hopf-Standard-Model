@@ -73,6 +73,35 @@ const topics = {
       currentSources[1],
     ],
   },
+  'bhsm-lifecycle': {
+    keywords:
+      'common frame lifecycle excitation envelope formation envelopment encapsulation decay collision daughters outcome descendants de-encapsulation quantum matter stars galaxies cosmos core surface boundary support environment scale automatic tour playback',
+    summary:
+      'The common frame presents BHSM as a theory in work immediately after Welcome through six primary scenes: Excitation, Envelope formation, Encapsulation, Decay, Collisions, and De-encapsulation. Decay first shows the parent’s transformation, then reveals its daughter products within the same scene. Daughters are the resulting descendants, including radiation, matter and thermal products. The tour starts automatically, runs all six scenes at Quantum, Matter, Stars, and Galaxies & cosmos in turn, then loops. Visitors can pause at the exact displayed frame or manually inspect a scene and scale. Playback honors global and reduced-motion preferences; Play can enable motion on request.',
+    scope:
+      'The shared frame is a theory in work, with scale-specific environments and mechanisms. Quantum examples concern signals and proposed interface relations; matter examples concern sector-specific organization and binding; stellar examples include proposed sustained black-hole conversion and a distinct quiet neutron-star endpoint; galaxy and cosmic examples extend the organizing questions to collective structure and the proposed global cycle. Daughters are presented as a nested outcome of decay; the source’s broader descendant accounting also applies to other daughter-producing transitions. The six-scene tour is a presentation order, not a universal sequence or one derived transition law. Its timing and automatic scale changes are schematic cadence, not physical evolution. The core has no ordinary spacetime or internal clock; local smoothness still has spacetime. Persistent encapsulation is distinct from terminal disappearance. Exactly zero new spacetime daughters belongs only to an exceptional proposed terminal core-matching route and does not erase prior outgoing flux or conservation accounting. No physical thresholds, rates, lifetimes or prediction are supplied by this illustration.',
+    sources: [
+      source(
+        'Download the exact 22 October core/surface amendment',
+        'research/lifecycle-core-surface-amendment-20261022.md',
+      ),
+      repoSource(
+        'Pinned 22 October definitions, regime and daughter rules',
+        'docs/BHSM_NORMAN_CORE_SURFACE_AMENDMENT_20261022.md',
+        '925b1ce0d7002757b682c55ab491b551806bb452',
+      ),
+      repoSource(
+        'Pinned forward chronology and event-to-new-child distinction',
+        'theory/bhsm_current_semantic_normalization.md',
+        '925b1ce0d7002757b682c55ab491b551806bb452',
+      ),
+      repoSource(
+        'Pinned sector-specific particle and envelopment taxonomy',
+        'docs/BHSM_NORMAN_SCHOOL_FULL_CORPUS_RECONSTRUCTION.md',
+        '925b1ce0d7002757b682c55ab491b551806bb452',
+      ),
+    ],
+  },
   'berger-hopf': {
     keywords:
       'berger hopf sphere squashing fibers fibration geometry spectrum charge unification',

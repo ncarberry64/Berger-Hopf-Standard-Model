@@ -14,7 +14,6 @@ import { PrototypeScience, UnificationConsole } from './prototype-science';
 import { CosmicEnclosure } from './cosmic-enclosure';
 import { CMSExplorer } from './cms-explorer';
 import { EngineHero, ScienceConsole } from './science-console';
-import { MuseumSoundtrack } from './museum-soundtrack';
 import { CosmologyUpdate } from './cosmology-update';
 import { CosmologyRealization } from './cosmology-realization';
 import { BHSMResearchUpdate } from './research-update';
@@ -24,6 +23,7 @@ import { BergerHopf } from './berger-hopf';
 import { AIAccess } from './ai-access';
 import { BigQuestions } from './big-questions';
 import { BlackholeTracker } from './blackhole-tracker';
+import { BHSMLifecycle } from './bhsm-lifecycle';
 import { freshShareURL } from '../lib/social-preview.mjs';
 import {
   ExhibitStatement,
@@ -101,6 +101,7 @@ export default function Home() {
           </span>
         </a>
         <nav aria-label="Museum navigation">
+          <a href="#bhsm-lifecycle">The common frame</a>
           <a href="#berger-hopf">Berger &amp; Hopf</a>
           <a href="#exhibits">Science exhibits</a>
           <a href="#comparisons">Comparisons</a>
@@ -113,6 +114,7 @@ export default function Home() {
       </header>
       <MuseumDeck>
         <EngineHero motion={motion} setMotion={setMotion} />
+        <BHSMLifecycle motion={motion} setMotion={setMotion} />
         <BergerHopf motion={motion} setMotion={setMotion} />
         <UnificationConsole motion={motion} setMotion={setMotion} />
         <PrototypeScience motion={motion} setMotion={setMotion} />
@@ -388,7 +390,6 @@ export default function Home() {
             <a href="#top">Back to the future ↑</a>
             <a href={freshShareURL}>Fresh Facebook sharing link ↗</a>
           </div>
-          <MuseumSoundtrack />
           <OpenReviewInvitation />
           <AIAccess />
         </footer>
