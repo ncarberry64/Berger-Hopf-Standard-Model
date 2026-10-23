@@ -1,9 +1,9 @@
-# Blackhole Tracker rc4: formal reviewer source
+# Blackhole Tracker rc5: formal reviewer source
 
 This BHSM repository is the formal reviewer home. `Manuscript-Generation`
 is the development workspace. Norman P. Carberry is the hypothesis and
-research author. The 176 upstream files are copied byte-for-byte from
-immutable development commit `3dedfc526cb534011ba28921df850bc2d1224fc3`.
+research author. The 193 upstream files are copied byte-for-byte from
+immutable development commit `9441367319045c471a99f36c38340a0de26ab308`.
 [FORMAL_PROVENANCE.json](FORMAL_PROVENANCE.json) records their paths, sizes
 and SHA-256. The [manuscript/release receipt](../../papers/bhsm_blackhole_tracker_20261021/provenance/FORMAL_REPOSITORY.json)
 records the formal product-code citation separately, avoiding a
@@ -13,9 +13,9 @@ source files remain byte-exact.
 Use the complete `BHSM_Blackhole_Tracker_Source.zip` or a matching
 `blackhole-tracker-paper-and-source` CI artifact. Its root contains `products/`,
 `papers/`, `tools/` and both license notices. A full clone of the much larger
-BHSM repository is optional. The source includes four notebooks, the app,
+BHSM repository is optional. The source includes five notebooks, the app,
 CLI/Python APIs, tests, pinned providers and historical validation records.
-The current product suite has **244 tests**. Software verification and replay
+The current product suite has **257 tests plus 29 subtests**. Software verification and replay
 do not establish scientific acceptance or journal acceptance.
 
 ## Install and run
@@ -38,6 +38,16 @@ opening a web page never installs them. See the [complete user guide](README.md)
 for virtual-environment, local-wheel, port and export/replay instructions.
 
 ## Three observation routes and their limits
+
+The additional `/atlas` workspace catalogs 155 historical source/event
+directions: all 100 pilot and all 59 published parallax events with four
+verified shared identities. Three investigation targets have different
+screening or disputed literature qualifications. They are not identified
+black holes. The literature-positive known benchmark stays separate;
+independent tracker recovery remains open. Lens mass, distance, current
+position and absolute motion stay unavailable. Read [CANDIDATE_ATLAS.md](CANDIDATE_ATLAS.md),
+use `Start_Blackhole_Tracker_Atlas.cmd` or `blackhole-tracker serve --open --page atlas`.
+JSON replay retains every unselected and failed record as well as the view.
 
 The resolved route fits one compact exterior's mass, center and observer
 motion under supplied distances, primary-pair association and full covariance.
@@ -86,7 +96,7 @@ cd products/blackhole_tracker
 python -m pytest -q tests
 python -m pip wheel --no-deps . --wheel-dir dist
 cd ../..
-python tools/smoke_blackhole_tracker_wheel.py --wheel products/blackhole_tracker/dist/bhsm_blackhole_tracker-0.2.0rc4-py3-none-any.whl
+python tools/smoke_blackhole_tracker_wheel.py --wheel products/blackhole_tracker/dist/bhsm_blackhole_tracker-0.2.0rc5-py3-none-any.whl
 ```
 
 The dedicated workflow installs `[dev,astrometry]` for the full product suite
@@ -104,11 +114,12 @@ python -I /absolute/path/products/blackhole_tracker/scripts/probe_joint_install.
 
 `--sourcepack ZIP` and `--result RESULT.json` optionally add actual native
 import and saved-state export/replay checks. The safe CI default is synthetic;
-no measured-event acceptance is inferred from that control. The four notebooks
+no measured-event acceptance is inferred from that control. The five notebooks
 are `01_compact_mass_and_motion`, `02_conditional_boundary_response`,
-`03_native_unresolved_photometry` and `04_joint_astrometry_and_parallax`.
+`03_native_unresolved_photometry`, `04_joint_astrometry_and_parallax`
+and `05_candidate_atlas`.
 The [validation directory](validation/) retains matching receipts; historical
-rc2/rc3 evidence is not relabeled as final rc4 evidence.
+rc2/rc3/rc4 evidence is not relabeled as final rc5 evidence.
 
 The top-level BHSM core Python 3.10+ matrix is separate from the product's
 Python 3.11+ requirement. Its dispatch-only full historical corpus is not

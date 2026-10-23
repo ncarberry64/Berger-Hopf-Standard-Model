@@ -17,9 +17,13 @@ paper, reviewed PDF, installable app, replay and supporting BHSM sources in one
 route. The formal research record is here; `Manuscript-Generation` is the
 development workspace.
 
-The `0.2.0rc4` research candidate supplies resolved-image, native-photometry
-and separately versioned joint astrometry/parallax workflows, with four
-notebooks and 244 product tests. The frozen pilot still retains all 100
+The `0.2.0rc5` research candidate supplies resolved-image, native-photometry,
+joint astrometry/parallax and candidate-atlas workspaces, with five
+notebooks and 257 product tests plus 29 subtests. The atlas retains 155
+historical source/event directions and three differently qualified
+investigation targets; its separate literature benchmark does not certify
+engine recovery. Lens mass and present-day lens position remain unavailable.
+The frozen pilot still retains all 100
 historical events and 76,344 measurements: 89 baseline model/noise screens
 were inadequate, 11 passed chi-square and two qualified for archival
 follow-up. Every pilot mass remains unresolved. All three declared models

@@ -1,17 +1,17 @@
 # Blackhole Tracker: researcher start
 
 **Blackhole Tracker: BHSM Boundary Interpretation of Compact-Lens Mass, Motion,
-and Conditional Response** accompanies the `0.2.0rc4` research candidate. This
+and Conditional Response** accompanies the `0.2.0rc5` research candidate. This
 repository is the formal reviewer record. The
 [Manuscript-Generation workspace](https://github.com/ncarberry64/Manuscript-Generation/pull/24)
 records development history; it is not a separate source of reviewer authority.
 
 | Review task | Start here |
 | --- | --- |
-| Read the manuscript | [Reviewed 43-page PDF](../papers/bhsm_blackhole_tracker_20261021/manuscript/main.pdf), [paper guide](../papers/bhsm_blackhole_tracker_20261021/README.md), [result statement](../papers/bhsm_blackhole_tracker_20261021/RESULT_STATEMENT.md) |
+| Read the manuscript | [Reviewed 45-page PDF](../papers/bhsm_blackhole_tracker_20261021/manuscript/main.pdf), [paper guide](../papers/bhsm_blackhole_tracker_20261021/README.md), [result statement](../papers/bhsm_blackhole_tracker_20261021/RESULT_STATEMENT.md) |
 | Understand the contribution and limits | [Lay report](../papers/bhsm_blackhole_tracker_20261021/LAY_REPORT.md), [model chain and freedoms](../papers/bhsm_blackhole_tracker_20261021/CHAIN_AND_FREEDOMS.md), [validation](../papers/bhsm_blackhole_tracker_20261021/VALIDATION.md) |
 | Install the app or reproduce an analysis | [Formal product guide](../products/blackhole_tracker/REVIEWER.md), followed by the complete [user and measurement guide](../products/blackhole_tracker/README.md) |
-| Inspect current checks and prior reviews | [Product validation receipts](../products/blackhole_tracker/validation/), [formal product CI](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/blackhole-tracker.yml) and [paper review record](../papers/bhsm_blackhole_tracker_20261021/review/); the current product suite has 244 tests, and earlier rc3/rc2 receipts remain historical |
+| Inspect current checks and prior reviews | [Product validation receipts](../products/blackhole_tracker/validation/), [formal product CI](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/blackhole-tracker.yml) and [paper review record](../papers/bhsm_blackhole_tracker_20261021/review/); the current product suite has 257 tests plus 29 subtests, and earlier rc4/rc3/rc2 receipts remain historical |
 | Inspect all real observations and follow-up outcomes | [Frozen pilot and reproduction](../papers/bhsm_blackhole_tracker_20261021/real_data_pilot_20261022/README.md), [all 100 annotated results](../papers/bhsm_blackhole_tracker_20261021/real_data_pilot_20261022/literature_annotations_v1/all_100_results.csv) and [qualified archival ranking](../papers/bhsm_blackhole_tracker_20261021/real_data_pilot_20261022/literature_annotations_v1/followup_ranking.csv) |
 | Inspect the separate known-system test and calibration gaps | [2023 joint benchmark](../papers/bhsm_blackhole_tracker_20261021/joint_known_system_20261022/README.md), [plain-language result](../papers/bhsm_blackhole_tracker_20261021/joint_known_system_20261022/PLAIN_LANGUAGE_RESULT.txt), [joint app and source-pack guide](../products/blackhole_tracker/JOINT_RESEARCH.md) and [unsent manual calibration request](../papers/bhsm_blackhole_tracker_20261021/joint_known_system_20261022/MANUAL_CALIBRATION_DATA_REQUEST_TEMPLATE.txt) |
 | Inspect public explanation and animation | [Blackhole Tracker Museum exhibit](https://ncarberry64.github.io/Berger-Hopf-Standard-Model/#blackhole-tracker), [Museum source](../museum/) |
@@ -28,6 +28,12 @@ fail adequacy, so no reliable known-system mass is accepted by this campaign.
 Its published black-hole classification remains independent literature evidence.
 The current [draft correction PR #471](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/pull/471)
 preserves the earlier release and review history.
+
+## Candidate selection and localization
+
+The [candidate atlas guide](../products/blackhole_tracker/CANDIDATE_ATLAS.md) and [portable metadata rebuild](../papers/bhsm_blackhole_tracker_20261021/candidate_atlas_20261023/README_INVENTORY_v3.txt) retain 155 source/event directions: 100 pilot + 59 parallax - 4 verified shared identities. Three investigation targets have different qualifications; no new black-hole interpretation is established. The separate published benchmark is a literature label, with independent engine recovery unresolved. No present-day lens position, mass, distance or absolute motion is supplied by this inventory.
+
+Launch `Start_Blackhole_Tracker_Atlas.cmd` or `blackhole-tracker serve --open --page atlas`. Filter the view, export JSON, reset and open the replay. All 155 cohort records and the separate benchmark are preserved. CLI users can run `blackhole-tracker atlas export --tier BLACK_HOLE_SEARCH_TARGET --output targets.json`, then `blackhole-tracker atlas replay targets.json --output restored-targets`; output paths must be new. SHA-256 checks consistency, not scientific acceptance.
 
 ## A first complete run
 
@@ -155,7 +161,7 @@ choose `Start_Blackhole_Tracker_Joint.cmd` in the complete Windows source
 package, or `Start_Blackhole_Tracker.cmd --astrometry`. For an existing source
 environment, close the app and run `python -m pip install ".[astrometry]"`
 with that environment's interpreter. A matching local wheel uses
-`python -m pip install "./bhsm_blackhole_tracker-0.2.0rc4-py3-none-any.whl[astrometry]"`.
+`python -m pip install "./bhsm_blackhole_tracker-0.2.0rc5-py3-none-any.whl[astrometry]"`.
 Dependency installation needs access to the configured package index; opening
 the joint page never installs dependencies.
 
@@ -207,12 +213,12 @@ completion gates.
 
 ## Revisions, citations and repository layout
 
-The current rc4 product code is pinned at
-[`1a556d37a40ef89deb54f9c07d231b5496163838`](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/tree/1a556d37a40ef89deb54f9c07d231b5496163838/products/blackhole_tracker),
-with 176 byte-exact upstream source files. Its
+The current rc5 product code is pinned at
+[`8ca349fa8eb5c54c661a022790ae915d05060b59`](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/tree/8ca349fa8eb5c54c661a022790ae915d05060b59/products/blackhole_tracker),
+with 193 byte-exact upstream source files. Its
 [formal provenance](../products/blackhole_tracker/FORMAL_PROVENANCE.json)
 records the immutable development source and every byte hash. The current manuscript/pilot/joint record is pinned at
-[`cb79f8693ba5f8e25f0858acc826b6718c974555`](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/tree/cb79f8693ba5f8e25f0858acc826b6718c974555/papers/bhsm_blackhole_tracker_20261021). The
+[`8d146d4a86b8931cebdd26df3508f7b9154280af`](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/tree/8d146d4a86b8931cebdd26df3508f7b9154280af/papers/bhsm_blackhole_tracker_20261021). The
 [manuscript/release record](../papers/bhsm_blackhole_tracker_20261021/provenance/FORMAL_REPOSITORY.json)
 binds the paper separately. Current theory/source interpretation is pinned at
 `705d4c7e2f9a832b457f63ff975e7d4dc8008645`.
