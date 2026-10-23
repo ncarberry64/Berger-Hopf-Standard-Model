@@ -7,6 +7,13 @@ export const reviewEntries = {
     question:
       'Which link from core topology through modes and geometry to a physical observable can you independently reproduce or challenge?',
   },
+  'bhsm-lifecycle': {
+    classification: 'BHSM · theory in work',
+    statement:
+      'BHSM, a theory in work, proposes a common frame for excitation, envelope formation, encapsulation, decay, collisions and de-encapsulation. The decay scene shows a parent’s transformation followed by its daughter products. The automatic tour compares the frame across four scales, with different environments and mechanisms.',
+    question:
+      'At a chosen scale, which boundary channels and outgoing daughters would test this frame, and which transition still needs a physical solution?',
+  },
   'berger-hopf': {
     classification: 'Mathematical foundation · physical proposal',
     statement:
@@ -41,6 +48,14 @@ export const reviewEntries = {
       'BHSM describes collisions as transitions between geometric envelopments. The theatre computes the kinematics of selected channels and exposes the boundary and branch questions.',
     question:
       'Does the exported transition record conserve the stated quantities, and which boundary inputs are needed to determine branch probabilities or rates?',
+  },
+  'blackhole-tracker': {
+    classification:
+      'BHSM compact-lens interpretation · synthetic demonstration',
+    statement:
+      'Blackhole Tracker reconstructs an effective compact-lens mass, position and motion and interprets the same exterior response within the declared BHSM sector. A separate conditional response is tested only with its supplied matching data.',
+    question:
+      'Can you reproduce the mass and motion fit with its full covariance and replay bundle, and distinguish the same-potential BHSM interpretation from an independently identified boundary state or black-hole horizon?',
   },
   'cosmology-original': {
     classification: 'BHSM cosmology proposal',

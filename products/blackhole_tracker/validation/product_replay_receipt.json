@@ -1,0 +1,49 @@
+{
+  "status": "ALL_PRODUCT_STAGES_PASSED",
+  "stages": [
+    {
+      "command": [
+        "-m",
+        "pytest",
+        "-q",
+        "tests"
+      ],
+      "returncode": 0
+    },
+    {
+      "command": [
+        "tests/calibrate_product.py"
+      ],
+      "returncode": 0
+    },
+    {
+      "command": [
+        "tests/check_finite_harmonic_degeneracy.py"
+      ],
+      "returncode": 0
+    }
+  ],
+  "code_sha256": {
+    "bhtracker/__init__.py": "602e46f2eefd1987e45396f940d19987cb84c43f60c0df28ece81307dd95046b",
+    "bhtracker/__main__.py": "cf7390a2508a0fcad4777a4a629fc5212ab655cb45845975995f835676a834e3",
+    "bhtracker/cli.py": "2912a3a2abffe0e5ad0ef303ef834712446c8bc2e94f48ea300cd1b8e6b0c950",
+    "bhtracker/data.py": "832b6c210cf4eb4f18383ff7a3f47a12e6e7d9c87a767488e5db31affd633d04",
+    "bhtracker/envelope.py": "c08bbf41cf58878db0a825247812f19b642280c1cd908f4a8a099c7d16f7c285",
+    "bhtracker/examples.py": "6694293c27930087cbc0866d83aa657ea70c6dd6cb2a6b1d6a59a693a6bf8f26",
+    "bhtracker/forward.py": "3dc51c57e56ff00633ca3d5e0766a37cd0eb7639d58a294373ac1e30df810e5d",
+    "bhtracker/importers.py": "12c2c97700432f675f9c69eb74f2b3010ac318972dc2f04f7c172fa53a492396",
+    "bhtracker/inference.py": "f5be57d250e63c81458505da31c6f0816eb409e591072f52effb273dacbc9e67",
+    "bhtracker/interpretation.py": "cfbc6faff975d5254dc7fd59c5b735a33d89ab4de4fc1f26757b2dee898f1314",
+    "bhtracker/physics_admission.py": "6dce22bee33a77414f61775197a1f61119eb3508112ee9855d74cd0cb6766655",
+    "bhtracker/r1_runtime.py": "f3cc2074d915ad02ba6549209d0b0cd532304fa71d2930bb7cbc3d5fc2a39250",
+    "bhtracker/report.py": "49e9f45f3598a9fda810f2034543c11401f792f828f01ad97d1b015081ae2ca2",
+    "bhtracker/server.py": "5469b838736f7231e76c4649e06718921ecbc9799de5badc2f4b819ca5eee9d0",
+    "bhtracker/theory/__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bhtracker/theory/provider/code/action_native_matter_n2.py": "eee6ffc6f31d743cc36c31300c8a51c6a28cc50fbbb7526342b7f88978dfcb81",
+    "bhtracker/theory/provider/code/background.py": "9bf7107e0e9f716a8176baed6ae638f887c3aabb295b580bf09d6c51364aae89",
+    "bhtracker/theory/provider/code/bhsm_optical_transfer.py": "63e660f0e97e42c5363740bcafe6407a9bd5e4eb2bcd7f9d36c059de64dd9c5d",
+    "bhtracker/theory/provider/code/closed_horndeski_n2.py": "0d7e596ae40bd01ba9331128afdda9d163e52c955096f70209f06975e197f36d",
+    "bhtracker/theory/provider/code/strong_lensing_transport.py": "eb67bf7c112257df80f2b9d2185c5ede3ae20f2f3a13c6bd348699d39cf419ed",
+    "bhtracker/theory/radial_response.py": "d7a90db765d89c9b56d5129a2bbb937238c364ddf09d8683c7b5bbfca0c17514"
+  }
+}

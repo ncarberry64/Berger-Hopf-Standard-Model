@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "title": "Nearby compact-mass track",
+  "fields": [
+    "x_plus_mas",
+    "y_plus_mas",
+    "x_minus_mas",
+    "y_minus_mas",
+    "ln_flux_ratio",
+    "delay_seconds"
+  ],
+  "geometry": {
+    "D_l_pc": 1000000.0,
+    "D_s_pc": 1000000000.0,
+    "D_ls_pc": 999000000.0,
+    "z_l": 0.000225,
+    "z_s": 0.3
+  },
+  "reference_epoch_yr": 2020.0,
+  "analysis": {
+    "reference_mass_msun": 100000.0,
+    "source_policy": "free_per_epoch",
+    "r0_pc": 0.0001,
+    "flux_ratio": 1.0,
+    "flux_provenance": "regular_body_proxy"
+  },
+  "provenance": {
+    "kind": "synthetic",
+    "seed": 20261021,
+    "noise_added": true,
+    "description": "Declared measurement errors are experimental inputs, not an instrument forecast or detection."
+  }
+}

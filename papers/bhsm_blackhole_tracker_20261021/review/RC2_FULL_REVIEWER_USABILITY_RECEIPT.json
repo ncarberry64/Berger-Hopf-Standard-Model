@@ -1,0 +1,295 @@
+{
+  "schema": "bhtracker.rc2.full_reviewer_usability.v1",
+  "started_utc": "2026-10-22T14:36:58Z",
+  "python": "C:\\Users\\carbe\\AppData\\Local\\Temp\\bhtracker clean wheel fy7ds_pr\\venv\\Scripts\\python.exe",
+  "package": "C:\\Users\\carbe\\AppData\\Local\\Temp\\bhtracker clean wheel fy7ds_pr\\venv\\Lib\\site-packages\\bhtracker",
+  "wheel": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_blackhole_tracker_rc_20261021\\rc2_20261022\\reviewed_wheelhouse\\bhsm_blackhole_tracker-0.2.0rc2-py3-none-any.whl",
+  "wheel_sha256": "323bcf675f6fe1c1262e85be49644d3736c2777788ecf2f92568f1cc6ba92ae3",
+  "checks": [
+    {
+      "name": "canonical BHSM repository consistently cited by wheel metadata, health, software/interpretation dictionaries and source manifest",
+      "passed": true,
+      "detail": {
+        "title": "BHSM Blackhole Tracker",
+        "author": "Norman P. Carberry",
+        "repository_url": "https://github.com/ncarberry64/Berger-Hopf-Standard-Model",
+        "product_path": "products/blackhole_tracker",
+        "paper_path": "papers/bhsm_blackhole_tracker_20261021",
+        "revision_policy": "Exact reviewed commits and artifact hashes are recorded in the release receipt; installed package hashes are recorded below."
+      }
+    },
+    {
+      "name": "actual served/installed/wheel static assets agree; visible link and HTML repository metadata cite BHSM",
+      "passed": true,
+      "detail": [
+        {
+          "name": "index.html",
+          "sha256": "fe80e694c7d5fc94f1d2fe9d8c66573f95c9c3d0d6df0f6d0a39bef164bf42db"
+        },
+        {
+          "name": "app.js",
+          "sha256": "98dab4751ea8765138d445076c589deac6e6994ef553b9c863ee02ab2f05ae7d"
+        },
+        {
+          "name": "style.css",
+          "sha256": "c17f1536e98a8b4938876c8209977465448b85fc6128914176ee05f83b139ab9"
+        }
+      ]
+    },
+    {
+      "name": "actual installed JavaScript handlers: duplicate-upload preservation, missing-job404 recovery, network/5xx guards, independent-source plot and chronological epoch labels",
+      "passed": true,
+      "detail": {
+        "harness_sha256": "81b78549630b6f2f8f9e120ff6e9d1a26a4397cdb7ed8b90580224e4980c2253",
+        "output": "PASS: uploaded JSON integrity, missing-job recovery and interruption guards, independent-source plotting, canonical BHSM links, shared metadata (6 statements), legacy/suppression/safe text, and chronological lossless epoch labels.",
+        "method": "Existing dependency-free minimal-DOM harness; runtime files read from installed site-packages. This is not an independently clicked browser walkthrough."
+      }
+    },
+    {
+      "name": "rebuilt installed CLI and HTTP reject booleans, quoted numeric measurements and boolean schema version without coercion",
+      "passed": true,
+      "detail": [
+        {
+          "case": "boolean_position",
+          "cli_exit": 2,
+          "http_status": 400,
+          "error": "observations row 1, column 1 must be numeric; supply a real number, not a boolean or string"
+        },
+        {
+          "case": "quoted_numeric_position",
+          "cli_exit": 2,
+          "http_status": 400,
+          "error": "observations row 1, column 1 must be numeric; supply a real number, not a boolean or string"
+        },
+        {
+          "case": "boolean_schema",
+          "cli_exit": 2,
+          "http_status": 400,
+          "error": "schema_version must be 1"
+        }
+      ]
+    },
+    {
+      "name": "valid synthetic fit unchanged after integrity/recovery fixes",
+      "passed": true,
+      "detail": {
+        "status": "TRACKED",
+        "mass_msun": 99947.19893016024,
+        "mass_sigma_msun": 38.701188474124166,
+        "maximum_prediction_difference": 0.0,
+        "same_likelihood_and_uncertainty": true
+      }
+    },
+    {
+      "name": "actual result HTML report visibly links canonical BHSM repository and preserves shared theory",
+      "passed": true,
+      "detail": {
+        "repository_url": "https://github.com/ncarberry64/Berger-Hopf-Standard-Model"
+      }
+    },
+    {
+      "name": "new real export preserves canonical citation, full input and file hashes; installed CLI replay is exact",
+      "passed": true,
+      "detail": {
+        "zip_sha256": "3c0cf8b90d694408b8f295f2090abccd5f1e19d55ef870adf3ce95befe26b916",
+        "replay": {
+          "passed": true,
+          "maximum_prediction_difference_in_supplied_sigma": 0.0,
+          "tolerance_in_supplied_sigma": 0.001,
+          "same_status": true,
+          "original_version": "0.2.0rc2",
+          "current_version": "0.2.0rc2",
+          "same_package_content": true,
+          "original_interpretation_schema_version": 2,
+          "current_interpretation_schema_version": 2,
+          "same_interpretation": true
+        }
+      }
+    },
+    {
+      "name": "nine reviewer/provider/amendment repository references resolve at intended refs",
+      "passed": true,
+      "detail": {
+        "receipt": "source_url_review.json",
+        "checks": 9,
+        "access": "Read-only authenticated GitHub connector; provider Git blob hashes match manifest."
+      }
+    }
+  ],
+  "findings": [
+    {
+      "severity": "P1",
+      "finding": "Uploaded JSON duplicate keys were erased before strict validation.",
+      "resolution": "Original upload text is preserved through actual strict-validation handler.",
+      "status": "FIXED_AND_INSTALLED_HANDLER_VERIFIED"
+    },
+    {
+      "severity": "P2",
+      "finding": "JSON booleans/quoted numbers and boolean schema version were accepted by coercion.",
+      "resolution": "Raw numeric-cell types and schema bool are rejected; finite NumPy integer/float inputs remain accepted by focused tests.",
+      "status": "FIXED_AND_INSTALLED_CLI_HTTP_VERIFIED"
+    },
+    {
+      "severity": "P2",
+      "finding": "Definitively lost job404 kept controls locked with endless retry.",
+      "resolution": "404 clears lost job and unlocks retained input; uncertain network/5xx remain guarded.",
+      "status": "FIXED_AND_INSTALLED_HANDLER_VERIFIED"
+    },
+    {
+      "severity": "P3",
+      "finding": "Series chart joined freely positioned source rows into a continuous curve.",
+      "resolution": "Independent predicted points replace joined source curve; center track remains a trajectory.",
+      "status": "FIXED_AND_INSTALLED_HANDLER_VERIFIED"
+    },
+    {
+      "severity": "P3",
+      "finding": "Unsorted rows could label trajectory endpoints by input order.",
+      "resolution": "Display sorts a separate track ordering while preserving raw data and complete epoch labels.",
+      "status": "FIXED_AND_INSTALLED_HANDLER_VERIFIED"
+    },
+    {
+      "severity": "P2",
+      "finding": "Formal repository paths and canonical authority were unclear or still pending.",
+      "resolution": "App/metadata/report/pyproject now cite BHSM; full formal paper import remains an integration item for archive lane.",
+      "status": "RUNTIME_CITATION_FIXED_FORMAL_PUBLICATION_PENDING"
+    },
+    {
+      "severity": "P3",
+      "finding": "Default registered notebook kernel could select a different installation.",
+      "resolution": "Paper README uses explicit --kernel-python and fresh work-directory; existing notebook script supports these options.",
+      "status": "DOCUMENTATION_FIXED"
+    },
+    {
+      "severity": "P3",
+      "finding": "Developer sync script assumed workspace product/papers sibling layout.",
+      "resolution": "Root reports conditional formal/workspace repository-root selection; normal installed runtime already carries provider inputs.",
+      "status": "FIXED_AND_PATH_SELECTION_INDEPENDENTLY_REVIEWED"
+    }
+  ],
+  "passed": true,
+  "completed_utc": "2026-10-22T14:37:02Z",
+  "supplementary_root_evidence": {
+    "reviewed_installed_browser_observation.json": {
+      "sha256": "3d66b9914f81133b2fb79f508b1a97bfaf59d30e48920b5548d955c9630c760a",
+      "owner": "root reviewer; read independently, not re-executed by this reviewer",
+      "summary": {
+        "app_url": "http://127.0.0.1:8878/",
+        "actual_gui_download": "C:\\Users\\carbe\\Downloads\\bhsm-analysis-replay (3).zip",
+        "endpoint_labels": [
+          "t=2015",
+          "t=2025"
+        ],
+        "canonical_source_link": "https://github.com/ncarberry64/Berger-Hopf-Standard-Model",
+        "independent_source_prediction_paths": 0,
+        "duplicate_upload_rejected": true,
+        "result_status": "Supported track",
+        "wheel_revision": "post_full_review_canonical_BHSM_metadata"
+      }
+    },
+    "reviewed_windows_clean_wheel.json": {
+      "sha256": "2a0db899f63ff6021f465e2c5c9cfad5b5f465235a47d8b8bddb1ba3e9389731",
+      "owner": "root reviewer; read independently, not re-executed by this reviewer",
+      "summary": {
+        "passed": true,
+        "interfaces": null,
+        "checks": [
+          "fresh venv with resolved dependencies",
+          "outside-checkout isolated import",
+          "packaged assets/examples",
+          "GR and R1 runtime providers",
+          "API/CLI prediction agreement",
+          "CLI example validate fit export and replay",
+          "API ZIP export and replay",
+          "six R1 and BHSM source pin checks",
+          "actual loopback HTTP startup and complete example download"
+        ]
+      }
+    },
+    "reviewed_interface_comparison/four_interface_receipt.json": {
+      "sha256": "51f072f9a7991beb0f110efdb2a3d04621993fd629aa4fb688bb1c10437f7991",
+      "owner": "root reviewer; read independently, not re-executed by this reviewer",
+      "summary": {
+        "passed": true,
+        "interfaces": {
+          "GUI": {
+            "same_input": true,
+            "same_serialized_input_hash": true,
+            "same_configuration": true,
+            "status": "TRACKED",
+            "same_interpretation": true,
+            "interpretation_schema_version": 2,
+            "maximum_prediction_difference_in_supplied_sigma": 0.0,
+            "passed": true
+          },
+          "API": {
+            "same_input": true,
+            "same_serialized_input_hash": true,
+            "same_configuration": true,
+            "status": "TRACKED",
+            "same_interpretation": true,
+            "interpretation_schema_version": 2,
+            "maximum_prediction_difference_in_supplied_sigma": 0.0,
+            "passed": true
+          },
+          "CLI": {
+            "same_input": true,
+            "same_serialized_input_hash": true,
+            "same_configuration": true,
+            "status": "TRACKED",
+            "same_interpretation": true,
+            "interpretation_schema_version": 2,
+            "maximum_prediction_difference_in_supplied_sigma": 0.0,
+            "passed": true
+          },
+          "notebook": {
+            "same_input": true,
+            "same_serialized_input_hash": false,
+            "same_configuration": true,
+            "status": "TRACKED",
+            "same_interpretation": true,
+            "interpretation_schema_version": 2,
+            "maximum_prediction_difference_in_supplied_sigma": 0.0,
+            "passed": true
+          }
+        },
+        "checks": null
+      }
+    },
+    "reviewed_replayed_rc2/replay_check.json": {
+      "sha256": "356407617ee5b3e0d26f71986c9e5b4e52a4f722f96e3e083c61e162f615e083",
+      "owner": "root reviewer; read independently, not re-executed by this reviewer",
+      "summary": {
+        "passed": true,
+        "maximum_prediction_difference_in_supplied_sigma": 0.0,
+        "tolerance_in_supplied_sigma": 0.001,
+        "same_status": true,
+        "original_version": "0.2.0rc2",
+        "current_version": "0.2.0rc2",
+        "same_package_content": true,
+        "original_interpretation_schema_version": 2,
+        "current_interpretation_schema_version": 2,
+        "same_interpretation": true
+      }
+    },
+    "reviewed_replayed_rc1_migration/replay_check.json": {
+      "sha256": "1fa380a1d3984933f0ebc7928dd5612aa158bce7482c7732d1662115a9cdbe40",
+      "owner": "root reviewer; read independently, not re-executed by this reviewer",
+      "summary": {
+        "passed": true,
+        "maximum_prediction_difference_in_supplied_sigma": 0.0,
+        "tolerance_in_supplied_sigma": 0.001,
+        "same_status": true,
+        "original_version": "0.2.0rc1",
+        "current_version": "0.2.0rc2",
+        "same_package_content": false,
+        "original_interpretation_schema_version": 1,
+        "current_interpretation_schema_version": 2,
+        "same_interpretation": false
+      }
+    }
+  },
+  "source_sync_review": {
+    "checked": "root selection in developer sync_theory.py correctly resolves products/blackhole_tracker to repository/papers and workspace product to its repository/papers; missing complete source archive produces an explicit message.",
+    "method": "read-only source review; no source-sync mutation executed"
+  }
+}

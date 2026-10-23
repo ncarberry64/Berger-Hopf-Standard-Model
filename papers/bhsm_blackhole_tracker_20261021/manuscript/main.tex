@@ -1,0 +1,591 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,bm}
+\usepackage[margin=24mm,headheight=15pt]{geometry}
+\usepackage{graphicx,booktabs,array,microtype,xcolor,fancyhdr}
+\usepackage[numbers,sort&compress]{natbib}
+\usepackage{hyperref}
+\hypersetup{colorlinks=true,linkcolor=blue!45!black,citecolor=blue!45!black,urlcolor=blue!45!black,
+pdftitle={Blackhole Tracker: BHSM Boundary Interpretation of Compact-Lens Mass, Motion, and Conditional Response},pdfauthor={Norman P. Carberry},
+pdfsubject={Formal source and reviewer repository: https://github.com/ncarberry64/Berger-Hopf-Standard-Model},pdfkeywords={BHSM, Blackhole Tracker, gravitational lensing, boundary response}}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small Blackhole Tracker: BHSM boundary interpretation}
+\fancyhead[R]{\small Research article}\fancyfoot[C]{\thepage}
+\setlength{\parskip}{.3em}\setlength{\parindent}{1em}
+\setlength{\emergencystretch}{3em}
+\renewcommand{\topfraction}{.93}\renewcommand{\textfraction}{.06}
+\newtheorem{theorem}{Theorem}\newtheorem{proposition}{Proposition}
+\newtheorem{corollary}{Corollary}\newtheorem{lemma}{Lemma}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\asinh}{\operatorname{asinh}}
+\title{\textbf{Blackhole Tracker: BHSM Boundary Interpretation of Compact-Lens Mass, Motion, and Conditional Response}}
+\author{Norman P. Carberry\\\small Independent Researcher, Oconomowoc, Wisconsin, USA\\
+\small \href{mailto:carberry8878130@hotmail.com}{carberry8878130@hotmail.com}\\
+\small ORCID: \href{https://orcid.org/0009-0000-6650-3485}{0009-0000-6650-3485}}
+\date{}
+\begin{document}
+\maketitle
+\begin{center}\small Research article for \emph{Galaxies}: Strong Gravitational Lens Modeling\end{center}
+\begin{abstract}
+Blackhole Tracker provides reproducible compact-lens inference with an
+explicit Berger--Hopf Standard Model (BHSM) boundary interpretation.
+Ordinary mass, center and motion describe one effective exterior in the
+adopted Einstein/GHY sector; its monopole also determines the principal
+extrinsic-curvature deficit and boundary energy of a declared enclosing sphere. One optical
+potential is counted once. A local app, command line, Python package and
+executed notebooks fit resolved image pairs, flux ratios and delays with
+full supplied covariance, nuisance profiling and explicit rejection or
+unresolved outcomes. In a fixed synthetic ten-year, three-source
+validation, all 64 noise realizations complete; nominal local 95\%
+interval coverage is 59--61 of 64 across five mass, center and motion
+components. Short cosmological tracks remain motion unresolved, and
+omitted shear produces a rejected fit. An optional scalar--tensor
+realization supplies a normalized boundary-to-lensing transfer and a
+uniform sufficient state bound throughout its retained exterior.
+Frozen full-line projection erases two quadrupole modes; the leading screened primary-pair
+delay response vanishes; a standard apparent-mass statistic confounds the
+leading response with shear. The admitted nearby envelope remains below
+the supplied noise. These results support candidate tracking and
+conditional response tests. No new black-hole detection, horizon
+classification, physical core-transfer law or selected deformation state
+is established.
+\end{abstract}
+\noindent\textbf{Keywords:} strong gravitational lensing; compact objects;
+Vainshtein screening; scalar--tensor gravity; boundary response; identifiability
+
+\section{Introduction: the Blackhole Tracker question}
+
+Lensing already measures the mass and motion of dark compact objects.
+Astrometric microlensing has been used to infer an isolated stellar-mass
+black-hole candidate's properties \cite{Sahu2022}; joint astrometry and
+parallax separate familiar mass, distance and proper-motion combinations.
+Moving dark structures also motivate multi-source astrometric templates
+\cite{VanTilburg2018}, and repeated lensed bursts carry motion-dependent
+delays \cite{Dai2017}. The product makes this measurement workflow reproducible under an explicit
+data contract. Its action-specific question is narrower: can a specified
+envelope deformation supply a calculable linked pattern in images, fluxes
+and delays, and which parts survive an ordinary lens fit?
+
+BHSM organizes its research around boundary geometry, constrained actions
+and envelope matching. That language does not by itself fix a metric,
+surface state or optical coefficient. An ordinary gravitational potential
+may already describe the same boundary contribution. We therefore use a
+declared Einstein/GHY sector for the ordinary fit and a single
+scalar--tensor action for the optional R1 response, counting each
+physical contribution once. The name
+\emph{Blackhole Tracker} denotes the proposed application to a candidate
+compact dark source. All rays in this paper lie far outside a declared
+worldtube, itself far outside the gravitational radius. Lensing on that
+domain does not establish a horizon or identify the compact interior.
+
+The central deliverable is a usable research product with an ordinary
+compact-lens tracking mode and an optional conditional boundary-response
+mode. The ordinary fit is interpreted in the recovered BHSM Einstein/GHY
+sector through the same exterior mass and its boundary representation;
+this interpretation does not add another gravitational contribution.
+The new theoretical result is a uniform sufficient admission bound
+on the normalized quadrupole throughout the retained R1 exterior. The
+optical calculation identifies exact blind directions and demonstrates
+why a working compact-mass track need not detect an envelope. A separate
+nonlinear product validation tests mass/motion recovery, full covariance,
+limited interval calibration and unsuccessful controls. These statements
+are independent of accepting a departure from GR; their action-specific
+application remains conditional.
+
+\subsection{Recovered record and scope of the new calculation}
+
+A finite recovery covered relevant local Git branches/worktrees, research
+files in Downloads and Documents, selected members of a mounted BHSM
+backup, and accessible excerpts of the conversation \emph{Strong Lensing
+Paper Plan}. The source map and content hashes are distributed with the
+calculation. This is actual access to selected material, not comprehensive
+recall of every conversation or archive.
+
+The earlier angular paper was recovered from
+\texttt{BHSM\_Angular\_Lensing\_Reproducibility.zip}, SHA256 beginning
+\texttt{84786b6b905ae1e2}. Its round closed-background, nine-harmonic,
+six-coordinate calculation is preserved separately. Its illustrative
+fixed-physical-source SIS delay shift, $-0.353216090$ s against a
+$7.753621449$ d baseline, is a conditional chosen state, not a selected
+black-hole signal. The earlier observational HE0435 paper and its failed
+or incomplete observational tests are also preserved. No such data are
+used here. A separate Hopf-charge result is retained as supporting
+research rather than made the central tracker claim.
+
+\begin{table}[t]
+\centering\small
+\caption{Recovered objects relevant to the tracker. ``Not located'' refers
+only to the searched record. Exact paths/hashes are in the source map.}
+\begin{tabular}{p{.28\linewidth}p{.63\linewidth}}
+\toprule Object & Scientific status and use\\\midrule
+R1 covariant action and homogeneous background & Conditional effective
+realization; archived source and hashes recovered and replayed. Supplies
+the local coefficients used here.\\
+Compact-source cubic reduction & Recovered action-derived quasi-static
+constraints and regular-body branch. Re-derived and checked here with
+general exterior scalar flux.\\
+BHSM black-hole/surface drafts & Surface identities and proposed flux
+parameters recovered. Horizon selection of the R1 exterior flux and
+causal deformation response not established by those objects.\\
+Microscopic constrained Hessian/Schur work & Actual local response machinery
+recovered; an evaluated normalized microscopic-to-cosmological optical
+map was not located.\\
+Fixed external environment & Seven action-owned interface variations
+remain even when external labels are fixed. This microscopic prescription
+does not fix a cosmological or black-hole deformation state.\\\bottomrule
+\end{tabular}
+\end{table}
+
+The strongest feasible action-specific deformation route is thus a normalized \emph{conditional
+effective-action} calculation. We do not substitute a familiar surface
+mass identity for the missing horizon problem. The spherical flux is
+kept as an exterior matching datum; the physical state remains free.
+The mathematical chain, and the place where it stops, are made explicit.
+
+\input{bhsm_interpretation}
+\input{exterior_derivation}
+\input{admission_bound}
+
+\begin{figure}[t]
+\centering\includegraphics[width=\linewidth]{../figures/screened_transfer.pdf}
+\caption{Conditional exterior transfer for the supplied regular-body flux
+proxy. Left: normalized decaying quadrupole, with its known deep $r^{-1}$
+and outer $r^{-3}$ powers. Right: the slope of the fully matched projected
+phase, approaching zero and $-2$. The curves use the action-fixed
+coefficients and the full line integral, not an extrapolation of either
+power law across the transition.}
+\label{fig:transfer}
+\end{figure}
+
+\input{projection_theorem}
+
+\subsection{Incoming, local and outgoing optical transfer}
+
+We use the homogeneous closed R1 background for the incoming and outgoing
+distances. If $K=0.018$ in units $L_0=c/H_0$, define
+\begin{equation}
+ \chi(z)=\int_0^z\frac{dz'}{\widehat H(z')},\qquad
+ S_K(\chi)=\frac{\sin(\sqrt K\chi)}{\sqrt K},\quad
+ D_{ab}=\frac{L_0 S_K(\chi_b-\chi_a)}{1+z_b}.
+\end{equation}
+The local deflection then enters the usual single-plane composition,
+\begin{equation}
+ \boldsymbol\beta=\boldsymbol\theta-
+ \frac{D_{ls}}{D_s}\widehat{\boldsymbol\alpha}
+       (D_l(\boldsymbol\theta-\boldsymbol c)),\qquad
+ \widehat{\boldsymbol\alpha}=\nabla_b\int(\Phi+\Psi)\,dz .
+\label{eq:lens-composition}
+\end{equation}
+This is the homogeneous limit of general optical transfer, whose
+equivalent-lens and source-transformation freedoms must be retained
+\cite{Schneider1997,Fleury2021,Schneider2019}. No angular environmental
+harmonic from the earlier cosmological paper is added here: a second
+nonlinear scalar Hessian background would change the local response
+operator and require a new reduction.
+
+For a reference mass $M$, let $m=GM/c^2$,
+\begin{equation}
+ r_E^2=4m\frac{D_lD_{ls}}{D_s},\qquad
+ \boldsymbol x=\frac{D_l(\boldsymbol\theta-\boldsymbol c)}{r_E},\qquad
+ t_M=\frac{4m}{c}(1+z_l).
+\end{equation}
+The dimensionless lens potential is the projected Weyl phase divided by
+$4m$. In particular, the ordinary monopole is $\ln r$, $r=|x|$; the
+scalar monopole correction is derived from the same action. It is added
+to that GR metric once. If $q(b)$ is the phase in physical length per
+unit transverse boundary amplitude,
+\begin{equation}
+ \delta\psi=\epsilon_+ Q(r)\cos2\varphi+
+                   \epsilon_\times Q(r)\sin2\varphi,
+ \quad Q(r)=\frac{q(r_Er)}{q(r_E)},\quad
+ \epsilon_A=\frac{a_A q(r_E)}{4m}.
+\label{eq:optical-normalization}
+\end{equation}
+The $a_A$ are supplied scalar states, not extra optical couplings.
+Homogeneous metric quadrupoles, which need not be fixed by $a_A$, are
+retained as ordinary compact-lens nuisance parameters.
+
+\section{A tracker statistic and its blind direction}
+
+For a point source lensed by an isolated point mass, let $R>1$ be the
+absolute primary-image flux ratio. The familiar delay law
+\cite{Munoz2016} gives
+\begin{align}
+ u&=2\sinh(\ln R/4),&s&=\sqrt{u^2+4},\notag\\
+ h(u)&=\tfrac12us+2\asinh(u/2),&
+ M_{\rm app}&=\frac{c^3\Delta t}{4G(1+z_l)h(u)}.
+\label{eq:massstat}
+\end{align}
+The apparent mass is constant for any slow constant-mass point-lens
+trajectory, including source or observer motion incorporated in $u$.
+This baseline estimator is inherited. It also remains equal to the point
+mass in a constant isotropic convergence in the ideal point-lens model:
+rescaling the image/source coordinates leaves the dimensionless
+point-mass delay difference and flux relation intact. It is not a general
+observable invariant for arbitrary lenses.
+
+For a small additional potential $\epsilon p$, Appendix~\ref{app:estimator-variation}
+derives
+\begin{equation}
+ \delta\ln M_{\rm app}=\frac{\delta\Delta\tau}{h(u)}
+          -\frac{s^2}{4h(u)}\delta\ln R.
+\end{equation}
+Image displacements must enter the magnification derivative even though
+Fermat stationarity removes them from the first-order delay at fixed
+source. For $p=q(r)\cos2\varphi$, write its response as
+$\delta\ln M_{\rm app}=\mathcal K_q(u)\cos2\varphi_s$. An exact
+first-order identity is
+\begin{equation}
+ \mathcal K_1=\mathcal K_{r^2}=K_*(u),\qquad
+ \mathcal K_{r^{-2}}=(u^2+1)K_*(u),\qquad
+ K_* =\frac{(u^2+4)^{3/2}}{u h(u)}.
+\label{eq:blind}
+\end{equation}
+Thus $(r^2-1)\cos2\varphi$ is invisible to this statistic at first
+order for every $u>0$. The potentials differ, and their images, fluxes and
+delays generally differ. The cancellation occurs only after compressing
+those data into $M_{\rm app}$. In particular, a leading screened
+$\epsilon\cos2\varphi$ produces the same apparent-mass history as a
+conventional shear $\gamma=2\epsilon$ of the same orientation.
+Different radial phase powers alone do not establish identification.
+
+For the radially constant phase, the two primary-image angles differ by
+$\pi$, so $p(x_+)=p(x_-)$ and $\delta\Delta\tau=0$. Nevertheless
+$\delta\ln R=-4\epsilon s\cos2\varphi_s/u$, and tangential astrometry
+can also change. At $\cos2\varphi_s=0$ even the flux/mass statistic is
+blind at first order while tangential shifts remain possible. Full
+transition matching restores a small radial and delay response
+(Figure~\ref{fig:blind}); this does not make the leading degeneracy
+irrelevant.
+
+\begin{figure}[t]
+\centering\includegraphics[width=\linewidth]{../figures/tracker_blind_direction.pdf}
+\caption{The matched radial profile in the point-mass first-variation
+operator, with $r_E/r_V=0.00743$. Left: its apparent-mass response is close
+to the exactly coincident constant-phase/external-shear response, despite
+different potentials. Right: the small matching-induced delay derivative;
+the strict constant-phase result is zero. Curves are derivatives per
+dimensionless phase amplitude, not physical observed signals.}
+\label{fig:blind}
+\end{figure}
+
+\section{Joint primary-pair information experiment}
+\label{sec:experiment}
+
+\subsection{Declared data and nuisance family}
+
+The numerical experiment uses the action-derived scalar monopole as well
+as the quadrupole, rather than fitting a point-mass background to an
+unlabeled modified profile. Its observables at each of nine reference
+configurations are
+\begin{equation}
+ O_i=(x_{+,i},y_{+,i},x_{-,i},y_{-,i},\ln R_i,\Delta t_i/t_M).
+\end{equation}
+The source reference positions are $(1.8t_i,0.6)$, with $t_i$ uniformly
+spanning $[-1,1]$. In the fit, two source coordinates are \emph{free at
+every configuration}; no known unlensed track is supplied. They can
+absorb parallax, source motion and source-position errors at these sample
+points. The lens nuisances are one mass, two center coordinates, two
+constant-velocity coordinates, one convergence, two external-shear and
+two compact material-quadrupole coordinates. The scalar flux is also
+fitted through its local monopole response, rather than assumed known in
+the inference. The visible axial scalar quadrupole is also fitted as a
+radial nuisance with its normalized $Y_{20}$ response. There are 30 nuisance
+parameters and two transverse envelope coordinates in 54 data components.
+The two odd projected tensor modes are absent from this one-view data
+model rather than artificially fixed by a prior.
+
+The ordinary quadrupoles are $B_A r^{-2}$ and $\Gamma_A r^2$ in the
+cosine/sine basis. They are fixed as a family before inspecting the
+envelope projection. Internal and external radial multipole information
+is familiar in lens modeling \cite{Bernstein2009}; it is not supplied
+here as a new general principle. The inference assumes known redshifts,
+distances, time calibration and a common absolute astrometric frame.
+Unknown frame drift is equivalent to part of the freely fitted center
+motion; arbitrary frame distortion or an unrestricted radial potential
+is not covered. Fluxes are intrinsic geometric point-source fluxes with
+no extinction, blending, independent microlensing or finite-source
+structure. These are strong experimental assumptions, not observational
+facts.
+
+For each baseline image, $A=I-D^2\psi_0$. The computed response includes
+\begin{equation}
+ \delta x=A^{-1}(\nabla\delta\psi+\delta y),\qquad
+ \delta\ln|\mu|=\tr\!\left[A^{-1}
+      (D^2\delta\psi+D(D^2\psi_0)[\delta x])\right].
+\label{eq:generalresponse}
+\end{equation}
+For a translated center, $\delta\psi=-\delta c\cdot\nabla\psi_0$.
+Mass differentiation changes the action's scalar monopole too. Source
+variation enters the delay as
+$(x_+-x_-)\cdot\delta y$, in addition to the potential difference.
+These terms ensure comparison of consistent physical states and prevent
+spurious source/center signatures.
+
+Let $N$ and $S$ denote the nuisance and envelope derivative matrices.
+With a specified data covariance $C_O$, local information is the Gram
+matrix of
+\begin{equation}
+ S_\perp=(I-P_N)C_O^{-1/2}S,
+\end{equation}
+where $P_N$ projects onto the column space of $C_O^{-1/2}N$.
+This is ordinary profiled linear inference. Here all data components
+have equal \emph{dimensionless} errors in the displayed units, an
+explicit choice for information comparison. It is not an instrument
+noise model. Nuisance columns are normalized before SVD; the recorded
+rank threshold is $10^{-9}$ of the largest singular value, and the full
+spectra are released. Raw column norms below $10^{-11}$ times the larger
+of the maximum norm and unity are discarded as numerical zeros.
+All 30 full-pair columns survive that admission. The axial mode is nearly
+masslike; when all admitted columns have full rank but condition number
+exceeds $10^6$, the projection uses 70-digit normal equations after the
+unchanged SVD rank selection. An independent 70-digit QR solve checks
+the result. These refine arithmetic for the same double-input derivatives,
+not the physical approximation. Parameter priors are not added to fill nulls.
+
+\subsection{Evaluated response and controls}
+
+For $M=10^9M_\odot$, $z_l=0.3$, $z_s=1$, $r_0=10$ pc and scalar
+flux proxy equal to the regular-body value, the same-background
+distances give $r_E=339.62$ pc, $\theta_E=74.116$ mas and
+$t_M=25612.55$ s. The computed screening radius is $r_V=45680.31$ pc.
+This scale is action-derived after choosing the matching flux; it is not
+tuned to the rays.
+
+\input{numerical_table}
+
+The joint-pair projected envelope singular values are approximately
+$(3.135,0.802)$ per unit phase amplitude. Roughly 4--15\% of each
+envelope column's norm survives the 30 nuisance directions. The strict
+constant-phase replacement gives nearly the same joint-pair result;
+identification here therefore comes mainly from keeping the separate
+image/flux/delay information rather than resolving the small transition
+correction. Astrometry alone retains only very small directions in this
+example, and its near-null spectrum is numerically delicate. The
+apparent-mass statistic alone retains no measurable independent
+direction with the admitted free-source/action-monopole family. The
+analytic point-mass/shear null in Equation~\eqref{eq:blind} separately
+establishes an exact first-order loss without relying on an SVD cutoff.
+
+\begin{figure}[t]
+\centering\includegraphics[width=\linewidth]{../figures/tracker_information.pdf}
+\caption{Information retained by the declared broad scan. Left: the flux
+component of the $+$ response before and after simultaneous nuisance
+projection in the full data vector. Right: retained column-norm fractions
+for three data choices; the apparent-mass residual is at roundoff.
+Comparisons use the stated dimensionless metric and nuisance family,
+not a telescope covariance or a universal observability theorem.}
+\label{fig:information}
+\end{figure}
+
+Controls vary mass, worldtube radius and the supplied scalar flux. With
+zero spherical scalar flux the exterior quadrupole is harmonic,
+$f_2\propto r^{-3}$; its transverse projected phase is exactly an ordinary
+compact quadrupole and the retained response vanishes to numerical
+precision. Nonzero fluxes $0.1$, $1$ and $3$ times the proxy give a
+screened response with the same broad-scan information pattern, as do
+the tested $10^6$ and $10^{11}M_\odot$ examples with declared weak-field
+worldtubes. These are conditional boundary families, not alternative
+theories or inferred black-hole charges. Allowing an independent center
+at every configuration reduces the joint information but does not remove
+both transverse directions in this restricted family. Arbitrary
+time-dependent quadrupoles would be a different, less constrained problem.
+
+\subsection{Perturbative and numerical control}
+
+The physical state example is chosen by an explicit small parameter,
+\begin{equation}
+ a_+=\frac{\eta x_0|p(x_0)|}{6},\quad a_\times=0,
+ \qquad \eta=10^{-3},\quad x_0=r_0/L_0.
+\label{eq:smallstate}
+\end{equation}
+The factor six is the quadrupole angular eigenvalue; the numerical
+checks also evaluate actual Hessian ratios and the quadratic residual
+in the retained nonlinear scalar equation. This is a supplied
+perturbatively small state, not a BHSM-selected amplitude or an upper
+bound on astrophysical deformations. It gives $a_+\simeq1.38\times10^{-16}$
+and $\epsilon_+\simeq-8.89\times10^{-13}$.
+
+At source $(0.9,0.6)$ the retained model gives a largest coordinate shift
+of about $9.4\times10^{-5}$ nanoarcsec and
+$\delta\ln R\simeq2.88\times10^{-12}$. The formal matched delay
+shift is approximately $5.1\times10^{-12}$ s. That last small number
+is a value in the truncated static thin-lens model, whose leading delay
+term vanishes; it is \emph{not} a physically certified picosecond forecast.
+Uncomputed time-dependent and matching corrections require their own
+comparison before interpreting such a subleading delay.
+
+The code checks the radial equation against the special-function
+solution, the dipole translation mode, independent original-$z$ versus
+transformed line integrals, finite-difference projected derivatives,
+boundary energy normalization, and finite nonlinear primary-image
+continuations. At test amplitudes decreasing from $10^{-3}$ to
+$3\times10^{-5}$, the central-difference error in the full response
+decreases quadratically to about $1.6\times10^{-7}$, with image
+stationarity residuals below $10^{-14}$. Those larger optical test
+amplitudes test the lens derivative; they do not validate the small-state
+scalar linearization at an enlarged boundary amplitude. Independent
+symbolic/Cartesian and polynomial-branch checks verify the estimator
+operator and its nulls. All are internal AI-assisted checks.
+
+Quintic interpolation uses analytic projected derivatives at logarithmic
+nodes; measured midpoint discrepancies and quadrature refinements are
+recorded as numerical diagnostics, not interval certificates. The formal
+infinite exterior is matched to the frozen local background. At a
+1 Mpc cutoff, explicit far-tail bounds give a monopole deflection tail
+below $9\times10^{-11}$ of the ordinary deflection and a transverse
+quadrupole phase tail below $8\times10^{-11}$ pc per unit boundary
+amplitude. These bound omitted tails only. They do not bound every
+weak-field, cosmological or effective-theory correction.
+
+\input{product_workflow}
+\input{product_validation}
+
+\section{What could actually be tracked?}
+
+The product demonstrates compact-lens inference under its declared synthetic
+measurement and covariance model. It does not demonstrate observational
+acquisition or a detectable BHSM envelope. The earlier broad information
+scan has a distinct limitation. For the illustrative cosmological mass and transverse
+speed $300$ km s$^{-1}$, ten observer years move the center only
+$0.00236$ pc, or $6.95\times10^{-6}r_E$. Traversing the broad synthetic
+$3.6r_E$ scan at that speed would take about $5.2$ million observer years.
+The short-span design has nearly dependent columns; its released
+spectrum must not be promoted into a realistic parameter forecast.
+Several independent source configurations could sample a broad spatial
+range, but that would require an actual source population, their
+redshifts and a corresponding data model. It is not automatically
+supplied by nine synthetic points.
+
+A translated static profile is an adiabatic template evaluated at lens
+crossing time. It requires slow motion, control of coefficient evolution
+over the relevant crossing times, and control of scalar propagation.
+For the speed example $v/c\simeq10^{-3}$, even nominal relative
+corrections at that level cannot be ignored when claiming the tiny
+subleading delay. Positive leading principal coefficients establish the
+local branch's hyperbolicity/ellipticity conditions; they do not prove
+global nonlinear stability, a UV completion or horizon admissibility.
+Fast intrinsic deformation or ringdown needs a causal metric solution.
+Such time-dependent black-hole lensing already has separate explicit
+models \cite{Pantig2026}; they do not close the R1 matching problem.
+
+The unknown flux is especially consequential. The regular-body integrated
+source equation supplies one proxy, whereas a black-hole exterior has
+an integration constant that must be selected by horizon, interior and
+cosmological boundary conditions. The searched BHSM record did not
+establish that selection. A surface-acceleration identity or a
+Brown--York energy inversion on a known Schwarzschild worldtube does
+not determine this scalar flux or its deformation response. Nor can the
+two odd line-of-sight tensor modes be reconstructed by improving the
+precision of the same static projection.
+
+This missing evaluation is specific to the present action and background.
+Cosmologically induced black-hole charges have been derived in related
+shift-symmetric Horndeski models \cite{Babichev2025}, and regular stable
+quasi-stationary cubic-Galileon black holes with cosmological asymptotes
+have been constructed \cite{Smulders2026}. Those works provide a concrete
+matching strategy. The explicit self-accelerating cubic de Sitter
+constructions are not the present canonical-sign, linear-potential, rolling
+matter background; directly substituting the latter coefficients into
+that self-accelerating branch does not give a real Hubble parameter.
+Their results therefore cannot simply select the flux proxy used here,
+nor do they provide this paper's normalized quadrupole state.
+
+Even perfect matching and a detectable transfer would track an exterior
+compact-mass/envelope combination. Any alternative interior producing
+the same Weyl response on every sampled ray gives the same data. A
+horizon claim therefore needs additional physics or independent
+observables. Unrestricted source transformations, line-of-sight
+potentials, uncertain distances, evolving macrostructure and flux
+propagation effects can also change the finite-family inference result.
+Multiple source redshifts alone do not remove every such freedom.
+
+\section{Discussion and conclusions: scientific advance and limits}
+
+Static cubic screening, its multipole powers and exact Green functions
+are established \cite{Kimura2012,Chu2013,Brito2014,Kobayashi2026}.
+General STF gravitational multipole projection is also established
+\cite{Turyshev2022}. The point-mass delay/flux estimator is standard,
+and ordinary radial multipole separation and profiled linear inference
+are standard methods. We do not claim priority for those ingredients.
+
+The addition combines their normalized R1 optical composition with an
+exterior-wide sufficient state cap and a runnable compact-lens inference
+workflow. Its theory exposes a delay-blind leading response, an exact
+apparent-mass/shear degeneracy and line-of-sight nulls. Its product retains
+full covariance and source freedom, and reports synthetic recovery with
+limited local-interval coverage checks together with weak-motion, mismatch and physically unresolved
+outcomes. The finite harmonic control makes a cause ambiguity exact
+rather than assigning every structured residual to BHSM.
+
+The result supports a theoretical and computational lens-modeling methods
+paper with a usable BHSM-interpreted research tool. Ordinary mass/motion
+recovery remains useful within that interpretation when no independent
+scalar deformation is resolved. Agreement with the Einstein-sector
+response is allowed; it does not uniquely select the underlying theory. It does not yet establish
+a detectable BHSM deformation, horizon classification or a decisive new
+astrophysical discovery. Further R1 prediction needs a normalized
+black-hole/homogeneous-background boundary map selecting exterior flux
+and deformation dynamics. Observational use additionally requires actual
+resolved pairs, calibrated geometric fluxes and delays, and a model
+adequate for their environment. No telescope detection or journal
+submission is reported.
+
+\paragraph{Data and code availability.}
+The complete source package contains the three preserved research
+projects, this manuscript, the \texttt{products/blackhole\_tracker/} package, executed
+notebooks, synthetic examples, source pins and numerical/review receipts.
+The paper's theoretical replay entry point is
+\texttt{scripts/reproduce.py}; the product's is
+\texttt{products/blackhole\_tracker/scripts/validate\_product.py}. Its README documents app,
+command-line and Python use and the data contract. All validation inputs
+are synthetic or theoretical; no fresh observational validation set is
+used. The formal reviewer repository is
+\href{https://github.com/ncarberry64/Berger-Hopf-Standard-Model}{Berger--Hopf Standard Model},
+with this paper under \texttt{papers/bhsm\_blackhole\_tracker\_20261021/}
+and the reviewable integration in
+\href{https://github.com/ncarberry64/Berger-Hopf-Standard-Model/pull/470}{draft PR 470}.
+The separate Manuscript-Generation repository is a development workspace.
+The inference code version for this release candidate is
+\texttt{bhsm-blackhole-tracker 0.2.0rc2}, code commit
+\href{https://github.com/ncarberry64/Berger-Hopf-Standard-Model/tree/33f26a5113392c0d2c323d7e4a36c7e81bd3ee29/products/blackhole_tracker}{\texttt{33f26a511339}}.
+The final release receipt binds the reviewed manuscript/source archive,
+wheel hashes and CI runs to the completed PR revision. A beginner can
+install the wheel, run \texttt{python -m bhtracker serve --open}, load the
+labeled nearby synthetic example and download its replay bundle.
+\texttt{python -m bhtracker replay analysis.zip --output replayed}
+repeats that saved configuration without an original private path.
+
+\paragraph{Author contributions.}
+Conceptualization, methodology, formal analysis and writing:
+Norman P. Carberry. Software, validation and visualization were prepared
+with the AI/tool assistance described below. Scientific responsibility
+and final manuscript approval rest with the author.
+
+\paragraph{Funding.}
+This research received no external funding.
+
+\paragraph{Conflicts of interest.}
+The author declares no conflicts of interest.
+
+\paragraph{Institutional review board and informed consent.}
+Not applicable. This theoretical and computational study uses synthetic
+measurements and introduces no human-participant or animal research.
+
+\paragraph{Acknowledgments and AI/tool disclosure.}
+During preparation of this manuscript and study, OpenAI ChatGPT and
+Codex (GPT-6 model family) were used for source recovery, symbolic
+calculation and checking, software generation and revision, numerical
+verification, visualization, literature checking and manuscript drafting.
+Retained claims are supported by the stated mathematics, source records
+and executable checks; AI output is not independent physical evidence.
+Independent agent reviews are internal computational checks, not external
+peer review. Responsibility for the retained scientific content rests
+with Norman P. Carberry.
+
+\appendix
+\input{estimator_derivation}
+\bibliographystyle{unsrtnat}
+\bibliography{refs}
+\end{document}

@@ -1,0 +1,28 @@
+{
+  "scope": "exact Hopf/Berger scalar geometry; no optical coupling or state selection",
+  "symbolic_checks": {
+    "neutral_dimension": 3,
+    "charged_dimension": 6,
+    "A_square_equals_rho2_identity": true,
+    "det_A_equals_rho4": true,
+    "neutral_Hopf_derivative_zero": true,
+    "charged_Hopf_second_derivative_minus4": true,
+    "nonzero_charged_stationary_nodal_witness": true,
+    "berger_n2_eigenvalues": [
+      "8",
+      "4+4*a**2"
+    ],
+    "round_limit_a1": [
+      8,
+      8
+    ]
+  },
+  "numerical_checks": {
+    "seed": 20261021,
+    "samples": 128,
+    "max_amplitude_gradient_identity_absolute_residual": 6.661338147750939e-16,
+    "max_A_square_absolute_residual": 3.3306690738754696e-16,
+    "minimum_norm_AX_for_rho1": 0.9999999999999997
+  },
+  "status": "PASS"
+}

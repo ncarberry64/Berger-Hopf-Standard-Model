@@ -1,0 +1,111 @@
+{
+  "status": "CONDITIONAL_R1_RESPONSE_NOT_MICROSCOPIC_PREDICTION",
+  "provider_audit": {
+    "physical_anchor_reconstruction_max_abs": 2.220446049250313e-16,
+    "original_constraint_scaled_max_abs": 2.9103830456733704e-11,
+    "potential_no_slip_row_relative_max": 2.384191289142197e-10,
+    "ray_anchor_N_residual": -4.440892098500626e-16
+  },
+  "quadrature_error_omega": 5.147200024064406e-29,
+  "refined_omega_difference": 1.2096102819845874e-28,
+  "finite_ode_checks": [
+    {
+      "amplitude_scale": 1.0,
+      "even_rotation_over_scale_squared": -9.982537899924231e-19,
+      "absolute_coefficient_error": 3.4777872860481166e-27
+    },
+    {
+      "amplitude_scale": 2.0,
+      "even_rotation_over_scale_squared": -9.982537512183319e-19,
+      "absolute_coefficient_error": 4.225187849947129e-26
+    },
+    {
+      "amplitude_scale": 4.0,
+      "even_rotation_over_scale_squared": -9.982537964547716e-19,
+      "absolute_coefficient_error": 2.984561249522412e-27
+    },
+    {
+      "amplitude_scale": 8.0,
+      "even_rotation_over_scale_squared": -9.982537706053775e-19,
+      "absolute_coefficient_error": 2.2864832892759703e-26
+    },
+    {
+      "amplitude_scale": 16.0,
+      "even_rotation_over_scale_squared": -9.982537851456617e-19,
+      "absolute_coefficient_error": 8.324548687726013e-27
+    }
+  ],
+  "common_profile_finite_rotation": 3.3881317890172014e-21,
+  "admissibility": {
+    "sample_count": 161,
+    "max_auxiliary_condition": 102918.71085998723,
+    "min_reduced_kinetic_eigenvalue": 0.002484990502673359,
+    "sampled_global_potential_bound_Phi_Psi": [
+      0.00043429115182226993,
+      0.0004342911518221205
+    ],
+    "sampled_global_bound_all_Newtonian_rows": [
+      0.00043429115182226993,
+      0.0004342911518221205,
+      0.000138266119038191,
+      0.0012757799541134646,
+      0.000138266119038191,
+      0.001761134024024415,
+      0.00013826611903819096
+    ],
+    "physical_state_selection": false,
+    "continuum_stability_proved": false
+  },
+  "strong_lens": {
+    "z_l": 0.3,
+    "z_s": 1.0,
+    "reduced_local_hessian": [
+      [
+        0.7348574598318869,
+        0.20336230618805676
+      ],
+      [
+        0.20336230618805676,
+        0.1651425401681132
+      ]
+    ],
+    "Gamma": {
+      "ol": [
+        [
+          -4.871632514404979e-08,
+          -4.250336692400631e-11
+        ],
+        [
+          -4.250336692400631e-11,
+          4.871632514404979e-08
+        ]
+      ],
+      "os": [
+        [
+          -5.759730682496795e-07,
+          -5.100500680757029e-10
+        ],
+        [
+          -5.100500680757029e-10,
+          5.759730682496795e-07
+        ]
+      ],
+      "ls": [
+        [
+          -2.888197089714311e-07,
+          -2.570527191552763e-10
+        ],
+        [
+          -2.570527191552763e-10,
+          2.888197089714311e-07
+        ]
+      ]
+    },
+    "lens_jacobian_rotation_first_order": 6.821905801947945e-08,
+    "centered_finite_difference": 6.821905609855072e-08,
+    "finite_difference_absolute_error": 1.92092872724008e-15,
+    "Fermat_weighted_jacobian_skew_first_order": 0.0,
+    "nodal_SIS_fractional_delay_cos2phi": -5.272567431056297e-07,
+    "nodal_SIS_fractional_delay_sin2phi": -4.675467011516965e-10
+  }
+}

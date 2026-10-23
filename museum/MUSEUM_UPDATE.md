@@ -1,5 +1,37 @@
 # Museum content update — 24 September 2026
 
+## Blackhole Tracker · researcher access — 22 October 2026
+
+Added an independent Blackhole Tracker exhibit after Collisions, with the same
+instrument panels, shared motion/visibility controls, review statement, source
+links and open-review question as the existing collection. The 15-slide deck,
+numbered destinations and static AI index follow the same visitor order.
+
+The browser computes noise-free point-lens image pairs, their magnification
+ratio and delay for three declared synthetic sources and a 2015–2025 moving
+center. A time scrubber, exact observer-year buttons, mass-input control,
+pause/play and enlarged center track explain what changes in the optical
+response. Reduced-motion visitors can inspect every state manually. The mass
+control is a supplied forward-model input, not an estimate; the Einstein circle
+is an angular lens scale. BHSM same-potential interpretation, conditional R1
+status and the boundary/core/horizon distinctions are visible in the exhibit.
+
+Visitors can download the exact reviewed product source ZIP or wheel directly
+from the Museum, read the installation guide and pinned manuscript, and follow
+the complete load/validate/fit/export/replay path on their own computer. Both
+license notices and the distribution hashes accompany the downloads. The
+Museum does not host an inference service or upload measurements.
+
+The new calculation checks preserve the exact nearby-motion inputs and verify
+all nine source/epoch rows against the pinned product forward engine. They also
+check the lens equation, allowed input range and the exact reviewed download
+hashes. No product source, frozen result or calibration campaign was changed.
+
+Two existing cosmology lint findings were corrected without changing its
+scientific inputs: the computed canvas has an explicit accessibility rationale,
+and the terminal playback freeze is scheduled on the next animation frame with
+cleanup. Its terminal observer epoch and explicit replay behavior are retained.
+
 ## Phone-first balance, sharing cache and mobile playlist — 30 September 2026
 
 Added a final phone/tablet stylesheet: shorter persistent navigation, a welcome

@@ -1,4 +1,5 @@
 'use client';
+/* oxlint-disable jsx-a11y/prefer-tag-over-role -- The computed canvas needs an accessible image description. */
 import { useEffect, useRef, useState } from 'react';
 import transfer from './cosmology-transfer.json';
 import {
@@ -156,9 +157,12 @@ export function CosmologyRealization({
   // Freeze at today; replay is an explicit control, not a cyclical cosmology.
   useEffect(() => {
     if (finished && playing) {
-      setFixed(epochs.length - 1);
-      setStart(time);
-      setPlaying(false);
+      const frame = requestAnimationFrame(() => {
+        setFixed(epochs.length - 1);
+        setStart(time);
+        setPlaying(false);
+      });
+      return () => cancelAnimationFrame(frame);
     }
   }, [finished, playing, time]);
   return (

@@ -1,11 +1,13 @@
 // Navigation and static-export validation share the visitor's science journey.
 export const slides = [
   ['potential', 'Welcome'],
+  ['bhsm-lifecycle', 'The common frame'],
   ['berger-hopf', 'Berger & Hopf'],
   ['science-unification', 'Forces'],
   ['science-predictions', 'Matter'],
   ['science-magnetic', 'Magnetism'],
   ['science-decays', 'Collisions'],
+  ['blackhole-tracker', 'Blackhole Tracker'],
   ['cosmology-original', 'Cosmology · the proposal'],
   ['other-work', 'Cosmology · testable response'],
   ['science-test', 'Comparisons'],

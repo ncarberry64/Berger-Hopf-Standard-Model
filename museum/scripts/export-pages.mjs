@@ -126,6 +126,10 @@ try {
     'Download transition record',
     'The questions that keep us curious.',
     'physics-question-answer',
+    'Follow the lens. Test the interpretation.',
+    'SYNTHETIC FORWARD VIEW',
+    'Download the app',
+    './research/blackhole-tracker/BHSM_Blackhole_Tracker_Product.zip',
   ]) {
     if (!written.includes(expected))
       throw new Error(`Static export is missing: ${expected}`);

@@ -1,0 +1,93 @@
+name: Formal Blackhole Tracker
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  tracker-source-and-wheel:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - name: Verify formal source bytes
+        run: python tools/verify_blackhole_tracker_snapshot.py
+      - name: Install product test and build dependencies
+        working-directory: products/blackhole_tracker
+        run: python -m pip install -e ".[dev]"
+      - name: Product contracts, browser fixture and replay
+        working-directory: products/blackhole_tracker
+        run: python -m pytest -q tests
+      - name: Build installable wheel
+        working-directory: products/blackhole_tracker
+        run: python -m pip wheel --no-deps . --wheel-dir dist
+      - name: Fit and export replay from wheel outside checkout
+        run: python tools/smoke_blackhole_tracker_wheel.py --wheel products/blackhole_tracker/dist/bhsm_blackhole_tracker-0.2.0rc2-py3-none-any.whl
+      - uses: actions/upload-artifact@v4
+        with:
+          name: blackhole-tracker-wheel-${{ matrix.os }}
+          path: products/blackhole_tracker/dist/*.whl
+
+  tracker-paper-and-source:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install TeX build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y latexmk texlive-latex-extra texlive-fonts-recommended lmodern
+      - name: Compile paper without changing reviewed PDF
+        run: >-
+          latexmk -cd -pdf -interaction=nonstopmode -halt-on-error
+          -outdir="$RUNNER_TEMP/tracker-latex"
+          papers/bhsm_blackhole_tracker_20261021/manuscript/main.tex
+      - name: Verify source and build complete portable release
+        run: |
+          python tools/verify_blackhole_tracker_snapshot.py
+          python papers/bhsm_blackhole_tracker_20261021/scripts/package_release.py tracker-artifacts
+          python tools/verify_blackhole_tracker_release.py --archive tracker-artifacts/BHSM_Blackhole_Tracker_Source.zip
+      - name: Reproduce theory inputs in isolated extracted source
+        shell: python
+        run: |
+          from pathlib import Path
+          import hashlib, json, os, subprocess, sys, zipfile
+          target = Path(os.environ['RUNNER_TEMP']) / 'tracker-source-replay'
+          target.mkdir()
+          with zipfile.ZipFile('tracker-artifacts/BHSM_Blackhole_Tracker_Source.zip') as source:
+              source.extractall(target)
+          theory = target / 'products/blackhole_tracker/bhtracker/theory'
+          def hashes():
+              return {p.relative_to(theory).as_posix(): hashlib.sha256(p.read_bytes()).hexdigest()
+                      for p in sorted(theory.rglob('*')) if p.is_file()}
+          before = hashes()
+          subprocess.run([sys.executable, str(target / 'products/blackhole_tracker/scripts/sync_theory.py')], check=True)
+          after = hashes()
+          if before != after:
+              raise SystemExit('Source-regenerated theory bytes differ from the reviewed provider')
+          receipt = {'passed': True, 'files': len(before), 'scope': 'Exact provider source regeneration, not physical confirmation'}
+          Path('tracker-artifacts/provider-source-replay.json').write_text(json.dumps(receipt, indent=2) + '\n')
+      - uses: actions/upload-artifact@v4
+        with:
+          name: blackhole-tracker-paper-and-source
+          path: |
+            tracker-artifacts/BHSM_Blackhole_Tracker_Source.zip
+            tracker-artifacts/BHSM_Blackhole_Tracker_Manuscript.pdf
+            tracker-artifacts/provider-source-replay.json
+            ${{ runner.temp }}/tracker-latex/main.pdf

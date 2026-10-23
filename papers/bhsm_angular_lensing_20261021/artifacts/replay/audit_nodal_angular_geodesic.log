@@ -1,0 +1,103 @@
+{
+  "schema": "BHSM-NODAL-ANGULAR-EULER-AUDIT-V1",
+  "equations": "theta'=L/S_K^2; L'=\u2212(phi+psi) N sin\u00b2(sqrt(K)chi) h theta",
+  "classification": "numerical derivative of declared metric completion; no selected physical amplitude",
+  "nodal_quadrupole": "C=diag(1,-1,0)/sqrt2; central direction z",
+  "max_background_fractional_map_defect": 2.220446049250313e-16,
+  "max_complex_step_kernel_difference": 2.080367128565186e-15,
+  "max_half_step_finite_difference": 5.700214605885989e-13,
+  "constant_Weyl_kernel_identity": [
+    {
+      "chi_length": 0.1,
+      "integral": 0.00016666366668595232,
+      "closed_form": 0.00016666366668616824,
+      "absolute_difference": 2.159188626504882e-16
+    },
+    {
+      "chi_length": 0.5,
+      "integral": 0.02082395983990421,
+      "closed_form": 0.020823959839903608,
+      "absolute_difference": 6.036837696399289e-16
+    },
+    {
+      "chi_length": 1.0,
+      "integral": 0.16636685945953694,
+      "closed_form": 0.16636685945953864,
+      "absolute_difference": 1.6930901125533637e-15
+    }
+  ],
+  "illustrative_matter_density_seed": [
+    {
+      "z_l": 0.3,
+      "z_s": 1.0,
+      "anchor": [
+        0.0,
+        0.0,
+        0.001,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "max_relative_temporal_metric_2_abs_Phi": 3.2678169212460645e-06,
+      "max_relative_spatial_metric_2_abs_Psi": 3.2678169212459434e-06,
+      "max_first_order_physical_matter_speed_over_c": 4.887198715486933e-06,
+      "radial_samples": 2001,
+      "maximum_redshift": 1.0,
+      "qualification": "exact angular maxima at sampled radial points; no certified continuous supremum"
+    },
+    {
+      "z_l": 0.3,
+      "z_s": 0.6,
+      "anchor": [
+        0.0,
+        0.0,
+        0.001,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "max_relative_temporal_metric_2_abs_Phi": 9.158064278713378e-07,
+      "max_relative_spatial_metric_2_abs_Psi": 9.158064278713247e-07,
+      "max_first_order_physical_matter_speed_over_c": 2.1033905785235925e-06,
+      "radial_samples": 2001,
+      "maximum_redshift": 0.6,
+      "qualification": "exact angular maxima at sampled radial points; no certified continuous supremum"
+    },
+    {
+      "z_l": 0.5,
+      "z_s": 1.5,
+      "anchor": [
+        0.0,
+        0.0,
+        0.001,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "max_relative_temporal_metric_2_abs_Phi": 9.420795021129943e-06,
+      "max_relative_spatial_metric_2_abs_Psi": 9.420795021130878e-06,
+      "max_first_order_physical_matter_speed_over_c": 1.0051664911269502e-05,
+      "radial_samples": 2001,
+      "maximum_redshift": 1.5,
+      "qualification": "exact angular maxima at sampled radial points; no certified continuous supremum"
+    },
+    {
+      "z_l": 0.8,
+      "z_s": 2.0,
+      "anchor": [
+        0.0,
+        0.0,
+        0.001,
+        0.0,
+        0.0,
+        0.0
+      ],
+      "max_relative_temporal_metric_2_abs_Phi": 2.03826385629088e-05,
+      "max_relative_spatial_metric_2_abs_Psi": 2.0382638562911884e-05,
+      "max_first_order_physical_matter_speed_over_c": 1.7155236655118714e-05,
+      "radial_samples": 2001,
+      "maximum_redshift": 2.0,
+      "qualification": "exact angular maxima at sampled radial points; no certified continuous supremum"
+    }
+  ]
+}

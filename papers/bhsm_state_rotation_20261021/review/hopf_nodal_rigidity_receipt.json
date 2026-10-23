@@ -1,0 +1,90 @@
+{
+  "status": "PASS",
+  "scope": "explicit auxiliary free scalar action on fixed Berger S3; no R1 cosmological extension",
+  "parameters": {
+    "a": 1.2,
+    "R": 1.0,
+    "c_s": 1.0,
+    "initial_A": "diag(1,-1,0,0)",
+    "initial_velocity": "0"
+  },
+  "exact_checks": [
+    {
+      "kappa": 0,
+      "euler_equation": true,
+      "rest_initial_data": true,
+      "nodal_plane_preserved": false
+    },
+    {
+      "kappa": 1,
+      "euler_equation": true,
+      "rest_initial_data": true,
+      "nodal_plane_preserved": true
+    }
+  ],
+  "small_time_leakage_coefficient_kappa0": 0.44,
+  "max_euler_residual": 1.7763568394002505e-15,
+  "max_leakage_formula_residual": 3.469446951953614e-18,
+  "table": [
+    {
+      "kappa": 0,
+      "time_R_over_cs": 0.0,
+      "relative_nodal_plane_leakage": 0.0,
+      "max_euler_residual": 1.7763568394002505e-15
+    },
+    {
+      "kappa": 0,
+      "time_R_over_cs": 0.1,
+      "relative_nodal_plane_leakage": 0.004335169462744259,
+      "max_euler_residual": 1.7763568394002505e-15
+    },
+    {
+      "kappa": 0,
+      "time_R_over_cs": 0.2,
+      "relative_nodal_plane_leakage": 0.016576487827066885,
+      "max_euler_residual": 1.7763568394002505e-15
+    },
+    {
+      "kappa": 0,
+      "time_R_over_cs": 0.5,
+      "relative_nodal_plane_leakage": 0.07359870733347565,
+      "max_euler_residual": 1.1102230246251565e-16
+    },
+    {
+      "kappa": 0,
+      "time_R_over_cs": 1.0,
+      "relative_nodal_plane_leakage": 0.024241938521516182,
+      "max_euler_residual": 1.7763568394002505e-15
+    },
+    {
+      "kappa": 1,
+      "time_R_over_cs": 0.0,
+      "relative_nodal_plane_leakage": 0.0,
+      "max_euler_residual": 0.0
+    },
+    {
+      "kappa": 1,
+      "time_R_over_cs": 0.1,
+      "relative_nodal_plane_leakage": 0.0,
+      "max_euler_residual": 0.0
+    },
+    {
+      "kappa": 1,
+      "time_R_over_cs": 0.2,
+      "relative_nodal_plane_leakage": 0.0,
+      "max_euler_residual": 0.0
+    },
+    {
+      "kappa": 1,
+      "time_R_over_cs": 0.5,
+      "relative_nodal_plane_leakage": 0.0,
+      "max_euler_residual": 0.0
+    },
+    {
+      "kappa": 1,
+      "time_R_over_cs": 1.0,
+      "relative_nodal_plane_leakage": 0.0,
+      "max_euler_residual": 0.0
+    }
+  ]
+}

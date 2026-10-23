@@ -1,0 +1,145 @@
+\section{Effective gravitational representation and source-redshift dependence}
+\label{sec:representation}
+
+The computed optical response admits a conventional effective-potential
+representation. This correspondence is constructive: the geometric and
+effective gravitational descriptions encode the same retained light transfer.
+The existence of that representation does not identify the physical
+preparation from lensing data. Distance-matrix lensing and its associated
+degeneracies provide the appropriate comparison
+\cite{Fleury2021Arbitrary,Schneider2019Multiplane,SchneiderSluse2014SPT}.
+
+\subsection{Exact correspondence for one source plane}
+
+Use physical angle-to-separation maps in compatible parallel screen frames,
+constant across the paraxial beam. Let $T$ be the symmetric time-delay matrix,
+$T_0>0$ a scalar reference length, and $M=T/T_0$. The local physical lens
+potential $\hat\psi$ and the angular source coordinate
+$\boldsymbol\beta=D_{os}^{-1}\boldsymbol X_s$ give
+\begin{equation}
+ ct(\boldsymbol\theta)
+ =\frac12(\boldsymbol\theta-\boldsymbol\beta)^T
+ T(\boldsymbol\theta-\boldsymbol\beta)
+ -(1+z_l)\hat\psi(D_{ol}\boldsymbol\theta)+f(\boldsymbol\beta).
+ \label{eq:representation-original-fermat}
+\end{equation}
+The arbitrary source-only function $f$ cancels between images of the same
+source. Define
+\begin{align}
+ \boldsymbol\beta_{\rm eff}&=M\boldsymbol\beta,
+ \label{eq:representation-effective-source}\\
+ \psi_{\rm eff}(\boldsymbol\theta)
+ &=\frac{1+z_l}{T_0}\hat\psi(D_{ol}\boldsymbol\theta)
+ +\frac12\boldsymbol\theta^T(I-M)\boldsymbol\theta.
+ \label{eq:representation-effective-potential}
+\end{align}
+Expansion of the quadratic terms gives the exact identity
+\begin{align}
+ \frac{ct(\boldsymbol\theta)}{T_0}
+ &=\frac12|\boldsymbol\theta-\boldsymbol\beta_{\rm eff}|^2
+   -\psi_{\rm eff}(\boldsymbol\theta)+F_s,\nonumber\\
+ F_s&=\frac12\boldsymbol\beta^T(M-M^2)\boldsymbol\beta
+       +\frac{f(\boldsymbol\beta)}{T_0}.
+ \label{eq:representation-exact-identity}
+\end{align}
+Since $F_s$ is independent of image position, the stationary images and
+relative arrival times are identical in the two representations. The
+effective deflection is
+\begin{equation}
+ \boldsymbol\nabla\psi_{\rm eff}
+ =\frac{1+z_l}{T_0}D_{ol}^T
+   \hat{\boldsymbol\alpha}(D_{ol}\boldsymbol\theta)
+   +(I-M)\boldsymbol\theta.
+ \label{eq:representation-effective-deflection}
+\end{equation}
+This is an application of the established arbitrary-background Fermat
+formalism \cite{Fleury2021Arbitrary}; the state-dependent matrices evaluated
+here supply its specified cosmological realization.
+
+For the physical SIS potential $\hat\psi(\boldsymbol x)=b|\boldsymbol x|$,
+the first term in Eq.~\eqref{eq:representation-effective-potential} is an
+elliptical potential when $D_{ol}$ is anisotropic. The quadratic term is a
+uniform-convergence and shear contribution. In the nodal quadrupole its
+first-order correction is tracefree. Agreement with this effective model
+therefore follows from the correspondence and is not separate evidence for
+the underlying state. Neither a globally admissible mass distribution nor
+agreement with independent dynamical constraints follows from the algebra
+alone. Source-position and mass-sheet freedoms must be included when assessing
+what an observation can determine \cite{SchneiderSluse2014SPT}.
+
+\subsection{A restricted comparison across two source redshifts}
+
+Consider sources $s$ and $t$ behind the same lens, using the same $D_{ol}$,
+physical lens potential, screen frame and small angular patch. For each
+source, define background quantities
+\begin{align}
+ p_s&=\frac{d_{ls}}{d_{os}},&
+ T_{0,s}&=(1+z_l)\frac{d_{ol}}{p_s},\nonumber\\
+ a_s&=\frac{1+z_l}{T_{0,s}}=\frac{p_s}{d_{ol}},&
+ B_s&=I-\frac{T_s}{T_{0,s}}.
+ \label{eq:representation-source-scaling}
+\end{align}
+The equivalent potential has the form
+$\psi_{{\rm eff},s}=a_s\hat\psi(D_{ol}\boldsymbol\theta)
++\boldsymbol\theta^TB_s\boldsymbol\theta/2$.
+An additional physical quadratic deflector at the main lens,
+$\delta\hat\psi(\boldsymbol x)=\boldsymbol x^TA_{\rm lens}\boldsymbol x/2$,
+can absorb all these quadratic terms with one fixed symmetric matrix
+$A_{\rm lens}$ precisely when
+\begin{equation}
+ \frac{B_s}{a_s}=D_{ol}^TA_{\rm lens}D_{ol}
+ \quad\hbox{is independent of }s.
+ \label{eq:representation-physical-quadratic}
+\end{equation}
+For common nonsingular $D_{ol}$ this is equivalent to source independence
+of $B_s/p_s$. To first order about $D_{ol}=d_{ol}I$, it is the familiar
+physical-to-reduced scaling $B_s=p_s d_{ol}A_{\rm lens}$.
+
+The tracefree contrast appropriate to the present calculation is
+\begin{equation}
+ R_{st}=\frac{B_s^{\rm TF}}{p_s}-\frac{B_t^{\rm TF}}{p_t}.
+ \label{eq:representation-redshift-contrast}
+\end{equation}
+With $E_{ab}=-\Gamma_{ab}$ and the common quadrupolar state $y$,
+\begin{align}
+ B_s^{\rm TF}
+   &=[(g_{ol}-g_{ls}+g_{os})\cdot y]H_C+O(|y|^2),\nonumber\\
+ R_{st}&=r_{st}H_C+O(|y|^2),\nonumber\\
+ r_{st}&=\left[
+ \frac{g_{ol}-g_{ls}+g_{os}}{p_s}
+ -\frac{g_{ol}-g_{lt}+g_{ot}}{p_t}
+ \right]\cdot y.
+ \label{eq:representation-state-contrast}
+\end{align}
+A thin tidal forcing exactly at the main-lens position provides a useful
+check: $g_{ol}=g_{ls}=0$ and
+$g_{os}\propto S_K(\chi_l)S_K(\chi_s-\chi_l)/S_K(\chi_s)
+=S_K(\chi_l)p_s$. Its contrast vanishes, whereas a distributed response
+need not obey that scaling.
+
+For the specified nodal tensor
+$C_\star=\operatorname{diag}(1,-1,0)/\sqrt2$, the illustrative state with
+$y_{\delta_m}=10^{-3}$ and all other initial amplitudes zero gives, at
+$z_l=0.3$, $z_s=1$ and $z_t=0.6$,
+\begin{equation}
+ R_{st}=
+ -9.2059866\times10^{-8}
+ \begin{pmatrix}1&0\\0&-1\end{pmatrix}
+ \quad\hbox{at first order}.
+ \label{eq:representation-computed-contrast}
+\end{equation}
+This dimensionless response cannot be absorbed into the one fixed physical
+main-plane quadratic term specified above. It remains compatible with a
+distributed conventional gravitational representation of the same light
+transfer. The coefficients $B_s$ are model quantities whose inference requires
+source, lens and measurement modeling; Eq.~\eqref{eq:representation-computed-contrast}
+is not a detected astronomical residual.
+
+In particular, the contrast does not establish general degeneracy breaking.
+Nonquadratic lens freedom, source-position transformations, additional lens
+planes and uncertain distance factors require their own joint treatment.
+Generalized mass-sheet transformations can scale delays for multiple source
+planes together \cite{Schneider2019Multiplane}. The result here is narrower:
+one shared preparation predicts a definite redshift dependence of its
+effective quadratic contribution, and that dependence is constrained when
+the physical deflector is required to be shared.

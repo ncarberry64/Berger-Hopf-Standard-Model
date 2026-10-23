@@ -1,0 +1,1779 @@
+{
+  "schema": "BHSM-NODAL-QUADRUPOLE-SIS-PREDICTION-V1",
+  "status": "EXECUTED_CONDITIONAL_FORWARD_RESPONSE",
+  "preparation": {
+    "H0_km_s_Mpc": 67.4,
+    "sigma_v_km_s": 200.0,
+    "physical_source_offset_kpc": 0.8,
+    "quadrupole_C": "diag(1,-1,0)/sqrt(2)",
+    "central_direction": "z",
+    "anchor_coordinates": [
+      "zeta",
+      "Pi2_reference",
+      "delta_m_ADM",
+      "delta_r_ADM",
+      "v_m_ADM",
+      "v_r_ADM"
+    ],
+    "illustrative_state": [
+      0.0,
+      0.0,
+      0.001,
+      0.0,
+      0.0,
+      0.0
+    ],
+    "state_status": "chosen small density-seed illustration; not inferred or action-selected"
+  },
+  "configurations": [
+    {
+      "z_l": 0.3,
+      "z_s": 1.0,
+      "background_distances_Mpc": {
+        "ol": 945.1628393723905,
+        "os": 1689.3122396864485,
+        "ls": 1076.9943480591749
+      },
+      "baseline_delay_seconds": 669912.8932194336,
+      "baseline_delay_days": 7.753621449299,
+      "baseline_images": [
+        {
+          "branch": "outer_positive",
+          "theta_radian": [
+            4.039159951841907e-06,
+            0.0
+          ],
+          "theta_arcsec": [
+            0.8331365448677021,
+            0.0
+          ],
+          "fermat_length": -3.485993321351078e-12,
+          "magnification": 8.52925293087231,
+          "lens_residual_dimensionless": 1.1102230246251565e-16
+        },
+        {
+          "branch": "inner_negative",
+          "theta_radian": [
+            -3.0920289464470873e-06,
+            -0.0
+          ],
+          "theta_arcsec": [
+            -0.6377767515493219,
+            -0.0
+          ],
+          "fermat_length": -2.0227124758789814e-12,
+          "magnification": -6.529252930872326,
+          "lens_residual_dimensionless": 0.0
+        }
+      ],
+      "theta_E_arcsec": 0.7354566482085121,
+      "source_angle_arcsec": 0.09767989665919,
+      "fractional_delay_kernel": [
+        -6.917583591627549e-05,
+        0.001554429772429473,
+        -0.0005272567430989613,
+        -4.6754670114769224e-07,
+        0.004749355794420023,
+        5.700278196458056e-06
+      ],
+      "delay_seconds_per_unit_anchor": [
+        -46.341784379544926,
+        1041.332546154654,
+        -353.2160902388808,
+        -0.3132155632810524,
+        3181.6546811683993,
+        3.8186898587448717
+      ],
+      "illustrative_angular_response": [
+        {
+          "source_azimuth_deg": 0.0,
+          "linear_delta_delay_seconds": -0.3532160902388808,
+          "finite_linear_map_delta_delay_seconds": -0.35321588651277125,
+          "finite_linear_map_images": [
+            {
+              "branch": "outer_positive",
+              "theta_radian": [
+                4.039158655209254e-06,
+                0.0
+              ],
+              "theta_arcsec": [
+                0.8331362774180191,
+                0.0
+              ],
+              "fermat_length": -3.4859922788496366e-12,
+              "magnification": 8.529285729932226,
+              "lens_residual_dimensionless": 0.0
+            },
+            {
+              "branch": "inner_negative",
+              "theta_radian": [
+                -3.092028195336072e-06,
+                -0.0
+              ],
+              "theta_arcsec": [
+                -0.6377765966215538,
+                -0.0
+              ],
+              "fermat_length": -2.0227122049017875e-12,
+              "magnification": -6.529231662214565,
+              "lens_residual_dimensionless": 1.1102230246251565e-16
+            }
+          ]
+        },
+        {
+          "source_azimuth_deg": 22.5,
+          "linear_delta_delay_seconds": -0.24976149263211211,
+          "finite_linear_map_delta_delay_seconds": -0.24976070213597268,
+          "finite_linear_map_images": [
+            {
+              "branch": "outer_positive",
+              "theta_radian": [
+                3.7316937692465255e-06,
+                1.5457255003652093e-06
+              ],
+              "theta_arcsec": [
+                0.7697170922871313,
+                0.318828770844026
+              ],
+              "fermat_length": -3.4859925841924138e-12,
+              "magnification": 8.529276123220278,
+              "lens_residual_dimensionless": 1.1102230246251565e-16
+            },
+            {
+              "branch": "inner_negative",
+              "theta_radian": [
+                -2.8566627870314227e-06,
+                -1.1832655840518893e-06
+              ],
+              "theta_arcsec": [
+                -0.5892289962803267,
+                -0.24406604643332025
+              ],
+              "fermat_length": -2.022712284268933e-12,
+              "magnification": -6.529237891619923,
+              "lens_residual_dimensionless": 1.1102230246251565e-16
+            }
+          ]
+        },
+        {
+          "source_azimuth_deg": 45.0,
+          "linear_delta_delay_seconds": -2.16282477159194e-17,
+          "finite_linear_map_delta_delay_seconds": 1.377076841890812e-06,
+          "finite_linear_map_images": [
+            {
+              "branch": "outer_positive",
+              "theta_radian": [
+                2.8561106197406856e-06,
+                2.856124164739217e-06
+              ],
+              "theta_arcsec": [
+                0.5891151036010869,
+                0.5891178974575846
+              ],
+              "fermat_length": -3.485993321353693e-12,
+              "magnification": 8.529252930748333,
+              "lens_residual_dimensionless": 1.1102230246251565e-16
+            },
+            {
+              "branch": "inner_negative",
+              "theta_radian": [
+                -2.186397301481724e-06,
+                -2.1863919698286616e-06
+              ],
+              "theta_arcsec": [
+                -0.4509768157693021,
+                -0.4509757160369162
+              ],
+              "fermat_length": -2.022712475878588e-12,
+              "magnification": -6.529252930818254,
+              "lens_residual_dimensionless": 2.220446049250313e-16
+            }
+          ]
+        },
+        {
+          "source_azimuth_deg": 67.5,
+          "linear_delta_delay_seconds": 0.2497614926321121,
+          "finite_linear_map_delta_delay_seconds": 0.2497622830560431,
+          "finite_linear_map_images": [
+            {
+              "branch": "outer_positive",
+              "theta_radian": [
+                1.5457136881512386e-06,
+                3.731700646826232e-06
+              ],
+              "theta_arcsec": [
+                0.31882633439999997,
+                0.7697185108897769
+              ],
+              "fermat_length": -3.485994058512997e-12,
+              "magnification": 8.529229738534312,
+              "lens_residual_dimensionless": 5.551115123125783e-17
+            },
+            {
+              "branch": "inner_negative",
+              "theta_radian": [
+                -1.1832709163556125e-06,
+                -2.85666172807053e-06
+              ],
+              "theta_arcsec": [
+                -0.24406714629991458,
+                -0.5892287778539633
+              ],
+              "fermat_length": -2.022712667488832e-12,
+              "magnification": -6.52926797013467,
+              "lens_residual_dimensionless": 1.1102230246251565e-16
+            }
+          ]
+        },
+        {
+          "source_azimuth_deg": 90.0,
+          "linear_delta_delay_seconds": 0.3532160902388808,
+          "finite_linear_map_delta_delay_seconds": 0.35321629396639764,
+          "finite_linear_map_images": [
+            {
+              "branch": "outer_positive",
+              "theta_radian": [
+                2.4732612177359253e-22,
+                4.039161248476054e-06
+              ],
+              "theta_arcsec": [
+                5.1014674587475825e-17,
+                0.8331368123176931
+              ],
+              "fermat_length": -3.485994363853801e-12,
+              "magnification": 8.529220132080225,
+              "lens_residual_dimensionless": 2.220446049250313e-16
+            },
+            {
+              "branch": "inner_negative",
+              "theta_radian": [
+                -1.893326752984698e-22,
+                -3.0920296975589687e-06
+              ],
+              "theta_arcsec": [
+                -3.905266758668328e-17,
+                -0.6377769064772687
+              ],
+              "fermat_length": -2.022712746856566e-12,
+              "magnification": -6.529274199658087,
+              "lens_residual_dimensionless": 1.232595164407831e-32
+            }
+          ]
+        }
+      ],
+      "derivative_checks": [
+        {
+          "map_derivative_coefficients": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "source_azimuth_deg": 0.0,
+          "full_stationary_derivative": 1.0000000000000009,
+          "closed_SIS_derivative": 1.0,
+          "direct_four_point_image_derivative": 0.9999999999981781,
+          "absolute_error": 1.821875983409882e-12
+        },
+        {
+          "map_derivative_coefficients": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "source_azimuth_deg": 22.5,
+          "full_stationary_derivative": 0.7071067811865487,
+          "closed_SIS_derivative": 0.7071067811865476,
+          "direct_four_point_image_derivative": 0.7071067811842412,
+          "absolute_error": 2.3063773113563e-12
+        },
+        {
+          "map_derivative_coefficients": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "source_azimuth_deg": 45.0,
+          "full_stationary_derivative": 1.2497196221584382e-15,
+          "closed_SIS_derivative": 6.123233995736766e-17,
+          "direct_four_point_image_derivative": 2.775557561562891e-13,
+          "absolute_error": 2.774945238163317e-13
+        },
+        {
+          "map_derivative_coefficients": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "source_azimuth_deg": 90.0,
+          "full_stationary_derivative": -1.0000000000000009,
+          "closed_SIS_derivative": -1.0,
+          "direct_four_point_image_derivative": -0.9999999999979469,
+          "absolute_error": 2.053135439439302e-12
+        },
+        {
+          "map_derivative_coefficients": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "source_azimuth_deg": 0.0,
+          "full_stationary_derivative": -1.0000000000000009,
+          "closed_SIS_derivative": -1.0,
+          "direct_four_point_image_derivative": -1.0000000000020177,
+          "absolute_error": 2.0177193249537595e-12
+        },
+        {
+          "map_derivative_coefficients": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "source_azimuth_deg": 22.5,
+          "full_stationary_derivative": -0.7071067811865487,
+          "closed_SIS_derivative": -0.7071067811865476,
+          "direct_four_point_image_derivative": -0.7071067811794303,
+          "absolute_error": 7.117306743964491e-12
+        },
+        {
+          "map_derivative_coefficients": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "source_azimuth_deg": 45.0,
+          "full_stationary_derivative": -1.2497196221584382e-15,
+          "closed_SIS_derivative": -6.123233995736766e-17,
+          "direct_four_point_image_derivative": -2.3129646346357427e-12,
+          "absolute_error": 2.312903402295785e-12
+        },
+        {
+          "map_derivative_coefficients": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "source_azimuth_deg": 90.0,
+          "full_stationary_derivative": 1.0000000000000009,
+          "closed_SIS_derivative": 1.0,
+          "direct_four_point_image_derivative": 1.0000000000021565,
+          "absolute_error": 2.156497203031904e-12
+        },
+        {
+          "map_derivative_coefficients": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "source_azimuth_deg": 0.0,
+          "full_stationary_derivative": 5.520427397419382e-16,
+          "closed_SIS_derivative": 0.0,
+          "direct_four_point_image_derivative": 1.850371707708594e-13,
+          "absolute_error": 1.850371707708594e-13
+        },
+        {
+          "map_derivative_coefficients": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "source_azimuth_deg": 22.5,
+          "full_stationary_derivative": 8.280641096129077e-16,
+          "closed_SIS_derivative": 0.0,
+          "direct_four_point_image_derivative": -2.775557561562891e-13,
+          "absolute_error": 2.775557561562891e-13
+        },
+        {
+          "map_derivative_coefficients": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "source_azimuth_deg": 45.0,
+          "full_stationary_derivative": 1.2729817737309826e-15,
+          "closed_SIS_derivative": 0.0,
+          "direct_four_point_image_derivative": -2.775557561562891e-13,
+          "absolute_error": 2.775557561562891e-13
+        },
+        {
+          "map_derivative_coefficients": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "source_azimuth_deg": 90.0,
+          "full_stationary_derivative": -5.520427397419382e-16,
+          "closed_SIS_derivative": -0.0,
+          "direct_four_point_image_derivative": 9.25185853854297e-14,
+          "absolute_error": 9.25185853854297e-14
+        },
+        {
+          "map_derivative_coefficients": [
+            0.31,
+            -0.22,
+            0.19
+          ],
+          "source_azimuth_deg": 0.0,
+          "full_stationary_derivative": 0.5300000000000006,
+          "closed_SIS_derivative": 0.53,
+          "direct_four_point_image_derivative": 0.5300000000009464,
+          "absolute_error": 9.463541061904834e-13
+        },
+        {
+          "map_derivative_coefficients": [
+            0.31,
+            -0.22,
+            0.19
+          ],
+          "source_azimuth_deg": 22.5,
+          "full_stationary_derivative": 0.37476659402887114,
+          "closed_SIS_derivative": 0.37476659402887025,
+          "direct_four_point_image_derivative": 0.37476659402814005,
+          "absolute_error": 7.301936832959655e-13
+        },
+        {
+          "map_derivative_coefficients": [
+            0.31,
+            -0.22,
+            0.19
+          ],
+          "source_azimuth_deg": 45.0,
+          "full_stationary_derivative": 7.747353642034588e-16,
+          "closed_SIS_derivative": 3.245314017740486e-17,
+          "direct_four_point_image_derivative": 8.326672684688673e-13,
+          "absolute_error": 8.326348153286899e-13
+        },
+        {
+          "map_derivative_coefficients": [
+            0.31,
+            -0.22,
+            0.19
+          ],
+          "source_azimuth_deg": 90.0,
+          "full_stationary_derivative": -0.5300000000000006,
+          "closed_SIS_derivative": -0.53,
+          "direct_four_point_image_derivative": -0.530000000000715,
+          "absolute_error": 7.149836278586008e-13
+        }
+      ],
+      "effective_representation_check": {
+        "scaled_fermat_identity_max_abs": 9.349253382469856e-17,
+        "scaled_gradient_identity_max_abs": 5.938932198651555e-17
+      }
+    },
+    {
+      "z_l": 0.3,
+      "z_s": 0.6,
+      "background_distances_Mpc": {
+        "ol": 945.1628393723905,
+        "os": 1413.147351122305,
+        "ls": 646.0196990784091
+      },
+      "baseline_delay_seconds": 800830.8893906738,
+      "baseline_delay_days": 9.26887603461428,
+      "baseline_images": [
+        {
+          "branch": "outer_positive",
+          "theta_radian": [
+            3.1228533842116995e-06,
+            0.0
+          ],
+          "theta_arcsec": [
+            0.6441347482325154,
+            0.0
+          ],
+          "fermat_length": -2.8496547436065583e-12,
+          "magnification": 5.516314984802605,
+          "lens_residual_dimensionless": 0.0
+        },
+        {
+          "branch": "inner_negative",
+          "theta_radian": [
+            -1.9906289217525657e-06,
+            -0.0
+          ],
+          "theta_arcsec": [
+            -0.4105966888551593,
+            -0.0
+          ],
+          "fermat_length": -1.100411651305133e-12,
+          "magnification": -3.516314984802613,
+          "lens_residual_dimensionless": 0.0
+        }
+      ],
+      "theta_E_arcsec": 0.5273657185438373,
+      "source_angle_arcsec": 0.11676902968867799,
+      "fractional_delay_kernel": [
+        -2.571051399216132e-05,
+        0.0004032674115178157,
+        -0.00015373178824777686,
+        -1.3549140514222453e-07,
+        0.0013676529265780179,
+        1.6416594412437456e-06
+      ],
+      "delay_seconds_per_unit_anchor": [
+        -20.589773787033913,
+        322.9489998280872,
+        -123.11316471008588,
+        -0.10850570248483979,
+        1095.258709569232,
+        1.3146915904078256
+      ],
+      "illustrative_angular_response": [
+        {
+          "source_azimuth_deg": 0.0,
+          "linear_delta_delay_seconds": -0.12311316471008589,
+          "finite_linear_map_delta_delay_seconds": -0.12311313999816775,
+          "finite_linear_map_images": [
+            {
+              "branch": "outer_positive",
+              "theta_radian": [
+                3.1228528859979665e-06,
+                0.0
+              ],
+              "theta_arcsec": [
+                0.6441346454685563,
+                0.0
+              ],
+              "fermat_length": -2.8496544090380256e-12,
+              "magnification": 5.516320269996394,
+              "lens_residual_dimensionless": 0.0
+            },
+            {
+              "branch": "inner_negative",
+              "theta_radian": [
+                -1.990628652755493e-06,
+                -0.0
+              ],
+              "theta_arcsec": [
+                -0.41059663337053026,
+                -0.0
+              ],
+              "fermat_length": -1.100411585650815e-12,
+              "magnification": -3.516312003410166,
+              "lens_residual_dimensionless": 0.0
+            }
+          ]
+        },
+        {
+          "source_azimuth_deg": 22.5,
+          "linear_delta_delay_seconds": -0.08705415361983809,
+          "finite_linear_map_delta_delay_seconds": -0.08705408149398863,
+          "finite_linear_map_images": [
+            {
+              "branch": "outer_positive",
+              "theta_radian": [
+                2.8851394414705234e-06,
+                1.1950654635848705e-06
+              ],
+              "theta_arcsec": [
+                0.5951027278907733,
+                0.2464999462989297
+              ],
+              "fermat_length": -2.8496545070309838e-12,
+              "magnification": 5.516318721995201,
+              "lens_residual_dimensionless": 1.1102230246251565e-16
+            },
+            {
+              "branch": "inner_negative",
+              "theta_radian": [
+                -1.8391012793390207e-06,
+                -7.617803037473746e-07
+              ],
+              "theta_arcsec": [
+                -0.3793418690516501,
+                -0.15712846675530645
+              ],
+              "fermat_length": -1.1004116048805048e-12,
+              "magnification": -3.5163128766384073,
+              "lens_residual_dimensionless": 1.1102230246251565e-16
+            }
+          ]
+        },
+        {
+          "source_azimuth_deg": 45.0,
+          "linear_delta_delay_seconds": -7.538507154755378e-18,
+          "finite_linear_map_delta_delay_seconds": 1.1816155165433884e-07,
+          "finite_linear_map_images": [
+            {
+              "branch": "outer_positive",
+              "theta_radian": [
+                2.2081893471249673e-06,
+                2.208192262129734e-06
+              ],
+              "theta_arcsec": [
+                0.4554717478416336,
+                0.45547234910452705
+              ],
+              "fermat_length": -2.8496547436067946e-12,
+              "magnification": 5.516314984797377,
+              "lens_residual_dimensionless": 2.220446049250313e-16
+            },
+            {
+              "branch": "inner_negative",
+              "theta_radian": [
+                -1.4075875685394682e-06,
+                -1.407586850254886e-06
+              ],
+              "theta_arcsec": [
+                -0.29033577710061487,
+                -0.29033562894378473
+              ],
+              "fermat_length": -1.1004116513051112e-12,
+              "magnification": -3.5163149848007618,
+              "lens_residual_dimensionless": 0.0
+            }
+          ]
+        },
+        {
+          "source_azimuth_deg": 67.5,
+          "linear_delta_delay_seconds": 0.08705415361983808,
+          "finite_linear_map_delta_delay_seconds": 0.08705422561615705,
+          "finite_linear_map_images": [
+            {
+              "branch": "outer_positive",
+              "theta_radian": [
+                1.1950630401030112e-06,
+                2.8851412079422977e-06
+              ],
+              "theta_arcsec": [
+                0.24649944641991356,
+                0.5951030922517316
+              ],
+              "fermat_length": -2.849654980182442e-12,
+              "magnification": 5.516311247610405,
+              "lens_residual_dimensionless": 1.1102230246251565e-16
+            },
+            {
+              "branch": "inner_negative",
+              "theta_radian": [
+                -7.617811129359957e-07,
+                -1.8391013559250955e-06
+              ],
+              "theta_arcsec": [
+                -0.1571286336624406,
+                -0.37934188484866205
+              ],
+              "fermat_length": -1.1004116977297575e-12,
+              "magnification": -3.516317092967202,
+              "lens_residual_dimensionless": 0.0
+            }
+          ]
+        },
+        {
+          "source_azimuth_deg": 90.0,
+          "linear_delta_delay_seconds": 0.12311316471008589,
+          "finite_linear_map_delta_delay_seconds": 0.1231131898239255,
+          "finite_linear_map_images": [
+            {
+              "branch": "outer_positive",
+              "theta_radian": [
+                1.9121939813950196e-22,
+                3.122853882425633e-06
+              ],
+              "theta_arcsec": [
+                3.944183210793075e-17,
+                0.6441348509965159
+              ],
+              "fermat_length": -2.849655078175236e-12,
+              "magnification": 5.516309699620053,
+              "lens_residual_dimensionless": 1.232595164407831e-32
+            },
+            {
+              "branch": "inner_negative",
+              "theta_radian": [
+                -1.2189094553739466e-22,
+                -1.9906291907497472e-06
+              ],
+              "theta_arcsec": [
+                -2.5141812264546085e-17,
+                -0.41059674433981086
+              ],
+              "fermat_length": -1.1004117169594873e-12,
+              "magnification": -3.516317966199525,
+              "lens_residual_dimensionless": 2.465190328815662e-32
+            }
+          ]
+        }
+      ],
+      "derivative_checks": [
+        {
+          "map_derivative_coefficients": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "source_azimuth_deg": 0.0,
+          "full_stationary_derivative": 1.0000000000000004,
+          "closed_SIS_derivative": 1.0,
+          "direct_four_point_image_derivative": 0.9999999999994271,
+          "absolute_error": 5.728750807065808e-13
+        },
+        {
+          "map_derivative_coefficients": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "source_azimuth_deg": 22.5,
+          "full_stationary_derivative": 0.7071067811865474,
+          "closed_SIS_derivative": 0.7071067811865476,
+          "direct_four_point_image_derivative": 0.7071067811857678,
+          "absolute_error": 7.7982065249671e-13
+        },
+        {
+          "map_derivative_coefficients": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "source_azimuth_deg": 45.0,
+          "full_stationary_derivative": -1.2790538565589984e-16,
+          "closed_SIS_derivative": 6.123233995736766e-17,
+          "direct_four_point_image_derivative": -1.2952601953960159e-12,
+          "absolute_error": 1.2953214277359732e-12
+        },
+        {
+          "map_derivative_coefficients": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "source_azimuth_deg": 90.0,
+          "full_stationary_derivative": -1.0000000000000004,
+          "closed_SIS_derivative": -1.0,
+          "direct_four_point_image_derivative": -0.9999999999994271,
+          "absolute_error": 5.728750807065808e-13
+        },
+        {
+          "map_derivative_coefficients": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "source_azimuth_deg": 0.0,
+          "full_stationary_derivative": -1.0000000000000004,
+          "closed_SIS_derivative": -1.0,
+          "direct_four_point_image_derivative": -1.0000000000002598,
+          "absolute_error": 2.5979218776228663e-13
+        },
+        {
+          "map_derivative_coefficients": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "source_azimuth_deg": 22.5,
+          "full_stationary_derivative": -0.7071067811865474,
+          "closed_SIS_derivative": -0.7071067811865476,
+          "direct_four_point_image_derivative": -0.7071067811863692,
+          "absolute_error": 1.7841284005726266e-13
+        },
+        {
+          "map_derivative_coefficients": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "source_azimuth_deg": 45.0,
+          "full_stationary_derivative": 1.2790538565589984e-16,
+          "closed_SIS_derivative": -6.123233995736766e-17,
+          "direct_four_point_image_derivative": 1.1102230246251563e-12,
+          "absolute_error": 1.1102842569651136e-12
+        },
+        {
+          "map_derivative_coefficients": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "source_azimuth_deg": 90.0,
+          "full_stationary_derivative": 1.0000000000000004,
+          "closed_SIS_derivative": 1.0,
+          "direct_four_point_image_derivative": 1.000000000000121,
+          "absolute_error": 1.2101430968414206e-13
+        },
+        {
+          "map_derivative_coefficients": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "source_azimuth_deg": 0.0,
+          "full_stationary_derivative": 4.617960593936244e-16,
+          "closed_SIS_derivative": 0.0,
+          "direct_four_point_image_derivative": 3.2381504884900397e-13,
+          "absolute_error": 3.2381504884900397e-13
+        },
+        {
+          "map_derivative_coefficients": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "source_azimuth_deg": 22.5,
+          "full_stationary_derivative": -2.308980296968123e-16,
+          "closed_SIS_derivative": 0.0,
+          "direct_four_point_image_derivative": -1.572815951552305e-12,
+          "absolute_error": 1.572815951552305e-12
+        },
+        {
+          "map_derivative_coefficients": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "source_azimuth_deg": 45.0,
+          "full_stationary_derivative": -4.0402293414992474e-16,
+          "closed_SIS_derivative": 0.0,
+          "direct_four_point_image_derivative": -1.572815951552305e-12,
+          "absolute_error": 1.572815951552305e-12
+        },
+        {
+          "map_derivative_coefficients": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "source_azimuth_deg": 90.0,
+          "full_stationary_derivative": -4.617960593936244e-16,
+          "closed_SIS_derivative": -0.0,
+          "direct_four_point_image_derivative": -3.700743415417188e-13,
+          "absolute_error": 3.700743415417188e-13
+        },
+        {
+          "map_derivative_coefficients": [
+            0.31,
+            -0.22,
+            0.19
+          ],
+          "source_azimuth_deg": 0.0,
+          "full_stationary_derivative": 0.5300000000000001,
+          "closed_SIS_derivative": 0.53,
+          "direct_four_point_image_derivative": 0.5300000000007613,
+          "absolute_error": 7.612799279854698e-13
+        },
+        {
+          "map_derivative_coefficients": [
+            0.31,
+            -0.22,
+            0.19
+          ],
+          "source_azimuth_deg": 22.5,
+          "full_stationary_derivative": 0.3747665940288699,
+          "closed_SIS_derivative": 0.37476659402887025,
+          "direct_four_point_image_derivative": 0.3747665940305918,
+          "absolute_error": 1.721567333134999e-12
+        },
+        {
+          "map_derivative_coefficients": [
+            0.31,
+            -0.22,
+            0.19
+          ],
+          "source_azimuth_deg": 45.0,
+          "full_stationary_derivative": -1.536651543270929e-16,
+          "closed_SIS_derivative": 3.245314017740486e-17,
+          "direct_four_point_image_derivative": -7.401486830834376e-13,
+          "absolute_error": 7.40181136223615e-13
+        },
+        {
+          "map_derivative_coefficients": [
+            0.31,
+            -0.22,
+            0.19
+          ],
+          "source_azimuth_deg": 90.0,
+          "full_stationary_derivative": -0.5300000000000001,
+          "closed_SIS_derivative": -0.53,
+          "direct_four_point_image_derivative": -0.5300000000009001,
+          "absolute_error": 9.000578060636144e-13
+        }
+      ],
+      "effective_representation_check": {
+        "scaled_fermat_identity_max_abs": 2.0053203183808578e-16,
+        "scaled_gradient_identity_max_abs": 1.992940336327531e-16
+      }
+    },
+    {
+      "z_l": 0.5,
+      "z_s": 1.5,
+      "background_distances_Mpc": {
+        "ol": 1291.4851964976153,
+        "os": 1782.75566274719,
+        "ls": 1011.8524125161335
+      },
+      "baseline_delay_seconds": 1000845.7316777243,
+      "baseline_delay_days": 11.583862635158846,
+      "baseline_images": [
+        {
+          "branch": "outer_positive",
+          "theta_radian": [
+            3.6230860834817035e-06,
+            0.0
+          ],
+          "theta_arcsec": [
+            0.7473151490259048,
+            0.0
+          ],
+          "fermat_length": -4.959157842045083e-12,
+          "magnification": 8.073846539934413,
+          "lens_residual_dimensionless": 1.1102230246251565e-16
+        },
+        {
+          "branch": "inner_negative",
+          "theta_radian": [
+            -2.725599101146483e-06,
+            -0.0
+          ],
+          "theta_arcsec": [
+            -0.5621951705052394,
+            -0.0
+          ],
+          "fermat_length": -2.7730252817380094e-12,
+          "magnification": -6.0738465399344275,
+          "lens_residual_dimensionless": 0.0
+        }
+      ],
+      "theta_E_arcsec": 0.6547551597655721,
+      "source_angle_arcsec": 0.09255998926033264,
+      "fractional_delay_kernel": [
+        -0.00010570100021181383,
+        0.0037081251298308644,
+        -0.0011624145834770705,
+        -1.0370162937396259e-06,
+        0.010615892068788744,
+        1.2740272595583901e-05
+      ],
+      "delay_seconds_per_unit_anchor": [
+        -105.79039489606009,
+        3711.261208718128,
+        -1163.3976743129658,
+        -1.0378933312695577,
+        10624.87026499862,
+        12.751047447700829
+      ],
+      "illustrative_angular_response": [
+        {
+          "source_azimuth_deg": 0.0,
+          "linear_delta_delay_seconds": -1.1633976743129657,
+          "finite_linear_map_delta_delay_seconds": -1.1633961610496044,
+          "finite_linear_map_images": [
+            {
+              "branch": "outer_positive",
+              "theta_radian": [
+                3.623083231258248e-06,
+                0.0
+              ],
+              "theta_arcsec": [
+                0.7473145607125864,
+                0.0
+              ],
+              "fermat_length": -4.959154346925815e-12,
+              "magnification": 8.073916418259538,
+              "lens_residual_dimensionless": 0.0
+            },
+            {
+              "branch": "inner_negative",
+              "theta_radian": [
+                -2.7255974170462413e-06,
+                -0.0
+              ],
+              "theta_arcsec": [
+                -0.5621948231346292,
+                -0.0
+              ],
+              "fermat_length": -2.7730243278078055e-12,
+              "magnification": -6.073801248555794,
+              "lens_residual_dimensionless": 0.0
+            }
+          ]
+        },
+        {
+          "source_azimuth_deg": 22.5,
+          "linear_delta_delay_seconds": -0.8226463847233566,
+          "finite_linear_map_delta_delay_seconds": -0.8226403879234567,
+          "finite_linear_map_images": [
+            {
+              "branch": "outer_positive",
+              "theta_radian": [
+                3.3472879471889804e-06,
+                1.3865069609405755e-06
+              ],
+              "theta_arcsec": [
+                0.6904276998801759,
+                0.2859875896586582
+              ],
+              "fermat_length": -4.959155370631453e-12,
+              "magnification": 8.073895950940196,
+              "lens_residual_dimensionless": 1.1102230246251565e-16
+            },
+            {
+              "branch": "inner_negative",
+              "theta_radian": [
+                -2.5181261652026463e-06,
+                -1.043036233681927e-06
+              ],
+              "theta_arcsec": [
+                -0.5194008055712676,
+                -0.2151416666491038
+              ],
+              "fermat_length": -2.773024607205639e-12,
+              "magnification": -6.0738145138979,
+              "lens_residual_dimensionless": 0.0
+            }
+          ]
+        },
+        {
+          "source_azimuth_deg": 45.0,
+          "linear_delta_delay_seconds": -7.123756189914242e-17,
+          "finite_linear_map_delta_delay_seconds": 1.0481919161975384e-05,
+          "finite_linear_map_images": [
+            {
+              "branch": "outer_positive",
+              "theta_radian": [
+                2.561894976363158e-06,
+                2.5619225005024607e-06
+              ],
+              "theta_arcsec": [
+                0.5284287709249563,
+                0.5284344481862167
+              ],
+              "fermat_length": -4.959157842064912e-12,
+              "magnification": 8.073846539338186,
+              "lens_residual_dimensionless": 1.1102230246251565e-16
+            },
+            {
+              "branch": "inner_negative",
+              "theta_radian": [
+                -1.927294943294639e-06,
+                -1.9272842711134283e-06
+              ],
+              "theta_arcsec": [
+                -0.3975331180596773,
+                -0.39753091676428765
+              ],
+              "fermat_length": -2.773025281734946e-12,
+              "magnification": -6.073846539672198,
+              "lens_residual_dimensionless": 1.1102230246251565e-16
+            }
+          ]
+        },
+        {
+          "source_azimuth_deg": 67.5,
+          "linear_delta_delay_seconds": 0.8226463847233565,
+          "finite_linear_map_delta_delay_seconds": 0.8226523818448186,
+          "finite_linear_map_images": [
+            {
+              "branch": "outer_positive",
+              "theta_radian": [
+                1.386483075565842e-06,
+                3.347302206835466e-06
+              ],
+              "theta_arcsec": [
+                0.2859826629464667,
+                0.6904306411433955
+              ],
+              "fermat_length": -4.9591603134834025e-12,
+              "magnification": 8.073797128977663,
+              "lens_residual_dimensionless": 1.1102230246251565e-16
+            },
+            {
+              "branch": "inner_negative",
+              "theta_radian": [
+                -1.043047004921386e-06,
+                -2.5181242815215783e-06
+              ],
+              "theta_arcsec": [
+                -0.21514388837672385,
+                -0.5194004170341571
+              ],
+              "fermat_length": -2.7730259562688723e-12,
+              "magnification": -6.0738785660199435,
+              "lens_residual_dimensionless": 0.0
+            }
+          ]
+        },
+        {
+          "source_azimuth_deg": 90.0,
+          "linear_delta_delay_seconds": 1.1633976743129657,
+          "finite_linear_map_delta_delay_seconds": 1.1633991880808026,
+          "finite_linear_map_images": [
+            {
+              "branch": "outer_positive",
+              "theta_radian": [
+                2.2184782995819483e-22,
+                3.6230889357125824e-06
+              ],
+              "theta_arcsec": [
+                4.575939966266583e-17,
+                0.7473157373407544
+              ],
+              "fermat_length": -4.959161337174078e-12,
+              "magnification": 8.073776662899808,
+              "lens_residual_dimensionless": 0.0
+            },
+            {
+              "branch": "inner_negative",
+              "theta_radian": [
+                -1.6689583804163975e-22,
+                -2.725600785251109e-06
+              ],
+              "theta_arcsec": [
+                -3.44247376971056e-17,
+                -0.5621955178767537
+              ],
+              "fermat_length": -2.773026235671328e-12,
+              "magnification": -6.0738918319355095,
+              "lens_residual_dimensionless": 0.0
+            }
+          ]
+        }
+      ],
+      "derivative_checks": [
+        {
+          "map_derivative_coefficients": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "source_azimuth_deg": 0.0,
+          "full_stationary_derivative": 1.0000000000000004,
+          "closed_SIS_derivative": 1.0,
+          "direct_four_point_image_derivative": 1.000000000001185,
+          "absolute_error": 1.185052056484892e-12
+        },
+        {
+          "map_derivative_coefficients": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "source_azimuth_deg": 22.5,
+          "full_stationary_derivative": 0.7071067811865465,
+          "closed_SIS_derivative": 0.7071067811865476,
+          "direct_four_point_image_derivative": 0.7071067811807256,
+          "absolute_error": 5.822009541134321e-12
+        },
+        {
+          "map_derivative_coefficients": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "source_azimuth_deg": 45.0,
+          "full_stationary_derivative": -1.8485059270838755e-16,
+          "closed_SIS_derivative": 6.123233995736766e-17,
+          "direct_four_point_image_derivative": 9.25185853854297e-14,
+          "absolute_error": 9.245735304547234e-14
+        },
+        {
+          "map_derivative_coefficients": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "source_azimuth_deg": 90.0,
+          "full_stationary_derivative": -1.0000000000000004,
+          "closed_SIS_derivative": -1.0,
+          "direct_four_point_image_derivative": -1.0000000000010925,
+          "absolute_error": 1.092459456231154e-12
+        },
+        {
+          "map_derivative_coefficients": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "source_azimuth_deg": 0.0,
+          "full_stationary_derivative": -1.0000000000000004,
+          "closed_SIS_derivative": -1.0,
+          "direct_four_point_image_derivative": -0.999999999998502,
+          "absolute_error": 1.4980239271267237e-12
+        },
+        {
+          "map_derivative_coefficients": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "source_azimuth_deg": 22.5,
+          "full_stationary_derivative": -0.7071067811865465,
+          "closed_SIS_derivative": -0.7071067811865476,
+          "direct_four_point_image_derivative": -0.7071067811848889,
+          "absolute_error": 1.6586731987899839e-12
+        },
+        {
+          "map_derivative_coefficients": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "source_azimuth_deg": 45.0,
+          "full_stationary_derivative": 1.8485059270838755e-16,
+          "closed_SIS_derivative": -6.123233995736766e-17,
+          "direct_four_point_image_derivative": 4.625929269271485e-13,
+          "absolute_error": 4.626541592671059e-13
+        },
+        {
+          "map_derivative_coefficients": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "source_azimuth_deg": 90.0,
+          "full_stationary_derivative": 1.0000000000000004,
+          "closed_SIS_derivative": 1.0,
+          "direct_four_point_image_derivative": 0.9999999999982707,
+          "absolute_error": 1.7292833831561438e-12
+        },
+        {
+          "map_derivative_coefficients": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "source_azimuth_deg": 0.0,
+          "full_stationary_derivative": 7.390160886061272e-16,
+          "closed_SIS_derivative": 0.0,
+          "direct_four_point_image_derivative": -1.249000902703301e-12,
+          "absolute_error": 1.249000902703301e-12
+        },
+        {
+          "map_derivative_coefficients": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "source_azimuth_deg": 22.5,
+          "full_stationary_derivative": -1.2932781550607235e-15,
+          "closed_SIS_derivative": 0.0,
+          "direct_four_point_image_derivative": 1.0177044392397268e-12,
+          "absolute_error": 1.0177044392397268e-12
+        },
+        {
+          "map_derivative_coefficients": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "source_azimuth_deg": 45.0,
+          "full_stationary_derivative": -3.8381267453957934e-16,
+          "closed_SIS_derivative": 0.0,
+          "direct_four_point_image_derivative": -5.551115123125782e-13,
+          "absolute_error": 5.551115123125782e-13
+        },
+        {
+          "map_derivative_coefficients": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "source_azimuth_deg": 90.0,
+          "full_stationary_derivative": -7.390160886061272e-16,
+          "closed_SIS_derivative": -0.0,
+          "direct_four_point_image_derivative": 1.1102230246251563e-12,
+          "absolute_error": 1.1102230246251563e-12
+        },
+        {
+          "map_derivative_coefficients": [
+            0.31,
+            -0.22,
+            0.19
+          ],
+          "source_azimuth_deg": 0.0,
+          "full_stationary_derivative": 0.53,
+          "closed_SIS_derivative": 0.53,
+          "direct_four_point_image_derivative": 0.5299999999972919,
+          "absolute_error": 2.7081670239681443e-12
+        },
+        {
+          "map_derivative_coefficients": [
+            0.31,
+            -0.22,
+            0.19
+          ],
+          "source_azimuth_deg": 22.5,
+          "full_stationary_derivative": 0.3747665940288694,
+          "closed_SIS_derivative": 0.37476659402887025,
+          "direct_four_point_image_derivative": 0.3747665940274924,
+          "absolute_error": 1.3778422847110505e-12
+        },
+        {
+          "map_derivative_coefficients": [
+            0.31,
+            -0.22,
+            0.19
+          ],
+          "source_azimuth_deg": 45.0,
+          "full_stationary_derivative": -1.0418244684977359e-16,
+          "closed_SIS_derivative": 3.245314017740486e-17,
+          "direct_four_point_image_derivative": 4.625929269271485e-13,
+          "absolute_error": 4.625604737869711e-13
+        },
+        {
+          "map_derivative_coefficients": [
+            0.31,
+            -0.22,
+            0.19
+          ],
+          "source_azimuth_deg": 90.0,
+          "full_stationary_derivative": -0.53,
+          "closed_SIS_derivative": -0.53,
+          "direct_four_point_image_derivative": -0.5299999999974769,
+          "absolute_error": 2.5230928457631308e-12
+        }
+      ],
+      "effective_representation_check": {
+        "scaled_fermat_identity_max_abs": 1.728065632778148e-16,
+        "scaled_gradient_identity_max_abs": 6.670932032550509e-17
+      }
+    },
+    {
+      "z_l": 0.8,
+      "z_s": 2.0,
+      "background_distances_Mpc": {
+        "ol": 1585.0596047737943,
+        "os": 1761.6662191056034,
+        "ls": 816.2565033350045
+      },
+      "baseline_delay_seconds": 1491669.9850947154,
+      "baseline_delay_days": 17.264698901559207,
+      "baseline_images": [
+        {
+          "branch": "outer_positive",
+          "theta_radian": [
+            3.0454977723912296e-06,
+            0.0
+          ],
+          "theta_arcsec": [
+            0.6281790079482406,
+            0.0
+          ],
+          "fermat_length": -6.27734228527263e-12,
+          "magnification": 6.706438182478747,
+          "lens_residual_dimensionless": 0.0
+        },
+        {
+          "branch": "inner_negative",
+          "theta_radian": [
+            -2.137266699644476e-06,
+            -0.0
+          ],
+          "theta_arcsec": [
+            -0.4408429017005389,
+            -0.0
+          ],
+          "fermat_length": -3.019109552260012e-12,
+          "magnification": -4.706438182478745,
+          "lens_residual_dimensionless": 0.0
+        }
+      ],
+      "theta_E_arcsec": 0.5345109548243897,
+      "source_angle_arcsec": 0.09366805312385082,
+      "fractional_delay_kernel": [
+        -0.00011586287121944669,
+        0.006349715072058502,
+        -0.0019248873168462592,
+        -1.7238566736804006e-06,
+        0.01776359961758982,
+        2.1317308152340595e-05
+      ],
+      "delay_seconds_per_unit_anchor": [
+        -172.82916738494296,
+        9471.679386893195,
+        -2871.296635229066,
+        -2.5714252587342687,
+        26497.4283767987,
+        31.79838873386135
+      ],
+      "illustrative_angular_response": [
+        {
+          "source_azimuth_deg": 0.0,
+          "linear_delta_delay_seconds": -2.8712966352290663,
+          "finite_linear_map_delta_delay_seconds": -2.8712900578975677,
+          "finite_linear_map_images": [
+            {
+              "branch": "outer_positive",
+              "theta_radian": [
+                3.0454929251314442e-06,
+                0.0
+              ],
+              "theta_arcsec": [
+                0.62817800812914,
+                0.0
+              ],
+              "fermat_length": -6.277334018581811e-12,
+              "magnification": 6.706527355865828,
+              "lens_residual_dimensionless": 1.1102230246251565e-16
+            },
+            {
+              "branch": "inner_negative",
+              "theta_radian": [
+                -2.1372639324549557e-06,
+                -0.0
+              ],
+              "theta_arcsec": [
+                -0.4408423309267287,
+                -0.0
+              ],
+              "fermat_length": -3.0191075572856895e-12,
+              "magnification": -4.706383577314244,
+              "lens_residual_dimensionless": 0.0
+            }
+          ]
+        },
+        {
+          "source_azimuth_deg": 22.5,
+          "linear_delta_delay_seconds": -2.0303133215685896,
+          "finite_linear_map_delta_delay_seconds": -2.03029056917876,
+          "finite_linear_map_images": [
+            {
+              "branch": "outer_positive",
+              "theta_radian": [
+                2.8136628131153205e-06,
+                1.1654773180386294e-06
+              ],
+              "theta_arcsec": [
+                0.5803596149918917,
+                0.2403969531906234
+              ],
+              "fermat_length": -6.2773364398729945e-12,
+              "magnification": 6.7065012367228825,
+              "lens_residual_dimensionless": 1.1102230246251565e-16
+            },
+            {
+              "branch": "inner_negative",
+              "theta_radian": [
+                -1.974577469910494e-06,
+                -8.17890210674985e-07
+              ],
+              "theta_arcsec": [
+                -0.4072858392509698,
+                -0.16870196583627262
+              ],
+              "fermat_length": -3.0191081415940955e-12,
+              "magnification": -4.70639957043772,
+              "lens_residual_dimensionless": 5.551115123125783e-17
+            }
+          ]
+        },
+        {
+          "source_azimuth_deg": 45.0,
+          "linear_delta_delay_seconds": -1.7581621168679207e-16,
+          "finite_linear_map_delta_delay_seconds": 3.893137909471989e-05,
+          "finite_linear_map_images": [
+            {
+              "branch": "outer_positive",
+              "theta_radian": [
+                2.1534736301837427e-06,
+                2.1535106236450362e-06
+              ],
+              "theta_arcsec": [
+                0.4441858210880809,
+                0.4441934515372071
+              ],
+              "fermat_length": -6.2773422853480485e-12,
+              "magnification": 6.706438181286347,
+              "lens_residual_dimensionless": 0.0
+            },
+            {
+              "branch": "inner_negative",
+              "theta_radian": [
+                -1.5112818347223e-06,
+                -1.5112697182736565e-06
+              ],
+              "theta_arcsec": [
+                -0.3117242548237515,
+                -0.3117217556268197
+              ],
+              "fermat_length": -3.019109552250392e-12,
+              "magnification": -4.7064381819985694,
+              "lens_residual_dimensionless": 0.0
+            }
+          ]
+        },
+        {
+          "source_azimuth_deg": 67.5,
+          "linear_delta_delay_seconds": 2.0303133215685896,
+          "finite_linear_map_delta_delay_seconds": 2.0303360752295703,
+          "finite_linear_map_images": [
+            {
+              "branch": "outer_positive",
+              "theta_radian": [
+                1.1654457638610024e-06,
+                2.8136833031646873e-06
+              ],
+              "theta_arcsec": [
+                0.24039044467428888,
+                0.5803638413679543
+              ],
+              "fermat_length": -6.2773481307680134e-12,
+              "magnification": 6.706375128328223,
+              "lens_residual_dimensionless": 1.1102230246251565e-16
+            },
+            {
+              "branch": "inner_negative",
+              "theta_radian": [
+                -8.179029024094996e-07,
+                -1.9745764486619637e-06
+              ],
+              "theta_arcsec": [
+                -0.1687045836944332,
+                -0.40728562860333956
+              ],
+              "fermat_length": -3.0191109629222707e-12,
+              "magnification": -4.706476794613379,
+              "lens_residual_dimensionless": 5.551115123125783e-17
+            }
+          ]
+        },
+        {
+          "source_azimuth_deg": 90.0,
+          "linear_delta_delay_seconds": 2.8712966352290663,
+          "finite_linear_map_delta_delay_seconds": 2.871303213061765,
+          "finite_linear_map_images": [
+            {
+              "branch": "outer_positive",
+              "theta_radian": [
+                1.864800483194356e-22,
+                3.0455026196732177e-06
+              ],
+              "theta_arcsec": [
+                3.846427103555755e-17,
+                0.6281800077719206
+              ],
+              "fermat_length": -6.277350552004106e-12,
+              "magnification": 6.7063490116636935,
+              "lens_residual_dimensionless": 0.0
+            },
+            {
+              "branch": "inner_negative",
+              "theta_radian": [
+                -1.3087105981844137e-22,
+                -2.137269466846671e-06
+              ],
+              "theta_arcsec": [
+                -2.6994093796802968e-17,
+                -0.44084347247696354
+              ],
+              "fermat_length": -3.0191115472462573e-12,
+              "magnification": -4.706492788790806,
+              "lens_residual_dimensionless": 0.0
+            }
+          ]
+        }
+      ],
+      "derivative_checks": [
+        {
+          "map_derivative_coefficients": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "source_azimuth_deg": 0.0,
+          "full_stationary_derivative": 1.0000000000000007,
+          "closed_SIS_derivative": 1.0,
+          "direct_four_point_image_derivative": 1.0000000000021565,
+          "absolute_error": 2.156497203031904e-12
+        },
+        {
+          "map_derivative_coefficients": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "source_azimuth_deg": 22.5,
+          "full_stationary_derivative": 0.7071067811865471,
+          "closed_SIS_derivative": 0.7071067811865476,
+          "direct_four_point_image_derivative": 0.7071067811861841,
+          "absolute_error": 3.6348701826227625e-13
+        },
+        {
+          "map_derivative_coefficients": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "source_azimuth_deg": 45.0,
+          "full_stationary_derivative": -1.3290748446074974e-15,
+          "closed_SIS_derivative": 6.123233995736766e-17,
+          "direct_four_point_image_derivative": -1.850371707708594e-13,
+          "absolute_error": 1.8509840311081679e-13
+        },
+        {
+          "map_derivative_coefficients": [
+            1.0,
+            0.0,
+            0.0
+          ],
+          "source_azimuth_deg": 90.0,
+          "full_stationary_derivative": -1.0000000000000007,
+          "closed_SIS_derivative": -1.0,
+          "direct_four_point_image_derivative": -1.0000000000021103,
+          "absolute_error": 2.1103119252074976e-12
+        },
+        {
+          "map_derivative_coefficients": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "source_azimuth_deg": 0.0,
+          "full_stationary_derivative": -1.0000000000000007,
+          "closed_SIS_derivative": -1.0,
+          "direct_four_point_image_derivative": -0.9999999999987795,
+          "absolute_error": 1.2204681709704346e-12
+        },
+        {
+          "map_derivative_coefficients": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "source_azimuth_deg": 22.5,
+          "full_stationary_derivative": -0.7071067811865471,
+          "closed_SIS_derivative": -0.7071067811865476,
+          "direct_four_point_image_derivative": -0.7071067811870168,
+          "absolute_error": 4.691802502065912e-13
+        },
+        {
+          "map_derivative_coefficients": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "source_azimuth_deg": 45.0,
+          "full_stationary_derivative": 1.3290748446074974e-15,
+          "closed_SIS_derivative": -6.123233995736766e-17,
+          "direct_four_point_image_derivative": -4.625929269271485e-13,
+          "absolute_error": 4.625316945871911e-13
+        },
+        {
+          "map_derivative_coefficients": [
+            0.0,
+            1.0,
+            0.0
+          ],
+          "source_azimuth_deg": 90.0,
+          "full_stationary_derivative": 1.0000000000000007,
+          "closed_SIS_derivative": 1.0,
+          "direct_four_point_image_derivative": 0.9999999999987332,
+          "absolute_error": 1.2667644710973036e-12
+        },
+        {
+          "map_derivative_coefficients": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "source_azimuth_deg": 0.0,
+          "full_stationary_derivative": 0.0,
+          "closed_SIS_derivative": 0.0,
+          "direct_four_point_image_derivative": 1.6653345369377346e-12,
+          "absolute_error": 1.6653345369377346e-12
+        },
+        {
+          "map_derivative_coefficients": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "source_azimuth_deg": 22.5,
+          "full_stationary_derivative": 4.958476776454299e-16,
+          "closed_SIS_derivative": 0.0,
+          "direct_four_point_image_derivative": -1.850371707708594e-13,
+          "absolute_error": 1.850371707708594e-13
+        },
+        {
+          "map_derivative_coefficients": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "source_azimuth_deg": 45.0,
+          "full_stationary_derivative": -1.689120674662117e-15,
+          "closed_SIS_derivative": 0.0,
+          "direct_four_point_image_derivative": -1.850371707708594e-13,
+          "absolute_error": 1.850371707708594e-13
+        },
+        {
+          "map_derivative_coefficients": [
+            0.0,
+            0.0,
+            1.0
+          ],
+          "source_azimuth_deg": 90.0,
+          "full_stationary_derivative": 0.0,
+          "closed_SIS_derivative": -0.0,
+          "direct_four_point_image_derivative": -1.2952601953960159e-12,
+          "absolute_error": 1.2952601953960159e-12
+        },
+        {
+          "map_derivative_coefficients": [
+            0.31,
+            -0.22,
+            0.19
+          ],
+          "source_azimuth_deg": 0.0,
+          "full_stationary_derivative": 0.5300000000000001,
+          "closed_SIS_derivative": 0.53,
+          "direct_four_point_image_derivative": 0.53000000000053,
+          "absolute_error": 5.300204719560497e-13
+        },
+        {
+          "map_derivative_coefficients": [
+            0.31,
+            -0.22,
+            0.19
+          ],
+          "source_azimuth_deg": 22.5,
+          "full_stationary_derivative": 0.37476659402887014,
+          "closed_SIS_derivative": 0.37476659402887025,
+          "direct_four_point_image_derivative": 0.3747665940278625,
+          "absolute_error": 1.0077494394522546e-12
+        },
+        {
+          "map_derivative_coefficients": [
+            0.31,
+            -0.22,
+            0.19
+          ],
+          "source_azimuth_deg": 45.0,
+          "full_stationary_derivative": -9.974605590343592e-16,
+          "closed_SIS_derivative": 3.245314017740486e-17,
+          "direct_four_point_image_derivative": -2.2204460492503127e-12,
+          "absolute_error": 2.22047850239049e-12
+        },
+        {
+          "map_derivative_coefficients": [
+            0.31,
+            -0.22,
+            0.19
+          ],
+          "source_azimuth_deg": 90.0,
+          "full_stationary_derivative": -0.5300000000000001,
+          "closed_SIS_derivative": -0.53,
+          "direct_four_point_image_derivative": -0.5300000000004375,
+          "absolute_error": 4.374278717023117e-13
+        }
+      ],
+      "effective_representation_check": {
+        "scaled_fermat_identity_max_abs": 1.5083666103748784e-16,
+        "scaled_gradient_identity_max_abs": 8.171632647253981e-17
+      }
+    }
+  ],
+  "checks": {
+    "max_fractional_four_point_derivative_error": 7.117306743964491e-12,
+    "max_lens_equation_residual": 2.220446049250313e-16,
+    "max_scaled_effective_representation_error": 2.0053203183808578e-16
+  },
+  "limits": [
+    "first-order smooth scalar geometry and paraxial thin-lens encounter",
+    "fixed physical source displacement and SIS strength at fixed measured redshifts",
+    "continued two noncaustic image branches; no global image-count claim",
+    "finite-map values check derivatives only; no nonlinear BHSM solution",
+    "no observed data, no fitted or uniquely selected physical state",
+    "effective-potential representation preserves lensing observables; no unique state inference"
+  ]
+}

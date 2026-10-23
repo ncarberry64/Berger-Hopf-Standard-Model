@@ -4,7 +4,7 @@ export function startSoundtrackOnInteraction(
   target: EventTarget,
   audio: Pick<
     HTMLMediaElement,
-    'play' | 'addEventListener' | 'removeEventListener'
+    'paused' | 'play' | 'addEventListener' | 'removeEventListener'
   >,
   shouldStart: (event: Event) => boolean = () => true,
 ) {
@@ -14,7 +14,13 @@ export function startSoundtrackOnInteraction(
   function finish() {
     finished = true;
     events.forEach((name) => target.removeEventListener(name, attempt, true));
-    audio.removeEventListener('play', finish);
+    audio.removeEventListener('play', started);
+  }
+
+  function started() {
+    // A stale play event may already have been rejected by the session guard.
+    // It must not consume the new fallback armed after a tab switch.
+    if (!audio.paused) finish();
   }
 
   function attempt(event: Event) {
@@ -23,7 +29,7 @@ export function startSoundtrackOnInteraction(
     try {
       void audio
         .play()
-        .then(finish)
+        .then(started)
         .catch(() => {
           // Browser permission or loading may fail; the next gesture can retry.
         });
@@ -33,6 +39,6 @@ export function startSoundtrackOnInteraction(
   }
 
   events.forEach((name) => target.addEventListener(name, attempt, true));
-  audio.addEventListener('play', finish);
+  audio.addEventListener('play', started);
   return finish;
 }

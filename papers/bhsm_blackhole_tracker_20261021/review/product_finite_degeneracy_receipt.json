@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "control": "C9 formal finite harmonic/compact potential identity",
+  "pass": true,
+  "scope": "Nonadmitted large-coefficient operator test; no physical state is enlarged and no detectability result is calculated.",
+  "mapping": "compact_effect = boundary[:2] * (-beta_hat*N2*r0_pc^3/(3*mref_pc*rE_pc^2))",
+  "mapping_coefficient": -0.00033742020215432627,
+  "operator_tolerance": {
+    "rtol": 5e-12,
+    "atol": 5e-12
+  },
+  "records": [
+    {
+      "compact_effect": [
+        0.0001,
+        -0.0002
+      ],
+      "formal_boundary_coefficients": [
+        -0.2963663685859061,
+        0.5927327371718122,
+        0.2963663685859061
+      ],
+      "maximum_absolute_operator_difference": 2.220446049250313e-16,
+      "maximum_operator_difference_over_scale": 7.338307390391149e-17
+    },
+    {
+      "compact_effect": [
+        -0.0003,
+        0.0001
+      ],
+      "formal_boundary_coefficients": [
+        0.8890991057577181,
+        -0.2963663685859061,
+        0.44454955287885906
+      ],
+      "maximum_absolute_operator_difference": 2.220446049250313e-16,
+      "maximum_operator_difference_over_scale": 7.328227317593823e-17
+    },
+    {
+      "compact_effect": [
+        0.0005,
+        0.0004
+      ],
+      "formal_boundary_coefficients": [
+        -1.4818318429295305,
+        -1.1854654743436244,
+        0.7409159214647653
+      ],
+      "maximum_absolute_operator_difference": 2.220446049250313e-16,
+      "maximum_operator_difference_over_scale": 7.45282769381439e-17
+    }
+  ],
+  "combined_operator_singular_values": [
+    136.04755934780002,
+    135.97877090555497,
+    4.3162375909215265e-14,
+    2.934969377041462e-14
+  ],
+  "rank_at_relative_1e_minus_10": 2,
+  "individual_coordinate_identifiability": "Four coordinates have only two independent operator directions; separate finite likelihood-only uncertainties are not licensed.",
+  "public_inflated_state_rejected": true,
+  "public_rejection_message": "prediction outside admitted r1_boundary_conditional domain: worldtube_weak_metric, state_within_sufficient_cap, small_spatial_background_gradient",
+  "inference_scope": "The current nonlinear fit does not expose a joint free compact-plus-boundary fit; this verifies the exact finite cause ambiguity and admission, not joint interval calibration.",
+  "dataset_sha256": "e85239e256cfc32b0804868c8b85856a793a8af8a271619d1a03b760ab360e20",
+  "script_sha256": "965863f28cb9a190f99a899ce9a2a9c9ed2c833b1adaf250783d560df7a68199",
+  "source_sha256": {
+    "product/tests/check_finite_harmonic_degeneracy.py": "965863f28cb9a190f99a899ce9a2a9c9ed2c833b1adaf250783d560df7a68199",
+    "product/bhtracker/data.py": "832b6c210cf4eb4f18383ff7a3f47a12e6e7d9c87a767488e5db31affd633d04",
+    "product/bhtracker/forward.py": "3dc51c57e56ff00633ca3d5e0766a37cd0eb7639d58a294373ac1e30df810e5d",
+    "product/bhtracker/r1_runtime.py": "f3cc2074d915ad02ba6549209d0b0cd532304fa71d2930bb7cbc3d5fc2a39250",
+    "product/bhtracker/physics_admission.py": "6dce22bee33a77414f61775197a1f61119eb3508112ee9855d74cd0cb6766655",
+    "product/bhtracker/theory/radial_response.py": "d7a90db765d89c9b56d5129a2bbb937238c364ddf09d8683c7b5bbfca0c17514"
+  },
+  "source_unchanged_during_run": true
+}

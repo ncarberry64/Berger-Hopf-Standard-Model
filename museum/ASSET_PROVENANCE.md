@@ -1,5 +1,42 @@
 # Museum asset provenance
 
+- The Einstein ring tour (`app/einstein-ring-tour.tsx`,
+  `lib/einstein-ring.ts`) is a not-to-scale, ordinary point-mass lensing
+  simulation. The finite uniform source is inverse-mapped through the lens
+  equation; its arcs and annulus are computed image regions, rather than a
+  decorative ring. The source radius, traversal speed, lens marker and
+  foreground reference stars are illustrative. Measurement arrows identify
+  normalized angular quantities; no observed mass, distance or physical speed
+  is inferred. `public/research/einstein-ring-tour.md` explains the method,
+  compact-source marker approximation, source-guide distinction, and primary
+  references. No external sky image or new measured dataset is used.
+
+- The Blackhole Tracker exhibit uses a noise-free ordinary monopole forward
+  calculation with the declared geometry and nearby-motion truth at formal
+  product revision `33f26a5113392c0d2c323d7e4a36c7e81bd3ee29`.
+  `lib/blackhole-tracker-example.json` records source paths, raw Git-blob and
+  LF-normalized SHA-256 hashes, and all nine forward reference rows from
+  `products/blackhole_tracker/bhtracker/forward.py`. Regenerate only this
+  presentation fixture with `python scripts/build-blackhole-tracker-example.py`
+  from the Museum directory (NumPy/SciPy required); the script verifies the
+  immutable source first. No optimization or statistical campaign runs.
+  `lib/blackhole-tracker.ts` solves the ordinary point-lens image pair,
+  magnification ratio and delay using the same constants and units. Its Node
+  checks compare all nine rows with the product and verify the lens equation
+  throughout the interactive input range. The 2015–2025 display speed, reverse
+  replay and enlarged center inset are presentation choices, not physical time
+  evolution. No drawn circle identifies a physical surface or horizon.
+- `public/research/blackhole-tracker/` redistributes the exact already reviewed
+  0.2.0rc2 portable product ZIP and wheel, with both canonical license notices.
+  `DISTRIBUTION.json` records the byte counts, SHA-256 hashes, source revision,
+  paper revision and local installation instructions. The downloaded Python
+  product performs fitting/export/replay locally; the Museum provides no
+  measurement upload or hosted inference. Tests unpack both artifacts, verify
+  their fixed reviewed hashes and preserve all 108 original product files.
+  The manuscript links are pinned to formal review revision
+  `1fd11510cd217218d6b230cb50516776eb746e1a`; the development workspace is not
+  presented as the reviewer authority.
+
 - The five supplementary sandbox panels use the ten complete numerical pairs
   and four qualitative sentinels in
   `../data/museum/bhsm_sandbox_comparison_20260902.json`, copied identically to
@@ -50,7 +87,7 @@
   (`frontend/src/assets/bhsm-symbol.svg`). That project identifies the mark as
   an original repository asset and publishes it under the MIT License.
 - Lucide interface icons are supplied by the declared `lucide-react` package.
-- The visitor-started museum soundtrack alternates two tracks by PaulYudin:
+- The original museum soundtrack used two tracks by PaulYudin:
   [Inspiring Epic](https://pixabay.com/music/main-title-inspiring-epic-164829/)
   and [Epic Cinematic Victory](https://pixabay.com/music/main-title-epic-cinematic-victory-155790/).
   Both MP3 files were downloaded from their official Pixabay CDN links on
@@ -62,6 +99,22 @@
   `30130c288ba87afd8e0c5ec3c67d102e1e4731d8465945ca0d3c8b564f1ad5a6`;
   `paulyudin-epic-cinematic-victory-155790.mp3` has SHA-256
   `5ffa8e361068f0e3d2df26647a70d31da6a846b2c4057e859f7c3414efd1105f`.
+
+- The October 22, 2026 exhibit soundtrack adds 16 distinct original compositions
+  by [Scott Buckley](https://www.scottbuckley.com.au/), one per numbered museum
+  stop. All are from his official library under
+  [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/), consistent with his
+  [music usage terms](https://www.scottbuckley.com.au/library/using-this-music/).
+  `public/soundtrack-credits.html` supplies a source link and full attribution
+  for each composition. `public/audio/exhibit-soundtracks.json` records the
+  original URL, retrieval date, original SHA-256, delivery SHA-256, duration,
+  modification notice, and slide assignment. Only MP3 transcoding to 128–160 kbps,
+  stereo, 44.1 kHz was performed; compositions were not edited. Decoherence uses
+  128 kbps to remain within the repository's 10 MiB asset limit; the other tracks
+  remain at 160 kbps. Rebuild with
+  `scripts/build-exhibit-soundtracks.py` and Python packages `imageio-ffmpeg`
+  and `mutagen`, keeping the original-download cache outside this Site.
+  The original PaulYudin assets and credits remain preserved.
 
 - The permanent science collection is generated from existing prediction,
   SM-bundle and current-system artifacts by `../tools/materialize_museum_science.py`.

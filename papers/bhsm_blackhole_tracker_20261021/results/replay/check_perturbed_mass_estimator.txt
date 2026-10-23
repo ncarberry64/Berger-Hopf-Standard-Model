@@ -1,0 +1,198 @@
+{
+  "status": "PASS",
+  "scope": "first variation of two continued primary thin-lens images; synthetic on-axis polynomial checks",
+  "symbolic_checks": {
+    "compact_F": true,
+    "external_F": true,
+    "compact_K": "(u**2+1)*Kstar",
+    "external_r2_K": "Kstar",
+    "angular_constant_K": "Kstar",
+    "first_order_null_r2_minus1": true
+  },
+  "maximum_cartesian_scalar_scaled_difference": 3.996802888650554e-15,
+  "structural_control_absolute_residuals": {
+    "constant": 0.0,
+    "uniform_deflection": 2.1094237467877974e-15,
+    "isotropic_convergence": 1.7763568394002505e-15,
+    "fractional_mass": 1.1102230246251565e-15
+  },
+  "polynomial_stationary_equation_maximum_absolute_residual": 9.657472829657744e-15,
+  "polynomial_fine_central_derivative_maximum_scaled_error": 2.245656254740242e-07,
+  "polynomial_extrapolated_derivative_maximum_scaled_error": 6.050366081934366e-10,
+  "finite_null_profile_example": {
+    "u": 1.0,
+    "epsilon": 0.001,
+    "log_Mapp_over_M": 1.0710768641415637e-05,
+    "interpretation": "nonzero quadratic departure; not an exact finite invariant"
+  },
+  "polynomial_checks": [
+    {
+      "profile": "compact",
+      "u": 0.4,
+      "analytic_dlogM": 30.55479215534003,
+      "extrapolated_dlogM": 30.554792153205494,
+      "maximum_scaled_derivative_error": 6.854802466423663e-11
+    },
+    {
+      "profile": "compact",
+      "u": 0.8,
+      "analytic_dlogM": 12.480667839324996,
+      "extrapolated_dlogM": 12.480667839002487,
+      "maximum_scaled_derivative_error": 1.4177630191993494e-10
+    },
+    {
+      "profile": "compact",
+      "u": 1.6,
+      "analytic_dlogM": 10.637570709295145,
+      "extrapolated_dlogM": 10.637570709145198,
+      "maximum_scaled_derivative_error": 3.7462502680753087e-10
+    },
+    {
+      "profile": "compact",
+      "u": 2.0,
+      "analytic_dlogM": 12.321148972691052,
+      "extrapolated_dlogM": 12.321148972560694,
+      "maximum_scaled_derivative_error": 2.623605459089444e-11
+    },
+    {
+      "profile": "external_r2",
+      "u": 0.4,
+      "analytic_dlogM": 26.340338064948313,
+      "extrapolated_dlogM": 26.340338065206094,
+      "maximum_scaled_derivative_error": 2.725141588690755e-11
+    },
+    {
+      "profile": "external_r2",
+      "u": 0.8,
+      "analytic_dlogM": 7.61016331666158,
+      "extrapolated_dlogM": 7.610163316679187,
+      "maximum_scaled_derivative_error": 9.56978453666423e-12
+    },
+    {
+      "profile": "external_r2",
+      "u": 1.6,
+      "analytic_dlogM": 2.988081659914366,
+      "extrapolated_dlogM": 2.9880816599066797,
+      "maximum_scaled_derivative_error": 1.3838233673485057e-11
+    },
+    {
+      "profile": "external_r2",
+      "u": 2.0,
+      "analytic_dlogM": 2.464229794538212,
+      "extrapolated_dlogM": 2.464229794509517,
+      "maximum_scaled_derivative_error": 2.2553514616391426e-11
+    },
+    {
+      "profile": "angular_constant",
+      "u": 0.4,
+      "analytic_dlogM": 26.34033806494831,
+      "extrapolated_dlogM": 26.340338065021076,
+      "maximum_scaled_derivative_error": 2.6615135992953363e-12
+    },
+    {
+      "profile": "angular_constant",
+      "u": 0.8,
+      "analytic_dlogM": 7.61016331666158,
+      "extrapolated_dlogM": 7.610163316682892,
+      "maximum_scaled_derivative_error": 3.700743415417188e-12
+    },
+    {
+      "profile": "angular_constant",
+      "u": 1.6,
+      "analytic_dlogM": 2.9880816599143656,
+      "extrapolated_dlogM": 2.9880816599603404,
+      "maximum_scaled_derivative_error": 6.661338147750938e-11
+    },
+    {
+      "profile": "angular_constant",
+      "u": 2.0,
+      "analytic_dlogM": 2.4642297945382117,
+      "extrapolated_dlogM": 2.4642297945613265,
+      "maximum_scaled_derivative_error": 1.3773568376254281e-11
+    },
+    {
+      "profile": "null_r2_minus1",
+      "u": 0.4,
+      "analytic_dlogM": 1.5543122344752192e-15,
+      "extrapolated_dlogM": 3.2936613635808257e-10,
+      "maximum_scaled_derivative_error": 3.293645820458476e-10
+    },
+    {
+      "profile": "null_r2_minus1",
+      "u": 0.8,
+      "analytic_dlogM": 4.440892098500626e-16,
+      "extrapolated_dlogM": 2.2204458362513053e-11,
+      "maximum_scaled_derivative_error": 2.2204014273303194e-11
+    },
+    {
+      "profile": "null_r2_minus1",
+      "u": 1.6,
+      "analytic_dlogM": 2.220446049250313e-16,
+      "extrapolated_dlogM": -5.181040807778124e-11,
+      "maximum_scaled_derivative_error": 5.181063012238615e-11
+    },
+    {
+      "profile": "null_r2_minus1",
+      "u": 2.0,
+      "analytic_dlogM": -2.220446049250313e-16,
+      "extrapolated_dlogM": -2.220446065621596e-11,
+      "maximum_scaled_derivative_error": 2.220423861161103e-11
+    },
+    {
+      "profile": "quartic",
+      "u": 0.4,
+      "analytic_dlogM": 17.911429884164853,
+      "extrapolated_dlogM": 17.911429882910905,
+      "maximum_scaled_derivative_error": 7.891625769874513e-11
+    },
+    {
+      "profile": "quartic",
+      "u": 0.8,
+      "analytic_dlogM": -2.1308457286652556,
+      "extrapolated_dlogM": -2.130845728961123,
+      "maximum_scaled_derivative_error": 9.450076952893523e-11
+    },
+    {
+      "profile": "quartic",
+      "u": 1.6,
+      "analytic_dlogM": -12.310896438847193,
+      "extrapolated_dlogM": -12.310896438869731,
+      "maximum_scaled_derivative_error": 4.1793803733571966e-11
+    },
+    {
+      "profile": "quartic",
+      "u": 2.0,
+      "analytic_dlogM": -17.249608561767484,
+      "extrapolated_dlogM": -17.249608561840997,
+      "maximum_scaled_derivative_error": 5.982543936501847e-11
+    },
+    {
+      "profile": "mixed",
+      "u": 0.4,
+      "analytic_dlogM": 8.824013251757684,
+      "extrapolated_dlogM": 8.824013255861217,
+      "maximum_scaled_derivative_error": 5.044366221856397e-10
+    },
+    {
+      "profile": "mixed",
+      "u": 0.8,
+      "analytic_dlogM": 2.549404711081629,
+      "extrapolated_dlogM": 2.5494047117121146,
+      "maximum_scaled_derivative_error": 6.050366081934366e-10
+    },
+    {
+      "profile": "mixed",
+      "u": 1.6,
+      "analytic_dlogM": 1.0010073560713124,
+      "extrapolated_dlogM": 1.0010073562660697,
+      "maximum_scaled_derivative_error": 2.966670556998299e-10
+    },
+    {
+      "profile": "mixed",
+      "u": 2.0,
+      "analytic_dlogM": 0.825516981170301,
+      "extrapolated_dlogM": 0.8255169813046561,
+      "maximum_scaled_derivative_error": 1.3952875058919896e-10
+    }
+  ]
+}

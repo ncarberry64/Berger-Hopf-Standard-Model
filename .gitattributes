@@ -2,6 +2,12 @@
 *.png -text -diff
 *.gif -text -diff
 # Deterministic line endings for hash-audited source files.
+docs/BHSM_NORMAN_CORE_SURFACE_AMENDMENT_20261022.md text eol=lf
+tools/check_norman_core_surface_consequences.py text eol=lf
+tools/verify_blackhole_tracker_snapshot.py text eol=lf
+tools/verify_blackhole_tracker_release.py text eol=lf
+tools/smoke_blackhole_tracker_wheel.py text eol=lf
+.github/workflows/blackhole-tracker.yml text eol=lf
 scripts/*.py text eol=lf
 src/bhsm_model.py text eol=lf
 # Materialized scientific ledgers are byte-compared with canonical LF output.

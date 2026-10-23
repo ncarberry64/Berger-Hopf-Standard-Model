@@ -1,0 +1,175 @@
+\section{Frozen effective action and six-state temporal provider}
+\label{app:action-provider}
+
+This appendix specifies the conditional R1 realization used for the temporal
+response coefficients.  It retains the coupled scalar, dust, and radiation
+system of the environmental and transport source calculations
+\cite{Carberry2026EnvironmentalSource,Carberry2026TransportSource}.
+It does not infer the microscopic BHSM state or its absolute normalization.
+The vendored source files and their hashes identify the precise implementation;
+only the background entries of the inherited parameter manifest are used.
+
+\subsection{Action, units, and background}
+
+The metric signature is $(-,+,+,+)$ and dots denote cosmic-time derivatives.
+In the code units $H_0=M_{\mathrm{Pl}}=c=1$, the effective action, up to its
+constant dimensional prefactor, is
+\begin{equation}
+ S=\int d^4x\sqrt{-g}\left[
+ \frac{\mathcal R}{2}+X-V(T)-\frac{2X}{\lambda}\Box T\right]+S_m+S_r,
+ \qquad
+ X=-\frac12\nabla_\mu T\nabla^\mu T,
+ \quad V(T)=V_0-q_TT .
+ \label{eq:app-r1-action}
+\end{equation}
+Thus the cubic term is $+(\nabla T)^2\Box T/\lambda$, with no additional
+factor of $1/2$.  In the convention with dimensional cubic scale $\Lambda$,
+$G_3=2X/\Lambda^3$ and $\lambda=\Lambda^3/(M_{\mathrm{Pl}}H_0^2)$ after
+rescaling $T_{\rm phys}=M_{\mathrm{Pl}}T$ and time by $H_0^{-1}$.
+The fluids are minimally coupled, isentropic, irrotational perfect fluids
+with $w_m=0$ and $w_r=1/3$; the dust sound speed is exactly zero.
+
+The frozen parameters are
+\begin{equation}
+ \begin{split}
+ (\Omega_{m0},\Omega_{r0},\Omega_{k0},\lambda,q_T)
+ &=(0.31,9\times10^{-5},-0.018,1,3),\\
+ V_0&=2.3986073449708067 .
+ \end{split}
+ \label{eq:app-background-parameters}
+\end{equation}
+Here $K=-\Omega_{k0}=0.018$ is the spatial curvature in $H_0^2/c^2$ units;
+$V_0$ is in $M_{\mathrm{Pl}}^2H_0^2$ units.  With $v=\dot T$, the background
+implementation uses
+\begin{align}
+ J&=v+6Hv^2/\lambda, & \dot J+3HJ&=q_T,\nonumber\\
+ \rho_T&=\tfrac12v^2+V+6Hv^3/\lambda,
+ &3(H^2+K/a^2)&=\rho_m+\rho_r+\rho_T ,
+ \label{eq:app-background-equations}
+\end{align}
+where $\rho_m=3\Omega_{m0}a^{-3}$ and
+$\rho_r=3\Omega_{r0}a^{-4}$.  At $z=100$, the inherited background
+prescription sets $T=0$ and $J=2q_T/(9H)$, selecting the positive-$v$
+solution jointly with the Friedmann constraint.  The stored $V_0$ comes
+from the original $H(a=1)=1$ normalization; this calculation neither repeats
+that shooting nor retunes it.  Replaying the frozen input gives
+$H(a=1)=0.9999999999811999$, a normalization residual of
+$-1.88\times10^{-11}$.
+The background is integrated in $N=\ln a$ with DOP853, relative tolerance
+$2\times10^{-13}$, absolute tolerance $10^{-15}$, and maximum step $0.005$.
+
+\subsection{Finite harmonic action and reduction}
+
+For one real harmonic, $\int Q^2dV_\gamma=1$ and
+$\nabla_\gamma^2Q=-8KQ$.  The scalar-field uniform-$T$ ADM convention uses
+lapse perturbation $\alpha$, covariant shift
+$N_i=\nabla_i(\chi_{\rm sh}Q)$, and spatial curvature perturbation $\zeta$.
+All variables below are harmonic coefficients.  Define
+\begin{equation}
+ \begin{gathered}
+ \boldsymbol{x}=(\zeta,D_m,D_r)^T,\qquad
+ D_I=\frac{\delta\rho_I}{\rho_I+p_I}+3\zeta,\qquad
+ \boldsymbol{u}=(\alpha,\chi_{\rm sh},v_m,v_r)^T,\\
+ \kappa=K/a^2,\qquad b_2=8\kappa,\qquad s_2=5\kappa .
+ \end{gathered}
+ \label{eq:app-action-variables}
+\end{equation}
+The symbols $v_m,v_r$ here denote ADM fluid velocity potentials, not the
+background field velocity $v$.  Put $h_I=\rho_I+p_I$ and
+\begin{equation}
+ \Theta=H-v^3/\lambda,\qquad
+ \Sigma=\tfrac12v^2+12Hv^3/\lambda-3H^2 .
+ \label{eq:app-theta-sigma}
+\end{equation}
+After algebraically eliminating the spatial fluid-current auxiliaries and
+performing the declared integration by parts, the implemented polynomial is
+\begin{align}
+ \frac{L_2}{a^3}={}&-3\dot\zeta^2+s_2\zeta^2+\Sigma\alpha^2
+ +2b_2\Theta\alpha\chi_{\rm sh}-2b_2\dot\zeta\chi_{\rm sh}
+ \nonumber\\
+ &+6\Theta\alpha\dot\zeta+2s_2\alpha\zeta
+ -b_2\kappa\chi_{\rm sh}^2+\sum_{I=m,r}h_I\ell_I,\nonumber\\
+ \ell_I={}&
+ v_I\dot D_I-\frac{b_2}{2}v_I^2+b_2\chi_{\rm sh}v_I
+ -\frac{w_I}{2}(D_I-3\zeta)^2-\alpha(D_I-3\zeta).
+ \label{eq:app-finite-action}
+\end{align}
+This equation specifies every finite Hessian entry used by the provider.
+Write it as
+\begin{equation}
+ L_2/a^3=\tfrac12\boldsymbol{u}^TA\boldsymbol{u}
+ +\boldsymbol{u}^T(B\dot{\boldsymbol{x}}+D\boldsymbol{x})
+ +\tfrac12\dot{\boldsymbol{x}}^TM_0\dot{\boldsymbol{x}}
+ +\tfrac12\boldsymbol{x}^TE\boldsymbol{x} .
+ \label{eq:app-block-action}
+\end{equation}
+The auxiliary equations and their Schur reduction give
+\begin{align}
+ \boldsymbol{u}&=-A^{-1}(B\dot{\boldsymbol{x}}+D\boldsymbol{x}),\nonumber\\
+ M&=M_0-B^TA^{-1}B,\qquad
+ L=-B^TA^{-1}D,\qquad V_2=E-D^TA^{-1}D .
+ \label{eq:app-schur}
+\end{align}
+The reduced canonical momentum is
+$\boldsymbol{p}=a^3(M\dot{\boldsymbol{x}}+L\boldsymbol{x})$.
+Consequently the six-dimensional state
+$\boldsymbol{w}=(\boldsymbol{x},\boldsymbol{p})^T$ evolves by
+\begin{equation}
+ \dot{\boldsymbol{x}}=M^{-1}(a^{-3}\boldsymbol{p}-L\boldsymbol{x}),
+ \qquad
+ \dot{\boldsymbol{p}}=a^3(L^T\dot{\boldsymbol{x}}+V_2\boldsymbol{x}) .
+ \label{eq:app-canonical-evolution}
+\end{equation}
+Dividing these equations by $H$ defines
+$d\boldsymbol{w}/dN=F(N)\boldsymbol{w}$ and the full fundamental matrix
+$U'=FU$, $U(N_i)=I_6$.  No projection or restart onto an isolated two-state
+sector is performed.  The default propagator tolerances are
+$(2\times10^{-10},2\times10^{-12})$, with maximum $N$ step $0.01$;
+the refinement uses $(2\times10^{-12},2\times10^{-14})$ and step $0.005$.
+
+\subsection{Physical anchor and optical potential rows}
+
+At $z_i=2.1$, $N_i=-\ln3.1$, the six specified coordinates are
+\begin{equation}
+ \begin{gathered}
+ \boldsymbol{y}=(\zeta,\Pi_{2,\rm ref},
+ \delta_m^{\rm ADM},\delta_r^{\rm ADM},v_m^{\rm ADM},v_r^{\rm ADM})_i^T,
+ \\
+ \Pi_{2,\rm ref}=2a_i^3G_{S,2}^{\rm ref}\dot\zeta_i,
+ \qquad
+ G_{S,2}^{\rm ref}=\frac{5(r+3)}{r+8},\qquad r=\frac{\Sigma}{\Theta^2}.
+ \end{gathered}
+ \label{eq:app-physical-anchor}
+\end{equation}
+The reference factor is the inherited gravity--scalar normalization;
+$\Pi_{2,\rm ref}$ is not identified with the coupled canonical momentum
+$p_\zeta$.  The current action rows implement
+$\delta_m^{\rm ADM}=D_m-3\zeta$,
+$\delta_r^{\rm ADM}=\tfrac43(D_r-3\zeta)$, and the reconstructed velocity
+potentials.  If $\mathcal B_i\boldsymbol{w}_i=\boldsymbol{y}$ denotes these
+six rows, the initial canonical state is obtained by solving this full
+system, $\boldsymbol{w}_i=\mathcal B_i^{-1}\boldsymbol{y}$.
+All six coordinates are retained independently for every spatial harmonic.
+
+The Newtonian metric convention is
+$ds^2=-(1+2\Phi)dt^2+a^2(1-2\Psi)\gamma_{ij}dx^idx^j$.
+For one harmonic, $\Phi=\phi Q$ and $\Psi=\psi Q$, with reconstructed rows
+\begin{equation}
+ \begin{gathered}
+ \phi=\alpha+\dot\chi_{\rm sh},\qquad
+ \psi=-\zeta-H\chi_{\rm sh},\\
+ \delta_I^{\rm N}=(1+w_I)(D_I-3\zeta-3H\chi_{\rm sh}),\qquad
+ v_I^{\rm N}=v_I^{\rm ADM}-\chi_{\rm sh} .
+ \end{gathered}
+ \label{eq:app-newtonian-map}
+\end{equation}
+The derivative of $\chi_{\rm sh}$ includes both the background dependence
+of its reconstruction row and the propagated state.  The code evaluates
+the former by a complex-step directional derivative.  Multiplication of
+these metric rows by $U(N,N_i)\mathcal B_i^{-1}$ gives the six columns
+$\phi_j(N),\psi_j(N)$ used by the optical integrals.  Cubic interpolation
+uses 801 temporal samples, repeated with 1601 samples in the refinement.
+The reported reconstruction, action-constraint, and independent optical
+checks establish numerical consistency of this declared finite system.
+They do not establish a general stability theorem, select its initial
+state, or supply the missing microscopic BHSM preparation.

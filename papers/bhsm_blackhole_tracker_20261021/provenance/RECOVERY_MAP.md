@@ -1,0 +1,16 @@
+# Tracker recovery and reconciliation
+
+This is the compact tracker extension to the bounded recovery recorded in `../../bhsm_state_rotation_20261021/provenance/RECOVERY_MAP.md`. That map, detailed inventory reports, source hashes and preserved archived angular paper are included in the complete release. Its route decision is historical: Norman subsequently prioritized the Blackhole Tracker, and this paper is now central.
+
+| Source | Object and provenance | Status / tracker use |
+|---|---|---|
+| Downloads/BHSM_Angular_Lensing_Reproducibility.zip, SHA256 84786b6b905ae1e27c828fcab2bc6ce4244e80960e11f7c309adcc76cb55e35b | Original paper and vendor provider; manifest pins action/background source at 06cf7c1b85d6605bfee0cc0d07fb2af86a66cae9 | Conditional effective theory. Exact archived bytes remain preserved; fresh earlier nine-stage replay reproduced the SIS timing example. |
+| Manuscript-Generation/.worktrees/strong-lensing-first-comparison-20261020/docs/strong_lensing_r1_screened_20261020/R1_LOCAL_COUPLING_DERIVATION_20261020.md | Cubic action, local source pairing, screened regular-body scalar branch, metric constraint | Recovered actual derivation, re-derived and generalized here to supplied exterior flux. Same source equation; no additional force inserted. |
+| New tracker radial_response.py and exterior_derivation.tex | Worldtube boundary-to-exterior response, normalization/impedance, exact decaying radial solution, transverse/axial metric projection | Newly executed conditional composition. Exact scalar flux, state and matching remain declared inputs. |
+| Black-hole DOCX/source drafts and selected archive leads | Surface acceleration/curvature and mass identities; proposed black-hole flux/response parameters | Established identities on their specified GR surfaces; do not determine the R1 horizon flux or causal deformation. Exact searched paths/hashes in blackhole_surface_recovery.md. |
+| Flagship v0.2/v0.3, Gate-7/muon action/interface sources and later PR465 lineage | Actual normalized-source, constrained-Hessian and seven-interface constructions | Useful local mathematics; no evaluated common-domain microscopic-to-optical bridge located. Fixed external labels do not freeze seven interface variations or select this compact-source state. |
+| Primary Galileon and lensing literature | Known screened multipoles, exact Green functions, point-mass delay/flux laws, ordinary multipole modeling and optical transfer freedoms | Established ingredients, directly attributed. New claim restricted to their normalized tracker composition and evaluated blind directions/information. |
+
+Existing Manuscript-Generation PR23 and its HE0435 record remain unchanged. Its recovered head was 4f044a6af5757f6f1c4e99e6547b43d6c45e353c; it did not contain the local angular paper package. The broader recovery distinguished historical copies, failed/conditional objects, unevaluated operators, accessible conversation excerpts and material not located or inaccessible. It did not inspect unrelated personal records or credentials, or claim comprehensive recall.
+
+The important reconciliation is that the effective local action and metric projection were available and are now used; a unique physical black-hole state/horizon map is a separate object and remains unclosed in this paper. The new result is not merely an inventory of that gap.

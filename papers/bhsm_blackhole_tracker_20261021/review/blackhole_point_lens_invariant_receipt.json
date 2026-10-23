@@ -1,0 +1,142 @@
+{
+  "status": "PASS",
+  "scope": "standard point-lens identity and quasistatic synthetic alignment control; no observational claim",
+  "symbolic_checks": {
+    "fermat_delay_identity": true,
+    "signed_flux_ratio_identity": true,
+    "h_derivative": true,
+    "log_flux_ratio_derivative": true
+  },
+  "synthetic_trajectory_sample_counts": {
+    "straight": 81,
+    "curved": 81,
+    "parallax_like": 81
+  },
+  "maximum_absolute_Mapp_over_M_error": 2.886579864025407e-15,
+  "maximum_stationary_equation_residual": 7.447602459741819e-16,
+  "maximum_isotropic_convergence_Mapp_error": 6.661338147750939e-16,
+  "linear_perturbation_checks": [
+    {
+      "u": 0.2,
+      "du": 1e-05,
+      "linear_residual": -1.2334320058574716e-09,
+      "absolute_residual_over_du2": 12.334320058574715
+    },
+    {
+      "u": 0.5,
+      "du": 1e-05,
+      "linear_residual": -1.8417206246125386e-10,
+      "absolute_residual_over_du2": 1.8417206246125384
+    },
+    {
+      "u": 1.0,
+      "du": 1e-05,
+      "linear_residual": -3.626304997149182e-11,
+      "absolute_residual_over_du2": 0.3626304997149181
+    },
+    {
+      "u": 2.0,
+      "du": 1e-05,
+      "linear_residual": -3.5748714906475e-12,
+      "absolute_residual_over_du2": 0.03574871490647499
+    }
+  ],
+  "macro_counterexamples": [
+    {
+      "model": "isotropic_convergence",
+      "coefficient": 0.1,
+      "u": 0.5,
+      "flux_ratio": 2.835614339018967,
+      "delay_in_4GM1plusz_over_c3": 1.066168663395051,
+      "M_app_over_M": 1.0000000000000007
+    },
+    {
+      "model": "isotropic_convergence",
+      "coefficient": 0.1,
+      "u": 1.0,
+      "flux_ratio": 7.546500595720753,
+      "delay_in_4GM1plusz_over_c3": 2.202075900919075,
+      "M_app_over_M": 1.0
+    },
+    {
+      "model": "isotropic_convergence",
+      "coefficient": 0.1,
+      "u": 2.0,
+      "flux_ratio": 39.505551299289735,
+      "delay_in_4GM1plusz_over_c3": 4.901342545536383,
+      "M_app_over_M": 0.9999999999999998
+    },
+    {
+      "model": "isotropic_convergence",
+      "coefficient": 0.3,
+      "u": 0.5,
+      "flux_ratio": 3.2482658762421117,
+      "delay_in_4GM1plusz_over_c3": 1.2127838242909612,
+      "M_app_over_M": 1.0000000000000004
+    },
+    {
+      "model": "isotropic_convergence",
+      "coefficient": 0.3,
+      "u": 1.0,
+      "flux_ratio": 9.651491107661533,
+      "delay_in_4GM1plusz_over_c3": 2.525955403286931,
+      "M_app_over_M": 0.9999999999999997
+    },
+    {
+      "model": "isotropic_convergence",
+      "coefficient": 0.3,
+      "u": 2.0,
+      "flux_ratio": 57.49281060252596,
+      "delay_in_4GM1plusz_over_c3": 5.751088470751897,
+      "M_app_over_M": 1.0000000000000002
+    },
+    {
+      "model": "external_shear_on_axis",
+      "coefficient": 0.05,
+      "u": 0.5,
+      "flux_ratio": 1.8348950628171616,
+      "delay_in_4GM1plusz_over_c3": 1.0371196254102057,
+      "M_app_over_M": 1.6955601415871737
+    },
+    {
+      "model": "external_shear_on_axis",
+      "coefficient": 0.05,
+      "u": 1.0,
+      "flux_ratio": 5.76166162937858,
+      "delay_in_4GM1plusz_over_c3": 2.1386989480036593,
+      "M_app_over_M": 1.1452309053908172
+    },
+    {
+      "model": "external_shear_on_axis",
+      "coefficient": 0.05,
+      "u": 2.0,
+      "flux_ratio": 31.773325451076694,
+      "delay_in_4GM1plusz_over_c3": 4.7390885596549515,
+      "M_app_over_M": 1.0628137062134269
+    },
+    {
+      "model": "external_shear_on_axis",
+      "coefficient": 0.1,
+      "u": 0.5,
+      "flux_ratio": 1.2372909054973091,
+      "delay_in_4GM1plusz_over_c3": 1.066168663395051,
+      "M_app_over_M": 5.00254011339834
+    },
+    {
+      "model": "external_shear_on_axis",
+      "coefficient": 0.1,
+      "u": 1.0,
+      "flux_ratio": 4.881081238271309,
+      "delay_in_4GM1plusz_over_c3": 2.202075900919075,
+      "M_app_over_M": 1.3177974887917534
+    },
+    {
+      "model": "external_shear_on_axis",
+      "coefficient": 0.1,
+      "u": 2.0,
+      "flux_ratio": 29.933973366181483,
+      "delay_in_4GM1plusz_over_c3": 4.901342545536383,
+      "M_app_over_M": 1.1283778625497376
+    }
+  ]
+}
