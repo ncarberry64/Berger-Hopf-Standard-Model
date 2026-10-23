@@ -165,10 +165,16 @@ def make_server(port=8765):
                 self.send_json(item or {'error':'Unknown job'},200 if item else 404);return
             path={'/':'index.html','/index.html':'index.html','/app.js':'app.js','/style.css':'style.css',
                   '/photometry':'photometry.html','/photometry/':'photometry.html','/photometry.js':'photometry.js',
-                  '/joint':'joint.html','/joint/':'joint.html','/joint.js':'joint.js'}.get(self.path)
+                  '/joint':'joint.html','/joint/':'joint.html','/joint.js':'joint.js',
+                  '/atlas':'atlas.html','/atlas/':'atlas.html','/atlas.html':'atlas.html',
+                  '/atlas.js':'atlas.js','/atlas-core.js':'atlas-core.js','/atlas.css':'atlas.css',
+                  '/atlas_data.json':'atlas_data.json','/atlas_manifest.json':'atlas_manifest.json'}.get(self.path)
+            if self.path.startswith('/atlas/'):
+                asset=self.path[len('/atlas/'):]
+                if asset in ('atlas.js','atlas-core.js','atlas.css','atlas_data.json','atlas_manifest.json'):path=asset
             if not path:self.send_json({'error':'Not found'},404);return
             blob=(WEB/path).read_bytes();self.send_response(200)
-            self.send_header('Content-Type',{'html':'text/html; charset=utf-8','js':'text/javascript','css':'text/css'}[path.rsplit('.',1)[1]])
+            self.send_header('Content-Type',{'html':'text/html; charset=utf-8','js':'text/javascript','css':'text/css','json':'application/json; charset=utf-8'}[path.rsplit('.',1)[1]])
             self.send_header('Content-Length',str(len(blob)));self.send_header('Cache-Control','no-store')
             self.send_header('Content-Security-Policy',"default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; connect-src 'self'; img-src 'self' data:; frame-ancestors 'none'")
             self.end_headers();self.wfile.write(blob)
@@ -302,9 +308,11 @@ def make_server(port=8765):
     server.executor=pool
     return server
 
-def serve(port=8765,open_browser=False):
+def serve(port=8765,open_browser=False,page='resolved'):
+    route={'resolved':'/','photometry':'/photometry','joint':'/joint','atlas':'/atlas'}.get(page)
+    if route is None:raise ValueError('Unknown local workspace page')
     server=make_server(port)
-    url=f'http://127.0.0.1:{server.server_port}/'
+    url=f'http://127.0.0.1:{server.server_port}{route}'
     print('Blackhole Tracker ready at '+url,flush=True)
     print('Local-only research app. Ctrl+C stops the server; inputs/results stay in this process.',flush=True)
     if open_browser:webbrowser.open(url)

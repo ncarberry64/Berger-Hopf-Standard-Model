@@ -46,9 +46,47 @@ def main(argv=None):
     prof=commands.add_parser('profile');prof.add_argument('dataset',type=Path);prof.add_argument('result',type=Path)
     prof.add_argument('--parameter',choices=['mass_msun','motion_x','motion_y'],default='mass_msun');prof.add_argument('--output',type=Path,required=True)
     serve=commands.add_parser('serve');serve.add_argument('--port',type=int,default=8765);serve.add_argument('--open',action='store_true')
+    serve.add_argument('--page',choices=['resolved','photometry','joint','atlas'],default='resolved')
+    atlas=commands.add_parser('atlas',help='catalog directions, evidence-qualified targets and lossless candidate-inventory replay; no physical fitting')
+    atlas_commands=atlas.add_subparsers(dest='atlas_command',required=True)
+    for name in ('list','export'):
+        sub=atlas_commands.add_parser(name)
+        sub.add_argument('--inventory',type=Path,help='versioned external inventory; default is the bundled reviewed catalog')
+        for field in ('query','tier','cohort','flag'):
+            sub.add_argument('--'+field,default='')
+        sub.add_argument('--sort',choices=['event_id','ra_deg','tier'],default='event_id')
+        sub.add_argument('--output',type=Path,required=name=='export')
+    atlas_validate=atlas_commands.add_parser('validate');atlas_validate.add_argument('inventory',type=Path)
+    atlas_replay=atlas_commands.add_parser('replay');atlas_replay.add_argument('bundle',type=Path)
+    atlas_replay.add_argument('--output',type=Path,help='fresh directory for exact inventory bytes and selected records')
     args=parser.parse_args(argv)
     try:
-        if args.command=='example':
+        if args.command=='atlas':
+            from . import candidate_atlas as cat
+            if args.atlas_command=='replay':
+                checked=cat.validate_replay(cat.read_json(args.bundle.read_bytes().decode('utf-8')))
+                if args.output:
+                    args.output.mkdir(parents=True,exist_ok=False)
+                    (args.output/'inventory.json').write_bytes(checked['inventory_json'].encode('utf-8'))
+                    (args.output/'selected_events.json').write_text(json.dumps({'metadata':checked['inventory']['metadata'],
+                        'filters':checked['filters'],'events':checked['filtered_events']},indent=2,ensure_ascii=False,allow_nan=False)+'\n',encoding='utf-8')
+                print(json.dumps({'verified':True,'scope':'Inventory consistency only; no fit, classification inference or uncertainty calibration',
+                    'inventory_utf8_sha256':checked['inventory_utf8_sha256'],**cat.summary(checked['inventory'],checked['filters'])},indent=2))
+            else:
+                inventory,text=cat.load_inventory(args.inventory)
+                if args.atlas_command=='validate':
+                    print(json.dumps({'valid':True,'inventory_utf8_sha256':cat.text_sha256(text),**cat.summary(inventory)},indent=2))
+                else:
+                    filters={k:getattr(args,k) for k in cat.default_filters()}
+                    value=cat.create_replay(text,filters,origin='blackhole-tracker atlas export') if args.atlas_command=='export' else {
+                        **cat.summary(inventory,filters),'filters':filters,'events':cat.filter_events(inventory,filters)}
+                    rendered=json.dumps(value,indent=2,ensure_ascii=False,allow_nan=False)+'\n'
+                    if args.output:
+                        args.output.parent.mkdir(parents=True,exist_ok=True)
+                        with args.output.open('x',encoding='utf-8',newline='\n') as stream:stream.write(rendered)
+                        print(str(args.output.resolve()))
+                    else:print(rendered)
+        elif args.command=='example':
             data,truth=make_example(args.name);args.output.parent.mkdir(parents=True,exist_ok=True)
             args.output.write_text(json.dumps(data,indent=2)+'\n',encoding='utf8');print(str(args.output.resolve()))
         elif args.command=='validate':
@@ -124,7 +162,7 @@ def main(argv=None):
             print(export_joint(read_json(args.result.read_bytes()),args.output))
         elif args.command=='serve':
             from .server import serve
-            serve(args.port,args.open)
+            serve(args.port,args.open,args.page)
     except ImportError:
         parser.exit(2,'The joint route requires the matching wheel with its [astrometry] extra, including Astropy.\n')
     except (ValueError,OSError,KeyError) as error:

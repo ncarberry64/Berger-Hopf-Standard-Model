@@ -62,3 +62,38 @@ def test_cross_origin_and_path_rejected(service):
     assert error.value.code==403
     with pytest.raises(HTTPError) as error:request(service,'/../pyproject.toml')
     assert error.value.code==404
+
+
+def test_candidate_atlas_bundled_assets_and_navigation(service):
+    import hashlib
+    for page in ('/atlas','/atlas/','/atlas.html'):
+        status,body,headers=request(service,page)
+        assert status==200 and b'Candidate atlas' in body and b'href="/joint"' in body
+        assert headers['Content-Type'].startswith('text/html')
+    for name in ('atlas.css','atlas.js','atlas-core.js','atlas_data.json','atlas_manifest.json'):
+        _,raw,_=request(service,'/'+name)
+        _,nested,_=request(service,'/atlas/'+name)
+        assert raw==nested and len(raw)>100
+    _,data,headers=request(service,'/atlas_data.json')
+    _,manifest,_=request(service,'/atlas_manifest.json')
+    assert headers['Content-Type'].startswith('application/json')
+    assert hashlib.sha256(data).hexdigest()==json.loads(manifest)['inventory_utf8_sha256']
+    from bhtracker.candidate_atlas import validate_inventory
+    inventory=validate_inventory(json.loads(data))
+    assert len(inventory['events'])==155 and len(inventory['benchmarks'])==1
+    assert all(e['lens']['mass_msun'] is None for e in inventory['events'])
+    for page in ('/','/photometry','/joint'):
+        _,body,_=request(service,page)
+        assert b'href="/atlas"' in body
+
+
+def test_named_workspace_open_is_local_and_closes_server():
+    from unittest.mock import Mock,patch
+    from bhtracker.server import serve
+    server=Mock(server_port=9999);server.serve_forever.side_effect=KeyboardInterrupt
+    with patch('bhtracker.server.make_server',return_value=server),patch('bhtracker.server.webbrowser.open') as browser:
+        serve(9999,True,'atlas')
+    browser.assert_called_once_with('http://127.0.0.1:9999/atlas')
+    server.server_close.assert_called_once()
+    with patch('bhtracker.server.make_server') as maker,pytest.raises(ValueError):serve(9999,True,'https://example.invalid')
+    maker.assert_not_called()

@@ -3,7 +3,7 @@
   "canonical_repository": "https://github.com/ncarberry64/Berger-Hopf-Standard-Model",
   "canonical_path": "products/blackhole_tracker",
   "workspace_source_repository": "https://github.com/ncarberry64/Manuscript-Generation",
-  "workspace_source_commit": "3dedfc526cb534011ba28921df850bc2d1224fc3",
+  "workspace_source_commit": "9441367319045c471a99f36c38340a0de26ab308",
   "workspace_source_prefix": "product/",
   "snapshot_policy": "Every upstream tracked product file copied byte-for-byte from immutable Git blobs; preserve formal additions and unrelated work.",
   "source_files": [
@@ -18,6 +18,11 @@
       "sha256": "c187b313045330911dfc42a510bf61f4612add6c6a936056118ab464cc4a107c"
     },
     {
+      "path": "CANDIDATE_ATLAS.md",
+      "bytes": 5498,
+      "sha256": "5481fc709fd7606d20650ad1b321a0bbc4ecdf45a7462a59a9cb3fa4c6fe4d01"
+    },
+    {
       "path": "FITTING_CONTRACT_V2.md",
       "bytes": 7037,
       "sha256": "6148d26ba1bbda4de57ccea8d7d012421b0bb2963103332d5a222687d72c4403"
@@ -29,13 +34,13 @@
     },
     {
       "path": "README.md",
-      "bytes": 48827,
-      "sha256": "9bb3ed1232b5f7f68671f4bab08e27231b598b8deadce08272acbd516abadecb"
+      "bytes": 50237,
+      "sha256": "392c04dcebfe2e16084b76192bc7faec19aa7f2ef98f008e76627c0114d1060f"
     },
     {
       "path": "RELEASE_NOTES.md",
-      "bytes": 12719,
-      "sha256": "b09526795c88ba925f8b3fa93bd53dd995f91e2db407f95cb7c6b7b5319322e2"
+      "bytes": 14400,
+      "sha256": "69d67b31b4af83bcdd007a0d53b697740c4acc0ff86ee33098cb015560d2c651"
     },
     {
       "path": "Start_Blackhole_Tracker.cmd",
@@ -43,9 +48,14 @@
       "sha256": "ffc145e5c7e92f635ae180de91c90c1f9677dbbe2d119239a5a19ffb5f24a205"
     },
     {
+      "path": "Start_Blackhole_Tracker_Atlas.cmd",
+      "bytes": 96,
+      "sha256": "26639c9d2a64432bbc06bb0b82851156e6ef16c4cb6d5fcb03cf4698d307b9d6"
+    },
+    {
       "path": "Start_Blackhole_Tracker_Joint.cmd",
-      "bytes": 188,
-      "sha256": "84936a117d26e138558db33f1a2f6a2f92b178fbeab6a36f14a71749ad0d252c"
+      "bytes": 201,
+      "sha256": "9e29c11190ed4a112fb5977e6bf7a8b46cc488133973c6759c34db83dc27612e"
     },
     {
       "path": "UNRESOLVED_OBSERVATIONS.md",
@@ -68,9 +78,14 @@
       "sha256": "a74dd19625f4bf463249ab9d3cb80ee8794e3e12c5d728f5fbdf5817f1002daa"
     },
     {
+      "path": "bhtracker/candidate_atlas.py",
+      "bytes": 12213,
+      "sha256": "9446b7c19414566b6ddd3921ccd1b9a38c46450d15a4074e881e0dd47714c624"
+    },
+    {
       "path": "bhtracker/cli.py",
-      "bytes": 10381,
-      "sha256": "079662921d0cef0299e53a8fb627f720414887ef886d7875c6dc284b466597dd"
+      "bytes": 13590,
+      "sha256": "dbd4db3a190f5d5f2d3e899c189e9b7d89f9f35fbb51c0c608f6bec7707c588b"
     },
     {
       "path": "bhtracker/data.py",
@@ -210,7 +225,7 @@
     {
       "path": "bhtracker/provenance.py",
       "bytes": 1687,
-      "sha256": "2258ec2cb99262d433a38db6b5c0dd602d6510d69b8af16fcf6868764b9015bd"
+      "sha256": "59665d20fb49651ac974ab9b0fb5f1b3de05ec345e361c6cfc70510d9b9673c1"
     },
     {
       "path": "bhtracker/r1_runtime.py",
@@ -229,8 +244,8 @@
     },
     {
       "path": "bhtracker/server.py",
-      "bytes": 24294,
-      "sha256": "532e99844fddea8a01b94210805f365b4607b717c47db0e534019ee8d6e7b84a"
+      "bytes": 25034,
+      "sha256": "3ef0f7fda2b25f71b79c9d5bec1c96e0e5262f0d77b6bc8fb7cc1d0edc2a620e"
     },
     {
       "path": "bhtracker/theory/ADAPTATION.json",
@@ -328,14 +343,44 @@
       "sha256": "131c41cb48c3118317fc53a894859761ae03796aa5a35cce70f2559e68f15cea"
     },
     {
+      "path": "bhtracker/web/atlas-core.js",
+      "bytes": 15413,
+      "sha256": "fd2779a4d068ba360279a20c14d0504d3e3cebb78938f2470b15b6385df686e1"
+    },
+    {
+      "path": "bhtracker/web/atlas.css",
+      "bytes": 9184,
+      "sha256": "1c55ac8c499d8cfd462a3627e659d5b123937af3d8c58aec1de9fa3469cf53c8"
+    },
+    {
+      "path": "bhtracker/web/atlas.html",
+      "bytes": 6245,
+      "sha256": "7b758f32707d5dac5d233b4fcf1ac9ee28a8bca8efa14c2453c8fef9f02c3f3b"
+    },
+    {
+      "path": "bhtracker/web/atlas.js",
+      "bytes": 18788,
+      "sha256": "99e106e5c04a69d0282e83a21b2e9b1f62818a1c952aeff972b3555f648deb7b"
+    },
+    {
+      "path": "bhtracker/web/atlas_data.json",
+      "bytes": 1824076,
+      "sha256": "4a76300f0e0e3883a0c9c343e1e0c5fbead595c9b4f333aaa01ec05c9ec9debc"
+    },
+    {
+      "path": "bhtracker/web/atlas_manifest.json",
+      "bytes": 610,
+      "sha256": "831b96ade43a46f9af7c948cc2daca9f7c9e1c886b69fcfca0cef450b521a9a8"
+    },
+    {
       "path": "bhtracker/web/index.html",
-      "bytes": 17012,
-      "sha256": "c443a865cdf0d2254057cf23d2ee1d08fd3d971a4a9fd470fa545bb337d585f7"
+      "bytes": 17087,
+      "sha256": "1280bcfdaab42aebed3c4ff9cceb50d533822fd640a9743a58d3384dba3386da"
     },
     {
       "path": "bhtracker/web/joint.html",
-      "bytes": 11083,
-      "sha256": "a2b2a86367bf405c6ec93f8c82e3b2049b2d3105e2c9572871521869b79fecae"
+      "bytes": 11158,
+      "sha256": "3f5bd9722c1e4e262fb082c91b0f901f8c879e4549d929cf27a47a23a87ec226"
     },
     {
       "path": "bhtracker/web/joint.js",
@@ -344,8 +389,8 @@
     },
     {
       "path": "bhtracker/web/photometry.html",
-      "bytes": 9586,
-      "sha256": "2055c5e024cbf1377abf8456c233d92904fbdd0857af4faee2f1aecd4b9bc0ce"
+      "bytes": 9661,
+      "sha256": "2294396ad0a96dfa955abebeee0e846e975cb616bda7dc9809b5e4ce0940c241"
     },
     {
       "path": "bhtracker/web/photometry.js",
@@ -409,28 +454,33 @@
     },
     {
       "path": "notebooks/01_compact_mass_and_motion.ipynb",
-      "bytes": 97240,
-      "sha256": "6d4bfc7f9b9cfc21f86174274f077d56de28cc1c0e8bbcbf55da1fd7924ba823"
+      "bytes": 97280,
+      "sha256": "9f8821713319fa593149dbe2b64bc08d6cadb156f1ee7ec1c386542df42b0115"
     },
     {
       "path": "notebooks/02_conditional_boundary_response.ipynb",
-      "bytes": 26687,
-      "sha256": "70e7a9191f55ba954357cb4edbcc498adfc6636f3f2d9eb3c7fb72909218a4c1"
+      "bytes": 26727,
+      "sha256": "b7e525c98355a88ba9e26c790cd15cf22f4df6173909d64ba969af263192e966"
     },
     {
       "path": "notebooks/03_native_unresolved_photometry.ipynb",
-      "bytes": 113909,
-      "sha256": "2af13e5696b5fdc42010b2c8518b58a7d0a7f9932e4d51a3f5eafdbe8ba78e93"
+      "bytes": 113950,
+      "sha256": "38c26bb28556bd7adc0e293d58862cbcf6471dcb57515a608a25b72fd9e6531f"
     },
     {
       "path": "notebooks/04_joint_astrometry_and_parallax.ipynb",
-      "bytes": 195690,
-      "sha256": "4418cfc21db2b9ef4a4e3f17f8adb7264f4fa2bb483fcfa2da8635b8286225c8"
+      "bytes": 195731,
+      "sha256": "c5663d0c4d02b52cb2946057f65178a7c8a1584bcc47c035306cfc40f50cc4d2"
+    },
+    {
+      "path": "notebooks/05_candidate_atlas.ipynb",
+      "bytes": 21364,
+      "sha256": "0dd6e21da5ff27507736cab299afb75e96b6c29d4f3ef4c1cb03b847a9c582f9"
     },
     {
       "path": "pyproject.toml",
-      "bytes": 1014,
-      "sha256": "639636fc2da1de1d18d1f66d5a1c344ee072da83810500757f0551bd08ba3bd5"
+      "bytes": 1029,
+      "sha256": "b29086047ee4aeffb51fd080e2cd5ea323cea34eab86b80013d8a150c638edf3"
     },
     {
       "path": "research/README_JOINT_REPRODUCTION.md",
@@ -474,8 +524,8 @@
     },
     {
       "path": "scripts/check_installed_wheel.py",
-      "bytes": 7538,
-      "sha256": "31ff9ffb44d4f4480aef749d8f7f0080593f477b7930271c88adb0ff31d0dc63"
+      "bytes": 8671,
+      "sha256": "5343ac14d86376101de2d409eae717cfafdd895d9447e8ae3ced5796d86a6a7c"
     },
     {
       "path": "scripts/check_web_interpretation.mjs",
@@ -499,8 +549,13 @@
     },
     {
       "path": "scripts/launch_local.py",
-      "bytes": 2776,
-      "sha256": "819c57e376e4a377fa3fd22c47fb83d376dd9f38fbab491a6634db5698dcec33"
+      "bytes": 2898,
+      "sha256": "b0e07aad91b87859f55c5b86da30991c54fea272e5743733996bc316076781b9"
+    },
+    {
+      "path": "scripts/make_candidate_atlas_notebook.py",
+      "bytes": 13171,
+      "sha256": "7a76c58e75e4a65b9e5417835de143d21548e0b27f38f44b135fe8c83b97617d"
     },
     {
       "path": "scripts/make_joint_notebook.py",
@@ -519,8 +574,8 @@
     },
     {
       "path": "scripts/package_product.py",
-      "bytes": 14965,
-      "sha256": "abc8ac1c4500f26bc4cab10a7badfffed2b2baf94f7cea48dc840aff68cda51f"
+      "bytes": 16812,
+      "sha256": "3409645a36acbead31607cc394529f4187a50ed993ebb773b04849dd0edf81d1"
     },
     {
       "path": "scripts/probe_joint_install.py",
@@ -583,6 +638,11 @@
       "sha256": "9e90259d7527e1a9b217670dad5c821bca7f2bdf81e6dee528bdcf58e8f2c8d8"
     },
     {
+      "path": "tests/test_candidate_atlas.py",
+      "bytes": 8695,
+      "sha256": "1663a83075b08e3e498eeed3b36a833dc257603d62ae5c2924444730e8da63b3"
+    },
+    {
       "path": "tests/test_csv_import.py",
       "bytes": 7284,
       "sha256": "53798612f4bb924fd48bec220c24fcdd6ec322ffecd11293faa40a6e58e8d446"
@@ -614,8 +674,8 @@
     },
     {
       "path": "tests/test_local_app.py",
-      "bytes": 3594,
-      "sha256": "7b089cfd25d6b652c3a727305187a6cec8e8cbbdd8894a4ce5c07886dc7eea42"
+      "bytes": 5474,
+      "sha256": "889855d2c8785f9b8128ca198e29d688c9faa88380e1e559b953742165215d11"
     },
     {
       "path": "tests/test_multistart_selection.py",
@@ -714,8 +774,8 @@
     },
     {
       "path": "validation/notebook_receipt.json",
-      "bytes": 9982,
-      "sha256": "491c6f81af4da33247c5f11a56eb08b7b1a504e6695e2ff01189876c523e500a"
+      "bytes": 10303,
+      "sha256": "e77f9bac161d4c50ace1310db260c9f60eb56d699ae0e140086134d7c877abd8"
     },
     {
       "path": "validation/ordinary_motion_precision_audit.json",
@@ -724,8 +784,8 @@
     },
     {
       "path": "validation/package_install_receipt.json",
-      "bytes": 28327,
-      "sha256": "550d4f2618a3fd96cac8966c075ac87b1f82a76c1a2a3c6fcd56e6b3e7cdaaf7"
+      "bytes": 30623,
+      "sha256": "dcc814a3ee706c7788bbff5ee7a80e25b5b4c2d349c61356901126493c90d057"
     },
     {
       "path": "validation/product_calibration_receipt.json",
@@ -831,6 +891,31 @@
       "path": "validation/rc4_release_validation.json",
       "bytes": 2713,
       "sha256": "f97959246b516c80b75f5aeb63c7a5613caa3f8a2ee015a28894397a4e9f5ac6"
+    },
+    {
+      "path": "validation/rc5_installed_browser_review.json",
+      "bytes": 2851,
+      "sha256": "e18b32ea053b5e7795c6c2b4b4aba3e17449aa45762f381102b1dec620ee64a1"
+    },
+    {
+      "path": "validation/rc5_installed_joint_probe.json",
+      "bytes": 7183,
+      "sha256": "fcc8ae5cf45793282fc9df0e9fa29605be8928f97e7b362dfdb0fc24398e85bf"
+    },
+    {
+      "path": "validation/rc5_installed_product_tests.xml",
+      "bytes": 34213,
+      "sha256": "22d5f45eac455db9d231b4e803dbf50e66613fbe05ac771f5a0bc38058f4713b"
+    },
+    {
+      "path": "validation/rc5_installed_runtime_and_CSV.json",
+      "bytes": 12867,
+      "sha256": "43203b91ced1d704e5b651eff7e6dad0fa336b2ac93099acd2a3b801eb26ae3a"
+    },
+    {
+      "path": "validation/rc5_release_validation.json",
+      "bytes": 2165,
+      "sha256": "796c971794da3820226aaf46baa6c274a43b60f7bf19eaada219b701232ce6c4"
     },
     {
       "path": "validation/rc_four_interface_receipt.json",

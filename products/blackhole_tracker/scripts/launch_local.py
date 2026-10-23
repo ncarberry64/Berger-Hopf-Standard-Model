@@ -16,6 +16,7 @@ def main():
     parser.add_argument('--no-open',action='store_true',help='run without opening a browser')
     parser.add_argument('--check-install',action='store_true',help='install/check dependencies and exit')
     parser.add_argument('--astrometry',action='store_true',help='explicitly install/check optional Astropy support for joint research')
+    parser.add_argument('--page',choices=['resolved','photometry','joint','atlas'],default='resolved')
     args=parser.parse_args()
     python=ROOT/'.venv'/'Scripts'/'python.exe'
     env=os.environ.copy()
@@ -36,7 +37,7 @@ def main():
             if not args.astrometry:
                 print('Joint research requires optional Astropy. Explicitly enable it with Start_Blackhole_Tracker_Joint.cmd or --astrometry.',flush=True)
             return 0
-        command=[str(python),'-I','-m','bhtracker','serve','--port',str(args.port)]
+        command=[str(python),'-I','-m','bhtracker','serve','--port',str(args.port),'--page',args.page]
         if not args.no_open:command.append('--open')
         return subprocess.run(command,cwd=ROOT,env=env).returncode
     except (OSError,subprocess.CalledProcessError) as error:

@@ -56,7 +56,7 @@ def source_archive(output):
         for path, relative in portable_files():
             target.write(path, (Path("product") / relative).as_posix())
             included.append(relative.as_posix())
-    for required in ["README.md", "pyproject.toml", "Start_Blackhole_Tracker.cmd", "Start_Blackhole_Tracker_Joint.cmd",
+    for required in ["README.md", "CANDIDATE_ATLAS.md", "pyproject.toml", "Start_Blackhole_Tracker.cmd", "Start_Blackhole_Tracker_Joint.cmd", "Start_Blackhole_Tracker_Atlas.cmd",
                      "scripts/package_product.py", "validation/package_install_receipt.json"]:
         if required not in included:
             raise ValueError(f"portable source is missing {required}")
@@ -76,7 +76,10 @@ def wheel_contents(wheel):
                     "bhtracker/web/joint.html", "bhtracker/web/joint.js", "bhtracker/joint_report.py",
                     "bhtracker/joint_mass.py", "bhtracker/joint_mass_v2.py",
                     "bhtracker/joint_workflow.py", "bhtracker/joint_workflow_v2.py",
-                    "bhtracker/joint_benchmark.py", "bhtracker/joint_benchmark_v2.py"]
+                    "bhtracker/joint_benchmark.py", "bhtracker/joint_benchmark_v2.py",
+                    "bhtracker/candidate_atlas.py", "bhtracker/web/atlas.html", "bhtracker/web/atlas.js",
+                    "bhtracker/web/atlas-core.js", "bhtracker/web/atlas.css", "bhtracker/web/atlas_data.json",
+                    "bhtracker/web/atlas_manifest.json"]
         for name in required:
             if name not in names:
                 raise ValueError(f"wheel is missing {name}")
@@ -102,6 +105,7 @@ from importlib import metadata, resources
 import json
 from pathlib import Path
 import sys
+import subprocess
 import threading
 from urllib.request import urlopen
 
@@ -131,7 +135,19 @@ for item in manifest['files']:
         raise RuntimeError('installed provider mismatch: ' + item['path'])
     provider[item['path']] = actual
 web = {name: hashlib.sha256(root.joinpath('web/' + name).read_bytes()).hexdigest()
-       for name in ['index.html', 'app.js', 'style.css', 'photometry.html', 'photometry.js', 'joint.html', 'joint.js']}
+       for name in ['index.html', 'app.js', 'style.css', 'photometry.html', 'photometry.js', 'joint.html', 'joint.js',
+                    'atlas.html','atlas.js','atlas-core.js','atlas.css','atlas_data.json','atlas_manifest.json']}
+from bhtracker.candidate_atlas import load_inventory, default_filters, filter_events, create_replay, validate_replay
+inventory, inventory_text = load_inventory()
+atlas_filters = {**default_filters(), 'tier':'BLACK_HOLE_SEARCH_TARGET'}
+assert len(inventory['events'])==155 and len(inventory['benchmarks'])==1
+assert len(filter_events(inventory, atlas_filters))==3
+restored=validate_replay(create_replay(inventory_text, atlas_filters))
+assert restored['inventory_json'].encode('utf-8')==inventory_text.encode('utf-8')
+for arguments in (['atlas','export','--tier','BLACK_HOLE_SEARCH_TARGET','--output','atlas-replay.json'],
+                  ['atlas','replay','atlas-replay.json','--output','atlas-restored']):
+    subprocess.run([sys.executable,'-I','-m','bhtracker',*arguments],check=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+assert Path('atlas-restored/inventory.json').read_bytes()==inventory_text.encode('utf-8')
 raw, truth = make_example('nearby_motion', noise=False)
 data = load_dataset(raw)
 prediction = predict(data, truth)
@@ -153,7 +169,8 @@ thread = threading.Thread(target=server.serve_forever, daemon=True)
 thread.start()
 http_checks = {}
 try:
-    for path in ['/', '/app.js', '/style.css', '/photometry', '/photometry.js', '/joint', '/joint.js', '/api/health', '/api/examples']:
+    for path in ['/', '/app.js', '/style.css', '/photometry', '/photometry.js', '/joint', '/joint.js', '/api/health', '/api/examples',
+                 '/atlas','/atlas/','/atlas.js','/atlas-core.js','/atlas.css','/atlas_data.json','/atlas_manifest.json','/atlas/atlas_data.json']:
         with urlopen('http://127.0.0.1:' + str(server.server_port) + path, timeout=10) as response:
             body = response.read()
             if response.status != 200 or not body:
@@ -168,7 +185,10 @@ receipt = {'passed': True, 'python': sys.version, 'prefix': str(prefix),
            'bhtracker_file': str(package), 'editable': False,
            'dependency_versions': {'numpy': np.__version__, 'scipy': scipy.__version__},
            'public_predict_max_absolute_error': error, 'fits': results,
-           'provider_files': provider, 'web_files': web, 'loopback_resource_checks': http_checks}
+           'provider_files': provider, 'web_files': web, 'loopback_resource_checks': http_checks,
+           'candidate_atlas':{'events':155,'separate_benchmarks':1,'search_targets':3,'mass_identified':False,
+               'new_black_hole_interpretation':False,'inventory_utf8_sha256':hashlib.sha256(inventory_text.encode('utf-8')).hexdigest(),
+               'API_and_CLI_replay_original_bytes_exact':True}}
 Path('installed_api_probe.json').write_text(json.dumps(receipt, indent=2, allow_nan=False), encoding='utf-8')
 print(json.dumps({'passed': True, 'bhtracker_file': str(package),
                   'gr_status': results['gr']['status'], 'r1_status': results['r1']['status']}))

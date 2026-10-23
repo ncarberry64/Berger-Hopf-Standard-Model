@@ -1,4 +1,4 @@
-# BHSM Blackhole Tracker 0.2.0rc4
+# BHSM Blackhole Tracker 0.2.0rc5
 
 BHSM Blackhole Tracker reconstructs the effective gravitational mass, location and motion of a BHSM-described compact configuration from resolved image pairs, their magnification ratio and their delay. The ordinary lens response and the BHSM boundary/envelope interpretation use the **same optical potential, counted once**. Agreement with ordinary gravity is an allowed result; a non-GR deviation is not required to use this interpretation.
 
@@ -8,9 +8,15 @@ The formal source and reviewer record are in the [BHSM GitHub repository](https:
 
 The fitted object is a **compact exterior**. Its BHSM interpretation does not uniquely identify the microscopic theory, establish a horizon or select an R1 deformation state. Bundled resolved measurement examples are explicitly synthetic. Actual downloaded observations remain in the external data handoff; the paper includes the complete derived 100-event results, residual plots and protocol without redistributing those raw files.
 
+## Candidate atlas: useful targets with mass unresolved
+
+Open **Candidate sky atlas**, run `blackhole-tracker serve --open --page atlas`, or use `Start_Blackhole_Tracker_Atlas.cmd`. The offline inventory contains all 100 pilot events and all 59 published parallax events, with four verified overlaps counted once: **155 unique source/event directions**. A separate published black-hole benchmark has an explicitly unresolved tracker recovery. No catalog coordinate is presented as a current lens position.
+
+Three records warrant investigation for different reasons: the two existing photometric followups and disputed, population-dependent PAR-13. Later literature revisions and alternatives remain visible. These are search targets; no new black-hole identification or independently measured lens mass is claimed. Failed fits, unavailable observations and unknown physical fields stay in the inventory. Filter, inspect the sky map, export CSV or a full JSON replay, and reopen the replay without fitting. [CANDIDATE_ATLAS.md](CANDIDATE_ATLAS.md) describes the evidence stages, source versions, Python/CLI use and offline metadata rebuild.
+
 ## Joint angular observations and annual parallax
 
-Version 0.2.0rc4 adds `/joint`, `blackhole-tracker joint`, a versioned Python API and `04_joint_astrometry_and_parallax.ipynb`. The GUI imports the reviewed 2023 known-system source ZIP directly, or calibrated joint JSON, and verifies/reopens saved results. Use the explicit Joint launcher or install the wheel's `[astrometry]` extra. [JOINT_RESEARCH.md](JOINT_RESEARCH.md) explains inputs, formulas, complete likelihood choices, interpretation, export and replay.
+The joint workflow introduced in rc4 provides `/joint`, `blackhole-tracker joint`, a versioned Python API and `04_joint_astrometry_and_parallax.ipynb`. The GUI imports the reviewed 2023 known-system source ZIP directly, or calibrated joint JSON, and verifies/reopens saved results. Use the explicit Joint launcher or install the wheel's `[astrometry]` extra. [JOINT_RESEARCH.md](JOINT_RESEARCH.md) explains inputs, formulas, complete likelihood choices, interpretation, export and replay.
 
 The new source version uses actual corrected author OGLE data and 21 HST centroid rows across 11 visits, with 82 mapped exposure headers. It preserves unknown clock and averaging conventions as explicit assumptions. This route is separate from the original 2022 benchmark. All three declared v2 benchmark noise models fail an adequacy check; their conditional masses are not reliable black-hole measurements. The software retains those failures, profile degeneracies and the required additional calibration evidence. Successful state replay does not change that scientific outcome. It has not validated general recognition of known black holes or identified a new one.
 
@@ -86,7 +92,7 @@ For an existing source installation, close the app and run these PowerShell comm
 .\.venv\Scripts\python.exe -m bhtracker serve --open
 ```
 
-If the environment does not exist yet, use the explicit joint launcher or the environment-creation commands below first. A wheel installation uses its actual local path: `python -m pip install "./bhsm_blackhole_tracker-0.2.0rc4-py3-none-any.whl[astrometry]"`. Quoting keeps the path and extra together, including paths containing spaces. On Linux/macOS, use the interpreter in your chosen virtual environment with the same wheel-extra command.
+If the environment does not exist yet, use the explicit joint launcher or the environment-creation commands below first. A wheel installation uses its actual local path: `python -m pip install "./bhsm_blackhole_tracker-0.2.0rc5-py3-none-any.whl[astrometry]"`. Quoting keeps the path and extra together, including paths containing spaces. On Linux/macOS, use the interpreter in your chosen virtual environment with the same wheel-extra command.
 
 Open **Joint astrometry research** and follow [JOINT_RESEARCH.md](JOINT_RESEARCH.md) for the reviewed source-pack import, explicit clock/frame assumptions, fitting, export and replay. Enabling the dependency does not validate a noise model or establish a black-hole mass. The original 2022 ambiguous HST export and the separately versioned 2023 benchmark remain distinct.
 
@@ -112,7 +118,7 @@ python -m bhtracker serve --port 8766 --open
 For development and notebook replay, use `python -m pip install -e ".[dev]"`. To run the optional joint tests and notebooks, explicitly use `python -m pip install -e ".[dev,astrometry]"`. To install a supplied wheel, replace the path below with its actual location:
 
 ```text
-python -m pip install path/to/bhsm_blackhole_tracker-0.2.0rc4-py3-none-any.whl
+python -m pip install path/to/bhsm_blackhole_tracker-0.2.0rc5-py3-none-any.whl
 python -m bhtracker serve --open
 ```
 
@@ -400,6 +406,7 @@ The notebooks are saved with executed outputs; their cell counts and SHA-256 has
 | `notebooks/02_conditional_boundary_response.ipynb` | Same-potential BHSM reporting contract, conditional R1 fit, physical admission, Dirichlet/conormal cap, unresolved envelope and rejection of an inadmissible state. Five code cells. |
 | `notebooks/03_native_unresolved_photometry.ipynb` | Native OGLE import, all-row fit/residuals and export/refit replay. Four code cells; actual external observations when configured. |
 | `notebooks/04_joint_astrometry_and_parallax.ipynb` | Verified 2023 source import, recorded conditional joint fit/profile audit, all-row plots and forward-state replay. Five code cells; no automatic measured fit or accepted mass claim. |
+| `notebooks/05_candidate_atlas.ipynb` | All 155 source/events, three differently qualified targets, separate literature benchmark, explicit unavailable lens quantities and exact UTF-8 inventory replay. Six code cells; no physical fit. |
 
 Open them in an editor with Jupyter support and select the environment in which this product is installed. With development dependencies installed, replay them and the product checks from this source directory:
 

@@ -1,4 +1,14 @@
-# Blackhole Tracker 0.2.0rc4
+# Blackhole Tracker 0.2.0rc5
+
+This candidate adds an offline candidate atlas to the local app, CLI and Python API. It retains 155 distinct historical source/event directions from the full 100-event pilot and all 59 published parallax events, reconciles four overlaps, and keeps the known published black-hole benchmark separate from the cohort and from engine validation.
+
+Three records are investigation targets: two frozen photometric followups and disputed, prior-dependent PAR-13. Literature revisions, conflicting source-motion information, all failed pilot models and missing observations remain visible. No new black-hole identification, measured lens mass, three-dimensional position or propagated lens trajectory is claimed. J2000 catalog equinox is distinct from an observation epoch.
+
+The atlas supports search, evidence/cohort/quality filters, a sky map, conditional literature assessments, CSV export and full inventory replay. Exact UTF-8 text and hashes preserve unselected records and unavailable fields across browser and Python. Hash verification establishes consistency; scientific inference and source authenticity require their own evidence. A portable metadata package independently rebuilds the same inventory offline without redistributing native photometry or full source articles.
+
+`Start_Blackhole_Tracker_Atlas.cmd` and `serve --page atlas` open the atlas directly. The explicit Joint launcher opens its joint workspace. Existing fitting methods, native observations and frozen campaigns retain their versions and outcomes. BHSM remains one Einstein/GHY exterior response counted once, with core, horizon and membrane quantities unavailable.
+
+## Previous release candidate 0.2.0rc4
 
 This candidate adds a separately versioned joint photometry/parallax and angular-centroid research route, with CLI, Python, browser workspace and a fourth notebook. The app directly imports the hash-verified 2023 known-system source ZIP, preserves native rows, clocks, calibration and exclusions, and exports all-row diagnostics with pinned BHSM interpretation sources and software provenance. Lossless browser JSON transport retains archived v1 numeric hashes; v2 hashes canonicalize numeric meaning. Saved-state replay is explicitly distinct from a new fit or scientific validation.
 

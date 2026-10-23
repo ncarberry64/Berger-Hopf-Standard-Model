@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="author" content="Norman P. Carberry"><meta name="repository" content="https://github.com/ncarberry64/Berger-Hopf-Standard-Model"><title>BHSM Blackhole Tracker · Candidate atlas</title><link rel="stylesheet" href="atlas.css">
+<script defer src="atlas-core.js"></script><script defer src="atlas.js"></script></head>
+<body><a class="skip" href="#workspace">Skip to candidate inventory</a>
+<header><a class="brand" href="#"><span class="orbit" aria-hidden="true">◎</span><span>BHSM<br><strong>BLACKHOLE TRACKER</strong></span></a>
+<div class="local">LOCAL RESEARCH APPLICATION <span>Candidate atlas · v1</span></div></header><nav class="workspace-nav" aria-label="Research workspaces"><a href="/atlas" aria-current="page">Candidate atlas</a><a href="/photometry">Unresolved photometry</a><a href="/joint">Joint astrometry</a><a href="/">Resolved images</a></nav>
+<main><section class="intro"><div><p class="kicker">OBSERVATIONS → CANDIDATES → FOLLOW-UP</p><h1>Know where to look next.</h1>
+<p>Explore cataloged lensing events, their evidence and the observations needed to identify the lens.</p></div>
+<div class="tools"><button id="download-json" disabled>Export filtered view + full replay</button><button id="download-csv" class="secondary" disabled>Filtered CSV</button>
+<label class="button secondary" for="replay-file">Open replay<input id="replay-file" type="file" accept=".json,application/json" hidden></label></div></section>
+<div id="status" class="status" role="status">Loading the source inventory and checking its file hash…</div>
+<section class="scope"><strong>These markers locate the source/event on the sky.</strong> The lens’s present-day position, distance and absolute motion remain unavailable in this inventory. A long event is not a measured black-hole mass. The map is a selected event catalog, not a complete census or a map of empty space.</section>
+<section id="summary" class="summary" aria-label="Inventory counts"></section>
+<section class="panel bhsm"><div><p class="kicker">BHSM INTERPRETATION</p><h2>One exterior optical response, counted once.</h2></div><p>The tracker interprets compact-lens observations through the BHSM framework using the shared Einstein/GHY exterior optical response. These observations do not identify a core state, membrane shape, deformation or horizon. Those quantities remain unavailable.</p></section>
+<section id="workspace" class="workspace"><aside class="panel filters"><p class="kicker">EXPLORE THE INVENTORY</p><h2>Find an event</h2>
+<label for="search">Search ID, alias or quality flag</label><input id="search" type="search" placeholder="e.g. 0585 or PAR-07" autocomplete="off">
+<label for="tier">Evidence tier</label><select id="tier"><option value="">All evidence tiers</option></select>
+<label for="cohort">Source cohort</label><select id="cohort"><option value="">All source cohorts</option></select>
+<label for="flag">Quality flag</label><select id="flag"><option value="">All quality flags</option></select>
+<label for="sort">Sort records</label><select id="sort"><option value="event_id">Catalog identity</option><option value="ra_deg">Right ascension</option><option value="tier">Evidence tier</option></select>
+<button id="reset" class="secondary">Reset filters</button>
+<div class="filter-note"><strong>Failures stay visible.</strong><p>Inadequate simple fits and unresolved cases remain in the inventory. A published dark-remnant interpretation may include white dwarfs and neutron stars as well as black holes.</p></div>
+<details><summary>Integrity & provenance</summary><div id="integrity" class="mono"></div><p class="small">SHA-256 checks file integrity. It is not an authenticity signature. Replay restores a saved inventory and view; it does not rerun physical inference.</p></details></aside>
+<div class="results"><section class="panel map-panel"><div class="panel-heading"><div><p class="kicker">SOURCE / EVENT DIRECTIONS</p><h2>Sky atlas <span id="map-count" class="subtle"></span></h2></div><div class="map-tools"><button id="fit-map" class="secondary active">Fit visible field</button><button id="all-sky" class="secondary">All sky</button></div></div>
+<div id="map-legend" class="legend"></div><svg id="sky-map" viewBox="0 0 900 390" role="img" aria-label="Equatorial map of catalog source and event directions"></svg>
+<p class="map-caption">Catalog equatorial directions; J2000 is an equinox label, not an observation epoch. Right ascension increases to the left. Markers have no implied depth, positional error radius or motion propagation.</p></section>
+<div class="record-grid"><section class="panel table-panel"><div class="panel-heading"><div><p class="kicker">ALL OUTCOMES RETAINED</p><h2 id="table-title">Event inventory</h2></div><span id="visible-count" class="pill"></span></div><div class="table-wrap"><table><thead><tr><th scope="col">Event / aliases</th><th scope="col">Evidence tier</th><th scope="col">Direction</th><th scope="col">Quality flags</th></tr></thead><tbody id="event-table"></tbody></table></div><p id="empty" hidden>No records match these filters. Reset the filters to restore the full inventory.</p></section>
+<section id="event-detail" class="panel detail" aria-live="polite"><p>Select a marker or event to inspect its evidence.</p></section></div></div></section>
+<section class="panel footer-notes"><h2>What makes a useful next observation?</h2><p>Parallax and an angular lensing scale can constrain mass under an adequate model. Lens-light limits and checks of stellar, remnant, binary and variability alternatives help identify the object’s type. A precise mass is not required to keep a qualified follow-up target in view.</p><p>No entry in this atlas establishes a new black-hole interpretation. Historical published interpretations retain their source and assumptions.</p></section>
+</main><footer><span>BHSM Blackhole Tracker · Research prototype · No external assets or telemetry</span><a href="https://github.com/ncarberry64/Berger-Hopf-Standard-Model" target="_blank" rel="noopener noreferrer">Formal BHSM reviewer repository ↗</a></footer></body></html>

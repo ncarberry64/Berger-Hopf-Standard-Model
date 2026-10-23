@@ -68,6 +68,17 @@ import numpy as np
 np.testing.assert_allclose(saved['predictions'],result['predictions'],rtol=2e-11,atol=2e-11)
 assert saved['bhsm_interpretation']==result['bhsm_interpretation']
 assert json.loads(pathlib.Path('CLI replay/replay_check.json').read_text())['passed']
+from bhtracker.candidate_atlas import load_inventory, create_replay, validate_replay, default_filters
+inventory,inventory_text=load_inventory()
+assert len(inventory['events'])==155 and len(inventory['benchmarks'])==1
+atlas_view={**default_filters(),'tier':'BLACK_HOLE_SEARCH_TARGET'}
+atlas_replay=validate_replay(create_replay(inventory_text,atlas_view))
+assert len(atlas_replay['filtered_events'])==3 and len(atlas_replay['inventory']['events'])==155
+assert atlas_replay['inventory_json'].encode()==inventory_text.encode()
+for args in (['atlas','export','--tier','BLACK_HOLE_SEARCH_TARGET','--output','atlas-replay.json'],
+             ['atlas','replay','atlas-replay.json','--output','atlas restored']):
+    subprocess.run([sys.executable,'-I','-m','bhtracker',*args],check=True,stdout=subprocess.PIPE,stderr=subprocess.PIPE)
+assert pathlib.Path('atlas restored/inventory.json').read_bytes()==inventory_text.encode()
 from bhtracker.report import export_analysis_bundle, replay_analysis
 pathlib.Path('analysis.zip').write_bytes(export_analysis_bundle(result))
 assert replay_analysis('analysis.zip','API replay')['passed']
@@ -81,7 +92,8 @@ try:
     line=lines.get(timeout=40)
     assert 'ready at http://127.0.0.1:' in line,line
     url=line.split('ready at ',1)[1].strip()
-    for endpoint in ('api/health','','app.js','style.css','api/examples/nearby_motion','api/examples/nearby_motion/bundle'):
+    for endpoint in ('api/health','','app.js','style.css','api/examples/nearby_motion','api/examples/nearby_motion/bundle',
+                     'atlas','atlas/','atlas.js','atlas-core.js','atlas.css','atlas_data.json','atlas_manifest.json'):
         with urllib.request.urlopen(url+endpoint,timeout=10) as response:
             assert response.status == 200
             assert len(response.read()) > 0
@@ -97,7 +109,8 @@ receipt={'status':'passed','python':sys.version,'executable':sys.executable,
  'checks':['fresh venv with resolved dependencies','outside-checkout isolated import',
  'packaged assets/examples','GR and R1 runtime providers','API/CLI prediction agreement',
  'CLI example validate fit export and replay','API ZIP export and replay',
- 'six R1 and BHSM source pin checks','actual loopback HTTP startup and complete example download'],
+ 'six R1 and BHSM source pin checks','actual loopback HTTP startup and complete example download',
+ 'candidate atlas155+1 records and3targets','candidate API/CLI lossless full-inventory replay'],
  'packaged_files':{str(p.relative_to(root)):hashlib.sha256(p.read_bytes()).hexdigest()
   for p in sorted(root.rglob('*')) if p.is_file() and '__pycache__' not in p.parts}}
 pathlib.Path('receipt.json').write_text(json.dumps(receipt,indent=2),encoding='utf8')
