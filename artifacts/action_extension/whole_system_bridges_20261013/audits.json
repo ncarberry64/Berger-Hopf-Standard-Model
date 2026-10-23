@@ -1,0 +1,30 @@
+{
+  "classification": "EXISTING_REPOSITORY_AUDITS_ALL_PASSED",
+  "results": [
+    {
+      "script": "tools/audit_bhsm_status.py",
+      "exit_code": 0,
+      "output": "{\n  \"audit\": \"bhsm_status\",\n  \"checks\": {\n    \"candidate_architecture_complete\": true,\n    \"completion_payload_candidate_only\": true,\n    \"completion_payload_not_proven\": true,\n    \"dark_matter_not_solved\": true,\n    \"frozen_predictions_unchanged\": true,\n    \"full_bhsm_not_proven\": true,\n    \"mass_numerical_closure_open\": true,\n    \"official_predictions_unchanged\": true,\n    \"standard_model_not_fully_derived\": true\n  },\n  \"passed\": true,\n  \"verdict_labels\": [\n    \"BHSM_REPO_STATUS_REFRESH_COMPLETE\",\n    \"FULL_BHSM_STATUS_SYNCHRONIZED\",\n    \"SM_DERIVATION_REMAINS_OPEN\",\n    \"MASS_NUMERICAL_CLOSURE_REMAINS_OPEN\"\n  ]\n}\n"
+    },
+    {
+      "script": "tools/audit_forbidden_claims.py",
+      "exit_code": 0,
+      "output": "{\n  \"allowed_example_paths\": [\n    \"docs/forbidden_claims.md\"\n  ],\n  \"audit\": \"forbidden_claims\",\n  \"findings\": [],\n  \"passed\": true,\n  \"verdict_labels\": [\n    \"FORBIDDEN_CLAIM_GUARDRAILS_ADDED\"\n  ]\n}\n"
+    },
+    {
+      "script": "tools/audit_frozen_prediction_integrity.py",
+      "exit_code": 0,
+      "output": "{\n  \"audit\": \"frozen_prediction_integrity\",\n  \"files\": [\n    {\n      \"actual_sha256\": \"9EA147C56537520C86D3C4F9B864C6BA98BAC9E64931EDAE96449F3B335A36C4\",\n      \"expected_sha256\": \"9EA147C56537520C86D3C4F9B864C6BA98BAC9E64931EDAE96449F3B335A36C4\",\n      \"path\": \"docs/frozen_predictions.md\",\n      \"unchanged\": true\n    },\n    {\n      \"actual_sha256\": \"F38210E0689871A25A9D5B0A1A4239883B7240CD7D0E25CDCF4C8CAB72A2CBE7\",\n      \"expected_sha256\": \"F38210E0689871A25A9D5B0A1A4239883B7240CD7D0E25CDCF4C8CAB72A2CBE7\",\n      \"path\": \"docs/frozen_predictions.json\",\n      \"unchanged\": true\n    }\n  ],\n  \"frozen_predictions_changed\": false,\n  \"passed\": true\n}\n"
+    },
+    {
+      "script": "tools/verify_precision.py",
+      "exit_code": 0,
+      "output": "PASS: precision gate verified (1.066e-14 <= 1.000e-13).\n"
+    },
+    {
+      "script": "tools/audit_public_readiness.py",
+      "exit_code": 0,
+      "output": "BHSM public-readiness audit v6.21.0\nverdict: BHSM_REPOSITORY_PUBLIC_REVIEW_READY\nPASS required_files\nPASS markdown_links\nPASS current_claims\nPASS citation\nPASS license_visibility\nPASS reproduction\nPASS hygiene\nPASS science_alignment\nPASS frozen_predictions\nexternal URLs recorded: 6\n"
+    }
+  ]
+}
