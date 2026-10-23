@@ -18,7 +18,7 @@ from pathlib import Path
 import subprocess
 
 import numpy as np
-from scipy import ndimage, signal
+from scipy import ndimage, optimize, signal
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -118,6 +118,113 @@ def pulse(samples):
             confidence, round(coherence, 4))
 
 
+def refine_attack_grid(samples, tempo, offset):
+    """Fit strong attack peaks instead of the later average onset centroid.
+
+    Only already-reliable pulse estimates enter here. A 5.8 ms hop resolves
+    attacks within the coarse grid's beat neighbourhood. Robust regression
+    estimates both phase and accumulated tempo drift; there is no manually
+    selected lead or constant latency subtraction. Every fourth nominal beat
+    is withheld while checking that both median and 90th-percentile residuals
+    improve. The published grid then uses all retained attacks.
+    """
+    hop = 64
+    frequencies, times, transform = signal.stft(
+        samples, fs=SAMPLE_RATE, nperseg=1024, noverlap=1024 - hop,
+        boundary="zeros", padded=True,
+    )
+    compressed = np.log1p(np.abs(transform) * 1000)
+    bands = []
+    for lower, upper in [(40, 250), (250, 2000), (2000, 5500)]:
+        band = compressed[(frequencies >= lower) & (frequencies < upper)]
+        flux = np.maximum(np.diff(band, axis=1, prepend=band[:, :1]), 0).mean(axis=0)
+        flux /= max(float(np.percentile(flux, 90)), 1e-8)
+        bands.append(flux)
+    onset = np.mean(bands, axis=0)
+    onset = np.maximum(onset - ndimage.median_filter(onset, size=173) * 0.75, 0)
+    onset = ndimage.gaussian_filter1d(onset, 2.4)
+    peaks, _ = signal.find_peaks(
+        onset, prominence=float(np.percentile(onset, 70)) * 0.5,
+        distance=round(0.15 * SAMPLE_RATE / hop),
+    )
+    period = 60 / tempo
+    attack_times = times[peaks]
+    beat_numbers = np.rint((attack_times - offset) / period).astype(int)
+    nominal_times = offset + beat_numbers * period
+    residuals = attack_times - nominal_times
+    keep = (
+        (np.abs(residuals) < 0.08) & (attack_times > 1)
+        & (attack_times < len(samples) / SAMPLE_RATE - 5)
+    )
+    peaks = peaks[keep]
+    attack_times = attack_times[keep]
+    beat_numbers = beat_numbers[keep]
+    nominal_times = nominal_times[keep]
+    residuals = residuals[keep]
+    train = beat_numbers % 4 != 0
+    holdout = ~train
+    if np.count_nonzero(train) < 20 or np.count_nonzero(holdout) < 10:
+        return tempo, offset, {"applied": False, "reason": "Too few strong attacks"}
+    center = float(np.median(nominal_times))
+    weights = np.sqrt(onset[peaks] / max(float(np.percentile(onset[peaks], 75)), 1e-8))
+
+    def fit(mask):
+        solution = optimize.least_squares(
+            lambda parameters: (
+                residuals[mask] - parameters[0]
+                - parameters[1] * (nominal_times[mask] - center)
+            ) * weights[mask],
+            [0, 0], loss="soft_l1", f_scale=0.015,
+        )
+        shift, drift = solution.x
+        refined_tempo = tempo / (1 + drift)
+        refined_offset = (offset + shift + drift * (offset - center)) % (60 / refined_tempo)
+        return round(float(refined_tempo), 3), round(float(refined_offset), 3)
+
+    def errors(mask, bpm, phase):
+        beat_period = 60 / bpm
+        values = attack_times[mask]
+        nearest = phase + np.rint((values - phase) / beat_period) * beat_period
+        return np.abs(values - nearest) * 1000
+
+    def metrics(values):
+        return {
+            "medianAbsoluteResidualMs": round(float(np.median(values)), 3),
+            "p90AbsoluteResidualMs": round(float(np.quantile(values, 0.9)), 3),
+        }
+
+    trained_tempo, trained_offset = fit(train)
+    before = errors(holdout, tempo, offset)
+    after = errors(holdout, trained_tempo, trained_offset)
+    accepted = bool(np.median(after) < np.median(before)
+                    and np.quantile(after, 0.9) < np.quantile(before, 0.9))
+    diagnostics = {
+        "applied": accepted,
+        "method": "5.805 ms-hop three-band spectral attack peaks within 80 ms of the baseline grid; amplitude-weighted soft-L1 fit of phase and tempo drift. Every fourth nominal beat held out before the final all-attack fit. Residuals measure detected attacks, not a perceptual latency guarantee.",
+        "baselineTempoBpm": tempo,
+        "baselineBeatOffsetSeconds": offset,
+        "detectedAttacks": int(len(attack_times)),
+        "holdoutAttacks": int(np.count_nonzero(holdout)),
+        "trainedTempoBpm": trained_tempo,
+        "trainedBeatOffsetSeconds": trained_offset,
+        "holdoutBefore": metrics(before),
+        "holdoutAfter": metrics(after),
+    }
+    if not accepted:
+        return tempo, offset, diagnostics
+    refined_tempo, refined_offset = fit(np.ones(len(attack_times), dtype=bool))
+    for label, mask in [
+        ("allAttacks", np.ones(len(attack_times), dtype=bool)),
+        ("first20Seconds", attack_times < 20),
+    ]:
+        diagnostics[label] = {
+            "count": int(np.count_nonzero(mask)),
+            "before": metrics(errors(mask, tempo, offset)),
+            "after": metrics(errors(mask, refined_tempo, refined_offset)),
+        }
+    return refined_tempo, refined_offset, diagnostics
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--ffmpeg", help="Path to an existing local FFmpeg executable")
@@ -136,6 +243,9 @@ def main():
         path = ROOT / "public" / row["source"].removeprefix("./")
         samples = decode(path, ffmpeg)
         tempo, offset, confidence, coherence = pulse(samples)
+        attack_fit = None
+        if confidence == "high":
+            tempo, offset, attack_fit = refine_attack_grid(samples, tempo, offset)
         tracks[row["slideId"]] = {
             "tempoBpm": tempo,
             "beatOffsetSeconds": offset,
@@ -146,10 +256,12 @@ def main():
             "energyStepSeconds": ENERGY_STEP,
             "energy": envelope(samples),
         }
+        if attack_fit:
+            tracks[row["slideId"]]["attackRefinement"] = attack_fit
         grid = f'{tempo:.3f} BPM, offset {offset:.3f}s' if tempo else 'energy cues only'
         print(f'{row["slideId"]}: {grid}, {confidence} ({coherence:.4f})', flush=True)
     result = {
-        "method": "Offline 11025 Hz mono decode; three-band positive log-spectral flux, 32 s window autocorrelation, narrow whole-track phase fit. Pulse coherence is onset circular concentration: high >=0.12, medium >=0.045, low otherwise; low grids are null. Tempo/phase are approximate presentation cues (half/double-time ambiguity and rubato possible), not scientific data. Centered 250 ms RMS at t=i*energyStepSeconds is normalized to each track's 95th percentile; energy follows the recorded waveform.",
+        "method": "Offline 11025 Hz mono decode; three-band positive log-spectral flux, 32 s window autocorrelation, narrow whole-track phase fit. High-confidence grids are refined to strong attack peaks at 5.805 ms hops using robust phase/tempo-drift regression, with every fourth beat held out to verify lower median and p90 timing residuals. Pulse coherence is onset circular concentration: high >=0.12, medium >=0.045, low otherwise; low grids are null. Tempo/phase are approximate presentation cues (half/double-time ambiguity and rubato possible), not scientific data. Centered 250 ms RMS at t=i*energyStepSeconds is normalized to each track's 95th percentile; energy follows the recorded waveform.",
         "tracks": tracks,
     }
     # Compact arrays keep the entire local cue set comfortably below 200 KiB.

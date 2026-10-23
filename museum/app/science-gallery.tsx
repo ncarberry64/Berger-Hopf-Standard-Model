@@ -51,21 +51,24 @@ const galleries = [
 export function ScienceGallery({ motion }: { motion: boolean }) {
   const [baseIndex, setIndex] = useState(0),
     [playing, setPlaying] = useState(true);
-  const { ref: stageRef, time } = useSceneClock(motion && playing);
-  const [started, setStarted] = useState(0);
-  const elapsed = (time - started) % 9;
+  const {
+    ref: stageRef,
+    phraseTime,
+    restartSequence,
+  } = useSceneClock(motion && playing, Infinity, 0, 'musical', 8);
+  const elapsed = phraseTime % 8;
   const index =
-    (baseIndex + Math.floor((time - started) / 9)) % comparison.rows.length;
+    (baseIndex + Math.floor(phraseTime / 8)) % comparison.rows.length;
   const chosen = comparison.rows[index];
   const gallery = galleries.find((g) => g.id === chosen.group)!;
   const ref = references.comparisons.find((r) => r.id === chosen.id)!;
   const residual = (100 * (chosen.bhsm - ref.value)) / ref.value;
   const reveal =
-    !motion || !playing ? 1 : Math.min(1, Math.max(0, (elapsed - 1.5) / 2));
+    !motion || !playing ? 1 : Math.min(1, Math.max(0, (elapsed - 2) / 2));
   const x = (n: number) => 450 + 17 * n;
   const select = (i: number) => {
     setIndex(i);
-    setStarted(time);
+    restartSequence();
     setPlaying(false);
   };
   return (
@@ -95,7 +98,16 @@ export function ScienceGallery({ motion }: { motion: boolean }) {
               </option>
             ))}
           </select>
-          <button onClick={() => setPlaying(!playing)} disabled={!motion}>
+          <button
+            onClick={() => {
+              if (!playing) {
+                setIndex(index);
+                restartSequence();
+              }
+              setPlaying(!playing);
+            }}
+            disabled={!motion}
+          >
             {playing && motion ? 'Ⅱ Pause sequence' : '▶ Cycle tests'}
           </button>
         </div>

@@ -20,6 +20,67 @@ const integrals = new Map<string, { values: number[]; mean: number }>();
 const clamp = (value: number, low: number, high: number) =>
   Math.max(low, Math.min(high, value));
 
+export function musicBeat(slideId: string, seconds: number) {
+  const cue = tracks[slideId];
+  if (
+    !cue ||
+    cue.confidence !== 'high' ||
+    !cue.tempoBpm ||
+    cue.beatOffsetSeconds === null
+  )
+    return null;
+  return {
+    beat: ((seconds - cue.beatOffsetSeconds) * cue.tempoBpm) / 60,
+    tempoBpm: cue.tempoBpm,
+  };
+}
+
+// Reading sequences launch from the actual beat, not the gently rejoining
+// finite-animation clock. Rejoining repeats the current entry, never skips it.
+export function createPhraseSequence(stageSeconds = 8) {
+  let value = 0;
+  let previousTime: number | undefined;
+  let previousBeat: number | undefined;
+  let anchor: { beat: number; value: number } | undefined;
+  function suspend() {
+    previousTime = undefined;
+    previousBeat = undefined;
+    anchor = undefined;
+  }
+  return {
+    suspend,
+    restart() {
+      value = 0;
+      suspend();
+    },
+    tick(time: number, beat: number | null) {
+      const delta =
+        previousTime === undefined ? 0 : Math.max(0, time - previousTime);
+      previousTime = time;
+      if (beat === null) {
+        anchor = undefined;
+        previousBeat = undefined;
+        value += delta;
+        return value;
+      }
+      if (
+        !anchor ||
+        previousBeat === undefined ||
+        beat < previousBeat ||
+        beat - previousBeat > 2
+      ) {
+        anchor = {
+          beat: Math.ceil((beat - 1e-9) / 4) * 4,
+          value: Math.floor(value / stageSeconds) * stageSeconds,
+        };
+      }
+      previousBeat = beat;
+      if (beat >= anchor.beat) value = anchor.value + (beat - anchor.beat) / 2;
+      return value;
+    },
+  };
+}
+
 // Musical presentation coordinates only. No scientific values or physical
 // clocks depend on these locally measured soundtrack cues.
 export function musicPosition(
@@ -39,11 +100,7 @@ export function musicPosition(
       0,
       ((t - cue.beatOffsetSeconds) * cue.tempoBpm) / 60,
     );
-    const fraction = beats % 1;
-    // A small, smooth breath between accents, with exact beat boundaries.
-    const eased =
-      fraction - (Math.sin(fraction * Math.PI * 2) * 0.08) / (Math.PI * 2);
-    return { position: (Math.floor(beats) + eased) / 2, grid: true };
+    return { position: beats / 2, grid: true };
   }
   let integral = integrals.get(slideId);
   if (!integral) {

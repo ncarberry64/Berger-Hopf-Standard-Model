@@ -50,3 +50,16 @@ Scene pauses, scrubbing, replay, reduced motion and the Einstein ring's
 alignment hold take priority. Hidden and offscreen scenes freeze; returning
 never fast-forwards through material the visitor has not seen. Seeking or
 looping the music rebases the presentation without rewinding the scene.
+
+Beat-led geometry uses whole musical cycles: the Berger metric breath and
+selected Hopf-fiber lap span 16 beats, and the BHSM chapter's laps span eight.
+Small light accents land on individual beats. Their phase is read directly
+from media time on every display frame, independently of the continuous clock
+that preserves finite reveals and inspection holds. Comparison sequences use
+four beats of lead-in, four of reveal and eight of reading hold. Automatic
+replays wait for the next bar before starting their reading sequence.
+
+Pulse offsets are refined against strong recorded attacks rather than the
+average spectral phase. Held-out attacks validate the fit. This reduces the
+small timing bias in the original cue estimates without introducing a guessed
+device-latency correction. Ambient diagrams retain their measured swells.
