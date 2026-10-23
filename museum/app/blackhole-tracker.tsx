@@ -28,7 +28,7 @@ export function BlackholeTracker({
   const [playing, setPlaying] = useState(true);
   const [anchor, setAnchor] = useState({ epoch: 2015, time: 0 });
   const [massScale, setMassScale] = useState(1);
-  const { ref, time } = useSceneClock(motion && playing);
+  const { ref, time } = useSceneClock(motion && playing, Infinity, 0, 'independent');
   // A forward/back presentation loop. The declared trajectory remains linear;
   // the reverse leg is explicitly replay, not reversed physical motion.
   const phase = (anchor.epoch - 2015 + (time - anchor.time) * 0.5) % 20;

@@ -41,6 +41,7 @@ export function MuseumSoundtrack() {
       );
       if (index < 0) return;
       setTrackIndex(index);
+      audio.dataset.exhibitMusic = exhibitSoundtracks[index].slideId;
       player.select(exhibitSoundtracks[index].source);
     });
     let channel: BroadcastChannel | undefined;
@@ -90,6 +91,7 @@ export function MuseumSoundtrack() {
       {/* oxlint-disable-next-line jsx-a11y/media-has-caption -- Instrumental music has no speech. */}
       <audio
         ref={audioRef}
+        data-exhibit-music={track.slideId}
         src={exhibitSoundtracks[0].source}
         preload="none"
         playsInline
