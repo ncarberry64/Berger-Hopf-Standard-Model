@@ -1,0 +1,1960 @@
+{
+  "catalog_metadata": {
+    "event_id": "OGLE3-ULENS-3318",
+    "catalog_id": "3318",
+    "ra_j2000": "18:07:19.07",
+    "dec_j2000": "-27:01:05.2",
+    "field_chip": "BLG235.6",
+    "star_number": "164846",
+    "published_tE_days": 192.359259,
+    "published_t0_hjd_minus_2450000": 3780.442615,
+    "ews_alias": "2006-BLG-046",
+    "overlap_alias": null,
+    "control_selection_sha256": "a2bb3158700dffaedddf04bb56920533bd3382dcbacff6c7532ae09444d0f1c5",
+    "relative_path": "raw/ogle3/photometry/photBLG235.6.I.164846.dat",
+    "source_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG235.6.I.164846.dat",
+    "stratum": "long_duration"
+  },
+  "baseline": {
+    "schema": "bhsm_unresolved_photometry_result/1",
+    "observation_schema": "bhsm_unresolved_observations/1",
+    "input_sha256": "4d44a5cd99aea57c928273f620db426bf75503625092ab89fcc78bf29788e4a9",
+    "protocol": {
+      "id": "BHSM-native-magnitude-PSPL-20261022-v1",
+      "model": "rectilinear point-source point-lens; per-instrument baseline magnitude and source fraction",
+      "likelihood": "independent Gaussian in native apparent magnitude, published sigma unchanged",
+      "time": "native HJD relative-day arithmetic; clock unspecified unless independently documented",
+      "bounds": {
+        "t0": "min(time)-span .. max(time)+span",
+        "tE_days": [
+          0.1,
+          10000.0
+        ],
+        "u0": [
+          0.0001,
+          10.0
+        ],
+        "source_fraction": [
+          1e-06,
+          1.0
+        ],
+        "signed_blend_sensitivity_source_fraction": [
+          1e-06,
+          10.0
+        ],
+        "baseline_magnitude": "per-instrument median - 10 .. median + 10"
+      },
+      "starts": 12,
+      "max_nfev": 1500,
+      "seed": 20261022,
+      "optimizer": "scipy least_squares trf, analytic Jacobian, linear loss, x_scale=jac",
+      "tolerances": {
+        "ftol": 1e-10,
+        "xtol": 1e-10,
+        "gtol": 1e-08
+      },
+      "rank_relative_cutoff": 1e-07,
+      "exclusions": "none: all finite native positive-error rows retained; exact documented source annotation is provenance, not a measurement",
+      "coverage": "local quadratic errors conditional on diagonal magnitude noise; no automatic coverage claim at boundaries or model failure",
+      "mass_identification": "unavailable: tE alone supplies neither thetaE nor piE"
+    },
+    "protocol_sha256": "65a23dcf7f8e41eb2b4a3a52053b7c57e11612e64993799c6a4b821a8d299713",
+    "run_options": {
+      "starts": 12,
+      "max_nfev": 1500,
+      "noise_scale": 1.0,
+      "equal_instrument_weight": false,
+      "allow_negative_blend": false
+    },
+    "status": "PHOTOMETRIC_MODEL_INADEQUATE",
+    "mass_status": "MASS_UNRESOLVED",
+    "model": "PSPL_RECTILINEAR_NATIVE_MAGNITUDE",
+    "parameters": {
+      "t0": 3776.240842760642,
+      "tE_days": 167.60863083427788,
+      "u0": 0.00010000000000289733,
+      "time_numeric_origin_jd": 2450000.0,
+      "allow_negative_blend": false,
+      "instruments": {
+        "OGLE-III": {
+          "baseline_magnitude": 19.87396763746227,
+          "source_fraction": 0.17852658786047662,
+          "flux_zero_point": "arbitrary common per-instrument reference magnitude 0",
+          "source_flux_relative": 2.0050067982965974e-09,
+          "blend_flux_relative": 9.225851430302746e-09
+        }
+      }
+    },
+    "uncertainty": {
+      "parameter_order": [
+        "t0",
+        "tE_days",
+        "u0",
+        "OGLE-III.baseline_magnitude",
+        "OGLE-III.source_fraction"
+      ],
+      "standard_errors": {
+        "t0": 5.15235596316733,
+        "tE_days": 61.26038837330779,
+        "u0": 9.883829149183645,
+        "OGLE-III.baseline_magnitude": 0.00818805392714713,
+        "OGLE-III.source_fraction": 0.10576499090227277
+      },
+      "covariance": [
+        [
+          26.546771971185947,
+          253.31775170088298,
+          50.33020494424573,
+          0.009306788261439781,
+          -0.4861982642768763
+        ],
+        [
+          253.317751700883,
+          3752.8351836485044,
+          446.24660319574406,
+          0.2501352622133303,
+          -6.364961624686912
+        ],
+        [
+          50.33020494424573,
+          446.24660319574406,
+          97.69007865025232,
+          0.015406093030303276,
+          -0.8715028366321669
+        ],
+        [
+          0.009306788261439781,
+          0.2501352622133303,
+          0.015406093030303273,
+          6.704422711386956e-05,
+          -0.0003550301186442848
+        ],
+        [
+          -0.4861982642768763,
+          -6.364961624686912,
+          -0.8715028366321668,
+          -0.0003550301186442848,
+          0.011186233300557843
+        ]
+      ],
+      "rank": 5,
+      "parameter_count": 5,
+      "identified_parameters": [
+        "t0",
+        "tE_days",
+        "u0",
+        "OGLE-III.baseline_magnitude",
+        "OGLE-III.source_fraction"
+      ],
+      "unidentified_parameters": [],
+      "normalized_jacobian_singular_values": [
+        1.9353439806627277,
+        0.9603420054556385,
+        0.5678774655694321,
+        0.09476187954434406,
+        0.02687525541555943
+      ],
+      "normalized_coordinate_null_projector": [
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      ],
+      "physical_null_directions": [],
+      "covariance_contract": "Null-affected public entries are unavailable. Local inverse-information errors use assumed native diagonal magnitude noise, without rescaling by reduced chi-square.",
+      "qualification": "Local quadratic approximation; bound-active, multimodal, rank-deficient or inadequate fits require profiles/sensitivity and do not establish frequentist coverage."
+    },
+    "timescale_uncertainty": {
+      "sigma_days": 61.26038837330779,
+      "status": "LOCAL_QUADRATIC_ONLY_NONREGULAR",
+      "coverage_claim": false,
+      "profile_interval_days": null
+    },
+    "numerical_convergence": {
+      "optimizer_success": true,
+      "multistart_confirmed": true,
+      "objective_chi_square": 685.0428207644533,
+      "starts": [
+        {
+          "start": 0,
+          "success": true,
+          "status": 2,
+          "objective_chi_square": 685.0428207652606,
+          "nfev": 24,
+          "optimality": 0.008130535902239262,
+          "message": "`ftol` termination condition is satisfied.",
+          "parameters": {
+            "t0": 3776.2408310109004,
+            "tE_days": 167.6076968946713,
+            "u0": 0.00010000001520467344,
+            "time_numeric_origin_jd": 2450000.0,
+            "allow_negative_blend": false,
+            "instruments": {
+              "OGLE-III": {
+                "baseline_magnitude": 19.87396753374271,
+                "source_fraction": 0.17852786751956387,
+                "flux_zero_point": "arbitrary common per-instrument reference magnitude 0",
+                "source_flux_relative": 2.00502136150455e-09,
+                "blend_flux_relative": 9.225837939970223e-09
+              }
+            }
+          }
+        },
+        {
+          "start": 1,
+          "success": true,
+          "status": 2,
+          "objective_chi_square": 685.0428207730913,
+          "nfev": 22,
+          "optimality": 0.02664020970327327,
+          "message": "`ftol` termination condition is satisfied.",
+          "parameters": {
+            "t0": 3776.2408031809055,
+            "tE_days": 167.60546086734536,
+            "u0": 0.00010000000025271491,
+            "time_numeric_origin_jd": 2450000.0,
+            "allow_negative_blend": false,
+            "instruments": {
+              "OGLE-III": {
+                "baseline_magnitude": 19.87396728371879,
+                "source_fraction": 0.17853092520336242,
+                "flux_zero_point": "arbitrary common per-instrument reference magnitude 0",
+                "source_flux_relative": 2.0050561636464425e-09,
+                "blend_flux_relative": 9.225805724076971e-09
+              }
+            }
+          }
+        },
+        {
+          "start": 2,
+          "success": true,
+          "status": 2,
+          "objective_chi_square": 685.0428207650127,
+          "nfev": 23,
+          "optimality": 0.006841501070944878,
+          "message": "`ftol` termination condition is satisfied.",
+          "parameters": {
+            "t0": 3776.240833089041,
+            "tE_days": 167.6078614745329,
+            "u0": 0.00010000000553632737,
+            "time_numeric_origin_jd": 2450000.0,
+            "allow_negative_blend": false,
+            "instruments": {
+              "OGLE-III": {
+                "baseline_magnitude": 19.873967551976577,
+                "source_fraction": 0.17852764188017456,
+                "flux_zero_point": "arbitrary common per-instrument reference magnitude 0",
+                "source_flux_relative": 2.0050187937080083e-09,
+                "blend_flux_relative": 9.225840319155595e-09
+              }
+            }
+          }
+        },
+        {
+          "start": 3,
+          "success": true,
+          "status": 2,
+          "objective_chi_square": 685.0428207648259,
+          "nfev": 27,
+          "optimality": 0.005564945484394152,
+          "message": "`ftol` termination condition is satisfied.",
+          "parameters": {
+            "t0": 3776.2408517912236,
+            "tE_days": 167.6093542540184,
+            "u0": 0.00010000000075594438,
+            "time_numeric_origin_jd": 2450000.0,
+            "allow_negative_blend": false,
+            "instruments": {
+              "OGLE-III": {
+                "baseline_magnitude": 19.87396771820679,
+                "source_fraction": 0.17852559791287897,
+                "flux_zero_point": "arbitrary common per-instrument reference magnitude 0",
+                "source_flux_relative": 2.0049955312270564e-09,
+                "blend_flux_relative": 9.225861862150784e-09
+              }
+            }
+          }
+        },
+        {
+          "start": 4,
+          "success": true,
+          "status": 2,
+          "objective_chi_square": 685.0428207654181,
+          "nfev": 35,
+          "optimality": 0.009136063584598862,
+          "message": "`ftol` termination condition is satisfied.",
+          "parameters": {
+            "t0": 3776.240856843823,
+            "tE_days": 167.60976102222187,
+            "u0": 0.00010000001321735137,
+            "time_numeric_origin_jd": 2450000.0,
+            "allow_negative_blend": false,
+            "instruments": {
+              "OGLE-III": {
+                "baseline_magnitude": 19.873967763751317,
+                "source_fraction": 0.17852504172474012,
+                "flux_zero_point": "arbitrary common per-instrument reference magnitude 0",
+                "source_flux_relative": 2.0049892006519745e-09,
+                "blend_flux_relative": 9.225867721613187e-09
+              }
+            }
+          }
+        },
+        {
+          "start": 5,
+          "success": true,
+          "status": 2,
+          "objective_chi_square": 685.0428207691538,
+          "nfev": 19,
+          "optimality": 0.020092242509372218,
+          "message": "`ftol` termination condition is satisfied.",
+          "parameters": {
+            "t0": 3776.2408137307175,
+            "tE_days": 167.6063059423498,
+            "u0": 0.00010000000002046478,
+            "time_numeric_origin_jd": 2450000.0,
+            "allow_negative_blend": false,
+            "instruments": {
+              "OGLE-III": {
+                "baseline_magnitude": 19.87396737802806,
+                "source_fraction": 0.17852976906049647,
+                "flux_zero_point": "arbitrary common per-instrument reference magnitude 0",
+                "source_flux_relative": 2.0050430050034493e-09,
+                "blend_flux_relative": 9.225817907184377e-09
+              }
+            }
+          }
+        },
+        {
+          "start": 6,
+          "success": true,
+          "status": 2,
+          "objective_chi_square": 685.0428207645493,
+          "nfev": 32,
+          "optimality": 0.003433378340515685,
+          "message": "`ftol` termination condition is satisfied.",
+          "parameters": {
+            "t0": 3776.2408458012014,
+            "tE_days": 167.6088951399326,
+            "u0": 0.00010000068742092044,
+            "time_numeric_origin_jd": 2450000.0,
+            "allow_negative_blend": false,
+            "instruments": {
+              "OGLE-III": {
+                "baseline_magnitude": 19.873967668357437,
+                "source_fraction": 0.17852623092155293,
+                "flux_zero_point": "arbitrary common per-instrument reference magnitude 0",
+                "source_flux_relative": 2.005002732512789e-09,
+                "blend_flux_relative": 9.22585517650685e-09
+              }
+            }
+          }
+        },
+        {
+          "start": 7,
+          "success": true,
+          "status": 2,
+          "objective_chi_square": 685.0428207644533,
+          "nfev": 18,
+          "optimality": 0.00042166627100338343,
+          "message": "`ftol` termination condition is satisfied.",
+          "parameters": {
+            "t0": 3776.240842760642,
+            "tE_days": 167.60863083427788,
+            "u0": 0.00010000000000289733,
+            "time_numeric_origin_jd": 2450000.0,
+            "allow_negative_blend": false,
+            "instruments": {
+              "OGLE-III": {
+                "baseline_magnitude": 19.87396763746227,
+                "source_fraction": 0.17852658786047662,
+                "flux_zero_point": "arbitrary common per-instrument reference magnitude 0",
+                "source_flux_relative": 2.0050067982965974e-09,
+                "blend_flux_relative": 9.225851430302746e-09
+              }
+            }
+          }
+        },
+        {
+          "start": 8,
+          "success": true,
+          "status": 2,
+          "objective_chi_square": 685.042820764896,
+          "nfev": 30,
+          "optimality": 0.006212139821367211,
+          "message": "`ftol` termination condition is satisfied.",
+          "parameters": {
+            "t0": 3776.240834251963,
+            "tE_days": 167.60795234106516,
+            "u0": 0.00010000000128631906,
+            "time_numeric_origin_jd": 2450000.0,
+            "allow_negative_blend": false,
+            "instruments": {
+              "OGLE-III": {
+                "baseline_magnitude": 19.873967561955304,
+                "source_fraction": 0.1785275170081565,
+                "flux_zero_point": "arbitrary common per-instrument reference magnitude 0",
+                "source_flux_relative": 2.005017372860355e-09,
+                "blend_flux_relative": 9.225841636783241e-09
+              }
+            }
+          }
+        },
+        {
+          "start": 9,
+          "success": true,
+          "status": 2,
+          "objective_chi_square": 685.0428207649501,
+          "nfev": 32,
+          "optimality": 0.007399992957652101,
+          "message": "`ftol` termination condition is satisfied.",
+          "parameters": {
+            "t0": 3776.24085231096,
+            "tE_days": 167.609412935961,
+            "u0": 0.00010000063490190575,
+            "time_numeric_origin_jd": 2450000.0,
+            "allow_negative_blend": false,
+            "instruments": {
+              "OGLE-III": {
+                "baseline_magnitude": 19.87396772591455,
+                "source_fraction": 0.178525521514695,
+                "flux_zero_point": "arbitrary common per-instrument reference magnitude 0",
+                "source_flux_relative": 2.0049946589762645e-09,
+                "blend_flux_relative": 9.225862654672456e-09
+              }
+            }
+          }
+        },
+        {
+          "start": 10,
+          "success": true,
+          "status": 2,
+          "objective_chi_square": 685.0428207644777,
+          "nfev": 21,
+          "optimality": 0.0011742052473024314,
+          "message": "`ftol` termination condition is satisfied.",
+          "parameters": {
+            "t0": 3776.240841157379,
+            "tE_days": 167.6085073361362,
+            "u0": 0.00010000001104514985,
+            "time_numeric_origin_jd": 2450000.0,
+            "allow_negative_blend": false,
+            "instruments": {
+              "OGLE-III": {
+                "baseline_magnitude": 19.87396762402748,
+                "source_fraction": 0.17852675800845416,
+                "flux_zero_point": "arbitrary common per-instrument reference magnitude 0",
+                "source_flux_relative": 2.005008734014184e-09,
+                "blend_flux_relative": 9.22584963355465e-09
+              }
+            }
+          }
+        },
+        {
+          "start": 11,
+          "success": true,
+          "status": 2,
+          "objective_chi_square": 685.0428207648382,
+          "nfev": 35,
+          "optimality": 0.005311710843779559,
+          "message": "`ftol` termination condition is satisfied.",
+          "parameters": {
+            "t0": 3776.2408348085505,
+            "tE_days": 167.60800315326526,
+            "u0": 0.00010000003937989707,
+            "time_numeric_origin_jd": 2450000.0,
+            "allow_negative_blend": false,
+            "instruments": {
+              "OGLE-III": {
+                "baseline_magnitude": 19.87396756806674,
+                "source_fraction": 0.1785274489365732,
+                "flux_zero_point": "arbitrary common per-instrument reference magnitude 0",
+                "source_flux_relative": 2.0050165970720858e-09,
+                "blend_flux_relative": 9.22584234935482e-09
+              }
+            }
+          }
+        }
+      ],
+      "active_bounds": [
+        "u0"
+      ]
+    },
+    "physical_admission": {
+      "status": "ADMITTED_PHOTOMETRIC_MODEL",
+      "positive_source_flux": true,
+      "nonnegative_stellar_blend": true,
+      "qualification": "Admission concerns positive predicted total flux and the declared blending model; angular weak-field, lens distance, horizon and BHSM core conditions are not identified by these data."
+    },
+    "observational_adequacy": {
+      "status": "INADEQUATE_OR_NOISE_MISSPECIFIED",
+      "flags": [
+        "BOUND_ACTIVE_LOCAL_COVARIANCE_NONREGULAR",
+        "PSPL_OR_DIAGONAL_NOISE_INADEQUATE"
+      ],
+      "diagnostics": {
+        "chi_square_native_noise": 685.042820764453,
+        "dof": 584,
+        "reduced_chi_square": 1.1730185287062551,
+        "chi_square_tail_probability_assuming_correct_independent_noise": 0.00239632719721379,
+        "per_instrument": {
+          "OGLE-III": {
+            "count": 589,
+            "chi_square_native_noise": 685.042820764453,
+            "rms_standardized_residual": 1.0784529735869153,
+            "median_standardized_residual": 0.17447783580115211,
+            "absolute_residual_above_3sigma_count": 7,
+            "lag1_correlation_sorted_native_time": 0.07232708295703222,
+            "runs_test": {
+              "runs": 259,
+              "z": -2.659834382916861
+            },
+            "seasonal_residuals": [
+              {
+                "start": 2127.52477,
+                "end": 2189.55319,
+                "count": 8,
+                "mean_standardized_residual": -0.3747598721960407,
+                "mean_over_independent_standard_error": -1.059980987785697
+              },
+              {
+                "start": 2337.86521,
+                "end": 2464.80297,
+                "count": 5,
+                "mean_standardized_residual": -0.3886519761874913,
+                "mean_over_independent_standard_error": -0.8690522383448601
+              },
+              {
+                "start": 2816.69894,
+                "end": 2859.66823,
+                "count": 3,
+                "mean_standardized_residual": 0.6957634232909499,
+                "mean_over_independent_standard_error": 1.2050975991879764
+              },
+              {
+                "start": 3059.88549,
+                "end": 3296.5307,
+                "count": 102,
+                "mean_standardized_residual": 0.005873891660529504,
+                "mean_over_independent_standard_error": 0.05932339783292156
+              },
+              {
+                "start": 3418.87054,
+                "end": 3671.49959,
+                "count": 85,
+                "mean_standardized_residual": 0.2198204870300437,
+                "mean_over_independent_standard_error": 2.0266447527972624
+              },
+              {
+                "start": 3783.89201,
+                "end": 4030.51798,
+                "count": 136,
+                "mean_standardized_residual": 0.1505721929235768,
+                "mean_over_independent_standard_error": 1.7559584272774842
+              },
+              {
+                "start": 4153.83775,
+                "end": 4377.56443,
+                "count": 109,
+                "mean_standardized_residual": 0.05967287000107406,
+                "mean_over_independent_standard_error": 0.6230030530775865
+              },
+              {
+                "start": 4517.89818,
+                "end": 4763.53657,
+                "count": 113,
+                "mean_standardized_residual": 0.12648761895045985,
+                "mean_over_independent_standard_error": 1.3445818329490067
+              },
+              {
+                "start": 4877.87659,
+                "end": 4953.74254,
+                "count": 28,
+                "mean_standardized_residual": -0.2900065880929593,
+                "mean_over_independent_standard_error": -1.5345706213286316
+              }
+            ],
+            "constant_chi_square": 4525.416768141577,
+            "linear_trend_chi_square": 4516.008666439061
+          }
+        },
+        "constant_model": {
+          "chi_square": 4525.416768141577,
+          "parameter_count": 1,
+          "delta_bic_constant_minus_pspl": 3814.8602426425177
+        },
+        "linear_trend_model": {
+          "chi_square": 4516.008666439061,
+          "parameter_count": 2,
+          "delta_bic_trend_minus_pspl": 3811.830567123653
+        },
+        "qualification": "Residual and chi-square diagnostics depend on diagonal-noise assumptions. Runs/season tests and BIC screens are uncalibrated multiplicity-sensitive diagnostics, not black-hole probabilities."
+      }
+    },
+    "diagnostics": {
+      "chi_square_native_noise": 685.042820764453,
+      "dof": 584,
+      "reduced_chi_square": 1.1730185287062551,
+      "chi_square_tail_probability_assuming_correct_independent_noise": 0.00239632719721379,
+      "per_instrument": {
+        "OGLE-III": {
+          "count": 589,
+          "chi_square_native_noise": 685.042820764453,
+          "rms_standardized_residual": 1.0784529735869153,
+          "median_standardized_residual": 0.17447783580115211,
+          "absolute_residual_above_3sigma_count": 7,
+          "lag1_correlation_sorted_native_time": 0.07232708295703222,
+          "runs_test": {
+            "runs": 259,
+            "z": -2.659834382916861
+          },
+          "seasonal_residuals": [
+            {
+              "start": 2127.52477,
+              "end": 2189.55319,
+              "count": 8,
+              "mean_standardized_residual": -0.3747598721960407,
+              "mean_over_independent_standard_error": -1.059980987785697
+            },
+            {
+              "start": 2337.86521,
+              "end": 2464.80297,
+              "count": 5,
+              "mean_standardized_residual": -0.3886519761874913,
+              "mean_over_independent_standard_error": -0.8690522383448601
+            },
+            {
+              "start": 2816.69894,
+              "end": 2859.66823,
+              "count": 3,
+              "mean_standardized_residual": 0.6957634232909499,
+              "mean_over_independent_standard_error": 1.2050975991879764
+            },
+            {
+              "start": 3059.88549,
+              "end": 3296.5307,
+              "count": 102,
+              "mean_standardized_residual": 0.005873891660529504,
+              "mean_over_independent_standard_error": 0.05932339783292156
+            },
+            {
+              "start": 3418.87054,
+              "end": 3671.49959,
+              "count": 85,
+              "mean_standardized_residual": 0.2198204870300437,
+              "mean_over_independent_standard_error": 2.0266447527972624
+            },
+            {
+              "start": 3783.89201,
+              "end": 4030.51798,
+              "count": 136,
+              "mean_standardized_residual": 0.1505721929235768,
+              "mean_over_independent_standard_error": 1.7559584272774842
+            },
+            {
+              "start": 4153.83775,
+              "end": 4377.56443,
+              "count": 109,
+              "mean_standardized_residual": 0.05967287000107406,
+              "mean_over_independent_standard_error": 0.6230030530775865
+            },
+            {
+              "start": 4517.89818,
+              "end": 4763.53657,
+              "count": 113,
+              "mean_standardized_residual": 0.12648761895045985,
+              "mean_over_independent_standard_error": 1.3445818329490067
+            },
+            {
+              "start": 4877.87659,
+              "end": 4953.74254,
+              "count": 28,
+              "mean_standardized_residual": -0.2900065880929593,
+              "mean_over_independent_standard_error": -1.5345706213286316
+            }
+          ],
+          "constant_chi_square": 4525.416768141577,
+          "linear_trend_chi_square": 4516.008666439061
+        }
+      },
+      "constant_model": {
+        "chi_square": 4525.416768141577,
+        "parameter_count": 1,
+        "delta_bic_constant_minus_pspl": 3814.8602426425177
+      },
+      "linear_trend_model": {
+        "chi_square": 4516.008666439061,
+        "parameter_count": 2,
+        "delta_bic_trend_minus_pspl": 3811.830567123653
+      },
+      "qualification": "Residual and chi-square diagnostics depend on diagonal-noise assumptions. Runs/season tests and BIC screens are uncalibrated multiplicity-sensitive diagnostics, not black-hole probabilities."
+    },
+    "flags": [
+      "BOUND_ACTIVE_LOCAL_COVARIANCE_NONREGULAR",
+      "PSPL_OR_DIAGONAL_NOISE_INADEQUATE"
+    ],
+    "point_count": 589,
+    "excluded_point_count": 0,
+    "unresolved_quantities": {
+      "mass_msun": null,
+      "lens_distance_pc": null,
+      "source_distance_pc": null,
+      "theta_E_mas": null,
+      "pi_E": null,
+      "absolute_proper_motion_mas_yr": null,
+      "resolved_image_positions": null,
+      "image_flux_ratio": null,
+      "interimage_delay_days": null,
+      "horizon_status": null,
+      "core_state": null,
+      "boundary_radius_pc": null
+    },
+    "bhsm_interpretation": {
+      "interpretation_schema_version": 2,
+      "interpretation_revision": "2026-10-22",
+      "framework": "BHSM",
+      "project_citation": {
+        "title": "BHSM Blackhole Tracker",
+        "author": "Norman P. Carberry",
+        "repository_url": "https://github.com/ncarberry64/Berger-Hopf-Standard-Model",
+        "product_path": "products/blackhole_tracker",
+        "paper_path": "papers/bhsm_blackhole_tracker_20261021",
+        "revision_policy": "Exact reviewed commits and artifact hashes are recorded in the release receipt; installed package hashes are recorded below."
+      },
+      "model_role": "One compact-configuration optical response in the adopted BHSM Einstein/GHY sector, described in boundary/envelope language.",
+      "one_potential_rule": "Equivalent ordinary-gravity and BHSM envelope descriptions represent the same fitted lens potential and are counted once. A separately derived response is added only when it is a distinct term of the same physical model.",
+      "parameter_meanings": [
+        {
+          "parameter": "t0 / tE_days / u0",
+          "interpretation": "Relative-time trajectory of the single unresolved compact-configuration optical response.",
+          "qualification": "These dimensionless/relative-time lens parameters do not measure a BHSM core, physical boundary deformation, mass or horizon."
+        },
+        {
+          "parameter": "instrument baseline/source fraction",
+          "interpretation": "Photometric calibration and unresolved luminous blending nuisance parameters.",
+          "qualification": "Brightness is the image-summed flux; it is not the ratio of resolved images."
+        }
+      ],
+      "inference_scope": "The ordinary fit is usable with this BHSM interpretation. Agreement with the ordinary lens response is allowed; a non-GR residual is not required. The fit alone does not uniquely identify the microscopic theory or a horizon.",
+      "conditional_extension": "No separate scalar deformation was requested. The ordinary monopole, motion and admitted shape terms retain their BHSM interpretation without an additional envelope force.",
+      "weyl_convention": "The tracker propagates W_full=Phi+Psi. A BHSM source using W_topo=(Phi_topo+Psi_topo)/2 contributes 2*W_topo to that same full Weyl response, not a second copy of an already represented term.",
+      "core_surface": {
+        "schema_version": 1,
+        "status": "PROPOSED_NOT_INFERRED",
+        "attribution": "Norman P. Carberry \u2014 22 October 2026 proposal",
+        "surface_summary": "The fitted mass and motion describe the spacetime-side exterior. Where the declared metric/boundary identity applies, boundary energy and the principal extrinsic-curvature deficit derive from that same mass at a declared enclosing radius; this radius is not a measured hard boundary or horizon.",
+        "core_summary": "BHSM proposes a common core described by abstract harmonic relationships, without ordinary spacetime. This fit does not infer core modes or an internal core trajectory, clock or geometry.",
+        "matching_summary": "Existing BHSM constructions provide conditional reconstruction, reciprocal attachment and constrained interface response on their declared regular domains. Extending them to terminal loss of surface manifestation requires a specified admissible terminal matching map and charge/flux accounting; the schematic matching relation alone does not supply that law.",
+        "inference_scope": "The engine can evaluate previously uncatalogued compact-lens candidates from supplied observations. A supported track is conditional on the distances, frame, source and environment model. It does not by itself establish a horizon, microscopic core state, interface strength, daughter channels, conversion rate or neutron-star endpoint.",
+        "claim_ledger": [
+          {
+            "label": "Core and spacetime-side realization",
+            "status": "DEFINITION_AND_HYPOTHESIS",
+            "statement": "Abstract core mode weights and algebraic phases have no automatic frequency in hertz. Surface S3 or Berger\u2013Hopf harmonics use their declared spacetime-side geometry; they are not silently a core Laplacian."
+          },
+          {
+            "label": "Inherited differential and boundary support",
+            "status": "ATTRIBUTED_PHYSICAL_PROPOSAL",
+            "statement": "The inherited differential is primary in Norman's account. Formation, maintenance and terminal transition are separate. Proposed hard isolation requires specified interaction channels; it does not require every exterior gravitational response to vanish."
+          },
+          {
+            "label": "Excitations, envelopes and encapsulations",
+            "status": "PROPOSED_ONTOLOGY",
+            "statement": "Excitations are propagating signals; envelopes have operative interfaces and proposed daughter-producing transitions; boundary-dominated encapsulations can persist. Terminal transfer with zero spacetime daughters is a separate hypothesis with unresolved matching/accounting, not a fitted zero."
+          },
+          {
+            "label": "Black-hole and other applications",
+            "status": "PROPOSED_APPLICATIONS",
+            "statement": "Sustained black-hole conversion, a separate quiet neutron-star endpoint, quantum surface manifestation and historical galaxy boundary persistence require their own matching and observational tests. No new halo component, threshold, lifetime or rate is added to this lens model."
+          },
+          {
+            "label": "Existing mathematical constructions",
+            "status": "RESULTS_WITH_DECLARED_DOMAINS",
+            "statement": "The normalized regular-interface constraint determines a weighted-median surface location. A specified fixed-orbit surface variation gives d(chi_Sigma)/d(epsilon)=-2/3; this is not a solved coupled background or core-transfer response. Regular constrained-response and nonlinear-front/persistence results retain their own domains."
+          },
+          {
+            "label": "Tracker evidence",
+            "status": "MODEL_CONDITIONAL_INFERENCE",
+            "statement": "One exterior optical potential is counted once. Ordinary fits remain usable without a non-GR residual. A track, derived spherical boundary representation and proposed core interpretation are distinct levels of statement."
+          }
+        ],
+        "new_optical_term_added": false,
+        "core_parameters_fitted": false,
+        "unavailable_quantities": {
+          "core_mode_data": {
+            "status": "NOT_INFERRED",
+            "value": null,
+            "reason": "The admitted optical fit does not supply the physical matching and independent evidence required for this quantity."
+          },
+          "interface_strength": {
+            "status": "NOT_INFERRED",
+            "value": null,
+            "reason": "The admitted optical fit does not supply the physical matching and independent evidence required for this quantity."
+          },
+          "daughter_channels": {
+            "status": "NOT_INFERRED",
+            "value": null,
+            "reason": "The admitted optical fit does not supply the physical matching and independent evidence required for this quantity."
+          },
+          "deencapsulation_rate": {
+            "status": "NOT_INFERRED",
+            "value": null,
+            "reason": "The admitted optical fit does not supply the physical matching and independent evidence required for this quantity."
+          },
+          "horizon_status": {
+            "status": "NOT_INFERRED",
+            "value": null,
+            "reason": "The admitted optical fit does not supply the physical matching and independent evidence required for this quantity."
+          },
+          "neutron_star_terminal_state": {
+            "status": "NOT_INFERRED",
+            "value": null,
+            "reason": "The admitted optical fit does not supply the physical matching and independent evidence required for this quantity."
+          }
+        },
+        "matching_status": "REGULAR_RESPONSE_CONSTRUCTION_AVAILABLE_TERMINAL_CORE_MAP_NOT_SELECTED"
+      },
+      "spherical_boundary": {
+        "status": "NOT_REPORTED_FOR_UNRESOLVED_MASS"
+      },
+      "source_provenance": {
+        "formal_repository_url": "https://github.com/ncarberry64/Berger-Hopf-Standard-Model",
+        "formal_product_path": "products/blackhole_tracker",
+        "scope": "BHSM adopted gravitational-sector interpretation of one ordinary optical response; no microscopic or horizon identification claimed",
+        "weyl_convention": "Tracker W_full=Phi+Psi; the separate BHSM optical contract defines W_topo=(Phi_topo+Psi_topo)/2",
+        "primary_reference": "https://arxiv.org/abs/gr-qc/9209012",
+        "sources": [
+          {
+            "path": "bhsm_sources/BHSM_Galaxy_Gravity_Loaded_Schur_Hessian_v0_5.md",
+            "sha256": "718cdac692ae6030eb70c327771343267c4517c1a69a01454a32872579013816",
+            "original_path": "C:\\Users\\carbe\\Downloads\\BHSM_Galaxy_Gravity_Loaded_Schur_Hessian_v0_5.md",
+            "role": "Explicit adopted Einstein/GHY boundary interpretation; extra topographic export remains conditional"
+          },
+          {
+            "path": "bhsm_sources/BHSM_Topographic_Galaxy_Encapsulation_Solution_v0_3.md",
+            "sha256": "c9eaee920746c024b695c722fc783aea53dfc9da5660a92150de4b05d9c7ba0a",
+            "original_path": "C:\\Users\\carbe\\Downloads\\BHSM_Topographic_Galaxy_Encapsulation_Solution_v0_3.md",
+            "role": "Explicit adopted Einstein/GHY boundary interpretation; extra topographic export remains conditional"
+          },
+          {
+            "path": "bhsm_sources/BHSM_ETA_SEAM_THRESHOLD_BY_v14_25.md",
+            "sha256": "6dba2dd7837b77ff24e7ea2c1a3733edf0b6ab8ac024a9a0d4481cadaf90046a",
+            "archive": "C:\\Users\\carbe\\Downloads\\BHSM_v14_25_seam_threshold_Brown_York_package.zip",
+            "member": "docs/BHSM_ETA_SEAM_THRESHOLD_BY_v14_25.md",
+            "role": "Same constrained gravitational boundary charge; no separate gravity addition"
+          },
+          {
+            "path": "BHSM_CORE_SURFACE_CONTRACT.json",
+            "sha256": "1b2a44d1d424cf1ad4786d57695c9ab5a9fa5946af7362f05c5e4fb52a251b97",
+            "role": "Versioned tracker interpretation adapter; the dated BHSM amendment supplies its attributed scientific source."
+          },
+          {
+            "path": "bhsm_sources/BHSM_NORMAN_CORE_SURFACE_AMENDMENT_20261022.md",
+            "sha256": "db244adeb07e5e5d5df1689986d542cd83a58268a1ba09c53bb8ca3ccbc720f7",
+            "repository": "https://github.com/ncarberry64/Berger-Hopf-Standard-Model",
+            "commit": "3c820fee74a5c715ef58bf30998edb1d7b26fe78",
+            "original_path": "docs/BHSM_NORMAN_CORE_SURFACE_AMENDMENT_20261022.md",
+            "url": "https://github.com/ncarberry64/Berger-Hopf-Standard-Model/blob/3c820fee74a5c715ef58bf30998edb1d7b26fe78/docs/BHSM_NORMAN_CORE_SURFACE_AMENDMENT_20261022.md",
+            "role": "Dated core/surface proposal and scoped regular-side derivations; no derived terminal core-transition or new optical response is asserted."
+          },
+          {
+            "path": "bhsm_sources/BHSM_NORMAN_CORE_SURFACE_AMENDMENT_20261022.json",
+            "sha256": "a5df72ff970b098a8963ebeb0694227e0f6412e10a726529f0a1436414d5dae4",
+            "repository": "https://github.com/ncarberry64/Berger-Hopf-Standard-Model",
+            "commit": "3c820fee74a5c715ef58bf30998edb1d7b26fe78",
+            "original_path": "artifacts/current_semantics/BHSM_NORMAN_CORE_SURFACE_AMENDMENT_20261022.json",
+            "url": "https://github.com/ncarberry64/Berger-Hopf-Standard-Model/blob/3c820fee74a5c715ef58bf30998edb1d7b26fe78/artifacts/current_semantics/BHSM_NORMAN_CORE_SURFACE_AMENDMENT_20261022.json",
+            "role": "Dated core/surface proposal and scoped regular-side derivations; no derived terminal core-transition or new optical response is asserted."
+          }
+        ],
+        "schema_version": 2,
+        "interpretation_revision": "2026-10-22",
+        "interpretation_contract_path": "BHSM_CORE_SURFACE_CONTRACT.json",
+        "theory_amendment": {
+          "author": "Norman P. Carberry",
+          "source_date": "2026-10-22",
+          "repository": "https://github.com/ncarberry64/Berger-Hopf-Standard-Model",
+          "commit": "3c820fee74a5c715ef58bf30998edb1d7b26fe78",
+          "path": "docs/BHSM_NORMAN_CORE_SURFACE_AMENDMENT_20261022.md",
+          "sha256": "db244adeb07e5e5d5df1689986d542cd83a58268a1ba09c53bb8ca3ccbc720f7",
+          "draft_pr": "https://github.com/ncarberry64/Berger-Hopf-Standard-Model/pull/470"
+        },
+        "packaging_note": "Sources are copied byte-for-byte. Relative document links refer to the original repository paths at the pinned commit; use each public source URL for its original context."
+      },
+      "observation_route": "unresolved_native_magnitude_pspl_v1",
+      "observational_identification": {
+        "mass_status": "MASS_UNRESOLVED",
+        "mass_msun": null,
+        "lens_distance_pc": null,
+        "theta_E_mas": null,
+        "microlens_parallax": null,
+        "absolute_proper_motion_mas_yr": null,
+        "horizon_status": "NOT_INFERRED",
+        "reason": "tE=thetaE/mu_rel; thetaE^2=kappa*M*pi_rel. A photometric timescale alone identifies neither mass, distance nor angular proper motion."
+      }
+    },
+    "product_version": "0.2.0rc3",
+    "analysis_configuration": {
+      "initial": {
+        "event_id": "OGLE3-ULENS-3318",
+        "catalog_id": "3318",
+        "ra_j2000": "18:07:19.07",
+        "dec_j2000": "-27:01:05.2",
+        "field_chip": "BLG235.6",
+        "star_number": "164846",
+        "published_t0_hjd_minus_2450000": 3780.442615,
+        "published_tE_days": 192.359259,
+        "published_u0": 0.028514,
+        "published_source_flux_fraction": 0.122885,
+        "published_baseline_I_magnitude": 19.605823,
+        "published_chi_square": 849.285879,
+        "published_dof": 680,
+        "V_magnitude": 21.568,
+        "V_error": 0.247,
+        "ews_alias": "2006-BLG-046",
+        "ews_aliases": [
+          "2006-BLG-046"
+        ],
+        "overlap_alias": null,
+        "overlap_aliases": [],
+        "source_sha256": "4ad3f8c907f5ccfcaf0bb64b2b42391fec747eba3c91548748b38771dddd1739",
+        "source_line": 3318,
+        "source_row_id": "4ad3f8c907f5ccfcaf0bb64b2b42391fec747eba3c91548748b38771dddd1739:3318",
+        "native_fields": [
+          "3318",
+          "18:07:19.07",
+          "-27:01:05.2",
+          "BLG235.6",
+          "164846",
+          "3780.442615",
+          "-0.471405",
+          "0.491587",
+          "192.359259",
+          "-34.405008",
+          "49.581410",
+          "0.028514",
+          "-0.007065",
+          "0.008189",
+          "0.122885",
+          "-0.029491",
+          "0.034492",
+          "19.605823",
+          "-0.007381",
+          "0.007416",
+          "849.285879",
+          "680",
+          "21.568",
+          "0.247",
+          "2006-BLG-046",
+          "-"
+        ],
+        "role": "published fit metadata; selection/initialization only, not likelihood observations"
+      },
+      "starts": 12,
+      "max_nfev": 1500,
+      "noise_scale": 1.0,
+      "equal_instrument_weight": false,
+      "allow_negative_blend": false
+    }
+  },
+  "sensitivity": {
+    "signed_blend": {
+      "status": "PHOTOMETRIC_MODEL_INADEQUATE",
+      "parameters": {
+        "t0": 3776.2408412673976,
+        "tE_days": 167.60851196770352,
+        "u0": 0.00010000000012297248,
+        "time_numeric_origin_jd": 2450000.0,
+        "allow_negative_blend": true,
+        "instruments": {
+          "OGLE-III": {
+            "baseline_magnitude": 19.873967624248642,
+            "source_fraction": 0.17852675069196025,
+            "flux_zero_point": "arbitrary common per-instrument reference magnitude 0",
+            "source_flux_relative": 2.005008651435259e-09,
+            "blend_flux_relative": 9.225849713845865e-09
+          }
+        }
+      },
+      "uncertainty": {
+        "parameter_order": [
+          "t0",
+          "tE_days",
+          "u0",
+          "OGLE-III.baseline_magnitude",
+          "OGLE-III.source_fraction"
+        ],
+        "standard_errors": {
+          "t0": 5.152358497788042,
+          "tE_days": 61.260327762188425,
+          "u0": 9.88384895763494,
+          "OGLE-III.baseline_magnitude": 0.008188052477708721,
+          "OGLE-III.source_fraction": 0.10576509333444065
+        },
+        "covariance": [
+          [
+            26.546798089728654,
+            253.3176472082316,
+            50.33033067858928,
+            0.009306786883294107,
+            -0.48619901544481764
+          ],
+          [
+            253.3176472082316,
+            3752.827757530754,
+            446.2471003973703,
+            0.2501348715722596,
+            -6.364961430241863
+          ],
+          [
+            50.330330678589284,
+            446.2471003973703,
+            97.69047021734131,
+            0.015406113439288997,
+            -0.8715055195551172
+          ],
+          [
+            0.009306786883294105,
+            0.2501348715722596,
+            0.015406113439288997,
+            6.704420337771193e-05,
+            -0.00035503021179203865
+          ],
+          [
+            -0.4861990154448177,
+            -6.364961430241863,
+            -0.871505519555117,
+            -0.0003550302117920386,
+            0.01118625496804294
+          ]
+        ],
+        "rank": 5,
+        "parameter_count": 5,
+        "identified_parameters": [
+          "t0",
+          "tE_days",
+          "u0",
+          "OGLE-III.baseline_magnitude",
+          "OGLE-III.source_fraction"
+        ],
+        "unidentified_parameters": [],
+        "normalized_jacobian_singular_values": [
+          1.9353439892735949,
+          0.960341985088021,
+          0.5678774695379544,
+          0.0947618871398835,
+          0.026875252494186687
+        ],
+        "normalized_coordinate_null_projector": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "physical_null_directions": [],
+        "covariance_contract": "Null-affected public entries are unavailable. Local inverse-information errors use assumed native diagonal magnitude noise, without rescaling by reduced chi-square.",
+        "qualification": "Local quadratic approximation; bound-active, multimodal, rank-deficient or inadequate fits require profiles/sensitivity and do not establish frequentist coverage."
+      },
+      "flags": [
+        "BOUND_ACTIVE_LOCAL_COVARIANCE_NONREGULAR",
+        "PSPL_OR_DIAGONAL_NOISE_INADEQUATE",
+        "SIGNED_BLEND_CALIBRATION_SENSITIVITY"
+      ],
+      "chi_square_native_noise": 685.0428207644752,
+      "multistart_confirmed": true
+    },
+    "noise_scale_1p25": {
+      "status": "PHOTOMETRIC_FIT",
+      "parameters": {
+        "t0": 3776.240842760642,
+        "tE_days": 167.60863083427788,
+        "u0": 0.00010000000000289733,
+        "time_numeric_origin_jd": 2450000.0,
+        "allow_negative_blend": false,
+        "instruments": {
+          "OGLE-III": {
+            "baseline_magnitude": 19.87396763746227,
+            "source_fraction": 0.17852658786047673,
+            "flux_zero_point": "arbitrary common per-instrument reference magnitude 0",
+            "source_flux_relative": 2.0050067982965986e-09,
+            "blend_flux_relative": 9.225851430302744e-09
+          }
+        }
+      },
+      "uncertainty": {
+        "parameter_order": [
+          "t0",
+          "tE_days",
+          "u0",
+          "OGLE-III.baseline_magnitude",
+          "OGLE-III.source_fraction"
+        ],
+        "standard_errors": {
+          "t0": 6.440444953959142,
+          "tE_days": 76.57548546663452,
+          "u0": 12.354786436479522,
+          "OGLE-III.baseline_magnitude": 0.010235067408933908,
+          "OGLE-III.source_fraction": 0.1322062386278407
+        },
+        "covariance": [
+          [
+            41.479331204977775,
+            395.80898703262676,
+            78.64094522538346,
+            0.014541856658499488,
+            -0.7596847879326146
+          ],
+          [
+            395.8089870326267,
+            5863.804974450754,
+            697.260317493345,
+            0.39083634720832666,
+            -9.945252538573254
+          ],
+          [
+            78.64094522538346,
+            697.2603174933452,
+            152.64074789101838,
+            0.02407202035984857,
+            -1.361723182237753
+          ],
+          [
+            0.014541856658499488,
+            0.3908363472083267,
+            0.024072020359848567,
+            0.00010475660486542107,
+            -0.0005547345603816922
+          ],
+          [
+            -0.7596847879326148,
+            -9.945252538573255,
+            -1.3617231822377527,
+            -0.0005547345603816922,
+            0.017478489532121562
+          ]
+        ],
+        "rank": 5,
+        "parameter_count": 5,
+        "identified_parameters": [
+          "t0",
+          "tE_days",
+          "u0",
+          "OGLE-III.baseline_magnitude",
+          "OGLE-III.source_fraction"
+        ],
+        "unidentified_parameters": [],
+        "normalized_jacobian_singular_values": [
+          1.9353439806627286,
+          0.9603420054556392,
+          0.5678774655694324,
+          0.0947618795443441,
+          0.02687525541555952
+        ],
+        "normalized_coordinate_null_projector": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "physical_null_directions": [],
+        "covariance_contract": "Null-affected public entries are unavailable. Local inverse-information errors use assumed native diagonal magnitude noise, without rescaling by reduced chi-square.",
+        "qualification": "Local quadratic approximation; bound-active, multimodal, rank-deficient or inadequate fits require profiles/sensitivity and do not establish frequentist coverage."
+      },
+      "flags": [
+        "BOUND_ACTIVE_LOCAL_COVARIANCE_NONREGULAR"
+      ],
+      "chi_square_native_noise": 438.42740528924986,
+      "multistart_confirmed": true
+    }
+  },
+  "timescale_profile": {
+    "schema": "bhsm_unresolved_timescale_profile/1",
+    "input_sha256": "4d44a5cd99aea57c928273f620db426bf75503625092ab89fcc78bf29788e4a9",
+    "reference_objective_chi_square": 685.0428207644533,
+    "coverage_claim": false,
+    "rows": [
+      {
+        "tE_days": 41.90215770856947,
+        "status": "ADMITTED_BOUNDARY_OPTIMUM",
+        "objective_chi_square": 797.6713889452528,
+        "delta_chi_square": 112.62856818079956,
+        "optimizer_success": true,
+        "parameters": {
+          "t0": 3779.0040701528014,
+          "tE_days": 41.90215770856946,
+          "u0": 0.1960127805331894,
+          "time_numeric_origin_jd": 2450000.0,
+          "allow_negative_blend": false,
+          "instruments": {
+            "OGLE-III": {
+              "baseline_magnitude": 19.83772578214519,
+              "source_fraction": 0.9999999999999996,
+              "flux_zero_point": "arbitrary common per-instrument reference magnitude 0",
+              "source_flux_relative": 1.1612071121808363e-08,
+              "blend_flux_relative": 5.1567954892066084e-24
+            }
+          }
+        }
+      },
+      {
+        "tE_days": 49.83034408099694,
+        "status": "ADMITTED_BOUNDARY_OPTIMUM",
+        "objective_chi_square": 753.5128912077703,
+        "delta_chi_square": 68.47007044331701,
+        "optimizer_success": true,
+        "parameters": {
+          "t0": 3774.5308598822194,
+          "tE_days": 49.83034408099694,
+          "u0": 0.12413029284428369,
+          "time_numeric_origin_jd": 2450000.0,
+          "allow_negative_blend": false,
+          "instruments": {
+            "OGLE-III": {
+              "baseline_magnitude": 19.84559764768284,
+              "source_fraction": 0.9999999999999999,
+              "flux_zero_point": "arbitrary common per-instrument reference magnitude 0",
+              "source_flux_relative": 1.1528185097409211e-08,
+              "blend_flux_relative": 1.279885652728431e-24
+            }
+          }
+        }
+      },
+      {
+        "tE_days": 59.25859972415529,
+        "status": "ADMITTED_BOUNDARY_OPTIMUM",
+        "objective_chi_square": 723.8733242213077,
+        "delta_chi_square": 38.830503456854444,
+        "optimizer_success": true,
+        "parameters": {
+          "t0": 3770.2901271510996,
+          "tE_days": 59.25859972415527,
+          "u0": 0.00010000000000000098,
+          "time_numeric_origin_jd": 2450000.0,
+          "allow_negative_blend": false,
+          "instruments": {
+            "OGLE-III": {
+              "baseline_magnitude": 19.85642759040062,
+              "source_fraction": 0.9999999999923036,
+              "flux_zero_point": "arbitrary common per-instrument reference magnitude 0",
+              "source_flux_relative": 1.1413765980190735e-08,
+              "blend_flux_relative": 8.784489791700567e-20
+            }
+          }
+        }
+      },
+      {
+        "tE_days": 70.47074841706376,
+        "status": "ADMITTED_BOUNDARY_OPTIMUM",
+        "objective_chi_square": 711.0287834050789,
+        "delta_chi_square": 25.985962640625644,
+        "optimizer_success": true,
+        "parameters": {
+          "t0": 3772.1207973350683,
+          "tE_days": 70.47074841706376,
+          "u0": 0.00010000000000000026,
+          "time_numeric_origin_jd": 2450000.0,
+          "allow_negative_blend": false,
+          "instruments": {
+            "OGLE-III": {
+              "baseline_magnitude": 19.859206418710187,
+              "source_fraction": 0.693611157452034,
+              "flux_zero_point": "arbitrary common per-instrument reference magnitude 0",
+              "source_flux_relative": 7.896479334093838e-09,
+              "blend_flux_relative": 3.48811165648565e-09
+            }
+          }
+        }
+      },
+      {
+        "tE_days": 83.80431541713897,
+        "status": "ADMITTED_BOUNDARY_OPTIMUM",
+        "objective_chi_square": 700.7618912933506,
+        "delta_chi_square": 15.719070528897305,
+        "optimizer_success": true,
+        "parameters": {
+          "t0": 3773.4694693217934,
+          "tE_days": 83.80431541713901,
+          "u0": 0.00010000000000556932,
+          "time_numeric_origin_jd": 2450000.0,
+          "allow_negative_blend": false,
+          "instruments": {
+            "OGLE-III": {
+              "baseline_magnitude": 19.862026287179443,
+              "source_fraction": 0.5022172016899966,
+              "flux_zero_point": "arbitrary common per-instrument reference magnitude 0",
+              "source_flux_relative": 5.702707137875705e-09,
+              "blend_flux_relative": 5.652354215430574e-09
+            }
+          }
+        }
+      },
+      {
+        "tE_days": 99.66068816199389,
+        "status": "ADMITTED_BOUNDARY_OPTIMUM",
+        "objective_chi_square": 693.2792823960098,
+        "delta_chi_square": 8.236461631556494,
+        "optimizer_success": true,
+        "parameters": {
+          "t0": 3774.451739951865,
+          "tE_days": 99.66068816199389,
+          "u0": 0.00010000000000000488,
+          "time_numeric_origin_jd": 2450000.0,
+          "allow_negative_blend": false,
+          "instruments": {
+            "OGLE-III": {
+              "baseline_magnitude": 19.864989201412236,
+              "source_fraction": 0.3763277968652038,
+              "flux_zero_point": "arbitrary common per-instrument reference magnitude 0",
+              "source_flux_relative": 4.261579723551801e-09,
+              "blend_flux_relative": 7.062536536396567e-09
+            }
+          }
+        }
+      },
+      {
+        "tE_days": 118.51719944831059,
+        "status": "ADMITTED_BOUNDARY_OPTIMUM",
+        "objective_chi_square": 688.4124741004711,
+        "delta_chi_square": 3.369653336017791,
+        "optimizer_success": true,
+        "parameters": {
+          "t0": 3775.1976513980076,
+          "tE_days": 118.51719944831065,
+          "u0": 0.00010000000000000026,
+          "time_numeric_origin_jd": 2450000.0,
+          "allow_negative_blend": false,
+          "instruments": {
+            "OGLE-III": {
+              "baseline_magnitude": 19.86799500460988,
+              "source_fraction": 0.28877588932386444,
+              "flux_zero_point": "arbitrary common per-instrument reference magnitude 0",
+              "source_flux_relative": 3.2610910772581864e-09,
+              "blend_flux_relative": 8.031718322077943e-09
+            }
+          }
+        }
+      },
+      {
+        "tE_days": 140.94149683412752,
+        "status": "ADMITTED_BOUNDARY_OPTIMUM",
+        "objective_chi_square": 685.8102783378504,
+        "delta_chi_square": 0.7674575733971096,
+        "optimizer_success": true,
+        "parameters": {
+          "t0": 3775.7794002937085,
+          "tE_days": 140.94149683412752,
+          "u0": 0.0001000000000145346,
+          "time_numeric_origin_jd": 2450000.0,
+          "allow_negative_blend": false,
+          "instruments": {
+            "OGLE-III": {
+              "baseline_magnitude": 19.870994474786027,
+              "source_fraction": 0.22551683655927673,
+              "flux_zero_point": "arbitrary common per-instrument reference magnitude 0",
+              "source_flux_relative": 2.5396927600659083e-09,
+              "blend_flux_relative": 8.721962018416026e-09
+            }
+          }
+        }
+      },
+      {
+        "tE_days": 167.60863083427796,
+        "status": "ADMITTED_BOUNDARY_OPTIMUM",
+        "objective_chi_square": 685.0428207644528,
+        "delta_chi_square": 0.0,
+        "optimizer_success": true,
+        "parameters": {
+          "t0": 3776.240842682764,
+          "tE_days": 167.60863083427802,
+          "u0": 0.00010000000000000026,
+          "time_numeric_origin_jd": 2450000.0,
+          "allow_negative_blend": false,
+          "instruments": {
+            "OGLE-III": {
+              "baseline_magnitude": 19.873967637912294,
+              "source_fraction": 0.17852658933455767,
+              "flux_zero_point": "arbitrary common per-instrument reference magnitude 0",
+              "source_flux_relative": 2.0050068140207375e-09,
+              "blend_flux_relative": 9.225851409923527e-09
+            }
+          }
+        }
+      },
+      {
+        "tE_days": 199.3213763239878,
+        "status": "ADMITTED_INTERIOR_OPTIMUM",
+        "objective_chi_square": 685.4675892709859,
+        "delta_chi_square": 0.4247685065325868,
+        "optimizer_success": true,
+        "parameters": {
+          "t0": 3777.9159417248866,
+          "tE_days": 199.3213763239878,
+          "u0": 0.018309463532834042,
+          "time_numeric_origin_jd": 2450000.0,
+          "allow_negative_blend": false,
+          "instruments": {
+            "OGLE-III": {
+              "baseline_magnitude": 19.87562428120033,
+              "source_fraction": 0.13639523961972233,
+              "flux_zero_point": "arbitrary common per-instrument reference magnitude 0",
+              "source_flux_relative": 1.5295000680171342e-09,
+              "blend_flux_relative": 9.684234900164066e-09
+            }
+          }
+        }
+      },
+      {
+        "tE_days": 237.0343988966212,
+        "status": "ADMITTED_INTERIOR_OPTIMUM",
+        "objective_chi_square": 686.0701721138086,
+        "delta_chi_square": 1.0273513493552855,
+        "optimizer_success": true,
+        "parameters": {
+          "t0": 3779.6175944474912,
+          "tE_days": 237.0343988966213,
+          "u0": 0.02019777043959334,
+          "time_numeric_origin_jd": 2450000.0,
+          "allow_negative_blend": false,
+          "instruments": {
+            "OGLE-III": {
+              "baseline_magnitude": 19.87672483858002,
+              "source_fraction": 0.10423935670375328,
+              "flux_zero_point": "arbitrary common per-instrument reference magnitude 0",
+              "source_flux_relative": 1.1677282505304615e-09,
+              "blend_flux_relative": 1.0034645665198202e-08
+            }
+          }
+        }
+      },
+      {
+        "tE_days": 281.8829936682548,
+        "status": "ADMITTED_INTERIOR_OPTIMUM",
+        "objective_chi_square": 686.7964468311111,
+        "delta_chi_square": 1.75362606665783,
+        "optimizer_success": true,
+        "parameters": {
+          "t0": 3780.704957879118,
+          "tE_days": 281.8829936682548,
+          "u0": 0.018114713269829483,
+          "time_numeric_origin_jd": 2450000.0,
+          "allow_negative_blend": false,
+          "instruments": {
+            "OGLE-III": {
+              "baseline_magnitude": 19.878128064082013,
+              "source_fraction": 0.08174699378377297,
+              "flux_zero_point": "arbitrary common per-instrument reference magnitude 0",
+              "source_flux_relative": 9.145776097171064e-10,
+              "blend_flux_relative": 1.0273327503175901e-08
+            }
+          }
+        }
+      },
+      {
+        "tE_days": 335.2172616685556,
+        "status": "ADMITTED_INTERIOR_OPTIMUM",
+        "objective_chi_square": 687.6279327756356,
+        "delta_chi_square": 2.585112011182332,
+        "optimizer_success": true,
+        "parameters": {
+          "t0": 3781.4353222587906,
+          "tE_days": 335.21726166855547,
+          "u0": 0.015463665981113633,
+          "time_numeric_origin_jd": 2450000.0,
+          "allow_negative_blend": false,
+          "instruments": {
+            "OGLE-III": {
+              "baseline_magnitude": 19.879761890271517,
+              "source_fraction": 0.06526813521223604,
+              "flux_zero_point": "arbitrary common per-instrument reference magnitude 0",
+              "source_flux_relative": 7.291156974610452e-10,
+              "blend_flux_relative": 1.0441966410065684e-08
+            }
+          }
+        }
+      },
+      {
+        "tE_days": 398.64275264797527,
+        "status": "ADMITTED_INTERIOR_OPTIMUM",
+        "objective_chi_square": 688.5173692983935,
+        "delta_chi_square": 3.474548533940265,
+        "optimizer_success": true,
+        "parameters": {
+          "t0": 3781.942269651002,
+          "tE_days": 398.64275264797527,
+          "u0": 0.012984403583993576,
+          "time_numeric_origin_jd": 2450000.0,
+          "allow_negative_blend": false,
+          "instruments": {
+            "OGLE-III": {
+              "baseline_magnitude": 19.881571526681007,
+              "source_fraction": 0.0527970586135216,
+              "flux_zero_point": "arbitrary common per-instrument reference magnitude 0",
+              "source_flux_relative": 5.888180538049199e-10,
+              "blend_flux_relative": 1.0563660308959791e-08
+            }
+          }
+        }
+      },
+      {
+        "tE_days": 474.068797793242,
+        "status": "ADMITTED_INTERIOR_OPTIMUM",
+        "objective_chi_square": 689.4111608000695,
+        "delta_chi_square": 4.3683400356162565,
+        "optimizer_success": true,
+        "parameters": {
+          "t0": 3782.301762974662,
+          "tE_days": 474.0687977932418,
+          "u0": 0.010842347242527115,
+          "time_numeric_origin_jd": 2450000.0,
+          "allow_negative_blend": false,
+          "instruments": {
+            "OGLE-III": {
+              "baseline_magnitude": 19.88350652267278,
+              "source_fraction": 0.04313023603639548,
+              "flux_zero_point": "arbitrary common per-instrument reference magnitude 0",
+              "source_flux_relative": 4.801525346983392e-10,
+              "blend_flux_relative": 1.0652467613569853e-08
+            }
+          }
+        }
+      },
+      {
+        "tE_days": 563.7659873365097,
+        "status": "ADMITTED_INTERIOR_OPTIMUM",
+        "objective_chi_square": 690.2612856524656,
+        "delta_chi_square": 5.218464888012363,
+        "optimizer_success": true,
+        "parameters": {
+          "t0": 3782.5601890812504,
+          "tE_days": 563.7659873365097,
+          "u0": 0.009042441553369824,
+          "time_numeric_origin_jd": 2450000.0,
+          "allow_negative_blend": false,
+          "instruments": {
+            "OGLE-III": {
+              "baseline_magnitude": 19.885515998183955,
+              "source_fraction": 0.03549788798235752,
+              "flux_zero_point": "arbitrary common per-instrument reference magnitude 0",
+              "source_flux_relative": 3.944537737594495e-10,
+              "blend_flux_relative": 1.0717581228308656e-08
+            }
+          }
+        }
+      },
+      {
+        "tE_days": 670.4345233371115,
+        "status": "ADMITTED_INTERIOR_OPTIMUM",
+        "objective_chi_square": 691.0313969676665,
+        "delta_chi_square": 5.988576203213256,
+        "optimizer_success": true,
+        "parameters": {
+          "t0": 3782.747361136159,
+          "tE_days": 670.4345233371116,
+          "u0": 0.007545127603225703,
+          "time_numeric_origin_jd": 2450000.0,
+          "allow_negative_blend": false,
+          "instruments": {
+            "OGLE-III": {
+              "baseline_magnitude": 19.887549414984026,
+              "source_fraction": 0.029384131810579226,
+              "flux_zero_point": "arbitrary common per-instrument reference magnitude 0",
+              "source_flux_relative": 3.2590655644217893e-10,
+              "blend_flux_relative": 1.0765336790242039e-08
+            }
+          }
+        }
+      }
+    ]
+  },
+  "timescale_crossings": {
+    "reference_delta_chi_square": 1.0,
+    "lower_days": 137.73481909144016,
+    "upper_days": 235.754276488369,
+    "coverage_claim": false,
+    "grid_min_days": 41.90215770856947,
+    "grid_max_days": 670.4345233371115,
+    "refinement_rows": [
+      {
+        "tE_days": 129.2439224522133,
+        "status": "ADMITTED_BOUNDARY_OPTIMUM",
+        "objective_chi_square": 686.8541734011831,
+        "delta_chi_square": 1.8113526367297936,
+        "optimizer_success": true,
+        "parameters": {
+          "t0": 3775.505836516478,
+          "tE_days": 129.24392245221327,
+          "u0": 0.0001000000007312715,
+          "time_numeric_origin_jd": 2450000.0,
+          "allow_negative_blend": false,
+          "instruments": {
+            "OGLE-III": {
+              "baseline_magnitude": 19.869497333181435,
+              "source_fraction": 0.25470713224432373,
+              "flux_zero_point": "arbitrary common per-instrument reference magnitude 0",
+              "source_flux_relative": 2.8723818435191054e-09,
+              "blend_flux_relative": 8.404812549152314e-09
+            }
+          }
+        }
+      },
+      {
+        "tE_days": 134.96603975492815,
+        "status": "ADMITTED_BOUNDARY_OPTIMUM",
+        "objective_chi_square": 686.2713533324713,
+        "delta_chi_square": 1.2285325680180676,
+        "optimizer_success": true,
+        "parameters": {
+          "t0": 3775.646623841093,
+          "tE_days": 134.96603975492815,
+          "u0": 0.00010000000000000026,
+          "time_numeric_origin_jd": 2450000.0,
+          "allow_negative_blend": false,
+          "instruments": {
+            "OGLE-III": {
+              "baseline_magnitude": 19.87024668604814,
+              "source_fraction": 0.23956068233020264,
+              "flux_zero_point": "arbitrary common per-instrument reference magnitude 0",
+              "source_flux_relative": 2.699708456908316e-09,
+              "blend_flux_relative": 8.569705332734867e-09
+            }
+          }
+        }
+      },
+      {
+        "tE_days": 137.92141119069925,
+        "status": "ADMITTED_BOUNDARY_OPTIMUM",
+        "objective_chi_square": 686.0260333886743,
+        "delta_chi_square": 0.9832126242209824,
+        "optimizer_success": true,
+        "parameters": {
+          "t0": 3775.7139765142024,
+          "tE_days": 137.92141119069922,
+          "u0": 0.00010000000000000026,
+          "time_numeric_origin_jd": 2450000.0,
+          "allow_negative_blend": false,
+          "instruments": {
+            "OGLE-III": {
+              "baseline_magnitude": 19.870620789984514,
+              "source_fraction": 0.23240748020780033,
+              "flux_zero_point": "arbitrary common per-instrument reference magnitude 0",
+              "source_flux_relative": 2.618193775546824e-09,
+              "blend_flux_relative": 8.647337666065309e-09
+            }
+          }
+        }
+      },
+      {
+        "tE_days": 136.43572356908476,
+        "status": "ADMITTED_BOUNDARY_OPTIMUM",
+        "objective_chi_square": 686.1449430516062,
+        "delta_chi_square": 1.1021222871529517,
+        "optimizer_success": true,
+        "parameters": {
+          "t0": 3775.680545732199,
+          "tE_days": 136.43572356908473,
+          "u0": 0.00010000000000000026,
+          "time_numeric_origin_jd": 2450000.0,
+          "allow_negative_blend": false,
+          "instruments": {
+            "OGLE-III": {
+              "baseline_magnitude": 19.870433788909935,
+              "source_fraction": 0.2359504748521936,
+              "flux_zero_point": "arbitrary common per-instrument reference magnitude 0",
+              "source_flux_relative": 2.6585653499676523e-09,
+              "blend_flux_relative": 8.608906570286193e-09
+            }
+          }
+        }
+      },
+      {
+        "tE_days": 137.1765560563186,
+        "status": "ADMITTED_BOUNDARY_OPTIMUM",
+        "objective_chi_square": 686.0845574673799,
+        "delta_chi_square": 1.0417367029266416,
+        "optimizer_success": true,
+        "parameters": {
+          "t0": 3775.697322058616,
+          "tE_days": 137.17655605631862,
+          "u0": 0.00010000000000793205,
+          "time_numeric_origin_jd": 2450000.0,
+          "allow_negative_blend": false,
+          "instruments": {
+            "OGLE-III": {
+              "baseline_magnitude": 19.870527301866773,
+              "source_fraction": 0.23417067361109695,
+              "flux_zero_point": "arbitrary common per-instrument reference magnitude 0",
+              "source_flux_relative": 2.6382842479027764e-09,
+              "blend_flux_relative": 8.628217262377514e-09
+            }
+          }
+        }
+      },
+      {
+        "tE_days": 137.5484794302268,
+        "status": "ADMITTED_BOUNDARY_OPTIMUM",
+        "objective_chi_square": 686.0550635940798,
+        "delta_chi_square": 1.0122428296265298,
+        "optimizer_success": true,
+        "parameters": {
+          "t0": 3775.70566437074,
+          "tE_days": 137.5484794302268,
+          "u0": 0.00010000000000000026,
+          "time_numeric_origin_jd": 2450000.0,
+          "allow_negative_blend": false,
+          "instruments": {
+            "OGLE-III": {
+              "baseline_magnitude": 19.870574049414103,
+              "source_fraction": 0.23328701508763305,
+              "flux_zero_point": "arbitrary common per-instrument reference magnitude 0",
+              "source_flux_relative": 2.6282153447213957e-09,
+              "blend_flux_relative": 8.63780108458617e-09
+            }
+          }
+        }
+      },
+      {
+        "tE_days": 137.73481909144016,
+        "status": "ADMITTED_BOUNDARY_OPTIMUM",
+        "objective_chi_square": 686.0404906397404,
+        "delta_chi_square": 0.9976698752871016,
+        "optimizer_success": true,
+        "parameters": {
+          "t0": 3775.7098242183374,
+          "tE_days": 137.73481909144022,
+          "u0": 0.00010000000000000026,
+          "time_numeric_origin_jd": 2450000.0,
+          "allow_negative_blend": false,
+          "instruments": {
+            "OGLE-III": {
+              "baseline_magnitude": 19.870597420513658,
+              "source_fraction": 0.232846733423344,
+              "flux_zero_point": "arbitrary common per-instrument reference magnitude 0",
+              "source_flux_relative": 2.623198657782475e-09,
+              "blend_flux_relative": 8.642575266617732e-09
+            }
+          }
+        }
+      },
+      {
+        "tE_days": 217.3615021667905,
+        "status": "ADMITTED_INTERIOR_OPTIMUM",
+        "objective_chi_square": 685.7543392960447,
+        "delta_chi_square": 0.7115185315914232,
+        "optimizer_success": true,
+        "parameters": {
+          "t0": 3778.8679116795297,
+          "tE_days": 217.36150216679056,
+          "u0": 0.0202581205304296,
+          "time_numeric_origin_jd": 2450000.0,
+          "allow_negative_blend": false,
+          "instruments": {
+            "OGLE-III": {
+              "baseline_magnitude": 19.876130902629193,
+              "source_fraction": 0.11877374313733748,
+              "flux_zero_point": "arbitrary common per-instrument reference magnitude 0",
+              "source_flux_relative": 1.3312759376752284e-09,
+              "blend_flux_relative": 9.877227747654287e-09
+            }
+          }
+        }
+      },
+      {
+        "tE_days": 226.98491802181883,
+        "status": "ADMITTED_INTERIOR_OPTIMUM",
+        "objective_chi_square": 685.9083242460639,
+        "delta_chi_square": 0.8655034816106308,
+        "optimizer_success": true,
+        "parameters": {
+          "t0": 3779.2642543077636,
+          "tE_days": 226.9849180218189,
+          "u0": 0.020377359730414792,
+          "time_numeric_origin_jd": 2450000.0,
+          "allow_negative_blend": false,
+          "instruments": {
+            "OGLE-III": {
+              "baseline_magnitude": 19.876417805757132,
+              "source_fraction": 0.11117212099981623,
+              "flux_zero_point": "arbitrary common per-instrument reference magnitude 0",
+              "source_flux_relative": 1.24574389966668e-09,
+              "blend_flux_relative": 9.959798357359605e-09
+            }
+          }
+        }
+      },
+      {
+        "tE_days": 231.95524051398507,
+        "status": "ADMITTED_INTERIOR_OPTIMUM",
+        "objective_chi_square": 685.9882468383007,
+        "delta_chi_square": 0.9454260738474431,
+        "optimizer_success": true,
+        "parameters": {
+          "t0": 3779.4459100433282,
+          "tE_days": 231.9552405139852,
+          "u0": 0.02031729035440211,
+          "time_numeric_origin_jd": 2450000.0,
+          "allow_negative_blend": false,
+          "instruments": {
+            "OGLE-III": {
+              "baseline_magnitude": 19.876568890061105,
+              "source_fraction": 0.10762753533713837,
+              "flux_zero_point": "arbitrary common per-instrument reference magnitude 0",
+              "source_flux_relative": 1.2058570839852311e-09,
+              "blend_flux_relative": 9.998125987892599e-09
+            }
+          }
+        }
+      },
+      {
+        "tE_days": 234.48106747913286,
+        "status": "ADMITTED_INTERIOR_OPTIMUM",
+        "objective_chi_square": 686.0289578376965,
+        "delta_chi_square": 0.9861370732431851,
+        "optimizer_success": true,
+        "parameters": {
+          "t0": 3779.532951958506,
+          "tE_days": 234.48106747913295,
+          "u0": 0.0202641845771647,
+          "time_numeric_origin_jd": 2450000.0,
+          "allow_negative_blend": false,
+          "instruments": {
+            "OGLE-III": {
+              "baseline_magnitude": 19.87664626937022,
+              "source_fraction": 0.10591452894494299,
+              "flux_zero_point": "arbitrary common per-instrument reference magnitude 0",
+              "source_flux_relative": 1.1865800200067954e-09,
+              "blend_flux_relative": 1.0016604583907265e-08
+            }
+          }
+        }
+      },
+      {
+        "tE_days": 235.754276488369,
+        "status": "ADMITTED_INTERIOR_OPTIMUM",
+        "objective_chi_square": 686.0495019621397,
+        "delta_chi_square": 1.0066811976864756,
+        "optimizer_success": true,
+        "parameters": {
+          "t0": 3779.575557445252,
+          "tE_days": 235.754276488369,
+          "u0": 0.020232534975952243,
+          "time_numeric_origin_jd": 2450000.0,
+          "allow_negative_blend": false,
+          "instruments": {
+            "OGLE-III": {
+              "baseline_magnitude": 19.876685427306988,
+              "source_fraction": 0.10507234668852984,
+              "flux_zero_point": "arbitrary common per-instrument reference magnitude 0",
+              "source_flux_relative": 1.1771024428199355e-09,
+              "blend_flux_relative": 1.0025678116647984e-08
+            }
+          }
+        }
+      }
+    ],
+    "status": "BOTH_REFERENCE_LEVEL_CROSSINGS_FOUND_NOT_COVERAGE"
+  },
+  "followup_conditions": {
+    "adequate_baseline_chi_square": false,
+    "multistart_confirmed": true,
+    "locally_identified_timescale": false,
+    "both_profile_crossings": true,
+    "no_temporal_or_seasonal_flags": true,
+    "PSPL_beats_linear_trend": true,
+    "no_active_bounds": false,
+    "sensitivity_stable": true,
+    "long_duration_priority_context": true
+  }
+}

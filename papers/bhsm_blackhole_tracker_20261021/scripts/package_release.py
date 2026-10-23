@@ -45,7 +45,11 @@ mf.write_text(json.dumps(manifest,indent=2)+'\n',encoding='utf8')
 files.append(mf)
 zip_path=OUTPUT/'BHSM_Blackhole_Tracker_Source.zip'
 with zipfile.ZipFile(zip_path,'w',zipfile.ZIP_DEFLATED,compresslevel=9) as z:
-    for path in files:z.write(path,path.relative_to(REPO).as_posix())
+    for path in files:
+        info=zipfile.ZipInfo(path.relative_to(REPO).as_posix(),date_time=(1980,1,1,0,0,0))
+        info.compress_type=zipfile.ZIP_DEFLATED
+        info.external_attr=0o100644 << 16
+        z.writestr(info,path.read_bytes(),compresslevel=9)
 shutil.copy2(ROOT/'manuscript/main.pdf',OUTPUT/'BHSM_Blackhole_Tracker_Manuscript.pdf')
 for name in ['LAY_REPORT.md','RESULT_STATEMENT.md','VALIDATION.md','CHAIN_AND_FREEDOMS.md','GIT_HANDOFF.md']:
     shutil.copy2(ROOT/name,OUTPUT/name)

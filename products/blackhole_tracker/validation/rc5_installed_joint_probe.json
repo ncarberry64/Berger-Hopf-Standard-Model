@@ -1,0 +1,167 @@
+{
+  "schema": "bhtracker.installed_joint_probe.v1",
+  "passed": true,
+  "prefix": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_real_data_corrections_20261022\\release_rc5\\package_install_u3rfmlbp\\clean_venv",
+  "bhtracker_file": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_real_data_corrections_20261022\\release_rc5\\package_install_u3rfmlbp\\clean_venv\\Lib\\site-packages\\bhtracker\\__init__.py",
+  "editable": false,
+  "versions": {
+    "product": "0.2.0rc5",
+    "python": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "astropy": "8.0.2"
+  },
+  "synthetic_control": {
+    "identified_as_synthetic": true,
+    "expected_mass_msun": 4.911679845005677,
+    "fitted_mass_msun": 4.911679845005586,
+    "objective_deviance": 1.5028863628960513e-23,
+    "zero_parallax_mass_unavailable": true,
+    "scientific_source_sha256": "6eaf050481fc23aebf4b929e49fdab57e324ee80eb08e1547b69f056269eeaaa"
+  },
+  "synthetic_replay": {
+    "schema": "bhtracker.joint_replay.v2",
+    "passed": true,
+    "checks": {
+      "objective_deviance": true,
+      "photometric_predictions_magnitude": true,
+      "astrometric_predictions_NE_mas": true
+    },
+    "input_sha256": "4b54c6bbcba732997aef0e772a1edfb30b0e8c5a83f9293386c87fc24d5c576a",
+    "scientific_source_sha256": "6eaf050481fc23aebf4b929e49fdab57e324ee80eb08e1547b69f056269eeaaa",
+    "max_photometric_difference_mag": 0.0,
+    "max_astrometric_difference_mas": 0.0,
+    "same_physical_parameters": true,
+    "same_native_residuals": true,
+    "same_recorded_diagnostic_gates": true,
+    "method": "FORWARD_STATE_REPLAY; optimization and scientific acceptance are separate"
+  },
+  "native_sourcepack": {
+    "archive_sha256": "71d36a03e4ba275e91bea62f4784a5193f34ad32d3777b637453f91151bafa99",
+    "summary": {
+      "schema": "bhtracker.native_joint_mass.v1",
+      "sha256": "d4fc2bfc9320c7eab8a33b93517f68f035a5d498ffb35ff548a638648143af96",
+      "target": "OGLE-2011-BLG-0462/MOA-2011-BLG-191",
+      "input_hash_algorithm": "bhtracker.canonical_numeric_json.v2",
+      "photometry_rows": 12521,
+      "astrometry_rows": 21,
+      "time_coordinate": "JD_TDB",
+      "metadata": {
+        "ra_axis": "EAST_TANGENT_ALPHA_COS_DEC",
+        "time_and_frame_provenance": {
+          "OGLE": "Native full HJD. Underlying clock unspecified in author deposit; explicitly assumed HJD_UTC, inverted heliocentric light time at geocentre then converted TDB. Earth-surface light time <=0.0213sec omitted; +/-120sec clock sensitivity required.",
+          "OGLE_clock_offset_seconds": 0.0,
+          "HST": "Calendar dates mapped by program/filter/count/duration to82 complete MAST FLC primary headers. UTC default crosschecked to DATE/TIME-OBS; exposure midpoints derived. Original combined centroid/photometry weighting unknown; full-window sensitivity required.",
+          "frame": "Published relative alpha_star/east,delta/north tangent plane, inherited Lam2022 ApJS26055 section5. Relative frame position/motion/parallax nuisance; no absolute Gaia transform asserted."
+        },
+        "selection": "All15533 source rows retained. Primary fit uses published2023 HJD2455376..2457700 window; all-row sensitivity mandatory.",
+        "calibration": "Published2023 neighbor-bias corrections and additive photometric/astrometric errors are already applied. No2022 filter correction reapplied. Full cross-covariance not supplied.",
+        "licenses": [
+          {
+            "source": "LamLu2023 arXiv2308.03302v2",
+            "license": "CC-BY4.0",
+            "url": "https://arxiv.org/abs/2308.03302"
+          },
+          {
+            "source": "Mroz2022 correctedOGLE Zenodo20056044",
+            "license": "CC-BY4.0",
+            "url": "https://doi.org/10.5281/zenodo.20056044"
+          }
+        ],
+        "source_urls": [
+          "https://arxiv.org/src/2308.03302v2",
+          "https://zenodo.org/api/records/20056044/files/OGLE-2011-BLG-0462-new.txt/content"
+        ]
+      },
+      "data_version": "OGLE-Mroz2022-corrected_LamLu2023v2-HST21-MAST82.v1",
+      "analysis": null,
+      "bounds": null,
+      "fit_readiness": "DECLARED_ANALYSIS_DOMAIN",
+      "effective_physical_search_bounds": {
+        "t0_jd_tdb": [
+          2455700.0,
+          2455830.0
+        ],
+        "tE_days": [
+          19.999999999999996,
+          1999.9999999999998
+        ],
+        "u0_heliocentric": [
+          -1.0,
+          1.0
+        ],
+        "pi_E": [
+          0.0,
+          1.0
+        ],
+        "theta_E_mas": [
+          0.01,
+          40.0
+        ],
+        "relative_frame_source_parallax_mas": [
+          -1.0,
+          1.0
+        ],
+        "qualification": "Declared search domains; artificial caps are not observational limits."
+      },
+      "unavailable": [
+        "absolute source parallax",
+        "absolute lens proper motion",
+        "lens distance",
+        "horizon",
+        "core state"
+      ]
+    }
+  },
+  "archived_state_replay": {
+    "schema": "bhtracker.joint_replay.v2",
+    "passed": true,
+    "checks": {
+      "objective_deviance": true,
+      "photometric_predictions_magnitude": true,
+      "astrometric_predictions_NE_mas": true
+    },
+    "input_sha256": "d4fc2bfc9320c7eab8a33b93517f68f035a5d498ffb35ff548a638648143af96",
+    "scientific_source_sha256": "6eaf050481fc23aebf4b929e49fdab57e324ee80eb08e1547b69f056269eeaaa",
+    "max_photometric_difference_mag": 0.0,
+    "max_astrometric_difference_mas": 2.930988785010413e-14,
+    "same_physical_parameters": true,
+    "same_native_residuals": true,
+    "same_recorded_diagnostic_gates": true,
+    "method": "FORWARD_STATE_REPLAY; optimization and scientific acceptance are separate"
+  },
+  "native_export_replay": {
+    "schema": "bhtracker.joint_replay.v2",
+    "passed": true,
+    "checks": {
+      "objective_deviance": true,
+      "photometric_predictions_magnitude": true,
+      "astrometric_predictions_NE_mas": true
+    },
+    "input_sha256": "d4fc2bfc9320c7eab8a33b93517f68f035a5d498ffb35ff548a638648143af96",
+    "scientific_source_sha256": "6eaf050481fc23aebf4b929e49fdab57e324ee80eb08e1547b69f056269eeaaa",
+    "max_photometric_difference_mag": 0.0,
+    "max_astrometric_difference_mas": 2.930988785010413e-14,
+    "same_physical_parameters": true,
+    "same_native_residuals": true,
+    "same_recorded_diagnostic_gates": true,
+    "method": "FORWARD_STATE_REPLAY; optimization and scientific acceptance are separate"
+  },
+  "archived_result_sha256": "0d1b9d5471d7030843aeef0bb1f5d5e1ca475907109514e08c42f1260bb67f54",
+  "archived_mass_status": "PROFILE_AND_SYSTEMATICS_REQUIRED",
+  "qualification": "Recorded state replay is numerical verification, not scientific acceptance or optimization.",
+  "installed_web_resources": {
+    "/joint": {
+      "status": 200,
+      "bytes": 11158
+    },
+    "/joint.js": {
+      "status": 200,
+      "bytes": 14713
+    },
+    "/api/health": {
+      "status": 200,
+      "bytes": 615
+    }
+  }
+}

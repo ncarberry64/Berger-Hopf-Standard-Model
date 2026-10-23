@@ -1,4 +1,64 @@
-# Blackhole Tracker 0.2.0rc2
+# Blackhole Tracker 0.2.0rc6
+
+This candidate makes the author-defined BHSM surface interpretation explicit: supported gravitational geometry is surface topography, with one Einstein/GHY exterior response counted once. A nonrejected light curve remains conditional evidence and does not by itself validate a gravitational origin or identify a black hole. The original core/surface contract and numerical fitting kernels remain preserved.
+
+The installed evidence spectrum retains all 1,808 model records, their exact investigation categories, alternative modes, failed models and unavailable physical fields. Moving-lens filters distinguish available measurements from missing track data; short event duration is never substituted for angular speed, proximity, mass or black-hole identity. The frozen viewer and its JSON, CSV, source bindings and figures have byte-verified transport and export.
+
+The primary-target workspace designates previously published Gaia18ajz for independent investigation, preserves all eight published model/prior/near--far alternatives and keeps the known-black-hole benchmark and brown-dwarf comparison separate. This is a research priority, not a new discovery or calibrated black-hole ranking. The source-pinned program explicitly holds scientific publication for independent evidence review.
+
+A separate moving-lens workspace and Python/CLI route fit supplied lens angular positions and covariance across explicit native epochs. They report full motion covariance, residual and stationary-motion statistics, preserve uncertainty/frame/source assumptions and export a reproducible replay. Source directions and raw source centroids cannot silently become lens positions. Synthetic controls test the implementation; this release does not establish independent known-black-hole recognition or a new black hole.
+
+Qualified catalog-membership aliases are included in spectrum search. The v11 viewer revision is distinct from the unchanged v10 data; replay checks exact subset and record agreement. A source-package helper reproduces and hash-checks the frozen Gaia18ajz public context, retaining failed responses without adopting them as new observations.
+
+The historical pilot, joint benchmark failures and earlier releases remain versioned evidence. The release-specific receipt binds installation, export/replay, manuscript review and hosted CI to their exact revisions.
+
+## Previous release candidate 0.2.0rc5
+
+This candidate adds an offline candidate atlas to the local app, CLI and Python API. It retains 155 distinct historical source/event directions from the full 100-event pilot and all 59 published parallax events, reconciles four overlaps, and keeps the known published black-hole benchmark separate from the cohort and from engine validation.
+
+Three records are investigation targets: two frozen photometric followups and disputed, prior-dependent PAR-13. Literature revisions, conflicting source-motion information, all failed pilot models and missing observations remain visible. No new black-hole identification, measured lens mass, three-dimensional position or propagated lens trajectory is claimed. J2000 catalog equinox is distinct from an observation epoch.
+
+The atlas supports search, evidence/cohort/quality filters, a sky map, conditional literature assessments, CSV export and full inventory replay. Exact UTF-8 text and hashes preserve unselected records and unavailable fields across browser and Python. Hash verification establishes consistency; scientific inference and source authenticity require their own evidence. A portable metadata package independently rebuilds the same inventory offline without redistributing native photometry or full source articles.
+
+`Start_Blackhole_Tracker_Atlas.cmd` and `serve --page atlas` open the atlas directly. The explicit Joint launcher opens its joint workspace. Existing fitting methods, native observations and frozen campaigns retain their versions and outcomes. BHSM remains one Einstein/GHY exterior response counted once, with core, horizon and membrane quantities unavailable.
+
+## Previous release candidate 0.2.0rc4
+
+This candidate adds a separately versioned joint photometry/parallax and angular-centroid research route, with CLI, Python, browser workspace and a fourth notebook. The app directly imports the hash-verified 2023 known-system source ZIP, preserves native rows, clocks, calibration and exclusions, and exports all-row diagnostics with pinned BHSM interpretation sources and software provenance. Lossless browser JSON transport retains archived v1 numeric hashes; v2 hashes canonicalize numeric meaning. Saved-state replay is explicitly distinct from a new fit or scientific validation.
+
+The known-system campaign retains all failed alternatives. All three declared v2 noise models fail at least one adequacy check, and a calibration competitor reaches an artificial correlation-time cap with unstable mass. No conditional point mass is promoted to a reliable black-hole measurement. The frozen 100-event pilot and its two mass-unresolved archival follow-ups remain unchanged. No new black-hole interpretation is established. See the separate protocol, validation and manuscript records for complete outcomes.
+
+Reopening and exporting a joint result now recomputes its diagnostic gates from the saved state and native residuals. Edited adequacy labels, cleared failed bins, invented distances and altered BHSM interpretation are rejected. Profile jobs include their complete retained mode search in their identity, and unsuccessful fits provide an explicit diagnostic download without displaying physical parameters.
+
+Windows launchers now read the actual package version. The explicit Joint launcher opts into Astropy; base installation remains usable without it. Linux/Windows CI tests both joint versions and checks a separate noneditable optional wheel installation. The proper-motion-only historical regression floor is 1e-11 mas/year, justified by the independent precision audit; predictions, mass, chi-square and original fixtures keep their strict checks.
+
+The ordinary compact-lens response retains its BHSM Einstein/GHY interpretation with one potential counted once. The joint route adds no core, envelope or membrane force and supplies no horizon, core-state, absolute lens-motion or lens-distance measurement. Software verification and scientific acceptance remain separate.
+
+```text
+python -m pip install "./bhsm_blackhole_tracker-0.2.0rc4-py3-none-any.whl[astrometry]"
+python -m bhtracker serve --open
+python -m bhtracker joint --help
+```
+
+## Previous release candidate 0.2.0rc3
+
+The reviewed corrections make physical fits independent of numerical epoch and mass references, genuinely profile physically admitted nuisance states, and report unidentified motion covariance as unavailable. Reporting-basis and covariance contracts are versioned; legacy internal profiles require a raw-input refit. Explicit physical bounds and full measurement covariance remain enforced. The historical covariance-only regression tolerance is now 1e-9, justified by independent derivative-step resolution checks; optical/prediction and admission checks retain their original thresholds.
+
+A separate native unresolved-photometry route is available in the app at `/photometry`, CLI, Python and a third executed notebook. It preserves every native observation, error, time convention, calibration, source hash and row identity. Exports and replay retain the exact likelihood controls. Photometry leaves mass, distance, absolute angular motion, horizon and core quantities unavailable.
+
+The frozen supplied 100-event / 76,344-row pilot records 89 inadequate simple-model fits and 11 non-rejected photometric fits. Two historical archival follow-ups pass stricter checks; neither has a measured mass. Five photometry-only analyses of the corresponding 2022 benchmark remain inadequate. Specific HST time/frame metadata gaps block its precision joint mass inference. No mass-supported black-hole candidate or new black-hole interpretation is claimed.
+
+The BHSM radial membrane source now states its fixed Minkowski background, constant-tension and pressure-work assumptions. Both handoff versions and both original documents are preserved and reconciled in the formal repository. This changes no optical force or fitted core parameter: one potential is counted once.
+
+Validation: 182 product tests; clean noneditable wheel installation; resolved and actual native app fit/export/replay; unidentified-covariance replay; and three installed-wheel notebooks. Saved predictions replay exactly, with native row identities and BHSM interpretation unchanged. The new likelihood's actual-cadence injection checks are separate from historical synthetic coverage campaigns, which retain their original versions and limitations.
+
+```text
+python -m pip install bhsm_blackhole_tracker-0.2.0rc3-py3-none-any.whl
+python -m bhtracker serve --open
+python -m bhtracker replay analysis.zip --output replayed
+```
+
+## Previous release candidate 0.2.0rc2
 
 This release fixes the trajectory date-label rounding defect and integrates Norman P. Carberry's dated core/surface amendment through the shared BHSM interpretation. It preserves the ordinary compact-lens engine, one-potential accounting, supplied radius and the conditional R1 metric/source-mass distinction.
 

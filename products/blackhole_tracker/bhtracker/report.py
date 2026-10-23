@@ -11,6 +11,10 @@ import numpy as np
 from .provenance import REPOSITORY_URL, project_citation
 
 def report_html(result):
+    from .joint_report import is_joint_result,report_html as joint_html
+    if is_joint_result(result):return joint_html(result)
+    from .unresolved_report import is_unresolved_result,report_html as unresolved_html
+    if is_unresolved_result(result):return unresolved_html(result)
     r=result;e=r['estimates'];u=r['uncertainty']
     escape=lambda value:html.escape(str(value))
     def fmt(v):
@@ -23,7 +27,9 @@ def report_html(result):
            ('Proper motion (mas / observer year)',e['proper_motion_mas_yr'],u['proper_motion_mas_yr'])]
     rows=''.join(f'<tr><th>{label}</th><td>{fmt(value)}</td><td>{fmt(err)}</td></tr>' for label,value,err in items)
     diagnostics=''.join(f"<li><strong>{escape(item['code'])}</strong>: {escape(item['message'])}</li>" for item in r['diagnostics'])
-    from .interpretation import bhsm_interpretation
+    from .interpretation import bhsm_interpretation,surface_geometry_interpretation
+    geometry=surface_geometry_interpretation()
+    geometry_html=''.join(f'<p>{escape(geometry[key])}</p>' for key in ('definition','summary','evidence_scope','unidentified_scope'))
     interpretation=r.get('bhsm_interpretation') or bhsm_interpretation(r['model']['family'],e,u,r['model'],r['status'])
     meanings=''.join(f"<tr><th>{escape(item['parameter'])}</th><td>{escape(item['interpretation'])}<br><small>{escape(item['qualification'])}</small></td></tr>" for item in interpretation['parameter_meanings'])
     boundary=interpretation.get('spherical_boundary',{})
@@ -44,13 +50,17 @@ def report_html(result):
 <p>Reference epoch {fmt(r['reference_epoch_yr'])}; family {escape(r['model']['family'])}; nuisance {escape(r['model']['nuisance'])}.</p>
 <table><tr><th>Quantity</th><th>Estimate</th><th>Local 1σ</th></tr>{rows}</table>
 <p>χ² {fmt(r['chi2'])} for {r['dof']} degrees of freedom; goodness-of-fit p={fmt(r['goodness_of_fit_p'])}. Uncertainties are local known-covariance approximations; active bounds and nulls require the stated qualification.</p>
-<h2>BHSM interpretation</h2><p>{escape(interpretation['model_role'])}</p><p>{escape(interpretation['one_potential_rule'])}</p><p>{escape(interpretation['inference_scope'])}</p>{core_html}{boundary_html}<details><summary>Parameter interpretation</summary><table>{meanings}</table><p>{escape(interpretation['conditional_extension'])}</p></details>
+<h2>BHSM interpretation</h2>{geometry_html}<p>{escape(interpretation['one_potential_rule'])}</p><p>{escape(interpretation['inference_scope'])}</p>{core_html}{boundary_html}<details><summary>Parameter interpretation</summary><table>{meanings}</table><p>{escape(interpretation['conditional_extension'])}</p></details>
 <h2>Fit diagnostics</h2><ul>{diagnostics}</ul><h2>Conditional envelope</h2><pre>{escape(json.dumps(r['conditional_envelope'],indent=2))}</pre>
 <h2>Model and domain</h2><pre>{escape(json.dumps(r['model'],indent=2))}</pre><pre>{escape(json.dumps(r.get('physics_admission'),indent=2))}</pre>
 <h2>Reproduction</h2><pre>{escape(json.dumps(r['data_summary'],indent=2))}</pre><pre>{escape(json.dumps(r['runtime'],indent=2))}</pre>
 <p><small>Product {escape(r['product_version'])}. A compact exterior fit does not identify a horizon. Synthetic examples and supplied uncertainties are not empirical detections or instrument forecasts. Full measurements, covariance, predictions and parameter covariance accompany the JSON export.</small></p></html>'''
 
 def export_result(result,directory):
+    from .joint_report import is_joint_result,export_result as export_joint
+    if is_joint_result(result):return export_joint(result,directory)
+    from .unresolved_report import is_unresolved_result,export_result as export_unresolved
+    if is_unresolved_result(result):return export_unresolved(result,directory)
     dest=Path(directory);dest.mkdir(parents=True,exist_ok=True)
     from .data import load_dataset
     if 'dataset_input' not in result or 'analysis_configuration' not in result:
@@ -165,14 +175,26 @@ def replay_analysis(source,output):
         try:
             with zipfile.ZipFile(source) as archive:
                 infos=archive.infolist()
-                if sum(i.file_size for i in infos)>100_000_000:raise ValueError('replay ZIP exceeds 100 MB uncompressed limit')
                 if len({i.filename for i in infos})!=len(infos):raise ValueError('replay ZIP contains duplicate filenames')
+                manifest_info=archive.getinfo('manifest.json')
+                if manifest_info.file_size>1_000_000:raise ValueError('replay manifest exceeds 1 MB limit')
+                early=read_json(archive.read(manifest_info))
+                # The large native-observation route retains every benchmark row.
+                # Its versioned limit never changes the resolved bundle limit.
+                limit=256_000_000 if early.get('schema') in {'bhtracker.unresolved_analysis_bundle.v1','bhtracker.joint_analysis_bundle.v1'} else 100_000_000
+                if sum(i.file_size for i in infos)>limit:raise ValueError(f'replay ZIP exceeds {limit//1_000_000} MB uncompressed limit')
                 content={i.filename:archive.read(i) for i in infos}
         except zipfile.BadZipFile as error:raise ValueError('replay requires an exported analysis directory or valid ZIP') from error
         def read(name):
             if name not in content:raise ValueError(f'replay ZIP is missing {name}')
             return content[name]
         manifest=read_json(read('manifest.json'))
+    if manifest.get('schema')=='bhtracker.unresolved_analysis_bundle.v1':
+        from .unresolved_report import replay_analysis as replay_unresolved
+        return replay_unresolved(read,manifest,output)
+    if manifest.get('schema')=='bhtracker.joint_analysis_bundle.v1':
+        from .joint_report import replay_bundle
+        return replay_bundle(read,manifest,output)
     if manifest.get('schema')!='bhtracker.analysis_bundle.v1':raise ValueError('manifest is not a version-1 analysis replay bundle')
     for required in ('dataset.json','analysis_config.json','result.json','software_provenance.json'):
         if required not in manifest.get('files',{}):raise ValueError(f'manifest must include {required}')
@@ -194,6 +216,19 @@ def replay_analysis(source,output):
            'original_interpretation_schema_version':old.get('bhsm_interpretation',{}).get('interpretation_schema_version',1),
            'current_interpretation_schema_version':result['bhsm_interpretation']['interpretation_schema_version'],
            'same_interpretation':old.get('bhsm_interpretation')==result['bhsm_interpretation']}
+    old_basis=old.get('model',{}).get('parameter_basis')
+    check['parameter_basis_handling']={
+        'original':old_basis or 'LEGACY_RESOLVED_INTERNAL_BASIS_V1',
+        'current':result['model'].get('parameter_basis'),
+        'method':'Refit preserved raw observations/configuration. Saved internal coordinates are never interpreted in a new basis.',
+        'migration':old_basis!=result['model'].get('parameter_basis')}
+    old_worldtube=old.get('model',{}).get('r0_pc')
+    new_worldtube=result['model'].get('r0_pc')
+    check['same_physical_worldtube']=bool(old_worldtube is not None and new_worldtube is not None and
+        np.isclose(old_worldtube,new_worldtube,rtol=1e-12,atol=0))
+    if not check['same_physical_worldtube']:
+        check['passed']=False
+        check['model_migration_required']='The historical default worldtube differs. Retain the matching historical wheel, or explicitly refit with the intended physical worldtube as a new analysis.'
     export_result(result,output)
     (Path(output)/'replay_check.json').write_text(json.dumps(check,indent=2)+'\n',encoding='utf8')
     if not check['passed']:raise ValueError(f'replay differs from saved result: inspect {Path(output)/"replay_check.json"}')

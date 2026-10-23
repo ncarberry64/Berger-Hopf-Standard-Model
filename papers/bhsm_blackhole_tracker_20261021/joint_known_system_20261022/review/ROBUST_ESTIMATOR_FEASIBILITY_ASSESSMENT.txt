@@ -1,0 +1,131 @@
+BOUNDED INDEPENDENT FEASIBILITY ASSESSMENT — NO NEW FIT OR BOOTSTRAP
+2026-10-22. Current frozen v2 Gaussian campaign remains stopped/inadequate.
+
+Conclusion
+
+A native weighted nonlinear estimating-equation estimator with cluster/block
+robust inference is a principled, genuinely separate research route. Failure of
+the frozen Gaussian covariance families does not logically prove that every
+correct-mean estimator will fail. It would be too strong to declare new external
+observations the only mathematically possible path from the present results.
+However, saved G0 does not establish the zero-mean, inter-night independence and
+finite/high-leverage angular-cluster conditions needed to accept a reliable mass.
+No sandwich mass error, bootstrap sample, mass test or new acceptance result has
+been calculated in this assessment.
+
+What the estimator would assume
+
+Let beta contain the nonlinear PSPL/parallax geometry, source fractions and
+baselines, theta_E and the relative angular-frame nuisance parameters. Keep the
+native reported errors unchanged and use fixed positive working weights W_c.
+For cluster c, with physical forward mean mu_c(beta), residual r_c=y_c-mu_c and
+Jacobian D_c=dmu_c/dbeta, solve
+
+    U(beta) = sum_c D_c' W_c r_c = 0.
+
+If E[W_c r_c | measurement design] = 0 at the true identifiable mean, covariance
+misspecification need not make this estimating equation inconsistent. For
+independent clusters with suitable finite moments, enough non-dominant clusters,
+and full-rank local identification, a covariance estimator has sandwich form
+
+    A^{-1} (sum_c U_c U_c') A^{-T},
+
+where A is the negative derivative of the estimating equations (or a consistent
+correct-mean approximation). This changes uncertainty estimation, not the G0
+weighted-least-squares point. It does not make native sigma into a measured full
+covariance. Dependence between nights requires a defensible long-run score
+covariance/block design, not merely relabeling each night independent.
+
+The method cannot correct a biased mean, calibration error correlated with time,
+seeing or a parallax regressor, weight endogeneity, incorrect blend geometry, or
+shared reference-frame distortion. It cannot supply absent clock or absolute
+frame information, a source distance, or a lens-flux limit.
+
+Saved-data evidence, computed descriptively without refitting
+
+The accompanying SAVED_G0_CLUSTER_ESTIMATOR_FEASIBILITY.json and script record
+the exact saved G0 file hash and all definitions. The 12,500 OGLE rows form 1326
+local-noon observing nights (size min/median/max 1/5/49). Weighted nightly residual
+means have correlation 0.0255 over all successive nights, but 0.1041 among 1093
+successive-night pairs separated by less than 1.5 days. This is evidence against
+assuming all short-separated nights independent without further assessment;
+it is not a calibrated test or proof of a particular long-memory process.
+
+Weighted seasonal residual means include −1.584 mmag (2013), +0.950 mmag (2014),
+and +0.846 mmag (2015). Their descriptive night-independence conditional sandwich
+mean scales are 0.310, 0.259, 0.230 mmag. These scales omit parameter-estimation and
+between-night dependence, so must not be quoted as calibrated significance or
+as proof of nonzero deterministic bias. They do show why zero mean conditional
+on season/design cannot simply be asserted from a global residual average or
+global Q near its nominal degrees of freedom.
+
+There are only 11 calendar visits available as potential HST clusters,
+not 42 independent angular coordinates. At saved G0 geometry, the angular linear
+design has 8 columns/rank 8. After projecting its other 7 linear nuisance columns,
+the partial theta_E information is concentrated: 2011-08-08 contributes 50.74%,
+2012-09-09 contributes 19.77%, and 2013-05-13 contributes 14.75%. The inverse
+Herfindahl effective number is 3.08 visits. This is an optimistic conditional
+design diagnostic holding nonlinear geometry fixed, not a robust effective-DOF
+theorem or confidence result. It demonstrates highly uneven leverage. An
+ordinary 11-visit pairs bootstrap omits the leading visit in (10/11)^11 ≈ 35% of
+draws. A wild scheme retains the design but does not automatically repair
+few-cluster leverage, unknown cross-visit frame covariance or asymmetry.
+
+What a genuinely separate prospective assessment would need
+
+1. Declare the estimating target and mean/exogeneity assumptions, physical
+   bounds, modes, treatment of native weights and all unidentifiable outputs.
+   Preserve this failed Gaussian campaign unchanged; do not redefine its gates.
+2. Fix a photometric clustering/block-score rule before its mass outcomes. Assess
+   dependence versus time gap, seeing and season. A choice of block length is an
+   additional assumption that must be justified and stress-tested, not selected
+   because a lower mass bound passes a desired threshold.
+3. Treat HST visits jointly within each visit, with small/high-leverage cluster
+   correction or an appropriately justified null-restricted wild/score method.
+   Common frame calibration may require explicit nuisance terms or calibrated
+   cross-visit information;11visits are not an asymptotic guarantee.
+4. Validate finite-sample behavior on this fixed irregular cadence, including
+   mean/calibration perturbations, heterogeneous/correlated errors, sparse
+   angular clusters, boundaries and negative/null systems. Independent reduction
+   or calibration checks would strengthen the otherwise untestable mean model.
+5. Invert a joint constrained mass test rather than assuming a symmetric delta-
+   method error for theta_E/pi_E near a weak or zero parallax. Refit/profile all
+   nuisance states and competing modes for bootstrap/null calculations; retain
+   infinite/unresolved intervals and failures. No automatic Gaussian Wilks cutoff.
+6. Predetermine adequacy, coverage tolerances and a stop rule. If support is not
+   reliable under these assumptions, report that outcome; do not iterate until
+   the known object's published mass or a BH threshold is reached.
+
+This is a feasibility specification for author evaluation, not authorization or
+a freeze of another campaign. Neither the G0 point 6.5457 Msun nor its successful
+synthetic/functional replay certifies a robust lower mass bound. Darkness and
+single-lens evidence remain separate even if a robust mass test later succeeds.
+
+Primary methodological sources
+
+Liang,K.-Y.; Zeger,S.L.(1986), Longitudinal data analysis using generalized linear
+models, Biometrika73,13–22, DOI10.1093/biomet/73.1.13:
+https://academic.oup.com/biomet/article-abstract/73/1/13/246001
+This establishes estimating-equation inference without specifying the full joint
+outcome distribution, under stated mean and dependence regularity conditions.
+
+Cameron,A.C.; Miller,D.L.(2015), A Practitioner's Guide to Cluster-Robust
+Inference, Journal of Human Resources50,317–372, author-hosted published PDF:
+https://cameron.econ.ucdavis.edu/research/Cameron_Miller_JHR_2015.pdf
+Its sectionsII,VI,VII distinguish within-cluster covariance robustness from
+between-cluster assumptions, discuss few-cluster reliability, and extend the
+argument to nonlinear/GMM models. The nonlinear least-squares case permits
+additively separable-error wild schemes; generic nonlinear models need score
+methods or other justified constructions. None is a model-free bias correction.
+
+MacKinnon,J.G.; Webb,M.D.(2017), Wild bootstrap inference for wildly different
+cluster sizes, Journal of Applied Econometrics32,233–254, corrected author paper:
+https://qed.econ.queensu.ca/pub/faculty/mackinnon/working-papers/qed_wp_1314.pdf
+This provides relevant primary warnings about cluster heterogeneity/effective
+cluster count; its treatment-model results are not asserted as a theorem for
+the present nonlinear microlensing estimator.
+
+Primary-source web responses are archived in
+ROBUST_ESTIMATOR_PRIMARY_RESEARCH_SNAPSHOT.json. Formula application, saved-state
+diagnostics, leverage calculation and conditional feasibility conclusions above
+are this review's derivation, not claimed results of those papers on OB110462.

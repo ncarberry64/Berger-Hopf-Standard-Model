@@ -2,7 +2,7 @@
 
 ## Formal reviewer repository
 
-The authoritative reviewer repository is [Berger-Hopf-Standard-Model](https://github.com/ncarberry64/Berger-Hopf-Standard-Model), on branch `codex/norman-core-surface-amendment-20261022`, in [draft PR #470](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/pull/470).
+The authoritative reviewer repository is [Berger-Hopf-Standard-Model](https://github.com/ncarberry64/Berger-Hopf-Standard-Model), on branch `codex/blackhole-tracker-real-data-20261022`, in [draft PR #471](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/pull/471).
 
 Reviewer paths in that branch are:
 
@@ -10,6 +10,14 @@ Reviewer paths in that branch are:
 - `papers/bhsm_blackhole_tracker_20261021/`: manuscript, theory replay, provenance and reviews.
 
 The external delivery receipt binds the final formal code commit, review status and artifact hashes. No formal code SHA is inferred here from a workspace commit or a theory-source pin. The interpretation manifest pins the dated scientific amendment at `3c820fee74a5c715ef58bf30998edb1d7b26fe78`; this is a source revision, not the final product/paper delivery commit.
+
+## Corrected rc3 and frozen real observations
+
+The runtime is pinned in the formal repository at `002b9ecfe2f1a778b68b7558581997c05919ae93`, imported from development commit `aa1759d07c97e25a2fb1a7ad24a053aa553d602a`. The reviewed F4/F5 theory source is independently pinned at `705d4c7e2f9a832b457f63ff975e7d4dc8008645`. This is a review candidate; no new merge, Pages publication or journal submission is performed.
+
+All 182 product tests pass. The clean installed wheel and actual local native app pass fit/export/replay with native row identities and BHSM interpretation preserved; unidentified motion covariance remains null. All three notebooks execute through the installed wheel outside the checkout. The corrected manuscript is 36 pages and includes the actual two archival follow-up light curves and the complete pilot interpretation.
+
+`real_data_pilot_20261022/` preserves the internally frozen protocol, original numerical tables and later literature annotations separately, all 100 residual plots and diagnostic files, original software bytes and external raw hashes/refetch instructions. Its 100 events / 76,344 measurements yield 89 inadequate and 11 non-rejected simple-model fits, two historical archival follow-ups, and zero mass-supported black-hole candidates. The historical 2022 benchmark remains inadequate under five photometric variants and its specific HST time/frame gaps remain unresolved. The user's subsequent request for known-black-hole mass validation is being investigated on a separate branch and later-data protocol; it does not replace these frozen results.
 
 ## Completed rc2 verification
 

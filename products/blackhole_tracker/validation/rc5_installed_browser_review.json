@@ -1,0 +1,69 @@
+{
+  "schema": "bhtracker.rc5_installed_browser_review.v1",
+  "status": "PASS",
+  "product_version": "0.2.0rc5",
+  "wheel_sha256": "93c8d8fe51f80e31f73c3461f80be6af968ae0e1b9839d989d6400508d1d91e2",
+  "scope": "Actual clean installed app browser interaction, layout and saved-view replay; no physical fit or scientific acceptance.",
+  "server": "http://127.0.0.1:8899/atlas",
+  "browser_backend": "CUA in-app browser",
+  "checks": {
+    "all_four_workspace_links_navigate": true,
+    "initial_cohort_records": 155,
+    "separate_literature_benchmarks": 1,
+    "filtered_target_records": 3,
+    "export_then_reset_then_actual_file_chooser_replay": true,
+    "replay_status": "Replay integrity verified. Restored 3 filtered records; all 155 cohort records are preserved. No physical fit was run.",
+    "PAR13_unreliable_Gaia_and_lower_mass_alternative_prominent": true,
+    "lens_physical_quantities_explicitly_unavailable": true,
+    "BHSM_one_exterior_optical_response_counted_once": true,
+    "formal_BHSM_repository_links": true,
+    "desktop": {
+      "viewport_width": 1280,
+      "document_width": 1265
+    },
+    "mobile": {
+      "viewport_width": 390,
+      "document_width": 375,
+      "four_navigation_links_wrap_in_two_rows": true
+    },
+    "temporary_viewport_override_reset": true,
+    "console_warnings_or_errors_at_final_navigation": []
+  },
+  "artifacts": [
+    {
+      "file": "installed_atlas_desktop.png",
+      "bytes": 413791,
+      "sha256": "2bf73d7f0d68d0deba00de3ac1b06298d23db9e0118471003004474725d005ce"
+    },
+    {
+      "file": "installed_atlas_mobile.png",
+      "bytes": 348474,
+      "sha256": "faf2b144764b4d2f7ba5c798fabfcc75eedf12a38923c8033229a2d324a42ea0"
+    },
+    {
+      "file": "installed_atlas_map.png",
+      "bytes": 75460,
+      "sha256": "4e2dd1b83abf3a8880b80bcad7a0467a961ea9c47d32c5cc32b07bb9158fb4da"
+    },
+    {
+      "file": "INSTALLED_BYTES_AND_ACTUAL_BROWSER_CSV_VERIFICATION.json",
+      "bytes": 12867,
+      "sha256": "43203b91ced1d704e5b651eff7e6dad0fa336b2ac93099acd2a3b801eb26ae3a"
+    },
+    {
+      "file": "BROWSER_TO_INSTALLED_PYTHON_REPLAY_CHECK_v1.json",
+      "bytes": 1688,
+      "sha256": "df22a271ca64314205faac4c2356b546f0fed8dfcd4430950a19d0b02bb7dc4a"
+    }
+  ],
+  "browser_replay_download": {
+    "file": "BHSM_candidate_atlas_replay (1).json",
+    "bytes": 2189437,
+    "sha256": "30361839963fbb0805a53a14e3f449fefe50ef2222382f058b4bd87937b65eb5"
+  },
+  "actual_filtered_CSV": "4b43dd84e8937349d8d213a3d1735156cb06359eeb5b67a9e56f1b1b287fa3e5",
+  "runtime_wheel_source_install_files_verified": 68,
+  "tamper_rejection_scope": "Unchanged JS core separately checked by prototype actual-browser tamper tests and product automated tests; not repeated as an installed-browser action in this receipt.",
+  "accepted_engine_black_holes": 0,
+  "new_black_hole_interpretations": 0
+}

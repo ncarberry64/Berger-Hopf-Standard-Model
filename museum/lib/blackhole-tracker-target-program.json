@@ -1,0 +1,151 @@
+{
+  "schema": "bhtracker.primary_target_program.v1",
+  "formal_repository": "https://github.com/ncarberry64/Berger-Hopf-Standard-Model",
+  "updated_on": "2026-10-23",
+  "primary_investigation_target": {
+    "event_id": "Gaia18ajz",
+    "investigation_category": "Potential black hole",
+    "selection_status": "PROVISIONAL_LITERATURE_BASED_FOLLOWUP_TARGET_PENDING_INDEPENDENT_REVIEW",
+    "novelty_status": "PREVIOUSLY_PUBLISHED_CANDIDATE_NOT_A_NEW_ENGINE_DISCOVERY",
+    "aliases": [
+      "AT2018uh",
+      "Gaia DR3 4156664130700362752"
+    ],
+    "catalog_source_direction": {
+      "ra_deg": 277.56025,
+      "dec_deg": -8.22021,
+      "equinox": "J2000",
+      "coordinate_observation_epoch": null,
+      "role": "HISTORICAL_SOURCE_EVENT_DIRECTION_NOT_LENS_POSITION"
+    },
+    "source": {
+      "title": "Howil et al., Gaia18ajz",
+      "url": "https://arxiv.org/html/2403.09006v3",
+      "published_doi": "10.1051/0004-6361/202451046",
+      "retrieved_source_sha256": "d892f4cc3befa81a637893a82782b8e021eeeaeca6492bc345b56f3bd5f479fc",
+      "sections": "2, 3, 5, 6; Tables 9 and 10",
+      "attribution": "Published literature inference; not a tracker measurement."
+    },
+    "evidence_for": [
+      "Published annual-parallax microlensing analysis and lens-light constraints motivate follow-up beyond duration."
+    ],
+    "evidence_against_or_unresolved": [
+      "Stellar and remnant priors retain different near/far and lower-mass alternatives.",
+      "Gaia source astrometry has elevated RUWE; source distance and proper-motion assumptions matter.",
+      "Published Gaia errors were estimated; photometric errors were rescaled and a blend prior was used.",
+      "Independent adequate native-data recovery and direct angular-scale constraints are not established by this release."
+    ],
+    "literature_alternatives": [
+      {
+        "photometric_mode": "GO-",
+        "mass_prior": "StellarIMF",
+        "branch": "Near",
+        "published_branch_weight": 0.47,
+        "published_mass_posterior_median_msun": 7.2,
+        "interpretation": "Prior-conditional posterior summary, not an observed mass or a BH probability."
+      },
+      {
+        "photometric_mode": "GO-",
+        "mass_prior": "StellarIMF",
+        "branch": "Far",
+        "published_branch_weight": 0.53,
+        "published_mass_posterior_median_msun": 0.94,
+        "interpretation": "Prior-conditional posterior summary, not an observed mass or a BH probability."
+      },
+      {
+        "photometric_mode": "GO-",
+        "mass_prior": "DarkIMF",
+        "branch": "Near",
+        "published_branch_weight": 0.96,
+        "published_mass_posterior_median_msun": 11.1,
+        "interpretation": "Prior-conditional posterior summary, not an observed mass or a BH probability."
+      },
+      {
+        "photometric_mode": "GO-",
+        "mass_prior": "DarkIMF",
+        "branch": "Far",
+        "published_branch_weight": 0.04,
+        "published_mass_posterior_median_msun": 1.11,
+        "interpretation": "Prior-conditional posterior summary, not an observed mass or a BH probability."
+      },
+      {
+        "photometric_mode": "GO+",
+        "mass_prior": "StellarIMF",
+        "branch": "Near",
+        "published_branch_weight": 0.94,
+        "published_mass_posterior_median_msun": 2.8,
+        "interpretation": "Prior-conditional posterior summary, not an observed mass or a BH probability."
+      },
+      {
+        "photometric_mode": "GO+",
+        "mass_prior": "StellarIMF",
+        "branch": "Far",
+        "published_branch_weight": 0.06,
+        "published_mass_posterior_median_msun": 0.4,
+        "interpretation": "Prior-conditional posterior summary, not an observed mass or a BH probability."
+      },
+      {
+        "photometric_mode": "GO+",
+        "mass_prior": "DarkIMF",
+        "branch": "Near",
+        "published_branch_weight": 0.999,
+        "published_mass_posterior_median_msun": 4.9,
+        "interpretation": "Prior-conditional posterior summary, not an observed mass or a BH probability."
+      },
+      {
+        "photometric_mode": "GO+",
+        "mass_prior": "DarkIMF",
+        "branch": "Far",
+        "published_branch_weight": 0.001,
+        "published_mass_posterior_median_msun": 0.59,
+        "interpretation": "Prior-conditional posterior summary, not an observed mass or a BH probability."
+      }
+    ],
+    "engine_evaluation_status": "NOT_YET_EVALUATED_AS_PRIMARY_TARGET",
+    "engine_measurements": {
+      "mass_msun": null,
+      "lens_distance_pc": null,
+      "theta_E_mas": null,
+      "absolute_lens_motion": null,
+      "accepted_mass_interval_msun": null
+    },
+    "next_observation": "Calibrated epoch astrometry or an independently constrained angular Einstein scale, plus source-frame and lens-light validation."
+  },
+  "known_black_hole_validation_benchmark": {
+    "event_id": "OGLE-2011-BLG-0462",
+    "aliases": [
+      "MOA-2011-BLG-191",
+      "OB110462"
+    ],
+    "role": "PUBLISHED_POSITIVE_REFERENCE_NOT_PRIMARY_NEW_CANDIDATE",
+    "source_url": "https://doi.org/10.3847/1538-4357/adbe6e",
+    "independent_engine_recovery_accepted": false,
+    "engine_status": "RETAINED_JOINT_MODEL_NOISE_FAILURES_NO_ACCEPTED_MASS"
+  },
+  "non_black_hole_comparison": {
+    "event_id": "OGLE-2007-BLG-224",
+    "role": "PUBLISHED_BROWN_DWARF_COUNTEREXAMPLE",
+    "source_url": "https://arxiv.org/abs/0904.0249v2",
+    "followup_source_url": "https://arxiv.org/abs/2011.06013",
+    "literature_mass_msun": 0.056,
+    "literature_mass_sigma_msun": 0.004,
+    "literature_lens_distance_pc": 525,
+    "literature_transverse_velocity_km_s": 113,
+    "independently_recovered_by_this_engine": false
+  },
+  "publication_gate": {
+    "ready": false,
+    "primary_research_target_designated": true,
+    "independent_candidate_evidence_review_complete": false,
+    "native_candidate_analysis_adequate": false,
+    "known_black_hole_recovery_validated": false,
+    "new_discovery_required_for_software_release": false,
+    "reasons": [
+      "A literature-based lead is not an independently established tracker result.",
+      "Complete the primary-target data/model/alternative review and clearly support the resulting potential-BH interpretation.",
+      "Keep known-BH validation, non-BH controls, novelty and unknown quantities explicit before publication."
+    ]
+  },
+  "bhsm_interpretation": "Supported gravitational geometry is interpreted as BHSM surface topography, with one Einstein/GHY exterior optical response counted once. Target selection adds no force, mass or microscopic core measurement.",
+  "counts_policy": "This program is separate from the frozen 1,808-model spectrum and 155-direction atlas. It changes neither dataset, their labels, nor discovery/recovery counts."
+}

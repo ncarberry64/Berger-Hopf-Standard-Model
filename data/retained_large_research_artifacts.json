@@ -1,7 +1,7 @@
 {
   "schema": "BHSM_RETAINED_LARGE_RESEARCH_ARTIFACTS_V1",
   "reviewed_public_main": "d0844d009fd12a10c97d79f21443df6764391203",
-  "purpose": "Retain reproducibility inputs already in public main; no blanket exemption for new large files. JSON hashes use LF, NPZ hashes use exact bytes.",
+  "purpose": "Retain reproducibility inputs already in public main and individually reviewed immutable release packets; no blanket exemption for new large files. JSON hashes use LF; binary artifacts use exact bytes.",
   "physical_completion": false,
   "artifacts": [
     {
@@ -203,6 +203,61 @@
       "path": "artifacts/flagship_integration/BHSM_N12_GATE7_SIGNED_GREEN_CURRENT_CENTER_GRAPH_JACOBIAN.npz",
       "canonical_bytes": 27774601,
       "sha256": "6eab2efec9fe3460ff94de43d8fab3e9188b9e601c4c559f9ece8047a96ffedc"
+    },
+    {
+      "path": "museum/public/research/blackhole-tracker/BHSM_Blackhole_Tracker_Source_0.2.0rc3.zip",
+      "canonical_bytes": 13399803,
+      "sha256": "8af0878d3ff647346de2ebb4bf8f0446d382b4ce3e5c2911bdd456c901af1166",
+      "reviewed_source_commit": "b80fd756c285844b6ea90110c4d58db47092830c",
+      "reviewed_distribution_commit": "a43680dd183439dae3e9dfad03cea3d8042c4123",
+      "review_pull_request": "https://github.com/ncarberry64/Berger-Hopf-Standard-Model/pull/471",
+      "inventory_members": 659,
+      "upstream_product_files": 130,
+      "scope": "Exact reviewed rc3 portable product and manuscript source packet; no raw observation series, mass confirmation or blanket size exemption."
+    },
+    {
+      "path": "museum/public/research/blackhole-tracker/BHSM_Blackhole_Tracker_Source_0.2.0rc4.zip",
+      "canonical_bytes": 14320902,
+      "sha256": "56ffa0d03ab485212740e31ef89b719bac8e24548eaef9527e7327221b722a69",
+      "reviewed_source_commit": "cb79f8693ba5f8e25f0858acc826b6718c974555",
+      "reviewed_product_commit": "1a556d37a40ef89deb54f9c07d231b5496163838",
+      "review_pull_request": "https://github.com/ncarberry64/Berger-Hopf-Standard-Model/pull/471",
+      "inventory_members": 747,
+      "upstream_product_files": 176,
+      "scope": "Exact reviewed rc4 complete manuscript/product/pilot/negative-joint-benchmark source packet. Every archive member and canonical verifier checked; no blanket size exception or mass/discovery confirmation."
+    },
+    {
+      "path": "museum/public/research/blackhole-tracker/BHSM_Blackhole_Tracker_Source_0.2.0rc5.zip",
+      "canonical_bytes": 15141673,
+      "sha256": "ace2caaf37df087dfa2522024e2fdb96cd80dfa29b6a3ba22a1c20ed4fd7b285",
+      "reviewed_source_commit": "5a785ea64fcdce58779a0f7431a6a218b3deadd4",
+      "reviewed_product_commit": "8ca349fa8eb5c54c661a022790ae915d05060b59",
+      "review_pull_request": "https://github.com/ncarberry64/Berger-Hopf-Standard-Model/pull/471",
+      "inventory_members": 804,
+      "upstream_product_files": 193,
+      "scope": "Exact reviewed rc5 complete manuscript/product/candidate-atlas/pilot/negative-joint source packet, every archive member verified. One exact path/size/hash retention entry; no scanner change, blanket exemption, discovery or mass confirmation."
+    },
+    {
+      "path": "museum/public/research/blackhole-tracker/BHSM_Blackhole_Tracker_Product_0.2.0rc6.zip",
+      "canonical_bytes": 10566276,
+      "sha256": "2691ad5401a2f1d40a6acdbf9979fc76cc2fe9d3d9e23bad5d1bcb9e70d34c35",
+      "reviewed_product_commit": "4c71556f5ab4352064325601669bca91a5230690",
+      "reviewed_distribution_commit": "898630d5e7c9213706d9d2ae10c47757c1939b34",
+      "review_pull_request": "https://github.com/ncarberry64/Berger-Hopf-Standard-Model/pull/471",
+      "inventory_members": 269,
+      "upstream_product_files": 266,
+      "scope": "Exact reviewed rc6 portable product with both redistribution notices and a complete file manifest. Two byte-identical materializations and every source member verified. This single path/size/hash retention entry does not exempt altered or additional files or establish a black-hole identity."
+    },
+    {
+      "path": "museum/public/research/blackhole-tracker/BHSM_Blackhole_Tracker_Source_0.2.0rc6.zip",
+      "canonical_bytes": 24604151,
+      "sha256": "fa9b80a12b143ecab7a554832232023267668dc26d9be1e102d6d19b2795f7c7",
+      "reviewed_source_commit": "e85d4fce2853997d6fedfd0bf75fc7d99bad3562",
+      "reviewed_product_commit": "4c71556f5ab4352064325601669bca91a5230690",
+      "review_pull_request": "https://github.com/ncarberry64/Berger-Hopf-Standard-Model/pull/471",
+      "inventory_members": 891,
+      "upstream_product_files": 266,
+      "scope": "Exact reviewed rc6 complete manuscript/product/primary-target/evidence-spectrum/angular-track/pilot/negative-joint source packet. Two byte-identical materializations and every archive member verified. One exact path/size/hash retention entry; no scanner change, blanket exemption, discovery or mass confirmation."
     }
   ]
 }

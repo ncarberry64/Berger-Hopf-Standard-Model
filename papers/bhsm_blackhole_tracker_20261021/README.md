@@ -1,75 +1,101 @@
-# Blackhole Tracker: research paper and usable product
+# Blackhole Tracker: BHSM inference and candidate atlas
 
-The current manuscript is **Blackhole Tracker: BHSM Boundary Interpretation of Compact-Lens Mass, Motion, and Conditional Response**. It accompanies a runnable specialist product for inference from resolved image pairs, flux ratios and delays. The ordinary fit reconstructs an effective BHSM-described exterior in the adopted Einstein/GHY sector; an observable departure from GR is not required. The earlier boundary-transfer and broad information experiment remain in the paper as distinct theoretical results; the preserved angular and Hopf papers remain supporting research.
+BHSM frames the search as a hunt for gravitational topography on the hypersurface and for evidence that distinguishes different envelopments. The author calls the spacetime differential associated with an envelope boundary the **BHSM envelope-boundary differential**. This defined usage is separate from conventional rotational frame dragging. The paper relates it to its existing, explicitly referenced exterior curvature construction and derives a conditional compact-versus-extended bending-profile diagnostic. These are one common optical response counted once; they do not add another mass or force. Equal optical responses retain their degeneracy, and no new extended-halo classifier, global hypersphere radius, microscopic boundary or spin measurement is claimed. The [dated author definition](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/blob/7ebc9f226e0d9abc68e2ec61c90a8b262081c733/docs/BHSM_TRACKER_ENVELOPMENT_SEARCH_CLARIFICATION_20261023.md) preserves the terminology and its research scope.
 
-The formal reviewer source is [BHSM draft PR #470](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/pull/470), branch `codex/norman-core-surface-amendment-20261022`. Its canonical paths are `products/blackhole_tracker/` for the product and `papers/bhsm_blackhole_tracker_20261021/` for this paper. [Manuscript-Generation PR #24](https://github.com/ncarberry64/Manuscript-Generation/pull/24) is the workspace/history record. The immutable formal code snapshot is `33f26a5113392c0d2c323d7e4a36c7e81bd3ee29`; the external delivery receipt binds the final paper revision and artifact hashes.
+Blackhole Tracker is a runnable lens-inference research product with a local app, CLI, Python API, notebooks and replayable exports. RC6 adds moving-lens investigation filters, a measured angular-track workflow and the author-defined interpretation of supported gravitational geometry as BHSM surface topography. The extended spectrum retains all 1,808 model records and unavailable physical fields. The earlier 155-direction atlas, three differently qualified investigation targets and separate published black-hole benchmark remain available. No new black hole or reliable independent engine recovery of the known benchmark is established.
 
-The package establishes three connected results:
+The **formal reviewer repository is [BHSM](https://github.com/ncarberry64/Berger-Hopf-Standard-Model)**, branch [codex/blackhole-tracker-real-data-20261022](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/tree/codex/blackhole-tracker-real-data-20261022). Formal product: `products/blackhole_tracker/`; paper: `papers/bhsm_blackhole_tracker_20261021/`. Manuscript-Generation is a development workspace. Historical RC4 code remains pinned to [1a556d37a40e](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/tree/1a556d37a40ef89deb54f9c07d231b5496163838/products/blackhole_tracker); that pin does not certify the atlas additions. The historical RC5 product is pinned to [8ca349fa8eb5](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/tree/8ca349fa8eb5c54c661a022790ae915d05060b59/products/blackhole_tracker) with 193 exact upstream files. Installed 257-test/29-subtest checks, five notebooks and actual browser export/replay pass. The 45-page PDF and 198-word manual-submission abstract are bound by [PDF QA](provenance/RC5_PDF_VISUAL_QA.json) and [RC5 submission metadata](submission/rc5/submission_metadata.json). Final hosted CI is recorded separately against the exact remote heads.
 
-- A local GUI, CLI, Python API and two executed notebooks reconstruct the mass, center and observer proper motion of the BHSM-described compact exterior, retaining the full supplied covariance and free source positions. The same monopole can have the conventional point-lens potential. Negative or unresolved results are explicit outputs.
-- A uniform sufficient bound controls all five normalized quadrupole coordinates throughout the retained R1 exterior, preserving its scalar principal signs within declared budgets. The exact Dirichlet/conormal pairing gives the corresponding source bound. This is a conditional local-action result, not full-system or horizon stability.
-- The normalized boundary-to-metric-to-lensing transfer has explicit information losses: two line-of-sight modes vanish; the leading screened primary-pair delay response vanishes; and its first-order apparent-mass response is degenerate with external shear. The old joint-response experiment retains information discarded by the scalar statistic within its declared finite nuisance family.
+The current RC6 product is pinned to [formal BHSM revision 4c71556f5ab4](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/tree/4c71556f5ab4352064325601669bca91a5230690/products/blackhole_tracker), with 266 exact upstream files. Source and isolated installed-product suites each passed 318 tests and 66 subtests; the sixth notebook and actual browser export/replay have separate current receipts under the product's `validation/rc6/` and `validation/notebook06_rc6_receipt_v2.json`. The final wheel SHA-256 is `01463e3a0de90cef7e2b9e9ac325ce2cf3e438f94b0ccb3316a76dc7ae434195`. Gaia18ajz is a previously published provisional primary investigation target, with all eight alternatives retained. Native candidate adequacy and accepted independent known-black-hole recovery remain open; scientific publication is held. Hosted CI is bound separately to the final remote heads.
 
-## BHSM boundary interpretation: one mass, one potential
+## Start with the evidence
 
-The recovered BHSM sources explicitly adopt Einstein gravity with GHY-completed boundary variation. They derive the spherical curvature deficit and normalize a mixed surface scalar; the v14.25 record evaluates a conditional Brown–York interface charge and prohibits adding the same gravitational energy twice. The [new manuscript section](manuscript/bhsm_interpretation.tex), [source-grounded dictionary](provenance/bhsm_boundary_mass_interpretation.md) and [hashed source ledger](provenance/bhsm_boundary_mass_interpretation_sources.json) give the exact provenance and assumptions.
+- [Plain-language account](LAY_REPORT.md) and [precise result statement](RESULT_STATEMENT.md).
+- [Portable candidate-inventory metadata and offline rebuild](candidate_atlas_20261023/README_INVENTORY_v3.txt), [155-event inventory plus separate benchmark](candidate_atlas_20261023/inventory_v3.json), and [independent portable-rebuild check](candidate_atlas_20261023/INDEPENDENT_PORTABLE_INVENTORY_REVIEW.json).
+- [Complete real-data pilot and replay instructions](real_data_pilot_20261022/README.md).
+- [All 100 results with literature annotations](real_data_pilot_20261022/literature_annotations_v1/all_100_results.csv), [JSON](real_data_pilot_20261022/literature_annotations_v1/all_100_results.json).
+- [Two historical archival-follow-up targets](real_data_pilot_20261022/literature_annotations_v1/followup_ranking.csv); their masses remain unavailable.
+- [All 100 residual plots](real_data_pilot_20261022/derived_v1/residuals/) and [diagnostics/profiles](real_data_pilot_20261022/derived_v1/diagnostics/).
+- [2023 joint known-system audit](joint_known_system_20261022/README.md), including failed baselines, profiles, controls and reproduction instructions.
+- [2022 known-system benchmark](real_data_pilot_20261022/derived_v1/historical_benchmark/summary.json).
+- [Validation scope and receipts](VALIDATION.md), [native-data paper section](manuscript/real_observations.tex) and [BHSM interpretation](manuscript/bhsm_interpretation.tex).
+- [Formal product guide](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/tree/codex/blackhole-tracker-real-data-20261022/products/blackhole_tracker/README.md) and [prior-literature audit](review/REAL_DATA_PRIOR_LITERATURE_20261022.json).
 
-For the static Schwarzschild member, put `m=GM/c²`, `f=1-2m/r` and choose an areal worldtube radius `r>2m`. With a flat reference:
+The atlas reconciles the 100-event pilot with all 59 Wyrzykowski et al. (2016) parallax events, counting four exact shared identities once: **100 + 59 - 4 = 155**. All 142 published parallax model modes remain metadata. Twenty-six older 2015 tables were located and hash-verified (19,068 rows); 33 exact-ID matches remain unavailable. Their 2016 reduction, masks and calibration are not assumed identical. The atlas performs no new parallax fit and creates no new follow-up ranking.
 
-```text
-delta k_g = (1-sqrt(f))/r
-M = (c²/G)[r² delta k_g - r³ delta k_g²/2]
-E_BY = (c^4 r/G)(1-sqrt(f))
-M = E_BY/c² - G E_BY²/(2c^6 r)
-Q_Sigma = (c²/8pi) integral H kappa_acc dA = GM/r
+Its three investigation targets have distinct bases. 0585 and 3092 passed the original frozen photometric follow-up screen; PAR-13 retains a disputed, prior-dependent literature possibility, with unreliable Gaia source astrometry and a lower-mass alternative recorded. The historical 13 dark-remnant-consistent events are not 13 black holes. Later literature also revises PAR-02 toward a roughly 0.9-solar-mass star under its adopted priors. None of the 155 entries receives a new black-hole candidate or strongly identified tier. The separate OB110462 benchmark has strong published support labeled **literature**, while independent engine recovery remains unresolved and uncalibrated.
+
+Map markers locate catalog source/event directions. J2000 is an equinox, not an observing epoch or a current lens position. Lens position, uncertainty, mass, distance, absolute proper motion and radial velocity remain null. The atlas supplies no three-dimensional or propagated lens location; unmarked sky is not evidence of black-hole absence.
+
+The frozen pilot uses all 100 supplied historical OGLE-III events and 76,344 native numeric rows. All 109 raw hashes and exact selection verify. Eighty-nine fail the stated PSPL photometric adequacy screen; eleven are not rejected by that screen. Only 0585 and 3092 pass every stricter archival-follow-up rule. Neither is a new event or a measured black hole. All pilot mass, distance and absolute-motion fields remain unavailable.
+
+The 2022 OB110462 benchmark retains its own observation version and unresolved HST export mapping. The separate rc4 benchmark uses the published 2023 HST reduction, actual matched exposure metadata and corrected OGLE photometry: 12,521 photometric rows and 21 angular rows at 11 visits. It is not a substitution into the older benchmark. All three frozen noise models converge, yet fail residual-structure checks; the calibrated-error competitor also reaches its correlation-timescale cap. Conditional masses and profile crossings are diagnostic, not accepted mass measurements. Forty parametric controls and whole-observing-night heldout predictions remain auditable. No new black hole or reliable known-system identification is claimed.
+
+## Run and replay an analysis
+
+Install the supplied wheel using the Python environment selected for the project, then open the local app:
+
+```powershell
+python -m pip install C:/path/to/bhsm_blackhole_tracker-0.2.0rc6-py3-none-any.whl
+python -m bhtracker serve --open
 ```
 
-Thus the fitted monopole is equivalently encoded by boundary curvature/charge. It supplies the same Weyl potential and is counted once; no second “BHSM mass” is added. Brown–York energy depends on the enclosing radius and reference, while M is the conserved mass of this spherical solution. Changing the chosen radius is not physical mass drift. A computational default radius is not an observed surface. These identities are a BHSM gravitational-sector interpretation, not a microscopic state-selection or horizon derivation. With a distinct non-Schwarzschild R1 contribution, the complete metric/source matching must replace a blind application of the Schwarzschild dictionary.
+Use the matching wheel only after its release checks are complete. To open the atlas directly, use `python -m bhtracker serve --open --page atlas` or the atlas launcher. Metadata-only CLI export and replay use fresh output paths:
 
-Interpretation schema 2 records Norman P. Carberry's 22 October 2026 amendment: abstract harmonic core data have no ordinary internal spacetime, while spacetime-side dynamics and enclosing-surface quantities retain their declared geometry. The app separates fitted, derived and proposed statements, with detailed theory and exact source provenance expandable. Existing regular-side reconstruction/attachment/response results are retained; their extension to terminal core transfer requires a selected admissible matching map and charge/flux accounting. This update supplies no new optical term, measured core parameter, horizon classification or terminal rate.
-
-## Use the product
-
-Read `products/blackhole_tracker/README.md` in the formal BHSM checkout for the Windows double-click launcher, installation, local app, CSV/JSON import, exact covariance order, CLI fitting/profiles, Python API and notebooks. The standalone product source ZIP retains its self-contained `product/README.md` layout; the historical Manuscript-Generation workspace also uses top-level `product/`. These are packaging/development layouts, not competing reviewer authorities. The installed product needs no private research archive, remote fitting service or API key.
-
-The ordinary compact-lens mode is usable within its validated synthetic domain as inference of that BHSM-described optical configuration. It can identify a supported mass/motion track, reject an inadequate model or report unresolved motion. The optional R1 extension tests a distinct conditional response; it is not a condition for ordinary BHSM utility. It does not establish that a compact dark source has a horizon. All bundled data are synthetic, including the published-parameter stellar variation.
-
-The frozen 64-draw full-covariance calibration completes without excluded fit failures. Nominal local 95% coverage is 61/64 for mass and both motion components, 59/64 for center x and 61/64 for center y. Exact binomial tests at the fixed alpha=0.01 reject none; finite-sample uncertainty and bias remain reported. The short cosmological control stays motion unresolved, and omitting conventional shear rejects the fit. The optional R1 envelope stays far below the nearby example's supplied noise at its admitted state cap.
-
-## Completed rc2 integration checks
-
-The installed `0.2.0rc2` wheel and browser assets carry the shared schema-2 interpretation and hashed amendment sources. API/CLI/report consistency, ordinary/rejected/unresolved/R1 output handling, legacy report rendering and exact source bytes passed the [independent installed review](review/RC2_INSTALLED_USABILITY_REVIEW.md). Actual browser downloads, installed CLI replay and both executed notebooks are recorded in the release receipts. The GUI/API/CLI/notebook comparison has identical supplied values/configuration/interpretation and zero predicted-observable differences. The rc1-to-rc2 replay records changed interpretation/provenance, rather than claiming historical metadata is identical. The endpoint labels now retain the actual years 2015 and 2025.
-
-The amendment adds interpretation metadata and source material, not a changed likelihood or new fitted physics. The prior fixed calibration and historical receipts remain preserved; that campaign was not restarted for this update. Final-head CI and artifact/code hashes are reported against their actual formal delivery commits in the external receipt.
-
-The subsequent full reviewer audit corrected uploaded duplicate-key handling, nonnumeric JSON coercion and lost-job recovery, and clarified independent-source plots. The rebuilt installed wheel has SHA256 `323bcf675f6fe1c1262e85be49644d3736c2777788ecf2f92568f1cc6ba92ae3`; unchanged valid predictions, likelihood and uncertainties remain exactly equal. The complete product suite passed 133 tests, including 17 new typed-input cases. The [review addendum](review/RC2_INSTALLED_USABILITY_REVIEW.md) distinguishes this final wheel and full-review receipt from the earlier rc2 bytes and records installed rejection/recovery, canonical BHSM citations and exact export/replay. No runtime usability blocker remains in those reviewed flows; this does not imply journal acceptance or a new physical detection.
-
-## Reproduce the separate calculations
-
-From `products/blackhole_tracker/` in the formal checkout (or the self-contained source product directory), install its development dependencies and run:
-
-```text
-python -m pip install -e ".[dev]"
-python scripts/validate_product.py
-python scripts/execute_notebooks.py --kernel-python /absolute/path/to/installed/python --work-directory /path/to/fresh/notebook-output
+```powershell
+python -m bhtracker atlas list --tier BLACK_HOLE_SEARCH_TARGET --output C:/path/to/targets.json
+python -m bhtracker atlas export --tier BLACK_HOLE_SEARCH_TARGET --output C:/path/to/targets_replay.json
+python -m bhtracker atlas replay C:/path/to/targets_replay.json --output C:/path/to/fresh_restored_atlas
 ```
 
-Replace the two notebook paths with your installed interpreter and an output directory. For the Windows environment in the product guide, the interpreter is `.venv/Scripts/python.exe`; on Linux it is `.venv/bin/python`. This selects the intended installation explicitly rather than relying on whichever interpreter a previously registered `python3` Jupyter kernel uses. Notebook execution updates the notebook files and writes its receipt; preserve the supplied executed versions if you want an unchanged reference copy.
+JSON replay retains every event and the separate benchmark, including unselected and failed records, together with the filters and exact selected records. It preserves the original UTF-8 inventory text and line endings. Hash checks establish consistency; they are not authenticity signatures, new fits or scientific acceptance. CSV is a filtered view; use JSON replay for the complete inventory. The Python interface is `bhtracker.candidate_atlas`.
 
-Product stage logs, hashes and machine receipts are under the product's `validation/` directory; the paper's `review/` contains the protocol and delivery snapshots. The notebooks replay the workflow rather than replace calibration. `validate_product.py` includes the historical 64-draw calibration, so it is a full reproduction command rather than a requirement for a first app run. These full validation commands were not all rerun solely for the rc2 metadata update.
+From `candidate_atlas_20261023/`, the factual metadata rebuild works offline without redistributing native observations:
 
-The original theory replay remains independent. Keep the sibling `bhsm_angular_lensing_20261021` directory containing its exact archived provider. From this paper directory, with `requirements.txt` installed, run:
-
-```text
-python scripts/reproduce.py
+```powershell
+python build_inventory_v3.py --freeze INPUT_FREEZE_v3.json --out C:/path/to/fresh_inventory.json
+python test_inventory_v3.py
 ```
 
-Its nine stages check pinned inputs, the source/radial/projection equations, estimator nulls, nonlinear image derivatives, nuisance projection and figures. Logs are under `results/` and `review/`. The old 54-component, 30-nuisance scan uses equal dimensionless errors, not a telescope covariance; its broad trajectory would require millions of years for the cosmological example. It is not the product's ten-year calibration fixture.
+The rebuilt inventory SHA-256 is `4a76300f0e0e3883a0c9c343e1e0c5fbead595c9b4f333aaa01ec05c9ec9debc`. Original source hashes and the prior raw-file availability audit remain separate from verification of the bundled metadata snapshots.
 
-From `manuscript/`, compile with:
+For an actual optimized OGLE-III photometry file, use the native route documented in the product guide. The optional metadata JSON preserves event aliases/catalog provenance; it does not add mass information.
 
-```text
-latexmk -pdf -interaction=nonstopmode -halt-on-error main.tex
+```powershell
+python -m bhtracker import-ogle3 C:/path/to/photometry.dat --metadata C:/path/to/event_metadata.json --output C:/path/to/native.json
+python -m bhtracker fit-photometry C:/path/to/native.json --output C:/path/to/native_analysis
+python -m bhtracker replay C:/path/to/analysis.zip --output C:/path/to/replayed
 ```
 
-Read `RESULT_STATEMENT.md`, `LAY_REPORT.md`, `VALIDATION.md`, `CHAIN_AND_FREEDOMS.md`, the provenance map and internal reviews for scope and evidence. This is an author-review draft for *Galaxies*, not a submitted or accepted article. No journal submission or external contact has occurred.
+For the optional joint route install the wheel with `[astrometry]` (or run `Start_Blackhole_Tracker_Joint.cmd`) and open `/joint`. Import the hash-verified 2023 source ZIP or a calibrated versioned JSON. See the [joint guide](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/tree/1a556d37a40ef89deb54f9c07d231b5496163838/products/blackhole_tracker/JOINT_RESEARCH.md). Four notebooks run against a clean installed wheel.
+
+The app supports native import, diagnostics, BHSM interpretation, export and replay. A photometric fit reports its model status and unavailable quantities. The resolved-image import contract remains separate and requires its actual positions/flux ratios/delays and supplied covariance.
+
+The complete frozen100-event analysis has a separate replay wrapper, because later interface/provenance edits must not overwrite historical kernel identity. From `real_data_pilot_20261022/`:
+
+```powershell
+python reproduce_frozen_pilot.py --verify-only --data-root C:/path/to/data
+python reproduce_frozen_pilot.py --data-root C:/path/to/data --output C:/path/to/new_external_output
+```
+
+The data root contains `download_manifest.json`, `pilot_selection.json` and `raw/`. The wrapper checks hashes, reconstructs the exact frozen own-code layout in a temporary workspace, and refuses an existing started output directory. Verification-only reproduces selection without fitting. Full replay retains every event and unsuccessful case.
+
+## BHSM and what the observations identify
+
+One optical exterior is interpreted in the declared BHSM Einstein/GHY sector and counted once. Mass identified by suitable observations can be represented as a declared static sphere's curvature deficit or Brown–York energy. Native brightness-only timescales do not identify that mass, so these derived quantities remain unavailable. The [23 October author clarification](../../docs/BHSM_AUTHOR_SURFACE_GEOMETRY_CLARIFICATION_20261023.md) includes ordinary gravitational topography in BHSM surface deformation. When a gravitational origin is supported, characterizing that geometry is useful before a unique object type is established; a conditional photometric fit alone does not validate that origin. Agreement with an ordinary lens model does not uniquely reconstruct a microscopic interface, test the abstract core or independently detect an R1 deformation.
+
+The dated core/surface proposal assigns no primitive spacetime metric, clock, trajectory or frequency to the abstract core. Reviewed theory/source revision [705d4c7e](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/tree/705d4c7e2f9a832b457f63ff975e7d4dc8008645) states the radial membrane assumptions and applied-pressure variation, preserves both handoff versions, and compares the recovered original PDFs at their restricted mathematical scope. It supplies no terminal core transfer or new optical coefficient.
+
+The optional R1 transfer calculation retains a uniform sufficient state cap in its declared local exterior and exact optical blind directions. Its admitted nearby envelope remains below the supplied noise. It is conditional theory, not observed BHSM-core or black-hole deformation evidence.
+
+## Source preservation and rights
+
+The frozen 100-event pilot and 2022 benchmark native files remain external and unmodified. The separate 2023 portable source pack redistributes its explicitly licensed author observations with attribution and bounded HST header prefixes. [Data provenance](real_data_pilot_20261022/data_provenance/) supplies acquisition URLs, citations, hashes and selection details. The 2022 Zenodo deposit declares CC BY 4.0; no blanket OGLE redistribution license is inferred from public access. The repository distributes compact derived results, diagnostics, plots and replay/fetch instructions rather than the raw OGLE observation cohort.
+
+Source-line identities and complete native inputs/predictions remain in the external replay output identified by the pilot summary. Literature annotations are a separate version with a receipt proving frozen numerical results/ranking unchanged. Primary searches identify four prior-parallax overlaps and 3092's OGLE/MOA aliases; incomplete novelty clearance is explicit.
+
+## Historical evidence and scope
+
+The prior 64- and128-draw resolved-pair calibrations remain versioned historical evidence, not reruns of the revised kernel or coverage calibration for native photometry. The original theoretical replay remains `python scripts/reproduce.py` from this paper directory. Product checks and notebook commands are in the product guide; reviewed correction and installed-workflow receipts are summarized in [VALIDATION.md](VALIDATION.md).
+
+This completed baseline supports auditable photometric screening and historical reanalysis priorities. The software executes the supplied observations, but reliable black-hole mass identification remains unestablished. A separately frozen estimator with justified correlation/calibration assumptions, or further angular/parallax and calibration evidence, would need validation and physical association tests. No journal submission or new black-hole discovery is claimed by this baseline.

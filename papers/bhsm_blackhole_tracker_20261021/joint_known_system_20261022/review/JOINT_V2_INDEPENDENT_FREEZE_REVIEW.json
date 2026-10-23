@@ -1,0 +1,172 @@
+{
+  "schema": "bhtracker.independent_joint_v2_freeze_review.v1",
+  "utc": "2026-10-22T20:46:26.054634+00:00",
+  "reviewer": "independent theory_reconciliation agent",
+  "verdict": "PASS_TO_FREEZE_PROSPECTIVE_CAMPAIGN_NOT_MASS_ACCEPTANCE",
+  "measured_fits_run_by_reviewer": false,
+  "source_files": {
+    "product/bhtracker/joint_mass_v2.py": {
+      "sha256": "6eaf050481fc23aebf4b929e49fdab57e324ee80eb08e1547b69f056269eeaaa",
+      "bytes": 40868
+    },
+    "product/bhtracker/joint_benchmark_v2.py": {
+      "sha256": "83f599f7cdd616690fdcbf61f30ec05145719cc5b343d083cfe4c0a45ff940a6",
+      "bytes": 7474
+    },
+    "product/bhtracker/joint_workflow_v2.py": {
+      "sha256": "3597564b3f7cf628fd13d003ad18fb5aff7f03aea644e86ece0664d75b7e1698",
+      "bytes": 4573
+    },
+    "product/docs/JOINT_MASS_BENCHMARK_PROTOCOL_V2.md": {
+      "sha256": "0be8ca73923a78c898676d6326212740fd43ef8f26f25d43d34f85350b258783",
+      "bytes": 10154
+    },
+    "product/tests/test_joint_mass_v2.py": {
+      "sha256": "026ed1a95175ca51add6d01407c16d6ba8a42f82187ec8c86dc26d471d5eb042",
+      "bytes": 4754
+    }
+  },
+  "control_outputs_read": {
+    "JOINT_V2_ACTUAL_CADENCE_INJECTION.json": {
+      "sha256": "eaf707339abc7b0a14d5db0700750a0d30846c73b4a725f2d08194dabaad6ef6",
+      "bytes": 1967
+    },
+    "JOINT_V2_ACTUAL_CADENCE_ZERO_PARALLAX_CONTROL.json": {
+      "sha256": "6d6c15a73619328cd357ee75d2049d69ae4c1186fd4836c36e129c3f4409832f",
+      "bytes": 2027
+    },
+    "JOINT_V2_NOISY_ACTUAL_CADENCE_INJECTIONS.json": {
+      "sha256": "b854e5b6763842b10f5e448516c2f36422e32b4aeef791200cf98d6dc8f3af18",
+      "bytes": 10283
+    }
+  },
+  "independent_dense_covariance_checks": [
+    {
+      "f": 0.0,
+      "k": 1.0,
+      "floor_mag": 0.0,
+      "Q_error": 0.0,
+      "relative_logdet_error": 0.0,
+      "passed": true
+    },
+    {
+      "f": 0.0,
+      "k": 0.5,
+      "floor_mag": 0.0,
+      "Q_error": 0.0,
+      "relative_logdet_error": 1.7763568394002505e-15,
+      "passed": true
+    },
+    {
+      "f": 0.0,
+      "k": 0.9,
+      "floor_mag": 0.003,
+      "Q_error": 4.440892098500626e-16,
+      "relative_logdet_error": 1.2212453270876722e-14,
+      "passed": true
+    },
+    {
+      "f": 0.0,
+      "k": 2.0,
+      "floor_mag": 0.02,
+      "Q_error": 0.0,
+      "relative_logdet_error": 1.2434497875801753e-14,
+      "passed": true
+    },
+    {
+      "f": 0.2,
+      "k": 1.0,
+      "floor_mag": 0.0,
+      "Q_error": 4.440892098500626e-16,
+      "relative_logdet_error": 1.7763568394002505e-15,
+      "passed": true
+    },
+    {
+      "f": 0.2,
+      "k": 0.5,
+      "floor_mag": 0.0,
+      "Q_error": 1.7763568394002505e-15,
+      "relative_logdet_error": 3.552713678800501e-15,
+      "passed": true
+    },
+    {
+      "f": 0.2,
+      "k": 0.9,
+      "floor_mag": 0.003,
+      "Q_error": 4.440892098500626e-16,
+      "relative_logdet_error": 1.0436096431476471e-14,
+      "passed": true
+    },
+    {
+      "f": 0.2,
+      "k": 2.0,
+      "floor_mag": 0.02,
+      "Q_error": 5.551115123125783e-17,
+      "relative_logdet_error": 3.552713678800501e-15,
+      "passed": true
+    },
+    {
+      "f": 0.95,
+      "k": 1.0,
+      "floor_mag": 0.0,
+      "Q_error": 1.4210854715202004e-14,
+      "relative_logdet_error": 7.105427357601002e-15,
+      "passed": true
+    },
+    {
+      "f": 0.95,
+      "k": 0.5,
+      "floor_mag": 0.0,
+      "Q_error": 5.684341886080802e-14,
+      "relative_logdet_error": 7.105427357601002e-15,
+      "passed": true
+    },
+    {
+      "f": 0.95,
+      "k": 0.9,
+      "floor_mag": 0.003,
+      "Q_error": 2.3092638912203256e-14,
+      "relative_logdet_error": 5.329070518200751e-15,
+      "passed": true
+    },
+    {
+      "f": 0.95,
+      "k": 2.0,
+      "floor_mag": 0.02,
+      "Q_error": 1.1102230246251565e-15,
+      "relative_logdet_error": 1.7763568394002505e-15,
+      "passed": true
+    }
+  ],
+  "focused_verification": {
+    "command": "python -m pytest tests/test_joint_mass_v2.py -q",
+    "working_directory": "product",
+    "passed": 10,
+    "elapsed_seconds_reported": 1.25
+  },
+  "checks": [
+    "Heliocentric source-minus-lens NE trajectory and unresolved image-summed centroid signs remain consistent with v1 independent derivation.",
+    "G1 preserves each native marginal variance; G2 calibration scale/floor are explicit fitted hypotheses and never edits supplied errors.",
+    "Full Gaussian objective includes negative relative log determinants and fixed least-squares offset is subtracted from reported deviance.",
+    "Independent dense checks include duplicate epochs, f=0,.2,.95 and native/calibrated/worst-bound scales.",
+    "Numerical time center is separated from physical time domain and target-specific bounds/initial guesses required for unknown targets.",
+    "Brightness diagnostic uses noise-free model predictions, avoiding selection on noisy residuals.",
+    "Complete candidate set, named diagnostics, blocked-night predictive rule, fixed control seeds, sensitivity set, and stop-if-all-fail rule are written before measured v2 fits.",
+    "Portable importer uses PureWindowsPath for archived provenance basename and verified exact source pack."
+  ],
+  "qualifications": [
+    "Review approves the prospective calculation, not adequacy of any measured-data outcome or astrophysical classification.",
+    "Single noisy-seed controls and 20 later parametric controls do not certify frequentist coverage; 20 controls have only 1/21 coarse tail resolution.",
+    "Both scalar chi-square tails and residual structure/prediction gates must remain visible; no passing scalar fit overrides failed bins or lag diagnostics.",
+    "Held-out driver was not yet implemented: evaluate all-minus-training conditional Q and relative log determinant at training-only fitted parameters, preserving training nuisance state.",
+    "Native HJD underlying clock and precise combined HST centroid epochs remain qualified; mandatory time-window and clock sensitivities are required.",
+    "Physical nuisance boundaries are nonregular; numerical caps, unresolved minima and incomplete competing modes prevent interval eligibility.",
+    "A conditional mass point is not a BH identification. Adequate angular/parallax profiles, sensitivity robustness and independent darkness/single-lens evidence are separate requirements.",
+    "G2 is a post-v1-diagnostic prospective calibration hypothesis, not external preregistration and not permission for further outcome-driven model iteration."
+  ],
+  "prior_reviews": [
+    "JOINT_V1_NOISE_REVIEW_AND_PROSPECTIVE_COVARIANCE.json",
+    "JOINT_V1_EXPLORATORY_RESIDUAL_STRUCTURE.json",
+    "PORTABLE_2023_SOURCEPACK_VERIFICATION.json"
+  ]
+}

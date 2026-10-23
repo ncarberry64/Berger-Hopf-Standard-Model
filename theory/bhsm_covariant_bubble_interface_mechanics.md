@@ -68,22 +68,53 @@ surface.
 
 ## Moving-interface equation
 
-For a symmetric spatial `p`-surface of areal radius `R`,
+The following radial reduction is a restricted example of the covariant
+traction law: a **round spatial `p`-sphere on a fixed Minkowski background**,
+constant tension `gamma_s`, units `c=1`, coordinate time `t`, and
+`|Rdot|<1`. Here `Omega_p` is the area of the unit `p`-sphere and dots mean
+coordinate-time derivatives. Its membrane contribution is
 
 ```text
 L_Sigma=-gamma_s Omega_p R^p sqrt(1-Rdot^2).
 ```
 
-Its exact Euler equation per unit area is
+The pure membrane term gives the zero-traction Euler equation. An applied
+normal pressure jump supplies the right-hand side; it does not follow from
+the membrane term alone. Write `Delta P=Delta P_event+P_bulk,response` in the
+same outward-pressure convention. For constant `Delta P`, include pressure
+work explicitly:
+
+```text
+L_total=L_Sigma+Delta P Omega_p R^(p+1)/(p+1).
+```
+
+Varying this total Lagrangian gives, per unit area,
 
 ```text
 gamma_s[Rddot/(1-Rdot^2)^(3/2)+p/(R sqrt(1-Rdot^2))]
   =Delta P_event+P_bulk,response.
 ```
 
-This is the covariant BHSM Rayleigh-type equation.  It is not a copied
-Newtonian fluid law.  No viscosity or damping is added.  Any loss term must be
-the computed outward Noether/radiative flux of the existing action.
+This is the fixed-background, constant-tension radial special case of the
+covariant BHSM traction equation. A nonconstant or dynamical pressure must be
+obtained from its actual bulk/interface action and stresses, rather than
+inserting the constant-pressure work term without variation of its source.
+
+Spherical symmetry alone does not justify this formula on curved geometry.
+For example, on a regular static side with
+
+```text
+ds^2=-f(r)dt^2+dr^2/f(r)+r^2 dOmega_p^2,   f(R)>0,
+L_Sigma=-gamma_s Omega_p R^p sqrt(f(R)-Rdot^2/f(R)),
+K_static=f'(R)/(2 sqrt(f(R)))+p sqrt(f(R))/R,
+```
+
+the displayed outward-normal static curvature reduces to `p/R` only for
+`f=1`. Curved or backreacting applications require the covariant traction
+equation with their actual induced metric, embedding and stress data. Varying
+tension requires its own variation terms, including any dependence on time,
+position or dynamical fields. No viscosity or damping is added. Any loss term
+must be the computed outward Noether/radiative flux of the existing action.
 
 ## Nucleation, harmonics, and the formation number
 

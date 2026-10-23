@@ -51,11 +51,11 @@ export const reviewEntries = {
   },
   'blackhole-tracker': {
     classification:
-      'BHSM compact-lens interpretation · synthetic demonstration',
+      'BHSM envelopment search · synthetic lensing, provisional target and separate benchmarks',
     statement:
-      'Blackhole Tracker reconstructs an effective compact-lens mass, position and motion and interprets the same exterior response within the declared BHSM sector. A separate conditional response is tested only with its supplied matching data.',
+      'The BHSM hunt constrains gravitational topography and asks which kinds of envelopment could produce it. The author-defined BHSM envelope-boundary differential is broader than conventional rotational frame dragging, which ordinary rotating matter can produce. Compact and extended or dark-matter-like interpretations require explicit response models and discriminating data; identical optical responses remain degenerate. One Einstein/GHY response is counted once. Gaia18ajz remains a previously published provisional primary potential black hole, with all eight alternatives and independent native assessment open. The published black-hole benchmark and brown-dwarf comparison have no accepted independent tracker recovery. The synthetic animation uses invented inputs; historical source directions are not lens tracks. Publication remains held for evidence review.',
     question:
-      'Can you reproduce the mass and motion fit with its full covariance and replay bundle, and distinguish the same-potential BHSM interpretation from an independently identified boundary state or black-hole horizon?',
+      'Which observations and admitted response models could distinguish compact and extended kinds of envelopment rather than leave the same optical response degenerate? How would you separate that question from conventional rotational frame dragging, and which evidence would support Gaia18ajz beyond its provisional literature designation?',
   },
   'cosmology-original': {
     classification: 'BHSM cosmology proposal',

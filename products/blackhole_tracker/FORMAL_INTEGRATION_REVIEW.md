@@ -1,4 +1,10 @@
-# Formal BHSM reviewer integration
+# Historical rc2 formal BHSM reviewer integration
+
+The findings and immutable artifacts below describe the preserved rc2
+integration. They do not certify later software or PDFs. The current rc4
+snapshot, 233-test verification and separate inadequate 2023 benchmark are
+documented in [REVIEWER.md](REVIEWER.md), the current source manifest and the
+manuscript/release receipts. Historical release identities remain unchanged.
 
 Norman P. Carberry's BHSM repository is the canonical reviewer home. The
 Manuscript-Generation repository records development history. This review

@@ -1,5 +1,6 @@
 import { cp, mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { spawn } from 'node:child_process';
+import { createHash } from 'node:crypto';
 import { dirname, relative, resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { slides } from '../lib/museum-slides.mjs';
@@ -16,6 +17,12 @@ const clientRoot = resolve(distRoot, 'client');
 const pagesRoot = resolve(distRoot, 'pages');
 const serverUrl = 'http://127.0.0.1:8787/';
 const publicUrl = 'https://ncarberry64.github.io/Berger-Hopf-Standard-Model/';
+const trackerDistribution = JSON.parse(await readFile(
+  resolve(museumRoot, 'public/research/blackhole-tracker/DISTRIBUTION.json'),
+  'utf8',
+));
+if (!/^\d+\.\d+\.\d+rc\d+$/.test(trackerDistribution.version))
+  throw new Error('Tracker distribution has no versioned release-candidate identity.');
 
 if (relative(distRoot, pagesRoot).startsWith('..')) {
   throw new Error('Refusing to export outside museum/dist.');
@@ -127,12 +134,50 @@ try {
     'The questions that keep us curious.',
     'physics-question-answer',
     'Follow the lens. Test the interpretation.',
-    'SYNTHETIC FORWARD VIEW',
+    'INDEPENDENT SYNTHETIC TEACHING MODEL',
+    'Gaia18ajz',
+    'Publication held for evidence review.',
+    'All eight published Gaia18ajz alternatives',
+    'OGLE-2007-BLG-224',
+    './research/blackhole-tracker/primary-target-20261023-v1/PRIMARY_TARGET_PROGRAM.json',
+    './research/blackhole-tracker/primary-target-20261023-v1/TARGET_EVIDENCE_STATUS.json',
     'Download the app',
-    './research/blackhole-tracker/BHSM_Blackhole_Tracker_Product.zip',
+    `./research/blackhole-tracker/BHSM_Blackhole_Tracker_Product_${trackerDistribution.version}.zip`,
+    `./research/blackhole-tracker/BHSM_Blackhole_Tracker_${trackerDistribution.version}.pdf`,
+    './research/blackhole-tracker/pilot-20261022-v1/all_100_results.csv',
+    'MASS UNRESOLVED',
+    'Three declared models fail adequacy. No supported mass.',
+    'ADEQUACY FAILED',
+    './research/blackhole-tracker/BHSM_OB110462_2023_SourcePack_v1.zip',
+    './research/blackhole-tracker/joint-20261022-v2/JOINT_PROVENANCE.json',
+    '155 historical events. Three investigation targets.',
+    'DISPUTED, PRIOR-CONDITIONAL POSSIBILITY',
+    'Start_Blackhole_Tracker_Atlas.cmd',
+    './research/blackhole-tracker/BHSM_Candidate_Atlas_Metadata_v3.zip',
+    './research/blackhole-tracker/candidate-atlas-20261023-v3/ATLAS_PROVENANCE.json',
+    './research/blackhole-tracker/candidate-atlas-20261023-v3/candidate_inventory_sky.png',
   ]) {
     if (!written.includes(expected))
       throw new Error(`Static export is missing: ${expected}`);
+  }
+  const trackerRoot = resolve(pagesRoot, 'research/blackhole-tracker');
+  const targetRoot = resolve(trackerRoot, 'primary-target-20261023-v1');
+  const targetStatus = JSON.parse(await readFile(resolve(targetRoot, 'TARGET_EVIDENCE_STATUS.json'), 'utf8'));
+  const targetProgram = await readFile(resolve(targetRoot, 'PRIMARY_TARGET_PROGRAM.json'));
+  if (targetProgram.length !== targetStatus.program_bytes ||
+      createHash('sha256').update(targetProgram).digest('hex') !== targetStatus.program_sha256 ||
+      !targetProgram.equals(await readFile(resolve(museumRoot, 'lib/blackhole-tracker-target-program.json'))))
+    throw new Error('Static primary-target program differs from the reviewed snapshot.');
+  for (const item of trackerDistribution.files) {
+    const path = resolve(trackerRoot, item.file);
+    if (relative(trackerRoot, path).startsWith('..'))
+      throw new Error('Tracker artifact path leaves its distribution directory.');
+    const bytes = await readFile(path);
+    if (
+      bytes.length !== item.bytes ||
+      createHash('sha256').update(bytes).digest('hex') !== item.sha256
+    )
+      throw new Error(`Static tracker artifact differs from its reviewed hash: ${item.file}`);
   }
   const sections = slides.map(([id]) => id);
   const positions = sections.map((id) => written.indexOf(`id="${id}"`));

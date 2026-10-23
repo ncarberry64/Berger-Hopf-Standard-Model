@@ -1,0 +1,96 @@
+{
+  "product_version": "0.2.0rc2",
+  "source": "/workspace/scratch/9471a05441b0/tmp/full_review/source/product",
+  "scope": "Synthetic regression probe; no physical data or repository mutation.",
+  "fixture": "make_example('nearby_motion', noise=False)",
+  "fit_controls": {
+    "starts": 1,
+    "nuisance": "none"
+  },
+  "budget_construction": "true minimum-impact GM/(c^2 b) times 1.00001",
+  "weak_metric_cap": 6.116157051213848e-08,
+  "baseline_status": "TRACKED",
+  "baseline_admitted": true,
+  "profile_interpretation": "Reoptimized likelihood. Endpoints at bounds are truncated; reference levels need separate calibration for nonregular/boundary cases.",
+  "profile_row_keys_before_instrumentation": [
+    "value",
+    "chi2",
+    "converged",
+    "delta_chi2"
+  ],
+  "profile_points_with_independent_admission_check": [
+    {
+      "value": 99885.9363806898,
+      "chi2": 8.993717321022459,
+      "converged": true,
+      "delta_chi2": 8.993717321022459,
+      "baseline_point_mass_admitted": true,
+      "actual_weak_ratio": 6.115861160695773e-08,
+      "public_prediction": "ACCEPTED"
+    },
+    {
+      "value": 99923.94312367175,
+      "chi2": 3.99813818770264,
+      "converged": true,
+      "delta_chi2": 3.99813818770264,
+      "baseline_point_mass_admitted": true,
+      "actual_weak_ratio": 6.115939189414208e-08,
+      "public_prediction": "ACCEPTED"
+    },
+    {
+      "value": 99961.96432827426,
+      "chi2": 0.9997672387403614,
+      "converged": true,
+      "delta_chi2": 0.9997672387403614,
+      "baseline_point_mass_admitted": true,
+      "actual_weak_ratio": 6.116017432581953e-08,
+      "public_prediction": "ACCEPTED"
+    },
+    {
+      "value": 100000.0,
+      "chi2": 3.784771312194142e-23,
+      "converged": true,
+      "delta_chi2": 0.0,
+      "baseline_point_mass_admitted": true,
+      "actual_weak_ratio": 6.116095890254948e-08,
+      "public_prediction": "ACCEPTED"
+    },
+    {
+      "value": 100000.0,
+      "chi2": 3.784771312194142e-23,
+      "converged": true,
+      "delta_chi2": 0.0,
+      "baseline_point_mass_admitted": true,
+      "actual_weak_ratio": 6.116095890254948e-08,
+      "public_prediction": "ACCEPTED"
+    },
+    {
+      "value": 100038.05014435374,
+      "chi2": 1.0002328307517936,
+      "converged": true,
+      "delta_chi2": 1.0002328307517936,
+      "baseline_point_mass_admitted": false,
+      "actual_weak_ratio": 6.116174562489037e-08,
+      "public_prediction": "prediction outside admitted baseline_point_mass domain: worldtube_weak_metric"
+    },
+    {
+      "value": 100076.11476684235,
+      "chi2": 4.001862923871158,
+      "converged": true,
+      "delta_chi2": 4.001862923871158,
+      "baseline_point_mass_admitted": false,
+      "actual_weak_ratio": 6.116253449340022e-08,
+      "public_prediction": "prediction outside admitted baseline_point_mass domain: worldtube_weak_metric"
+    },
+    {
+      "value": 100114.19387297475,
+      "chi2": 9.006288306026658,
+      "converged": true,
+      "delta_chi2": 9.006288306026658,
+      "baseline_point_mass_admitted": false,
+      "actual_weak_ratio": 6.116332550863862e-08,
+      "public_prediction": "prediction outside admitted baseline_point_mass domain: worldtube_weak_metric"
+    }
+  ],
+  "finding": "Converged profile points near delta_chi2=1 and 4 are outside the declared physical domain, but public profile rows do not report or exclude them."
+}

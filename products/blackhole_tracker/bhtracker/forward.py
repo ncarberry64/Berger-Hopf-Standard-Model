@@ -27,7 +27,11 @@ class LensEngine:
         self.tscale=max(float(np.ptp(self.data.epochs))/2,1.)
         self.tau=(self.data.epochs-self.data.t0)/self.tscale
         self.origin=np.mean(self.data.observations[:,:4].reshape(-1,2),axis=0)
-        self.r0=float(self.data.analysis.get('r0_pc',self.rE*1e-3))
+        # A numerical reference mass must not select a physical excision radius.
+        # The fallback is an explicit data-scale convention, not a measured skin.
+        observed_scale=float(np.median(np.linalg.norm(self.data.observations[:,:2]-self.data.observations[:,2:4],axis=1)))/2
+        self.default_r0_pc=observed_scale/RAD_MAS*g['D_l_pc']*1e-3
+        self.r0=float(self.data.analysis.get('r0_pc',self.default_r0_pc))
         # Admission and propagation must use the identical physical worldtube.
         self.physics_config={**self.data.raw,'analysis':{**self.data.analysis,'r0_pc':self.r0}}
         self.parallax=np.asarray(self.data.analysis.get('lens_parallax_factors',np.zeros((self.data.n,2))))*(1000/g['D_l_pc'])
@@ -90,7 +94,7 @@ class LensEngine:
         centers=center+(d.epochs-d.t0)[:,None]*motion+self.parallax
         y=(sources-centers)/self.theta
         u=np.linalg.norm(y,axis=1)
-        if np.any(u<1e-5):raise ValueError('near-critical aligned source is outside the primary-pair contract')
+        if np.any(u/np.sqrt(mr)<1e-5):raise ValueError('near-critical aligned source is outside the primary-pair contract')
         e=y/u[:,None];s=np.sqrt(u*u+4*mr)
         images=np.stack([.5*(u+s)[:,None]*e,.5*(u-s)[:,None]*e],axis=1)
         shear=np.asarray(parameters.get('shear',[0.,0.]),dtype=float)

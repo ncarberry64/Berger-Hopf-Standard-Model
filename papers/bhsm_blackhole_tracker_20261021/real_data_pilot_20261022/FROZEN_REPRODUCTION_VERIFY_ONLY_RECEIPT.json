@@ -1,0 +1,18 @@
+{
+  "schema": "bhsm_frozen_pilot_reproduction_verification/1",
+  "verification_date": "2026-10-22",
+  "command": "python reproduce_frozen_pilot.py --verify-only --data-root <supplied package>/data",
+  "exit_code": 0,
+  "actual_status": "FROZEN_KERNEL_PROTOCOL_AND_RAW_SELECTION_VERIFIED_NO_FIT",
+  "raw_files": 109,
+  "sample_sha256": "0cf5dbf714a99567ccfc8448f53560333ed4597115a2801138ac707926a8a4a7",
+  "kernel_sha256": {
+    "observations.py": "5c9b07c1887c9a299ca8505b323462d41f314457f2bff3b5b2b2ca1970a21c0b",
+    "photometry.py": "e51e83a8754666fe3746d037a80f7cfc25818a846297357222f38f3d1033bdac",
+    "astrometry.py": "8171c0cac0130dc704c6a3b11cc6197be0bdbb642267344e5c930e5ed5121423"
+  },
+  "raw_files_refetched": false,
+  "scientific_fits_repeated": false,
+  "checkout_modified": false,
+  "scope": "Wrapper reconstructs original layout and four own-source files in a checked temporary workspace; verifies exact protocol, scientific modules, all raw file hashes and frozen100-event selection. Focused verification is not a second full pilot fit."
+}

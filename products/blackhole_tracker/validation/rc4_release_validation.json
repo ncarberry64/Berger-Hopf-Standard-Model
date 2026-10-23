@@ -1,0 +1,39 @@
+{
+  "schema": "bhtracker.rc4_release_validation.v2",
+  "status": "LOCAL_SOFTWARE_CHECKS_PASSED",
+  "product_version": "0.2.0rc4",
+  "wheel": {
+    "filename": "bhsm_blackhole_tracker-0.2.0rc4-py3-none-any.whl",
+    "bytes": 289441,
+    "sha256": "fe01ef411b453c21374255f8bb7bd6a47e139a7f700fec227c5da0f5d0f568e5"
+  },
+  "full_product_tests": {
+    "passed": 244,
+    "failed": 0,
+    "skipped": 0,
+    "seconds": 87.191,
+    "receipt": "rc4_product_tests.xml"
+  },
+  "base_only_install_receipt": "package_install_receipt.json",
+  "optional_joint_install_receipt": "rc4_installed_joint_probe.json",
+  "notebooks": {
+    "executed": 4,
+    "receipt": "notebook_receipt.json",
+    "environment": "Clean noneditable installed wheel, kernel and cwd outside checkout"
+  },
+  "scientific_acceptance": "NOT_ESTABLISHED; every frozen measured joint candidate fails adequacy. Software checks and forward replay do not classify a black hole.",
+  "frozen_scientific_source_sha256": "6eaf050481fc23aebf4b929e49fdab57e324ee80eb08e1547b69f056269eeaaa",
+  "ci": "Final exact remote heads are recorded separately after push; this local receipt does not assert remote CI success.",
+  "reviewed_final_CI_corrections": {
+    "failed_head": "492f80b2db6efb2b5268a26687114f94075a6948",
+    "preserved_failures": "Four jobs: Linux push/PR strict prediction fixture, Windows push/PR covariance comparison. Full provider logs retained externally in CI_DEV_492F80B_PRODUCT_FAILURES.json.",
+    "ordinary_multistart": "Within the already requested objective precision, select convergence then a smaller column-normalized projected first-order KKT residual; material likelihood improvements retain precedence. Invalid candidates are explicit and JSON-safe. This changes resolved optimizer tie selection, not frozen joint/pilot algorithms or physical thresholds.",
+    "covariance_comparison": "Replace entrywise cross-covariance relative comparison by a coordinate-invariant bound on fractional variance in every linear motion combination. The numerical coefficient remains1e-9; the metrics are explicitly different. Separate symmetry, SPD, rank and mass-error guards remain.",
+    "unchanged": "Original stored optical fixture, strict prediction tolerance, physical admission, supplied uncertainties and frozen observational campaigns.",
+    "receipts": [
+      "rc4_covariance_resolution_receipt.json",
+      "rc4_covariance_resolution_focused_tests.xml"
+    ]
+  },
+  "historical_precision_evidence": "Earlier passing/failing identical-tree runs and finite-difference audits are retained rather than relabelled as final checks. See ORDINARY_REFINEMENT_STUDY_2.5.4.json and final selector receipt."
+}

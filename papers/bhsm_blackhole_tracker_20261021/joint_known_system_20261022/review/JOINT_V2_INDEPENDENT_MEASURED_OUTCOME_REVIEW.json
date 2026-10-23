@@ -1,0 +1,566 @@
+{
+  "schema": "bhtracker.independent_measured_joint_v2_review.v1",
+  "utc": "2026-10-22T21:30:16.145560+00:00",
+  "verdict": "ALL_FROZEN_CANDIDATES_INADEQUATE_NO_ACCEPTED_MASS_OR_BH_IDENTIFICATION",
+  "scientific_source_sha256": "6eaf050481fc23aebf4b929e49fdab57e324ee80eb08e1547b69f056269eeaaa",
+  "frozen_commit": "5bb94198565fb25414f1f05908c00d49838c4b73",
+  "input_sha256": "d4fc2bfc9320c7eab8a33b93517f68f035a5d498ffb35ff548a638648143af96",
+  "measured_fits_or_optimizations_run_by_reviewer": false,
+  "operation": "Read saved output and evaluate existing saved states; no optimization.",
+  "baseline_outcomes": [
+    {
+      "file": "JOINT_V2_G0_DIAGONAL16_CONTINUED.json",
+      "sha256": "14a1f3ea6dfd1ae60d48171d0824122d69ef2837edec42112eb8f4dacc58a72c",
+      "input_sha256": "d4fc2bfc9320c7eab8a33b93517f68f035a5d498ffb35ff548a638648143af96",
+      "status": "JOINT_MODEL_OR_NOISE_INADEQUATE",
+      "reported_mass_status": "PROFILE_AND_SYSTEMATICS_REQUIRED",
+      "accepted_mass": false,
+      "accepted_BH_identification": false,
+      "conditional_point_parameters": {
+        "t0_jd_tdb": 2455763.94860065,
+        "tE_days": 284.3931831381306,
+        "u0_heliocentric": 0.05183332449988892,
+        "angle_source_minus_lens_rad": 2.897235961731018,
+        "pi_E": 0.09712737880412109,
+        "instruments": {
+          "OGLE": {
+            "baseline_magnitude": 16.4847746629365,
+            "source_fraction": 0.046788454634028545
+          },
+          "HST_F814W": {
+            "baseline_magnitude": 19.959651293689614,
+            "source_fraction": 0.9548338975376495
+          },
+          "HST_F606W": {
+            "baseline_magnitude": 22.058295520789784,
+            "source_fraction": 0.9601282852262146
+          }
+        },
+        "theta_E_mas": 5.177578502797766,
+        "source_position_N_mas": 13.839949115279163,
+        "relative_frame_source_motion_N_mas_yr": -3.4533196286630843,
+        "source_position_E_mas": 7.759308221948201,
+        "relative_frame_source_motion_E_mas_yr": -2.0154981629385014,
+        "relative_frame_source_parallax_mas": 0.2076933624252513,
+        "F606W_constant_frame_offset_N_mas": -0.04438992810268568,
+        "F606W_constant_frame_offset_E_mas": 0.03448892003723925,
+        "mass_msun": 6.545684721249638,
+        "heliocentric_relative_motion_mas_yr": 6.649633888124407
+      },
+      "diagnostics": {
+        "astrometry_chi2": 32.04303679407464,
+        "astrometry_dof_conservative": 29,
+        "astrometry_chi2_tail_probability": 0.31798741385263796,
+        "photometry_innovation_chi2": 12568.558503514589,
+        "photometry_dof_approximate": 12510,
+        "photometry_chi2_tail_probability_approximate": 0.35425965818514066,
+        "GP_noise_inference_requires_simulation_calibration": false,
+        "OGLE_sorted_innovation_lag1": 0.1295352613036514,
+        "photometry_chi2_two_sided_probability_approximate": 0.7085193163702813,
+        "astrometry_chi2_two_sided_probability_approximate": 0.6359748277052759
+      },
+      "failed_bins": [
+        "native_sigma_quartile_1",
+        "native_sigma_quartile_2",
+        "native_sigma_quartile_3",
+        "native_sigma_quartile_4",
+        "predicted_noise_free_magnitude_quartile_1",
+        "predicted_noise_free_magnitude_quartile_2",
+        "predicted_noise_free_magnitude_quartile_4",
+        "Julian_year_2010",
+        "Julian_year_2011",
+        "Julian_year_2013",
+        "Julian_year_2014",
+        "Julian_year_2015",
+        "Julian_year_2016",
+        "fixed_event_HJD2455400_2456400",
+        "fixed_offevent_complement"
+      ],
+      "Ljung_Box10_probability_approximate": 1.3788597368072085e-126,
+      "nonlinear_active_bounds": [],
+      "linear_active_bounds": [],
+      "converged_starts": 16,
+      "attempted_starts": 16,
+      "converged_objective_range": [
+        12600.601540308662,
+        13307.609634912145
+      ],
+      "saved_state_reevaluation_errors": {
+        "objective_deviance": 0.0,
+        "photometric_innovation_chi2": 0.0,
+        "astrometric_chi2": 0.0,
+        "GP_log_determinant_ratio_to_native_diagonal": 0.0
+      }
+    },
+    {
+      "file": "JOINT_V2_G1_MARGINAL16_CONTINUED.json",
+      "sha256": "0d1b9d5471d7030843aeef0bb1f5d5e1ca475907109514e08c42f1260bb67f54",
+      "input_sha256": "d4fc2bfc9320c7eab8a33b93517f68f035a5d498ffb35ff548a638648143af96",
+      "status": "JOINT_MODEL_OR_NOISE_INADEQUATE",
+      "reported_mass_status": "PROFILE_AND_SYSTEMATICS_REQUIRED",
+      "accepted_mass": false,
+      "accepted_BH_identification": false,
+      "conditional_point_parameters": {
+        "t0_jd_tdb": 2455764.310901825,
+        "tE_days": 282.3759737120259,
+        "u0_heliocentric": 0.047900535404028007,
+        "angle_source_minus_lens_rad": 2.865003760789448,
+        "pi_E": 0.08956537922742851,
+        "instruments": {
+          "OGLE": {
+            "baseline_magnitude": 16.484473804212424,
+            "source_fraction": 0.04671815846277546
+          },
+          "HST_F814W": {
+            "baseline_magnitude": 19.95868273783358,
+            "source_fraction": 0.9555758848295202
+          },
+          "HST_F606W": {
+            "baseline_magnitude": 22.057368967736192,
+            "source_fraction": 0.9603588368999635
+          }
+        },
+        "gp_correlation_fraction": 0.13646302986439923,
+        "gp_tau_days": 0.3628485310963385,
+        "theta_E_mas": 5.181188699909645,
+        "source_position_N_mas": 13.830693020930203,
+        "relative_frame_source_motion_N_mas_yr": -3.4530086154903357,
+        "source_position_E_mas": 7.702079095757176,
+        "relative_frame_source_motion_E_mas_yr": -2.014570191541285,
+        "relative_frame_source_parallax_mas": 0.190051325077251,
+        "F606W_constant_frame_offset_N_mas": -0.04567315822981702,
+        "F606W_constant_frame_offset_E_mas": 0.0333664977562204,
+        "mass_msun": 7.103285982270498,
+        "heliocentric_relative_motion_mas_yr": 6.701806629525586
+      },
+      "diagnostics": {
+        "astrometry_chi2": 32.38750744003493,
+        "astrometry_dof_conservative": 29,
+        "astrometry_chi2_tail_probability": 0.30312419784821387,
+        "photometry_innovation_chi2": 12598.172831458007,
+        "photometry_dof_approximate": 12508,
+        "photometry_chi2_tail_probability_approximate": 0.2833328909143844,
+        "GP_noise_inference_requires_simulation_calibration": true,
+        "OGLE_sorted_innovation_lag1": 0.019803615074037117,
+        "photometry_chi2_two_sided_probability_approximate": 0.5666657818287688,
+        "astrometry_chi2_two_sided_probability_approximate": 0.6062483956964277
+      },
+      "failed_bins": [
+        "native_sigma_quartile_1",
+        "native_sigma_quartile_2",
+        "native_sigma_quartile_3",
+        "predicted_noise_free_magnitude_quartile_1",
+        "predicted_noise_free_magnitude_quartile_2",
+        "predicted_noise_free_magnitude_quartile_4",
+        "Julian_year_2010",
+        "Julian_year_2011",
+        "Julian_year_2012",
+        "Julian_year_2013",
+        "Julian_year_2014",
+        "Julian_year_2015",
+        "Julian_year_2016",
+        "fixed_event_HJD2455400_2456400",
+        "fixed_offevent_complement"
+      ],
+      "Ljung_Box10_probability_approximate": 0.22288240977471002,
+      "nonlinear_active_bounds": [],
+      "linear_active_bounds": [],
+      "converged_starts": 16,
+      "attempted_starts": 16,
+      "converged_objective_range": [
+        12067.237171323228,
+        12099.204382002405
+      ],
+      "saved_state_reevaluation_errors": {
+        "objective_deviance": 0.0,
+        "photometric_innovation_chi2": 0.0,
+        "astrometric_chi2": 0.0,
+        "GP_log_determinant_ratio_to_native_diagonal": 0.0
+      }
+    },
+    {
+      "file": "JOINT_V2_G2_CALIBRATED16_CONTINUED.json",
+      "sha256": "8dba427f556863c87bc266a001500d7cbc4a2ec20e579e8478c91401d70ce763",
+      "input_sha256": "d4fc2bfc9320c7eab8a33b93517f68f035a5d498ffb35ff548a638648143af96",
+      "status": "JOINT_MODEL_OR_NOISE_INADEQUATE",
+      "reported_mass_status": "PROFILE_AND_SYSTEMATICS_REQUIRED",
+      "accepted_mass": false,
+      "accepted_BH_identification": false,
+      "conditional_point_parameters": {
+        "t0_jd_tdb": 2455763.580147867,
+        "tE_days": 340.4995062298254,
+        "u0_heliocentric": 0.014554665156332405,
+        "angle_source_minus_lens_rad": 2.931067182604872,
+        "pi_E": 0.032420331699152226,
+        "instruments": {
+          "OGLE": {
+            "baseline_magnitude": 16.470144082410172,
+            "source_fraction": 0.034952505910026584
+          },
+          "HST_F814W": {
+            "baseline_magnitude": 19.968383558162152,
+            "source_fraction": 0.7088025637247319
+          },
+          "HST_F606W": {
+            "baseline_magnitude": 22.066771839018735,
+            "source_fraction": 0.7117493628371806
+          }
+        },
+        "gp_correlation_fraction": 0.40652230013093915,
+        "gp_tau_days": 99.99999999967683,
+        "OGLE_error_calibration_scale": 0.9497115510845952,
+        "OGLE_extra_noise_floor_mag": 0.008479011135920183,
+        "theta_E_mas": 4.768504335728818,
+        "source_position_N_mas": 13.761793837737871,
+        "relative_frame_source_motion_N_mas_yr": -3.439875155005444,
+        "source_position_E_mas": 7.7526213811791695,
+        "relative_frame_source_motion_E_mas_yr": -2.0235136495619783,
+        "relative_frame_source_parallax_mas": 0.16230060421480066,
+        "F606W_constant_frame_offset_N_mas": -0.030621106643551266,
+        "F606W_constant_frame_offset_E_mas": 0.028549145139305426,
+        "mass_msun": 18.060708673466376,
+        "heliocentric_relative_motion_mas_yr": 5.115121099322142
+      },
+      "diagnostics": {
+        "astrometry_chi2": 32.427055970159685,
+        "astrometry_dof_conservative": 29,
+        "astrometry_chi2_tail_probability": 0.30144442303827856,
+        "photometry_innovation_chi2": 12528.743488085338,
+        "photometry_dof_approximate": 12506,
+        "photometry_chi2_tail_probability_approximate": 0.4411967998668733,
+        "GP_noise_inference_requires_simulation_calibration": true,
+        "OGLE_sorted_innovation_lag1": 0.046350053816690044,
+        "photometry_chi2_two_sided_probability_approximate": 0.8823935997337466,
+        "astrometry_chi2_two_sided_probability_approximate": 0.6028888460765571
+      },
+      "failed_bins": [
+        "predicted_noise_free_magnitude_quartile_2",
+        "predicted_noise_free_magnitude_quartile_4",
+        "native_seeing_quartile_1",
+        "native_seeing_quartile_4",
+        "Julian_year_2012",
+        "Julian_year_2013",
+        "Julian_year_2014",
+        "Julian_year_2015"
+      ],
+      "Ljung_Box10_probability_approximate": 6.768052971502633e-05,
+      "nonlinear_active_bounds": [
+        "log_OGLE_GP_tau_days"
+      ],
+      "linear_active_bounds": [],
+      "converged_starts": 16,
+      "attempted_starts": 16,
+      "converged_objective_range": [
+        11287.384047408501,
+        11502.357377788867
+      ],
+      "saved_state_reevaluation_errors": {
+        "objective_deviance": 0.0,
+        "photometric_innovation_chi2": 0.0,
+        "astrometric_chi2": 0.0,
+        "GP_log_determinant_ratio_to_native_diagonal": 0.0
+      }
+    }
+  ],
+  "whole_night_prediction_outcomes": [
+    {
+      "file": "JOINT_V2_G1_MARGINAL16_CONTINUED_V2_1_BLOCKED_PREDICTION.json",
+      "sha256": "2012ef6cbe6a79ddba7021be4f1cefc05adff3b59dbb1e369cd1051434002ece",
+      "training_file": "JOINT_V2_G1_MARGINAL16_CONTINUED_V2_1_BLOCKED_TRAIN.json",
+      "training_sha256": "7bc0347caa1402dcab5957e693d1a14e8ef002ff2d224c8d4f00cc2425deb98a",
+      "heldout_count": 2464,
+      "training_convergence": {
+        "converged_starts": 6,
+        "attempted_starts": 6,
+        "best_objective_deviance": 9549.432427404572,
+        "computational_time_origin_jd_tdb": 2455765.0,
+        "optimization_constant_offset": 30065.169097387843,
+        "profiled_nonlinear_rank": 13,
+        "nonlinear_parameter_count": 13,
+        "linear_parameter_count": 8
+      },
+      "training_non_noise_admission_status": "JOINT_MODEL_OR_NOISE_INADEQUATE",
+      "training_failed_bins": [
+        "native_sigma_quartile_1",
+        "native_sigma_quartile_3",
+        "predicted_noise_free_magnitude_quartile_1",
+        "predicted_noise_free_magnitude_quartile_2",
+        "predicted_noise_free_magnitude_quartile_4",
+        "Julian_year_2010",
+        "Julian_year_2011",
+        "Julian_year_2012",
+        "Julian_year_2013",
+        "Julian_year_2014",
+        "Julian_year_2015",
+        "Julian_year_2016",
+        "fixed_event_HJD2455400_2456400",
+        "fixed_offevent_complement"
+      ],
+      "training_active_bounds": [],
+      "conditional_photometric_Q": 2647.635436472585,
+      "conditional_logdet_relative_to_native_D": -124.61528663467084,
+      "conditional_relative_Gaussian_deviance": 2523.020149837914,
+      "conditional_negative2_log_predictive_density": -14898.476090723416,
+      "conditional_Q_two_sided_probability_approximate": 0.01037599378822633,
+      "approximate_screen_passed": true,
+      "same_training_state_reevaluation_errors": {
+        "conditional_photometric_Q": 0.0,
+        "conditional_logdet_relative_to_native_D": 0.0,
+        "conditional_relative_Gaussian_deviance": 0.0,
+        "conditional_negative2_log_predictive_density": 0.0,
+        "conditional_Q_two_sided_probability_approximate": 0.0
+      },
+      "interpretation": "A passing plug-in heldout quadratic cannot override failed full-data or training residual structure, physical/numerical boundaries, and uncalibrated parameter uncertainty."
+    },
+    {
+      "file": "JOINT_V2_G2_CALIBRATED16_CONTINUED_V2_1_BLOCKED_PREDICTION.json",
+      "sha256": "5966a647c7807267db7fc51a66eed853d3d80a58019aa8f1aac943798b91025b",
+      "training_file": "JOINT_V2_G2_CALIBRATED16_CONTINUED_V2_1_BLOCKED_TRAIN.json",
+      "training_sha256": "8804055371eb64580129489ba1ed6c2eacc633b7f8da93e6a77dcde80c656eef",
+      "heldout_count": 2464,
+      "training_convergence": {
+        "converged_starts": 8,
+        "attempted_starts": 8,
+        "best_objective_deviance": 9044.67668742843,
+        "computational_time_origin_jd_tdb": 2455765.0,
+        "optimization_constant_offset": 43978.01930558706,
+        "profiled_nonlinear_rank": 15,
+        "nonlinear_parameter_count": 15,
+        "linear_parameter_count": 8
+      },
+      "training_non_noise_admission_status": "JOINT_MODEL_OR_NOISE_INADEQUATE",
+      "training_failed_bins": [
+        "predicted_noise_free_magnitude_quartile_2",
+        "predicted_noise_free_magnitude_quartile_4",
+        "native_seeing_quartile_4",
+        "Julian_year_2012",
+        "Julian_year_2013",
+        "Julian_year_2014",
+        "Julian_year_2015"
+      ],
+      "training_active_bounds": [
+        "log_OGLE_GP_tau_days"
+      ],
+      "conditional_photometric_Q": 2540.407037825402,
+      "conditional_logdet_relative_to_native_D": -294.724079969008,
+      "conditional_relative_Gaussian_deviance": 2245.682957856394,
+      "conditional_negative2_log_predictive_density": -15175.813282704934,
+      "conditional_Q_two_sided_probability_approximate": 0.27710525582280593,
+      "approximate_screen_passed": true,
+      "same_training_state_reevaluation_errors": {
+        "conditional_photometric_Q": 0.0,
+        "conditional_logdet_relative_to_native_D": 0.0,
+        "conditional_relative_Gaussian_deviance": 0.0,
+        "conditional_negative2_log_predictive_density": 0.0,
+        "conditional_Q_two_sided_probability_approximate": 0.0
+      },
+      "interpretation": "A passing plug-in heldout quadratic cannot override failed full-data or training residual structure, physical/numerical boundaries, and uncalibrated parameter uncertainty."
+    }
+  ],
+  "completed_control_summary": [
+    {
+      "candidate": "G1",
+      "file": "JOINT_V2_G1_MARGINAL16_CONTINUED_PARAMETRIC_CONTROLS20.json",
+      "sha256": "abdd54ef21308167025c47a3e96315f83d9e63492b06cdf778ba6c047d323660",
+      "count": 20,
+      "simulation_seeds": [
+        2026102200,
+        2026102201,
+        2026102202,
+        2026102203,
+        2026102204,
+        2026102205,
+        2026102206,
+        2026102207,
+        2026102208,
+        2026102209,
+        2026102210,
+        2026102211,
+        2026102212,
+        2026102213,
+        2026102214,
+        2026102215,
+        2026102216,
+        2026102217,
+        2026102218,
+        2026102219
+      ],
+      "controls_with_failed_variance_bins": 0,
+      "overall_not_rejected_count": 19,
+      "lag1_min_max": [
+        -0.014525614335829823,
+        0.01131200833082069
+      ],
+      "observed_absolute_lag_exceeds_all_controls": true,
+      "truth_profile_status_counts": {
+        "ADMITTED_NONREGULAR_PHYSICAL_BOUNDARY": 1,
+        "ADMITTED_LOCAL_PROFILE": 19
+      },
+      "minimum_MC_tail_resolution": 0.047619047619047616,
+      "qualification": "Twenty controls provide coarse diagnostics and local generating-mode calibration only; no precise interval coverage or global-mode claim. All native cadence/errors retained; generated values explicitly simulated."
+    },
+    {
+      "candidate": "G2",
+      "file": "JOINT_V2_G2_CALIBRATED16_CONTINUED_PARAMETRIC_CONTROLS20.json",
+      "sha256": "828e7cf7ad1d6f96c2e25eb46b396149aaf7b7f8ba8dc6832ca56f891c12c81d",
+      "count": 20,
+      "simulation_seeds": [
+        2026102300,
+        2026102301,
+        2026102302,
+        2026102303,
+        2026102304,
+        2026102305,
+        2026102306,
+        2026102307,
+        2026102308,
+        2026102309,
+        2026102310,
+        2026102311,
+        2026102312,
+        2026102313,
+        2026102314,
+        2026102315,
+        2026102316,
+        2026102317,
+        2026102318,
+        2026102319
+      ],
+      "controls_with_failed_variance_bins": 0,
+      "overall_not_rejected_count": 19,
+      "lag1_min_max": [
+        -0.013305018578499654,
+        0.01986140904470625
+      ],
+      "observed_absolute_lag_exceeds_all_controls": true,
+      "truth_profile_status_counts": {
+        "ADMITTED_LOCAL_PROFILE": 10,
+        "BOUNDARY_LIMITED": 10
+      },
+      "minimum_MC_tail_resolution": 0.047619047619047616,
+      "qualification": "Twenty controls provide coarse diagnostics and local generating-mode calibration only; no precise interval coverage or global-mode claim. All native cadence/errors retained; generated values explicitly simulated."
+    }
+  ],
+  "conditional_profile_summary": [
+    {
+      "candidate": "G1",
+      "file": "JOINT_V2_G1_MASS_PROFILE31.json",
+      "sha256": "1f46c0ce695dce7fab826bb968e02ea6b7fa4d1cb3b2bfd207909cfda85f6318",
+      "rows": 31,
+      "configuration": {
+        "max_nfev": 600,
+        "mode_limit": 8,
+        "retained_modes": 6
+      },
+      "status_counts": {
+        "ADMITTED_LOCAL_PROFILE": 24,
+        "BOUNDARY_LIMITED": 7
+      },
+      "accepted_physical_interval": false,
+      "coverage_claim": false,
+      "qualification": "Baseline inadequacy prevents mass acceptance irrespective of local row interval eligibility."
+    },
+    {
+      "candidate": "G2",
+      "file": "JOINT_V2_G2_MASS_PROFILE31.json",
+      "sha256": "efe455ce21e76eec369886db0be0b2cda2680f151479e02e73f033791b85da98",
+      "rows": 31,
+      "configuration": {
+        "max_nfev": 600,
+        "mode_limit": 8,
+        "retained_modes": 8
+      },
+      "status_counts": {
+        "BOUNDARY_LIMITED": 31
+      },
+      "accepted_physical_interval": false,
+      "coverage_claim": false,
+      "qualification": "Baseline inadequacy prevents mass acceptance irrespective of local row interval eligibility."
+    }
+  ],
+  "conditional_refined_support": [
+    {
+      "candidate": "G1",
+      "file": "JOINT_V2_G1_MASS_REFINED_SUPPORT.json",
+      "sha256": "9bf4d09f3da78791951cf5fbe9065e21ac93c73b7379729993b284210df113b1",
+      "rows": 54,
+      "levels": [
+        {
+          "delta_deviance_level": 1.0,
+          "conditional_support_around_best_msun": [
+            5.988854334916463,
+            8.398829210356862
+          ],
+          "accepted_mass_interval": null,
+          "reason": "Noise adequacy and other identification gates are separate; no mass acceptance from profile alone. Caps/unresolved points interrupt support."
+        },
+        {
+          "delta_deviance_level": 3.841459,
+          "conditional_support_around_best_msun": [
+            5.020896280502707,
+            9.910458562488609
+          ],
+          "accepted_mass_interval": null,
+          "reason": "Noise adequacy and other identification gates are separate; no mass acceptance from profile alone. Caps/unresolved points interrupt support."
+        }
+      ],
+      "accepted_physical_interval": false,
+      "coverage_claim": false
+    },
+    {
+      "candidate": "G2",
+      "file": "JOINT_V2_G2_MASS_REFINED_SUPPORT.json",
+      "sha256": "f02e20ccc426a142266daf9ed8507e853c0b13dbe6d901c0e8e598e65e985f46",
+      "rows": 32,
+      "levels": [
+        {
+          "delta_deviance_level": 1.0,
+          "conditional_support_around_best_msun": null,
+          "accepted_mass_interval": null,
+          "reason": "Noise adequacy and other identification gates are separate; no mass acceptance from profile alone. Caps/unresolved points interrupt support."
+        },
+        {
+          "delta_deviance_level": 3.841459,
+          "conditional_support_around_best_msun": null,
+          "accepted_mass_interval": null,
+          "reason": "Noise adequacy and other identification gates are separate; no mass acceptance from profile alone. Caps/unresolved points interrupt support."
+        }
+      ],
+      "accepted_physical_interval": false,
+      "coverage_claim": false
+    }
+  ],
+  "findings": [
+    "All16 declared starts per candidate converge after the predeclared continuation, but all3 baseline residual structure screens fail.",
+    "G0 scalar photometric/angular quadratic screens pass while serial correlation and15 structure bins fail.",
+    "G1 preserves native marginal errors and removes most serial correlation, but15 native-error/brightness/season/event-structure bins fail; a global quadratic near expected is insufficient.",
+    "G2 improves scalar/predictive scores but8 structure bins and serial correlation fail; the OU time scale reaches the100day artificial upper cap.",
+    "Conditional point masses differ from6.5457 to18.0607 solar masses across the fixed candidate set; this spread is model dependence, not an observational error interval.",
+    "All angular quadratic values near32 over29 conservatively counted degrees of freedom remain conditional on the supplied relative frame and assumed covariance. Angular fit adequacy alone does not establish a trustworthy mass ratio.",
+    "Both corrected whole-night plug-in predictive screens pass at.01, butG1 is borderline at.010376 and neither passes the required full residual model. No acceptance gate may be bypassed by prediction.",
+    "Stop this fixed campaign; retain diagnostics/profiles/controls required by protocol and label all outputs conditional. No further covariance-family tuning to reach the literature mass.",
+    "The known-system BH classification in prior literature is separate evidence. This implementation/data combination has not independently validated a reliable known-BH mass, and cannot establish reliability for unknown systems."
+  ],
+  "still_unavailable": [
+    "accepted mass interval",
+    "certified profile coverage",
+    "absolute source/lens parallax",
+    "absolute lens proper motion",
+    "lens distance",
+    "new lens-flux upper limit",
+    "BHSM core/surface state",
+    "new black-hole discovery"
+  ],
+  "physical_additional_evidence_needed": [
+    "Author-documented photometric clock scale, exposure/calibration metadata, per-epoch variance components, detector identity and matched-star diagnostics to distinguish calibration/seeing dependence from correlated astrophysical or reduction residuals.",
+    "Exposure-level astrometric covariances, reference-star transforms, bias corrections, effective epoch weights and cross-filter/visit correlations; independent frame zero points before absolute parallax or velocity inference.",
+    "A separately validated adequate generative mean/noise calibration, not a fitted variance chosen because it yields the expected mass.",
+    "Independent angular-parallax signal and lens/source flux constraints for any unknown followup; contemporaneous missing peak astrometry cannot be manufactured from a later observation."
+  ],
+  "linked_independent_receipts": [
+    "JOINT_V2_INDEPENDENT_FREEZE_REVIEW.json",
+    "JOINT_V2_1_PARTITION_INDEPENDENT_REVIEW.json",
+    "JOINT_V2_1_PREDICTION_DRIVER_INDEPENDENT_REVIEW.json",
+    "JOINT_V1_NOISE_REVIEW_AND_PROSPECTIVE_COVARIANCE.json"
+  ]
+}

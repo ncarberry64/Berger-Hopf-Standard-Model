@@ -1,0 +1,1207 @@
+{
+  "schema": "bhsm.portable_2023_benchmark_sources/1",
+  "pack_id": "BHSM-OB110462-2023-sourcepack-v1",
+  "created_date": "2026-10-22",
+  "scope": "Distinct corrected-OGLE plus LamLu2023v2 HST data and timing metadata; no original2022benchmark/pilot/Keck observations",
+  "raw_observations_unchanged": true,
+  "files": [
+    {
+      "path": "ACADEMIC_USE.md",
+      "bytes": 2295,
+      "sha256": "3484a686ad03529cea91b56b00908d29b8ae1cc69dd4c842a936b74820ecc4b6",
+      "refetch": null,
+      "role": "frozen_provenance_or_BHSM_helper"
+    },
+    {
+      "path": "CITATIONS_AND_RIGHTS.md",
+      "bytes": 2795,
+      "sha256": "22ada8c70b86883f433662e1a00839838f1e6aa29823854373960ee8c7a5d477",
+      "refetch": null,
+      "role": "frozen_provenance_or_BHSM_helper"
+    },
+    {
+      "path": "LAM_LU_2023_HST_EXPOSURE_TIME_MAPPING.json",
+      "bytes": 41140,
+      "sha256": "25e218c9987f593540a9fdcdd5123ae70db992ebcf5fe7d647c60eff22fc63f0",
+      "refetch": null,
+      "role": "frozen_provenance_or_BHSM_helper"
+    },
+    {
+      "path": "LamLu2023v2__hst_data_table.txt",
+      "bytes": 1595,
+      "sha256": "11b548a323a00515bd2b117ad05a457308384409ac76de55f1a5fea0bdf240a3",
+      "refetch": {
+        "kind": "arxiv_tar_member",
+        "url": "https://arxiv.org/src/2308.03302v2",
+        "archive_sha256": "9779852208a5bb6586f9d138dde6de3a23f4a9658c160d13958a8adadedd5ed4",
+        "archive_bytes": 2644516,
+        "member": "hst_data_table.txt"
+      },
+      "role": "raw_author_arxiv_member",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "LamLu2023v2__hst_obs_table.txt",
+      "bytes": 1462,
+      "sha256": "c812d3d21405eafca1e0287ea2805349f3513e7b0a903c7dedc1c9233d871f46",
+      "refetch": {
+        "kind": "arxiv_tar_member",
+        "url": "https://arxiv.org/src/2308.03302v2",
+        "archive_sha256": "9779852208a5bb6586f9d138dde6de3a23f4a9658c160d13958a8adadedd5ed4",
+        "archive_bytes": 2644516,
+        "member": "hst_obs_table.txt"
+      },
+      "role": "raw_author_arxiv_member",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "LamLu2023v2__sample631.tex",
+      "bytes": 72066,
+      "sha256": "e323fde793bc6e6e4538cb141aab39c0a54a32a9be1844f2e81f42c88c21e5d7",
+      "refetch": {
+        "kind": "arxiv_tar_member",
+        "url": "https://arxiv.org/src/2308.03302v2",
+        "archive_sha256": "9779852208a5bb6586f9d138dde6de3a23f4a9658c160d13958a8adadedd5ed4",
+        "archive_bytes": 2644516,
+        "member": "sample631.tex"
+      },
+      "role": "raw_author_arxiv_member",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "LamLu2023v2_inventory.json",
+      "bytes": 2954,
+      "sha256": "bba70f53058a57c777f1273527fbb1fdc00a8b33a0392ab188430ac9bc6bbc5f",
+      "refetch": null,
+      "role": "frozen_provenance_or_BHSM_helper"
+    },
+    {
+      "path": "LICENSE.md",
+      "bytes": 836,
+      "sha256": "0209931e13422c6608d12f9f24b2b8d007031294fdef73f2d6f36bd6e610f7c3",
+      "refetch": null,
+      "role": "frozen_provenance_or_BHSM_helper"
+    },
+    {
+      "path": "MAST_2023_Table2_header_receipt.json",
+      "bytes": 112182,
+      "sha256": "d8f7f353d4e87875be6fac5b29ae52895c11c5b180eaf8fd5638d41fce11ecff",
+      "refetch": null,
+      "role": "frozen_provenance_or_BHSM_helper"
+    },
+    {
+      "path": "MAST_header_prefixes/ibnc06f6q_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "37a13bf8c1b7b27356e60f704c6ea44a572b0869512c97c154f9327f2714ad37",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ibnc06f6q_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ibnc06f7q_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "67109f04ccc087b748df445ee911e604024ab720d012464d22acb7470b5c8b67",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ibnc06f7q_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ibnc06fbq_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "bdc4195aaee0505aa8a7d8d4fe2ab1b40a130564041ccf2cd327fe146306f2ca",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ibnc06fbq_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ibnc06fcq_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "60b1151780011d65a8dcc94607174e74444a6bef2a15ac5c01bf5a9eeca65c85",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ibnc06fcq_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ibnc06fdq_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "1191a700e87df182de5fc6856b01c7dbb170a6c6067d84d8722aaa790d556110",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ibnc06fdq_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ibnc06feq_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "c799470c5daf8932314685e96249e2f6dcf036bd50734d7b36b371202c428b9f",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ibnc06feq_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ibnc06ffq_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "6f15adb3b2b48644ef8b985cf98c91950d0cec9deb11fab8c485c1820aaedc11",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ibnc06ffq_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ibnc06fgq_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "9503ccf86ddeb8eb96208e1d23543325d958fdee824c7355026d453949684b7f",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ibnc06fgq_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ibnc06fkq_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "8093a6a77fb323d27566438b0315c8e262af74769afaf46b811a68b23e2d6872",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ibnc06fkq_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ibtk04axq_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "0eb04eef20e66405e961aabed88e2b53013be0369c068303effaac300d1e15c9",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ibtk04axq_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ibtk04ayq_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "7f952e0330f6d1ea55671cbc119291109eb4c84887d2be63f61b9fc9a735a94c",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ibtk04ayq_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ibtk04b0q_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "19e453dee797c99ef520bb7b5f2f31ec13f8502c521ade7b9a162629e327064e",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ibtk04b0q_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ibtk04b5q_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "791d184849d59d8cd18aa9223fb726db4a3fe63036278338c2e60f8c1f478ed3",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ibtk04b5q_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ibtk04b9q_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "6c2a0db1d6dbc94dca36d99094f4fa212b461e244df5193d84efb1ec90d1e3bc",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ibtk04b9q_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ibtk04baq_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "8f47907e55deb6833281ff755d57d7e1948fb52043f1c2e10eea93c13d80d9eb",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ibtk04baq_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ibtk04bcq_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "3cb62c41ef18171ecff9c800340787d9601cdacc01ad084c7d9ca9337c664c64",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ibtk04bcq_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ibtk07j4q_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "3c9cf076966ffd7926297abf1223e520082e6c3520064c0b572abee5ce21bb7f",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ibtk07j4q_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ibtk07j5q_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "2586b472358b141f70aeac2c454d529adeec3448ac7ebd9cd526f7f70494d648",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ibtk07j5q_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ibtk07j6q_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "298ff226f84c003d6257adc54c889babe3f8c3c13669b34e3dc9ee5e3ee5d94a",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ibtk07j6q_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ibtk07j7q_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "ca67178f11bd03db52aa366198ad528b6cf35c201c677fb6a29a8a807e4976a1",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ibtk07j7q_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ibtk07j8q_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "e8f11a91d1192fae7a4cf05dc177370e45181a0c9801aaf255d38126a84285e9",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ibtk07j8q_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ibtk07j9q_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "fcd6a58916fb9cc5ea2dffd69b99f8da7ab799b6d8af28c1a34b388e97ad8cfa",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ibtk07j9q_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ibtk07jaq_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "66f539df7ce0bcc727bfc120b96964faa5e9194f4bb07cad652195f743be7ca5",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ibtk07jaq_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ic3l03l3q_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "dcc8b8776856bd4ecd80d3e8655d4187236e66e735a988fc296c73e7108cdebb",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ic3l03l3q_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ic3l03l4q_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "9a49a96412424848cc0143bfd2a5004d498990b97b400e8c4a4841f660ecf57e",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ic3l03l4q_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ic3l03l5q_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "ed490ccf309ee7eb4427341cc92d3d6c78f7ee01dad4675486fb5606564333b4",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ic3l03l5q_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ic3l03l6q_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "8b527c7b8d408c13d7e6ba0698f151bcc131774bc52404e3ce98b8f5fd502bca",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ic3l03l6q_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ic3l03l7q_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "81fa8506f387277dae4d7f76165343cbc1e3cc8a0a6a09c23d8a030cd4450931",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ic3l03l7q_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ic3l03l8q_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "3f449a5345726eeb713442892ecbe921d72f8894b1ea8b003ccd735944cb3ec0",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ic3l03l8q_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ic3l03l9q_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "e63e96490c172c195cfaee8cc5a22f5801d9b26850e983f367f08ea7156f7610",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ic3l03l9q_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ic3l06euq_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "9820e5c469d9ea56f378e603d30663dcd88fec759b44b9d29ebb915fdcf9923b",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ic3l06euq_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ic3l06evq_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "34e307aa311c991ca0dfa0bf3f4e74eca2655fec71ae9935461c02e4d4d27879",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ic3l06evq_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ic3l06ewq_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "8585962bb07d8b22798fd875921582bd6eaa4206d3a05f48bcd3ccf0911e741a",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ic3l06ewq_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ic3l06exq_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "30d88628705cdd44c77327ec3198a7f60b1526c6295517679385e36be17963fa",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ic3l06exq_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ic3l06eyq_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "7940f06c33226d1ac16f4ae28862b074af0102b5c0f6f71d8d95e8ad6967d87c",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ic3l06eyq_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ic3l06ezq_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "7824c9017ae38ca7811319e2e27ae597fb5854cccbdbbaeb8c87fb4286fc9c0e",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ic3l06ezq_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ic3l06f0q_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "b8f35fd637bce5fbf50f8a908a197717c72977c4fd5754597b32b86e9140b1a9",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ic3l06f0q_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ic7m02frq_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "322b1af832cf10c5b3e44ad0dd2700c2e49a615971bd0ab4abdb1b6677211a5d",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ic7m02frq_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ic7m02fsq_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "3645e58f43d580c4bbe24ab2d8f6134eadf37876475a09d42293b29dbbcd6eef",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ic7m02fsq_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ic7m02ftq_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "26352854176fc2d7c4a975d5ce2e285bf2c2f026b258cc4260436403d29b651e",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ic7m02ftq_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ic7m02fuq_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "6374e146c69847723d87be7ecd02c9e8096013fbbb67250417ec0fb81267ddb8",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ic7m02fuq_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ic7m02fvq_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "e560bf23d77f0807688d1395f6791095b106f913d5f64cb72a777a2fc6a58aab",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ic7m02fvq_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ic7m02fwq_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "4d622f08a4396e2dc53d9ed8cdbe7f3766206a0d7180d2610ea55858195b7475",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ic7m02fwq_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ic7m02fxq_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "dd040007ef8de202ec87a333efb8db10e32dd0e138946744aaa21781f3c05fff",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ic7m02fxq_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ic7m06xiq_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "68433aa830f9c9b380eaaa21efe74aa3101ac2df0a286183ea519118c875d5f2",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ic7m06xiq_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ic7m06xjq_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "773a3461351217366c9e05456ea557ad2f92a29f7ad92a90cbe1edb57834f841",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ic7m06xjq_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ic7m06xkq_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "7f3c9da577737a8e600536353c5ac473b81ec303e62e4406f21bbfd1231553f1",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ic7m06xkq_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ic7m06xlq_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "15aae933027858aa057539fa1ae728a3da2090905b61f2ad9722eb7f96cb771c",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ic7m06xlq_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ic7m06xmq_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "8139705664cef75df32d0a043fdb69b723795c6ab0bbb85ef001c356831020ac",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ic7m06xmq_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ic7m06xnq_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "564903e251447e15addd8c8d64742ee3001250bcb13bc0955f8b23921872d1c6",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ic7m06xnq_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ic7m06xoq_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "781134b6a1807ed5d9a456d0cc60d8f47b1bf223ac57ecf4b22f4eed96bd2700",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ic7m06xoq_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/idaj51inq_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "29e309ac7b10f925a8b9062c92a01d736da99e50f35397468683446c309a48c4",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/idaj51inq_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/idaj51ioq_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "3eaf110b91083e504ebd2daf2800bb05d8807205564b78327e5b40aedbca5e51",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/idaj51ioq_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/idaj51ipq_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "ebd82ba577807695fa79b3f0d37ca65a5dc61d4a36c38eab8691e6753a364007",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/idaj51ipq_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/idaj51iqq_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "9d89fccbbc6697d57fb4e8ec5bf9f39acb0ef95fa24eadbc1415a794f710f764",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/idaj51iqq_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/idaj51irq_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "0e4d27be667d1b3ddf8b5fb9fb69948d50bd809ddce494626c62ea7507afd46e",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/idaj51irq_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/idaj51isq_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "fc88855c80f21663691f00e47f2d030a68fea68cf7faec9a0a48aa6ea5fe6d18",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/idaj51isq_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/idaj51itq_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "af5074cc47c8d222b0135f607b4ed699a86290eaf8af172d3b3734f16fb47a89",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/idaj51itq_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ieos01wzq_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "78fabf5bb3187c8a1794401c0c770ce461cc4b98f84b777154b779dede549f8a",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ieos01wzq_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ieos01x0q_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "da0ad1a572905d8b39bdeb2b4c552f7c6c898e709fd84c95b7a091d29adf1fb1",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ieos01x0q_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ieos01x1q_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "d10caa204da1e7788e4437daa923ae643345cba251cf856dd7195da956605659",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ieos01x1q_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ieos01x2q_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "b7c689a080dc3ab01b0a3ae01a2c787d83ff159f00fda173ae4cf45e48ec97e6",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ieos01x2q_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ieos01x4q_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "c349724a14db11e023a009e1e6412f2d7550e438ac9871fc8b2e11ced32695d2",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ieos01x4q_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ieos01x5q_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "5bed34cc961cc2996db28a35b4a0bfe1e6edeb147472913e8a972364ad3a41c2",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ieos01x5q_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ieos01x6q_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "b2d65bc1489dfcb1f25f258996de82690a5a7ba96cbcee337fac4d566294daf2",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ieos01x6q_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ieos01x7q_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "2b801e43908b5921e7d439f4de78a0cd285d41c0c990c753b8a70aa2ec2092d7",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ieos01x7q_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ieos01x8q_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "b598eaffd2b064d7e0dde8109dfabfd19669c78054d0cc371e2e2509f50a0ea4",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ieos01x8q_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ieos01x9q_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "e5bda616d0210934662c062f10ce53cc0c7b3635c39ce7a95f13c07b35b6de19",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ieos01x9q_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ieos01xaq_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "cbc5347b7e10fb42d3d468af4a514cbef499474d63f6124d2649908ab41f7bac",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ieos01xaq_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ieos02i3q_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "e983ecfecce3db0b52b63b6e9af67a63c421165f2c7ef70e6a15ff6fd6ef6fff",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ieos02i3q_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ieos02i4q_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "1867f5cee88bffe53a4f890c737453787ef470c0f3a42dc6c373ef1ca84ca14e",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ieos02i4q_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ieos02i6q_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "a8174a09460dff95071c2406863570843e8ca690180d14d1d5215202bcc3e5d4",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ieos02i6q_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ieos02i7q_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "4cc014903d1f2c30828a82424107c0f139ebf8db8f676c6890e07509df37e864",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ieos02i7q_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ieos02i9q_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "3bb9a99d2c074cd58aaa997661c9e82078f7a59da3b2ea50684783a406126119",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ieos02i9q_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ieos02iaq_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "9f0067e3c9a3b59185882a5146557c3b4eb0a0d37ba6d5297582b3471408f823",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ieos02iaq_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ieos02ibq_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "b280e4f31f3b2a226b64503b13633e5779a279127bab1929e00bf34c2008e9d9",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ieos02ibq_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ieos02icq_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "f1c6bc9bdc7d4697c2572e7b05181c0704239254b2aee4cc56f3c1ad22c4805b",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ieos02icq_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ieos02idq_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "dc69985d5d7310a9dc819204642e0ce3e450629071c74428b9110f025103c97f",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ieos02idq_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ieos02ieq_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "0329dbedbcff29c1d5d9a1c40d409632893805118307231fd9197174197ff798",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ieos02ieq_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/ieos02ifq_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "819f3812ecac23c8d299b5902dded9317ce0a2246fe0f36728591113cf5e9134",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/ieos02ifq_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/iepz12hbq_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "393e8734b1e36f701d3d1a109e17e00d93094df90e25a9e4887420c377691d2e",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/iepz12hbq_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "MAST_header_prefixes/iepz12hcq_flc.fits.prefix.bin",
+      "bytes": 28800,
+      "sha256": "b83db55eef2a74ace2f2cd4db47d9d19069b6b0946f311cac7f0735e3cee7923",
+      "refetch": {
+        "kind": "https_range",
+        "url": "https://mast.stsci.edu/api/v0.1/Download/file?uri=mast:HST/product/iepz12hcq_flc.fits",
+        "range": "bytes=0-28799",
+        "require_status": 206
+      },
+      "role": "bounded_public_HST_FITS_prefix",
+      "license": "NASA-MAST-public-domain-HST-data"
+    },
+    {
+      "path": "Mroz2022_Zenodo20056044_metadata.json",
+      "bytes": 4566,
+      "sha256": "6f890621f3a7e9069ee7f626850286708ab90d4961747841fbe4498f5d215c39",
+      "refetch": null,
+      "role": "frozen_provenance_or_BHSM_helper"
+    },
+    {
+      "path": "OGLE-2011-BLG-0462-new.txt",
+      "bytes": 497056,
+      "sha256": "94001c1310dcb25ac72f033b1be076221d338501dcf0caee789228c4e318bd28",
+      "refetch": {
+        "kind": "https_bytes",
+        "url": "https://zenodo.org/api/records/20056044/files/OGLE-2011-BLG-0462-new.txt/content"
+      },
+      "role": "raw_author_photometry",
+      "license": "CC-BY-4.0"
+    },
+    {
+      "path": "PORTABLE_HEADER_INDEX.json",
+      "bytes": 55173,
+      "sha256": "82106a31147172f5255cd0222149e00d73f388f17d316fd2c7aa43c6ea475bbe",
+      "refetch": null,
+      "role": "frozen_provenance_or_BHSM_helper"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2337,
+      "sha256": "53c36e87e4973ed602ccb716f8b9f96d7426bf3bfa7ef22a2dd8994937189db2",
+      "refetch": null,
+      "role": "frozen_provenance_or_BHSM_helper"
+    },
+    {
+      "path": "RIGHTS_EVIDENCE.json",
+      "bytes": 1390,
+      "sha256": "346675437d3729dda59b2cbe89dc83add049d36f06beb568d2ee37fa8640e553",
+      "refetch": null,
+      "role": "frozen_provenance_or_BHSM_helper"
+    },
+    {
+      "path": "verify_or_refetch_2023_sources.py",
+      "bytes": 6315,
+      "sha256": "0be35d7d5f75c9314ad9287337da4cba8190f3bf3d2267cae2570d827026794c",
+      "refetch": null,
+      "role": "frozen_provenance_or_BHSM_helper"
+    }
+  ],
+  "file_count": 97,
+  "total_bytes": 3165762
+}

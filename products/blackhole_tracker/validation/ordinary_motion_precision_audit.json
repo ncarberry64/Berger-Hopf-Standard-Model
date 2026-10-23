@@ -1,0 +1,190 @@
+{
+  "schema": "bhsm_resolved_motion_regression_precision_audit/1",
+  "scope": "Synthetic original nearby_motion fixture only. Read-only numerical analysis; no fixture, runtime, tolerance or actual pilot changes.",
+  "formal_head": "74b2035ff793e79e3352c0a7efb0febe109b0e9f",
+  "runtime": {
+    "python": "3.14.3",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1"
+  },
+  "ci_runtime": {
+    "python": "3.12.10",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1"
+  },
+  "original_fixture_sha256": "dfd06d5db4317b5f6b1eff3faf13dbd45df9bc1d734e3c65dd22c63d1d52a5a1",
+  "inference_sha256": "3e2f5ed370c62b9c0d42e19600a1fd6c382a1947be6a76f75b3c1a28b93086bb",
+  "fixture_mu_y": -0.03808274400122571,
+  "ci_mu_y": -0.03808274400385762,
+  "ci_absolute_delta_mas_per_year": -2.631908579964204e-12,
+  "old_total_allowed_y_delta": 1.7616548800245142e-12,
+  "optimization": {
+    "jac": "3-point",
+    "x_scale": "jac",
+    "ftol": 1e-10,
+    "xtol": 1e-10,
+    "gtol": 1e-08,
+    "max_nfev": 160,
+    "starts": 2,
+    "rng_seed": 49312
+  },
+  "parameter_basis": {
+    "schema": "bhtracker.resolved_parameter_basis.v2",
+    "optimization_epoch_yr": 2020.0,
+    "reporting_epoch_yr": 2020.0,
+    "angular_scale_mas": 31.616486541231378,
+    "time_scale_yr": 5.0,
+    "mass_scale_msun": 99923.0966869251,
+    "origin_mas": [
+      5.547289344594869,
+      2.7306601978657064
+    ],
+    "compact_quad_convention": "public coefficients retain the computational reference Einstein-radius convention; internal coefficients/bounds use the separately fixed physical compact basis",
+    "compact_quad_reference_mass_msun": 99923.0966869251,
+    "compact_quad_internal_to_public_factor": 0.9984625251504581,
+    "compact_quad_physical_bound_rule": "internal plus/cross each in [-0.01,0.01]; physical angular coefficients are public compact_quad * theta_reference_mas**4",
+    "unbounded_positions": "center and free sources have no numerical positional prior"
+  },
+  "baseline_years": 10.0,
+  "max_reporting_epoch_offset_years": 5.0,
+  "minimum_native_position_error_mas": 0.02,
+  "local_fitted_motion_sigma_mas_per_year": [
+    0.0011866219551265483,
+    0.001230578888685675
+  ],
+  "current_fit_estimates": {
+    "mass_msun": 99947.19893016038,
+    "center_mas": [
+      0.7920975840607198,
+      -0.5965511576232996
+    ],
+    "proper_motion_mas_yr": [
+      0.06666757259297879,
+      -0.03808274400128257
+    ],
+    "shear": [
+      0.00021199289978393108,
+      0.0003902962563879049
+    ],
+    "compact_quad": [
+      0.0,
+      0.0
+    ],
+    "convergence": 0.0,
+    "flux_ratio": 1.0
+  },
+  "fixture_estimates": {
+    "mass_msun": 99947.19893016141,
+    "center_mas": [
+      0.7920975840609605,
+      -0.5965511576232281
+    ],
+    "proper_motion_mas_yr": [
+      0.0666675725930148,
+      -0.03808274400122571
+    ],
+    "shear": [
+      0.00021199289979910395,
+      0.0003902962563968958
+    ],
+    "compact_quad": [
+      0.0,
+      0.0
+    ],
+    "convergence": 0.0,
+    "flux_ratio": 1.0
+  },
+  "current_fit_chi2": 36.39290573001042,
+  "fixture_chi2": 36.392905730009396,
+  "current_fit_status": "TRACKED",
+  "variations_fixed_other_parameters": [
+    {
+      "delta_motion_y_mas_per_year": -2.631908579964204e-12,
+      "max_center_displacement_mas": 1.315954289982102e-11,
+      "max_prediction_abs_change_by_column": [
+        7.069900220812997e-12,
+        5.023537141823908e-12,
+        7.0894401460464e-12,
+        1.8177459537582763e-11,
+        5.59996493620929e-13,
+        1.298072760391733e-12
+      ],
+      "whitened_prediction_change_l2": 9.576569922484027e-09,
+      "max_fraction_of_existing_prediction_tolerance": 0.167226542700256,
+      "chi2_change_fixed_other_parameters": 2.4797941478027496e-12,
+      "delta_over_fitted_local_motion_sigma": 2.1387564862056308e-09
+    },
+    {
+      "delta_motion_y_mas_per_year": 1e-11,
+      "max_center_displacement_mas": 4.9999999999999995e-11,
+      "max_prediction_abs_change_by_column": [
+        2.6858515411731787e-11,
+        1.9095836023552692e-11,
+        2.6933122398986598e-11,
+        6.906919480798024e-11,
+        2.127409359786725e-12,
+        4.929834318545545e-12
+      ],
+      "whitened_prediction_change_l2": 3.637692886122639e-08,
+      "max_fraction_of_existing_prediction_tolerance": 0.6354134707849803,
+      "chi2_change_fixed_other_parameters": 6.039613253960852e-13,
+      "delta_over_fitted_local_motion_sigma": 8.126256749520986e-09
+    },
+    {
+      "delta_motion_y_mas_per_year": -1e-11,
+      "max_center_displacement_mas": 4.9999999999999995e-11,
+      "max_prediction_abs_change_by_column": [
+        2.6851409984374186e-11,
+        1.9095836023552692e-11,
+        2.6931346042147197e-11,
+        6.906564209430144e-11,
+        2.12674322597195e-12,
+        4.931166586175095e-12
+      ],
+      "whitened_prediction_change_l2": 3.637756114251383e-08,
+      "max_fraction_of_existing_prediction_tolerance": 0.6353807870084338,
+      "chi2_change_fixed_other_parameters": 4.867217739956686e-12,
+      "delta_over_fitted_local_motion_sigma": 8.126256749520986e-09
+    },
+    {
+      "delta_motion_y_mas_per_year": 1e-10,
+      "max_center_displacement_mas": 5e-10,
+      "max_prediction_abs_change_by_column": [
+        2.6851409984374186e-10,
+        1.9094770209449052e-10,
+        2.6930813135095377e-10,
+        6.906857308308645e-10,
+        2.127054088418845e-11,
+        4.93050045236032e-11
+      ],
+      "whitened_prediction_change_l2": 3.6377644055921173e-07,
+      "max_fraction_of_existing_prediction_tolerance": 6.354077511240847,
+      "chi2_change_fixed_other_parameters": 8.810729923425242e-13,
+      "delta_over_fitted_local_motion_sigma": 8.126256749520987e-08
+    },
+    {
+      "delta_motion_y_mas_per_year": 1e-06,
+      "max_center_displacement_mas": 4.9999999999999996e-06,
+      "max_prediction_abs_change_by_column": [
+        2.6851315340081783e-06,
+        1.909439728109419e-06,
+        2.693109006912664e-06,
+        6.906829414177196e-06,
+        2.1271578498627264e-07,
+        4.93051516059495e-07
+      ],
+      "whitened_prediction_change_l2": 0.0036377666177262766,
+      "max_fraction_of_existing_prediction_tolerance": 63540.51849573691,
+      "chi2_change_fixed_other_parameters": 1.3233498080467143e-05,
+      "delta_over_fitted_local_motion_sigma": 0.0008126256749520985
+    }
+  ],
+  "recommendation": {
+    "only_parameter": "proper_motion_mas_yr",
+    "rtol_unchanged": 2e-11,
+    "proposed_atol_mas_per_year": 1e-11,
+    "mass_predictions_chi2_gates_unchanged": true,
+    "fixture_unchanged": true,
+    "rationale": "A declared physical absolute floor for a small fitted motion component avoids a platform-accidental sub-pico-mas/year demand. Existing dimensionless optimizer stopping rules and finite-difference Jacobian do not guarantee per-parameter picounit equality. The floor is many orders below supplied astrometric errors and inferred motion uncertainty; strict prediction/mass/chi2 gates remain independent."
+  }
+}

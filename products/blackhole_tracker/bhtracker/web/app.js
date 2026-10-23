@@ -522,14 +522,14 @@
         'The analysis does not resolve all conditional envelope directions within the declared model.', true);
     } else if (status === 'INFORMATION_AVAILABLE') {
       card('Do the data resolve admitted states?', 'Local sensitivity available',
-        'The model retains conditional response information. This is a sensitivity result, not a deformation detection.', true);
+        'The model retains conditional response information. This assesses a distinct R1 boundary response; it does not identify microscopic interface dynamics. The ordinary gravitational imprint retains its BHSM surface-topography interpretation.', true);
     }
     if (cards.children.length) container.append(cards);
     if (envelope.unconstrained_estimate_inside_admitted_ball === false) {
       const note = document.createElement('div'); note.className = 'envelope-domain-note';
       const title = document.createElement('strong'), body = document.createElement('p');
       title.textContent = 'Unconstrained estimate outside the admitted domain';
-      body.textContent = 'That unrestricted fit value is not a physical boundary-state measurement. It must not be interpreted as a detected deformation.';
+      body.textContent = 'That unrestricted fit value is not an admitted physical interface-state measurement. It does not establish a distinct dynamical surface response; the ordinary gravitational imprint retains its BHSM surface-topography interpretation.';
       note.append(title, body); container.append(note);
     }
     const technical = document.createElement('details'); technical.className = 'envelope-technical';
@@ -580,12 +580,17 @@
     const fields = ['positive image x', 'positive image y', 'negative image x', 'negative image y', 'log flux ratio', 'delay'];
     const C = covariance(), measurementLabels = Array.from({ length: C.length }, (_, i) => `Row ${Math.floor(i / 6) + 1} ${fields[i % 6]}`);
     show($('measurement-correlations'), strongest(C, measurementLabels), 'No nonzero off-diagonal correlations are present in the supplied matrix.');
-    const names = result.model?.fitted_parameters || [], internal = result._internal || {};
-    const meanings = { log_mass: 'Mass', center_x: 'Center x', center_y: 'Center y', motion_x: 'Motion x', motion_y: 'Motion y',
-      shear_plus: 'Tidal shear 1', shear_cross: 'Tidal shear 2', compact_plus: 'Compact shape 1', compact_cross: 'Compact shape 2', convergence: 'Environmental focusing', log_flux: 'Scalar flux' };
+    const reporting = result.physical_parameter_uncertainty;
+    if (reporting?.schema !== 'bhtracker.reporting_covariance.v2') {
+      show($('parameter-correlations'), [], 'Reporting-coordinate covariance is unavailable in this legacy result. Internal optimization coordinates are not displayed as physical parameter correlations.');
+      return;
+    }
+    const names = reporting.names || [];
+    const meanings = { mass_msun: 'Mass', center_x: 'Center x at reporting epoch', center_y: 'Center y at reporting epoch', motion_x: 'Motion x', motion_y: 'Motion y',
+      shear_plus: 'Tidal shear 1', shear_cross: 'Tidal shear 2', compact_plus: 'Compact shape 1', compact_cross: 'Compact shape 2', convergence: 'Environmental focusing', flux_ratio: 'Scalar flux' };
     const indices = names.map((name, i) => meanings[name] ? i : -1).filter(i => i >= 0);
-    const pcov = indices.map(i => indices.map(j => internal.covariance?.[i]?.[j]));
-    const omitted = indices.map(i => internal.unidentified?.[i] === true);
+    const pcov = indices.map(i => indices.map(j => reporting.covariance?.[i]?.[j]));
+    const omitted = indices.map(i => reporting.unidentified?.[i] === true);
     show($('parameter-correlations'), strongest(pcov, indices.map(i => meanings[names[i]]), omitted),
       'No resolved nonzero correlations are available for the displayed lens parameters. Unidentified directions are excluded.');
   }

@@ -179,31 +179,85 @@ const topics = {
   },
   'blackhole-tracker': {
     keywords:
-      'blackhole black hole tracker compact lens lensing gravitational mass motion astrometry magnification delay BHSM boundary envelope R1 research app export replay covariance',
+      'blackhole black hole tracker candidate atlas source event sky directions catalog parallax cohort alias disputed Gaia metadata compact extended dark matter mass profile lens lensing gravitational hypersurface hypersphere topography envelopment envelope-boundary differential frame dragging spin mass motion astrometry magnification delay BHSM boundary envelope R1 research app export replay covariance OGLE unresolved photometry real observations pilot native magnitude timescale mass unresolved archival followup joint known system negative benchmark astropy sourcepack calibration adequacy',
     summary:
-      'A computed, noise-free synthetic point-lens animation shows three fixed source positions, their image pairs and the declared 2015–2025 moving center. Visitors can pause, choose an observer year and change the supplied mass. Downloadable Python research software performs the full fit, export and replay workflow; it runs on the visitor’s computer.',
+      'The BHSM tracker hunts for hypersurface gravitational topography and asks which kinds of envelopment produce an observed response. Compact, extended and dark-matter-like interpretations require explicit models and discriminating observations; the present release does not validate a new extended-halo classifier. The author-defined BHSM envelope-boundary differential is distinct from conventional rotational frame dragging. Gaia18ajz is the provisional previously published primary potential black hole, with all eight literature alternatives and independent native-data assessment open. OB110462 is a published black-hole reference and OGLE-2007-BLG-224 a published brown-dwarf comparison; neither has accepted independent engine recovery. A separate synthetic animation uses fixed source inputs and a declared 2015–2025 center track. The historical atlas preserves all failures and unavailable native tables.',
     scope:
-      'The animation is a forward illustration rather than an optimizer or observation. The ordinary Einstein/GHY exterior has an explicit BHSM same-potential interpretation. A supplied radius does not measure a hard surface or horizon, and an unresolved conditional R1 state is not a detected deformation. No new observed black-hole discovery is claimed.',
+      'The primary candidate/evidence freeze is pending and publication remains held. The author calls the spacetime differential at an envelope boundary the BHSM envelope-boundary differential; this usage does not make conventional rotational frame dragging exclusive to black holes. Ordinary rotating matter produces the conventional effect. The current tracker measures neither a boundary jump nor spin, global hypersphere radius or microscopic core coordinates. In the scalar weak-field, thin-lens model, an exterior point-mass response can also arise outside an ordinary finite circular projected mass distribution. Identical optical responses retain their degeneracy and count as one Einstein/GHY response, with no second mass or force. Conditional photometric nonrejection does not validate gravitational origin. Gaia18ajz engine mass, distance, angular Einstein scale and absolute motion remain null; its published branch weights are conditional within each mode/prior, not BH probabilities. No measured Gaia18ajz track is animated. All 1,808 historical model records have zero admitted measured lens tracks. Duration, proximity and speed do not determine identity. Zero established new BHs and zero accepted independent known-BH recoveries remain. Hashes check bytes, not physical adequacy.',
     sources: [
+      repoSource(
+        'Author-defined envelopment search and envelope-boundary differential: exact scope and response degeneracy',
+        'docs/BHSM_TRACKER_ENVELOPMENT_SEARCH_CLARIFICATION_20261023.md',
+        '7ebc9f226e0d9abc68e2ec61c90a8b262081c733',
+      ),
+      source(
+        'Provisional primary-target program, all eight alternatives and explicit engine unknowns',
+        'research/blackhole-tracker/primary-target-20261023-v1/PRIMARY_TARGET_PROGRAM.json',
+      ),
+      source(
+        'Primary target evidence-review status and exact snapshot hash',
+        'research/blackhole-tracker/primary-target-20261023-v1/TARGET_EVIDENCE_STATUS.json',
+      ),
       repoSource(
         'Formal product reviewer guide',
         'products/blackhole_tracker/REVIEWER.md',
-        '33f26a5113392c0d2c323d7e4a36c7e81bd3ee29',
+        'e85d4fce2853997d6fedfd0bf75fc7d99bad3562',
+      ),
+      repoSource(
+        'RC6 primary program and portable measured-lens angular-track workflow',
+        'products/blackhole_tracker/SKYTRACK.md',
+        '4c71556f5ab4352064325601669bca91a5230690',
+      ),
+      repoSource(
+        'RC6 researcher start, complete release and retained negative results',
+        'docs/BLACKHOLE_TRACKER_RESEARCH_START.md',
+        'e85d4fce2853997d6fedfd0bf75fc7d99bad3562',
       ),
       repoSource(
         'Product user guide',
         'products/blackhole_tracker/README.md',
-        '33f26a5113392c0d2c323d7e4a36c7e81bd3ee29',
+        '4c71556f5ab4352064325601669bca91a5230690',
       ),
       repoSource(
         'Manuscript and derivations',
         'papers/bhsm_blackhole_tracker_20261021/manuscript/main.tex',
-        '1fd11510cd217218d6b230cb50516776eb746e1a',
+        'e85d4fce2853997d6fedfd0bf75fc7d99bad3562',
       ),
       repoSource(
         'Pinned ordinary-lens forward calculation',
         'products/blackhole_tracker/bhtracker/forward.py',
-        '33f26a5113392c0d2c323d7e4a36c7e81bd3ee29',
+        '4c71556f5ab4352064325601669bca91a5230690',
+      ),
+      repoSource(
+        'Joint astrometry installation, source-pack import and replay',
+        'products/blackhole_tracker/JOINT_RESEARCH.md',
+        '4c71556f5ab4352064325601669bca91a5230690',
+      ),
+      repoSource(
+        'RC5 Candidate Atlas filtering, evidence tiers and full-inventory replay',
+        'products/blackhole_tracker/CANDIDATE_ATLAS.md',
+        '4c71556f5ab4352064325601669bca91a5230690',
+      ),
+      source(
+        'Atlas counts, source directions, distinct evidence and separate benchmark',
+        'research/blackhole-tracker/candidate-atlas-20261023-v3/ATLAS_PROVENANCE.json',
+      ),
+      source(
+        'Complete155-event metadata and offline reconstruction',
+        'research/blackhole-tracker/BHSM_Candidate_Atlas_Metadata_v3.zip',
+      ),
+      repoSource(
+        'Separate known-system failed alternatives and frozen protocols',
+        'papers/bhsm_blackhole_tracker_20261021/joint_known_system_20261022/README.md',
+        'cb79f8693ba5f8e25f0858acc826b6718c974555',
+      ),
+      source(
+        'Separate known-system failed candidates and exact evidence hashes',
+        'research/blackhole-tracker/joint-20261022-v2/JOINT_PROVENANCE.json',
+      ),
+      source(
+        'Native source-pack attribution and rights',
+        'research/blackhole-tracker/joint-20261022-v2/SOURCEPACK_CITATIONS_AND_RIGHTS.md',
       ),
       source(
         'Synthetic forward example and source hashes',
@@ -212,6 +266,18 @@ const topics = {
       source(
         'App download hashes and provenance',
         'research/blackhole-tracker/DISTRIBUTION.json',
+      ),
+      source(
+        'All 100 real-pilot results and primary literature annotations',
+        'research/blackhole-tracker/pilot-20261022-v1/all_100_results.csv',
+      ),
+      source(
+        'Frozen real-observation analysis protocol',
+        'research/blackhole-tracker/pilot-20261022-v1/protocol_v1.json',
+      ),
+      source(
+        'Real-pilot download provenance and qualified archival shortlist',
+        'research/blackhole-tracker/pilot-20261022-v1/PILOT_PROVENANCE.json',
       ),
     ],
   },
@@ -347,7 +413,7 @@ const topics = {
 export const catalog = {
   schema_version: '1.0',
   title: 'BHSM Museum AI navigation index',
-  updated: '2026-10-22',
+  updated: '2026-10-23',
   museum_url: museumUrl,
   repository_url: repository,
   guide_url: local('llms.txt'),

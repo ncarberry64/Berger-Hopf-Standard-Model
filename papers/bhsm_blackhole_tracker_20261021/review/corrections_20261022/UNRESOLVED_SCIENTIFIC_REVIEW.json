@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-22",
+  "review_scope": "Independent read-only scientific review of native unresolved routes and tests; no new fit campaign",
+  "files": [
+    {
+      "path": "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-state-rotation-20261021\\product\\bhtracker\\observations.py",
+      "sha256": "5c9b07c1887c9a299ca8505b323462d41f314457f2bff3b5b2b2ca1970a21c0b"
+    },
+    {
+      "path": "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-state-rotation-20261021\\product\\bhtracker\\photometry.py",
+      "sha256": "e51e83a8754666fe3746d037a80f7cfc25818a846297357222f38f3d1033bdac"
+    },
+    {
+      "path": "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-state-rotation-20261021\\product\\bhtracker\\astrometry.py",
+      "sha256": "8171c0cac0130dc704c6a3b11cc6197be0bdbb642267344e5c930e5ed5121423"
+    },
+    {
+      "path": "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-state-rotation-20261021\\product\\tests\\test_unresolved_observations.py",
+      "sha256": "15f96decedec046e70cead9e30d63f6f4931cea1c1307ec1ca7dc816d58ae49c"
+    }
+  ],
+  "verified_by_source_review": [
+    "Native magnitude Gaussian residuals equal forward predictions minus observed magnitudes divided by native positive sigma; no approximate flux covariance is manufactured",
+    "PSPL magnification image sum and analytic native-magnitude Jacobian have independent two-image and finite-difference regressions",
+    "Model t0/tE/u0 share one rectilinear event trajectory; source/blend calibration is instrument-specific",
+    "Source rows, native time axes, uncertainties, annotations, hashes and pilot/catalog roles are preserved; exact malformed-data annotation handled narrowly",
+    "Mass, angular Einstein radius, lens distance, absolute proper motion, horizon/core and interimage observables remain explicitly unavailable",
+    "Local covariance masks null-affected entries and preserves a separate null representation; finite physical parameters do not imply mass identification",
+    "Centroid shift away from the lens is independently checked against image-flux-weighted positions; luminous blend is a flux-weighted centroid with explicit frame coordinates",
+    "Precision route requires time/frame/covariance/ephemeris metadata and keeps actual2022HST inference blocked",
+    "Photometric alternatives/diagnostics are labelled sensitivity screens, not calibrated BH probabilities or discovery claims"
+  ],
+  "findings": [
+    {
+      "id": "UNRESOLVED_REVIEW_OPTIONAL_INPUTS",
+      "severity": "PUBLIC_API_FAIL_CLOSED_VALIDATION",
+      "location": "astrometry.py precision_metadata_status and predict_parallax_photometry",
+      "status": "CORRECTED_AND_INDEPENDENTLY_REVIEWED",
+      "reproduction": "OPTIONAL_ROUTE_INPUT_VALIDATION_BEFORE.json",
+      "detail": "NaN photometric fraction returns NaN forward predictions, and bool numeric epoch origin passes the precision gate; validate finite numeric origin and model inputs/strict verification declarations",
+      "baseline_pilot_affected": false,
+      "remaining_observational_limit": "Actual2022HSTprecisionjointinference remainsblocked; baselinePSPLobjectiveunchanged"
+    },
+    {
+      "id": "UNRESOLVED_REVIEW_OPTIONAL_CONVENTIONS",
+      "severity": "PUBLIC_FORWARD_CONVENTION_QUALIFICATION",
+      "location": "astrometry.py module/geocentric_sun_displacement/parallax_trajectory docstrings",
+      "status": "CORRECTED_AND_INDEPENDENTLY_REVIEWED",
+      "detail": "Gould lens-relative-source trajectory axes differ from source-minus-lens NE centroid axes; require explicit sign/basis conversion. Literal Earth-to-Sun Gould offset requires heliocentric observer vectors, while documented input is barycentric; state an internally consistent convention and assumptions. Individual norm-only photometry/centroid equations agree with primaries.",
+      "baseline_pilot_affected": false,
+      "remaining_observational_limit": "Actual2022HSTprecisionjointinference remainsblocked; baselinePSPLobjectiveunchanged"
+    }
+  ],
+  "limits": [
+    "No claim of comprehensive independent test rerun; module owner runs focused tests and actual cadence injections",
+    "Precision joint astrometric/parallax likelihood is not validated for2022table bytes; original export mapping/calibration gaps independently documented",
+    "A metadata gate is a declared context contract, not external certification of an ephemeris or a newly measured mass",
+    "Fourpilot events overlap the59publishedparallaxcohort;0264/PAR07alreadyhasapublishedremnantinterpretationandsubsequentprior-dependentreanalysis"
+  ],
+  "primary_comparison_urls": [
+    "https://doi.org/10.1086/164140",
+    "https://doi.org/10.1086/308716",
+    "https://doi.org/10.1086/382782",
+    "https://doi.org/10.3847/1538-4365/ac7441",
+    "https://arxiv.org/html/1509.04899v2",
+    "https://arxiv.org/html/2107.13701v1"
+  ],
+  "primary_convention_source_bytes": [
+    {
+      "path": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_real_data_corrections_20261022\\metadata_research\\Gould2004_geocentric.html",
+      "url": "https://arxiv.org/html/astro-ph/0311548v2",
+      "sha256": "f53095359958a085309e50f5cbbc0d6199acd9a9c1eb3d6ca303eae7106a1b27"
+    },
+    {
+      "path": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_real_data_corrections_20261022\\metadata_research\\DominikSahu2000_astrometry.html",
+      "url": "https://arxiv.org/html/astro-ph/9805360v2",
+      "sha256": "8c1d25c91ac152a4f357f0c07f8486790d0934b962e4143fb3b24eef9182cbbf"
+    }
+  ],
+  "post_correction_files": [
+    {
+      "path": "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-state-rotation-20261021\\product\\bhtracker\\observations.py",
+      "sha256": "5c9b07c1887c9a299ca8505b323462d41f314457f2bff3b5b2b2ca1970a21c0b"
+    },
+    {
+      "path": "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-state-rotation-20261021\\product\\bhtracker\\photometry.py",
+      "sha256": "e51e83a8754666fe3746d037a80f7cfc25818a846297357222f38f3d1033bdac"
+    },
+    {
+      "path": "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-state-rotation-20261021\\product\\bhtracker\\astrometry.py",
+      "sha256": "a74dd19625f4bf463249ab9d3cb80ee8794e3e12c5d728f5fbdf5817f1002daa"
+    },
+    {
+      "path": "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-state-rotation-20261021\\product\\tests\\test_unresolved_observations.py",
+      "sha256": "15f96decedec046e70cead9e30d63f6f4931cea1c1307ec1ca7dc816d58ae49c"
+    }
+  ],
+  "bounded_direct_recheck": {
+    "bool_epoch_rejected": true,
+    "nan_fraction_rejected": true,
+    "new_fits_run": 0
+  },
+  "final_review_status": "NO_UNRESOLVED_SOFTWARE_FINDING_IN_REVIEWED_SCOPE; PRECISION_JOINT_OBSERVATIONAL_METADATA_STILL_UNRESOLVED"
+}

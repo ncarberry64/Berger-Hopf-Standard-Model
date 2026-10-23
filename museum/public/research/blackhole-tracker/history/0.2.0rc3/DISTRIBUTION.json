@@ -1,0 +1,67 @@
+{
+  "schema": "bhsm-museum-product-distribution/v1",
+  "product": "BHSM Blackhole Tracker",
+  "version": "0.2.0rc3",
+  "release_stage": "reviewable correction release candidate; publication follows the protected repository workflow",
+  "repository_url": "https://github.com/ncarberry64/Berger-Hopf-Standard-Model",
+  "reviewed_product_code_revision": "002b9ecfe2f1a778b68b7558581997c05919ae93",
+  "reviewed_paper_revision": "b80fd756c285844b6ea90110c4d58db47092830c",
+  "upstream_product_revision": "aa1759d07c97e25a2fb1a7ad24a053aa553d602a",
+  "paper_development_source_revision": "d92062efd807281a44a891a334e361426ff1581d",
+  "animation_fixture_source_revision": "33f26a5113392c0d2c323d7e4a36c7e81bd3ee29",
+  "product_source_file_count": 130,
+  "source_packet_member_count": 659,
+  "paper_pages": 36,
+  "input_product_source_archive_sha256": "641dae606c988b3ae49eca8786d65b077756bec2eb8f3df3c19f326c317759c5",
+  "files": [
+    {
+      "file": "BHSM_Blackhole_Tracker_Product_0.2.0rc3.zip",
+      "bytes": 691657,
+      "sha256": "accb46a03b79f86e9df74e1c4c2e7baf7062887b831a087856132f437e03b3e9"
+    },
+    {
+      "file": "bhsm_blackhole_tracker-0.2.0rc3-py3-none-any.whl",
+      "bytes": 234803,
+      "sha256": "11fbbae7799858667c8b8c2e8956c126c9f5103276ee044f2d5bcf6457d8930f"
+    },
+    {
+      "file": "BHSM_Blackhole_Tracker_Source_0.2.0rc3.zip",
+      "bytes": 13399803,
+      "sha256": "8af0878d3ff647346de2ebb4bf8f0446d382b4ce3e5c2911bdd456c901af1166"
+    },
+    {
+      "file": "BHSM_Blackhole_Tracker_0.2.0rc3.pdf",
+      "bytes": 976310,
+      "sha256": "94b4193e2b387452348870610f4c7c328234d936a4a59aae5e545c04818fcfb2"
+    },
+    {
+      "file": "LICENSE.md",
+      "bytes": 836,
+      "sha256": "0209931e13422c6608d12f9f24b2b8d007031294fdef73f2d6f36bd6e610f7c3"
+    },
+    {
+      "file": "ACADEMIC_USE.md",
+      "bytes": 2295,
+      "sha256": "3484a686ad03529cea91b56b00908d29b8ae1cc69dd4c842a936b74820ecc4b6"
+    },
+    {
+      "file": "forward-example.json",
+      "bytes": 4072,
+      "sha256": "a7918cbed9bd18bb92e1147a9733a52ef2fa21529d94cc16be965b7abfb6cedf"
+    },
+    {
+      "file": "pilot-20261022-v1/PILOT_PROVENANCE.json",
+      "bytes": 4016,
+      "sha256": "5b7d509bbbe8593254fc7e64931da02a1b88b00e70aac6bbe44249c086fa79cc"
+    }
+  ],
+  "scope": "Exact corrected source/wheel/paper artifacts with canonical notices. The Museum retains an explicitly synthetic resolved-image animation and separately reports the actual100-event native-photometry pilot. All pilot masses remain unresolved; two historical archival followups and zero new black-hole interpretations. Fitting/export/replay run in the visitors own Python process. Native per-point third-party observations remain external.",
+  "license_files": [
+    "LICENSE.md",
+    "ACADEMIC_USE.md"
+  ],
+  "installation": "Extract portable product ZIP, open product directory; Python3.11+: Start_Blackhole_Tracker.cmd on Windows, or python -m pip install . then python -m bhtracker serve --open. Native unresolved photometry has its own interface and observation schema.",
+  "input_privacy": "Local app binds loopback; staticMuseum does not upload measurements or run inference.",
+  "historical_release": "history/0.2.0rc2/DISTRIBUTION.json",
+  "pilot_provenance": "pilot-20261022-v1/PILOT_PROVENANCE.json"
+}

@@ -9,6 +9,7 @@ import socket
 import subprocess
 import tempfile
 import threading
+import tomllib
 import urllib.request
 import venv
 
@@ -18,6 +19,7 @@ def main():
     args=parser.parse_args()
     if os.name!='nt':parser.error('This is an actual Windows CMD check; run on Windows')
     product=Path(__file__).resolve().parents[1]
+    expected_version=tomllib.loads((product/'pyproject.toml').read_text(encoding='utf-8'))['project']['version']
     root=Path(tempfile.mkdtemp(prefix='BHSM launcher spaces '))
     source=root/'product with spaces'
     shutil.copytree(product,source,ignore=shutil.ignore_patterns('.venv','build','dist','*.egg-info','__pycache__','.pytest_cache','user_runs'))
@@ -36,6 +38,16 @@ def main():
         p=subprocess.run([*command,'--check-install'],cwd=source,env=env,text=True,capture_output=True,timeout=600)
         assert p.returncode==0 and 'installation is ready' in p.stdout,p.stdout+p.stderr
         receipt['checks']['existing_venv_missing_dependencies_repaired']={'exit':p.returncode,'log':p.stdout+p.stderr}
+        installed_python=source/'.venv'/'Scripts'/'python.exe'
+        base=subprocess.run([str(installed_python),'-I','-c',"import importlib.util; assert importlib.util.find_spec('astropy') is None"],cwd=root,env=env,text=True,capture_output=True,timeout=30)
+        assert base.returncode==0,base.stdout+base.stderr
+        receipt['checks']['base_install_keeps_astropy_optional']={'passed':True}
+        joint_command=[os.path.join(os.environ['SystemRoot'],'System32','cmd.exe'),'/d','/c','Start_Blackhole_Tracker_Joint.cmd','--check-install']
+        joint=subprocess.run(joint_command,cwd=source,env=env,text=True,capture_output=True,timeout=600)
+        assert joint.returncode==0 and 'with optional joint astrometry support' in joint.stdout,joint.stdout+joint.stderr
+        verified=subprocess.run([str(installed_python),'-I','-c',"import astropy,bhtracker; print(astropy.__version__); print(bhtracker.__version__)"],cwd=root,env=env,text=True,capture_output=True,check=True,timeout=30)
+        assert verified.stdout.splitlines()[-1]==expected_version
+        receipt['checks']['explicit_joint_launcher_installs_optional_extra']={'exit':joint.returncode,'log':joint.stdout+joint.stderr,'installed_versions':verified.stdout.splitlines()}
         with socket.socket() as occupied:
             occupied.bind(('127.0.0.1',0));occupied.listen(1);port=occupied.getsockname()[1]
             p=subprocess.run([*command,'--no-open','--port',str(port)],cwd=source,env=env,text=True,capture_output=True,timeout=30)
@@ -52,7 +64,7 @@ def main():
             assert 'ready at http://127.0.0.1:' in line,line
             url=line.split('ready at ',1)[1].strip()
             with urllib.request.urlopen(url+'api/health') as response:health=json.load(response)
-            assert health['version']=='0.2.0rc2'
+            assert health['version']==expected_version
             receipt['checks']['actual_launcher_server']={'url':url,'health':health}
         finally:
             # Terminate only the process tree created by this test.

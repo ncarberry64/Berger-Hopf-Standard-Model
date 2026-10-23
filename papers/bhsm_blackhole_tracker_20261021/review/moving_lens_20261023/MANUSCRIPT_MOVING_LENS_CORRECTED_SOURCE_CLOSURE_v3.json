@@ -1,0 +1,52 @@
+{
+  "schema": "bhsm.independent_moving_lens_manuscript_corrected_source_closure.v3",
+  "created_utc": "2026-10-23T20:30:51.101677+00:00",
+  "status": "PASS_ALL_THREE_FINDINGS_CLOSED_NO_FURTHER_SOURCE_CHANGE",
+  "source_pins": {
+    "candidate_inventory.tex": {
+      "path": "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\papers\\bhsm_blackhole_tracker_20261021\\manuscript\\candidate_inventory.tex",
+      "bytes": 11393,
+      "sha256": "8ea2e6896bbfab1e6dd0f4ad324ca330008edee0928b26d00f135fad9d967de7"
+    },
+    "refs.bib": {
+      "path": "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\papers\\bhsm_blackhole_tracker_20261021\\manuscript\\refs.bib",
+      "bytes": 21433,
+      "sha256": "dad527fdf940bec37f0581079dae1964ad14a09bf253ca24c8a8b6710910c1a0"
+    },
+    "README.md": {
+      "path": "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\papers\\bhsm_blackhole_tracker_20261021\\README.md",
+      "bytes": 13899,
+      "sha256": "1207855250ef60a19e89ff9ba1b648376d182d33b29d4065a385990fd4a5db99"
+    }
+  },
+  "prior_review": {
+    "path": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_real_data_corrections_20261022\\expanded_dataset_search_20261023\\moving_lens_manuscript_independent_review_v1\\MANUSCRIPT_MOVING_LENS_SOURCE_REVIEW_v1.json",
+    "bytes": 8066,
+    "sha256": "0b23c3d208b149f7c57b7185de7bb5c41bbd36b367e80b7bcf5d0262bfe0b9ff"
+  },
+  "snapshot_timing_correction": "The earlier tool-read prose preceded the parent corrections, but the v1 receipt script captured its three source-byte snapshots after those corrections had already landed. All three snapshots therefore already contain the corrected passages. The outstanding-request narrative in v1 is superseded by this closure; it did not describe the state of its captured bytes. Exact current source equals those snapshots. No claim is made that those snapshots preserve pre-correction bytes.",
+  "preserved_reviewer_attempt": {
+    "script": {
+      "path": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_real_data_corrections_20261022\\expanded_dataset_search_20261023\\moving_lens_manuscript_independent_review_v1\\close_source_delta_v2.py",
+      "bytes": 3462,
+      "sha256": "bcef76e6aebc77bdb9d413df94e6fdff8a05c9e45625d98375693d42544e0ecd"
+    },
+    "failure": "The first exact-delta script expected the v1 snapshots to predate corrections; its assertion failed because they already include them. This is a reviewer timing assumption, not a producer defect."
+  },
+  "verification": [
+    "Current candidate_inventory source explicitly defines the common tangent frame, rectilinear t_i=t0_i closest-approach epoch and Julian-year units matching mas per Julian year.",
+    "The future association equation still has the verified q/sign/J algebra and requires source propagation, all sign/model modes and joint uncertainties. Annual-parallax time-anchor caveat remains.",
+    "Gaia18ajz evaluation is a prerequisite before any tracker candidate claim; a successful positive outcome is not promised. Published alternatives and the lack of independent tracker recovery remain explicit.",
+    "README contains correct UTF8 Brown\u2013York. It is byte-identical to the reviewed snapshot, retaining97CRLF line endings. refs.bib remains byte-identical with435CRLF; all three primary attribution conclusions remain applicable.",
+    "All1808 catalog model records still have no admitted measured lens track in the stated snapshot; no new observed trajectory/BH identity or native likelihood result is asserted."
+  ],
+  "remaining_blocking_findings": [],
+  "reviewer_source_edits": false,
+  "native_model_constructor_fit_replay_calls": 0,
+  "scope": "Source/math/attribution closure only; final PDF layout, installed release and hosted CI are separately verified.",
+  "script": {
+    "path": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_real_data_corrections_20261022\\expanded_dataset_search_20261023\\moving_lens_manuscript_independent_review_v1\\close_corrected_source_v3.py",
+    "bytes": 4442,
+    "sha256": "fc335c7feaaf4bafe5633379115bf4f9f5d198b22ab2b08ab8272cd3bb635e10"
+  }
+}

@@ -1,0 +1,298 @@
+{
+  "schema": "bhtracker.covariance_resolution_test_review.v1",
+  "utc": "2026-10-22T22:08:04.928829+00:00",
+  "framework": "BHSM",
+  "reviewer_repository": "https://github.com/ncarberry64/Berger-Hopf-Standard-Model",
+  "scope": "Test-only numerical comparison correction. No inference, forward model, physical admission, data, likelihood, covariance output or observational result changed by this review.",
+  "baseline_development_commit": "492f80b2db6efb2b5268a26687114f94075a6948",
+  "CI_failure": {
+    "python": "3.12.10",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "jobs": [
+      "https://github.com/ncarberry64/Manuscript-Generation/actions/runs/39861246286/job/120112205269",
+      "https://github.com/ncarberry64/Manuscript-Generation/actions/runs/39861253935/job/120112232512"
+    ],
+    "log_sha256": {
+      "job_120112205269.log": "938b46901c4506fb4c0607b1bd3cc72a37ddc02493443aa733618c23ed2972a8",
+      "job_120112232512.log": "af4c18e51556d4cdb3c06648c1f0eb6fc7c48d07880a41361a524132889e4c64"
+    },
+    "test": "test_reviewed_inference_corrections.py::test_reporting_covariance_resolution_across_independent_derivative_steps",
+    "old_comparison": {
+      "rtol": 1e-09,
+      "atol": 1e-18,
+      "actual_cross_entry": 4.423335407088879e-08,
+      "reference_cross_entry": 4.4233354020806706e-08,
+      "absolute_cross_difference": 5.00822127e-17,
+      "relative_cross_difference": 1.13222734e-09
+    },
+    "qualification": "The log prints full precision for failing cross entries but only rounded diagonals; no exact complete Windows whitened norm is claimed from those rounded lines."
+  },
+  "prior_step_audit": {
+    "path": "after/covariance_step_resolution.json",
+    "sha256": "0e80cec6247b9c1336ef3aaaf578d46410c9d3e26884ffa14eec5c993435f156",
+    "meaning": "Preserved four-step independent physical-forward derivative audit; identifies numerical covariance resolution rather than statistical coverage."
+  },
+  "mathematical_criterion": {
+    "reference": "C=L L^T symmetric positive definite motion covariance",
+    "difference": "E=L^-1(C_step-C)L^-T, symmetrized after independent symmetry check",
+    "comparison": "max(abs(eigvalsh(E))) <= 1e-9",
+    "unchanged_fractional_variance_bound": 1e-09,
+    "equivalent_requirement": "For every real motion linear combination v, |v^T(C_step-C)v| <= 1e-9 v^T C v.",
+    "invariance": "Generalized eigenvalue bound is unchanged by any nonsingular reporting-coordinate/unit transformation. Entrywise relative cross-covariance error is not invariant and is unstable at zero correlation.",
+    "independent_guards": [
+      "Both matrices finite and symmetric to32machineeps times matrix2norm",
+      "Both matrices positive definite",
+      "All four derivative-step Jacobian ranks equal fitted rank",
+      "Mass standard-deviation comparison remains1e-9 relative",
+      "Unidentified-motion and physical admission tests unchanged"
+    ],
+    "not_a_change_to": [
+      "scientific likelihood",
+      "measurement uncertainty",
+      "model adequacy thresholds",
+      "physical domain",
+      "reported covariance",
+      "statistical coverage claim"
+    ],
+    "criterion_change_explicit": "The comparison metric changes from componentwise relative entries to a uniform variance-ratio bound. The numerical coefficient remains1e-9. These metrics are not mathematically identical; the new one tests coordinate-invariant covariance accuracy and avoids arbitrary division by a small or zero cross entry."
+  },
+  "new_controls": {
+    "positive": "Tiny correlation crosses zero while fractional variance change stays2e-10.",
+    "negative": [
+      "2e-9 marginal-variance change rejected by unchanged1e-9 bound",
+      "2e-9 correlated-direction variance change rejected even at zero reference correlation",
+      "Singular candidate covariance rejected"
+    ],
+    "coordinate_invariance": "Analytically0.02 fractional variance direction unchanged by strongly unequal reporting units and mixed axes; checked1e-12 relative."
+  },
+  "local_environment": {
+    "python": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1"
+  },
+  "four_independent_derivative_steps": [
+    {
+      "relative_step": 1e-06,
+      "rank": 25,
+      "mass_sigma_msun": 38.7011884728243,
+      "mass_sigma_fractional_error": 6.581668543503838e-11,
+      "proper_motion_covariance": [
+        [
+          1.408071664364113e-06,
+          4.4233353995596524e-08
+        ],
+        [
+          4.423335399559653e-08,
+          1.5143244013342254e-06
+        ]
+      ],
+      "old_elementwise_max_relative_error": 3.818068939851919e-10,
+      "whitened_max_fractional_variance_error": 3.9428649522280076e-11,
+      "covariance_eigenvalues": [
+        1.3920677165320154e-06,
+        1.530328349166323e-06
+      ]
+    },
+    {
+      "relative_step": 2e-06,
+      "rank": 25,
+      "mass_sigma_msun": 38.701188475386886,
+      "mass_sigma_fractional_error": 3.9812597663058114e-13,
+      "proper_motion_covariance": [
+        [
+          1.4080716643852581e-06,
+          4.423335399856899e-08
+        ],
+        [
+          4.4233353998568954e-08,
+          1.5143244012939217e-06
+        ]
+      ],
+      "old_elementwise_max_relative_error": 3.146072960482378e-10,
+      "whitened_max_fractional_variance_error": 1.5569589599677025e-11,
+      "covariance_eigenvalues": [
+        1.392067716544146e-06,
+        1.5303283491350338e-06
+      ]
+    },
+    {
+      "relative_step": 4e-06,
+      "rank": 25,
+      "mass_sigma_msun": 38.7011884730069,
+      "mass_sigma_fractional_error": 6.109834860268393e-11,
+      "proper_motion_covariance": [
+        [
+          1.4080716643934835e-06,
+          4.423335403603338e-08
+        ],
+        [
+          4.4233354036033354e-08,
+          1.5143244013054032e-06
+        ]
+      ],
+      "old_elementwise_max_relative_error": 5.323650150534885e-10,
+      "whitened_max_fractional_variance_error": 2.737975738328256e-11,
+      "covariance_eigenvalues": [
+        1.3920677165287764e-06,
+        1.5303283491701103e-06
+      ]
+    },
+    {
+      "relative_step": 8e-06,
+      "rank": 25,
+      "mass_sigma_msun": 38.70118847507433,
+      "mass_sigma_fractional_error": 7.678080393702658e-12,
+      "proper_motion_covariance": [
+        [
+          1.4080716643798172e-06,
+          4.423335402469479e-08
+        ],
+        [
+          4.423335402469475e-08,
+          1.514324401288349e-06
+        ]
+      ],
+      "old_elementwise_max_relative_error": 2.760290066100093e-10,
+      "whitened_max_fractional_variance_error": 1.0545592528327057e-11,
+      "covariance_eigenvalues": [
+        1.3920677165219728e-06,
+        1.5303283491461935e-06
+      ]
+    }
+  ],
+  "local_reviewed_corrections_run": {
+    "command": "python -m pytest tests/test_reviewed_inference_corrections.py -q",
+    "cwd": "product",
+    "passed": 11,
+    "failed": 0,
+    "seconds": 43.02
+  },
+  "source_sha256_at_review": {
+    "product/tests/test_reviewed_inference_corrections.py": "670ea1b8459678f8a7e286d278ea0a459ece5105ecc9bf0a187b32a3dad53824",
+    "product/bhtracker/inference.py": "b5e3ea0b81079080fd1a1c3c0286e337afb4299fd58244ac240887f0d678dc5a",
+    "product/bhtracker/forward.py": "54035f500c3c8f1b8ae606e45c178c4e9b09e31b083b152f52d479654b7066f5"
+  },
+  "final_source_recheck_status": "PASS_ON_OWNER_FROZEN_SELECTOR_AND_FINITE_GUARDS",
+  "exact_Windows_CI_after_change": "PENDING_COORDINATOR_CI; current local Windows interpreter/dependencies differ from hosted job.",
+  "observational_claims": "None. This is declared synthetic covariance numerical verification, not BH mass recovery or new interval coverage.",
+  "selector_source_recheck_before_candidate_guards": {
+    "utc": "2026-10-22T22:09:35.559047+00:00",
+    "command": "python -m pytest tests/test_reviewed_inference_corrections.py -q -k 'covariance_resolution_accepts_zero or covariance_variance_resolution_is_reporting or reporting_covariance_resolution_across' --junitxml=validation/rc4_covariance_resolution_focused_tests.xml",
+    "passed": 3,
+    "failed": 0,
+    "deselected": 8,
+    "seconds": 1.03,
+    "junit_sha256": "9fb2736d43d646fe76a2d3bb3a7d3e3cca9ce36fc493575c4e36eaf1bb8a8c52",
+    "source_sha256": {
+      "product/bhtracker/inference.py": "b5e3ea0b81079080fd1a1c3c0286e337afb4299fd58244ac240887f0d678dc5a",
+      "product/bhtracker/forward.py": "54035f500c3c8f1b8ae606e45c178c4e9b09e31b083b152f52d479654b7066f5",
+      "product/tests/test_reviewed_inference_corrections.py": "670ea1b8459678f8a7e286d278ea0a459ece5105ecc9bf0a187b32a3dad53824"
+    },
+    "fitted_rank": 25,
+    "reference_motion_covariance": [
+      [
+        1.408071664388352e-06,
+        4.4233354012485123e-08
+      ],
+      [
+        4.4233354012485064e-08,
+        1.5143244012788705e-06
+      ]
+    ],
+    "four_step_records": [
+      {
+        "relative_step": 1e-06,
+        "rank": 25,
+        "mass_sigma_fractional_error": 6.581668543503838e-11,
+        "proper_motion_covariance": [
+          [
+            1.408071664364113e-06,
+            4.4233353995596524e-08
+          ],
+          [
+            4.423335399559653e-08,
+            1.5143244013342254e-06
+          ]
+        ],
+        "old_elementwise_max_relative_error": 3.818068939851919e-10,
+        "whitened_max_fractional_variance_error": 3.9428649522280076e-11,
+        "minimum_motion_covariance_eigenvalue": 1.3920677165320154e-06
+      },
+      {
+        "relative_step": 2e-06,
+        "rank": 25,
+        "mass_sigma_fractional_error": 3.9812597663058114e-13,
+        "proper_motion_covariance": [
+          [
+            1.4080716643852581e-06,
+            4.423335399856899e-08
+          ],
+          [
+            4.4233353998568954e-08,
+            1.5143244012939217e-06
+          ]
+        ],
+        "old_elementwise_max_relative_error": 3.146072960482378e-10,
+        "whitened_max_fractional_variance_error": 1.5569589599677025e-11,
+        "minimum_motion_covariance_eigenvalue": 1.392067716544146e-06
+      },
+      {
+        "relative_step": 4e-06,
+        "rank": 25,
+        "mass_sigma_fractional_error": 6.109834860268393e-11,
+        "proper_motion_covariance": [
+          [
+            1.4080716643934835e-06,
+            4.423335403603338e-08
+          ],
+          [
+            4.4233354036033354e-08,
+            1.5143244013054032e-06
+          ]
+        ],
+        "old_elementwise_max_relative_error": 5.323650150534885e-10,
+        "whitened_max_fractional_variance_error": 2.737975738328256e-11,
+        "minimum_motion_covariance_eigenvalue": 1.3920677165287764e-06
+      },
+      {
+        "relative_step": 8e-06,
+        "rank": 25,
+        "mass_sigma_fractional_error": 7.678080393702658e-12,
+        "proper_motion_covariance": [
+          [
+            1.4080716643798172e-06,
+            4.423335402469479e-08
+          ],
+          [
+            4.423335402469475e-08,
+            1.514324401288349e-06
+          ]
+        ],
+        "old_elementwise_max_relative_error": 2.760290066100093e-10,
+        "whitened_max_fractional_variance_error": 1.0545592528327057e-11,
+        "minimum_motion_covariance_eigenvalue": 1.3920677165219728e-06
+      }
+    ],
+    "qualification": "Owner selector is a separately reviewed production change. This recheck pins its exact current source bytes; additional owner finite-candidate guards require a subsequent source recheck before final release binding.",
+    "junit_historical_development_commit": "e30ca44"
+  },
+  "final_source_recheck": {
+    "utc": "2026-10-22T22:11:18.785696+00:00",
+    "command": "python -m pytest tests/test_reviewed_inference_corrections.py -q -k 'covariance_resolution_accepts_zero or covariance_variance_resolution_is_reporting or reporting_covariance_resolution_across' --junitxml=validation/rc4_covariance_resolution_focused_tests.xml",
+    "passed": 3,
+    "failed": 0,
+    "deselected": 8,
+    "seconds": 1.13,
+    "junit_sha256": "038d7d4ab9a2144b8f58e848db03cc2a767062e9c9a4d78de4c3f50431dc451f",
+    "source_sha256": {
+      "product/bhtracker/inference.py": "35d0bba9db08feb22584d7234e62ea9bd6ef34d6feb325258892d51118f986f9",
+      "product/bhtracker/forward.py": "54035f500c3c8f1b8ae606e45c178c4e9b09e31b083b152f52d479654b7066f5",
+      "product/tests/test_reviewed_inference_corrections.py": "670ea1b8459678f8a7e286d278ea0a459ece5105ecc9bf0a187b32a3dad53824"
+    },
+    "all_four_derivative_step_covariance_variance_errors_within": 1e-09,
+    "all_four_derivative_step_mass_sigma_relative_errors_within": 1e-09,
+    "separate_matrix_checks": "Finite/symmetric/positive definite motion covariance and unchanged fitted Jacobian rank verified at each step.",
+    "qualification": "Final source includes owner selector and finite-candidate guards. Earlier detailed numerical records remain separately attributed to their exact earlier source hashes. No inference/source change by covariance reviewer."
+  }
+}

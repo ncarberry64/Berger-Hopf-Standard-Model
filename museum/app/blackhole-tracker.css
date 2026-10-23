@@ -7,7 +7,9 @@
 .tracker-instruments,
 .tracker-readouts > div,
 .tracker-meaning,
-.tracker-access {
+.tracker-access,
+.tracker-primary-target,
+.tracker-real-data {
   background: #0a0c14;
   border: 1px solid #363247;
   border-radius: 12px;
@@ -136,7 +138,8 @@
   font-size: 0.75rem;
 }
 .tracker-meaning,
-.tracker-access {
+.tracker-access,
+.tracker-primary-target {
   padding: 1.25rem;
   margin: 1rem 0;
   color: #d7cde2;
@@ -144,7 +147,9 @@
   line-height: 1.75;
 }
 .tracker-meaning h4,
-.tracker-access h4 {
+.tracker-access h4,
+.tracker-primary-target h4,
+.tracker-real-data h4 {
   color: #f6e7e9;
   font-size: 1.15rem;
   margin: 0 0 0.5rem;
@@ -187,6 +192,47 @@
   border-top: 1px solid #363247;
   padding-top: 1rem;
 }
+.tracker-primary-target details {
+  border-top: 1px solid #363247;
+  padding-top: 1rem;
+  margin: 1rem 0;
+}
+.tracker-primary-target summary {
+  cursor: pointer;
+  color: #c5b0ee;
+  min-height: 44px;
+}
+.tracker-target-state {
+  border-left: 3px solid #ffbc77;
+  background: #1c1720;
+  padding: 0.9rem 1rem;
+  margin: 1rem 0;
+  color: #e6d6d0;
+}
+.tracker-table-scroll {
+  max-width: 100%;
+  overflow-x: auto;
+}
+.tracker-primary-target table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+  text-align: left;
+}
+.tracker-primary-target caption {
+  text-align: left;
+  padding-bottom: 0.7rem;
+  color: #bcaecb;
+}
+.tracker-primary-target th,
+.tracker-primary-target td {
+  border-bottom: 1px solid #363247;
+  padding: 0.65rem;
+  vertical-align: top;
+}
+.tracker-primary-target th {
+  color: #f0dff4;
+}
 .tracker-access summary {
   cursor: pointer;
   color: #c5b0ee;
@@ -195,6 +241,71 @@
 .tracker-local-note {
   color: #bcaecb;
   font-size: 0.8rem;
+}
+.tracker-real-data {
+  background: #0a0c14;
+  border: 1px solid #363247;
+  border-radius: 12px;
+}
+.tracker-targets {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+.tracker-models {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.tracker-comparisons {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.tracker-targets article {
+  border: 1px solid #48405b;
+  border-radius: 8px;
+  padding: 1rem;
+}
+.tracker-targets h5 {
+  font-size: 1rem;
+  margin: 0 0 0.5rem;
+  color: #f0dff4;
+}
+.tracker-targets strong {
+  color: #ffbc77;
+  font-size: 0.75rem;
+}
+.tracker-targets a {
+  color: #71e5eb;
+  overflow-wrap: anywhere;
+}
+.tracker-atlas {
+  background: #0a0c14;
+  border: 1px solid #363247;
+  border-radius: 12px;
+  padding: 1.25rem;
+}
+.tracker-atlas h4 {
+  margin-top: 0;
+}
+.tracker-atlas-map {
+  margin: 1.25rem 0;
+}
+.tracker-atlas-map img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+.tracker-atlas-map figcaption {
+  margin-top: 0.7rem;
+  color: #bcaecb;
+  font-size: 0.85rem;
+}
+.tracker-atlas-targets {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.tracker-atlas code {
+  color: #f1c9a0;
+  font-size: 0.8rem;
+  overflow-wrap: anywhere;
 }
 @media (max-width: 760px) {
   .tracker-theatre {
@@ -214,8 +325,14 @@
     grid-column: 1 / -1;
   }
   .tracker-meaning,
-  .tracker-access {
+  .tracker-access,
+  .tracker-primary-target,
+  .tracker-atlas,
+  .tracker-real-data {
     padding: 1rem;
+  }
+  .tracker-targets {
+    grid-template-columns: 1fr;
   }
   .tracker-actions {
     align-items: stretch;

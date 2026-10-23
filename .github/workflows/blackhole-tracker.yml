@@ -30,7 +30,7 @@ jobs:
         run: python tools/verify_blackhole_tracker_snapshot.py
       - name: Install product test and build dependencies
         working-directory: products/blackhole_tracker
-        run: python -m pip install -e ".[dev]"
+        run: python -m pip install -e ".[dev,astrometry]"
       - name: Product contracts, browser fixture and replay
         working-directory: products/blackhole_tracker
         run: python -m pytest -q tests
@@ -38,11 +38,35 @@ jobs:
         working-directory: products/blackhole_tracker
         run: python -m pip wheel --no-deps . --wheel-dir dist
       - name: Fit and export replay from wheel outside checkout
-        run: python tools/smoke_blackhole_tracker_wheel.py --wheel products/blackhole_tracker/dist/bhsm_blackhole_tracker-0.2.0rc2-py3-none-any.whl
+        run: python tools/smoke_blackhole_tracker_wheel.py --wheel products/blackhole_tracker/dist/bhsm_blackhole_tracker-0.2.0rc6-py3-none-any.whl
+      - name: Optional joint route from an isolated astrometry wheel installation
+        shell: python
+        run: |
+          from pathlib import Path
+          import os, subprocess, sys, tempfile, venv
+          workspace = Path.cwd()
+          wheels = list((workspace / "products/blackhole_tracker/dist").glob("*.whl"))
+          if len(wheels) != 1:
+              raise SystemExit("Expected exactly one freshly built tracker wheel")
+          probe = workspace / "products/blackhole_tracker/scripts/probe_joint_install.py"
+          output = workspace / "tracker-artifacts/joint-wheel-smoke.json"
+          output.parent.mkdir(parents=True, exist_ok=True)
+          environment = os.environ.copy()
+          for name in ("PYTHONPATH", "PYTHONHOME"):
+              environment.pop(name, None)
+          environment.update(PYTHONNOUSERSITE="1", MPLBACKEND="Agg", OPENBLAS_NUM_THREADS="1", OMP_NUM_THREADS="1")
+          with tempfile.TemporaryDirectory(prefix="bhsm optional joint wheel ") as directory:
+              outside = Path(directory)
+              venv.EnvBuilder(with_pip=True).create(outside / "venv")
+              python = outside / "venv" / ("Scripts/python.exe" if os.name == "nt" else "bin/python")
+              subprocess.run([str(python), "-I", "-m", "pip", "install", str(wheels[0]) + "[astrometry]"], cwd=outside, env=environment, check=True, timeout=600)
+              subprocess.run([str(python), "-I", str(probe), "--output", str(output)], cwd=outside, env=environment, check=True, timeout=600)
       - uses: actions/upload-artifact@v4
         with:
           name: blackhole-tracker-wheel-${{ matrix.os }}
-          path: products/blackhole_tracker/dist/*.whl
+          path: |
+            products/blackhole_tracker/dist/*.whl
+            tracker-artifacts/joint-wheel-smoke.json
 
   tracker-paper-and-source:
     runs-on: ubuntu-latest

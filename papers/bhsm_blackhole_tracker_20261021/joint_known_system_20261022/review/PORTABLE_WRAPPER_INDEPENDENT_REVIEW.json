@@ -1,0 +1,41 @@
+{
+  "schema": "bhtracker.independent_portable_wrapper_review.v1",
+  "wrapper_sha256": "a61101e001a3d0ed67f924bcd864aea5d5c93d6c5cc9beccd7b51338e0c5d462",
+  "status": "PASS",
+  "independent_cases": [
+    {
+      "case": "formal_default_from_external_cwd",
+      "exit_code": 0,
+      "stdout": "{\"verified\": true, \"photometric_rows\": 12521, \"astrometric_rows\": 21, \"input_sha256\": \"d4fc2bfc9320c7eab8a33b93517f68f035a5d498ffb35ff548a638648143af96\"}\n",
+      "stderr": "",
+      "passed": true
+    },
+    {
+      "case": "unknown_stage_rejected",
+      "exit_code": 2,
+      "stdout": "",
+      "stderr": "usage: reproduce_joint_campaign.py [-h] --sourcepack SOURCEPACK\n                                   --output OUTPUT [--repository REPOSITORY]\n                                   [--verify-only] [--stages STAGES]\nreproduce_joint_campaign.py: error: Unknown stage(s): unknown\n",
+      "passed": true
+    },
+    {
+      "case": "changed_workflow_rejected",
+      "exit_code": 2,
+      "stderr": "Reproduction stopped: Frozen source differs: joint_workflow_v2.py; use the recorded version or declare a new analysis\n",
+      "passed": true
+    }
+  ],
+  "prior_owner_five_case_receipt": "PORTABLE_WRAPPER_FORMAL_LAYOUT_VALIDATION.json",
+  "prior_owner_tested_wrapper_sha256": "348ed89c01f3e508004057d585ed6abb35af7de3ff36cf5f726e6b5653648821",
+  "prior_owner_cases_different_wrapper_revision": true,
+  "reviewed_final_changes": [
+    "Partial control restart removes persisted linkage before invoking unchanged driver.",
+    "All20 gzip artifacts required for completion.",
+    "Formal/dev paths detected independently of cwd.",
+    "Science/importer/workflow sources pinned.",
+    "Strict candidate/schema/input/partition/training resume checks.",
+    "Existing canonical-equal native input transport bytes preserved."
+  ],
+  "no_measured_fit_rerun": true,
+  "no_mass_acceptance": true,
+  "qualification": "Path/import/provenance tests on Windows; not multi-operating-system numerical certification."
+}

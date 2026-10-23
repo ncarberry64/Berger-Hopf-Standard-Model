@@ -1,0 +1,206 @@
+{
+  "schema": "bhsm.museum.candidate_atlas_view.v1",
+  "repository_url": "https://github.com/ncarberry64/Berger-Hopf-Standard-Model",
+  "formal_product_revision": "8ca349fa8eb5c54c661a022790ae915d05060b59",
+  "source_inventory": "products/blackhole_tracker/bhtracker/web/atlas_data.json",
+  "inventory_utf8_sha256": "4a76300f0e0e3883a0c9c343e1e0c5fbead595c9b4f333aaa01ec05c9ec9debc",
+  "scientific_as_of": "2026-10-23",
+  "role": "STATIC_METADATA_VIEW_NOT_AN_INFERENCE_OR_NEW_RANKING",
+  "counts": {
+    "unique_events": 155,
+    "pilot_events": 100,
+    "published_parallax_events": 59,
+    "verified_overlap_pairs": 4,
+    "sky_markers": 155,
+    "pilot_inadequate_simple_model": 89,
+    "pilot_scalar_nonrejected": 11,
+    "pilot_frozen_followup_targets": 2,
+    "historical_dark_remnant_consistent": 13,
+    "published_parallax_model_modes": 142,
+    "older_native_tables": 26,
+    "older_native_rows": 19068,
+    "older_native_unavailable": 33,
+    "older_classA": 23,
+    "older_classB": 3,
+    "independently_measured_lens_mass_in_atlas": 0,
+    "new_BH_interpretations": 0,
+    "tier_counts": {
+      "REVIEW_REQUIRED": 94,
+      "SUPPORTED_LENSING_EVENT": 58,
+      "BLACK_HOLE_SEARCH_TARGET": 3,
+      "BLACK_HOLE_CANDIDATE": 0,
+      "STRONGLY_SUPPORTED_BLACK_HOLE_IDENTIFICATION": 0
+    }
+  },
+  "targets": [
+    {
+      "event_id": "OGLE3-ULENS-0585",
+      "known_aliases": [
+        "BLG122.6.83113"
+      ],
+      "source_direction": {
+        "ra_deg": 267.1888333333333,
+        "dec_deg": -34.7455,
+        "ra_hms": "17:48:45.32",
+        "dec_dms": "-34:44:43.8",
+        "frame": "catalog_equatorial",
+        "equinox": "J2000",
+        "epoch": null,
+        "role": "SOURCE_EVENT_DIRECTION",
+        "uncertainty": null,
+        "provenance": [
+          {
+            "source_role": "catalog2015",
+            "sha256": "4ad3f8c907f5ccfcaf0bb64b2b42391fec747eba3c91548748b38771dddd1739",
+            "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/catalogA-full.table",
+            "source_row_id": "OGLE2015:catalogA-full.table:line:0585"
+          }
+        ]
+      },
+      "lens": {
+        "position": null,
+        "position_epoch": null,
+        "position_covariance": null,
+        "distance_pc": null,
+        "mass_msun": null,
+        "proper_motion_mas_yr": null,
+        "radial_velocity_km_s": null
+      },
+      "tier": "BLACK_HOLE_SEARCH_TARGET",
+      "classification_basis": "FROZEN_PHOTOMETRIC_FOLLOWUP_SCREEN_ONLY_NO_BH_DISCRIMINATION",
+      "quality_flags": [],
+      "next_actions": [
+        "Search archival event photometry for parallax and validate alternatives; obtain angular/lens-light evidence before physical classification."
+      ]
+    },
+    {
+      "event_id": "OGLE3-ULENS-3092",
+      "known_aliases": [
+        "BLG225.6.198210",
+        "MOA-2007-BLG-027",
+        "MOA-2007-BLG-27",
+        "OGLE-2007-BLG-057"
+      ],
+      "source_direction": {
+        "ra_deg": 271.0709583333333,
+        "dec_deg": -27.609944444444444,
+        "ra_hms": "18:04:17.03",
+        "dec_dms": "-27:36:35.8",
+        "frame": "catalog_equatorial",
+        "equinox": "J2000",
+        "epoch": null,
+        "role": "SOURCE_EVENT_DIRECTION",
+        "uncertainty": null,
+        "provenance": [
+          {
+            "source_role": "catalog2015",
+            "sha256": "4ad3f8c907f5ccfcaf0bb64b2b42391fec747eba3c91548748b38771dddd1739",
+            "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/catalogA-full.table",
+            "source_row_id": "OGLE2015:catalogA-full.table:line:3092"
+          }
+        ]
+      },
+      "lens": {
+        "position": null,
+        "position_epoch": null,
+        "position_covariance": null,
+        "distance_pc": null,
+        "mass_msun": null,
+        "proper_motion_mas_yr": null,
+        "radial_velocity_km_s": null
+      },
+      "tier": "BLACK_HOLE_SEARCH_TARGET",
+      "classification_basis": "FROZEN_PHOTOMETRIC_FOLLOWUP_SCREEN_ONLY_NO_BH_DISCRIMINATION",
+      "quality_flags": [],
+      "next_actions": [
+        "Search archival event photometry for parallax and validate alternatives; obtain angular/lens-light evidence before physical classification."
+      ]
+    },
+    {
+      "event_id": "OGLE3-ULENS-PAR-13",
+      "known_aliases": [
+        "BLG333.2.53483",
+        "OGLE-2002-BLG-061"
+      ],
+      "source_direction": {
+        "ra_deg": 263.983125,
+        "dec_deg": -27.26725,
+        "ra_hms": "17:35:55.95",
+        "dec_dms": "-27:16:2.1",
+        "frame": "catalog_equatorial",
+        "equinox": "J2000",
+        "epoch": null,
+        "role": "SOURCE_EVENT_DIRECTION",
+        "uncertainty": null,
+        "provenance": [
+          {
+            "source_role": "catalog2016",
+            "sha256": "7c2b14e4f08393fb3ed86a997966a94ee7848cfe7a8445c904d2b775586d875e",
+            "url": "https://cdsarc.cds.unistra.fr/ftp/J/MNRAS/458/3012/table2.dat",
+            "source_row_id": "CDS:J/MNRAS/458/3012/table2.dat:line:13"
+          }
+        ]
+      },
+      "lens": {
+        "position": null,
+        "position_epoch": null,
+        "position_covariance": null,
+        "distance_pc": null,
+        "mass_msun": null,
+        "proper_motion_mas_yr": null,
+        "radial_velocity_km_s": null
+      },
+      "tier": "BLACK_HOLE_SEARCH_TARGET",
+      "classification_basis": "PUBLISHED_CONDITIONAL_BH_POSSIBILITY_WITH_UNRELIABLE_GAIA_AND_LOWER_MASS_ALTERNATIVE",
+      "quality_flags": [
+        "ALTERNATIVE_SOURCE_MOTION_SUPPORTS_LOWER_MASS",
+        "EXACT_2016_NATIVE_REDUCTION_UNAVAILABLE",
+        "GAIA_SOURCE_ASTROMETRIC_SOLUTION_UNRELIABLE",
+        "HISTORICAL_DARK_REMNANT_IS_NOT_A_BH_LABEL",
+        "LATER_PRIOR_CONDITIONAL_REANALYSIS_REVISES_HISTORICAL_MASS",
+        "LENS_MASS_DISTANCE_MOTION_UNRESOLVED",
+        "NO_BLACK_HOLE_IDENTIFICATION"
+      ],
+      "next_actions": [
+        "Resolve Gaia/OGLE source-motion discrepancy and crowded-field association before adopting any BH-scale interpretation.",
+        "Recover and version exact native parallax observations, calibration, masks and clocks; validate and process all59 including unavailable or failed cases."
+      ]
+    }
+  ],
+  "benchmark": {
+    "event_id": "OGLE-2011-BLG-0462",
+    "classification_source": "LITERATURE",
+    "benchmark_status": "KNOWN_PUBLISHED_ISOLATED_BLACK_HOLE",
+    "tracker_recovery_status": "NOT_ESTABLISHED_NUMERICAL_STAGE_UNRESOLVED",
+    "source_direction": {
+      "ra_deg": 267.9174583333,
+      "dec_deg": -29.89063888889,
+      "ra_hms": null,
+      "dec_dms": null,
+      "frame": "ICRS",
+      "equinox": null,
+      "epoch": null,
+      "role": "SOURCE_EVENT_DIRECTION",
+      "uncertainty": null,
+      "provenance": [
+        {
+          "source_role": "benchmark_input",
+          "sha256": "08c63eff0d3160d2865c45bf349c67e6c2a9a97c2aa690f9208609a9e058444c",
+          "url": "https://doi.org/10.3847/1538-4357/adbe6e",
+          "source_row_id": "sky_position_icrs_deg"
+        }
+      ]
+    },
+    "lens": {
+      "position": null,
+      "position_epoch": null,
+      "position_covariance": null,
+      "distance_pc": null,
+      "mass_msun": null,
+      "proper_motion_mas_yr": null,
+      "radial_velocity_km_s": null
+    }
+  },
+  "scope": "Source/event directions, not present lens positions. Unavailable physical quantities stay null. All155 cohort outcomes, including failed or unavailable cases, remain in the complete inventory. One published benchmark is separate from cohort counts; tracker recovery is open. No new black-hole interpretation.",
+  "BHSM_interpretation": "One Einstein/GHY optical exterior counted once. Core, membrane, horizon and deformation are not measured by this inventory."
+}

@@ -1,0 +1,31 @@
+{
+  "schema": "bhtracker.parallel_auxiliary_dispatch_stop.v1",
+  "stopped_utc": "2026-10-22T21:28:07.9915510Z",
+  "reason": "Authoritative original serial31-point output completed; cancel redundant auxiliary dispatch after retaining all checkpoints and comparisons",
+  "controller": [
+    {
+      "ProcessId": 33612,
+      "ParentProcessId": 7344,
+      "CommandLine": "\"C:\\Python314\\python.exe\" run_v2_parallel_profile.py --product C:/Users/carbe/Manuscript-Generation/.worktrees/bhsm-joint-mass-20261022/product --input JOINT_2023_NATIVE_INPUT_v1.json --baseline JOINT_V2_G2_CALIBRATED16_CONTINUED.json --output JOINT_V2_G2_MASS_PROFILE31_PARALLEL.json --workers 3"
+    }
+  ],
+  "children": [
+    {
+      "ProcessId": 29868,
+      "ParentProcessId": 33612,
+      "CommandLine": "\"C:\\Python314\\python.exe\" \"-c\" \"from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=33612, pipe_handle=544)\" \"--multiprocessing-fork\""
+    },
+    {
+      "ProcessId": 30884,
+      "ParentProcessId": 33612,
+      "CommandLine": "\"C:\\Python314\\python.exe\" \"-c\" \"from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=33612, pipe_handle=604)\" \"--multiprocessing-fork\""
+    },
+    {
+      "ProcessId": 24540,
+      "ParentProcessId": 33612,
+      "CommandLine": "\"C:\\Python314\\python.exe\" \"-c\" \"from multiprocessing.spawn import spawn_main; spawn_main(parent_pid=33612, pipe_handle=580)\" \"--multiprocessing-fork\""
+    }
+  ],
+  "authoritative_serial_sha256": "efe455ce21e76eec369886db0be0b2cda2680f151479e02e73f033791b85da98",
+  "checkpoint_dispatch_sha256": "4414e311262c7bdbca1616f80810ad2587a195719bd5e58394800033a0953dfa"
+}

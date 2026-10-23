@@ -1,0 +1,521 @@
+{
+  "schema": "bhtracker.compact_joint_public_audit.v1",
+  "framework": "BHSM",
+  "formal_reviewer_repository": "https://github.com/ncarberry64/Berger-Hopf-Standard-Model",
+  "formal_product_path": "products/blackhole_tracker/",
+  "formal_product_revision": {
+    "sha": "1a556d37a40ef89deb54f9c07d231b5496163838",
+    "url": "https://github.com/ncarberry64/Berger-Hopf-Standard-Model/tree/1a556d37a40ef89deb54f9c07d231b5496163838/products/blackhole_tracker/",
+    "must_resolve_before_final_release": false
+  },
+  "scientific_development_freeze": "5bb94198565fb25414f1f05908c00d49838c4b73",
+  "scientific_source_sha256": "6eaf050481fc23aebf4b929e49fdab57e324ee80eb08e1547b69f056269eeaaa",
+  "canonical_input_sha256": "d4fc2bfc9320c7eab8a33b93517f68f035a5d498ffb35ff548a638648143af96",
+  "sourcepack": {
+    "filename": "BHSM_OB110462_2023_SourcePack_v1.zip",
+    "sha256": "71d36a03e4ba275e91bea62f4784a5193f34ad32d3777b637453f91151bafa99",
+    "bytes": 764958,
+    "release_location_state": "PENDING_PARENT_RELEASE_ASSET_LINK",
+    "inventory": "sourcepack/ACQUISITION_MANIFEST.json",
+    "rights": "sourcepack/CITATIONS_AND_RIGHTS.md",
+    "formal_repository_path": "museum/public/research/blackhole-tracker/BHSM_OB110462_2023_SourcePack_v1.zip",
+    "planned_Pages_URL": "https://ncarberry64.github.io/Berger-Hopf-Standard-Model/research/blackhole-tracker/BHSM_OB110462_2023_SourcePack_v1.zip",
+    "publication_status": "DRAFT_NOT_YET_PUBLISHED; release coordinator verifies after authorized publication"
+  },
+  "driver_hashes": {
+    "run_v2_blocked_prediction.py": "cafdde87407f0a2555deaf99438ee505f3e21131f306b95fc5e74bf04caea2d8",
+    "run_v2_1_blocked_prediction.py": "d39ddc87ab63133e37c7cb4cce8834332f6a9b309e9cce51ca26c6df5e473ff4",
+    "run_v2_parametric_controls.py": "23e1968e1cc2402ebabcb567345f51c72ad6b28345c1bc245ba8d8490138d060",
+    "continue_v2.py": "3d9ecb0d688fb5b995d2fda625bfa11b537715c3b6315136dd252a3a4692f1a7",
+    "refine_v2_profiles.py": "a71325fa71739e9d212b06a11de75eaa99d9c846ae65f38abbd3b12861cdff9b"
+  },
+  "external_result_files": {
+    "JOINT_V2_G0_DIAGONAL16_CONTINUED.json": {
+      "sha256": "14a1f3ea6dfd1ae60d48171d0824122d69ef2837edec42112eb8f4dacc58a72c",
+      "bytes": 11207604,
+      "bundled": false,
+      "role": "full conditional fit, regenerable from source pack"
+    },
+    "JOINT_V2_G1_MARGINAL16_CONTINUED.json": {
+      "sha256": "0d1b9d5471d7030843aeef0bb1f5d5e1ca475907109514e08c42f1260bb67f54",
+      "bytes": 11436701,
+      "bundled": false,
+      "role": "full conditional fit, regenerable from source pack"
+    },
+    "JOINT_V2_G2_CALIBRATED16_CONTINUED.json": {
+      "sha256": "8dba427f556863c87bc266a001500d7cbc4a2ec20e579e8478c91401d70ce763",
+      "bytes": 11412459,
+      "bundled": false,
+      "role": "full conditional fit, regenerable from source pack"
+    },
+    "JOINT_V2_G1_MARGINAL16_CONTINUED_V2_1_BLOCKED_PREDICTION.json": {
+      "sha256": "2012ef6cbe6a79ddba7021be4f1cefc05adff3b59dbb1e369cd1051434002ece",
+      "bytes": 106531,
+      "bundled": false,
+      "role": "corrected whole-night conditional score"
+    },
+    "JOINT_V2_G1_MARGINAL16_CONTINUED_BLOCKED_PREDICTION.json": {
+      "sha256": "37492cd6f15079b1996680c9fb9a091c4ebce80c29d10a93bfe5debdff7051e6",
+      "bytes": 106574,
+      "bundled": false,
+      "role": "original UTC-boundary conditional diagnostic; splits observing nights"
+    },
+    "JOINT_V2_G1_MARGINAL16_CONTINUED_PARAMETRIC_CONTROLS20.json": {
+      "sha256": "abdd54ef21308167025c47a3e96315f83d9e63492b06cdf778ba6c047d323660",
+      "bytes": 313221,
+      "bundled": false,
+      "role": "summary of generated/refitted controls; large sample files external"
+    },
+    "JOINT_V2_G1_MASS_PROFILE31.json": {
+      "sha256": "1f46c0ce695dce7fab826bb968e02ea6b7fa4d1cb3b2bfd207909cfda85f6318",
+      "bytes": 70781,
+      "bundled": false,
+      "role": "conditional nuisance-profile grid; no accepted confidence interval"
+    },
+    "JOINT_V2_G1_MASS_REFINED_SUPPORT.json": {
+      "sha256": "9bf4d09f3da78791951cf5fbe9065e21ac93c73b7379729993b284210df113b1",
+      "bytes": 124854,
+      "bundled": false,
+      "role": "conditional crossing refinement; no accepted mass interval"
+    },
+    "JOINT_V2_G1_MARGINAL16_CONTINUED_CONTROL_00.json.gz": {
+      "sha256": "65a57a45eab71ae421a379936cfdf974d9ff3c75f64e72a550e22debab75e700",
+      "bytes": 2464404,
+      "bundled": false,
+      "role": "full generated/refitted control sample; reproducible from frozen seed"
+    },
+    "JOINT_V2_G1_MARGINAL16_CONTINUED_CONTROL_01.json.gz": {
+      "sha256": "136cccb904710c94d8ee9bceccc69aea3606db4eac9b05c3ab64b5d2cfeac730",
+      "bytes": 2464001,
+      "bundled": false,
+      "role": "full generated/refitted control sample; reproducible from frozen seed"
+    },
+    "JOINT_V2_G1_MARGINAL16_CONTINUED_CONTROL_02.json.gz": {
+      "sha256": "2ff85a6c88ea217d771ddd69eb925e5b7867071f8283dc207e689c28bc42382e",
+      "bytes": 2464232,
+      "bundled": false,
+      "role": "full generated/refitted control sample; reproducible from frozen seed"
+    },
+    "JOINT_V2_G1_MARGINAL16_CONTINUED_CONTROL_03.json.gz": {
+      "sha256": "e50b6f85ddc49a4a948c5dffd00ab5cf2c36d871bb72bde9747a2da4f76d6033",
+      "bytes": 2464721,
+      "bundled": false,
+      "role": "full generated/refitted control sample; reproducible from frozen seed"
+    },
+    "JOINT_V2_G1_MARGINAL16_CONTINUED_CONTROL_04.json.gz": {
+      "sha256": "ebf2325e936268368d05965cd08d986cb3419b86928d03d983ef007ac86b4849",
+      "bytes": 2464674,
+      "bundled": false,
+      "role": "full generated/refitted control sample; reproducible from frozen seed"
+    },
+    "JOINT_V2_G1_MARGINAL16_CONTINUED_CONTROL_05.json.gz": {
+      "sha256": "a560f3b2b3d8ddf2a2c16b04e9be7d547499e8667a16a1d25ff1ad0043b5b4c8",
+      "bytes": 2464157,
+      "bundled": false,
+      "role": "full generated/refitted control sample; reproducible from frozen seed"
+    },
+    "JOINT_V2_G1_MARGINAL16_CONTINUED_CONTROL_06.json.gz": {
+      "sha256": "232971821d89efadaed22ca781a47f941dd59ba590389a3f20a6ae8378629e8d",
+      "bytes": 2464281,
+      "bundled": false,
+      "role": "full generated/refitted control sample; reproducible from frozen seed"
+    },
+    "JOINT_V2_G1_MARGINAL16_CONTINUED_CONTROL_07.json.gz": {
+      "sha256": "e45e058bc8ec19e49232760e6deff26a4ca2711f54b549fcf45fefb97e82c84c",
+      "bytes": 2464381,
+      "bundled": false,
+      "role": "full generated/refitted control sample; reproducible from frozen seed"
+    },
+    "JOINT_V2_G1_MARGINAL16_CONTINUED_CONTROL_08.json.gz": {
+      "sha256": "11e3c355b31b15e65e58e30ccb64e5a646828a664a76b36b0ca7fe82c9ebfe0d",
+      "bytes": 2464367,
+      "bundled": false,
+      "role": "full generated/refitted control sample; reproducible from frozen seed"
+    },
+    "JOINT_V2_G1_MARGINAL16_CONTINUED_CONTROL_09.json.gz": {
+      "sha256": "de64f5ad5567934ae0de2744ac5931f64d93df255f4e86e4ff11124dc36904b5",
+      "bytes": 2464680,
+      "bundled": false,
+      "role": "full generated/refitted control sample; reproducible from frozen seed"
+    },
+    "JOINT_V2_G1_MARGINAL16_CONTINUED_CONTROL_10.json.gz": {
+      "sha256": "b8cc4ad9515e998efd3db46f4ffc49761517d59250af3475ac46a9b05af6896b",
+      "bytes": 2464385,
+      "bundled": false,
+      "role": "full generated/refitted control sample; reproducible from frozen seed"
+    },
+    "JOINT_V2_G1_MARGINAL16_CONTINUED_CONTROL_11.json.gz": {
+      "sha256": "2946ade52d0fbde344ccf1263da749032d33c2d36060d6fd3b17facad7ea229f",
+      "bytes": 2464953,
+      "bundled": false,
+      "role": "full generated/refitted control sample; reproducible from frozen seed"
+    },
+    "JOINT_V2_G1_MARGINAL16_CONTINUED_CONTROL_12.json.gz": {
+      "sha256": "469dd2c222333b62300546dd2ae556405e1a387bea756a858f0d0aad2b057c49",
+      "bytes": 2464383,
+      "bundled": false,
+      "role": "full generated/refitted control sample; reproducible from frozen seed"
+    },
+    "JOINT_V2_G1_MARGINAL16_CONTINUED_CONTROL_13.json.gz": {
+      "sha256": "84a8d98d41a0eb26d1969b88fe42524b7d1765b2513344ebe9ce8c369d499a49",
+      "bytes": 2463822,
+      "bundled": false,
+      "role": "full generated/refitted control sample; reproducible from frozen seed"
+    },
+    "JOINT_V2_G1_MARGINAL16_CONTINUED_CONTROL_14.json.gz": {
+      "sha256": "1d0e4a440b254450a4e1ae27a28443d8f9431711f6032f8b1ab60d9d9843ce0b",
+      "bytes": 2464722,
+      "bundled": false,
+      "role": "full generated/refitted control sample; reproducible from frozen seed"
+    },
+    "JOINT_V2_G1_MARGINAL16_CONTINUED_CONTROL_15.json.gz": {
+      "sha256": "3892051cca4a37cd84d106dae89fd90eba5369a62e88e433a618608ba9a0e029",
+      "bytes": 2464793,
+      "bundled": false,
+      "role": "full generated/refitted control sample; reproducible from frozen seed"
+    },
+    "JOINT_V2_G1_MARGINAL16_CONTINUED_CONTROL_16.json.gz": {
+      "sha256": "bf78e7e5b52c83dac0ec17c48f84d38f76f141ec3a27a784a4fe543899391001",
+      "bytes": 2463915,
+      "bundled": false,
+      "role": "full generated/refitted control sample; reproducible from frozen seed"
+    },
+    "JOINT_V2_G1_MARGINAL16_CONTINUED_CONTROL_17.json.gz": {
+      "sha256": "885bc3622adfb91f301331fa725dcfb161782556c9aecdb20e983633566bed0f",
+      "bytes": 2464605,
+      "bundled": false,
+      "role": "full generated/refitted control sample; reproducible from frozen seed"
+    },
+    "JOINT_V2_G1_MARGINAL16_CONTINUED_CONTROL_18.json.gz": {
+      "sha256": "3ac69d0d8ca1f1f64e4dadf44450a072449eff1cda228eec65639a12b14b386e",
+      "bytes": 2464510,
+      "bundled": false,
+      "role": "full generated/refitted control sample; reproducible from frozen seed"
+    },
+    "JOINT_V2_G1_MARGINAL16_CONTINUED_CONTROL_19.json.gz": {
+      "sha256": "38f3fdc88f65a0da21456793d5195c2b8ae523a1181010c88336329ebce82687",
+      "bytes": 2464308,
+      "bundled": false,
+      "role": "full generated/refitted control sample; reproducible from frozen seed"
+    },
+    "JOINT_V2_G2_CALIBRATED16_CONTINUED_V2_1_BLOCKED_PREDICTION.json": {
+      "sha256": "5966a647c7807267db7fc51a66eed853d3d80a58019aa8f1aac943798b91025b",
+      "bytes": 106636,
+      "bundled": false,
+      "role": "corrected whole-night conditional score"
+    },
+    "JOINT_V2_G2_CALIBRATED16_CONTINUED_BLOCKED_PREDICTION.json": {
+      "sha256": "451c8bf317115556a5da35960a6269b1cc76075ca3d55852d8453def6d9ff555",
+      "bytes": 106681,
+      "bundled": false,
+      "role": "original UTC-boundary conditional diagnostic; splits observing nights"
+    },
+    "JOINT_V2_G2_CALIBRATED16_CONTINUED_PARAMETRIC_CONTROLS20.json": {
+      "sha256": "828e7cf7ad1d6f96c2e25eb46b396149aaf7b7f8ba8dc6832ca56f891c12c81d",
+      "bytes": 322066,
+      "bundled": false,
+      "role": "summary of generated/refitted controls; large sample files external"
+    },
+    "JOINT_V2_G2_MASS_PROFILE31.json": {
+      "sha256": "efe455ce21e76eec369886db0be0b2cda2680f151479e02e73f033791b85da98",
+      "bytes": 77318,
+      "bundled": false,
+      "role": "conditional nuisance-profile grid; no accepted confidence interval"
+    },
+    "JOINT_V2_G2_MASS_REFINED_SUPPORT.json": {
+      "sha256": "f02e20ccc426a142266daf9ed8507e853c0b13dbe6d901c0e8e598e65e985f46",
+      "bytes": 80472,
+      "bundled": false,
+      "role": "conditional crossing refinement; no accepted mass interval"
+    },
+    "JOINT_V2_G2_CALIBRATED16_CONTINUED_CONTROL_00.json.gz": {
+      "sha256": "6743e9a53b2868759cadccf86b4d1f28cfdb052372380816afdd64031cd3762e",
+      "bytes": 2458044,
+      "bundled": false,
+      "role": "full generated/refitted control sample; reproducible from frozen seed"
+    },
+    "JOINT_V2_G2_CALIBRATED16_CONTINUED_CONTROL_01.json.gz": {
+      "sha256": "c904bab660668d233d5225e77afbb2a541acc78a06c385f6c43c5bce2445ab28",
+      "bytes": 2457261,
+      "bundled": false,
+      "role": "full generated/refitted control sample; reproducible from frozen seed"
+    },
+    "JOINT_V2_G2_CALIBRATED16_CONTINUED_CONTROL_02.json.gz": {
+      "sha256": "95ad5e096fe9f4f0a511275612a48d524de6d5bcddc6741283bd20e37c07bfb0",
+      "bytes": 2459470,
+      "bundled": false,
+      "role": "full generated/refitted control sample; reproducible from frozen seed"
+    },
+    "JOINT_V2_G2_CALIBRATED16_CONTINUED_CONTROL_03.json.gz": {
+      "sha256": "eeddb41ff62c043a16fd68f5b2c4f43bac2c0680122cb1d184a81dbe3a08331b",
+      "bytes": 2457936,
+      "bundled": false,
+      "role": "full generated/refitted control sample; reproducible from frozen seed"
+    },
+    "JOINT_V2_G2_CALIBRATED16_CONTINUED_CONTROL_04.json.gz": {
+      "sha256": "9831294739aeb07d8630d4d29e565b0e1b4ab0734320fadb6a7f38ae8fc7d866",
+      "bytes": 2459242,
+      "bundled": false,
+      "role": "full generated/refitted control sample; reproducible from frozen seed"
+    },
+    "JOINT_V2_G2_CALIBRATED16_CONTINUED_CONTROL_05.json.gz": {
+      "sha256": "b679a674828c768925bce6e8f756306afb08bceb014af031216c03704f2080d5",
+      "bytes": 2457851,
+      "bundled": false,
+      "role": "full generated/refitted control sample; reproducible from frozen seed"
+    },
+    "JOINT_V2_G2_CALIBRATED16_CONTINUED_CONTROL_06.json.gz": {
+      "sha256": "a2a0e5ce1abb022b8e0d7460b359a445d03fb80e73493b6ffe65652c9fa8d050",
+      "bytes": 2456434,
+      "bundled": false,
+      "role": "full generated/refitted control sample; reproducible from frozen seed"
+    },
+    "JOINT_V2_G2_CALIBRATED16_CONTINUED_CONTROL_07.json.gz": {
+      "sha256": "921ddd440d6a4d7dc154b58bab2dc0c59f818af3eb60c864af2883804d7adb50",
+      "bytes": 2458016,
+      "bundled": false,
+      "role": "full generated/refitted control sample; reproducible from frozen seed"
+    },
+    "JOINT_V2_G2_CALIBRATED16_CONTINUED_CONTROL_08.json.gz": {
+      "sha256": "85db0c65811d58764cddac8ba4d17fbbc6e2b6881dfc497674662165d4e96a51",
+      "bytes": 2457843,
+      "bundled": false,
+      "role": "full generated/refitted control sample; reproducible from frozen seed"
+    },
+    "JOINT_V2_G2_CALIBRATED16_CONTINUED_CONTROL_09.json.gz": {
+      "sha256": "c38bbb9479ee670acf51d775f228a5db42242ff5659d47a168c130f018084b28",
+      "bytes": 2459182,
+      "bundled": false,
+      "role": "full generated/refitted control sample; reproducible from frozen seed"
+    },
+    "JOINT_V2_G2_CALIBRATED16_CONTINUED_CONTROL_10.json.gz": {
+      "sha256": "322e55a8add22ba67e7f428075ffbc9a315094b1eb95ea2e3d5647dbc0326c5e",
+      "bytes": 2457730,
+      "bundled": false,
+      "role": "full generated/refitted control sample; reproducible from frozen seed"
+    },
+    "JOINT_V2_G2_CALIBRATED16_CONTINUED_CONTROL_11.json.gz": {
+      "sha256": "f0830c9e863a4c25c745e0460339fe3e6600a3151428c37aba3095a00c6ac6b7",
+      "bytes": 2457535,
+      "bundled": false,
+      "role": "full generated/refitted control sample; reproducible from frozen seed"
+    },
+    "JOINT_V2_G2_CALIBRATED16_CONTINUED_CONTROL_12.json.gz": {
+      "sha256": "2be8274a0103887c9fdd32de69cb7502eedd04e5672d2bf861ba7f7aa484a13b",
+      "bytes": 2458378,
+      "bundled": false,
+      "role": "full generated/refitted control sample; reproducible from frozen seed"
+    },
+    "JOINT_V2_G2_CALIBRATED16_CONTINUED_CONTROL_13.json.gz": {
+      "sha256": "4f9ebb3de3d163a79db80f860b54cd173eb7b014bd981e91a5675e8521484b6b",
+      "bytes": 2458355,
+      "bundled": false,
+      "role": "full generated/refitted control sample; reproducible from frozen seed"
+    },
+    "JOINT_V2_G2_CALIBRATED16_CONTINUED_CONTROL_14.json.gz": {
+      "sha256": "a7ff7de446c359eec6abd0c83f7ca8c5deb025780097e4636dea9186c266515c",
+      "bytes": 2456874,
+      "bundled": false,
+      "role": "full generated/refitted control sample; reproducible from frozen seed"
+    },
+    "JOINT_V2_G2_CALIBRATED16_CONTINUED_CONTROL_15.json.gz": {
+      "sha256": "e366897fd8f795aa500adf7d547568dd44b283cb336e1ef616e9cf7f14cb8977",
+      "bytes": 2456344,
+      "bundled": false,
+      "role": "full generated/refitted control sample; reproducible from frozen seed"
+    },
+    "JOINT_V2_G2_CALIBRATED16_CONTINUED_CONTROL_16.json.gz": {
+      "sha256": "4f5f8db16235a6e51bdcc4f48b07af5e6b57664c79b3d4d30dcd6234e33101dc",
+      "bytes": 2456671,
+      "bundled": false,
+      "role": "full generated/refitted control sample; reproducible from frozen seed"
+    },
+    "JOINT_V2_G2_CALIBRATED16_CONTINUED_CONTROL_17.json.gz": {
+      "sha256": "f385a5ac376ad5dc0e980f5db1373df59ae5363c9a293acb38bbd342e1b82fc5",
+      "bytes": 2459119,
+      "bundled": false,
+      "role": "full generated/refitted control sample; reproducible from frozen seed"
+    },
+    "JOINT_V2_G2_CALIBRATED16_CONTINUED_CONTROL_18.json.gz": {
+      "sha256": "7835baf2408aba17a2573ba094475b663e0563428cd2c4804af65835f9241765",
+      "bytes": 2458275,
+      "bundled": false,
+      "role": "full generated/refitted control sample; reproducible from frozen seed"
+    },
+    "JOINT_V2_G2_CALIBRATED16_CONTINUED_CONTROL_19.json.gz": {
+      "sha256": "3b74c8a52db434ca7f2bf2641e57721008b748d2e18070c961cc85e39f1abefc",
+      "bytes": 2459325,
+      "bundled": false,
+      "role": "full generated/refitted control sample; reproducible from frozen seed"
+    }
+  },
+  "conditional_mass_acceptance": false,
+  "BH_identification_acceptance": false,
+  "candidate_stop_reason": "All frozen candidates fail residual adequacy;G2 also numerical tau cap. Passing plug-in prediction does not override failure.",
+  "required_control_outputs_complete": true,
+  "profile_grid_rows_present": 62,
+  "scope": "Small public derived tables/figure/protocols/reviews. No full fitted-vector or control-sample copies. Native source bytes available through attributed portable pack; original frozen100 pilot remains separate.",
+  "public_files": {
+    "baseline_summary.csv": {
+      "sha256": "9ff321a5f0b9c0fc76a0a5d7be60efabfba3e5484789709f38d8a25a3688be71",
+      "bytes": 1009
+    },
+    "baseline_summary.json": {
+      "sha256": "9ebd0aec624fd09854c09c0db1288cda358f4699306918179e1f534ddd1009a5",
+      "bytes": 2194
+    },
+    "build_compact_audit.py": {
+      "sha256": "54cdb03bdf18924d48380cf7bde4122270f0109e55661a56002be686f6230c6b",
+      "bytes": 17397
+    },
+    "conditional_mass_profile.csv": {
+      "sha256": "231a4b4cddc28e2f0cf5e2bafe3eb8c03fe80feef1ea065be5041a54af4bb0bd",
+      "bytes": 5787
+    },
+    "conditional_refined_support.json": {
+      "sha256": "170b85a78f82a085781431821547fd572df017e2b45e5b74c4025532af91706d",
+      "bytes": 3183
+    },
+    "control_summary.json": {
+      "sha256": "4ec0f027932a7b4538201e7612f5315876d3b80ab68bb5419d17c5cb9ac8e3ed",
+      "bytes": 10669
+    },
+    "drivers/run_v2_parallel_profile.py": {
+      "sha256": "5c9e6694ab0afc2ff74ecf9c281f7988bf04fdc2974ac8806c4128c4fce3826e",
+      "bytes": 4824
+    },
+    "FROZEN_PILOT_PRESERVATION.json": {
+      "sha256": "5ee8326f364f49a7cf4f338d66c0447e6c79bc23d252699ffa1887c02bce39cc",
+      "bytes": 630
+    },
+    "joint_noise_diagnostics.png": {
+      "sha256": "ddddc84da7cbea8731c16b1531277493d11b1f49f582b08bd7d5f265784dea69",
+      "bytes": 260893
+    },
+    "MANUAL_CALIBRATION_DATA_REQUEST_TEMPLATE.txt": {
+      "sha256": "ab5a7218a554256096e87fbeaaba64d3abf7ab3530e9094568da62aafa16fe34",
+      "bytes": 6001
+    },
+    "original_UTC_prediction_diagnostic.csv": {
+      "sha256": "648eb9d419852064098e011c9c208b3fa844d431fa8dcc8e46bfc0e12cb627ad",
+      "bytes": 420
+    },
+    "PLAIN_LANGUAGE_RESULT.txt": {
+      "sha256": "9104d23195d35a331c0121acbd4ce0deefbdf282850d8bfe1c1ba99611628865",
+      "bytes": 3532
+    },
+    "prediction_summary.csv": {
+      "sha256": "6241d24153f06abec3f20f52942720f8e1f51e700b5c565ee4611d62ba71c42a",
+      "bytes": 571
+    },
+    "protocol/JOINT_MASS_BENCHMARK_PROTOCOL_V2.md": {
+      "sha256": "0be8ca73923a78c898676d6326212740fd43ef8f26f25d43d34f85350b258783",
+      "bytes": 10154
+    },
+    "protocol/JOINT_PROTOCOL_V2_FREEZE.json": {
+      "sha256": "9dca7fe937b8b9604d09d3e37bc6f0f171105a7199238d3dd0a9b7b3877efc21",
+      "bytes": 1620
+    },
+    "protocol/JOINT_VALIDATION_PARTITION_V2_1_FREEZE.json": {
+      "sha256": "a5f3a04552074683aee87900e6354c49f0ac57f0bac1747d5a9e9a5ba7de1758",
+      "bytes": 105401
+    },
+    "README.md": {
+      "sha256": "a31856412cac62e506ac0cdd0fda577e1d8b6d88f2557680bb16ced308067fe9",
+      "bytes": 6191
+    },
+    "residual_bin_summary.csv": {
+      "sha256": "d627facf672a8e98e9150d9cf91942708711993a8be768d5559f0b22be520902",
+      "bytes": 7649
+    },
+    "review/G2_PARALLEL_DISPATCH.json": {
+      "sha256": "3249efcc487be3f740acf213950be342efcba9c07bc3243102d80bfdd4b2e821",
+      "bytes": 7072
+    },
+    "review/JOINT_V1_NOISE_REVIEW_AND_PROSPECTIVE_COVARIANCE.json": {
+      "sha256": "4b73913b36dcbfc48308015ec61a738edf8f092fe74361a8328f92f9f6cf8e28",
+      "bytes": 6989
+    },
+    "review/JOINT_V2_1_PARTITION_INDEPENDENT_REVIEW.json": {
+      "sha256": "c641163cc05590f8abc9b6642b87b9e35aae16a19ec5f8aa922683f9bddab632",
+      "bytes": 533731
+    },
+    "review/JOINT_V2_1_PREDICTION_DRIVER_INDEPENDENT_REVIEW.json": {
+      "sha256": "88247ce7e47abe57e761f54e045a169101a0d1bdc85ac9929a8f939277377c4a",
+      "bytes": 3834
+    },
+    "review/JOINT_V2_ACCEPTANCE_RECEIPT.json": {
+      "sha256": "52e6807e2e8c65aa85dd422954fb7922f6ae50a760b9bf099407ad6dec100549",
+      "bytes": 26237
+    },
+    "review/JOINT_V2_FINAL_ARTIFACT_INVENTORY.json": {
+      "sha256": "8ac158a418058aa4808176152ee8625dd3404125382c3c5d276d1d92b79d26f8",
+      "bytes": 2917
+    },
+    "review/JOINT_V2_G2_PARALLEL_AUXILIARY_STOP.json": {
+      "sha256": "ffac6a968ffec66d9ac27eff259459b119d08b3c6a8aa235558719312a1907da",
+      "bytes": 1698
+    },
+    "review/JOINT_V2_G2_PARALLEL_OVERLAP_RECEIPT.json": {
+      "sha256": "3fd4034002f0b34bf898af8828feccfd39f80f256b75003bbe3754aa087a42eb",
+      "bytes": 1486
+    },
+    "review/JOINT_V2_G2_SERIAL_PARALLEL_COMPARISON.json": {
+      "sha256": "0edfdcc643cacdded99fbb69af5db372f2a0e981f6487e23653fbbc1b413abca",
+      "bytes": 7168
+    },
+    "review/JOINT_V2_INDEPENDENT_FREEZE_REVIEW.json": {
+      "sha256": "482497245bdc768f5a8f1d06fe31c6ea6d7fe87dd5e51fd2a418a0f12fee4037",
+      "bytes": 6804
+    },
+    "review/JOINT_V2_INDEPENDENT_MEASURED_OUTCOME_REVIEW.json": {
+      "sha256": "eb912c84f5d0ea1ce0ecc845548176772365e184dea7fab9a081217bb160edc3",
+      "bytes": 25316
+    },
+    "review/PORTABLE_2023_SOURCEPACK_VERIFICATION.json": {
+      "sha256": "ba315a5900818486149ad640564674b267fc74fc51e21e55ce707660899377e3",
+      "bytes": 2612
+    },
+    "review/PORTABLE_WRAPPER_FORMAL_LAYOUT_VALIDATION.json": {
+      "sha256": "754043c63b36fb2ce4585ea0d99b7b372deb2716ebdb2b2e17bf1e08bff58f5f",
+      "bytes": 2199
+    },
+    "review/PORTABLE_WRAPPER_INDEPENDENT_REVIEW.json": {
+      "sha256": "59dfd0983ed9f4e9701f4cece6b84b004542c524c8af9348790dfcd40751be46",
+      "bytes": 2057
+    },
+    "review/ROBUST_ESTIMATOR_FEASIBILITY_ASSESSMENT.txt": {
+      "sha256": "5619bfcbda45ffd398d56a83e39c24640dae59bb2cb35b0046c15f0a14161077",
+      "bytes": 8114
+    },
+    "review/SAVED_G0_CLUSTER_ESTIMATOR_FEASIBILITY.json": {
+      "sha256": "9250961ff2f65c9b8157ba1cdaff7e614854aef696497469ac24f9117fade321",
+      "bytes": 5502
+    },
+    "sourcepack/ACQUISITION_MANIFEST.json": {
+      "sha256": "5b9c29eb7021ff1c48a7269f972a2589de288dd1ae239a33b667801b8544b3b2",
+      "bytes": 48235
+    },
+    "sourcepack/CITATIONS_AND_RIGHTS.md": {
+      "sha256": "22ada8c70b86883f433662e1a00839838f1e6aa29823854373960ee8c7a5d477",
+      "bytes": 2795
+    },
+    "sourcepack/RIGHTS_EVIDENCE.json": {
+      "sha256": "346675437d3729dda59b2cbe89dc83add049d36f06beb568d2ee37fa8640e553",
+      "bytes": 1390
+    }
+  },
+  "figure_environment": {
+    "matplotlib": "3.11.0"
+  },
+  "required_profile_outputs_complete": true,
+  "required_prediction_continued_modes_complete": true,
+  "required_original_partition_diagnostics_present": true,
+  "required_refined_support_outputs_complete": true,
+  "fixed_campaign_acceptance_receipt_present": true,
+  "portable_reproduction": {
+    "formal_repository_wrapper": "products/blackhole_tracker/research/reproduce_joint_campaign.py",
+    "instructions": "products/blackhole_tracker/research/README_JOINT_REPRODUCTION.md",
+    "science_files_unchanged": true
+  }
+}

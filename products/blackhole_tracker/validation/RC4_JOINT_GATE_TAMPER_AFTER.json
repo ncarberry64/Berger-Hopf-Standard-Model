@@ -1,0 +1,69 @@
+{
+  "schema": "bhtracker.saved_gate_tamper_probe.v2",
+  "all_three_original_measured_states_validated": true,
+  "original_receipts": [
+    {
+      "file": "JOINT_V2_G0_DIAGONAL16_CONTINUED.json",
+      "replay": {
+        "schema": "bhtracker.joint_replay.v2",
+        "passed": true,
+        "checks": {
+          "objective_deviance": true,
+          "photometric_predictions_magnitude": true,
+          "astrometric_predictions_NE_mas": true
+        },
+        "input_sha256": "d4fc2bfc9320c7eab8a33b93517f68f035a5d498ffb35ff548a638648143af96",
+        "scientific_source_sha256": "6eaf050481fc23aebf4b929e49fdab57e324ee80eb08e1547b69f056269eeaaa",
+        "max_photometric_difference_mag": 0.0,
+        "max_astrometric_difference_mas": 0.0,
+        "same_physical_parameters": true,
+        "same_native_residuals": true,
+        "same_recorded_diagnostic_gates": true,
+        "method": "FORWARD_STATE_REPLAY; optimization and scientific acceptance are separate"
+      }
+    },
+    {
+      "file": "JOINT_V2_G1_MARGINAL16_CONTINUED.json",
+      "replay": {
+        "schema": "bhtracker.joint_replay.v2",
+        "passed": true,
+        "checks": {
+          "objective_deviance": true,
+          "photometric_predictions_magnitude": true,
+          "astrometric_predictions_NE_mas": true
+        },
+        "input_sha256": "d4fc2bfc9320c7eab8a33b93517f68f035a5d498ffb35ff548a638648143af96",
+        "scientific_source_sha256": "6eaf050481fc23aebf4b929e49fdab57e324ee80eb08e1547b69f056269eeaaa",
+        "max_photometric_difference_mag": 0.0,
+        "max_astrometric_difference_mas": 0.0,
+        "same_physical_parameters": true,
+        "same_native_residuals": true,
+        "same_recorded_diagnostic_gates": true,
+        "method": "FORWARD_STATE_REPLAY; optimization and scientific acceptance are separate"
+      }
+    },
+    {
+      "file": "JOINT_V2_G2_CALIBRATED16_CONTINUED.json",
+      "replay": {
+        "schema": "bhtracker.joint_replay.v2",
+        "passed": true,
+        "checks": {
+          "objective_deviance": true,
+          "photometric_predictions_magnitude": true,
+          "astrometric_predictions_NE_mas": true
+        },
+        "input_sha256": "d4fc2bfc9320c7eab8a33b93517f68f035a5d498ffb35ff548a638648143af96",
+        "scientific_source_sha256": "6eaf050481fc23aebf4b929e49fdab57e324ee80eb08e1547b69f056269eeaaa",
+        "max_photometric_difference_mag": 0.0,
+        "max_astrometric_difference_mas": 0.0,
+        "same_physical_parameters": true,
+        "same_native_residuals": true,
+        "same_recorded_diagnostic_gates": true,
+        "method": "FORWARD_STATE_REPLAY; optimization and scientific acceptance are separate"
+      }
+    }
+  ],
+  "tampered_result_rejected": true,
+  "error": "Reported joint status differs from the replayed diagnostic gates",
+  "frozen_scientific_sources_edited": false
+}

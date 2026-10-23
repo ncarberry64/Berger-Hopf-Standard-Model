@@ -1,0 +1,95 @@
+MANUAL DATA/CALIBRATION REQUEST TEMPLATE — NOT SENT
+Prepared for author review. Choose recipient, affiliation, return address and
+sharing permissions before sending. This document does not request or assume
+access to unreleased Keck observations.
+
+Subject: Public calibration metadata for an auditable OB110462 joint-lensing benchmark
+
+Dear [data/reduction author or archive contact],
+
+We are validating an independent research implementation on the published
+OGLE-2011-BLG-0462/MOA-2011-BLG-191 observations. We preserve the corrected OGLE
+author file and the Lam & Lu (2023, arXiv:2308.03302v2) HST Table 2 data, with
+their calibrations already applied. We do not use a published mass as a datum
+or prior. The implementation uses ordinary unresolved point-lens optics within
+an explicit BHSM interpretation; it does not infer an interior/core state.
+
+The native-diagonal and two prospectively frozen OU covariance candidates have
+failed residual-structure checks, even when global quadratic and some prediction
+checks appear satisfactory. We therefore report all masses as conditional and
+do not claim that this run independently validates the known-system mass. We
+would like to establish whether public calibration evidence can separate noise,
+seeing, detector/frame systematics, and the physical lens trajectory.
+
+Could you point us to existing public documentation or shareable tabular metadata
+for the following, preferably without requiring redistribution of full images?
+
+OGLE time and reduction provenance:
+1. The underlying clock scale of the supplied HJD column (UTC, TT, TDB, or other),
+   timestamp definition (exposure start/midpoint/end), applied light-time
+   correction, and observatory/time-system metadata.
+2. Exact error-renormalization convention and parameters, their scope by detector
+   and epoch, and which variance components are included in the supplied errors.
+   We will not apply an already included correction a second time.
+3. If public: exposure IDs/times, detector/field identifiers, difference flux and
+   reference flux with calibration/zero-point covariance, seeing definition,
+   airmass, sky/background measures, exposure times, and documented quality flags.
+4. Existing matched-brightness nearby-star or off-event diagnostics that assess
+   residual covariance and seeing dependence by night/season, including the
+   uncertainty of any reference-flux or long-term calibration terms.
+
+HST measurement and relative-frame provenance:
+5. The precise effective epochs/weights used for each combined Table 2 position
+   and magnitude, and the associated individual exposure IDs. We have mapped the
+   calendar visits to 82 FLC primary headers, but do not equate derived equal- or
+   duration-weighted midpoints with the original centroid weights.
+6. Public per-exposure centroids and uncertainties, or combined two-dimensional
+   covariance, including same-visit/cross-filter and transformation correlations.
+7. Reference-star selections and frame transformations, applied neighbor/CTE/PSF
+   bias corrections with uncertainties, and any shared calibration covariance.
+8. The relation of the published relative astrometric frame to absolute source
+   parallax/proper motion, including transformation zero points and their errors.
+   We currently leave absolute distance and lens motion unavailable.
+9. Existing public lens/source flux or contrast limits, their passbands,
+   confidence definitions, angular resolution, extinction assumptions and
+   contamination treatment. We do not treat all blend light as measured lens flux.
+
+Please also identify the citation, version, license/redistribution terms, and any
+documented data issues for each item. If a requested quantity is unavailable or
+not defined in the reduction, that explicit answer is useful and will be retained.
+We are not asking for a reconstruction of quantities that were not measured.
+
+We can supply a concise residual/diagnostic report and exact file hashes on
+request. Any new calibration/data version will be analyzed under a separately
+frozen protocol; it will not replace the existing failed campaign retrospectively.
+
+Thank you,
+[corresponding author name, affiliation and email]
+[formal BHSM repository and reviewable release link]
+
+OBSERVATION REQUIREMENTS FOR A FUTURE UNKNOWN-SYSTEM CLAIM
+
+These are requirements to plan with observing specialists, not a current
+observing proposal or a promise that a historical event can be recovered.
+
+- A real native light curve with explicit clock/calibration/row provenance,
+  enough baseline and peak coverage to constrain blending and annual parallax,
+  and independent calibration checks on its noise model.
+- Multiple calibrated angular observations that constrain the changing
+  microlensing centroid relative to the unlensed source motion. Include
+  contemporaneous or archival peak-phase astrometry where available, plus a
+  long enough late baseline to distinguish linear motion, parallax and blending.
+  A single late image is insufficient to supply a missing peak trajectory.
+- Coordinate/frame/covariance and exposure-weight metadata sufficient for a
+  defensible joint likelihood, preferably an independently reduced or separately
+  calibrated data set to test systematic errors.
+- Lens/source photometry or high-resolution contrast limits adequate to test a
+  luminous stellar lens and unrelated/source-companion blending. Absolute
+  distance or velocity additionally requires a calibrated absolute frame and
+  explicit source-parallax/extinction information.
+- A frozen selection and adequacy protocol, numerical and injection/null
+  controls, retained failed/unresolved cases, competing-mode mass profiles and
+  independent sensitivity checks. Long duration alone supplies no black-hole mass.
+- Catalog aliases, coordinates, survey event names and prior literature checked
+  before describing an interpretation as potentially new. The present pilot's
+  0585 and 3092 are archival photometric follow-up cases, not measured BH masses.

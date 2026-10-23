@@ -1,21 +1,53 @@
 {
   "schema": "bhsm-museum-product-distribution/v1",
   "product": "BHSM Blackhole Tracker",
-  "version": "0.2.0rc2",
+  "version": "0.2.0rc6",
+  "release_stage": "Complete reviewable software/research packet. Scientific publication and public deployment remain held for candidate/evidence review. This receipt does not assert a merge, hosted CI completion or live Pages verification.",
   "repository_url": "https://github.com/ncarberry64/Berger-Hopf-Standard-Model",
-  "reviewed_product_code_revision": "33f26a5113392c0d2c323d7e4a36c7e81bd3ee29",
-  "reviewed_paper_revision": "1fd11510cd217218d6b230cb50516776eb746e1a",
-  "upstream_product_revision": "ab0fd069195f63a864d74b0926d23311f1c3523e",
+  "reviewed_product_code_revision": "4c71556f5ab4352064325601669bca91a5230690",
+  "reviewed_paper_revision": "e85d4fce2853997d6fedfd0bf75fc7d99bad3562",
+  "reviewer_guide_revision": "e85d4fce2853997d6fedfd0bf75fc7d99bad3562",
+  "upstream_product_revision": "6bd7bf40cbef58f240b46626a21b0c7820099da0",
+  "paper_development_source_revision": "a3db292b78952c7fa350568838253f61e5142b59",
+  "animation_fixture_source_revision": "33f26a5113392c0d2c323d7e4a36c7e81bd3ee29",
+  "product_source_file_count": 266,
+  "product_zip_member_count": 269,
+  "source_packet_member_count": 891,
+  "paper_pages": 49,
+  "product_tests": 318,
+  "pytest_subtests": 66,
+  "software_verification_scope": "Source and isolated installed-wheel checks; actual Windows launcher six checks and actual browser export/replay controls. These checks validate software behavior, not the physical adequacy of a measured lens model.",
+  "windows_launcher_checks": 6,
+  "executed_notebooks": 6,
+  "notebook_execution_scope": {
+    "newly_executed_in_rc6": 1,
+    "new_notebook": "06_moving_lens_and_primary_target.ipynb",
+    "new_executed_code_cells": 8,
+    "retained_historical_executions": 5,
+    "qualification": "The first five notebooks and their earlier execution receipt are preserved; they are not relabeled as new RC6 executions."
+  },
+  "input_product_source_archive_sha256": "22f7d1221fbe3aa2b58fe66ee7deba546bd9594c82430aa2c8aed77cf6f1c159",
+  "source_packet_manifest_sha256": "50e1c6a0471c8c8927b53e2539e9ac7f7fa7fb7d3a18ccf2291e754a89ab79ba",
   "files": [
     {
-      "file": "BHSM_Blackhole_Tracker_Product.zip",
-      "bytes": 516988,
-      "sha256": "1dac4273060e7795bc025f104d53cb3106574a730f9a4c665b869e11adfa4c78"
+      "file": "BHSM_Blackhole_Tracker_Product_0.2.0rc6.zip",
+      "bytes": 10566276,
+      "sha256": "2691ad5401a2f1d40a6acdbf9979fc76cc2fe9d3d9e23bad5d1bcb9e70d34c35"
     },
     {
-      "file": "bhsm_blackhole_tracker-0.2.0rc2-py3-none-any.whl",
-      "bytes": 190213,
-      "sha256": "323bcf675f6fe1c1262e85be49644d3736c2777788ecf2f92568f1cc6ba92ae3"
+      "file": "bhsm_blackhole_tracker-0.2.0rc6-py3-none-any.whl",
+      "bytes": 9336754,
+      "sha256": "01463e3a0de90cef7e2b9e9ac325ce2cf3e438f94b0ccb3316a76dc7ae434195"
+    },
+    {
+      "file": "BHSM_Blackhole_Tracker_Source_0.2.0rc6.zip",
+      "bytes": 24604151,
+      "sha256": "fa9b80a12b143ecab7a554832232023267668dc26d9be1e102d6d19b2795f7c7"
+    },
+    {
+      "file": "BHSM_Blackhole_Tracker_0.2.0rc6.pdf",
+      "bytes": 1293833,
+      "sha256": "ee5fa4811aca15425d53df1b8f42bc81ef290684354e4e2a1a201f3d5974c9c3"
     },
     {
       "file": "LICENSE.md",
@@ -29,15 +61,130 @@
     },
     {
       "file": "forward-example.json",
-      "sha256": "a7918cbed9bd18bb92e1147a9733a52ef2fa21529d94cc16be965b7abfb6cedf",
-      "bytes": 4072
+      "bytes": 4072,
+      "sha256": "a7918cbed9bd18bb92e1147a9733a52ef2fa21529d94cc16be965b7abfb6cedf"
+    },
+    {
+      "file": "pilot-20261022-v1/PILOT_PROVENANCE.json",
+      "bytes": 4016,
+      "sha256": "5b7d509bbbe8593254fc7e64931da02a1b88b00e70aac6bbe44249c086fa79cc"
+    },
+    {
+      "file": "BHSM_OB110462_2023_SourcePack_v1.zip",
+      "bytes": 764958,
+      "sha256": "71d36a03e4ba275e91bea62f4784a5193f34ad32d3777b637453f91151bafa99"
+    },
+    {
+      "file": "joint-20261022-v2/JOINT_PROVENANCE.json",
+      "bytes": 6598,
+      "sha256": "fb69a6d2733d85252a2653fb48ded0a528e367d9e716c237099c186c407af604"
+    },
+    {
+      "file": "BHSM_Candidate_Atlas_Metadata_v3.zip",
+      "bytes": 333448,
+      "sha256": "84d91dbd3f50edacddb0871f1d63783ca58154225795cc9b509d516c99bef53f"
+    },
+    {
+      "file": "candidate-atlas-20261023-v3/ATLAS_PROVENANCE.json",
+      "bytes": 7667,
+      "sha256": "b1047705e2179b9a8aaf18b28fc97de217b263b0794ca0d0bc4a07cf7b2373dc"
+    },
+    {
+      "file": "candidate-atlas-20261023-v3/candidate_inventory_sky.png",
+      "bytes": 167781,
+      "sha256": "a28ac499e7658227ad2884d9f8f2bb89e3d61af2de6439b7ac5c4fc547b6d483"
+    },
+    {
+      "file": "DISTRIBUTION_0.2.0rc4.json",
+      "bytes": 4394,
+      "sha256": "75ed7ca39eb0d5f0d56ff1db36dcd2ad985065ecd8424413226a0949c0e16cf6"
+    },
+    {
+      "file": "DISTRIBUTION_0.2.0rc5.json",
+      "bytes": 6516,
+      "sha256": "992a007e168677f7e7eac217b5d221c76b75c93782e74d04f4c4e88ae29c9e69"
+    },
+    {
+      "file": "primary-target-20261023-v1/PRIMARY_TARGET_PROGRAM.json",
+      "bytes": 6742,
+      "sha256": "175c4b11279bb0397b48eb76d38b556b30eb246ef005bb1cb1cfab510dd32f48"
+    },
+    {
+      "file": "primary-target-20261023-v1/TARGET_EVIDENCE_STATUS.json",
+      "bytes": 1345,
+      "sha256": "12b594fd31c5cb1e2e7d78871e5366401b58a737595e61ecb3e26eb7d66ad85f"
+    },
+    {
+      "file": "DISTRIBUTION_0.2.0rc6.pending.json",
+      "bytes": 2236,
+      "sha256": "87f7f24fd07a683734dafde65208e7712e28ff2e775732a09eea5290cb73fd76"
     }
   ],
-  "scope": "Exact previously reviewed product source ZIP and wheel, redistributed for local research use. The Museum provides a synthetic forward animation; fitting runs in the visitor's own Python process. Source ZIP includes 108 exact product source files, manifest and both license notices. Keep both notices with either download.",
+  "scope": "Exact reviewed RC6 source, wheel and 49-page paper with canonical notices and an unchanged synthetic animation. The provisional primary target Gaia18ajz is previously published, retains all eight mode/prior/near-far alternatives, and has no accepted independent native-data assessment in this release. The 1,808-model spectrum preserves failures, modes, native time groups and unavailable quantities; these are not 1,808 unique objects. It admits zero measured lens tracks. The older 155-direction atlas remains separately frozen at its historical source pin. A measured-angular-track route validates supplied lens positions and covariance using synthetic controls; it does not infer black-hole identity, mass or distance. Zero established new black holes and zero accepted independent known-black-hole recoveries remain. One Einstein/GHY optical response is interpreted as BHSM hypersurface topography and counted once. The envelope-boundary differential is author-defined and broader than conventional rotational frame dragging; no new spin or extended-halo classifier is established. Hashes establish byte consistency, not authenticity or physical adequacy.",
   "license_files": [
     "LICENSE.md",
     "ACADEMIC_USE.md"
   ],
-  "installation": "Extract product ZIP, open product directory; with Python 3.11+ run Start_Blackhole_Tracker.cmd on Windows, or python -m pip install . then python -m bhtracker serve --open.",
-  "input_privacy": "The local app binds to loopback. The static Museum does not upload measurements or run inference."
+  "native_observation_rights": "Source-pack CC-BY4.0 author data and public HST terms remain in the ZIP and SOURCEPACK_CITATIONS_AND_RIGHTS.md; BHSM licensing does not replace them.",
+  "installation": "Extract the portable product ZIP and open product/. Python 3.11+: Start_Blackhole_Tracker.cmd creates its own local environment. Other systems install with python -m pip install . in a dedicated environment, then python -m bhtracker serve --open. App navigation opens Primary target, Evidence spectrum, Moving lens, Candidate sky atlas, Unresolved photometry or Joint astrometry research. Moving lens also uses Start_Blackhole_Tracker_Moving_Lens.cmd or --page skytrack. Joint research explicitly requires the astrometry extra; opening a page does not install it. Use the installed environment for all CLI replay commands; the Windows launcher interpreter is product/.venv/Scripts/python.exe. Resolved/native fit ZIP replay, measured-track result JSON replay and metadata view replay are distinct workflows documented in the pinned researcher guide.",
+  "input_privacy": "Local app binds loopback; static Museum does not upload measurements or run inference.",
+  "historical_releases": [
+    "history/0.2.0rc2/DISTRIBUTION.json",
+    "DISTRIBUTION_0.2.0rc3.json",
+    "DISTRIBUTION_0.2.0rc4.json",
+    "DISTRIBUTION_0.2.0rc5.json"
+  ],
+  "preparation_history": [
+    {
+      "file": "DISTRIBUTION_0.2.0rc6.pending.json",
+      "sha256": "87f7f24fd07a683734dafde65208e7712e28ff2e775732a09eea5290cb73fd76",
+      "role": "Immutable incomplete preparation record. Its null paper/source fields and then-current RC5 wording describe that earlier stage, not the final RC6 release."
+    }
+  ],
+  "pilot_provenance": "pilot-20261022-v1/PILOT_PROVENANCE.json",
+  "joint_provenance": "joint-20261022-v2/JOINT_PROVENANCE.json",
+  "candidate_inventory_utf8_sha256": "4a76300f0e0e3883a0c9c343e1e0c5fbead595c9b4f333aaa01ec05c9ec9debc",
+  "candidate_atlas_provenance": "candidate-atlas-20261023-v3/ATLAS_PROVENANCE.json",
+  "candidate_atlas_historical_product_revision": "8ca349fa8eb5c54c661a022790ae915d05060b59",
+  "candidate_atlas_counts": {
+    "unique_cohort_events": 155,
+    "pilot": 100,
+    "published_parallax": 59,
+    "verified_overlaps": 4,
+    "investigation_targets": 3,
+    "independently_measured_lens_masses": 0,
+    "new_BH_interpretations": 0,
+    "separate_published_benchmarks": 1,
+    "accepted_engine_benchmark_recoveries": 0
+  },
+  "primary_target_program": {
+    "file": "primary-target-20261023-v1/PRIMARY_TARGET_PROGRAM.json",
+    "sha256": "175c4b11279bb0397b48eb76d38b556b30eb246ef005bb1cb1cfab510dd32f48",
+    "event_id": "Gaia18ajz",
+    "category": "Potential black hole",
+    "status": "PROVISIONAL_PREVIOUSLY_PUBLISHED_NOT_A_NEW_ENGINE_DISCOVERY"
+  },
+  "publication_gate": {
+    "ready": false,
+    "primary_research_target_designated": true,
+    "independent_candidate_evidence_review_complete": false,
+    "native_candidate_analysis_adequate": false,
+    "known_black_hole_recovery_validated": false,
+    "new_discovery_required_for_software_release": false,
+    "reasons": [
+      "A literature-based lead is not an independently established tracker result.",
+      "Complete the primary-target data/model/alternative review and clearly support the resulting potential-BH interpretation.",
+      "Keep known-BH validation, non-BH controls, novelty and unknown quantities explicit before publication."
+    ]
+  },
+  "primary_target_locked": false,
+  "publication_ready": false,
+  "bhsm_author_clarification": {
+    "formal_commit": "7ebc9f226e0d9abc68e2ec61c90a8b262081c733",
+    "path": "docs/BHSM_TRACKER_ENVELOPMENT_SEARCH_CLARIFICATION_20261023.md",
+    "sha256": "c2df2654c5b094206acbce8e450fbdbe87a16fcc267787f9d897a2b0202b909a",
+    "status": "AUTHOR_DEFINED_USAGE_AND_RESEARCH_HYPOTHESIS",
+    "source_packet_copy": "papers/bhsm_blackhole_tracker_20261021/review/envelopment_search_20261023/BHSM_TRACKER_ENVELOPMENT_SEARCH_CLARIFICATION_20261023.md"
+  },
+  "manual_submission": "Prepared held packet; no journal upload or submission performed."
 }
