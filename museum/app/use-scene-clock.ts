@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import { slides } from '../lib/museum-slides.mjs';
+import { createChapterSequence } from '../lib/chapter-cues';
 import {
   createSceneTransport,
   createPhraseSequence,
@@ -17,20 +18,26 @@ export function useSceneClock<T extends HTMLElement = HTMLDivElement>(
   minimumVisibility = 0,
   musicMode: MusicMotionMode = 'musical',
   phraseSeconds?: number,
+  chapterCues?: readonly number[],
 ) {
   const ref = useRef<T>(null);
   const [clock] = useState(() => createSceneTransport(musicMode));
   const [sequence] = useState(() =>
     phraseSeconds ? createPhraseSequence(phraseSeconds) : null,
   );
+  const [chapters] = useState(() =>
+    chapterCues ? createChapterSequence(chapterCues) : null,
+  );
   const [frame, setFrame] = useState<{
     time: number;
     beat: number | null;
     phraseTime: number;
+    chapter: number;
   }>({
     time: 0,
     beat: null,
     phraseTime: 0,
+    chapter: 0,
   });
   const rhythm = useRef<{
     beat: number;
@@ -49,6 +56,7 @@ export function useSceneClock<T extends HTMLElement = HTMLDivElement>(
         if (!visible) {
           clock.suspend();
           sequence?.suspend();
+          chapters?.suspend();
         }
       },
       { threshold: minimumVisibility },
@@ -64,6 +72,7 @@ export function useSceneClock<T extends HTMLElement = HTMLDivElement>(
       if (!visible || document.hidden || !active) {
         clock.suspend();
         sequence?.suspend();
+        chapters?.suspend();
         scene.dataset.musicSync = 'off';
         return;
       }
@@ -101,19 +110,37 @@ export function useSceneClock<T extends HTMLElement = HTMLDivElement>(
             ((next - rhythm.current.time) * rhythm.current.tempoBpm) / 60
           : null);
       const phraseTime = sequence?.tick(next, beat) ?? next;
+      const chapter =
+        chapters?.tick(
+          next,
+          synchronized
+            ? {
+                slideId: slideId!,
+                source: audio.currentSrc || audio.src,
+                seconds: mediaSeconds,
+                seeking: audio.seeking,
+              }
+            : undefined,
+        ) ?? 0;
+      if (chapters && scene.dataset.cuedChapter !== String(chapter)) {
+        scene.dataset.cuedChapter = String(chapter);
+        if (synchronized)
+          scene.dataset.chapterChangedAt = mediaSeconds.toFixed(4);
+        else delete scene.dataset.chapterChangedAt;
+      }
       scene.dataset.musicSync = synchronized ? 'on' : 'off';
       scene.dataset.sceneTime = next.toFixed(4);
       if (sequence) scene.dataset.phraseTime = phraseTime.toFixed(4);
       if (beat !== null) scene.dataset.musicBeat = beat.toFixed(4);
-      // Beat and bass timing render on every display frame. Expensive ambient diagrams
+      // Beat and note-cued chapters render on every display frame. Ambient diagrams
       // keep their existing 20-fps budget while sampling the media every frame.
       if (
         beat !== null ||
-        musicMode === 'bass' ||
+        chapters !== null ||
         now - paintedAt >= 50 ||
         next >= stopAt
       ) {
-        setFrame({ time: next, beat, phraseTime });
+        setFrame({ time: next, beat, phraseTime, chapter });
         paintedAt = now;
       }
       if (next >= stopAt) window.cancelAnimationFrame(request);
@@ -124,12 +151,25 @@ export function useSceneClock<T extends HTMLElement = HTMLDivElement>(
       window.cancelAnimationFrame(request);
       clock.suspend();
       sequence?.suspend();
+      chapters?.suspend();
       scene.dataset.musicSync = 'off';
     };
-  }, [running, stopAt, minimumVisibility, musicMode, clock, sequence]);
+  }, [
+    running,
+    stopAt,
+    minimumVisibility,
+    musicMode,
+    clock,
+    sequence,
+    chapters,
+  ]);
   function restartSequence() {
     sequence?.restart();
     setFrame((previous) => ({ ...previous, phraseTime: 0 }));
   }
-  return { ref, ...frame, restartSequence };
+  function restartChapters() {
+    chapters?.restart();
+    setFrame((previous) => ({ ...previous, chapter: 0 }));
+  }
+  return { ref, ...frame, restartSequence, restartChapters };
 }

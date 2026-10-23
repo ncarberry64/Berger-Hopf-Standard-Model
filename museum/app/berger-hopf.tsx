@@ -10,6 +10,7 @@ import {
 } from '../lib/berger-hopf';
 import { SCIENCE } from './exhibits';
 import { bergerMotion } from '../lib/berger-motion';
+import chapterCues from '../lib/exhibit3-chapters.json';
 
 const chapters = [
   {
@@ -56,9 +57,21 @@ export function BergerHopf({
   const [started, setStarted] = useState(0);
   const [scale, setScale] = useState(1);
   const [manualScale, setManualScale] = useState(false);
-  const { ref, time } = useSceneClock(motion && playing, Infinity, 0, 'bass');
+  const {
+    ref,
+    time,
+    chapter: cuedChapter,
+    restartChapters,
+  } = useSceneClock(
+    motion && playing,
+    Infinity,
+    0,
+    'cadence',
+    undefined,
+    chapterCues.cueTimesSeconds,
+  );
   const elapsed = Math.max(0, time - started);
-  const stage = auto ? (selected + Math.floor(elapsed / 10)) % 3 : selected;
+  const stage = auto ? cuedChapter : selected;
   const choreography = bergerMotion(time, elapsed, stage);
   const fiberScale =
     stage === 0 ? 1 : manualScale ? scale : choreography.fiberScale;
@@ -111,7 +124,7 @@ export function BergerHopf({
       <div
         className="bh-theatre"
         ref={ref}
-        data-motion-driver="bass"
+        data-motion-driver="piano-chapters"
         data-chapter={stage}
       >
         <div className="bh-projection">
@@ -287,6 +300,7 @@ export function BergerHopf({
           onClick={() => {
             setSelected(0);
             setStarted(time);
+            restartChapters();
             setAuto(true);
             setManualScale(false);
             setPlaying(true);
