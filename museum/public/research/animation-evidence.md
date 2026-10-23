@@ -1,6 +1,6 @@
 # What drives the museum animations
 
-Reviewed 8 October 2026. Animation speed is a presentation choice unless
+Reviewed 23 October 2026. Animation speed is a presentation choice unless
 an explicit physical readout says otherwise. Motion can reveal a mathematical
 construction, traverse measured records, or explain an established mechanism;
 it is not automatically a solved physical history.
@@ -20,10 +20,51 @@ it is not automatically a solved physical history.
 | BHSM matter and mass | The three linked Hopf-fiber views cycle with reference particle families; their projection variants are illustrative, not computed family eigenfunctions. The author's mass sequence shows field only → quark emergence and local clearing → color binding and a shared bubble → proton → electron emergence and attraction → bound hydrogen cloud. Field marks are pushed outside the growing bubble, which holds after formation; Replay formation resets the sequence. The 1s cloud is a qualitative probability envelope, not an orbit. Sizes and timing are presentation choices, not calculated QCD or particle creation; bubble area does not measure mass. Pause, hidden-tab, offscreen and reduced-motion guards apply. The equation tour follows the matched relative-energy contract. [Sources and exact scope](mass-and-hypersphere-context.md). |
 | Magnetic moments | CODATA 2022 magnetic moments drive conventional Larmor frequencies f=2|μ|B/h in chosen B=0.1 T. Arrows illustrate quantum expectation vectors, not spinning material surfaces; time is logarithmically compressed. BHSM local tree result and open quantum correction are explained separately. |
 | Collision theatre | Conserved four-momentum calculations with reference masses, or recorded CMS four-vectors. Tracks encode kinematics, not detector hits; no physical cross sections/branching probabilities are invented. [Implementation](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/blob/main/museum/lib/science-media.ts). |
-| Original cosmology | Continuous, bounded 20-fps interpolation through seven selectable stages, about 1.5 seconds each while visible. The author’s 1 October 2026 clarification proposes all black holes connect to one core/singularity and a single instantaneous whole-cosmos white-hole event after heat death at zero core–surface differential. The brief boundary hold is for reading, not physical delay. Synthetic geometry and cadence are illustrative, not computed cosmic dynamics. Hidden-tab, offscreen, reduced-motion and pause guards stop playback. The original still illustration remains in an expandable source panel. |
+| Original cosmology | Continuous, bounded 20-fps interpolation through seven selectable stages, about 1.5 seconds each without music and following recorded swells with music. The author’s 1 October 2026 clarification proposes all black holes connect to one core/singularity and a single instantaneous whole-cosmos white-hole event after heat death at zero core–surface differential. The brief boundary hold is for reading, not physical delay. Synthetic geometry and cadence are illustrative, not computed cosmic dynamics. Hidden-tab, offscreen, reduced-motion and pause guards stop playback. The original still illustration remains in an expandable source panel. |
 | R1 cosmology | Frozen audited transfer matrices and replay epochs drive the response. User-selected spatial modes and demonstration inputs remain labeled. [Replay](r1-coupled-environment-replay.json). |
 | Comparisons | Historical source-bound numbers and reference uncertainties; animated selection is navigation, not model evolution. [Data](../data/sandbox-comparison.json). |
 | CMS and numerical research | Measured CMS four-vectors are transformed between charts. The timing replay uses recorded benchmark medians, slowed uniformly 3×; the numerical monitor traverses retained scalar certificates. [Benchmark](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/blob/main/artifacts/cern_open_data_benchmark/results.json). |
 
 No animation promotes an open physical claim. The original sources, existing
 completion definition and gate ledger govern the claims.
+
+## Music and presentation timing
+
+While an exhibit's music is playing, illustrative motion follows that audio
+element's playback position. Stable musical pulses align the comparison
+tour to phrases. For ambient or changing-tempo recordings,
+motion follows the recorded swells instead of imposing a fixed beat. The
+collision theatre retains its eight-second approach, reveal and inspection
+cadence. Muting the music preserves synchronization; silent viewing retains
+independent animation.
+
+The cue file is derived offline from the exact local MP3s by
+`museum/scripts/analyze-music-cues.py`. It contains centered 250 ms energy
+samples, approximate pulse estimates with confidence flags, and audio hashes.
+Only high-confidence pulse grids are used for phrase alignment. These cues
+control presentation, not physical rates or scientific inputs. Magnetic
+precession comparisons, recorded benchmark timing, the declared tracker epochs
+and the audited R1 replay keep their independent clocks.
+
+Scene pauses, scrubbing, replay, reduced motion and the Einstein ring's
+alignment hold take priority. Hidden and offscreen scenes freeze; returning
+never fast-forwards through material the visitor has not seen. Seeking or
+looping the music rebases the presentation without rewinding the scene.
+
+Exhibit 3 follows the recording's bass rather than its faster rhythmic layer.
+`museum/scripts/analyze-exhibit3-bass.py` measures the exact local MP3's
+30–160 Hz energy at 25 ms intervals, using zero-delay filtering and centered
+smoothing. This envelope varies the speed of the original motion continuously:
+the geometry moves faster with the bass and relaxes between swells. The native
+orbit, viewing rotation and metric formulas remain intact; there are no added
+light pulses, fixed beat laps or bar waits in this exhibit. Pauses, manual
+metric settings and replay retain their original behavior.
+
+Comparison sequences use
+four beats of lead-in, four of reveal and eight of reading hold. Automatic
+replays wait for the next bar before starting their reading sequence.
+
+Comparison pulse offsets are refined against strong recorded attacks rather than the
+average spectral phase. Held-out attacks validate the fit. This reduces the
+small timing bias in the original cue estimates without introducing a guessed
+device-latency correction. Ambient diagrams retain their measured swells.

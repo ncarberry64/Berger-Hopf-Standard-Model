@@ -333,7 +333,7 @@ export function ForceGeometry({
             }}
           />
         </label>
-        <span>12-second explanatory replay</span>
+        <span>Explanatory replay · follows music when playing</span>
       </div>
       <div
         className="force-study-reading"

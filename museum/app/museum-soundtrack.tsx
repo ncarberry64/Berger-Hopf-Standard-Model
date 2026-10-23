@@ -2,63 +2,48 @@
 
 import { Music2, Pause, Play, Volume2, VolumeX } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
-import { startSoundtrackOnInteraction } from '../lib/start-soundtrack';
+import { exhibitSoundtracks } from '../lib/exhibit-soundtracks.mjs';
+import { followExhibit } from '../lib/exhibit-navigation';
+import { createExhibitSoundtrack } from '../lib/exhibit-soundtrack';
 import { manageSoundtrackSession } from '../lib/soundtrack-session';
-import { advanceSoundtrack } from '../lib/advance-soundtrack';
-
-const TRACKS = [
-  {
-    title: 'Inspiring Epic',
-    artist: 'PaulYudin',
-    source: './audio/paulyudin-inspiring-epic-164829.mp3',
-  },
-  {
-    title: 'Epic Cinematic Victory',
-    artist: 'PaulYudin',
-    source: './audio/paulyudin-epic-cinematic-victory-155790.mp3',
-  },
-] as const;
 
 export function MuseumSoundtrack() {
   const audioRef = useRef<HTMLAudioElement>(null);
+  const controller = useRef<ReturnType<typeof createExhibitSoundtrack> | null>(
+    null,
+  );
   const [trackIndex, setTrackIndex] = useState(0);
   const [playing, setPlaying] = useState(false);
   const [muted, setMuted] = useState(false);
-  const currentTrack = useRef(0);
-  const manuallyPaused = useRef(false);
-  const stopGesture = useRef<() => void>(() => {});
-  const armPlayback = useRef<() => void>(() => {});
-  const track = TRACKS[trackIndex];
+  const track = exhibitSoundtracks[trackIndex];
 
   useEffect(() => {
-    const players = audioRef.current ? [audioRef.current] : [];
+    const audio = audioRef.current;
+    if (!audio) return;
     const isActive = () => !document.hidden && document.hasFocus();
-    const shouldStart = (event: Event) => {
-      if (!isActive()) return false;
-      // The final-slide player handles its own buttons. Do not start and
-      // toggle playback twice on the same click.
-      if (
-        event.target instanceof Element &&
-        event.target.closest('.soundtrack-controls')
-      )
-        return false;
-      return !(
-        event instanceof KeyboardEvent &&
-        (event.repeat ||
-          ['Shift', 'Control', 'Alt', 'Meta', 'Escape'].includes(event.key))
+    const player = createExhibitSoundtrack({
+      audio,
+      isActive,
+      onChange: setPlaying,
+      // Only an explicitly requested music action can start or retry playback.
+      onNeedGesture: () => {},
+    });
+    controller.current = player;
+    player.select(exhibitSoundtracks[0].source);
+    const playMusic = () => {
+      void player.play().catch(() => {});
+    };
+    // The entrance's explicitly labeled music action shares the Play control.
+    window.addEventListener('bhsm:play-music', playMusic);
+    const stopFollowing = followExhibit(window, (slideId) => {
+      const index = exhibitSoundtracks.findIndex(
+        (soundtrack) => soundtrack.slideId === slideId,
       );
-    };
-    const armGesture = () => {
-      stopGesture.current();
-      const audio = audioRef.current;
-      if (audio && !manuallyPaused.current)
-        stopGesture.current = startSoundtrackOnInteraction(
-          window,
-          audio,
-          shouldStart,
-        );
-    };
-    armPlayback.current = armGesture;
+      if (index < 0) return;
+      setTrackIndex(index);
+      audio.dataset.exhibitMusic = exhibitSoundtracks[index].slideId;
+      player.select(exhibitSoundtracks[index].source);
+    });
     let channel: BroadcastChannel | undefined;
     try {
       if (typeof BroadcastChannel !== 'undefined')
@@ -69,64 +54,29 @@ export function MuseumSoundtrack() {
     const stopSession = manageSoundtrackSession({
       windowTarget: window,
       documentTarget: document,
-      players,
+      players: [audio],
       isActive,
       channel,
       owner: crypto.randomUUID(),
       onChange: setPlaying,
-      onSuspend: armGesture,
+      onBeforeSuspend: player.suspend,
+      onSuspend: () => {},
     });
-    armGesture();
     return () => {
-      stopGesture.current();
+      window.removeEventListener('bhsm:play-music', playMusic);
+      stopFollowing();
+      player.dispose();
       stopSession();
+      controller.current = null;
     };
   }, []);
 
-  async function play() {
-    const audio = audioRef.current;
-    if (!audio || document.hidden || !document.hasFocus()) return;
-
-    try {
-      await audio.play();
-    } catch {
-      setPlaying(false);
-      armPlayback.current();
-    }
-  }
-
   function togglePlayback() {
+    const player = controller.current;
     const audio = audioRef.current;
-    if (!audio) return;
-
-    if (playing) {
-      manuallyPaused.current = true;
-      stopGesture.current();
-      audio.pause();
-      setPlaying(false);
-      return;
-    }
-
-    manuallyPaused.current = false;
-    void play();
-  }
-
-  function advancePlaylist() {
-    const audio = audioRef.current;
-    if (
-      !audio ||
-      manuallyPaused.current ||
-      document.hidden ||
-      !document.hasFocus()
-    )
-      return;
-    const nextIndex = (currentTrack.current + 1) % TRACKS.length;
-    currentTrack.current = nextIndex;
-    setTrackIndex(nextIndex);
-    void advanceSoundtrack(audio, TRACKS[nextIndex].source).catch(() => {
-      setPlaying(false);
-      armPlayback.current();
-    });
+    if (!player || !audio) return;
+    if (!audio.paused) player.pause();
+    else void player.play().catch(() => {});
   }
 
   function toggleMute() {
@@ -136,40 +86,43 @@ export function MuseumSoundtrack() {
   }
 
   return (
-    <aside className="soundtrack-dock" aria-label="Museum soundtrack">
-      {/* Keep the same user-activated media element for every playlist track.
-          A second element can require a fresh playback gesture on iOS. */}
+    <aside className="soundtrack-dock" aria-label="Exhibit soundtrack">
+      {/* Reuse the visitor-started element and loop this exhibit's music. */}
       {/* oxlint-disable-next-line jsx-a11y/media-has-caption -- Instrumental music has no speech. */}
       <audio
         ref={audioRef}
-        src={TRACKS[0].source}
-        preload="metadata"
+        data-exhibit-music={track.slideId}
+        src={exhibitSoundtracks[0].source}
+        preload="none"
         playsInline
-        onEnded={advancePlaylist}
+        loop
       />
       <div className="soundtrack-mark" aria-hidden="true">
         <Music2 />
       </div>
-      <div className="soundtrack-copy" aria-live="polite">
+      <div className="soundtrack-copy" aria-live="polite" aria-atomic="true">
         <small>
-          Museum soundtrack · {trackIndex + 1}/{TRACKS.length}
+          Exhibit music · {trackIndex + 1}/{exhibitSoundtracks.length}
         </small>
-        <strong>{track.title}</strong>
-        <a
-          href="https://pixabay.com/users/paulyudin-30043746/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          {track.artist} · Pixabay ↗
-        </a>
+        <strong title={track.title}>{track.title}</strong>
+        <span className="soundtrack-credit">
+          <a href={track.creditUrl} target="_blank" rel="noreferrer">
+            {track.artist} ↗
+          </a>
+          <a href={track.licenseUrl} target="_blank" rel="noreferrer">
+            License ↗
+          </a>
+          {/* oxlint-disable-next-line next/no-html-link-for-pages -- Static credit record. */}
+          <a href="./soundtrack-credits.html" target="_blank" rel="noreferrer">
+            Credits ↗
+          </a>
+        </span>
       </div>
       <div className="soundtrack-controls">
         <button
           type="button"
           onClick={togglePlayback}
-          aria-label={
-            playing ? 'Pause museum soundtrack' : 'Play museum soundtrack'
-          }
+          aria-label={playing ? 'Pause exhibit music' : 'Play exhibit music'}
           aria-pressed={playing}
         >
           {playing ? <Pause aria-hidden="true" /> : <Play aria-hidden="true" />}
@@ -177,9 +130,7 @@ export function MuseumSoundtrack() {
         <button
           type="button"
           onClick={toggleMute}
-          aria-label={
-            muted ? 'Unmute museum soundtrack' : 'Mute museum soundtrack'
-          }
+          aria-label={muted ? 'Unmute exhibit music' : 'Mute exhibit music'}
           aria-pressed={muted}
         >
           {muted ? (

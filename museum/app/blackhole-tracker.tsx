@@ -4,6 +4,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import { ScienceConsole, useSceneClock } from './science-console';
 import { REPOSITORY } from './exhibits';
+import { EinsteinRingTour } from './einstein-ring-tour';
 import {
   trackerCenter,
   trackerExample,
@@ -41,7 +42,7 @@ export function BlackholeTracker({
   const [playing, setPlaying] = useState(true);
   const [anchor, setAnchor] = useState({ epoch: 2015, time: 0 });
   const [massScale, setMassScale] = useState(1);
-  const { ref, time } = useSceneClock(motion && playing);
+  const { ref, time } = useSceneClock(motion && playing, Infinity, 0, 'independent');
   // A forward/back presentation loop. The declared trajectory remains linear;
   // the reverse leg is explicitly replay, not reversed physical motion.
   const phase = (anchor.epoch - 2015 + (time - anchor.time) * 0.5) % 20;
@@ -76,6 +77,7 @@ export function BlackholeTracker({
       intro="Hunt for gravitational topography on the BHSM hypersurface and ask which kinds of envelopment could produce it. Gaia18ajz is our provisional primary potential black hole, alongside a published black-hole benchmark and a brown-dwarf comparison. Its independent tracker evidence remains open. Explore the historical Candidate Atlas and a separate synthetic lensing animation."
       accent="cyan"
     >
+      <EinsteinRingTour motion={motion} setMotion={setMotion} />
       <div className="tracker-theatre" ref={ref}>
         <div className="tracker-scene">
           <div className="tracker-scene-cap">

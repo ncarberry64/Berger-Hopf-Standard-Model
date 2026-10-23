@@ -1,6 +1,7 @@
 // Navigation and static-export validation share the visitor's science journey.
 export const slides = [
   ['potential', 'Welcome'],
+  ['bhsm-lifecycle', 'The common frame'],
   ['berger-hopf', 'Berger & Hopf'],
   ['science-unification', 'Forces'],
   ['science-predictions', 'Matter'],

@@ -1,32 +1,14 @@
 'use client';
 /* oxlint-disable next/no-html-link-for-pages -- The evidence link reads a static Markdown file. */
 /* oxlint-disable jsx-a11y/prefer-tag-over-role -- Inline SVG needs image semantics; an HTML img cannot contain this interactive drawing. */
-import { Children, useEffect, useRef, useState, type ReactNode } from 'react';
+import { Children, type ReactNode } from 'react';
+import { useSceneClock } from './use-scene-clock';
+import { slides } from '../lib/museum-slides.mjs';
 import { ChildrenOfBHSM } from './children-of-bhsm';
 import { AIInterfaceButton } from './ai-access';
 import { ExhibitStatement, ExhibitReview } from './exhibit-review';
 
-// A shared scene clock stops outside the viewport and while the tab is hidden.
-export function useSceneClock(running: boolean) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [time, setTime] = useState(0);
-  useEffect(() => {
-    if (!running) return;
-    let visible = false;
-    const observer = new IntersectionObserver(([entry]) => {
-      visible = entry.isIntersecting;
-    });
-    if (ref.current) observer.observe(ref.current);
-    const timer = setInterval(() => {
-      if (visible && !document.hidden) setTime((t) => t + 0.05);
-    }, 50);
-    return () => {
-      observer.disconnect();
-      clearInterval(timer);
-    };
-  }, [running]);
-  return { ref, time };
-}
+export { useSceneClock };
 
 export function ScienceConsole({
   id,
@@ -48,15 +30,18 @@ export function ScienceConsole({
   accent?: string;
 }) {
   const panels = Children.toArray(children);
+  const slideIndex = slides.findIndex(([slideId]) => slideId === id);
+  const displayNumber =
+    slideIndex >= 0 ? String(slideIndex + 1).padStart(2, '0') : number;
   return (
     <article id={id} className={`science-console console-${accent}`}>
       <div className="console-cap">
         <span>{label}</span>
-        <span>BHSM / {number}</span>
+        <span>BHSM / {displayNumber}</span>
       </div>
       <div className="console-body">
         <aside className="console-rail" aria-hidden="true">
-          <b>{number}</b>
+          <b>{displayNumber}</b>
           <span>{label}</span>
           <i />
           <i />
@@ -206,7 +191,11 @@ export function EngineHero({
             interactions. Explore its claims, inspect the calculations, and help
             test what follows.
           </p>
-          <a className="enter-museum" href="#berger-hopf">
+          <a
+            className="enter-museum"
+            href="#bhsm-lifecycle"
+            onClick={() => window.dispatchEvent(new Event('bhsm:play-music'))}
+          >
             Enter with music →
           </a>
           <AIInterfaceButton />

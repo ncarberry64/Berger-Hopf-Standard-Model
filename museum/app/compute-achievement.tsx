@@ -12,7 +12,7 @@ const kernels = [
 
 export function ComputeAchievement({ motion }: { motion: boolean }) {
   const [playing, setPlaying] = useState(true);
-  const { ref, time } = useSceneClock(motion && playing);
+  const { ref, time } = useSceneClock(motion && playing, Infinity, 0, 'independent');
   const maximum = benchmark.results.branchy_cylindrical_scalar.median_seconds;
   const elapsed = (time / 3) % (maximum + 0.8);
   return (

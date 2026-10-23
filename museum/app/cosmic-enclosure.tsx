@@ -1,6 +1,7 @@
 'use client';
 /* oxlint-disable jsx-a11y/prefer-tag-over-role -- Inline SVG needs image semantics; an HTML img cannot contain this interactive drawing. */
-import { useEffect, useRef, useState } from 'react';
+import { useState } from 'react';
+import { useSceneClock } from './use-scene-clock';
 import { SCIENCE } from './exhibits';
 import references from './reference-data.json';
 import {
@@ -66,28 +67,14 @@ const displayEdges = edges.map((edge) => ({
 const STAGE_SECONDS = 1.5;
 
 export function CosmicEnclosure({ motion }: { motion: boolean }) {
-  const sceneRef = useRef<HTMLButtonElement>(null);
-  const [progress, setProgress] = useState(0);
+  const [anchor, setAnchor] = useState({ progress: 0, time: 0 });
   const [playing, setPlaying] = useState(true);
-  useEffect(() => {
-    if (!motion || !playing) return;
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
-    let visible = false;
-    const observer = new IntersectionObserver(([entry]) => {
-      visible = entry.isIntersecting;
-    });
-    if (sceneRef.current) observer.observe(sceneRef.current);
-    // Continuous 20-fps presentation clock, not a physical cosmic timescale.
-    // Never catch up after an offscreen/hidden interval.
-    const timer = window.setInterval(() => {
-      if (!visible || document.hidden || reduced.matches) return;
-      setProgress((value) => (value + 0.05 / STAGE_SECONDS) % phases.length);
-    }, 50);
-    return () => {
-      observer.disconnect();
-      window.clearInterval(timer);
-    };
-  }, [motion, playing]);
+  const { ref: sceneRef, time } = useSceneClock<HTMLButtonElement>(
+    motion && playing,
+  );
+  const progress =
+    (anchor.progress + (time - anchor.time) / STAGE_SECONDS) % phases.length;
+  const setProgress = (value: number) => setAnchor({ progress: value, time });
   const active = Math.floor(progress);
   const phase =
     phases[active].start +
@@ -513,9 +500,10 @@ export function CosmicEnclosure({ motion }: { motion: boolean }) {
         </div>
       </div>
       <p className="console-caption">
-        Continuous animation of the BHSM proposal · about 1.5 seconds per stage
-        while visible. Select a stage to pause and inspect it. The brief hold at
-        heat death makes the boundary readable; BHSM proposes an instantaneous,
+        Continuous animation of the BHSM proposal. The visible tour follows the
+        music&apos;s swells, or advances about every 1.5 seconds without music.
+        Select a stage to pause and inspect it. The brief hold at heat death
+        makes the boundary readable; BHSM proposes an instantaneous,
         whole-cosmos white-hole event when the core–surface differential
         vanishes. This is a conceptual visualization, not a computed cosmic
         history or physical time scale. The numerical R1 response is animated in

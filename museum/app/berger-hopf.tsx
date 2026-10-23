@@ -9,6 +9,7 @@ import {
   projectFiber,
 } from '../lib/berger-hopf';
 import { SCIENCE } from './exhibits';
+import { bergerMotion } from '../lib/berger-motion';
 
 const chapters = [
   {
@@ -55,13 +56,14 @@ export function BergerHopf({
   const [started, setStarted] = useState(0);
   const [scale, setScale] = useState(1);
   const [manualScale, setManualScale] = useState(false);
-  const { ref, time } = useSceneClock(motion && playing);
+  const { ref, time } = useSceneClock(motion && playing, Infinity, 0, 'bass');
   const elapsed = Math.max(0, time - started);
   const stage = auto ? (selected + Math.floor(elapsed / 10)) % 3 : selected;
+  const choreography = bergerMotion(time, elapsed, stage);
   const fiberScale =
-    stage === 0 ? 1 : manualScale ? scale : 1 + 0.3 * Math.sin(elapsed * 0.65);
+    stage === 0 ? 1 : manualScale ? scale : choreography.fiberScale;
   const chapter = chapters[stage];
-  const angle = time * 0.12 + 0.55;
+  const angle = choreography.angle;
   const focus = 9;
   const base = hopfBase(hopfPoint(fibers[focus].eta, fibers[focus].phi, 0));
   const level = bergerLevel(2, 0, fiberScale);
@@ -69,6 +71,12 @@ export function BergerHopf({
     setSelected(i);
     setAuto(false);
   };
+  const showScene = () =>
+    ref.current?.scrollIntoView({
+      block: 'center',
+      inline: 'nearest',
+      behavior: motion ? 'smooth' : 'instant',
+    });
   return (
     <ScienceConsole
       id="berger-hopf"
@@ -100,7 +108,12 @@ export function BergerHopf({
           </button>
         ))}
       </div>
-      <div className="bh-theatre" ref={ref}>
+      <div
+        className="bh-theatre"
+        ref={ref}
+        data-motion-driver="bass"
+        data-chapter={stage}
+      >
         <div className="bh-projection">
           <svg
             viewBox="0 0 700 480"
@@ -129,7 +142,7 @@ export function BergerHopf({
                 )
                 .join(' ');
               const dot = projectFiber(
-                hopfPoint(eta, phi, time * (stage === 2 ? 1.1 : 0.65)),
+                hopfPoint(eta, phi, choreography.orbit),
                 angle,
               );
               return (
@@ -157,7 +170,7 @@ export function BergerHopf({
               fill="none"
               stroke="#bda7f5"
               strokeDasharray="4 7"
-              strokeDashoffset={-time * 12}
+              strokeDashoffset={choreography.dashOffset}
             />
             <circle cx="587" cy="151" r="60" fill="#101321" stroke="#75628f" />
             <ellipse
@@ -258,6 +271,9 @@ export function BergerHopf({
       <div className="bh-controls">
         <button
           onClick={() => {
+            if (!playing || !motion) {
+              showScene();
+            }
             if (!motion) {
               setMotion(true);
               setPlaying(true);
@@ -275,6 +291,7 @@ export function BergerHopf({
             setManualScale(false);
             setPlaying(true);
             setMotion(true);
+            showScene();
           }}
         >
           Replay the story ↺
@@ -318,7 +335,7 @@ export function BergerHopf({
         ].map((name, i) => (
           <span
             key={name}
-            className={stage === 2 && Math.floor(time) % 5 === i ? 'lit' : ''}
+            className={stage === 2 && choreography.pathway === i ? 'lit' : ''}
           >
             <small>0{i + 1}</small>
             {name}
