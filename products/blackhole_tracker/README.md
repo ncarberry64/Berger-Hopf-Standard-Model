@@ -1,4 +1,4 @@
-# BHSM Blackhole Tracker 0.2.0rc6
+# BHSM Blackhole Tracker 0.2.0rc7
 
 BHSM Blackhole Tracker reconstructs the effective gravitational mass, location and motion of a BHSM-described compact configuration from resolved image pairs, their magnification ratio and their delay. The ordinary lens response and the BHSM boundary/envelope interpretation use the **same optical potential, counted once**. Agreement with ordinary gravity is an allowed result; a non-GR deviation is not required to use this interpretation.
 
@@ -108,7 +108,7 @@ For an existing source installation, close the app and run these PowerShell comm
 .\.venv\Scripts\python.exe -m bhtracker serve --open
 ```
 
-If the environment does not exist yet, use the explicit joint launcher or the environment-creation commands below first. A wheel installation uses its actual local path: `python -m pip install "./bhsm_blackhole_tracker-0.2.0rc6-py3-none-any.whl[astrometry]"`. Quoting keeps the path and extra together, including paths containing spaces. On Linux/macOS, use the interpreter in your chosen virtual environment with the same wheel-extra command.
+If the environment does not exist yet, use the explicit joint launcher or the environment-creation commands below first. A wheel installation uses its actual local path: `python -m pip install "./bhsm_blackhole_tracker-0.2.0rc7-py3-none-any.whl[astrometry]"`. Quoting keeps the path and extra together, including paths containing spaces. On Linux/macOS, use the interpreter in your chosen virtual environment with the same wheel-extra command.
 
 Open **Joint astrometry research** and follow [JOINT_RESEARCH.md](JOINT_RESEARCH.md) for the reviewed source-pack import, explicit clock/frame assumptions, fitting, export and replay. Enabling the dependency does not validate a noise model or establish a black-hole mass. The original 2022 ambiguous HST export and the separately versioned 2023 benchmark remain distinct.
 
@@ -134,7 +134,7 @@ python -m bhtracker serve --port 8766 --open
 For development and notebook replay, use `python -m pip install -e ".[dev]"`. To run the optional joint tests and notebooks, explicitly use `python -m pip install -e ".[dev,astrometry]"`. To install a supplied wheel, replace the path below with its actual location:
 
 ```text
-python -m pip install path/to/bhsm_blackhole_tracker-0.2.0rc6-py3-none-any.whl
+python -m pip install path/to/bhsm_blackhole_tracker-0.2.0rc7-py3-none-any.whl
 python -m bhtracker serve --open
 ```
 
@@ -415,6 +415,20 @@ Envelope status `UNRESOLVED` means the admitted design has weak or rank-deficien
 ## Executed notebooks and validation
 
 The first five notebooks retain their versioned executed outputs and the historical `validation/notebook_receipt.json`. The RC6 moving-lens walkthrough has its own [final installed-wheel execution receipt](validation/notebook06_rc6_receipt_v2.json); earlier notebook runs are not relabeled as RC6 validation.
+
+The separate [current-kernel study](docs/CALIBRATION_STUDY_V1.md) retains 4,608
+synthetic datasets and 4,736 fits. Its [findings](docs/CALIBRATION_FINDINGS_20261024_V1.md)
+include three failed photometric uncertainty-calibration tests and fixed-model
+contamination controls. The independent saved-only audit confirms those results.
+Local uncertainties and profile-reference thresholds have not been established
+as calibrated confidence statements for arbitrary events. A nonrejected curve
+does not establish lensing or black-hole identity. The new study preserves the
+historical experiments and does not clear the scientific publication hold.
+
+The [BHSM claim and falsifier dossier](docs/BHSM_ENVELOPMENT_CLAIM_AND_FALSIFIERS_V1.md)
+states the conditional observable maps, exact degeneracies, alternative causes
+and evidence required for each claim. The [software citation and packaging guide](PACKAGING_AND_CITATION.md)
+distinguishes this product version from the historical root repository citation.
 
 | Notebook | Walkthrough |
 |---|---|

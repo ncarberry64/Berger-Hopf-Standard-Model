@@ -5,7 +5,7 @@ from importlib.metadata import version, PackageNotFoundError
 from pathlib import Path
 import platform
 
-VERSION='0.2.0rc6'
+VERSION='0.2.0rc7'
 REPOSITORY_URL='https://github.com/ncarberry64/Berger-Hopf-Standard-Model'
 
 def project_citation():

@@ -1,0 +1,266 @@
+{
+  "schema": "bhsm.rc7.prospective_calibration_protocol.v1",
+  "id": "BHSM-CURRENT-KERNEL-CALIBRATION-20261024-v1",
+  "status": "DRAFT_REQUIRES_EXACT_SOURCE_RUNTIME_DATA_FREEZE_BEFORE_GENERATION",
+  "purpose": "New conditional calibration of corrected resolved inference and native rectilinear photometry, with preserved control failures and explicit limits on classification.",
+  "relation_to_old_studies": "An independent experiment using current released model contracts. It neither continues nor bypasses the unresolved 2025 exact-Student native point/recovery protocol, and it does not relabel the historical64-draw campaign.",
+  "truth_separation": "Truth is stored separately from fit inputs; fit calls receive no generating parameters or truth initializations. This is computational separation, not external human blinding or external registration.",
+  "resolved_blocks": [
+    {
+      "id": "R0_REGULAR_10",
+      "block": 0,
+      "mass_msun": 10.0,
+      "replicates": 512,
+      "role": "coverage",
+      "fit_nuisances": [
+        "shear"
+      ]
+    },
+    {
+      "id": "R1_REMOTE_REPORTING_REFERENCE",
+      "block": 1,
+      "mass_msun": 10.0,
+      "reporting_epoch_yr": 2000.0,
+      "reference_mass_msun": 0.001,
+      "replicates": 512,
+      "role": "coverage",
+      "fit_nuisances": [
+        "shear"
+      ]
+    },
+    {
+      "id": "R2_LOW_MASS",
+      "block": 2,
+      "mass_msun": 0.05,
+      "replicates": 512,
+      "role": "coverage",
+      "fit_nuisances": [
+        "shear"
+      ]
+    },
+    {
+      "id": "R3_HIGH_MASS",
+      "block": 3,
+      "mass_msun": 100000.0,
+      "r0_pc": 1E-05,
+      "replicates": 512,
+      "role": "coverage",
+      "fit_nuisances": [
+        "shear"
+      ]
+    },
+    {
+      "id": "R4_STATIONARY",
+      "block": 4,
+      "mass_msun": 10.0,
+      "motion_over_theta_per_year": [
+        0.0,
+        0.0
+      ],
+      "replicates": 256,
+      "role": "stationary_motion_control",
+      "fit_nuisances": [
+        "shear"
+      ]
+    },
+    {
+      "id": "R5_REPEATED_EPOCH",
+      "block": 5,
+      "mass_msun": 10.0,
+      "repeated_epoch": true,
+      "replicates": 64,
+      "role": "unidentified_motion",
+      "fit_nuisances": [
+        "shear"
+      ]
+    },
+    {
+      "id": "R6_REPEATED_REMOTE_REPORTING",
+      "block": 6,
+      "mass_msun": 10.0,
+      "repeated_epoch": true,
+      "reporting_epoch_yr": 2000.0,
+      "replicates": 64,
+      "role": "unidentified_motion",
+      "fit_nuisances": [
+        "shear"
+      ]
+    },
+    {
+      "id": "R7_ORDINARY_SHEAR",
+      "block": 7,
+      "mass_msun": 10.0,
+      "shear": [
+        0.03,
+        -0.018
+      ],
+      "replicates": 128,
+      "role": "paired_ordinary_nuisance_control",
+      "fit_nuisances": [
+        "none",
+        "shear"
+      ]
+    }
+  ],
+  "resolved_design": {
+    "epochs_observer_julian_years": [
+      2025.55,
+      2025.69,
+      2025.88,
+      2026.03,
+      2026.21,
+      2026.39,
+      2026.58
+    ],
+    "geometry_pc": [
+      1000.0,
+      8000.0,
+      7000.0
+    ],
+    "redshifts": [
+      0.0,
+      0.0
+    ],
+    "physical_anchor_epoch": 2026.0,
+    "physical_anchor_center_mas": [
+      12.3,
+      -4.2
+    ],
+    "default_motion_over_theta_per_year": [
+      0.4,
+      -0.2
+    ],
+    "source_offsets_over_theta": "(0.65+0.12*sin(i),0.55+0.07*cos(0.7*i)); free source position at every row",
+    "default_worldtube_pc": 1E-08,
+    "default_numerical_reference_mass_msun": 7.0,
+    "covariance": "Known hypothetical dense covariance: sigma=(0.003theta)*4,0.01 in log flux,0.005*(4GM/c^3) in delay seconds; same-axis image correlation0.25; log-flux/delay correlation0.2; cross-epoch correlation0.2^abs(i-j)",
+    "qualification": "Supplied hypothetical resolved measurements/distances/covariance for conditional algorithm tests, not manufactured measurements of any actual unresolved event or an instrument forecast."
+  },
+  "photometric_cadence_selection": {
+    "rule": "First identifier in each of the two strata of the already frozen100-event selection; choice ignores measured brightness, new fit outcomes and follow-up ranking.",
+    "ids": [
+      "OGLE3-ULENS-0033",
+      "OGLE3-ULENS-0127"
+    ],
+    "t0_native_relative_days": [
+      3155.835691,
+      2727.69093
+    ],
+    "tE_days": [
+      200.0,
+      25.0
+    ],
+    "u0": 0.3,
+    "source_fraction": 0.65,
+    "baseline_magnitude": 18.0,
+    "time": "Preserve every native relative HJD time and UNSPECIFIED underlying clock. No precision parallax or angular positions inferred.",
+    "errors": "Condition on unchanged supplied optimized magnitude errors; no second correction and no native covariance fabrication. Gaussian independence is the matching signal experiment's explicit generating assumption."
+  },
+  "photometric_families": [
+    {
+      "family": "pspl",
+      "replicates_per_cadence": 512,
+      "noise": "independent Gaussian with fixed parent marginal sigma",
+      "role": "local_covariance_and_truth_profile_membership"
+    },
+    {
+      "family": "constant",
+      "replicates_per_cadence": 128,
+      "noise": "independent Gaussian",
+      "role": "nonlensing_screen_contamination"
+    },
+    {
+      "family": "periodic_variable",
+      "replicates_per_cadence": 128,
+      "definition": "baseline-0.1*cos(2pi*(t-t0)/100 days)",
+      "noise": "independent Gaussian",
+      "role": "nonlensing_screen_contamination"
+    },
+    {
+      "family": "binary_source",
+      "replicates_per_cadence": 128,
+      "definition": "same point lens, two unresolved sources:0.7A(t0,tE,u0)+0.3A(t0+1.2tE,tE,0.5), total source fraction0.65",
+      "noise": "independent Gaussian",
+      "role": "single_source_model_misspecification"
+    },
+    {
+      "family": "correlated_pspl",
+      "replicates_per_cadence": 128,
+      "noise": "sigma*(sqrt(0.5)*independent Normal+sqrt(0.5)*stationary Gaussian OU),tau30days, stable time order, no season reset",
+      "role": "diagonal_noise_misspecification"
+    }
+  ],
+  "seeds": {
+    "generator": "PCG64/SeedSequence",
+    "entropy": [
+      20261024,
+      5391159,
+      "stream",
+      "block",
+      "replicate"
+    ],
+    "resolved_stream": 1,
+    "photometric_stream": 2,
+    "photometric_block": "100+10*cadence_index+family_index",
+    "repeat_policy": "Reproduce generated input twice at identical key; count as one realization. No redraw, clipping, replacement or outcome-dependent seed changes."
+  },
+  "fit_options": {
+    "resolved": {
+      "family": "gr",
+      "starts": 2,
+      "max_nfev": 160,
+      "initial": null
+    },
+    "photometry": {
+      "starts": 12,
+      "max_nfev": 1500,
+      "initial": null,
+      "noise_scale": 1.0,
+      "equal_instrument_weight": false,
+      "allow_negative_blend": false
+    },
+    "photometry_profile": {
+      "values": "one fixed generating tE per matching-PSPL case",
+      "max_nfev": 1500
+    }
+  },
+  "intervals": {
+    "level": 0.95,
+    "resolved_mass": "log-Gaussian using public sigma_M/M",
+    "other_local_parameters": "additive local Normal, no reduced-chi-square rescaling",
+    "core_coverage": "finite solved physically admitted estimator intervals before goodness-of-fit selection; unavailable/generation/solver failures count as misses",
+    "deployed_joint_success": "separately report usable-and-covered after existing goodness screen; do not test this selected joint probability against0.95",
+    "photometric_profile": "Generating tE belongs to the delta-chi-square<=chi2_1(0.95) interior reference set; not an endpoint estimate. Unresolved/boundary/reference-failure ordinates remain unavailable and count conservatively as misses.",
+    "coverage_scope": "Conditional on each fixed truth/cadence/noise block; not universal, actual-object or nonregular coverage certification."
+  },
+  "statistics": {
+    "binomial_uncertainty": "exact95percent intervals separately per block; report planned/attempted/failed/unavailable/covered and completion bounds",
+    "gross_local_miscalibration": "two-sided exact binomial test of0.95, only the20 resolved+6 photometric local-parameter tests plus2 profile-truth tests; Bonferroni alpha0.01/28; report all findings, never tune intervals or discard runs",
+    "screen_rates": "Keep constant/variable nonrejection and binary/correlation misspecification nonrejection separate. They are not a calibrated BH false-positive rate.",
+    "mass_comparator": "resolved95percent lower mass bound above3solar masses is a synthetic optical-mass comparator only; not a universal neutron-star limit or BH identity",
+    "unimplemented_classifier": "BH classifier not evaluated, BH false-positive and false-negative rates unavailable; zero flags cannot prove specificity."
+  },
+  "budgets": {
+    "wall_seconds": 3600,
+    "saved_bytes": 2147483648,
+    "per_fit_max_evaluations": "above",
+    "rule": "No automatic retries. Preserve generation/fit/profile/serialization failures; stop on source change, global wall/storage exhaustion or input corruption. Enumerate every remaining planned case as not attempted. A stopped campaign is NOT_COMPLETED, never a successful coverage study."
+  },
+  "outputs": [
+    "full prospective freeze with exact protocol/driver/module/kernel/runtime/raw-parent pins",
+    "original cadence parents and all generated input hashes before fit",
+    "all generated inputs and full fit outcomes in deterministic gzip JSON",
+    "append-only attempt ledger",
+    "one summary row per planned fit with failures and not-attempted rows",
+    "per-block exact uncertainty/coverage/control summaries",
+    "preselected replicate0 residual plots",
+    "source-byte preservation receipt"
+  ],
+  "scientific_boundaries": [
+    "Entirely synthetic calibration, not a new real-object interpretation or mass recovery",
+    "No horizon/core/envelope-boundary jump/spin classification",
+    "One Einstein/GHY optical exterior interpreted as BHSM surface topography, counted once",
+    "The authentic known-system benchmark remains independent and requires its own calibrated observation/likelihood admission",
+    "No changes to frozenRC6, raw observations or historical campaigns"
+  ]
+}

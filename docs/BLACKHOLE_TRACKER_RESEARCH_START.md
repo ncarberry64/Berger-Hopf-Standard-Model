@@ -1,7 +1,7 @@
 # Blackhole Tracker: researcher start
 
 **Blackhole Tracker: BHSM Boundary Interpretation of Compact-Lens Mass, Motion,
-and Conditional Response** accompanies the `0.2.0rc6` research candidate. This
+and Conditional Response** accompanies the `0.2.0rc7` research candidate. This
 repository is the formal reviewer record. The
 [Manuscript-Generation workspace](https://github.com/ncarberry64/Manuscript-Generation/pull/24)
 records development history; it is not a separate source of reviewer authority.
@@ -11,7 +11,9 @@ records development history; it is not a separate source of reviewer authority.
 | Read the manuscript | [Reviewed PDF](../papers/bhsm_blackhole_tracker_20261021/manuscript/main.pdf), [paper guide](../papers/bhsm_blackhole_tracker_20261021/README.md), [result statement](../papers/bhsm_blackhole_tracker_20261021/RESULT_STATEMENT.md) |
 | Understand the contribution and limits | [Lay report](../papers/bhsm_blackhole_tracker_20261021/LAY_REPORT.md), [model chain and freedoms](../papers/bhsm_blackhole_tracker_20261021/CHAIN_AND_FREEDOMS.md), [validation](../papers/bhsm_blackhole_tracker_20261021/VALIDATION.md) |
 | Install the app or reproduce an analysis | [Formal product guide](../products/blackhole_tracker/REVIEWER.md), followed by the complete [user and measurement guide](../products/blackhole_tracker/README.md) |
-| Inspect current checks and prior reviews | [RC6 installed and browser checks](../products/blackhole_tracker/validation/rc6/), [formal product CI](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/blackhole-tracker.yml) and [paper review record](../papers/bhsm_blackhole_tracker_20261021/review/); source and isolated installed-product suites each passed 318 tests plus 66 subtests. Earlier release receipts remain historical. |
+| Inspect current checks and prior reviews | [RC7 evidence and limits](../products/blackhole_tracker/validation/rc7/), [formal product CI](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/blackhole-tracker.yml) and [paper review record](../papers/bhsm_blackhole_tracker_20261021/review/); source and isolated installed-product suites each passed 338 tests plus 66 subtests. [RC6 receipts](../products/blackhole_tracker/validation/rc6/) retain their historical versions. |
+| Reproduce the current-kernel calibration | [Prospective protocol](../products/blackhole_tracker/docs/CALIBRATION_STUDY_V1.md), [all findings including three failed tests](../products/blackhole_tracker/docs/CALIBRATION_FINDINGS_20261024_V1.md), and [portable source/evidence](../products/blackhole_tracker/research/validation_20261024/) |
+| Inspect BHSM observables and falsifiers | [Claim dossier](../products/blackhole_tracker/docs/BHSM_ENVELOPMENT_CLAIM_AND_FALSIFIERS_V1.md), [portable ideal algebra controls](../products/blackhole_tracker/research/bhsm_claim_20261024/) and [software citation/licensing](../products/blackhole_tracker/PACKAGING_AND_CITATION.md) |
 | Inspect all real observations and follow-up outcomes | [Frozen pilot and reproduction](../papers/bhsm_blackhole_tracker_20261021/real_data_pilot_20261022/README.md), [all 100 annotated results](../papers/bhsm_blackhole_tracker_20261021/real_data_pilot_20261022/literature_annotations_v1/all_100_results.csv) and [qualified archival ranking](../papers/bhsm_blackhole_tracker_20261021/real_data_pilot_20261022/literature_annotations_v1/followup_ranking.csv) |
 | Inspect the separate known-system test and calibration gaps | [2023 joint benchmark](../papers/bhsm_blackhole_tracker_20261021/joint_known_system_20261022/README.md), [plain-language result](../papers/bhsm_blackhole_tracker_20261021/joint_known_system_20261022/PLAIN_LANGUAGE_RESULT.txt), [joint app and source-pack guide](../products/blackhole_tracker/JOINT_RESEARCH.md) and [unsent manual calibration request](../papers/bhsm_blackhole_tracker_20261021/joint_known_system_20261022/MANUAL_CALIBRATION_DATA_REQUEST_TEMPLATE.txt) |
 | Inspect public explanation and animation | [Blackhole Tracker Museum exhibit](https://ncarberry64.github.io/Berger-Hopf-Standard-Model/#blackhole-tracker), [Museum source](../museum/) |
@@ -26,6 +28,11 @@ criteria. All masses remain unresolved and no new black-hole interpretation
 is established. All three declared models in the separate 2023 joint benchmark
 fail adequacy, so no reliable known-system mass is accepted by this campaign.
 Its published black-hole classification remains independent literature evidence.
+The new synthetic study processes 4,608 datasets and 4,736 fits but fails three
+photometric uncertainty-calibration tests. A separately frozen Student
+known-system experiment also retains unresolved numerical starts and no accepted
+mass. Those findings keep the scientific hold explicit; matching a published
+conditional point is insufficient for recovery.
 The current [draft correction PR #471](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/pull/471)
 preserves the earlier release and review history.
 
@@ -194,7 +201,7 @@ choose `Start_Blackhole_Tracker_Joint.cmd` in the complete Windows source
 package, or `Start_Blackhole_Tracker.cmd --astrometry`. For an existing source
 environment, close the app and run `python -m pip install ".[astrometry]"`
 with that environment's interpreter. A matching local wheel uses
-`python -m pip install "./bhsm_blackhole_tracker-0.2.0rc6-py3-none-any.whl[astrometry]"`.
+`python -m pip install "./bhsm_blackhole_tracker-0.2.0rc7-py3-none-any.whl[astrometry]"`.
 Dependency installation needs access to the configured package index; opening
 the joint page never installs dependencies.
 
@@ -216,6 +223,15 @@ controls, angular covariance/frame/epoch weights, and independent lens/source
 flux limits. The [manual request template](../papers/bhsm_blackhole_tracker_20261021/joint_known_system_20261022/MANUAL_CALIBRATION_DATA_REQUEST_TEMPLATE.txt)
 is prepared for author review and has not been sent. A new calibration version
 requires a new frozen analysis, not retrospective replacement of this failure.
+
+The separately versioned [normalized Student research sources](../products/blackhole_tracker/research/known2023_student_20261024/)
+preserve the same real 2023 errors, all starting modes and the later numerical
+chart/trust experiments. They include portable metadata-only preparation and
+invented controls; importing the source or installing the product launches no
+native campaign. Their conditional points remain unaccepted, with no transfer
+of old Gaussian adequacy pivots to the new density. The app's retained joint
+workflow and its historical failed candidates are not relabeled as a successful
+Student mass recovery.
 
 ## What the BHSM result does and does not establish
 

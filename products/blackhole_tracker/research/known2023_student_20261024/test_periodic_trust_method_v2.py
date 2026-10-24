@@ -1,0 +1,112 @@
+"""Prospective invented numerical invariants only; no observational model import."""
+import math
+import json
+from fractions import Fraction
+import unittest
+import numpy as np
+from scipy.optimize import minimize
+from periodic_chart_v1 import canonical_angle,native_from_chart,chart_seed
+from bounded_trust_polish_v1 import polish_score
+
+class NumericalControls(unittest.TestCase):
+    def test_01_every_original_seed_center_preserves_physical_circle(self):
+        lo=np.array([-10.,-10.,-1.,-math.pi,0.]);hi=np.array([10.,10.,1.,math.pi,1.])
+        for k in range(16):
+            seed=np.array([0.,1.,(-1 if k<8 else 1)*.06,-math.pi+2*math.pi*(k%8)/8,.1])
+            chart,center=chart_seed(seed);self.assertEqual(chart[3],0.)
+            np.testing.assert_allclose(native_from_chart(chart,center,lo,hi),seed,atol=1e-15)
+            for delta in [-math.pi,-.1,0.,.1,math.pi]:
+                chart[3]=delta;theta=native_from_chart(chart,center,lo,hi)[3]
+                self.assertAlmostEqual(math.cos(theta),math.cos(center+delta),places=14)
+                self.assertAlmostEqual(math.sin(theta),math.sin(center+delta),places=14)
+
+    def test_02_lifted_angle_derivative_across_canonical_seam(self):
+        target=-3.;center=3.;lo=np.array([-1.,-1.,-1.,-math.pi]);hi=-lo
+        for delta in [math.pi-center-1e-5,math.pi-center,math.pi-center+1e-5]:
+            def f(d):return -math.cos(native_from_chart([0.,0.,0.,d],center,lo,hi)[3]-target)
+            fd=(f(delta+1e-6)-f(delta-1e-6))/2e-6
+            self.assertAlmostEqual(fd,math.sin(center+delta-target),places=8)
+
+    def test_03_chart_optimizer_escapes_old_seam(self):
+        target=3.;center=-math.pi
+        def score(z):
+            theta=canonical_angle(center+z[0]);return -math.cos(theta-target),np.array([math.sin(theta-target)])
+        r=minimize(score,[0.],jac=True,method='L-BFGS-B',bounds=[(-math.pi,math.pi)],options={'gtol':1e-10,'ftol':1e-14})
+        self.assertLess(abs(canonical_angle(center+r.x[0]-target)),1e-7)
+
+    def test_04_nonangular_domain_is_unchanged(self):
+        lo=np.array([-1.,-1.,-1.,-math.pi]);hi=-lo
+        with self.assertRaises(ValueError):native_from_chart([1.1,0.,0.,0.],0.,lo,hi)
+        with self.assertRaises(ValueError):canonical_angle(float('inf'))
+        x=native_from_chart([.5,-.2,.1,10.],.2,lo,hi)
+        np.testing.assert_array_equal(x[:3],[.5,-.2,.1])
+
+    def test_05_independent_illconditioned_quadratic_optimum(self):
+        Q=np.array([[.8,-.6],[.6,.8]]);H=Q@np.diag([1e-4,1e4])@Q.T;truth=np.array([.03,-.05])
+        def score(x):d=x-truth;return float(.5*d@H@d),H@d
+        # Independent ||H^-1||_inf <11201 means toy score1e-10 permits
+        # <=1.1201e-6 coordinate error, below the unchanged2e-6 assertion.
+        # This tightens this invented test only; native tolerance remains.02.
+        result=polish_score(score,[.6,.7],[-2.,-2.],[2.,2.],[1.,1.],max_iterations=16,score_tolerance=1e-10,max_scaled_step=1.)
+        self.assertTrue(result['declared_score_reached'])
+        np.testing.assert_allclose(result['state'],truth,atol=2e-6,rtol=0.)
+        # Exact rational replay of the *represented*2x2 Hessian and state.
+        # This is independent of the helper's finite-difference Hessian/solve.
+        A=[[Fraction.from_float(float(H[i,j]))for j in range(2)]for i in range(2)]
+        det=A[0][0]*A[1][1]-A[0][1]*A[1][0]
+        self.assertGreater(det,0)
+        inverse=[[A[1][1]/det,-A[0][1]/det],[-A[1][0]/det,A[0][0]/det]]
+        norm=max(sum(map(abs,row))for row in inverse)
+        self.assertLess(norm,Fraction(11201))
+        error=[Fraction.from_float(float(result['state'][j]))-Fraction.from_float(float(truth[j]))for j in range(2)]
+        residual=[sum(A[i][j]*error[j]for j in range(2))for i in range(2)]
+        error_norm=max(map(abs,error));residual_norm=max(map(abs,residual));certificate=norm*residual_norm
+        self.assertLessEqual(error_norm,certificate)
+        self.assertLessEqual(certificate,Fraction.from_float(2e-6))
+        print(json.dumps({'control':'ill_conditioned_quadratic_independent_certificate','H_represented':H.tolist(),'state':result['state'].tolist(),'truth':truth.tolist(),'toy_score_tolerance':1e-10,'unchanged_state_tolerance':2e-6,'inverse_inf_norm_exact':str(norm),'residual_inf_norm_exact':str(residual_norm),'coordinate_error_inf_exact':str(error_norm),'coordinate_error_certificate_exact':str(certificate),'native_score_tolerance_unchanged':.02}))
+
+    def test_06_objective_constant_does_not_define_stationarity(self):
+        truth=np.array([.13,-.24]);H=np.array([[3.,.7],[.7,2.]])
+        results=[]
+        for constant in [0.,1e8,-1e8]:
+            def score(x):d=x-truth;return float(.5*d@H@d+constant),H@d
+            results.append(polish_score(score,[.8,.8],[-2.,-2.],[2.,2.],[1.,1.],max_iterations=16,score_tolerance=1e-8)['state'])
+        for result in results:np.testing.assert_allclose(result,truth,atol=1e-8,rtol=0.)
+
+    def test_07_origin_and_units_do_not_change_quadratic_physics(self):
+        truth=np.array([.13,-.24]);origin=np.array([1e6,-1e6]);units=np.array([2.,.5]);H=np.array([[3.,.7],[.7,2.]])
+        def native_score(x):d=(x-origin)/units-truth;return float(.5*d@H@d),(H@d)/units
+        result=polish_score(native_score,origin+units*[.8,.8],origin-2*units,origin+2*units,units,max_iterations=16,score_tolerance=1e-7)
+        self.assertTrue(result['declared_score_reached']);np.testing.assert_allclose((result['state']-origin)/units,truth,atol=2e-8,rtol=0.)
+
+    def test_08_exact_active_face(self):
+        def score(x):d=x-np.array([-1.,.3]);return float(d@d),2*d
+        r=polish_score(score,[.5,.6],[0.,-1.],[2.,1.],[1.,1.],max_iterations=16,score_tolerance=1e-8)
+        self.assertTrue(r['declared_score_reached']);self.assertEqual(r['state'][0],0.)
+        self.assertAlmostEqual(r['state'][1],.3,places=8)
+
+    def test_09_negative_curvature_is_unresolved_not_ridged(self):
+        def score(x):return float(-x[0]**2+x[1]**2),np.array([-2*x[0],2*x[1]])
+        r=polish_score(score,[.5,.2],[-2.,-2.],[2.,2.],[1.,1.],max_iterations=16)
+        self.assertFalse(r['declared_score_reached']);self.assertEqual(r['status'],'LOCAL_CURVATURE_OR_SCORE_UNRESOLVED')
+        np.testing.assert_array_equal(r['state'],[.5,.2])
+
+    def test_10_flat_score_is_not_identification(self):
+        r=polish_score(lambda x:(1.,np.zeros(2)),[.5,.2],[-2.,-2.],[2.,2.],[1.,1.])
+        self.assertTrue(r['declared_score_reached']);np.testing.assert_array_equal(r['state'],[.5,.2])
+        self.assertIn('not a global optimum',r['qualification'])
+        self.assertNotIn('identified',r)
+
+    def test_11_invalid_callback_and_trust_limit(self):
+        with self.assertRaises(FloatingPointError):polish_score(lambda x:(float('nan'),np.ones(1)),[0.],[-1.],[1.],[1.])
+        with self.assertRaises(ValueError):polish_score(lambda x:(1.,np.ones(1)),[0.],[-1.],[1.],[1.],max_scaled_step=0.)
+
+    def test_12_fixed_trust_step_limits_every_accepted_displacement(self):
+        target=np.array([-10.,8.])
+        def score(x):d=x-target;return float(d@d),2*d
+        r=polish_score(score,[0.,0.],[-20.,-20.],[20.,20.],[1.,1.],max_iterations=16,score_tolerance=1e-8,max_scaled_step=1.)
+        self.assertTrue(r['declared_score_reached']);np.testing.assert_allclose(r['state'],target,atol=1e-8)
+        states=[np.array(t['state'])for t in r['trace']]
+        self.assertTrue(all(np.max(abs(b-a))<=1.+1e-12 for a,b in zip(states,states[1:])))
+
+if __name__=='__main__':unittest.main()

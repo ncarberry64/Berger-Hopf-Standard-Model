@@ -1,9 +1,9 @@
-# Blackhole Tracker rc6: formal reviewer source
+# Blackhole Tracker rc7: formal reviewer source
 
 This BHSM repository is the formal reviewer home. `Manuscript-Generation`
 is the development workspace. Norman P. Carberry is the hypothesis and
-research author. The 266 upstream files are copied byte-for-byte from
-immutable development commit `6bd7bf40cbef58f240b46626a21b0c7820099da0`.
+research author. The 373 upstream files are copied byte-for-byte from
+immutable development commit `648fad552dfe1ee45b1c139b61423fdf22b997d1`.
 [FORMAL_PROVENANCE.json](FORMAL_PROVENANCE.json) records their paths, sizes
 and SHA-256. The [manuscript/release receipt](../../papers/bhsm_blackhole_tracker_20261021/provenance/FORMAL_REPOSITORY.json)
 records the formal product-code citation separately, avoiding a
@@ -17,6 +17,26 @@ BHSM repository is optional. The source includes six notebooks, the app,
 CLI/Python APIs, tests, pinned providers and historical validation records.
 The suite includes spectrum transport, source-pinned target-program and synthetic measured-track checks. Exact run counts and outcomes belong to the matching release receipts. Software verification and replay
 do not establish scientific acceptance or journal acceptance.
+
+The [RC7 evidence](validation/rc7/) records 338 tests plus 66 subtests on both
+the source Python 3.14 environment and a fresh minimum-family installed Python
+3.11 environment. Actual browser export and installed CLI replay preserve all
+734 native rows of the checked historical event with zero prediction difference.
+The new [4,608-dataset calibration](docs/CALIBRATION_FINDINGS_20261024_V1.md)
+retains every fit and three failed uncertainty-calibration tests. The separate
+[Student known-system research route](research/known2023_student_20261024/)
+retains unresolved starts and no accepted mass. Scientific publication remains
+held. The [BHSM claim dossier](docs/BHSM_ENVELOPMENT_CLAIM_AND_FALSIFIERS_V1.md)
+states its conditional observables and falsifiers; one exterior is counted once.
+
+The routine wheel and SDIST remain compact. The optional complete synthetic
+evidence is supplied in three parts of at most 40 MiB under
+`research/validation_20261024/evidence_public_v2/`, with exact manifests and
+standard-library join/verification instructions. Original native observations
+and prepared parents remain external with hashes and acquisition instructions;
+the private complete local archive is not part of this public source. Read
+[packaging and citations](PACKAGING_AND_CITATION.md) for the unchanged legal
+terms and the software citation distinct from the historical root DOI.
 
 ## Install and run
 
@@ -132,7 +152,7 @@ cd products/blackhole_tracker
 python -m pytest -q tests
 python -m pip wheel --no-deps . --wheel-dir dist
 cd ../..
-python tools/smoke_blackhole_tracker_wheel.py --wheel products/blackhole_tracker/dist/bhsm_blackhole_tracker-0.2.0rc6-py3-none-any.whl
+python tools/smoke_blackhole_tracker_wheel.py --wheel products/blackhole_tracker/dist/bhsm_blackhole_tracker-0.2.0rc7-py3-none-any.whl
 ```
 
 The dedicated workflow installs `[dev,astrometry]` for the full product suite
@@ -155,7 +175,7 @@ are `01_compact_mass_and_motion`, `02_conditional_boundary_response`,
 `03_native_unresolved_photometry`, `04_joint_astrometry_and_parallax`
 and `05_candidate_atlas`.
 The [validation directory](validation/) retains matching receipts; historical
-release evidence is not relabeled as RC6 evidence.
+release evidence is not relabeled as RC7 evidence.
 
 The top-level BHSM core Python 3.10+ matrix is separate from the product's
 Python 3.11+ requirement. Its dispatch-only full historical corpus is not

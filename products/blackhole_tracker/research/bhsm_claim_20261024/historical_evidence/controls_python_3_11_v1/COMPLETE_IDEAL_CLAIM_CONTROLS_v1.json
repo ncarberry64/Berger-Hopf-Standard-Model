@@ -1,0 +1,3911 @@
+{
+  "schema": "bhsm.claim_dossier.ideal_controls.v1",
+  "status": "PASS_INVENTED_ALGEBRA_ONLY",
+  "python": "3.11.9",
+  "executable": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_real_data_corrections_20261022\\release_rc4\\minimum_runtime_probe\\venv\\Scripts\\python.exe",
+  "freeze_sha256": "16f166dd7f5d8ec76b3c5c01fb941b970bf7b734b1d40ad11999a4e1ce64df8d",
+  "admission_sha256": "03091c20404ac4489a06461a0129787c95486a31dd77bf365083f741338222fb",
+  "source_hashes_before": {
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_real_data_corrections_20261022\\prepublication_20261024\\bhsm_claim_v1\\BHSM_ENVELOPMENT_CLAIM_AND_FALSIFIERS_V1.md": "07a1470eb916b56297fa98793a8da0af10d0512d34a5ee48dc413890e25ae769",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_real_data_corrections_20261022\\prepublication_20261024\\bhsm_claim_v1\\ideal_claim_diagnostics_v1.py": "ad870bd1943acdd85fe147bdbb40f9c316d7c4d4652ad54d03f6146c6ca5ee6e",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_real_data_corrections_20261022\\prepublication_20261024\\bhsm_claim_v1\\run_ideal_claim_controls_v1.py": "ac0dc98139ca39f1295a6a18da32f793bc26ac0a12e947b6209e27b6ce4241ae",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_real_data_corrections_20261022\\prepublication_20261024\\bhsm_claim_v1\\PROSPECTIVE_IDEAL_CONTROL_PROTOCOL_v1.txt": "f691d80bd8b6ae96fc6e25b3a6132120c1993e60ba96f502ce7e345fe96632ae",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_real_data_corrections_20261022\\prepublication_20261024\\bhsm_claim_v1\\CLAIM_CONTRACT_v1.json": "6baa3990225e36e80d06c63cd5ca67b839c6414b879ce4b7bcf2822834c82549",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_real_data_corrections_20261022\\prepublication_20261024\\bhsm_claim_v1\\PRIMARY_SOURCE_CHECKS_v1.json": "43ba2f8b25b0700cf14d8f0cbc99b9338b2abbfd0d9fe80f3479e0ab07d9ba54",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\docs\\BHSM_ENVELOPMENT_CLAIM_AND_FALSIFIERS_V1.md": "07a1470eb916b56297fa98793a8da0af10d0512d34a5ee48dc413890e25ae769",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\BHSM-real-data-20261022\\docs\\BHSM_AUTHOR_SURFACE_GEOMETRY_CLARIFICATION_20261023.md": "f8dcd3611d71f2acef265bf2f921eb0db5773fc5524266d3a5df63b718c714a3",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\BHSM-real-data-20261022\\docs\\BHSM_TRACKER_ENVELOPMENT_SEARCH_CLARIFICATION_20261023.md": "c2df2654c5b094206acbce8e450fbdbe87a16fcc267787f9d897a2b0202b909a",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\BHSM-real-data-20261022\\docs\\BHSM_NORMAN_CORE_SURFACE_AMENDMENT_20261022.md": "028158078ae6ac2c32f44f3539c2598ade810f5ef77fff66b7e854cb9d4f959a",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\BHSM-real-data-20261022\\docs\\source_recovery\\20261022\\README.md": "2f634a46f6974f871b79aafcf1b331797be7d4ee69bd10c0f550310d93ffb5da",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\BHSM-real-data-20261022\\docs\\source_recovery\\20261022\\originals\\BHSM_Core_Harmonics_Black_Hole_Tracker_Codex_Prompt_20261022.txt": "149ba5efafd46be01bde9fe9513c1c83788b8a5f41c2127a4e2e5e6ce358517c",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\BHSM-real-data-20261022\\docs\\source_recovery\\20261022\\originals\\BHSM_Frame_Dragging_and_Nonlinear_Front_Derivation_v0_1.pdf": "7bb85093bcf3d03ca30220fd6d52aa3306a2c4d1648e91679c3d5a65f9409e2e",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\BHSM-real-data-20261022\\docs\\source_recovery\\20261022\\originals\\BHSM_Galaxy_Envelope_Formation_and_Persistence_v0_1.pdf": "de228c96c612024e2bfd1d3c9907dc6223108dfb6ecfc4f7b7bffb65623450a4",
+    "C:\\Users\\carbe\\Downloads\\BHSM_Galaxy_Gravity_Loaded_Schur_Hessian_v0_5.md": "718cdac692ae6030eb70c327771343267c4517c1a69a01454a32872579013816",
+    "C:\\Users\\carbe\\Downloads\\BHSM_Topographic_Galaxy_Encapsulation_Solution_v0_3.md": "c9eaee920746c024b695c722fc783aea53dfc9da5660a92150de4b05d9c7ba0a",
+    "C:\\Users\\carbe\\Downloads\\BHSM_optical_constitutive_reduction.tex": "0164cafd76e43a23c10f0e6449f300317d11a92597fdee56fd17883f35240e44",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\BHSM-real-data-20261022\\papers\\bhsm_blackhole_tracker_20261021\\manuscript\\bhsm_interpretation.tex": "5fbe5ca35829b543220e856914b2d13f3d322848dac1df56d7b61d982dd5e01f",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\BHSM-real-data-20261022\\papers\\bhsm_blackhole_tracker_20261021\\manuscript\\projection_theorem.tex": "16d5148a7ac76f95296313a9f08f765d7076f71154fba26cc2ac669e61c5dbc7",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\BHSM-real-data-20261022\\papers\\bhsm_blackhole_tracker_20261021\\manuscript\\estimator_derivation.tex": "55b1b0eec6ebccedd17e900d0df70e791e1e470f339f7f50d446d94fae8f0828",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\BHSM-real-data-20261022\\papers\\bhsm_blackhole_tracker_20261021\\CHAIN_AND_FREEDOMS.md": "34a48d48a99cfba2e83ab03b734025c87e89cd3d0b9ba8b22dff7a7397708cee",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\BHSM-real-data-20261022\\papers\\bhsm_blackhole_tracker_20261021\\review\\envelopment_search_20261023\\SOURCE_ONLY_MATHEMATICAL_REVIEW_v1.txt": "32c39850044f58f5e4e048550d101ddd11ff4e17ae4dd0c0a3ca57cd2202970c",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\BHSM-real-data-20261022\\papers\\bhsm_blackhole_tracker_20261021\\provenance\\bhsm_boundary_mass_interpretation_sources.json": "eb3b5b9a26d6b5606719c45113db69cc8ca9dc000cfa9bb7e174cde50f2ca3a5",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\theory\\PRIMARY_TARGET_PROGRAM.json": "175c4b11279bb0397b48eb76d38b556b30eb246ef005bb1cb1cfab510dd32f48",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\theory\\BHSM_CORE_SURFACE_CONTRACT.json": "a0561d8fe7d1031daa2a56c433d46b99734b20f850e02e16d0e5095b32fc3507",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\research\\primary_target_20261023\\COMPARATIVE_PRIMARY_FOLLOWUP_REVIEW_v2.json": "5459238e85a56f925edf8d8c671510500e42156a662e40c7a2d87bbdf1ad076d",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\__main__.py": "6ce05b79ee1666025af142adc913f1d468781e77af67ae431fe163472a52fb3a",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\astrometry.py": "a74dd19625f4bf463249ab9d3cb80ee8794e3e12c5d728f5fbdf5817f1002daa",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\candidate_atlas.py": "d55fbaab55a8564722866686447430d4e5967073a7f113705a295d87f294a2c0",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\cli.py": "81a3574dc377c3c469e0284a80dc857bb60fbaa11436096ed082c068b7e4aa71",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\data.py": "6ef640052af40d95056ce4d15a508096d678737ba09afdb24c0df09df03d6b63",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\envelope.py": "c08bbf41cf58878db0a825247812f19b642280c1cd908f4a8a099c7d16f7c285",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\examples.py": "6694293c27930087cbc0866d83aa657ea70c6dd6cb2a6b1d6a59a693a6bf8f26",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\forward.py": "54035f500c3c8f1b8ae606e45c178c4e9b09e31b083b152f52d479654b7066f5",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\importers.py": "12c2c97700432f675f9c69eb74f2b3010ac318972dc2f04f7c172fa53a492396",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\inference.py": "35d0bba9db08feb22584d7234e62ea9bd6ef34d6feb325258892d51118f986f9",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\interpretation.py": "15c934c1de804ecd62585a00e84a4555a051ad9f9ff706c8a3e323f3f6ce4b20",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\joint_benchmark_v2.py": "83f599f7cdd616690fdcbf61f30ec05145719cc5b343d083cfe4c0a45ff940a6",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\joint_benchmark.py": "d3811ccb1214ab6ac3f307033fbcb6e9fc89ad7201de4c3b91faeeec47f94480",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\joint_mass_v2.py": "6eaf050481fc23aebf4b929e49fdab57e324ee80eb08e1547b69f056269eeaaa",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\joint_mass.py": "507874d1adb27440abc3add6aab6ac5caf45f871b7ba58b8206d3fdceef32ff0",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\joint_report.py": "38f4504a271b41408914a5030b222c3109e0615fc767c71161e7f868a44a14ac",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\joint_workflow_v2.py": "3cb2bf649120f107acd8c4e3bef9ae7f89b02371ec5c3c76c36b601b901c43c6",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\joint_workflow.py": "173df93205a2cbc7fe81acc3695421eddd6faeeb285fa808a892797d5704869e",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\observations.py": "5c9b07c1887c9a299ca8505b323462d41f314457f2bff3b5b2b2ca1970a21c0b",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\photometry.py": "d3bcfcf6bab36542f13a45f062f74ef322bd5cd97e71eb184123588f186eefa0",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\physics_admission.py": "eb89ef40f95128078df390ce813c312ad302b1494424d57faea3191cafa58e60",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\r1_runtime.py": "f3cc2074d915ad02ba6549209d0b0cd532304fa71d2930bb7cbc3d5fc2a39250",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\report.py": "b0bb39f074eb4e4945cc273ae73577f8fd1d7007f24a50c0fa82446672887e18",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\sample_bundle.py": "8d145f0d16a2d9f2a63706b0fb5f26d187e33589597ae7ee7182cec8b15613ad",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\server.py": "fa83d139ae5e9d1188a3db18fbfc1e595ca22f1c97fedd2623895a36fcc92db6",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\skytrack.py": "e7890e414542da49873b4d1ad775520719872a845ff3bfe6a55c761ea840172a",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\spectrum.py": "d42cf335576ff95c4a2a5a548e33d194114593dd125d7c87d8860d0dfca168a3",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\target_program.py": "d122aa945846fe0ea65438df3e8e42aeac401cfa1b02dd1172b5210660f70e39",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\unresolved_report.py": "332134fa5f7012d4f0d9dcfe241b5a262a459c487182a538f9080bf5418687b7"
+  },
+  "source_hashes_after": {
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_real_data_corrections_20261022\\prepublication_20261024\\bhsm_claim_v1\\BHSM_ENVELOPMENT_CLAIM_AND_FALSIFIERS_V1.md": "07a1470eb916b56297fa98793a8da0af10d0512d34a5ee48dc413890e25ae769",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_real_data_corrections_20261022\\prepublication_20261024\\bhsm_claim_v1\\ideal_claim_diagnostics_v1.py": "ad870bd1943acdd85fe147bdbb40f9c316d7c4d4652ad54d03f6146c6ca5ee6e",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_real_data_corrections_20261022\\prepublication_20261024\\bhsm_claim_v1\\run_ideal_claim_controls_v1.py": "ac0dc98139ca39f1295a6a18da32f793bc26ac0a12e947b6209e27b6ce4241ae",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_real_data_corrections_20261022\\prepublication_20261024\\bhsm_claim_v1\\PROSPECTIVE_IDEAL_CONTROL_PROTOCOL_v1.txt": "f691d80bd8b6ae96fc6e25b3a6132120c1993e60ba96f502ce7e345fe96632ae",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_real_data_corrections_20261022\\prepublication_20261024\\bhsm_claim_v1\\CLAIM_CONTRACT_v1.json": "6baa3990225e36e80d06c63cd5ca67b839c6414b879ce4b7bcf2822834c82549",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_real_data_corrections_20261022\\prepublication_20261024\\bhsm_claim_v1\\PRIMARY_SOURCE_CHECKS_v1.json": "43ba2f8b25b0700cf14d8f0cbc99b9338b2abbfd0d9fe80f3479e0ab07d9ba54",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\docs\\BHSM_ENVELOPMENT_CLAIM_AND_FALSIFIERS_V1.md": "07a1470eb916b56297fa98793a8da0af10d0512d34a5ee48dc413890e25ae769",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\BHSM-real-data-20261022\\docs\\BHSM_AUTHOR_SURFACE_GEOMETRY_CLARIFICATION_20261023.md": "f8dcd3611d71f2acef265bf2f921eb0db5773fc5524266d3a5df63b718c714a3",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\BHSM-real-data-20261022\\docs\\BHSM_TRACKER_ENVELOPMENT_SEARCH_CLARIFICATION_20261023.md": "c2df2654c5b094206acbce8e450fbdbe87a16fcc267787f9d897a2b0202b909a",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\BHSM-real-data-20261022\\docs\\BHSM_NORMAN_CORE_SURFACE_AMENDMENT_20261022.md": "028158078ae6ac2c32f44f3539c2598ade810f5ef77fff66b7e854cb9d4f959a",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\BHSM-real-data-20261022\\docs\\source_recovery\\20261022\\README.md": "2f634a46f6974f871b79aafcf1b331797be7d4ee69bd10c0f550310d93ffb5da",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\BHSM-real-data-20261022\\docs\\source_recovery\\20261022\\originals\\BHSM_Core_Harmonics_Black_Hole_Tracker_Codex_Prompt_20261022.txt": "149ba5efafd46be01bde9fe9513c1c83788b8a5f41c2127a4e2e5e6ce358517c",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\BHSM-real-data-20261022\\docs\\source_recovery\\20261022\\originals\\BHSM_Frame_Dragging_and_Nonlinear_Front_Derivation_v0_1.pdf": "7bb85093bcf3d03ca30220fd6d52aa3306a2c4d1648e91679c3d5a65f9409e2e",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\BHSM-real-data-20261022\\docs\\source_recovery\\20261022\\originals\\BHSM_Galaxy_Envelope_Formation_and_Persistence_v0_1.pdf": "de228c96c612024e2bfd1d3c9907dc6223108dfb6ecfc4f7b7bffb65623450a4",
+    "C:\\Users\\carbe\\Downloads\\BHSM_Galaxy_Gravity_Loaded_Schur_Hessian_v0_5.md": "718cdac692ae6030eb70c327771343267c4517c1a69a01454a32872579013816",
+    "C:\\Users\\carbe\\Downloads\\BHSM_Topographic_Galaxy_Encapsulation_Solution_v0_3.md": "c9eaee920746c024b695c722fc783aea53dfc9da5660a92150de4b05d9c7ba0a",
+    "C:\\Users\\carbe\\Downloads\\BHSM_optical_constitutive_reduction.tex": "0164cafd76e43a23c10f0e6449f300317d11a92597fdee56fd17883f35240e44",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\BHSM-real-data-20261022\\papers\\bhsm_blackhole_tracker_20261021\\manuscript\\bhsm_interpretation.tex": "5fbe5ca35829b543220e856914b2d13f3d322848dac1df56d7b61d982dd5e01f",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\BHSM-real-data-20261022\\papers\\bhsm_blackhole_tracker_20261021\\manuscript\\projection_theorem.tex": "16d5148a7ac76f95296313a9f08f765d7076f71154fba26cc2ac669e61c5dbc7",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\BHSM-real-data-20261022\\papers\\bhsm_blackhole_tracker_20261021\\manuscript\\estimator_derivation.tex": "55b1b0eec6ebccedd17e900d0df70e791e1e470f339f7f50d446d94fae8f0828",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\BHSM-real-data-20261022\\papers\\bhsm_blackhole_tracker_20261021\\CHAIN_AND_FREEDOMS.md": "34a48d48a99cfba2e83ab03b734025c87e89cd3d0b9ba8b22dff7a7397708cee",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\BHSM-real-data-20261022\\papers\\bhsm_blackhole_tracker_20261021\\review\\envelopment_search_20261023\\SOURCE_ONLY_MATHEMATICAL_REVIEW_v1.txt": "32c39850044f58f5e4e048550d101ddd11ff4e17ae4dd0c0a3ca57cd2202970c",
+    "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\BHSM-real-data-20261022\\papers\\bhsm_blackhole_tracker_20261021\\provenance\\bhsm_boundary_mass_interpretation_sources.json": "eb3b5b9a26d6b5606719c45113db69cc8ca9dc000cfa9bb7e174cde50f2ca3a5",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\theory\\PRIMARY_TARGET_PROGRAM.json": "175c4b11279bb0397b48eb76d38b556b30eb246ef005bb1cb1cfab510dd32f48",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\theory\\BHSM_CORE_SURFACE_CONTRACT.json": "a0561d8fe7d1031daa2a56c433d46b99734b20f850e02e16d0e5095b32fc3507",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\research\\primary_target_20261023\\COMPARATIVE_PRIMARY_FOLLOWUP_REVIEW_v2.json": "5459238e85a56f925edf8d8c671510500e42156a662e40c7a2d87bbdf1ad076d",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\__main__.py": "6ce05b79ee1666025af142adc913f1d468781e77af67ae431fe163472a52fb3a",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\astrometry.py": "a74dd19625f4bf463249ab9d3cb80ee8794e3e12c5d728f5fbdf5817f1002daa",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\candidate_atlas.py": "d55fbaab55a8564722866686447430d4e5967073a7f113705a295d87f294a2c0",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\cli.py": "81a3574dc377c3c469e0284a80dc857bb60fbaa11436096ed082c068b7e4aa71",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\data.py": "6ef640052af40d95056ce4d15a508096d678737ba09afdb24c0df09df03d6b63",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\envelope.py": "c08bbf41cf58878db0a825247812f19b642280c1cd908f4a8a099c7d16f7c285",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\examples.py": "6694293c27930087cbc0866d83aa657ea70c6dd6cb2a6b1d6a59a693a6bf8f26",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\forward.py": "54035f500c3c8f1b8ae606e45c178c4e9b09e31b083b152f52d479654b7066f5",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\importers.py": "12c2c97700432f675f9c69eb74f2b3010ac318972dc2f04f7c172fa53a492396",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\inference.py": "35d0bba9db08feb22584d7234e62ea9bd6ef34d6feb325258892d51118f986f9",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\interpretation.py": "15c934c1de804ecd62585a00e84a4555a051ad9f9ff706c8a3e323f3f6ce4b20",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\joint_benchmark_v2.py": "83f599f7cdd616690fdcbf61f30ec05145719cc5b343d083cfe4c0a45ff940a6",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\joint_benchmark.py": "d3811ccb1214ab6ac3f307033fbcb6e9fc89ad7201de4c3b91faeeec47f94480",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\joint_mass_v2.py": "6eaf050481fc23aebf4b929e49fdab57e324ee80eb08e1547b69f056269eeaaa",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\joint_mass.py": "507874d1adb27440abc3add6aab6ac5caf45f871b7ba58b8206d3fdceef32ff0",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\joint_report.py": "38f4504a271b41408914a5030b222c3109e0615fc767c71161e7f868a44a14ac",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\joint_workflow_v2.py": "3cb2bf649120f107acd8c4e3bef9ae7f89b02371ec5c3c76c36b601b901c43c6",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\joint_workflow.py": "173df93205a2cbc7fe81acc3695421eddd6faeeb285fa808a892797d5704869e",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\observations.py": "5c9b07c1887c9a299ca8505b323462d41f314457f2bff3b5b2b2ca1970a21c0b",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\photometry.py": "d3bcfcf6bab36542f13a45f062f74ef322bd5cd97e71eb184123588f186eefa0",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\physics_admission.py": "eb89ef40f95128078df390ce813c312ad302b1494424d57faea3191cafa58e60",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\r1_runtime.py": "f3cc2074d915ad02ba6549209d0b0cd532304fa71d2930bb7cbc3d5fc2a39250",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\report.py": "b0bb39f074eb4e4945cc273ae73577f8fd1d7007f24a50c0fa82446672887e18",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\sample_bundle.py": "8d145f0d16a2d9f2a63706b0fb5f26d187e33589597ae7ee7182cec8b15613ad",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\server.py": "fa83d139ae5e9d1188a3db18fbfc1e595ca22f1c97fedd2623895a36fcc92db6",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\skytrack.py": "e7890e414542da49873b4d1ad775520719872a845ff3bfe6a55c761ea840172a",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\spectrum.py": "d42cf335576ff95c4a2a5a548e33d194114593dd125d7c87d8860d0dfca168a3",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\target_program.py": "d122aa945846fe0ea65438df3e8e42aeac401cfa1b02dd1172b5210660f70e39",
+    "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\unresolved_report.py": "332134fa5f7012d4f0d9dcfe241b5a262a459c487182a538f9080bf5418687b7"
+  },
+  "controls": [
+    {
+      "control": "test_01_monopole",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "control": "test_02_disk_interior",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "control": "test_03_finite_support_counterexample",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "control": "test_04_central_mass_cancels",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "control": "test_05_negative_retained",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "control": "test_06_gradient",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "control": "test_07_boundary_inverse",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "control": "test_08_radius_and_intrinsic_curvature",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "control": "test_09_mass_sheet",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "control": "test_10_stf_oddness",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "control": "test_11_radial_rank",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "control": "test_12_ideal_slip",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "control": "test_13_duration_nonidentification",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "control": "test_14_refusals",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "control": "test_15_eight_branches",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "control": "test_16_status_contract",
+      "status": "PASS",
+      "error": null
+    }
+  ],
+  "witnesses": [
+    {
+      "kind": "INDEPENDENT_IDEAL_WITNESS",
+      "control": "test_02_disk_interior",
+      "payload": {
+        "independent_enclosed_masses": [
+          1,
+          4
+        ],
+        "enclosed_ratio": {
+          "rational_numerator": 4,
+          "rational_denominator": 1
+        },
+        "contrast_expected": 3
+      }
+    },
+    {
+      "kind": "INDEPENDENT_IDEAL_WITNESS",
+      "control": "test_03_finite_support_counterexample",
+      "payload": {
+        "ordinary_disk_support": 4,
+        "radii": [
+          5,
+          8
+        ],
+        "disk_bending": [
+          3.2,
+          2.0
+        ],
+        "point_bending": [
+          3.2,
+          2.0
+        ],
+        "unique_BH_identity": false
+      }
+    },
+    {
+      "kind": "INDEPENDENT_IDEAL_WITNESS",
+      "control": "test_04_central_mass_cancels",
+      "payload": {
+        "central_mass": 0,
+        "annular_mass_expected": 3
+      }
+    },
+    {
+      "kind": "INDEPENDENT_IDEAL_WITNESS",
+      "control": "test_04_central_mass_cancels",
+      "payload": {
+        "central_mass": 3,
+        "annular_mass_expected": 3
+      }
+    },
+    {
+      "kind": "INDEPENDENT_IDEAL_WITNESS",
+      "control": "test_04_central_mass_cancels",
+      "payload": {
+        "central_mass": 15,
+        "annular_mass_expected": 3
+      }
+    },
+    {
+      "kind": "INDEPENDENT_IDEAL_WITNESS",
+      "control": "test_06_gradient",
+      "payload": {
+        "raw_expression_central_difference": [
+          -0.6999999999979244,
+          0.4000000000004,
+          -1.4999999999987244,
+          4.000000000004
+        ],
+        "helper_gradient": [
+          -0.7,
+          0.4,
+          -1.5,
+          4.0
+        ],
+        "step": 1e-05
+      }
+    },
+    {
+      "kind": "INDEPENDENT_IDEAL_WITNESS",
+      "control": "test_07_boundary_inverse",
+      "payload": {
+        "m": 1,
+        "radius": 3,
+        "deficit": 0.14088324360345808,
+        "independent_inverse": 1.0
+      }
+    },
+    {
+      "kind": "INDEPENDENT_IDEAL_WITNESS",
+      "control": "test_07_boundary_inverse",
+      "payload": {
+        "m": 1,
+        "radius": 10,
+        "deficit": 0.010557280900008414,
+        "independent_inverse": 1.0000000000000002
+      }
+    },
+    {
+      "kind": "INDEPENDENT_IDEAL_WITNESS",
+      "control": "test_07_boundary_inverse",
+      "payload": {
+        "m": 1,
+        "radius": 100,
+        "deficit": 0.00010050506338833466,
+        "independent_inverse": 1.0000000000000002
+      }
+    },
+    {
+      "kind": "INDEPENDENT_IDEAL_WITNESS",
+      "control": "test_08_radius_and_intrinsic_curvature",
+      "payload": {
+        "radii": [
+          10,
+          20
+        ],
+        "same_m": 1,
+        "deficits": [
+          0.010557280900008414,
+          0.00256583509747431
+        ],
+        "intrinsic_curvatures": [
+          0.01,
+          0.0025
+        ]
+      }
+    },
+    {
+      "kind": "INDEPENDENT_IDEAL_WITNESS",
+      "control": "test_09_mass_sheet",
+      "payload": {
+        "u": 0.4,
+        "lambda": 0.6,
+        "same_images": [
+          1.219803902718557,
+          -0.819803902718557
+        ],
+        "transformed_lens_residuals": [
+          0.0,
+          1.1102230246251565e-16
+        ],
+        "old_determinants": [
+          0.5483105719488333,
+          -1.2139105719488332
+        ],
+        "new_determinants": [
+          0.19739180590158004,
+          -0.4370078059015797
+        ],
+        "flux_ratios": [
+          2.213910571948833,
+          2.2139105719488312
+        ],
+        "fermat_differences": [
+          0.8053017817859056,
+          0.48318106907154323
+        ]
+      }
+    },
+    {
+      "kind": "INDEPENDENT_IDEAL_WITNESS",
+      "control": "test_09_mass_sheet",
+      "payload": {
+        "u": 0.4,
+        "lambda": 0.8,
+        "same_images": [
+          1.219803902718557,
+          -0.819803902718557
+        ],
+        "transformed_lens_residuals": [
+          0.0,
+          -1.1102230246251565e-16
+        ],
+        "old_determinants": [
+          0.5483105719488333,
+          -1.2139105719488332
+        ],
+        "new_determinants": [
+          0.3509187660472533,
+          -0.7769027660472535
+        ],
+        "flux_ratios": [
+          2.213910571948833,
+          2.2139105719488335
+        ],
+        "fermat_differences": [
+          0.8053017817859056,
+          0.6442414254287244
+        ]
+      }
+    },
+    {
+      "kind": "INDEPENDENT_IDEAL_WITNESS",
+      "control": "test_09_mass_sheet",
+      "payload": {
+        "u": 1.3,
+        "lambda": 0.6,
+        "same_images": [
+          1.8426860441876562,
+          -0.5426860441876563
+        ],
+        "transformed_lens_residuals": [
+          -2.220446049250313e-16,
+          -1.1102230246251565e-16
+        ],
+        "old_determinants": [
+          0.9132649539681873,
+          -10.529364953968186
+        ],
+        "new_determinants": [
+          0.3287753834285473,
+          -3.790571383428547
+        ],
+        "flux_ratios": [
+          11.529364953968184,
+          11.529364953968189
+        ],
+        "fermat_differences": [
+          2.7729404849694808,
+          1.6637642909816883
+        ]
+      }
+    },
+    {
+      "kind": "INDEPENDENT_IDEAL_WITNESS",
+      "control": "test_09_mass_sheet",
+      "payload": {
+        "u": 1.3,
+        "lambda": 0.8,
+        "same_images": [
+          1.8426860441876562,
+          -0.5426860441876563
+        ],
+        "transformed_lens_residuals": [
+          0.0,
+          0.0
+        ],
+        "old_determinants": [
+          0.9132649539681873,
+          -10.529364953968186
+        ],
+        "new_determinants": [
+          0.5844895705396397,
+          -6.738793570539639
+        ],
+        "flux_ratios": [
+          11.529364953968184,
+          11.529364953968187
+        ],
+        "fermat_differences": [
+          2.7729404849694808,
+          2.2183523879755844
+        ]
+      }
+    },
+    {
+      "kind": "INDEPENDENT_IDEAL_WITNESS",
+      "control": "test_09_mass_sheet",
+      "payload": {
+        "u": 2.0,
+        "lambda": 0.6,
+        "same_images": [
+          2.414213562373095,
+          -0.4142135623730951
+        ],
+        "transformed_lens_residuals": [
+          -2.220446049250313e-16,
+          -2.220446049250313e-16
+        ],
+        "old_determinants": [
+          0.9705627484771405,
+          -32.97056274847713
+        ],
+        "new_determinants": [
+          0.34940258945177055,
+          -11.869402589451763
+        ],
+        "flux_ratios": [
+          33.97056274847713,
+          33.97056274847712
+        ],
+        "fermat_differences": [
+          4.591174298785276,
+          2.7547045792711655
+        ]
+      }
+    },
+    {
+      "kind": "INDEPENDENT_IDEAL_WITNESS",
+      "control": "test_09_mass_sheet",
+      "payload": {
+        "u": 2.0,
+        "lambda": 0.8,
+        "same_images": [
+          2.414213562373095,
+          -0.4142135623730951
+        ],
+        "transformed_lens_residuals": [
+          0.0,
+          -2.220446049250313e-16
+        ],
+        "old_determinants": [
+          0.9705627484771405,
+          -32.97056274847713
+        ],
+        "new_determinants": [
+          0.6211601590253701,
+          -21.101160159025365
+        ],
+        "flux_ratios": [
+          33.97056274847713,
+          33.97056274847712
+        ],
+        "fermat_differences": [
+          4.591174298785276,
+          3.6729394390282204
+        ]
+      }
+    },
+    {
+      "kind": "INDEPENDENT_IDEAL_WITNESS",
+      "control": "test_10_stf_oddness",
+      "payload": {
+        "x_y_z": [
+          {
+            "rational_numerator": 1,
+            "rational_denominator": 1
+          },
+          {
+            "rational_numerator": 2,
+            "rational_denominator": 1
+          },
+          {
+            "rational_numerator": 1,
+            "rational_denominator": 4
+          }
+        ],
+        "radial_factor": {
+          "rational_numerator": 256,
+          "rational_denominator": 6561
+        },
+        "cross_terms": [
+          {
+            "rational_numerator": 128,
+            "rational_denominator": 6561
+          },
+          {
+            "rational_numerator": 256,
+            "rational_denominator": 6561
+          }
+        ],
+        "opposite": [
+          {
+            "rational_numerator": -128,
+            "rational_denominator": 6561
+          },
+          {
+            "rational_numerator": -256,
+            "rational_denominator": 6561
+          }
+        ],
+        "paired_projection": [
+          {
+            "rational_numerator": 0,
+            "rational_denominator": 1
+          },
+          {
+            "rational_numerator": 0,
+            "rational_denominator": 1
+          }
+        ]
+      }
+    },
+    {
+      "kind": "INDEPENDENT_IDEAL_WITNESS",
+      "control": "test_10_stf_oddness",
+      "payload": {
+        "x_y_z": [
+          {
+            "rational_numerator": 1,
+            "rational_denominator": 1
+          },
+          {
+            "rational_numerator": 2,
+            "rational_denominator": 1
+          },
+          {
+            "rational_numerator": 2,
+            "rational_denominator": 1
+          }
+        ],
+        "radial_factor": {
+          "rational_numerator": 1,
+          "rational_denominator": 81
+        },
+        "cross_terms": [
+          {
+            "rational_numerator": 4,
+            "rational_denominator": 81
+          },
+          {
+            "rational_numerator": 8,
+            "rational_denominator": 81
+          }
+        ],
+        "opposite": [
+          {
+            "rational_numerator": -4,
+            "rational_denominator": 81
+          },
+          {
+            "rational_numerator": -8,
+            "rational_denominator": 81
+          }
+        ],
+        "paired_projection": [
+          {
+            "rational_numerator": 0,
+            "rational_denominator": 1
+          },
+          {
+            "rational_numerator": 0,
+            "rational_denominator": 1
+          }
+        ]
+      }
+    },
+    {
+      "kind": "INDEPENDENT_IDEAL_WITNESS",
+      "control": "test_10_stf_oddness",
+      "payload": {
+        "x_y_z": [
+          {
+            "rational_numerator": 1,
+            "rational_denominator": 1
+          },
+          {
+            "rational_numerator": 2,
+            "rational_denominator": 1
+          },
+          {
+            "rational_numerator": 7,
+            "rational_denominator": 1
+          }
+        ],
+        "radial_factor": {
+          "rational_numerator": 1,
+          "rational_denominator": 2916
+        },
+        "cross_terms": [
+          {
+            "rational_numerator": 7,
+            "rational_denominator": 1458
+          },
+          {
+            "rational_numerator": 7,
+            "rational_denominator": 729
+          }
+        ],
+        "opposite": [
+          {
+            "rational_numerator": -7,
+            "rational_denominator": 1458
+          },
+          {
+            "rational_numerator": -7,
+            "rational_denominator": 729
+          }
+        ],
+        "paired_projection": [
+          {
+            "rational_numerator": 0,
+            "rational_denominator": 1
+          },
+          {
+            "rational_numerator": 0,
+            "rational_denominator": 1
+          }
+        ]
+      }
+    },
+    {
+      "kind": "INDEPENDENT_IDEAL_WITNESS",
+      "control": "test_10_stf_oddness",
+      "payload": {
+        "x_y_z": [
+          {
+            "rational_numerator": 3,
+            "rational_denominator": 2
+          },
+          {
+            "rational_numerator": -1,
+            "rational_denominator": 2
+          },
+          {
+            "rational_numerator": 1,
+            "rational_denominator": 4
+          }
+        ],
+        "radial_factor": {
+          "rational_numerator": 256,
+          "rational_denominator": 1681
+        },
+        "cross_terms": [
+          {
+            "rational_numerator": 192,
+            "rational_denominator": 1681
+          },
+          {
+            "rational_numerator": -64,
+            "rational_denominator": 1681
+          }
+        ],
+        "opposite": [
+          {
+            "rational_numerator": -192,
+            "rational_denominator": 1681
+          },
+          {
+            "rational_numerator": 64,
+            "rational_denominator": 1681
+          }
+        ],
+        "paired_projection": [
+          {
+            "rational_numerator": 0,
+            "rational_denominator": 1
+          },
+          {
+            "rational_numerator": 0,
+            "rational_denominator": 1
+          }
+        ]
+      }
+    },
+    {
+      "kind": "INDEPENDENT_IDEAL_WITNESS",
+      "control": "test_10_stf_oddness",
+      "payload": {
+        "x_y_z": [
+          {
+            "rational_numerator": 3,
+            "rational_denominator": 2
+          },
+          {
+            "rational_numerator": -1,
+            "rational_denominator": 2
+          },
+          {
+            "rational_numerator": 2,
+            "rational_denominator": 1
+          }
+        ],
+        "radial_factor": {
+          "rational_numerator": 4,
+          "rational_denominator": 169
+        },
+        "cross_terms": [
+          {
+            "rational_numerator": 24,
+            "rational_denominator": 169
+          },
+          {
+            "rational_numerator": -8,
+            "rational_denominator": 169
+          }
+        ],
+        "opposite": [
+          {
+            "rational_numerator": -24,
+            "rational_denominator": 169
+          },
+          {
+            "rational_numerator": 8,
+            "rational_denominator": 169
+          }
+        ],
+        "paired_projection": [
+          {
+            "rational_numerator": 0,
+            "rational_denominator": 1
+          },
+          {
+            "rational_numerator": 0,
+            "rational_denominator": 1
+          }
+        ]
+      }
+    },
+    {
+      "kind": "INDEPENDENT_IDEAL_WITNESS",
+      "control": "test_10_stf_oddness",
+      "payload": {
+        "x_y_z": [
+          {
+            "rational_numerator": 3,
+            "rational_denominator": 2
+          },
+          {
+            "rational_numerator": -1,
+            "rational_denominator": 2
+          },
+          {
+            "rational_numerator": 7,
+            "rational_denominator": 1
+          }
+        ],
+        "radial_factor": {
+          "rational_numerator": 4,
+          "rational_denominator": 10609
+        },
+        "cross_terms": [
+          {
+            "rational_numerator": 84,
+            "rational_denominator": 10609
+          },
+          {
+            "rational_numerator": -28,
+            "rational_denominator": 10609
+          }
+        ],
+        "opposite": [
+          {
+            "rational_numerator": -84,
+            "rational_denominator": 10609
+          },
+          {
+            "rational_numerator": 28,
+            "rational_denominator": 10609
+          }
+        ],
+        "paired_projection": [
+          {
+            "rational_numerator": 0,
+            "rational_denominator": 1
+          },
+          {
+            "rational_numerator": 0,
+            "rational_denominator": 1
+          }
+        ]
+      }
+    },
+    {
+      "kind": "INDEPENDENT_IDEAL_WITNESS",
+      "control": "test_11_radial_rank",
+      "payload": {
+        "squared_radii": [
+          {
+            "rational_numerator": 1,
+            "rational_denominator": 1
+          },
+          {
+            "rational_numerator": 4,
+            "rational_denominator": 1
+          },
+          {
+            "rational_numerator": 9,
+            "rational_denominator": 1
+          }
+        ],
+        "matrix": [
+          [
+            {
+              "rational_numerator": 1,
+              "rational_denominator": 1
+            },
+            {
+              "rational_numerator": 1,
+              "rational_denominator": 1
+            },
+            {
+              "rational_numerator": 1,
+              "rational_denominator": 1
+            }
+          ],
+          [
+            {
+              "rational_numerator": 1,
+              "rational_denominator": 1
+            },
+            {
+              "rational_numerator": 1,
+              "rational_denominator": 4
+            },
+            {
+              "rational_numerator": 4,
+              "rational_denominator": 1
+            }
+          ],
+          [
+            {
+              "rational_numerator": 1,
+              "rational_denominator": 1
+            },
+            {
+              "rational_numerator": 1,
+              "rational_denominator": 9
+            },
+            {
+              "rational_numerator": 9,
+              "rational_denominator": 1
+            }
+          ]
+        ],
+        "independent_determinant": {
+          "rational_numerator": -10,
+          "rational_denominator": 3
+        },
+        "closed_determinant": {
+          "rational_numerator": -10,
+          "rational_denominator": 3
+        },
+        "two_radius_null": [
+          {
+            "rational_numerator": -5,
+            "rational_denominator": 1
+          },
+          {
+            "rational_numerator": 4,
+            "rational_denominator": 1
+          },
+          {
+            "rational_numerator": 1,
+            "rational_denominator": 1
+          }
+        ],
+        "values": [
+          {
+            "rational_numerator": 0,
+            "rational_denominator": 1
+          },
+          {
+            "rational_numerator": 0,
+            "rational_denominator": 1
+          },
+          {
+            "rational_numerator": 40,
+            "rational_denominator": 9
+          }
+        ]
+      }
+    },
+    {
+      "kind": "INDEPENDENT_IDEAL_WITNESS",
+      "control": "test_13_duration_nonidentification",
+      "payload": {
+        "scale": {
+          "rational_numerator": 1,
+          "rational_denominator": 2
+        },
+        "theta": {
+          "rational_numerator": 3,
+          "rational_denominator": 2
+        },
+        "relative_motion": {
+          "rational_numerator": 1,
+          "rational_denominator": 1
+        },
+        "mass": {
+          "rational_numerator": 9,
+          "rational_denominator": 4
+        },
+        "relative_parallax": {
+          "rational_numerator": 1,
+          "rational_denominator": 1
+        },
+        "same_tE": {
+          "rational_numerator": 3,
+          "rational_denominator": 2
+        }
+      }
+    },
+    {
+      "kind": "INDEPENDENT_IDEAL_WITNESS",
+      "control": "test_13_duration_nonidentification",
+      "payload": {
+        "scale": {
+          "rational_numerator": 2,
+          "rational_denominator": 1
+        },
+        "theta": {
+          "rational_numerator": 6,
+          "rational_denominator": 1
+        },
+        "relative_motion": {
+          "rational_numerator": 4,
+          "rational_denominator": 1
+        },
+        "mass": {
+          "rational_numerator": 36,
+          "rational_denominator": 1
+        },
+        "relative_parallax": {
+          "rational_numerator": 1,
+          "rational_denominator": 1
+        },
+        "same_tE": {
+          "rational_numerator": 3,
+          "rational_denominator": 2
+        }
+      }
+    },
+    {
+      "kind": "INDEPENDENT_IDEAL_WITNESS",
+      "control": "test_13_duration_nonidentification",
+      "payload": {
+        "scale": {
+          "rational_numerator": 3,
+          "rational_denominator": 1
+        },
+        "theta": {
+          "rational_numerator": 9,
+          "rational_denominator": 1
+        },
+        "relative_motion": {
+          "rational_numerator": 6,
+          "rational_denominator": 1
+        },
+        "mass": {
+          "rational_numerator": 81,
+          "rational_denominator": 1
+        },
+        "relative_parallax": {
+          "rational_numerator": 1,
+          "rational_denominator": 1
+        },
+        "same_tE": {
+          "rational_numerator": 3,
+          "rational_denominator": 2
+        }
+      }
+    },
+    {
+      "kind": "INDEPENDENT_IDEAL_WITNESS",
+      "control": "test_15_eight_branches",
+      "payload": {
+        "literal_primary_table_references": [
+          [
+            "GO-",
+            "StellarIMF",
+            "Near",
+            "0.47",
+            "7.2"
+          ],
+          [
+            "GO-",
+            "StellarIMF",
+            "Far",
+            "0.53",
+            "0.94"
+          ],
+          [
+            "GO-",
+            "DarkIMF",
+            "Near",
+            "0.96",
+            "11.1"
+          ],
+          [
+            "GO-",
+            "DarkIMF",
+            "Far",
+            "0.04",
+            "1.11"
+          ],
+          [
+            "GO+",
+            "StellarIMF",
+            "Near",
+            "0.94",
+            "2.8"
+          ],
+          [
+            "GO+",
+            "StellarIMF",
+            "Far",
+            "0.06",
+            "0.4"
+          ],
+          [
+            "GO+",
+            "DarkIMF",
+            "Near",
+            "0.999",
+            "4.9"
+          ],
+          [
+            "GO+",
+            "DarkIMF",
+            "Far",
+            "0.001",
+            "0.59"
+          ]
+        ],
+        "all_contract_branches": [
+          {
+            "photometric_mode": "GO-",
+            "mass_prior": "StellarIMF",
+            "branch": "Near",
+            "published_branch_weight": 0.47,
+            "published_mass_posterior_median_msun": 7.2,
+            "interpretation": "Prior-conditional posterior summary, not an observed mass or a BH probability."
+          },
+          {
+            "photometric_mode": "GO-",
+            "mass_prior": "StellarIMF",
+            "branch": "Far",
+            "published_branch_weight": 0.53,
+            "published_mass_posterior_median_msun": 0.94,
+            "interpretation": "Prior-conditional posterior summary, not an observed mass or a BH probability."
+          },
+          {
+            "photometric_mode": "GO-",
+            "mass_prior": "DarkIMF",
+            "branch": "Near",
+            "published_branch_weight": 0.96,
+            "published_mass_posterior_median_msun": 11.1,
+            "interpretation": "Prior-conditional posterior summary, not an observed mass or a BH probability."
+          },
+          {
+            "photometric_mode": "GO-",
+            "mass_prior": "DarkIMF",
+            "branch": "Far",
+            "published_branch_weight": 0.04,
+            "published_mass_posterior_median_msun": 1.11,
+            "interpretation": "Prior-conditional posterior summary, not an observed mass or a BH probability."
+          },
+          {
+            "photometric_mode": "GO+",
+            "mass_prior": "StellarIMF",
+            "branch": "Near",
+            "published_branch_weight": 0.94,
+            "published_mass_posterior_median_msun": 2.8,
+            "interpretation": "Prior-conditional posterior summary, not an observed mass or a BH probability."
+          },
+          {
+            "photometric_mode": "GO+",
+            "mass_prior": "StellarIMF",
+            "branch": "Far",
+            "published_branch_weight": 0.06,
+            "published_mass_posterior_median_msun": 0.4,
+            "interpretation": "Prior-conditional posterior summary, not an observed mass or a BH probability."
+          },
+          {
+            "photometric_mode": "GO+",
+            "mass_prior": "DarkIMF",
+            "branch": "Near",
+            "published_branch_weight": 0.999,
+            "published_mass_posterior_median_msun": 4.9,
+            "interpretation": "Prior-conditional posterior summary, not an observed mass or a BH probability."
+          },
+          {
+            "photometric_mode": "GO+",
+            "mass_prior": "DarkIMF",
+            "branch": "Far",
+            "published_branch_weight": 0.001,
+            "published_mass_posterior_median_msun": 0.59,
+            "interpretation": "Prior-conditional posterior summary, not an observed mass or a BH probability."
+          }
+        ],
+        "within_pair_weight_sums": [
+          [
+            "GO-",
+            "StellarIMF",
+            {
+              "rational_numerator": 1,
+              "rational_denominator": 1
+            }
+          ],
+          [
+            "GO-",
+            "DarkIMF",
+            {
+              "rational_numerator": 1,
+              "rational_denominator": 1
+            }
+          ],
+          [
+            "GO+",
+            "StellarIMF",
+            {
+              "rational_numerator": 1,
+              "rational_denominator": 1
+            }
+          ],
+          [
+            "GO+",
+            "DarkIMF",
+            {
+              "rational_numerator": 1,
+              "rational_denominator": 1
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "kind": "INDEPENDENT_IDEAL_WITNESS",
+      "control": "test_16_status_contract",
+      "payload": {
+        "claim_count": 7,
+        "candidate_context": {
+          "event_id": "Gaia18ajz",
+          "aliases": [
+            "AT2018uh",
+            "Gaia DR3 4156664130700362752"
+          ],
+          "novelty_status": "PREVIOUSLY_PUBLISHED_CANDIDATE_NOT_A_NEW_ENGINE_DISCOVERY",
+          "selection_status": "PROVISIONAL_LITERATURE_BASED_FOLLOWUP_TARGET_PENDING_INDEPENDENT_REVIEW",
+          "catalog_source_direction_role": "HISTORICAL_SOURCE_EVENT_DIRECTION_NOT_LENS_POSITION",
+          "all_eight_literature_branches": [
+            {
+              "photometric_mode": "GO-",
+              "mass_prior": "StellarIMF",
+              "branch": "Near",
+              "published_branch_weight": 0.47,
+              "published_mass_posterior_median_msun": 7.2,
+              "interpretation": "Prior-conditional posterior summary, not an observed mass or a BH probability."
+            },
+            {
+              "photometric_mode": "GO-",
+              "mass_prior": "StellarIMF",
+              "branch": "Far",
+              "published_branch_weight": 0.53,
+              "published_mass_posterior_median_msun": 0.94,
+              "interpretation": "Prior-conditional posterior summary, not an observed mass or a BH probability."
+            },
+            {
+              "photometric_mode": "GO-",
+              "mass_prior": "DarkIMF",
+              "branch": "Near",
+              "published_branch_weight": 0.96,
+              "published_mass_posterior_median_msun": 11.1,
+              "interpretation": "Prior-conditional posterior summary, not an observed mass or a BH probability."
+            },
+            {
+              "photometric_mode": "GO-",
+              "mass_prior": "DarkIMF",
+              "branch": "Far",
+              "published_branch_weight": 0.04,
+              "published_mass_posterior_median_msun": 1.11,
+              "interpretation": "Prior-conditional posterior summary, not an observed mass or a BH probability."
+            },
+            {
+              "photometric_mode": "GO+",
+              "mass_prior": "StellarIMF",
+              "branch": "Near",
+              "published_branch_weight": 0.94,
+              "published_mass_posterior_median_msun": 2.8,
+              "interpretation": "Prior-conditional posterior summary, not an observed mass or a BH probability."
+            },
+            {
+              "photometric_mode": "GO+",
+              "mass_prior": "StellarIMF",
+              "branch": "Far",
+              "published_branch_weight": 0.06,
+              "published_mass_posterior_median_msun": 0.4,
+              "interpretation": "Prior-conditional posterior summary, not an observed mass or a BH probability."
+            },
+            {
+              "photometric_mode": "GO+",
+              "mass_prior": "DarkIMF",
+              "branch": "Near",
+              "published_branch_weight": 0.999,
+              "published_mass_posterior_median_msun": 4.9,
+              "interpretation": "Prior-conditional posterior summary, not an observed mass or a BH probability."
+            },
+            {
+              "photometric_mode": "GO+",
+              "mass_prior": "DarkIMF",
+              "branch": "Far",
+              "published_branch_weight": 0.001,
+              "published_mass_posterior_median_msun": 0.59,
+              "interpretation": "Prior-conditional posterior summary, not an observed mass or a BH probability."
+            }
+          ],
+          "branch_weight_policy": "Normalize only within each GO sign and mass-prior near/far pair; not BH probabilities or eight-way weights.",
+          "engine_measurements": {
+            "mass_msun": null,
+            "lens_distance_pc": null,
+            "theta_E_mas": null,
+            "absolute_lens_motion": null,
+            "accepted_mass_interval_msun": null
+          },
+          "independent_native_candidate_adequacy": "NOT_ESTABLISHED",
+          "next_observation": "Calibrated epoch astrometry or an independently constrained angular Einstein scale, plus source-frame and lens-light validation."
+        },
+        "positive_reference": {
+          "event_id": "OGLE-2011-BLG-0462",
+          "aliases": [
+            "MOA-2011-BLG-191",
+            "OB110462"
+          ],
+          "role": "PUBLISHED_POSITIVE_REFERENCE_NOT_PRIMARY_NEW_CANDIDATE",
+          "source_url": "https://doi.org/10.3847/1538-4357/adbe6e",
+          "independent_engine_recovery_accepted": false,
+          "engine_status": "RETAINED_JOINT_MODEL_NOISE_FAILURES_NO_ACCEPTED_MASS"
+        },
+        "non_BH_comparison": {
+          "event_id": "OGLE-2007-BLG-224",
+          "role": "PUBLISHED_BROWN_DWARF_COUNTEREXAMPLE",
+          "source_url": "https://arxiv.org/abs/0904.0249v2",
+          "followup_source_url": "https://arxiv.org/abs/2011.06013",
+          "literature_mass_msun": 0.056,
+          "literature_mass_sigma_msun": 0.004,
+          "literature_lens_distance_pc": 525,
+          "literature_transverse_velocity_km_s": 113,
+          "independently_recovered_by_this_engine": false
+        },
+        "new_boundary_law_derived": false,
+        "publication_ready": false
+      }
+    }
+  ],
+  "events": [
+    {
+      "kind": "ADMISSION_AND_PREFLIGHT",
+      "admission": {
+        "schema": "bhsm.claim_dossier.root_admission.v1",
+        "execution_admitted": true,
+        "freeze_sha256": "16f166dd7f5d8ec76b3c5c01fb941b970bf7b734b1d40ad11999a4e1ce64df8d",
+        "created_utc": "2026-10-24 19:15:37 UTC",
+        "review": "Root read the full dossier, helper, prospective16-control protocol and full evidence driver. Algebra checked independently: annular-mass contrast and gradient, static deficit inverse, mass-sheet Jacobian/Fermat scaling, radial determinant/null and logarithmic-potential scalar identity. All are conditional response models/counterexamples, not new source physics.",
+        "authorized_runs": [
+          {
+            "python": "3.11",
+            "count": 1
+          },
+          {
+            "python": "3.14",
+            "count": 1
+          }
+        ],
+        "boundary": "Exactly one invented16-control campaign per specified runtime into new output directories; no native observation/likelihood/probability/optimizer/provider/importer calls, no changing source/criteria after failures, no release or scientific-HOLD promotion."
+      },
+      "freeze_sha256": "16f166dd7f5d8ec76b3c5c01fb941b970bf7b734b1d40ad11999a4e1ce64df8d",
+      "source_hashes_before": {
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_real_data_corrections_20261022\\prepublication_20261024\\bhsm_claim_v1\\BHSM_ENVELOPMENT_CLAIM_AND_FALSIFIERS_V1.md": "07a1470eb916b56297fa98793a8da0af10d0512d34a5ee48dc413890e25ae769",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_real_data_corrections_20261022\\prepublication_20261024\\bhsm_claim_v1\\ideal_claim_diagnostics_v1.py": "ad870bd1943acdd85fe147bdbb40f9c316d7c4d4652ad54d03f6146c6ca5ee6e",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_real_data_corrections_20261022\\prepublication_20261024\\bhsm_claim_v1\\run_ideal_claim_controls_v1.py": "ac0dc98139ca39f1295a6a18da32f793bc26ac0a12e947b6209e27b6ce4241ae",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_real_data_corrections_20261022\\prepublication_20261024\\bhsm_claim_v1\\PROSPECTIVE_IDEAL_CONTROL_PROTOCOL_v1.txt": "f691d80bd8b6ae96fc6e25b3a6132120c1993e60ba96f502ce7e345fe96632ae",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_real_data_corrections_20261022\\prepublication_20261024\\bhsm_claim_v1\\CLAIM_CONTRACT_v1.json": "6baa3990225e36e80d06c63cd5ca67b839c6414b879ce4b7bcf2822834c82549",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_real_data_corrections_20261022\\prepublication_20261024\\bhsm_claim_v1\\PRIMARY_SOURCE_CHECKS_v1.json": "43ba2f8b25b0700cf14d8f0cbc99b9338b2abbfd0d9fe80f3479e0ab07d9ba54",
+        "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\docs\\BHSM_ENVELOPMENT_CLAIM_AND_FALSIFIERS_V1.md": "07a1470eb916b56297fa98793a8da0af10d0512d34a5ee48dc413890e25ae769",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\BHSM-real-data-20261022\\docs\\BHSM_AUTHOR_SURFACE_GEOMETRY_CLARIFICATION_20261023.md": "f8dcd3611d71f2acef265bf2f921eb0db5773fc5524266d3a5df63b718c714a3",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\BHSM-real-data-20261022\\docs\\BHSM_TRACKER_ENVELOPMENT_SEARCH_CLARIFICATION_20261023.md": "c2df2654c5b094206acbce8e450fbdbe87a16fcc267787f9d897a2b0202b909a",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\BHSM-real-data-20261022\\docs\\BHSM_NORMAN_CORE_SURFACE_AMENDMENT_20261022.md": "028158078ae6ac2c32f44f3539c2598ade810f5ef77fff66b7e854cb9d4f959a",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\BHSM-real-data-20261022\\docs\\source_recovery\\20261022\\README.md": "2f634a46f6974f871b79aafcf1b331797be7d4ee69bd10c0f550310d93ffb5da",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\BHSM-real-data-20261022\\docs\\source_recovery\\20261022\\originals\\BHSM_Core_Harmonics_Black_Hole_Tracker_Codex_Prompt_20261022.txt": "149ba5efafd46be01bde9fe9513c1c83788b8a5f41c2127a4e2e5e6ce358517c",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\BHSM-real-data-20261022\\docs\\source_recovery\\20261022\\originals\\BHSM_Frame_Dragging_and_Nonlinear_Front_Derivation_v0_1.pdf": "7bb85093bcf3d03ca30220fd6d52aa3306a2c4d1648e91679c3d5a65f9409e2e",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\BHSM-real-data-20261022\\docs\\source_recovery\\20261022\\originals\\BHSM_Galaxy_Envelope_Formation_and_Persistence_v0_1.pdf": "de228c96c612024e2bfd1d3c9907dc6223108dfb6ecfc4f7b7bffb65623450a4",
+        "C:\\Users\\carbe\\Downloads\\BHSM_Galaxy_Gravity_Loaded_Schur_Hessian_v0_5.md": "718cdac692ae6030eb70c327771343267c4517c1a69a01454a32872579013816",
+        "C:\\Users\\carbe\\Downloads\\BHSM_Topographic_Galaxy_Encapsulation_Solution_v0_3.md": "c9eaee920746c024b695c722fc783aea53dfc9da5660a92150de4b05d9c7ba0a",
+        "C:\\Users\\carbe\\Downloads\\BHSM_optical_constitutive_reduction.tex": "0164cafd76e43a23c10f0e6449f300317d11a92597fdee56fd17883f35240e44",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\BHSM-real-data-20261022\\papers\\bhsm_blackhole_tracker_20261021\\manuscript\\bhsm_interpretation.tex": "5fbe5ca35829b543220e856914b2d13f3d322848dac1df56d7b61d982dd5e01f",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\BHSM-real-data-20261022\\papers\\bhsm_blackhole_tracker_20261021\\manuscript\\projection_theorem.tex": "16d5148a7ac76f95296313a9f08f765d7076f71154fba26cc2ac669e61c5dbc7",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\BHSM-real-data-20261022\\papers\\bhsm_blackhole_tracker_20261021\\manuscript\\estimator_derivation.tex": "55b1b0eec6ebccedd17e900d0df70e791e1e470f339f7f50d446d94fae8f0828",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\BHSM-real-data-20261022\\papers\\bhsm_blackhole_tracker_20261021\\CHAIN_AND_FREEDOMS.md": "34a48d48a99cfba2e83ab03b734025c87e89cd3d0b9ba8b22dff7a7397708cee",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\BHSM-real-data-20261022\\papers\\bhsm_blackhole_tracker_20261021\\review\\envelopment_search_20261023\\SOURCE_ONLY_MATHEMATICAL_REVIEW_v1.txt": "32c39850044f58f5e4e048550d101ddd11ff4e17ae4dd0c0a3ca57cd2202970c",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\BHSM-real-data-20261022\\papers\\bhsm_blackhole_tracker_20261021\\provenance\\bhsm_boundary_mass_interpretation_sources.json": "eb3b5b9a26d6b5606719c45113db69cc8ca9dc000cfa9bb7e174cde50f2ca3a5",
+        "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\theory\\PRIMARY_TARGET_PROGRAM.json": "175c4b11279bb0397b48eb76d38b556b30eb246ef005bb1cb1cfab510dd32f48",
+        "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\theory\\BHSM_CORE_SURFACE_CONTRACT.json": "a0561d8fe7d1031daa2a56c433d46b99734b20f850e02e16d0e5095b32fc3507",
+        "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\research\\primary_target_20261023\\COMPARATIVE_PRIMARY_FOLLOWUP_REVIEW_v2.json": "5459238e85a56f925edf8d8c671510500e42156a662e40c7a2d87bbdf1ad076d",
+        "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\__main__.py": "6ce05b79ee1666025af142adc913f1d468781e77af67ae431fe163472a52fb3a",
+        "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\astrometry.py": "a74dd19625f4bf463249ab9d3cb80ee8794e3e12c5d728f5fbdf5817f1002daa",
+        "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\candidate_atlas.py": "d55fbaab55a8564722866686447430d4e5967073a7f113705a295d87f294a2c0",
+        "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\cli.py": "81a3574dc377c3c469e0284a80dc857bb60fbaa11436096ed082c068b7e4aa71",
+        "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\data.py": "6ef640052af40d95056ce4d15a508096d678737ba09afdb24c0df09df03d6b63",
+        "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\envelope.py": "c08bbf41cf58878db0a825247812f19b642280c1cd908f4a8a099c7d16f7c285",
+        "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\examples.py": "6694293c27930087cbc0866d83aa657ea70c6dd6cb2a6b1d6a59a693a6bf8f26",
+        "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\forward.py": "54035f500c3c8f1b8ae606e45c178c4e9b09e31b083b152f52d479654b7066f5",
+        "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\importers.py": "12c2c97700432f675f9c69eb74f2b3010ac318972dc2f04f7c172fa53a492396",
+        "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\inference.py": "35d0bba9db08feb22584d7234e62ea9bd6ef34d6feb325258892d51118f986f9",
+        "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\interpretation.py": "15c934c1de804ecd62585a00e84a4555a051ad9f9ff706c8a3e323f3f6ce4b20",
+        "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\joint_benchmark_v2.py": "83f599f7cdd616690fdcbf61f30ec05145719cc5b343d083cfe4c0a45ff940a6",
+        "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\joint_benchmark.py": "d3811ccb1214ab6ac3f307033fbcb6e9fc89ad7201de4c3b91faeeec47f94480",
+        "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\joint_mass_v2.py": "6eaf050481fc23aebf4b929e49fdab57e324ee80eb08e1547b69f056269eeaaa",
+        "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\joint_mass.py": "507874d1adb27440abc3add6aab6ac5caf45f871b7ba58b8206d3fdceef32ff0",
+        "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\joint_report.py": "38f4504a271b41408914a5030b222c3109e0615fc767c71161e7f868a44a14ac",
+        "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\joint_workflow_v2.py": "3cb2bf649120f107acd8c4e3bef9ae7f89b02371ec5c3c76c36b601b901c43c6",
+        "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\joint_workflow.py": "173df93205a2cbc7fe81acc3695421eddd6faeeb285fa808a892797d5704869e",
+        "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\observations.py": "5c9b07c1887c9a299ca8505b323462d41f314457f2bff3b5b2b2ca1970a21c0b",
+        "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\photometry.py": "d3bcfcf6bab36542f13a45f062f74ef322bd5cd97e71eb184123588f186eefa0",
+        "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\physics_admission.py": "eb89ef40f95128078df390ce813c312ad302b1494424d57faea3191cafa58e60",
+        "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\r1_runtime.py": "f3cc2074d915ad02ba6549209d0b0cd532304fa71d2930bb7cbc3d5fc2a39250",
+        "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\report.py": "b0bb39f074eb4e4945cc273ae73577f8fd1d7007f24a50c0fa82446672887e18",
+        "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\sample_bundle.py": "8d145f0d16a2d9f2a63706b0fb5f26d187e33589597ae7ee7182cec8b15613ad",
+        "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\server.py": "fa83d139ae5e9d1188a3db18fbfc1e595ca22f1c97fedd2623895a36fcc92db6",
+        "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\skytrack.py": "e7890e414542da49873b4d1ad775520719872a845ff3bfe6a55c761ea840172a",
+        "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\spectrum.py": "d42cf335576ff95c4a2a5a548e33d194114593dd125d7c87d8860d0dfca168a3",
+        "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\target_program.py": "d122aa945846fe0ea65438df3e8e42aeac401cfa1b02dd1172b5210660f70e39",
+        "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\unresolved_report.py": "332134fa5f7012d4f0d9dcfe241b5a262a459c487182a538f9080bf5418687b7"
+      },
+      "python": "3.11.9 (tags/v3.11.9:de54cf5, Apr  2 2024, 10:12:12) [MSC v.1938 64 bit (AMD64)]",
+      "executable": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_real_data_corrections_20261022\\release_rc4\\minimum_runtime_probe\\venv\\Scripts\\python.exe"
+    },
+    {
+      "kind": "CONTROL_STARTED",
+      "control": "test_01_monopole"
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_01_monopole",
+      "name": "annular_contrast",
+      "args": [
+        1.0,
+        3.0,
+        6.0,
+        2.0
+      ],
+      "stage": "STARTED"
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_01_monopole",
+      "name": "annular_contrast",
+      "args": [
+        1.0,
+        3.0,
+        6.0,
+        2.0
+      ],
+      "stage": "RETURNED",
+      "output": {
+        "contrast": 0.0,
+        "gradient_order": [
+          "r1",
+          "r2",
+          "alpha1",
+          "alpha2"
+        ],
+        "gradient": [
+          -6.0,
+          2.0,
+          -1.0,
+          3.0
+        ],
+        "uncertainty": null,
+        "classification": null,
+        "scope": "IDEAL_MODEL_MOMENT_CONTRAST_ONLY"
+      }
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_01_monopole",
+      "name": "annular_contrast",
+      "args": [
+        1.25,
+        7.5,
+        4.8,
+        0.8
+      ],
+      "stage": "STARTED"
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_01_monopole",
+      "name": "annular_contrast",
+      "args": [
+        1.25,
+        7.5,
+        4.8,
+        0.8
+      ],
+      "stage": "RETURNED",
+      "output": {
+        "contrast": 0.0,
+        "gradient_order": [
+          "r1",
+          "r2",
+          "alpha1",
+          "alpha2"
+        ],
+        "gradient": [
+          -4.8,
+          0.8,
+          -1.25,
+          7.5
+        ],
+        "uncertainty": null,
+        "classification": null,
+        "scope": "IDEAL_MODEL_MOMENT_CONTRAST_ONLY"
+      }
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_01_monopole",
+      "name": "annular_contrast",
+      "args": [
+        2.0,
+        11.0,
+        3.0,
+        0.5454545454545454
+      ],
+      "stage": "STARTED"
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_01_monopole",
+      "name": "annular_contrast",
+      "args": [
+        2.0,
+        11.0,
+        3.0,
+        0.5454545454545454
+      ],
+      "stage": "RETURNED",
+      "output": {
+        "contrast": 0.0,
+        "gradient_order": [
+          "r1",
+          "r2",
+          "alpha1",
+          "alpha2"
+        ],
+        "gradient": [
+          -3.0,
+          0.5454545454545454,
+          -2.0,
+          11.0
+        ],
+        "uncertainty": null,
+        "classification": null,
+        "scope": "IDEAL_MODEL_MOMENT_CONTRAST_ONLY"
+      }
+    },
+    {
+      "kind": "CONTROL_TERMINAL",
+      "control": "test_01_monopole",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "kind": "CONTROL_STARTED",
+      "control": "test_02_disk_interior"
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_02_disk_interior",
+      "name": "annular_contrast",
+      "args": [
+        1,
+        2,
+        1,
+        2
+      ],
+      "stage": "STARTED"
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_02_disk_interior",
+      "name": "annular_contrast",
+      "args": [
+        1,
+        2,
+        1,
+        2
+      ],
+      "stage": "RETURNED",
+      "output": {
+        "contrast": 3.0,
+        "gradient_order": [
+          "r1",
+          "r2",
+          "alpha1",
+          "alpha2"
+        ],
+        "gradient": [
+          -1.0,
+          2.0,
+          -1.0,
+          2.0
+        ],
+        "uncertainty": null,
+        "classification": null,
+        "scope": "IDEAL_MODEL_MOMENT_CONTRAST_ONLY"
+      }
+    },
+    {
+      "kind": "INDEPENDENT_IDEAL_WITNESS",
+      "control": "test_02_disk_interior",
+      "payload": {
+        "independent_enclosed_masses": [
+          1,
+          4
+        ],
+        "enclosed_ratio": {
+          "rational_numerator": 4,
+          "rational_denominator": 1
+        },
+        "contrast_expected": 3
+      }
+    },
+    {
+      "kind": "CONTROL_TERMINAL",
+      "control": "test_02_disk_interior",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "kind": "CONTROL_STARTED",
+      "control": "test_03_finite_support_counterexample"
+    },
+    {
+      "kind": "INDEPENDENT_IDEAL_WITNESS",
+      "control": "test_03_finite_support_counterexample",
+      "payload": {
+        "ordinary_disk_support": 4,
+        "radii": [
+          5,
+          8
+        ],
+        "disk_bending": [
+          3.2,
+          2.0
+        ],
+        "point_bending": [
+          3.2,
+          2.0
+        ],
+        "unique_BH_identity": false
+      }
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_03_finite_support_counterexample",
+      "name": "annular_contrast",
+      "args": [
+        5,
+        8,
+        3.2,
+        2.0
+      ],
+      "stage": "STARTED"
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_03_finite_support_counterexample",
+      "name": "annular_contrast",
+      "args": [
+        5,
+        8,
+        3.2,
+        2.0
+      ],
+      "stage": "RETURNED",
+      "output": {
+        "contrast": 0.0,
+        "gradient_order": [
+          "r1",
+          "r2",
+          "alpha1",
+          "alpha2"
+        ],
+        "gradient": [
+          -3.2,
+          2.0,
+          -5.0,
+          8.0
+        ],
+        "uncertainty": null,
+        "classification": null,
+        "scope": "IDEAL_MODEL_MOMENT_CONTRAST_ONLY"
+      }
+    },
+    {
+      "kind": "CONTROL_TERMINAL",
+      "control": "test_03_finite_support_counterexample",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "kind": "CONTROL_STARTED",
+      "control": "test_04_central_mass_cancels"
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_04_central_mass_cancels",
+      "name": "annular_contrast",
+      "args": [
+        1,
+        2,
+        1,
+        2.0
+      ],
+      "stage": "STARTED"
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_04_central_mass_cancels",
+      "name": "annular_contrast",
+      "args": [
+        1,
+        2,
+        1,
+        2.0
+      ],
+      "stage": "RETURNED",
+      "output": {
+        "contrast": 3.0,
+        "gradient_order": [
+          "r1",
+          "r2",
+          "alpha1",
+          "alpha2"
+        ],
+        "gradient": [
+          -1.0,
+          2.0,
+          -1.0,
+          2.0
+        ],
+        "uncertainty": null,
+        "classification": null,
+        "scope": "IDEAL_MODEL_MOMENT_CONTRAST_ONLY"
+      }
+    },
+    {
+      "kind": "INDEPENDENT_IDEAL_WITNESS",
+      "control": "test_04_central_mass_cancels",
+      "payload": {
+        "central_mass": 0,
+        "annular_mass_expected": 3
+      }
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_04_central_mass_cancels",
+      "name": "annular_contrast",
+      "args": [
+        1,
+        2,
+        4,
+        3.5
+      ],
+      "stage": "STARTED"
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_04_central_mass_cancels",
+      "name": "annular_contrast",
+      "args": [
+        1,
+        2,
+        4,
+        3.5
+      ],
+      "stage": "RETURNED",
+      "output": {
+        "contrast": 3.0,
+        "gradient_order": [
+          "r1",
+          "r2",
+          "alpha1",
+          "alpha2"
+        ],
+        "gradient": [
+          -4.0,
+          3.5,
+          -1.0,
+          2.0
+        ],
+        "uncertainty": null,
+        "classification": null,
+        "scope": "IDEAL_MODEL_MOMENT_CONTRAST_ONLY"
+      }
+    },
+    {
+      "kind": "INDEPENDENT_IDEAL_WITNESS",
+      "control": "test_04_central_mass_cancels",
+      "payload": {
+        "central_mass": 3,
+        "annular_mass_expected": 3
+      }
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_04_central_mass_cancels",
+      "name": "annular_contrast",
+      "args": [
+        1,
+        2,
+        16,
+        9.5
+      ],
+      "stage": "STARTED"
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_04_central_mass_cancels",
+      "name": "annular_contrast",
+      "args": [
+        1,
+        2,
+        16,
+        9.5
+      ],
+      "stage": "RETURNED",
+      "output": {
+        "contrast": 3.0,
+        "gradient_order": [
+          "r1",
+          "r2",
+          "alpha1",
+          "alpha2"
+        ],
+        "gradient": [
+          -16.0,
+          9.5,
+          -1.0,
+          2.0
+        ],
+        "uncertainty": null,
+        "classification": null,
+        "scope": "IDEAL_MODEL_MOMENT_CONTRAST_ONLY"
+      }
+    },
+    {
+      "kind": "INDEPENDENT_IDEAL_WITNESS",
+      "control": "test_04_central_mass_cancels",
+      "payload": {
+        "central_mass": 15,
+        "annular_mass_expected": 3
+      }
+    },
+    {
+      "kind": "CONTROL_TERMINAL",
+      "control": "test_04_central_mass_cancels",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "kind": "CONTROL_STARTED",
+      "control": "test_05_negative_retained"
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_05_negative_retained",
+      "name": "annular_contrast",
+      "args": [
+        1,
+        2,
+        3,
+        1
+      ],
+      "stage": "STARTED"
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_05_negative_retained",
+      "name": "annular_contrast",
+      "args": [
+        1,
+        2,
+        3,
+        1
+      ],
+      "stage": "RETURNED",
+      "output": {
+        "contrast": -1.0,
+        "gradient_order": [
+          "r1",
+          "r2",
+          "alpha1",
+          "alpha2"
+        ],
+        "gradient": [
+          -3.0,
+          1.0,
+          -1.0,
+          2.0
+        ],
+        "uncertainty": null,
+        "classification": null,
+        "scope": "IDEAL_MODEL_MOMENT_CONTRAST_ONLY"
+      }
+    },
+    {
+      "kind": "CONTROL_TERMINAL",
+      "control": "test_05_negative_retained",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "kind": "CONTROL_STARTED",
+      "control": "test_06_gradient"
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_06_gradient",
+      "name": "annular_contrast",
+      "args": [
+        1.5,
+        4.0,
+        0.7,
+        0.4
+      ],
+      "stage": "STARTED"
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_06_gradient",
+      "name": "annular_contrast",
+      "args": [
+        1.5,
+        4.0,
+        0.7,
+        0.4
+      ],
+      "stage": "RETURNED",
+      "output": {
+        "contrast": 0.5500000000000003,
+        "gradient_order": [
+          "r1",
+          "r2",
+          "alpha1",
+          "alpha2"
+        ],
+        "gradient": [
+          -0.7,
+          0.4,
+          -1.5,
+          4.0
+        ],
+        "uncertainty": null,
+        "classification": null,
+        "scope": "IDEAL_MODEL_MOMENT_CONTRAST_ONLY"
+      }
+    },
+    {
+      "kind": "INDEPENDENT_IDEAL_WITNESS",
+      "control": "test_06_gradient",
+      "payload": {
+        "raw_expression_central_difference": [
+          -0.6999999999979244,
+          0.4000000000004,
+          -1.4999999999987244,
+          4.000000000004
+        ],
+        "helper_gradient": [
+          -0.7,
+          0.4,
+          -1.5,
+          4.0
+        ],
+        "step": 1e-05
+      }
+    },
+    {
+      "kind": "CONTROL_TERMINAL",
+      "control": "test_06_gradient",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "kind": "CONTROL_STARTED",
+      "control": "test_07_boundary_inverse"
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_07_boundary_inverse",
+      "name": "principal_reference_deficit",
+      "args": [
+        1,
+        3
+      ],
+      "stage": "STARTED"
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_07_boundary_inverse",
+      "name": "principal_reference_deficit",
+      "args": [
+        1,
+        3
+      ],
+      "stage": "RETURNED",
+      "output": 0.14088324360345808
+    },
+    {
+      "kind": "INDEPENDENT_IDEAL_WITNESS",
+      "control": "test_07_boundary_inverse",
+      "payload": {
+        "m": 1,
+        "radius": 3,
+        "deficit": 0.14088324360345808,
+        "independent_inverse": 1.0
+      }
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_07_boundary_inverse",
+      "name": "principal_reference_deficit",
+      "args": [
+        1,
+        10
+      ],
+      "stage": "STARTED"
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_07_boundary_inverse",
+      "name": "principal_reference_deficit",
+      "args": [
+        1,
+        10
+      ],
+      "stage": "RETURNED",
+      "output": 0.010557280900008414
+    },
+    {
+      "kind": "INDEPENDENT_IDEAL_WITNESS",
+      "control": "test_07_boundary_inverse",
+      "payload": {
+        "m": 1,
+        "radius": 10,
+        "deficit": 0.010557280900008414,
+        "independent_inverse": 1.0000000000000002
+      }
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_07_boundary_inverse",
+      "name": "principal_reference_deficit",
+      "args": [
+        1,
+        100
+      ],
+      "stage": "STARTED"
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_07_boundary_inverse",
+      "name": "principal_reference_deficit",
+      "args": [
+        1,
+        100
+      ],
+      "stage": "RETURNED",
+      "output": 0.00010050506338833466
+    },
+    {
+      "kind": "INDEPENDENT_IDEAL_WITNESS",
+      "control": "test_07_boundary_inverse",
+      "payload": {
+        "m": 1,
+        "radius": 100,
+        "deficit": 0.00010050506338833466,
+        "independent_inverse": 1.0000000000000002
+      }
+    },
+    {
+      "kind": "CONTROL_TERMINAL",
+      "control": "test_07_boundary_inverse",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "kind": "CONTROL_STARTED",
+      "control": "test_08_radius_and_intrinsic_curvature"
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_08_radius_and_intrinsic_curvature",
+      "name": "principal_reference_deficit",
+      "args": [
+        1,
+        10
+      ],
+      "stage": "STARTED"
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_08_radius_and_intrinsic_curvature",
+      "name": "principal_reference_deficit",
+      "args": [
+        1,
+        10
+      ],
+      "stage": "RETURNED",
+      "output": 0.010557280900008414
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_08_radius_and_intrinsic_curvature",
+      "name": "principal_reference_deficit",
+      "args": [
+        1,
+        20
+      ],
+      "stage": "STARTED"
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_08_radius_and_intrinsic_curvature",
+      "name": "principal_reference_deficit",
+      "args": [
+        1,
+        20
+      ],
+      "stage": "RETURNED",
+      "output": 0.00256583509747431
+    },
+    {
+      "kind": "INDEPENDENT_IDEAL_WITNESS",
+      "control": "test_08_radius_and_intrinsic_curvature",
+      "payload": {
+        "radii": [
+          10,
+          20
+        ],
+        "same_m": 1,
+        "deficits": [
+          0.010557280900008414,
+          0.00256583509747431
+        ],
+        "intrinsic_curvatures": [
+          0.01,
+          0.0025
+        ]
+      }
+    },
+    {
+      "kind": "CONTROL_TERMINAL",
+      "control": "test_08_radius_and_intrinsic_curvature",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "kind": "CONTROL_STARTED",
+      "control": "test_09_mass_sheet"
+    },
+    {
+      "kind": "INDEPENDENT_IDEAL_WITNESS",
+      "control": "test_09_mass_sheet",
+      "payload": {
+        "u": 0.4,
+        "lambda": 0.6,
+        "same_images": [
+          1.219803902718557,
+          -0.819803902718557
+        ],
+        "transformed_lens_residuals": [
+          0.0,
+          1.1102230246251565e-16
+        ],
+        "old_determinants": [
+          0.5483105719488333,
+          -1.2139105719488332
+        ],
+        "new_determinants": [
+          0.19739180590158004,
+          -0.4370078059015797
+        ],
+        "flux_ratios": [
+          2.213910571948833,
+          2.2139105719488312
+        ],
+        "fermat_differences": [
+          0.8053017817859056,
+          0.48318106907154323
+        ]
+      }
+    },
+    {
+      "kind": "INDEPENDENT_IDEAL_WITNESS",
+      "control": "test_09_mass_sheet",
+      "payload": {
+        "u": 0.4,
+        "lambda": 0.8,
+        "same_images": [
+          1.219803902718557,
+          -0.819803902718557
+        ],
+        "transformed_lens_residuals": [
+          0.0,
+          -1.1102230246251565e-16
+        ],
+        "old_determinants": [
+          0.5483105719488333,
+          -1.2139105719488332
+        ],
+        "new_determinants": [
+          0.3509187660472533,
+          -0.7769027660472535
+        ],
+        "flux_ratios": [
+          2.213910571948833,
+          2.2139105719488335
+        ],
+        "fermat_differences": [
+          0.8053017817859056,
+          0.6442414254287244
+        ]
+      }
+    },
+    {
+      "kind": "INDEPENDENT_IDEAL_WITNESS",
+      "control": "test_09_mass_sheet",
+      "payload": {
+        "u": 1.3,
+        "lambda": 0.6,
+        "same_images": [
+          1.8426860441876562,
+          -0.5426860441876563
+        ],
+        "transformed_lens_residuals": [
+          -2.220446049250313e-16,
+          -1.1102230246251565e-16
+        ],
+        "old_determinants": [
+          0.9132649539681873,
+          -10.529364953968186
+        ],
+        "new_determinants": [
+          0.3287753834285473,
+          -3.790571383428547
+        ],
+        "flux_ratios": [
+          11.529364953968184,
+          11.529364953968189
+        ],
+        "fermat_differences": [
+          2.7729404849694808,
+          1.6637642909816883
+        ]
+      }
+    },
+    {
+      "kind": "INDEPENDENT_IDEAL_WITNESS",
+      "control": "test_09_mass_sheet",
+      "payload": {
+        "u": 1.3,
+        "lambda": 0.8,
+        "same_images": [
+          1.8426860441876562,
+          -0.5426860441876563
+        ],
+        "transformed_lens_residuals": [
+          0.0,
+          0.0
+        ],
+        "old_determinants": [
+          0.9132649539681873,
+          -10.529364953968186
+        ],
+        "new_determinants": [
+          0.5844895705396397,
+          -6.738793570539639
+        ],
+        "flux_ratios": [
+          11.529364953968184,
+          11.529364953968187
+        ],
+        "fermat_differences": [
+          2.7729404849694808,
+          2.2183523879755844
+        ]
+      }
+    },
+    {
+      "kind": "INDEPENDENT_IDEAL_WITNESS",
+      "control": "test_09_mass_sheet",
+      "payload": {
+        "u": 2.0,
+        "lambda": 0.6,
+        "same_images": [
+          2.414213562373095,
+          -0.4142135623730951
+        ],
+        "transformed_lens_residuals": [
+          -2.220446049250313e-16,
+          -2.220446049250313e-16
+        ],
+        "old_determinants": [
+          0.9705627484771405,
+          -32.97056274847713
+        ],
+        "new_determinants": [
+          0.34940258945177055,
+          -11.869402589451763
+        ],
+        "flux_ratios": [
+          33.97056274847713,
+          33.97056274847712
+        ],
+        "fermat_differences": [
+          4.591174298785276,
+          2.7547045792711655
+        ]
+      }
+    },
+    {
+      "kind": "INDEPENDENT_IDEAL_WITNESS",
+      "control": "test_09_mass_sheet",
+      "payload": {
+        "u": 2.0,
+        "lambda": 0.8,
+        "same_images": [
+          2.414213562373095,
+          -0.4142135623730951
+        ],
+        "transformed_lens_residuals": [
+          0.0,
+          -2.220446049250313e-16
+        ],
+        "old_determinants": [
+          0.9705627484771405,
+          -32.97056274847713
+        ],
+        "new_determinants": [
+          0.6211601590253701,
+          -21.101160159025365
+        ],
+        "flux_ratios": [
+          33.97056274847713,
+          33.97056274847712
+        ],
+        "fermat_differences": [
+          4.591174298785276,
+          3.6729394390282204
+        ]
+      }
+    },
+    {
+      "kind": "CONTROL_TERMINAL",
+      "control": "test_09_mass_sheet",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "kind": "CONTROL_STARTED",
+      "control": "test_10_stf_oddness"
+    },
+    {
+      "kind": "INDEPENDENT_IDEAL_WITNESS",
+      "control": "test_10_stf_oddness",
+      "payload": {
+        "x_y_z": [
+          {
+            "rational_numerator": 1,
+            "rational_denominator": 1
+          },
+          {
+            "rational_numerator": 2,
+            "rational_denominator": 1
+          },
+          {
+            "rational_numerator": 1,
+            "rational_denominator": 4
+          }
+        ],
+        "radial_factor": {
+          "rational_numerator": 256,
+          "rational_denominator": 6561
+        },
+        "cross_terms": [
+          {
+            "rational_numerator": 128,
+            "rational_denominator": 6561
+          },
+          {
+            "rational_numerator": 256,
+            "rational_denominator": 6561
+          }
+        ],
+        "opposite": [
+          {
+            "rational_numerator": -128,
+            "rational_denominator": 6561
+          },
+          {
+            "rational_numerator": -256,
+            "rational_denominator": 6561
+          }
+        ],
+        "paired_projection": [
+          {
+            "rational_numerator": 0,
+            "rational_denominator": 1
+          },
+          {
+            "rational_numerator": 0,
+            "rational_denominator": 1
+          }
+        ]
+      }
+    },
+    {
+      "kind": "INDEPENDENT_IDEAL_WITNESS",
+      "control": "test_10_stf_oddness",
+      "payload": {
+        "x_y_z": [
+          {
+            "rational_numerator": 1,
+            "rational_denominator": 1
+          },
+          {
+            "rational_numerator": 2,
+            "rational_denominator": 1
+          },
+          {
+            "rational_numerator": 2,
+            "rational_denominator": 1
+          }
+        ],
+        "radial_factor": {
+          "rational_numerator": 1,
+          "rational_denominator": 81
+        },
+        "cross_terms": [
+          {
+            "rational_numerator": 4,
+            "rational_denominator": 81
+          },
+          {
+            "rational_numerator": 8,
+            "rational_denominator": 81
+          }
+        ],
+        "opposite": [
+          {
+            "rational_numerator": -4,
+            "rational_denominator": 81
+          },
+          {
+            "rational_numerator": -8,
+            "rational_denominator": 81
+          }
+        ],
+        "paired_projection": [
+          {
+            "rational_numerator": 0,
+            "rational_denominator": 1
+          },
+          {
+            "rational_numerator": 0,
+            "rational_denominator": 1
+          }
+        ]
+      }
+    },
+    {
+      "kind": "INDEPENDENT_IDEAL_WITNESS",
+      "control": "test_10_stf_oddness",
+      "payload": {
+        "x_y_z": [
+          {
+            "rational_numerator": 1,
+            "rational_denominator": 1
+          },
+          {
+            "rational_numerator": 2,
+            "rational_denominator": 1
+          },
+          {
+            "rational_numerator": 7,
+            "rational_denominator": 1
+          }
+        ],
+        "radial_factor": {
+          "rational_numerator": 1,
+          "rational_denominator": 2916
+        },
+        "cross_terms": [
+          {
+            "rational_numerator": 7,
+            "rational_denominator": 1458
+          },
+          {
+            "rational_numerator": 7,
+            "rational_denominator": 729
+          }
+        ],
+        "opposite": [
+          {
+            "rational_numerator": -7,
+            "rational_denominator": 1458
+          },
+          {
+            "rational_numerator": -7,
+            "rational_denominator": 729
+          }
+        ],
+        "paired_projection": [
+          {
+            "rational_numerator": 0,
+            "rational_denominator": 1
+          },
+          {
+            "rational_numerator": 0,
+            "rational_denominator": 1
+          }
+        ]
+      }
+    },
+    {
+      "kind": "INDEPENDENT_IDEAL_WITNESS",
+      "control": "test_10_stf_oddness",
+      "payload": {
+        "x_y_z": [
+          {
+            "rational_numerator": 3,
+            "rational_denominator": 2
+          },
+          {
+            "rational_numerator": -1,
+            "rational_denominator": 2
+          },
+          {
+            "rational_numerator": 1,
+            "rational_denominator": 4
+          }
+        ],
+        "radial_factor": {
+          "rational_numerator": 256,
+          "rational_denominator": 1681
+        },
+        "cross_terms": [
+          {
+            "rational_numerator": 192,
+            "rational_denominator": 1681
+          },
+          {
+            "rational_numerator": -64,
+            "rational_denominator": 1681
+          }
+        ],
+        "opposite": [
+          {
+            "rational_numerator": -192,
+            "rational_denominator": 1681
+          },
+          {
+            "rational_numerator": 64,
+            "rational_denominator": 1681
+          }
+        ],
+        "paired_projection": [
+          {
+            "rational_numerator": 0,
+            "rational_denominator": 1
+          },
+          {
+            "rational_numerator": 0,
+            "rational_denominator": 1
+          }
+        ]
+      }
+    },
+    {
+      "kind": "INDEPENDENT_IDEAL_WITNESS",
+      "control": "test_10_stf_oddness",
+      "payload": {
+        "x_y_z": [
+          {
+            "rational_numerator": 3,
+            "rational_denominator": 2
+          },
+          {
+            "rational_numerator": -1,
+            "rational_denominator": 2
+          },
+          {
+            "rational_numerator": 2,
+            "rational_denominator": 1
+          }
+        ],
+        "radial_factor": {
+          "rational_numerator": 4,
+          "rational_denominator": 169
+        },
+        "cross_terms": [
+          {
+            "rational_numerator": 24,
+            "rational_denominator": 169
+          },
+          {
+            "rational_numerator": -8,
+            "rational_denominator": 169
+          }
+        ],
+        "opposite": [
+          {
+            "rational_numerator": -24,
+            "rational_denominator": 169
+          },
+          {
+            "rational_numerator": 8,
+            "rational_denominator": 169
+          }
+        ],
+        "paired_projection": [
+          {
+            "rational_numerator": 0,
+            "rational_denominator": 1
+          },
+          {
+            "rational_numerator": 0,
+            "rational_denominator": 1
+          }
+        ]
+      }
+    },
+    {
+      "kind": "INDEPENDENT_IDEAL_WITNESS",
+      "control": "test_10_stf_oddness",
+      "payload": {
+        "x_y_z": [
+          {
+            "rational_numerator": 3,
+            "rational_denominator": 2
+          },
+          {
+            "rational_numerator": -1,
+            "rational_denominator": 2
+          },
+          {
+            "rational_numerator": 7,
+            "rational_denominator": 1
+          }
+        ],
+        "radial_factor": {
+          "rational_numerator": 4,
+          "rational_denominator": 10609
+        },
+        "cross_terms": [
+          {
+            "rational_numerator": 84,
+            "rational_denominator": 10609
+          },
+          {
+            "rational_numerator": -28,
+            "rational_denominator": 10609
+          }
+        ],
+        "opposite": [
+          {
+            "rational_numerator": -84,
+            "rational_denominator": 10609
+          },
+          {
+            "rational_numerator": 28,
+            "rational_denominator": 10609
+          }
+        ],
+        "paired_projection": [
+          {
+            "rational_numerator": 0,
+            "rational_denominator": 1
+          },
+          {
+            "rational_numerator": 0,
+            "rational_denominator": 1
+          }
+        ]
+      }
+    },
+    {
+      "kind": "CONTROL_TERMINAL",
+      "control": "test_10_stf_oddness",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "kind": "CONTROL_STARTED",
+      "control": "test_11_radial_rank"
+    },
+    {
+      "kind": "INDEPENDENT_IDEAL_WITNESS",
+      "control": "test_11_radial_rank",
+      "payload": {
+        "squared_radii": [
+          {
+            "rational_numerator": 1,
+            "rational_denominator": 1
+          },
+          {
+            "rational_numerator": 4,
+            "rational_denominator": 1
+          },
+          {
+            "rational_numerator": 9,
+            "rational_denominator": 1
+          }
+        ],
+        "matrix": [
+          [
+            {
+              "rational_numerator": 1,
+              "rational_denominator": 1
+            },
+            {
+              "rational_numerator": 1,
+              "rational_denominator": 1
+            },
+            {
+              "rational_numerator": 1,
+              "rational_denominator": 1
+            }
+          ],
+          [
+            {
+              "rational_numerator": 1,
+              "rational_denominator": 1
+            },
+            {
+              "rational_numerator": 1,
+              "rational_denominator": 4
+            },
+            {
+              "rational_numerator": 4,
+              "rational_denominator": 1
+            }
+          ],
+          [
+            {
+              "rational_numerator": 1,
+              "rational_denominator": 1
+            },
+            {
+              "rational_numerator": 1,
+              "rational_denominator": 9
+            },
+            {
+              "rational_numerator": 9,
+              "rational_denominator": 1
+            }
+          ]
+        ],
+        "independent_determinant": {
+          "rational_numerator": -10,
+          "rational_denominator": 3
+        },
+        "closed_determinant": {
+          "rational_numerator": -10,
+          "rational_denominator": 3
+        },
+        "two_radius_null": [
+          {
+            "rational_numerator": -5,
+            "rational_denominator": 1
+          },
+          {
+            "rational_numerator": 4,
+            "rational_denominator": 1
+          },
+          {
+            "rational_numerator": 1,
+            "rational_denominator": 1
+          }
+        ],
+        "values": [
+          {
+            "rational_numerator": 0,
+            "rational_denominator": 1
+          },
+          {
+            "rational_numerator": 0,
+            "rational_denominator": 1
+          },
+          {
+            "rational_numerator": 40,
+            "rational_denominator": 9
+          }
+        ]
+      }
+    },
+    {
+      "kind": "CONTROL_TERMINAL",
+      "control": "test_11_radial_rank",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "kind": "CONTROL_STARTED",
+      "control": "test_12_ideal_slip"
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_12_ideal_slip",
+      "name": "ideal_slip_residual",
+      "args": [
+        0.0003141592653589793,
+        0.01,
+        1,
+        0
+      ],
+      "stage": "STARTED"
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_12_ideal_slip",
+      "name": "ideal_slip_residual",
+      "args": [
+        0.0003141592653589793,
+        0.01,
+        1,
+        0
+      ],
+      "stage": "RETURNED",
+      "output": 0.0
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_12_ideal_slip",
+      "name": "ideal_slip_residual",
+      "args": [
+        0.0003141592653589793,
+        3,
+        300,
+        0
+      ],
+      "stage": "STARTED"
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_12_ideal_slip",
+      "name": "ideal_slip_residual",
+      "args": [
+        0.0003141592653589793,
+        3,
+        300,
+        0
+      ],
+      "stage": "RETURNED",
+      "output": 0.0
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_12_ideal_slip",
+      "name": "ideal_slip_residual",
+      "args": [
+        0.00047123889803846896,
+        0.01,
+        1,
+        0.5
+      ],
+      "stage": "STARTED"
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_12_ideal_slip",
+      "name": "ideal_slip_residual",
+      "args": [
+        0.00047123889803846896,
+        0.01,
+        1,
+        0.5
+      ],
+      "stage": "RETURNED",
+      "output": 0.0
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_12_ideal_slip",
+      "name": "ideal_slip_residual",
+      "args": [
+        0.00047123889803846896,
+        3,
+        300,
+        0.5
+      ],
+      "stage": "STARTED"
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_12_ideal_slip",
+      "name": "ideal_slip_residual",
+      "args": [
+        0.00047123889803846896,
+        3,
+        300,
+        0.5
+      ],
+      "stage": "RETURNED",
+      "output": 0.0
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_12_ideal_slip",
+      "name": "ideal_slip_residual",
+      "args": [
+        0.0006283185307179586,
+        0.01,
+        1,
+        1
+      ],
+      "stage": "STARTED"
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_12_ideal_slip",
+      "name": "ideal_slip_residual",
+      "args": [
+        0.0006283185307179586,
+        0.01,
+        1,
+        1
+      ],
+      "stage": "RETURNED",
+      "output": 0.0
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_12_ideal_slip",
+      "name": "ideal_slip_residual",
+      "args": [
+        0.0006283185307179586,
+        3,
+        300,
+        1
+      ],
+      "stage": "STARTED"
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_12_ideal_slip",
+      "name": "ideal_slip_residual",
+      "args": [
+        0.0006283185307179586,
+        3,
+        300,
+        1
+      ],
+      "stage": "RETURNED",
+      "output": 0.0
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_12_ideal_slip",
+      "name": "ideal_slip_residual",
+      "args": [
+        0.0006283185307179586,
+        0.01,
+        1,
+        0
+      ],
+      "stage": "STARTED"
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_12_ideal_slip",
+      "name": "ideal_slip_residual",
+      "args": [
+        0.0006283185307179586,
+        0.01,
+        1,
+        0
+      ],
+      "stage": "RETURNED",
+      "output": 1.0
+    },
+    {
+      "kind": "CONTROL_TERMINAL",
+      "control": "test_12_ideal_slip",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "kind": "CONTROL_STARTED",
+      "control": "test_13_duration_nonidentification"
+    },
+    {
+      "kind": "INDEPENDENT_IDEAL_WITNESS",
+      "control": "test_13_duration_nonidentification",
+      "payload": {
+        "scale": {
+          "rational_numerator": 1,
+          "rational_denominator": 2
+        },
+        "theta": {
+          "rational_numerator": 3,
+          "rational_denominator": 2
+        },
+        "relative_motion": {
+          "rational_numerator": 1,
+          "rational_denominator": 1
+        },
+        "mass": {
+          "rational_numerator": 9,
+          "rational_denominator": 4
+        },
+        "relative_parallax": {
+          "rational_numerator": 1,
+          "rational_denominator": 1
+        },
+        "same_tE": {
+          "rational_numerator": 3,
+          "rational_denominator": 2
+        }
+      }
+    },
+    {
+      "kind": "INDEPENDENT_IDEAL_WITNESS",
+      "control": "test_13_duration_nonidentification",
+      "payload": {
+        "scale": {
+          "rational_numerator": 2,
+          "rational_denominator": 1
+        },
+        "theta": {
+          "rational_numerator": 6,
+          "rational_denominator": 1
+        },
+        "relative_motion": {
+          "rational_numerator": 4,
+          "rational_denominator": 1
+        },
+        "mass": {
+          "rational_numerator": 36,
+          "rational_denominator": 1
+        },
+        "relative_parallax": {
+          "rational_numerator": 1,
+          "rational_denominator": 1
+        },
+        "same_tE": {
+          "rational_numerator": 3,
+          "rational_denominator": 2
+        }
+      }
+    },
+    {
+      "kind": "INDEPENDENT_IDEAL_WITNESS",
+      "control": "test_13_duration_nonidentification",
+      "payload": {
+        "scale": {
+          "rational_numerator": 3,
+          "rational_denominator": 1
+        },
+        "theta": {
+          "rational_numerator": 9,
+          "rational_denominator": 1
+        },
+        "relative_motion": {
+          "rational_numerator": 6,
+          "rational_denominator": 1
+        },
+        "mass": {
+          "rational_numerator": 81,
+          "rational_denominator": 1
+        },
+        "relative_parallax": {
+          "rational_numerator": 1,
+          "rational_denominator": 1
+        },
+        "same_tE": {
+          "rational_numerator": 3,
+          "rational_denominator": 2
+        }
+      }
+    },
+    {
+      "kind": "CONTROL_TERMINAL",
+      "control": "test_13_duration_nonidentification",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "kind": "CONTROL_STARTED",
+      "control": "test_14_refusals"
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_14_refusals",
+      "name": "annular_contrast",
+      "args": [
+        true,
+        2,
+        1,
+        1
+      ],
+      "stage": "STARTED"
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_14_refusals",
+      "name": "annular_contrast",
+      "args": [
+        true,
+        2,
+        1,
+        1
+      ],
+      "stage": "RAISED",
+      "error_type": "ValueError",
+      "error": "r1 must be a builtin real number, not bool"
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_14_refusals",
+      "name": "annular_contrast",
+      "args": [
+        {
+          "typed_float": "NaN"
+        },
+        2,
+        1,
+        1
+      ],
+      "stage": "STARTED"
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_14_refusals",
+      "name": "annular_contrast",
+      "args": [
+        {
+          "typed_float": "NaN"
+        },
+        2,
+        1,
+        1
+      ],
+      "stage": "RAISED",
+      "error_type": "ValueError",
+      "error": "r1 must be finite"
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_14_refusals",
+      "name": "annular_contrast",
+      "args": [
+        1,
+        {
+          "typed_float": "+Infinity"
+        },
+        1,
+        1
+      ],
+      "stage": "STARTED"
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_14_refusals",
+      "name": "annular_contrast",
+      "args": [
+        1,
+        {
+          "typed_float": "+Infinity"
+        },
+        1,
+        1
+      ],
+      "stage": "RAISED",
+      "error_type": "ValueError",
+      "error": "r2 must be finite"
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_14_refusals",
+      "name": "annular_contrast",
+      "args": [
+        0,
+        2,
+        1,
+        1
+      ],
+      "stage": "STARTED"
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_14_refusals",
+      "name": "annular_contrast",
+      "args": [
+        0,
+        2,
+        1,
+        1
+      ],
+      "stage": "RAISED",
+      "error_type": "ValueError",
+      "error": "r1 must be positive"
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_14_refusals",
+      "name": "annular_contrast",
+      "args": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "stage": "STARTED"
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_14_refusals",
+      "name": "annular_contrast",
+      "args": [
+        2,
+        1,
+        1,
+        1
+      ],
+      "stage": "RAISED",
+      "error_type": "ValueError",
+      "error": "Distinct ordered radii r2>r1 required"
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_14_refusals",
+      "name": "annular_contrast",
+      "args": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "stage": "STARTED"
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_14_refusals",
+      "name": "annular_contrast",
+      "args": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "stage": "RAISED",
+      "error_type": "ValueError",
+      "error": "Distinct ordered radii r2>r1 required"
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_14_refusals",
+      "name": "annular_contrast",
+      "args": [
+        1,
+        2,
+        -1,
+        1
+      ],
+      "stage": "STARTED"
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_14_refusals",
+      "name": "annular_contrast",
+      "args": [
+        1,
+        2,
+        -1,
+        1
+      ],
+      "stage": "RAISED",
+      "error_type": "ValueError",
+      "error": "alpha1 must be positive"
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_14_refusals",
+      "name": "annular_contrast",
+      "args": [
+        1,
+        2,
+        0,
+        1
+      ],
+      "stage": "STARTED"
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_14_refusals",
+      "name": "annular_contrast",
+      "args": [
+        1,
+        2,
+        0,
+        1
+      ],
+      "stage": "RAISED",
+      "error_type": "ValueError",
+      "error": "alpha1 must be positive"
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_14_refusals",
+      "name": "annular_contrast",
+      "args": [
+        1e+308,
+        1.1e+308,
+        1e+308,
+        1e+308
+      ],
+      "stage": "STARTED"
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_14_refusals",
+      "name": "annular_contrast",
+      "args": [
+        1e+308,
+        1.1e+308,
+        1e+308,
+        1e+308
+      ],
+      "stage": "RAISED",
+      "error_type": "ValueError",
+      "error": "Numerical product overflow/underflow unresolved"
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_14_refusals",
+      "name": "annular_contrast",
+      "args": [
+        1e-300,
+        2e-300,
+        1e-300,
+        1e-300
+      ],
+      "stage": "STARTED"
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_14_refusals",
+      "name": "annular_contrast",
+      "args": [
+        1e-300,
+        2e-300,
+        1e-300,
+        1e-300
+      ],
+      "stage": "RAISED",
+      "error_type": "ValueError",
+      "error": "Numerical product overflow/underflow unresolved"
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_14_refusals",
+      "name": "principal_reference_deficit",
+      "args": [
+        1,
+        2
+      ],
+      "stage": "STARTED"
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_14_refusals",
+      "name": "principal_reference_deficit",
+      "args": [
+        1,
+        2
+      ],
+      "stage": "RAISED",
+      "error_type": "ValueError",
+      "error": "Finite static exterior radius>2m required"
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_14_refusals",
+      "name": "principal_reference_deficit",
+      "args": [
+        1,
+        1
+      ],
+      "stage": "STARTED"
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_14_refusals",
+      "name": "principal_reference_deficit",
+      "args": [
+        1,
+        1
+      ],
+      "stage": "RAISED",
+      "error_type": "ValueError",
+      "error": "Finite static exterior radius>2m required"
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_14_refusals",
+      "name": "principal_reference_deficit",
+      "args": [
+        true,
+        10
+      ],
+      "stage": "STARTED"
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_14_refusals",
+      "name": "principal_reference_deficit",
+      "args": [
+        true,
+        10
+      ],
+      "stage": "RAISED",
+      "error_type": "ValueError",
+      "error": "m must be a builtin real number, not bool"
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_14_refusals",
+      "name": "principal_reference_deficit",
+      "args": [
+        -1,
+        10
+      ],
+      "stage": "STARTED"
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_14_refusals",
+      "name": "principal_reference_deficit",
+      "args": [
+        -1,
+        10
+      ],
+      "stage": "RAISED",
+      "error_type": "ValueError",
+      "error": "m must be nonnegative"
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_14_refusals",
+      "name": "principal_reference_deficit",
+      "args": [
+        1e-300,
+        1e+300
+      ],
+      "stage": "STARTED"
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_14_refusals",
+      "name": "principal_reference_deficit",
+      "args": [
+        1e-300,
+        1e+300
+      ],
+      "stage": "RAISED",
+      "error_type": "ValueError",
+      "error": "Nonzero compactness underflow unresolved"
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_14_refusals",
+      "name": "ideal_slip_residual",
+      "args": [
+        1,
+        1e-300,
+        1e+300,
+        1
+      ],
+      "stage": "STARTED"
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_14_refusals",
+      "name": "ideal_slip_residual",
+      "args": [
+        1,
+        1e-300,
+        1e+300,
+        1
+      ],
+      "stage": "RAISED",
+      "error_type": "ValueError",
+      "error": "Velocity normalization overflow/underflow unresolved"
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_14_refusals",
+      "name": "ideal_slip_residual",
+      "args": [
+        1,
+        1,
+        0,
+        1
+      ],
+      "stage": "STARTED"
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_14_refusals",
+      "name": "ideal_slip_residual",
+      "args": [
+        1,
+        1,
+        0,
+        1
+      ],
+      "stage": "RAISED",
+      "error_type": "ValueError",
+      "error": "c must be positive"
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_14_refusals",
+      "name": "ideal_slip_residual",
+      "args": [
+        1,
+        1,
+        2,
+        {
+          "typed_float": "+Infinity"
+        }
+      ],
+      "stage": "STARTED"
+    },
+    {
+      "kind": "HELPER_INVOCATION",
+      "control": "test_14_refusals",
+      "name": "ideal_slip_residual",
+      "args": [
+        1,
+        1,
+        2,
+        {
+          "typed_float": "+Infinity"
+        }
+      ],
+      "stage": "RAISED",
+      "error_type": "ValueError",
+      "error": "slip must be finite"
+    },
+    {
+      "kind": "CONTROL_TERMINAL",
+      "control": "test_14_refusals",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "kind": "CONTROL_STARTED",
+      "control": "test_15_eight_branches"
+    },
+    {
+      "kind": "INDEPENDENT_IDEAL_WITNESS",
+      "control": "test_15_eight_branches",
+      "payload": {
+        "literal_primary_table_references": [
+          [
+            "GO-",
+            "StellarIMF",
+            "Near",
+            "0.47",
+            "7.2"
+          ],
+          [
+            "GO-",
+            "StellarIMF",
+            "Far",
+            "0.53",
+            "0.94"
+          ],
+          [
+            "GO-",
+            "DarkIMF",
+            "Near",
+            "0.96",
+            "11.1"
+          ],
+          [
+            "GO-",
+            "DarkIMF",
+            "Far",
+            "0.04",
+            "1.11"
+          ],
+          [
+            "GO+",
+            "StellarIMF",
+            "Near",
+            "0.94",
+            "2.8"
+          ],
+          [
+            "GO+",
+            "StellarIMF",
+            "Far",
+            "0.06",
+            "0.4"
+          ],
+          [
+            "GO+",
+            "DarkIMF",
+            "Near",
+            "0.999",
+            "4.9"
+          ],
+          [
+            "GO+",
+            "DarkIMF",
+            "Far",
+            "0.001",
+            "0.59"
+          ]
+        ],
+        "all_contract_branches": [
+          {
+            "photometric_mode": "GO-",
+            "mass_prior": "StellarIMF",
+            "branch": "Near",
+            "published_branch_weight": 0.47,
+            "published_mass_posterior_median_msun": 7.2,
+            "interpretation": "Prior-conditional posterior summary, not an observed mass or a BH probability."
+          },
+          {
+            "photometric_mode": "GO-",
+            "mass_prior": "StellarIMF",
+            "branch": "Far",
+            "published_branch_weight": 0.53,
+            "published_mass_posterior_median_msun": 0.94,
+            "interpretation": "Prior-conditional posterior summary, not an observed mass or a BH probability."
+          },
+          {
+            "photometric_mode": "GO-",
+            "mass_prior": "DarkIMF",
+            "branch": "Near",
+            "published_branch_weight": 0.96,
+            "published_mass_posterior_median_msun": 11.1,
+            "interpretation": "Prior-conditional posterior summary, not an observed mass or a BH probability."
+          },
+          {
+            "photometric_mode": "GO-",
+            "mass_prior": "DarkIMF",
+            "branch": "Far",
+            "published_branch_weight": 0.04,
+            "published_mass_posterior_median_msun": 1.11,
+            "interpretation": "Prior-conditional posterior summary, not an observed mass or a BH probability."
+          },
+          {
+            "photometric_mode": "GO+",
+            "mass_prior": "StellarIMF",
+            "branch": "Near",
+            "published_branch_weight": 0.94,
+            "published_mass_posterior_median_msun": 2.8,
+            "interpretation": "Prior-conditional posterior summary, not an observed mass or a BH probability."
+          },
+          {
+            "photometric_mode": "GO+",
+            "mass_prior": "StellarIMF",
+            "branch": "Far",
+            "published_branch_weight": 0.06,
+            "published_mass_posterior_median_msun": 0.4,
+            "interpretation": "Prior-conditional posterior summary, not an observed mass or a BH probability."
+          },
+          {
+            "photometric_mode": "GO+",
+            "mass_prior": "DarkIMF",
+            "branch": "Near",
+            "published_branch_weight": 0.999,
+            "published_mass_posterior_median_msun": 4.9,
+            "interpretation": "Prior-conditional posterior summary, not an observed mass or a BH probability."
+          },
+          {
+            "photometric_mode": "GO+",
+            "mass_prior": "DarkIMF",
+            "branch": "Far",
+            "published_branch_weight": 0.001,
+            "published_mass_posterior_median_msun": 0.59,
+            "interpretation": "Prior-conditional posterior summary, not an observed mass or a BH probability."
+          }
+        ],
+        "within_pair_weight_sums": [
+          [
+            "GO-",
+            "StellarIMF",
+            {
+              "rational_numerator": 1,
+              "rational_denominator": 1
+            }
+          ],
+          [
+            "GO-",
+            "DarkIMF",
+            {
+              "rational_numerator": 1,
+              "rational_denominator": 1
+            }
+          ],
+          [
+            "GO+",
+            "StellarIMF",
+            {
+              "rational_numerator": 1,
+              "rational_denominator": 1
+            }
+          ],
+          [
+            "GO+",
+            "DarkIMF",
+            {
+              "rational_numerator": 1,
+              "rational_denominator": 1
+            }
+          ]
+        ]
+      }
+    },
+    {
+      "kind": "CONTROL_TERMINAL",
+      "control": "test_15_eight_branches",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "kind": "CONTROL_STARTED",
+      "control": "test_16_status_contract"
+    },
+    {
+      "kind": "INDEPENDENT_IDEAL_WITNESS",
+      "control": "test_16_status_contract",
+      "payload": {
+        "claim_count": 7,
+        "candidate_context": {
+          "event_id": "Gaia18ajz",
+          "aliases": [
+            "AT2018uh",
+            "Gaia DR3 4156664130700362752"
+          ],
+          "novelty_status": "PREVIOUSLY_PUBLISHED_CANDIDATE_NOT_A_NEW_ENGINE_DISCOVERY",
+          "selection_status": "PROVISIONAL_LITERATURE_BASED_FOLLOWUP_TARGET_PENDING_INDEPENDENT_REVIEW",
+          "catalog_source_direction_role": "HISTORICAL_SOURCE_EVENT_DIRECTION_NOT_LENS_POSITION",
+          "all_eight_literature_branches": [
+            {
+              "photometric_mode": "GO-",
+              "mass_prior": "StellarIMF",
+              "branch": "Near",
+              "published_branch_weight": 0.47,
+              "published_mass_posterior_median_msun": 7.2,
+              "interpretation": "Prior-conditional posterior summary, not an observed mass or a BH probability."
+            },
+            {
+              "photometric_mode": "GO-",
+              "mass_prior": "StellarIMF",
+              "branch": "Far",
+              "published_branch_weight": 0.53,
+              "published_mass_posterior_median_msun": 0.94,
+              "interpretation": "Prior-conditional posterior summary, not an observed mass or a BH probability."
+            },
+            {
+              "photometric_mode": "GO-",
+              "mass_prior": "DarkIMF",
+              "branch": "Near",
+              "published_branch_weight": 0.96,
+              "published_mass_posterior_median_msun": 11.1,
+              "interpretation": "Prior-conditional posterior summary, not an observed mass or a BH probability."
+            },
+            {
+              "photometric_mode": "GO-",
+              "mass_prior": "DarkIMF",
+              "branch": "Far",
+              "published_branch_weight": 0.04,
+              "published_mass_posterior_median_msun": 1.11,
+              "interpretation": "Prior-conditional posterior summary, not an observed mass or a BH probability."
+            },
+            {
+              "photometric_mode": "GO+",
+              "mass_prior": "StellarIMF",
+              "branch": "Near",
+              "published_branch_weight": 0.94,
+              "published_mass_posterior_median_msun": 2.8,
+              "interpretation": "Prior-conditional posterior summary, not an observed mass or a BH probability."
+            },
+            {
+              "photometric_mode": "GO+",
+              "mass_prior": "StellarIMF",
+              "branch": "Far",
+              "published_branch_weight": 0.06,
+              "published_mass_posterior_median_msun": 0.4,
+              "interpretation": "Prior-conditional posterior summary, not an observed mass or a BH probability."
+            },
+            {
+              "photometric_mode": "GO+",
+              "mass_prior": "DarkIMF",
+              "branch": "Near",
+              "published_branch_weight": 0.999,
+              "published_mass_posterior_median_msun": 4.9,
+              "interpretation": "Prior-conditional posterior summary, not an observed mass or a BH probability."
+            },
+            {
+              "photometric_mode": "GO+",
+              "mass_prior": "DarkIMF",
+              "branch": "Far",
+              "published_branch_weight": 0.001,
+              "published_mass_posterior_median_msun": 0.59,
+              "interpretation": "Prior-conditional posterior summary, not an observed mass or a BH probability."
+            }
+          ],
+          "branch_weight_policy": "Normalize only within each GO sign and mass-prior near/far pair; not BH probabilities or eight-way weights.",
+          "engine_measurements": {
+            "mass_msun": null,
+            "lens_distance_pc": null,
+            "theta_E_mas": null,
+            "absolute_lens_motion": null,
+            "accepted_mass_interval_msun": null
+          },
+          "independent_native_candidate_adequacy": "NOT_ESTABLISHED",
+          "next_observation": "Calibrated epoch astrometry or an independently constrained angular Einstein scale, plus source-frame and lens-light validation."
+        },
+        "positive_reference": {
+          "event_id": "OGLE-2011-BLG-0462",
+          "aliases": [
+            "MOA-2011-BLG-191",
+            "OB110462"
+          ],
+          "role": "PUBLISHED_POSITIVE_REFERENCE_NOT_PRIMARY_NEW_CANDIDATE",
+          "source_url": "https://doi.org/10.3847/1538-4357/adbe6e",
+          "independent_engine_recovery_accepted": false,
+          "engine_status": "RETAINED_JOINT_MODEL_NOISE_FAILURES_NO_ACCEPTED_MASS"
+        },
+        "non_BH_comparison": {
+          "event_id": "OGLE-2007-BLG-224",
+          "role": "PUBLISHED_BROWN_DWARF_COUNTEREXAMPLE",
+          "source_url": "https://arxiv.org/abs/0904.0249v2",
+          "followup_source_url": "https://arxiv.org/abs/2011.06013",
+          "literature_mass_msun": 0.056,
+          "literature_mass_sigma_msun": 0.004,
+          "literature_lens_distance_pc": 525,
+          "literature_transverse_velocity_km_s": 113,
+          "independently_recovered_by_this_engine": false
+        },
+        "new_boundary_law_derived": false,
+        "publication_ready": false
+      }
+    },
+    {
+      "kind": "CONTROL_TERMINAL",
+      "control": "test_16_status_contract",
+      "status": "PASS",
+      "error": null
+    },
+    {
+      "kind": "CAMPAIGN_TERMINAL",
+      "status": "PASS_INVENTED_ALGEBRA_ONLY",
+      "tests_run": 16,
+      "source_hashes_after": {
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_real_data_corrections_20261022\\prepublication_20261024\\bhsm_claim_v1\\BHSM_ENVELOPMENT_CLAIM_AND_FALSIFIERS_V1.md": "07a1470eb916b56297fa98793a8da0af10d0512d34a5ee48dc413890e25ae769",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_real_data_corrections_20261022\\prepublication_20261024\\bhsm_claim_v1\\ideal_claim_diagnostics_v1.py": "ad870bd1943acdd85fe147bdbb40f9c316d7c4d4652ad54d03f6146c6ca5ee6e",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_real_data_corrections_20261022\\prepublication_20261024\\bhsm_claim_v1\\run_ideal_claim_controls_v1.py": "ac0dc98139ca39f1295a6a18da32f793bc26ac0a12e947b6209e27b6ce4241ae",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_real_data_corrections_20261022\\prepublication_20261024\\bhsm_claim_v1\\PROSPECTIVE_IDEAL_CONTROL_PROTOCOL_v1.txt": "f691d80bd8b6ae96fc6e25b3a6132120c1993e60ba96f502ce7e345fe96632ae",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_real_data_corrections_20261022\\prepublication_20261024\\bhsm_claim_v1\\CLAIM_CONTRACT_v1.json": "6baa3990225e36e80d06c63cd5ca67b839c6414b879ce4b7bcf2822834c82549",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_real_data_corrections_20261022\\prepublication_20261024\\bhsm_claim_v1\\PRIMARY_SOURCE_CHECKS_v1.json": "43ba2f8b25b0700cf14d8f0cbc99b9338b2abbfd0d9fe80f3479e0ab07d9ba54",
+        "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\docs\\BHSM_ENVELOPMENT_CLAIM_AND_FALSIFIERS_V1.md": "07a1470eb916b56297fa98793a8da0af10d0512d34a5ee48dc413890e25ae769",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\BHSM-real-data-20261022\\docs\\BHSM_AUTHOR_SURFACE_GEOMETRY_CLARIFICATION_20261023.md": "f8dcd3611d71f2acef265bf2f921eb0db5773fc5524266d3a5df63b718c714a3",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\BHSM-real-data-20261022\\docs\\BHSM_TRACKER_ENVELOPMENT_SEARCH_CLARIFICATION_20261023.md": "c2df2654c5b094206acbce8e450fbdbe87a16fcc267787f9d897a2b0202b909a",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\BHSM-real-data-20261022\\docs\\BHSM_NORMAN_CORE_SURFACE_AMENDMENT_20261022.md": "028158078ae6ac2c32f44f3539c2598ade810f5ef77fff66b7e854cb9d4f959a",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\BHSM-real-data-20261022\\docs\\source_recovery\\20261022\\README.md": "2f634a46f6974f871b79aafcf1b331797be7d4ee69bd10c0f550310d93ffb5da",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\BHSM-real-data-20261022\\docs\\source_recovery\\20261022\\originals\\BHSM_Core_Harmonics_Black_Hole_Tracker_Codex_Prompt_20261022.txt": "149ba5efafd46be01bde9fe9513c1c83788b8a5f41c2127a4e2e5e6ce358517c",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\BHSM-real-data-20261022\\docs\\source_recovery\\20261022\\originals\\BHSM_Frame_Dragging_and_Nonlinear_Front_Derivation_v0_1.pdf": "7bb85093bcf3d03ca30220fd6d52aa3306a2c4d1648e91679c3d5a65f9409e2e",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\BHSM-real-data-20261022\\docs\\source_recovery\\20261022\\originals\\BHSM_Galaxy_Envelope_Formation_and_Persistence_v0_1.pdf": "de228c96c612024e2bfd1d3c9907dc6223108dfb6ecfc4f7b7bffb65623450a4",
+        "C:\\Users\\carbe\\Downloads\\BHSM_Galaxy_Gravity_Loaded_Schur_Hessian_v0_5.md": "718cdac692ae6030eb70c327771343267c4517c1a69a01454a32872579013816",
+        "C:\\Users\\carbe\\Downloads\\BHSM_Topographic_Galaxy_Encapsulation_Solution_v0_3.md": "c9eaee920746c024b695c722fc783aea53dfc9da5660a92150de4b05d9c7ba0a",
+        "C:\\Users\\carbe\\Downloads\\BHSM_optical_constitutive_reduction.tex": "0164cafd76e43a23c10f0e6449f300317d11a92597fdee56fd17883f35240e44",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\BHSM-real-data-20261022\\papers\\bhsm_blackhole_tracker_20261021\\manuscript\\bhsm_interpretation.tex": "5fbe5ca35829b543220e856914b2d13f3d322848dac1df56d7b61d982dd5e01f",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\BHSM-real-data-20261022\\papers\\bhsm_blackhole_tracker_20261021\\manuscript\\projection_theorem.tex": "16d5148a7ac76f95296313a9f08f765d7076f71154fba26cc2ac669e61c5dbc7",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\BHSM-real-data-20261022\\papers\\bhsm_blackhole_tracker_20261021\\manuscript\\estimator_derivation.tex": "55b1b0eec6ebccedd17e900d0df70e791e1e470f339f7f50d446d94fae8f0828",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\BHSM-real-data-20261022\\papers\\bhsm_blackhole_tracker_20261021\\CHAIN_AND_FREEDOMS.md": "34a48d48a99cfba2e83ab03b734025c87e89cd3d0b9ba8b22dff7a7397708cee",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\BHSM-real-data-20261022\\papers\\bhsm_blackhole_tracker_20261021\\review\\envelopment_search_20261023\\SOURCE_ONLY_MATHEMATICAL_REVIEW_v1.txt": "32c39850044f58f5e4e048550d101ddd11ff4e17ae4dd0c0a3ca57cd2202970c",
+        "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\BHSM-real-data-20261022\\papers\\bhsm_blackhole_tracker_20261021\\provenance\\bhsm_boundary_mass_interpretation_sources.json": "eb3b5b9a26d6b5606719c45113db69cc8ca9dc000cfa9bb7e174cde50f2ca3a5",
+        "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\theory\\PRIMARY_TARGET_PROGRAM.json": "175c4b11279bb0397b48eb76d38b556b30eb246ef005bb1cb1cfab510dd32f48",
+        "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\theory\\BHSM_CORE_SURFACE_CONTRACT.json": "a0561d8fe7d1031daa2a56c433d46b99734b20f850e02e16d0e5095b32fc3507",
+        "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\research\\primary_target_20261023\\COMPARATIVE_PRIMARY_FOLLOWUP_REVIEW_v2.json": "5459238e85a56f925edf8d8c671510500e42156a662e40c7a2d87bbdf1ad076d",
+        "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\__main__.py": "6ce05b79ee1666025af142adc913f1d468781e77af67ae431fe163472a52fb3a",
+        "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\astrometry.py": "a74dd19625f4bf463249ab9d3cb80ee8794e3e12c5d728f5fbdf5817f1002daa",
+        "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\candidate_atlas.py": "d55fbaab55a8564722866686447430d4e5967073a7f113705a295d87f294a2c0",
+        "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\cli.py": "81a3574dc377c3c469e0284a80dc857bb60fbaa11436096ed082c068b7e4aa71",
+        "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\data.py": "6ef640052af40d95056ce4d15a508096d678737ba09afdb24c0df09df03d6b63",
+        "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\envelope.py": "c08bbf41cf58878db0a825247812f19b642280c1cd908f4a8a099c7d16f7c285",
+        "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\examples.py": "6694293c27930087cbc0866d83aa657ea70c6dd6cb2a6b1d6a59a693a6bf8f26",
+        "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\forward.py": "54035f500c3c8f1b8ae606e45c178c4e9b09e31b083b152f52d479654b7066f5",
+        "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\importers.py": "12c2c97700432f675f9c69eb74f2b3010ac318972dc2f04f7c172fa53a492396",
+        "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\inference.py": "35d0bba9db08feb22584d7234e62ea9bd6ef34d6feb325258892d51118f986f9",
+        "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\interpretation.py": "15c934c1de804ecd62585a00e84a4555a051ad9f9ff706c8a3e323f3f6ce4b20",
+        "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\joint_benchmark_v2.py": "83f599f7cdd616690fdcbf61f30ec05145719cc5b343d083cfe4c0a45ff940a6",
+        "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\joint_benchmark.py": "d3811ccb1214ab6ac3f307033fbcb6e9fc89ad7201de4c3b91faeeec47f94480",
+        "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\joint_mass_v2.py": "6eaf050481fc23aebf4b929e49fdab57e324ee80eb08e1547b69f056269eeaaa",
+        "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\joint_mass.py": "507874d1adb27440abc3add6aab6ac5caf45f871b7ba58b8206d3fdceef32ff0",
+        "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\joint_report.py": "38f4504a271b41408914a5030b222c3109e0615fc767c71161e7f868a44a14ac",
+        "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\joint_workflow_v2.py": "3cb2bf649120f107acd8c4e3bef9ae7f89b02371ec5c3c76c36b601b901c43c6",
+        "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\joint_workflow.py": "173df93205a2cbc7fe81acc3695421eddd6faeeb285fa808a892797d5704869e",
+        "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\observations.py": "5c9b07c1887c9a299ca8505b323462d41f314457f2bff3b5b2b2ca1970a21c0b",
+        "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\photometry.py": "d3bcfcf6bab36542f13a45f062f74ef322bd5cd97e71eb184123588f186eefa0",
+        "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\physics_admission.py": "eb89ef40f95128078df390ce813c312ad302b1494424d57faea3191cafa58e60",
+        "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\r1_runtime.py": "f3cc2074d915ad02ba6549209d0b0cd532304fa71d2930bb7cbc3d5fc2a39250",
+        "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\report.py": "b0bb39f074eb4e4945cc273ae73577f8fd1d7007f24a50c0fa82446672887e18",
+        "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\sample_bundle.py": "8d145f0d16a2d9f2a63706b0fb5f26d187e33589597ae7ee7182cec8b15613ad",
+        "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\server.py": "fa83d139ae5e9d1188a3db18fbfc1e595ca22f1c97fedd2623895a36fcc92db6",
+        "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\skytrack.py": "e7890e414542da49873b4d1ad775520719872a845ff3bfe6a55c761ea840172a",
+        "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\spectrum.py": "d42cf335576ff95c4a2a5a548e33d194114593dd125d7c87d8860d0dfca168a3",
+        "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\target_program.py": "d122aa945846fe0ea65438df3e8e42aeac401cfa1b02dd1172b5210660f70e39",
+        "C:\\Users\\carbe\\Manuscript-Generation\\.worktrees\\bhsm-joint-mass-20261022\\product\\bhtracker\\unresolved_report.py": "332134fa5f7012d4f0d9dcfe241b5a262a459c487182a538f9080bf5418687b7"
+      }
+    }
+  ],
+  "test_count": 16,
+  "failures": 0,
+  "errors": 0,
+  "event_log_sha256": "ebba1973e3d68682936b838ed225f01a4f7ba3e4875040d5e4d8585ce1513d92",
+  "outcome_log_sha256": "44eab03f1f4d425f2159dd377b5566ec7629dbe51a76e0c936730e982425b1c1",
+  "native_calls": 0,
+  "likelihood_calls": 0,
+  "fit_calls": 0,
+  "probability_calls": 0,
+  "downloads": 0,
+  "accepted_BH_or_new_native_result": false,
+  "publication_hold_cleared": false
+}

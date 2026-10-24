@@ -1,0 +1,3784 @@
+{
+  "schema": "bhsm_observation_download_manifest_v1",
+  "prepared_utc": "2026-10-22T19:23:06.619696+00:00",
+  "acquisition_status": "complete_for_declared_pilot_and_benchmark",
+  "real_data_analysis_performed": false,
+  "new_black_hole_candidates_identified": false,
+  "cohort": "BHSM-OGLE3-pilot-20261022-v1",
+  "file_count": 109,
+  "raw_bytes": 6755857,
+  "notes": [
+    "Full class-A catalog metadata are present; only the declared 100 optimized event light curves are included.",
+    "Pilot selection was frozen using published catalog fit values before any new light-curve fitting; no new scientific fits have been performed.",
+    "Two tables describe the same 3560 parent events; do not count them twice.",
+    "The benchmark is one previously studied physical event, observed by multiple instruments and filters.",
+    "Initial connectivity probes returned transient HTTP503 for three OGLE resources; subsequent bounded retries succeeded. The probe light curve is excluded from this pilot package.",
+    "Publisher MD5 values were checked for the Zenodo files; SHA256 was calculated for every downloaded file.",
+    "No blanket data license is inferred from public accessibility; preserve attribution and source-specific terms."
+  ],
+  "files": [
+    {
+      "relative_path": "raw/ogle3/CLASSA_OPTIMIZED_index.html",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:19:55.678474+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:19:57.544983+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/",
+      "http_status": 200,
+      "content_type": "text/html;charset=UTF-8",
+      "last_modified": null,
+      "bytes": 1109967,
+      "sha256": "7b15a96473dcf4f43362656cde7c76db9c60f6276df002f7999680f70138304f",
+      "md5": "b8e9f23dcca14b7e1ba3327aa82a2019",
+      "role": "publisher_documentation_or_index"
+    },
+    {
+      "relative_path": "raw/ogle3/README.txt",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/README.txt",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:19:55.550369+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:19:56.172949+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/README.txt",
+      "http_status": 200,
+      "content_type": "text/plain",
+      "last_modified": "Thu, 22 May 2014 07:42:51 GMT",
+      "bytes": 3298,
+      "sha256": "00f9c596c49bb9b8e4a692068ee43322c9e6a6d84f17f7eb07b0f5ed8bec3536",
+      "md5": "906fc989e4990af6b92add4547c888e2",
+      "role": "publisher_documentation_or_index"
+    },
+    {
+      "relative_path": "raw/ogle3/catalogA-full.table",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/catalogA-full.table",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:51.779277+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:52.812893+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/catalogA-full.table",
+      "http_status": 200,
+      "content_type": null,
+      "last_modified": "Tue, 20 May 2014 11:49:28 GMT",
+      "bytes": 820588,
+      "sha256": "4ad3f8c907f5ccfcaf0bb64b2b42391fec747eba3c91548748b38771dddd1739",
+      "md5": "022293f78643c230043d0d1db1e54067",
+      "role": "published_catalog_metadata_and_fit_summary",
+      "source_release": "Wyrzykowski et al. 2015 / OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/catalogA_basic.table",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/catalogA_basic.table",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:51.778312+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:52.511298+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/catalogA_basic.table",
+      "http_status": 200,
+      "content_type": null,
+      "last_modified": "Mon, 19 May 2014 12:13:54 GMT",
+      "bytes": 199104,
+      "sha256": "fb803c4d0ad85e47eb3ca379a53bce8245a1643f9679e87321acfd1fe7ec40d7",
+      "md5": "300de46abab7a45dbf62b284607bd76e",
+      "role": "published_catalog_metadata_and_fit_summary",
+      "source_release": "Wyrzykowski et al. 2015 / OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG100.3.I.144687.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG100.3.I.144687.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:52.511611+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:53.046533+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG100.3.I.144687.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:54:51 GMT",
+      "bytes": 29574,
+      "sha256": "31324077d637261ddea50336e4fe239cdda928c2b34e0fce94fe49350d8e05c2",
+      "md5": "8196255ce062285ed217512fb23f73d9",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-0033",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG100.4.I.17039.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG100.4.I.17039.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:52.813703+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:52.961286+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG100.4.I.17039.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:54:51 GMT",
+      "bytes": 29667,
+      "sha256": "8ce1a1189a0a81f39d83ff211a3300279eef471bcac8fbc53c4511165aa4e3b5",
+      "md5": "ad140678650dbfbcce59ab8251746a3b",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-0037",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG100.6.I.91567.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG100.6.I.91567.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:52.961484+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:53.113919+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG100.6.I.91567.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:54:52 GMT",
+      "bytes": 29295,
+      "sha256": "e38ff1b02effeafa93e8fa7d5d9f6f0e206c12db9138f6d05395b97e54d7ce98",
+      "md5": "af997dcaf3a57ccc8e1d0fb044e2c0d8",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-0048",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG101.1.I.189629.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG101.1.I.189629.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:53.046770+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:53.182794+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG101.1.I.189629.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:54:53 GMT",
+      "bytes": 30039,
+      "sha256": "3f779944c839ad810ca89222e0a13209da38230c55a662b6c397ab91ade2be92",
+      "md5": "c11311cf026dbe28e475bdafc888be9d",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-0078",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG101.4.I.196393.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG101.4.I.196393.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:53.114139+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:53.254525+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG101.4.I.196393.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:54:54 GMT",
+      "bytes": 29915,
+      "sha256": "f2af29c637cdda5fac7ee7ac313c0a67c17124996301de886de974be3de87e7d",
+      "md5": "aa91cba7a9105473922b99f49bfca7a3",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-0127",
+      "stratum": "ordinary_duration_control",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG101.5.I.211484.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG101.5.I.211484.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:53.183023+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:53.311233+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG101.5.I.211484.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:54:54 GMT",
+      "bytes": 29853,
+      "sha256": "727f6336989ceb62ace637ce5a999021734458de84ae5a96a3f28d4f60121aa4",
+      "md5": "87d4cf40d55ddf33f3644cb9e407ffc7",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-0146",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG101.7.I.166809.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG101.7.I.166809.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:53.254856+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:53.399105+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG101.7.I.166809.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:54:55 GMT",
+      "bytes": 30008,
+      "sha256": "35b6c6adade2a182b59ccfdf5bee4ab1aa29500d11821cd27e23ddfeb448af24",
+      "md5": "45f1e32a49ab18da82a10a0f4ec846c9",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-0169",
+      "stratum": "ordinary_duration_control",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG101.8.I.1086.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG101.8.I.1086.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:53.311423+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:53.441917+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG101.8.I.1086.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:54:55 GMT",
+      "bytes": 26846,
+      "sha256": "77adc04ccc555c30b5e37f26d0a44660ba3d86eee446030ae5307f050ced208e",
+      "md5": "b0ed0daf0068ee05b50367a2e34951aa",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-0174",
+      "stratum": "ordinary_duration_control",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG102.2.I.42779.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG102.2.I.42779.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:53.399295+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:53.547126+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG102.2.I.42779.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:54:56 GMT",
+      "bytes": 31682,
+      "sha256": "e86eadab509c0fc49694a35f29c53743b21ce2b3eaed0e16b44cf9307d019d33",
+      "md5": "b549a01e95f51dbf042b64dc05bdc720",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-0202",
+      "stratum": "ordinary_duration_control",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG102.6.I.120180.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG102.6.I.120180.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:53.442159+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:53.583550+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG102.6.I.120180.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:54:57 GMT",
+      "bytes": 31744,
+      "sha256": "be4d243d2b6335046a22f1128b108d8ee598447b9342c8e3d7395b29bf2bc06e",
+      "md5": "8ec33c22ef4b3368e6f5b92afcba34eb",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-0252",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG102.6.I.244836.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG102.6.I.244836.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:53.547321+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:53.719970+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG102.6.I.244836.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:54:58 GMT",
+      "bytes": 31775,
+      "sha256": "76cecbacb9616829e371cc2ca39a3fa0c73e9031e341699c2237d00ca519dc1d",
+      "md5": "ad6b3a1e0446759245a2f47ed732970a",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-0261",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG102.7.I.44461.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG102.7.I.44461.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:53.583756+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:53.721846+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG102.7.I.44461.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:54:58 GMT",
+      "bytes": 31868,
+      "sha256": "621272d3f0c11408497bfb12f4c904f3ae390ad241de7413dd39c8acc25528fd",
+      "md5": "a9737d8f341f7f829a88630dc48a43f2",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-0264",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG102.8.I.76236.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG102.8.I.76236.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:53.720263+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:53.849717+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG102.8.I.76236.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:54:58 GMT",
+      "bytes": 31806,
+      "sha256": "34dc1592e932657003bfbc2d34cd4b779874af0536afeaae79aac691d2f51bbb",
+      "md5": "af5372f3062ff867fbfe23389ff732f6",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-0277",
+      "stratum": "ordinary_duration_control",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG103.4.I.61174.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG103.4.I.61174.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:53.721991+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:53.861427+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG103.4.I.61174.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:54:59 GMT",
+      "bytes": 28520,
+      "sha256": "f8a288b746c694c4589d8582a73bec803e00d04c6f144870ea76366c04235f22",
+      "md5": "3f6b588a503b4bce745045b65f3b8515",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-0316",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG103.6.I.127368.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG103.6.I.127368.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:53.849923+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:54.102160+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG103.6.I.127368.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:54:59 GMT",
+      "bytes": 25482,
+      "sha256": "ec10b202ee052ebb359fede0b746efed65f9945346c62861d5355999aaebd4b7",
+      "md5": "e0e8792be5b10892e887a470234dd0c5",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-0337",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG103.7.I.24853.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG103.7.I.24853.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:53.861603+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:53.989591+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG103.7.I.24853.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:54:59 GMT",
+      "bytes": 28489,
+      "sha256": "a3b7d0093afd1427a97af0cb45ebb429e57fbde42b9b7dfb0fe4f5a8737f44ee",
+      "md5": "da7ab447a72d4887accc77dd66d45fd1",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-0344",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG103.7.I.31316.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG103.7.I.31316.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:53.989776+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:54.118902+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG103.7.I.31316.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:54:59 GMT",
+      "bytes": 28706,
+      "sha256": "4c10f18ed9aad4b921a6cdce40cd82e667274187192f6e9e4591fdbae713670b",
+      "md5": "9c8eddb1881ca80856ac1390f5eb39d0",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-0345",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG103.8.I.107079.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG103.8.I.107079.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:54.102557+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:54.237677+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG103.8.I.107079.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:00 GMT",
+      "bytes": 28551,
+      "sha256": "a808461be5564252abdf3cdcc7939a1a129c6d9cfe8ad98430d60840caa44c96",
+      "md5": "7a68326cd4ecfa3ff494af2d8b0d5c51",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-0361",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG104.2.I.64390.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG104.2.I.64390.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:54.119286+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:54.253205+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG104.2.I.64390.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:00 GMT",
+      "bytes": 27094,
+      "sha256": "2944b0c102e8955e41a451068a765b1ab109391763572a3476eebf2707e86290",
+      "md5": "c387d5077c8544fa89142f087c8b2cb9",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-0381",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG104.2.I.76459.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG104.2.I.76459.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:54.237866+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:54.367632+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG104.2.I.76459.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:00 GMT",
+      "bytes": 27807,
+      "sha256": "5d29c676315097243e50bbf13bdddf36239c92fdcfb6c3889a982a5f7179f451",
+      "md5": "65ed48a739eafa7e5850b639ef98e656",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-0382",
+      "stratum": "ordinary_duration_control",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG104.6.I.150374.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG104.6.I.150374.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:54.367839+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:54.496324+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG104.6.I.150374.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:01 GMT",
+      "bytes": 28086,
+      "sha256": "83f1667c94816284ee08967e9decdd4fc18cb954e796e51b7def0f9d8b63a7e9",
+      "md5": "2b944f0fe9ec4bf1d8d4426f89b515ff",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-0427",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG104.6.I.91022.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG104.6.I.91022.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:54.253387+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:54.402566+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG104.6.I.91022.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:01 GMT",
+      "bytes": 27993,
+      "sha256": "7ba4b2969aff961f5164191a5ac76ada91bd6fad600281a69ba323b70431b8dc",
+      "md5": "c55d150e7f53b355f52c5f7bd10e2cea",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-0424",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG105.2.I.158258.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG105.2.I.158258.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:54.402776+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:54.537764+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG105.2.I.158258.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:02 GMT",
+      "bytes": 24087,
+      "sha256": "f50f12cdb54b53d4283461781e59c827403d7e4bccb15950c54ac90da6942ac0",
+      "md5": "b9b763119ef558116cb4df858b5e5973",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-0468",
+      "stratum": "ordinary_duration_control",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG117.1.I.89360.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG117.1.I.89360.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:54.496514+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:54.626777+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG117.1.I.89360.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:02 GMT",
+      "bytes": 9300,
+      "sha256": "61b1dd797a0bc704963d645a97a8d555833e366a4d7fd157fed76a8734128ed2",
+      "md5": "ab1ba20a1b0776e2538d75b7bdda5655",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-0518",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG121.2.I.201637.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG121.2.I.201637.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:54.537947+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:54.672304+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG121.2.I.201637.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:02 GMT",
+      "bytes": 18011,
+      "sha256": "55d8526b36936c1dfd2153f675fc8bcb2dcc9084e921a314c171dc138e0174e9",
+      "md5": "f06866dff6cb8fc138980558bad9d18e",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-0538",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG122.1.I.184151.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG122.1.I.184151.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:54.626954+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:54.757467+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG122.1.I.184151.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:03 GMT",
+      "bytes": 25172,
+      "sha256": "64180769af77fa8bb2905604f33c3bb0d8bcfcffc804043abd5c02957103c822",
+      "md5": "991d8a4f8bbe3a795748791028eb8af0",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-0568",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG122.6.I.83113.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG122.6.I.83113.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:54.672483+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:54.806527+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG122.6.I.83113.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:03 GMT",
+      "bytes": 22754,
+      "sha256": "2057393df485b62484e101ea7e18d1dce379088720e7b8937b72859902b08767",
+      "md5": "68f0094b915571343ca6dc7a7fcbba29",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-0585",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG129.5.I.40706.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG129.5.I.40706.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:54.758367+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:54.888927+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG129.5.I.40706.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:04 GMT",
+      "bytes": 24428,
+      "sha256": "50a442699c1b815457d98ce6f1364148af0f1ceb76cccf8c11ecfcea936203bf",
+      "md5": "cd11ef83b6c2b0477b4fd75b79d36df5",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-0626",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG130.5.I.63917.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG130.5.I.63917.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:54.806774+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:54.941747+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG130.5.I.63917.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:04 GMT",
+      "bytes": 24428,
+      "sha256": "75ff382cea33de16cde0bc91fc835da9604bd572d2ab612f0ab7928d267a59a9",
+      "md5": "7668b1c9e20eed19ddf9ab8d02822604",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-0669",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG131.1.I.104549.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG131.1.I.104549.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:54.889148+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:55.019206+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG131.1.I.104549.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:05 GMT",
+      "bytes": 18972,
+      "sha256": "2651eee2de868102db8d399f49c702829f661f3f469ad3df84d2dd1d062593a2",
+      "md5": "ae6e74fbe6c98ea9aec6669ad6adcd92",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-0695",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG138.2.I.164878.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG138.2.I.164878.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:54.941930+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:55.075931+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG138.2.I.164878.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:05 GMT",
+      "bytes": 23839,
+      "sha256": "af1a67bd4364bfc0c02e4a756754cc589541944876be0f02a7b1c5159be4f9b4",
+      "md5": "0ad366dec353b054737125759d6e1df4",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-0754",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG138.4.I.128073.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG138.4.I.128073.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:55.019384+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:55.156456+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG138.4.I.128073.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:05 GMT",
+      "bytes": 23560,
+      "sha256": "e64712735e322a11817332bb8a72e8a36c5005e447ab3effcb7df7bd16dff66a",
+      "md5": "6252d2fd0e9d2dd908fafd05147ddc12",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-0761",
+      "stratum": "ordinary_duration_control",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG138.7.I.60168.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG138.7.I.60168.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:55.076225+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:55.318710+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG138.7.I.60168.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:05 GMT",
+      "bytes": 23839,
+      "sha256": "483433d6e72056e942f42a16b3b7b8d20a8f052039c9b0ef5ff0664c39bd318c",
+      "md5": "e70070ee990c08f8940ea46fa1ad2e93",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-0772",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG139.4.I.85199.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG139.4.I.85199.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:55.156713+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:55.314184+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG139.4.I.85199.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:06 GMT",
+      "bytes": 23653,
+      "sha256": "86582390adf4adc3fb3a45183a1475925c9c8dc935ae4f59b295390b3f233764",
+      "md5": "258ab0b666db8bac91c1f8f739044789",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-0796",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG141.8.I.1055.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG141.8.I.1055.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:55.314568+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:55.465350+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG141.8.I.1055.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:07 GMT",
+      "bytes": 18476,
+      "sha256": "1fe733d18d1bfe0cf2e261ffb6264c170b54517de1f35d55c4337b157d6f8a51",
+      "md5": "276653ef3d988286c3687a10600dc792",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-0859",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG147.8.I.136895.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG147.8.I.136895.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:55.318892+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:55.568489+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG147.8.I.136895.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:07 GMT",
+      "bytes": 23436,
+      "sha256": "cbdd8e6ef467a6e9701210232e624a8b8d1f201ef6bfc4fb1b13ab8eab967578",
+      "md5": "2e8271e7f4ee68704c7a93e2f5fa0828",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-0914",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG149.8.I.81777.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG149.8.I.81777.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:55.465533+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:55.594057+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG149.8.I.81777.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:08 GMT",
+      "bytes": 19096,
+      "sha256": "ae2a79bcf65d905127a4b18f9d8b89d1ec0048f92f3bdd704ac8cf673f3aec57",
+      "md5": "8b8a9f3ddd8b43f4fa776ce6cc7d4da4",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-0977",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG155.2.I.80211.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG155.2.I.80211.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:55.568686+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:55.718837+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG155.2.I.80211.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:08 GMT",
+      "bytes": 24676,
+      "sha256": "170b273ca33fec618a69e2c344fcea697a9297e6b736578b32f19ab6b7fc7a47",
+      "md5": "ce0224e2bce00032a32118638ea9c7ac",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-0996",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG155.7.I.72368.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG155.7.I.72368.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:55.594353+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:55.723283+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG155.7.I.72368.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:09 GMT",
+      "bytes": 24614,
+      "sha256": "c54d88d49ae7d5fa60c0391a8f94109a2b3435600c2f43661d82d7f2bfacd3e6",
+      "md5": "59df01281b947d4ea737d23987bf6915",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-1035",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG155.8.I.36163.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG155.8.I.36163.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:55.719109+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:55.853964+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG155.8.I.36163.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:09 GMT",
+      "bytes": 24738,
+      "sha256": "2cc550e7795890c720be8f0c5f02a1f5149b981eabae919ca8501120d8d2c8d2",
+      "md5": "35c6fa683ec139a2bf745a84f3b9220c",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-1042",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG157.2.I.62805.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG157.2.I.62805.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:55.723439+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:55.851552+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG157.2.I.62805.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:10 GMT",
+      "bytes": 25296,
+      "sha256": "382175531540a16afde8536f019ffff06b40f933614f29991cf290765123bce8",
+      "md5": "4c2107be568bbdc37860160d4e0790bb",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-1106",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG158.3.I.82698.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG158.3.I.82698.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:55.851737+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:55.996844+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG158.3.I.82698.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:11 GMT",
+      "bytes": 10075,
+      "sha256": "ac9831b928c9d42cdc59b5f818314fe63fbbef2ea481740c4bd494cc5ff24eb6",
+      "md5": "5613416c1b5a8b72e62514c6213b346d",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-1150",
+      "stratum": "ordinary_duration_control",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG164.4.I.55241.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG164.4.I.55241.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:55.854130+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:55.998500+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG164.4.I.55241.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:11 GMT",
+      "bytes": 23188,
+      "sha256": "3f4c182dcf8b6db021ab2f2d0657450792ae02af25b48c058f0dbaa1d274e709",
+      "md5": "9304ae8b703c9e61ea035a039e2ade81",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-1215",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG164.6.I.92173.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG164.6.I.92173.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:55.997021+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:56.134877+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG164.6.I.92173.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:12 GMT",
+      "bytes": 23250,
+      "sha256": "e2606668e78459d383f3f3e75403a8bb960082c1abd80448348167bd70fc079f",
+      "md5": "e9312bd2b11b7e16bfbd792fa10be0d2",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-1232",
+      "stratum": "ordinary_duration_control",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG166.3.I.95832.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG166.3.I.95832.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:55.999870+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:56.141263+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG166.3.I.95832.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:12 GMT",
+      "bytes": 9796,
+      "sha256": "2e42d86df48b24c4e485f85f0a961e87e70cefd535ca1be4c09d0d8252ce9653",
+      "md5": "afd9c76428dccc3c3bebd79d8aff039d",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-1261",
+      "stratum": "ordinary_duration_control",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG171.1.I.102793.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG171.1.I.102793.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:56.135124+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:56.285935+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG171.1.I.102793.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:12 GMT",
+      "bytes": 24118,
+      "sha256": "4c3fc1c8a6abe129afc8924acb005da2423c1e1b04cbaf66fd6da0bd39bc6ee9",
+      "md5": "1fdeba0ca611e20a8aa6c11d8331c8ee",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-1288",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG171.2.I.116296.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG171.2.I.116296.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:56.141457+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:56.270465+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG171.2.I.116296.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:13 GMT",
+      "bytes": 24335,
+      "sha256": "b1561359b05c39e9ee2502a3b903133425a82a33e546b0d3ee8216a897ad2362",
+      "md5": "7e5b6d0fe965af351b47bf4ef7366a00",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-1301",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG172.7.I.61890.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG172.7.I.61890.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:56.270657+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:56.402833+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG172.7.I.61890.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:14 GMT",
+      "bytes": 27993,
+      "sha256": "680ef19148b318dcc75d232621082b8602b1f1c74c73774fd9a8ce81b78bf1dd",
+      "md5": "60cbc2e132fbf647e6a17c6bdd37b81f",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-1400",
+      "stratum": "ordinary_duration_control",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG173.6.I.132026.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG173.6.I.132026.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:56.286134+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:56.422742+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG173.6.I.132026.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:15 GMT",
+      "bytes": 23653,
+      "sha256": "0a08899dd7373cb1753e44251bb4bd880e29c7a5c8f8f97a492e857ac6cf2e26",
+      "md5": "a5eb2f429f5e6e15acf36eff551421c8",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-1439",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG174.7.I.90280.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG174.7.I.90280.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:56.403053+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:56.533727+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG174.7.I.90280.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:15 GMT",
+      "bytes": 10385,
+      "sha256": "578c1a6cc96a23f54e49e4d1f5c1d749e4f382f111addd0b5b0ee6c1190c8115",
+      "md5": "e01ee96475aefbca1661c0297d73c67c",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-1461",
+      "stratum": "ordinary_duration_control",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG180.5.I.92777.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG180.5.I.92777.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:56.422938+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:56.559546+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG180.5.I.92777.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:17 GMT",
+      "bytes": 28055,
+      "sha256": "dde42157b577d3bd224b789cf14a99c977d2cde271fd6464c8c3c8605499a208",
+      "md5": "aefd392ab2e2949cb865f1a01d30e208",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-1576",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG180.7.I.157714.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG180.7.I.157714.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:56.533915+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:56.670579+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG180.7.I.157714.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:18 GMT",
+      "bytes": 28489,
+      "sha256": "6c57e4fff91f9917638bc2af568cd2d32e647a479b51077c9e356fa5186ce8b0",
+      "md5": "26e014315df8b42c8348a1b67613b7f2",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-1597",
+      "stratum": "ordinary_duration_control",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG181.3.I.126663.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG181.3.I.126663.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:56.559816+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:56.688727+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG181.3.I.126663.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:19 GMT",
+      "bytes": 27621,
+      "sha256": "dcc261c92217d3dc69f58769e9ef1c3ec90139905fc5eddff7b524ee6919009c",
+      "md5": "b86172e64188d99be73c675512f185bb",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-1635",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG181.6.I.102603.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG181.6.I.102603.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:56.670765+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:56.820872+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG181.6.I.102603.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:19 GMT",
+      "bytes": 27528,
+      "sha256": "89ef281990df8529a62a6ab1addaf7db535f55b72353af5173b7a5ab8387e5bd",
+      "md5": "9020bdecf0eab482a5ceefc1bf19de1c",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-1654",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG182.4.I.157258.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG182.4.I.157258.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:56.688899+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:56.825386+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG182.4.I.157258.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:20 GMT",
+      "bytes": 27745,
+      "sha256": "db2b9bda1c770fab1bd702f6766b4dcd046c6b855daac23a01978c35359534ce",
+      "md5": "cc8b820775d3913a3bbfe660793b1f31",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-1702",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG183.2.I.32628.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG183.2.I.32628.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:56.821054+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:56.958963+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG183.2.I.32628.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:21 GMT",
+      "bytes": 23467,
+      "sha256": "087ef380b1b375e4b0054c12fef38fe58451b9b8188b493d919a6964f2586230",
+      "md5": "bb6b15f423757907a564f5c387dcda52",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-1737",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG183.5.I.17275.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG183.5.I.17275.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:56.825602+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:56.959024+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG183.5.I.17275.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:21 GMT",
+      "bytes": 23529,
+      "sha256": "88632303b263f60cd22242c466e32b13be44d70af0877d9060c888aed88837d9",
+      "md5": "09a6bb8067fcb4507da2a7707912fc1f",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-1749",
+      "stratum": "ordinary_duration_control",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG188.6.I.148663.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG188.6.I.148663.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:56.960943+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:57.107365+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG188.6.I.148663.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:23 GMT",
+      "bytes": 23777,
+      "sha256": "dbaa0592a9cf01db7236524376de5ca5ffef0ee066789ceb3f9d173b92bb3fbc",
+      "md5": "69cf4096688bd5bc2482dcb904cb897d",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-1865",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG188.6.I.90911.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG188.6.I.90911.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:56.959296+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:57.121384+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG188.6.I.90911.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:23 GMT",
+      "bytes": 23777,
+      "sha256": "c525b818a5afb9555ae068975b4566e64a362e132ba34ab78a237681f258687c",
+      "md5": "27b656691d980ea80feac9037f087a54",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-1861",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG189.6.I.67391.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG189.6.I.67391.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:57.107546+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:57.281033+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG189.6.I.67391.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:23 GMT",
+      "bytes": 23033,
+      "sha256": "66b2b6032892f57ffcaf62d4a9d26ff9bfadd4e1ccccbd5259787c9f9baa485a",
+      "md5": "0ea31357ee951e059cee9a8c51935d30",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-1920",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG190.6.I.107102.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG190.6.I.107102.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:57.121568+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:57.268533+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG190.6.I.107102.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:24 GMT",
+      "bytes": 24831,
+      "sha256": "9602ec01ae4b1b49ec0a3afbd8b2d807f8c272b7b51a72a3a458bbfea063f47a",
+      "md5": "9bdc4e67f49b633a5c34db7a5c5307b7",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-1961",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG194.4.I.24312.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG194.4.I.24312.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:57.268718+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:57.521170+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG194.4.I.24312.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:25 GMT",
+      "bytes": 27745,
+      "sha256": "bbddf9ca0b1b8083eb7afcc357082860ff4a3863d6a234cab6ca23009abff0fd",
+      "md5": "a77e910436607de7c014c1ca06951336",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-2009",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG194.8.I.127384.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG194.8.I.127384.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:57.281271+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:57.409968+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG194.8.I.127384.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:26 GMT",
+      "bytes": 27776,
+      "sha256": "a35eed3f3f28ee7e590020d0facc0e7351eeedbabc01d8852d920dc979ca9b4e",
+      "md5": "fa4eabb90893379e44ab26b4706955db",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-2035",
+      "stratum": "ordinary_duration_control",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG195.5.I.141274.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG195.5.I.141274.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:57.410230+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:57.543032+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG195.5.I.141274.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:27 GMT",
+      "bytes": 27962,
+      "sha256": "31ffdff18f7147d130646bc869e47a68cc0b931c4e680d41d946fb97254ced20",
+      "md5": "09ad4b0489c9545670165ff3406c8e22",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-2122",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG195.6.I.224844.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG195.6.I.224844.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:57.521373+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:57.658252+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG195.6.I.224844.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:28 GMT",
+      "bytes": 27621,
+      "sha256": "2c558029b6c73e4f4400dae92a7eca24a168e89a814134e60189801d2e9b16fe",
+      "md5": "886f6a718d642eb16ca3edd2f81eb1ed",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-2136",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG197.1.I.7643.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG197.1.I.7643.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:57.543256+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:57.674274+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG197.1.I.7643.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:29 GMT",
+      "bytes": 24025,
+      "sha256": "1cde7fa22f2e865634e26ced1db9f098326ff73afbed53da6edd842ab4a56df3",
+      "md5": "e4c82b6e7223676e75c3abd88b5296d2",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-2209",
+      "stratum": "ordinary_duration_control",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG197.5.I.182478.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG197.5.I.182478.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:57.658439+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:57.800223+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG197.5.I.182478.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:29 GMT",
+      "bytes": 24087,
+      "sha256": "a74e6aad08173a3c33cc55c0eb4f182584c4eecded440a973875d8c1af07e99d",
+      "md5": "f45eff86b9e634cb1d6446234fde7e06",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-2229",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG206.6.I.38856.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG206.6.I.38856.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:57.674462+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:57.827228+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG206.6.I.38856.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:34 GMT",
+      "bytes": 26443,
+      "sha256": "12a233a482e87b8d89856732e4e6758cc3188ab5ea02a16d67b8148c4d4dbd15",
+      "md5": "5bf7a51f86e5a77c25a9c371c68bfb7f",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-2442",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG206.8.I.227602.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG206.8.I.227602.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:57.801619+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:57.930910+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG206.8.I.227602.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:35 GMT",
+      "bytes": 26722,
+      "sha256": "8973ff2f4fef2a6df6972b650691cfc50262dc6ea66e7e68611b44d65ca654e3",
+      "md5": "5692097fcde31c131be72cdc073ddfd0",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-2475",
+      "stratum": "ordinary_duration_control",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG206.8.I.268802.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG206.8.I.268802.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:57.827405+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:57.965322+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG206.8.I.268802.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:35 GMT",
+      "bytes": 26536,
+      "sha256": "bbb282bc2b2657a4ef45c2befc0f9a78695974cf505c79f76a8cd0d41c3a3c32",
+      "md5": "c07cce16e1275ada1699da10a348debb",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-2477",
+      "stratum": "ordinary_duration_control",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG208.8.I.118494.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG208.8.I.118494.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:57.931260+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:58.080245+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG208.8.I.118494.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:37 GMT",
+      "bytes": 9114,
+      "sha256": "a1dcb42039383c280924c0587ac6b79f95bd8f229857d803b5c5d18b12f64084",
+      "md5": "4b10cbe4d01edc52bdcf1fb95009cf3b",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-2593",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG214.6.I.179862.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG214.6.I.179862.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:58.080422+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:58.226635+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG214.6.I.179862.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:38 GMT",
+      "bytes": 23715,
+      "sha256": "54fc70993b76d2aabd104a53e60141d2300dacc247126614c46e468635242f97",
+      "md5": "6febc7da2be9de8c1e00e47528f55194",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-2653",
+      "stratum": "ordinary_duration_control",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG214.6.I.21917.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG214.6.I.21917.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:57.965508+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:58.098819+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG214.6.I.21917.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:38 GMT",
+      "bytes": 24118,
+      "sha256": "22ce2359dc28ea3f8c8f2d67fbd27ff7d6a3c063f9f02554e457e22342a4cf2f",
+      "md5": "29eec492a884a5a37a598ad3176efbd6",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-2643",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG214.7.I.142342.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG214.7.I.142342.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:58.099176+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:58.235571+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG214.7.I.142342.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:38 GMT",
+      "bytes": 24025,
+      "sha256": "932dd2b43beb5ff5550561ac69f4d5f1c8cf722d1222fa51ec30b41107be7f36",
+      "md5": "73ae36ff5486c53819a9e425ade178dc",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-2666",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG215.1.I.9346.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG215.1.I.9346.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:58.226819+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:58.360842+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG215.1.I.9346.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:39 GMT",
+      "bytes": 23467,
+      "sha256": "8b94e98768109365dcd3e9568fcdff38d34b5742c92018ab0cc16b4e9f4a91d7",
+      "md5": "f03d1f39b8af67c54e7fc1d11f64e083",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-2678",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG216.1.I.51236.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG216.1.I.51236.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:58.235759+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:58.379290+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG216.1.I.51236.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:40 GMT",
+      "bytes": 23064,
+      "sha256": "be360d61ba386dbc1eefb0d8bdc1ffb0503c57e2d299357511f115d27b180cf9",
+      "md5": "4578db5a966f31ad0b44d7d2e6fcbbcc",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-2756",
+      "stratum": "ordinary_duration_control",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG216.3.I.161902.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG216.3.I.161902.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:58.361026+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:58.491730+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG216.3.I.161902.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:40 GMT",
+      "bytes": 23281,
+      "sha256": "a691223e6b20c94118409ff1c10faeefcad7d32bc111e494f6394f2730515cbd",
+      "md5": "d86fc302599e6b9355724b4eca48ce3b",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-2773",
+      "stratum": "ordinary_duration_control",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG216.4.I.210984.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG216.4.I.210984.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:58.379585+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:58.515416+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG216.4.I.210984.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:41 GMT",
+      "bytes": 23219,
+      "sha256": "8b47d87f7e1c5a96e298265454b472a4b559e2440eb3ffa323c9854058fe03f6",
+      "md5": "4ef8f4657dec5c9276a565fc286d94d7",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-2781",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG216.5.I.97549.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG216.5.I.97549.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:58.492051+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:58.634937+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG216.5.I.97549.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:41 GMT",
+      "bytes": 23188,
+      "sha256": "7b9d10f4d631797a1a0258d4846428f1856decc03b23d9e98ad6f1825f2043f6",
+      "md5": "4425ca761ece303097836f15036bd72a",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-2787",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG217.6.I.204551.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG217.6.I.204551.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:58.515598+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:58.760643+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG217.6.I.204551.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:42 GMT",
+      "bytes": 20677,
+      "sha256": "0e9806eef6781568e292bc8bed7e10c96291d6f96d6973e7d225d58101660d5d",
+      "md5": "9efed8940b6998c16c9bad5de195c6e3",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-2842",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG217.7.I.124.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG217.7.I.124.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:58.635179+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:58.771909+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG217.7.I.124.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:42 GMT",
+      "bytes": 18073,
+      "sha256": "2a7630fac6d717f8eb8d77d4592575e9a6f6c0e43b4e3cfeaee5a75a97e57357",
+      "md5": "30efe344ef585c7044e61006c3a73292",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-2843",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG219.2.I.2510.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG219.2.I.2510.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:58.760884+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:58.894878+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG219.2.I.2510.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:42 GMT",
+      "bytes": 22878,
+      "sha256": "354a178a2632b690c00557015daae5c220d83ffaf5d6396af346a5f326c07a36",
+      "md5": "892fc9757b4df250cedb36a477f561b7",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-2882",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG223.3.I.189790.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG223.3.I.189790.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:58.772104+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:58.909061+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG223.3.I.189790.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:43 GMT",
+      "bytes": 24769,
+      "sha256": "e677485f1c5c17e21f3c6f257e37650a58bbdee8a4aed44c9744de7f697c5f1e",
+      "md5": "677104f357433bdbb7012aba6b1c21ba",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-2937",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG224.7.I.72669.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG224.7.I.72669.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:58.895126+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:59.054257+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG224.7.I.72669.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:45 GMT",
+      "bytes": 22692,
+      "sha256": "107fdcc4c08dac7b800dff74d9466df694ece9cc8766a83bdd4de24b415c35c7",
+      "md5": "89cb9e31898480f085930f9d61522c24",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-3037",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG225.4.I.65696.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG225.4.I.65696.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:58.909541+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:59.166563+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG225.4.I.65696.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:46 GMT",
+      "bytes": 22909,
+      "sha256": "85a727b6acca002be6f59dcc66e95abe7175cd601e0373e66573e80be5f34e2c",
+      "md5": "09b6f8a1584d556f4820b36ce8dc9b88",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-3067",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG225.6.I.198210.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG225.6.I.198210.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:59.054464+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:59.190905+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG225.6.I.198210.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:46 GMT",
+      "bytes": 22909,
+      "sha256": "b0f11617d4763ecfa3e3f7f95433aee469f5134eda382e81b52b6592faf53422",
+      "md5": "eddd20b1311a7833ea4d35150b09921a",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-3092",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG226.5.I.151608.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG226.5.I.151608.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:59.166756+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:59.310898+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG226.5.I.151608.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:47 GMT",
+      "bytes": 22661,
+      "sha256": "a96c614135513f8a52ab49ae95914b431dc5e5eb4585c97ea0da7d60a25a89af",
+      "md5": "949870cd3df855b8304f031f21516e9f",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-3129",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG227.3.I.123517.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG227.3.I.123517.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:59.191227+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:59.320267+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG227.3.I.123517.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:48 GMT",
+      "bytes": 22382,
+      "sha256": "0c593cd640e55c2b02d588dbba6d2d14d9c55cf4d81d479ddb3997188c3d6f3d",
+      "md5": "fcd85e4004387cd010eac158485ff9d4",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-3159",
+      "stratum": "ordinary_duration_control",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG227.3.I.244061.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG227.3.I.244061.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:59.311204+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:59.449968+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG227.3.I.244061.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:48 GMT",
+      "bytes": 17019,
+      "sha256": "0ebf16fc19be832a13b08f788e734e650f2db3147ef4a848b1c14a9c4ba01472",
+      "md5": "17f7bebafb082bd5a8c2e7cf3c9f79f8",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-3163",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG232.1.I.151059.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG232.1.I.151059.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:59.320415+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:59.463861+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG232.1.I.151059.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:48 GMT",
+      "bytes": 21886,
+      "sha256": "d912ffe434e06ecee659e32d2375af87bb4a1c5c1c4929387c6f153c7ecb2fc3",
+      "md5": "1f445b9c09ee18da517c32822fc7edef",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-3184",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG232.3.I.74582.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG232.3.I.74582.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:59.450181+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:59.590655+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG232.3.I.74582.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:48 GMT",
+      "bytes": 21855,
+      "sha256": "bee03ebe29b79d9f1fb344d2dd2b4dd3c4a8196943436237362ece5e8372f650",
+      "md5": "907af6b8df999722a62866e908db096b",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-3199",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG232.8.I.20080.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG232.8.I.20080.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:59.464034+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:59.596485+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG232.8.I.20080.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:49 GMT",
+      "bytes": 21948,
+      "sha256": "00a875a68a099ba25e7adf20c8a954880b78cb26b84e367b944c8760b376c8a7",
+      "md5": "17fe11cfff6857a69d76f173f8f936d3",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-3231",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG235.6.I.164846.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG235.6.I.164846.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:59.590841+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:59.729737+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG235.6.I.164846.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:50 GMT",
+      "bytes": 18259,
+      "sha256": "9a045340057a570b66ba0804cf91d3b78e3eee3f32e29031cc8d49d1d98bf7c3",
+      "md5": "1c4d1b6acff99b4e4bc13aa24817ec3b",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-3318",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG241.1.I.211820.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG241.1.I.211820.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:59.596632+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:59.726697+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG241.1.I.211820.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:51 GMT",
+      "bytes": 18662,
+      "sha256": "ab468cb278d08f2db3651e5658c9e10f57be5d1a3497101c096a5b69fd731df4",
+      "md5": "41fd54d9193fe4af3fdfaab057604118",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-3340",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG241.2.I.66534.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG241.2.I.66534.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:59.727088+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:59.860191+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG241.2.I.66534.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:51 GMT",
+      "bytes": 18662,
+      "sha256": "e084ddd256b96d6c3eabc9104180512793e0a1d9dbf59de627cea2ca103e09bd",
+      "md5": "e35c241ff1ed6a4f0ec6a3c181a45880",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-3343",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG242.8.I.242929.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG242.8.I.242929.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:59.730064+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:59.865363+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG242.8.I.242929.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:52 GMT",
+      "bytes": 16554,
+      "sha256": "73c139a32bd110dcd1124f10bad4572a166ea626c0e2579b46db6afb7adfdb9c",
+      "md5": "dac9d811673806e47908bb5909e81603",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-3400",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG249.2.I.92350.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG249.2.I.92350.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:59.860367+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:59.993971+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG249.2.I.92350.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:52 GMT",
+      "bytes": 16740,
+      "sha256": "5036a5fd92f38c8d3e88c8604442237416623a76c1cfc92459275dc3a8a561a2",
+      "md5": "20345fb2d43306baaee3b08f29e24bd0",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-3404",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG249.5.I.113205.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG249.5.I.113205.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:59.865497+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:21:59.999763+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG249.5.I.113205.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:52 GMT",
+      "bytes": 16523,
+      "sha256": "536c58e0c8d51b093b1d0c04185c9b6d6adca9bc4453885416e7ac168e18c553",
+      "md5": "7684bac1fda56b54bfe45afa42c348e4",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-3414",
+      "stratum": "long_duration",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG252.2.I.83670.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG252.2.I.83670.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:59.994181+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:22:00.127097+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG252.2.I.83670.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:53 GMT",
+      "bytes": 7564,
+      "sha256": "f9398bfd248066b75eebcdbfcb2b6bff6049142c839227bd5c47b7c9bfe1b590",
+      "md5": "0e45cda0e3679309378ede6062786125",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-3468",
+      "stratum": "ordinary_duration_control",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/ogle3/photometry/photBLG340.2.I.35808.dat",
+      "url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG340.2.I.35808.dat",
+      "publisher_md5": null,
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:21:59.999896+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:22:00.137676+00:00",
+      "resolved_url": "https://ftp.astrouw.edu.pl/ogle/ogle3/blg_tau/PHOT/CLASSA-OPTIMIZED/photBLG340.2.I.35808.dat",
+      "http_status": 200,
+      "content_type": "application/x-troff-man",
+      "last_modified": "Mon, 19 May 2014 10:55:53 GMT",
+      "bytes": 9238,
+      "sha256": "58df80ed5e56bc1ae3d4d066fb8a0fbe6d21a52f0eedc4f04df17a8be1bd7a27",
+      "md5": "e2a152ded8829ff82c8913a25ed62345",
+      "role": "pilot_observational_photometry",
+      "event_id": "OGLE3-ULENS-3509",
+      "stratum": "ordinary_duration_control",
+      "columns": [
+        "hjd_minus_2450000",
+        "I_mag",
+        "I_mag_error"
+      ],
+      "epoch_convention": "HJD - 2450000 days; underlying time scale unspecified in source README",
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "source_release": "Wyrzykowski et al. 2015 / optimized OGLE-III archive"
+    },
+    {
+      "relative_path": "raw/zenodo_6607578/MOA-2011-BLG-191.dat",
+      "url": "https://zenodo.org/records/6607578/files/MOA-2011-BLG-191.dat?download=1",
+      "publisher_md5": "8bd42c123be16872001e65beed275f54",
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:19:53.123111+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:19:55.548644+00:00",
+      "resolved_url": "https://zenodo.org/records/6607578/files/MOA-2011-BLG-191.dat?download=1",
+      "http_status": 200,
+      "content_type": "application/octet-stream,application/octet-stream",
+      "last_modified": null,
+      "bytes": 1831273,
+      "sha256": "6be26ea38a0a2d5a19dc64590d4df27385563bb64f1f3b0d4175a0f925a91bae",
+      "md5": "8bd42c123be16872001e65beed275f54",
+      "role": "historical_benchmark_photometry",
+      "event_id": "OGLE-2011-BLG-0462 / MOA-2011-BLG-191",
+      "columns": [
+        "hjd",
+        "mag",
+        "mag_err"
+      ],
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "epoch_convention": "HJD; underlying time scale unspecified in source README",
+      "source_release": "Zenodo 6607578, version 1.0.0, 2022-06-10",
+      "source_doi": "10.5281/zenodo.6607578"
+    },
+    {
+      "relative_path": "raw/zenodo_6607578/OB110462_HST_F606W.dat",
+      "url": "https://zenodo.org/records/6607578/files/OB110462_HST_F606W.dat?download=1",
+      "publisher_md5": "8a4a1a9937ca3b7a10db47f400a0ef8e",
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:19:54.660524+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:19:55.170304+00:00",
+      "resolved_url": "https://zenodo.org/records/6607578/files/OB110462_HST_F606W.dat?download=1",
+      "http_status": 200,
+      "content_type": "application/octet-stream,application/octet-stream",
+      "last_modified": null,
+      "bytes": 1100,
+      "sha256": "1f394e72342180ed79bac55f12dacc57b58716da1d6ec48cc9cbe29b805cc328",
+      "md5": "8a4a1a9937ca3b7a10db47f400a0ef8e",
+      "role": "historical_benchmark_astrometry_and_photometry",
+      "event_id": "OGLE-2011-BLG-0462 / MOA-2011-BLG-191",
+      "columns": [
+        "t",
+        "x",
+        "x_err",
+        "y",
+        "y_err",
+        "mag",
+        "mag_err"
+      ],
+      "units": [
+        "native numeric epoch",
+        "mas",
+        "mas",
+        "mas",
+        "mas",
+        "mag",
+        "mag"
+      ],
+      "epoch_convention": "README says UTC but numeric epoch origin/format unresolved; do not silently assign MJD",
+      "source_release": "Zenodo 6607578, version 1.0.0, 2022-06-10",
+      "source_doi": "10.5281/zenodo.6607578"
+    },
+    {
+      "relative_path": "raw/zenodo_6607578/OB110462_HST_F814W.dat",
+      "url": "https://zenodo.org/records/6607578/files/OB110462_HST_F814W.dat?download=1",
+      "publisher_md5": "df3242ebaffa4520ad828ba5af0e2ab6",
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:19:55.170551+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:19:55.436233+00:00",
+      "resolved_url": "https://zenodo.org/records/6607578/files/OB110462_HST_F814W.dat?download=1",
+      "http_status": 200,
+      "content_type": "application/octet-stream,application/octet-stream",
+      "last_modified": null,
+      "bytes": 1107,
+      "sha256": "a909074273e1e562003d86aab44cfe569656c9b5ba0d5c5c096bcc6c278a872b",
+      "md5": "df3242ebaffa4520ad828ba5af0e2ab6",
+      "role": "historical_benchmark_astrometry_and_photometry",
+      "event_id": "OGLE-2011-BLG-0462 / MOA-2011-BLG-191",
+      "columns": [
+        "t",
+        "x",
+        "x_err",
+        "y",
+        "y_err",
+        "mag",
+        "mag_err"
+      ],
+      "units": [
+        "native numeric epoch",
+        "mas",
+        "mas",
+        "mas",
+        "mas",
+        "mag",
+        "mag"
+      ],
+      "epoch_convention": "README says UTC but numeric epoch origin/format unresolved; do not silently assign MJD",
+      "source_release": "Zenodo 6607578, version 1.0.0, 2022-06-10",
+      "source_doi": "10.5281/zenodo.6607578"
+    },
+    {
+      "relative_path": "raw/zenodo_6607578/OGLE-2011-BLG-0462.dat",
+      "url": "https://zenodo.org/records/6607578/files/OGLE-2011-BLG-0462.dat?download=1",
+      "publisher_md5": "07fc8083b0ba759bd34137f1a9fa34ba",
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:19:53.122312+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:19:54.659932+00:00",
+      "resolved_url": "https://zenodo.org/records/6607578/files/OGLE-2011-BLG-0462.dat?download=1",
+      "http_status": 200,
+      "content_type": "application/octet-stream,application/octet-stream",
+      "last_modified": null,
+      "bytes": 415373,
+      "sha256": "d7e6035d54fac3f71cde16f01dc9d7ce3a078bfcf99518ed8a5f9e28c1610827",
+      "md5": "07fc8083b0ba759bd34137f1a9fa34ba",
+      "role": "historical_benchmark_photometry",
+      "event_id": "OGLE-2011-BLG-0462 / MOA-2011-BLG-191",
+      "columns": [
+        "hjd",
+        "mag",
+        "mag_err"
+      ],
+      "units": [
+        "day",
+        "mag",
+        "mag"
+      ],
+      "epoch_convention": "HJD; underlying time scale unspecified in source README",
+      "source_release": "Zenodo 6607578, version 1.0.0, 2022-06-10",
+      "source_doi": "10.5281/zenodo.6607578"
+    },
+    {
+      "relative_path": "raw/zenodo_6607578/README",
+      "url": "https://zenodo.org/records/6607578/files/README?download=1",
+      "publisher_md5": "73e7487836858e5030f0c4f8295cd9be",
+      "attempts": [
+        {
+          "started_utc": "2026-10-22T19:19:55.436425+00:00",
+          "status": "success"
+        }
+      ],
+      "status": "downloaded",
+      "retrieved_utc": "2026-10-22T19:19:55.678257+00:00",
+      "resolved_url": "https://zenodo.org/records/6607578/files/README?download=1",
+      "http_status": 200,
+      "content_type": "application/octet-stream,application/octet-stream",
+      "last_modified": null,
+      "bytes": 7259,
+      "sha256": "83be7ae23a15b1873fde65c48f8f4f50fc0952d5ce277962f0eafc6c84b751ff",
+      "md5": "73e7487836858e5030f0c4f8295cd9be",
+      "role": "publisher_documentation_or_index"
+    }
+  ]
+}

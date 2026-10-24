@@ -1,4 +1,30 @@
-# Blackhole Tracker 0.2.0rc6
+# Blackhole Tracker 0.2.0rc7
+
+This candidate adds a separately frozen current-kernel calibration with 4,608
+synthetic datasets, 4,736 fits and 1,024 generating-timescale profile queries.
+An independent saved-only audit confirms all accounting and the three failed
+photometric uncertainty-calibration tests. The app exposes those limits;
+nonrejection remains insufficient to establish lensing or a black hole. No
+error scaling, threshold change or replaced draw conceals the failures.
+
+The BHSM claim dossier distinguishes testable projected quantities, ordinary
+extended-mass alternatives and exact degeneracies. Its ideal controls verify
+the conditional mathematics on two supported Python runtimes. One Einstein/GHY
+optical exterior is interpreted as gravitational hypersurface topography and
+counted once. Microscopic boundary, core, spin and horizon claims remain
+unidentified by these fits.
+
+The built distributions now carry both original legal notices, a versioned
+software citation and formal BHSM repository metadata. The historical root
+citation retains its own version and DOI; no new DOI or release date is
+invented. RC6 artifacts and scientific outcomes remain preserved.
+
+See `docs/CALIBRATION_STUDY_V1.md`,
+`docs/CALIBRATION_FINDINGS_20261024_V1.md`,
+`docs/BHSM_ENVELOPMENT_CLAIM_AND_FALSIFIERS_V1.md` and
+`PACKAGING_AND_CITATION.md`. Scientific publication acceptance remains on hold.
+
+## Previous release candidate 0.2.0rc6
 
 This candidate makes the author-defined BHSM surface interpretation explicit: supported gravitational geometry is surface topography, with one Einstein/GHY exterior response counted once. A nonrejected light curve remains conditional evidence and does not by itself validate a gravitational origin or identify a black hole. The original core/surface contract and numerical fitting kernels remain preserved.
 

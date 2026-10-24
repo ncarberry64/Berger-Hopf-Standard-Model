@@ -1,0 +1,105 @@
+"""Frozen invented data only; dense-law, FD, identity and admission controls."""
+import json
+from pathlib import Path
+import unittest
+import numpy as np
+from scipy.linalg import solve_triangular
+from known2023_student_model_v1 import Known2023StudentModel, KAPPA, sha
+
+ROOT = Path(__file__).resolve().parent
+CORE = ROOT.parents[1] / 'bhtracker/joint_mass_v2.py'
+STUDENT = ROOT / 'providers'
+
+class ModelControls(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.raw = (ROOT / 'invented_fixture_v1/INVENTED_DATASET_v1.json').read_bytes()
+        cls.truth = json.loads((ROOT / 'invented_fixture_v1/INVENTED_TRUTH_v1.json').read_bytes())
+        cls.registry = json.loads((ROOT / 'invented_fixture_v1/CONTROL_REGISTRY_v1.json').read_bytes())
+
+    def model(self, **options):
+        return Known2023StudentModel(self.raw, purpose='WHOLLY_INVENTED', expected_sha256=sha(self.raw), core_path=CORE, student_directory=STUDENT, control_registry=self.registry, **options)
+
+    def state(self, model):
+        t = self.truth
+        p = t['p']
+        x = [p['t0_jd_tdb'] - model.time_origin, np.log(p['tE_days']), p['u0_heliocentric'], p['angle_source_minus_lens_rad'], p['pi_E']]
+        for name in model.names:
+            x += t['instruments'][name]
+        x += t['season_logscales'] + [t['OGLE_scale_brightness_slope'], t['OGLE_scale_seeing_slope'], t['OGLE_fraction'], np.log(t['OGLE_tau_days']), t['OGLE_seeing_mean_slope_mag']]
+        return np.asarray(x)
+
+    def test_dense_independent_normalized_student_reference(self):
+        m = self.model(); x = self.state(m); r = m.evaluate(x, details=True)
+        order = m.order; residual = np.asarray(r['photometric_residuals_magnitude'])[order]
+        scale = np.asarray(r['OGLE_inferred_marginal_scales']); times = m.tp[order]
+        i, n = m.noise_start, len(m.seasons)
+        fraction, tau = x[i + n + 2], np.exp(x[i + n + 3])
+        covariance = (1 - fraction) * np.eye(len(times)) + fraction * np.exp(-np.abs(times[:, None] - times[None, :]) / tau)
+        lower = np.linalg.cholesky(covariance)
+        z = solve_triangular(lower, residual / scale, lower=True)
+        dense_d = float(7 * np.log1p(z * z / 4).sum() - 2 * len(z) * np.log(15 / 32) + 2 * np.log(scale).sum() + 2 * np.log(np.diag(lower)).sum())
+        self.assertAlmostEqual(dense_d, r['OGLE_student_deviance'], places=8)
+        self.assertAlmostEqual(r['negative_two_log_likelihood'], r['OGLE_student_deviance'] + r['HST_photometric_gaussian_deviance'] + r['astrometric_gaussian_deviance'], places=10)
+
+    def test_full_gradient_independent_central_differences(self):
+        m = self.model(); x = self.state(m); base = m.evaluate(x)
+        self.assertFalse(base['feature_knot_source_ids'])
+        self.assertTrue(base['linear_profile_identified'])
+        for j, name in enumerate(m.parameter_names):
+            h = .001 if j == 0 else 1e-6 if j in (2, 4) or name.endswith('source_fraction') or name == 'OGLE_seeing_mean_slope_mag' else 1e-5
+            left, right = x.copy(), x.copy(); left[j] -= h; right[j] += h
+            fd = (m.evaluate(right)['negative_two_log_likelihood'] - m.evaluate(left)['negative_two_log_likelihood']) / (2 * h)
+            tolerance = 4e-4 * max(1., abs(fd), abs(base['gradient'][j]))
+            with self.subTest(parameter=name):
+                self.assertLessEqual(abs(fd - base['gradient'][j]), tolerance)
+
+    def test_fixed_mass_reprofiles_nuisance_and_gradient(self):
+        m = self.model(); x = self.state(m); mass = 2.4 / (KAPPA * .17)
+        r = m.evaluate(x, fixed_mass=mass, details=True)
+        self.assertAlmostEqual(r['parameters']['theta_E_mas'], 2.4, places=12)
+        for j in range(5):
+            h = .001 if j == 0 else 1e-6
+            a, b = x.copy(), x.copy(); a[j] -= h; b[j] += h
+            fd = (m.evaluate(b, fixed_mass=mass)['negative_two_log_likelihood'] - m.evaluate(a, fixed_mass=mass)['negative_two_log_likelihood']) / (2 * h)
+            with self.subTest(parameter=j):
+                self.assertLessEqual(abs(fd - r['gradient'][j]), 4e-4 * max(1., abs(fd), abs(r['gradient'][j])))
+
+    def test_computational_references_do_not_change_physics(self):
+        a = self.model(); b = self.model(numerical_time_origin=2455710., angular_reference=2456500.)
+        ra, rb = a.evaluate(self.state(a), details=True), b.evaluate(self.state(b), details=True)
+        self.assertAlmostEqual(ra['negative_two_log_likelihood'], rb['negative_two_log_likelihood'], places=8)
+        self.assertAlmostEqual(ra['parameters']['theta_E_mas'], rb['parameters']['theta_E_mas'], places=9)
+        np.testing.assert_allclose(ra['astrometric_predictions_NE_mas'], rb['astrometric_predictions_NE_mas'], rtol=0, atol=1e-9)
+
+    def test_no_synthetic_to_native_relabel(self):
+        with self.assertRaises(ValueError):
+            Known2023StudentModel(self.raw, purpose='AUTHENTIC2023', expected_sha256=sha(self.raw), core_path=CORE, student_directory=STUDENT)
+        with self.assertRaises(ValueError):
+            Known2023StudentModel(self.raw, purpose='ACTUAL_CADENCE_CONTROL', expected_sha256=sha(self.raw), core_path=CORE, student_directory=STUDENT, control_registry=self.registry)
+
+    def test_owned_array_and_metadata_mutation_detected(self):
+        m = self.model(); m.groups[0].setflags(write=True)
+        with self.assertRaises(ValueError):
+            m.verify_snapshot()
+        other = self.model(); other.pr[0]['magnitude'] += 1
+        with self.assertRaises(ValueError):
+            other.verify_snapshot()
+
+    def test_booleans_and_strings_not_states(self):
+        m = self.model(); x = self.state(m).tolist()
+        for value in (True, '1'):
+            trial = list(x); trial[2] = value
+            with self.subTest(value=value), self.assertRaises(ValueError):
+                m.evaluate(trial)
+
+    def test_no_accepted_mass_or_fake_complete_covariance(self):
+        m = self.model(); r = m.evaluate(self.state(m), details=True)
+        self.assertIsNone(r['accepted_mass_interval'])
+        self.assertFalse(r['accepted_black_hole_interpretation'])
+        self.assertEqual(r['measurement_role'], 'SYNTHETIC_MEASUREMENTS_NOT_AUTHENTIC_OBSERVATIONS')
+        self.assertIn('independence is an explicit working assumption', r['working_covariance'])
+        self.assertEqual(len(r['astrometric_residuals_NE_mas']), 24)
+
+if __name__ == '__main__':
+    unittest.main(verbosity=2)

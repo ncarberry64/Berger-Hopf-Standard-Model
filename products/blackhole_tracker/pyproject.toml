@@ -1,17 +1,22 @@
 [build-system]
-requires = ["setuptools>=68", "wheel"]
+requires = ["setuptools>=77.0.3", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
 name = "bhsm-blackhole-tracker"
-version = "0.2.0rc6"
+version = "0.2.0rc7"
 description = "BHSM compact-lens research, evidence-qualified candidate atlas, native photometry and optional joint astrometry"
+authors = [{name = "Norman P. Carberry"}]
+license = "LicenseRef-AllRightsReserved"
+license-files = ["LICENSE.md", "ACADEMIC_USE.md"]
 requires-python = ">=3.11"
 dependencies = ["numpy>=1.26", "scipy>=1.12", "matplotlib>=3.8"]
 
 [project.urls]
 Repository = "https://github.com/ncarberry64/Berger-Hopf-Standard-Model"
 Issues = "https://github.com/ncarberry64/Berger-Hopf-Standard-Model/issues"
+Citation = "https://github.com/ncarberry64/Berger-Hopf-Standard-Model/blob/main/CITATION.cff"
+Documentation = "https://github.com/ncarberry64/Berger-Hopf-Standard-Model/blob/main/docs/BLACKHOLE_TRACKER_RESEARCH_START.md"
 
 [project.optional-dependencies]
 dev = ["pytest>=8", "nbformat>=5", "nbclient>=0.10", "ipykernel>=6", "build>=1"]
@@ -25,4 +30,4 @@ where = ["."]
 include = ["bhtracker*"]
 
 [tool.setuptools.package-data]
-bhtracker = ["web/*", "examples/*.json", "theory/*.json", "theory/bhsm_sources/*", "theory/provider/code/*.py", "theory/provider/preregistration/*.json", "theory/provider/*.json"]
+bhtracker = ["CITATION.cff", "web/*", "examples/*.json", "theory/*.json", "theory/bhsm_sources/*", "theory/provider/code/*.py", "theory/provider/preregistration/*.json", "theory/provider/*.json"]
