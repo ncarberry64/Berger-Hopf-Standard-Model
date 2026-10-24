@@ -1,0 +1,411 @@
+{
+  "schema": "bhsm.known2023.compact_comparison.v1",
+  "campaigns": [
+    {
+      "campaign": "authentic2023_ST6_SEEING_point_v1",
+      "purpose": "AUTHENTIC2023",
+      "numerical_version": "v2_original",
+      "status": "NUMERICALLY_UNRESOLVED",
+      "all16_starts_retained": true,
+      "eligible_start_indices": [
+        4,
+        6,
+        15
+      ],
+      "eligible_endpoint_count": 3,
+      "endpoint_count": 48,
+      "endpoint_status_counts": {
+        "RETURNED": 48
+      },
+      "trust_status_counts": {},
+      "trust_failure_counts": {},
+      "all_feature_knot_counts": 0,
+      "selected": {
+        "start_index": 15,
+        "phase": "LBFGSB_FULL_DEVIANCE_POLISH",
+        "conditional_parameters": {
+          "t0_jd_tdb": 2455764.093046754,
+          "tE_days": 290.1426939757522,
+          "u0_heliocentric": 0.04815450638209308,
+          "angle_source_minus_lens_rad": 2.8839511479549556,
+          "pi_E": 0.09007858801585689,
+          "theta_E_mas": 5.127042791997661,
+          "source_position_N_offset_mas": 12.822147218879408,
+          "source_position_E_offset_mas": 7.000634230755308,
+          "relative_source_motion_N_mas_yr": -3.4516012610927236,
+          "relative_source_motion_E_mas_yr": -2.015852537833254,
+          "relative_frame_source_parallax_mas": 0.19599396722972273,
+          "F606W_offset_N_mas": -0.04308446677127894,
+          "F606W_offset_E_mas": 0.033050713533958595,
+          "source_position_N_mas": 13.826909123641313,
+          "source_position_E_mas": 7.7325389926600705,
+          "conditional_mass_msun": 6.9890062945656934
+        },
+        "deviance": -77243.81488950182,
+        "full_scaled_projected_score": 0.006079119682252276,
+        "analysis_contacts": [
+          {
+            "parameter": "OGLE_scale_brightness_slope",
+            "side": "LOWER",
+            "role": "DECLARED_ANALYSIS_DOMAIN_NOT_PHYSICAL_CONFIDENCE_LIMIT"
+          }
+        ],
+        "linear_contacts": [],
+        "descriptive_only": {
+          "OGLE_unit_variance_Student_innovations": {
+            "count": 12500,
+            "mean": 0.01929519853279512,
+            "rms": 0.9547246069637011,
+            "population_sd": 0.954529606903617,
+            "maximum_absolute": 10.071036348306976,
+            "calibrated_p_value": null
+          },
+          "HST_angular_standardized_residuals": {
+            "count": 42,
+            "mean": -0.005297755566574414,
+            "rms": 0.8743789485406718,
+            "population_sd": 0.8743628991654709,
+            "maximum_absolute": 2.0462811563442833,
+            "calibrated_p_value": null
+          },
+          "full_photo_residual_magnitudes": {
+            "count": 12521,
+            "mean": 0.0003069002099956637,
+            "rms": 0.011420424696785563,
+            "population_sd": 0.01141630029896088,
+            "maximum_absolute": 0.05099111752985408,
+            "calibrated_p_value": null
+          }
+        },
+        "parameters_are_conditional_fitted_values_not_accepted_measurements": true
+      },
+      "elapsed_seconds": 192.51499999999942,
+      "original_model_call_counts": {
+        "optimizer": 19712,
+        "endpoint": 48
+      },
+      "journal_audit_failure": null,
+      "known_lower_trials": 0,
+      "accepted_mass_interval": null,
+      "known_BH_recovery_accepted": false,
+      "adequacy": "NOT_REFIT_CALIBRATED",
+      "coverage": "NOT_CALIBRATED",
+      "original_outcome_pin": {
+        "path": "outputs\\bhsm_real_data_corrections_20261022\\prepublication_20261024\\known_system_v1\\authentic2023_ST6_SEEING_point_v1\\POINT_OUTCOME_v1.json",
+        "bytes": 2136596,
+        "sha256": "8d8d43c99c7d9166468e8ab93c7c0a62c3d8847ec60a23a6f13b70d295f86808"
+      }
+    },
+    {
+      "campaign": "actual_cadence_ST6_SEEING_point_v1",
+      "purpose": "ACTUAL_CADENCE_CONTROL",
+      "numerical_version": "v2_original",
+      "status": "NUMERICALLY_UNRESOLVED",
+      "all16_starts_retained": true,
+      "eligible_start_indices": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligible_endpoint_count": 25,
+      "endpoint_count": 48,
+      "endpoint_status_counts": {
+        "RETURNED": 48
+      },
+      "trust_status_counts": {},
+      "trust_failure_counts": {},
+      "all_feature_knot_counts": 0,
+      "selected": {
+        "start_index": 11,
+        "phase": "LBFGSB_FULL_DEVIANCE_POLISH",
+        "conditional_parameters": {
+          "t0_jd_tdb": 2455765.885701089,
+          "tE_days": 143.15977395889584,
+          "u0_heliocentric": 0.20919537295236848,
+          "angle_source_minus_lens_rad": 0.6589109306469916,
+          "pi_E": 0.17358863016596582,
+          "theta_E_mas": 2.989414457487087,
+          "source_position_N_offset_mas": -2.8425685717856624,
+          "source_position_E_offset_mas": 1.4942698155062162,
+          "relative_source_motion_N_mas_yr": 0.7272769881859289,
+          "relative_source_motion_E_mas_yr": -0.40081669158492866,
+          "relative_frame_source_parallax_mas": 0.32032988883833097,
+          "F606W_offset_N_mas": 0.1865586746633412,
+          "F606W_offset_E_mas": 0.20670910524770822,
+          "source_position_N_mas": 7.906713291570773,
+          "source_position_E_mas": -3.670568170018668,
+          "conditional_mass_msun": 2.114632554731499
+        },
+        "deviance": -77256.81176480195,
+        "full_scaled_projected_score": 0.0009725539970155934,
+        "analysis_contacts": [],
+        "linear_contacts": [],
+        "descriptive_only": {
+          "OGLE_unit_variance_Student_innovations": {
+            "count": 12500,
+            "mean": -0.0014057160327455135,
+            "rms": 0.9975703969125267,
+            "population_sd": 0.9975694064869127,
+            "maximum_absolute": 6.324657528625195,
+            "calibrated_p_value": null
+          },
+          "HST_angular_standardized_residuals": {
+            "count": 42,
+            "mean": -0.015817555140728475,
+            "rms": 0.9882273069757477,
+            "population_sd": 0.9881007110623434,
+            "maximum_absolute": 2.4631766645823414,
+            "calibrated_p_value": null
+          },
+          "full_photo_residual_magnitudes": {
+            "count": 12521,
+            "mean": -0.00013708187911968395,
+            "rms": 0.012748103203848324,
+            "population_sd": 0.012747366153617185,
+            "maximum_absolute": 0.08252142726024303,
+            "calibrated_p_value": null
+          }
+        },
+        "parameters_are_conditional_fitted_values_not_accepted_measurements": true
+      },
+      "elapsed_seconds": 152.70299999999406,
+      "original_model_call_counts": {
+        "optimizer": 13364,
+        "endpoint": 48
+      },
+      "journal_audit_failure": null,
+      "known_lower_trials": 0,
+      "accepted_mass_interval": null,
+      "known_BH_recovery_accepted": false,
+      "adequacy": "NOT_REFIT_CALIBRATED",
+      "coverage": "NOT_CALIBRATED",
+      "original_outcome_pin": {
+        "path": "outputs\\bhsm_real_data_corrections_20261022\\prepublication_20261024\\known_system_v1\\actual_cadence_ST6_SEEING_point_v1\\POINT_OUTCOME_v1.json",
+        "bytes": 2131697,
+        "sha256": "ed14d7f869148cc8138981daceff66aa5bb7a41797b169995ae8532206ea21fd"
+      }
+    },
+    {
+      "campaign": "authentic2023_ST6_SEEING_point_v3",
+      "purpose": "AUTHENTIC2023",
+      "numerical_version": "v3_periodic_trust",
+      "status": "NUMERICALLY_UNRESOLVED",
+      "all16_starts_retained": true,
+      "eligible_start_indices": [
+        1,
+        2,
+        4,
+        15
+      ],
+      "eligible_endpoint_count": 7,
+      "endpoint_count": 64,
+      "endpoint_status_counts": {
+        "RETURNED": 64
+      },
+      "trust_status_counts": {
+        "LOCAL_CURVATURE_OR_SCORE_UNRESOLVED": 12,
+        "DECLARED_PROJECTED_SCORE_REACHED": 4
+      },
+      "trust_failure_counts": {
+        "LinAlgError: 5-th leading minor of the array is not positive definite": 12
+      },
+      "all_feature_knot_counts": 0,
+      "selected": {
+        "start_index": 15,
+        "phase": "GRADIENT_TRUST_POLISH",
+        "conditional_parameters": {
+          "t0_jd_tdb": 2455764.0930667487,
+          "tE_days": 290.14273386981745,
+          "u0_heliocentric": 0.04815436262831086,
+          "angle_source_minus_lens_rad": 2.8839494836470463,
+          "pi_E": 0.09007831565398748,
+          "theta_E_mas": 5.127042043445636,
+          "source_position_N_offset_mas": 12.822146606814412,
+          "source_position_E_offset_mas": 7.000631360424058,
+          "relative_source_motion_N_mas_yr": -3.451601216194354,
+          "relative_source_motion_E_mas_yr": -2.015852494965458,
+          "relative_frame_source_parallax_mas": 0.19599309770728193,
+          "F606W_offset_N_mas": -0.04308449880627904,
+          "F606W_offset_E_mas": 0.03305063897626932,
+          "source_position_N_mas": 13.826908511576317,
+          "source_position_E_mas": 7.7325361223288205,
+          "conditional_mass_msun": 6.9890264062053165
+        },
+        "deviance": -77243.81488950102,
+        "full_scaled_projected_score": 0.017174096884512834,
+        "analysis_contacts": [
+          {
+            "parameter": "OGLE_scale_brightness_slope",
+            "side": "LOWER",
+            "role": "DECLARED_ANALYSIS_DOMAIN_NOT_PHYSICAL_CONFIDENCE_LIMIT"
+          }
+        ],
+        "linear_contacts": [],
+        "descriptive_only": {
+          "OGLE_unit_variance_Student_innovations": {
+            "count": 12500,
+            "mean": 0.019295224373232514,
+            "rms": 0.9547246528003336,
+            "population_sd": 0.9545296522272654,
+            "maximum_absolute": 10.071034956626923,
+            "calibrated_p_value": null
+          },
+          "HST_angular_standardized_residuals": {
+            "count": 42,
+            "mean": -0.0052979846121710495,
+            "rms": 0.8743791440960833,
+            "population_sd": 0.8743630933366575,
+            "maximum_absolute": 2.046282322017659,
+            "calibrated_p_value": null
+          },
+          "full_photo_residual_magnitudes": {
+            "count": 12521,
+            "mean": 0.00030690097119137833,
+            "rms": 0.01142042484003716,
+            "population_sd": 0.011416300421801258,
+            "maximum_absolute": 0.050991119100826765,
+            "calibrated_p_value": null
+          }
+        },
+        "parameters_are_conditional_fitted_values_not_accepted_measurements": true
+      },
+      "elapsed_seconds": 223.125,
+      "original_model_call_counts": {
+        "optimizer": 19384,
+        "endpoint": 64
+      },
+      "journal_audit_failure": null,
+      "known_lower_trials": 0,
+      "accepted_mass_interval": null,
+      "known_BH_recovery_accepted": false,
+      "adequacy": "NOT_REFIT_CALIBRATED",
+      "coverage": "NOT_CALIBRATED",
+      "original_outcome_pin": {
+        "path": "outputs\\bhsm_real_data_corrections_20261022\\prepublication_20261024\\known_system_v1\\authentic2023_ST6_SEEING_point_v3\\POINT_OUTCOME_v1.json",
+        "bytes": 2293143,
+        "sha256": "dce4ae6b7fd7c0c2d985b48eed07cb395891ae0f00905982059c7f204d8a7a3b"
+      }
+    },
+    {
+      "campaign": "actual_cadence_ST6_SEEING_point_v3",
+      "purpose": "ACTUAL_CADENCE_CONTROL",
+      "numerical_version": "v3_periodic_trust",
+      "status": "NUMERICALLY_UNRESOLVED",
+      "all16_starts_retained": true,
+      "eligible_start_indices": [
+        0,
+        1,
+        2,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "eligible_endpoint_count": 43,
+      "endpoint_count": 64,
+      "endpoint_status_counts": {
+        "RETURNED": 64
+      },
+      "trust_status_counts": {
+        "DECLARED_PROJECTED_SCORE_REACHED": 15,
+        "LOCAL_CURVATURE_OR_SCORE_UNRESOLVED": 1
+      },
+      "trust_failure_counts": {
+        "LinAlgError: 5-th leading minor of the array is not positive definite": 1
+      },
+      "all_feature_knot_counts": 0,
+      "selected": {
+        "start_index": 9,
+        "phase": "SLSQP_SCALED",
+        "conditional_parameters": {
+          "t0_jd_tdb": 2455765.885699056,
+          "tE_days": 143.15977302562843,
+          "u0_heliocentric": 0.20919539378769755,
+          "angle_source_minus_lens_rad": 0.6589111218911277,
+          "pi_E": 0.17358861133999404,
+          "theta_E_mas": 2.989414687875138,
+          "source_position_N_offset_mas": -2.8425685072875186,
+          "source_position_E_offset_mas": 1.494269694272808,
+          "relative_source_motion_N_mas_yr": 0.7272769820209788,
+          "relative_source_motion_E_mas_yr": -0.40081668365266093,
+          "relative_frame_source_parallax_mas": 0.32032987836075216,
+          "F606W_offset_N_mas": 0.1865586710231161,
+          "F606W_offset_E_mas": 0.2067091110072161,
+          "source_position_N_mas": 7.9067133560689165,
+          "source_position_E_mas": -3.670568291252076,
+          "conditional_mass_msun": 2.114632947037313
+        },
+        "deviance": -77256.81176480131,
+        "full_scaled_projected_score": 0.0002999210060423696,
+        "analysis_contacts": [],
+        "linear_contacts": [],
+        "descriptive_only": {
+          "OGLE_unit_variance_Student_innovations": {
+            "count": 12500,
+            "mean": -0.0014057262441582268,
+            "rms": 0.9975703729833761,
+            "population_sd": 0.997569382543349,
+            "maximum_absolute": 6.324656056451115,
+            "calibrated_p_value": null
+          },
+          "HST_angular_standardized_residuals": {
+            "count": 42,
+            "mean": -0.01581756148180378,
+            "rms": 0.9882272936236269,
+            "population_sd": 0.9881006976070038,
+            "maximum_absolute": 2.4631766284378234,
+            "calibrated_p_value": null
+          },
+          "full_photo_residual_magnitudes": {
+            "count": 12521,
+            "mean": -0.00013708227691783386,
+            "rms": 0.012748103231371356,
+            "population_sd": 0.012747366176863981,
+            "maximum_absolute": 0.08252142771382154,
+            "calibrated_p_value": null
+          }
+        },
+        "parameters_are_conditional_fitted_values_not_accepted_measurements": true
+      },
+      "elapsed_seconds": 166.56200000000536,
+      "original_model_call_counts": {
+        "optimizer": 11967,
+        "endpoint": 64
+      },
+      "journal_audit_failure": null,
+      "known_lower_trials": 0,
+      "accepted_mass_interval": null,
+      "known_BH_recovery_accepted": false,
+      "adequacy": "NOT_REFIT_CALIBRATED",
+      "coverage": "NOT_CALIBRATED",
+      "original_outcome_pin": {
+        "path": "outputs\\bhsm_real_data_corrections_20261022\\prepublication_20261024\\known_system_v1\\actual_cadence_ST6_SEEING_point_v3\\POINT_OUTCOME_v1.json",
+        "bytes": 2279870,
+        "sha256": "2cc89294030aecebc3f11af16444ea9da624ca05ac53c710a1b11ea0bd204907"
+      }
+    }
+  ],
+  "publication_hold": true,
+  "new_black_hole_discoveries": 0,
+  "accepted_known_BH_recoveries": 0,
+  "original_observations_or_predictions_included": false,
+  "BHSM": "One common Einstein/GHY optical exterior, interpreted as surface topography/envelopment and counted once. Conditional geometry is distinct from BH identity and microscopic interface dynamics."
+}

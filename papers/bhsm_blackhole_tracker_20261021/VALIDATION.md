@@ -1,4 +1,49 @@
-# Validation and evidence: RC5 atlas and retained RC4 analyses
+# Validation and evidence: RC7 prepublication checks
+
+The separately frozen current-kernel experiment completes all 4,608 synthetic
+datasets, 4,736 fits and 1,024 truth-timescale profile queries. An independent
+saved-only audit performs 12,084,004 checks without new model, generator, fit
+or profile calls and confirms all 28 exact tests and three calibration failures.
+See the product's `docs/CALIBRATION_FINDINGS_20261024_V1.md` and versioned
+research evidence. Completion is accounting, not universal calibration.
+
+The new Student known-system route keeps the normalized density, real 2023
+quoted angular errors, all modes and failed numerical decisions. Neither its
+initial nor chart/trust experiment clears the point-resolution gate. Its
+conditional mass remains unaccepted. No 2025 angular uncertainty is invented.
+The portable research sources retain their invented-control receipts, including
+the failed and prospectively corrected ill-conditioned control contract.
+
+All 32 saved terminal states undergo two fixed derivative diagnostics, followed
+by one append-only numerical continuation. A demonstrated coarse Hessian-step
+defect is corrected without changing the physical kernel, observations, noise
+law or score criterion. The continuation returns all 32 endpoints in 21.375
+seconds with 781 normalized calls: 13/16 authentic and 15/16 generated-control
+endpoints are numerically eligible. Four states retain curvature failures.
+The authentic noise-domain contact and original unresolved search history
+remain; no interval, global optimum or independent known-BH recovery is accepted.
+The compact review keeps every state and the original failed campaigns.
+
+RC7 source product verification passes 338 tests plus 66 subtests on Python
+3.14.3. A fresh noneditable wheel installation on Python 3.11.9 with the supported
+minimum dependency families passes the same 338 tests plus 66 subtests and
+seven installed HTTP resource checks. A separate source research replay on
+Python 3.14.3 passes 49 deterministic controls after the explicit transport-binding
+correction. These are software/mathematical
+checks, not independent observational calibration samples.
+
+The actual fresh RC7 browser imports and fits every one of the preserved 734
+rows of OGLE3-ULENS-0585, then downloads the complete replay bundle. Installed
+CLI replay gives exactly zero prediction difference with unchanged row order,
+unavailable quantities and BHSM interpretation. An altered, still-valid JSON
+member is rejected by the manifest hash check. The original native source is
+unchanged. This verifies the workflow, not a new pilot result or mass.
+
+The wheel embeds both original legal notices and matching software citations,
+with valid PEP 639 metadata and complete RECORD hashes. Historical RC6 and older
+validation remains below with its original versions, outcomes and scope.
+
+## Historical RC5 and retained RC4 analyses
 
 Validation is separated into the reviewed physical-inference corrections, native unresolved observations, historical resolved-pair calibration, conditional theory, and installed workflows. A completed optimizer is not a scientifically adequate model. Internal agent checks are not external peer review.
 

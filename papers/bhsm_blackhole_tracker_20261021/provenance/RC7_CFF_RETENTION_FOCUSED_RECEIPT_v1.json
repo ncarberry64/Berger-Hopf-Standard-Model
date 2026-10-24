@@ -1,0 +1,41 @@
+{
+  "schema": "bhtracker.rc7_formal_citation_retention_correction.v1",
+  "status": "PASS_FOCUSED_SOURCE_FIXES_ROOT_COMMITTED",
+  "formal_commit": "0b984d2c073ae44b9d7caebe36fbf68557672e45",
+  "files": [
+    {
+      "path": "tools/audit_public_readiness.py",
+      "sha256": "2280ec1cd61026d521c522a0db8607aa52d7d38dac54ff2e43648ea5090742b6",
+      "bytes": 26477
+    },
+    {
+      "path": "tests/test_public_readiness_cff_license.py",
+      "sha256": "d25c8abc932fc14336be35ec3fb1dd847aef42080ecd9686d5bc7d4622257134",
+      "bytes": 4255
+    },
+    {
+      "path": "data/retained_large_research_artifacts.json",
+      "sha256": "e024df04d4a460e66e5f901d5e8aca3d9f771d27fe9646d776bd8428bebe546b",
+      "bytes": 17946
+    }
+  ],
+  "CFF_scope": "Exact immutable archival license-url for custom CFF1.2 terms; reject scalar license override, changed/mutable URLs, changed/extra/duplicate author identities, wrongDOI/repository and changedZenodo permissions. Historical release/DOI/currentlicense links remain checked. No network/YAML dependency.",
+  "retention_scope": {
+    "unchanged_historical_entries": 45,
+    "exact_new_public_parts": 3,
+    "large_file_threshold_unchanged_bytes": 10485760,
+    "hash_algorithm_and_tamper_unlisted_refusal_unchanged": true,
+    "future_artifact_entries_wait_final_exact_bytes": true
+  },
+  "focused_tests": {
+    "passed": 15,
+    "new_metadata_cases": 14,
+    "existing_tamper_unlisted_case": 1,
+    "log_sha256": "257f6bed26e0ca1e72262752447331fed35f3cf1911abd53ca43131cf3225704",
+    "junit_sha256": "7ac8537f2a7ecc8d71192753e5e7bbee8e75e70db28d99fc2e4760c984c1a70d"
+  },
+  "full_8_audits_executed": false,
+  "product373_unchanged_from_formal_import": true,
+  "scientific_threshold_or_publication_hold_changed": false,
+  "reexecution_needed": false
+}

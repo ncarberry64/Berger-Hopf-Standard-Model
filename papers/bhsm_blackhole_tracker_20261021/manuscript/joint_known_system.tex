@@ -336,3 +336,106 @@ Robust uncertainty does not correct a biased mean or shared frame calibration.
 No such alternative mass estimator is fitted or validated here, and no reliable
 mass support is inferred from the saved G0 point alone.
 
+\subsection{A separately frozen normalized Student experiment}
+\label{sec:student-known-system}
+A new experiment retains the exact 2023 observations and the preceding
+failures. It changes the declared OGLE working density, without using a
+published mass as a datum, prior, initializer or acceptance target. The
+21 HST angular rows keep their positive quoted marginal errors, with
+independence explicitly assumed; this is not a released full covariance.
+The 2025 reduction with unavailable angular errors is kept separate.
+All eight source/frame/filter and angular-scale linear coefficients are
+profiled, enumerating the nine active faces for bounded angular scale and
+relative-frame source parallax. Zero angular scale is admissible. Neither
+that relative nuisance parallax nor the clock assumptions supply an
+absolute lens distance or motion.
+
+The OGLE residuals are ordered chronologically with stable tie order.
+Let $S$ contain the inferred positive marginal scales and
+$R_{ij}=(1-f)\delta_{ij}+f\exp(-|t_i-t_j|/\tau)$.
+For the determinant-one chronological differencing matrix $B$, let
+$LL^{\mathsf T}=BRB^{\mathsf T}$ and
+$z=L^{-1}BS^{-1}(m_{\rm obs}-m_{\rm mean})$.
+Independent unit-variance Student innovations with fixed $\nu=6$ give
+\begin{equation}
+ D_{\rm OGLE}=7\sum_i\log(1+z_i^2/4)
+ +2\sum_i\log S_i+2\sum_i\log L_{ii}
+ -2N\log(15/32).
+ \label{eq:student-known-normalization}
+\end{equation}
+The mean includes an inferred seeing term; seasonal, predicted-brightness
+and seeing dependence enter the scales. HST photometry and astrometry
+retain their complete supplied-error Gaussian normalizations. This is
+a specified non-Gaussian innovation law, not a Gaussian process plus
+Student measurement errors or an elliptical multivariate Student density.
+It requires its own refitted adequacy reference, rather than the earlier
+Gaussian chi-square pivots.
+
+The first bounded search retains all 16 sign/angle starts and 48 phase
+endpoints for both authentic data and one separately generated control
+at the same cadence and error support. All 12\,521 brightnesses and 21
+angular values in that control are replaced in a distinct synthetic
+namespace; the authentic parent bytes and row identities remain intact.
+Its generic low-mass generating class is an engineering assumption,
+not a classification inferred from a mass threshold. It supplies one
+numerical control, not interval coverage or observational calibration.
+Both searches complete without clearing their numerical-resolution gate.
+
+A separately frozen coordinate/solver follow-up uses a full angular
+chart centered on each original seed and a fixed gradient-based Newton
+polish, without changing the physical model, domains or score criterion.
+Every start remains in the denominator. It removes arbitrary angle-seam
+contacts but still leaves unresolved starts: four of sixteen authentic
+starts and fifteen of sixteen control starts have eligible endpoints.
+The remaining local refinement refuses a finite-difference free-Hessian
+estimate that is not positive definite, rather than inserting a ridge or
+a covariance floor.
+The best eligible authentic conditional point remains approximately
+$6.989M_\odot$, but a brightness-dependent noise parameter reaches its
+declared analysis boundary. This is not an accepted mass estimate or
+confidence interval. The control's conditional point also does not
+constitute a coverage or bias study.
+
+Two separately frozen derivative diagnostics retain all 32 terminal states
+and all 23 nonlinear coordinates, with four step sizes per diagnostic and
+5\,920 normalized-density calls each. They perform no fitting or random
+draws. Profile faces and clipped-feature regimes remain unchanged across
+the probes. At the four finer scaled steps, from $3\times10^{-6}$ to
+$10^{-7}$, fourteen authentic and fifteen control states have positive
+symmetrized free-curvature spectra throughout; two authentic states and
+one control state retain negative minima. The coarse curvature step used
+by the initial polish can therefore produce spurious indefiniteness.
+The finer scalar-score agreement also improves, while decoded large-JD
+addition introduces a measurable numerical step mismatch in the time
+coordinate. Neither floating sign stability nor a smaller numerical step
+certifies an exact Hessian, a physical covariance or an identified mass.
+The clock convention and observations are unchanged.
+
+An append-only numerical continuation then applies the same 16-iteration
+polish to every one of these 32 saved states, changing only the curvature
+step from $10^{-4}$ to $3\times10^{-7}$. It completes in 21.375 seconds
+with 781 normalized-density calls and all 32 returned endpoints, without
+timeouts, source changes or journal failures. Thirteen of sixteen authentic
+and fifteen of sixteen control endpoints meet the unchanged numerical
+eligibility criterion. Three authentic states and one control state still
+fail the positive-curvature requirement. The best eligible authentic
+post-endpoint has conditional mass approximately $6.989M_\odot$ and
+scaled projected score 0.00512; the brightness-noise domain contact
+persists. This corrects much of the coarse-stencil failure but neither
+certifies the original search/global optimum nor clears the unresolved
+history, adequacy and uncertainty-calibration gates. No mass interval or
+independent known-black-hole recovery is accepted.
+
+The original failed numerical-control assertion is retained separately:
+an ill-conditioned quadratic's requested gradient tolerance did not
+imply its additional coordinate-accuracy assertion. A prospectively
+corrected control tightens only its toy score and verifies an exact
+rational inverse-Hessian residual-to-coordinate bound. The physical
+score criterion and algorithms are unchanged by that test correction.
+The revised deterministic controls pass, but do not certify any native
+mass. Source, state, failed-mode and normalization records accompany the
+portable experimental route. No independent known-black-hole recovery
+or new black-hole identification is accepted. The BHSM interpretation
+remains one Einstein/GHY exterior as gravitational hypersurface
+topography, counted once, with core and horizon quantities unavailable.
+

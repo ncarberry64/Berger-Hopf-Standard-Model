@@ -11,7 +11,37 @@ Reviewer paths in that branch are:
 
 The external delivery receipt binds the final formal code commit, review status and artifact hashes. No formal code SHA is inferred here from a workspace commit or a theory-source pin. The interpretation manifest pins the dated scientific amendment at `3c820fee74a5c715ef58bf30998edb1d7b26fe78`; this is a source revision, not the final product/paper delivery commit.
 
-## Corrected rc3 and frozen real observations
+## Current RC7 review candidate
+
+The current product is `0.2.0rc7`, pinned in the formal repository at
+`f90c9dc4a9eed262ca3b2291b3320f47bb4a5333`, with 373 exact imported product
+source files from workspace commit `648fad552dfe1ee45b1c139b61423fdf22b997d1`.
+The final delivery receipt separately binds the reviewed paper and later formal
+integration head. The BHSM repository remains the canonical researcher source.
+
+Source and minimum-supported installed environments each pass 338 tests and
+66 subtests. The compact source distribution separately replays 49 research
+controls and the original 16 ideal algebra controls. A fresh installed-browser
+run imports all 734 native rows of OGLE3-ULENS-0585, fits, exports and replays
+with zero prediction difference; the original data and unavailable quantities
+remain intact, and manifest tampering is refused.
+
+The new frozen synthetic experiment retains all 4,608 datasets and 4,736 fits.
+Its independent saved-only audit confirms three uncertainty-calibration failures.
+The separate normalized-Student 2023 known-system experiment remains numerically
+unresolved. Software verification does not clear these scientific limits:
+accepted independent known-black-hole recoveries and established new black-hole
+identifications both remain zero, and scientific publication remains on HOLD.
+
+The product contains the versioned protocols, compact findings and three bounded
+public evidence parts with assembly/hash verification. Native observations
+excluded from that public transport retain their hashes, source-row provenance,
+official retrieval information and separate access/rights requirements. The
+compact source distribution includes retrieval and replay helpers rather than
+silently substituting generated measurements for observations. The legal
+notices, software citation and historical preprint identifier remain distinct.
+
+## Historical corrected rc3 and frozen real observations
 
 The runtime is pinned in the formal repository at `002b9ecfe2f1a778b68b7558581997c05919ae93`, imported from development commit `aa1759d07c97e25a2fb1a7ad24a053aa553d602a`. The reviewed F4/F5 theory source is independently pinned at `705d4c7e2f9a832b457f63ff975e7d4dc8008645`. This is a review candidate; no new merge, Pages publication or journal submission is performed.
 

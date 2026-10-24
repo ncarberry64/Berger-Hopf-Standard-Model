@@ -1,0 +1,54 @@
+One bounded Hstep-only numerical continuation -- source preparation, not admission
+
+Start from exactly ALL32 pinned v3 terminal chart states,16native and16frozen
+daughter, original start-index order. Retain every prior phase, failed mode,
+control failure and diagnostic. Do not rerun original initialization/SciPy phases,
+choose only favorable states, generate data, bootstrap or mass-profile anything.
+
+The physical kernel, Gaussian supplied angular errors, normalized Student law,
+all observations/time conventions, domains/scales, periodic charts, fullscore0.02,
+linear rank/active-face/KKT and feature-knot criteria stay unchanged. The kernel's
+large-JD t0 addition is NOT rewritten or silently corrected. Domain contacts and
+remaining adequacy/calibration/uncertainty/identity limitations still block
+physical acceptance. No published mass initializes or selects this experiment.
+
+Every state receives one16-iteration maximum polish using byte-exact unchanged
+bounded_trust_polish_v1.py. The ONLY numerical-method parameter correction is
+Hessian finite-difference step3e-7 instead of1e-4. Same fixed scaled trust step1,
+exact-face mapping, Cholesky requirement,40backtracks, Armijo/tie rule and score
+tolerance0.02. No negative-curvature fallback, ridge, pseudoinverse, covariance
+floor or positive-eigenvalue substitution is added. Failure remains unresolved.
+
+The fine diagnostic directly supports this correction:14native states have
+positive floating free spectra at all four finer levels, whereas the old1e-4
+step produced many apparent negative spectra. Two native and one control state
+retain negative floating spectra at every tested fine level. Therefore this
+continuation does NOT promise all16 eligibility and cannot certify exact
+Hessian signs. It is a finite test of the demonstrated coarse-stencil defect.
+
+Preserve the exact v3 callback scale round-trip and exact-bound mapping, so this
+is not an undeclared second coordinate change. All actual evaluated states,
+full normalized objectives/analytic gradients/rank/KKT/knots and errors are
+journaled. The original chart center and terminal hash are recorded perstate.
+The permanent journal latch prevents any later model call after an audit loss.
+Save all32 postpolish terminals/ledger entries, even after a failure or timeout.
+
+Limits remain100s/state,1740sworker/1800ssupervisor,256MiBjournal. One fixed
+combined32-state continuation is run, so the common whole-budget can interrupt
+later states; retain all unattempted states explicitly. Maximum44640 normalized
+calls:32*[17iteration baselines +16*(2*23 Hessian probes +40line probes)
+ +1final helper evaluation +1independent returned endpoint]. Early termination
+and active faces reduce that ceiling. No additional evaluation or retry follows.
+
+Use exactPython3.11.9/NumPy1.26.4/SciPy1.12.0/Astropy6.0.0/singlethread. Reuse
+the already independently reviewed/passed corrected12 numerical controls because
+the helper's bytes and algorithm are unchanged; do not rerun controls merely
+to manufacture more passing evidence. Fresh source/data/state bindings, source
+review and a separate root execution receipt precede any continuation call.
+
+Endpoint eligibility is a numerical diagnostic, not physical acceptance. Report
+each original and postpolish score/status/contact/knot and every remaining
+curvature failure. Lowest returned post-endpoint is conditional only; this does
+not certify original search/global coverage. Accepted mass interval remains null,
+known-BH recovery false and publication hold remains. The same BHSM one-exterior
+surface/envelopment interpretation applies without a second optical potential.

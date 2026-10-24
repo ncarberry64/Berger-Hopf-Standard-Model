@@ -1,4 +1,34 @@
-# Result statement: RC6 research target, moving-lens tools and retained observations
+# Result statement: RC7 prepublication validation
+
+The current-kernel study retains all 4,608 synthetic datasets, 4,736 fits and
+1,024 generating-timescale profile queries. Its independent saved-only audit
+confirms three failed photometric calibration tests on one cadence: local
+timescale intervals cover 510/512 truths, impact-parameter intervals 461/512,
+and the timescale profile-reference set 504/512. The nominal level is 95%.
+Both excessive and insufficient coverage remain reported. The resolved tests
+are conditional on supplied hypothetical distances, frame and covariance.
+
+A separately normalized Student experiment on the unchanged 2023 known-system
+observations preserves every failed starting mode. A numerical chart/trust
+follow-up removes arbitrary angular seams but does not clear the full
+point-resolution gate. A conditional value near 6.989 solar masses is not an
+accepted mass or independent recovery; a noise-domain contact, calibration and
+uncertainty requirements remain. The 2025 data with absent angular errors are
+not assigned fabricated covariance. Scientific publication remains held.
+
+The finer-step numerical correction returns all 32 retained endpoints and
+improves authentic endpoint eligibility to 13/16, with 15/16 for the generated
+control. Four curvature failures, the native noise-boundary contact and the
+original search history remain explicit. This is numerical progress rather
+than a physical mass interval, calibrated recovery or a new black hole.
+
+The BHSM claim dossier makes conditional observables, ordinary competing causes,
+projection nulls and falsifiers explicit. Its deterministic algebra controls
+verify the stated mathematics, not an observed microscopic boundary or horizon.
+The software distribution carries the original legal notices and a separate
+RC7 software citation to the formal BHSM Git. No new DOI is assigned.
+
+The retained RC6 target and earlier observational findings follow unchanged.
 
 BHSM frames the search as a hunt for gravitational topography on the hypersurface and for evidence that distinguishes different envelopments. The author calls the spacetime differential associated with an envelope boundary the **BHSM envelope-boundary differential**. This defined usage is separate from conventional rotational frame dragging. The paper relates it to its existing, explicitly referenced exterior curvature construction and derives a conditional compact-versus-extended bending-profile diagnostic. These are one common optical response counted once; they do not add another mass or force. Equal optical responses retain their degeneracy, and no new extended-halo classifier, global hypersphere radius, microscopic boundary or spin measurement is claimed. The [dated author definition](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/blob/7ebc9f226e0d9abc68e2ec61c90a8b262081c733/docs/BHSM_TRACKER_ENVELOPMENT_SEARCH_CLARIFICATION_20261023.md) preserves the terminology and its research scope.
 
@@ -61,4 +91,4 @@ The historical 64- and 128-realization resolved-pair calibrations retain their o
 
 Formal reviewer source: [BHSM repository](https://github.com/ncarberry64/Berger-Hopf-Standard-Model), branch [codex/blackhole-tracker-real-data-20261022](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/tree/codex/blackhole-tracker-real-data-20261022), product `products/blackhole_tracker/`, paper `papers/bhsm_blackhole_tracker_20261021/`; atlas metadata are in the paper's `candidate_atlas_20261023/` directory. Historical RC4 source remains pinned to [1a556d37a40e](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/tree/1a556d37a40ef89deb54f9c07d231b5496163838/products/blackhole_tracker). It does not certify the added RC5 bytes. Manuscript-Generation is a development workspace. The historical RC5 product is pinned to [8ca349fa8eb5](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/tree/8ca349fa8eb5c54c661a022790ae915d05060b59/products/blackhole_tracker). Its installed 257 tests/29 subtests, five notebooks and actual browser export/replay pass. The 45-page PDF has its own [visual-review binding](provenance/RC5_PDF_VISUAL_QA.json); hosted CI is bound separately to final remote heads. Historical receipts remain historical.
 
-The current RC6 product is pinned to [formal BHSM revision 4c71556f5ab4](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/tree/4c71556f5ab4352064325601669bca91a5230690/products/blackhole_tracker), with 266 exact upstream files. Source and isolated installed-product suites each passed 318 tests and 66 subtests; the sixth notebook and actual browser export/replay have separate current receipts under the product's `validation/rc6/` and `validation/notebook06_rc6_receipt_v2.json`. The final wheel SHA-256 is `01463e3a0de90cef7e2b9e9ac325ce2cf3e438f94b0ccb3316a76dc7ae434195`. Gaia18ajz is a previously published provisional primary investigation target, with all eight alternatives retained. Native candidate adequacy and accepted independent known-black-hole recovery remain open; scientific publication is held. Hosted CI is bound separately to the final remote heads.
+The historical RC6 product is pinned to [formal BHSM revision 4c71556f5ab4](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/tree/4c71556f5ab4352064325601669bca91a5230690/products/blackhole_tracker), with 266 exact upstream files. Source and isolated installed-product suites each passed 318 tests and 66 subtests; the sixth notebook and actual browser export/replay have separate current receipts under the product's `validation/rc6/` and `validation/notebook06_rc6_receipt_v2.json`. The final wheel SHA-256 is `01463e3a0de90cef7e2b9e9ac325ce2cf3e438f94b0ccb3316a76dc7ae434195`. Gaia18ajz is a previously published provisional primary investigation target, with all eight alternatives retained. Native candidate adequacy and accepted independent known-black-hole recovery remain open; scientific publication is held. Hosted CI is bound separately to the final remote heads.

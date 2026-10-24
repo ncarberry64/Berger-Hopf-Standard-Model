@@ -1,5 +1,32 @@
 # What the Blackhole Tracker has demonstrated
 
+The new prepublication checks make the tool easier to audit and expose where
+its claims must stop. We ran 4,608 simulated datasets through 4,736 fits and
+kept every result. The supplied-data mass/motion controls behaved as reported
+at their tested designs, but three tests showed that some photometric error
+bars or profile thresholds do not have their advertised nominal coverage.
+The app now displays those limits. A simple curve passing a fit check also
+does not prove that gravitational lensing caused it.
+
+The new known-system analysis still does not count as successful independent
+black-hole recovery. It can return a conditional mass near seven solar masses,
+but unresolved searches, calibration assumptions and a noise-model boundary
+prevent accepting that number. The program preserves the failed alternatives
+instead of treating agreement with a published answer as validation.
+
+A numerical correction improves the known-system search: thirteen of sixteen
+starting modes now reach the declared local score criterion, compared with
+four before the correction. The remaining failures stay visible. Improving
+the calculation does not supply the missing calibration or make the conditional
+mass a confirmed black-hole measurement.
+
+**New black holes established: zero. Independently accepted known-black-hole
+recoveries: zero.** Gaia18ajz remains the previously published provisional
+investigation target with all its alternatives retained. The tool is usable
+for research screening, specified-model fitting and reproducible investigation;
+it is not yet a validated black-hole recognition system. The paper remains on
+scientific hold. The following historical counts are preserved, not new finds.
+
 BHSM frames the search as a hunt for gravitational topography on the hypersurface and for evidence that distinguishes different envelopments. The author calls the spacetime differential associated with an envelope boundary the **BHSM envelope-boundary differential**. This defined usage is separate from conventional rotational frame dragging. The paper relates it to its existing, explicitly referenced exterior curvature construction and derives a conditional compact-versus-extended bending-profile diagnostic. These are one common optical response counted once; they do not add another mass or force. Equal optical responses retain their degeneracy, and no new extended-halo classifier, global hypersphere radius, microscopic boundary or spin measurement is claimed. The [dated author definition](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/blob/7ebc9f226e0d9abc68e2ec61c90a8b262081c733/docs/BHSM_TRACKER_ENVELOPMENT_SEARCH_CLARIFICATION_20261023.md) preserves the terminology and its research scope.
 
 The current primary research target is **Gaia18ajz**, a previously published potential black hole. Its published parallax and lens-light analysis motivates investigation, but all eight model/prior/near--far alternatives remain visible, including lower-mass explanations. It is not a new tracker discovery. The known black-hole benchmark and the brown-dwarf comparison are separate controls; neither has been independently recovered by this engine.

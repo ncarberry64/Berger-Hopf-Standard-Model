@@ -29,26 +29,27 @@ pdfsubject={Formal source and reviewer repository: https://github.com/ncarberry6
 \begin{center}\small Research article for \emph{Galaxies}: Strong Gravitational Lens Modeling\end{center}
 \begin{abstract}
 Blackhole Tracker interprets compact-lens inference as Berger--Hopf Standard
-Model (BHSM) gravitational surface topography, counting one effective
-exterior once. A local app, command line, Python package and notebooks support
-resolved pairs and native unresolved photometry. A frozen pilot processes
+Model (BHSM) gravitational surface topography, counting one
+exterior once. App, command-line, Python and notebook interfaces support
+resolved pairs and native photometry. A frozen pilot processes
 100 OGLE-III events and 76\,344 measurements: 89 fail its adequacy screen,
 eleven are not rejected and two pass stricter archival follow-up criteria.
-A versioned atlas reconciles this pilot with 59 published parallax events,
-retaining 155 distinct source/event directions, literature revisions and
-all failed assessments. Three qualified or disputed investigation targets
-remain distinct from black-hole identifications. Mass, lens position,
-distance and absolute motion remain unresolved; duration is not mass.
-A 2022 benchmark rejects rectilinear photometry-only fits. A separate joint
-benchmark uses 12\,521 photometric measurements and 21 two-coordinate HST
-positions; three frozen noise candidates fail residual-structure checks.
-Reviewed corrections remove numerical-reference dependence, admit physical
-nuisance profiles and preserve unavailable motion uncertainties.
-The optional scalar--tensor calculation bounds boundary states in its
-retained exterior, but two projected modes vanish and the leading
-apparent-mass response is degenerate with shear. The product supports
-auditable screening, localization and conditional response tests.
-No new black-hole interpretation, measured BHSM core dynamics, independently
+An atlas adds 59 published parallax events, retaining 155 distinct
+source/event directions and failed assessments. Three qualified or disputed
+targets remain unconfirmed.
+Mass, lens position, distance and absolute motion remain unresolved;
+duration is not mass. A joint benchmark retains 12\,521 photometric
+measurements and 21 two-coordinate HST positions: three Gaussian noise
+candidates fail residual checks; a normalized Student experiment remains
+numerically unresolved. Corrections remove numerical-reference dependence,
+admit physical nuisance profiles and preserve unavailable motion uncertainties.
+A frozen synthetic study retains 4\,608 datasets and 4\,736 fits; three
+photometric uncertainty-calibration tests fail alongside successful conditional
+resolved controls. The optional scalar--tensor calculation bounds retained
+boundary states, but two projected modes vanish and the leading response
+is degenerate with shear. The product supports auditable screening and
+conditional response tests. No new black-hole identification, independent
+known-black-hole recovery, measured BHSM core dynamics, independently
 detected R1 deformation or horizon classification is established.
 \end{abstract}
 \noindent\textbf{Keywords:} strong gravitational lensing; compact objects;
@@ -465,6 +466,7 @@ controls. It is historical evidence for that model and implementation,
 not a repeated calibration of the revised rc3 kernel or native
 unresolved-photometry likelihood.
 \input{product_validation}
+\input{current_kernel_validation}
 \input{real_observations}
 \input{joint_known_system}
 \input{candidate_inventory}
@@ -580,7 +582,15 @@ unassessed and failed cohort cases remain visible, and the published
 known-system benchmark stays outside the cohort ranking. No new
 telescope detection or journal submission is reported.
 
-The completed joint candidate set stops without an accepted mass. Its apparently
+The current-kernel study completes its full frozen accounting but rejects three
+photometric uncertainty-calibration tests. Successful conditional resolved
+controls therefore do not establish universally calibrated errors or a
+black-hole classifier. The separately normalized Student experiment likewise
+does not clear its numerical-resolution gate; an eligible conditional point
+near a published mass is insufficient to count as independent recovery.
+Neither result clears the scientific publication hold.
+
+The completed Gaussian joint candidate set stops without an accepted mass. Its apparently
 satisfactory global quadratics and whole-night predictive screens cannot override
 failed residual structure or a numerical covariance-timescale cap. Valuable
 further evidence includes per-exposure variance, seeing/detector diagnostics,
@@ -598,9 +608,13 @@ paper under \nolinkurl{papers/bhsm_blackhole_tracker_20261021/}.
 The integration branch is
 \href{https://github.com/ncarberry64/Berger-Hopf-Standard-Model/tree/codex/blackhole-tracker-real-data-20261022}{the real-data integration branch};
 the separate Manuscript-Generation repository is a development workspace.
-The rc6 resolved, native-photometry, joint, candidate-inventory and
+The rc7 resolved, native-photometry, joint, candidate-inventory and
 measured angular-track product source is pinned to formal revision
-\href{https://github.com/ncarberry64/Berger-Hopf-Standard-Model/tree/4c71556f5ab4352064325601669bca91a5230690/products/blackhole_tracker}{\texttt{4c71556f5ab4}}.
+\href{https://github.com/ncarberry64/Berger-Hopf-Standard-Model/tree/f90c9dc4a9eed262ca3b2291b3320f47bb4a5333/products/blackhole_tracker}{\texttt{f90c9dc4a9ee}}.
+Its product \texttt{CITATION.cff} records version 0.2.0rc7 separately from
+the historical repository DOI. Both original legal notices accompany the
+wheel and source distribution; their terms are unchanged. The preceding
+RC6 source revision \texttt{4c71556f5ab4} remains preserved.
 The final release receipt pins the completed source revision, wheel,
 manuscript PDF and CI outcomes. The theory/source reconciliation is
 independently pinned to formal revision
