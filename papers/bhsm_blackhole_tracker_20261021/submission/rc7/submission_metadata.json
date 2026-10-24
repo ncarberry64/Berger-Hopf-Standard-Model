@@ -1,7 +1,7 @@
 {
   "schema_version": 4,
   "prepared_on": "2026-10-24",
-  "status": "DRAFT_FINAL_BINDINGS_PENDING_PUBLICATION_HOLD",
+  "status": "PREPARED_FOR_AUTHOR_REVIEW_PUBLICATION_HOLD",
   "journal": "Galaxies",
   "article_type": "Article",
   "special_issue": {
@@ -37,27 +37,32 @@
   "manuscript": {
     "relative_source": "manuscript/main.tex",
     "relative_pdf": "manuscript/main.pdf",
-    "pages": null,
+    "pages": 52,
     "format": "Free-format research article; focused sourceZIP and reviewedPDF",
     "total_submission_file_limit_mb": 120,
-    "final_pdf_binding_status": "PENDING_ROOT_FINAL_COMPILATION_AND_ALL_PAGE_VISUAL_REVIEW",
-    "reviewed_pdf_sha256": null,
-    "reviewed_pdf_bytes": null,
-    "independent_pdf_qa_status": "PENDING",
-    "independent_pdf_qa_receipt": null,
-    "independent_pdf_qa_sha256": null,
-    "matching_bbl_sha256": null,
-    "matching_bbl_bytes": null
+    "final_pdf_binding_status": "INDEPENDENT_INTERNAL_VISUAL_QA_PASS_ALL52_PAGES",
+    "reviewed_pdf_sha256": "0d8a0985c54fd806f14f512184502711d61f57dd38ca9c3007eb9509ce99427a",
+    "reviewed_pdf_bytes": 1315684,
+    "independent_pdf_qa_status": "PASS",
+    "independent_pdf_qa_receipt": "provenance/RC7_PDF_VISUAL_QA_v3.json",
+    "independent_pdf_qa_sha256": "c721fd4f62c460002e647f7a37e57f2b457d26b0ada52f2d46a1a8ab9041eae4",
+    "matching_bbl_sha256": "66c1fe2b64ea948e6964dceaeebd0b04c611ce1324c5a3c5972eaaff9a8a3e3e",
+    "matching_bbl_bytes": 21050,
+    "compile_receipt": "provenance/RC7_PAPER_COMPILE_v3.json",
+    "compile_receipt_sha256": "14a97087c2da383d918fe7bb691c802f648206602e0fb99a9b3eb535f9e79cc9"
   },
   "formal_repository": {
     "url": "https://github.com/ncarberry64/Berger-Hopf-Standard-Model",
-    "review_integration": null,
+    "review_integration": {
+      "reviewed_paper_snapshot_commit": "db2768ca8ffcb78611c78936fc2a0351046ff2c1",
+      "reviewed_paper_snapshot_url": "https://github.com/ncarberry64/Berger-Hopf-Standard-Model/tree/db2768ca8ffcb78611c78936fc2a0351046ff2c1/papers/bhsm_blackhole_tracker_20261021"
+    },
     "paper_path": "papers/bhsm_blackhole_tracker_20261021",
     "product_path": "products/blackhole_tracker",
     "code_version": "bhsm-blackhole-tracker 0.2.0rc7",
     "code_commit": "f90c9dc4a9eed262ca3b2291b3320f47bb4a5333",
     "code_url": "https://github.com/ncarberry64/Berger-Hopf-Standard-Model/tree/f90c9dc4a9eed262ca3b2291b3320f47bb4a5333/products/blackhole_tracker",
-    "note": "Formal BHSM product citation is immutable; final paper/source commits remain pending."
+    "note": "BHSM is the formal reviewer repository. Product code is pinned separately; B/F1 are immutable reviewed-paper anchors, with later containing commits recorded externally."
   },
   "established_backmatter": {
     "funding": "This research received no external funding.",
@@ -101,7 +106,7 @@
   "manual_submission_only": true,
   "ready_for_submission": false,
   "abstract_workspace_whitespace_words": 199,
-  "abstract_binding_status": "EXACT_CURRENT_SOURCE_NORMALIZED_TO_PLAIN_TEXT",
+  "abstract_binding_status": "EXACT_FINAL_REVIEWED_SOURCE_NORMALIZED_TO_PLAIN_TEXT",
   "candidate_atlas": {
     "schema": "bhsm.blackhole_tracker.candidate_inventory.v1",
     "relative_directory": "candidate_atlas_20261023",
@@ -119,17 +124,11 @@
     "accepted_engine_black_hole_identifications": 0,
     "scope": "Source/event directions and qualified metadata; lens mass, position, distance and absolute motion unavailable; no new physical fit."
   },
-  "pending_release_bindings": [
-    "Final compiledPDF hash/bytes/pages and independent all-page visualQA receipt/hash.",
-    "Immutable reviewed paper-source and formal source-snapshot commits; external source/reviewerZIP manifest.",
-    "HostedCI evidence only after exact remote-head/actual checkout qualification.",
-    "PublicationHOLD remains: three calibration flags, adequate candidate evidence and known-system recovery are unresolved."
-  ],
   "requirements_verification_status": "HISTORICAL_22_OCTOBER_2026_REQUIREMENTS_NOT_REVERIFIED_BY_THIS_DRAFT",
   "previous_submission_metadata": "../rc6/submission_metadata.json (preserved historicalRC6)",
   "local_release_validation": {
     "product_version": "0.2.0rc7",
-    "status": "ROOT_SUPPLIED_LOCAL_PRODUCT_PASS_FINAL_PAPER_PENDING",
+    "status": "ROOT_SUPPLIED_LOCAL_PRODUCT_PASS_PAPER_REVIEW_BOUND_SCIENTIFIC_HOLD",
     "source_product_tests": 338,
     "source_passed_subtests": 66,
     "installed_product_tests": 338,
@@ -142,7 +141,7 @@
     "installed_receipt": "products/blackhole_tracker/validation/rc7/FINAL_WHEEL_INSTALLATION_RECEIPT_v1.json",
     "installed_receipt_sha256": "65148c5d33e06315948488bf12eccbd7d3d916891a3b90300c094d3b17e56a85",
     "historical_notebook_scope": "Six historical executed notebooks retain original validation versions; no new RC7 notebook execution is asserted here.",
-    "hosted_ci_status": "PENDING_EXACT_FINAL_HEAD_CAPTURE_NOT_ASSERTED",
+    "hosted_ci_status": "NOT_ASSERTED_BY_THIS_HELD_PACKET",
     "scientific_acceptance": "NOT_ESTABLISHED"
   },
   "publication_hold": {
@@ -194,13 +193,14 @@
     "scope": "Hunt localized BHSM hypersurface envelopments; conditional compact-versus-extended geometric diagnostics. Author's broad frame-dragging usage denotes a spacetime differential across an envelopment boundary, distinguished from standard rotational frame dragging and not a BH-only criterion.",
     "new_observed_boundary_or_BH_identification_established": false
   },
-  "all_final_bindings_supplied": false,
+  "all_final_bindings_supplied": true,
   "abstract_input_source_sha256": "6322f8cccaa0f54c71354177e7dee464a43ba01694bc0dac2ae5b108c60530f8",
   "final_source_bindings": {
-    "reviewed_paper_source_commit": null,
-    "formal_source_snapshot_commit": null,
+    "reviewed_paper_source_commit": "00d480f9ee51818ae8a0374fcb395f8121e8103b",
+    "formal_source_snapshot_commit": "db2768ca8ffcb78611c78936fc2a0351046ff2c1",
     "upstream_product_files": 373,
-    "source_archive_hash_location": "External release manifest; no self-referential archive hash is embedded in its own source metadata."
+    "source_archive_hash_location": "External release manifest; no self-referential archive hash is embedded in its own source metadata.",
+    "two_phase_scope": "Reviewed paper/PDF/Bbl anchors B/F1 precede metadata-containing C/F2. The external release receipt binds C/F2; these metadata fields never name their own containing commit."
   },
   "synthetic_calibration_study": {
     "datasets": 4608,
@@ -240,6 +240,28 @@
   "normalized_student_known_system_experiment": {
     "status": "NUMERICALLY_UNRESOLVED",
     "accepted_independent_known_BH_recovery": false,
-    "scope": "Normalized Student density experiment; numerical failure account retained, no mass recovery or adequate likelihood result claimed."
-  }
+    "scope": "Normalized Student density experiment; numerical failure account retained, no mass recovery or adequate likelihood result claimed.",
+    "final_append_only_continuation": {
+      "authentic_eligible": 13,
+      "authentic_starts": 16,
+      "control_eligible": 15,
+      "control_starts": 16,
+      "authentic_numerical_failures": 3,
+      "control_numerical_failures": 1,
+      "terminal_states_retained": 32,
+      "normalized_density_calls": 781,
+      "elapsed_seconds_reported": 21.375,
+      "physical_and_numerical_eligibility_criteria_unchanged": true,
+      "brightness_dependent_noise_domain_contact_persists": true,
+      "scope": "This is the final32-state continuation stage, not the entire experiment call total. Finite-difference curvature is numerical evidence, not a certified exact Hessian or accepted mass covariance."
+    },
+    "accepted_mass_interval": false,
+    "global_optimum_certified": false,
+    "source": "manuscript/joint_known_system.tex, separately frozen normalized Student experiment and continuation records"
+  },
+  "release_scope_qualifications": [
+    "Final containing development/formal commits and ZIP hashes belong in the external release receipt, avoiding self-reference.",
+    "Hosted CI success is not asserted by this held local author-review packet.",
+    "Scientific publication HOLD remains; three calibration flags, adequate candidate evidence and independent known-system recovery are unresolved."
+  ]
 }

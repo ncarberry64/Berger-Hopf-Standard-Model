@@ -10,13 +10,24 @@ identification or accepted independent known-BH recovery is established.
 The current metadata binds the 199-word normalized abstract, immutable formal
 product revision `f90c9dc4a9eed262ca3b2291b3320f47bb4a5333` and RC7 wheel
 `0178c23099522ce5d608a36bce96693f9f197ba9f176776f35d57293f12d6c54`.
-Final PDF bytes/page count, independent visual-QA receipt and immutable paper/
-source commit bindings are **PENDING**. `all_final_bindings_supplied` is `false`;
-the helper refuses this draft before creating an output directory. Do not run it
-or turn pending values into guesses. Root will supply final bindings after the
-paper is compiled and visually reviewed.
+The final reviewed PDF is 52 pages, 1,315,684 bytes, SHA256
+`0d8a0985c54fd806f14f512184502711d61f57dd38ca9c3007eb9509ce99427a`.
+Internal all-page QA is `provenance/RC7_PDF_VISUAL_QA_v3.json`, SHA256
+`c721fd4f62c460002e647f7a37e57f2b457d26b0ada52f2d46a1a8ab9041eae4`.
+The matching compiled bibliography is 21,050 bytes, SHA256
+`66c1fe2b64ea948e6964dceaeebd0b04c611ce1324c5a3c5972eaaff9a8a3e3e`.
+`all_final_bindings_supplied` is `true` for these reviewed paper bindings;
+manual readiness remains `false`. Do not run packet preparation until root
+admits the final containing-source C/F2 materialization.
 
-Once those facts are supplied, from the paper source directory:
+The immutable reviewed paper anchors are development commit B
+`00d480f9ee51818ae8a0374fcb395f8121e8103b` and formal source snapshot F1
+`db2768ca8ffcb78611c78936fc2a0351046ff2c1`. Metadata is completed after those
+commits, so these fields intentionally do not name their own future containing
+commits C/F2. The external final release receipt records C/F2; the reviewed
+manuscript/PDF/bibliography/figure bytes must remain identical across all four.
+
+After final C/F2 packaging admission, from the paper source directory:
 
 ```text
 python submission/rc7/prepare_submission.py /path/to/NEW/external/manual-rc7-held
@@ -46,7 +57,13 @@ and 16 claim controls. These are not independent scientific acceptance. The
 frozen 4,608-dataset/4,736-fit study retains three gross P1 photometric uncertainty
 calibration flags; its BH-classifier false-positive/negative rates are unavailable.
 The normalized Student known-system experiment is numerically unresolved.
-The metadata and cover letter retain these facts and the publication HOLD.
+Its last append-only numerical continuation retains all 32 terminal states:
+13/16 authentic and 15/16 control endpoints meet the unchanged numerical
+eligibility criterion, leaving three authentic and one control failure. That
+stage uses 781 normalized-density calls in 21.375 seconds, and a brightness-noise
+domain contact remains. These are numerical diagnostics, not an accepted mass,
+interval or known-BH recovery. The metadata and cover letter retain these facts
+and the publication HOLD.
 
 Author facts and prior journal-history confirmations are inherited with their
 preserved provenance. Final approval of the actual files and journal terms remains

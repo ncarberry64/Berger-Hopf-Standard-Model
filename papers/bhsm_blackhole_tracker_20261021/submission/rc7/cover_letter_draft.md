@@ -32,6 +32,12 @@ post-hoc boundary diagnosis does not remove these flags. Scalar nonrejection
 is not a BH classifier; BH false-positive/negative rates remain unavailable.
 The normalized Student known-system experiment remains numerically unresolved,
 and no accepted independent known-BH recovery is claimed.
+Its final append-only numerical continuation retains all 32 saved states:
+13/16 authentic and 15/16 control endpoints meet the unchanged numerical
+eligibility criterion, with three authentic and one control failure. That
+stage takes 781 normalized-density calls and 21.375 seconds. A brightness-noise
+domain contact persists; neither these numerical results nor a conditional
+point value supplies an accepted mass, interval or independent known-BH recovery.
 
 Formal software/reviewer repository:
 https://github.com/ncarberry64/Berger-Hopf-Standard-Model
@@ -44,10 +50,19 @@ claim controls retained separately. These are engineering/conditional-control
 results, not scientific acceptance. Historical notebook validations retain their
 original versions. Hosted CI success is not asserted by this draft.
 
-FINAL PDF HASH, PAGE COUNT, INDEPENDENT VISUAL-QA AND PAPER/SOURCE PINS: PENDING.
-This letter and metadata must be updated with those actual final facts before
-even the held local author-review helper is run. The abstract currently has 199
-words under the packet's source-normalization rule.
+The reviewed 52-page PDF is 1,315,684 bytes, SHA256
+0d8a0985c54fd806f14f512184502711d61f57dd38ca9c3007eb9509ce99427a.
+Its internal all-page visual/source-citation QA receipt has SHA256
+c721fd4f62c460002e647f7a37e57f2b457d26b0ada52f2d46a1a8ab9041eae4.
+The matching 21,050-byte compiled bibliography has SHA256
+66c1fe2b64ea948e6964dceaeebd0b04c611ce1324c5a3c5972eaaff9a8a3e3e.
+The reviewed development paper source is commit
+00d480f9ee51818ae8a0374fcb395f8121e8103b; its immutable formal paper-source
+snapshot is db2768ca8ffcb78611c78936fc2a0351046ff2c1. These reviewed anchors are
+separate from later containing metadata/source commits recorded by the external
+release receipt. The abstract has 199 words under the packet's source-normalization
+rule. Visual and packaging checks do not constitute external scientific peer
+review, journal acceptance or release of the publication hold.
 
 The manuscript discloses substantive assistance from OpenAI ChatGPT and Codex;
 responsibility for the retained scientific content rests with the author. The

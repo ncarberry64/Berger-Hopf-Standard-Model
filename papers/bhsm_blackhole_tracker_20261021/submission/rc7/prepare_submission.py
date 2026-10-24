@@ -1,4 +1,8 @@
-"""Verify a held local RC7 author-review packet; never upload or attest for an author."""
+"""Verify a held RC7 packet bound to reviewed B/F1; never upload or attest.
+
+Final containing C/F2 commits belong in the external release receipt, avoiding
+self-referential source commit fields inside this metadata.
+"""
 from pathlib import Path
 import argparse
 import hashlib

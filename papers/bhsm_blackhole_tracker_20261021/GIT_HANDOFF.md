@@ -41,6 +41,18 @@ compact source distribution includes retrieval and replay helpers rather than
 silently substituting generated measurements for observations. The legal
 notices, software citation and historical preprint identifier remain distinct.
 
+Windows source checkouts in deeply nested folders can exceed Git's legacy path
+limit. Use a short destination and enable long paths for the clone command:
+
+```text
+git -c core.longpaths=true clone --branch codex/blackhole-tracker-real-data-20261022 https://github.com/ncarberry64/Berger-Hopf-Standard-Model.git BHSM
+```
+
+For existing checkouts, pass `-c core.longpaths=true` to affected Git commands.
+The installed wheel workflow does not require a source checkout. Source imports
+in the release audit read immutable blob IDs and verify every copied byte;
+they do not reinterpret a long `commit:path` argument as a local filename.
+
 ## Historical corrected rc3 and frozen real observations
 
 The runtime is pinned in the formal repository at `002b9ecfe2f1a778b68b7558581997c05919ae93`, imported from development commit `aa1759d07c97e25a2fb1a7ad24a053aa553d602a`. The reviewed F4/F5 theory source is independently pinned at `705d4c7e2f9a832b457f63ff975e7d4dc8008645`. This is a review candidate; no new merge, Pages publication or journal submission is performed.
