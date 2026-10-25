@@ -9,6 +9,7 @@ import socket
 import subprocess
 import tempfile
 import threading
+import time
 import tomllib
 import urllib.request
 import venv
@@ -23,7 +24,8 @@ def main():
     root=Path(tempfile.mkdtemp(prefix='BHSM launcher spaces '))
     source=root/'product with spaces'
     shutil.copytree(product,source,ignore=shutil.ignore_patterns('.venv','build','dist','*.egg-info','__pycache__','.pytest_cache','user_runs'))
-    command=[os.path.join(os.environ['SystemRoot'],'System32','cmd.exe'),'/d','/c','Start_Blackhole_Tracker.cmd']
+    environment=root/'owned-env'
+    command=[os.path.join(os.environ['SystemRoot'],'System32','cmd.exe'),'/d','/c','Start_Blackhole_Tracker.cmd','--environment',str(environment)]
     env=os.environ.copy();env['BHSM_TRACKER_NONINTERACTIVE']='1'
     for key in ('PYTHONPATH','PYTHONHOME'):env.pop(key,None)
     receipt={'status':'failed','source_copy':str(source),'checks':{}}
@@ -33,16 +35,19 @@ def main():
         p=subprocess.run([*command,'--check-install'],cwd=source,env=missing,text=True,capture_output=True,timeout=30)
         assert p.returncode==2 and 'Python 3.11 or newer was not found' in p.stdout,p.stdout+p.stderr
         receipt['checks']['missing_python']={'exit':p.returncode,'message':p.stdout}
-        # Deliberately create an existing venv without the package/dependencies.
-        venv.create(source/'.venv',with_pip=True)
+        # A preexisting unowned environment must never be adopted or modified.
+        foreign=root/'foreign-env';foreign.mkdir();sentinel=foreign/'PRESERVE.txt';sentinel.write_bytes(b'foreign environment')
+        refused=subprocess.run([*command,'--environment',str(foreign),'--check-install'],cwd=source,env=env,text=True,capture_output=True,timeout=30)
+        assert refused.returncode==2 and sentinel.read_bytes()==b'foreign environment' and 'unowned' in refused.stderr
+        receipt['checks']['foreign_environment_preserved']={'exit':refused.returncode,'message':refused.stderr}
         p=subprocess.run([*command,'--check-install'],cwd=source,env=env,text=True,capture_output=True,timeout=600)
         assert p.returncode==0 and 'installation is ready' in p.stdout,p.stdout+p.stderr
-        receipt['checks']['existing_venv_missing_dependencies_repaired']={'exit':p.returncode,'log':p.stdout+p.stderr}
-        installed_python=source/'.venv'/'Scripts'/'python.exe'
+        receipt['checks']['fresh_owned_environment_installed']={'exit':p.returncode,'log':p.stdout+p.stderr}
+        installed_python=environment/'Scripts'/'python.exe'
         base=subprocess.run([str(installed_python),'-I','-c',"import importlib.util; assert importlib.util.find_spec('astropy') is None"],cwd=root,env=env,text=True,capture_output=True,timeout=30)
         assert base.returncode==0,base.stdout+base.stderr
         receipt['checks']['base_install_keeps_astropy_optional']={'passed':True}
-        joint_command=[os.path.join(os.environ['SystemRoot'],'System32','cmd.exe'),'/d','/c','Start_Blackhole_Tracker_Joint.cmd','--check-install']
+        joint_command=[os.path.join(os.environ['SystemRoot'],'System32','cmd.exe'),'/d','/c','Start_Blackhole_Tracker_Joint.cmd','--environment',str(environment),'--check-install']
         joint=subprocess.run(joint_command,cwd=source,env=env,text=True,capture_output=True,timeout=600)
         assert joint.returncode==0 and 'with optional joint astrometry support' in joint.stdout,joint.stdout+joint.stderr
         verified=subprocess.run([str(installed_python),'-I','-c',"import astropy,bhtracker; print(astropy.__version__); print(bhtracker.__version__)"],cwd=root,env=env,text=True,capture_output=True,check=True,timeout=30)
@@ -60,8 +65,11 @@ def main():
             for line in p.stdout:lines.put(line)
         threading.Thread(target=reader,daemon=True).start()
         try:
-            line=lines.get(timeout=30)
-            assert 'ready at http://127.0.0.1:' in line,line
+            deadline=time.monotonic()+30
+            while True:
+                line=lines.get(timeout=max(.01,deadline-time.monotonic()))
+                if 'ready at http://127.0.0.1:' in line:break
+                assert time.monotonic()<deadline,'Launcher did not report a ready URL'
             url=line.split('ready at ',1)[1].strip()
             with urllib.request.urlopen(url+'api/health') as response:health=json.load(response)
             assert health['version']==expected_version

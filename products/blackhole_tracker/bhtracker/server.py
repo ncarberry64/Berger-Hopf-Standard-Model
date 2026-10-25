@@ -1,4 +1,4 @@
-"""Loopback-only app. Measurements stay in memory; no remote service used."""
+"""Loopback-only app; MC audits persist in owned local directories, no remote service."""
 from concurrent.futures import ThreadPoolExecutor
 from http.server import BaseHTTPRequestHandler,ThreadingHTTPServer
 from pathlib import Path
@@ -11,6 +11,8 @@ import base64
 from io import BytesIO
 import tempfile
 import zipfile
+import time
+from urllib.parse import urlsplit,parse_qs
 from .data import load_dataset,read_json
 from .examples import example_names,make_example
 from .inference import fit,profile
@@ -21,6 +23,7 @@ WEB=Path(__file__).resolve().parent/'web'
 PHOTOMETRY_DATASET_LIMIT=32_000_000
 SKYTRACK_DATASET_LIMIT=8_000_000
 SKYTRACK_REQUEST_LIMIT=80_000_000
+PHOTOMETRY_MC_REQUEST_LIMIT=180_000_000
 JOINT_SOURCEPACK_SHA256='71d36a03e4ba275e91bea62f4784a5193f34ad32d3777b637453f91151bafa99'
 
 def import_joint_sourcepack(content):
@@ -112,6 +115,8 @@ def photometry_summary(dataset):
 
 def make_server(port=8765):
     pool=ThreadPoolExecutor(max_workers=1)
+    from .photometry_mc import MCJobs
+    mc_jobs=MCJobs(pool)
     jobs={};fingerprints={};lock=threading.Lock()
     class Handler(BaseHTTPRequestHandler):
         def log_message(self,*args):pass
@@ -125,6 +130,14 @@ def make_server(port=8765):
             self.send_header('Content-Disposition',f'attachment; filename="{filename}"')
             self.send_header('Content-Length',str(len(blob)));self.send_header('Cache-Control','no-store')
             self.end_headers();self.wfile.write(blob)
+        def send_zip_file(self,path,filename):
+            path=Path(path)
+            self.send_response(200);self.send_header('Content-Type','application/zip')
+            self.send_header('Content-Disposition',f'attachment; filename="{filename}"')
+            self.send_header('Content-Length',str(path.stat().st_size));self.send_header('Cache-Control','no-store')
+            self.end_headers()
+            with path.open('rb') as stream:
+                for block in iter(lambda:stream.read(1024*1024),b''):self.wfile.write(block)
         def local_request(self):
             hosts={f'127.0.0.1:{self.server.server_port}',f'localhost:{self.server.server_port}'}
             if self.headers.get('Host') not in hosts:return False
@@ -155,6 +168,11 @@ def make_server(port=8765):
             if not self.local_request():self.send_json({'error':'Local origin required'},403);return
             if self.path=='/api/health':self.send_json({'status':'ready','product':'BHSM Blackhole Tracker','version':VERSION,'project_citation':project_citation(),'dataset_file_limit_bytes':8_000_000,'photometry_dataset_file_limit_bytes':PHOTOMETRY_DATASET_LIMIT,'skytrack_dataset_file_limit_bytes':SKYTRACK_DATASET_LIMIT,'skytrack_request_limit_bytes':SKYTRACK_REQUEST_LIMIT,'request_limit_bytes':40_000_000});return
             if self.path=='/api/examples':self.send_json(example_names());return
+            if self.path.startswith('/api/photometry-mc/jobs/'):
+                identity=self.path[len('/api/photometry-mc/jobs/'):]
+                try:self.send_json(mc_jobs.status(identity))
+                except ValueError as error:self.send_json({'error':str(error)},404)
+                return
             if self.path=='/api/targets':
                 from .target_program import target_program
                 try:self.send_json(target_program())
@@ -197,6 +215,8 @@ def make_server(port=8765):
                 self.end_headers();self.wfile.write(blob);return
             path={'/':'index.html','/index.html':'index.html','/app.js':'app.js','/style.css':'style.css',
                   '/photometry':'photometry.html','/photometry/':'photometry.html','/photometry.js':'photometry.js',
+                  '/photometry-mc':'photometry-mc.html','/photometry-mc/':'photometry-mc.html',
+                  '/photometry-mc.js':'photometry-mc.js','/photometry-mc.css':'photometry-mc.css',
                   '/joint':'joint.html','/joint/':'joint.html','/joint.js':'joint.js',
                   '/skytrack':'skytrack.html','/skytrack/':'skytrack.html',
                   '/skytrack.js':'skytrack.js','/skytrack.css':'skytrack.css',
@@ -218,10 +238,50 @@ def make_server(port=8765):
             if not self.local_request():self.send_json({'error':'Local origin required'},403);return
             try:
                 size=int(self.headers.get('Content-Length','0'))
-                limit=SKYTRACK_REQUEST_LIMIT if self.path.startswith('/api/skytrack/') else 40_000_000
+                if self.path.startswith('/api/photometry-mc/replay-file'):
+                    from .photometry_mc import MAX_EXPORT_BYTES
+                    from .photometry_mc_replay import replay_bundle
+                    parsed=urlsplit(self.path);query=parse_qs(parsed.query,strict_parsing=True)
+                    if parsed.path!='/api/photometry-mc/replay-file' or set(query)!={'mode'} or len(query['mode'])!=1 or query['mode'][0] not in ('integrity','numerical'):
+                        raise ValueError('Specify one replay mode: integrity or numerical')
+                    if self.headers.get('Content-Type','').split(';')[0]!='application/zip' or not 0<size<=MAX_EXPORT_BYTES:
+                        raise ValueError('Browser ZIP limit is128MiB; use mc-photometry replay for larger file audits')
+                    with tempfile.TemporaryDirectory(prefix='bhsm-mc-owned-upload-') as directory:
+                        path=Path(directory)/'original.zip';remaining=size;deadline=time.monotonic()+120
+                        with path.open('xb') as output:
+                            while remaining:
+                                if time.monotonic()>deadline:raise TimeoutError('Replay upload wall budget exceeded')
+                                self.connection.settimeout(min(30,max(.1,deadline-time.monotonic())))
+                                block=self.rfile.read(min(1024*1024,remaining))
+                                if not block:raise ValueError('Replay upload ended before declared byte length')
+                                output.write(block);remaining-=len(block)
+                                if time.monotonic()>deadline:raise TimeoutError('Replay upload wall budget exceeded; no replay performed')
+                        self.send_json(replay_bundle(path,mode=query['mode'][0]));return
+                limit=PHOTOMETRY_MC_REQUEST_LIMIT if self.path.startswith('/api/photometry-mc/') else SKYTRACK_REQUEST_LIMIT if self.path.startswith('/api/skytrack/') else 40_000_000
                 if not 0<size<=limit:raise ValueError(f'Request must contain at most {limit//1_000_000} MB of JSON')
                 data=read_json(self.rfile.read(size))
                 if not isinstance(data,dict):raise ValueError('request body must be a JSON object')
+                if self.path in ('/api/photometry-mc/plan','/api/photometry-mc/start'):
+                    from .photometry_mc import plan
+                    if self.path.endswith('/plan'):self.send_json(plan(data))
+                    else:self.send_json(mc_jobs.submit(data),202)
+                    return
+                if self.path.startswith('/api/photometry-mc/jobs/'):
+                    bits=self.path[len('/api/photometry-mc/jobs/'):].split('/')
+                    if len(bits)!=2 or bits[1] not in ('cancel','export'):raise ValueError('Unknown MC job action')
+                    if data:raise ValueError('MC job action requires an empty JSON object')
+                    if bits[1]=='cancel':self.send_json(mc_jobs.cancel(bits[0]))
+                    else:
+                        with tempfile.TemporaryDirectory(prefix='bhsm-mc-owned-export-') as directory:
+                            path=Path(directory)/'original.zip';mc_jobs.export(bits[0],path)
+                            self.send_zip_file(path,'BHSM_photometry_MC_audit.zip')
+                    return
+                if self.path=='/api/photometry-mc/replay':
+                    from .photometry_mc_replay import replay_bundle
+                    if set(data)-{'bundle_base64','mode'} or not isinstance(data.get('bundle_base64'),str):raise ValueError('Provide the unchanged portable ZIP as bundle_base64 and explicit replay mode')
+                    if len(data['bundle_base64'])>178_956_976:raise ValueError('Browser replay ZIP is limited to128MiB; use the CLI/file API for larger retained audits')
+                    blob=base64.b64decode(data['bundle_base64'],validate=True)
+                    self.send_json(replay_bundle(blob,mode=data.get('mode','integrity')));return
                 if 'result_json' in data:
                     if 'result' in data:raise ValueError('provide result or lossless result_json, not both')
                     data['result']=read_json(data['result_json'])
@@ -360,22 +420,23 @@ def make_server(port=8765):
                 self.send_json({'error':'Not found'},404)
             except ImportError:
                 self.send_json({'error':'The joint astrometry route requires the optional astrometry dependencies. Install the matching local wheel with its [astrometry] extra, including Astropy.'},400)
-            except (ValueError,KeyError,TypeError) as error:self.send_json({'error':str(error)},400)
+            except (ValueError,KeyError,TypeError,OSError,EOFError,zipfile.BadZipFile) as error:self.send_json({'error':str(error)},400)
     try:server=ThreadingHTTPServer(('127.0.0.1',port),Handler)
     except OSError as error:
         pool.shutdown(wait=False)
         raise OSError(f'Cannot open local port {port}: {error}. Close the other app or choose another port, for example --port 8766') from error
     server.executor=pool
+    server.mc_jobs=mc_jobs
     return server
 
 def serve(port=8765,open_browser=False,page='resolved'):
-    route={'resolved':'/','photometry':'/photometry','joint':'/joint','atlas':'/atlas','spectrum':'/spectrum/','skytrack':'/skytrack'}.get(page)
+    route={'resolved':'/','photometry':'/photometry','photometry-mc':'/photometry-mc','joint':'/joint','atlas':'/atlas','spectrum':'/spectrum/','skytrack':'/skytrack'}.get(page)
     if route is None:raise ValueError('Unknown local workspace page')
     server=make_server(port)
     url=f'http://127.0.0.1:{server.server_port}{route}'
     print('Blackhole Tracker ready at '+url,flush=True)
-    print('Local-only research app. Ctrl+C stops the server; inputs/results stay in this process.',flush=True)
+    print('Local-only research app. MC audit workspaces persist at their displayed paths; Ctrl+C stops the server.',flush=True)
     if open_browser:webbrowser.open(url)
     try:server.serve_forever()
     except KeyboardInterrupt:pass
-    finally:server.server_close();server.executor.shutdown(wait=False,cancel_futures=True)
+    finally:server.mc_jobs.shutdown();server.server_close();server.executor.shutdown(wait=False,cancel_futures=True)

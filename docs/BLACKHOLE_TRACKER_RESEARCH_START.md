@@ -6,12 +6,22 @@ repository is the formal reviewer record. The
 [Manuscript-Generation workspace](https://github.com/ncarberry64/Manuscript-Generation/pull/24)
 records development history; it is not a separate source of reviewer authority.
 
+The current product source is **RC7 engineering / HOLD**, with 440 exact files
+from immutable development commit `6d3b97dbd1ce1b2eeb5b902d622d9558fdfa22d7`.
+[Engineering status](../products/blackhole_tracker/ENGINEERING_STATUS_20261025.md)
+separates its historical evidence from the fresh local canonical checks:
+493 tests plus 66 subtests, wheel/SDIST membership and installed export/replay
+pass. Hosted CI for the new commits remains **PENDING**. The existing reviewed paper/PDF,
+manual packet and downloads retain their separate historical bindings.
+
 | Review task | Start here |
 | --- | --- |
 | Read the manuscript | [Reviewed PDF](../papers/bhsm_blackhole_tracker_20261021/manuscript/main.pdf), [paper guide](../papers/bhsm_blackhole_tracker_20261021/README.md), [result statement](../papers/bhsm_blackhole_tracker_20261021/RESULT_STATEMENT.md) |
 | Understand the contribution and limits | [Lay report](../papers/bhsm_blackhole_tracker_20261021/LAY_REPORT.md), [model chain and freedoms](../papers/bhsm_blackhole_tracker_20261021/CHAIN_AND_FREEDOMS.md), [validation](../papers/bhsm_blackhole_tracker_20261021/VALIDATION.md) |
 | Install the app or reproduce an analysis | [Formal product guide](../products/blackhole_tracker/REVIEWER.md), followed by the complete [user and measurement guide](../products/blackhole_tracker/README.md) |
-| Inspect current checks and prior reviews | [RC7 evidence and limits](../products/blackhole_tracker/validation/rc7/), [formal product CI](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/blackhole-tracker.yml) and [paper review record](../papers/bhsm_blackhole_tracker_20261021/review/); source and isolated installed-product suites each passed 338 tests plus 66 subtests. [RC6 receipts](../products/blackhole_tracker/validation/rc6/) retain their historical versions. |
+| Inspect current checks and prior reviews | [Current local engineering evidence and pending hosted CI](../products/blackhole_tracker/ENGINEERING_STATUS_20261025.md), [current receipt](../products/blackhole_tracker/validation/canonical_engineering_20261025_v1.json), [historical RC7 evidence](../products/blackhole_tracker/validation/rc7/), [formal product CI](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/blackhole-tracker.yml) and [paper review record](../papers/bhsm_blackhole_tracker_20261021/review/). Fresh canonical checks pass 493 tests plus 66 subtests and installed replay of 11 profiles / 143 states. These do not establish scientific acceptance. |
+| Use fixed-node photometry uncertainty research | [Pointwise MC guide](../products/blackhole_tracker/PHOTOMETRY_MC.md) and [two-design confirmation scope](../products/blackhole_tracker/docs/PHOTOMETRY_POINTWISE_EVIDENCE_20261025_V1.md); approximate fitted-nuisance decisions, with general-input calibration and continuous endpoints pending. |
+| Inspect the packaged covariance-aware known-system engine | [Explicit API and optional dependencies](../products/blackhole_tracker/docs/KNOWN_SYSTEM_V3.md); no legacy fallback or accepted known-black-hole recovery. |
 | Reproduce the current-kernel calibration | [Prospective protocol](../products/blackhole_tracker/docs/CALIBRATION_STUDY_V1.md), [all findings including three failed tests](../products/blackhole_tracker/docs/CALIBRATION_FINDINGS_20261024_V1.md), and [portable source/evidence](../products/blackhole_tracker/research/validation_20261024/) |
 | Inspect BHSM observables and falsifiers | [Claim dossier](../products/blackhole_tracker/docs/BHSM_ENVELOPMENT_CLAIM_AND_FALSIFIERS_V1.md), [portable ideal algebra controls](../products/blackhole_tracker/research/bhsm_claim_20261024/) and [software citation/licensing](../products/blackhole_tracker/PACKAGING_AND_CITATION.md) |
 | Inspect all real observations and follow-up outcomes | [Frozen pilot and reproduction](../papers/bhsm_blackhole_tracker_20261021/real_data_pilot_20261022/README.md), [all 100 annotated results](../papers/bhsm_blackhole_tracker_20261021/real_data_pilot_20261022/literature_annotations_v1/all_100_results.csv) and [qualified archival ranking](../papers/bhsm_blackhole_tracker_20261021/real_data_pilot_20261022/literature_annotations_v1/followup_ranking.csv) |

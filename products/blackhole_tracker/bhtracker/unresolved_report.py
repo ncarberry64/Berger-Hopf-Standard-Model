@@ -46,7 +46,9 @@ def report_html(result):
 <p class="status">{escape(result['status'])} · MASS_UNRESOLVED</p>
 <p>Project and reviewer record: <a href="{REPOSITORY_URL}">BHSM GitHub repository</a>.</p>
 <p>All {result['point_count']} native magnitude observations were used; {result['excluded_point_count']} numeric observations excluded. The separate source annotations remain in the input provenance.</p>
-<table><tr><th>Quantity</th><th>Estimate</th><th>Conditional local 1σ</th></tr>{table}</table>
+<table><tr><th>Quantity</th><th>Estimate</th><th>Local curvature σ · uncalibrated</th></tr>{table}</table>
+<p>These standard errors are local-curvature diagnostics, not calibrated confidence intervals. The historical nominal 95% procedures covered 510/512 timescale truths, 461/512 impact-parameter truths and 504/512 generating-timescale profile-reference queries; all three failed their predeclared calibration criterion. Their numerical values and history are preserved.</p>
+<p>For requested tE/u0 pointwise uncertainty decisions, open the installed app's Monte Carlo workspace at <code>/photometry-mc</code> and upload the bundle's <code>dataset.json</code>. The replacement method passed four predeclared confirmation gates at two fixed cadence/error/truth designs only; general user-input calibration remains pending and fitted-nuisance inference approximate. Finite nodes do not form a continuous interval. See <code>PHOTOMETRY_MC.md</code> and <code>docs/PHOTOMETRY_POINTWISE_EVIDENCE_20261025_V1.md</code> in the researcher source; the formal BHSM repository above is the reviewer record.</p>
 <p>Time is represented relative to the explicitly recorded numeric origin {fmt(parameters['time_numeric_origin_jd'])}. An origin shift is not a clock-scale or heliocentric conversion. Native times and row identities remain in the observation file.</p>
 <h2>What is and is not identified</h2><p>tE = θE / μrel and θE² = κ M πrel. This light-curve route does not measure θE or microlens parallax, so duration does not supply a mass. It does not identify a black hole or horizon.</p>
 <p>{escape(result['uncertainty']['qualification'])}</p>

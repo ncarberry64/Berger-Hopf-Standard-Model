@@ -1,24 +1,28 @@
-# Blackhole Tracker rc7: formal reviewer source
+# Blackhole Tracker RC7 engineering: formal reviewer source
 
 This BHSM repository is the formal reviewer home. `Manuscript-Generation`
 is the development workspace. Norman P. Carberry is the hypothesis and
-research author. The 373 upstream files are copied byte-for-byte from
-immutable development commit `648fad552dfe1ee45b1c139b61423fdf22b997d1`.
+research author. The 440 upstream files are copied byte-for-byte from
+immutable development commit `6d3b97dbd1ce1b2eeb5b902d622d9558fdfa22d7`.
 [FORMAL_PROVENANCE.json](FORMAL_PROVENANCE.json) records their paths, sizes
-and SHA-256. The [manuscript/release receipt](../../papers/bhsm_blackhole_tracker_20261021/provenance/FORMAL_REPOSITORY.json)
-records the formal product-code citation separately, avoiding a
-self-referential future commit. This guide is a formal addition; upstream
-source files remain byte-exact.
+and SHA-256. The complete prior 373-file record remains in
+[historical provenance](validation/rc7_FORMAL_PROVENANCE_historical_648fad.json).
+This guide is a formal addition; all upstream source files remain byte-exact.
+The current source is **RC7 engineering / HOLD**. Fresh local canonical
+regression, wheel/SDIST membership and installed export/replay pass.
+Hosted CI for the new commits remains **PENDING**.
+Read [engineering status](ENGINEERING_STATUS_20261025.md) for the exact evidence
+boundaries and the separate, unchanged manuscript/release record.
 
-Use the complete `BHSM_Blackhole_Tracker_Source.zip` or a matching
-`blackhole-tracker-paper-and-source` CI artifact. Its root contains `products/`,
-`papers/`, `tools/` and both license notices. A full clone of the much larger
-BHSM repository is optional. The source includes six notebooks, the app,
+Existing `BHSM_Blackhole_Tracker_Source.zip` downloads and
+`blackhole-tracker-paper-and-source` CI artifacts retain their historical
+release identities. They do not certify this new engineering source snapshot;
+a newly matched portable archive remains pending. The source includes six notebooks, the app,
 CLI/Python APIs, tests, pinned providers and historical validation records.
 The suite includes spectrum transport, source-pinned target-program and synthetic measured-track checks. Exact run counts and outcomes belong to the matching release receipts. Software verification and replay
 do not establish scientific acceptance or journal acceptance.
 
-The [RC7 evidence](validation/rc7/) records 338 tests plus 66 subtests on both
+The historical [RC7 evidence](validation/rc7/) records 338 tests plus 66 subtests on both
 the source Python 3.14 environment and a fresh minimum-family installed Python
 3.11 environment. Actual browser export and installed CLI replay preserve all
 734 native rows of the checked historical event with zero prediction difference.
@@ -28,6 +32,26 @@ retains every fit and three failed uncertainty-calibration tests. The separate
 retains unresolved starts and no accepted mass. Scientific publication remains
 held. The [BHSM claim dossier](docs/BHSM_ENVELOPMENT_CLAIM_AND_FALSIFIERS_V1.md)
 states its conditional observables and falsifiers; one exterior is counted once.
+
+Later held engineering source passed 493 tests plus 66 subtests, and a separate
+installed saved-state replay covered 11 profiles and 143 states with zero
+objective difference and tamper refusal. These bounded prior receipts are
+identified in [engineering status](ENGINEERING_STATUS_20261025.md). They do not
+validate the new provenance manifest, added SDIST membership rule or scientific
+inference. A fresh canonical build and installed run now independently pass
+493 tests plus 66 subtests, all 17 reference-source SDIST membership checks,
+and 11-profile/143-state replay with zero objective difference. Tampering is
+refused and a valid export restores correctly. See the
+[current receipt](validation/canonical_engineering_20261025_v1.json).
+Hosted CI and the newly matched complete portable archive remain pending.
+
+The source now includes the explicit
+[Gaussian/spectral known-system API](docs/KNOWN_SYSTEM_V3.md), with no legacy
+fallback, and the separate [pointwise MC workspace](PHOTOMETRY_MC.md) at
+`/photometry-mc`. The latter supplies approximate fitted-nuisance decisions at
+requested nodes; its confirmation supports two fixed designs only, with
+general input/composite calibration and continuous interval endpoints pending.
+Neither route establishes an accepted mass or known-black-hole recovery.
 
 The routine wheel and SDIST remain compact. The optional complete synthetic
 evidence is supplied in three parts of at most 40 MiB under
@@ -45,11 +69,13 @@ From the source-archive or BHSM root:
 
 ```text
 cd products/blackhole_tracker
-python -m pip install -e ".[dev,astrometry]"
+python -m pip install -e ".[dev,joint-research]"
 python -m bhtracker serve --open
 ```
 
-This explicitly opts into Astropy for the joint research tests and notebooks.
+This explicitly opts into Astropy and celerite2 for the larger known-system
+engineering suite. The smaller `astrometry` extra remains available for the
+original joint route.
 For base resolved-image/native-photometry use, `python -m pip install .`
 suffices. Windows users can double-click `Start_Blackhole_Tracker.cmd`; joint
 research uses the separate **`Start_Blackhole_Tracker_Joint.cmd`** or the explicit
@@ -155,8 +181,11 @@ cd ../..
 python tools/smoke_blackhole_tracker_wheel.py --wheel products/blackhole_tracker/dist/bhsm_blackhole_tracker-0.2.0rc7-py3-none-any.whl
 ```
 
-The dedicated workflow installs `[dev,astrometry]` for the full product suite
-on Linux and Windows with Node 24 browser-contract checks. It retains a
+The dedicated workflow now installs `[dev,astrometry,joint-research]` for
+the source suite. Its separate Gaussian wheel job copies only tests and
+reference fixtures outside the checkout, checks package origins in the same
+pytest process and runs against a fresh noneditable wheel installation.
+Hosted results for the new commits remain pending. Retain a
 separate fresh **base-only** wheel installation for resolved/native fits,
 then a second noneditable wheel installation with `[astrometry]` for the
 synthetic joint recovery/null/replay control. It runs the optional probe with
@@ -189,7 +218,13 @@ source ledger and interpretation files. The ordinary exterior and boundary
 representation remain one potential. Conditional responses supply no terminal
 core-transfer law or an inferred microscopic core state.
 
-Build and verify the complete source archive from the BHSM root:
+The following archive commands belong to the separate paper/release binding.
+Do not label a new archive as matching this engineering snapshot until its
+manifest and canonical checks are separately completed. The existing reviewed
+PDF, manual submission packet and release receipts remain unchanged.
+
+Build and verify the complete source archive from the BHSM root when that
+separate release work is authorized:
 
 ```text
 python papers/bhsm_blackhole_tracker_20261021/scripts/package_release.py tmp/tracker-release

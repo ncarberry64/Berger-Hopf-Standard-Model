@@ -1,0 +1,129 @@
+"""Invented-data integration controls; no native-data likelihood calls."""
+import json
+import math
+from pathlib import Path
+import sys
+import unittest
+import numpy as np
+from scipy.optimize import lsq_linear
+
+NUMERICAL = Path(__file__).resolve().parent.parent/'known_system_v2'
+sys.path.insert(0,str(NUMERICAL))
+from known2023_student_model_v2 import Known2023StudentModel,sha
+from gaussian_joint_model_v4 import GaussianJointModel, KAPPA, MAG
+from published_gp_leaf_v2 import dense_covariance,Hyperparameters
+from centered_geometry_v1 import centered_geometry
+
+CORE=Path('C:/Users/carbe/Manuscript-Generation/.worktrees/bhsm-joint-mass-20261022/product/bhtracker/joint_mass_v2.py')
+
+
+class JointCandidateControls(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        cls.raw=(NUMERICAL/'invented_fixture_v1/INVENTED_DATASET_v1.json').read_bytes()
+        cls.truth=json.loads((NUMERICAL/'invented_fixture_v1/INVENTED_TRUTH_v1.json').read_bytes())
+        cls.registry=json.loads((NUMERICAL/'invented_fixture_v1/CONTROL_REGISTRY_v1.json').read_bytes())
+
+    def model(self,**options):
+        d=Known2023StudentModel(self.raw,purpose='WHOLLY_INVENTED',expected_sha256=sha(self.raw),
+            core_path=CORE,student_directory=NUMERICAL/'providers',control_registry=self.registry,**options)
+        return GaussianJointModel(d)
+
+    def state(self,m):
+        p=self.truth['p']
+        return np.r_[p['t0_jd_tdb']-m.data.time_origin,np.log(p['tE_days']),p['u0_heliocentric'],
+            p['angle_source_minus_lens_rad'],p['pi_E'],
+            [self.truth['instruments'][n][1] for n in m.names],np.log([.007,20.,.004,.2])]
+
+    def test_01_normalized_joint_and_baseline_profiles_dense_reference(self):
+        m=self.model();x=self.state(m);d=m.data
+        result=m.evaluate(x,details=True)
+        A,_,_,_=centered_geometry(d.tp,numerical_time_origin=d.time_origin,t0_offset_days=x[0],
+            tE_days=np.exp(x[1]),u0_heliocentric=x[2],angle_source_minus_lens_rad=x[3],pi_E=x[4],earth=d.ep)
+        p=Hyperparameters(*np.exp(x[m.hyper_start:]))
+        total=0.
+        for j,(name,g) in enumerate(zip(m.names,d.groups)):
+            curve=-MAG*np.log1p(x[5+j]*(A[g]-1))
+            C=dense_covariance(d.tp[g]-d.time_origin,d.sp[g],p) if name=='OGLE' else np.diag(d.sp[g]**2)
+            one=np.ones(len(g));target=d.yp[g]-curve
+            b=float(one@np.linalg.solve(C,target)/(one@np.linalg.solve(C,one)))
+            b=float(np.clip(b,*m.baseline_bounds[j]))
+            r=target-b
+            total+=float(r@np.linalg.solve(C,r)+np.linalg.slogdet(C)[1]+len(g)*math.log(2*math.pi))
+            self.assertAlmostEqual(b,result['baseline_magnitudes'][name],places=9)
+        angular=m._angular(x)
+        matrix=angular['design']/d.sa[:,None]
+        lo=np.full(matrix.shape[1],-np.inf);hi=np.full(matrix.shape[1],np.inf)
+        for i,pair in d.linear_bounds.items():lo[i],hi[i]=pair
+        other=lsq_linear(matrix,d.ya/d.sa,bounds=(lo,hi),tol=1e-12,lsmr_tol=1e-12,max_iter=1000)
+        self.assertTrue(other.success)
+        total+=float(np.sum((matrix@other.x-d.ya/d.sa)**2)+np.log(2*math.pi*d.sa**2).sum())
+        self.assertAlmostEqual(total,result['negative_two_log_likelihood'],delta=2e-6)
+
+    def test_02_profile_envelope_gradient_all_geometry_fractions_hypers(self):
+        m=self.model();x=self.state(m);r=m.evaluate(x)
+        for j,name in enumerate(m.parameter_names):
+            h=1e-3 if j==0 else 1e-6 if j< m.hyper_start else 7e-5
+            a=x.copy();b=x.copy();a[j]-=h;b[j]+=h
+            fd=(m.evaluate(b)['negative_two_log_likelihood']-m.evaluate(a)['negative_two_log_likelihood'])/(2*h)
+            with self.subTest(name=name):
+                self.assertLessEqual(abs(fd-r['gradient'][j]),4e-4*max(1.,abs(fd),abs(r['gradient'][j])))
+
+    def test_03_fixed_mass_chain_rule_reprofiles_all_angular_nuisance(self):
+        m=self.model();x=self.state(m);mass=2.4/(KAPPA*.17)
+        r=m.evaluate(x,fixed_mass=mass,details=True)
+        self.assertAlmostEqual(r['parameters']['theta_E_mas'],2.4,places=11)
+        for j in range(5):
+            h=1e-3 if j==0 else 1e-6
+            a=x.copy();b=x.copy();a[j]-=h;b[j]+=h
+            fd=(m.evaluate(b,fixed_mass=mass)['negative_two_log_likelihood']-m.evaluate(a,fixed_mass=mass)['negative_two_log_likelihood'])/(2*h)
+            with self.subTest(parameter=j):
+                self.assertLessEqual(abs(fd-r['gradient'][j]),4e-4*max(1.,abs(fd),abs(r['gradient'][j])))
+
+    def test_04_computational_origin_reference_and_replay_pair(self):
+        a=self.model();b=self.model(numerical_time_origin=2455710.,angular_reference=2456500.)
+        x,y=self.state(a),self.state(b)
+        ra,rb=a.evaluate(x,details=True),b.evaluate(y,details=True)
+        self.assertAlmostEqual(ra['negative_two_log_likelihood'],rb['negative_two_log_likelihood'],places=8)
+        self.assertAlmostEqual(ra['parameters']['theta_E_mas'],rb['parameters']['theta_E_mas'],places=9)
+        self.assertEqual(ra['parameters']['t0_evaluated_pair'],{'origin_jd':a.data.time_origin,'offset_days':float(x[0])})
+
+    def test_05_exact_zero_gp_faces_and_unavailable_mass_acceptance(self):
+        m=self.model();x=self.state(m)
+        r=m.evaluate(x,zero_components=('matern','sho'),details=True)
+        self.assertTrue(np.isfinite(r['negative_two_log_likelihood']))
+        np.testing.assert_array_equal(r['gradient'][m.hyper_start:],0.)
+        self.assertIsNone(r['accepted_mass_interval'])
+        self.assertFalse(r['known_black_hole_recovery_accepted'])
+        self.assertEqual(r['input_purpose'],'WHOLLY_INVENTED')
+        self.assertIn('BHSM',r['BHSM'])
+
+    def test_06_invalid_states_and_preserved_owned_adapter(self):
+        m=self.model();x=self.state(m).tolist()
+        for val in ('1',True):
+            trial=list(x);trial[2]=val
+            with self.subTest(val=val),self.assertRaises(ValueError):m.evaluate(trial)
+        m.evaluate(x);self.assertTrue(m.verify_snapshot()['verified'])
+        with self.assertRaises(ValueError):m.evaluate(x,fixed_mass=-1.)
+        with self.assertRaises(ValueError):m.evaluate(x,zero_components=('arbitrary',))
+
+
+    def test_07_complete_state_export_zero_face_coordinates_and_replay(self):
+        m=self.model();x=self.state(m)
+        r=m.evaluate(x,zero_components=('matern',),details=True)
+        self.assertEqual(r['complete_evaluated_state']['state'],x.tolist())
+        self.assertNotIn(m.hyper_start,m.active_optimizer_indices(('matern',)))
+        self.assertNotIn(m.hyper_start+1,m.active_optimizer_indices(('matern',)))
+        self.assertIsNone(r['parameters']['GP']['matern_rho_days'])
+        self.assertEqual(r['parameters']['GP']['matern_sigma_mag'],0.)
+        for j,name in enumerate(m.names):self.assertEqual(r['parameters']['instruments'][name]['source_fraction'],x[5+j])
+        replay=m.evaluate(r['complete_evaluated_state']['state'],zero_components=r['complete_evaluated_state']['zero_components'])
+        self.assertEqual(replay['negative_two_log_likelihood'],r['negative_two_log_likelihood'])
+
+    def test_08_candidate_domain_metadata_mutation_is_detected(self):
+        m=self.model();m.lower.setflags(write=True)
+        with self.assertRaises(ValueError):m.verify_snapshot()
+        n=self.model();n.hyper_start+=1
+        with self.assertRaises(ValueError):n.verify_snapshot()
+
+if __name__=='__main__':unittest.main(verbosity=2)

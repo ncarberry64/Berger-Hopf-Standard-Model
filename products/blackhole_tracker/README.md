@@ -28,6 +28,13 @@ Use **Unresolved photometry** in the app, or open `http://127.0.0.1:8765/photome
 
 Validate, fit and inspect the observations and residuals before exporting the replay ZIP. The default is the reviewed 12-start native-magnitude PSPL likelihood with published errors, nonnegative source/blend flux and no clipping or thinning. A signed calibration blend or changed weights/noise is an explicitly labelled sensitivity. Numerical convergence, photometric flux admission, observational adequacy and parameter identification are separate decisions. The public `PHOTOMETRIC_FIT` status does not imply a measured lens mass; this route always retains `MASS_UNRESOLVED`.
 
+Choose the result you need:
+
+- **Native photometry** returns point estimates, residual diagnostics and local-curvature standard errors. These errors are not calibrated confidence intervals. The historical local timescale, impact-parameter and profile-reference procedures failed three predeclared tests; their results remain preserved.
+- **[Pointwise photometry (MC)](PHOTOMETRY_MC.md)** at `/photometry-mc` computes approximate fitted-nuisance decisions at explicitly requested tE/u0 values. Its replacement procedure passed all four confirmation gates at two fixed cadence/error/truth designs; general user-input calibration remains pending. Finite grid points do not establish continuous interval endpoints. The [versioned evidence guide](docs/PHOTOMETRY_POINTWISE_EVIDENCE_20261025_V1.md) records the tested scope, counts and receipt hashes.
+
+If you already have versioned unresolved JSON, upload that original file directly to the MC workspace. For a native OGLE/MOA file, first import it in Native photometry, select **Download versioned input JSON**, then upload that saved JSON in the MC workspace. This preserves the native row/time/error and source-file provenance; no fit or Monte Carlo run starts merely by following a navigation link.
+
 ```text
 python -m bhtracker import-ogle3 /path/to/photBLG122.6.I.83113.dat --output observations.json
 python -m bhtracker validate observations.json
@@ -35,6 +42,8 @@ python -m bhtracker fit-photometry observations.json --output native_fit
 python -m bhtracker replay native_fit --output native_replayed
 python -m bhtracker profile-photometry observations.json native_fit/result.json --timescales 150 200 250 300 350 --output timescale_profile.json
 ```
+
+The last command is the preserved profile-ordinate diagnostic, not a calibrated interval. For the separate fixed-grid procedure, follow [PHOTOMETRY_MC.md](PHOTOMETRY_MC.md); it requires explicit grid values, entropy and a new durable audit directory.
 
 For the historical 2022 reduction, use `import-benchmark --ogle OGLE_file --moa MOA_file --output observations.json`. The native HJD origin arithmetic is recorded; an origin shift is not a clock-scale or heliocentric conversion. The additional limited relative-time assumption for combining the two instruments remains explicit. Their baseline, blend and residual diagnostics remain separate.
 
@@ -93,7 +102,9 @@ The result's `bhsm_interpretation` dictionary records these meanings and the one
 
 Install Python **3.11 or newer**, with the `python` command available on PATH. Unpack the complete product folder and double-click **`Start_Blackhole_Tracker.cmd`**.
 
-On first launch the script creates `.venv`, installs the package and runtime dependencies, and opens the local app. It also checks an existing environment and repairs missing dependencies. Dependency installation needs access to your configured package index; fitting uses no remote service or API key. Keep the console open while using the app. Press **Ctrl+C** there to stop it. The launcher also accepts the Windows `py -3` launcher when `python` is unavailable.
+On first launch the script creates a short, versioned environment under `%LOCALAPPDATA%\BHSM\e`, installs the package and runtime dependencies, and opens the local app. It prints the chosen path. Later launches check that owned environment and refresh the installation when source bytes change. Dependency installation needs access to your configured package index; fitting uses no remote service or API key. Keep the console open while using the app. Press **Ctrl+C** there to stop it. The launcher also accepts the Windows `py -3` launcher when `python` is unavailable.
+
+Use `--environment PATH` to choose another fresh, short location. Existing project `.venv` folders and unrelated environments are preserved; the launcher refuses an existing directory without its matching ownership marker. A recorded Windows test of Astropy 6 failed to load its FITS compression DLL from a very deep environment path; the same wheel passed in a shorter Unicode path. The short default avoids that observed path-depth problem without registry or execution-policy changes.
 
 The default address is **http://127.0.0.1:8765/**. If the browser does not open, enter that address manually. If the port is occupied, run `Start_Blackhole_Tracker.cmd --port 8766`. `--no-open` suppresses browser opening; `--check-install` installs/checks dependencies and exits. A missing or old Python produces an installation message and a nonzero exit code. Paths containing spaces are supported.
 
@@ -101,26 +112,26 @@ The default address is **http://127.0.0.1:8765/**. If the browser does not open,
 
 The standard launcher installs the resolved-image and native-photometry routes. Joint parallax and angular-centroid research also needs **Astropy**. To choose that extra, double-click **`Start_Blackhole_Tracker_Joint.cmd`**, or run `Start_Blackhole_Tracker.cmd --astrometry`. This explicitly installs/checks the same package with its `astrometry` extra, then starts the same local app. Initial dependency installation needs network access. The ordinary launcher never adds optional dependencies merely because the joint page is opened.
 
-For an existing source installation, close the app and run these PowerShell commands from the unpacked product directory:
+For the experimental covariance-aware known-system engine, explicitly select the larger `joint-research` extra. This checks Astropy's FITS compression component and `celerite2==0.3.3`; no older solver is substituted if a check fails. Close the app and run from the unpacked product directory:
 
 ```powershell
-.\.venv\Scripts\python.exe -m pip install ".[astrometry]"
-.\.venv\Scripts\python.exe -m bhtracker serve --open
+.\Start_Blackhole_Tracker.cmd --joint-research --check-install
 ```
 
-If the environment does not exist yet, use the explicit joint launcher or the environment-creation commands below first. A wheel installation uses its actual local path: `python -m pip install "./bhsm_blackhole_tracker-0.2.0rc7-py3-none-any.whl[astrometry]"`. Quoting keeps the path and extra together, including paths containing spaces. On Linux/macOS, use the interpreter in your chosen virtual environment with the same wheel-extra command.
+Use the printed environment's `Scripts\python.exe` with the commands in [KNOWN_SYSTEM_V3.md](docs/KNOWN_SYSTEM_V3.md). A wheel installation uses its actual local path: `python -m pip install "./bhsm_blackhole_tracker-0.2.0rc7-py3-none-any.whl[joint-research]"`. Quoting keeps the path and extra together, including paths containing spaces. The smaller `astrometry` extra remains available for the original joint route. On Linux/macOS, use the interpreter in your chosen virtual environment with the same wheel-extra command.
 
 Open **Joint astrometry research** and follow [JOINT_RESEARCH.md](JOINT_RESEARCH.md) for the reviewed source-pack import, explicit clock/frame assumptions, fitting, export and replay. Enabling the dependency does not validate a noise model or establish a black-hole mass. The original 2022 ambiguous HST export and the separately versioned 2023 benchmark remain distinct.
 
 For an explicit PowerShell installation, start in this `product` directory:
 
 ```powershell
-python -m venv .venv
-.\.venv\Scripts\python.exe -m pip install .
-.\.venv\Scripts\python.exe -m bhtracker serve --open
+$trackerEnv = "$env:LOCALAPPDATA\BHSM\manual-env"
+python -m venv $trackerEnv
+& "$trackerEnv\Scripts\python.exe" -m pip install .
+& "$trackerEnv\Scripts\python.exe" -m bhtracker serve --open
 ```
 
-This does not require activating the environment or changing PowerShell's execution policy. If an existing `.venv` is missing dependencies, rerun the installation command. After changing source dependencies, rerun it before restarting the app.
+Choose a fresh path for the manual environment. This does not require activating the environment or changing PowerShell's execution policy. For a manually managed installation, rerun its installation command after changing source dependencies. The launcher manages only environments bearing its own marker.
 
 ### Other installation options
 
@@ -140,7 +151,7 @@ python -m bhtracker serve --open
 
 The wheel contains the browser assets, example JSON files and pinned R1 provider inputs. The source distribution also supplies the launcher, notebooks, tests and validation scripts. To build a wheel from source with the development dependencies installed, run `python -m build --wheel`; output goes to `dist/`.
 
-The commands below use `python` to mean the interpreter with this package installed. With the Windows environment above, substitute `.\.venv\Scripts\python.exe`. The installed `blackhole-tracker` executable is equivalent to `python -m bhtracker`.
+The commands below use `python` to mean the interpreter with this package installed. On Windows, substitute the `Scripts\python.exe` at the environment path printed by the launcher or chosen above. The installed `blackhole-tracker` executable is equivalent to `python -m bhtracker`.
 
 On Linux, create a fresh environment with `python3 -m venv tracker-env`, install the wheel with `tracker-env/bin/python -m pip install /path/to/the.whl`, then run `tracker-env/bin/python -m bhtracker serve --open`. The source installation uses the same `pip install .` command from the unpacked product directory. Distribution-provided Python installations may require their `python3-venv` package first.
 
@@ -153,7 +164,7 @@ On Linux, create a fresh environment with `python3 -m venv tracker-env`, install
 5. Select **Download replay bundle**. It includes the original input, full covariance and calibrations, exact fit controls, result, HTML, prediction CSV, two plots, software/source hashes and a reproduction guide. JSON and HTML remain separately available.
 6. Install the same wheel in another working directory and run `python -m bhtracker replay bhsm-analysis-replay.zip --output replayed`. Read `replayed/replay_check.json`; no original private input path is needed.
 
-The server binds only to `127.0.0.1`. Inputs and jobs remain in that local process until you export them; it uses no remote fitting service. Closing the process clears its in-memory jobs. Dataset imports are limited to 8 MB; JSON requests are limited to 40 MB to accommodate result exports. At most 64 jobs are retained per session; restart to clear a full session. One worker runs fits sequentially: **pending** means queued, **running** means inference is executing, **complete** means a scientific result is available (which may be rejected or unresolved), and **failed** means computation raised an error. Duplicate pending/running submissions of the same dataset/configuration reuse the existing job. Cancellation is unavailable. This is a local research tool, not an authenticated network deployment.
+The server binds only to `127.0.0.1` and uses no remote fitting service. In the resolved and legacy native-fit workspaces, inputs/jobs remain in memory until export, closing the process clears those jobs, and cancellation is unavailable. Resolved imports are limited to 8 MB, native versioned input to 32 MB, and ordinary JSON requests to 40 MB. At most 64 legacy jobs are retained per session, with one worker running those fits sequentially: **pending** means queued, **running** means inference is executing, **complete** means a result is available (which may be rejected or unresolved), and **failed** means computation raised an error. Duplicate pending/running legacy submissions reuse the existing job. The separate MC workspace retains disk audit directories, supports explicit cancellation, and streams browser ZIPs up to 128 MiB; its [guide](PHOTOMETRY_MC.md) describes larger CLI/file audits and failure retention. This is a local research tool, not an authenticated network deployment.
 
 ### Bundled examples
 

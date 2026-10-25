@@ -1,0 +1,239 @@
+"""Prospectively fixed invented controls; no native row, fitter or RNG input."""
+from decimal import Decimal, localcontext
+import math
+import unittest
+import numpy as np
+from centered_geometry_v1 import centered_geometry
+from bounded_negative_curvature_trust_v5 import minimize, _projected_cauchy
+
+WITNESSES = {}
+
+
+class GeometryControls(unittest.TestCase):
+    def options(self):
+        return dict(numerical_time_origin=2455765., t0_offset_days=.125,
+                    tE_days=128., u0_heliocentric=.25,
+                    angle_source_minus_lens_rad=.7, pi_E=.125,
+                    earth=np.array([[.125, -.25], [.5, .25], [-.25, .375]]))
+
+    def test_independent_decimal_axis_geometry(self):
+        opts = self.options(); opts['angle_source_minus_lens_rad'] = 0.
+        times = np.array([2455700., 2455800., 2455900.])
+        a, _, u, _ = centered_geometry(times, **opts)
+        with localcontext() as ctx:
+            ctx.prec = 80
+            D = Decimal.from_float
+            expected_a, expected_u = [], []
+            for t, e in zip(times, opts['earth']):
+                qn = ((D(float(t)) - D(opts['numerical_time_origin'])) - D(opts['t0_offset_days'])) / D(opts['tE_days']) + D(opts['pi_E']) * D(float(e[0]))
+                qe = D(opts['u0_heliocentric']) + D(opts['pi_E']) * D(float(e[1]))
+                q2 = qn * qn + qe * qe
+                expected_a.append(float((q2 + 2) / (q2 * (q2 + 4)).sqrt()))
+                expected_u.append([float(qn / (q2 + 2)), float(qe / (q2 + 2))])
+        np.testing.assert_allclose(a, expected_a, rtol=4e-15, atol=0)
+        np.testing.assert_allclose(u, expected_u, rtol=4e-15, atol=0)
+        WITNESSES['decimal_geometry'] = {'amplitude': a.tolist(), 'independent': expected_a}
+
+    def test_all_five_derivatives_multiscale(self):
+        times = np.array([2455700., 2455800., 2455900.]); opts = self.options()
+        _, da, _, du = centered_geometry(times, **opts)
+        names = ['t0_offset_days', 'log_tE', 'u0_heliocentric', 'angle_source_minus_lens_rad', 'pi_E']
+        errors = []
+        for j, name in enumerate(names):
+            for h in (1e-3, 1e-4, 1e-5):
+                left, right = dict(opts), dict(opts)
+                if name == 'log_tE':
+                    left['tE_days'] *= math.exp(-h); right['tE_days'] *= math.exp(h)
+                else:
+                    left[name] -= h; right[name] += h
+                al, _, ul, _ = centered_geometry(times, **left)
+                ar, _, ur, _ = centered_geometry(times, **right)
+                err = max(float(np.max(np.abs((ar-al)/(2*h)-da[:, j]))), float(np.max(np.abs((ur-ul)/(2*h)-du[:, :, j]))))
+                errors.append({'column': name, 'step': h, 'max_absolute_error': err})
+                self.assertLess(err, 2e-5)
+        WITNESSES['derivatives_multiscale'] = errors
+
+    def test_exact_dyadic_reference_change_and_angle_periodicity(self):
+        times = np.array([2455700., 2455800., 2455900.]); opts = self.options()
+        original = centered_geometry(times, **opts)
+        other = dict(opts); other['numerical_time_origin'] += 235.; other['t0_offset_days'] -= 235.
+        shifted = centered_geometry(times, **other)
+        for a, b in zip(original, shifted): np.testing.assert_array_equal(a, b)
+        other = dict(opts); other['angle_source_minus_lens_rad'] += 2 * math.pi
+        for a, b in zip(original, centered_geometry(times, **other)):
+            np.testing.assert_allclose(a, b, rtol=2e-14, atol=2e-14)
+
+    def test_sub_JD_ulp_offset_remains_resolved(self):
+        opts = self.options(); opts['t0_offset_days'] = .125
+        times = np.array([2455765.5, 2455766., 2455767.])
+        base = centered_geometry(times, **opts)[0]
+        other = dict(opts); other['t0_offset_days'] += 1e-10
+        moved = centered_geometry(times, **other)[0]
+        self.assertEqual(opts['numerical_time_origin'] + opts['t0_offset_days'], other['numerical_time_origin'] + other['t0_offset_days'])
+        self.assertGreater(float(np.max(np.abs(moved - base))), 0.)
+        WITNESSES['sub_JD_ulp'] = {'offset_step': 1e-10, 'amplitude_change': (moved-base).tolist(), 'old_rounded_t0_equal': True}
+
+    def test_invalid_support_is_not_floored(self):
+        opts = self.options()
+        for key, value in [('pi_E', True), ('tE_days', 0.), ('t0_offset_days', math.nan)]:
+            with self.subTest(key=key), self.assertRaises(ValueError): centered_geometry([2455765.], **{**opts, 'earth':np.zeros((1,2)), key:value})
+        with self.assertRaises(ValueError):
+            centered_geometry([2455765.], **{**opts, 'earth':np.zeros((1,2)), 'u0_heliocentric':0., 't0_offset_days':0.})
+
+
+class TrustControls(unittest.TestCase):
+    def retain(self, key, result):
+        WITNESSES[key] = result
+        self.assertIsNone(result['covariance']); self.assertIsNone(result['accepted_mass_interval'])
+        self.assertFalse(result['known_BH_recovery_accepted']); self.assertFalse(result['global_optimality_certified'])
+        self.assertEqual(result['calls'], len(result['events']))
+        return result
+
+    def test_indefinite_quadratic_reaches_original_box_boundary(self):
+        h = np.diag([-2., 2.])
+        r = self.retain('indefinite', minimize(lambda x:(float(.5*x@h@x),h@x), [.25,.4], [-2.,-2.], [2.,2.], hessian=lambda x:h, projected_score_tolerance=1e-8))
+        self.assertLessEqual(r['best_value'], -4.+1e-10)
+        self.assertTrue(any(i.get('minimum_approximate_free_eigenvalue',0)<0 for i in r['iterations']))
+
+    def test_exact_stationary_saddle_escapes_without_ridge(self):
+        def fun(x): return float((x[0]*x[0]-1)**2+x[1]*x[1]), np.array([4*x[0]*(x[0]*x[0]-1),2*x[1]])
+        r = self.retain('saddle', minimize(fun,[0.,0.],[-2.,-2.],[2.,2.],hessian=lambda x:np.diag([12*x[0]*x[0]-4,2]), projected_score_tolerance=1e-8))
+        self.assertLess(r['best_value'], 1e-12)
+        self.assertEqual(r['iterations'][0]['step_reason'], 'EXPLICIT_MINIMUM_EIGENDIRECTION')
+
+    def test_convex_coupled_solution(self):
+        h=np.array([[4.,1.],[1.,3.]]); target=np.array([.3,-.7])
+        r=self.retain('convex',minimize(lambda x:(float(.5*(x-target)@h@(x-target)),h@(x-target)),[1.5,1.],[-2.,-2.],[2.,2.],hessian=lambda x:h,projected_score_tolerance=1e-8))
+        np.testing.assert_allclose(r['best_state'],target,atol=1e-8,rtol=0)
+
+    def test_finite_difference_score_Hessian(self):
+        h=np.array([[4.,1.],[1.,3.]]); target=np.array([.3,-.7])
+        r=self.retain('finite_difference',minimize(lambda x:(float(.5*(x-target)@h@(x-target)),h@(x-target)),[1.5,1.],[-2.,-2.],[2.,2.],projected_score_tolerance=1e-7))
+        np.testing.assert_allclose(r['best_state'],target,atol=1e-7,rtol=0)
+
+    def test_active_original_face_is_retained(self):
+        target=np.array([-1.,.5])
+        r=self.retain('active_face',minimize(lambda x:(float(np.sum((x-target)**2)),2*(x-target)),[0.,0.],[0.,-2.],[2.,2.],hessian=lambda x:2*np.eye(2),projected_score_tolerance=1e-8))
+        np.testing.assert_allclose(r['best_state'],[0.,.5],atol=1e-8,rtol=0)
+
+    def test_stationary_boundary_negative_direction_is_examined(self):
+        r=self.retain('boundary_saddle',minimize(lambda x:(float(-x[0]**2),np.array([-2*x[0]])),[0.],[0.],[2.],hessian=lambda x:np.array([[-2.]]),projected_score_tolerance=1e-8))
+        self.assertEqual(r['best_state'],[2.]); self.assertEqual(r['best_value'],-4.)
+
+    def test_budget_refusal_preserves_complete_attempts(self):
+        r=self.retain('budget',minimize(lambda x:(float(x@x),2*x),[1.,1.],[-2.,-2.],[2.,2.],max_calls=1))
+        self.assertEqual(r['status'],'NUMERICALLY_UNRESOLVED');self.assertEqual(r['calls'],1)
+        self.assertEqual(r['failure']['type'],'BudgetExhausted')
+
+    def test_failed_trial_retained_and_never_zero_likelihood(self):
+        def fun(x):
+            if not np.array_equal(x,[1.,1.]): raise ValueError('invented unsupported proposal')
+            return float(x@x),2*x
+        r=self.retain('failed_trial',minimize(fun,[1.,1.],[-2.,-2.],[2.,2.]))
+        self.assertEqual(r['status'],'NUMERICALLY_UNRESOLVED'); self.assertEqual(r['best_value'],2.)
+        self.assertEqual(r['events'][-1]['status'],'FAILED_EVALUATION')
+
+    def test_lower_rejected_trial_and_terminal_are_not_mixed(self):
+        # Deliberately imperfect curvature oracle models an inaccurate local
+        # approximation. The true objective/gradient remain internally exact.
+        fun=lambda x:(float(1-2*x[0]+1.95*x[0]**2),np.array([-2+3.9*x[0]]))
+        r=self.retain('matched_state_exports',minimize(fun,[0.],[-2.],[2.],hessian=lambda x:np.zeros((1,1)),max_iterations=1))
+        self.assertFalse(r['iterations'][0]['accepted'])
+        self.assertEqual(r['termination_status_applies_to'],'terminal_state_only')
+        self.assertEqual(r['terminal']['physical_state'],[0.])
+        self.assertEqual(r['lowest_observed']['physical_state'],[1.])
+        self.assertAlmostEqual(r['terminal']['value'],1.)
+        self.assertAlmostEqual(r['lowest_observed']['value'],.95)
+        self.assertAlmostEqual(r['terminal']['projected_scaled_score'],2.)
+        self.assertAlmostEqual(r['lowest_observed']['projected_scaled_score'],1.9)
+
+    def test_lower_Hessian_probe_is_in_all_observed_minimum(self):
+        target=.1
+        r=self.retain('lower_hessian_probe',minimize(lambda x:(float((x[0]-target)**2),np.array([2*(x[0]-target)])),[0.],[-2.],[2.],max_calls=2,hessian_step=.05))
+        self.assertEqual(r['status'],'NUMERICALLY_UNRESOLVED')
+        self.assertEqual(r['events'][-1]['purpose'],'HESSIAN_PLUS_0')
+        self.assertEqual(r['terminal']['physical_state'],[0.])
+        self.assertEqual(r['lowest_observed']['physical_state'],[.05])
+        self.assertAlmostEqual(r['lowest_observed']['value'],.0025)
+        self.assertAlmostEqual(r['lowest_observed']['projected_scaled_score'],.1)
+
+    def test_scale_change_preserves_simple_physical_solution(self):
+        target=np.array([.3,-.7]); h=np.diag([2.,4.])
+        r=self.retain('rescaled',minimize(lambda x:(float(.5*(x-target)@h@(x-target)),h@(x-target)),[1.,1.],[-2.,-2.],[2.,2.],scale=[.25,2.],hessian=lambda x:h,projected_score_tolerance=1e-9,max_iterations=64))
+        np.testing.assert_allclose(r['best_state'],target,atol=1e-8,rtol=0)
+
+
+
+
+class ProjectedCauchyControls(unittest.TestCase):
+    def test_clipped_quadratic_has_independent_descent_bound(self):
+        x=np.array([1e-20,.7,-.4]);g=np.array([100.,-3.,2.]);h=np.array([[4.,2.,-1.],[2.,-3.,.5],[-1.,.5,2.]])
+        s,info=_projected_cauchy(x,g,h,np.array([0.,-1.,-1.]),np.array([1.,1.,1.]),1.)
+        q=float(g@s+.5*s@h@s)
+        self.assertLess(q,0.);self.assertLessEqual(np.linalg.norm(s),1.)
+        self.assertLessEqual(float(g@s),-float(s@s)/info['alpha']+1e-12)
+        WITNESSES['projected_cauchy_bound']={'step':s.tolist(),'quadratic':q,'info':info}
+
+    def test_tiny_positive_coordinate_reaches_face_by_actual_descent(self):
+        r=minimize(lambda x:(100*x[0],np.array([100.])),[1e-20],[0.],[1.],hessian=lambda x:np.zeros((1,1)),projected_score_tolerance=1e-9)
+        self.assertEqual(r['events'][0]['physical_state'],[1e-20])
+        self.assertEqual(r['terminal']['physical_state'],[0.]);self.assertEqual(r['terminal']['value'],0.)
+        self.assertEqual(r['iterations'][0]['acceptance'],'STRICT_REPRESENTED_OBJECTIVE_DESCENT')
+        WITNESSES['tiny_positive_strict_descent']=r
+
+    def test_exact_value_boundary_tie_retains_own_KKT_progress(self):
+        r=minimize(lambda x:(1e6+100*x[0],np.array([100.])),[1e-20],[0.],[1.],hessian=lambda x:np.zeros((1,1)),projected_score_tolerance=1e-9)
+        self.assertEqual(r['events'][0]['physical_state'],[1e-20])
+        self.assertEqual(r['terminal']['physical_state'],[0.]);self.assertEqual(r['terminal']['projected_scaled_score'],0.)
+        self.assertEqual(r['lowest_observed']['physical_state'],[1e-20])
+        self.assertEqual(r['iterations'][0]['acceptance'],'EXACT_REPRESENTED_VALUE_TIE_NEW_FEASIBLE_FACE_SCORE_PROGRESS')
+        WITNESSES['boundary_tie']=r
+
+    def test_outward_boundary_normal_stays_on_original_domain(self):
+        r=minimize(lambda x:(100*x[0],np.array([100.])),[0.],[0.],[1.],hessian=lambda x:np.zeros((1,1)),projected_score_tolerance=1e-9)
+        self.assertEqual(r['status'],'PROJECTED_SCORE_REACHED')
+        self.assertTrue(all(e['physical_state']==[0.]for e in r['events']))
+
+    def test_multiple_scaled_near_faces_are_not_initially_snapped(self):
+        initial=[1e-20,1.-1e-16]
+        r=minimize(lambda x:(1e6+100*x[0]-100*x[1],np.array([100.,-100.])),initial,[0.,0.],[1.,1.],scale=[.1,2.],hessian=lambda x:np.zeros((2,2)),projected_score_tolerance=1e-9)
+        self.assertGreater(r['events'][0]['physical_state'][0],0.)
+        self.assertLess(r['events'][0]['physical_state'][1],1.)
+        self.assertEqual(r['terminal']['physical_state'],[0.,1.])
+        WITNESSES['multiple_scaled_faces']=r
+
+    def test_exact_scaled_face_restores_original_physical_float(self):
+        bound=float(np.log(.5))
+        r=minimize(lambda x:(float(x[0]),np.array([1.])),[bound],[bound],[0.],scale=[.2],hessian=lambda x:np.zeros((1,1)))
+        self.assertEqual(r['events'][0]['physical_state'],[bound])
+        self.assertEqual(r['terminal']['physical_state'],[bound])
+
+    def test_interior_objective_tie_cannot_claim_progress(self):
+        r=minimize(lambda x:(1e6+1e-12*x[0],np.array([1e-12])),[0.],[-2.],[2.],hessian=lambda x:np.zeros((1,1)),projected_score_tolerance=1e-16,max_iterations=1)
+        self.assertFalse(r['iterations'][0]['accepted'])
+        self.assertEqual(r['terminal']['physical_state'],[0.])
+
+    def test_common_normalization_changes_tie_label_not_reached_face(self):
+        out=[]
+        for constant in (0.,1e6):
+            r=minimize(lambda x:(constant+100*x[0],np.array([100.])),[1e-20],[0.],[1.],hessian=lambda x:np.zeros((1,1)),projected_score_tolerance=1e-9)
+            out.append(r)
+        self.assertEqual(out[0]['terminal']['physical_state'],out[1]['terminal']['physical_state'])
+        self.assertNotEqual(out[0]['iterations'][0]['acceptance'],out[1]['iterations'][0]['acceptance'])
+
+
+
+class CompatibilityExportControls(unittest.TestCase):
+    def test_legacy_alias_equals_exact_matched_lowest_state(self):
+        records=[]
+        for bound in (float(np.log(.5)),float(np.log(2.)),.1,.3,float(np.pi)):
+            for scale in (.2,.3,7.,.001,10.):
+                result=minimize(lambda x:(float(x[0]-bound),np.array([1.])),[bound],[bound],[bound+2.],scale=[scale],hessian=lambda x:np.zeros((1,1)))
+                self.assertEqual(result['best_state'],result['lowest_observed']['physical_state'])
+                self.assertEqual(result['best_state'],[bound])
+                self.assertEqual(result['best_value'],result['lowest_observed']['value'])
+                self.assertEqual(result['best_physical_gradient'],result['lowest_observed']['physical_gradient'])
+                records.append({'bound':bound,'scale':scale,'ordinary_roundtrip':(bound/scale)*scale,'result':result})
+        WITNESSES['compatibility_aliases']=records
+
+if __name__=='__main__':unittest.main(verbosity=2)

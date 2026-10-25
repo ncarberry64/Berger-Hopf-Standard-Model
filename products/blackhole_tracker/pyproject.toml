@@ -21,6 +21,7 @@ Documentation = "https://github.com/ncarberry64/Berger-Hopf-Standard-Model/blob/
 [project.optional-dependencies]
 dev = ["pytest>=8", "nbformat>=5", "nbclient>=0.10", "ipykernel>=6", "build>=1"]
 astrometry = ["astropy>=6"]
+joint-research = ["astropy>=6", "celerite2==0.3.3"]
 
 [project.scripts]
 blackhole-tracker = "bhtracker.cli:main"
@@ -31,3 +32,4 @@ include = ["bhtracker*"]
 
 [tool.setuptools.package-data]
 bhtracker = ["CITATION.cff", "web/*", "examples/*.json", "theory/*.json", "theory/bhsm_sources/*", "theory/provider/code/*.py", "theory/provider/preregistration/*.json", "theory/provider/*.json"]
+"bhtracker._joint_v3" = ["SOURCE_MANIFEST_v1.json"]

@@ -1,5 +1,6 @@
 import argparse
 import json
+import sys
 from pathlib import Path
 from .data import load_dataset
 from .examples import make_example,TITLES
@@ -7,8 +8,22 @@ from .inference import fit,profile
 from .report import export_result,replay_analysis
 
 def main(argv=None):
+    arguments=list(sys.argv[1:] if argv is None else argv)
+    if arguments and arguments[0]=='known-system':
+        # Lazy, lossless delegation keeps the research engine and optional
+        # dependencies separate from every existing command and optical route.
+        try:
+            from .known_system_v3 import main as known_main
+            return known_main(arguments[1:])
+        except ImportError as error:
+            print('Known-system research needs the optional joint-research dependencies: '+str(error),file=sys.stderr)
+            raise SystemExit(2) from error
+        except (ValueError,OSError,KeyError,RuntimeError,FloatingPointError) as error:
+            print('Known-system input/model error: '+str(error),file=sys.stderr)
+            raise SystemExit(2) from error
     parser=argparse.ArgumentParser(prog='blackhole-tracker',description='BHSM compact-lens research: resolved images, native photometry and optional joint astrometry; mass requires identifying observations')
     commands=parser.add_subparsers(dest='command',required=True)
+    commands.add_parser('known-system',help='versioned Gaussian/spectral research engine; use known-system --help (scientific acceptance pending)')
     ex=commands.add_parser('example',help='write a reproducible synthetic measurement set')
     ex.add_argument('name',choices=list(TITLES),nargs='?',default='nearby_motion');ex.add_argument('--output',type=Path,required=True)
     val=commands.add_parser('validate');val.add_argument('dataset',type=Path)
@@ -46,7 +61,19 @@ def main(argv=None):
     prof=commands.add_parser('profile');prof.add_argument('dataset',type=Path);prof.add_argument('result',type=Path)
     prof.add_argument('--parameter',choices=['mass_msun','motion_x','motion_y'],default='mass_msun');prof.add_argument('--output',type=Path,required=True)
     serve=commands.add_parser('serve');serve.add_argument('--port',type=int,default=8765);serve.add_argument('--open',action='store_true')
-    serve.add_argument('--page',choices=['resolved','photometry','joint','atlas','spectrum','skytrack'],default='resolved')
+    serve.add_argument('--page',choices=['resolved','photometry','photometry-mc','joint','atlas','spectrum','skytrack'],default='resolved')
+    mc=commands.add_parser('mc-photometry',help='pending approximate fixed-node MC inference, durable audit/export and saved-state replay; no BH mass')
+    mc_commands=mc.add_subparsers(dest='mc_command',required=True)
+    mc_run=mc_commands.add_parser('run');mc_run.add_argument('dataset',type=Path)
+    mc_run.add_argument('--timescales',nargs='+',type=float);mc_run.add_argument('--impacts',nargs='+',type=float)
+    mc_run.add_argument('--entropy',nargs='+',type=int,required=True);mc_run.add_argument('--output',type=Path,required=True)
+    mc_run.add_argument('--wall-seconds',type=int,default=600);mc_run.add_argument('--max-saved-bytes',type=int,default=268435456)
+    mc_status=mc_commands.add_parser('status');mc_status.add_argument('workspace',type=Path)
+    mc_export=mc_commands.add_parser('export');mc_export.add_argument('workspace',type=Path);mc_export.add_argument('--output',type=Path,required=True)
+    mc_export.add_argument('--max-archive-bytes',type=int,default=536870912)
+    mc_replay=mc_commands.add_parser('replay');mc_replay.add_argument('bundle',type=Path)
+    mc_replay.add_argument('--mode',choices=['integrity','numerical'],default='integrity');mc_replay.add_argument('--wall-seconds',type=int,default=120)
+    mc_replay.add_argument('--max-states',type=int,default=100000);mc_replay.add_argument('--output',type=Path)
     spectrum=commands.add_parser('spectrum',help='inspect/export/verify the frozen read-only evidence spectrum; no fitting or classification')
     spectrum_commands=spectrum.add_subparsers(dest='spectrum_command',required=True)
     spectrum_commands.add_parser('summary')
@@ -74,7 +101,24 @@ def main(argv=None):
     atlas_replay.add_argument('--output',type=Path,help='fresh directory for exact inventory bytes and selected records')
     args=parser.parse_args(argv)
     try:
-        if args.command=='skytrack':
+        if args.command=='mc-photometry':
+            from .photometry_mc import MCWorkspace,workspace_status,canonical
+            from .photometry_mc_replay import export_workspace,replay_bundle,summary
+            if args.mc_command=='run':
+                grids={}
+                if args.timescales is not None:grids['tE_days']=args.timescales
+                if args.impacts is not None:grids['u0']=args.impacts
+                workspace=MCWorkspace(args.dataset,grids,args.entropy,args.output,wall_seconds=args.wall_seconds,max_saved_bytes=args.max_saved_bytes)
+                print('Local pending MC audit: '+str(workspace.directory),flush=True)
+                result=workspace.run();value=summary(workspace.request,result)
+            elif args.mc_command=='status':value=workspace_status(args.workspace)
+            elif args.mc_command=='export':value=export_workspace(args.workspace,args.output,max_archive_bytes=args.max_archive_bytes)
+            else:value=replay_bundle(args.bundle,mode=args.mode,wall_seconds=args.wall_seconds,max_states=args.max_states)
+            if args.mc_command=='replay' and args.output:
+                with args.output.open('xb') as stream:stream.write(canonical(value))
+                print(str(args.output.resolve()))
+            else:print(json.dumps(value,indent=2,ensure_ascii=False,allow_nan=False))
+        elif args.command=='skytrack':
             from . import skytrack
             if args.skytrack_command=='example':value=skytrack.synthetic_example()
             elif args.skytrack_command=='validate':value=skytrack.validate_skytrack(args.input.read_bytes().decode('utf8'))

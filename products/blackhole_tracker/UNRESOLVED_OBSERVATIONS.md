@@ -101,6 +101,14 @@ false-discovery interpretation. A failed PSPL screen can reflect outliers,
 correlated calibration, intrinsic variability, parallax or binary structure;
 it does not support a black-hole or BHSM-specific claim by itself.
 
+For point estimates and residual screening, use the native fit. For approximate
+pointwise tE/u0 uncertainty decisions, use the separate
+[Monte Carlo workspace](PHOTOMETRY_MC.md) at `/photometry-mc`. Its completed
+confirmation supports only the two fixed designs documented in the
+[evidence guide](docs/PHOTOMETRY_POINTWISE_EVIDENCE_20261025_V1.md); it does not
+validate arbitrary inputs or continuous confidence intervals. Native local errors
+and historical profile-reference failures remain available as diagnostics.
+
 Local inverse-information errors condition on the adopted noise model. Public
 null-affected covariance entries and errors are unavailable, and the associated
 null directions/projector are supplied separately. Low significance and

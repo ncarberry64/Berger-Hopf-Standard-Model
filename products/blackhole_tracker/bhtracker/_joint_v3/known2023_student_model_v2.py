@@ -1,0 +1,329 @@
+"""New centered-evaluation conditional2023 working likelihood v2; native runs require a NEW reviewed freeze.
+
+OGLE: normalized chronological Student nu6 innovations. HST photometry and
+astrometry: unchanged positive supplied marginal errors, explicitly assumed
+independent Gaussian working observations. No2025 errors are manufactured.
+"""
+from copy import deepcopy
+import base64
+import hashlib
+import json
+import math
+from pathlib import Path
+import sys
+import types
+
+import numpy as np
+
+from . import gaussian_mean_profile_v1 as mean_provider
+from .centered_geometry_v1 import centered_geometry
+
+ROOT = Path(__file__).resolve().parent
+NATIVE_SHA = 'd2409db410e113872781494ca4d73db57d2a44fd65146c4e7ec2f40828448428'
+CORE_SHA = '6eaf050481fc23aebf4b929e49fdab57e324ee80eb08e1547b69f056269eeaaa'
+STUDENT_SHA = 'ca16cd2e04c8898a55929c4de4b6282029d7389cd89637b62cb838030ebbb54e'
+STUDENT_BASE_SHA = '1ad508ad93f6ea1aec706e25c0fcbcb9aabd32ada77bac732fd7843c2f917834'
+YEAR = 365.25
+MAG = 2.5 / math.log(10.)
+KAPPA = 4 * 1.3271244e20 / (299792458. ** 2 * 149597870700.) * (180 / math.pi) * 3600000
+
+def sha(data):
+    return hashlib.sha256(data).hexdigest()
+
+def packed(value):
+    return json.dumps(value, sort_keys=True, separators=(',', ':'), ensure_ascii=False, allow_nan=False).encode('utf-8')
+
+def load_source(path, expected, name):
+    """Fixed installed roles only; never execute a caller-supplied provider."""
+    from ._bindings import load_provider
+    return load_provider(path, expected)
+
+def readonly(value):
+    result = np.array(value, dtype=float, copy=True, order='C')
+    if not np.isfinite(result).all():
+        raise ValueError('Finite numeric input required')
+    result.setflags(write=False)
+    return result
+
+def geometry(times, p, earth, *, numerical_time_origin, t0_offset_days):
+    # Physical t0 reconstructed in decode is for reporting only; no large-JD
+    # addition is allowed before the small time difference in this forward map.
+    return centered_geometry(times, numerical_time_origin=numerical_time_origin,
+        t0_offset_days=t0_offset_days, tE_days=p['tE_days'],
+        u0_heliocentric=p['u0_heliocentric'],
+        angle_source_minus_lens_rad=p['angle_source_minus_lens_rad'],
+        pi_E=p['pi_E'], earth=earth)
+
+class Known2023StudentModel:
+    """Owned immutable data/arrays; no automatic fitting or mass acceptance."""
+    def __init__(self, raw_document, *, purpose, expected_sha256, core_path, student_directory, control_registry=None, numerical_time_origin=2455765., angular_reference=2456000., instrument_bias=False, orientation_by_rootname=None):
+        if not isinstance(raw_document, bytes) or sha(raw_document) != expected_sha256:
+            raise ValueError('Exact frozen input bytes required')
+        document = json.loads(raw_document.decode('utf-8'), parse_constant=lambda x: (_ for _ in ()).throw(ValueError('Nonfinite JSON: ' + x)))
+        generated_photo = generated_angular = None
+        if purpose == 'AUTHENTIC2023':
+            if expected_sha256 != NATIVE_SHA or document.get('data_version') != 'OGLE-Mroz2022-corrected_LamLu2023v2-HST21-MAST82.v1':
+                raise ValueError('Only the exact authenticated2023 input is admitted')
+            if document.get('simulation_only') is True:
+                raise ValueError('Authentic input cannot be relabeled')
+            for file in document['native_files'].values():
+                if sha(base64.b64decode(file['raw_bytes_base64'], validate=True)) != file['sha256']:
+                    raise ValueError('Embedded source bytes differ')
+        elif purpose == 'WHOLLY_INVENTED':
+            allowed = set((control_registry or {}).get('wholly_invented_sha256', ()))
+            if expected_sha256 not in allowed or document.get('simulation_only') is not True or document.get('data_version') != 'SYNTHETIC_KNOWN2023_ST6_CONTROL_v1' or document.get('native_files'):
+                raise ValueError('Exact reviewed wholly invented fixture required')
+        elif purpose == 'ACTUAL_CADENCE_CONTROL':
+            allowed = set((control_registry or {}).get('actual_cadence_sha256', ()))
+            if expected_sha256 not in allowed or document.get('schema') != 'bhsm.known2023.generated_control.v1' or document.get('simulation_only') is not True or document.get('scope') != 'CONDITIONAL_SIMULATION_AT_AUTHENTIC_CADENCE':
+                raise ValueError('Exact frozen actual-cadence daughter required')
+            parent_raw = base64.b64decode(document['parent_native_bytes_base64'], validate=True)
+            if sha(parent_raw) != NATIVE_SHA or document['parent_native_sha256'] != NATIVE_SHA:
+                raise ValueError('Original parent bytes must be unchanged')
+            parent = json.loads(parent_raw.decode('utf-8'))
+            gp, ga = document['generated_photometry'], document['generated_astrometry']
+            if [r['parent_source_row_id'] for r in gp] != [r['source_row_id'] for r in parent['photometry']] or [r['parent_source_row_id'] for r in ga] != [r['source_row_id'] for r in parent['astrometry']]:
+                raise ValueError('Every selected parent row requires exactly one generated replacement in original order')
+            generated_photo = [r['generated_magnitude'] for r in gp]
+            generated_angular = [[r['generated_north_mas'], r['generated_east_mas']] for r in ga]
+            for value in (generated_photo, generated_angular):
+                mean_provider._reject_booleans(value)
+                if np.asarray(value).dtype.kind not in 'iuf' or not np.isfinite(value).all():
+                    raise ValueError('Finite numeric generated measurements required; no native fallback')
+            document = parent  # Parent remains unaltered; arrays select separate generated values below.
+        else:
+            raise ValueError('Explicit authentic or frozen invented purpose required')
+        if document.get('schema') != 'bhtracker.native_joint_mass.v1' or document.get('time_coordinate') != 'JD_TDB':
+            raise ValueError('Versioned native-unit joint document required')
+        self.purpose, self.input_sha256 = purpose, expected_sha256
+        self.raw_document = bytes(raw_document)
+        self.document = deepcopy(document)
+        self._document_sha = sha(packed(self.document))
+        self.core_path = Path(core_path).resolve()
+        self.core = load_source(self.core_path, CORE_SHA, '_bhsm_known2023_core_' + CORE_SHA[:12])
+        student_directory = Path(student_directory).resolve()
+        self.student_paths = [student_directory / 'student_ou.py', student_directory / 'student_ou_banded.py']
+        load_source(self.student_paths[0], STUDENT_BASE_SHA, 'student_ou')
+        self.student = load_source(self.student_paths[1], STUDENT_SHA, '_bhsm_known2023_student_' + STUDENT_SHA[:12])
+        self.source_pins = {str(self.core_path): CORE_SHA, str(self.student_paths[0]): STUDENT_BASE_SHA, str(self.student_paths[1]): STUDENT_SHA,
+                            str(ROOT / 'centered_geometry_v1.py'): sha((ROOT / 'centered_geometry_v1.py').read_bytes()),
+                            str(ROOT / 'gaussian_mean_profile_v1.py'): sha((ROOT / 'gaussian_mean_profile_v1.py').read_bytes()), str(Path(__file__).resolve()): sha(Path(__file__).read_bytes())}
+        if Path(mean_provider.profile_mean.__code__.co_filename).resolve() != ROOT / 'gaussian_mean_profile_v1.py':
+            raise ValueError('Unexpected linear profile provider')
+        if Path(centered_geometry.__code__.co_filename).resolve() != ROOT / 'centered_geometry_v1.py':
+            raise ValueError('Unexpected centered geometry provider')
+        self.time_origin, self.reference = float(numerical_time_origin), float(angular_reference)
+        if not np.isfinite([self.time_origin, self.reference]).all():
+            raise ValueError('Finite computational references required')
+        self.pr, self.ar = deepcopy(document['photometry']), deepcopy(document['astrometry'])
+        if purpose == 'AUTHENTIC2023' and (len(self.pr), len(self.ar)) != (12521, 21):
+            raise ValueError('Registered native selected-row counts differ')
+        for rows in (self.pr, self.ar):
+            if len({r['source_row_id'] for r in rows}) != len(rows):
+                raise ValueError('Unique source-row identities required')
+        self.names = tuple(dict.fromkeys(r['instrument'] for r in self.pr))
+        if 'OGLE' not in self.names:
+            raise ValueError('Declared OGLE working-law chain required')
+        self.tp = readonly([r['time_jd_tdb'] for r in self.pr])
+        self.yp = readonly(generated_photo if generated_photo is not None else [r['magnitude'] for r in self.pr])
+        self.sp = readonly([r['magnitude_error'] for r in self.pr])
+        if np.any(self.sp <= 0):
+            raise ValueError('Positive supplied native photometric errors required')
+        self.groups = tuple(np.flatnonzero([r['instrument'] == name for r in self.pr]) for name in self.names)
+        for group in self.groups:
+            group.setflags(write=False)
+        ogle = self.groups[self.names.index('OGLE')]
+        self.order = np.array(ogle[np.argsort(self.tp[ogle], kind='stable')], copy=True)
+        self.order.setflags(write=False)
+        ogle_set = set(map(int, ogle))
+        self.other_photo = np.array([i for i in range(len(self.pr)) if i not in ogle_set], dtype=int)
+        self.other_photo.setflags(write=False)
+        self.seeing = readonly([self.pr[i]['seeing_pixels'] for i in self.order])
+        if np.any(self.seeing <= 0):
+            raise ValueError('Positive supplied seeing metadata required')
+        self.zseeing = readonly(np.clip((self.seeing - 5.) / 2., -1., 1.))
+        years = np.floor((self.tp[self.order] - 2451545.) / YEAR).astype(int) + 2000
+        self.seasons = tuple(sorted(set(map(int, years))))
+        self.season_index = np.array([self.seasons.index(int(y)) for y in years], dtype=int)
+        self.season_index.setflags(write=False)
+        self.photo_ids = tuple(r['source_row_id'] for r in self.pr)
+        self.angular_ids = tuple(r['source_row_id'] for r in self.ar)
+        self.ogle_ordered_ids = tuple(self.photo_ids[i] for i in self.order)
+        times, weights, starts = [], [], []
+        for row in self.ar:
+            t = row['exposure_midpoints_jd_tdb']
+            if not len(t):
+                raise ValueError('Actual exposure-time support required')
+            starts.append(len(times))
+            times.extend(t)
+            weights.extend([1. / len(t)] * len(t))
+        self.ta = readonly(times)
+        self.weights = readonly(weights)
+        self.starts = np.array(starts, dtype=int)
+        self.starts.setflags(write=False)
+        self.ra, self.dec = float(document['ra_deg']), float(document['dec_deg'])
+        self.ep = readonly(self.core.earth_heliocentric_ne(self.tp, self.ra, self.dec))
+        self.ea = readonly(self.core.earth_heliocentric_ne(self.ta, self.ra, self.dec))
+        self.eref = readonly(self.core.earth_heliocentric_ne([self.reference], self.ra, self.dec)[0])
+        angular = readonly(generated_angular if generated_angular is not None else [[r['north_mas'], r['east_mas']] for r in self.ar])
+        self.angular_origin = readonly(np.mean(angular, axis=0))
+        self.ya = readonly((angular - self.angular_origin).ravel())
+        self.sa = readonly([[r['north_error_mas'], r['east_error_mas']] for r in self.ar]).ravel()
+        self.sa.setflags(write=False)
+        if np.any(self.sa <= 0):
+            raise ValueError('Genuine positive supplied angular errors required; no new floor')
+        self.filters = tuple(dict.fromkeys(r['filter'] for r in self.ar))
+        if type(instrument_bias) is not bool:
+            raise ValueError('Explicit boolean sensitivity selection required')
+        self.instrument_bias = instrument_bias
+        self.orientation_basis = None
+        if self.instrument_bias:
+            raise ValueError('Instrument-frame sensitivity must receive separately reviewed source mapping/domain before implementation admission')
+        self.parameter_names = ['t0_offset_days', 'log_tE_days', 'u0_heliocentric', 'angle_source_minus_lens_rad', 'pi_E']
+        self.lower = [2455700. - self.time_origin, np.log(20.), -1., -np.pi, 0.]
+        self.upper = [2455830. - self.time_origin, np.log(2000.), 1., np.pi, 1.]
+        self.scales = [10., .3, .1, 1., .1]
+        for name, group in zip(self.names, self.groups):
+            median = float(np.median(self.yp[group]))
+            self.parameter_names += [name + '_baseline_magnitude', name + '_source_fraction']
+            self.lower += [median - 5., 1e-5]
+            self.upper += [median + 5., 1.]
+            self.scales += [.1, .1]
+        self.noise_start = len(self.parameter_names)
+        self.parameter_names += ['OGLE_logscale_' + str(s) for s in self.seasons]
+        self.parameter_names += ['OGLE_scale_brightness_slope', 'OGLE_scale_seeing_slope', 'OGLE_fraction', 'log_OGLE_tau_days', 'OGLE_seeing_mean_slope_mag']
+        self.lower += [np.log(.5)] * len(self.seasons) + [-.25, -.25, 0., np.log(.05), -.02]
+        self.upper += [np.log(2.)] * len(self.seasons) + [.25, .25, .95, np.log(100.), .02]
+        self.scales += [.2] * len(self.seasons) + [.1, .1, .2, 1., .01]
+        self.lower, self.upper, self.scales = map(readonly, (self.lower, self.upper, self.scales))
+        self.parameter_names = tuple(self.parameter_names)
+        self.linear_names = ('theta_E_mas', 'source_position_N_offset_mas', 'source_position_E_offset_mas', 'relative_source_motion_N_mas_yr', 'relative_source_motion_E_mas_yr', 'relative_frame_source_parallax_mas') + tuple(f + '_offset_' + axis + '_mas' for f in self.filters[1:] for axis in ('N', 'E'))
+        self.linear_bounds = {0: (0., 40.), 5: (-1., 1.)}
+        self._array_pins = {name: sha(getattr(self, name).tobytes()) for name in ('tp', 'yp', 'sp', 'order', 'other_photo', 'seeing', 'zseeing', 'season_index', 'ta', 'weights', 'starts', 'ep', 'ea', 'eref', 'angular_origin', 'ya', 'sa', 'lower', 'upper', 'scales')}
+        self._groups_pins = tuple(sha(group.tobytes()) for group in self.groups)
+        self._rows_sha = sha(packed({'pr': self.pr, 'ar': self.ar}))
+        self._metadata_sha = sha(packed(self._metadata()))
+        self.verify_snapshot()
+
+    def _metadata(self):
+        return {'purpose': self.purpose, 'input_sha256': self.input_sha256,
+                'time_origin': self.time_origin, 'reference': self.reference,
+                'ra': self.ra, 'dec': self.dec, 'names': self.names,
+                'filters': self.filters, 'seasons': self.seasons,
+                'parameter_names': self.parameter_names, 'linear_names': self.linear_names,
+                'photo_ids': self.photo_ids, 'angular_ids': self.angular_ids,
+                'ogle_ordered_ids': self.ogle_ordered_ids, 'noise_start': self.noise_start,
+                'linear_bounds': self.linear_bounds, 'instrument_bias': self.instrument_bias}
+
+    def verify_snapshot(self):
+        if sha(self.raw_document) != self.input_sha256 or sha(packed(self.document)) != self._document_sha:
+            raise ValueError('Frozen dataset snapshot changed')
+        for path, expected in self.source_pins.items():
+            if sha(Path(path).read_bytes()) != expected:
+                raise ValueError('Frozen scientific source changed')
+        for name, expected in self._array_pins.items():
+            arr = getattr(self, name)
+            if arr.flags.writeable or sha(arr.tobytes()) != expected:
+                raise ValueError('Owned scientific array changed: ' + name)
+        if tuple(sha(group.tobytes()) for group in self.groups) != self._groups_pins or any(group.flags.writeable for group in self.groups):
+            raise ValueError('Owned group indices changed')
+        if sha(packed({'pr': self.pr, 'ar': self.ar})) != self._rows_sha or sha(packed(self._metadata())) != self._metadata_sha:
+            raise ValueError('Scientific row/parameter metadata changed')
+        return {'verified': True, 'input_sha256': self.input_sha256, 'source_pins': self.source_pins}
+
+    def average(self, values):
+        weighted = values * self.weights.reshape((-1,) + (1,) * (values.ndim - 1))
+        return np.add.reduceat(weighted, self.starts, axis=0)
+
+    def decode(self, x):
+        return {'t0_jd_tdb': self.time_origin + float(x[0]), 'tE_days': float(np.exp(x[1])), 'u0_heliocentric': float(x[2]), 'angle_source_minus_lens_rad': float(x[3]), 'pi_E': float(x[4])}
+
+    def seeds(self):
+        for k in range(16):
+            x = [2455765. - self.time_origin, np.log(250.), (-1 if k < 8 else 1) * .06, -np.pi + 2 * np.pi * (k % 8) / 8, .1]
+            for name, group in zip(self.names, self.groups):
+                x += [float(np.median(self.yp[group])), .05 if name == 'OGLE' else .95]
+            x += [0.] * len(self.seasons) + [0., 0., .1, np.log(2.), 0.]
+            yield np.asarray(x, dtype=float)
+
+    def evaluate(self, state, *, fixed_mass=None, details=False):
+        mean_provider._reject_booleans(state)
+        if np.asarray(state).dtype.kind not in 'iuf':
+            raise ValueError('Real numeric state required')
+        x = np.asarray(state, dtype=float)
+        if x.shape != self.lower.shape or not np.isfinite(x).all() or np.any(x < self.lower) or np.any(x > self.upper):
+            raise ValueError('Finite state within the exact declared analysis domain required')
+        if fixed_mass is not None and (isinstance(fixed_mass, bool) or not np.isfinite(fixed_mass) or fixed_mass <= 0):
+            raise ValueError('Positive finite fixed mass required')
+        p = self.decode(x)
+        amplitude, da, _, _ = geometry(self.tp, p, self.ep, numerical_time_origin=self.time_origin, t0_offset_days=x[0])
+        mean = np.empty(len(self.tp))
+        derivative = np.zeros((len(self.tp), len(x)))
+        core = np.empty(len(self.tp))
+        for k, group in enumerate(self.groups):
+            mb, fraction = x[5 + 2 * k:7 + 2 * k]
+            blend = 1 + fraction * (amplitude[group] - 1)
+            core[group] = mb - MAG * np.log1p(fraction * (amplitude[group] - 1))
+            derivative[group, :5] = -MAG * fraction * da[group] / blend[:, None]
+            derivative[group, 5 + 2 * k] = 1.
+            derivative[group, 6 + 2 * k] = -MAG * (amplitude[group] - 1) / blend
+        mean[:] = core
+        i, n, order = self.noise_start, len(self.seasons), self.order
+        mean[order] += x[i + n + 4] * self.zseeing
+        residual = self.yp - mean
+        feature = (core[order] - 16.5) / 2.
+        clipped = np.clip(feature, -1., 1.)
+        knots = np.isclose(np.abs(feature), 1., atol=1e-12, rtol=0.)
+        feature_derivative = np.where(np.abs(feature) < 1., .5, 0.)
+        feature_derivative[knots] = .25
+        logscale = x[i:i + n][self.season_index] + x[i + n] * clipped + x[i + n + 1] * self.zseeing
+        scale = self.sp[order] * np.exp(logscale)
+        photo = self.student.student_ou_banded_deviance_score(self.tp[order], residual[order], scale, x[i + n + 2], float(np.exp(x[i + n + 3])), 6., row_ids=self.ogle_ordered_ids)
+        gradient = -photo['residual_score'] @ derivative[order] + (photo['log_scale_score'] * x[i + n] * feature_derivative) @ derivative[order]
+        gradient[i:i + n] = np.bincount(self.season_index, weights=photo['log_scale_score'], minlength=n)
+        gradient[i + n] = photo['log_scale_score'] @ clipped
+        gradient[i + n + 1] = photo['log_scale_score'] @ self.zseeing
+        gradient[i + n + 2] = photo['fraction_score']
+        gradient[i + n + 3] = photo['log_tau_score']
+        gradient[i + n + 4] = -photo['residual_score'] @ self.zseeing
+        others = self.other_photo
+        gaussian_photo = float(np.sum((residual[others] / self.sp[others]) ** 2 + 2 * np.log(self.sp[others]) + np.log(2 * np.pi)))
+        gradient += (-2 * residual[others] / self.sp[others] ** 2) @ derivative[others]
+        _, _, unit, du = geometry(self.ta, p, self.ea, numerical_time_origin=self.time_origin, t0_offset_days=x[0])
+        unit, du = self.average(unit), self.average(du)
+        at = self.average(self.ta[:, None])[:, 0]
+        parallax = -self.average(self.ea - self.eref)
+        columns = [unit.ravel()]
+        for axis in range(2):
+            col = np.zeros((len(self.ar), 2)); col[:, axis] = 1.; columns.append(col.ravel())
+        for axis in range(2):
+            col = np.zeros((len(self.ar), 2)); col[:, axis] = (at - self.reference) / YEAR; columns.append(col.ravel())
+        columns.append(parallax.ravel())
+        for name in self.filters[1:]:
+            mask = np.array([r['filter'] == name for r in self.ar])
+            for axis in range(2):
+                col = np.zeros((len(self.ar), 2)); col[mask, axis] = 1.; columns.append(col.ravel())
+        design = np.column_stack(columns)
+        fixed = {0: KAPPA * fixed_mass * p['pi_E']} if fixed_mass is not None else None
+        profile = mean_provider.profile_mean(design / self.sa[:, None], self.ya / self.sa, self.linear_bounds, fixed=fixed)
+        linear = profile['coefficients']
+        angular_residual = self.ya - design @ linear
+        mean_score = -2 * angular_residual / self.sa ** 2
+        gradient[:5] += np.einsum('ni,nij->j', mean_score.reshape(-1, 2), linear[0] * du)
+        if fixed_mass is not None:
+            gradient[4] += float(mean_score @ (KAPPA * fixed_mass * unit.ravel()))
+        angular_d = profile['quadratic'] + float(np.sum(2 * np.log(self.sa) + np.log(2 * np.pi)))
+        value = float(photo['negative_two_log_density'] + gaussian_photo + angular_d)
+        if not np.isfinite(value) or not np.isfinite(gradient).all():
+            raise FloatingPointError('Unrepresentable normalized likelihood or analytic gradient')
+        result = {'negative_two_log_likelihood': value, 'gradient': gradient, 'feature_knot_source_ids': [self.ogle_ordered_ids[j] for j in np.flatnonzero(knots)], 'linear_profile_identified': profile['linear_parameters_identified'], 'linear_profile_rank': profile['full_column_rank'], 'linear_profile_projected_score': profile['column_normalized_projected_score']}
+        result['input_purpose'] = self.purpose
+        result['measurement_role'] = 'AUTHENTIC2023_OBSERVATIONS' if self.purpose == 'AUTHENTIC2023' else 'SYNTHETIC_MEASUREMENTS_NOT_AUTHENTIC_OBSERVATIONS'
+        if details:
+            parameters = dict(p)
+            parameters.update(dict(zip(self.linear_names, map(float, linear))))
+            parameters['source_position_N_mas'] = float(linear[1] + self.angular_origin[0])
+            parameters['source_position_E_mas'] = float(linear[2] + self.angular_origin[1])
+            parameters['conditional_mass_msun'] = float(linear[0] / (KAPPA * p['pi_E'])) if linear[0] > 0 and p['pi_E'] > 0 else None
+            result.update(parameters=parameters, photometric_predictions_magnitude=mean.tolist(), photometric_residuals_magnitude=residual.tolist(), OGLE_inferred_marginal_scales=scale.tolist(), OGLE_raw_student_innovations=np.asarray(photo['whitened_innovations']).tolist(), OGLE_generative_source_ids=self.ogle_ordered_ids, HST_photometric_gaussian_deviance=gaussian_photo, OGLE_student_deviance=photo['negative_two_log_density'], astrometric_gaussian_deviance=angular_d, astrometric_predictions_NE_mas=(design @ linear).reshape(-1, 2).tolist(), astrometric_prediction_origin_NE_mas=self.angular_origin.tolist(), astrometric_residuals_NE_mas=angular_residual.reshape(-1, 2).tolist(), astrometric_whitened_residuals=(angular_residual / self.sa).tolist(), linear_profile={k: v for k, v in profile.items() if k not in ('coefficients', 'residual')}, accepted_mass_interval=None, accepted_black_hole_interpretation=False, working_covariance='Native supplied positive angular marginal errors; independence is an explicit working assumption, not a supplied complete covariance.', BHSM='One ordinary Einstein/GHY optical exterior with BHSM surface-topography interpretation, counted once; no horizon/core/boundary state measured.')
+        return result

@@ -1,10 +1,15 @@
 # Historical rc2 formal BHSM reviewer integration
 
 The findings and immutable artifacts below describe the preserved rc2
-integration. They do not certify later software or PDFs. The current rc4
-snapshot, 233-test verification and separate inadequate 2023 benchmark are
-documented in [REVIEWER.md](REVIEWER.md), the current source manifest and the
-manuscript/release receipts. Historical release identities remain unchanged.
+integration. They do not certify later software or PDFs. The current RC7
+engineering snapshot is documented in [REVIEWER.md](REVIEWER.md),
+[engineering status](ENGINEERING_STATUS_20261025.md) and the current source
+manifest. Fresh local canonical regression, distribution membership and
+installed export/replay pass; hosted CI is pending and scientific publication
+is held. The current bounded evidence is recorded in the
+[engineering receipt](validation/canonical_engineering_20261025_v1.json).
+The manuscript/release receipts retain their separate historical bindings;
+no reviewed PDF or release identity is replaced by this engineering mirror.
 
 Norman P. Carberry's BHSM repository is the canonical reviewer home. The
 Manuscript-Generation repository records development history. This review
