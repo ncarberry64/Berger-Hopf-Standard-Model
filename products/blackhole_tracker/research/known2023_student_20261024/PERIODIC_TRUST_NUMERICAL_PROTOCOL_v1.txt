@@ -1,0 +1,76 @@
+New numerical-method experiment v1 -- SOURCE PREPARATION ONLY
+
+Neither new numerical controls nor authentic/child likelihoods have run under
+this proposal. Independent source review and root admission precede execution.
+Both completed v2 runs remain byte-exact NUMERICALLY_UNRESOLVED artifacts. No
+threshold is relaxed, no failed mode removed and no physical parameter is chosen
+to match a literature mass. The existing2023 kernel and all17 old source pins
+remain unchanged. No new observation, random draw, error or covariance is made.
+
+Saved diagnosis 2f28026b... identifies an arbitrary angle-seam obstruction in
+four native and three generated-control starts, as well as near-equal objective
+endpoints with full scores above0.02. The latter is consistent with objective-
+relative stopping in ill-conditioned coupled geometry/blending/noise directions;
+it is not proof of a unique minimum or of physical identifiability. This proposal
+addresses coordinates and local numerical stopping only, using the same law.
+
+Keep the original16 angle/sign seeds exactly. For each start set a chart center
+equal to its ORIGINAL seed angle. Optimize delta_angle in[-pi,pi], initially0,
+with physical angle=math.remainder(center+delta_angle,2pi). This full2pi chart
+covers the same physical circle. All other coordinates/domains/scales remain
+exactly the original kernel's. Score chain derivative for delta equals the
+physical angle derivative; angle is NEVER one-sided projected. Arbitrary chart
+or canonical seams are not physical confidence limits. All charts/modes remain.
+
+The existing three fixed SciPy phases run in that chart. Every seed then receives
+one fixed gradient-based trust-Newton polish, irrespective of its fit/mass/score.
+The source derives from previously reviewed R/numeric_polish_review_pending/
+bounded_polish.py. Only a fixed scaled-infinity step limit1 is added: uniformly
+shorten the Newton direction if needed, preserving its descent direction. No
+ridge, Hessian pseudoinverse, covariance floor, noise change or clipped physical
+confidence domain is substituted. A nonpositive free Hessian is explicitly
+unresolved; it is not forced positive or silently treated as a minimum.
+
+Polish:16 iterations maximum, full projected score tolerance0.02 unchanged,
+finite-difference gradient step1e-4 in scaled local additive-anchor coordinates,
+actual representable central or one-sided steps, symmetric free Hessian,
+Cholesky solve; fixed scaled trust step<=1; first-box-face shortening and at most
+40 Armijo/tie backtracks. A floating objective tie is accepted only within
+32*eps*max(1,abs(fullobjective)) AND with a strictly smaller projected score.
+All objective/gradient evaluations, Hessian/FD/step/line-search diagnostics and
+failures are retained. This is a numerical tie rule, not a probability threshold.
+
+During local polish the angle lift is an unbounded numerical covering coordinate
+of the same angular circle, so it cannot be falsely projected at a chart edge.
+The fixed step<=1 and16 iterations bound actual lift travel to16rad from its
+finite starting delta, while physical evaluations are canonicalized into the
+unchanged kernel's[-pi,pi] representation. Nonperiodic bounds remain unchanged.
+This does not enlarge any physical prior/domain or create a physical angle cap.
+
+The existing100s/start,1740s/worker,1800s/supervisor and256MiB latched journal
+budgets remain. All64 potential endpoints (4phases times16starts) and all16
+terminals remain. Every source/array/journal guard is retained. Numerical point
+resolution still requires an eligible endpoint from every start, exact full
+linear rank, no feature knot, full score<=0.02 and no known feasible lower trial.
+No global-optimality or identifiability certificate is inferred from this test.
+
+Before any new native/child call,12 fixed wholly invented controls are proposed:
+all16 seed-circle mappings; derivative continuity across canonical seams; escape
+from an old arbitrary seam in a cosine objective; unchanged nonangular domain;
+independent ill-conditioned quadratic optimum; additive objective-constant
+invariance; native origin/units invariance; exact active face; negative-curvature
+unresolved status; flat-score nonidentification; invalid callback/trust budget;
+fixed trust displacement bound. These call no observational model/provider.
+An independent source gate/root admission must precede even these new controls.
+
+After successful controls and separate root receipts, run ONE fresh native and
+ONE fresh control point experiment with v3. Reuse the already generated frozen
+daughter6d22dbda... and declared seed/truth; generate no new noise or dataset.
+Both retain all earlier v2 failures. No automatic retry, profile or bootstrap.
+All accepted mass intervals remain null and known-BH recovery false until later
+independent adequacy, calibration, uncertainty and lens-identity conditions pass.
+
+Known native brightness-scale slope/domain contact and some tau contacts remain
+scientific limitations; changing a numerical chart cannot resolve those. Same
+conditional Gaussian angular assumptions, clocks, equal exposure weights,
+Student refitted-reference requirement and BHSM one-exterior interpretation hold.

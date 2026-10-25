@@ -1,0 +1,82 @@
+BHSM BLACK HOLE TRACKER — INDEPENDENT REVIEW EVIDENCE
+22 October 2026
+
+Pinned formal repository:
+https://github.com/ncarberry64/Berger-Hopf-Standard-Model
+Commit: 2fb1eeac19337d59de72ef1d0493dd3e2f0eae69
+Product directory: products/blackhole_tracker
+Reviewed release: bhsm-blackhole-tracker 0.2.0rc2
+
+PURPOSE
+
+These are small, synthetic reproductions of three software findings, not
+observational evidence or physical validation of BHSM. No repository files
+are modified. The profile probe temporarily wraps the optimizer in its own
+process to record returned optima, without changing the objective or solver.
+
+The three recorded JSON files in evidence/ are the original review results.
+Their absolute source paths record the review environment; they are not paths
+the portable scripts need. Reruns write separate JSON files by default.
+
+SETUP
+
+Use an activated Python 3.11+ environment. Install the reviewed wheel, obtained
+with the reviewed product release, rather than a different checkout:
+
+  python -m pip install "/path/to/bhsm_blackhole_tracker-0.2.0rc2-py3-none-any.whl"
+  python -B -c "import bhtracker; print(bhtracker.__version__); print(bhtracker.__file__)"
+
+Confirm version 0.2.0rc2 and that the import points into the installed
+environment. Run the commands below from this review packet's root directory,
+away from a source checkout that could shadow the installed package. Do not
+set PYTHONPATH to the product source when testing the wheel.
+
+Only the coordinate-domain probe needs the product source fixture. Unpack
+BHSM_Blackhole_Tracker_Product.zip and use its product/ directory, or use
+products/blackhole_tracker from the pinned formal commit above. The supplied
+directory must contain tests/test_inference_contract.py. Its independent SI
+point-lens fixture is extracted without importing pytest or running the suite.
+
+RUN
+
+  python -B evidence/repro_coordinate_domain.py --product-source "/path/to/product" --output rerun/coordinate_domain.json
+  python -B evidence/repro_null_motion_covariance.py --output rerun/null_motion_covariance.json
+  python -B evidence/profile_admission_repro.py --output rerun/profile_admission.json
+
+Instead of --product-source, the first command also accepts the environment
+variable BHSM_PRODUCT_SOURCE containing that same product directory path.
+All three scripts accept --help and create the output parent directory.
+
+EXPECTED FINDINGS IN THE REVIEWED RELEASE
+
+1. coordinate_domain.json: the exact 10-solar-mass control is TRACKED. Changing
+   only the reference epoch from 2026 to 2000, or the numerical reference mass
+   from 7 to 0.001, yields FIT_REJECTED. The physical truth still passes public
+   forward admission and reproduces the same measurements. Changing the
+   numerical reference mass to 100000 restores the supported fit. The fixed
+   physical worldtube, measurements and covariance are unchanged throughout.
+
+2. null_motion_covariance.json: all rows lie at the reference epoch. Distinct
+   admitted proper motions yield identical predictions. The fit reports null
+   motion standard errors and an unidentified-motion mask, but still exports
+   a finite, almost-zero proper_motion_covariance from its pseudoinverse.
+
+3. profile_admission.json: the fitted baseline is TRACKED and physically
+   admitted under the deliberately tight supplied weak-field budget. Several
+   converged profile optima, including points near delta-chi-squared 1 and 4,
+   fail that same physical-admission check. The public profile does not flag
+   or exclude them. The script's assertions verify this condition.
+
+The recorded review used Python 3.12.14, NumPy 2.3.5 and SciPy 1.17.0. Numerical
+rounding and tiny pseudoinverse remnants can differ across platforms. Compare
+the stated invariants and statuses, not bit-for-bit JSON equality. A corrected
+future version should cease reproducing these findings; the profile script's
+assertion will then require interpretation in that context.
+
+PORTABILITY ADAPTATIONS
+
+The numerical logic is unchanged. Only fixture/package discovery, command-line
+output locations, source-path provenance and explanatory usage text were
+adapted. The coordinate probe accepts an explicit source-fixture directory;
+the other probes import the installed package normally. The original recorded
+JSON files were copied without modification.

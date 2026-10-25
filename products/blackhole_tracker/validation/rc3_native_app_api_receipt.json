@@ -1,0 +1,54 @@
+{
+  "scope": "Local native unresolved-photometry UI/API; source tests use clearly labelled independent synthetic PSPL injection, not pilot/discovery evidence.",
+  "files": {
+    "bhtracker/server.py": "82e205faaceb9d9c44fce03dd90ce953e54636c3f0f96bb472416c7b2cda1470",
+    "bhtracker/web/index.html": "1226c0c3aa422d16c053ffa7cac8fbe955d0a8ba443206c48e83638e9ad7ab52",
+    "bhtracker/web/app.js": "131c41cb48c3118317fc53a894859761ae03796aa5a35cce70f2559e68f15cea",
+    "bhtracker/web/photometry.html": "1838c4d3d90cc986302cd73f4942f0de76bd16bfb6868ba5a5badbc750043e11",
+    "bhtracker/web/photometry.js": "4b374054b2d6eaa8992bfa3e6ee4ccf14e7f42f69ddfb607b621825badb559ff",
+    "bhtracker/web/style.css": "1d1b092b6d852ace80c29915beb54f83518d59a2eae685b893cbbb987c90962f",
+    "tests/test_photometry_app.py": "5a44672296cf207f4be0cb530b18434efa7f5dad947d2e78c2173fa34834658f"
+  },
+  "verification": {
+    "passed": 9,
+    "failed": 0,
+    "skipped": 0,
+    "seconds": 6.45,
+    "junit": "../after/photometry_app_tests.xml",
+    "checks": [
+      "GET /photometry, /photometry/, /photometry.js and resolved-workspace link",
+      "native-byte base64 OGLE import with source SHA/native row/time preservation",
+      "versioned unresolved JSON validation",
+      "actual asynchronous 180-row PSPL fit recovers independent72-day injection",
+      "four separate convergence/admission/adequacy/identifiability outputs and massunresolved contract",
+      "generic HTML report and complete export ZIP",
+      "actual replay preserves rows and predictions within0.001 suppliedsigma",
+      "literal OGLE source annotation plus chronology/duplicates preserved",
+      "2022 benchmark native absoluteHJD origin0 retained and limitedclockassumption recorded",
+      "malformedbase64/native row/unsupportedHSTupload/duplicatedJSON schema rejected",
+      "duplicateactivejob prevents duplicate work under sharedguard",
+      "old resolved app fullflow remains passing"
+    ],
+    "javascript_syntax": "Node24 --check PASS for bothapp.js andphotometry.js",
+    "hygiene": "git diff --check PASS"
+  },
+  "limits": {
+    "existing_resolved_file_bytes": 8000000,
+    "unresolved_JSON_bytes": 32000000,
+    "combined_native_bytes_before_base64": 24000000,
+    "all_request_JSON_bytes": 40000000,
+    "shared_max_inmemory_jobs": 64,
+    "worker_count": 1
+  },
+  "actual_benchmark_ingestion_capacity": {
+    "rows": 61585,
+    "default_JSON_bytes": 22635692,
+    "pretty_JSON_bytes": 26577602,
+    "new_limit_bytes": 32000000,
+    "note": "Byte-size/schema capacity check, not a new scientific benchmark fit."
+  },
+  "correlation_contract": "Resolvedapp uses onlyphysical_parameter_uncertainty.v2 reporting covariance/names/nullmask; legacy internalcovariance is explicitly hidden.",
+  "profile_consumer_review": "No profile curve endpoint or profile UI exists in server/web. No Number(null) likelihood conversion or crossing construction in these consumers.",
+  "browser_verification": "Root owns actual installed-wheel browser walkthrough; not claimed by these API tests.",
+  "scientific_scope": "BHSM onepotentialonce explicit. tE alone is notmass; mass/distance/absolutePM/thetaE/piE/horizon/core remain unavailable. No discovery probability or followupscore assigned byUI."
+}

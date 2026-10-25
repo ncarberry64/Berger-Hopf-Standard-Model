@@ -30,6 +30,10 @@ DOI = "10.5281/zenodo.20663419"
 ZENODO_ARCHIVE_VERSION = "v1.2.0"
 ZENODO_ARCHIVE_DATE = "2026-06-12"
 LICENSE_ID = "LicenseRef-AllRightsReserved"
+ARCHIVAL_LICENSE_URL = (
+    REPOSITORY
+    + "/blob/186e2f6ea8ea46bcd7936c3cb6d15d0d6e05b966/LICENSE.md"
+)
 CITATION_TITLE = (
     "Berger-Hopf Standard Model: "
     "Artifact-Backed Geometric Physics Research Framework"
@@ -223,6 +227,47 @@ def parse_cff_top_level() -> dict[str, str]:
     return values
 
 
+def citation_author_matches() -> bool:
+    """Check the sole declared person's structured CFF identity, offline."""
+    authors: list[dict[str, str]] = []
+    in_authors = False
+    for line in read_text("CITATION.cff").splitlines():
+        if line == "authors:":
+            in_authors = True
+            continue
+        if not in_authors:
+            continue
+        if line and not line[0].isspace():
+            break
+        first = re.match(r"^\s+-\s+([a-z][a-z0-9-]*):\s*(.*)$", line)
+        field = first or re.match(r"^\s+([a-z][a-z0-9-]*):\s*(.*)$", line)
+        if not field:
+            continue
+        if first:
+            authors.append({})
+        if not authors:
+            return False
+        if field.group(1) in authors[-1]:
+            return False
+        value = field.group(2).strip()
+        if len(value) >= 2 and value[0] == value[-1] and value[0] in "\"'":
+            value = value[1:-1]
+        authors[-1][field.group(1)] = value
+    return len(authors) == 1 and all(
+        authors[0].get(key) == expected
+        for key, expected in {
+            "family-names": "Carberry",
+            "given-names": "Norman P.",
+            "orcid": "https://orcid.org/0009-0000-6650-3485",
+        }.items()
+    )
+
+
+def citation_license_matches(cff: dict[str, str]) -> bool:
+    """CFF 1.2 custom terms use the exact archival notice URL, not SPDX text."""
+    return cff.get("license-url") == ARCHIVAL_LICENSE_URL and "license" not in cff
+
+
 def check_required_files() -> dict:
     missing = [
         relative for relative in REQUIRED_PUBLIC_FILES if not (ROOT / relative).is_file()
@@ -317,11 +362,13 @@ def check_citation() -> dict:
         "version": LATEST_RELEASE_TAG,
         "date-released": LATEST_RELEASE_DATE,
         "repository-code": REPOSITORY,
-        "license": LICENSE_ID,
+        "license-url": ARCHIVAL_LICENSE_URL,
     }
     for key, expected in expected_cff.items():
         if cff.get(key) != expected:
             failures.append(f"CITATION.cff:{key}")
+    if not citation_license_matches(cff):
+        failures.append("CITATION.cff:custom_license_notice")
     if zenodo.get("title") != CITATION_TITLE:
         failures.append(".zenodo.json:title")
     if zenodo.get("version") != LATEST_RELEASE_TAG:
@@ -334,7 +381,7 @@ def check_citation() -> dict:
         failures.append(".zenodo.json:creator_orcid")
     if cff_dois != {DOI} or zenodo_dois != {DOI}:
         failures.append("doi_consistency")
-    if "Norman P. Carberry" not in read_text("CITATION.cff"):
+    if not citation_author_matches():
         failures.append("CITATION.cff:author")
     return {
         "passed": not failures,
@@ -344,7 +391,8 @@ def check_citation() -> dict:
         "release_tag": cff.get("version"),
         "release_date": cff.get("date-released"),
         "doi": DOI,
-        "license": cff.get("license"),
+        "license": LICENSE_ID if citation_license_matches(cff) else None,
+        "license_url": cff.get("license-url"),
         "zenodo_archive_version": ZENODO_ARCHIVE_VERSION,
         "zenodo_archive_date": ZENODO_ARCHIVE_DATE,
     }
@@ -359,7 +407,7 @@ def check_license_visibility() -> dict:
         failures.append("README license link")
     if "[LICENSE.md](../LICENSE.md)" not in handoff:
         failures.append("handoff license link")
-    if cff.get("license") != LICENSE_ID:
+    if not citation_license_matches(cff):
         failures.append("CFF license")
     return {"passed": not failures, "failures": failures}
 

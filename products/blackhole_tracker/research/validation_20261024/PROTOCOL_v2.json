@@ -1,0 +1,213 @@
+{
+  "schema": "bhsm.photometry_v2.prospective_primary4_protocol.v1",
+  "purpose": "PRIMARY4_FRESH_INDEPENDENT_CONFIRMATION",
+  "primary": {
+    "datasets_per_cadence": 2048,
+    "cadences": 2,
+    "outer_datasets": 4096,
+    "parameters": [
+      "tE_days",
+      "u0"
+    ],
+    "metrics": 4,
+    "ordinate_tests": 8192,
+    "confidence_level": 0.95,
+    "all_planned_denominators": true,
+    "primary_success": "available AND INCLUDED; numerical failures/unavailable/unattempted are misses, never denominator deletions",
+    "completion": "Every planned ordinate must be processed; budget/source/storage/unauditable/unattempted cases force NOT_COMPLETED and no gate passage.",
+    "availability": "All decisive and all processed counts separately reported. Numerical unknowns count as misses; no outer-set retention is substituted into the primary count.",
+    "simultaneous_CP": {
+      "family_confidence": 0.99,
+      "metrics": 4,
+      "tail_probability_per_metric": 0.00125,
+      "required_interval_inside": [
+        0.92,
+        0.98
+      ],
+      "exact_prespecified_pass_included_count": [
+        1921,
+        1986
+      ],
+      "decision": "Exact integer CP-only1921..1986; combined with unchanged old gross gate1921..1979. Floating quantiles/p-values displayed; exact combined count rule determines gate.",
+      "planning_sha256": "8afd07951d9d4e021a542e065c89b063904bd27bca3414e6fa8467f106aef625"
+    },
+    "old_gross_gate": {
+      "two_sided_alpha": 0.00035714285714285714,
+      "unchanged": true,
+      "purpose": "Retained alongside new primary-four precision gate; old28 procedure results remain historical."
+    },
+    "combined_exact_gate_inclusion_count": [
+      1921,
+      1979
+    ],
+    "independent_exact_planning_sha256": "60f5cbc355b94748fc52540c6835950e7822e2849054e5cd789f080fd2312250"
+  },
+  "truths": [
+    {
+      "t0": 3155.835691,
+      "tE_days": 200.0,
+      "u0": 0.3,
+      "source_fraction": 0.65,
+      "baseline_magnitude": 18.0
+    },
+    {
+      "t0": 2727.69093,
+      "tE_days": 25.0,
+      "u0": 0.3,
+      "source_fraction": 0.65,
+      "baseline_magnitude": 18.0
+    }
+  ],
+  "truth_separation": "Only generator receives full truths. Fitter sees synthetic rows, original time/error context and tested null ordinate; never truth nuisance/initialization.",
+  "entropy": {
+    "prefix": [
+      20261025,
+      1346917938
+    ],
+    "reserved_confirmation_stage": 3,
+    "outer": "prefix+[3,0,cadence,replicate]",
+    "bootstrap": "prefix+[3,1,cadence,replicate,parameter_index], then API parameter/ordinate hash and fixed slot",
+    "development_streams": "Old pilots stages0/1 and SAME532 replays stay immutable; no confirmation draw has occurred at preparation.",
+    "retuning": "No method/threshold/seed/selection change after confirmation opens; all failures retained. New development after failure requires a distinct future confirmatory stream."
+  },
+  "inference": {
+    "slots": 199,
+    "confidence_level": 0.95,
+    "starts": 12,
+    "max_nfev": 1500,
+    "noise_scale": 1.0,
+    "lazy": true,
+    "search_method": "NULL12_FREE1",
+    "seed_policy": "NULL_RAW_PEAK_WIDTH12_V1"
+  },
+  "law_and_scope": {
+    "observations": "Unchanged independent Gaussian native apparent magnitudes with unchanged original supplied errors; no error rescaling.",
+    "optics": "Unchanged rectilinear image-summed PSPL; exactly one optical exterior in BHSM surface interpretation.",
+    "statistic": "Fixed finite-search LR-like algorithm applied identically observed and bootstrap. No global optimum certificate.",
+    "null_generation": "Constrained-null fitted nuisance, not unrestricted MLE; estimated-nuisance bootstrap remains approximate.",
+    "simple_null": "Exact rank exchangeability applies only to a fully specified same-law null/fixed measurable algorithm, not automatically to plug-in nuisance.",
+    "physical_bounds": "All original t0/tE/u0/baseline/source-fraction bounds and active physical blend faces retained.",
+    "lower_unresolved": "A lower finite unresolved feasible trial vetoes a selected higher resolved state; unknown ordering stays unknown.",
+    "rank": "Fixed B199 roster; p bounds[(1+c)/200,(1+c+unknown)/200]; reject p_upper<=.05, include p_lower>.05; lazy inclusion c>=10.",
+    "mass_distance_theta_motion": "All unavailable. Timescale is not BH mass/distance/absolute motion."
+  },
+  "resources": {
+    "max_workers": 4,
+    "BLAS_threads_per_worker": 1,
+    "whole_campaign_wall_seconds": 64800,
+    "per_ordinate_wall_seconds": 600,
+    "logical_database_bytes_per_worker": 8589934592,
+    "whole_output_bytes_including_sidecars": 51539607552,
+    "planning": "Saved raw replay rates .04377s/P0 and .17857s/P1 profile,~40 MC slots yields~2.6h at4 balanced workers plus I/O; full199 theoretical~13h plus I/O.18h supervised cap is deliberately ample, not a guaranteed duration.",
+    "qualification": "Deadline/storage checks are cooperative between stages; supervisor terminates children at whole limit. OS I/O and final read-only integrity/reporting can exceed the polling point; actual elapsed and any overshoot retained. Logical DB caps exclude sidecars; whole-tree cap includes all DB/journals/logs/receipts.",
+    "automatic_retries": 0,
+    "fallback_to_old_method": false,
+    "confirmation_outcomes_never_used_to_shrink_N": true,
+    "vanished_sidecars": "Cooperative size scan ignores only FileNotFoundError for a sidecar removed during the snapshot; other IO errors remain failures."
+  },
+  "scheduling": "Cases ordered replicate then cadence0/1; worker=(replicate+2*cadence)%4 gives each worker512 datasets of each cadence, independent of outcomes.",
+  "storage": {
+    "per_worker": "One exclusively owned SQLite DELETE/FULL database; exactly fixed test roster; no overwrite/replacement.",
+    "before_outer_draw": "Both parameter requests and all199 seeds commit before outer RNG. Any request failure stops every later draw/fit.",
+    "outer": "Store generated magnitudes, state/seed/hash and row identity once per dataset, referring to frozen original sampling parent; no repeated native observations.",
+    "observed": "OBSERVED_PROFILE commits before any bootstrap generation; callback failure permanently latches the procedure.",
+    "bootstrap": "Compact magnitudes/hash/seed/row identity commit before fit; full fitted result commits before counting comparison. Every failed/unattempted slot remains unknown.",
+    "final": "Full ordinal result then identity summary; all8192 initial and final identities retained before aggregate reporting.",
+    "failure": "Writer and worker permanent latch; supervisor stops other workers after a failed worker. No automatic replay/recovery/model calls. Raw DB+sidecars preserved; unauditable shard counts as misses.",
+    "sealing": "Integrity/completeness only, never statistical acceptance; read-only hashes/CRC/canonical payloads checked before inclusion.",
+    "final_worker_acceptance": "PASS requires all4actualprocess exitcodes0; exact successful completion receipts with correcttypedworker/planned/completed counts, no stop/sourcechange, databasepin and freshverification equal; each database must be verified sealed and complete. Missing/nonzero/unsealed/ackfailure retains allstoredfinaldecisions but everyaffected primary row is an auditmiss and fullstudy cannotPASS. Last/all-process failures and limits are checked after monitoring exits too.",
+    "stop_persistence": "Terminate every live child before best-effort STOP_REQUEST persistence; retain persistence errors and all remaining unknowns, then boundedwait/kill/finalidentityaccounting. A stop-file failure cannot permit more model work or PASS."
+  },
+  "preselected_followup_audits": {
+    "execution": "Separate exact source/receipt admission after primary terminal; IDs fixed NOW, not selected by result.",
+    "endpoint_grid_cases": [
+      {
+        "cadence": 0,
+        "replicate": 0
+      },
+      {
+        "cadence": 0,
+        "replicate": 511
+      },
+      {
+        "cadence": 0,
+        "replicate": 1023
+      },
+      {
+        "cadence": 0,
+        "replicate": 2047
+      },
+      {
+        "cadence": 1,
+        "replicate": 0
+      },
+      {
+        "cadence": 1,
+        "replicate": 511
+      },
+      {
+        "cadence": 1,
+        "replicate": 1023
+      },
+      {
+        "cadence": 1,
+        "replicate": 2047
+      }
+    ],
+    "grid": "For each parameter,17 logarithmic nodes across unchanged full numerical domain, plus the tested original truth ordinate if absent. Same B199/null method; all failed/unknown/gap/cap states preserved.",
+    "endpoint_claim": "Sampled-grid topology/decision audit only; no continuous finite endpoints, no exclusion between grid points, no cap-derived confidence limit. Any stronger endpoint claim stays unavailable.",
+    "stress_cases": [
+      {
+        "cadence": 0,
+        "source_fraction": 1.0,
+        "replicate": 0
+      },
+      {
+        "cadence": 0,
+        "source_fraction": 1.0,
+        "replicate": 1
+      },
+      {
+        "cadence": 0,
+        "source_fraction": 0.2,
+        "replicate": 0
+      },
+      {
+        "cadence": 0,
+        "source_fraction": 0.2,
+        "replicate": 1
+      },
+      {
+        "cadence": 1,
+        "source_fraction": 1.0,
+        "replicate": 0
+      },
+      {
+        "cadence": 1,
+        "source_fraction": 1.0,
+        "replicate": 1
+      },
+      {
+        "cadence": 1,
+        "source_fraction": 0.2,
+        "replicate": 0
+      },
+      {
+        "cadence": 1,
+        "source_fraction": 0.2,
+        "replicate": 1
+      }
+    ],
+    "stress_entropy": "prefix+[4,0,cadence,fraction_index,replicate]; disjoint from primary3, frozen future stress source before draws.",
+    "stress_scope": "8 datasets/16 tests are exploratory boundary/weak-blend engineering diagnostics, not powered95% calibration or primary-family gate; no advertised stress-domain calibration.",
+    "no_hidden_selection": "No case replacement, strongest-target ranking or failure exclusion."
+  },
+  "history": {
+    "old_Wald_tE": "510/512 P1 overcoverage, retained",
+    "old_Wald_u0": "461/512 P1 undercoverage, retained",
+    "old_Wilks_tE_truth_membership": "504/512 P1 overcoverage, retained",
+    "new_method": "Replacement inference procedure; no rewriting old results or pretending old tests passed."
+  },
+  "claim_if_pass": "Conditional tested-design coverage for the new MC ordinate procedure only. No known-BH recovery, gravitational-origin validation, full continuous confidence interval or publication clearance follows automatically.",
+  "publication_hold_cleared": false
+}

@@ -26,16 +26,25 @@
   throughout the interactive input range. The 2015–2025 display speed, reverse
   replay and enlarged center inset are presentation choices, not physical time
   evolution. No drawn circle identifies a physical surface or horizon.
-- `public/research/blackhole-tracker/` redistributes the exact already reviewed
-  0.2.0rc2 portable product ZIP and wheel, with both canonical license notices.
+- The current `public/research/blackhole-tracker/` downloads are the corrected
+  0.2.0rc3 portable product and wheel, with both canonical license notices.
   `DISTRIBUTION.json` records the byte counts, SHA-256 hashes, source revision,
   paper revision and local installation instructions. The downloaded Python
   product performs fitting/export/replay locally; the Museum provides no
   measurement upload or hosted inference. Tests unpack both artifacts, verify
-  their fixed reviewed hashes and preserve all 108 original product files.
-  The manuscript links are pinned to formal review revision
-  `1fd11510cd217218d6b230cb50516776eb746e1a`; the development workspace is not
-  presented as the reviewer authority.
+  all manifest source hashes. Current product/manuscript pins are recorded in
+  `DISTRIBUTION.json`; the development workspace is not the reviewer authority.
+  Historical 0.2.0rc2 bytes, its 108-file source manifest and original code/paper
+  pins remain unchanged in `history/0.2.0rc2/` and at their earlier public paths.
+  The synthetic animation fixture retains its independent earlier source pin.
+- `public/research/blackhole-tracker/pilot-20261022-v1/` contains the real
+  100-event result table, qualified ranking, frozen protocol, summary, two
+  derived residual plots and `PILOT_PROVENANCE.json` with actual file hashes.
+  These are distinct from the synthetic animation and contain no native
+  per-point observation tables. All 76,344 measurements were processed, 89
+  baseline model/noise screens were inadequate and 11 passed chi-square.
+  The two historical archival follow-up targets retain `MASS_UNRESOLVED`;
+  no new black-hole interpretation or BHSM-specific mechanism is established.
 
 - The five supplementary sandbox panels use the ten complete numerical pairs
   and four qualitative sentinels in

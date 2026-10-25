@@ -1,0 +1,35 @@
+# Resolved inference and profile contract v2
+
+This correction retains the ordinary compact-lens likelihood and its BHSM Einstein/GHY interpretation. The optical mass contributes once. The synthetic regression examples below do not identify an observed black hole or validate nongeometric core or envelope hypotheses.
+
+## Numerical coordinates and physical bounds
+
+The optimizer center is defined at the mean supplied observation epoch. Its angular scale is the median observed primary-image half-separation; its mass scale is the ordinary point-lens identity initialization from the unchanged observations. Neither scale depends on `analysis.reference_mass_msun` or the user reporting epoch. Center and source coordinates are unbounded numerical coordinates: there are no hidden finite positional boxes. The supplied mass bounds, conservative quasistatic motion square and public forward-model admission conditions still apply.
+
+`center_mas` always refers to the original user reporting epoch. Its full differential includes `center_report = center_optimization + (report_epoch - optimization_epoch) * proper_motion`, including the center-motion covariance cross terms and transformed null directions. Input observations, covariance, row order, reporting epoch and input hash are preserved; the fit does not rewrite the dataset.
+
+`model.parameter_basis` and `_internal.basis` use `bhtracker.resolved_parameter_basis.v2`. They persist the optimization/reporting epochs, origin, angular/time/mass scales and compact coefficient basis. An old result without matching basis metadata cannot be profiled as v2: the API explicitly requests a refit of its preserved input. Historical files remain historical, rather than being silently reinterpreted in the new coordinate system.
+
+When `r0_pc` is omitted, v2 uses `0.001 * median observed primary-image half-separation`, converted to pc at the supplied lens distance. This is an explicit data-scale convention, independent of the numerical reference mass, and is not a measured surface or a selected physical skin. Supply `r0_pc` to declare a particular physical worldtube. The old reference-Einstein-radius fallback is not silently replayed as v2. Near alignment is tested relative to the actual fitted mass Einstein radius, not the numerical reference mass.
+
+## Compact quadrupole convention
+
+Public `compact_quad` retains the previous potential convention: its two dimensionless coefficients multiply the ordinary inverse-radius-squared harmonics in the computational reference lens coordinates. The associated physical angular coefficient is `Q = compact_quad * theta_reference_mas**4`. Thus the same physical quadrupole at a different reference mass has `compact_quad_new = compact_quad_old * (reference_mass_old / reference_mass_new)**2`.
+
+The physical bound basis is separately declared by positive `analysis.compact_quad_reference_mass_msun`; when absent it defaults to the data-derived physical initialization mass, independent of the computational reference mass. Internal coefficients each lie in `[-0.01, 0.01]` at that fixed physical basis. Decode converts them to the public computational convention. Bounds, encode/decode and the full reporting covariance use that same conversion, which is persisted in basis metadata. This changes the old default bound policy intentionally; use an explicit compact bound basis to preserve a chosen historical physical prior. It does not rename the numerical reference coefficient as a measured surface deformation.
+
+## Unidentified uncertainties
+
+`proper_motion_covariance` is a finite 2-by-2 ordinary covariance only when both components are locally identifiable. Otherwise the whole block is JSON `null`. Low motion significance alone does not cause a null block: a weak but identifiable control retains its finite covariance.
+
+`physical_parameter_uncertainty` uses `bhtracker.reporting_covariance.v2`. It contains all reporting-coordinate covariance cross terms. Entries involving an unidentified quantity are null. The transformed null tangent columns and internal-to-reporting Jacobian are retained. `_internal.covariance` is explicitly an identified-subspace generalized inverse, not an ordinary covariance for unidentified directions. A reporting-epoch change cannot turn a null motion direction into precise reporting-center information. Track uncertainty at an actually observed common epoch can remain identified even when the separated center and motion are not.
+
+## Constrained nuisance profiles
+
+`profile` uses `bhtracker.physical_profile.v2`. It first solves the nuisance likelihood without active inequalities, then actually reoptimizes nuisance states with SLSQP physical constraints when the optimum is inadmissible. The ordinary conditions include physical weak-field impact, motion and worldtube limits. Conditional R1 additionally uses the actual matching provenance and its worldtube metric, characteristic motion, intrinsic evolution, background drift, spatial gradient and retained-state conditions. Every accepted candidate receives a public forward admission check. These are local searches, not proofs of global optimum or infeasibility.
+
+Points distinguish `ADMITTED_INTERIOR`, `ADMITTED_BOUNDARY`, `NUMERICAL_FAILURE` and `PHYSICAL_DOMAIN_UNRESOLVED`. Admitted states include their nuisance parameters, continuous admission margins and whether a constrained search was required. The boundary label uses a recorded numerical margin tolerance; it does not relax any physical cap. Search failure never establishes that no feasible nuisance state exists. Such points have null `chi2` and `delta_chi2` for physical interval use, and `physical_interval_eligible=false`. Their unconstrained diagnostic objective remains separately labeled.
+
+The reference likelihood minimum is admitted and adequately solved; invalid or unresolved points cannot supply it. Only eligible points may enter an interval crossing, and unresolved points break a crossing bracket. Physical truncation, optimizer convergence and admission are separate fields. Reference delta-chi-square values 1 and 3.841 do not by themselves establish calibrated coverage at boundaries or in nonregular or unidentified cases.
+
+Finite-difference verification retains the historical fixture bytes and the original physical prediction, mass and admission assertions. Four independently coded symmetric derivative steps (`1e-6`, `2e-6`, `4e-6`, `8e-6` in the stable internal basis) gave a mass-standard-error relative spread of `6.62e-11` and motion-covariance relative variation up to `5.32e-10` on the reviewed nearby-motion control. The historical `2e-11` local-covariance comparison was below that measured numerical resolution after changing derivative coordinates. Only that historical local uncertainty/covariance comparison uses a separately checked `1e-9` relative tolerance. This is not a relaxation of the supplied measurement covariance, physical caps, likelihood criterion, prediction accuracy or mass-recovery criterion, and it is not a coverage claim.

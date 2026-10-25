@@ -1,0 +1,24 @@
+include LICENSE.md ACADEMIC_USE.md CITATION.cff PACKAGING_AND_CITATION.md
+include *.md
+include Start_Blackhole_Tracker*.cmd
+recursive-include docs *.md
+recursive-include validation *.md
+include validation/product_calibration_receipt.json
+recursive-include validation/rc7 *.json *.md *.txt *.xml *.csv *.gz
+recursive-include notebooks *.ipynb
+recursive-include examples *.json *.csv *.zip *.md
+recursive-include scripts *.py *.mjs
+recursive-include research *.py *.json *.jsonl *.txt *.log *.md
+recursive-include tests *.py *.py.txt *.json *.js
+
+# Source/metadata only: original observation archives stay in their own records.
+recursive-exclude research *.csv *.tsv *.fits *.fit *.fz *.zip *.tar *.xz *.gz *.part* *.h5 *.hdf5 *.parquet *.feather
+prune research/raw
+prune research/raw_data
+prune research/native_observations
+prune research/observations
+prune build
+prune dist
+prune .pytest_cache
+global-exclude *.py[cod]
+global-exclude __pycache__/*

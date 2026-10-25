@@ -38,6 +38,12 @@ def prepare(output):
                      for path in (PAPER/folder).rglob('*')
                      if path.is_file() and path.suffix.lower() in {'.tex', '.bib', '.bbl', '.pdf', '.png', '.jpg', '.jpeg', '.eps'}
                      and path != pdf)
+    # The separate joint audit owns this byte-pinned figure; keep its relative
+    # path so the focused journal archive compiles without the reviewer tree.
+    joint_figure = PAPER/'joint_known_system_20261022/joint_noise_diagnostics.png'
+    if not joint_figure.is_file():
+        raise ValueError('The joint manuscript diagnostic figure is missing')
+    members = sorted(set(members + [joint_figure]))
     if not members or PAPER/'manuscript/main.tex' not in members:
         raise ValueError('Complete LaTeX sources are required')
     if sum(path.stat().st_size for path in members)+pdf.stat().st_size > 120_000_000:

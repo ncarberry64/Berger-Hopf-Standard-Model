@@ -1,0 +1,311 @@
+"""Finite-budget bounded trust search, including indefinite-Hessian directions.
+
+This is an optimization algorithm, not a Hessian/covariance regularizer. No
+Hessian ridge, positive-eigenvalue replacement, pseudoinverse or uncertainty is
+produced. Every trial uses the original objective/domain; failures are retained.
+The finite spectral/eigendirection search is not a global/second-order certificate.
+"""
+import math
+import time
+import numpy as np
+from spectral_trust_step_v1 import spectral_step
+
+
+class BudgetExhausted(RuntimeError):
+    pass
+
+
+def _boundary(s, p, radius):
+    a, b, c = float(p @ p), float(s @ p), float(s @ s - radius * radius)
+    if not np.isfinite([a, b, c]).all() or a <= 0:
+        raise FloatingPointError('Unresolved trust-sphere intersection')
+    disc = b * b - a * c
+    if disc < 0 or not math.isfinite(disc):
+        raise FloatingPointError('Unresolved trust-sphere discriminant')
+    root = math.sqrt(disc)
+    return -c / (b + root) if b >= 0 and b + root > 0 else (-b + root) / a
+
+
+def _steihaug(g, h, radius):
+    s, r = np.zeros(len(g)), g.copy()
+    p = -r
+    rr = float(r @ r)
+    if rr == 0:
+        return s, 'ZERO_GRADIENT'
+    tolerance = min(.5, math.sqrt(math.sqrt(rr))) * math.sqrt(rr)
+    for _ in range(len(g)):
+        hp = h @ p
+        curvature = float(p @ hp)
+        if curvature <= 0:
+            return s + _boundary(s, p, radius) * p, 'NEGATIVE_CURVATURE_TRUST_BOUNDARY'
+        alpha = rr / curvature
+        proposal = s + alpha * p
+        if np.linalg.norm(proposal) >= radius:
+            return s + _boundary(s, p, radius) * p, 'TRUST_BOUNDARY'
+        s, r = proposal, r + alpha * hp
+        new_rr = float(r @ r)
+        if math.sqrt(new_rr) <= tolerance:
+            return s, 'TRUNCATED_CG_RESIDUAL'
+        p = -r + (new_rr / rr) * p
+        rr = new_rr
+    return s, 'TRUNCATED_CG_DIMENSION_LIMIT'
+
+
+def _projected_cauchy(z, g, h, lower, upper, radius):
+    # For exact arithmetic, projection gives g.s <= -||s||²/alpha.
+    # alpha*||H|| <= 1/2 then guarantees q(s)<0 whenever s!=0.
+    # Actual represented q is independently checked by the caller; this is
+    # a step-size choice, not a Hessian modification or covariance floor.
+    norm = math.hypot(*map(float, g))
+    if not math.isfinite(norm):
+        raise FloatingPointError('Unrepresentable projected-Cauchy gradient norm')
+    if norm == 0:
+        return np.zeros(len(g)), {'alpha': None, 'curvature_norm_bound': None}
+    curvature = float(np.max(np.sum(np.abs(h), axis=1)))
+    if not math.isfinite(curvature):
+        raise FloatingPointError('Unrepresentable projected-Cauchy curvature bound')
+    alpha = min(radius / norm, .5 / curvature) if curvature > 0 else radius / norm
+    if not math.isfinite(alpha) or alpha <= 0:
+        raise FloatingPointError('Unrepresentable positive projected-Cauchy step')
+    step = np.maximum(lower, np.minimum(upper, z - alpha * g)) - z
+    return step, {'alpha': float(alpha), 'curvature_norm_bound': curvature}
+
+
+def minimize(fun, initial, lower, upper, *, scale=None, hessian=None,
+             max_iterations=32, max_calls=1600, seconds=100.,
+             projected_score_tolerance=.02, hessian_step=3e-7,
+             initial_radius=1., maximum_radius=4.,
+             promotion_objective_tolerance=1e-7, max_probe_promotions=8):
+    """fun(physical_state)->(full objective, analytic physical gradient).
+
+    Optional hessian(state) supplies a physical-coordinate Hessian for invented
+    controls. Otherwise a declared finite difference of analytic scores is used;
+    its arithmetic and active-face changes are explicitly approximate.
+    """
+    if any(type(v) is not int or v <= 0 for v in (max_iterations, max_calls)):
+        raise ValueError('Positive integer budgets required')
+    if type(max_probe_promotions) is not int or max_probe_promotions < 0:
+        raise ValueError('Nonnegative finite promotion budget required')
+    control = (seconds, projected_score_tolerance, hessian_step, initial_radius, maximum_radius, promotion_objective_tolerance)
+    if any(isinstance(v, (bool, np.bool_)) for v in control) or not np.isfinite(control).all() or min(control) <= 0 or maximum_radius < initial_radius:
+        raise ValueError('Positive finite declared solver controls required')
+    arrays = [np.asarray(v) for v in (initial, lower, upper)]
+    if any(a.dtype.kind not in 'iuf' for a in arrays):
+        raise ValueError('Real coordinate arrays required')
+    x, lo, hi = map(lambda a: np.array(a, float, copy=True), arrays)
+    sc = np.ones_like(x) if scale is None else np.asarray(scale, float)
+    if x.ndim != 1 or not len(x) or any(a.shape != x.shape for a in (lo, hi, sc)) or not all(np.isfinite(a).all() for a in (x, lo, hi, sc)) or np.any(lo >= hi) or np.any(sc <= 0) or np.any(x < lo) or np.any(x > hi):
+        raise ValueError('Matched finite initial/bounds/positive scales required')
+    z, zl, zu = x / sc, lo / sc, hi / sc
+    if not all(np.isfinite(a).all() for a in (z, zl, zu)):
+        raise ValueError('Unrepresentable scaled coordinates')
+    if np.any((x != lo) & (z == zl)) or np.any((x != hi) & (z == zu)):
+        raise ValueError('Scaling collapses a strict interior coordinate onto an exact face')
+    started, calls, events, iterations = time.monotonic(), 0, [], []
+
+    def evaluate(state, purpose):
+        nonlocal calls, best, best_call
+        if calls >= max_calls or time.monotonic() - started >= seconds:
+            raise BudgetExhausted('Declared model-call/wall budget exhausted')
+        physical = np.maximum(lo, np.minimum(hi, state * sc))
+        physical = np.where(state == zl, lo, np.where(state == zu, hi, physical))
+        calls += 1
+        event = {'call': calls, 'purpose': purpose, 'physical_state': physical.tolist()}
+        try:
+            value, gradient = fun(physical.copy())
+            gradient = np.asarray(gradient, float)
+            if gradient.shape != x.shape or not math.isfinite(value) or not np.isfinite(gradient).all():
+                raise FloatingPointError('Nonfinite/mismatched objective or analytic gradient')
+            event.update(status='RETURNED', value=float(value), physical_gradient=gradient.tolist())
+            if best is None or value < best[0]:
+                best = (float(value), state.copy(), gradient * sc)
+                best_call = calls
+            return float(value), gradient * sc
+        except Exception as exc:
+            event.update(status='FAILED_EVALUATION', error_type=type(exc).__name__, error=str(exc))
+            raise
+        finally:
+            events.append(event)
+
+    def matched(state):
+        if state is None:
+            return None
+        fv, zv, gv = state
+        physical = np.maximum(lo, np.minimum(hi, zv * sc))
+        physical = np.where(zv == zl, lo, np.where(zv == zu, hi, physical))
+        projected = gv.copy()
+        projected[((physical == lo) & (gv > 0)) | ((physical == hi) & (gv < 0))] = 0.
+        return {'physical_state': physical.tolist(), 'value': float(fv),
+                'physical_gradient': (gv / sc).tolist(),
+                'projected_scaled_score': float(np.max(np.abs(projected)))}
+
+    radius, status, failure = float(initial_radius), 'ITERATION_BUDGET_UNRESOLVED', None
+    best = None
+    best_call = None
+    terminal = None
+    promotions = 0
+
+    def promote_lower(record):
+        nonlocal z, value, g, terminal, promotions, status
+        # This absolute threshold and finite count are progress policies, NOT
+        # likelihood error bounds, minimum tolerances or physical acceptance.
+        if best is None or np.array_equal(best[1], z):
+            return 'NONE'
+        improvement = value - best[0]
+        if not math.isfinite(improvement):
+            status = 'LOWER_POINT_COMPARISON_ARITHMETIC_UNRESOLVED'
+            return 'REFUSED'
+        if improvement <= promotion_objective_tolerance:
+            return 'NONE'
+        record['materially_lower_full_gradient_point'] = {**matched(best),
+            'source_evaluation_call': best_call, 'objective_improvement': improvement,
+            'progress_policy_only': True}
+        if promotions >= max_probe_promotions:
+            status = 'LOWER_FULL_GRADIENT_POINT_PROMOTION_BUDGET_UNRESOLVED'
+            record['probe_promotion'] = 'REFUSED_FINITE_BUDGET'
+            return 'REFUSED'
+        value, z, g = best[0], best[1].copy(), best[2].copy()
+        terminal = (value, z.copy(), g.copy())
+        promotions += 1
+        record['probe_promotion'] = 'OWN_FULL_GRADIENT_POINT_NEW_ITERATION_REQUIRED'
+        record['promoted_own_projected_score'] = matched(terminal)['projected_scaled_score']
+        return 'PROMOTED'
+    try:
+        value, g = evaluate(z, 'INITIAL')
+        best = (value, z.copy(), g.copy())
+        best_call = calls
+        terminal = (value, z.copy(), g.copy())
+        for iteration in range(max_iterations):
+            projected = g.copy()
+            active = ((z == zl) & (g > 0)) | ((z == zu) & (g < 0))
+            projected[active] = 0.
+            score = float(np.max(np.abs(projected)))
+            free = np.flatnonzero(~active)
+            record = {'iteration': iteration, 'value': value, 'projected_scaled_score': score, 'radius': radius, 'free_columns': free.tolist()}
+            iterations.append(record)
+            if not len(free):
+                action = promote_lower(record)
+                if action == 'PROMOTED':
+                    continue
+                if action == 'REFUSED':
+                    break
+                status = 'PROJECTED_SCORE_REACHED'
+                break
+            if hessian is not None:
+                physical_h = np.asarray(hessian(np.maximum(lo, np.minimum(hi, z * sc))), float)
+                if physical_h.shape != (len(z), len(z)) or not np.isfinite(physical_h).all():
+                    raise FloatingPointError('Invalid supplied Hessian')
+                full_h = physical_h * sc[:, None] * sc[None, :]
+                hf = full_h[np.ix_(free, free)]
+                record['hessian_method'] = 'SUPPLIED_ANALYTIC_INVENTED_CONTROL'
+            else:
+                columns = []
+                stencils = []
+                for j in free:
+                    plus, minus = z.copy(), z.copy()
+                    plus[j] = min(zu[j], z[j] + hessian_step)
+                    minus[j] = max(zl[j], z[j] - hessian_step)
+                    width = plus[j] - minus[j]
+                    if width <= 0:
+                        raise FloatingPointError('Hessian stencil unrepresentable; no fake curvature')
+                    gp = g if plus[j] == z[j] else evaluate(plus, f'HESSIAN_PLUS_{j}')[1]
+                    gm = g if minus[j] == z[j] else evaluate(minus, f'HESSIAN_MINUS_{j}')[1]
+                    columns.append((gp[free] - gm[free]) / width)
+                    stencils.append({'column': int(j), 'plus': float(plus[j]), 'minus': float(minus[j])})
+                hf = np.column_stack(columns)
+                record.update(hessian_method='SYMMETRIZED_FINITE_DIFFERENCE_OF_ANALYTIC_SCORE', stencils=stencils)
+            if not np.isfinite(hf).all():
+                raise FloatingPointError('Nonfinite finite-difference Hessian')
+            hf = .5 * (hf + hf.T)
+            eigenvalues, eigenvectors = np.linalg.eigh(hf)
+            record['minimum_approximate_free_eigenvalue'] = float(eigenvalues[0])
+            eigen_resolution = 64 * np.finfo(float).eps * max(1., float(np.max(np.abs(eigenvalues))))
+            record['floating_eigen_probe_resolution'] = float(eigen_resolution)
+            detectable_negative = eigenvalues[0] < -eigen_resolution
+            candidates = []
+            cg, reason = _steihaug(g[free], hf, radius)
+            candidates.append((cg, reason))
+            cauchy, cauchy_info = _projected_cauchy(z[free], g[free], hf, zl[free], zu[free], radius)
+            record['projected_cauchy'] = cauchy_info
+            candidates.append((cauchy, 'PROJECTED_CAUCHY'))
+            try:
+                spectral, spectral_info = spectral_step(g[free], eigenvalues, eigenvectors, radius)
+                record['spectral_candidate'] = spectral_info
+                if spectral is not None:
+                    candidates.append((spectral, 'SPECTRAL_TRUST_QUADRATIC'))
+            except Exception as exc:
+                record['spectral_candidate'] = {'status': 'UNAVAILABLE',
+                    'error_type': type(exc).__name__, 'error': str(exc),
+                    'qualification': 'Other step candidates remain; original H is unchanged.'}
+            if detectable_negative:
+                for sign in (-1., 1.):
+                    candidates.append((sign * radius * eigenvectors[:, 0], 'EXPLICIT_MINIMUM_EIGENDIRECTION'))
+            proposed = []
+            record['candidate_quadratic_tests'] = []
+            for step, reason in candidates:
+                trial = z.copy()
+                trial[free] += step
+                trial = np.maximum(zl, np.minimum(zu, trial))
+                actual = trial[free] - z[free]
+                q = float(g[free] @ actual + .5 * actual @ hf @ actual)
+                record['candidate_quadratic_tests'].append({'reason': reason,
+                    'actual_free_step_after_original_box': actual.tolist(),
+                    'original_H_quadratic': q if math.isfinite(q) else None,
+                    'predicted_descent': bool(np.isfinite(q) and q < 0 and np.any(actual != 0))})
+                if np.isfinite(q) and q < 0 and np.any(actual != 0):
+                    proposed.append((q, reason, trial))
+            negative_proposed = [c for c in proposed if c[1] == 'EXPLICIT_MINIMUM_EIGENDIRECTION']
+            if score <= projected_score_tolerance and not negative_proposed:
+                action = promote_lower(record)
+                if action == 'PROMOTED':
+                    continue
+                if action == 'REFUSED':
+                    break
+                status = 'PROJECTED_SCORE_REACHED'
+                break
+            if not proposed:
+                status = 'NO_REPRESENTABLE_PREDICTED_DESCENT_UNRESOLVED'
+                break
+            q, reason, trial = min(proposed, key=lambda c: (c[0], c[1]))
+            step_norm = float(np.linalg.norm(trial[free] - z[free]))
+            trial_value, trial_g = evaluate(trial, 'TRUST_TRIAL')
+            ratio = (value - trial_value) / (-q)
+            record.update(step_reason=reason, predicted_reduction=-q, actual_reduction=value - trial_value, ratio=ratio)
+            if trial_value < best[0]:
+                best = (trial_value, trial.copy(), trial_g.copy())
+            trial_projected = trial_g.copy()
+            trial_projected[((trial == zl) & (trial_g > 0)) | ((trial == zu) & (trial_g < 0))] = 0.
+            trial_score = float(np.max(np.abs(trial_projected)))
+            new_face = bool(np.any(((trial == zl) & (z != zl)) | ((trial == zu) & (z != zu))))
+            boundary_tie = trial_value == value and new_face and trial_score < score
+            if (ratio > .1 and trial_value < value) or boundary_tie:
+                z, value, g = trial, trial_value, trial_g
+                terminal = (value, z.copy(), g.copy())
+                record['accepted'] = True
+                record['acceptance'] = 'EXACT_REPRESENTED_VALUE_TIE_NEW_FEASIBLE_FACE_SCORE_PROGRESS' if boundary_tie else 'STRICT_REPRESENTED_OBJECTIVE_DESCENT'
+                record['trial_own_projected_scaled_score'] = trial_score
+            else:
+                record['accepted'] = False
+            if ratio < .25:
+                radius *= .25
+            elif ratio > .75 and step_norm >= .9 * radius:
+                radius = min(2 * radius, maximum_radius)
+            if radius <= np.finfo(float).eps * max(1., np.linalg.norm(z)):
+                status = 'TRUST_RADIUS_ARITHMETIC_UNRESOLVED'
+                break
+    except Exception as exc:
+        status, failure = 'NUMERICALLY_UNRESOLVED', {'type': type(exc).__name__, 'message': str(exc)}
+    return {'schema': 'bhsm.known_recovery.bounded_negative_curvature_trust.v6', 'status': status,
+            'termination_status_applies_to': 'terminal_state_only',
+            'full_gradient_probe_promotions': promotions,
+            'promotion_progress_policy': {'absolute_objective_improvement': promotion_objective_tolerance,
+                'maximum_promotions': max_probe_promotions,
+                'qualification': 'Algorithmic progress/budget policy, NOT a numerical error bound or minimum/physics acceptance tolerance.'},
+            'terminal': matched(terminal), 'lowest_observed': matched(best),
+            'failure': failure, 'calls': calls, 'seconds': time.monotonic() - started,
+            'best_value': None if best is None else best[0],
+            'best_state': None if best is None else matched(best)['physical_state'],
+            'best_physical_gradient': None if best is None else (best[2] / sc).tolist(),
+            'events': events, 'iterations': iterations, 'global_optimality_certified': False,
+            'covariance': None, 'accepted_mass_interval': None, 'known_BH_recovery_accepted': False,
+            'qualification': 'Finite search using unchanged supplied objective/domain; approximate curvature and finite eigendirection probes, not a global or full second-order certificate.'}

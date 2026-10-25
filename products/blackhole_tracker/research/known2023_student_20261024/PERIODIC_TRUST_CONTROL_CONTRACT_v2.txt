@@ -1,0 +1,27 @@
+Prospective control-contract correction only -- no helper/native method change
+
+The v1 campaign remains FAILED with11pass/1failed assertion, exact log/source/
+freeze/admission/receipt preserved. No numerical control or native/daughter fit
+has rerun at this source-preparation revision. The helper, physical kernel,
+periodic adapter, v3runner, model/law/domains/seeds/budgets and native score0.02
+are unchanged. Root has not admitted new controls merely by reading this note.
+
+For test05 H=Q diag(1e-4,1e4)Q^T, Q=[[.8,-.6],[.6,.8]], the ideal inverse is
+Q diag(1e4,1e-4)Q^T and ||H^-1||inf<11201. For the returned x and known x*,
+r=H(x-x*) and ||x-x*||inf <= ||H^-1||inf ||r||inf. The old toy score1e-7
+thus implied only a bound about0.00112, not the extra2e-6 coordinate assertion.
+The state-accuracy assertion stays EXACTLY2e-6; the toy-only requested score is
+tightened to1e-10, giving a sufficient ideal bound<1.1201e-6.
+
+The corrected test independently constructs the exact rational inverse of the
+actual represented binary64 H and exact represented returned-state/truth error.
+It verifies determinant positive, inverse infinity norm<11201, and the exact
+residual-to-error triangle certificate, requiring that certificate<=2e-6. It
+retains all exact rational quantities in the log. This checks the actual result
+rather than treating a floating score as exact arithmetic or a precision claim.
+It is a supplied quadratic control certificate, not a physical mass interval.
+
+All other11 controls and all helper/source algorithms remain byte-equivalent in
+function. A new source freeze and root admission precede the once-only corrected
+12control run. Failure remains failure; no native admission follows a failed
+control. No mass target, data, covariance, threshold relaxation or new draw.

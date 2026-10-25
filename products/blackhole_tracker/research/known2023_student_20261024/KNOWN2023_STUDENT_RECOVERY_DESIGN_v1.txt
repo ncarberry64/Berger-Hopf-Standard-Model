@@ -1,0 +1,72 @@
+New2023-data native recovery experiment -- implementation design v1
+
+NOT NATIVE EXECUTION ADMISSION. Exact kernel, runner, control and actual-input
+freezes and independent review must precede the new authentic likelihood call.
+All2022/2023/2025 observations, failures, old protocols and R sources remain.
+
+Primary candidate fixed now: ST6_SEEING. Native2023 data file D2409db410e113872781
+494ca4d73db57d2a44fd65146c4e7ec2f40828448428 retains12500 selected OGLE rows,
+21 native HST photometric rows and21 angular rows at11 actual visits, plus raw
+files/all original rows and correction/time provenance. Native angular quoted
+errors are positive and remain unchanged. The new working covariance is their
+diagonal Gaussian covariance, explicitly an independence assumption, not a
+supplied complete covariance. No2025 error-null observations are converted to
+this schema and no positive jitter, floor or covariance is invented.
+
+Use the released heliocentric source-minus-lens PSPL geometry and native NE
+centroid response. Retain source reference position/motion, relative source
+parallax and F814W frame offsets. ThetaE>=0 and signed source parallax are
+profiled at each nonlinear state, including fixed-mass profile points. A
+Gaussian angular profile enumerates exact active faces of the two bounded
+linear coefficients; all other linear terms are free. Zero extra variance is
+not excluded: actual supplied marginal errors keep this covariance positive.
+This does not admit a singular2025 cell covariance or bypass its pending method.
+
+ONLY the OGLE photometric working law changes to the reviewed chronological
+unit-variance Student nu6 innovation density, after its stable banded covariance
+whitening. Keep every normalization/scale/determinant. Native HST photometry
+retains its supplied-error Gaussian density. Seven OGLE seasonal logscales,
+predicted-brightness and supplied-seeing scale slopes, OU fraction/tau and one
+seeing-dependent MEAN slope are inferred. Predictor zseeing=clip((seeing-5)/2,
+-1,1) is predeclared from the old prospective method and source motivation;
+it is not selected from fitted mass. Independent Student innovations are a
+declared generative law, not a Gaussian process plus Student measurement error.
+
+Use the original broad geometry/scale analysis boxes: t0JD[2455700,2455830],
+tE[20,2000]days,u0[-1,1], periodic angle,piE[0,1], baseline median+-5/source
+fraction[1e-5,1], seasonal logscale[log.5,log2], brightness/seeing noise slopes
+[-.25,.25],fraction[0,.95],tau[.05,100]days,seeing mean slope[-.02,.02]mag,
+thetaE[0,40]mas and relative source parallax[-1,1]mas. These are analysis
+domains, not measured physical limits. Nonphysical cap contact blocks accepted
+mass. Native clocks and unknown combined-exposure weights remain explicit.
+
+All16 generic angle/sign starts are retained, without literature mass seeding.
+Analytic full-deviance gradients, exact mean-profile rank/projected-score and
+source/array integrity are required; SciPy success is insufficient. All modes,
+lower trials, failed starts and conditional relative likelihood HEIGHTS remain;
+these heights are not mode posterior weights or black-hole probabilities.
+
+First bounded campaign: one predeclared authentic point-family run and one
+actual-cadence known-truth control, each maximum30minutes/16starts. The latter
+must use a separate generated-measurement namespace with original parent bytes
+unchanged, no native-value fallback, and generic non-BH generating truth fixed
+before drawing. A native point cannot be certified by a failed control. No
+automatic hundreds-of-refits or new mass profiles launch from this first stage.
+
+Adequacy statistics must use the correct Student PIT/reference and refitted
+calibration; no inherited Gaussian49 chi-square pivots. A numerically resolved
+point plus one successful control is still not calibrated coverage/known-BH
+acceptance. It enables a separately bounded refitted adequacy/interval stage.
+
+Predeclared later sensitivities include timing/combined-exposure weighting,
+source/lens light and generic instrument-frame bias. The latter may add freely
+inferred mas coefficients rotated by the complete primary PA_V3, with explicit
+origin and filter role; it is not a known CTE or PSF correction. Its full
+uncertainty/identifiability must be retained. No SCI partial header, astrophysical
+mass or published posterior fills a missing calibration field.
+
+Scientific aim is independent adequate recovery, not agreement with a desired
+number. Acceptance remains null until numerical, model/noise, calibration,
+uncertainty and independently attributed darkness/single-lens conditions pass.
+One ordinary Einstein/GHY optical exterior has explicit BHSM surface-topography
+interpretation and is counted once. No membrane/horizon/core state is inferred.

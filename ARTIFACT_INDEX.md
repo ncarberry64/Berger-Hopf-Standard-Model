@@ -15,7 +15,14 @@ outcomes remain explicit.
 [Product provenance](products/blackhole_tracker/FORMAL_PROVENANCE.json),
 [paper provenance](papers/bhsm_blackhole_tracker_20261021/provenance/FORMAL_REPOSITORY.json)
 and the [integration review](products/blackhole_tracker/FORMAL_INTEGRATION_REVIEW.md)
-record immutable development inputs, exact copied bytes and formal checks.
+record their distinct source and release identities. The current product
+snapshot contains 440 exact files from immutable development commit
+`b39fef6dc754c640e5b48f39e0212d0932abd87c`, labeled **RC7 engineering / HOLD**.
+[Engineering status](products/blackhole_tracker/ENGINEERING_STATUS_20261025.md)
+records both historical and fresh predecessor `6d3b97db` evidence: 493 tests plus 66 subtests,
+wheel/SDIST membership and installed export/replay of 11 profiles / 143 states
+pass locally. Hosted CI for the new commits remains **PENDING**. Existing paper/PDF/manual-packet and release/download bindings are
+unchanged and do not certify this new source snapshot.
 `tools/verify_blackhole_tracker_snapshot.py` checks the source snapshot;
 `tools/verify_blackhole_tracker_release.py` checks the complete portable ZIP.
 Original supporting angular and Hopf papers remain preserved and attributed

@@ -1,0 +1,71 @@
+{
+  "schema": "bhtracker.installed_browser_verification.v2",
+  "passed": true,
+  "wheel_sha256": "fe01ef411b453c21374255f8bb7bd6a47e139a7f700fec227c5da0f5d0f568e5",
+  "app_url": "http://127.0.0.1:8888/joint",
+  "actual_sourcepack_GUI_import": {
+    "photometry_rows": 12521,
+    "astrometry_rows": 21,
+    "sha256": "71d36a03e4ba275e91bea62f4784a5193f34ad32d3777b637453f91151bafa99"
+  },
+  "saved_measured_result_status": "JOINT_MODEL_OR_NOISE_INADEQUATE",
+  "BHSM_interpretation_visible": true,
+  "failed_residual_bins_visible": 15,
+  "saved_result_gate_tamper_rejected": true,
+  "failed_search_control": {
+    "purpose": "Software failure-path control, outside the frozen inference campaign",
+    "starts": 1,
+    "max_nfev": 1,
+    "status": "JOINT_SEARCH_FAILED",
+    "retained_starts": 1,
+    "physical_parameters_unavailable": true,
+    "explicit_download_clicked": true,
+    "diagnostic_sha256": "980b0439cbfd14e279c706fd16578e107518f17ea529f4900d98cd7e16cb7365",
+    "evidence_wheel_sha256": "fe01ef411b453c21374255f8bb7bd6a47e139a7f700fec227c5da0f5d0f568e5"
+  },
+  "failure_then_saved_result_reopen": {
+    "restored_starts": 16,
+    "restored_max_nfev": 1800,
+    "job_status": "Saved result verified; no new fit run.",
+    "stale_error_cleared": true,
+    "failed_search_download_hidden": true,
+    "same_failed_scientific_adequacy_status": true,
+    "behavioral_handler_controls": "Three Node-driven cases also cover requested/numerical/default starts and clearing profile/replay state for newly validated input."
+  },
+  "bundle": {
+    "sha256": "c24ec729f03042b884b4f16ad6c5e8d6089ca04aff5a910600407e85a58e5163",
+    "members": 16,
+    "all_members_CRC_verified": true
+  },
+  "installed_CLI_forward_replay": {
+    "schema": "bhtracker.joint_replay.v2",
+    "passed": true,
+    "checks": {
+      "objective_deviance": true,
+      "photometric_predictions_magnitude": true,
+      "astrometric_predictions_NE_mas": true
+    },
+    "input_sha256": "d4fc2bfc9320c7eab8a33b93517f68f035a5d498ffb35ff548a638648143af96",
+    "scientific_source_sha256": "6eaf050481fc23aebf4b929e49fdab57e324ee80eb08e1547b69f056269eeaaa",
+    "max_photometric_difference_mag": 0.0,
+    "max_astrometric_difference_mas": 2.930988785010413e-14,
+    "same_physical_parameters": true,
+    "same_native_residuals": true,
+    "same_recorded_diagnostic_gates": true,
+    "method": "FORWARD_STATE_REPLAY; optimization and scientific acceptance are separate"
+  },
+  "ordinary_installed_refit_replay": {
+    "passed": true,
+    "maximum_prediction_difference_in_supplied_sigma": 0.0,
+    "same_status": true,
+    "same_package_content": true,
+    "same_interpretation_schema": 2,
+    "same_physical_worldtube": true,
+    "external_directory": "release_rc4/final_installed_ordinary_replay_fe01"
+  },
+  "screenshot": {
+    "file": "release_rc4/installed_rc4_final_fe01.png",
+    "sha256": "7953d03e2db379f40756deab2bbbadaa849f9b5012c34644f7df8ef3980eb10b"
+  },
+  "scope": "Local installed usability, provenance, gate integrity and numerical replay. These checks do not establish physical adequacy or reliable black-hole classification."
+}

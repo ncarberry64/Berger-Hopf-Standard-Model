@@ -1,0 +1,217 @@
+"""Literal prospective invented controls. No observations, RNG or native APIs."""
+import math
+import unittest
+import numpy as np
+from spectral_trust_step_v1 import spectral_step
+from bounded_negative_curvature_trust_v6 import minimize
+from bounded_negative_curvature_trust_v5 import _steihaug
+
+CALLS = []
+WITNESSES = {}
+HADAMARD = .5 * np.array([[1., 1., 1., 1.], [1., -1., 1., -1.],
+                          [1., 1., -1., -1.], [1., -1., -1., 1.]])
+
+
+def native(x):
+    if isinstance(x, np.ndarray):
+        return native(x.tolist())
+    if isinstance(x, np.generic):
+        return native(x.item())
+    if isinstance(x, float) and not math.isfinite(x):
+        return {'type': 'nonfinite_float', 'value': repr(x)}
+    if isinstance(x, dict):
+        return {k: native(v) for k, v in x.items()}
+    if isinstance(x, (list, tuple)):
+        return [native(v) for v in x]
+    return x
+
+
+class SpectralControls(unittest.TestCase):
+    def leaf(self, g, w, q, radius, **kw):
+        row = {'test': self.id(), 'kind': 'SPECTRAL', 'gradient': native(g),
+               'eigenvalues': native(w), 'eigenvectors': native(q), 'radius': native(radius), 'controls': native(kw)}
+        CALLS.append(row)
+        try:
+            s, info = spectral_step(g, w, q, radius, **kw)
+            row.update(status='RETURNED', step=native(s), info=info)
+            return s, info
+        except Exception as e:
+            row.update(status='RAISED', error_type=type(e).__name__, error=str(e)); raise
+
+    def solver(self, label, fun, initial, lower, upper, **kw):
+        row = {'test': self.id(), 'kind': 'SOLVER', 'literal_objective_fixture': label,
+               'initial': native(initial), 'lower': native(lower), 'upper': native(upper),
+               'controls': native({k: v for k, v in kw.items() if k != 'hessian'}),
+               'hessian_fixture': label if kw.get('hessian') is not None else None}
+        CALLS.append(row)
+        try:
+            r = minimize(fun, initial, lower, upper, **kw)
+            row.update(status='RETURNED', result=native(r))
+            self.assertIsNone(r['covariance']); self.assertIsNone(r['accepted_mass_interval'])
+            self.assertFalse(r['known_BH_recovery_accepted']); self.assertFalse(r['global_optimality_certified'])
+            self.assertEqual(r['calls'], len(r['events']))
+            return r
+        except Exception as e:
+            row.update(status='RAISED', error_type=type(e).__name__, error=str(e)); raise
+
+    def test_01_PD_interior_matches_analytic_inverse(self):
+        s, i = self.leaf([.5, -1.], [2., 4.], np.eye(2), 1.)
+        np.testing.assert_allclose(s, [-.25, .25], rtol=0, atol=2e-15)
+        self.assertEqual(i['status'], 'PSD_UNCONSTRAINED_CANDIDATE')
+
+    def test_02_rotated_ill_conditioned_PD_resolves_weak_direction(self):
+        w = np.array([2.**-30, 1., 2., 4.]); q = HADAMARD.copy()
+        target = np.array([.5, .25, .75, .5]); h = q @ np.diag(w) @ q.T; g = -h @ target
+        s, i = self.leaf(g, w, q, 2.)
+        old, reason = _steihaug(g, h, 2.)
+        np.testing.assert_allclose(s, target, rtol=0, atol=2e-12)
+        self.assertGreater(np.linalg.norm(old - target), .1)
+        WITNESSES['ill_conditioned_coupling'] = {'new_step': s.tolist(), 'old_step': old.tolist(), 'old_reason': reason,
+                                                 'original_H': h.tolist(), 'target': target.tolist()}
+
+    def test_03_one_dimensional_boundary(self):
+        s, i = self.leaf([3.], [1.], [[1.]], 1.)
+        np.testing.assert_allclose(s, [-1.], rtol=0, atol=5e-14)
+        self.assertAlmostEqual(sum(i['trust_multiplier'].values()), 2., places=11)
+
+    def test_04_PD_secular_known_multiplier(self):
+        expected = np.array([-.6, .8]); w = np.array([1., 4.]); g = -(w + 3.) * expected
+        s, i = self.leaf(g, w, np.eye(2), 1.)
+        np.testing.assert_allclose(s, expected, rtol=0, atol=2e-13)
+        self.assertAlmostEqual(sum(i['trust_multiplier'].values()), 3., places=10)
+
+    def test_05_indefinite_regular_secular(self):
+        expected = np.array([.6, .8]); w = np.array([-2., 1.]); g = -(w + 3.) * expected
+        s, i = self.leaf(g, w, np.eye(2), 1.)
+        np.testing.assert_allclose(s, expected, rtol=0, atol=2e-13)
+        self.assertEqual(i['trust_multiplier']['base'], 2.)
+        self.assertAlmostEqual(i['trust_multiplier']['nonnegative_shift'], 1., places=10)
+
+    def test_06_hard_case_independent_analytic_objective(self):
+        s, i = self.leaf([0., 1.], [-2., 2.], np.eye(2), 1.)
+        self.assertEqual(i['status'], 'HARD_CASE_BOUNDARY_CANDIDATE')
+        self.assertAlmostEqual(math.hypot(*s), 1., places=13)
+        self.assertAlmostEqual(s[1], -.25, places=14)
+        self.assertAlmostEqual(float(np.array([0., 1.]) @ s + .5 * s @ np.diag([-2., 2.]) @ s), -9./8., places=13)
+
+    def test_07_repeated_minimum_hard_eigenspace(self):
+        s, i = self.leaf([0., 0., 1.], [-2., -2., 2.], np.eye(3), 1.)
+        self.assertEqual(i['status'], 'HARD_CASE_BOUNDARY_CANDIDATE')
+        self.assertAlmostEqual(float(np.array([0., 0., 1.]) @ s + .5 * s @ np.diag([-2., -2., 2.]) @ s), -9./8., places=13)
+
+    def test_08_zero_H_linear_objective(self):
+        s, i = self.leaf([3., 4.], [0., 0.], np.eye(2), 2.)
+        np.testing.assert_allclose(s, [-1.2, -1.6], rtol=0, atol=2e-13)
+        self.assertAlmostEqual(float(np.array([3., 4.]) @ s), -10., places=12)
+
+    def test_09_zero_H_zero_gradient_has_no_fake_descent(self):
+        s, i = self.leaf([0., 0.], [0., 0.], np.eye(2), 1.)
+        np.testing.assert_array_equal(s, [0., 0.]); self.assertEqual(i['quadratic_in_supplied_eigensystem'], 0.)
+
+    def test_10_PSD_singular_interior(self):
+        s, i = self.leaf([0., 1.], [0., 2.], np.eye(2), 1.)
+        np.testing.assert_array_equal(s, [0., -.5]); self.assertEqual(i['status'], 'PSD_UNCONSTRAINED_CANDIDATE')
+
+    def test_11_repeated_zero_regular_boundary(self):
+        s, i = self.leaf([-.3, 0., -2.], [0., 0., 2.], np.eye(3), 1.)
+        np.testing.assert_allclose(s, [.6, 0., .8], rtol=0, atol=2e-13)
+        self.assertAlmostEqual(i['trust_multiplier']['nonnegative_shift'], .5, places=10)
+
+    def test_12_tiny_nonzero_minimum_gradient_is_not_hard_case(self):
+        s, i = self.leaf([2.**-80, 1.], [-2., 2.], np.eye(2), 1.)
+        self.assertEqual(i['status'], 'REGULAR_SECULAR_BOUNDARY_CANDIDATE')
+        self.assertGreater(i['trust_multiplier']['nonnegative_shift'], 0.)
+        self.assertLess(s[0], -.9); self.assertAlmostEqual(s[1], -.25, places=12)
+
+    def test_13_orthogonal_rotation_preserves_step_and_quadratic(self):
+        w = np.array([-2., 0., 1., 4.]); target = np.array([.5, -.5, .5, -.5]); a = -(w + 3.) * target
+        s0, _ = self.leaf(a, w, np.eye(4), 1.)
+        s1, _ = self.leaf(HADAMARD @ a, w, HADAMARD, 1.)
+        np.testing.assert_allclose(s1, HADAMARD @ s0, rtol=0, atol=2e-13)
+
+    def test_14_scaled_coupled_solver_reaches_same_physical_solution(self):
+        w = np.array([2.**-24, 1., 2., 4.]); h = HADAMARD @ np.diag(w) @ HADAMARD.T
+        target = np.array([.5, .25, .75, .5]); results = []
+        for scale in (np.ones(4), [.5, 2., .25, 1.]):
+            r = self.solver('coupled_PD_dyadic_H_target', lambda x: (float(.5*(x-target)@h@(x-target)), h@(x-target)),
+                            [0.]*4, [-2.]*4, [2.]*4, scale=scale, hessian=lambda x:h,
+                            projected_score_tolerance=1e-12, max_iterations=64)
+            np.testing.assert_allclose(r['terminal']['physical_state'], target, rtol=0, atol=5e-5)
+            results.append(r['terminal']['physical_state'])
+        WITNESSES['scaled_coupled_solution'] = results
+
+    def test_15_box_clipping_can_destroy_quadratic_descent(self):
+        c = math.sqrt(.5); q = np.array([[c, c], [c, -c]])
+        g = np.array([-1., 1.]); h = np.array([[1., -4.], [-4., 1.]])
+        s, _ = self.leaf(g, [-3., 5.], q, 1.)
+        clipped = np.maximum([-1., -1.], np.minimum([0., 1.5], np.array([-1e-20, .5])+s)) - np.array([-1e-20, .5])
+        self.assertLess(float(g@s+.5*s@h@s), 0.)
+        self.assertGreater(float(g@clipped+.5*clipped@h@clipped), 0.)
+        WITNESSES['box_clip_original_H_check'] = {'unclipped': s.tolist(), 'clipped': clipped.tolist(), 'original_H': h.tolist()}
+        initial = np.array([-1e-20, .5])
+        r = self.solver('indefinite_original_box_clip', lambda x:(float(g@(x-initial)+.5*(x-initial)@h@(x-initial)),g+h@(x-initial)),
+                        initial, [-1., -1.], [0., 1.5], hessian=lambda x:h, max_iterations=1)
+        tested = r['iterations'][0]['candidate_quadratic_tests']
+        self.assertTrue(any(t['original_H_quadratic'] > 0 and not t['predicted_descent'] for t in tested))
+        for t in tested:
+            actual = np.array(t['actual_free_step_after_original_box'])
+            self.assertAlmostEqual(t['original_H_quadratic'], float(g@actual+.5*actual@h@actual), places=13)
+        self.assertLess(r['terminal']['value'], 0.)
+
+    def test_16_invalid_inputs_and_nonorthogonal_geometry_refuse(self):
+        for options in ({'radius': 0.}, {'radius': True}, {'radius': 1., 'max_iterations': True}):
+            with self.subTest(options=options), self.assertRaises(ValueError):
+                self.leaf([1.], [1.], [[1.]], **options)
+        s, i = self.leaf([1., 1.], [1., 2.], [[1., 1.], [0., 1.]], 1.)
+        self.assertIsNone(s); self.assertEqual(i['status'], 'UNAVAILABLE')
+
+    def test_17_lower_probe_promotion_uses_own_gradient_and_no_false_stop(self):
+        fun = lambda x: (float(.015625*x[0]-16*x[0]**3+16*x[0]**4),
+                         np.array([.015625-48*x[0]**2+64*x[0]**3]))
+        r = self.solver('dyadic_quartic_probe_promotion', fun, [0.], [-1.], [1.],
+                        hessian_step=.125, projected_score_tolerance=.02, max_iterations=1)
+        self.assertEqual(r['full_gradient_probe_promotions'], 1)
+        self.assertEqual(r['terminal']['physical_state'], [.125])
+        self.assertGreater(r['terminal']['projected_scaled_score'], .02)
+        self.assertEqual(r['status'], 'ITERATION_BUDGET_UNRESOLVED')
+        self.assertEqual(r['iterations'][0]['materially_lower_full_gradient_point']['source_evaluation_call'], 2)
+
+    def test_18_promotion_cap_preserves_lower_point_and_unresolved_status(self):
+        fun = lambda x: (float(.015625*x[0]-16*x[0]**3+16*x[0]**4), np.array([.015625-48*x[0]**2+64*x[0]**3]))
+        r = self.solver('dyadic_quartic_probe_promotion', fun, [0.], [-1.], [1.], hessian_step=.125,
+                        projected_score_tolerance=.02, max_probe_promotions=0)
+        self.assertEqual(r['status'], 'LOWER_FULL_GRADIENT_POINT_PROMOTION_BUDGET_UNRESOLVED')
+        self.assertEqual(r['terminal']['physical_state'], [0.]); self.assertEqual(r['lowest_observed']['physical_state'], [.125])
+
+    def test_19_subpolicy_lower_probe_is_not_an_error_bound(self):
+        r = self.solver('small_quadratic_progress_policy', lambda x:(float(1e-8*(x[0]-.1)**2), np.array([2e-8*(x[0]-.1)])),
+                        [0.], [-1.], [1.], hessian_step=.05, projected_score_tolerance=.02)
+        self.assertEqual(r['full_gradient_probe_promotions'], 0); self.assertEqual(r['status'], 'PROJECTED_SCORE_REACHED')
+        self.assertLess(r['lowest_observed']['value'], r['terminal']['value'])
+        self.assertIn('NOT a numerical error bound', r['promotion_progress_policy']['qualification'])
+
+    def test_20_additive_constant_preserves_promotion_policy(self):
+        results = []
+        for constant in (0., 2.**20):
+            fun = lambda x:(float(constant+.015625*x[0]-16*x[0]**3+16*x[0]**4), np.array([.015625-48*x[0]**2+64*x[0]**3]))
+            r = self.solver('shifted_dyadic_quartic_probe_promotion', fun, [0.], [-1.], [1.], hessian_step=.125,
+                            projected_score_tolerance=.02, max_iterations=1)
+            results.append(r)
+        self.assertEqual(results[0]['terminal']['physical_state'], results[1]['terminal']['physical_state'])
+        self.assertEqual(results[0]['iterations'][0]['materially_lower_full_gradient_point']['objective_improvement'],
+                         results[1]['iterations'][0]['materially_lower_full_gradient_point']['objective_improvement'])
+
+    def test_21_secular_budget_unresolved_is_explicit(self):
+        s, i = self.leaf([2.4, -5.6], [1., 4.], np.eye(2), 1., max_iterations=1)
+        self.assertIsNone(s); self.assertEqual(i['reason'], 'SECULAR_ITERATION_BUDGET_UNRESOLVED')
+
+    def test_22_original_eigenvalues_and_arrays_are_unchanged(self):
+        g = np.array([0., 1.]); w = np.array([-2., 2.]); q = np.eye(2)
+        originals = [x.copy() for x in (g, w, q)]
+        self.leaf(g, w, q, 1.)
+        for x, y in zip((g, w, q), originals): np.testing.assert_array_equal(x, y)
+        self.assertEqual(CALLS[-1]['info']['eigenvalues_unchanged'], [-2., 2.])
+
+
+if __name__ == '__main__':
+    unittest.main(verbosity=2)

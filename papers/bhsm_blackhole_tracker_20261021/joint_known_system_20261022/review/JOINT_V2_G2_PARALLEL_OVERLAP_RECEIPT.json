@@ -1,0 +1,41 @@
+{
+  "schema": "bhtracker.parallel_profile_overlap.v1",
+  "scientific_source_sha256": "6eaf050481fc23aebf4b929e49fdab57e324ee80eb08e1547b69f056269eeaaa",
+  "serial_overlap_sha256": "f5ad27ecd2e0336bcee729c62a42a95021912fdbcba0264dff5c5a6233a75226",
+  "baseline_sha256": "8dba427f556863c87bc266a001500d7cbc4a2ec20e579e8478c91401d70ce763",
+  "both_blas_threads": 1,
+  "checks": [
+    {
+      "index": 0,
+      "mass_msun": 0.1,
+      "identical_row": true,
+      "objective_absolute_difference": 0.0,
+      "serial_status": "BOUNDARY_LIMITED",
+      "parallel_status": "BOUNDARY_LIMITED",
+      "serial_interval_eligible": false,
+      "parallel_interval_eligible": false
+    },
+    {
+      "index": 15,
+      "mass_msun": 3.1622776601683795,
+      "identical_row": true,
+      "objective_absolute_difference": 0.0,
+      "serial_status": "BOUNDARY_LIMITED",
+      "parallel_status": "BOUNDARY_LIMITED",
+      "serial_interval_eligible": false,
+      "parallel_interval_eligible": false
+    },
+    {
+      "index": 30,
+      "mass_msun": 100.0,
+      "identical_row": true,
+      "objective_absolute_difference": 0.0,
+      "serial_status": "BOUNDARY_LIMITED",
+      "parallel_status": "BOUNDARY_LIMITED",
+      "serial_interval_eligible": false,
+      "parallel_interval_eligible": false
+    }
+  ],
+  "all_identical": true,
+  "meaning": "Same frozen per-mass function and retained modes; only dispatch order changed. No cross-mass warm starts."
+}

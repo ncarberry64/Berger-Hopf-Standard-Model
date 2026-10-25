@@ -1,0 +1,102 @@
+"""Invented-data controls for complete objective audit; no native inputs."""
+import unittest
+import numpy as np
+import test_gaussian_joint_model_v4 as fixture
+from gaussian_joint_model_v2 import GaussianJointModel as PreviousModel
+
+
+class AuditedControls(fixture.JointCandidateControls):
+    def test_09_unchanged_values_and_gradients_on_all_faces(self):
+        m=self.model();x=self.state(m);old=PreviousModel(m.data)
+        for face in ((),('matern',),('sho',),('matern','sho')):
+            a=old.evaluate(x,zero_components=face)
+            b=m.evaluate(x,zero_components=face)
+            self.assertEqual(a['negative_two_log_likelihood'],b['negative_two_log_likelihood'])
+            np.testing.assert_array_equal(a['gradient'],b['gradient'])
+
+    def test_10_every_completed_covariance_value_is_a_full_joint_value(self):
+        m=self.model();x=self.state(m)
+        for face,count in (((),9),(('matern',),5),(('sho',),5),(('matern','sho'),1)):
+            events=[];r=m.evaluate(x,zero_components=face,objective_audit=events.append)
+            self.assertEqual(r['photometric_objective_evaluations'],count)
+            self.assertEqual(len(events),2*count)
+            for planned,done in zip(events[::2],events[1::2]):
+                self.assertEqual(planned['stage'],'PLANNED');self.assertEqual(done['stage'],'RETURNED')
+                self.assertEqual(planned['state'],done['state'])
+                self.assertFalse(done['has_full_gradient'])
+                replay=m.evaluate(done['state'],zero_components=face)
+                self.assertEqual(done['negative_two_log_likelihood'],replay['negative_two_log_likelihood'])
+
+    def test_11_failed_plan_commit_prevents_its_covariance_call(self):
+        m=self.model();x=self.state(m);original=m._photo;calls=[]
+        def photo(*args,**kwargs):calls.append(1);return original(*args,**kwargs)
+        m._photo=photo
+        def callback(event):
+            if event['stage']=='PLANNED':raise OSError('invented failed plan commit')
+        with self.assertRaises(OSError):m.evaluate(x,objective_audit=callback)
+        self.assertEqual(calls,[])
+
+    def test_12_failed_result_commit_prevents_later_covariance_calls(self):
+        m=self.model();x=self.state(m);original=m._photo;calls=[]
+        def photo(*args,**kwargs):calls.append(1);return original(*args,**kwargs)
+        m._photo=photo
+        def callback(event):
+            if event['stage']=='RETURNED':raise OSError('invented failed result commit')
+        with self.assertRaises(OSError):m.evaluate(x,objective_audit=callback)
+        self.assertEqual(calls,[1])
+
+    def test_13_internal_failure_has_an_owned_planned_state(self):
+        m=self.model();x=self.state(m);original=m._photo;calls=[];events=[]
+        def photo(*args,**kwargs):
+            calls.append(1)
+            if len(calls)==2:raise FloatingPointError('invented covariance failure')
+            return original(*args,**kwargs)
+        m._photo=photo
+        with self.assertRaises(FloatingPointError):m.evaluate(x,objective_audit=events.append)
+        self.assertEqual([r['stage']for r in events],['PLANNED','RETURNED','PLANNED','FAILED'])
+        self.assertEqual(events[-1]['state'],events[-2]['state']);self.assertEqual(len(calls),2)
+
+    def test_14_fixed_mass_internal_values_reuse_only_same_geometry_angular(self):
+        m=self.model();x=self.state(m);events=[];mass=2.
+        m.evaluate(x,fixed_mass=mass,objective_audit=events.append)
+        done=[e for e in events if e['stage']=='RETURNED']
+        self.assertEqual(len(set(e['same_geometry_angular_deviance']for e in done)),1)
+        for e in done:
+            np.testing.assert_array_equal(e['state'][:m.hyper_start],x[:m.hyper_start])
+            r=m.evaluate(e['state'],fixed_mass=mass)
+            self.assertEqual(r['negative_two_log_likelihood'],e['negative_two_log_likelihood'])
+
+    def test_15_inactive_coherence_is_unmeasured_and_costs_no_perturbations(self):
+        m=self.model();x=self.state(m);y=x.copy()
+        y[m.hyper_start+1]=m.lower[m.hyper_start+1]
+        y[m.hyper_start+3]=m.upper[m.hyper_start+3]
+        a=m.evaluate(x,zero_components=('matern','sho'))
+        b=m.evaluate(y,zero_components=('matern','sho'))
+        self.assertEqual(a['negative_two_log_likelihood'],b['negative_two_log_likelihood'])
+        self.assertEqual(b['photometric_objective_evaluations'],1)
+        np.testing.assert_array_equal(b['gradient'][m.hyper_start:],0.)
+
+    def test_16_invalid_callback_rejected_before_covariance(self):
+        m=self.model();x=self.state(m);calls=[]
+        def photo(*args,**kwargs):calls.append(1);raise AssertionError('should never run')
+        m._photo=photo
+        with self.assertRaises(ValueError):m.evaluate(x,objective_audit=True)
+        self.assertEqual(calls,[])
+
+
+    def test_17_nonfinite_internal_full_reductions_get_failed_pair(self):
+        for bad in (float('nan'),float('inf'),'OVERFLOW'):
+            m=self.model();x=self.state(m);events=[];calls=[];original=m._photo
+            def photo(*args,**kwargs):
+                calls.append(1);r=original(*args,**kwargs)
+                r['value']=np.finfo(float).max if bad=='OVERFLOW' else bad
+                return r
+            m._photo=photo
+            if bad=='OVERFLOW':
+                m._angular=lambda *a,**k:{'value':np.finfo(float).max,'gradient':np.zeros(len(x))}
+            with self.assertRaises(FloatingPointError):m.evaluate(x,objective_audit=events.append)
+            self.assertEqual(calls,[1]);self.assertEqual([e['stage']for e in events],['PLANNED','FAILED'])
+            self.assertEqual(events[0]['state'],events[1]['state'])
+
+
+if __name__=='__main__':unittest.main(verbosity=2)

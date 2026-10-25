@@ -1,0 +1,58 @@
+{
+  "schema": "bhsm.http_audit_completion_order_repair.v1",
+  "upstream_product_source_commit": "baa46d10e51cbc9453396ba409b958346de41793",
+  "scope": "HTTP/browser lifecycle repair only; saved result remains retained while its owner Future is active. Export waits for terminal owner completion.",
+  "trigger": "Formal Windows CI returnedHTTP400 on immediate export after statuscomplete. Its responsebody was not retained; attribution to this race is source-supported. A separate controlled held-owner regression deterministically reproduced prematurecomplete in the original installedwheel.",
+  "fix": "Primary app status finalizing plus export_readyfalse until ownerFuture.done; browsercontinuespolling and keeps exportdisabled. GET/cancel paths sharegate.",
+  "focused_verification": {
+    "before": {
+      "testcases": 1,
+      "failures": 1,
+      "errors": 0,
+      "behavior": "Original installedwheel returnedcomplete whileownerheld"
+    },
+    "after_app": {
+      "passed": 8,
+      "failed": 0
+    },
+    "frontend_Python": {
+      "passed": 3,
+      "failed": 0
+    },
+    "mocked_DOM": {
+      "passed": 33,
+      "backend_calls": 0,
+      "native_model_calls": 0
+    }
+  },
+  "all8_saved_scientific_method_source_files_unchanged": true,
+  "original_saved_ZIP_and_119_protected_records_unchanged": true,
+  "raw_records_or_fitting_equations_or_seeds_or_likelihood_changed": false,
+  "proofs": [
+    {
+      "filename": "MC_TERMINAL_EXPORT_RACE_BEFORE_v1.xml",
+      "bytes": 11328,
+      "sha256": "063856f19745ffed6b179587561c41b76e8a3d602e04779f79eacaf2bb1c052d"
+    },
+    {
+      "filename": "MC_TERMINAL_EXPORT_RACE_AFTER_v1.xml",
+      "bytes": 1379,
+      "sha256": "568df6b3e2e8d012a22779a9d9699676a3101f0dacb67744bb553c3638304bd6"
+    },
+    {
+      "filename": "MC_TERMINAL_EXPORT_FRONTEND_AFTER_v1.xml",
+      "bytes": 768,
+      "sha256": "fdd07a012cedcfcbbe14f6c54b839abb97a4f7869e29763f9ffe2be162859b0e"
+    },
+    {
+      "filename": "MC_HTTP_COMPLETION_ORDER_SOURCE_REVIEW_v1.json",
+      "bytes": 8146,
+      "sha256": "c7f3faa391d62547ea15e17afec7533ac3a31049d5a169f9c730c4a32d5f2db9"
+    }
+  ],
+  "current_full_hosted_CI": "PENDING_NEW_HEAD",
+  "known_BH_recovery_accepted": false,
+  "accepted_mass_interval": null,
+  "new_black_holes": 0,
+  "publication_hold": "HOLD"
+}

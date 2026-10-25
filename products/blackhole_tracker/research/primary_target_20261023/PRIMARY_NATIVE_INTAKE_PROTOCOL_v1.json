@@ -1,0 +1,27 @@
+{
+  "schema": "bhsm.primary_candidate_native_intake_protocol.v1",
+  "scope": "Read-only public native observation intake, before any fit or candidate classification.",
+  "target": "Gaia18ajz",
+  "source_direction_deg": [
+    277.56025,
+    -8.22021
+  ],
+  "source_role": "PUBLISHED_SOURCE_EVENT_DIRECTION_NOT_LENS_POSITION",
+  "ztf_request": {
+    "endpoint": "https://irsa.ipac.caltech.edu/cgi-bin/ZTF/nph_light_curves",
+    "parameters": {
+      "POS": "CIRCLE 277.56025 -8.22021 0.0002777777777777778",
+      "COLLECTION": "ztf_dr21",
+      "FORMAT": "ipac_table"
+    },
+    "constraints": "1 arcsecond contextual cone; no time, band, magnitude, NOBS or catflags cuts. Returned object IDs and every row/flag preserved; association not automatically established."
+  },
+  "limits": {
+    "timeout_seconds": 45,
+    "response_bytes": 12000000,
+    "retry_count": 0
+  },
+  "storage": "Fresh versioned files and headers/hashes; failed or error payloads retained. Never overwrite original observations.",
+  "analysis_calls": 0,
+  "admission": "No annual-parallax likelihood, invented error/covariance, position or mass inferred by this intake."
+}

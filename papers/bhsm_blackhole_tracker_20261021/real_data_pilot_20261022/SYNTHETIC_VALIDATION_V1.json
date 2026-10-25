@@ -1,0 +1,1445 @@
+{
+  "schema": "bhsm_unresolved_validation/1",
+  "role": "INGESTION_AND_SYNTHETIC_VALIDATION_NOT_REAL_DATA_INFERENCE",
+  "protocol": {
+    "id": "BHSM-native-magnitude-PSPL-20261022-v1",
+    "model": "rectilinear point-source point-lens; per-instrument baseline magnitude and source fraction",
+    "likelihood": "independent Gaussian in native apparent magnitude, published sigma unchanged",
+    "time": "native HJD relative-day arithmetic; clock unspecified unless independently documented",
+    "bounds": {
+      "t0": "min(time)-span .. max(time)+span",
+      "tE_days": [
+        0.1,
+        10000.0
+      ],
+      "u0": [
+        0.0001,
+        10.0
+      ],
+      "source_fraction": [
+        1e-06,
+        1.0
+      ],
+      "signed_blend_sensitivity_source_fraction": [
+        1e-06,
+        10.0
+      ],
+      "baseline_magnitude": "per-instrument median - 10 .. median + 10"
+    },
+    "starts": 12,
+    "max_nfev": 1500,
+    "seed": 20261022,
+    "optimizer": "scipy least_squares trf, analytic Jacobian, linear loss, x_scale=jac",
+    "tolerances": {
+      "ftol": 1e-10,
+      "xtol": 1e-10,
+      "gtol": 1e-08
+    },
+    "rank_relative_cutoff": 1e-07,
+    "exclusions": "none: all finite native positive-error rows retained; exact documented source annotation is provenance, not a measurement",
+    "coverage": "local quadratic errors conditional on diagonal magnitude noise; no automatic coverage claim at boundaries or model failure",
+    "mass_identification": "unavailable: tE alone supplies neither thetaE nor piE"
+  },
+  "protocol_sha256": "65a23dcf7f8e41eb2b4a3a52053b7c57e11612e64993799c6a4b821a8d299713",
+  "selection": {
+    "cohort_id": "BHSM-OGLE3-pilot-20261022-v1",
+    "selected_ids": [
+      "OGLE3-ULENS-0033",
+      "OGLE3-ULENS-0037",
+      "OGLE3-ULENS-0048",
+      "OGLE3-ULENS-0078",
+      "OGLE3-ULENS-0127",
+      "OGLE3-ULENS-0146",
+      "OGLE3-ULENS-0169",
+      "OGLE3-ULENS-0174",
+      "OGLE3-ULENS-0202",
+      "OGLE3-ULENS-0252",
+      "OGLE3-ULENS-0261",
+      "OGLE3-ULENS-0264",
+      "OGLE3-ULENS-0277",
+      "OGLE3-ULENS-0316",
+      "OGLE3-ULENS-0337",
+      "OGLE3-ULENS-0344",
+      "OGLE3-ULENS-0345",
+      "OGLE3-ULENS-0361",
+      "OGLE3-ULENS-0381",
+      "OGLE3-ULENS-0382",
+      "OGLE3-ULENS-0424",
+      "OGLE3-ULENS-0427",
+      "OGLE3-ULENS-0468",
+      "OGLE3-ULENS-0518",
+      "OGLE3-ULENS-0538",
+      "OGLE3-ULENS-0568",
+      "OGLE3-ULENS-0585",
+      "OGLE3-ULENS-0626",
+      "OGLE3-ULENS-0669",
+      "OGLE3-ULENS-0695",
+      "OGLE3-ULENS-0754",
+      "OGLE3-ULENS-0761",
+      "OGLE3-ULENS-0772",
+      "OGLE3-ULENS-0796",
+      "OGLE3-ULENS-0859",
+      "OGLE3-ULENS-0914",
+      "OGLE3-ULENS-0977",
+      "OGLE3-ULENS-0996",
+      "OGLE3-ULENS-1035",
+      "OGLE3-ULENS-1042",
+      "OGLE3-ULENS-1106",
+      "OGLE3-ULENS-1150",
+      "OGLE3-ULENS-1215",
+      "OGLE3-ULENS-1232",
+      "OGLE3-ULENS-1261",
+      "OGLE3-ULENS-1288",
+      "OGLE3-ULENS-1301",
+      "OGLE3-ULENS-1400",
+      "OGLE3-ULENS-1439",
+      "OGLE3-ULENS-1461",
+      "OGLE3-ULENS-1576",
+      "OGLE3-ULENS-1597",
+      "OGLE3-ULENS-1635",
+      "OGLE3-ULENS-1654",
+      "OGLE3-ULENS-1702",
+      "OGLE3-ULENS-1737",
+      "OGLE3-ULENS-1749",
+      "OGLE3-ULENS-1861",
+      "OGLE3-ULENS-1865",
+      "OGLE3-ULENS-1920",
+      "OGLE3-ULENS-1961",
+      "OGLE3-ULENS-2009",
+      "OGLE3-ULENS-2035",
+      "OGLE3-ULENS-2122",
+      "OGLE3-ULENS-2136",
+      "OGLE3-ULENS-2209",
+      "OGLE3-ULENS-2229",
+      "OGLE3-ULENS-2442",
+      "OGLE3-ULENS-2475",
+      "OGLE3-ULENS-2477",
+      "OGLE3-ULENS-2593",
+      "OGLE3-ULENS-2643",
+      "OGLE3-ULENS-2653",
+      "OGLE3-ULENS-2666",
+      "OGLE3-ULENS-2678",
+      "OGLE3-ULENS-2756",
+      "OGLE3-ULENS-2773",
+      "OGLE3-ULENS-2781",
+      "OGLE3-ULENS-2787",
+      "OGLE3-ULENS-2842",
+      "OGLE3-ULENS-2843",
+      "OGLE3-ULENS-2882",
+      "OGLE3-ULENS-2937",
+      "OGLE3-ULENS-3037",
+      "OGLE3-ULENS-3067",
+      "OGLE3-ULENS-3092",
+      "OGLE3-ULENS-3129",
+      "OGLE3-ULENS-3159",
+      "OGLE3-ULENS-3163",
+      "OGLE3-ULENS-3184",
+      "OGLE3-ULENS-3199",
+      "OGLE3-ULENS-3231",
+      "OGLE3-ULENS-3318",
+      "OGLE3-ULENS-3340",
+      "OGLE3-ULENS-3343",
+      "OGLE3-ULENS-3400",
+      "OGLE3-ULENS-3404",
+      "OGLE3-ULENS-3414",
+      "OGLE3-ULENS-3468",
+      "OGLE3-ULENS-3509"
+    ],
+    "selected_ids_sha256": "0cf5dbf714a99567ccfc8448f53560333ed4597115a2801138ac707926a8a4a7",
+    "long_duration_count": 75,
+    "control_count": 25,
+    "eligible_control_count": 2272,
+    "status": "EXACT_SELECTION_REPRODUCED"
+  },
+  "pilot_ingestion": [
+    {
+      "event_id": "OGLE3-ULENS-0033",
+      "count": 954,
+      "raw_sha256": "31324077d637261ddea50336e4fe239cdda928c2b34e0fce94fe49350d8e05c2",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-0037",
+      "count": 957,
+      "raw_sha256": "8ce1a1189a0a81f39d83ff211a3300279eef471bcac8fbc53c4511165aa4e3b5",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-0048",
+      "count": 945,
+      "raw_sha256": "e38ff1b02effeafa93e8fa7d5d9f6f0e206c12db9138f6d05395b97e54d7ce98",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-0078",
+      "count": 969,
+      "raw_sha256": "3f779944c839ad810ca89222e0a13209da38230c55a662b6c397ab91ade2be92",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-0127",
+      "count": 965,
+      "raw_sha256": "f2af29c637cdda5fac7ee7ac313c0a67c17124996301de886de974be3de87e7d",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-0146",
+      "count": 963,
+      "raw_sha256": "727f6336989ceb62ace637ce5a999021734458de84ae5a96a3f28d4f60121aa4",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-0169",
+      "count": 968,
+      "raw_sha256": "35b6c6adade2a182b59ccfdf5bee4ab1aa29500d11821cd27e23ddfeb448af24",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-0174",
+      "count": 866,
+      "raw_sha256": "77adc04ccc555c30b5e37f26d0a44660ba3d86eee446030ae5307f050ced208e",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-0202",
+      "count": 1022,
+      "raw_sha256": "e86eadab509c0fc49694a35f29c53743b21ce2b3eaed0e16b44cf9307d019d33",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-0252",
+      "count": 1024,
+      "raw_sha256": "be4d243d2b6335046a22f1128b108d8ee598447b9342c8e3d7395b29bf2bc06e",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-0261",
+      "count": 1025,
+      "raw_sha256": "76cecbacb9616829e371cc2ca39a3fa0c73e9031e341699c2237d00ca519dc1d",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-0264",
+      "count": 1028,
+      "raw_sha256": "621272d3f0c11408497bfb12f4c904f3ae390ad241de7413dd39c8acc25528fd",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-0277",
+      "count": 1026,
+      "raw_sha256": "34dc1592e932657003bfbc2d34cd4b779874af0536afeaae79aac691d2f51bbb",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-0316",
+      "count": 920,
+      "raw_sha256": "f8a288b746c694c4589d8582a73bec803e00d04c6f144870ea76366c04235f22",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-0337",
+      "count": 822,
+      "raw_sha256": "ec10b202ee052ebb359fede0b746efed65f9945346c62861d5355999aaebd4b7",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-0344",
+      "count": 919,
+      "raw_sha256": "a3b7d0093afd1427a97af0cb45ebb429e57fbde42b9b7dfb0fe4f5a8737f44ee",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-0345",
+      "count": 926,
+      "raw_sha256": "4c10f18ed9aad4b921a6cdce40cd82e667274187192f6e9e4591fdbae713670b",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-0361",
+      "count": 921,
+      "raw_sha256": "a808461be5564252abdf3cdcc7939a1a129c6d9cfe8ad98430d60840caa44c96",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-0381",
+      "count": 874,
+      "raw_sha256": "2944b0c102e8955e41a451068a765b1ab109391763572a3476eebf2707e86290",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-0382",
+      "count": 897,
+      "raw_sha256": "5d29c676315097243e50bbf13bdddf36239c92fdcfb6c3889a982a5f7179f451",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-0424",
+      "count": 903,
+      "raw_sha256": "7ba4b2969aff961f5164191a5ac76ada91bd6fad600281a69ba323b70431b8dc",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-0427",
+      "count": 906,
+      "raw_sha256": "83f1667c94816284ee08967e9decdd4fc18cb954e796e51b7def0f9d8b63a7e9",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-0468",
+      "count": 777,
+      "raw_sha256": "f50f12cdb54b53d4283461781e59c827403d7e4bccb15950c54ac90da6942ac0",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-0518",
+      "count": 300,
+      "raw_sha256": "61b1dd797a0bc704963d645a97a8d555833e366a4d7fd157fed76a8734128ed2",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-0538",
+      "count": 581,
+      "raw_sha256": "55d8526b36936c1dfd2153f675fc8bcb2dcc9084e921a314c171dc138e0174e9",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-0568",
+      "count": 812,
+      "raw_sha256": "64180769af77fa8bb2905604f33c3bb0d8bcfcffc804043abd5c02957103c822",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-0585",
+      "count": 734,
+      "raw_sha256": "2057393df485b62484e101ea7e18d1dce379088720e7b8937b72859902b08767",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-0626",
+      "count": 788,
+      "raw_sha256": "50a442699c1b815457d98ce6f1364148af0f1ceb76cccf8c11ecfcea936203bf",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-0669",
+      "count": 788,
+      "raw_sha256": "75ff382cea33de16cde0bc91fc835da9604bd572d2ab612f0ab7928d267a59a9",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-0695",
+      "count": 612,
+      "raw_sha256": "2651eee2de868102db8d399f49c702829f661f3f469ad3df84d2dd1d062593a2",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-0754",
+      "count": 769,
+      "raw_sha256": "af1a67bd4364bfc0c02e4a756754cc589541944876be0f02a7b1c5159be4f9b4",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-0761",
+      "count": 760,
+      "raw_sha256": "e64712735e322a11817332bb8a72e8a36c5005e447ab3effcb7df7bd16dff66a",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-0772",
+      "count": 769,
+      "raw_sha256": "483433d6e72056e942f42a16b3b7b8d20a8f052039c9b0ef5ff0664c39bd318c",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-0796",
+      "count": 763,
+      "raw_sha256": "86582390adf4adc3fb3a45183a1475925c9c8dc935ae4f59b295390b3f233764",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-0859",
+      "count": 596,
+      "raw_sha256": "1fe733d18d1bfe0cf2e261ffb6264c170b54517de1f35d55c4337b157d6f8a51",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-0914",
+      "count": 756,
+      "raw_sha256": "cbdd8e6ef467a6e9701210232e624a8b8d1f201ef6bfc4fb1b13ab8eab967578",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-0977",
+      "count": 616,
+      "raw_sha256": "ae2a79bcf65d905127a4b18f9d8b89d1ec0048f92f3bdd704ac8cf673f3aec57",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-0996",
+      "count": 796,
+      "raw_sha256": "170b273ca33fec618a69e2c344fcea697a9297e6b736578b32f19ab6b7fc7a47",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-1035",
+      "count": 794,
+      "raw_sha256": "c54d88d49ae7d5fa60c0391a8f94109a2b3435600c2f43661d82d7f2bfacd3e6",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-1042",
+      "count": 798,
+      "raw_sha256": "2cc550e7795890c720be8f0c5f02a1f5149b981eabae919ca8501120d8d2c8d2",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-1106",
+      "count": 816,
+      "raw_sha256": "382175531540a16afde8536f019ffff06b40f933614f29991cf290765123bce8",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-1150",
+      "count": 325,
+      "raw_sha256": "ac9831b928c9d42cdc59b5f818314fe63fbbef2ea481740c4bd494cc5ff24eb6",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-1215",
+      "count": 748,
+      "raw_sha256": "3f4c182dcf8b6db021ab2f2d0657450792ae02af25b48c058f0dbaa1d274e709",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-1232",
+      "count": 750,
+      "raw_sha256": "e2606668e78459d383f3f3e75403a8bb960082c1abd80448348167bd70fc079f",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-1261",
+      "count": 316,
+      "raw_sha256": "2e42d86df48b24c4e485f85f0a961e87e70cefd535ca1be4c09d0d8252ce9653",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-1288",
+      "count": 778,
+      "raw_sha256": "4c3fc1c8a6abe129afc8924acb005da2423c1e1b04cbaf66fd6da0bd39bc6ee9",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-1301",
+      "count": 785,
+      "raw_sha256": "b1561359b05c39e9ee2502a3b903133425a82a33e546b0d3ee8216a897ad2362",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-1400",
+      "count": 903,
+      "raw_sha256": "680ef19148b318dcc75d232621082b8602b1f1c74c73774fd9a8ce81b78bf1dd",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-1439",
+      "count": 763,
+      "raw_sha256": "0a08899dd7373cb1753e44251bb4bd880e29c7a5c8f8f97a492e857ac6cf2e26",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-1461",
+      "count": 335,
+      "raw_sha256": "578c1a6cc96a23f54e49e4d1f5c1d749e4f382f111addd0b5b0ee6c1190c8115",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-1576",
+      "count": 905,
+      "raw_sha256": "dde42157b577d3bd224b789cf14a99c977d2cde271fd6464c8c3c8605499a208",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-1597",
+      "count": 919,
+      "raw_sha256": "6c57e4fff91f9917638bc2af568cd2d32e647a479b51077c9e356fa5186ce8b0",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-1635",
+      "count": 891,
+      "raw_sha256": "dcc261c92217d3dc69f58769e9ef1c3ec90139905fc5eddff7b524ee6919009c",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-1654",
+      "count": 888,
+      "raw_sha256": "89ef281990df8529a62a6ab1addaf7db535f55b72353af5173b7a5ab8387e5bd",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-1702",
+      "count": 895,
+      "raw_sha256": "db2b9bda1c770fab1bd702f6766b4dcd046c6b855daac23a01978c35359534ce",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-1737",
+      "count": 757,
+      "raw_sha256": "087ef380b1b375e4b0054c12fef38fe58451b9b8188b493d919a6964f2586230",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-1749",
+      "count": 759,
+      "raw_sha256": "88632303b263f60cd22242c466e32b13be44d70af0877d9060c888aed88837d9",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-1861",
+      "count": 767,
+      "raw_sha256": "c525b818a5afb9555ae068975b4566e64a362e132ba34ab78a237681f258687c",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-1865",
+      "count": 767,
+      "raw_sha256": "dbaa0592a9cf01db7236524376de5ca5ffef0ee066789ceb3f9d173b92bb3fbc",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-1920",
+      "count": 743,
+      "raw_sha256": "66b2b6032892f57ffcaf62d4a9d26ff9bfadd4e1ccccbd5259787c9f9baa485a",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-1961",
+      "count": 801,
+      "raw_sha256": "9602ec01ae4b1b49ec0a3afbd8b2d807f8c272b7b51a72a3a458bbfea063f47a",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-2009",
+      "count": 895,
+      "raw_sha256": "bbddf9ca0b1b8083eb7afcc357082860ff4a3863d6a234cab6ca23009abff0fd",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-2035",
+      "count": 896,
+      "raw_sha256": "a35eed3f3f28ee7e590020d0facc0e7351eeedbabc01d8852d920dc979ca9b4e",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-2122",
+      "count": 902,
+      "raw_sha256": "31ffdff18f7147d130646bc869e47a68cc0b931c4e680d41d946fb97254ced20",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-2136",
+      "count": 891,
+      "raw_sha256": "2c558029b6c73e4f4400dae92a7eca24a168e89a814134e60189801d2e9b16fe",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-2209",
+      "count": 775,
+      "raw_sha256": "1cde7fa22f2e865634e26ced1db9f098326ff73afbed53da6edd842ab4a56df3",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-2229",
+      "count": 777,
+      "raw_sha256": "a74e6aad08173a3c33cc55c0eb4f182584c4eecded440a973875d8c1af07e99d",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-2442",
+      "count": 853,
+      "raw_sha256": "12a233a482e87b8d89856732e4e6758cc3188ab5ea02a16d67b8148c4d4dbd15",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-2475",
+      "count": 862,
+      "raw_sha256": "8973ff2f4fef2a6df6972b650691cfc50262dc6ea66e7e68611b44d65ca654e3",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-2477",
+      "count": 856,
+      "raw_sha256": "bbb282bc2b2657a4ef45c2befc0f9a78695974cf505c79f76a8cd0d41c3a3c32",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-2593",
+      "count": 294,
+      "raw_sha256": "a1dcb42039383c280924c0587ac6b79f95bd8f229857d803b5c5d18b12f64084",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-2643",
+      "count": 778,
+      "raw_sha256": "22ce2359dc28ea3f8c8f2d67fbd27ff7d6a3c063f9f02554e457e22342a4cf2f",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-2653",
+      "count": 765,
+      "raw_sha256": "54fc70993b76d2aabd104a53e60141d2300dacc247126614c46e468635242f97",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-2666",
+      "count": 775,
+      "raw_sha256": "932dd2b43beb5ff5550561ac69f4d5f1c8cf722d1222fa51ec30b41107be7f36",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-2678",
+      "count": 757,
+      "raw_sha256": "8b94e98768109365dcd3e9568fcdff38d34b5742c92018ab0cc16b4e9f4a91d7",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-2756",
+      "count": 743,
+      "raw_sha256": "be360d61ba386dbc1eefb0d8bdc1ffb0503c57e2d299357511f115d27b180cf9",
+      "annotation_count": 1,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-2773",
+      "count": 750,
+      "raw_sha256": "a691223e6b20c94118409ff1c10faeefcad7d32bc111e494f6394f2730515cbd",
+      "annotation_count": 1,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-2781",
+      "count": 748,
+      "raw_sha256": "8b47d87f7e1c5a96e298265454b472a4b559e2440eb3ffa323c9854058fe03f6",
+      "annotation_count": 1,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-2787",
+      "count": 747,
+      "raw_sha256": "7b9d10f4d631797a1a0258d4846428f1856decc03b23d9e98ad6f1825f2043f6",
+      "annotation_count": 1,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-2842",
+      "count": 667,
+      "raw_sha256": "0e9806eef6781568e292bc8bed7e10c96291d6f96d6973e7d225d58101660d5d",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-2843",
+      "count": 583,
+      "raw_sha256": "2a7630fac6d717f8eb8d77d4592575e9a6f6c0e43b4e3cfeaee5a75a97e57357",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-2882",
+      "count": 738,
+      "raw_sha256": "354a178a2632b690c00557015daae5c220d83ffaf5d6396af346a5f326c07a36",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-2937",
+      "count": 799,
+      "raw_sha256": "e677485f1c5c17e21f3c6f257e37650a58bbdee8a4aed44c9744de7f697c5f1e",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-3037",
+      "count": 732,
+      "raw_sha256": "107fdcc4c08dac7b800dff74d9466df694ece9cc8766a83bdd4de24b415c35c7",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-3067",
+      "count": 739,
+      "raw_sha256": "85a727b6acca002be6f59dcc66e95abe7175cd601e0373e66573e80be5f34e2c",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-3092",
+      "count": 739,
+      "raw_sha256": "b0f11617d4763ecfa3e3f7f95433aee469f5134eda382e81b52b6592faf53422",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-3129",
+      "count": 731,
+      "raw_sha256": "a96c614135513f8a52ab49ae95914b431dc5e5eb4585c97ea0da7d60a25a89af",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-3159",
+      "count": 722,
+      "raw_sha256": "0c593cd640e55c2b02d588dbba6d2d14d9c55cf4d81d479ddb3997188c3d6f3d",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-3163",
+      "count": 549,
+      "raw_sha256": "0ebf16fc19be832a13b08f788e734e650f2db3147ef4a848b1c14a9c4ba01472",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-3184",
+      "count": 706,
+      "raw_sha256": "d912ffe434e06ecee659e32d2375af87bb4a1c5c1c4929387c6f153c7ecb2fc3",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-3199",
+      "count": 705,
+      "raw_sha256": "bee03ebe29b79d9f1fb344d2dd2b4dd3c4a8196943436237362ece5e8372f650",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-3231",
+      "count": 708,
+      "raw_sha256": "00a875a68a099ba25e7adf20c8a954880b78cb26b84e367b944c8760b376c8a7",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-3318",
+      "count": 589,
+      "raw_sha256": "9a045340057a570b66ba0804cf91d3b78e3eee3f32e29031cc8d49d1d98bf7c3",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-3340",
+      "count": 602,
+      "raw_sha256": "ab468cb278d08f2db3651e5658c9e10f57be5d1a3497101c096a5b69fd731df4",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-3343",
+      "count": 602,
+      "raw_sha256": "e084ddd256b96d6c3eabc9104180512793e0a1d9dbf59de627cea2ca103e09bd",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-3400",
+      "count": 534,
+      "raw_sha256": "73c139a32bd110dcd1124f10bad4572a166ea626c0e2579b46db6afb7adfdb9c",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-3404",
+      "count": 540,
+      "raw_sha256": "5036a5fd92f38c8d3e88c8604442237416623a76c1cfc92459275dc3a8a561a2",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-3414",
+      "count": 533,
+      "raw_sha256": "536c58e0c8d51b093b1d0c04185c9b6d6adca9bc4453885416e7ac168e18c553",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-3468",
+      "count": 244,
+      "raw_sha256": "f9398bfd248066b75eebcdbfcb2b6bff6049142c839227bd5c47b7c9bfe1b590",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    },
+    {
+      "event_id": "OGLE3-ULENS-3509",
+      "count": 298,
+      "raw_sha256": "58df80ed5e56bc1ae3d4d066fb8a0fbe6d21a52f0eedc4f04df17a8be1bd7a27",
+      "annotation_count": 0,
+      "strictly_increasing": true,
+      "duplicate_times": []
+    }
+  ],
+  "pilot_numeric_count": 76344,
+  "historical_benchmark_photometric_count": 61585,
+  "historical_benchmark_HST_rows": 16,
+  "historical_benchmark_HST_unique_visits": 8,
+  "historical_benchmark_precision_metadata": {
+    "status": "BLOCKED_MISSING_VERIFIED_METADATA",
+    "missing": [
+      "native HST numeric epoch origin is not defined; UTC alone is not an epoch origin",
+      "verified native-to-ephemeris time transformation and underlying photometric HJD clock scale",
+      "whether relative RA is the tangent-plane alpha*cos(delta) coordinate",
+      "reference frame, existing cross-filter corrections and shared-epoch dependence",
+      "explicit angular noise, reference-frame and cross-filter dependence model",
+      "verified observer ephemeris and sky-position convention"
+    ],
+    "joint_mass_inference": "UNRESOLVED"
+  },
+  "synthetic_actual_cadence_injections": [
+    {
+      "role": "SYNTHETIC_VALIDATION_ONLY",
+      "cadence_event_id": "OGLE3-ULENS-0033",
+      "cadence_raw_sha256": "31324077d637261ddea50336e4fe239cdda928c2b34e0fce94fe49350d8e05c2",
+      "count": 954,
+      "truth": {
+        "t0": 3155.835691,
+        "tE_days": 200.0,
+        "u0": 0.3,
+        "source_fraction": 0.65,
+        "baseline_magnitude": 18.0
+      },
+      "noiseless_recovery": {
+        "parameters": {
+          "t0": 3155.835691,
+          "tE_days": 199.99999999999957,
+          "u0": 0.3000000000000008,
+          "time_numeric_origin_jd": 2450000.0,
+          "allow_negative_blend": false,
+          "instruments": {
+            "OGLE-III": {
+              "baseline_magnitude": 18.0,
+              "source_fraction": 0.6500000000000025,
+              "flux_zero_point": "arbitrary common per-instrument reference magnitude 0",
+              "source_flux_relative": 4.10122273912127e-08,
+              "blend_flux_relative": 2.2083507056806598e-08
+            }
+          }
+        },
+        "chi_square": 1.9848147952497207e-23
+      },
+      "noise_trials": [
+        {
+          "seed": 49312,
+          "status": "PHOTOMETRIC_FIT",
+          "tE_days": 202.46095147365043,
+          "sigma_tE_days": 1.875317065406498,
+          "timescale_pull": 1.3122855430940068,
+          "flags": [],
+          "rank": 5,
+          "chi_square": 1005.6028264563519
+        },
+        {
+          "seed": 49313,
+          "status": "PHOTOMETRIC_FIT",
+          "tE_days": 199.71234795054482,
+          "sigma_tE_days": 1.8618067870593207,
+          "timescale_pull": -0.15450155808568894,
+          "flags": [],
+          "rank": 5,
+          "chi_square": 927.0504156932001
+        },
+        {
+          "seed": 49314,
+          "status": "PHOTOMETRIC_FIT",
+          "tE_days": 197.29155249241717,
+          "sigma_tE_days": 1.8495447476360503,
+          "timescale_pull": -1.4643860393453942,
+          "flags": [],
+          "rank": 5,
+          "chi_square": 875.3207906441248
+        },
+        {
+          "seed": 49315,
+          "status": "PHOTOMETRIC_FIT",
+          "tE_days": 201.46503556464825,
+          "sigma_tE_days": 1.871003923726837,
+          "timescale_pull": 0.7830211075827435,
+          "flags": [],
+          "rank": 5,
+          "chi_square": 877.2937284553301
+        },
+        {
+          "seed": 49316,
+          "status": "PHOTOMETRIC_FIT",
+          "tE_days": 199.31525464696972,
+          "sigma_tE_days": 1.8597244418400527,
+          "timescale_pull": -0.3681972111700472,
+          "flags": [],
+          "rank": 5,
+          "chi_square": 951.3362357460134
+        },
+        {
+          "seed": 49317,
+          "status": "PHOTOMETRIC_FIT",
+          "tE_days": 200.26037190843263,
+          "sigma_tE_days": 1.8643145111585953,
+          "timescale_pull": 0.13966093535946408,
+          "flags": [],
+          "rank": 5,
+          "chi_square": 946.8153831170563
+        },
+        {
+          "seed": 49318,
+          "status": "PHOTOMETRIC_FIT",
+          "tE_days": 200.1219531935776,
+          "sigma_tE_days": 1.8620554577868942,
+          "timescale_pull": 0.06549385683848279,
+          "flags": [],
+          "rank": 5,
+          "chi_square": 912.364547953762
+        },
+        {
+          "seed": 49319,
+          "status": "PHOTOMETRIC_FIT",
+          "tE_days": 200.87105356935604,
+          "sigma_tE_days": 1.8665835769515435,
+          "timescale_pull": 0.4666566127077033,
+          "flags": [],
+          "rank": 5,
+          "chi_square": 1009.51329977724
+        }
+      ]
+    },
+    {
+      "role": "SYNTHETIC_VALIDATION_ONLY",
+      "cadence_event_id": "OGLE3-ULENS-0127",
+      "cadence_raw_sha256": "f2af29c637cdda5fac7ee7ac313c0a67c17124996301de886de974be3de87e7d",
+      "count": 965,
+      "truth": {
+        "t0": 2727.69093,
+        "tE_days": 25.0,
+        "u0": 0.3,
+        "source_fraction": 0.65,
+        "baseline_magnitude": 18.0
+      },
+      "noiseless_recovery": {
+        "parameters": {
+          "t0": 2727.69093,
+          "tE_days": 25.000000000000018,
+          "u0": 0.2999999999999983,
+          "time_numeric_origin_jd": 2450000.0,
+          "allow_negative_blend": false,
+          "instruments": {
+            "OGLE-III": {
+              "baseline_magnitude": 18.0,
+              "source_fraction": 0.6499999999999977,
+              "flux_zero_point": "arbitrary common per-instrument reference magnitude 0",
+              "source_flux_relative": 4.10122273912124e-08,
+              "blend_flux_relative": 2.20835070568069e-08
+            }
+          }
+        },
+        "chi_square": 4.589077547975602e-25
+      },
+      "noise_trials": [
+        {
+          "seed": 49312,
+          "status": "PHOTOMETRIC_FIT",
+          "tE_days": 30.134981006253813,
+          "sigma_tE_days": 8.014833574153453,
+          "timescale_pull": 0.6406846703359256,
+          "flags": [],
+          "rank": 5,
+          "chi_square": 1024.9481326761234
+        },
+        {
+          "seed": 49313,
+          "status": "PHOTOMETRIC_FIT",
+          "tE_days": 30.5913209193494,
+          "sigma_tE_days": 8.475916096514707,
+          "timescale_pull": 0.6596715748104854,
+          "flags": [],
+          "rank": 5,
+          "chi_square": 940.6642682577613
+        },
+        {
+          "seed": 49314,
+          "status": "PHOTOMETRIC_FIT",
+          "tE_days": 21.43229103201995,
+          "sigma_tE_days": 6.631398419190686,
+          "timescale_pull": -0.5380025060257898,
+          "flags": [
+            "BOUND_ACTIVE_LOCAL_COVARIANCE_NONREGULAR"
+          ],
+          "rank": 5,
+          "chi_square": 883.6453594139442
+        },
+        {
+          "seed": 49315,
+          "status": "PHOTOMETRIC_FIT",
+          "tE_days": 25.703231715254255,
+          "sigma_tE_days": 6.793934186855939,
+          "timescale_pull": 0.10350876177381585,
+          "flags": [],
+          "rank": 5,
+          "chi_square": 891.4397227430469
+        },
+        {
+          "seed": 49316,
+          "status": "PHOTOMETRIC_FIT",
+          "tE_days": 25.888204542787225,
+          "sigma_tE_days": 7.49746288067169,
+          "timescale_pull": 0.11846734781135076,
+          "flags": [],
+          "rank": 5,
+          "chi_square": 961.8249968721392
+        },
+        {
+          "seed": 49317,
+          "status": "PHOTOMETRIC_FIT",
+          "tE_days": 28.326320707832373,
+          "sigma_tE_days": 7.9540731041511785,
+          "timescale_pull": 0.4181908645139794,
+          "flags": [],
+          "rank": 5,
+          "chi_square": 955.9845774610361
+        },
+        {
+          "seed": 49318,
+          "status": "PHOTOMETRIC_FIT",
+          "tE_days": 20.422543318243132,
+          "sigma_tE_days": 6.584961291867403,
+          "timescale_pull": -0.6951379786256519,
+          "flags": [
+            "BOUND_ACTIVE_LOCAL_COVARIANCE_NONREGULAR"
+          ],
+          "rank": 5,
+          "chi_square": 922.2267960599378
+        },
+        {
+          "seed": 49319,
+          "status": "PHOTOMETRIC_FIT",
+          "tE_days": 26.6886008302786,
+          "sigma_tE_days": 7.732058889093257,
+          "timescale_pull": 0.21838954597985763,
+          "flags": [],
+          "rank": 5,
+          "chi_square": 1026.5830944155862
+        }
+      ]
+    }
+  ],
+  "weak_source_synthetic_profile": {
+    "truth": {
+      "t0": 3155.835691,
+      "tE_days": 200.0,
+      "u0": 0.3,
+      "source_fraction": 0.02,
+      "baseline_magnitude": 18.0
+    },
+    "fit": {
+      "parameters": {
+        "t0": 3160.0582346378624,
+        "tE_days": 204.3198310293981,
+        "u0": 0.27458559047806624,
+        "time_numeric_origin_jd": 2450000.0,
+        "allow_negative_blend": false,
+        "instruments": {
+          "OGLE-III": {
+            "baseline_magnitude": 18.0001040151702,
+            "source_fraction": 0.01772668181868468,
+            "flux_zero_point": "arbitrary common per-instrument reference magnitude 0",
+            "source_flux_relative": 1.1183708619242258e-09,
+            "blend_flux_relative": 6.19713192088602e-08
+          }
+        }
+      },
+      "uncertainty": {
+        "parameter_order": [
+          "t0",
+          "tE_days",
+          "u0",
+          "OGLE-III.baseline_magnitude",
+          "OGLE-III.source_fraction"
+        ],
+        "standard_errors": {
+          "t0": 1.9042230838661953,
+          "tE_days": 52.55514858881473,
+          "u0": 0.09606447794455276,
+          "OGLE-III.baseline_magnitude": 0.0001841836930038536,
+          "OGLE-III.source_fraction": 0.007787001530026631
+        },
+        "covariance": [
+          [
+            3.6260655531288832,
+            -1.4911981400424694,
+            0.0021269515485173736,
+            -2.2185246321678675e-06,
+            0.00011663756219843405
+          ],
+          [
+            -1.4911981400424696,
+            2762.043643192395,
+            -4.961084780216926,
+            0.004476183896712322,
+            -0.40438668863915744
+          ],
+          [
+            0.0021269515485173736,
+            -4.961084780216926,
+            0.009228383922759466,
+            -7.554459520739592e-06,
+            0.0007468714439565627
+          ],
+          [
+            -2.2185246321678807e-06,
+            0.004476183896712322,
+            -7.554459520739592e-06,
+            3.392363276853779e-08,
+            -6.105468069544672e-07
+          ],
+          [
+            0.00011663756219843403,
+            -0.40438668863915744,
+            0.0007468714439565627,
+            -6.10546806954467e-07,
+            6.0637392828637094e-05
+          ]
+        ],
+        "rank": 5,
+        "parameter_count": 5,
+        "identified_parameters": [
+          "t0",
+          "tE_days",
+          "u0",
+          "OGLE-III.baseline_magnitude",
+          "OGLE-III.source_fraction"
+        ],
+        "unidentified_parameters": [],
+        "normalized_jacobian_singular_values": [
+          1.616958231466279,
+          0.9923537589692075,
+          0.9539479752676691,
+          0.6998295708828861,
+          0.030032098723162867
+        ],
+        "normalized_coordinate_null_projector": [
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ]
+        ],
+        "physical_null_directions": [],
+        "covariance_contract": "Null-affected public entries are unavailable. Local inverse-information errors use assumed native diagonal magnitude noise, without rescaling by reduced chi-square.",
+        "qualification": "Local quadratic approximation; bound-active, multimodal, rank-deficient or inadequate fits require profiles/sensitivity and do not establish frequentist coverage."
+      },
+      "flags": []
+    },
+    "profile": {
+      "schema": "bhsm_unresolved_timescale_profile/1",
+      "input_sha256": "25f40efd236d96a545a30e41966421b1f3dc909cd49a856877c3588fe5ed57cb",
+      "reference_objective_chi_square": 899.5625059607286,
+      "coverage_claim": false,
+      "rows": [
+        {
+          "tE_days": 100.0,
+          "status": "ADMITTED_INTERIOR_OPTIMUM",
+          "objective_chi_square": 905.2801019915763,
+          "delta_chi_square": 5.717596030847744,
+          "optimizer_success": true,
+          "parameters": {
+            "t0": 3159.8812547036355,
+            "tE_days": 100.00000000000004,
+            "u0": 0.7589464443899621,
+            "time_numeric_origin_jd": 2450000.0,
+            "allow_negative_blend": false,
+            "instruments": {
+              "OGLE-III": {
+                "baseline_magnitude": 17.999950873756124,
+                "source_fraction": 0.08090187513411759,
+                "flux_zero_point": "arbitrary common per-instrument reference magnitude 0",
+                "source_flux_relative": 5.104794200914542e-09,
+                "blend_flux_relative": 5.7993795200776224e-08
+              }
+            }
+          }
+        },
+        {
+          "tE_days": 200.0,
+          "status": "ADMITTED_INTERIOR_OPTIMUM",
+          "objective_chi_square": 899.5707448521571,
+          "delta_chi_square": 0.008238891428504758,
+          "optimizer_success": true,
+          "parameters": {
+            "t0": 3160.0519797234947,
+            "tE_days": 199.99999999999991,
+            "u0": 0.2825607302438085,
+            "time_numeric_origin_jd": 2450000.0,
+            "allow_negative_blend": false,
+            "instruments": {
+              "OGLE-III": {
+                "baseline_magnitude": 18.000097026042713,
+                "source_fraction": 0.018381637441056406,
+                "flux_zero_point": "arbitrary common per-instrument reference magnitude 0",
+                "source_flux_relative": 1.1596992743701055e-09,
+                "blend_flux_relative": 6.19303969202079e-08
+              }
+            }
+          }
+        },
+        {
+          "tE_days": 400.0,
+          "status": "ADMITTED_INTERIOR_OPTIMUM",
+          "objective_chi_square": 908.4046350953104,
+          "delta_chi_square": 8.842129134581796,
+          "optimizer_success": true,
+          "parameters": {
+            "t0": 3160.252436399587,
+            "tE_days": 399.9999999999999,
+            "u0": 0.1166757512156962,
+            "time_numeric_origin_jd": 2450000.0,
+            "allow_negative_blend": false,
+            "instruments": {
+              "OGLE-III": {
+                "baseline_magnitude": 18.000411664276356,
+                "source_fraction": 0.0065553010539053285,
+                "flux_zero_point": "arbitrary common per-instrument reference magnitude 0",
+                "source_flux_relative": 4.1345474062046417e-10,
+                "blend_flux_relative": 6.265836106471895e-08
+              }
+            }
+          }
+        },
+        {
+          "tE_days": 800.0,
+          "status": "ADMITTED_INTERIOR_OPTIMUM",
+          "objective_chi_square": 927.6871214820595,
+          "delta_chi_square": 28.124615521330952,
+          "optimizer_success": true,
+          "parameters": {
+            "t0": 3160.404949326935,
+            "tE_days": 799.9999999999999,
+            "u0": 0.05221650982450393,
+            "time_numeric_origin_jd": 2450000.0,
+            "allow_negative_blend": false,
+            "instruments": {
+              "OGLE-III": {
+                "baseline_magnitude": 18.000909298028795,
+                "source_fraction": 0.002814342555601138,
+                "flux_zero_point": "arbitrary common per-instrument reference magnitude 0",
+                "source_flux_relative": 1.7742435638313465e-10,
+                "blend_flux_relative": 6.286548988659791e-08
+              }
+            }
+          }
+        }
+      ]
+    }
+  },
+  "qualification": "Sixteen noisy trials assess recoverability and error scaling; they do not establish calibrated coverage, false-discovery rate or black-hole recovery."
+}

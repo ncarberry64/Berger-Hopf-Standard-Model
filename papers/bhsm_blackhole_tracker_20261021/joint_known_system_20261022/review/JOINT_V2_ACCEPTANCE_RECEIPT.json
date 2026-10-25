@@ -1,0 +1,473 @@
+{
+  "schema": "bhtracker.joint_acceptance_receipt.v2",
+  "completed_utc": "2026-10-22T21:29:31.726149+00:00",
+  "scientific_version": "v2",
+  "experimental_route": true,
+  "reviewer_software_repository": "https://github.com/ncarberry64/Berger-Hopf-Standard-Model",
+  "software_name": "BHSM Blackhole Tracker",
+  "product_version": "0.2.0rc4",
+  "scientific_source_sha256": "6eaf050481fc23aebf4b929e49fdab57e324ee80eb08e1547b69f056269eeaaa",
+  "workspace_source_freeze_commit": "5bb94198565fb25414f1f05908c00d49838c4b73",
+  "input_sha256": "d4fc2bfc9320c7eab8a33b93517f68f035a5d498ffb35ff548a638648143af96",
+  "input_hash_algorithm": "bhtracker.canonical_numeric_json.v2",
+  "accepted_for_mass_identification": false,
+  "accepted_for_new_BH_identification": false,
+  "accepted_mass_measurement": null,
+  "accepted_mass_interval": null,
+  "raw_solver_status_is_insufficient": true,
+  "models": [
+    {
+      "candidate": "G0",
+      "numerical_convergence": {
+        "converged_starts": 16,
+        "attempted_starts": 16,
+        "best_objective_deviance": 12600.601540308662,
+        "computational_time_origin_jd_tdb": 2455765.0,
+        "optimization_constant_offset": 0.0,
+        "profiled_nonlinear_rank": 11,
+        "nonlinear_parameter_count": 11,
+        "linear_parameter_count": 8
+      },
+      "solver_status": "JOINT_MODEL_OR_NOISE_INADEQUATE",
+      "conditional_parameters": {
+        "t0_jd_tdb": 2455763.94860065,
+        "tE_days": 284.3931831381306,
+        "u0_heliocentric": 0.05183332449988892,
+        "angle_source_minus_lens_rad": 2.897235961731018,
+        "pi_E": 0.09712737880412109,
+        "instruments": {
+          "OGLE": {
+            "baseline_magnitude": 16.4847746629365,
+            "source_fraction": 0.046788454634028545
+          },
+          "HST_F814W": {
+            "baseline_magnitude": 19.959651293689614,
+            "source_fraction": 0.9548338975376495
+          },
+          "HST_F606W": {
+            "baseline_magnitude": 22.058295520789784,
+            "source_fraction": 0.9601282852262146
+          }
+        },
+        "theta_E_mas": 5.177578502797766,
+        "source_position_N_mas": 13.839949115279163,
+        "relative_frame_source_motion_N_mas_yr": -3.4533196286630843,
+        "source_position_E_mas": 7.759308221948201,
+        "relative_frame_source_motion_E_mas_yr": -2.0154981629385014,
+        "relative_frame_source_parallax_mas": 0.2076933624252513,
+        "F606W_constant_frame_offset_N_mas": -0.04438992810268568,
+        "F606W_constant_frame_offset_E_mas": 0.03448892003723925,
+        "mass_msun": 6.545684721249638,
+        "heliocentric_relative_motion_mas_yr": 6.649633888124407
+      },
+      "diagnostics": {
+        "astrometry_chi2": 32.04303679407464,
+        "astrometry_dof_conservative": 29,
+        "astrometry_chi2_tail_probability": 0.31798741385263796,
+        "photometry_innovation_chi2": 12568.558503514589,
+        "photometry_dof_approximate": 12510,
+        "photometry_chi2_tail_probability_approximate": 0.35425965818514066,
+        "GP_noise_inference_requires_simulation_calibration": false,
+        "OGLE_sorted_innovation_lag1": 0.1295352613036514,
+        "photometry_chi2_two_sided_probability_approximate": 0.7085193163702813,
+        "astrometry_chi2_two_sided_probability_approximate": 0.6359748277052759
+      },
+      "residual_structure_failed_bins": [
+        "native_sigma_quartile_1",
+        "native_sigma_quartile_2",
+        "native_sigma_quartile_3",
+        "native_sigma_quartile_4",
+        "predicted_noise_free_magnitude_quartile_1",
+        "predicted_noise_free_magnitude_quartile_2",
+        "predicted_noise_free_magnitude_quartile_4",
+        "Julian_year_2010",
+        "Julian_year_2011",
+        "Julian_year_2013",
+        "Julian_year_2014",
+        "Julian_year_2015",
+        "Julian_year_2016",
+        "fixed_event_HJD2455400_2456400",
+        "fixed_offevent_complement"
+      ],
+      "residual_Ljung_Box10_p_approximate": 1.3788597368072085e-126,
+      "active_nonlinear_search_bounds": [],
+      "active_linear_bounds": [],
+      "accepted_mass_measurement": null,
+      "accepted_mass_interval": null,
+      "accepted_BH_classification": false
+    },
+    {
+      "candidate": "G1",
+      "numerical_convergence": {
+        "converged_starts": 16,
+        "attempted_starts": 16,
+        "best_objective_deviance": 12067.237171323228,
+        "computational_time_origin_jd_tdb": 2455765.0,
+        "optimization_constant_offset": 37446.653419424874,
+        "profiled_nonlinear_rank": 13,
+        "nonlinear_parameter_count": 13,
+        "linear_parameter_count": 8
+      },
+      "solver_status": "JOINT_MODEL_OR_NOISE_INADEQUATE",
+      "conditional_parameters": {
+        "t0_jd_tdb": 2455764.310901825,
+        "tE_days": 282.3759737120259,
+        "u0_heliocentric": 0.047900535404028007,
+        "angle_source_minus_lens_rad": 2.865003760789448,
+        "pi_E": 0.08956537922742851,
+        "instruments": {
+          "OGLE": {
+            "baseline_magnitude": 16.484473804212424,
+            "source_fraction": 0.04671815846277546
+          },
+          "HST_F814W": {
+            "baseline_magnitude": 19.95868273783358,
+            "source_fraction": 0.9555758848295202
+          },
+          "HST_F606W": {
+            "baseline_magnitude": 22.057368967736192,
+            "source_fraction": 0.9603588368999635
+          }
+        },
+        "gp_correlation_fraction": 0.13646302986439923,
+        "gp_tau_days": 0.3628485310963385,
+        "theta_E_mas": 5.181188699909645,
+        "source_position_N_mas": 13.830693020930203,
+        "relative_frame_source_motion_N_mas_yr": -3.4530086154903357,
+        "source_position_E_mas": 7.702079095757176,
+        "relative_frame_source_motion_E_mas_yr": -2.014570191541285,
+        "relative_frame_source_parallax_mas": 0.190051325077251,
+        "F606W_constant_frame_offset_N_mas": -0.04567315822981702,
+        "F606W_constant_frame_offset_E_mas": 0.0333664977562204,
+        "mass_msun": 7.103285982270498,
+        "heliocentric_relative_motion_mas_yr": 6.701806629525586
+      },
+      "diagnostics": {
+        "astrometry_chi2": 32.38750744003493,
+        "astrometry_dof_conservative": 29,
+        "astrometry_chi2_tail_probability": 0.30312419784821387,
+        "photometry_innovation_chi2": 12598.172831458007,
+        "photometry_dof_approximate": 12508,
+        "photometry_chi2_tail_probability_approximate": 0.2833328909143844,
+        "GP_noise_inference_requires_simulation_calibration": true,
+        "OGLE_sorted_innovation_lag1": 0.019803615074037117,
+        "photometry_chi2_two_sided_probability_approximate": 0.5666657818287688,
+        "astrometry_chi2_two_sided_probability_approximate": 0.6062483956964277
+      },
+      "residual_structure_failed_bins": [
+        "native_sigma_quartile_1",
+        "native_sigma_quartile_2",
+        "native_sigma_quartile_3",
+        "predicted_noise_free_magnitude_quartile_1",
+        "predicted_noise_free_magnitude_quartile_2",
+        "predicted_noise_free_magnitude_quartile_4",
+        "Julian_year_2010",
+        "Julian_year_2011",
+        "Julian_year_2012",
+        "Julian_year_2013",
+        "Julian_year_2014",
+        "Julian_year_2015",
+        "Julian_year_2016",
+        "fixed_event_HJD2455400_2456400",
+        "fixed_offevent_complement"
+      ],
+      "residual_Ljung_Box10_p_approximate": 0.22288240977471002,
+      "active_nonlinear_search_bounds": [],
+      "active_linear_bounds": [],
+      "accepted_mass_measurement": null,
+      "accepted_mass_interval": null,
+      "accepted_BH_classification": false,
+      "profile": {
+        "file": "JOINT_V2_G1_MASS_PROFILE31.json",
+        "states": {
+          "ADMITTED_LOCAL_PROFILE": 24,
+          "BOUNDARY_LIMITED": 7
+        },
+        "eligible_points": 24,
+        "coverage_claim": false
+      },
+      "conditional_profile_support": [
+        {
+          "delta_deviance_level": 1.0,
+          "conditional_support_around_best_msun": [
+            5.988854334916463,
+            8.398829210356862
+          ],
+          "accepted_mass_interval": null,
+          "reason": "Noise adequacy and other identification gates are separate; no mass acceptance from profile alone. Caps/unresolved points interrupt support."
+        },
+        {
+          "delta_deviance_level": 3.841459,
+          "conditional_support_around_best_msun": [
+            5.020896280502707,
+            9.910458562488609
+          ],
+          "accepted_mass_interval": null,
+          "reason": "Noise adequacy and other identification gates are separate; no mass acceptance from profile alone. Caps/unresolved points interrupt support."
+        }
+      ],
+      "authoritative_whole_night": {
+        "heldout_count": 2464,
+        "conditional_photometric_Q": 2647.635436472585,
+        "conditional_logdet_relative_to_native_D": -124.61528663467084,
+        "conditional_relative_Gaussian_deviance": 2523.020149837914,
+        "conditional_Q_two_sided_probability_approximate": 0.01037599378822633,
+        "approximate_screen_passed": true
+      },
+      "original_UTC_conditional_only": {
+        "heldout_count": 2467,
+        "conditional_photometric_Q": 2710.2058444778904,
+        "conditional_logdet_relative_to_native_D": -131.82207567474893,
+        "conditional_relative_Gaussian_deviance": 2578.3837688031417,
+        "conditional_Q_two_sided_probability_approximate": 0.000767823385261454,
+        "approximate_screen_passed": false
+      },
+      "parametric_controls": {
+        "count": 20,
+        "overall_screen_passes": 19,
+        "variance_bin_failed_cases": 0,
+        "truth_profile_eligible_cases": 20,
+        "predictive_Q_range": [
+          2307.355514857325,
+          2570.5186961684776
+        ],
+        "predictive_Q_at_least_observed_count": 0,
+        "plus_one_upper_tail_resolution": 0.047619047619047616,
+        "zero_of20_exact95_two_sided_binomial_interval": [
+          0,
+          0.16843347098308528
+        ],
+        "nineteen_of20_exact95_two_sided_binomial_interval": [
+          0.7512672372279723,
+          0.9987349105020502
+        ],
+        "qualification": "Local generating-mode refits,20samples; no precise mass coverage or global search certification."
+      }
+    },
+    {
+      "candidate": "G2",
+      "numerical_convergence": {
+        "converged_starts": 16,
+        "attempted_starts": 16,
+        "best_objective_deviance": 11287.384047408501,
+        "computational_time_origin_jd_tdb": 2455765.0,
+        "optimization_constant_offset": 54775.3329334235,
+        "profiled_nonlinear_rank": 15,
+        "nonlinear_parameter_count": 15,
+        "linear_parameter_count": 8
+      },
+      "solver_status": "JOINT_MODEL_OR_NOISE_INADEQUATE",
+      "conditional_parameters": {
+        "t0_jd_tdb": 2455763.580147867,
+        "tE_days": 340.4995062298254,
+        "u0_heliocentric": 0.014554665156332405,
+        "angle_source_minus_lens_rad": 2.931067182604872,
+        "pi_E": 0.032420331699152226,
+        "instruments": {
+          "OGLE": {
+            "baseline_magnitude": 16.470144082410172,
+            "source_fraction": 0.034952505910026584
+          },
+          "HST_F814W": {
+            "baseline_magnitude": 19.968383558162152,
+            "source_fraction": 0.7088025637247319
+          },
+          "HST_F606W": {
+            "baseline_magnitude": 22.066771839018735,
+            "source_fraction": 0.7117493628371806
+          }
+        },
+        "gp_correlation_fraction": 0.40652230013093915,
+        "gp_tau_days": 99.99999999967683,
+        "OGLE_error_calibration_scale": 0.9497115510845952,
+        "OGLE_extra_noise_floor_mag": 0.008479011135920183,
+        "theta_E_mas": 4.768504335728818,
+        "source_position_N_mas": 13.761793837737871,
+        "relative_frame_source_motion_N_mas_yr": -3.439875155005444,
+        "source_position_E_mas": 7.7526213811791695,
+        "relative_frame_source_motion_E_mas_yr": -2.0235136495619783,
+        "relative_frame_source_parallax_mas": 0.16230060421480066,
+        "F606W_constant_frame_offset_N_mas": -0.030621106643551266,
+        "F606W_constant_frame_offset_E_mas": 0.028549145139305426,
+        "mass_msun": 18.060708673466376,
+        "heliocentric_relative_motion_mas_yr": 5.115121099322142
+      },
+      "diagnostics": {
+        "astrometry_chi2": 32.427055970159685,
+        "astrometry_dof_conservative": 29,
+        "astrometry_chi2_tail_probability": 0.30144442303827856,
+        "photometry_innovation_chi2": 12528.743488085338,
+        "photometry_dof_approximate": 12506,
+        "photometry_chi2_tail_probability_approximate": 0.4411967998668733,
+        "GP_noise_inference_requires_simulation_calibration": true,
+        "OGLE_sorted_innovation_lag1": 0.046350053816690044,
+        "photometry_chi2_two_sided_probability_approximate": 0.8823935997337466,
+        "astrometry_chi2_two_sided_probability_approximate": 0.6028888460765571
+      },
+      "residual_structure_failed_bins": [
+        "predicted_noise_free_magnitude_quartile_2",
+        "predicted_noise_free_magnitude_quartile_4",
+        "native_seeing_quartile_1",
+        "native_seeing_quartile_4",
+        "Julian_year_2012",
+        "Julian_year_2013",
+        "Julian_year_2014",
+        "Julian_year_2015"
+      ],
+      "residual_Ljung_Box10_p_approximate": 6.768052971502633e-05,
+      "active_nonlinear_search_bounds": [
+        "log_OGLE_GP_tau_days"
+      ],
+      "active_linear_bounds": [],
+      "accepted_mass_measurement": null,
+      "accepted_mass_interval": null,
+      "accepted_BH_classification": false,
+      "profile": {
+        "file": "JOINT_V2_G2_MASS_PROFILE31.json",
+        "states": {
+          "BOUNDARY_LIMITED": 31
+        },
+        "eligible_points": 0,
+        "coverage_claim": false
+      },
+      "conditional_profile_support": [
+        {
+          "delta_deviance_level": 1.0,
+          "conditional_support_around_best_msun": null,
+          "accepted_mass_interval": null,
+          "reason": "Noise adequacy and other identification gates are separate; no mass acceptance from profile alone. Caps/unresolved points interrupt support."
+        },
+        {
+          "delta_deviance_level": 3.841459,
+          "conditional_support_around_best_msun": null,
+          "accepted_mass_interval": null,
+          "reason": "Noise adequacy and other identification gates are separate; no mass acceptance from profile alone. Caps/unresolved points interrupt support."
+        }
+      ],
+      "authoritative_whole_night": {
+        "heldout_count": 2464,
+        "conditional_photometric_Q": 2540.407037825402,
+        "conditional_logdet_relative_to_native_D": -294.724079969008,
+        "conditional_relative_Gaussian_deviance": 2245.682957856394,
+        "conditional_Q_two_sided_probability_approximate": 0.27710525582280593,
+        "approximate_screen_passed": true
+      },
+      "original_UTC_conditional_only": {
+        "heldout_count": 2467,
+        "conditional_photometric_Q": 2596.51317925663,
+        "conditional_logdet_relative_to_native_D": -307.90904673951627,
+        "conditional_relative_Gaussian_deviance": 2288.6041325171136,
+        "conditional_Q_two_sided_probability_approximate": 0.06846398658402558,
+        "approximate_screen_passed": true
+      },
+      "parametric_controls": {
+        "count": 20,
+        "overall_screen_passes": 19,
+        "variance_bin_failed_cases": 0,
+        "truth_profile_eligible_cases": 10,
+        "predictive_Q_range": [
+          2222.2633396830806,
+          2591.7775183367557
+        ],
+        "predictive_Q_at_least_observed_count": 2,
+        "plus_one_upper_tail_resolution": 0.047619047619047616,
+        "zero_of20_exact95_two_sided_binomial_interval": [
+          0,
+          0.16843347098308528
+        ],
+        "nineteen_of20_exact95_two_sided_binomial_interval": [
+          0.7512672372279723,
+          0.9987349105020502
+        ],
+        "qualification": "Local generating-mode refits,20samples; no precise mass coverage or global search certification."
+      }
+    }
+  ],
+  "stopping": {
+    "status": "CLOSED_PRESPECIFIED_CANDIDATE_SET_ALL_INADEQUATE",
+    "additional_mandatory_systematic_sensitivities": "NOT_ENTERED: frozen protocol requires baseline adequacy first; all G0/G1/G2 fail. No timing/frame/blend robustness is claimed.",
+    "further_noise_model_iteration": "NOT_PERFORMED; would require a separate disclosed prospective protocol, not acceptance by iteration."
+  },
+  "identified_quantities": {
+    "native_photometric_and_angular_observations": "PRESERVED_MEASURED_INPUTS",
+    "trajectory_timescale_angular_scale_parallax_and_flux_parameters": "CONDITIONAL_ON_FAILED_LIKELIHOOD; model-dependent diagnostic point estimates only",
+    "reliably_calibrated_lens_mass": null,
+    "absolute_lens_distance": null,
+    "absolute_lens_proper_motion": null,
+    "source_absolute_parallax": null,
+    "horizon_or_BHSM_core_state": null
+  },
+  "BHSM_interpretation": "One compact optical potential is counted once. Ordinary exterior lens equations are interpreted as the observable BHSM exterior response; no extra core deflection or horizon is inferred.",
+  "known_system_result": "Software ingests and fits this known system, but does not independently validate its black-hole mass from this data version. Existing published classification is separately attributed.",
+  "unknown_system_result": "No new BH interpretation is accepted; unresolved100-event pilot and its native results remain separate and unchanged.",
+  "required_evidence": [
+    "Photometric variance/deblending/seeing/detector/season calibration and clock semantics independent of the fitted target",
+    "Exposure-level HST astrometric covariance, frame transforms, bias calibration and centroid epoch weights",
+    "Validated finite competing-mode mass support under adequate residual and whole-night predictive behavior",
+    "Independent lens-flux/darkness and single-lens compatibility evidence; catalog/alias/literature checks for unknown systems",
+    "Absolute parallax and motion zero-point calibration before distance or absolute proper motion"
+  ],
+  "artifacts_sha256": {
+    "JOINT_2023_NATIVE_INPUT_v1.json": "d2409db410e113872781494ca4d73db57d2a44fd65146c4e7ec2f40828448428",
+    "BHSM_OB110462_2023_SourcePack_v1.zip": "71d36a03e4ba275e91bea62f4784a5193f34ad32d3777b637453f91151bafa99",
+    "JOINT_V2_G0_DIAGONAL16_CONTINUED.json": "14a1f3ea6dfd1ae60d48171d0824122d69ef2837edec42112eb8f4dacc58a72c",
+    "JOINT_V2_G1_MARGINAL16_CONTINUED.json": "0d1b9d5471d7030843aeef0bb1f5d5e1ca475907109514e08c42f1260bb67f54",
+    "JOINT_V2_G1_MASS_PROFILE31.json": "1f46c0ce695dce7fab826bb968e02ea6b7fa4d1cb3b2bfd207909cfda85f6318",
+    "JOINT_V2_G1_MASS_REFINED_SUPPORT.json": "9bf4d09f3da78791951cf5fbe9065e21ac93c73b7379729993b284210df113b1",
+    "JOINT_V2_G1_MARGINAL16_CONTINUED_V2_1_BLOCKED_PREDICTION.json": "2012ef6cbe6a79ddba7021be4f1cefc05adff3b59dbb1e369cd1051434002ece",
+    "JOINT_V2_G1_MARGINAL16_CONTINUED_BLOCKED_PREDICTION.json": "37492cd6f15079b1996680c9fb9a091c4ebce80c29d10a93bfe5debdff7051e6",
+    "JOINT_V2_G1_MARGINAL16_CONTINUED_PARAMETRIC_CONTROLS20.json": "abdd54ef21308167025c47a3e96315f83d9e63492b06cdf778ba6c047d323660",
+    "JOINT_V2_G1_MARGINAL16_CONTINUED_CONTROL_00.json.gz": "65a57a45eab71ae421a379936cfdf974d9ff3c75f64e72a550e22debab75e700",
+    "JOINT_V2_G1_MARGINAL16_CONTINUED_CONTROL_01.json.gz": "136cccb904710c94d8ee9bceccc69aea3606db4eac9b05c3ab64b5d2cfeac730",
+    "JOINT_V2_G1_MARGINAL16_CONTINUED_CONTROL_02.json.gz": "2ff85a6c88ea217d771ddd69eb925e5b7867071f8283dc207e689c28bc42382e",
+    "JOINT_V2_G1_MARGINAL16_CONTINUED_CONTROL_03.json.gz": "e50b6f85ddc49a4a948c5dffd00ab5cf2c36d871bb72bde9747a2da4f76d6033",
+    "JOINT_V2_G1_MARGINAL16_CONTINUED_CONTROL_04.json.gz": "ebf2325e936268368d05965cd08d986cb3419b86928d03d983ef007ac86b4849",
+    "JOINT_V2_G1_MARGINAL16_CONTINUED_CONTROL_05.json.gz": "a560f3b2b3d8ddf2a2c16b04e9be7d547499e8667a16a1d25ff1ad0043b5b4c8",
+    "JOINT_V2_G1_MARGINAL16_CONTINUED_CONTROL_06.json.gz": "232971821d89efadaed22ca781a47f941dd59ba590389a3f20a6ae8378629e8d",
+    "JOINT_V2_G1_MARGINAL16_CONTINUED_CONTROL_07.json.gz": "e45e058bc8ec19e49232760e6deff26a4ca2711f54b549fcf45fefb97e82c84c",
+    "JOINT_V2_G1_MARGINAL16_CONTINUED_CONTROL_08.json.gz": "11e3c355b31b15e65e58e30ccb64e5a646828a664a76b36b0ca7fe82c9ebfe0d",
+    "JOINT_V2_G1_MARGINAL16_CONTINUED_CONTROL_09.json.gz": "de64f5ad5567934ae0de2744ac5931f64d93df255f4e86e4ff11124dc36904b5",
+    "JOINT_V2_G1_MARGINAL16_CONTINUED_CONTROL_10.json.gz": "b8cc4ad9515e998efd3db46f4ffc49761517d59250af3475ac46a9b05af6896b",
+    "JOINT_V2_G1_MARGINAL16_CONTINUED_CONTROL_11.json.gz": "2946ade52d0fbde344ccf1263da749032d33c2d36060d6fd3b17facad7ea229f",
+    "JOINT_V2_G1_MARGINAL16_CONTINUED_CONTROL_12.json.gz": "469dd2c222333b62300546dd2ae556405e1a387bea756a858f0d0aad2b057c49",
+    "JOINT_V2_G1_MARGINAL16_CONTINUED_CONTROL_13.json.gz": "84a8d98d41a0eb26d1969b88fe42524b7d1765b2513344ebe9ce8c369d499a49",
+    "JOINT_V2_G1_MARGINAL16_CONTINUED_CONTROL_14.json.gz": "1d0e4a440b254450a4e1ae27a28443d8f9431711f6032f8b1ab60d9d9843ce0b",
+    "JOINT_V2_G1_MARGINAL16_CONTINUED_CONTROL_15.json.gz": "3892051cca4a37cd84d106dae89fd90eba5369a62e88e433a618608ba9a0e029",
+    "JOINT_V2_G1_MARGINAL16_CONTINUED_CONTROL_16.json.gz": "bf78e7e5b52c83dac0ec17c48f84d38f76f141ec3a27a784a4fe543899391001",
+    "JOINT_V2_G1_MARGINAL16_CONTINUED_CONTROL_17.json.gz": "885bc3622adfb91f301331fa725dcfb161782556c9aecdb20e983633566bed0f",
+    "JOINT_V2_G1_MARGINAL16_CONTINUED_CONTROL_18.json.gz": "3ac69d0d8ca1f1f64e4dadf44450a072449eff1cda228eec65639a12b14b386e",
+    "JOINT_V2_G1_MARGINAL16_CONTINUED_CONTROL_19.json.gz": "38f3fdc88f65a0da21456793d5195c2b8ae523a1181010c88336329ebce82687",
+    "JOINT_V2_G2_CALIBRATED16_CONTINUED.json": "8dba427f556863c87bc266a001500d7cbc4a2ec20e579e8478c91401d70ce763",
+    "JOINT_V2_G2_MASS_PROFILE31.json": "efe455ce21e76eec369886db0be0b2cda2680f151479e02e73f033791b85da98",
+    "JOINT_V2_G2_MASS_REFINED_SUPPORT.json": "f02e20ccc426a142266daf9ed8507e853c0b13dbe6d901c0e8e598e65e985f46",
+    "JOINT_V2_G2_CALIBRATED16_CONTINUED_V2_1_BLOCKED_PREDICTION.json": "5966a647c7807267db7fc51a66eed853d3d80a58019aa8f1aac943798b91025b",
+    "JOINT_V2_G2_CALIBRATED16_CONTINUED_BLOCKED_PREDICTION.json": "451c8bf317115556a5da35960a6269b1cc76075ca3d55852d8453def6d9ff555",
+    "JOINT_V2_G2_CALIBRATED16_CONTINUED_PARAMETRIC_CONTROLS20.json": "828e7cf7ad1d6f96c2e25eb46b396149aaf7b7f8ba8dc6832ca56f891c12c81d",
+    "JOINT_V2_G2_CALIBRATED16_CONTINUED_CONTROL_00.json.gz": "6743e9a53b2868759cadccf86b4d1f28cfdb052372380816afdd64031cd3762e",
+    "JOINT_V2_G2_CALIBRATED16_CONTINUED_CONTROL_01.json.gz": "c904bab660668d233d5225e77afbb2a541acc78a06c385f6c43c5bce2445ab28",
+    "JOINT_V2_G2_CALIBRATED16_CONTINUED_CONTROL_02.json.gz": "95ad5e096fe9f4f0a511275612a48d524de6d5bcddc6741283bd20e37c07bfb0",
+    "JOINT_V2_G2_CALIBRATED16_CONTINUED_CONTROL_03.json.gz": "eeddb41ff62c043a16fd68f5b2c4f43bac2c0680122cb1d184a81dbe3a08331b",
+    "JOINT_V2_G2_CALIBRATED16_CONTINUED_CONTROL_04.json.gz": "9831294739aeb07d8630d4d29e565b0e1b4ab0734320fadb6a7f38ae8fc7d866",
+    "JOINT_V2_G2_CALIBRATED16_CONTINUED_CONTROL_05.json.gz": "b679a674828c768925bce6e8f756306afb08bceb014af031216c03704f2080d5",
+    "JOINT_V2_G2_CALIBRATED16_CONTINUED_CONTROL_06.json.gz": "a2a0e5ce1abb022b8e0d7460b359a445d03fb80e73493b6ffe65652c9fa8d050",
+    "JOINT_V2_G2_CALIBRATED16_CONTINUED_CONTROL_07.json.gz": "921ddd440d6a4d7dc154b58bab2dc0c59f818af3eb60c864af2883804d7adb50",
+    "JOINT_V2_G2_CALIBRATED16_CONTINUED_CONTROL_08.json.gz": "85db0c65811d58764cddac8ba4d17fbbc6e2b6881dfc497674662165d4e96a51",
+    "JOINT_V2_G2_CALIBRATED16_CONTINUED_CONTROL_09.json.gz": "c38bbb9479ee670acf51d775f228a5db42242ff5659d47a168c130f018084b28",
+    "JOINT_V2_G2_CALIBRATED16_CONTINUED_CONTROL_10.json.gz": "322e55a8add22ba67e7f428075ffbc9a315094b1eb95ea2e3d5647dbc0326c5e",
+    "JOINT_V2_G2_CALIBRATED16_CONTINUED_CONTROL_11.json.gz": "f0830c9e863a4c25c745e0460339fe3e6600a3151428c37aba3095a00c6ac6b7",
+    "JOINT_V2_G2_CALIBRATED16_CONTINUED_CONTROL_12.json.gz": "2be8274a0103887c9fdd32de69cb7502eedd04e5672d2bf861ba7f7aa484a13b",
+    "JOINT_V2_G2_CALIBRATED16_CONTINUED_CONTROL_13.json.gz": "4f9ebb3de3d163a79db80f860b54cd173eb7b014bd981e91a5675e8521484b6b",
+    "JOINT_V2_G2_CALIBRATED16_CONTINUED_CONTROL_14.json.gz": "a7ff7de446c359eec6abd0c83f7ca8c5deb025780097e4636dea9186c266515c",
+    "JOINT_V2_G2_CALIBRATED16_CONTINUED_CONTROL_15.json.gz": "e366897fd8f795aa500adf7d547568dd44b283cb336e1ef616e9cf7f14cb8977",
+    "JOINT_V2_G2_CALIBRATED16_CONTINUED_CONTROL_16.json.gz": "4f5f8db16235a6e51bdcc4f48b07af5e6b57664c79b3d4d30dcd6234e33101dc",
+    "JOINT_V2_G2_CALIBRATED16_CONTINUED_CONTROL_17.json.gz": "f385a5ac376ad5dc0e980f5db1373df59ae5363c9a293acb38bbd342e1b82fc5",
+    "JOINT_V2_G2_CALIBRATED16_CONTINUED_CONTROL_18.json.gz": "7835baf2408aba17a2573ba094475b663e0563428cd2c4804af65835f9241765",
+    "JOINT_V2_G2_CALIBRATED16_CONTINUED_CONTROL_19.json.gz": "3b74c8a52db434ca7f2bf2641e57721008b748d2e18070c961cc85e39f1abefc",
+    "JOINT_PROTOCOL_V2_FREEZE.json": "9dca7fe937b8b9604d09d3e37bc6f0f171105a7199238d3dd0a9b7b3877efc21",
+    "JOINT_VALIDATION_PARTITION_V2_1_FREEZE.json": "a5f3a04552074683aee87900e6354c49f0ac57f0bac1747d5a9e9a5ba7de1758",
+    "JOINT_V2_G2_PARALLEL_OVERLAP_RECEIPT.json": "3fd4034002f0b34bf898af8828feccfd39f80f256b75003bbe3754aa087a42eb",
+    "JOINT_V2_G2_SERIAL_PARALLEL_COMPARISON.json": "0edfdcc643cacdded99fbb69af5db372f2a0e981f6487e23653fbbc1b413abca",
+    "JOINT_V2_G2_PARALLEL_AUXILIARY_STOP.json": "ffac6a968ffec66d9ac27eff259459b119d08b3c6a8aa235558719312a1907da",
+    "JOINT_V2_G2_MASS_PROFILE31_PARALLEL/dispatch.json": "3249efcc487be3f740acf213950be342efcba9c07bc3243102d80bfdd4b2e821"
+  }
+}

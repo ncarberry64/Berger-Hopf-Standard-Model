@@ -1,0 +1,26 @@
+Narrow v2 correction before native/cadence execution
+
+All v1 sources/freezes/logs remain unchanged. Kernel, domains, seeds, noise law,
+truth, solver phases, source inputs and budgets are unchanged. No native or
+actual-cadence forward/likelihood/fitter has been called at this revision.
+
+Runner v2 permanently latches any journal-budget, serialization or write failure.
+It retains the first unrecorded event in the terminal outcome outside the bounded
+journal, prohibits every later objective/endpoint model call, fills every later
+phase/start terminal and forces NUMERICALLY_UNRESOLVED even if all16 starts had
+earlier eligible endpoints. The lower trial is added to memory before the journal
+write, and last valid state is retained. A filesystem failure can still prevent
+writing final artifacts; supervisor records nonzero/incomplete, never acceptance.
+
+Generator v2 checks exact purpose ACTUAL_CADENCE_GENERATION, exact integer seed
+2026102402 and actual Python/NumPy/SciPy/Astropy versions against the prospective
+freeze before any forward call/draw. Its receipt records actual runtime/seed.
+Generic nonBH generating class is an experimental assumption, not a universal
+physical classification inferred merely from the chosen mass.
+
+The previous10 invented tests remain and3 new tests are prospectively fixed:
+journal-budget latching with retained lower trial; simulated write failure;
+generation purpose/integer-seed/runtime mismatch before forward/draw. These are
+small pure/mocked controls, not native models, a new campaign or an acceptance
+calibration. Root/independent source gates and exact new freezes still precede
+the one authentic point and one actual-cadence control.
