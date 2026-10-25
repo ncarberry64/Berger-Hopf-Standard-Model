@@ -63,6 +63,31 @@ class SourceAndMetadata(unittest.TestCase):
         from bhtracker._joint_v3 import core_snapshot_v2
         self.assertIsNone(check_live_source(core_snapshot_v2))
 
+    def test_physical_source_alias_passes_but_foreign_filename_or_constants_refuse(self):
+        from bhtracker._joint_v3._bindings import check_live_source
+        from bhtracker._joint_v3 import core_snapshot_v2 as core
+        source = Path(core.__file__).resolve(strict=True)
+        original = core.project_ne
+        aliases = [str(source.parent) + '/./' + source.name]
+        if sys.platform == 'win32':
+            import ctypes
+            buffer = ctypes.create_unicode_buffer(32768)
+            if ctypes.windll.kernel32.GetShortPathNameW(str(source), buffer, len(buffer)):
+                aliases.append(buffer.value)
+        def function(code):
+            return types.FunctionType(code, original.__globals__, original.__name__,
+                                      original.__defaults__, original.__closure__)
+        for alias in aliases:
+            self.assertEqual(Path(alias).resolve(strict=True), source)
+            with patch.object(core, 'project_ne', function(original.__code__.replace(co_filename=alias))):
+                self.assertIsNone(check_live_source(core))
+        with patch.object(core, 'project_ne', function(original.__code__.replace(co_filename=str(Path(api.__file__).resolve())))):
+            with self.assertRaises(ValueError): check_live_source(core)
+        changed = original.__code__.replace(co_consts=original.__code__.co_consts + ('INVENTED_CONSTANT_DRIFT',))
+        with patch.object(core, 'project_ne', function(changed)):
+            with self.assertRaises(ValueError): check_live_source(core)
+        self.assertIsNone(check_live_source(core))
+
     def test_duplicate_keys_general_input_and_native_relabel_refuse(self):
         for raw, purpose in [(b'{"x":1,"x":2}', 'WHOLLY_INVENTED'),
                              (b'{}', 'GENERAL_USER'), (b'{}', 'AUTHENTIC2023')]:

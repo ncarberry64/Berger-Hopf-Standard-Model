@@ -1,0 +1,60 @@
+{
+  "schema": "bhsm.provider_physical_filename_alias_repair.v1",
+  "upstream_product_source_commit": "b39fef6dc754c640e5b48f39e0212d0932abd87c",
+  "trigger": "Allthree current Windows installed-wheel jobs rejected project_ne source identity (11failed15passed); allthree Linux installed-wheel jobs passed26. Actual sourceorigins were installed wheels outside checkout.",
+  "causal_qualification": "Hosted traces do not identify the differing code field. A separate local runtime experiment reproduced the same rejection with onlyco_filename changed by a dot alias or real Windows8.3 spelling; both resolve to the same pinnedphysicalfile.",
+  "change": "Require live code filenames to resolve(strict=True) to the pinned source path. Preserve all other code fields and recursively compare nestedcode/constants. Qualifiedrole/spec and sourcehash guards remain. No arbitraryforeignfilename accepted.",
+  "verification": {
+    "focused_source_engine_and_CLI": {
+      "passed": 27,
+      "failed": 0,
+      "errors": 0,
+      "skips": 0
+    },
+    "positive_cases": [
+      "samefile dot alias",
+      "actual Windows8.3 alias"
+    ],
+    "negative_cases": [
+      "different existing sourcefile",
+      "alteredconstants"
+    ],
+    "all17_reference_py_txt_unchanged": true,
+    "all8_saved_MC_method_files_unchanged": true,
+    "numerical_leaf_equations_or_native_data_or_model_settings_changed": false
+  },
+  "manifest": "Onlybindinghelper bytes/hash record updated, API harddigest follows; all numerical source records remain unchanged.",
+  "proofs": [
+    {
+      "filename": "PROVIDER_FILENAME_ALIAS_REPRODUCTION_v1.json",
+      "bytes": 1809,
+      "sha256": "68c0eaf1844766a492c45ea195bfdb0a0964f2a7d2347048699e7ea13c091f74"
+    },
+    {
+      "filename": "KNOWN_PROVIDER_PHYSICAL_SOURCE_ALIAS_AFTER_v1.xml",
+      "bytes": 1368,
+      "sha256": "6054723c74ad9e7ad9bf21c4b688e7e69651689fc1b7af9458386a5f9f4a428d"
+    },
+    {
+      "filename": "KNOWN_PROVIDER_PHYSICAL_SOURCE_ALIAS_AFTER_v2.xml",
+      "bytes": 4307,
+      "sha256": "2b01a0e1346b52d5ad35d7213595a4d8cad91cba52e8aca2b7b1f4927ac8808a"
+    },
+    {
+      "filename": "PROVIDER_FILENAME_ALIAS_SOURCE_REVIEW_v1.json",
+      "bytes": 15087,
+      "sha256": "51169c0abca400d13ab290ca385f2f5f29da8ec1bcfb956f6fb61f1a3b628348"
+    },
+    {
+      "filename": "SUCCESSOR_KNOWN_WHEEL_SAVED_AUDIT_v1.json",
+      "bytes": 114446,
+      "sha256": "5a1bc23b81566fc85d2474fc6961f611781d583b1c18333b8cfb78074b9e3d9f"
+    }
+  ],
+  "intermediate_collection_hash_refusal": "Preservedbefore manifestupdate; not a passingtest",
+  "hosted_current_successor_CI": "PENDING_NEW_HEAD",
+  "known_BH_recovery_accepted": false,
+  "accepted_mass_interval": null,
+  "new_black_holes": 0,
+  "publication_hold": "HOLD"
+}

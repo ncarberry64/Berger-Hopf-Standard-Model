@@ -3,7 +3,7 @@
 This BHSM repository is the formal reviewer home. `Manuscript-Generation`
 is the development workspace. Norman P. Carberry is the hypothesis and
 research author. The 440 upstream files are copied byte-for-byte from
-immutable development commit `baa46d10e51cbc9453396ba409b958346de41793`.
+immutable development commit `b39fef6dc754c640e5b48f39e0212d0932abd87c`.
 [FORMAL_PROVENANCE.json](FORMAL_PROVENANCE.json) records their paths, sizes
 and SHA-256. The complete prior 373-file record remains in
 [historical provenance](validation/rc7_FORMAL_PROVENANCE_historical_648fad.json).
@@ -56,6 +56,13 @@ The [completion-order correction](validation/http_completion_order_20261025_v1.j
 also prevents the app from enabling export before its audit owner finishes.
 It passes eight focused app controls and 33 mocked browser scenarios; saved
 scientific method bytes and original replay bundles remain unchanged.
+
+The current [provider filename guard](validation/provider_physical_filename_alias_20261025_v1.json)
+accepts Windows short paths only when they resolve to the pinned physical
+source. Other code fields and nested constants stay checked; foreign source
+paths and changed code remain refused. Its 27 focused engine/CLI controls
+pass. The predecessor's Windows installed-wheel failures remain preserved,
+and current hosted verification is pending.
 
 The source now includes the explicit
 [Gaussian/spectral known-system API](docs/KNOWN_SYSTEM_V3.md), with no legacy

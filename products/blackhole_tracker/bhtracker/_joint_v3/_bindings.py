@@ -17,20 +17,40 @@ def check_live_source(module):
                 codes[value.co_qualname] = value
                 collect(value)
     collect(compiled)
+    def same_code(expected, actual):
+        # Windows can import the pinned file through its 8.3 spelling. Keep
+        # source identity strict while accepting aliases of that same file.
+        try:
+            if Path(actual.co_filename).resolve(strict=True) != path:
+                return False
+        except (OSError, RuntimeError, ValueError):
+            return False
+        fields = ('co_argcount', 'co_posonlyargcount', 'co_kwonlyargcount',
+                  'co_nlocals', 'co_stacksize', 'co_flags', 'co_code',
+                  'co_names', 'co_varnames', 'co_name', 'co_qualname',
+                  'co_firstlineno', 'co_linetable', 'co_exceptiontable',
+                  'co_freevars', 'co_cellvars')
+        if any(getattr(expected, n) != getattr(actual, n) for n in fields):
+            return False
+        if len(expected.co_consts) != len(actual.co_consts):
+            return False
+        for left, right in zip(expected.co_consts, actual.co_consts):
+            if isinstance(left, types.CodeType) or isinstance(right, types.CodeType):
+                if not (isinstance(left, types.CodeType) and isinstance(right, types.CodeType)
+                        and same_code(left, right)):
+                    return False
+            elif left != right:
+                return False
+        return True
     def inspect(value, expected_name=None):
         if isinstance(value, types.FunctionType) and (expected_name in codes or value.__module__ == module.__name__):
             # Python 3.14 stores the compiler-generated annotation function
             # under __annotate_func__, while its actual source qualname is
             # __annotate__. Prefer a declared member name, then its qualname.
             expected = codes.get(expected_name) or codes.get(value.__qualname__)
-            fields = ('co_argcount', 'co_posonlyargcount', 'co_kwonlyargcount',
-                      'co_nlocals', 'co_stacksize', 'co_flags', 'co_code', 'co_consts',
-                      'co_names', 'co_varnames', 'co_filename', 'co_name', 'co_qualname',
-                      'co_firstlineno', 'co_linetable', 'co_exceptiontable',
-                      'co_freevars', 'co_cellvars')
             # Marshal encodings can differ solely in string-intern/reference
             # layout despite equal code. Compare the actual code fields instead.
-            if expected is None or any(getattr(expected, n) != getattr(value.__code__, n) for n in fields):
+            if expected is None or not same_code(expected, value.__code__):
                 raise ValueError('Loaded provider function differs: ' + value.__qualname__)
         elif isinstance(value, type) and (expected_name in codes or value.__module__ == module.__name__):
             if value.__module__ != module.__name__:

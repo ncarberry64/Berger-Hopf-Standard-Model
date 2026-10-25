@@ -2,7 +2,7 @@
 
 This formal BHSM checkout now contains 440 exact upstream product files from
 immutable development commit
-`baa46d10e51cbc9453396ba409b958346de41793`. The software remains
+`b39fef6dc754c640e5b48f39e0212d0932abd87c`. The software remains
 `0.2.0rc7` engineering, with **publication HOLD**. The predecessor source's
 fresh local regression, wheel/SDIST membership and installed export/replay pass.
 Hosted CI for the new commits remains **PENDING**.
@@ -72,6 +72,16 @@ source passes eight app controls and three frontend controls, including
 33 mocked DOM scenarios. All eight saved scientific method files and the
 original ZIP are unchanged, preserving legitimate numerical replay. This
 focused result does not replace full hosted checks of the current source.
+
+For predecessor `baa46d10`, six hosted source/wheel jobs passed 494 tests plus
+66 subtests each. The separate installed-wheel engine jobs passed on Linux
+but failed on Windows at the provider source guard. A local experiment
+reproduced rejection caused only by an 8.3 or dot spelling of the same file.
+The [physical filename correction](validation/provider_physical_filename_alias_20261025_v1.json)
+preserves strict pinned-file identity and all other code fields, including
+nested code checks. Its 27 focused engine/CLI controls pass, including
+foreign-file and changed-constant refusal. The hosted failures retain their
+original qualification; fresh current Windows/Linux checks remain pending.
 
 ## Bounded prior engineering evidence
 
