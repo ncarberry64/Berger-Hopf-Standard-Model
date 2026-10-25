@@ -2,9 +2,9 @@
 
 This formal BHSM checkout now contains 440 exact upstream product files from
 immutable development commit
-`6d3b97dbd1ce1b2eeb5b902d622d9558fdfa22d7`. The software remains
-`0.2.0rc7` engineering, with **publication HOLD**. Fresh local canonical
-regression, wheel/SDIST membership and installed export/replay checks pass.
+`baa46d10e51cbc9453396ba409b958346de41793`. The software remains
+`0.2.0rc7` engineering, with **publication HOLD**. The predecessor source's
+fresh local regression, wheel/SDIST membership and installed export/replay pass.
 Hosted CI for the new commits remains **PENDING**.
 [FORMAL_PROVENANCE.json](FORMAL_PROVENANCE.json) binds the current bytes;
 the entire earlier 373-file/`648fad` record is preserved in
@@ -51,9 +51,27 @@ profile confirms no optimizer, new study or scientific RNG calls.
 
 The [current engineering receipt](validation/canonical_engineering_20261025_v1.json)
 records exact build and evidence hashes. This verification covers the
-unchanged 440-file upstream product. Subsequent formal guidance edits do not
+440-file predecessor at `6d3b97db`; the current manifest path correction
+has separate hash checks and awaits fresh hosted CI. Formal guidance edits do not
 replace the historical manuscript, PDF or release bindings. Hosted CI and
 a newly matched portable paper/source archive remain pending.
+
+The local test/build/replay receipts bind predecessor `6d3b97db`.
+Linux CI subsequently exposed five Windows separator spellings in the test
+reference manifest. The current source corrects those spellings to portable
+relative paths; all 20 referenced payload bytes, their hashes, the harness
+and every numerical model remain unchanged. Both failed Linux jobs are
+preserved. The [path repair record](validation/portable_reference_paths_20261025_v1.json)
+documents this metadata-only correction. Fresh Linux/Windows CI is pending;
+the earlier local pass is not relabeled as a test of the corrected manifest.
+
+A separate [HTTP completion-order repair](validation/http_completion_order_20261025_v1.json)
+keeps the app finalizing until the audit owner finishes. A deterministic
+held-owner regression fails against the old installed app; the corrected
+source passes eight app controls and three frontend controls, including
+33 mocked DOM scenarios. All eight saved scientific method files and the
+original ZIP are unchanged, preserving legitimate numerical replay. This
+focused result does not replace full hosted checks of the current source.
 
 ## Bounded prior engineering evidence
 

@@ -143,3 +143,26 @@ class MCAppControls(unittest.TestCase):
         self.assertEqual(seen['bytes'],size);self.assertEqual(seen['sha256'],expected.hexdigest())
         self.assertFalse(Path(seen['owned_path']).exists());self.assertTrue(value['engineering_mock'])
         mc.save(self.root/'LARGE_STREAM_TRANSFER_CHECK.json',{'bytes':size,'sha256':expected.hexdigest(),'base64_used':False,'analysis_mocked':True,'passed':True})
+
+    def test_08_terminal_result_waits_for_worker_exit_before_export(self):
+        body,original=input_body();entered=threading.Event();release=threading.Event()
+        def held_supervisor(workspace):
+            result=inline_mocked_supervisor(workspace);entered.set()
+            if not release.wait(10):raise TimeoutError('Invented supervisor release was not received')
+            return result
+        with service() as server,patch.object(mc.MCWorkspace,'run',held_supervisor),patch.object(mc,'monte_carlo_ordinate',side_effect=mocked_mc):
+            _,blob,_=request(server,'/api/photometry-mc/start',body);identity=json.loads(blob)['job_id']
+            try:
+                self.assertTrue(entered.wait(10))
+                _,blob,_=request(server,'/api/photometry-mc/jobs/'+identity);value=json.loads(blob)
+                self.assertEqual(value['status'],'finalizing',value)
+                self.assertEqual(value['recorded_result_status'],'complete');self.assertFalse(value['export_ready'])
+                with self.assertRaises(HTTPError) as error:request(server,'/api/photometry-mc/jobs/'+identity+'/export',{})
+                self.assertEqual(error.exception.code,400)
+                self.assertIn('wait for terminal audit',json.loads(error.exception.read())['error'])
+            finally:release.set()
+            server.mc_jobs._job(identity)['future'].result(timeout=10)
+            _,blob,_=request(server,'/api/photometry-mc/jobs/'+identity);value=json.loads(blob)
+            self.assertEqual(value['status'],'complete');self.assertTrue(value['export_ready'])
+            _,bundle,_=request(server,'/api/photometry-mc/jobs/'+identity+'/export',{})
+            with zipfile.ZipFile(BytesIO(bundle)) as archive:self.assertEqual(archive.read('input.original.utf8.json'),original)

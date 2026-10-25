@@ -4,8 +4,8 @@ The findings and immutable artifacts below describe the preserved rc2
 integration. They do not certify later software or PDFs. The current RC7
 engineering snapshot is documented in [REVIEWER.md](REVIEWER.md),
 [engineering status](ENGINEERING_STATUS_20261025.md) and the current source
-manifest. Fresh local canonical regression, distribution membership and
-installed export/replay pass; hosted CI is pending and scientific publication
+manifest. Fresh local regression, distribution membership and installed
+export/replay pass for predecessor `6d3b97db`; current hosted CI is pending and scientific publication
 is held. The current bounded evidence is recorded in the
 [engineering receipt](validation/canonical_engineering_20261025_v1.json).
 The manuscript/release receipts retain their separate historical bindings;

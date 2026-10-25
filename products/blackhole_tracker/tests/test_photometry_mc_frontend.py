@@ -36,7 +36,7 @@ class PhotometryMCFrontendTests(unittest.TestCase):
             with (artifact/'DOM_stderr.log').open('x',encoding='utf-8') as stream:stream.write(result.stderr)
         self.assertEqual(result.returncode, 0, result.stdout + result.stderr)
         receipt = json.loads(result.stdout)
-        self.assertTrue(receipt['passed']); self.assertEqual(receipt['tests'], 32)
+        self.assertTrue(receipt['passed']); self.assertEqual(receipt['tests'], 33)
         self.assertEqual(receipt['backend_calls'], 0); self.assertEqual(receipt['native_model_calls'], 0)
         self.assertFalse(receipt['scientific_validation'])
 

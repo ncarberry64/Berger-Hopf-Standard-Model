@@ -2,7 +2,7 @@
   'use strict';
   const INPUT_LIMIT = 32_000_000;
   const ZIP_LIMIT = 128 * 1024 * 1024;
-  const ACTIVE = new Set(['pending', 'running']);
+  const ACTIVE = new Set(['pending', 'running', 'finalizing']);
   const TERMINAL = new Set(['complete', 'cancelled', 'failed']);
   const DECIMAL = /^[+-]?(?:\d+\.?\d*|\.\d+)(?:e[+-]?\d+)?$/i;
 

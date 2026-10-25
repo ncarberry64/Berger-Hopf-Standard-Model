@@ -1,0 +1,45 @@
+{
+  "schema": "bhsm.portable_reference_manifest_path_repair.v1",
+  "scope": "Only five manifest path separator spellings; all20 referenced payload bytes and hashes and harness unchanged. Existing Linux CI exposed Windows-only literal path spelling.",
+  "old_manifest_sha256": "1285124a22be14b13c11931c2be020ace7e95ffb49d59407909c80aad066f909",
+  "new_manifest_sha256": "35287e88819d3d8d252bddc33e72aabcfed4373b1642b9b0812b19ab8985cecd",
+  "changes": [
+    {
+      "before": "providers\\student_ou.py.txt",
+      "after": "providers/student_ou.py.txt",
+      "member_sha256": "1ad508ad93f6ea1aec706e25c0fcbcb9aabd32ada77bac732fd7843c2f917834"
+    },
+    {
+      "before": "providers\\student_ou_banded.py.txt",
+      "after": "providers/student_ou_banded.py.txt",
+      "member_sha256": "42a63bfe29dd51ddc98709f92bb5f193033ea0545682802b064dd7e26ca624a5"
+    },
+    {
+      "before": "invented_fixture_v1\\INVENTED_DATASET_v1.json",
+      "after": "invented_fixture_v1/INVENTED_DATASET_v1.json",
+      "member_sha256": "d2613acccc3a7cd251b9bbaef615d01570ddb1f92a01dee61c669548265546f2"
+    },
+    {
+      "before": "invented_fixture_v1\\INVENTED_TRUTH_v1.json",
+      "after": "invented_fixture_v1/INVENTED_TRUTH_v1.json",
+      "member_sha256": "730f7dafbb72f9a1064ee08ff2c90825c388fb46c5878841f6205dd961d68850"
+    },
+    {
+      "before": "invented_fixture_v1\\CONTROL_REGISTRY_v1.json",
+      "after": "invented_fixture_v1/CONTROL_REGISTRY_v1.json",
+      "member_sha256": "1bbf6acb726413fcf916c1bfe5b313e50a18ca63e79c159b0497b31f6355d487"
+    }
+  ],
+  "all20_payload_digests_verified": true,
+  "harness_sha256": "78a2341f3646f80be3b3180cff904b5967007e65d806f1fc7086440c5654fd38",
+  "scientific_equations_or_native_observations_changed": false,
+  "hosted_CI_for_repaired_source": "PENDING",
+  "publication_hold": "HOLD",
+  "upstream_product_source_commit": "3e2ef6a7be1fac02df720551e47c35aa46495f0c",
+  "predecessor_local_test_source_commit": "6d3b97dbd1ce1b2eeb5b902d622d9558fdfa22d7",
+  "failed_hosted_attempts_preserved": [
+    "Manuscript-Generation run40232846732 Ubuntu tracker-wheel-smoke:2failed491passed66subtests",
+    "BHSM run40232890884 Ubuntu tracker-source-and-wheel:2failed491passed66subtests"
+  ],
+  "native_or_physical_acceptance": false
+}

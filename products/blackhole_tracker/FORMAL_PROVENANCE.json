@@ -2,11 +2,21 @@
   "accepted_mass_interval": null,
   "canonical_path": "products/blackhole_tracker",
   "canonical_repository": "https://github.com/ncarberry64/Berger-Hopf-Standard-Model",
-  "canonical_retest_status": "PASS_LOCAL_ENGINEERING_HOSTED_CI_PENDING",
+  "canonical_retest_status": "LOCAL_PREDECESSOR_PASS_PORTABLE_MANIFEST_FIX_VERIFIED_HOSTED_CI_PENDING",
+  "current_HTTP_completion_order_repair": {
+    "bytes": 2303,
+    "path": "validation/http_completion_order_20261025_v1.json",
+    "sha256": "1e0a95a2273e30d2cece1919e507beefebb9fbc4479d32fa2fb4f4b119794328"
+  },
   "current_engineering_receipt": {
     "bytes": 4244,
     "path": "validation/canonical_engineering_20261025_v1.json",
     "sha256": "9b140fdd7dcdae15b9ebaf2b4924e1b4e798fd0cd37237ef420fc83566e005e8"
+  },
+  "current_reference_path_repair": {
+    "bytes": 2260,
+    "path": "validation/portable_reference_paths_20261025_v1.json",
+    "sha256": "93ac37372a7aca0b5139651f71e848c7d2097e7cb310b45f6ff259fc2965b45b"
   },
   "historical_provenance": {
     "bytes": 70567,
@@ -413,9 +423,9 @@
       "sha256": "8d145f0d16a2d9f2a63706b0fb5f26d187e33589597ae7ee7182cec8b15613ad"
     },
     {
-      "bytes": 35116,
+      "bytes": 35735,
       "path": "bhtracker/server.py",
-      "sha256": "6cc5d6ac2be3d8e0cb0b112bf65c49d5ee9c846ee8930a67f2e38931b251b4d5"
+      "sha256": "5ecaacf6407e4d87d7ea88a397af72a5a224c3ef4836d3de1d20b57f94feafcf"
     },
     {
       "bytes": 34495,
@@ -603,9 +613,9 @@
       "sha256": "356b5a047cd10e99298ab246aeb26572f0d9916e09f892d8a79dce3497da852d"
     },
     {
-      "bytes": 26013,
+      "bytes": 26027,
       "path": "bhtracker/web/photometry-mc.js",
-      "sha256": "38d9306aa7cee6791db1765a8eb4d011bc254457797106b9e45862a50f92d79b"
+      "sha256": "c8f7d6849dffbf72300a649a2b984a7590d94a57df41eaae59ba0b82e1979b66"
     },
     {
       "bytes": 12571,
@@ -1498,9 +1508,9 @@
       "sha256": "dfd06d5db4317b5f6b1eff3faf13dbd45df9bc1d734e3c65dd22c63d1d52a5a1"
     },
     {
-      "bytes": 25538,
+      "bytes": 26240,
       "path": "tests/frontend/test_photometry_mc_dom.js",
-      "sha256": "1cf7e49cd9d00475e1aa1a2044b8f8bc7354c3ad8e35452971d471de80f3c088"
+      "sha256": "d9b5ee26b9768d2586d4e76fdf47de9e4a4a609d1801a8cb28373ff6117143cd"
     },
     {
       "bytes": 5064,
@@ -1508,9 +1518,9 @@
       "sha256": "b810f5fc0c381c351773fcf9f7e42421ac39984fe78e6041d4354759f10df21c"
     },
     {
-      "bytes": 5099,
+      "bytes": 5094,
       "path": "tests/known_system_v3_reference/REFERENCE_MANIFEST_v1.json",
-      "sha256": "1285124a22be14b13c11931c2be020ace7e95ffb49d59407909c80aad066f909"
+      "sha256": "35287e88819d3d8d252bddc33e72aabcfed4373b1642b9b0812b19ab8985cecd"
     },
     {
       "bytes": 17257,
@@ -1718,14 +1728,14 @@
       "sha256": "011029be4e2a404b8d3982df129548186c84e62f623468ac45abd365edee730e"
     },
     {
-      "bytes": 9651,
+      "bytes": 11455,
       "path": "tests/test_photometry_mc_app.py",
-      "sha256": "e8e641d9bf1a8c9124d8231d828c26f58386c63bfad59e53ef98e18ad342a754"
+      "sha256": "49f56d2ceb364a9e04e0d2f606944e79f375decda5f3bf9737b379b055d302c0"
     },
     {
       "bytes": 5894,
       "path": "tests/test_photometry_mc_frontend.py",
-      "sha256": "84935a9d8c64244392cf84aa1d1e34c3f09dc8060b3234a326a667ef61243cae"
+      "sha256": "17e71f68eb58b81e434332e93dbf870bcbe2b9475a67a2fb65a964e91045ace3"
     },
     {
       "bytes": 27920,
@@ -2224,8 +2234,8 @@
     }
   ],
   "submission_ready": false,
-  "test_evidence_scope": "Fresh canonical build and isolated installed-wheel regression pass493tests+66subtests; wheelmetadata/notices/RECORD and all17 reference SDISTmembers exact. Originaldurablesavedexport/replay passes11profiles143states/maxQdiff0, controlledtamperrefused/validrestore. This does not establish coverage, acceptedknownBHrecovery or scientificacceptance. HostedCI/newportablepaperarchive pending.",
-  "workspace_source_commit": "6d3b97dbd1ce1b2eeb5b902d622d9558fdfa22d7",
+  "test_evidence_scope": "Fresh canonical build and isolated installed-wheel regression pass493tests+66subtests; wheelmetadata/notices/RECORD and all17 reference SDISTmembers exact. Originaldurablesavedexport/replay passes11profiles143states/maxQdiff0, controlledtamperrefused/validrestore. This does not establish coverage, acceptedknownBHrecovery or scientificacceptance. HostedCI/newportablepaperarchive pending. Local493+66/build/replay receipts bind predecessor6d3b97db; successor3e2ef6a changes onlyfive reference-manifest pathseparators, with all20 payloadhashes andharness unchanged. NewLinux/Windows hostedCI is required; failedLinux predecessorjobs retained. Currentserver/browserlifecyclefix has8appcontrols+3frontendPythoncontrols including33mockedDOMcases; all8savedscientificmethodfiles unchanged sooriginalZIPnumericalreplay remainsadmissible. NewfullhostedCI pending.",
+  "workspace_source_commit": "baa46d10e51cbc9453396ba409b958346de41793",
   "workspace_source_prefix": "product/",
   "workspace_source_repository": "https://github.com/ncarberry64/Manuscript-Generation"
 }

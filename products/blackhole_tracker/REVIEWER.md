@@ -3,13 +3,13 @@
 This BHSM repository is the formal reviewer home. `Manuscript-Generation`
 is the development workspace. Norman P. Carberry is the hypothesis and
 research author. The 440 upstream files are copied byte-for-byte from
-immutable development commit `6d3b97dbd1ce1b2eeb5b902d622d9558fdfa22d7`.
+immutable development commit `baa46d10e51cbc9453396ba409b958346de41793`.
 [FORMAL_PROVENANCE.json](FORMAL_PROVENANCE.json) records their paths, sizes
 and SHA-256. The complete prior 373-file record remains in
 [historical provenance](validation/rc7_FORMAL_PROVENANCE_historical_648fad.json).
 This guide is a formal addition; all upstream source files remain byte-exact.
-The current source is **RC7 engineering / HOLD**. Fresh local canonical
-regression, wheel/SDIST membership and installed export/replay pass.
+The current source is **RC7 engineering / HOLD**. For predecessor `6d3b97db`,
+fresh local regression, wheel/SDIST membership and installed export/replay pass.
 Hosted CI for the new commits remains **PENDING**.
 Read [engineering status](ENGINEERING_STATUS_20261025.md) for the exact evidence
 boundaries and the separate, unchanged manuscript/release record.
@@ -44,6 +44,18 @@ and 11-profile/143-state replay with zero objective difference. Tampering is
 refused and a valid export restores correctly. See the
 [current receipt](validation/canonical_engineering_20261025_v1.json).
 Hosted CI and the newly matched complete portable archive remain pending.
+
+Those local receipts bind predecessor `6d3b97db`. The current source also
+corrects five Windows separator spellings in its test-reference manifest
+after Linux CI exposed them. All 20 referenced payloads, hashes and the
+harness are unchanged. Both failed Linux jobs remain recorded; the
+[portable path correction](validation/portable_reference_paths_20261025_v1.json)
+requires fresh hosted Linux/Windows checks.
+
+The [completion-order correction](validation/http_completion_order_20261025_v1.json)
+also prevents the app from enabling export before its audit owner finishes.
+It passes eight focused app controls and 33 mocked browser scenarios; saved
+scientific method bytes and original replay bundles remain unchanged.
 
 The source now includes the explicit
 [Gaussian/spectral known-system API](docs/KNOWN_SYSTEM_V3.md), with no legacy

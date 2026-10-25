@@ -17,9 +17,9 @@ outcomes remain explicit.
 and the [integration review](products/blackhole_tracker/FORMAL_INTEGRATION_REVIEW.md)
 record their distinct source and release identities. The current product
 snapshot contains 440 exact files from immutable development commit
-`6d3b97dbd1ce1b2eeb5b902d622d9558fdfa22d7`, labeled **RC7 engineering / HOLD**.
+`baa46d10e51cbc9453396ba409b958346de41793`, labeled **RC7 engineering / HOLD**.
 [Engineering status](products/blackhole_tracker/ENGINEERING_STATUS_20261025.md)
-records both prior and fresh canonical evidence: 493 tests plus 66 subtests,
+records both historical and fresh predecessor `6d3b97db` evidence: 493 tests plus 66 subtests,
 wheel/SDIST membership and installed export/replay of 11 profiles / 143 states
 pass locally. Hosted CI for the new commits remains **PENDING**. Existing paper/PDF/manual-packet and release/download bindings are
 unchanged and do not certify this new source snapshot.

@@ -154,6 +154,16 @@ async function test(name, fn) { await fn(); cases.push(name); }
     await h.app.refreshStatus();assert.equal(h.app.snapshot().rows.length,2);assert.equal(h.app.snapshot().rows[1].decision,'UNKNOWN_NOT_RETURNED');
     assert.equal(h.el['mc-export'].disabled,false);assert.equal(h.el['mc-node-rows'].children[0].children[3].textContent,'Unavailable');h.app.dispose();
   });
+  await test('finalizing keeps polling and export disabled until the owner finishes', async () => {
+    const h=harness();await h.started('finalizing');
+    assert.equal(h.app.snapshot().jobStatus,'finalizing');assert.equal(h.el['mc-export'].disabled,true);
+    assert.equal(h.timers.size,1);const count=h.calls.length;
+    assert.equal(await h.app.exportJob(),false);assert.equal(h.calls.length,count);
+    h.enqueue('GET','/api/photometry-mc/jobs/job-1',h.job('complete',[],{export_ready:true}));
+    await [...h.timers.values()][0].fn();
+    assert.equal(h.app.snapshot().jobStatus,'complete');assert.equal(h.el['mc-export'].disabled,false);
+    assert.equal(h.timers.size,0);h.app.dispose();
+  });
   await test('failed partial job can export without converting missing probability to zero', async () => {
     const h=harness();await h.started('failed',[{node_id:'tE_days_0',parameter:'tE_days',value:100,decision:'UNKNOWN',p_lower:null,p_upper:2,unknown:198}]);
     assert.equal(h.el['mc-node-rows'].children[0].children[3].textContent,'Unavailable');assert.equal(h.el['mc-node-rows'].children[0].children[4].textContent,'Unavailable');

@@ -7,9 +7,9 @@ repository is the formal reviewer record. The
 records development history; it is not a separate source of reviewer authority.
 
 The current product source is **RC7 engineering / HOLD**, with 440 exact files
-from immutable development commit `6d3b97dbd1ce1b2eeb5b902d622d9558fdfa22d7`.
+from immutable development commit `baa46d10e51cbc9453396ba409b958346de41793`.
 [Engineering status](../products/blackhole_tracker/ENGINEERING_STATUS_20261025.md)
-separates its historical evidence from the fresh local canonical checks:
+separates its historical evidence from fresh local checks of predecessor `6d3b97db`:
 493 tests plus 66 subtests, wheel/SDIST membership and installed export/replay
 pass. Hosted CI for the new commits remains **PENDING**. The existing reviewed paper/PDF,
 manual packet and downloads retain their separate historical bindings.

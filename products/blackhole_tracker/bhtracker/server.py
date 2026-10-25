@@ -26,6 +26,18 @@ SKYTRACK_REQUEST_LIMIT=80_000_000
 PHOTOMETRY_MC_REQUEST_LIMIT=180_000_000
 JOINT_SOURCEPACK_SHA256='71d36a03e4ba275e91bea62f4784a5193f34ad32d3777b637453f91151bafa99'
 
+def mc_http_status(jobs, identity, value=None):
+    """A saved result is terminal for the app only after its owner has exited."""
+    value=jobs.status(identity) if value is None else value
+    finished=jobs._job(identity)['future'].done()
+    value['export_ready']=finished
+    if not finished and value['status'] in ('complete','failed','cancelled'):
+        value['recorded_result_status']=value['status']
+        value['status']='finalizing'
+        value['qualification']='Saved results are retained; wait for the audit owner to finish before exporting.'
+    return value
+
+
 def import_joint_sourcepack(content):
     """Import only the reviewed source pack; never execute archived helpers."""
     if hashlib.sha256(content).hexdigest()!=JOINT_SOURCEPACK_SHA256:
@@ -170,7 +182,7 @@ def make_server(port=8765):
             if self.path=='/api/examples':self.send_json(example_names());return
             if self.path.startswith('/api/photometry-mc/jobs/'):
                 identity=self.path[len('/api/photometry-mc/jobs/'):]
-                try:self.send_json(mc_jobs.status(identity))
+                try:self.send_json(mc_http_status(mc_jobs,identity))
                 except ValueError as error:self.send_json({'error':str(error)},404)
                 return
             if self.path=='/api/targets':
@@ -270,7 +282,7 @@ def make_server(port=8765):
                     bits=self.path[len('/api/photometry-mc/jobs/'):].split('/')
                     if len(bits)!=2 or bits[1] not in ('cancel','export'):raise ValueError('Unknown MC job action')
                     if data:raise ValueError('MC job action requires an empty JSON object')
-                    if bits[1]=='cancel':self.send_json(mc_jobs.cancel(bits[0]))
+                    if bits[1]=='cancel':self.send_json(mc_http_status(mc_jobs,bits[0],mc_jobs.cancel(bits[0])))
                     else:
                         with tempfile.TemporaryDirectory(prefix='bhsm-mc-owned-export-') as directory:
                             path=Path(directory)/'original.zip';mc_jobs.export(bits[0],path)
