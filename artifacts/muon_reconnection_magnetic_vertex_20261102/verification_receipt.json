@@ -1,0 +1,32 @@
+{
+  "deterministic_runs": [
+    "run_2",
+    "run_3"
+  ],
+  "file_sha256": {
+    "ATTEMPT_1.json": "a5cc047c8d697934e3a2ae53e269e6b5476cafa46aabe434d7f2ce7ee105672f",
+    "RECONNECTION_MAGNETIC_VERTEX.md": "927138a8403181ba127b306c9a80d046710c15d735f3babeea669b2d045d91e6",
+    "derive_reconnection_vertex.py": "1366c3e6cbecd499cf362817ac8ac2c103bddaedd26e7019cfa8692775efd8a1",
+    "run_2/result.json": "776564494a9f3cce51f77d7b95f2cdf7a46d0ff9d3d01d4224eccd4001da6852",
+    "run_3/result.json": "776564494a9f3cce51f77d7b95f2cdf7a46d0ff9d3d01d4224eccd4001da6852",
+    "scoped_audits.json": "a60a1bceaf7b7e98d80cb2c5153a41fd1921afa6137d91196d930884973980d2",
+    "source_ledger.json": "efa2ee5803a9a62853867d5af936a129720c034d40c04f231e3b1fd818dcfcb9",
+    "test_reconnection_vertex.py": "965e4b92ddf95c21ebd47a0be6784841ef8f32aa0b45fa9291786542862aa293"
+  },
+  "focused_test_seconds": 1.202,
+  "focused_tests": 6,
+  "identity_and_structural_checks": 22,
+  "no_additional_workers": true,
+  "no_heat_integration": true,
+  "no_history_solve": true,
+  "no_new_resolution": true,
+  "outputs_byte_identical": true,
+  "physical_calculation": false,
+  "portable_replay": "verified below before status update",
+  "preserved_failed_attempt": "ATTEMPT_1.json",
+  "reproduce": "python derive_reconnection_vertex.py --out fresh_run",
+  "schema": "bhsm.muon-v64-verification.v1",
+  "source_excerpts": 22,
+  "source_files": 16,
+  "tests": "python -m pytest --noconftest -q -p no:cacheprovider test_reconnection_vertex.py"
+}

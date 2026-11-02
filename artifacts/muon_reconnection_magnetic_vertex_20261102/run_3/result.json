@@ -1,0 +1,104 @@
+{
+  "actual_next_operand": "Source-projected physical electromotive circulation and matched return on the action-selected event/common domain; include DQ_H, entering, released and moving-domain terms.",
+  "admitted_temporal_residual": 2.962944017741165e-13,
+  "admitted_temporal_strength": 0.001953125,
+  "classification": "ACTION_FLUX_ENERGY_AND_PHOTON_INSERTION_IDENTITIES_VERIFIED_PHYSICAL_EVENT_OPEN",
+  "complete_g_mu": null,
+  "complete_native_a_mu": null,
+  "exact_checks": {
+    "central_action/Hamilton_velocity": true,
+    "central_action/Legendre_energy": true,
+    "central_action/canonical_energy_balance": true,
+    "central_action/material_flux_total_tangent": true,
+    "central_action/moving_endpoint_flux": true,
+    "central_action/owned_momentum": true,
+    "central_action/owned_radial_conormal": true,
+    "first_order_insertion/compatible_fixed_domain_Ward": true,
+    "first_order_insertion/exact_matrix_derivative": true,
+    "first_order_insertion/ordered_total_vertex": true,
+    "owned_curvature/owned_hypercharge_bracket": true,
+    "projected_Bianchi/charged_contact_two_placements_01": true,
+    "projected_Bianchi/charged_contact_two_placements_12": true,
+    "projected_Bianchi/charged_contact_two_placements_20": true,
+    "projected_Bianchi/projected_Bianchi_with_Dq": true,
+    "projected_Bianchi/projected_source_motion_01": true,
+    "projected_Bianchi/projected_source_motion_12": true,
+    "projected_Bianchi/projected_source_motion_20": true,
+    "projected_Bianchi/reduced_photon_Bianchi": true,
+    "projected_Bianchi/reduced_photon_curvature_01": true,
+    "projected_Bianchi/reduced_photon_curvature_12": true,
+    "projected_Bianchi/reduced_photon_curvature_20": true
+  },
+  "groups": {
+    "central_action": {
+      "canonical_energy": "Pi**2/(2*kappa*e(t, x)) + Pi*beta(t, x)*Derivative(a(t, x), x) + 2*kappa*a(t, x)**2*d(t, x) + kappa*r(t, x)*Derivative(a(t, x), x)**2/2",
+      "coefficient_work_identically_zero": false,
+      "explicit_coefficient_work": "kappa*(-beta(t, x)*Derivative(a(t, x), x) + Derivative(a(t, x), t))**2*Derivative(e(t, x), t)/2 - kappa*(-beta(t, x)*Derivative(a(t, x), x) + Derivative(a(t, x), t))*e(t, x)*Derivative(a(t, x), x)*Derivative(beta(t, x), t) - 2*kappa*a(t, x)**2*Derivative(d(t, x), t) - kappa*Derivative(a(t, x), x)**2*Derivative(r(t, x), t)/2",
+      "material_F_u_i": "Pi/(kappa*e(t, x)) + (w + beta(t, x))*Derivative(a(t, x), x)",
+      "material_F_u_i_Y": "-Pi*e_Y/(kappa*e(t, x)**2) + Pi_Y/(kappa*e(t, x)) + a_rho_Y*(w + beta(t, x)) + beta_Y*Derivative(a(t, x), x) + w_Y*Derivative(a(t, x), x)",
+      "residuals": {
+        "Hamilton_velocity": "0",
+        "Legendre_energy": "0",
+        "canonical_energy_balance": "0",
+        "material_flux_total_tangent": "0",
+        "moving_endpoint_flux": "0",
+        "owned_momentum": "0",
+        "owned_radial_conormal": "0"
+      },
+      "scope": "Owned central constant-angular sector; no physical fields or material speed supplied."
+    },
+    "first_order_insertion": {
+      "domain_contact": "-B*GD*C",
+      "insertion": "AY - B*G*CY + B*G*DY*G*C - B*GD*C - BY*G*C",
+      "residuals": {
+        "compatible_fixed_domain_Ward": "0",
+        "exact_matrix_derivative": "0",
+        "ordered_total_vertex": "0"
+      },
+      "scope": "Operator identity plus exact algebra fixture; no native/exterior inverse evaluated."
+    },
+    "owned_curvature": {
+      "residuals": {
+        "owned_hypercharge_bracket": "0.0"
+      },
+      "scope": "Structural centrality check on test vectors, not physical field data."
+    },
+    "projected_Bianchi": {
+      "omitted_Dq_identically_zero": false,
+      "omitted_Dq_term": "-t**2*x*y - t**2*y - t*x**2*y - 3*t*x**2/2 - t*x*y**2 - x*y**2/2",
+      "reduced_photon_scope": "Local regular Higgs frame only; transformed connection includes U^-1 dU; canonical photon normalization and event patching remain owned physical obligations.",
+      "residuals": {
+        "charged_contact_two_placements_01": "0",
+        "charged_contact_two_placements_12": "0",
+        "charged_contact_two_placements_20": "0",
+        "projected_Bianchi_with_Dq": "0",
+        "projected_source_motion_01": "0",
+        "projected_source_motion_12": "0",
+        "projected_source_motion_20": "0",
+        "reduced_photon_Bianchi": "0",
+        "reduced_photon_curvature_01": "0",
+        "reduced_photon_curvature_12": "0",
+        "reduced_photon_curvature_20": "0"
+      },
+      "scope": "Exact arbitrary-polynomial algebra check; no state, reconnection rate or physical uncertainty."
+    }
+  },
+  "historical_subtotal": {
+    "a_mu": 0.0011659186179552334,
+    "classification": "calibrated additive subtotal, not a complete native prediction",
+    "g_mu": 2.0023318372359107
+  },
+  "no_new_workers": true,
+  "no_old_campaign_repeated": true,
+  "no_state_choice": true,
+  "physical_child_state_constructed": false,
+  "physical_common_background_realized": false,
+  "physical_energy_partition_evaluated": false,
+  "physical_event_reconnection_evaluated": false,
+  "physical_guard": 2e-10,
+  "schema": "bhsm.muon-reconnection-magnetic-vertex.v64",
+  "solver_tolerance": 2e-11,
+  "source_count": 16,
+  "source_ledger_sha256": "efa2ee5803a9a62853867d5af936a129720c034d40c04f231e3b1fd818dcfcb9",
+  "total_physical_uncertainty": null
+}
