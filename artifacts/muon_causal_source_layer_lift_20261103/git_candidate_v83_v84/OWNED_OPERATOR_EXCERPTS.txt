@@ -1,0 +1,252 @@
+DOCUMENTATION ONLY. These excerpts are not imported by the verifiers.
+
+SOURCE src/bhsm/interface/muon_owned_native_product_connection.py
+SHA256 fa4e95aebb8df771c48a9b3421e429ca54332f93b0ae0e0283c2eb49141ae577
+LINES 1-124
+ROLE Common factor A=D+W, adjoint, same-clock Hcan, source conversion; full outer-domain identification explicitly false
+
+"""Common-A temporal binding of the retained covariant product factor.
+
+The real corrected coefficient curve binds A=(partial_t+Omega_t)/N+W.
+Its geometric L2 adjoint is -D_tau+W.  This is an owner-derived component
+with the same anti-Hermitian bundle connection, not the analytic causal
+factor partial_tau+Hcan, and not a completed stratified realization.
+"""
+from __future__ import annotations
+import numpy as np
+from .muon_continued_action_reality import action_reality_coefficient, action_reality_source, _higgs_mass_realified
+from .muon_native_dirac_hamiltonian import lepton_current_hilbert_representation
+from .muon_native_product_factor_graph import lepton_unit_trace_gauge_representation
+from .muon_piecewise_euclidean_action import FAMILY_INDICES
+from .muon_chronological_clifford_graph import chronological_clifford_blocks
+
+
+def native_real_action_vertices(radius,lapse,*,family=None):
+    """Common material-field vertices of A=D_tau+W and its action adjoint."""
+    if family is not None and(type(family)is not int or family not in(0,1,2)):
+        raise ValueError('family is None or an exact retained index 0,1,2')
+    R,N=complex(radius),complex(lapse)
+    if not np.isfinite([R,N]).all() or R.imag!=0 or N.imag!=0 or min(R.real,N.real)<=0:
+        raise ValueError('positive real coframe radius and induced lapse required')
+    rep=lepton_current_hilbert_representation();G=lepton_unit_trace_gauge_representation()['generators']
+    gauge=np.zeros((5,4,18,18),complex);gauge[0]=G/N
+    gauge[2:]=-1j*np.einsum('aij,cjk->acik',rep['alpha'],G)/R
+    scalar=np.array([_higgs_mass_realified(e) for e in np.eye(4)])
+    X=np.concatenate((gauge.reshape(20,18,18),scalar));fi=np.arange(18) if family is None else FAMILY_INDICES[family]
+    return dict(vertices=X[:,fi][:,:,fi],vertices_sharp=X.conj().transpose(0,2,1)[:,fi][:,:,fi],
+        family_indices=fi,canonical_temporal_vertices=(-1j*G/N)[:,fi][:,:,fi],
+        native_temporal_vertices=(G/N)[:,fi][:,:,fi])
+
+
+def owned_native_product_node(phase, coordinate_time, *, family=None):
+    """Execute W and the factor connection from one real common-A germ.
+
+    Field coordinates are the material Lorentz one-form coefficients and
+    the four real Higgs coordinates.  The native temporal vertex is G/N;
+    -i G/N is separately exported as the canonical Lorentz vertex.  Both
+    independent analytic tangent branches use the same coefficient, never
+    its conjugate.  Their fixed matrices are the real-action adjoints.
+    """
+    if isinstance(coordinate_time, bool) or not np.isreal(coordinate_time):
+        raise ValueError('a real coordinate-time anchor is required')
+    t=float(coordinate_time)
+    if not np.isfinite(t):raise ValueError('finite real coordinate time required')
+    if family is not None and (type(family)is not int or family not in (0,1,2)):
+        raise ValueError('family is None or an exact retained index 0,1,2')
+    a=action_reality_coefficient(phase,t,0j);geo=a['geometry']
+    N,R=complex(geo['N']),complex(geo['R4'])
+    if N.imag!=0 or R.imag!=0 or N.real<=0 or R.real<=0:
+        raise ValueError('the real positive coframe chart is required')
+    W,Om=a['W'],a['Omega'];herm=float(np.max(abs(W-W.conj().T)))
+    anti=float(np.max(abs(Om+Om.conj().T)))
+    if max(herm,anti)>1e-12:raise ArithmeticError('common-A real action reality failed')
+    rep=lepton_current_hilbert_representation()
+    vertex=native_real_action_vertices(R,N,family=family)
+    fi=np.arange(18) if family is None else FAMILY_INDICES[family]
+    restrict=lambda x:x[...,fi,:][...,fi]
+    return dict(W=restrict(W),Omega_factor=restrict(Om),
+        factor_body=restrict(W+Om),adjoint_body=restrict(W-Om),
+        canonical_Hcan=restrict(W-1j*Om),vertices=vertex['vertices'],vertices_sharp=vertex['vertices_sharp'],
+        canonical_temporal_vertices=vertex['canonical_temporal_vertices'],
+        native_temporal_vertices=vertex['native_temporal_vertices'],alpha=restrict(rep['alpha']),
+        R=R.real,N=N.real,raw_fields=a['raw'].real.copy(),
+        wall_independent_plus_inherited=a['wall_independent_plus_inherited'].real.copy(),
+        inherited_image=float(a['inherited_image'].real) if hasattr(a['inherited_image'],'real') else float(a['inherited_image']),
+        family_indices=fi,coordinate_time=t,W_Hermitian_defect=herm,
+        Omega_anti_Hermitian_defect=anti,
+        factor_owner='ae4_current_c2_factorized_hs_calderon.factorized_product_dirac_hs_weyl_jet',
+        bundle_connection_owner='completion.foundational_dirac_spin_glue_v14_45 collar common total connection',
+        native_equation='A=(partial_t+Omega_L,t)/N+W; Omega_factor=Omega_L,t/N',
+        current_equation='i D_tau chi=W chi; Hcan=W-i Omega_factor',
+        native_pairing='d_tau*dOmega after the retained canonical density isometry; d_tau=N dt',
+        field_coordinate='material At_L,Ar_L,Ai_L; realified Higgs ReH1,ReH2,ImH1,ImH2',
+        temporal_connection_inferred_from_Hcan=False,
+        physical_outer_domain_or_relative_completion_identified=False)
+
+
+def owned_native_product_source(phase,coordinate_time,source_curves,*,family=None):
+    """Actual first magnetic fields in the native common-A factor coordinates.
+
+    The retained source already contains its calibrated charge.  Only the
+    temporal connection placement is converted from delta Hcan.  There is
+    no multiplication of the source by another electric charge and no
+    deletion of Higgs response.  Real anchors make the opposite branch's
+    matrices the dagger; arbitrary complex source coefficients themselves
+    remain independent analytic tangent coordinates.
+    """
+    a=owned_native_product_node(phase,coordinate_time,family=family)
+    source=action_reality_source(phase,float(coordinate_time),source_curves,0j)
+    G=lepton_unit_trace_gauge_representation()['generators']
+    dOm=np.einsum('ach,cij->ahij',source['source_wall'][:,0],G)/a['N']
+    Xi=source['Xi']+(1+1j)*dOm;fi=a['family_indices']
+    Xi=Xi[:,:,fi][:,:,:,fi]
+    return dict(Xi=Xi,Xisharp=Xi.conj().transpose(0,1,3,2),
+        canonical_Xi=source['Xi'][:,:,fi][:,:,:,fi],delta_Omega=dOm[:,:,fi][:,:,:,fi],
+        source_wall=source['source_wall'],source_H=source['source_H'],
+        source_axes=np.arange(8),family_indices=fi,electric_charge_added_again=False,
+        source_equation='delta A=delta W+delta Omega; delta Hcan=delta W-i delta Omega',
+        independent_source_coefficients_conjugated=False)
+
+
+def owned_native_product_quadrature(phases, temporal_grids, *, family,
+                                    quadrature_order=4):
+    """Actual two-arm real product core with a single common birth trace.
+
+    Incoming nodes run toward birth, outgoing nodes run away from birth.
+    The initial-only restriction and final natural row are computational
+    finite-core conditions.  Both original endpoint locations are retained;
+    neither is called E0 or the canonical stop. No corner interval or Wick
+    continuation of the causal current action is asserted by this graph.
+    """
+    if type(quadrature_order)is not int or quadrature_order<2:
+        raise ValueError('explicit quadrature order at least two required')
+    gx,gw=np.polynomial.legendre.leggauss(quadrature_order)
+    q=[];provenance=[];node=0;birth=None
+    for side in ('incoming','outgoing'):
+        grid=np.asarray(temporal_grids[side],float)
+        if grid.ndim!=1 or len(grid)<2 or np.any(np.diff(grid)<=0):
+            raise ValueError('strictly future real grids are required')
+        if (side=='incoming' and grid[-1]!=0) or (side=='outgoing' and grid[0]!=0):
+            raise ValueError('birth is the shared real time zero')
+        for lo,hi in zip(grid[:-1],grid[1:]):
+
+
+SOURCE src/bhsm/interface/ae4_current_c2_factorized_hs_calderon.py
+SHA256 af8ef0eecec83dfe737644bb3d15dbe5c0bd2dc677551aa00ed55d62639840f0
+LINES 24-66
+ROLE Original first-factor transfer at spectral parameter z<0; mu^2=-z, downstream load not selected by the routine
+
+def _product_dirac_map(
+    terminal: mp.mpf | None,
+    superpotential: mp.mpf,
+    duration: mp.mpf,
+    spectral_parameter: mp.mpf,
+) -> mp.mpf:
+    kappa = mp.sqrt(superpotential * superpotential - spectral_parameter)
+    tangent = mp.tanh(kappa * duration)
+    a = 1 - superpotential * tangent / kappa
+    b = tangent / kappa
+    c = -spectral_parameter * tangent / kappa
+    d = 1 + superpotential * tangent / kappa
+    if terminal is None:
+        return a / b
+    return (c + terminal * a) / (d + terminal * b)
+
+
+def factorized_product_dirac_hs_weyl_jet(
+    *,
+    log_radii: np.ndarray,
+    proper_durations: np.ndarray,
+    dirac_eigenvalue_at_unit_radius: float,
+    chirality: int,
+    source_profile: np.ndarray,
+    spectral_parameter: float,
+    decimal_precision: int = 80,
+    terminal_load: float | str | mp.mpf | None = None,
+    terminal_load_first: float | str | mp.mpf = 0.0,
+    terminal_load_second: float | str | mp.mpf = 0.0,
+) -> dict[str, Any]:
+    """Return the full finite-core Weyl value and two HS derivatives.
+
+    On segment ``i`` the superpotential is
+
+    ``W_i(H)=chirality*lambda*exp(-x_i)+H*p_i``.
+
+    The far Dirichlet form-core graph is selected by ``terminal_load=None``;
+    a finite nonnegative load may instead be supplied by an independently
+    action-owned downstream tail.  Its first two HS jets can be propagated
+    with ``terminal_load_first`` and ``terminal_load_second``.  The routine
+    transports these data but does not select or derive them.
+    """
+
+
+
+SOURCE artifacts/muon_pair_flux_domain_20261103/PAIR_FLUX_DOMAIN.md
+SHA256 fadfefd453dc518e42d29f32102a1f38d4290445d93e9732352b7eb99379d3dc
+LINES 39-102
+ROLE Exact adopted pair coefficient and conditional four-column canonical normalization; independent left source preserved
+
+* v67 supplies the temporal insertion V_phi and its exact negative-projector
+  structure under radial compact-gauge transport. Its numerical initializer
+  and all physical limitations remain unchanged.
+
+The new results below use these facts rather than redoing their campaigns.
+Eleven local source records plus the exact Git archive are pinned.
+
+## 1. Construct the actual finite-pair operator coefficient
+
+The recovered four-mode occupation matrix is I4/2. The owned signed relative
+one-body current coefficient, with positron normal ordering, is
+
+    S=diag(1/2,1/2,-1/2,-1/2),  Tr S=0,  ||S||_1=2.
+
+This is the exact bilinear coefficient of the already-adopted Fock16 pair.
+It is not a replacement of its higher ordered products by Wick products.
+The full exact pair density is preserved for those higher products.
+
+On the *realized complete canonical Cauchy Hilbert space*, let the four
+prescribed dressed columns form F:C4 -> H_C, F^dagger F=I4, including the
+actual normal inclusion and density/frame isometry. Then
+
+    Delta C_pair=F S F^dagger,
+    ||Delta C_pair||_1=2,
+    J_pair[chi]=Tr4(S F^dagger M_(chi V_phi) F).
+
+The normal-pair form of this same insertion is v67's
+Tr18[V_phi(C_ss+C_nn)]; both diagonal normal sections remain. The local
+normal restriction is not by itself the complete Cauchy isometry F.
+
+Since the exact transported V_phi is a negative projector, its norm is one.
+For any bounded real scalar test chi in that common domain,
+
+    |J_pair[chi]| <= 2 ||chi||_infinity.
+
+This bound does not require the actual column values. It does require the
+owned canonical normalization and a nonzero Higgs chart with unitary radial
+gauge transport. No extra Maxwell kappa, V^-2 factor, spin average or family
+multiplicity is appended. It uses the exact projector theorem, not the
+slightly inexact floating U1 matrix as an exact projector.
+
+In the original normalized-Haar scalar test basis, the addition kernels have
+K_n(x,x)=(n+1)^2. For the retained n=1 and n=3 multiplets, sum_h Y_h(x)^2
+is 4 and 16 respectively. Thus the Euclidean moment-vector enclosures are
+
+    ||J_pair,n1||_2 <= 4,
+    ||J_pair,n3||_2 <= 8,
+    ||J_pair,n1+n3||_2 <= 2 sqrt(20) = 8.94427190999916.
+
+These are conditional dimensionless bounds on the finite relative pair
+block. They are not values of the physical charge moments, a physical
+uncertainty, or bounds on the complete inherited/native/matched source.
+Tr S=0 for the identity test does not imply vanishing weighted Q_H moments.
+
+Independent analytic left sources are not reset to F^dagger. The above is a
+base physical-density bound. On a fixed common Hilbert realization its
+tangent contains F_Y^dagger M F+F^dagger M_Y F+F^dagger M F_Y, in addition
+to any owned domain/isometry contacts. A conditional estimate involves
+2(2||M|| ||F_Y||+||M_Y||), so the unevaluated physical response F_Y is not
+bounded by the base CAR identity alone. Higher responses retain the exact
+pair state and all ordered placements; no quasifree closure is made.
+
+## 2. Covariant radial flux: the genuine pole is not an entering port
+

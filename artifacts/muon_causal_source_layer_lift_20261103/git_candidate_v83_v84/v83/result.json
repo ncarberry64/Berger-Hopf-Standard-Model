@@ -1,0 +1,148 @@
+{
+  "K0": "sinh(k(h-y))/sinh(kh)",
+  "Kh": "sinh(ky)/sinh(kh)",
+  "a_mu": null,
+  "auxiliary_neumann_layer_trace_squared": "2*w*coth(w*h)/mu^4 for a unit factor-kernel source, w>0",
+  "checks": [
+    {
+      "exact": true,
+      "name": "left bulk equation",
+      "residual_terms": 0
+    },
+    {
+      "exact": true,
+      "name": "right bulk equation",
+      "residual_terms": 0
+    },
+    {
+      "exact": true,
+      "name": "left Dirichlet face",
+      "residual_terms": 0
+    },
+    {
+      "exact": true,
+      "name": "right Dirichlet face",
+      "residual_terms": 0
+    },
+    {
+      "exact": true,
+      "name": "diagonal continuity",
+      "residual_terms": 0
+    },
+    {
+      "exact": true,
+      "name": "unit delta jump",
+      "residual_terms": 0
+    },
+    {
+      "exact": true,
+      "name": "outward source conormal at zero",
+      "residual_terms": 0
+    },
+    {
+      "exact": true,
+      "name": "outward source conormal at h",
+      "residual_terms": 0
+    },
+    {
+      "exact": true,
+      "name": "K0 length derivative numerator",
+      "residual_terms": 0
+    },
+    {
+      "exact": true,
+      "name": "Kh length derivative numerator",
+      "residual_terms": 0
+    },
+    {
+      "exact": true,
+      "name": "K0 spectral derivative numerator",
+      "residual_terms": 0
+    },
+    {
+      "exact": true,
+      "name": "Kh spectral derivative numerator",
+      "residual_terms": 0
+    },
+    {
+      "exact": true,
+      "name": "K0 Gram integral",
+      "residual_terms": 0
+    },
+    {
+      "exact": true,
+      "name": "Kh Gram integral",
+      "residual_terms": 0
+    },
+    {
+      "exact": true,
+      "name": "cross Gram integral",
+      "residual_terms": 0
+    },
+    {
+      "exact": true,
+      "name": "forced q0 kernel numerator",
+      "residual_terms": 0
+    },
+    {
+      "exact": true,
+      "name": "forced qh kernel numerator",
+      "residual_terms": 0
+    },
+    {
+      "exact": true,
+      "name": "native boundary determinant",
+      "residual_terms": 0
+    },
+    {
+      "exact": true,
+      "name": "forced independent analytic-dual source formula",
+      "residual_terms": 0
+    },
+    {
+      "exact": true,
+      "name": "factor-kernel amplitude",
+      "residual_terms": 0
+    },
+    {
+      "exact": true,
+      "name": "factor-kernel bulk response",
+      "residual_terms": 0
+    },
+    {
+      "exact": true,
+      "name": "factor-layer norm integral",
+      "residual_terms": 0
+    }
+  ],
+  "classification": "exact owned product-factor component; conditional physical application",
+  "complete_matched_observable_dependence_proved": false,
+  "environment": {
+    "base_prefix": "C:\\Python314",
+    "executable": "C:\\Python314\\python.exe",
+    "isolated": 1,
+    "no_site": 1,
+    "sys_path": [
+      "C:\\Python314\\python314.zip",
+      "C:\\Python314\\DLLs",
+      "C:\\Python314\\Lib",
+      "C:\\Python314"
+    ]
+  },
+  "g_mu": null,
+  "green": "sinh(k min(x,y))*sinh(k(h-max(x,y)))/(k sinh(kh))",
+  "method_tolerance_unchanged": 2e-11,
+  "new_resolution": null,
+  "numerical_physics_runs": 0,
+  "physical_background_used": false,
+  "physical_guard": 2e-10,
+  "physical_neumann_condition_adopted": false,
+  "physical_occupations_assigned": false,
+  "physical_total_uncertainty": null,
+  "reconnection": null,
+  "remaining": "common constrained coefficients and forced event relation on actual propagated source/dual range, with relative completion",
+  "schema": "bhsm.forced-event-kernel-recall.v83",
+  "script_sha256": "268d6897552a2cd0a5188b58d816d17c096f45bc5e8941223d3177ce1cf66e35",
+  "source_kernel": "j_i = - integral_0^h K_i(y) f(y) dy",
+  "source_range_bound": "sum_j k_j ||j_j||^2 <= sum_j ||f_j||_L2^2 on the product component"
+}

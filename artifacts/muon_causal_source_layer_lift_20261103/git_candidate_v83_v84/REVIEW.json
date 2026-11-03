@@ -1,0 +1,27 @@
+{
+  "content_scan": {
+    "files_scanned": 12,
+    "findings": [],
+    "pattern_categories": [
+      "private_key",
+      "credential_token",
+      "personal_home_path",
+      "email_address",
+      "private_conversation_or_library_id"
+    ]
+  },
+  "excluded": [
+    "Broad Downloads filename and archive inventories; no further Downloads scan or read",
+    "Raw conversation URLs/excerpts, Library identifiers, authorization records and personal context",
+    "Absolute personal paths, process details, invocation stdout and full local status history",
+    "Local finalizers, broad scan producer, checkpoint ZIPs, binary arrays/caches and preliminary replay",
+    "Unrelated repository edits, old campaigns and unverified physical or comparison data"
+  ],
+  "generated_binaries_included": false,
+  "publication_audits_reason": "no publication authorized in this checkpoint",
+  "publication_audits_run": false,
+  "reproducibility": "two standalone stdlib verifiers and canonical results; prior v83 replay reused without recomputation",
+  "review_limit": "targeted text scan plus scope/provenance inspection; not a guarantee of secret absence or publication approval",
+  "scientific_review": "derived / conditional / open distinguished; independent sources and original guard preserved",
+  "status": "local review candidate only; not staged, committed or uploaded"
+}
