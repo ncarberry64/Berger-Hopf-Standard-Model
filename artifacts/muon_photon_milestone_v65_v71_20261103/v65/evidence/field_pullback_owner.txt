@@ -1,0 +1,43 @@
+def field_pullback(x, *, anchor=False):
+    """Full two-jet of the material wall trace into the common151 chart.
+
+    Independent profiles are on fixed material rho=WALL. Normal motion is
+    in the original metric/connection jets, not a second Eulerian sampling
+    of those same material profiles. Ambient N is NOT substituted for N_ind.
+    The optional source-free anchor retains the same mechanical connection.
+    It is a functional decomposition, not a vacuum or occupation rule.
+    """
+    x = np.asarray(x, float)
+    raw = _geometry_fields(x)
+    w = intrinsic_m4_weight_jet(12, raw[:37], raw[37:74], raw[74:98],
+                              source_value=raw[98], source_rate=raw[99])
+    # Full chart retains qdot/sdot endpoint partials even though the saved
+    # stationary comparison has those ordinary rates equal to zero.
+    def lift(j):
+        g, h = np.zeros(189), np.zeros((189,189))
+        g[:100] = j.gradient
+        h[:100,:100] = j.hessian
+        return Jet(j.value,g,h)
+    p, _ = static_field_maps(np.array([WALL]), enrich_temporal=True)
+    p = p[0].reshape(5,4,84)
+    lam = lift(w['mechanical_connection_lambda'])
+    entries = [lift(w['R4']), lift(w['induced_lapse'])]
+    for f in (0,2,3,4):
+        for c in range(4):
+            g = np.zeros(189)
+            if not anchor: g[100:184] = p[f,c]
+            v = Jet.affine(float(p[f,c]@x[62:146]) if not anchor else 0.,g)
+            if f >= 2: v = v + M[f-2,c]*(lam-1)
+            entries.append(v)
+    for k in range(4):
+        g = np.zeros(189)
+        if not anchor: g[184+k] = 1.
+        entries.append(Jet.affine(float(x[146+k]) if not anchor else 0.,g))
+    fullg = np.array([j.gradient for j in entries])
+    fullh = np.array([j.hessian for j in entries])
+    indices = np.r_[GEOMETRY_IDS,np.arange(100,189)]
+    return dict(value=np.array([j.value for j in entries]),
+        gradient=fullg[:,indices],hessian=fullh[:,indices][:,:,indices],
+        full_gradient189=fullg,full_hessian189=fullh,
+        ambient_lapse=float(w['fields']['N'].value),
+        mechanical_lambda=float(lam.value), material_trace_map=p)
