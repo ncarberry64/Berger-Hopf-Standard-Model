@@ -1,0 +1,78 @@
+{
+  "committed": false,
+  "content_scope": "Selected local coefficient milestone plus provenance ledger; surrounding working-tree edits excluded",
+  "excluded": [
+    "All modified tracked files outside this directory",
+    "Raw source archives and Downloads inventories",
+    "Personal paths, private links and conversation exports",
+    "Unselected binaries, broad data and old replay folders",
+    "Local preparation/review scripts outside the payload",
+    "Unreplayed intermediate results except provenance hashes"
+  ],
+  "execution_review": {
+    "checks": 139,
+    "custom_package_imports": false,
+    "deterministic_replay_passed": true,
+    "imports": [
+      "argparse",
+      "ast",
+      "cmath",
+      "hashlib",
+      "json",
+      "math",
+      "pathlib",
+      "sys"
+    ],
+    "network_calls": false,
+    "owned_AST_execution": "Only the three pinned pure coefficient function definitions"
+  },
+  "pending_before_any_push": [
+    "Recheck expected HEAD and branch",
+    "Rehash this exact payload",
+    "Stage only the reviewed allowlist",
+    "Apply the required publication approval controls"
+  ],
+  "privacy_review": {
+    "allowed_public_metadata": "Existing public repository URL, branch and commit hashes",
+    "limitation": "Bounded pattern and content review of these selected files, not a guarantee that all possible secrets or broader environment exposures are absent",
+    "manual_scope": "Scientific numeric snapshots, source functions, owned excerpts, repository-relative provenance and explicit public repository target; no conversation text or private file contents bundled",
+    "matches": [],
+    "pattern_categories": [
+      "private_key",
+      "credential_prefix",
+      "credential_assignment",
+      "home_path",
+      "email_address",
+      "private_conversation_link",
+      "private_library_marker",
+      "network_address"
+    ]
+  },
+  "pushed": false,
+  "repository_fit": {
+    "artifact_only": true,
+    "audit_scope": "Only this self-contained payload and its exact source pins were checked. Unselected work is not certified and must not be added to a later commit.",
+    "binary_files": 0,
+    "external_dependencies": [],
+    "old_work_preserved": true,
+    "production_module_changes": false,
+    "raw_archives": 0,
+    "repository_wide_legacy_audits_run": false,
+    "scoped_status_precision_claim_and_integrity_checks_passed": true,
+    "test_suite_changes": false
+  },
+  "schema": "bhsm.selected-payload-review.v1",
+  "scientific_review": {
+    "independent_Green_dual_not_conjugated": true,
+    "native_snapshot_reproduction_limit_explicit": true,
+    "no_physical_reconnection_or_a_mu_claim": true,
+    "no_physical_uncertainty_claim": true,
+    "partial_native18_not_total_residual": true,
+    "physical_guard_unchanged": true,
+    "retarded_and_native_completion_distinguished": true,
+    "row74_and_generated_event_relation_open": true,
+    "trial_only_labelled": true
+  },
+  "staged": false,
+  "status": "Scoped text payload review passed; no Git operation or publication performed"
+}

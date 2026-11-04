@@ -1,0 +1,180 @@
+Scoped scientific source excerpts. These do not constitute the full physical domain.
+
+SOURCE src/bhsm/interface/muon_native_product_factor_graph.py
+SHA256 4a5feeb0e32edc0505a44b45a19d6bdc821220cc9cf5187e35f59fe7720a7c18
+LINES 49-64 (one-based)
+def lepton_unit_trace_gauge_representation():
+    """Retained unit-Tr16 Sp1/U1 generators on all eighteen Weyl entries."""
+    charges = yukawa_and_anomaly_ledger()['charges']
+    if charges['L'] != '-1/2' or charges['e_c'] != '1':
+        raise ValueError('retained lepton hypercharge ledger changed')
+    weak = retained_higgs_spin_charge_representation()['higgs_su2_generators']
+    result = np.zeros((4, 18, 18), complex)
+    for a in range(3):
+        result[a, :12, :12] = -1j*np.kron(weak[a], np.eye(6))/math.sqrt(2)
+    # e_R is the conjugate of the retained left e_c ledger entry.
+    Y = np.diag(np.r_[-.5*np.ones(12), -np.ones(6)])
+    result[3] = -1j*Y/math.sqrt(10/3)
+    return dict(generators=result, hypercharge=Y,
+        component_order='unitTr16 H1,H2,H3,HY',
+        owner='muon_intrinsic_higgs_gauge_action.higgs_u2_real_representation',
+        physical_EM_generator=lepton_current_hilbert_representation()['EM_charge'])
+
+SOURCE src/bhsm/interface/muon_full_d5_localized_lepton_trace.py
+SHA256 1dd35d202dcb9b50b2bf09197d190fb4a49b2f9cf5c9f7393f88df204abb80ac
+LINES 48-64 (one-based)
+    G=np.zeros((4,16,16),complex);weak=np.asarray(su2_fundamental_generators())
+    # Q_L is color-major weak-doublet order; the lepton doublet follows.
+    for a in range(3):
+        G[a,:6,:6]=-1j*np.kron(np.eye(3),weak[a])/np.sqrt(2)
+        G[a,6:8,6:8]=-1j*weak[a]/np.sqrt(2)
+    G[3]=-1j*np.diag(charges)/np.sqrt(10/3)
+    G128=np.array([np.block([[np.kron(np.eye(4),g),np.zeros((64,64),complex)],
+        [np.zeros((64,64),complex),np.kron(np.eye(4),g.conj())]])for g in G])
+    W=np.zeros((3*128,18),complex)
+    for weak_index in range(2):
+        for family in range(3):
+            for spin in range(2):
+                row=family*128+spin*16+6+weak_index
+                col=(weak_index*3+family)*2+spin;W[row,col]=1
+    for family in range(3):
+        for spin in range(2):
+            row=family*128+64+(2+spin)*16+14
+
+SOURCE src/bhsm/interface/covariant_bubble_interface_mechanics.py
+SHA256 6ef60e88da66e131874312cf43c90590c530b3b94da65a57f2a9cc958cf2b98d
+LINES 207-220 (one-based)
+            "inertia": "worldvolume Legendre Hessian plus action-derived bulk impedance",
+            "damping": (
+                "none locally; any effective loss must be the computed outward Noether "
+                "or radiative flux"
+            ),
+            "newtonian_fluid_equation_imported": False,
+        },
+        "nucleation": {
+            "operator": "H_form=H_bulk,constrained+gamma_s J_Sigma-H_event,drive",
+            "Jacobi_operator": "J_Sigma=-Delta_Sigma-(|A|^2+Ric(n,n))",
+            "criterion": "lambda_min(H_form)=0 with a simple oriented first crossing",
+            "stable_side": "lambda_min(H_form)>0",
+            "unstable_side": "lambda_min(H_form)<0",
+            "distinctions": {
+
+SOURCE src/bhsm/interface/covariant_bubble_interface_mechanics.py
+SHA256 6ef60e88da66e131874312cf43c90590c530b3b94da65a57f2a9cc958cf2b98d
+LINES 257-286 (one-based)
+                "(event mode,alpha_s,tau_s,I_s,Lambda_s,B_s) selects admissible "
+                "regular carrier channels, scale, drive, and initial data"
+            ),
+            "propagation": (
+                "the formed child evolves in its later local causal environment; the "
+                "formation environment need not persist"
+            ),
+            "first_future_carrier_rule": (
+                "first regular future W_s where the constrained lambda_min(H_form) has "
+                "a simple oriented zero and the nonlinear branch satisfies constraints"
+            ),
+        },
+        "carrier_reset": {
+            "carrier_class": "CARR2_CONDITIONAL",
+            "carrier": (
+                "stationary worldvolume selected by the coupled bulk-interface equations, "
+                "unique modulo reparametrization only if the constrained IVP and first "
+                "crossing are proved well posed and simple"
+            ),
+            "F_B": (
+                "the event-to-child trace map induced by the solved worldvolume flow and "
+                "its spin/bundle parallel transport; not the identity by convention"
+            ),
+            "F_B_selected_now": False,
+            "L_s_physical": (
+                "q_e=C_s(F_B)q_c; Pi_c+C_s(F_B)^*Pi_e=-delta S_Sigma/delta q_c"
+            ),
+            "Lagrangianity": (
+                "conditional on the displayed relation being the graph of the exact "
+                "surface generating functional on the reduced trace space"
+
+SOURCE src/bhsm/interface/ae4_stratified_dirac_zeta_induced_owner.py
+SHA256 ab0537e52db679979bc85109f27b85d534507459dde256bd24ac7742b2d5efe2
+LINES 327-343 (one-based)
+def claim_boundary() -> dict[str, Any]:
+    return {
+        "AE4_STRATIFIED_DIRAC_ZETA_MICROSCOPIC_OWNER_SELECTED": True,
+        "AE4_POSITIVE_ORDER_M8_M5_M4_MOMENT_RATIOS_DERIVED": True,
+        "AE4_INDEPENDENT_CROSS_STRATUM_WILSON_ONTOLOGY_RETIRED": True,
+        "AE4_ELL_STAR_NATIVE_COLLAPSE_SURFACE_OWNER_RULE_SELECTED": True,
+        "AE4_MODE_FREQUENCY_CUTOFF_OWNER_DEFINITION_ADOPTED": True,
+        "AE4_FUTURE_DIRECTED_PARENT_CHILD_DOMAIN_SELECTED": True,
+        "AE4_COMMON_SPECTRAL_LENGTH_PHYSICAL_ORIGIN_DERIVED": False,
+        "AE4_CURRENT_C2_COLLAPSE_IMPEDANCE_ENERGY_EVALUATED": False,
+        "AE4_GLOBAL_SELF_ADJOINT_STRATIFIED_DIRAC_DOMAIN_DERIVED": False,
+        "AE4_COMPLETE_OPERATOR_VALUED_CALDERON_WENTZELL_SEAM_DERIVED": False,
+        "AE4_LOG_ORDER_RELATIVE_ZETA_ETA_PHASE_EVALUATED": False,
+        "AE4_FINITE_FAMILY_DIRAC_OPERATOR_EVALUATED": False,
+        "AE4_PHYSICAL_M8_M5_M4_NUMERICAL_COEFFICIENTS_DERIVED": False,
+        "FULL_BHSM_COMPLETE": False,
+        "exact_next_calculation": (
+
+SOURCE theory/muon_provisional_preparation_state_relation_20261020.md
+SHA256 b8c6e83f3383ef589caaba64cd2d53c2de70cd032442d8155cb53b1a169fa9ca
+LINES 105-165 (one-based)
+\[
+ j_c(x)={\mu(x)\over2}\sum_s
+   \{U_s^\dagger(iG_c)U_s-V_s^\dagger(iG_c)V_s\}.
+\]
+
+`G_c` are the original unit-Tr16 generators. For the material temporal
+coordinate, `dH_can/dA_t^c=-iG_c/N_ind`: the action factor `N_ind` cancels
+once. No extra electromagnetic coupling, family multiplicity or Haar
+volume is inserted. The exact pair current and its ordered products are
+evaluated from the retained density; they are not replaced by Wick products
+of a mean covariance.
+
+The scalar and raw intrinsic lepton actions enter the common cap action
+with `1/V^2`. This factor is present before the fermion field is made
+canonical. Up to the original symmetric-kinetic endpoint term, the actual
+rescaling is
+
+\[
+ S_{\ell,cap}={1\over V^2}S_{\ell,raw}
+ ={1\over V^2}\int dt\,d\Omega\,
+       \xi^\dagger(i\partial_t-N_{ind}H_{can})\xi
+ =\int dt\,d\Omega\,
+       \chi_{cap}^\dagger(i\partial_t-N_{ind}H_{can})\chi_{cap}.
+\]
+
+The corresponding action symplectic/CAR pairing is
+`V^-2 integral xi^dagger xi dOmega = integral chi_cap^dagger chi_cap dOmega`.
+Thus complete Haar-normalized sections of `chi_cap` with the exact
+unit-CAR pair annihilators have `mu=1` relative to the existing cap gauge
+rows. Multiplying these sections' source by another `V^-2` would count
+the raw-to-cap normalization twice. Sections normalized instead as
+`integral xi^dagger xi=1` would have the raw-field coefficient `mu=V^-2`
+and would require the corresponding CAR rescaling; the two conventions
+cannot be mixed. This conclusion follows from the action's kinetic
+pairing and field rescaling, not from an 18-by18 point Gram identity.
+The explicit inherited anchors are
+`muon_charged_current_fermi_reduction.transported_fermi_template`
+(`S4/V^2`, `chi_hat=R4^(3/2)psi/V`, `Y0=1/sqrt(V)`),
+`muon_primal_charged_current_response.charged_current_action_source`
+and `muon_magnetic_open_lepton_vertex.canonical_open_field_vertices`.
+
+The original gauge equations, including the temporal constraint, are
+
+\[
+ {\delta S_M\over\delta A_\nu^c}
+ +{\delta S_H\over\delta A_\nu^c}
+ +{\delta S_\ell\over\delta A_\nu^c}
+ +\ell_{\mathrm{matched\ native/state},\nu c}
+ +\ell_{\mathrm{exterior/interface},\nu c}=0,
+\]
+\[
+ D_i\Pi^i+j_{\rm pair}+j_{\rm other}=0.
+\]
+
+These derivatives are actual original-action applications. In the existing
+constant-angular radial chart their literal Maxwell integrand is
+
+\[
+ L_M={1\over2}\{k|X|^2+e_M\sum_i|T_i-\beta R_i|^2
+                    -r_M\sum_i|R_i|^2-d_M\sum_i|B_i|^2\},
+\]
