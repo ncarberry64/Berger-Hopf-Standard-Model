@@ -28,6 +28,12 @@ connects reviewed derived results to these same public exhibits.
 
 ## Start with your research question
 
+For a map of the whole record, use the [repository guide](docs/REPOSITORY_GUIDE.md).
+The [dated open research register](docs/OPEN_RESEARCH.md) distinguishes merged
+main from active PRs and later public branch work. The
+[organization plan](docs/REPOSITORY_CLEANUP_PLAN.md) records the preservation and
+integration order for this cleanup.
+
 | Audience or task | Entry point |
 | --- | --- |
 | Review the new Blackhole Tracker manuscript or try its app | [Research start](docs/BLACKHOLE_TRACKER_RESEARCH_START.md), [reviewed PDF](papers/bhsm_blackhole_tracker_20261021/manuscript/main.pdf) and [Museum exhibit](https://ncarberry64.github.io/Berger-Hopf-Standard-Model/#blackhole-tracker) |

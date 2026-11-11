@@ -1,5 +1,16 @@
 # BHSM Artifact Index
 
+Use the [repository guide](docs/REPOSITORY_GUIDE.md) to choose a scientific
+reading path, [artifact handling](artifacts/README.md) to interpret generated
+evidence, and the [open research register](docs/OPEN_RESEARCH.md) for work beyond
+merged main. This catalog retains the original campaign entries and anchors;
+"Current" in an old heading refers to that entry's source context.
+
+<details>
+<summary>Browse the retained artifact catalog and campaign evidence</summary>
+
+
+
 ## Blackhole Tracker — formal research product and paper
 
 This BHSM repository is the canonical reviewer home. Start with the
@@ -2542,3 +2553,5 @@ and then records 36 fresh-curvature promotions through corrected-Rayleigh
 `||F376|| = 0.777030406838571`. Legacy-event-covector and corrected-Rayleigh
 norm series are separate measurement eras unless reevaluated under one
 definition.
+
+</details>

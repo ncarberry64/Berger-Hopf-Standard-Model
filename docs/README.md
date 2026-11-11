@@ -1,5 +1,9 @@
 # BHSM Documentation Index
 
+Start with the [repository guide](REPOSITORY_GUIDE.md) for the record's structure
+and the [open research register](OPEN_RESEARCH.md) for work beyond merged main.
+This catalog preserves the original campaign headings and links below.
+
 ## Research entry points
 
 | Purpose | Maintained entry |
@@ -315,6 +319,9 @@ The retained v0.8 minimal-action theory dictionary is documented in
 - [Release checklist](bhsm_v1_2_0_release_checklist.md)
 - [Institutional HEP handoff](institutional_hep_handoff_index.md)
 - [Citation guide](how_to_cite.md)
+<details>
+<summary>Retained v14 and v15 derivation chronology</summary>
+
 <!-- BHSM_V14_31_TO_V14_33_CUMULATIVE -->
 ## v14.31–v14.33 Path B continuation
 
@@ -589,3 +596,5 @@ selected persistent orbit, and de-envelopment receiving law are not jointly
 action-derived. The cycle is therefore not a physical operator and full BHSM
 completion remains false.
 <!-- /BHSM_V15_6_NORMAN_CYCLE_MASTER_CLOSURE -->
+
+</details>

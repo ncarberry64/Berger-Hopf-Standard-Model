@@ -1,5 +1,20 @@
 # BHSM Status
 
+For a compact reading path, start with the [repository guide](docs/REPOSITORY_GUIDE.md)
+and [dated open research register](docs/OPEN_RESEARCH.md). The
+[system integration map](artifacts/current_semantics/BHSM_CURRENT_SYSTEM_INTEGRATION_MAP.json)
+and each result's exact source/domain govern its scope. Full physical completion
+remains open; this organizational update changes no scientific acceptance gate.
+
+The retained status entries below are a chronological record, not a single
+uniform verdict. Their original headings, scoped results and failures remain
+available for citation.
+
+<details>
+<summary>Read the retained status entries and historical checkpoints</summary>
+
+
+
 The current academic entry is [Institutional start](docs/INSTITUTIONAL_START.md).
 The September 7 integration reuses existing AE4 response and enclosure assets
 and includes the full-field boundary/interface research with its open physical
@@ -4072,3 +4087,5 @@ longitudinal/transverse two-radius composition. No action term, center,
 trajectory, coefficient, scale, frozen prediction, or calibration input was
 changed. `FULL_BHSM_COMPLETE = FALSE`; `GATE7_CLOSED = FALSE`.
 <!-- /BHSM_CURRENT_ENCAPSULATION_REALIZATION_SCOPE -->
+
+</details>

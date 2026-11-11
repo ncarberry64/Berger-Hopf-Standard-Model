@@ -137,6 +137,7 @@ jobs:
       - name: Focused cross-resolution and invariant tests
         run: >-
           python -m pytest -q
+          tests/test_repository_navigation.py
           tests/test_ae3_c2_photon_symbol_audit.py
           tests/test_ae32_c2_einstein_cartan_lr_action.py
           tests/test_ae31_c2_state_observable_audit.py
@@ -180,6 +181,7 @@ jobs:
           tests/test_engine_physics_status_separation.py
       - name: Public status and claim boundaries
         run: |
+          python tools/audit_repository_navigation.py
           python tools/check_norman_core_surface_consequences.py
           python scripts/audit_covariant_bubble_interface_mechanics.py
           python tools/audit_forbidden_claims.py
