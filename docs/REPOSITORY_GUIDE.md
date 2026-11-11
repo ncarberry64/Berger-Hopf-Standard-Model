@@ -9,6 +9,7 @@ The complete physical derivation and experimental validation remain open.
 | Purpose | Start here | Then follow |
 | --- | --- | --- |
 | Understand the proposal | [Plain-language account](bhsm_in_plain_language.md) | [Claim boundaries](../CLAIMS.md) and the [Museum](../museum/README.md) |
+| Find a scientific topic | [Research topics](RESEARCH_TOPICS.md) | Enclosure/response, mass/flavor, gravity/cosmology, and reproduction routes |
 | Review the current scientific architecture | [System integration map](../artifacts/current_semantics/BHSM_CURRENT_SYSTEM_INTEGRATION_MAP.json) | [Current status record](current_bhsm_status.md), [gate ledger](../theory/gate_ledger.md), and the exact source for each claim |
 | Find work newer than main | [Open research register](OPEN_RESEARCH.md) | Pinned PR/branch sources; these are separate from merged main |
 | Reproduce a result | [Institutional start](INSTITUTIONAL_START.md) | [Quickstart](../QUICKSTART.md), the result's generator, inputs, tests and hashes |

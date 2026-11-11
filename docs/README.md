@@ -4,6 +4,9 @@ Start with the [repository guide](REPOSITORY_GUIDE.md) for the record's structur
 and the [open research register](OPEN_RESEARCH.md) for work beyond merged main.
 This catalog preserves the original campaign headings and links below.
 
+For a shorter route through a specific question, use the
+[research topic map](RESEARCH_TOPICS.md).
+
 The [10 November envelope clarification](BHSM_ENVELOPE_CLARIFICATION_20261110.md)
 records Norman's later regime terminology and its Museum correction as author
 interpretation, with the October source retained.

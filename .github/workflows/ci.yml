@@ -190,6 +190,42 @@ jobs:
           python tools/audit_public_readiness.py
           python tools/materialize_museum_science.py --check
           python tools/verify_precision.py
+      - name: Set up Node.js for Museum record checks
+        uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - name: Check Museum lifecycle and source records
+        working-directory: museum
+        run: >-
+          node --experimental-strip-types --test
+          scripts/test-lifecycle-tour.mjs
+          scripts/test-ai-guide.mjs
+          scripts/test-ai-snapshot.mjs
+      - name: Verify author clarification download
+        working-directory: museum
+        run: |
+          node --input-type=module <<'NODE'
+          import assert from 'node:assert/strict';
+          import { readFile } from 'node:fs/promises';
+          const paths = [
+            '../docs/BHSM_ENVELOPE_CLARIFICATION_20261110.md',
+            'public/research/lifecycle-envelope-clarification-20261110.md',
+          ];
+          const texts = await Promise.all(paths.map(path => readFile(path, 'utf8')));
+          assert.equal(texts[0].replaceAll('\r\n', '\n'), texts[1].replaceAll('\r\n', '\n'));
+          console.log('Author clarification and Museum download agree.');
+          NODE
+      - name: Check generated Museum navigation
+        working-directory: museum
+        run: |
+          node scripts/build-ai-guide.mjs
+          git diff --exit-code -- \
+            lib/ai-source-snapshot.json \
+            lib/ai-source-snapshot.sha256 \
+            public/ai/handoff.json \
+            public/ai/index.json \
+            public/llms.txt \
+            public/data/physics-questions.json
       - name: Coordinate benchmark precision gate
         run: |
           python -m bhsm.interface.benchmarks.coordinate_benchmark \

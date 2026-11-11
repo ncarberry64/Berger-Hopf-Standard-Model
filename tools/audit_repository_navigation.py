@@ -21,15 +21,19 @@ from urllib.parse import unquote, urlsplit
 ROOT = Path(__file__).resolve().parents[1]
 NAVIGATION_FILES = (
     "README.md",
+    "CONTRIBUTING.md",
     "docs/README.md",
     "ARTIFACT_INDEX.md",
     "STATUS.md",
     "docs/current_bhsm_status.md",
     "docs/REPOSITORY_GUIDE.md",
+    "docs/RESEARCH_TOPICS.md",
+    "docs/BHSM_ENVELOPE_CLARIFICATION_20261110.md",
     "docs/OPEN_RESEARCH.md",
     "docs/REPOSITORY_CLEANUP_PLAN.md",
     "artifacts/README.md",
     "theory/README.md",
+    "museum/README.md",
 )
 
 
