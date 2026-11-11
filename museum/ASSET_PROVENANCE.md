@@ -1,5 +1,13 @@
 # Museum asset provenance
 
+- The lifecycle wording follows Norman P. Carberry’s 10 November 2026 author
+  clarification in `../docs/BHSM_ENVELOPE_CLARIFICATION_20261110.md`, copied
+  identically to `public/research/lifecycle-envelope-clarification-20261110.md`.
+  A propagating excitation is the lowest envelope regime; ordinary envelope
+  and full encapsulation remain distinct. Environmental mass is attributed
+  interpretation, with no mass value or physical gap promoted. The original
+  October amendment/download and scientific outputs remain unchanged.
+
 - The Einstein ring tour (`app/einstein-ring-tour.tsx`,
   `lib/einstein-ring.ts`) is a not-to-scale, ordinary point-mass lensing
   simulation. The finite uniform source is inverse-mapped through the lens

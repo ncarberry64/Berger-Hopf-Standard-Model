@@ -1,5 +1,16 @@
 # Museum content update — 24 September 2026
 
+## Envelope interpretation correction - 11 November 2026
+
+The lifecycle now follows Norman's 10 November clarification: a propagating
+excitation is the lowest envelope regime; an ordinary envelope is not full
+encapsulation. All three can exhibit mass in a given environment in this
+interpretation. The display supplies neither a mass value nor a spectral gap.
+The dated clarification records the superseded sentence and links its source;
+the October amendment and download remain unchanged. Adjacent scene labels,
+review text and AI navigation follow the same distinction. Tour timing,
+scientific outputs and the physical-prediction registry are unchanged.
+
 ## Music and cosmology presentation — 23 October 2026
 
 Collision contacts follow measured attacks in `Race The Sun`, keeping their
