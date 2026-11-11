@@ -5,9 +5,9 @@ import { ScienceConsole, useSceneClock } from './science-console';
 import { lifecycleFrame, lifecycleOffset } from '../lib/lifecycle-tour';
 
 const stages = [
-  { name: 'Excitation', verb: 'A disturbance propagates.', question: 'What carries the signal?', text: 'A propagating spacetime signal is the starting idea. A photon supplies the example. Excitation alone does not imply an envelope or an encapsulated object.' },
-  { name: 'Envelope formation', verb: 'An interface forms around organization.', question: 'What sustains the distinction?', text: 'An operative interface develops around an organized configuration in its environment. The inherited organization—the “baton”—belongs to its spacetime history.' },
-  { name: 'Encapsulation', verb: 'Boundary support becomes dominant.', question: 'What supports the boundary?', text: 'At a declared scale and in a declared environment, the formed boundary becomes the dominant support relative to the continuing differential. The object can persist in this regime.' },
+  { name: 'Excitation', verb: 'A disturbance propagates.', question: 'What carries the signal?', text: 'In Norman’s BHSM interpretation, a propagating excitation is the lowest envelope regime. A photon supplies a signal example; this description does not assign it a nonzero invariant rest mass.' },
+  { name: 'Envelope organization', verb: 'An interface forms around organization.', question: 'What sustains the distinction?', text: 'An ordinary envelope can develop an operative interface around its organization without full encapsulation. The inherited organization—the “baton”—belongs to its spacetime history.' },
+  { name: 'Full encapsulation', verb: 'Boundary support becomes dominant.', question: 'What supports the boundary?', text: 'At a declared scale and in a declared environment, the formed boundary becomes the dominant support relative to the continuing differential. The object can persist in this regime.' },
   { name: 'Decay', verb: 'A parent changes into successors.', question: 'Which outgoing channels are available?', text: 'An organized parent can relax or transform through permitted channels. A decay is not automatically complete boundary loss, and an unresolved channel is not a forbidden one.' },
   { name: 'Collisions', verb: 'Histories meet at a new event.', question: 'What survives or reorganizes?', text: 'An encounter can scatter, preserve, merge or disrupt configurations. Its outgoing history follows a new event; the collision does not rewind the earlier formation event.' },
   { name: 'De-encapsulation', verb: 'The enclosing organization is lost or converted.', question: 'What loses its surface manifestation?', text: 'Loss or conversion of an organized spacetime manifestation differs from the disappearance of every product. BHSM’s sustained “black-hole fire” is a proposed interface process; loss of an incoming object and loss of the whole configuration are different events.' },
@@ -110,7 +110,7 @@ function LifecycleScene({ stage, scale, time, progress }: { stage: number; scale
   return (
     <svg className="lifecycle-scene" viewBox="0 0 760 310" role="img" aria-labelledby="lifecycle-scene-title lifecycle-scene-desc">
       <title id="lifecycle-scene-title">{`${stages[stage].name} at the ${scales[scale].name.toLowerCase()} scale`}</title>
-      <desc id="lifecycle-scene-desc">A conceptual spacetime-side animation. The envelope forms around organization, boundary support strengthens, decay transforms the parent and reveals daughter products within the decay scene, two incoming histories collide, and an opening contour represents de-encapsulation. No physical time, size, core interior or calculated rate is shown.</desc>
+      <desc id="lifecycle-scene-desc">A conceptual spacetime-side animation. A propagating excitation is the lowest envelope regime; an ordinary envelope develops organization, boundary support strengthens, decay transforms the parent and reveals daughter products within the decay scene, two incoming histories collide, and an opening contour represents de-encapsulation. No physical time, size, core interior or calculated rate is shown.</desc>
       <path className="lifecycle-guide" d="M30 155H730" />
       <text x="34" y="285" className="lifecycle-scene-note">SPACETIME-SIDE SCHEMATIC · NO PHYSICAL SIZE OR TIME SCALE</text>
       {stage === 0 ? <>
@@ -188,7 +188,7 @@ export function BHSMLifecycle({ motion, setMotion }: { motion: boolean; setMotio
   return (
     <ScienceConsole id="bhsm-lifecycle" number="02" label="Fundamental BHSM · the common frame" title="One frame. Across the scales." intro="Excitation, maintained organization and boundary change: BHSM uses a common frame to connect signals, matter, stars and cosmic structure. Follow the same questions as the scale changes." accent="cyan">
       <div className="lifecycle" ref={ref} data-stage={stage} data-scale={scale} data-playing={tour && motion}>
-        <p className="lifecycle-proposal">BHSM — theory in work · 22 October 2026</p>
+        <p className="lifecycle-proposal">BHSM — author interpretation clarified 10 November 2026</p>
         <div className="lifecycle-scale" role="group" aria-label="Choose a scale">
           {scales.map((s, i) => <button key={s.name} type="button" onClick={() => hold(i, stage)} aria-pressed={scale === i}>{s.name}</button>)}
         </div>
@@ -217,13 +217,14 @@ export function BHSMLifecycle({ motion, setMotion }: { motion: boolean; setMotio
           <button type="button" onClick={toggleTour} aria-pressed={tour && motion}>{tour && motion ? 'Pause tour' : 'Play tour'}</button>
         </div>
         <div className="lifecycle-branches">
-          <div><span>Organization</span><p>Excitation → operative envelope → possible encapsulation</p></div>
+          <div><span>Organization</span><p>Lowest envelope: excitation → organized envelope → possible full encapsulation</p></div>
           <div><span>Possible histories</span><p>Persistence · decay · collision · conversion or release</p></div>
           <div><span>Decay outcome</span><p>Parent → decay → daughter products. Those products can start new organized histories.</p></div>
         </div>
         <div className="lifecycle-common">
           <p className="eyebrow">What stays common</p>
           <h4>What propagates? What maintains the boundary? What survives?</h4>
+          <p>In Norman’s interpretation, propagating excitations, ordinary envelopes and fully encapsulated configurations can all exhibit mass in a given environment. An ordinary envelope is not full encapsulation. These regime names supply neither a mass value nor a spectral gap.</p>
           <p>The frame repeats these questions across scales. The mechanisms, environment, interaction channels and physical equations must be specified for each system.</p>
           <p className="lifecycle-selected-question">Now asking: {stages[stage].question}</p>
         </div>
@@ -234,6 +235,7 @@ export function BHSMLifecycle({ motion, setMotion }: { motion: boolean; setMotio
           <p>A hard boundary means bilateral noninteraction through the specified interior/exterior channels. An ordinary transmitting surface is different. Exterior gravity and boundary response are separate questions.</p>
           <p>The exceptional terminal proposal can have exactly zero newly produced spacetime daughters. It requires a derived core correspondence and conservation accounting; it does not erase earlier radiation or matter, and cannot be inferred from silence in a detector.</p>
           <p>These are configuration, environment and scale regimes, not exclusive particle-statistics classes or a mandatory sequence. The animation supplies no physical rate, lifetime or threshold.</p>
+          <p><a href="./research/lifecycle-envelope-clarification-20261110.md">Read Norman’s 10 November envelope clarification</a></p>
           <a href="./research/lifecycle-core-surface-amendment-20261022.md">Read the complete October 22 core/surface source ↗</a>
         </details>
         <div className="lifecycle-next"><a href="#berger-hopf">Explore the geometry behind the frame →</a><a href="#science-decays">Follow collisions and daughters →</a><a href="#cosmology-original">Explore the cosmic proposal →</a></div>

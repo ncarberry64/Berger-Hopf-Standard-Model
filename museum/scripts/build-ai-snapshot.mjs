@@ -114,7 +114,7 @@ if (!available.some(Boolean)) {
   const snapshotText =
     JSON.stringify(
       {
-        snapshot_date: '2026-10-22',
+        snapshot_date: '2026-11-11',
         description:
           'Verbatim excerpts. Each file carries its own source revision; this is not a complete repository or a live status lookup.',
         sources,

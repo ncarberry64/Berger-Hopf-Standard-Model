@@ -1,5 +1,17 @@
 # Current BHSM status
 
+Use the [repository guide](REPOSITORY_GUIDE.md) and [open research register](OPEN_RESEARCH.md)
+to distinguish the merged architecture, active public branches and historical
+campaigns. This file preserves the dated scientific status record. A retained
+entry's claim applies to its specified action, domain and source revision;
+later dates alone do not establish succession. No physical completion is
+promoted by the repository cleanup.
+
+<details>
+<summary>Read the dated interpretation and scientific status record</summary>
+
+
+
 ## Dated core/surface interpretation amendment — 22 October 2026
 
 [Norman P. Carberry's amendment](BHSM_NORMAN_CORE_SURFACE_AMENDMENT_20261022.md)
@@ -2817,3 +2829,5 @@ This synchronizes the current status already recorded in this document:
 - advanced/retarded Green and restricted Feynman/state machinery exist, but a physical scattering matrix, transition law, and full unitarity closure do not.
 
 The purpose of the canonical note is to prevent future audits from confusing kinematic/proxy results with action-owned physical observables, or from repeating superseded formulations of the scale and chirality objections.
+
+</details>

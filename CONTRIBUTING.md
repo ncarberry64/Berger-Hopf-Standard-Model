@@ -16,6 +16,18 @@ results and deviations as explicitly as successful checks.
 
 ## Pull Requests
 
+Use the [repository guide](docs/REPOSITORY_GUIDE.md) to choose the right home and
+check the [open research register](docs/OPEN_RESEARCH.md) for overlapping work.
+For each new result, record its claim class, action/domain, source commit,
+inputs, generator or derivation, validation scope and remaining gates. Keep
+scratch output in ignored local directories; generated scientific evidence
+and failed controls retain their provenance and original identities.
+
+Organization changes should follow the
+[preservation plan](docs/REPOSITORY_CLEANUP_PLAN.md). Before moving a file, map
+its imports, generators, manifests, source hashes and public links. Preserve
+old link targets and headings or provide reviewed compatibility paths.
+
 Keep each pull request focused and identify:
 
 - the source or artifact supporting the change;
@@ -29,6 +41,7 @@ Run the focused tests plus:
 python tools/audit_forbidden_claims.py
 python tools/audit_bhsm_status.py
 python tools/audit_frozen_prediction_integrity.py
+python tools/audit_repository_navigation.py
 ```
 
 ### Test filesystem isolation

@@ -10,7 +10,7 @@ export const reviewEntries = {
   'bhsm-lifecycle': {
     classification: 'BHSM · theory in work',
     statement:
-      'BHSM, a theory in work, proposes a common frame for excitation, envelope formation, encapsulation, decay, collisions and de-encapsulation. The decay scene shows a parent’s transformation followed by its daughter products. The automatic tour compares the frame across four scales, with different environments and mechanisms.',
+      'In Norman’s BHSM interpretation, a propagating excitation is the lowest envelope regime, an ordinary envelope is distinct from full encapsulation, and all three can exhibit mass in a given environment. The common frame connects those regimes with decay, collisions and de-encapsulation; it supplies no mass prediction or spectral-gap proof. The decay scene shows a parent’s transformation followed by its daughter products. The automatic tour compares the frame across four scales, with different environments and mechanisms.',
     question:
       'At a chosen scale, which boundary channels and outgoing daughters would test this frame, and which transition still needs a physical solution?',
   },
