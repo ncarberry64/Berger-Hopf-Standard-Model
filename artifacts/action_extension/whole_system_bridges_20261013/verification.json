@@ -1,0 +1,35 @@
+{
+  "FULL_BHSM_COMPLETE": false,
+  "artifact_pair": [
+    "artifacts/action_extension/BHSM_WHOLE_SYSTEM_RESPONSE_BRIDGES_20261013.json",
+    "artifacts/action_extension/whole_system_bridges_20261013/reproduction.json"
+  ],
+  "artifact_sha256": "860677da16ac80bb550f0b3b500c4d89e917dfd10881985e9dc958ea833832e7",
+  "audit_receipt_sha256": "956838aabfee8f163c5191ba1ba1a32bf7832c1d8714b1469153f143bda84e4f",
+  "base_commit": "00614fa0d479a2de78460ca061cc5304cdb610cf",
+  "byte_identical_reproduction": true,
+  "classification": "VERIFIED_CONDITIONAL_WHOLE_SYSTEM_INTEGRATION",
+  "focused_test_command": "C:/Python314/python.exe -m pytest tests/test_ae4_mixed_terminal_hs.py tests/test_ae4_mixed_event_response.py tests/test_charged_lepton_pole_observable.py tests/test_bhsm_whole_system_response_bridges.py tests/test_ae4_event_response_jet_integration.py tests/test_ae31_charged_lepton_pole_dressing_invariant.py tests/test_universal_dressed_pole.py -q",
+  "focused_test_result": {
+    "duration_seconds": 5.06,
+    "failed": 0,
+    "passed": 111
+  },
+  "frozen_file_sha256": {
+    "docs/frozen_predictions.json": "f38210e0689871a25a9d5b0a1a4239883b7240cd7d0e25cdcf4c8cab72a2cbe7",
+    "docs/frozen_predictions.md": "9ea147c56537520c86d3c4f9b864c6ba98bac9e64931edae96449f3b335a36c4"
+  },
+  "input_hashes_match": true,
+  "physical_event_response_evaluated": false,
+  "scope": "Fixed-core HS coefficients and synthetic finite event witness; physical terminal selection, same-action sector values, full spectral integration, poles and cosmological relative-energy readout remain upstream.",
+  "source": {
+    "artifacts/action_extension/BHSM_AE4_CURRENT_C2_TERMINAL_HS_JET_TRANSPORT.json": "8b0598a2330f6f4d7b8940556fc9924af3172630dd35c346d09684393983f2da",
+    "scripts/materialize_bhsm_whole_system_response_bridges.py": "73f4ee45e743b5ab5ab9067b016ab0016d9313f8e7ca7e8b1c234f0b5696be4a",
+    "src/bhsm/interface/ae31_charged_lepton_pole_dressing_invariant.py": "77580bf76e7618bdaec54cb97d9678a1fabfbdc1b428cb82375e5066f7e00d3c",
+    "src/bhsm/interface/ae4_c2_stratified_event_flux_assembly.py": "2b01565bd57e56c5f1cbeb932b55b4823426464b05df5f8c3387c92ced278312",
+    "src/bhsm/interface/ae4_mixed_event_response.py": "a5404e97a05f7d0ed54a6ab84833c3f0db02ddea9f0d646c0db87239ae8a4670",
+    "src/bhsm/interface/ae4_mixed_terminal_hs.py": "c3c03e8dcfad6c1131cfda60514bb2798a6337cc0667c28598fce92bbd23d9fb",
+    "src/bhsm/interface/charged_lepton_pole_observable.py": "17a482ce5c1278f6fa513c3f1f29449a2faa4a8df22bf0719d6d61edda382c38",
+    "src/bhsm/interface/universal_dressed_pole.py": "7580d9a53594670c1efad78c6145262856153795067290858e04d3e22a0a57a1"
+  }
+}
