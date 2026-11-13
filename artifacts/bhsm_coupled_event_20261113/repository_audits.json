@@ -1,0 +1,139 @@
+{
+  "candidate_files": [
+    {
+      "path": ".github/workflows/ci.yml",
+      "sha256": "542725958c8850085a7a613b47bfecd6f411b7fbcd1cdcd275614c7c2237effb"
+    },
+    {
+      "path": "artifacts/bhsm_coupled_event_20261113/assumptions.json",
+      "sha256": "342b5e2c0ee6f42c02379794a8337c4e1769471d7687b9f51042bf6e65cad193"
+    },
+    {
+      "path": "artifacts/bhsm_coupled_event_20261113/inputs.json",
+      "sha256": "a298edae4a75014cdde37b347fa14d7643d4ae64a58c1f4a791320bcf976e313"
+    },
+    {
+      "path": "artifacts/bhsm_coupled_event_20261113/retained_review.json",
+      "sha256": "fd8584b6484643a6d6392a7cca8cf496c9357396c59d17ef204eb9e4b1a9425f"
+    },
+    {
+      "path": "artifacts/bhsm_coupled_event_20261113/validation.json",
+      "sha256": "500cdfa14c9cad102ecf1c558cf80ae8e1c0008cc9bd0cb914bd82ec9c6c5930"
+    },
+    {
+      "path": "audits/bhsm_coupled_event_20261113.py",
+      "sha256": "e2fc7a0b45ecf784a45928a79413ff7413d225b61b2c3e499c9f014fd3b3e696"
+    },
+    {
+      "path": "docs/OPEN_RESEARCH.md",
+      "sha256": "59b8d092239ab592139b4d1fc6e293731a155abeebcbdf82ce5b7c80c8aef76d"
+    },
+    {
+      "path": "tests/test_bhsm_coupled_event_20261113.py",
+      "sha256": "2da9b3110ddc590aea23fdead8b094ef0310a231ca553a4375b2d8d86ce057ae"
+    },
+    {
+      "path": "theory/bhsm_coupled_event_20261113.md",
+      "sha256": "1001100797a86dced2b360e940a141218d4753a8df61cc49d776d74d94f515f0"
+    }
+  ],
+  "candidate_payload_file_count": 10,
+  "final_payload_audit_scope": "All ten payload files were present and staged for the final six official audits, including assumptions, retained review and the CI test addition. This receipt was then refreshed with final file hashes and results; its self hash is excluded.",
+  "limits": [
+    "No full repository public-readiness or navigation pass is claimed.",
+    "The forbidden-claims tool scans its fixed nine upstream documentation paths; it does not independently validate the new scientific claim scope.",
+    "Precision checks the committed coordinate benchmark, not a new physical mass-gap result.",
+    "Full-checkout CI must run the same official commands.",
+    "No public-readiness manifest was materialized; frozen predictions were not changed."
+  ],
+  "navigation": {
+    "all_omitted_targets_present_in_pinned_remote_tree": true,
+    "baseline_failure_count": 476,
+    "baseline_local_links_checked": 572,
+    "candidate_failure_count": 476,
+    "candidate_local_links_checked": 573,
+    "candidate_markdown_fragments_checked": 3,
+    "new_failures": 0,
+    "omission_reasons": [
+      "Remote link targets were not materialized in the minimal validation worktree.",
+      "Full target contents and heading fragments are not validated by path existence."
+    ],
+    "omitted_target_bytes": 6696611,
+    "unique_omitted_target_paths": 408
+  },
+  "official_audits": [
+    {
+      "baseline_exit_code": 0,
+      "candidate_exit_code": 0,
+      "candidate_stdout_sha256": "f7cabd3dd8abcf52bf66bdbcf376512724512cc06a50bdfbd001ba227d0e397c",
+      "command": "python tools/audit_forbidden_claims.py",
+      "result": "PASS",
+      "stdout_identical_to_baseline": true
+    },
+    {
+      "baseline_exit_code": 0,
+      "candidate_exit_code": 0,
+      "candidate_stdout_sha256": "b09a9b2bb2c9a6bb3736c0637ac538714331c4f7bd23acbcccfc61471ef2346a",
+      "command": "python tools/audit_bhsm_status.py",
+      "result": "PASS",
+      "stdout_identical_to_baseline": true
+    },
+    {
+      "baseline_exit_code": 0,
+      "candidate_exit_code": 0,
+      "candidate_stdout_sha256": "4333f325078313d32fd7445a552775c0e363f214fbb847fb300517e875f3edf3",
+      "command": "python tools/audit_frozen_prediction_integrity.py",
+      "result": "PASS",
+      "stdout_identical_to_baseline": true
+    },
+    {
+      "baseline_exit_code": 0,
+      "candidate_exit_code": 0,
+      "candidate_stdout_sha256": "04d070bd0a25655283b672185753155ba093bdb5e4f9d4336c3a376173ce4ecc",
+      "command": "python tools/verify_precision.py",
+      "result": "PASS",
+      "stdout_identical_to_baseline": true
+    },
+    {
+      "baseline_exit_code": 1,
+      "candidate_exit_code": 1,
+      "candidate_stdout_sha256": "9d1f071098b83bcefaadd0b66a766d1474c3c71a1393f358aac974888e7e63d7",
+      "command": "python tools/audit_public_readiness.py --format json",
+      "failed_check_names": [
+        "markdown_links",
+        "reproduction"
+      ],
+      "result": "INCOMPLETE_MINIMAL_WORKTREE",
+      "stdout_identical_to_baseline": true
+    },
+    {
+      "baseline_exit_code": 1,
+      "candidate_exit_code": 1,
+      "candidate_stdout_sha256": "59ab151c00c87c13a5ae112f456b7daedbe966e7a47ef24913d86169257d6b84",
+      "command": "python tools/audit_repository_navigation.py",
+      "failed_check_names": [],
+      "result": "INCOMPLETE_MINIMAL_WORKTREE",
+      "stdout_identical_to_baseline": false
+    }
+  ],
+  "precision_delta": 1.066e-14,
+  "precision_threshold": 1e-13,
+  "public_readiness": {
+    "failed_checks": [
+      "markdown_links",
+      "reproduction"
+    ],
+    "hygiene_scope": "Only the actually materialized/staged upstream and listed candidate files.",
+    "missing_link_count": 41,
+    "passed": false,
+    "reproduction_blocker": "The full BHSM package/CLI is not installed in this clean minimal audit environment."
+  },
+  "receipt_self_hash_excluded": "artifacts/bhsm_coupled_event_20261113/repository_audits.json",
+  "remote_blob_count": 13143,
+  "schema_version": 1,
+  "source_commit": "86ad2527688baf2837eb0b88c42f6a0f791a73f9",
+  "source_repository": "ncarberry64/Berger-Hopf-Standard-Model",
+  "staged_materialized_file_count": 51,
+  "upstream_blob_hashes_verified": 42,
+  "validation_environment": "Clean Python3.14 venv without site packages; source-verified official audits, 42 materialized upstream files; no full clone. Earlier ambient CLI result was superseded."
+}

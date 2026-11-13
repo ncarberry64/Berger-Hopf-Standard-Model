@@ -52,3 +52,15 @@ with the research owner before preparing a dedicated scientific change.
 Use the [repository guide](REPOSITORY_GUIDE.md) for the merged record and the
 [cleanup plan](REPOSITORY_CLEANUP_PLAN.md) for integration order. Keep scientific
 branches independent while organization changes are reviewed.
+
+## Mass-gap coupled-event checkpoint — 13 November 2026
+
+A dedicated [research checkpoint](../theory/bhsm_coupled_event_20261113.md) now
+records the corrected full normal Euler equation and a portable mixed-field
+initial-data reproduction. Its retained twelve lapse projections and Maxwell
+normal contribution close numerically; fresh charged and Higgs loads change
+the combined targets, and radius, sourced Gauss, physical history/domain and
+matched energy charge remain open. This is a conditional research export, not
+a physical mass-gap result. The separate muon source branch above is not merged
+by this update. Older dated inventory entries remain unchanged.
+
