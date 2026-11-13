@@ -1,0 +1,1375 @@
+{
+  "artifact": "BHSM_AE4_SUPPORT_LOSS_CLASSICAL_OWNER_AUDIT_20261007",
+  "audit_equations": {
+    "classical_total_action": {
+      "equation": "S_total=S_bulk,event+S_bulk,child+S_owned_boundary_corner-sum_s integral_(W_s) gamma_s dmu_h",
+      "source": {
+        "end_line": 140,
+        "path": "src/bhsm/interface/covariant_bubble_interface_mechanics.py",
+        "start_line": 139,
+        "symbol": "build_payload"
+      }
+    },
+    "event_energy_equality": {
+      "equation": "<psi,(R-H_event,drive)psi>=0 with the same positive inertia",
+      "source": {
+        "end_line": 121,
+        "path": "src/bhsm/interface/ae4_stratified_dirac_zeta_induced_owner.py",
+        "start_line": 69,
+        "symbol": "native_spectral_length_contract"
+      }
+    },
+    "kinetic_norm": {
+      "already_owned_equivalent_alternate_normalization_proved": false,
+      "equation": "<psi_star,I_star psi_star>=1 at the base",
+      "inertia_authority_source": {
+        "end_line": 121,
+        "path": "src/bhsm/interface/ae4_stratified_dirac_zeta_induced_owner.py",
+        "start_line": 69,
+        "symbol": "native_spectral_length_contract"
+      },
+      "normalization_authority": {
+        "date": "2026-10-07",
+        "instruction": "Normalize from the action-owned kinetic inertia, preferably <psi_star,I_star psi_star>=1 unless an already-owned normalization proves another equivalent convention.",
+        "kind": "CURRENT_HUMAN_USER_OWNER_CLARIFICATION",
+        "scope": "Preferred convention supplied by the current user instruction; native_spectral_length_contract supplies positive inertia and the same-mode frequency quotient, not unit kinetic normalization.",
+        "section": "3. PHYSICAL MODE / DISPLACEMENT",
+        "task": "Continue BHSM muon/native program from PR #465; verified starting HEAD 00fa89d62e4c74ee9fd0b41611b3468ad035b5db"
+      },
+      "normalization_physically_evaluated": false,
+      "transport_rule": "i_v, i_J and i_vJ remain total mode/pairing/domain/normalization jets; base i=1 alone does not set them to zero"
+    },
+    "metric_matching": {
+      "equation": "R_eps,ab=h_ab-gamma_eps,ab=0; matcher reactions retained in lambda^dagger R once",
+      "source": {
+        "end_line": 21,
+        "path": "src/bhsm/interface/master_action/variations.py",
+        "start_line": 8,
+        "symbol": "equation_rows"
+      }
+    },
+    "native_dynamic_flux": {
+      "equation": "D_port[u]=(Dtrace[u],DP[u],DF[u]-DG[u]-D2P[X,u]-DP[DXu]); canonical order 3 trace, 2 momentum, 2 dynamic flux",
+      "source": {
+        "end_line": 39,
+        "path": "src/bhsm/interface/geometric_material_port.py",
+        "start_line": 27,
+        "symbol": "required_material_jet"
+      }
+    },
+    "normal_traction": {
+      "equation": "jump(T_nn)=gamma_s*K+I_bulk,response",
+      "source": {
+        "end_line": 187,
+        "path": "src/bhsm/interface/covariant_bubble_interface_mechanics.py",
+        "start_line": 187,
+        "symbol": "build_payload"
+      }
+    },
+    "physical_clock_mode": {
+      "equation": "I_lambda D_tau^2 a_lambda+[gamma_s j_lambda+Z_lambda]a_lambda=f_event,lambda",
+      "source": {
+        "end_line": 235,
+        "path": "src/bhsm/interface/covariant_bubble_interface_mechanics.py",
+        "start_line": 234,
+        "symbol": "build_payload"
+      }
+    },
+    "surface_Jacobi": {
+      "equation": "J_Sigma=-Delta_Sigma-(|A|^2+Ric(n,n))",
+      "source": {
+        "end_line": 216,
+        "path": "src/bhsm/interface/covariant_bubble_interface_mechanics.py",
+        "start_line": 216,
+        "symbol": "build_payload"
+      }
+    },
+    "surface_kinetic_Legendre_Hessian": {
+      "derivation": "d2L_Sigma/dRdot2; surface contribution only, not the complete stratified I_star",
+      "derived_surface_Legendre_Hessian": "I_Sigma=gamma_s*Omega_p*R^p/(1-Rdot^2)^(3/2)",
+      "owned_L": "L_Sigma=-gamma_s Omega_p R^p sqrt(1-Rdot^2)",
+      "source": {
+        "end_line": 204,
+        "path": "src/bhsm/interface/covariant_bubble_interface_mechanics.py",
+        "start_line": 204,
+        "symbol": "build_payload"
+      }
+    }
+  },
+  "audited_producers": [
+    {
+      "end_line": 175,
+      "path": "src/bhsm/interface/action_extension_global_spin_reset_ae2.py",
+      "start_line": 175,
+      "symbol": "action_definition"
+    },
+    {
+      "end_line": 121,
+      "path": "src/bhsm/interface/ae4_stratified_dirac_zeta_induced_owner.py",
+      "start_line": 69,
+      "symbol": "native_spectral_length_contract"
+    },
+    {
+      "end_line": 304,
+      "path": "src/bhsm/interface/ae4_stratified_dirac_zeta_induced_owner.py",
+      "start_line": 274,
+      "symbol": "microscopic_owner_contract"
+    },
+    {
+      "end_line": 91,
+      "path": "src/bhsm/interface/aether_moving_interface_transfer_v15_12.py",
+      "start_line": 70,
+      "symbol": "hayward_corner_variation"
+    },
+    {
+      "end_line": 307,
+      "path": "src/bhsm/interface/completion/path_b_foundational_action_v14_31.py",
+      "start_line": 307,
+      "symbol": "foundational_action_payload"
+    },
+    {
+      "end_line": 365,
+      "path": "src/bhsm/interface/covariant_bubble_interface_mechanics.py",
+      "start_line": 84,
+      "symbol": "build_payload"
+    },
+    {
+      "end_line": 140,
+      "path": "src/bhsm/interface/covariant_bubble_interface_mechanics.py",
+      "start_line": 139,
+      "symbol": "build_payload"
+    },
+    {
+      "end_line": 187,
+      "path": "src/bhsm/interface/covariant_bubble_interface_mechanics.py",
+      "start_line": 187,
+      "symbol": "build_payload"
+    },
+    {
+      "end_line": 204,
+      "path": "src/bhsm/interface/covariant_bubble_interface_mechanics.py",
+      "start_line": 204,
+      "symbol": "build_payload"
+    },
+    {
+      "end_line": 216,
+      "path": "src/bhsm/interface/covariant_bubble_interface_mechanics.py",
+      "start_line": 216,
+      "symbol": "build_payload"
+    },
+    {
+      "end_line": 235,
+      "path": "src/bhsm/interface/covariant_bubble_interface_mechanics.py",
+      "start_line": 234,
+      "symbol": "build_payload"
+    },
+    {
+      "end_line": 135,
+      "path": "src/bhsm/interface/encapsulation_response_representation_theorem.py",
+      "start_line": 96,
+      "symbol": "input_space_contract"
+    },
+    {
+      "end_line": 168,
+      "path": "src/bhsm/interface/encapsulation_response_representation_theorem.py",
+      "start_line": 138,
+      "symbol": "output_space_contract"
+    },
+    {
+      "end_line": 593,
+      "path": "src/bhsm/interface/encapsulation_response_representation_theorem.py",
+      "start_line": 572,
+      "symbol": "constraint_noether_ledger"
+    },
+    {
+      "end_line": 24,
+      "path": "src/bhsm/interface/geometric_material_port.py",
+      "start_line": 14,
+      "symbol": "geometric_trace_jet"
+    },
+    {
+      "end_line": 39,
+      "path": "src/bhsm/interface/geometric_material_port.py",
+      "start_line": 27,
+      "symbol": "required_material_jet"
+    },
+    {
+      "end_line": 117,
+      "path": "src/bhsm/interface/master_action/path_b_master_action_v14_31.py",
+      "start_line": 82,
+      "symbol": "master_action_payload"
+    },
+    {
+      "end_line": 59,
+      "path": "src/bhsm/interface/master_action/terms.py",
+      "start_line": 59,
+      "symbol": "term_rows"
+    },
+    {
+      "end_line": 60,
+      "path": "src/bhsm/interface/master_action/terms.py",
+      "start_line": 60,
+      "symbol": "term_rows"
+    },
+    {
+      "end_line": 61,
+      "path": "src/bhsm/interface/master_action/terms.py",
+      "start_line": 61,
+      "symbol": "term_rows"
+    },
+    {
+      "end_line": 62,
+      "path": "src/bhsm/interface/master_action/terms.py",
+      "start_line": 62,
+      "symbol": "term_rows"
+    },
+    {
+      "end_line": 63,
+      "path": "src/bhsm/interface/master_action/terms.py",
+      "start_line": 63,
+      "symbol": "term_rows"
+    },
+    {
+      "end_line": 64,
+      "path": "src/bhsm/interface/master_action/terms.py",
+      "start_line": 64,
+      "symbol": "term_rows"
+    },
+    {
+      "end_line": 65,
+      "path": "src/bhsm/interface/master_action/terms.py",
+      "start_line": 65,
+      "symbol": "term_rows"
+    },
+    {
+      "end_line": 66,
+      "path": "src/bhsm/interface/master_action/terms.py",
+      "start_line": 66,
+      "symbol": "term_rows"
+    },
+    {
+      "end_line": 67,
+      "path": "src/bhsm/interface/master_action/terms.py",
+      "start_line": 67,
+      "symbol": "term_rows"
+    },
+    {
+      "end_line": 68,
+      "path": "src/bhsm/interface/master_action/terms.py",
+      "start_line": 68,
+      "symbol": "term_rows"
+    },
+    {
+      "end_line": 69,
+      "path": "src/bhsm/interface/master_action/terms.py",
+      "start_line": 69,
+      "symbol": "term_rows"
+    },
+    {
+      "end_line": 70,
+      "path": "src/bhsm/interface/master_action/terms.py",
+      "start_line": 70,
+      "symbol": "term_rows"
+    },
+    {
+      "end_line": 71,
+      "path": "src/bhsm/interface/master_action/terms.py",
+      "start_line": 71,
+      "symbol": "term_rows"
+    },
+    {
+      "end_line": 137,
+      "path": "src/bhsm/interface/master_action/terms.py",
+      "start_line": 120,
+      "symbol": "payload"
+    },
+    {
+      "end_line": 21,
+      "path": "src/bhsm/interface/master_action/variations.py",
+      "start_line": 8,
+      "symbol": "equation_rows"
+    },
+    {
+      "end_line": 142,
+      "path": "src/bhsm/interface/owner_authorized_encapsulation_interface_action.py",
+      "start_line": 89,
+      "symbol": "interface_variable_contract"
+    },
+    {
+      "end_line": 464,
+      "path": "src/bhsm/interface/owner_authorized_encapsulation_interface_action.py",
+      "start_line": 441,
+      "symbol": "no_ex_nihilo_noether_structure"
+    }
+  ],
+  "classical_owner": {
+    "action_version": "BHSM-AE-3.2.16-COVARIANT-BUBBLE-INTERFACE-MECHANICS",
+    "authority": "BHSM-AE-3.2.16-COVARIANT-BUBBLE-INTERFACE-MECHANICS",
+    "quantum_heat_in_classical_action": false,
+    "realization_gate": "OPERATIONAL_ACTION_EQUATION_FOR_OUTWARD_SPACETIME_SUPPORT_CESSATION_NOT_DEFINED_IN_INSPECTED_OWNERS",
+    "realized_base": null,
+    "realized_domain": null,
+    "realized_pairing": null,
+    "scalar_composition": "S_total=S_bulk,event+S_bulk,child+S_owned_boundary_corner-sum_s integral_(W_s) gamma_s dmu_h",
+    "scalar_composition_source": {
+      "end_line": 140,
+      "path": "src/bhsm/interface/covariant_bubble_interface_mechanics.py",
+      "start_line": 139,
+      "symbol": "build_payload"
+    }
+  },
+  "classification": "CONCRETE_CLASSICAL_OWNER_INVENTORY__SUPPORT_LOSS_REALIZATION_NOT_PHYSICALLY_INSTANTIATED",
+  "constraint_and_domain_inventory": {
+    "admissibility": [
+      "Hamiltonian and momentum constraints",
+      "Gauss constraints",
+      "gauge/BRST quotient and pairing",
+      "incidence and bundle compatibility",
+      "orientation and FR parity",
+      "AE4 future retarded admissibility"
+    ],
+    "admissibility_source": {
+      "end_line": 593,
+      "path": "src/bhsm/interface/encapsulation_response_representation_theorem.py",
+      "start_line": 572,
+      "symbol": "constraint_noether_ledger"
+    },
+    "constraint_values_and_stationary_multipliers": "gated by selected support-loss realization; historical lapse/shift/event multipliers are not borrowed",
+    "domain": "coupled regular-stratum event/child/interface domain with its actual trace, embedding, spin/gauge transport and corner ensemble",
+    "domain_source": {
+      "end_line": 142,
+      "path": "src/bhsm/interface/owner_authorized_encapsulation_interface_action.py",
+      "start_line": 89,
+      "symbol": "interface_variable_contract"
+    },
+    "metric_matcher": "R_eps,ab=h_ab-gamma_eps,ab=0; matcher reactions retained in lambda^dagger R once",
+    "metric_matcher_source": {
+      "end_line": 21,
+      "path": "src/bhsm/interface/master_action/variations.py",
+      "start_line": 8,
+      "symbol": "equation_rows"
+    },
+    "no_recount_rule": "a constraint already quotiented in the physical space is not another independent row; source-dependent uneliminated constraint rows require their actual multiplier reactions",
+    "pairing": "sum_s <Pi_s,delta q_s>_Sigma_HAS_ACTION_UNITS; sectorwise continuous duals from Legendre/Green forms and graded signs",
+    "pairing_source": {
+      "end_line": 168,
+      "path": "src/bhsm/interface/encapsulation_response_representation_theorem.py",
+      "start_line": 138,
+      "symbol": "output_space_contract"
+    }
+  },
+  "error_scope": "text/source-owner inventory and exact analytic membrane differentiation only; no physical numerical realization, continuum error certificate or new scientific input",
+  "event_and_first_stop": {
+    "Noether_source": {
+      "end_line": 464,
+      "path": "src/bhsm/interface/owner_authorized_encapsulation_interface_action.py",
+      "start_line": 441,
+      "symbol": "no_ex_nihilo_noether_structure"
+    },
+    "adopted_event": "first future E_impedance=E_core AND outward spacetime support ceases",
+    "available_conservation_identity": "J_event+J_child+J_interface+J_environment=0; integrated Phi_out only after clock, reference, ensemble and common domain exist",
+    "cutoff_source": {
+      "end_line": 121,
+      "path": "src/bhsm/interface/ae4_stratified_dirac_zeta_induced_owner.py",
+      "start_line": 69,
+      "symbol": "native_spectral_length_contract"
+    },
+    "energy_equality": "<psi,(R-H_event,drive)psi>=0 with the same positive inertia",
+    "first_stop": "OPERATIONAL_ACTION_EQUATION_FOR_OUTWARD_SPACETIME_SUPPORT_CESSATION_NOT_DEFINED_IN_INSPECTED_OWNERS",
+    "mechanics_loss_statement": "none locally; any effective loss must be the computed outward Noether or radiative flux",
+    "mechanics_source": {
+      "end_line": 365,
+      "path": "src/bhsm/interface/covariant_bubble_interface_mechanics.py",
+      "start_line": 84,
+      "symbol": "build_payload"
+    },
+    "other_realization_fields": "gated downstream of this first event-definition stop; not presented as additional independent stops",
+    "physical_a_mu": null,
+    "physical_g_mu": null,
+    "physical_h_z_r_i": null,
+    "physical_promotion": false,
+    "stop_scope": "the inspected conserved jump/current and traction identities do not identify a particular current component, contraction, orientation criterion or threshold as the support-cessation predicate; do not equate zero jump, zero traction, zero descriptor or canonical stop to cessation"
+  },
+  "inspection_scope": "retained registered scalar densities, minimal regular membrane, canonical boundary outputs, normal-stratum and kinetic normalization authorities; no launch, history, residual-row, spectrum or campaign data consumed",
+  "normal_mode_contract": {
+    "Jacobi_operator": "J_Sigma=-Delta_Sigma-(|A|^2+Ric(n,n))",
+    "Jacobi_source": {
+      "end_line": 216,
+      "path": "src/bhsm/interface/covariant_bubble_interface_mechanics.py",
+      "start_line": 216,
+      "symbol": "build_payload"
+    },
+    "active_regular_strata": null,
+    "already_owned_equivalent_alternate_normalization_proved": false,
+    "corner_rule": "codimension-two corners bound the regular pieces; they are not an independent carrier law",
+    "embedding_convention": "two event/child embeddings of one abstract compact oriented stratified carrier; outward conormals oppose; unit normal only on a non-null induced metric, otherwise the canonical object is conormal density",
+    "event_line_scope_source": {
+      "end_line": 135,
+      "path": "src/bhsm/interface/encapsulation_response_representation_theorem.py",
+      "start_line": 96,
+      "symbol": "input_space_contract"
+    },
+    "excluded_substitutions": [
+      "N12 simple ordered-event-stop eigendirection v24",
+      "descriptor direction",
+      "launch vector",
+      "SVD gain vector",
+      "Gate7 correction column",
+      "right inverse",
+      "canonical basis vector",
+      "cached Euclidean norm"
+    ],
+    "kinetic_owner": "positive reduced physical-clock normal Legendre Hessian of the complete same-owner action, including required bulk response",
+    "mode_branch": "initiating event projector selects the formation branch at simple oriented constrained H_form crossing; continuously transport that same physical branch to AE4 support loss",
+    "mode_equation": "I_lambda D_tau^2 a_lambda+[gamma_s j_lambda+Z_lambda]a_lambda=f_event,lambda",
+    "mode_equation_source": {
+      "end_line": 235,
+      "path": "src/bhsm/interface/covariant_bubble_interface_mechanics.py",
+      "start_line": 234,
+      "symbol": "build_payload"
+    },
+    "normal_traction": "jump(T_nn)=gamma_s*K+I_bulk,response",
+    "normal_traction_source": {
+      "end_line": 187,
+      "path": "src/bhsm/interface/covariant_bubble_interface_mechanics.py",
+      "start_line": 187,
+      "symbol": "build_payload"
+    },
+    "normalization_authority": {
+      "date": "2026-10-07",
+      "instruction": "Normalize from the action-owned kinetic inertia, preferably <psi_star,I_star psi_star>=1 unless an already-owned normalization proves another equivalent convention.",
+      "kind": "CURRENT_HUMAN_USER_OWNER_CLARIFICATION",
+      "scope": "Preferred convention supplied by the current user instruction; native_spectral_length_contract supplies positive inertia and the same-mode frequency quotient, not unit kinetic normalization.",
+      "section": "3. PHYSICAL MODE / DISPLACEMENT",
+      "task": "Continue BHSM muon/native program from PR #465; verified starting HEAD 00fa89d62e4c74ee9fd0b41611b3468ad035b5db"
+    },
+    "normalization_transport": "i_v, i_J and i_vJ remain total mode/pairing/domain/normalization jets; base i=1 alone does not set them to zero",
+    "physical_psi_and_xi_evaluated": false,
+    "preferred_normalization": "<psi_star,I_star psi_star>=1 at the base",
+    "registered_regular_strata": [
+      "M8",
+      "M5+",
+      "M5-",
+      "M4"
+    ],
+    "source": {
+      "end_line": 142,
+      "path": "src/bhsm/interface/owner_authorized_encapsulation_interface_action.py",
+      "start_line": 89,
+      "symbol": "interface_variable_contract"
+    },
+    "spherical_surface_reduction": {
+      "derivation": "d2L_Sigma/dRdot2; surface contribution only, not the complete stratified I_star",
+      "derived_surface_Legendre_Hessian": "I_Sigma=gamma_s*Omega_p*R^p/(1-Rdot^2)^(3/2)",
+      "owned_L": "L_Sigma=-gamma_s Omega_p R^p sqrt(1-Rdot^2)",
+      "source": {
+        "end_line": 204,
+        "path": "src/bhsm/interface/covariant_bubble_interface_mechanics.py",
+        "start_line": 204,
+        "symbol": "build_payload"
+      }
+    },
+    "worldvolume_dimensions_if_all_active": {
+      "M4": 3,
+      "M5+": 4,
+      "M5-": 4,
+      "M8": 7
+    },
+    "xi_psi": "complete action-owned normal section xi_s=psi_s n_s on each active stratum with admitted incidence/trace compatibility; retain every component"
+  },
+  "normal_section_and_kinetic_normalization": {
+    "Jacobi_operator": "J_Sigma=-Delta_Sigma-(|A|^2+Ric(n,n))",
+    "Jacobi_source": {
+      "end_line": 216,
+      "path": "src/bhsm/interface/covariant_bubble_interface_mechanics.py",
+      "start_line": 216,
+      "symbol": "build_payload"
+    },
+    "active_regular_strata": null,
+    "already_owned_equivalent_alternate_normalization_proved": false,
+    "corner_rule": "codimension-two corners bound the regular pieces; they are not an independent carrier law",
+    "embedding_convention": "two event/child embeddings of one abstract compact oriented stratified carrier; outward conormals oppose; unit normal only on a non-null induced metric, otherwise the canonical object is conormal density",
+    "event_line_scope_source": {
+      "end_line": 135,
+      "path": "src/bhsm/interface/encapsulation_response_representation_theorem.py",
+      "start_line": 96,
+      "symbol": "input_space_contract"
+    },
+    "excluded_substitutions": [
+      "N12 simple ordered-event-stop eigendirection v24",
+      "descriptor direction",
+      "launch vector",
+      "SVD gain vector",
+      "Gate7 correction column",
+      "right inverse",
+      "canonical basis vector",
+      "cached Euclidean norm"
+    ],
+    "kinetic_owner": "positive reduced physical-clock normal Legendre Hessian of the complete same-owner action, including required bulk response",
+    "mode_branch": "initiating event projector selects the formation branch at simple oriented constrained H_form crossing; continuously transport that same physical branch to AE4 support loss",
+    "mode_equation": "I_lambda D_tau^2 a_lambda+[gamma_s j_lambda+Z_lambda]a_lambda=f_event,lambda",
+    "mode_equation_source": {
+      "end_line": 235,
+      "path": "src/bhsm/interface/covariant_bubble_interface_mechanics.py",
+      "start_line": 234,
+      "symbol": "build_payload"
+    },
+    "normal_traction": "jump(T_nn)=gamma_s*K+I_bulk,response",
+    "normal_traction_source": {
+      "end_line": 187,
+      "path": "src/bhsm/interface/covariant_bubble_interface_mechanics.py",
+      "start_line": 187,
+      "symbol": "build_payload"
+    },
+    "normalization_authority": {
+      "date": "2026-10-07",
+      "instruction": "Normalize from the action-owned kinetic inertia, preferably <psi_star,I_star psi_star>=1 unless an already-owned normalization proves another equivalent convention.",
+      "kind": "CURRENT_HUMAN_USER_OWNER_CLARIFICATION",
+      "scope": "Preferred convention supplied by the current user instruction; native_spectral_length_contract supplies positive inertia and the same-mode frequency quotient, not unit kinetic normalization.",
+      "section": "3. PHYSICAL MODE / DISPLACEMENT",
+      "task": "Continue BHSM muon/native program from PR #465; verified starting HEAD 00fa89d62e4c74ee9fd0b41611b3468ad035b5db"
+    },
+    "normalization_transport": "i_v, i_J and i_vJ remain total mode/pairing/domain/normalization jets; base i=1 alone does not set them to zero",
+    "physical_psi_and_xi_evaluated": false,
+    "preferred_normalization": "<psi_star,I_star psi_star>=1 at the base",
+    "registered_regular_strata": [
+      "M8",
+      "M5+",
+      "M5-",
+      "M4"
+    ],
+    "source": {
+      "end_line": 142,
+      "path": "src/bhsm/interface/owner_authorized_encapsulation_interface_action.py",
+      "start_line": 89,
+      "symbol": "interface_variable_contract"
+    },
+    "spherical_surface_reduction": {
+      "derivation": "d2L_Sigma/dRdot2; surface contribution only, not the complete stratified I_star",
+      "derived_surface_Legendre_Hessian": "I_Sigma=gamma_s*Omega_p*R^p/(1-Rdot^2)^(3/2)",
+      "owned_L": "L_Sigma=-gamma_s Omega_p R^p sqrt(1-Rdot^2)",
+      "source": {
+        "end_line": 204,
+        "path": "src/bhsm/interface/covariant_bubble_interface_mechanics.py",
+        "start_line": 204,
+        "symbol": "build_payload"
+      }
+    },
+    "worldvolume_dimensions_if_all_active": {
+      "M4": 3,
+      "M5+": 4,
+      "M5-": 4,
+      "M8": 7
+    },
+    "xi_psi": "complete action-owned normal section xi_s=psi_s n_s on each active stratum with admitted incidence/trace compatibility; retain every component"
+  },
+  "owner_separation": {
+    "classical_support_loss": {
+      "action_version": "BHSM-AE-3.2.16-COVARIANT-BUBBLE-INTERFACE-MECHANICS",
+      "equation": "S_total=S_bulk,event+S_bulk,child+S_owned_boundary_corner-sum_s integral_(W_s) gamma_s dmu_h",
+      "owns": [
+        "support-loss branch",
+        "normal displacement",
+        "stationary constraints and reactions",
+        "interface inertia",
+        "surface Jacobi resistance",
+        "bulk impedance Schur curvature"
+      ],
+      "source": {
+        "end_line": 140,
+        "path": "src/bhsm/interface/covariant_bubble_interface_mechanics.py",
+        "start_line": 139,
+        "symbol": "build_payload"
+      }
+    },
+    "cross_owner_bridge": "the same realized mode, support-loss surface and classical contraction c feed the downstream quantum provider; distinct functionals need not have the same action identity",
+    "quantum_AE4": {
+      "action_version": "BHSM-AE-4.0.0",
+      "consumes": "c=<psi,I psi>/<psi,R psi> from classical support-loss mechanics",
+      "counting_rule": "downstream heat functional; never insert it as a second classical restoring term without an explicit owner assignment",
+      "equation": "Gamma_AE4=-(1/2) STr E1(c P_strat)+relative-zeta/eta completion",
+      "source": {
+        "end_line": 304,
+        "path": "src/bhsm/interface/ae4_stratified_dirac_zeta_induced_owner.py",
+        "start_line": 274,
+        "symbol": "microscopic_owner_contract"
+      }
+    }
+  },
+  "registered_term_inventory": [
+    {
+      "coefficient": "kappa1",
+      "counting_rule": "retain at its registered stratum; do not sum duplicate descriptions across unowned reduction arrows",
+      "current_support_loss_evaluated": false,
+      "expression": "int sqrt(-G) kappa1 R8/2",
+      "fields": [
+        "G_AB"
+      ],
+      "gauge_invariant": true,
+      "level": "S8",
+      "mass_dimension_closed": true,
+      "real": true,
+      "source": {
+        "end_line": 59,
+        "path": "src/bhsm/interface/master_action/terms.py",
+        "start_line": 59,
+        "symbol": "term_rows"
+      },
+      "term_id": "T8_EH",
+      "variation_used": "E8_AB=0"
+    },
+    {
+      "coefficient": "kappa0",
+      "counting_rule": "retain at its registered stratum; do not sum duplicate descriptions across unowned reduction arrows",
+      "current_support_loss_evaluated": false,
+      "expression": "-int sqrt(-G) kappa0/2",
+      "fields": [
+        "G_AB"
+      ],
+      "gauge_invariant": true,
+      "level": "S8",
+      "mass_dimension_closed": true,
+      "real": true,
+      "source": {
+        "end_line": 60,
+        "path": "src/bhsm/interface/master_action/terms.py",
+        "start_line": 60,
+        "symbol": "term_rows"
+      },
+      "term_id": "T8_vacuum",
+      "variation_used": "vacuum stress"
+    },
+    {
+      "coefficient": "Zchi,g",
+      "counting_rule": "retain at its registered stratum; do not sum duplicate descriptions across unowned reduction arrows",
+      "current_support_loss_evaluated": false,
+      "expression": "-int sqrt(-G) Zchi(1+g sigma^2)|dchi|^2/2",
+      "fields": [
+        "G_AB",
+        "chi",
+        "sigma"
+      ],
+      "gauge_invariant": true,
+      "level": "S8",
+      "mass_dimension_closed": true,
+      "real": true,
+      "source": {
+        "end_line": 61,
+        "path": "src/bhsm/interface/master_action/terms.py",
+        "start_line": 61,
+        "symbol": "term_rows"
+      },
+      "term_id": "T8_carrier",
+      "variation_used": "chi and sigma equations"
+    },
+    {
+      "coefficient": "Zsigma,A0,G0",
+      "counting_rule": "retain at its registered stratum; do not sum duplicate descriptions across unowned reduction arrows",
+      "current_support_loss_evaluated": false,
+      "expression": "-int sqrt(-G)[Zsigma|dsigma|^2/2+A0 sigma^2/2+G0 sigma^4/4]",
+      "fields": [
+        "G_AB",
+        "sigma"
+      ],
+      "gauge_invariant": true,
+      "level": "S8",
+      "mass_dimension_closed": true,
+      "real": true,
+      "source": {
+        "end_line": 62,
+        "path": "src/bhsm/interface/master_action/terms.py",
+        "start_line": 62,
+        "symbol": "term_rows"
+      },
+      "term_id": "T8_scalar",
+      "variation_used": "bulk scalar equation"
+    },
+    {
+      "coefficient": "kappa1,kappa0,Z5,A5,G5",
+      "counting_rule": "retain at its registered stratum; do not sum duplicate descriptions across unowned reduction arrows",
+      "current_support_loss_evaluated": false,
+      "expression": "sum_eps int_M5_eps sqrt(-g_eps)[kappa1 R5/2-kappa0/2-Z5|dsigma|^2/2-U5]",
+      "fields": [
+        "g_eps",
+        "sigma"
+      ],
+      "gauge_invariant": true,
+      "level": "S5|4",
+      "mass_dimension_closed": true,
+      "real": true,
+      "source": {
+        "end_line": 63,
+        "path": "src/bhsm/interface/master_action/terms.py",
+        "start_line": 63,
+        "symbol": "term_rows"
+      },
+      "term_id": "T5_caps",
+      "variation_used": "cap Einstein/scalar equations"
+    },
+    {
+      "coefficient": "kappa1",
+      "counting_rule": "retain at its registered stratum; do not sum duplicate descriptions across unowned reduction arrows",
+      "current_support_loss_evaluated": false,
+      "expression": "sum_eps eps kappa1 int_B1 sqrt(-gamma_eps) K_eps",
+      "fields": [
+        "g_eps"
+      ],
+      "gauge_invariant": true,
+      "level": "S5|4",
+      "mass_dimension_closed": true,
+      "real": true,
+      "source": {
+        "end_line": 64,
+        "path": "src/bhsm/interface/master_action/terms.py",
+        "start_line": 64,
+        "symbol": "term_rows"
+      },
+      "term_id": "T5_GHY",
+      "variation_used": "normal-derivative cancellation and canonical momentum"
+    },
+    {
+      "coefficient": "C_partial plus typed EFT inputs",
+      "counting_rule": "retain at its registered stratum; do not sum duplicate descriptions across unowned reduction arrows",
+      "current_support_loss_evaluated": false,
+      "expression": "int_B1 sqrt(-h)[C_partial R4+L_B1,matter]",
+      "fields": [
+        "h_ab",
+        "A_i",
+        "Psi",
+        "sigma"
+      ],
+      "gauge_invariant": true,
+      "level": "S5|4",
+      "mass_dimension_closed": true,
+      "real": true,
+      "source": {
+        "end_line": 65,
+        "path": "src/bhsm/interface/master_action/terms.py",
+        "start_line": 65,
+        "symbol": "term_rows"
+      },
+      "term_id": "T4_B1",
+      "variation_used": "intrinsic B1 equations"
+    },
+    {
+      "coefficient": "redundant multiplier normalization",
+      "counting_rule": "uneliminated multiplier constraint lambda^dagger R; do not also add it to multiplier-free S_SL",
+      "current_support_loss_evaluated": false,
+      "expression": "sum_eps int_B1 Lambda_eps^{ab}(h_ab-gamma_eps,ab)",
+      "fields": [
+        "Lambda_eps",
+        "h_ab",
+        "g_eps"
+      ],
+      "gauge_invariant": true,
+      "level": "S5|4",
+      "mass_dimension_closed": true,
+      "real": true,
+      "source": {
+        "end_line": 66,
+        "path": "src/bhsm/interface/master_action/terms.py",
+        "start_line": 66,
+        "symbol": "term_rows"
+      },
+      "term_id": "T4_matcher",
+      "variation_used": "exact metric matching and reaction"
+    },
+    {
+      "coefficient": "g1,g2,g3",
+      "counting_rule": "retain at its registered stratum; do not sum duplicate descriptions across unowned reduction arrows",
+      "current_support_loss_evaluated": false,
+      "expression": "-int sqrt(-h) sum_i Tr(F_i^2)/(4 g_i^2)",
+      "fields": [
+        "A_i",
+        "h_ab"
+      ],
+      "gauge_invariant": true,
+      "level": "S4eff",
+      "mass_dimension_closed": true,
+      "real": true,
+      "source": {
+        "end_line": 67,
+        "path": "src/bhsm/interface/master_action/terms.py",
+        "start_line": 67,
+        "symbol": "term_rows"
+      },
+      "term_id": "T4_gauge",
+      "variation_used": "Yang-Mills equations and stress"
+    },
+    {
+      "coefficient": "canonical",
+      "counting_rule": "retain at its registered stratum; do not sum duplicate descriptions across unowned reduction arrows",
+      "current_support_loss_evaluated": false,
+      "expression": "int sqrt(-h) i barPsi gamma^mu D_mu Psi",
+      "fields": [
+        "Psi",
+        "A_i",
+        "h_ab"
+      ],
+      "gauge_invariant": true,
+      "level": "S4eff",
+      "mass_dimension_closed": true,
+      "real": true,
+      "source": {
+        "end_line": 68,
+        "path": "src/bhsm/interface/master_action/terms.py",
+        "start_line": 68,
+        "symbol": "term_rows"
+      },
+      "term_id": "T4_fermion",
+      "variation_used": "Dirac equations and currents"
+    },
+    {
+      "coefficient": "Y_u,Y_d,Y_e",
+      "counting_rule": "retain at its registered stratum; do not sum duplicate descriptions across unowned reduction arrows",
+      "current_support_loss_evaluated": false,
+      "expression": "-int sqrt(-h)[barQ_L Y_d H d_R+barQ_L Y_u Htilde u_R+barL_L Y_e H e_R+h.c.]",
+      "fields": [
+        "Psi",
+        "H"
+      ],
+      "gauge_invariant": true,
+      "level": "S4eff",
+      "mass_dimension_closed": true,
+      "real": true,
+      "source": {
+        "end_line": 69,
+        "path": "src/bhsm/interface/master_action/terms.py",
+        "start_line": 69,
+        "symbol": "term_rows"
+      },
+      "term_id": "T4_Yukawa",
+      "variation_used": "fermion and scalar sources"
+    },
+    {
+      "coefficient": "lambda5 and quadratic input",
+      "counting_rule": "retain at its registered stratum; do not sum duplicate descriptions across unowned reduction arrows",
+      "current_support_loss_evaluated": false,
+      "expression": "int sqrt(-h)[|D H|^2-V(H;lambda5)]",
+      "fields": [
+        "H",
+        "A_i"
+      ],
+      "gauge_invariant": true,
+      "level": "S4eff",
+      "mass_dimension_closed": true,
+      "real": true,
+      "source": {
+        "end_line": 70,
+        "path": "src/bhsm/interface/master_action/terms.py",
+        "start_line": 70,
+        "symbol": "term_rows"
+      },
+      "term_id": "T4_scalar",
+      "variation_used": "scalar equation and reduced quartic"
+    },
+    {
+      "coefficient": "Z_neu,A_neu,g_neu",
+      "counting_rule": "retain at its registered stratum; do not sum duplicate descriptions across unowned reduction arrows",
+      "current_support_loss_evaluated": false,
+      "expression": "int sqrt(-h)[Z_neu|D N|^2/2-A_neu N^2/2+g_neu N.R]",
+      "fields": [
+        "N_neu",
+        "Psi",
+        "sigma"
+      ],
+      "gauge_invariant": true,
+      "level": "DeltaS4",
+      "mass_dimension_closed": true,
+      "real": true,
+      "source": {
+        "end_line": 71,
+        "path": "src/bhsm/interface/master_action/terms.py",
+        "start_line": 71,
+        "symbol": "term_rows"
+      },
+      "term_id": "T4_neutral_aux",
+      "variation_used": "conditional neutral response equation"
+    }
+  ],
+  "scalar_composition": {
+    "L": "S_SL+lambda^dagger R",
+    "S_SL": "active same-domain bulk event+child densities plus selected minimal regular membrane and owned GHY/Hayward completion",
+    "current_eta_replacement": {
+      "equation": "S_color_eta=S_YM[A]-int_M4 dmu_h w(sigma)[kappa1 X_eta/2+X_eta^4/8]+S_constraint",
+      "replacement_source": {
+        "end_line": 117,
+        "path": "src/bhsm/interface/master_action/path_b_master_action_v14_31.py",
+        "start_line": 82,
+        "symbol": "master_action_payload"
+      },
+      "rule": "one physical Path-B eta and one color connection; older M8 eta origin is not a second co-varied physical field",
+      "source": {
+        "end_line": 307,
+        "path": "src/bhsm/interface/completion/path_b_foundational_action_v14_31.py",
+        "start_line": 307,
+        "symbol": "foundational_action_payload"
+      }
+    },
+    "derived_outputs_not_extra_scalar_terms": {
+      "counting_rule": "derive boundary, material and contact jets from each originating scalar once; these outputs are not separate scalar actions to add to S_SL",
+      "dynamic_flux": "D[P; F-G-DP[X]] with D2P[X,u] and DP[DXu] each once",
+      "momentum_conormal": "sectorwise Legendre or Green covectors of originating scalar action",
+      "source": {
+        "end_line": 39,
+        "path": "src/bhsm/interface/geometric_material_port.py",
+        "start_line": 27,
+        "symbol": "required_material_jet"
+      },
+      "trace": "D(Tq)=T Dq plus explicit owned shape/frame derivative",
+      "trace_source": {
+        "end_line": 24,
+        "path": "src/bhsm/interface/geometric_material_port.py",
+        "start_line": 14,
+        "symbol": "geometric_trace_jet"
+      }
+    },
+    "minimal_membrane": {
+      "S_Sigma": "-sum_s integral_(W_s) gamma_s dmu_h",
+      "gamma": "alpha_FSC*ell_s^(-m_s)",
+      "m_s": "dim W_s=dim regular ambient stratum minus 1",
+      "matter_rule": "all geometry/scalar/gauge/fermion/ghost/higher-spin terms act through their total-action bulk traction; no duplicate surface couplings",
+      "new_bending_or_seam_potential": false,
+      "new_viscosity_or_damping": false,
+      "selected_density": "W_s=1",
+      "source": {
+        "end_line": 365,
+        "path": "src/bhsm/interface/covariant_bubble_interface_mechanics.py",
+        "start_line": 84,
+        "symbol": "build_payload"
+      }
+    },
+    "owned_corner": {
+      "equation": "S_Hayward=kappa1*A_joint*theta",
+      "first_variation": "kappa1*(theta*delta_A_joint+A_joint*delta_theta)",
+      "mixed_contact": "d2S/(dA_joint dtheta)=kappa1",
+      "rule": "existing coefficient-locked EH/GHY/Hayward completion counted once; smooth internal split cancellations are not a support-loss event",
+      "source": {
+        "end_line": 91,
+        "path": "src/bhsm/interface/aether_moving_interface_transfer_v15_12.py",
+        "start_line": 70,
+        "symbol": "hayward_corner_variation"
+      }
+    },
+    "registered_13_terms": [
+      {
+        "coefficient": "kappa1",
+        "counting_rule": "retain at its registered stratum; do not sum duplicate descriptions across unowned reduction arrows",
+        "current_support_loss_evaluated": false,
+        "expression": "int sqrt(-G) kappa1 R8/2",
+        "fields": [
+          "G_AB"
+        ],
+        "gauge_invariant": true,
+        "level": "S8",
+        "mass_dimension_closed": true,
+        "real": true,
+        "source": {
+          "end_line": 59,
+          "path": "src/bhsm/interface/master_action/terms.py",
+          "start_line": 59,
+          "symbol": "term_rows"
+        },
+        "term_id": "T8_EH",
+        "variation_used": "E8_AB=0"
+      },
+      {
+        "coefficient": "kappa0",
+        "counting_rule": "retain at its registered stratum; do not sum duplicate descriptions across unowned reduction arrows",
+        "current_support_loss_evaluated": false,
+        "expression": "-int sqrt(-G) kappa0/2",
+        "fields": [
+          "G_AB"
+        ],
+        "gauge_invariant": true,
+        "level": "S8",
+        "mass_dimension_closed": true,
+        "real": true,
+        "source": {
+          "end_line": 60,
+          "path": "src/bhsm/interface/master_action/terms.py",
+          "start_line": 60,
+          "symbol": "term_rows"
+        },
+        "term_id": "T8_vacuum",
+        "variation_used": "vacuum stress"
+      },
+      {
+        "coefficient": "Zchi,g",
+        "counting_rule": "retain at its registered stratum; do not sum duplicate descriptions across unowned reduction arrows",
+        "current_support_loss_evaluated": false,
+        "expression": "-int sqrt(-G) Zchi(1+g sigma^2)|dchi|^2/2",
+        "fields": [
+          "G_AB",
+          "chi",
+          "sigma"
+        ],
+        "gauge_invariant": true,
+        "level": "S8",
+        "mass_dimension_closed": true,
+        "real": true,
+        "source": {
+          "end_line": 61,
+          "path": "src/bhsm/interface/master_action/terms.py",
+          "start_line": 61,
+          "symbol": "term_rows"
+        },
+        "term_id": "T8_carrier",
+        "variation_used": "chi and sigma equations"
+      },
+      {
+        "coefficient": "Zsigma,A0,G0",
+        "counting_rule": "retain at its registered stratum; do not sum duplicate descriptions across unowned reduction arrows",
+        "current_support_loss_evaluated": false,
+        "expression": "-int sqrt(-G)[Zsigma|dsigma|^2/2+A0 sigma^2/2+G0 sigma^4/4]",
+        "fields": [
+          "G_AB",
+          "sigma"
+        ],
+        "gauge_invariant": true,
+        "level": "S8",
+        "mass_dimension_closed": true,
+        "real": true,
+        "source": {
+          "end_line": 62,
+          "path": "src/bhsm/interface/master_action/terms.py",
+          "start_line": 62,
+          "symbol": "term_rows"
+        },
+        "term_id": "T8_scalar",
+        "variation_used": "bulk scalar equation"
+      },
+      {
+        "coefficient": "kappa1,kappa0,Z5,A5,G5",
+        "counting_rule": "retain at its registered stratum; do not sum duplicate descriptions across unowned reduction arrows",
+        "current_support_loss_evaluated": false,
+        "expression": "sum_eps int_M5_eps sqrt(-g_eps)[kappa1 R5/2-kappa0/2-Z5|dsigma|^2/2-U5]",
+        "fields": [
+          "g_eps",
+          "sigma"
+        ],
+        "gauge_invariant": true,
+        "level": "S5|4",
+        "mass_dimension_closed": true,
+        "real": true,
+        "source": {
+          "end_line": 63,
+          "path": "src/bhsm/interface/master_action/terms.py",
+          "start_line": 63,
+          "symbol": "term_rows"
+        },
+        "term_id": "T5_caps",
+        "variation_used": "cap Einstein/scalar equations"
+      },
+      {
+        "coefficient": "kappa1",
+        "counting_rule": "retain at its registered stratum; do not sum duplicate descriptions across unowned reduction arrows",
+        "current_support_loss_evaluated": false,
+        "expression": "sum_eps eps kappa1 int_B1 sqrt(-gamma_eps) K_eps",
+        "fields": [
+          "g_eps"
+        ],
+        "gauge_invariant": true,
+        "level": "S5|4",
+        "mass_dimension_closed": true,
+        "real": true,
+        "source": {
+          "end_line": 64,
+          "path": "src/bhsm/interface/master_action/terms.py",
+          "start_line": 64,
+          "symbol": "term_rows"
+        },
+        "term_id": "T5_GHY",
+        "variation_used": "normal-derivative cancellation and canonical momentum"
+      },
+      {
+        "coefficient": "C_partial plus typed EFT inputs",
+        "counting_rule": "retain at its registered stratum; do not sum duplicate descriptions across unowned reduction arrows",
+        "current_support_loss_evaluated": false,
+        "expression": "int_B1 sqrt(-h)[C_partial R4+L_B1,matter]",
+        "fields": [
+          "h_ab",
+          "A_i",
+          "Psi",
+          "sigma"
+        ],
+        "gauge_invariant": true,
+        "level": "S5|4",
+        "mass_dimension_closed": true,
+        "real": true,
+        "source": {
+          "end_line": 65,
+          "path": "src/bhsm/interface/master_action/terms.py",
+          "start_line": 65,
+          "symbol": "term_rows"
+        },
+        "term_id": "T4_B1",
+        "variation_used": "intrinsic B1 equations"
+      },
+      {
+        "coefficient": "redundant multiplier normalization",
+        "counting_rule": "uneliminated multiplier constraint lambda^dagger R; do not also add it to multiplier-free S_SL",
+        "current_support_loss_evaluated": false,
+        "expression": "sum_eps int_B1 Lambda_eps^{ab}(h_ab-gamma_eps,ab)",
+        "fields": [
+          "Lambda_eps",
+          "h_ab",
+          "g_eps"
+        ],
+        "gauge_invariant": true,
+        "level": "S5|4",
+        "mass_dimension_closed": true,
+        "real": true,
+        "source": {
+          "end_line": 66,
+          "path": "src/bhsm/interface/master_action/terms.py",
+          "start_line": 66,
+          "symbol": "term_rows"
+        },
+        "term_id": "T4_matcher",
+        "variation_used": "exact metric matching and reaction"
+      },
+      {
+        "coefficient": "g1,g2,g3",
+        "counting_rule": "retain at its registered stratum; do not sum duplicate descriptions across unowned reduction arrows",
+        "current_support_loss_evaluated": false,
+        "expression": "-int sqrt(-h) sum_i Tr(F_i^2)/(4 g_i^2)",
+        "fields": [
+          "A_i",
+          "h_ab"
+        ],
+        "gauge_invariant": true,
+        "level": "S4eff",
+        "mass_dimension_closed": true,
+        "real": true,
+        "source": {
+          "end_line": 67,
+          "path": "src/bhsm/interface/master_action/terms.py",
+          "start_line": 67,
+          "symbol": "term_rows"
+        },
+        "term_id": "T4_gauge",
+        "variation_used": "Yang-Mills equations and stress"
+      },
+      {
+        "coefficient": "canonical",
+        "counting_rule": "retain at its registered stratum; do not sum duplicate descriptions across unowned reduction arrows",
+        "current_support_loss_evaluated": false,
+        "expression": "int sqrt(-h) i barPsi gamma^mu D_mu Psi",
+        "fields": [
+          "Psi",
+          "A_i",
+          "h_ab"
+        ],
+        "gauge_invariant": true,
+        "level": "S4eff",
+        "mass_dimension_closed": true,
+        "real": true,
+        "source": {
+          "end_line": 68,
+          "path": "src/bhsm/interface/master_action/terms.py",
+          "start_line": 68,
+          "symbol": "term_rows"
+        },
+        "term_id": "T4_fermion",
+        "variation_used": "Dirac equations and currents"
+      },
+      {
+        "coefficient": "Y_u,Y_d,Y_e",
+        "counting_rule": "retain at its registered stratum; do not sum duplicate descriptions across unowned reduction arrows",
+        "current_support_loss_evaluated": false,
+        "expression": "-int sqrt(-h)[barQ_L Y_d H d_R+barQ_L Y_u Htilde u_R+barL_L Y_e H e_R+h.c.]",
+        "fields": [
+          "Psi",
+          "H"
+        ],
+        "gauge_invariant": true,
+        "level": "S4eff",
+        "mass_dimension_closed": true,
+        "real": true,
+        "source": {
+          "end_line": 69,
+          "path": "src/bhsm/interface/master_action/terms.py",
+          "start_line": 69,
+          "symbol": "term_rows"
+        },
+        "term_id": "T4_Yukawa",
+        "variation_used": "fermion and scalar sources"
+      },
+      {
+        "coefficient": "lambda5 and quadratic input",
+        "counting_rule": "retain at its registered stratum; do not sum duplicate descriptions across unowned reduction arrows",
+        "current_support_loss_evaluated": false,
+        "expression": "int sqrt(-h)[|D H|^2-V(H;lambda5)]",
+        "fields": [
+          "H",
+          "A_i"
+        ],
+        "gauge_invariant": true,
+        "level": "S4eff",
+        "mass_dimension_closed": true,
+        "real": true,
+        "source": {
+          "end_line": 70,
+          "path": "src/bhsm/interface/master_action/terms.py",
+          "start_line": 70,
+          "symbol": "term_rows"
+        },
+        "term_id": "T4_scalar",
+        "variation_used": "scalar equation and reduced quartic"
+      },
+      {
+        "coefficient": "Z_neu,A_neu,g_neu",
+        "counting_rule": "retain at its registered stratum; do not sum duplicate descriptions across unowned reduction arrows",
+        "current_support_loss_evaluated": false,
+        "expression": "int sqrt(-h)[Z_neu|D N|^2/2-A_neu N^2/2+g_neu N.R]",
+        "fields": [
+          "N_neu",
+          "Psi",
+          "sigma"
+        ],
+        "gauge_invariant": true,
+        "level": "DeltaS4",
+        "mass_dimension_closed": true,
+        "real": true,
+        "source": {
+          "end_line": 71,
+          "path": "src/bhsm/interface/master_action/terms.py",
+          "start_line": 71,
+          "symbol": "term_rows"
+        },
+        "term_id": "T4_neutral_aux",
+        "variation_used": "conditional neutral response equation"
+      }
+    ],
+    "reset": {
+      "AE2_independent_fermion_seam": "S_Sigma_F_AE2=0",
+      "nonfermion_generation": "Pi_c+C_s(F_B)^*Pi_e=-delta S_Sigma/delta q_c on the realized reduced trace/domain",
+      "rule": "retain owned fermion transmission graph and its domain; do not manufacture a nonzero reset scalar from trace data",
+      "source": {
+        "end_line": 365,
+        "path": "src/bhsm/interface/covariant_bubble_interface_mechanics.py",
+        "start_line": 84,
+        "symbol": "build_payload"
+      },
+      "why_zero": "internal glue of one global field domain; no delta-supported matter density",
+      "zero_source": {
+        "end_line": 175,
+        "path": "src/bhsm/interface/action_extension_global_spin_reset_ae2.py",
+        "start_line": 175,
+        "symbol": "action_definition"
+      }
+    },
+    "stratification_guard": {
+      "complex": "S8 --R_8to5--> S5|4 --R_5to4--> S4eff",
+      "reduction_arrows_sourced": false,
+      "rule": "registered levels are not automatically additive copies; realize active strata with explicit compatibility data and no duplicate bulk or intrinsic matter descriptions",
+      "source": {
+        "end_line": 137,
+        "path": "src/bhsm/interface/master_action/terms.py",
+        "start_line": 120,
+        "symbol": "payload"
+      }
+    }
+  },
+  "scientific_reference": "524ed90689bd5923c249bba2e699abf627e703cd",
+  "sector_accounting": [
+    {
+      "counting_rule": "one active stratum realization per scalar density; no additive copies across unowned reduction arrows",
+      "kind": "originating_scalar_action",
+      "sector": "active_event_child_bulk",
+      "source": "registered_term_inventory"
+    },
+    {
+      "counting_rule": "selected minimal area member once on each active regular environment stratum",
+      "equation": "-sum_s integral_(W_s) gamma_s dmu_h",
+      "kind": "originating_scalar_action",
+      "sector": "minimal_membrane",
+      "source": {
+        "end_line": 365,
+        "path": "src/bhsm/interface/covariant_bubble_interface_mechanics.py",
+        "start_line": 84,
+        "symbol": "build_payload"
+      }
+    },
+    {
+      "counting_rule": "existing coefficient-locked completion once; contacts derive from it, no duplicate seam coefficient",
+      "kind": "originating_scalar_completion",
+      "sector": "owned_GHY_Hayward",
+      "source": {
+        "end_line": 91,
+        "path": "src/bhsm/interface/aether_moving_interface_transfer_v15_12.py",
+        "start_line": 70,
+        "symbol": "hayward_corner_variation"
+      }
+    },
+    {
+      "counting_rule": "exclude multiplier terms from multiplier-free S_SL and include source-dependent reactions once",
+      "kind": "lambda_dagger_R",
+      "sector": "metric_matcher_and_other_uneliminated_constraints",
+      "source": {
+        "end_line": 21,
+        "path": "src/bhsm/interface/master_action/variations.py",
+        "start_line": 8,
+        "symbol": "equation_rows"
+      }
+    },
+    {
+      "counting_rule": "retain actual uneliminated rows and BRST domain; do not recount constraints already quotiented",
+      "kind": "constraint_or_admissible_domain",
+      "sector": "gauge_BRST_and_incidence",
+      "source": {
+        "end_line": 593,
+        "path": "src/bhsm/interface/encapsulation_response_representation_theorem.py",
+        "start_line": 572,
+        "symbol": "constraint_noether_ledger"
+      }
+    },
+    {
+      "counting_rule": "retain the action-owned internal-glue domain; no invented delta-supported fermion seam action",
+      "equation": "S_Sigma_F_AE2=0",
+      "kind": "owned_zero_fermion_surface_density_plus_transmission_domain",
+      "sector": "AE2_reset",
+      "source": {
+        "end_line": 175,
+        "path": "src/bhsm/interface/action_extension_global_spin_reset_ae2.py",
+        "start_line": 175,
+        "symbol": "action_definition"
+      }
+    },
+    {
+      "counting_rule": "not extra scalar restoring terms; derive every moving-boundary/product-rule output once from its originating action",
+      "kind": "derived_boundary_or_Legendre_output",
+      "sector": "trace_momentum_conormal_dynamic_flux",
+      "source": {
+        "end_line": 39,
+        "path": "src/bhsm/interface/geometric_material_port.py",
+        "start_line": 27,
+        "symbol": "required_material_jet"
+      }
+    },
+    {
+      "counting_rule": "all first/mixed source contacts arise from originating scalar or multiplier-owned term once; unknown contact is never zero",
+      "kind": "directional_derivative_of_originating_scalar_or_constraint",
+      "sector": "contacts",
+      "source": {
+        "end_line": 91,
+        "path": "src/bhsm/interface/aether_moving_interface_transfer_v15_12.py",
+        "start_line": 70,
+        "symbol": "hayward_corner_variation"
+      }
+    },
+    {
+      "counting_rule": "consumes classical i/r; excluded from S_SL unless an explicit future owner assigns a classical role",
+      "kind": "downstream_quantum_owner",
+      "sector": "AE4_finite_E1_and_relative_zeta_eta",
+      "source": {
+        "end_line": 304,
+        "path": "src/bhsm/interface/ae4_stratified_dirac_zeta_induced_owner.py",
+        "start_line": 274,
+        "symbol": "microscopic_owner_contract"
+      }
+    }
+  ],
+  "starting_HEAD": "00fa89d62e4c74ee9fd0b41611b3468ad035b5db"
+}

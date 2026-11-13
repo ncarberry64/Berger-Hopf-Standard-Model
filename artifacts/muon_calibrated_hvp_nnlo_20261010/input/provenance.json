@@ -1,0 +1,44 @@
+{
+  "SM_total_used": false,
+  "approximated_classes": [
+    "6a",
+    "6b",
+    "6bll",
+    "6c2"
+  ],
+  "approximation_estimate_policy": "4e-12 conservative sum of four published O(1e-12) kernel scales, plus1e-12 omittedtau estimate; not rigorous bounds",
+  "classification": "PRIMARY_PUBLISHED_NNLO_HVP_KERNELS_WITH_EXPLICIT_APPROXIMATIONS",
+  "coefficient_file": {
+    "bytes": 16082,
+    "count": 48,
+    "path": "coefficients.json",
+    "sha256": "5f9b09543d4875c3316d8c047322b41d1df69f7b6b348365e37f361619920f3b"
+  },
+  "complete_native_remainder": false,
+  "double_kernel_reduction": "xi_large=t,xi_small=t*z, symmetry2; G Jacobian t cancels1/t; then t=exp(-v),z=exp(-w), measureexp(-v-w) with Gauss-Laguerre",
+  "equations": "28-45",
+  "exact_kernel_classes": [
+    "6c1",
+    "6c3",
+    "6c4",
+    "6d"
+  ],
+  "extraction_producer": {
+    "command": "C:/Python314/python.exe C:/Users/carbe/Downloads/BHSM_MUON_SPECTRAL_INPUTS_20261010/extract_nnlo_tables.py",
+    "exit_code": 0,
+    "method": "48exactMathMLalttextcoefficients, concatenate continued p_i rows, rational SymPy expressions; retain original TeX alongside each expression",
+    "path": "C:\\Users\\carbe\\Downloads\\BHSM_MUON_SPECTRAL_INPUTS_20261010\\extract_nnlo_tables.py",
+    "sha256": "0256f9e4d6268d2c80fae84b10b3d3f6efa11491487028803565aa8387bf92bf"
+  },
+  "measured_anomaly_used": false,
+  "overlap": "6e internal HVP radiation in NLO inclusive R;6f/6g/6h incorporatedLO, not added; pureleptonic QED excluded",
+  "primary_source": {
+    "bytes": 637932,
+    "path": "C:\\Users\\carbe\\Downloads\\BHSM_MUON_SPECTRAL_INPUTS_20261010\\2112.05704v3.pdf",
+    "sha256": "cd190af861de2cbfccd136783f7cc88b715c38dec3f2f22e9a24d335983c6c29",
+    "url": "https://arxiv.org/pdf/2112.05704v3"
+  },
+  "retained_source_spectrum": "artifacts/muon_calibrated_hvp_spectral_20261010/input; hash verified by unchanged loader",
+  "source_url": "https://arxiv.org/html/2112.05704v3",
+  "tables": "1-3"
+}

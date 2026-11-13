@@ -1,0 +1,1143 @@
+{
+  "B54_required": null,
+  "T_required": null,
+  "alternatives": {
+    "current_native_equivalence_established": false,
+    "equations": [
+      "ds=C_rho d rho",
+      "J_rad=(r/R_wall)^3",
+      "I_rad=integral_full_cap C_rho sin^2(rho/2) d rho",
+      "u_rad=I_rad^-1/2 J_rad^-1/2 sin(rho/2)",
+      "J_vol=(nu/nu_wall) J_rad",
+      "u_vol=sqrt(nu_wall/nu) u_rad",
+      "h4_current-h4_rad=(partial_rho log nu)/(2 C_rho)"
+    ],
+    "historical_producers": "v15.76 shell_geometry and v15.82 regular_einstein_cartan_kernel; fixed-time radial application of v14.45",
+    "invented_reset_extension": false,
+    "older_snapshot_replayed": false,
+    "reason": "different physical image; density conversion alone does not supply spin/shift/time/interface/domain intertwining",
+    "retained_radial_inclusion": true
+  },
+  "elapsed_seconds": 0.7881806000077631,
+  "endpoint_branch": {
+    "Delta_X": -0.5044197217897727,
+    "R_hit": 1.5624124111745232,
+    "absolute_ODE_error_bound": null,
+    "classification": "new numerical endpoint on the physical cut-intersection branch; global range certificate independent of ODE errors",
+    "dR_hit_dy": -13.753156506522554,
+    "determinant_slope": -13.753156506522553,
+    "ds0_dy": 13.198798966676485,
+    "function_evaluations": 5383,
+    "interfaces": [
+      {
+        "jump": [
+          0.0,
+          0.0,
+          -8.739105610361388,
+          -0.004113013107089891
+        ],
+        "new_cell": [
+          45,
+          63
+        ],
+        "old_cell": [
+          46,
+          63
+        ],
+        "s": 4.019188439237329e-05
+      },
+      {
+        "jump": [
+          0.0,
+          0.0,
+          -52.57378102363233,
+          -0.19827489413019084
+        ],
+        "new_cell": [
+          44,
+          63
+        ],
+        "old_cell": [
+          45,
+          63
+        ],
+        "s": 0.000296292018629766
+      },
+      {
+        "jump": [
+          0.0,
+          0.0,
+          -6.973619141505843,
+          -0.047209455404545686
+        ],
+        "new_cell": [
+          43,
+          63
+        ],
+        "old_cell": [
+          44,
+          63
+        ],
+        "s": 0.0005461605106025218
+      },
+      {
+        "jump": [
+          0.0,
+          0.0,
+          -2.302047280102755,
+          -0.02179003955096004
+        ],
+        "new_cell": [
+          42,
+          63
+        ],
+        "old_cell": [
+          43,
+          63
+        ],
+        "s": 0.0007887584048578257
+      },
+      {
+        "jump": [
+          0.0,
+          0.0,
+          -1.0397297650474968,
+          -0.012269510688203589
+        ],
+        "new_cell": [
+          41,
+          63
+        ],
+        "old_cell": [
+          42,
+          63
+        ],
+        "s": 0.0010244796560069745
+      },
+      {
+        "jump": [
+          0.0,
+          0.0,
+          -0.5802755015276659,
+          -0.008011960843396615
+        ],
+        "new_cell": [
+          40,
+          63
+        ],
+        "old_cell": [
+          41,
+          63
+        ],
+        "s": 0.0012539198526459738
+      },
+      {
+        "jump": [
+          0.0,
+          0.0,
+          -0.3958007428657453,
+          -0.006225189450655755
+        ],
+        "new_cell": [
+          39,
+          63
+        ],
+        "old_cell": [
+          40,
+          63
+        ],
+        "s": 0.0014776761237785575
+      },
+      {
+        "jump": [
+          0.0,
+          0.0,
+          -0.2832109001774654,
+          -0.004917593025031586
+        ],
+        "new_cell": [
+          38,
+          63
+        ],
+        "old_cell": [
+          39,
+          63
+        ],
+        "s": 0.0016963144294768276
+      },
+      {
+        "jump": [
+          0.0,
+          0.0,
+          -0.19534461072775855,
+          -0.0035671563764276826
+        ],
+        "new_cell": [
+          37,
+          63
+        ],
+        "old_cell": [
+          38,
+          63
+        ],
+        "s": 0.0019103643001187008
+      },
+      {
+        "jump": [
+          0.0,
+          0.0,
+          -0.15514536392423395,
+          -0.0030062631831677677
+        ],
+        "new_cell": [
+          36,
+          63
+        ],
+        "old_cell": [
+          37,
+          63
+        ],
+        "s": 0.0021203211184805467
+      },
+      {
+        "jump": [
+          0.0,
+          0.0,
+          -0.13013490873774458,
+          -0.0026652166828551316
+        ],
+        "new_cell": [
+          35,
+          63
+        ],
+        "old_cell": [
+          36,
+          63
+        ],
+        "s": 0.0023266537473170647
+      },
+      {
+        "jump": [
+          0.0,
+          0.0,
+          -0.09847659406094067,
+          -0.001968219773993418
+        ],
+        "new_cell": [
+          34,
+          63
+        ],
+        "old_cell": [
+          35,
+          63
+        ],
+        "s": 0.002529809540095044
+      },
+      {
+        "jump": [
+          0.0,
+          0.0,
+          -0.08077131902493306,
+          -0.0015801137067015247
+        ],
+        "new_cell": [
+          33,
+          63
+        ],
+        "old_cell": [
+          34,
+          63
+        ],
+        "s": 0.002730216093781523
+      },
+      {
+        "jump": [
+          0.0,
+          0.0,
+          -0.07140376288894856,
+          -0.0014032863768340675
+        ],
+        "new_cell": [
+          32,
+          63
+        ],
+        "old_cell": [
+          33,
+          63
+        ],
+        "s": 0.0029282844741952765
+      },
+      {
+        "jump": [
+          0.0,
+          0.0,
+          -0.055742680976820225,
+          -0.0009250853614846122
+        ],
+        "new_cell": [
+          31,
+          63
+        ],
+        "old_cell": [
+          32,
+          63
+        ],
+        "s": 0.0031244086908693873
+      },
+      {
+        "jump": [
+          0.0,
+          0.0,
+          -0.0417571775091119,
+          -0.0004368037468092112
+        ],
+        "new_cell": [
+          30,
+          63
+        ],
+        "old_cell": [
+          31,
+          63
+        ],
+        "s": 0.0033189619412009887
+      },
+      {
+        "jump": [
+          0.0,
+          0.0,
+          -0.026659891348970177,
+          0.00016810714686243955
+        ],
+        "new_cell": [
+          29,
+          63
+        ],
+        "old_cell": [
+          30,
+          63
+        ],
+        "s": 0.0035122919685551166
+      },
+      {
+        "jump": [
+          0.0,
+          0.0,
+          -0.031131424152434306,
+          -7.434296325126155e-05
+        ],
+        "new_cell": [
+          28,
+          63
+        ],
+        "old_cell": [
+          29,
+          63
+        ],
+        "s": 0.003704712105039481
+      },
+      {
+        "jump": [
+          0.0,
+          0.0,
+          -0.018748749429576606,
+          0.00048201156778970855
+        ],
+        "new_cell": [
+          27,
+          63
+        ],
+        "old_cell": [
+          28,
+          63
+        ],
+        "s": 0.0038964916258056805
+      },
+      {
+        "jump": [
+          0.0,
+          0.0,
+          -0.010193844274056119,
+          0.000887787869842338
+        ],
+        "new_cell": [
+          26,
+          63
+        ],
+        "old_cell": [
+          27,
+          63
+        ],
+        "s": 0.004087843938001458
+      },
+      {
+        "jump": [
+          0.0,
+          0.0,
+          -0.0015616710940804523,
+          0.0013226802226085077
+        ],
+        "new_cell": [
+          25,
+          63
+        ],
+        "old_cell": [
+          26,
+          63
+        ],
+        "s": 0.004278913415253996
+      },
+      {
+        "jump": [
+          0.0,
+          0.0,
+          0.0035301694882008405,
+          0.0015810323768015166
+        ],
+        "new_cell": [
+          24,
+          63
+        ],
+        "old_cell": [
+          25,
+          63
+        ],
+        "s": 0.004469763968139397
+      },
+      {
+        "jump": [
+          0.0,
+          0.0,
+          0.008362941204708818,
+          0.001829107994167245
+        ],
+        "new_cell": [
+          23,
+          63
+        ],
+        "old_cell": [
+          24,
+          63
+        ],
+        "s": 0.004660369326490129
+      },
+      {
+        "jump": [
+          0.0,
+          0.0,
+          0.00851010304027966,
+          0.0017945960373491054
+        ],
+        "new_cell": [
+          22,
+          63
+        ],
+        "old_cell": [
+          23,
+          63
+        ],
+        "s": 0.004850608748749922
+      },
+      {
+        "jump": [
+          0.0,
+          0.0,
+          0.005639574293624605,
+          0.0015516544105427243
+        ],
+        "new_cell": [
+          21,
+          63
+        ],
+        "old_cell": [
+          22,
+          63
+        ],
+        "s": 0.00504026744106067
+      },
+      {
+        "jump": [
+          0.0,
+          0.0,
+          0.006167768637936888,
+          0.0015052454294814943
+        ],
+        "new_cell": [
+          20,
+          63
+        ],
+        "old_cell": [
+          21,
+          63
+        ],
+        "s": 0.005229043720043991
+      },
+      {
+        "jump": [
+          0.0,
+          0.0,
+          0.009058468461361713,
+          0.001612762927813094
+        ],
+        "new_cell": [
+          19,
+          63
+        ],
+        "old_cell": [
+          20,
+          63
+        ],
+        "s": 0.005416560293155983
+      },
+      {
+        "jump": [
+          0.0,
+          0.0,
+          0.008470640122737905,
+          0.0014814184448996848
+        ],
+        "new_cell": [
+          18,
+          63
+        ],
+        "old_cell": [
+          19,
+          63
+        ],
+        "s": 0.005602380771756296
+      },
+      {
+        "jump": [
+          0.0,
+          0.0,
+          0.008839972549893105,
+          0.0014144791055623607
+        ],
+        "new_cell": [
+          17,
+          63
+        ],
+        "old_cell": [
+          18,
+          63
+        ],
+        "s": 0.005786028458495687
+      },
+      {
+        "jump": [
+          0.0,
+          0.0,
+          0.005568297444924042,
+          0.0010754039395801662
+        ],
+        "new_cell": [
+          16,
+          63
+        ],
+        "old_cell": [
+          17,
+          63
+        ],
+        "s": 0.005967003554427935
+      },
+      {
+        "jump": [
+          0.0,
+          0.0,
+          0.005421757591506093,
+          0.0009676880585371972
+        ],
+        "new_cell": [
+          15,
+          63
+        ],
+        "old_cell": [
+          16,
+          63
+        ],
+        "s": 0.006144798986057189
+      },
+      {
+        "jump": [
+          0.0,
+          0.0,
+          0.0070722431737948455,
+          0.0010082439156307021
+        ],
+        "new_cell": [
+          14,
+          63
+        ],
+        "old_cell": [
+          15,
+          63
+        ],
+        "s": 0.0063189111707392925
+      },
+      {
+        "jump": [
+          0.0,
+          0.0,
+          0.007977131452477693,
+          0.0010010819008017258
+        ],
+        "new_cell": [
+          13,
+          63
+        ],
+        "old_cell": [
+          14,
+          63
+        ],
+        "s": 0.006488845435252697
+      },
+      {
+        "jump": [
+          0.0,
+          0.0,
+          0.007785199830152578,
+          0.0009126834491748337
+        ],
+        "new_cell": [
+          12,
+          63
+        ],
+        "old_cell": [
+          13,
+          63
+        ],
+        "s": 0.006654115134843291
+      },
+      {
+        "jump": [
+          0.0,
+          0.0,
+          0.007963104570336554,
+          0.0008622617311005998
+        ],
+        "new_cell": [
+          11,
+          63
+        ],
+        "old_cell": [
+          12,
+          63
+        ],
+        "s": 0.006814236643181865
+      },
+      {
+        "jump": [
+          0.0,
+          0.0,
+          0.00868007814975158,
+          0.0008662082042411035
+        ],
+        "new_cell": [
+          10,
+          63
+        ],
+        "old_cell": [
+          11,
+          63
+        ],
+        "s": 0.0069687179389519415
+      },
+      {
+        "jump": [
+          0.0,
+          0.0,
+          0.014611217737510174,
+          0.0013476568258576904
+        ],
+        "new_cell": [
+          9,
+          63
+        ],
+        "old_cell": [
+          10,
+          63
+        ],
+        "s": 0.007117041831400893
+      },
+      {
+        "jump": [
+          0.0,
+          0.0,
+          0.018583777031068394,
+          0.0016745393973210398
+        ],
+        "new_cell": [
+          8,
+          63
+        ],
+        "old_cell": [
+          9,
+          63
+        ],
+        "s": 0.007258643418952576
+      },
+      {
+        "jump": [
+          0.0,
+          0.0,
+          0.022647314328679613,
+          0.002025124238735576
+        ],
+        "new_cell": [
+          7,
+          63
+        ],
+        "old_cell": [
+          8,
+          63
+        ],
+        "s": 0.007392880053732978
+      },
+      {
+        "jump": [
+          0.0,
+          0.0,
+          0.03283739556466969,
+          0.0029691968345690323
+        ],
+        "new_cell": [
+          6,
+          63
+        ],
+        "old_cell": [
+          7,
+          63
+        ],
+        "s": 0.007518991616795142
+      },
+      {
+        "jump": [
+          0.0,
+          0.0,
+          0.044087040568882685,
+          0.004038635110132992
+        ],
+        "new_cell": [
+          5,
+          63
+        ],
+        "old_cell": [
+          6,
+          63
+        ],
+        "s": 0.007636044710159679
+      },
+      {
+        "jump": [
+          0.0,
+          0.0,
+          0.07384552974751557,
+          0.0069325579507551055
+        ],
+        "new_cell": [
+          4,
+          63
+        ],
+        "old_cell": [
+          5,
+          63
+        ],
+        "s": 0.007742855211594858
+      },
+      {
+        "jump": [
+          0.0,
+          0.0,
+          0.12812867039393439,
+          0.01228768379338202
+        ],
+        "new_cell": [
+          3,
+          63
+        ],
+        "old_cell": [
+          4,
+          63
+        ],
+        "s": 0.007837873715200156
+      },
+      {
+        "jump": [
+          0.0,
+          0.0,
+          0.25940710238761255,
+          0.025356040517168804
+        ],
+        "new_cell": [
+          2,
+          63
+        ],
+        "old_cell": [
+          3,
+          63
+        ],
+        "s": 0.00791900865936634
+      },
+      {
+        "jump": [
+          0.0,
+          0.0,
+          0.6896659031016128,
+          0.06843161254853952
+        ],
+        "new_cell": [
+          1,
+          63
+        ],
+        "old_cell": [
+          2,
+          63
+        ],
+        "s": 0.00798333974749801
+      },
+      {
+        "jump": [
+          0.0,
+          0.0,
+          4.13578710190891,
+          0.4145005414768405
+        ],
+        "new_cell": [
+          0,
+          63
+        ],
+        "old_cell": [
+          1,
+          63
+        ],
+        "s": 0.00802662251350607
+      }
+    ],
+    "normalization_full": null,
+    "normalization_integral_partial": 0.004004334035151555,
+    "s0": 0.008042366136094535,
+    "tau_s": -0.03667665103284088,
+    "y": 0.00014753362308861907
+  },
+  "endpoint_cache_reused": true,
+  "error_scope": {
+    "endpoint_absolute_ODE_error": null,
+    "inherited_source_H": "unchanged; not used as a replacement for metric C_tau",
+    "normalization_remainder": null,
+    "prefix_continuum_or_unsampled_state_error": null,
+    "prefix_range": "Arb192 contracted owned q/v/m hull; assumes same-action continuous gluing and these boxes contain inherited prefix realization",
+    "previous_Hermite_curve_error_not_used_in_range": true,
+    "source_support_error": "actual saved Gauss nodes at fixed saved source realization",
+    "tail_continuum_metric_error": null,
+    "tail_range": "Arb192 whole-cell enclosure for exact binary64 nodal input and its declared bilinear interpolation"
+  },
+  "evaluated_source_preimages": 0,
+  "family_range": {
+    "ODE_replay_used_for_proof": false,
+    "all_tail_wall_times_enclosed": true,
+    "at_y_zero": "grazing wall contact; implicit boundary limit, no division by tau_s",
+    "normal_length_upper": {
+      "arb": "[0.00807889255352894562471599773320211081025911144454574026314 +/- 4.37e-60]",
+      "interval": [
+        0.008078892553528944,
+        0.008078892553528947
+      ]
+    },
+    "old_prefix_bound_refined": false,
+    "oriented_sectors": "inward geometric sheet; simultaneous s,n reversal is a reparametrization only; independent physical strata are not identified; LR carriers remain retained",
+    "possible_family_focal_points": "do not affect this phase/image enclosure; no global chart-rank theorem asserted",
+    "prefix_born_wall_branches": "nonpositive initial tau and strictly decreasing tau after s>0; no future-directed cut hit before E1",
+    "prefix_duration_upper": 1.4944995686293672e-27,
+    "prefix_family_bound_is_old_single_curve_bound": false,
+    "prefix_family_length_upper": {
+      "arb": "[2.59932700093424969055414829136430670136594685551867721817e-14 +/- 1.55e-73]",
+      "interval": [
+        2.5993270009342495e-14,
+        2.59932700093425e-14
+      ]
+    },
+    "prefix_family_radial_drop_upper": {
+      "arb": "[2.73985682560751578424974342982359300002356269008678273239e-14 +/- 4.25e-71]",
+      "interval": [
+        2.7398568256075156e-14,
+        2.7398568256075162e-14
+      ]
+    },
+    "prefix_family_rapidity_increment_upper": {
+      "arb": "[1.21803299434673546032805304718715584277919957165437099566e-13 +/- 3.85e-70]",
+      "interval": [
+        1.2180329943467353e-13,
+        1.2180329943467358e-13
+      ]
+    },
+    "prefix_radial_velocity_upper": {
+      "arb": "[-1.03655611237628649995955040645349083921885372708053180432 +/- 1.73e-57]",
+      "interval": [
+        -1.0365561123762868,
+        -1.0365561123762863
+      ]
+    },
+    "prefix_rapidity_rate_lower": {
+      "arb": "[4.42842414603543605479604300934991075869766840315273567722 +/- 4.18e-57]",
+      "interval": [
+        4.428424146035435,
+        4.428424146035437
+      ]
+    },
+    "prefix_rapidity_rate_upper": {
+      "arb": "[4.68595522575247453809031608418925729190286574448936816971 +/- 2.64e-58]",
+      "interval": [
+        4.6859552257524735,
+        4.685955225752475
+      ]
+    },
+    "radial_drop_upper": {
+      "arb": "[0.00851501597160972551121403632716185461191257707186763077280 +/- 3.42e-60]",
+      "interval": [
+        0.008515015971609724,
+        0.008515015971609727
+      ]
+    },
+    "radial_strip": 0.02,
+    "rapidity_bootstrap": 0.1,
+    "rapidity_upper": {
+      "arb": "[0.0403590597462797320717564417672586279743421274851015176448 +/- 3.66e-59]",
+      "interval": [
+        0.04035905974627973,
+        0.04035905974627974
+      ]
+    },
+    "rho_hit_enclosure": {
+      "arb": "[1.57 +/- 7.72e-3]",
+      "interval": [
+        1.5622813108230515,
+        1.5707963267951317
+      ]
+    },
+    "scope": "rigorous coefficient-box first-exit range in the declared tail nodal metric and supplied owned prefix-jet hull; continuum/history error unevaluated",
+    "tail_radial_velocity_upper": {
+      "arb": "[-1.03547512354561583694933998412982657577186304129344131273 +/- 6.42e-58]",
+      "interval": [
+        -1.035475123545616,
+        -1.0354751235456157
+      ]
+    },
+    "tail_rapidity_rate_lower": {
+      "arb": "[4.52082128538349684274910353120132279989904971078963732174 +/- 2.69e-57]",
+      "interval": [
+        4.520821285383496,
+        4.520821285383498
+      ]
+    },
+    "tail_rapidity_rate_upper": {
+      "arb": "[4.99561783732975485135749311235680397556656945308069622856 +/- 2.57e-57]",
+      "interval": [
+        4.995617837329754,
+        4.995617837329756
+      ]
+    },
+    "uniqueness": "one transverse inward cut hit for each tail y>0; after the cut tau stays decreasing on the inherited prefix",
+    "wall_tail_interval": [
+      0.0,
+      0.00014753362308861907
+    ]
+  },
+  "first_unresolved_operand": {
+    "classification": "current operator/interface implementation and matching to retained effective route; not eta selection, a new physical arm or proof that BHSM has no map",
+    "consumer": "T=<W e,p>5; M4 B_required=T; coupled exterior K/M",
+    "equation": "D5_current W_rad_current = W_rad_current D4 + declared connected normal/temporal remainder, with Gamma0/reset matching and Wsharp M5 W=M4",
+    "explicit_first_action": "current temporal/shift/Spin x SM remainder in D5_current W_rad, including the rho-dependent temporal principal coefficient nu_wall/nu; its trace/reset intertwining",
+    "input": "current cut lapse/radial metric/shift, adopted daughter rho/2, common-A Spin x SM connection and inherited AE2/AE4 domain",
+    "name": "current same-owner Dirac/domain matching for the retained full radial inclusion",
+    "normal_density_correction": "evaluated Delta h4=(partial_rho log nu)/(2 C_rho), canceled by sqrt(nu_wall/nu) density conversion at actual source nodes; not the missing operand",
+    "output": "one same-owner normalized inclusion action on the saved Gauss source support",
+    "producer": "retained v14.45 radial restriction in v15.76/v15.82, matched to current Dirac body and AE4 geometric L2"
+  },
+  "local_derivative_used_as_global_extrapolation": false,
+  "native_heat_contact": null,
+  "native_physical_transfer_directions": 0,
+  "new_endpoint_integrations": 0,
+  "normalization_integral_full": null,
+  "normalization_remainder": null,
+  "old_checks_replayed": 0,
+  "old_prefix_displacement_refined": false,
+  "old_productions_rerun": 0,
+  "physical_a_mu": null,
+  "physical_g_mu": null,
+  "preserved_local_derivative": -35.34587871146189,
+  "preserved_seed_R_hit": 1.564030196575592,
+  "result": "source-directed range obstruction for inherited inward Gaussian realization",
+  "retained_radial_density_conversion": {
+    "Gaussian_m_eta_replaced": false,
+    "consumer": "current canonical Dirac body and AE4 geometric-L2 pairing",
+    "delta_h4_range": [
+      -1.424507768125987,
+      -0.11325431920386292
+    ],
+    "equations": [
+      "J_vol=(nu/nu_wall) J_rad",
+      "u_vol=sqrt(nu_wall/nu) u_rad",
+      "h4_current=h4_rad+(partial_rho log nu)/(2C)",
+      "(partial_rho log u_vol)/C+h4_current+m_eta_rad=0"
+    ],
+    "max_normal_cancellation_residual": 6.661338147750939e-16,
+    "max_pairing_density_residual": 1.1102230246251565e-16,
+    "normalization_full_evaluated": false,
+    "numerical_scope": "binary64 pointwise arithmetic on actual saved Gauss source nodes; no quadrature/tail/domain certificate",
+    "producer": "v14.45, v15.76 shell_geometry, v15.82 regular_einstein_cartan_kernel",
+    "remaining_equation": "retain time/shift/Spin x SM and connected terms in current D5 W_rad, and match the inherited trace/reset domain before using it as W_eta",
+    "same_owner_inclusion_intertwining_proved": false,
+    "temporal_principal_ratio_range": [
+      0.7465717774975276,
+      1.3492557328363046
+    ]
+  },
+  "source_preimages_in_certified_model": 0,
+  "source_range_rejection": {
+    "classifications": [
+      "outside enclosed physical tail branch image",
+      "outside enclosed physical tail branch image",
+      "outside enclosed physical tail branch image",
+      "outside enclosed physical tail branch image",
+      "outside enclosed physical tail branch image",
+      "outside enclosed physical tail branch image",
+      "outside enclosed physical tail branch image",
+      "outside enclosed physical tail branch image",
+      "outside enclosed physical tail branch image",
+      "outside enclosed physical tail branch image",
+      "outside enclosed physical tail branch image",
+      "outside enclosed physical tail branch image",
+      "outside enclosed physical tail branch image",
+      "outside enclosed physical tail branch image",
+      "outside enclosed physical tail branch image",
+      "outside enclosed physical tail branch image",
+      "outside enclosed physical tail branch image",
+      "outside enclosed physical tail branch image",
+      "outside enclosed physical tail branch image",
+      "outside enclosed physical tail branch image",
+      "outside enclosed physical tail branch image",
+      "outside enclosed physical tail branch image",
+      "outside enclosed physical tail branch image",
+      "outside enclosed physical tail branch image",
+      "outside enclosed physical tail branch image",
+      "outside enclosed physical tail branch image",
+      "outside enclosed physical tail branch image",
+      "outside enclosed physical tail branch image",
+      "outside enclosed physical tail branch image",
+      "outside enclosed physical tail branch image",
+      "outside enclosed physical tail branch image",
+      "outside enclosed physical tail branch image",
+      "outside enclosed physical tail branch image",
+      "outside enclosed physical tail branch image",
+      "outside enclosed physical tail branch image",
+      "outside enclosed physical tail branch image",
+      "outside enclosed physical tail branch image",
+      "outside enclosed physical tail branch image",
+      "outside enclosed physical tail branch image",
+      "outside enclosed physical tail branch image",
+      "outside enclosed physical tail branch image",
+      "outside enclosed physical tail branch image",
+      "outside enclosed physical tail branch image",
+      "outside enclosed physical tail branch image",
+      "outside enclosed physical tail branch image",
+      "outside enclosed physical tail branch image",
+      "outside enclosed physical tail branch image",
+      "outside enclosed physical tail branch image",
+      "outside enclosed physical tail branch image",
+      "outside enclosed physical tail branch image",
+      "outside enclosed physical tail branch image",
+      "outside enclosed physical tail branch image",
+      "outside enclosed physical tail branch image",
+      "outside enclosed physical tail branch image",
+      "outside enclosed physical tail branch image",
+      "outside enclosed physical tail branch image",
+      "outside enclosed physical tail branch image",
+      "outside enclosed physical tail branch image",
+      "outside enclosed physical tail branch image",
+      "outside enclosed physical tail branch image",
+      "outside enclosed physical tail branch image",
+      "outside enclosed physical tail branch image",
+      "outside enclosed physical tail branch image",
+      "outside enclosed physical tail branch image"
+    ],
+    "count": 64,
+    "hit_enclosure": [
+      1.5622813108230515,
+      1.5707963267951317
+    ],
+    "minimum_certified_gap": 0.5822377204174384,
+    "points": [
+      0.5907527363892835,
+      0.5971482737383355,
+      0.6054926639640072,
+      0.6118882013130592,
+      0.6152964289954538,
+      0.6216919663445057,
+      0.6300363565701775,
+      0.6364318939192295,
+      0.6398401216016241,
+      0.646235658950676,
+      0.6545800491763477,
+      0.6609755865253997,
+      0.6643838142077942,
+      0.6707793515568462,
+      0.679123741782518,
+      0.68551927913157,
+      0.6889275068139645,
+      0.6953230441630165,
+      0.7036674343886883,
+      0.7100629717377402,
+      0.7134711994201348,
+      0.7198667367691868,
+      0.7282111269948585,
+      0.7346066643439104,
+      0.738014892026305,
+      0.744410429375357,
+      0.7527548196010287,
+      0.7591503569500807,
+      0.7625585846324753,
+      0.7689541219815272,
+      0.777298512207199,
+      0.783694049556251,
+      0.7871022772386456,
+      0.7934978145876975,
+      0.8018422048133693,
+      0.8082377421624213,
+      0.8116459698448159,
+      0.8180415071938678,
+      0.8263858974195396,
+      0.8327814347685916,
+      0.8361896624509861,
+      0.8425851998000381,
+      0.8509295900257098,
+      0.8573251273747617,
+      0.8607333550571563,
+      0.8671288924062083,
+      0.8754732826318801,
+      0.881868819980932,
+      0.8852770476633266,
+      0.8916725850123786,
+      0.9000169752380504,
+      0.9064125125871023,
+      0.9098207402694969,
+      0.9162162776185488,
+      0.9245606678442205,
+      0.9309562051932725,
+      0.9343644328756671,
+      0.940759970224719,
+      0.9491043604503908,
+      0.9554998977994428,
+      0.9589081254818373,
+      0.9653036628308893,
+      0.9736480530565611,
+      0.9800435904056131
+    ],
+    "range": [
+      0.5907527363892835,
+      0.9800435904056131
+    ],
+    "reason": "certified range rejection precedes bracketed root search; not a theorem inferred from missed shots",
+    "root_solve_count": 0
+  },
+  "source_support_contraction": null,
+  "stationary_exterior_response": null
+}

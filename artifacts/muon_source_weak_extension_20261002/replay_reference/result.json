@@ -1,0 +1,114 @@
+{
+  "arbitrary_diagonal_regularization": 0,
+  "checks": {
+    "angular_orthonormal_residual": 4.440892098500626e-16,
+    "column_gram_reconstruction_residual": 8.054239685313374e-21,
+    "generated_frame_reconstruction_residual": 9.930136612989092e-16,
+    "independent_map_right_inverse_residual": 0.0,
+    "old_gram_nullspace_residual": 3.593656445351658e-21,
+    "principal_determinant_identity_relative_residual": 2.278753382782301e-15,
+    "profile_reconstruction_residual": 1.3414875847488985e-15,
+    "reduced_gram_condition": 19.440098737210665,
+    "reduced_gram_smallest_eigenvalue": 7.589139596612338e-06,
+    "transported_form_reconstruction_residuals": {
+      "q_A": 4.5972879029064263e-20,
+      "q_AB": 5.554562625835606e-21,
+      "q_AB_connected": 4.642563807584717e-21
+    }
+  },
+  "classification": "EVALUATED_SAVED_SOURCE_QUOTIENT_AND_INHERITED_LORENTZ_PARENT_PRINCIPAL_BLOCK; NOT_NATIVE_EXTENSION_OR_PHYSICAL_MUON_ANOMALY",
+  "connected_n2_contact_transported": true,
+  "coordinate": "b; beta=T_b b and A_Q=sqrt(2) beta retained; no extra 2/3 in the vertex",
+  "core_time_faces_are_physical_boundaries": false,
+  "error_scope": "exact retained representation identities and analytic determinant/flux algebra; binary64 contraction residuals at fixed cached inputs. No outward full-form, history, interpolation, quadrature, native matching, domain, or theory uncertainty bound.",
+  "evaluated_arrays_reused": true,
+  "first_interior_sample": {
+    "determinant": -2240.9741079108226,
+    "history_node": 0,
+    "principal_matrix": [
+      [
+        53.04069290169771,
+        126.15855215825721
+      ],
+      [
+        126.15855215825721,
+        257.8210318651244
+      ]
+    ],
+    "rho": 0.7853981633974483,
+    "rho_index": 32
+  },
+  "flux_equations": [
+    "Pi_tau=e*(b_tau-zeta*b_rho-H*b/2)",
+    "Pi_rho=-zeta*Pi_tau-r*b_rho"
+  ],
+  "frame_rank_provenance": "established n0 rank4 and generated positive-n1 rank12 representation; factorization residuals are numerical controls, not a fitted rank choice",
+  "frozen_local_values_changed": false,
+  "function_frame": "F(tau)=[E0,f_R(tau) U1]; Phi(tau)=F(tau) C with constant C",
+  "gram_eigenvalues": [
+    7.589139596612338e-06,
+    7.589139596612345e-06,
+    7.5891395966123455e-06,
+    7.589139596612346e-06,
+    7.589139596612346e-06,
+    7.589139596612346e-06,
+    7.589139596612346e-06,
+    7.589139596612346e-06,
+    7.589139596612347e-06,
+    7.589139596612347e-06,
+    7.5891395966123506e-06,
+    7.589139596612353e-06,
+    0.00014753362308861907,
+    0.00014753362308861907,
+    0.00014753362308861907,
+    0.00014753362308861907
+  ],
+  "independent_columns": 16,
+  "input_identities": {
+    "child_forms": {
+      "repository_path": "artifacts/muon_source_jet_20261002/replay_reference/evaluated_child_forms.npz",
+      "sha256": "a0b87cdbf0778588449287a40d336d9a285c65fd610705fc8af62a4e83aecddd"
+    },
+    "frozen_local": {
+      "repository_path": "artifacts/muon_source_jet_20261002/frozen_local.json",
+      "sha256": "4b31cd5a599c7d469ff22de2902716084c6b988cfed1b91e1e8add95336fd98b"
+    },
+    "parent_fields": {
+      "repository_path": "artifacts/muon_parent_geometry_20261001/replay_reference/local_parent_velocity_density.npz",
+      "sha256": "34ab3500a98197aa3db35f5f3d2e6e7234145e7bd819477e81efcbda3bebd95c"
+    },
+    "source_actions": {
+      "repository_path": "artifacts/muon_source_jet_20261002/replay_reference/local_source_actions.npz",
+      "sha256": "615ac8e9b75ac2e8b8da8904e3798af48b66af43bdb9732c0728cbf0ed9cbcfa"
+    },
+    "source_inputs": {
+      "repository_path": "artifacts/muon_source_jet_20261002/source_inputs.npz",
+      "sha256": "3eec5f38a5822809e7e4e069d6431dd17403de9c09447a124976dfe1b74ffd0d"
+    },
+    "weighted_density": {
+      "repository_path": "artifacts/muon_connection_weight_20261001/replay_reference/attachment_and_weighted_density.npz",
+      "sha256": "d55dad66ec719a3c88530be15322671d448bd5b81253902c18fc7a6aea12899d"
+    }
+  },
+  "lorentz_regular_grid_points": 3072,
+  "lorentz_signature_on_regular_grid": "one positive and one negative direction; determinant identity derived exactly, values sampled at fixed retained inputs",
+  "module_sha256": "9fb8483b1fa591d7b1788f8cf9c3e3ce30b63f73a189168604cd37cbefe44274",
+  "native_E1_evaluations": 0,
+  "native_added_to_selected_local": false,
+  "native_shifted_resolvent_applications": 0,
+  "nullity": 20,
+  "old_source_angular_contact_normalization_recomputed": false,
+  "original_columns": 36,
+  "parent_extensions_evaluated": 0,
+  "parent_trace_reset_Clifford_flux_residuals": null,
+  "physical_a_mu": null,
+  "physical_g_mu": null,
+  "physical_transfer_directions": 0,
+  "positive_pairing_sign_flip_performed": false,
+  "principal_block_equation": "[[e,-e*zeta],[-e*zeta,e*zeta^2-r]]; det=-e*r",
+  "principal_block_scope": "primitive local Lorentz Maxwell derivative block per kappa1 with inherited K_Q and full pointwise W; covariant angular/lower-order/native remainder not replaced by curl^2=9",
+  "publication_start_HEAD": "dd6bfbdad755c280f952e20b9a258090ebdd00e5",
+  "repeated_source_resolvent_heat_tail_bound": null,
+  "reuse_reason": "Nullity metadata corrected to20 and first missing boundary equation clarified; numerical implementation and evaluated arrays unchanged.",
+  "scientific_reference": "524ed90689bd5923c249bba2e699abf627e703cd"
+}

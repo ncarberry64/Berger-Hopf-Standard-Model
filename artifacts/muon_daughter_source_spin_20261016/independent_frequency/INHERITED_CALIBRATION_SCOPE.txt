@@ -1,0 +1,21 @@
+Scope clarification for the frozen independent frequency-control pair
+
+The field archive and all parent input/source hashes are retained exactly.
+Those inherited original-action numerical coefficients contain historical
+authorized calibration dependencies, including the retained Higgs coefficient.
+This independent arithmetic control neither removes nor recalibrates them.
+
+The JSON flag measured_parameters_or_VA_fit_used=false is limited to this
+producer inserting no NEW measured value or V-A replacement. It must not be
+read as a claim that the inherited field operator is calibration-free.
+
+No such flag is used in the derivative calculation or its admission. The
+exact-stored derivative comparison, equation bounds and paired bytes remain
+unchanged. Root should preserve this clarification with any publication or
+rename that metadata to new_measured_values_or_VA_fit_inserted in a separately
+pinned canonical port. Do not silently rewrite the frozen executed source.
+
+Frozen result.json SHA256:
+5536590c4a0153ccb9c89a41f4ac19cd67e7144f0380e295360826655d02fe3f
+Frozen producer SHA256:
+04f57de15be967bb2c30280b0786b8dae398fdebd5cd0ead546b7ae3d0663ff9

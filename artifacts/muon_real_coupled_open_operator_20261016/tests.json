@@ -1,0 +1,31 @@
+{
+  "arguments": [
+    "-m",
+    "pytest",
+    "-q",
+    "tests/test_muon_full_d5_source_first.py",
+    "tests/test_muon_real_two_arm_temporal_action.py",
+    "tests/test_muon_combined_f_eta_contact.py",
+    "--junitxml=<external receipt path>"
+  ],
+  "environment": {
+    "PYTHONPATH": "src"
+  },
+  "exit_code": 0,
+  "first_guarded_session_cause": "Root concurrently edited three tracked .gitattributes files while pytest protected the checkout. The session guard restored those metadata edits and returned1. Scientific tests all passed. Metadata restored, stable rerun returned0.",
+  "first_guarded_session_component_tests_passed": 16,
+  "first_guarded_session_exit_code": 1,
+  "full_physical_derivative_pass": false,
+  "stable_rerun_summary": "16 passed in20.79s",
+  "test_groups": {
+    "combined_f_eta_contact": 4,
+    "full_D5_source_first": 6,
+    "real_two_arm_temporal_action": 6
+  },
+  "tested_source_hashes": {
+    "tests/test_muon_combined_f_eta_contact.py": "73302e3b130a0476c9814a1727fa9fa00134291a87bfd2f160218d017dc42bad",
+    "tests/test_muon_full_d5_source_first.py": "a5a08ffa09f2be65e37d18e206ec2d9286acb9c4543a5bccc85b65117cf90729",
+    "tests/test_muon_real_two_arm_temporal_action.py": "186bae8780eb1aa162df605f77c24b97261d251717449b208947edbf5fe76f8e"
+  },
+  "total_passed": 16
+}

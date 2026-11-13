@@ -1,0 +1,48 @@
+{
+  "complete_native_or_Pauli_evaluated": false,
+  "continuous_temporal_or_middle_minus_light_error_enclosed": false,
+  "focused_test_command": "C:\\Python314\\python.exe -m pytest --noconftest -q tests/test_muon_native_reached_response_heat.py",
+  "focused_test_exit_code": 0,
+  "focused_test_stdout": "2 passed in 2.69s",
+  "pair_records": [
+    {
+      "bytes": 539694,
+      "independent_replay_byte_identical": true,
+      "name": "reached_source_heat.json",
+      "sha256": "16202e0c65cb195476f86451b3174f98067624f6570205ef7f93c87b12d8f160"
+    },
+    {
+      "bytes": 993041,
+      "independent_replay_byte_identical": true,
+      "name": "reached_source_heat.npz",
+      "sha256": "b0140a4f30fc65433cc8bdda747f1b6d73e4356c27eb34c66c9717e587cc2121"
+    }
+  ],
+  "producer_commands": [
+    "C:\\Python314\\python.exe scripts/evaluate_muon_native_reached_response_heat.py --output artifacts/muon_native_reached_response_heat_20261010/run_1",
+    "C:\\Python314\\python.exe scripts/evaluate_muon_native_reached_response_heat.py --output artifacts/muon_native_reached_response_heat_20261010/run_2"
+  ],
+  "producer_exit_codes": [
+    0,
+    null
+  ],
+  "run_2_evidence": "Complete final receipt and archive were saved by the producer after all5/9/17-node applications; both are byte-identical to independent run_1. The final exec session was no longer retained for exit-code retrieval.",
+  "run_2_final_tool_exit_code_unavailable_after_session_context_reset": true,
+  "source_records": [
+    {
+      "bytes": 8768,
+      "path": "src/bhsm/interface/muon_native_reached_response_heat.py",
+      "sha256": "12d93ee512f043158d6b20e27146c2425129dc88fcdd122514f28afa0f5044f3"
+    },
+    {
+      "bytes": 5720,
+      "path": "scripts/evaluate_muon_native_reached_response_heat.py",
+      "sha256": "f254ae91966281e0f324b34c30619d93a1ee118f5fad44e77de66f457e6e4ff8"
+    },
+    {
+      "bytes": 1914,
+      "path": "tests/test_muon_native_reached_response_heat.py",
+      "sha256": "8d57a28159c436ee3262ebac5eb3cceaf5cf0db3b5c785349d87a5de7e56806a"
+    }
+  ]
+}

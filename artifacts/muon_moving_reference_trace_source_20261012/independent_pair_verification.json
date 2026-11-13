@@ -1,0 +1,42 @@
+{
+  "actual_source_reproduction": {
+    "radial": 0.0,
+    "wall": 0.0
+  },
+  "all_consumed_pins_current": true,
+  "classification": "INDEPENDENT_REPLAY_FULL_MOVING_REFERENCE_PROFILE_SOURCE_AND_FINITE_FIELD_TESTS",
+  "coefficient_test_convention": "column0 is the original64 gauge VALUE-trace test source. Columns1/2 are independent VALUE-basis tests of the time/radial output FUNCTIONS; column2 is not the physical radial derivative of column0 coefficients.",
+  "complete_source_germ": "exact full value/time/radial profile and exact wall are primary; derivative consistency belongs to the analytic profile, not auxiliary projected columns",
+  "environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "PYTHONPATH": "src;scripts"
+  },
+  "exact_commands": [
+    "C:/Python314/python.exe scripts/evaluate_muon_moving_reference_trace_source.py --output artifacts/muon_moving_reference_trace_source_20261012/run_1",
+    "C:/Python314/python.exe scripts/evaluate_muon_moving_reference_trace_source.py --output artifacts/muon_moving_reference_trace_source_20261012/run_2"
+  ],
+  "focused_control": {
+    "command": "C:/Python314/python.exe -m pytest --noconftest -q tests/test_muon_moving_reference_trace_source.py",
+    "observed_tool_exit_code": 0,
+    "observed_tool_result": "2 passed in 1.85s",
+    "source_sha256": "1aa787d340fd153646b559f1d969e5a868a2b7706dba044031843e178f40b107"
+  },
+  "frozen_coefficient_offset_zero_not_substituted_for_full_source": true,
+  "original_trace_rows_temporal_endpoint_not_continuous_bulk_glue": true,
+  "pairs": {
+    "application.npz": {
+      "bytes": 208067,
+      "identical": true,
+      "sha256": "3f254643c98e1dc44a9892c0397ab50ac9ad38ca286891d6f1e56acc8406c731"
+    },
+    "result.json": {
+      "bytes": 59581,
+      "identical": true,
+      "sha256": "319f8cb8250a1a9c17018b1d04058bb114c956440a7b9c3e23a252a90fd00299"
+    }
+  },
+  "physical_Pauli_completed": false,
+  "physical_event_clock_or_mode_or_exterior_selected": false,
+  "source_image_complement_and_wall_mismatch_preserved": true
+}

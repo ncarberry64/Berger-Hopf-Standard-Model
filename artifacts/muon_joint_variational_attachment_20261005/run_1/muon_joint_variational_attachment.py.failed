@@ -1,0 +1,77 @@
+"""Known node3 first variations; independent wall response remains unknown.
+
+The photon is the physical source. Its compact insertion image is a
+computational probe/load, not a prescribed joint operator-domain vector.
+These calculations do not promote local expansions to the AE4 operator.
+"""
+from __future__ import annotations
+import numpy as np
+
+
+def material_green_columns(gamma, Xi, mu4, H, kappa, I, I_tau):
+    """Actual proper-wall Green densities in the existing common frame.
+
+    J_L2 belongs to <v,D u>-<D_formal^dagger v,u> in geometric L2;
+    J_Dirac=Gamma0 J_L2 is the Dirac-bar action pairing instead.
+    Neither is the strong P conormal or the native independent-H4 output.
+    The 1/2 of the inherited symmetrized boundary variation is not a
+    Clifford normalization or a multiplier of the Green matrix.
+    """
+    J=mu4*1j*gamma[4]
+    Jbar=gamma[0]@J
+    left=J@Xi*kappa;leftbar=Jbar@Xi*kappa
+    rate=3*H-I_tau/(2*I)
+    return dict(geometric_L2_Green_density=J,Dirac_bar_Green_density=Jbar,
+        W_material_Green_L2=left,W_material_Green_Dirac=leftbar,
+        W_material_Green_L2_tau=rate*left,W_material_Green_Dirac_tau=rate*leftbar,
+        p_material_Green_L2=np.zeros_like(left),p_material_Green_Dirac=np.zeros_like(leftbar),
+        p_material_Green_tau=np.zeros_like(leftbar),Green_coordinate_time_rate=np.array(rate),
+        opposite_outward_Dirac_Green=-leftbar,
+        mu4=np.array(mu4),mu4_tau=np.array(3*H*mu4),kappa=np.array(kappa),
+        kappa_tau=np.array(-kappa*I_tau/(2*I)))
+
+
+def known_bulk_euler_contractions(point,basis,gamma,weights,source):
+    """Contract already-saved D5 p_source, not a new point/body action.
+
+    All twelve source-image test directions and n1/n3 outputs are kept.
+    bar-v uses Gamma0 while diagnostic Riesz loads use positive L2.
+    These are the known local body contributions to a joint variation;
+    no global form/domain membership is claimed for the trial columns.
+    """
+    d=len(source);amplitude=np.zeros((2*d,),complex);time=np.zeros_like(amplitude)
+    load=np.zeros((2*d,d),complex)
+    w=weights*point['volume'];wt=weights*point['Cauchy']
+    for n,xi in basis.items():
+        action=point[f'Dp_n{n}']
+        barred_action=np.einsum('oi,gimk->gomk',gamma[0],action,optimize=True)
+        contraction=np.einsum('omki,gomk->gi',xi.conj(),barred_action,optimize=True)
+        x=xi.reshape(-1,d);G=x.conj().T@x
+        for k,scalar in enumerate((point['u'],point['p'])):
+            amplitude[k*d:(k+1)*d]+=np.einsum('g,gi->i',w*scalar,contraction,optimize=True)
+            # Gamma0*(iGamma0/nu)*p Xi = i*p Xi/nu; use Cauchy=volume/nu.
+            time[k*d:(k+1)*d]+=1j*(wt@(scalar*point['p']))*(G@source)
+            load[k*d:(k+1)*d]+=(w@(scalar*point['p']))*G
+    return dict(known_bulk_Dirac_Euler_p_source=amplitude,
+        known_bulk_Dirac_time_jet_p_source=time,
+        diagnostic_bulk_Riesz_load_12=load,
+        diagnostic_bulk_Riesz_load_original=load@source)
+
+
+def coupled_variation_contract():
+    """One missing prescription, in its actual variational role."""
+    return dict(
+        physical_source='b_A photon connection; beta=T_b b and A_Q=sqrt(2) beta',
+        source_image='p_Ak=Xi_A^(5) phi_k, phi_k=hat_chi e_k; not an independent physical fermion source',
+        numerical_load='ell5(v5)=<v5,p5>_5 diagnostic parent component; no required Dom(D) membership of p5',
+        wall_unknown='w=Pi4 u is solved jointly with u5; not selected from B_rad p',
+        first_missing=dict(
+            name='current joint first-order M5/M4 interface variational prescription',
+            equation='c45(v4,g5)=D_bar_w D_g5 S_F,joint[v4,g5], g5=gamma5 u5; or the equivalent prescribed joint variation graph and wall-output rule',
+            type='sesquilinear interface form on owned H4 variations and the actual H5 Sobolev trace/normal-data space; geometric dual pairing and both sheet orientations',
+            restriction='only source-reached joint response directions for the12 supplied columns; not a full boundary kernel',
+            producer='same-action off-mode attachment before the v14.45 localized-mode pullback, realized in current AE4 first-order domain',
+            consumer='wall Euler equation E4(w)+E45(g5)=ell4 and corresponding bulk Green balance; then joint q(V,U)=<D V,D U> and source jet',
+            required_source_jet='differentiate this same prescription under b_A, including pairing/trace/domain variations; not independently chosen wall inputs',
+            evidence_scope='insufficient displayed v14.45/v15.69/AE31/AE4 equations; not an exhaustive absence theorem for every retained source'),
+        native_R4=None,native_wall_Gram=None,updated_solution=None,physical_a_mu=None,physical_g_mu=None)

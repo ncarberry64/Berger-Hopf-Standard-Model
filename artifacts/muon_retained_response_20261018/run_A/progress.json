@@ -1,0 +1,236 @@
+[
+  {
+    "checks": {
+      "Hermitian_operator_response": true,
+      "angular_map_and_reached_outputs": true,
+      "direct_field_not_double_counted": true,
+      "independent_finite_field_propagator": true,
+      "independent_finite_field_spin": true,
+      "integrated_response_quadrature": true,
+      "neutral_source_scope_contact": true,
+      "original_gauge_and_Higgs_covariance": true,
+      "original_local_Hamiltonian_map": true,
+      "saved_input_hashes": true,
+      "scalar_history_not_endpoint_freeze": true,
+      "scalar_response_reused": true,
+      "shared_wall_classical_and_spin_input_map": true
+    },
+    "finite_field_checks": [
+      {
+        "direction": "mixed_original_wall_and_scalar",
+        "direction_nonzeros": {
+          "0": 0.6,
+          "120": 0.7,
+          "160": 0.2,
+          "18": 0.3,
+          "36": 0.5
+        },
+        "rows": [
+          {
+            "derivative_amplitude": 0.14433756730248917,
+            "propagator_max": 2.604222393902611e-12,
+            "spin_max": 9.251858542851204e-16,
+            "step": 0.02
+          },
+          {
+            "derivative_amplitude": 0.14433756730248917,
+            "propagator_max": 1.6280032881188917e-13,
+            "spin_max": 1.850371707924006e-15,
+            "step": 0.01
+          },
+          {
+            "derivative_amplitude": 0.14433756730248917,
+            "propagator_max": 1.0269562980198883e-14,
+            "spin_max": 3.7007434171404814e-15,
+            "step": 0.005
+          }
+        ]
+      },
+      {
+        "direction": "fixed_axis_magnetic_profile",
+        "direction_nonzeros": {
+          "160": 1.0,
+          "164": -0.4
+        },
+        "rows": [
+          {
+            "derivative_amplitude": 2.2228766680903056e-06,
+            "propagator_max": 7.401486831049789e-17,
+            "spin_max": 3.700743415848012e-17,
+            "step": 0.5
+          },
+          {
+            "derivative_amplitude": 2.2228766680903056e-06,
+            "propagator_max": 1.480297366177646e-16,
+            "spin_max": 7.401486832773081e-17,
+            "step": 0.25
+          },
+          {
+            "derivative_amplitude": 2.2228766680903056e-06,
+            "propagator_max": 2.9605947331092324e-16,
+            "spin_max": 1.4802973663392047e-16,
+            "step": 0.125
+          }
+        ]
+      }
+    ],
+    "finite_response_inputs": 166,
+    "full_physical_derivative_admitted": false,
+    "gauge_only_Maxwell_initial_feedthrough_at_fixed_wall": "exactly absent from this intrinsic local operator; not absent after wall feedback",
+    "measures": {
+      "arbitrary_scalar_initial_J_max": 1.9217180718042472e-08,
+      "duplicate_direct_magnetic_addition_error": 4.359411732210668e-06,
+      "endpoint_freeze_vs_saved_dynamic_scalar_max": 9.608565312452232e-09,
+      "generic_wall_Higgs_J_max": 1.0373105570286436e-09,
+      "independent_sector_sum_difference": 2.0816681711721685e-17,
+      "integrated_Higgs_max": 1.9217180718042472e-08,
+      "integrated_gauge_max": 0.44721359549749107,
+      "magnetic_fixed_axis_Higgs_J_max": 3.0491773337620446e-20,
+      "magnetic_fixed_axis_Higgs_spin_max": 1.5191266329439017e-25,
+      "omit_gauge_motion_of_Higgs_identity_difference": 8.113909796839641e-05,
+      "original_direct_magnetic_J_recovered": 2.54109884178139e-21,
+      "original_direct_magnetic_spin_recovered": 2.541098841894378e-21,
+      "original_field_gauge_identity_absolute": 2.220446049250313e-16,
+      "original_field_gauge_identity_relative": 1.6968263870881152e-20,
+      "original_point_map_absolute": 7.276179655400323e-12,
+      "original_point_map_relative": 5.0410851392609475e-16,
+      "projected_integrated_Hermiticity": 8.470329472789522e-22,
+      "saved_Higgs_polynomial_reconstruction": 1.3322676295501878e-15,
+      "saved_combined_boundary_Green": 3.3492089310249717e-15,
+      "source_operator_Hermiticity": 5.551115123125783e-17,
+      "source_to_spin_operator_max": 4.456115651696767e-06,
+      "spin_response_Hermiticity": 2.7755575615628914e-17,
+      "time_rule12_vs16_J": 1.110223024643332e-16,
+      "time_rule12_vs16_spin": 4.16333634498313e-17,
+      "time_rule8_vs12_J": 1.1102230246574683e-16,
+      "unchanged_spin_propagator_sample_difference": 0.0,
+      "unreachable_readout_leakage": 0.0
+    },
+    "neutral_Higgs_coordinate_check": {
+      "neutral_Higgs_gauge_rate_contact": 0.0,
+      "scaled_neutral_Higgs_source_after_contact": 3.2311742677852644e-27,
+      "scaled_neutral_Higgs_source_before_contact": 4.7601167512936154e-12,
+      "scope": "Higgs action alone; complete physical neutral magnetic derivative not assembled"
+    },
+    "original_combined_input_layout": 574,
+    "side": "incoming",
+    "source_impulse_causality": "saved 4-stage collocation approximates scalar response; no continuum causal-support certificate"
+  },
+  {
+    "checks": {
+      "Hermitian_operator_response": true,
+      "angular_map_and_reached_outputs": true,
+      "direct_field_not_double_counted": true,
+      "independent_finite_field_propagator": true,
+      "independent_finite_field_spin": true,
+      "integrated_response_quadrature": true,
+      "neutral_source_scope_contact": true,
+      "original_gauge_and_Higgs_covariance": true,
+      "original_local_Hamiltonian_map": true,
+      "saved_input_hashes": true,
+      "scalar_history_not_endpoint_freeze": true,
+      "scalar_response_reused": true,
+      "shared_wall_classical_and_spin_input_map": true
+    },
+    "finite_field_checks": [
+      {
+        "direction": "mixed_original_wall_and_scalar",
+        "direction_nonzeros": {
+          "0": 0.6,
+          "120": 0.7,
+          "160": 0.2,
+          "18": 0.3,
+          "36": 0.5
+        },
+        "rows": [
+          {
+            "derivative_amplitude": 0.14433756729942276,
+            "propagator_max": 2.6042917823110744e-12,
+            "spin_max": 9.25185853962003e-16,
+            "step": 0.02
+          },
+          {
+            "derivative_amplitude": 0.14433756729942276,
+            "propagator_max": 1.628558399399795e-13,
+            "spin_max": 1.850371707924006e-15,
+            "step": 0.01
+          },
+          {
+            "derivative_amplitude": 0.14433756729942276,
+            "propagator_max": 1.0255685190935861e-14,
+            "spin_max": 3.700743416386541e-15,
+            "step": 0.005
+          }
+        ]
+      },
+      {
+        "direction": "fixed_axis_magnetic_profile",
+        "direction_nonzeros": {
+          "160": 1.0,
+          "164": -0.4
+        },
+        "rows": [
+          {
+            "derivative_amplitude": 1.4000729422319253e-06,
+            "propagator_max": 7.401486832773081e-17,
+            "spin_max": 3.700743415524894e-17,
+            "step": 0.5
+          },
+          {
+            "derivative_amplitude": 1.4000729422319253e-06,
+            "propagator_max": 1.4802973663392047e-16,
+            "spin_max": 7.401486832773081e-17,
+            "step": 0.25
+          },
+          {
+            "derivative_amplitude": 1.4000729422319253e-06,
+            "propagator_max": 2.9605947324199154e-16,
+            "spin_max": 1.480297366177646e-16,
+            "step": 0.125
+          }
+        ]
+      }
+    ],
+    "finite_response_inputs": 166,
+    "full_physical_derivative_admitted": false,
+    "gauge_only_Maxwell_initial_feedthrough_at_fixed_wall": "exactly absent from this intrinsic local operator; not absent after wall feedback",
+    "measures": {
+      "arbitrary_scalar_initial_J_max": 9.605976422463143e-09,
+      "duplicate_direct_magnetic_addition_error": 2.7457657368253072e-06,
+      "endpoint_freeze_vs_saved_dynamic_scalar_max": 4.802982169120249e-09,
+      "generic_wall_Higgs_J_max": 6.533470964630019e-10,
+      "independent_sector_sum_difference": 2.7755575615628914e-17,
+      "integrated_Higgs_max": 9.605976422463143e-09,
+      "integrated_gauge_max": 0.4472135954989792,
+      "magnetic_fixed_axis_Higgs_J_max": 7.618845866848619e-21,
+      "magnetic_fixed_axis_Higgs_spin_max": 2.3907566982460284e-26,
+      "omit_gauge_motion_of_Higgs_identity_difference": 5.110522583448438e-05,
+      "original_direct_magnetic_J_recovered": 2.117582368293523e-21,
+      "original_direct_magnetic_spin_recovered": 1.694065894511682e-21,
+      "original_field_gauge_identity_absolute": 1.3877787807814457e-16,
+      "original_field_gauge_identity_relative": 9.127472692978951e-21,
+      "original_point_map_absolute": 7.276179655400323e-12,
+      "original_point_map_relative": 5.0410851392609475e-16,
+      "projected_integrated_Hermiticity": 5.551115123287341e-17,
+      "saved_Higgs_polynomial_reconstruction": 1.2212453270876722e-15,
+      "saved_combined_boundary_Green": 6.0285164447254624e-15,
+      "source_operator_Hermiticity": 5.551115123125783e-17,
+      "source_to_spin_operator_max": 2.8066687903243135e-06,
+      "spin_response_Hermiticity": 5.551115123287341e-17,
+      "time_rule12_vs16_J": 1.110223024627176e-16,
+      "time_rule12_vs16_spin": 4.1633363432059827e-17,
+      "time_rule8_vs12_J": 1.1102230246574683e-16,
+      "unchanged_spin_propagator_sample_difference": 0.0,
+      "unreachable_readout_leakage": 0.0
+    },
+    "neutral_Higgs_coordinate_check": {
+      "neutral_Higgs_gauge_rate_contact": 0.0,
+      "scaled_neutral_Higgs_source_after_contact": 1.6155871338926322e-27,
+      "scaled_neutral_Higgs_source_before_contact": 2.3794104422605247e-12,
+      "scope": "Higgs action alone; complete physical neutral magnetic derivative not assembled"
+    },
+    "original_combined_input_layout": 574,
+    "side": "outgoing",
+    "source_impulse_causality": "saved 4-stage collocation approximates scalar response; no continuum causal-support certificate"
+  }
+]

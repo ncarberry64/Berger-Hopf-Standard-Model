@@ -1,0 +1,203 @@
+REAL D5 COVARIANT PRODUCT FACTOR: LOCAL NATIVE CONSTRUCTION
+2026-10-16 -- derivation only, no new field solve, contour or physical gate
+
+Repository: C:/Users/carbe/Downloads/BHSM_muon_parent_maxwell_worktree_20261001
+
+1. WHICH PLACEMENT IS ALREADY OWNED
+
+ae4_current_c2_factorized_hs_calderon.py:24-66 executes the separated
+positive product-Dirac factor with W=chirality*lambda/R+H*profile.
+muon_native_dirac_hamiltonian.py:214-280 explicitly gives its covariant
+matrix extension A=D_tau_factor+W and the associated product form.
+More strongly, muon_owned_native_product_connection.py:34-77 binds the
+actual REAL common-A temporal connection:
+  A=(partial_t+Omega_L,t)/N+W, Omega_factor=Omega_L,t/N.
+Its native temporal vertex is G/N; the canonical Lorentz Hamiltonian
+vertex -iG/N is separately retained. This is not a generic missing
+temporal slot and does not ask for a new Wick choice in that component.
+muon_native_product_factor_graph.py:226+ implements its geometric positive
+form from A maps, with proper density N dt and all18 entries.
+
+The new full384 D5 coefficient assembly expresses the supplied original
+ordered D5 operator in the exact split
+  D_L(E)=Gamma0(i D_tau-W)+E Gamma0 ell_Sigma/N,
+  D_tau=(partial_t-z partial_rho)/N+h0+(A_t-z A_rho)/N.
+This is checked against muon_holomorphic_d5_trace_action.py:419-486.
+The same already-owned PLUS product placement therefore has a concrete
+full-D5 local coefficient extension A=D_tau+W. It is not obtained by
+heating D_L, putting Hcan into the temporal connection, or declaring
+physical time to be the heat-semigroup parameter.
+
+This statement constructs that local product component. Agreement of
+the complete stratified realization/relative determinant still needs
+the actual full incidence, quotient, domain and coupled physical fields.
+The reduced factor owner alone does not prove determinant equality for
+every possible full384 extension. No alternative extension is selected
+or needed to calculate the local factor and its principal symbol here.
+
+2. ACTUAL DENSITY AND TEMPORAL ADJOINT, INCLUDING THE SHIFT
+
+Use a REAL regular patch of the existing material coframe
+  e0=N dt, e4=C(d rho+z dt), ea=R theta^a,
+  N,C,R>0, z real, mu=N C R^3 dt d rho dOmega,
+  E0=(partial_t-z partial_rho)/N, E4=partial_rho/C.
+The right-body Ea have zero Haar divergence; no angular truncation is
+used in this derivation. Let S=log(C R^3). The exact source contacts are
+  h0=[S_t-z S_rho-z_rho]/(2N)=(1/2)div_mu E0,
+  h4=[(log N)_rho+3(log R)_rho]/(2C)=(1/2)div_mu E4.
+They are supplied by muon_holomorphic_d5_trace_action.py:24-105.
+Its moving-material change has C_rho=C_chi J and
+z=(beta+chi_t)/J; the J_t/J contribution to S_t cancels the matching
+z_rho term. Thus its unchanged h0 really is this material half-divergence,
+not a rate missing a moving-wall contribution.
+
+On compactly supported tests, E0^dagger=-E0-div_mu E0. For the actual
+unitary internal generators and REAL gauge coefficients,
+  Omega0=(A_t-z A_rho)/N, Omega0^dagger=-Omega0,
+so D_tau^dagger=-D_tau exactly. No assumption about W is needed here.
+The temporal bundle connection is the given one-form evaluated on E0.
+It is not -i times the Lorentz temporal connection.
+
+The full384 Eulerian fiber pairing is also constructible: the original
+Dirac bar is Psi^dagger Gamma0, and the future-e0 current is
+  bar(Psi) Gamma0 Psi=Psi^dagger Psi.
+Hence the geometric spacetime norm is integral mu Psi^dagger Psi on
+each full carrier; the same-bundle A output has the same current Gram.
+This does not introduce a new local input/output metric parameter.
+For an owned frame Psi=Sframe psi, transport the norm to
+G=Sframe^dagger Sframe and the WHOLE differential expression to
+Sframe^-1 A Sframe. In a nonunitary moving frame, its G and connection
+derivative contacts must be retained; one cannot simply reuse Gram I.
+
+The explicit scalar density isometry chi=(C R^3)^(1/2)Psi gives measure
+N dt d rho dOmega and
+  D_tau'=E0-z_rho/(2N)+Omega0,
+  (E4+h4)'=partial_rho/C+[(log N)_rho-(log C)_rho]/(2C).
+The residual shift-compression term is required. A radius rescaling
+alone does not justify deleting it. On the intrinsic no-radial-shift
+restriction this reduces to the existing proper-time factor formula.
+
+3. NON-HERMITIAN ETA DOES NOT PREVENT A POSITIVE ELLIPTIC PRODUCT
+
+Put alpha_j=Gamma0 Gamma_j, j=1,2,3,4. On this real coframe these are
+Hermitian and satisfy {alpha_j,alpha_k}=2 delta_jk. The full source gives
+  W_radial=-i eps alpha4(partial_rho/C+h4+A_rho/C),
+  W_angular=-i sum_a alpha_a(Ea+A_a)/R + W_round_spin,
+  W_eta=-Gamma0 Eta,
+with eps=+/-1 the original eta-sheet orientation. The original right-body
+round-spin coefficient is retained once, not added a second time.
+
+W_radial+W_angular is FORMALLY Hermitian in mu: the derivative of
+mu/C produces 2h4, exactly canceled by the scalar h4 adjoint contact;
+the right-body derivatives have zero Haar divergence; the real internal
+gauge matrices are anti-Hermitian and commute with spin matrices.
+The actual sigma-normal source at lines140-196 of the original owner is
+  Eta=i(-n0 Gamma0+eps n4 Gamma4)m,
+with real n0,n4,m on the regular real normal chart. Thus
+  W_eta=i n0 m I-i eps n4 m alpha4
+is generally ANTI-Hermitian, nonzero, and must not be discarded.
+It is lower order. Hermitian W is not required for a positive A^dagger A.
+
+For arbitrary full differential W, using its FULL formal adjoint,
+  A^dagger=-D_tau+W^dagger,
+  P=A^dagger A
+    =-D_tau^2+(W^dagger-W)D_tau-[D_tau,W]+W^dagger W.
+W^dagger includes derivative/density contacts, not just the matrix dagger
+of its displayed zero-order body. This identity retains the eta-induced
+first-order and zeroth-order terms. The Hermitian-W simplification is
+valid only when that condition actually holds.
+
+For REAL cotangent coordinates define
+  tau=(xi_t-z xi_rho)/N,
+  v=(xi_1/R,xi_2/R,xi_3/R,eps xi_rho/C).
+With partial -> i xi the exact principal symbols are
+  sigma1(A)=i tau I+alpha(v),
+  sigma1(A)^dagger sigma1(A)
+       =[tau^2+xi_rho^2/C^2+sum_a xi_a^2/R^2]I.
+There are no mixed Clifford residues or discarded spin components.
+A is elliptic; P is strongly elliptic on every compact regular real
+patch. Its scalar positive metric is
+  gplus^tt=1/N^2, gplus^t,rho=-z/N^2,
+  gplus^rho,rho=z^2/N^2+1/C^2, gplus^ab=delta_ab/R^2.
+Its volume is exactly mu. Positivity of N,C,R with compact coefficient
+bounds suffices locally; no bound on eta's amplitude and no new small-
+spin condition is needed. A time-sign-flipped principal metric is a
+consequence of the OWNED product placement, not a chosen complex contour.
+
+4. CONORMAL AND EVERY LOCAL FIRST/MIXED CONTACT
+
+Write A=a^j partial_j+B in a coordinate/Haar frame, with
+  a^t=I/N,
+  a^rho=-z I/N-i eps alpha4/C,
+  a^a=-i alpha_a/R.
+The exact scalar-density formal adjoint is
+  A^dagger v=-mu^-1 sum_j partial_j(mu a^{j dag}v)+B^dagger v,
+with Haar divergence used for the angular frame. It is valid for an
+arbitrary non-Hermitian B and includes lapse, shift and density rates.
+With a transported positive fiber G, replace this by
+  A^{dag_G}v=-(mu G)^-1 sum_j partial_j(mu a^{j dag}G v)
+              +G^-1 B^dagger G v.
+This is a computable frame-transport rule, not an extra pairing choice.
+
+The product Green conormal for outward coordinate covector n is
+  p_n=mu (a^j n_j)^dagger A v.
+For a fixed-rho face it is
+  p_rho=mu[-z I/N+i eps alpha4/C] A v;
+for rho=rho_wall(t), replace z by z+rho_wall_dot ONCE.
+For a temporal face p_t=(mu/N)A v. Scalar induced measure/normal factors
+may be redistributed consistently, but cannot be applied a second time.
+This supplies the local form flux; it does not select an exterior graph.
+
+All source contacts are obtained by differentiating these SAME formulas.
+For example set F0=S_t-z S_rho-z_rho. Then
+  F0_x=S_tx-z_x S_rho-z S_rhox-z_rhox,
+  F0_xy=S_txy-z_xy S_rho-z_x S_rhoy-z_y S_rhox
+          -z S_rhoxy-z_rhoxy,
+  h0=(1/2)N^-1 F0, h4=(1/2)C^-1[(log N)_rho+3(log R)_rho].
+The x/y/xy contacts follow the complete product/reciprocal rules;
+Omega0=N^-1(A_t-z A_rho) has the same complete contacts. No field,
+coframe, or connection source derivative is declared zero by this proof.
+
+For fixed test vectors on a fixed reference patch and REAL source axes,
+  q=integral mu (Au)^dagger Av,
+  q_x=integral [mu_x Au^dagger Av
+                +mu((A_xu)^dagger Av+Au^dagger A_xv)],
+and q_xy has exactly these NINE local terms:
+  mu_xy Au^dagger Av;
+  mu_x[(A_yu)^dagger Av+Au^dagger A_yv];
+  mu_y[(A_xu)^dagger Av+Au^dagger A_xv];
+  mu[(A_xyu)^dagger Av+(A_xu)^dagger A_yv
+       +(A_yu)^dagger A_xv+Au^dagger A_xyv].
+A moving frame adds its actual G contacts; a moving domain/trace adds
+its actual pullback and conormal contacts. These are not omitted by
+pretending the nine volume terms are the entire physical derivative.
+For complex analytic tangent axes, continue the independently supplied
+real-action sharp/left coefficients instead of conjugating the analytic
+source coefficients. The real Riesz identities above do not authorize
+turning a complex candidate background into a real one by projection.
+
+The local off-shell phase exp(-i E tau_Sigma) already owned by the original
+D5 action gives A_E=-i ell_Sigma I/N under this product placement. The
+coframe/proper-clock factor is therefore explicit, not a new unknown
+temporal constant. This is distinct from the heat/resolvent eigenvalue
+of P and does not assert a stationary pole on a time-dependent history.
+
+5. CONSTRUCTIVE CONCLUSION AND PRECISE REMAINING SCOPE
+
+The real original D5 coefficient functions, actual current pairing,
+half-divergence contacts, unitary bundle connection and already-owned
+plus-product rule construct a full-carrier LOCAL positive elliptic factor.
+An additional local Hermitian-W requirement, eta deletion, free temporal
+connection, or unspecified Wick contour is not needed to construct this
+component. Standard closure of its compactly supported smooth core gives
+a closed local operator and a positive A^dagger A; that reference core
+must not be mislabeled as a physical stop or actual outgoing realization.
+
+This does not prove that arbitrary extensions have the same determinant,
+or identify the entire H8 plus H5+ plus H5- plus H4 native realization.
+The common action incidence/BRST quotient/relative completion and physical
+coupled real fields must still be applied on the same domain. Pointwise
+real ellipticity is not a uniform theorem through a degenerating cap,
+noncompact future, glancing interface or unbounded coefficient family.
+No full physical background, outgoing derivative, radial/angular limit,
+two-spin pole normalization, coupled correction or muon moment is computed.

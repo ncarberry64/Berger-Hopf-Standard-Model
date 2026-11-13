@@ -1,0 +1,78 @@
+INDEPENDENT CENTRAL9x7 MIXED SOURCE-CORNER CLOCK
+2026-10-16. REPO=C:/Users/carbe/Downloads/BHSM_muon_parent_maxwell_worktree_20261001
+WORK=C:/Users/carbe/OneDrive/Documents/CODEX
+
+New evaluated component
+The remaining nine central U(1) temporal-parameter mixed corner clocks are computed directly from the complete217 canonical momentum germs at the original ea02 cut. No charge/Gauss/Noether identity supplies their values. Only after that contraction does the producer load the independently evaluated literal36 Gauss clock and compare its central rows. Together with the previously checked27 SU2 rows, this completes the independent corner-clock comparison for all36 ordinary temporal parameters. It does NOT turn the cached24 mechanical derivatives into independent literal checks, nor solve any of the60 constraints.
+
+The field is the original retained complex analytic ea02 germ, with its actual supplied source/reference and response-clock directions. No real-part projection, new physical muon state, birth0 section, field solve, normal mode, microscopic native current or physical charge units are introduced. Here the historical word native in input filenames denotes material precision, not a new native-operator identification.
+
+Exact chart and original source ownership
+The original central source is
+ artifacts/muon_actual_source_corner_radial_jets_20261016/
+ bhsm_original_ea02_central_gauss_corner_20261016/native_D4_run_1,
+ source56c5dc1d082e01e2903d544f327ebf16e64155125e01af0601c2c7038c55aa47.
+Its central gauge generator contains the fixed ordinary radial derivative image and the scalar image -T_Y H phi(wall). Central adjoint commutators vanish even at the nonzero non-Abelian background, so only the Higgs part of this fixed parameter-to-position map varies. The original source explicitly supplies that map and its clock; the new producer reconstructs the Higgs part independently and checks both maps rather than assuming a generic moving-left zero.
+
+The actual source-owned original lift P has rawH260:264 mapped to originalq102:106 with exactI4; rawHdot264:268 maps to originalv208:212. The retained original252-to-old368 and old368-to-D4 maps locate those same four position coordinates in the complete217 chart. These maps and all full746 field/response-clock operands are checked against the coefficient-only archive. The fixed central Gauss incidence is exactly C=[zero24;I36] restricted to columns4p+3,p=0..8. Thus C_dot=0 is a fact of this supplied fixed ordinary-At profile/index chart, not a generic assumption about moving boundaries. The complete original moving coefficient/density/source effects remain in Pi and its derivatives.
+
+Independent four-term contraction
+Let Pi be the full217 primal canonical momentum, Pi_dot its actual total clock, deltaPi its seven variations and deltaPi_dot their full source-complete clocks. All old158 and new59 rows are retained. With Q=V(H)^T Pi, independently build
+ V_H=-T_Y H phi,
+ Vdot_H=-T_Y H_h phi,
+ deltaV_H=-T_Y H_R phi,
+ deltaVdot_H=-T_Y (H_hR+H_Rdot) phi.
+The supplied mixed coefficient and response-rate pieces H_hR,H_Rdot are read separately; neither is inferred or set to zero. H_h is the actual supplied coefficient clock, not a replacement guessed from a stored velocity. The other gauge-generator components are the original fixed central chart and are checked against its original clock map.
+
+Then compute directly, with analytic transposes and no source conjugation,
+ deltaQ=V^T deltaPi+deltaV^T Pi,
+ deltaQ_dot=Vdot^T deltaPi+V^T deltaPi_dot
+             +deltaVdot^T Pi+deltaV^T Pi_dot.
+Each of the four mixed products and the separate hR/Rdot Higgs pieces is exported. No extra charge, Haar, boundary-density or normalization factor multiplies the already integrated canonical momenta. This is the classical Lorentz canonical corner, not an unsquared boundary Gamma or a native square.
+
+Only AFTER evaluating these contractions is the independent literal Gauss archive loaded. Its central9 rows are selected from the exact named36 parameter order (p,c) by4p+3. They supply independently evaluated G_R and d_t G_R. Comparisons are
+ deltaQ+G_R=0,
+ deltaQ_dot+d_t G_R=0.
+These validate the same-source derivative identity; they are not used to fill any corner term. Future-arm initial outward flux is -deltaQ_dot. For an affine defect correction, the required column0 corner-clock load is +C^T Gt. The actual primal Qdot and Gt are added once only to affine column0; all homogeneous columns are preserved. Seven-to-four output retains col0 and sums each retarded/homogeneous pair.
+
+Actual numerical outcome (288-bit propagated acb arithmetic)
+Independent first-primary upper2.1626386312165346e-32.
+Independent mixed-primary upper1.1949541732771446e-26.
+The new deltaVdot^T Pi contact is NONZERO: upper1.1190081856850464e-13.
+The deltaV^T Pi_dot contact upper1.4417350427974302e-14.
+The computed H_hR contribution to that contact is exactly0 in the supplied coefficient map; its separate H_Rdot contribution is the full1.1190081856850464e-13. Neither piece was assigned zero.
+Full R/Rdot and raw-Higgs row identities are exactly0. Explicit reconstructed V differs from its original source by at most2.360193009415064e-48, Vdot by1.357281105256365e-84. Primal charge/clock agree with the original source, with clock upper1.322027112113839e-32.
+
+The actual affine constraints STILL FAIL. Central affine clock column0 upper1.5780475892705934e-5; complete seven-column central clock upper0.0021161999527615693; combined four upper0.002887515271765525. The mixed identity cancels two nonzero actual quantities of upper0.0021161999527615693. No constraint correction or physical convergence follows from that cancellation. This clock statement is distinct from the earlier undifferentiated SU2 corner: its seven maximum2.62872e-10 occurs in homogeneouscol6, while affinecol0SU2 is1.28766e-11 and the combinedfour3.02423e-10 fails.
+
+Inputs, without old campaign replay
+1. Complete217 Cauchy momentum/source clock:
+ artifacts/muon_actual_cauchy_constraint_clock_20261016/
+ bhsm_original_ea02_complete_d4_cauchy_20261016/run_1,
+ source63d04359f42673671169f61bcfa395b04fe5008c05912b65c95090c0a4458942,
+ archive7e11ceedc78de309d8944797982ed35aded42056f5b3fd9bccd871455591d5b3.
+2. Original coefficient-only R/hR/Rdot source:
+ artifacts/muon_actual_native_coefficients_source_completion_20261016/
+ bhsm_original_ea02_coefficient_right_clock_export_20261016/run_1,
+ sourcec744590f986e47c946f128641b071808f527d230ba60fc2fa70adf87d351c851.
+3. Independently evaluated literal36 temporal clock:
+ artifacts/muon_actual_cauchy_constraint_clock_20261016/
+ bhsm_original_ea02_literal_temporal_Gauss_clock_20261016/run_1,
+ sourcea0634e1b7d31568bf2485ce26cbd961bb2bf63475f972a43bc6e63bda7f07efd,
+ archive85622441b81340665722018b95dbd1a26f65637a63f791239f51327147f95484.
+4. The original central source, actualea02 target, original lift and fixed degree4 radial-profile archive are separately hash-pinned in the output. No action/Hessian AD, source/history sampling, profile solve, response solve or field solve is replayed.
+
+Final source and two independent executions
+audits/bhsm_original_ea02_central_mixed_corner_clock_20261016.py
+ SHA ff58de07e9e411323b847b8fcd43269bdaa55a2628d2b35574bfb7117e2d6a90.
+WORK/outputs/bhsm_original_ea02_central_mixed_corner_clock_20261016/run_1
+WORK/outputs/bhsm_original_ea02_central_mixed_corner_clock_20261016/run_2
+All three files byte-identical,319870 bytes/run,largest260321:
+ executed_producer.py,15082 bytes (same sourceSHA)
+ independent_central9x7_mixed_source_corner_clock.npz,260321 bytes
+ SHA76d8d5512335e71202f8e261497524462e6b12754fc486427e3d95176e0dfd34
+ result.json,44467 bytes
+ SHAa3f0a9c804fdc0b8caff8ef5d4003a46d81d69b301f64c1e0aeb89b4a19ec3f6.
+Parent final_pair_verification.json
+ SHA013306b54cae7e571996f259662078ad62cf5cf2a3bd92391484cc2b431663e6.
+The first pilot passed and is preserved; final source was unchanged. No pytest, existing source edit, attrs edit, staging or commit was performed by this component. Original coupled matching corrections=0. Physical full outgoing energy/field/source/domain derivative=False; physical radial solution convergence=False; Maxwell/all226 after pass=False; normalized physical two-spin state and magnetic moment=None.

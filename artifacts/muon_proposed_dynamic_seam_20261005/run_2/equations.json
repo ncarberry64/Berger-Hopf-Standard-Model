@@ -1,0 +1,31 @@
+{
+  "adopted": {
+    "intrinsic_action": "charged-lepton kinetic+one Y_l H bridge; already assembled LR block",
+    "localized_mode": "Psi5=W_eta w; B_eta W_eta=I only on established range",
+    "material_domain": "inherited smooth parent transmission",
+    "parent_fields": "Psi_plus,Psi_minus are two oriented restrictions of parent spinor; intrinsic w=(L_L,e_R) is independent"
+  },
+  "derived_conditionally": {
+    "F_A": "-(kappa_A/kappa)F+((iota^sharp)_A G0+iota^sharp G0_A)/kappa",
+    "J_A": "F_A chi+F chi_A",
+    "J_chi": "-b_volume iota^sharp Xi",
+    "boundary_reverse": "G0^sharp iota e4/kappa in action-Euler dual; no distributed volume witness",
+    "chi_A": "p_A-W_A Bp-W B_A p-W B p_A",
+    "localized_compression": "W^sharp A5 W+A4; equality to retained local action unestablished",
+    "partial_at_fixed_trace": "partial J/partial log kappa=-J; total kappa motion along G0 chi=-kappa b Xi cancels this contribution",
+    "wall_force_A": "-(E^sharp)_A G1 Psi-E^sharp(G1 Psi)_A"
+  },
+  "native_adoption": false,
+  "new_postulate": {
+    "E": "kappa iota, kappa=1/sqrt(2 I)",
+    "F": "kappa^-1 iota^sharp G0",
+    "G0": "(gamma_plus Psi_plus+U^-1 gamma_minus Psi_minus)/2",
+    "G1": "j(gamma_plus Psi_plus-U^-1 gamma_minus Psi_minus)",
+    "S_seam": "-1/2[<w,E^sharp G1 Psi>4+<G1 Psi,Ew>boundary]",
+    "charge_redundancy": "Psi_N=(Psi,C Psi); J_N(x,y)=(C^-1 y,Cx); no unconstrained doubled quantum trace",
+    "j": "J_Dirac_bar/mu4=i Gamma0 Gamma4",
+    "material_constraint": "P G0 Psi=E w, Q G1 Psi=0",
+    "wall_Euler": "A4 w-E^sharp G1 Psi"
+  },
+  "same_photon_jet_status": "formally derived with all supplied jets required; not numerically physically evaluated"
+}

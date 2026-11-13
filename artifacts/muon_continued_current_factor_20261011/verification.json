@@ -1,0 +1,132 @@
+{
+  "classification": "VERIFIED_CONTINUED_CURRENT_ACTION_REPLAY",
+  "commands": [
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "scripts/evaluate_muon_continued_current_factor.py",
+        "--output",
+        "artifacts/muon_continued_current_factor_20261011/run_1",
+        "--refinements",
+        "16",
+        "32",
+        "64"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "path": "artifacts/muon_continued_current_factor_20261011/execution_logs/run_1.command.json",
+      "stderr_path": "run_1.stderr.txt",
+      "stdout_path": "run_1.stdout.txt"
+    },
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "scripts/evaluate_muon_continued_current_factor.py",
+        "--output",
+        "artifacts/muon_continued_current_factor_20261011/run_2",
+        "--refinements",
+        "16",
+        "32",
+        "64"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "path": "artifacts/muon_continued_current_factor_20261011/execution_logs/run_2.command.json",
+      "stderr_path": "run_2.stderr.txt",
+      "stdout_path": "run_2.stdout.txt"
+    }
+  ],
+  "error_scope": "binary64 same-domain inverse, analytic transpose current dual, and quadrature refinement; no certified continuum, sectorial real-contour heat, physical external-shell, finite-cutoff, or Pauli error",
+  "finite_cutoff_relative_completion_identified": false,
+  "pairs": [
+    {
+      "byte_identical": true,
+      "paths": [
+        "artifacts/muon_continued_current_factor_20261011/run_1/incoming_16.npz",
+        "artifacts/muon_continued_current_factor_20261011/run_2/incoming_16.npz"
+      ],
+      "sha256": "f2f39b93990ec7ab4e018e77c2dfc1b8ab9c128fd469e8e3ea0afdd1f90ef8ac"
+    },
+    {
+      "byte_identical": true,
+      "paths": [
+        "artifacts/muon_continued_current_factor_20261011/run_1/incoming_32.npz",
+        "artifacts/muon_continued_current_factor_20261011/run_2/incoming_32.npz"
+      ],
+      "sha256": "ea11b8065762d27bdd7fa60688a67fd37a6901763d37485892c854ad05f1317f"
+    },
+    {
+      "byte_identical": true,
+      "paths": [
+        "artifacts/muon_continued_current_factor_20261011/run_1/incoming_64.npz",
+        "artifacts/muon_continued_current_factor_20261011/run_2/incoming_64.npz"
+      ],
+      "sha256": "bf387e5888574dc64fcb82666d1e6f915324509f477c50ffb6cd89dcb412c489"
+    },
+    {
+      "byte_identical": true,
+      "paths": [
+        "artifacts/muon_continued_current_factor_20261011/run_1/outgoing_16.npz",
+        "artifacts/muon_continued_current_factor_20261011/run_2/outgoing_16.npz"
+      ],
+      "sha256": "9d923721b063aa476660df538f7f06a3ab6bb51a8e6d8f276d77532150842915"
+    },
+    {
+      "byte_identical": true,
+      "paths": [
+        "artifacts/muon_continued_current_factor_20261011/run_1/outgoing_32.npz",
+        "artifacts/muon_continued_current_factor_20261011/run_2/outgoing_32.npz"
+      ],
+      "sha256": "47f95fc0febc8caee63bb50fcdfd0b2dbf3bb854024fa599682d19e3128abc01"
+    },
+    {
+      "byte_identical": true,
+      "paths": [
+        "artifacts/muon_continued_current_factor_20261011/run_1/outgoing_64.npz",
+        "artifacts/muon_continued_current_factor_20261011/run_2/outgoing_64.npz"
+      ],
+      "sha256": "f2ceddfc5effb169d6b931fec725bf77c422f7ee6a8e6ac5f1c6c7ddc3169a9f"
+    },
+    {
+      "byte_identical": true,
+      "paths": [
+        "artifacts/muon_continued_current_factor_20261011/run_1/result.json",
+        "artifacts/muon_continued_current_factor_20261011/run_2/result.json"
+      ],
+      "sha256": "a23d8714e4c64cef2ac55bdbe8571229f9ef2e99d2e099bcfe29711bd37d157a"
+    }
+  ],
+  "physical_Pauli_completed": false,
+  "real_Euclidean_sectorial_heat_contour_proved": false,
+  "source_dependencies_verified": true,
+  "tests": {
+    "argv": [
+      "C:/Python314/python.exe",
+      "-m",
+      "pytest",
+      "--noconftest",
+      "tests/test_muon_continued_current_factor.py",
+      "tests/test_muon_joined_continued_current.py",
+      "-q"
+    ],
+    "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+    "environment": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "PYTHONPATH": "src"
+    },
+    "exit_code": 0,
+    "stderr": "",
+    "stdout": ".....                                                                    [100%]\n5 passed in 3.10s\n"
+  }
+}

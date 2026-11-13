@@ -1,0 +1,238 @@
+ALL-ANGULAR PRINCIPAL TRANSVERSALITY OF THE NILPOTENT ETA SEAM
+
+Analytic derivation, not a numerical toy or a physical-domain adoption.
+It retains the full384 common fibre, all three tangent directions, both
+spin components and the original SM/conjugate carrier. The conditional
+distributional-jump interpretation and older hard-glue reconciliation in
+muon_eta_seam_nilpotent_continuum_graph_20261016.txt remain unchanged.
+
+1. Exact current norm and principal orientation
+
+Work at a REAL regular timelike wall and freeze the actual geometric
+coefficients at one point. The positive current metric is G, the proper
+wall density is rho>0, and its original normal Green coefficient is
+
+ J=i rho G A,       A^2=I,       A^dagger G=G A.
+
+The full spatial tangential principal matrices alpha_a are G-self-adjoint
+and obey {A,alpha_a}=0, {alpha_a,alpha_b}=2 delta_ab I in the physical
+orthonormal coframe. The existing spin boost is a CURRENT isometry; it
+does not justify taking a complex saved-contour matrix norm as a real
+physical norm. All formulas below can be conjugated by G^(1/2) to a fibre
+with identity current. Define the invariant point norm
+
+ ||X||_G=||G^(1/2) X G^(-1/2)||_2.
+
+This uses no numerical quadrature weight. Multiplying G by the same
+physical positive scalar density leaves this induced operator norm
+unchanged. Coordinate changes must transform J, B and their densities
+together. In particular the rho in
+
+ N=J^-1 rho B^dagger M B
+
+cancels the rho in J, once. Here q is in the provided canonical intrinsic
+current frame, with Gram I18. In another target frame insert its ACTUAL
+current metric into the Riesz dual and change M accordingly, rather than
+keeping a Euclidean dagger on unchanged coordinates.
+
+Let E be the common normalized point lift, K=E^dagger G E>0 and
+B=K^-1 E^dagger G. In current-orthonormal coordinates define
+
+ e=G^(1/2) E K^(-1/2),          e^dagger e=I18,
+ m=K^(-1/2) M K^(-1/2).
+
+The actual real Lorentz-scalar bridge is Hermitian, hence m^dagger=m, and
+the normalized jump has the exact form
+
+ Nhat=-i Ahat e m e^dagger,
+ ||N||_G=||m||_2.                                         (1)
+
+The equality follows because Ahat is unitary and e is an isometry, not
+from a loose product bound. For the supplied same-chart mode values,
+K=|u_+|^2 P_L+|u_-|^2 P_R. Thus m is the full LR mass block with its
+off-diagonal vertex divided by |u_+ u_-|. Its norm is action-computable
+from the SAME actual H,Y,normal mode and current, not from a fitted scale.
+If additional canonical density rescalings are used, compute K and M in
+those same Riesz frames; do not substitute this simplified K by name.
+
+In the following identity-current formulas hats on A and N are suppressed.
+For xi in the full three-dimensional tangent cotangent space set
+
+ a(xi)=sum_a alpha_a xi_a,       a(xi)^2=|xi|^2 I.
+
+Use the unsquared local spectral equation
+
+ [i A partial_s-a(xi)+z I]u=0,
+ partial_s u=Kcal(xi,z)u,
+ Kcal=-i A a(xi)+i z A,
+ Kcal^2=(|xi|^2-z^2)I.                                   (2)
+
+This convention has the SAME normal Green J=i rho G A and normal
+coordinate increasing from the plus region s<0 into the minus region
+s>0. This local spatial-Dirac z is not the spectral parameter of the
+positive square D^dagger D, and does not establish a global stationary
+physical energy on a moving history.
+
+At z=0, kappa=|xi|>0 and
+
+ P_+=(I+Kcal/kappa)/2,       P_-=(I-Kcal/kappa)/2
+
+are orthogonal projectors of rank192. Decaying half-space solutions have
+x in ran P_+ for s<0 and y in ran P_- for s>0. The jump y=(I+N)x is
+therefore transverse precisely when
+
+ A_st=P_+(I+N)|ran(P_+)                                 (3)
+
+is invertible. This fixes the orientation; interchanging the regions
+interchanges the two stable labels without changing the conclusion.
+
+2. General sufficient smallness, and why nilpotency alone is insufficient
+
+For ANY seam matrix with the prescribed nilpotent jump, orthogonality
+gives ||P_+ N P_+||<=||N||_G. Thus a uniform real-background bound
+
+ ess_sup_Sigma ||N||_G <=theta<1
+
+implies, for EVERY nonzero tangent xi,
+
+ ||A_st^-1||_G <=1/(1-theta).                             (4)
+
+No angular harmonic cutoff occurs. For inhomogeneous y-(I+N)x=g the
+stable x is -A_st^-1 P_+g and y=g+(I+N)x; their estimates use (4) and
+||I+N||<=1+theta. A uniformly nondegenerate real coframe supplies the
+corresponding coordinate estimates.
+
+N^2=0 alone does NOT imply that P_+ N P_+ is nilpotent or that (3) is
+invertible at every Hermitian coupling. As an exact algebraic check in
+one normal Clifford pair, take A=sigma1, a=sigma3, e=(1,0)^T and scalar
+m=-2. Then N=-i A e m e^dagger has N^2=0 and isotropic e, while
+Kcal=-sigma2 and the positive stable line has compression N=-1.
+Consequently (3) vanishes. This is a counterexample to an abstract
+isotropy-only theorem, not an alternative BHSM field or numerical probe.
+
+3. Stronger ACTUAL scalar-Higgs result: no critical scalar coupling
+
+The supplied local bridge has more structure than arbitrary Hermitian M.
+muon_full_d5_localized_lepton_trace.full_d5_localized_lepton_trace selects
+the particle L left-spin carrier and conjugate e_R right-spin carrier.
+Its fixed charge-conjugate gamma matrices0..3 give the same tangent alpha
+blocks in this LR frame; its normal gamma has the required opposite sign.
+Thus the selected tangent Clifford matrices are exactly
+
+ a18_a=diag(I6 tensor (-sigma_a), I3 tensor (+sigma_a)).
+
+This is also supplied directly by
+muon_native_dirac_hamiltonian.lepton_current_hilbert_representation
+(lines54-84). The function fixed_y_higgs_hamiltonian (lines86-104) gives
+
+ M=[[0,V],[V^dagger,0]],
+ V_(weak,family,spin;family',spin')=H_weak Y_family,family' delta_spin,spin'.
+
+Therefore, for the GENERAL complex H doublet and the existing full Y,
+
+ alpha_a e=e a18_a,       {a18_a,M}=0.
+
+K is scalar on the L and R blocks and commutes with every a18_a, so
+
+ {a18(xi),m}=0.                                          (5)
+
+No Higgs axis, family degeneration, spin deletion or angular truncation
+is used. Gauge/spin/temporal background contacts remain lower-order terms
+of the full operator; they are not assigned zero by this principal claim.
+
+Since A exchanges the selected Lorentz chirality within each internal
+carrier while alpha_a preserves the selected subspace, alpha_a e=e a18_a,
+one has e^dagger A e=e^dagger Kcal e=0. At z=0 this gives
+e^dagger P_+e=I18/2, so w=sqrt(2)P_+e is an isometry into the192-dimensional
+stable space. Also Kcal A=i a(xi), whence
+
+ P_+ A e=i P_+e a18(xi)/|xi|.
+
+It follows that
+
+ P_+ N P_+=(1/2) w [a18(xi)/|xi|] m w^dagger.              (6)
+
+By (5) the displayed compression is ANTI-HERMITIAN. It is zero on the
+remaining174 stable directions. Hence for every scalar mass amplitude
+
+ ||A_st u||^2=||u||^2+||P_+NP_+u||^2 >=||u||^2,
+ ||A_st^-1||_G<=1.                                       (7)
+
+The full inverse exists: on ran(w) it is the finite18 inverse of
+I+a18(xi)m/(2|xi|), and on its orthogonal complement it is identity.
+This improves (4) WITHOUT a small-mass assumption, but only for the
+provided Lorentz-scalar LR seam. It does not cover an arbitrary Hermitian
+seam, a Pauli/tensor vertex, derivative interface terms, or the full
+nonlocal effective outgoing/Wentzell response unless those additional
+terms separately satisfy the needed identities.
+
+4. Complex parameter and precise uniformity
+
+For kappa=sqrt(|xi|^2-z^2) with Re kappa>0, kappa!=0, the algebraic stable
+projectors in (2) remain complementary, but are generally NOT orthogonal.
+They are orthogonal on the imaginary z axis, where Kcal is Hermitian.
+Do not apply the norm-one projector argument to arbitrary complex z.
+
+For the actual scalar bridge, e^dagger P_+e=I18/2 still holds algebraically,
+and the affected stable subspace ran(P_+e) has compression represented by
+
+ B_st=(a18(xi)+z I)m/(2 kappa).
+
+Equation (5) gives the exact identity
+
+ B_st^2=-m^2/4,
+ (I+B_st)^-1=(I-B_st)(I+m^2/4)^-1.                        (8)
+
+Thus there are no scalar-coupling zeros of the stable compression for
+any such complex parameter. The unaffected174 stable directions remain
+identity. For z=i tau, B_st is anti-Hermitian and (7) holds uniformly in
+the full nonzero joint (xi,tau) parameter, including xi=0.
+
+For arbitrary complex z the inverses may be nonnormal, and projector
+conditioning must be included. On a closed parameter cone
+
+ |kappa|>=epsilon (|xi|+|z|)>0,
+
+put p_epsilon=(1+epsilon^-1)/2 and beta=||m||/(2epsilon).
+Then ||P_+||<=p_epsilon and ||(I+B_st)^-1||<=1+beta.
+Writing S=P_+e and L=2e^dagger restricted to ran(P_+), with LS=I18,
+
+ A_st^-1=I-S B_st(I+B_st)^-1 L,
+ ||A_st^-1||<=1+2 p_epsilon beta(1+beta).                  (9)
+
+This explicit sufficient bound is uniform in tangent direction and
+frequency on that cone whenever the actual ||m|| is uniformly bounded.
+For a general non-scalar seam the Neumann bound instead requires
+p_epsilon ||N||_G<1 on the cone. At any fixed finite complex z, the
+large-|xi| principal limit is in such a cone and reduces to section3.
+
+No estimate here is uniform through kappa=0, the characteristic/glancing
+set. Propagating real-frequency modes there require the actual causal
+outgoing construction. Nor does this exclude a finite-frequency bound
+state/resonance or assert invertibility of the global muon operator:
+its desired pole is a lower-order/global spectral question.
+
+5. What this advances and what remains to prove
+
+The derivation supplies a uniform all-angular COMPLEMENTING PRINCIPAL
+symbol for the local scalar-Higgs distributional graph. It is stronger
+than a finite normal-transfer or finite-angular test. With bounded smooth
+real coefficients and uniformly regular geometry it is the relevant
+principal ingredient for a local elliptic transmission H1 estimate of a
+spatial Dirac realization. It does not identify Lorentzian spacetime
+graph regularity with elliptic H1 regularity, or prove a global retarded
+inverse merely from algebraic maximal isotropy.
+
+In particular, a fixed-angular thin-layer ODE limit and this limiting
+principal transversality do not by themselves prove uniform all-angular
+norm-resolvent/smooth-layer convergence: simultaneous |xi|~1/width and
+varying-coefficient estimates still have to be controlled. No exchanged
+limit, contour, regulator profile or exterior is chosen here.
+
+The literal old global-spin limiting-trace condition versus the nonzero
+distributional SH completion remains the source reconciliation already
+identified in the companion note. This principal theorem does not retire
+that owner. It neither evaluates the actual real normal-mode amplitudes
+or background nor passes any physical outgoing derivative. No coupled
+correction, Maxwell/226 validation, two-spin normalization or muon moment
+is claimed.

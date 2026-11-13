@@ -1,0 +1,206 @@
+ORIGINAL TWO-COLLAR HIGGS SEAM: VARIATIONAL RECONCILIATION AND DUAL TYPES
+2026-10-16. Source-level derivation; no numerical campaign or new coupling.
+
+RESULT
+
+The declared nonzero unsquared Higgs surface action determines an interacting
+weak transmission law on the ORIGINAL two collar traces. A second in/out
+doubling of their already stacked point carrier is unnecessary and wrong.
+The geometric SpinLift still identifies their fibers. Its earlier inference
+of hard equality for interacting limiting field traces must be corrected,
+not claimed to survive unchanged. This is an action-preserving consistency
+repair, when the declared nonzero action is retained; it is not a theorem
+that the literal old hard-H1 operator domain and the repaired domain coincide.
+
+No phase, trace average, UV field, physical mollifier, second kinetic term,
+or independently chosen boundary coupling occurs in the construction.
+Global native/graded domain binding and outgoing solution are not proved.
+
+1. SOURCE TOPOLOGY AND THE ACTUAL TWO TRACE SPACES
+
+master_action/reduction.py:83-117 gives opposite cap normals and
+ c_eps(t,x,rho)=(t,pi/2-eps*rho,x), rho>=0,
+so the two half collars meet at the same equator. Their original boundary
+space is E_plus direct_sum E_minus, with one full carrier of dimension d
+on each side. In the complete computational representation d=384; the
+charge-conjugate storage is not another physical loop multiplicity.
+
+completion/foundational_dirac_spin_glue_v14_45.py:92-142 declares the
+unsquared bulk action WITH S_H; :248-287 writes a geometric SpinLift U and
+also a hard field transmission equation. muon_holomorphic_d5_trace_action.py:
+272-337 retains the two complete eta fields and the once-only off-diagonal
+surface action; :419-486 evaluates literal independent LEFT(v) D RIGHT(u),
+not a replacement broken-piece symmetrized action. Its finite point border
+is not itself a continuum domain proof.
+
+Let the two limiting RIGHT traces be x in E_plus and z in E_minus. Use the
+actual geometric map U:E_plus->E_minus to align y=U^-1 z. Thus x and y are
+two traces in ONE common d-dimensional fiber. They are not a new spinor pair
+in addition to (x,z). With common outward Green coefficient J on plus,
+the original minus coefficient is
+
+ J_minus=-U^(-dagger) J U^-1.                                  (1)
+
+On the real physical wall J^dagger=-J and J is invertible at the regular
+noncharacteristic interface. Orientation and wall density occur in J once.
+The material shift/normal must come from the original coframe; this argument
+does not set temporal or eta coefficients to zero.
+
+2. ORIGINAL NORMALIZED SURFACE FORM, WITHOUT TRACE AVERAGING
+
+The normalized two-sheet action already owns
+
+ q=B_L x+B_R y,
+ B_L=P_L B_plus,       B_R=P_R B_minus U,
+ B_Sigma=B_L+B_R,                                      (2)
+
+with ranks12/6 of P_L/P_R, and full complement retained. This is exactly
+its [P_L B_plus, P_R B_minus] trace after the geometric alignment; it is not
+an assumed arithmetic average. The independent left incidence is converted
+from Dirac bar to the canonical current pairing exactly once. Denote the
+result on a common smooth left test by C_Sigma. On the physical real family,
+with the owned left normal value equal to the right normal value's conjugate,
+C_Sigma=B_Sigma^dagger. Analytic source firsts instead keep the independently
+continued left map; no source coefficient is conjugated by this notation.
+
+Put the complete once-only density/mass source in T=rho_Sigma M_Y(H). The
+original surface bilinear is -q_left T q. Actual normal-mode factors stay in
+B/C; this derivation does not set them to1 or normalize a physical pole.
+
+The normalized common-frame trace has the form
+
+ B_L=P_L D S_frame^-1/u_plus,
+ B_R=P_R D S_frame^-1/u_minus,
+
+where D is the actual W dual. The corresponding real canonical C has the
+same transported W image. The owned normal Green isotropy gives the stronger
+componentwise identities
+
+ B_L J^-1 C_Sigma=0,       B_R J^-1 C_Sigma=0.             (3)
+
+Indeed the core contraction is W^dagger J_adapted^-1 W=0: the normal
+Clifford exchanges the selected Lorentz chirality within each internal
+carrier, and the particle-L/conjugate-e_R carriers are distinct. The
+nonzero mode scalars and P_L/P_R do not alter that zero. For unequal boosts
+one MUST apply U before this common-frame statement; merely stacking the
+unrelated coefficient matrices would not prove (3).
+
+3. THE DISTRIBUTIONAL EULER EQUATION AND THE INTERACTING GRAPH
+
+Use one signed normal coordinate on the connected collar. The right field is
+piecewise regular, with traces x at the minus side and y at the plus side.
+For the original canonical first-order expression
+
+ L=J(s) partial_s+K(s,partial_t,partial_x),
+
+its distributional derivative supplies J(0)(y-x) delta_Sigma. Varying the
+original unsquared action against a smooth global independent left test gives
+
+ J(y-x)=C_Sigma T q.                                      (4)
+
+This is a single d-vector equation on the original2d traces. Multiplying
+by B_L J^-1 and B_R J^-1 and using (3) gives
+
+ B_L y=B_L x,  B_R y=B_R x,
+ q=B_Sigma x=B_Sigma y.                                  (5)
+
+Thus the actual surface trace is unique and no average prescription remains.
+With N=J^-1 C_Sigma T B_Sigma one obtains
+
+ N^2=0,   S=I+N,   S^-1=I-N,
+ y=S x,   z=U S x.                                      (6)
+
+The domain trace graph is {(x,U S x):x in E_plus}, dimension d in the
+original E_plus direct_sum E_minus space of dimension2d. It does NOT have
+in/out traces on an already2d doubled fiber. Every original complement
+vector remains present; N is not an arbitrary full-rank boundary mass.
+
+For admitted real left and right fields, the difference of possible left
+limiting values annihilates C_Sigma because of the corresponding invariant
+selected trace. Consequently evaluating the original surface bilinear on
+the admitted discontinuous fields is also unambiguous. This extends the
+same source bilinear, rather than inventing a product of delta with an
+unselected discontinuous full spinor.
+
+The old free graph is z=U x. It is recovered when T=0. For the same fields,
+hard z=U x together with (4) forces C_Sigma Tq=0. That is an extra restriction,
+not the intended general nonzero Higgs source. A global spin bundle permits
+piecewise regular/distributional sections with a jump; fiber identification
+alone does not force globalH1 continuity. Correcting that false inference
+preserves U and S_H, while changing the interacting strong trace domain.
+
+This is the precise scope of an action-derived domain correction. If one
+instead insists that the old hard globalH1 domain is an independent axiom,
+the same nonzero action gives the restricted source condition above. The
+two interpretations are not mathematically identical. A graph-closure claim
+must name its actual smooth/transmission core; (6) is not automatically the
+graph closure of the old hard-H1 L2 operator with a nonzero delta term.
+Choosing the canonical maximal distributional realization is the standard
+weak completion of the stated action, not a new numerical field value.
+
+4. EXACT GREEN AND LEFT-ROW TYPES; NON-HERMITIAN ETA IS RETAINED
+
+Let ell_x,ell_z be independent canonical Riesz LEFT ROWS on the original
+trace spaces. These are rows of test-vector daggers on the real family,
+not the bare Dirac-bar covectors or native square conormals. Define
+
+ ell_y=ell_z U^(-dagger).
+
+Then the actual original boundary Green pairing is
+
+ ell_x J x+ell_z J_minus z = ell_x J x-ell_y J y.          (7)
+
+For right y=Sx, its annihilator requires
+
+ ell_y=ell_x J S^-1 J^-1,
+ ell_z=ell_x J S^-1 J^-1 U^dagger.                       (8)
+
+This is why U^-1 cannot silently replace U^dagger in the original canonical
+left-row law. Bare Dirac-bar rows have their separate Gamma0 conversion;
+the source code counts it once. Independent complex analytic left jets
+continue the actual real dual map, not conjugated complex source weights.
+
+If the real surface source T is Hermitian and C_Sigma=B_Sigma^dagger, then
+
+ N^dagger J+J N=0,   N^dagger J N=0,   S^dagger J S=J,
+
+so (8) equals the Riesz row of the same right graph. For independent analytic
+sources use (8) algebraically, with the appropriate independently continued
+geometric sharp maps. This requires no Hermiticity assumption on K.
+
+In particular, for L=J(s)partial_s+K on the coordinate-density canonical
+pairing, the formal adjoint is
+
+ L^dagger=J(s)partial_s+J'(s)+K^dagger                    (9)
+
+when J^dagger=-J. Thus formal symmetry additionally requires K-K^dagger=J'.
+The full real eta contact can violate that identity in the original Riesz
+pairing: its normal m_eta contribution is J m_eta with real m_eta, whose
+adjoint is -J m_eta. The exact combined f covector, full time component,
+spin/gauge connections and density contacts must remain in K and its actual
+adjoint. A local Green-conservative seam does not make the entire bulk
+Lorentz operator self-adjoint. The independent left bulk equation uses
+L^dagger, not an assumed second copy of L. None of this obstructs defining
+a closed native A and A^dagger A once its separate actual binding is supplied.
+
+5. WHAT PROFILE INDEPENDENCE CAN AND CANNOT ESTABLISH
+
+On this ONE common fiber, a bounded-coefficient normal ODE with a shrinking
+normalized approximate identity has dominant generator eta_epsilon(s) N0.
+Since N0^2=0, its exact singular propagator is I+N0 integral eta_epsilon.
+For varying T(s) but fixed common isotropic B/C, every pair of such singular
+generators also multiplies to0, even without commuting T(s). Bounded regular
+body terms and uniformly small coefficient changes contribute a vanishing
+width error under the usual uniformly boundedL1 profile hypothesis. This
+explains why no local average, phase or coupling is selected by the shape
+of an auxiliary smoothing test. It is not a proposal for a physical mollifier.
+
+That local ODE fact does not prove operator-norm thin-layer convergence of
+the full unbounded time/angular PDE, strong resolvent convergence on its
+global domain, or equality to the full AE4 graded native realization. A
+finite angular/frequency cutoff may not be silently called uniform in all
+directions. The global core/trace estimates and actual inherited/outgoing
+domain still require their own action-owned construction.
+
+No full outgoing derivative, radial physical convergence, Maxwell226 pass,
+coupled correction, spin normalization, or magnetic moment follows here.

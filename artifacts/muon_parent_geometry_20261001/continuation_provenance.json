@@ -1,0 +1,309 @@
+{
+  "completion_counterterm": null,
+  "contact": null,
+  "domain_boundary": null,
+  "earlier_tests_and_calculations_rerun": false,
+  "frozen_local": {
+    "a_mu_QED_local": "0.00116550200495813",
+    "a_mu_selected_local_open_interval": [
+      "0.0011655039493",
+      "0.0011655109506"
+    ],
+    "already_combined_selected_local": true,
+    "calibration_convention": "alpha_inverse=137.035999084; standard uncertainty=2.1e-8; other original conditional inputs fixed",
+    "calibration_only_standard_uncertainty": "1.79e-13",
+    "delta_a_mu_h_local_1_open_interval": [
+      "0",
+      "3.500331e-9"
+    ],
+    "native_added": false
+  },
+  "native_bulk_heat": null,
+  "preceding_checkpoint": "BHSM_MUON_PARENT_ELECTRIC_OPERAND_524ED906_20261001",
+  "previous_records": {
+    "checkpoint.json": {
+      "record": {
+        "actual_branch": "codex/n12-current-finite-stop-witness",
+        "actual_head": "524ed90689bd5923c249bba2e699abf627e703cd",
+        "checkpoint_id": "BHSM_MUON_PARENT_ELECTRIC_OPERAND_524ED906_20261001",
+        "code_or_shared_cache_changed": false,
+        "computed_result": {
+          "angular_checks": {
+            "Gram": 9.962218889221079e-16,
+            "angular_complement": 2.771854347690154e-15,
+            "curl_3": 8.881784197001252e-16,
+            "curl_square_9": 1.1257317665345078e-14
+          },
+          "classification": "ACTUAL_PHOTON_ANGULAR_AND_INTRINSIC_FRAME_FACTORS__NOT_NATIVE_OPERATOR_ACTION",
+          "frame_H_max": 0.09356155097592357,
+          "frame_H_min": 0.08867187842869288,
+          "frame_identity": "d_tau(R*f_R*b)=R*f_R*(b_prime-H*b/2)",
+          "frame_template": "E_e=S/h-(H/2)C+(H^2/4)M_dt,e; both endpoints retained",
+          "full_residual_or_continuum_error_enclosure": null,
+          "native_E1_evaluations": 0,
+          "native_preflight": "E_plus_Q_AB(tau,rho): zero-source positive parent electric Hessian on the saved eight N=1 coexact photon modes",
+          "native_shifted_resolvent_evaluations": 0,
+          "numerical_uncertainty_for_native": null,
+          "photon_angular_span_is_rank16_fermion_span": false,
+          "photon_angular_subspace_reduces_full_operator": null,
+          "physical_a_mu": null,
+          "physical_g_mu": null,
+          "physical_transfer_directions": 0,
+          "retained_temporal_nodes": 48,
+          "segment_count": 47,
+          "temporal_compression_exponentiated": false,
+          "trace_factors": {
+            "Q_square": "16/3",
+            "T3_Y": "0",
+            "T3_square": "2",
+            "Y_square": "10/3",
+            "family_multiplicity_not_attached": true,
+            "orthogonal_AQ_ZH_Gram": [
+              [
+                "8/3",
+                "-2/3"
+              ],
+              [
+                "-2/3",
+                "8/3"
+              ]
+            ]
+          }
+        },
+        "first_missing_operand": {
+          "Hessian_convention": "S^(2)=1/2 beta^dagger K beta; electric Hessian prefactor KF5, not KF5/2",
+          "bare_source_generator": "Q=T3+Y, connection vector (1,1); V_b=V_i",
+          "cache_cut_is_not_physical_boundary": true,
+          "consumer": "uneliminated parent electric form -> nonstationary Poisson/Calderon action -> K[0], M[0] common heat pencil",
+          "definition": "delta_dot_beta_A delta_dot_beta_B S_quad_AE4_positive_gf at Phi_C2",
+          "domain": "same AE4 parent+child zero/BRST quotient, reset/smooth transmission; canonical-stop Friedrichs only on its selected branch",
+          "frozen_partial_derivative_not_full_temporal_operator": true,
+          "local_Maxwell_density_if_same_positive_realization_is_established": "KF5*W*sqrt(g5_plus)*Tr16(Q^2)*(g5_plus^{tau tau}g5_plus^{ab}-g5_plus^{tau a}g5_plus^{tau b}), projected on the eight modes",
+          "operand": "E_plus_Q_AB(tau,rho)",
+          "orthogonal_coordinate": "A_Q=sqrt(2)*b; V_AQ=V_i/sqrt(2)",
+          "positive_realization_metric_or_domain_invented": false,
+          "recovered_producer": "parent S5 action and frozen radial equation; no nonstationary positive electric coefficient supplied by inspected producers",
+          "smallest_calculation": "project the same-action positive parent electric density/temporal lift onto the eight saved modes and generated profiles, retaining the radial coordinate and common-domain flux",
+          "source_order": "zero-source, mask 0",
+          "stop_branch_requires_new_independent_terminal_load": false
+        },
+        "frozen_local": {
+          "QED": "0.00116550200495813",
+          "calibration_only_standard_uncertainty": "1.79e-13",
+          "h_open_interval": [
+            "0",
+            "3.500331e-9"
+          ],
+          "partial_native_added": false,
+          "refined_or_recomputed": false,
+          "selected_local_open_interval": [
+            "0.0011655039493",
+            "0.0011655109506"
+          ]
+        },
+        "github_publication": "authorized at next substantial operator/native milestone; no native operator action obtained in this packet",
+        "ledger": [
+          {
+            "name": "native_bulk_heat",
+            "role": "original finite-E1 source coefficient, not state derivative",
+            "value": null
+          },
+          {
+            "name": "state",
+            "role": "completed covariance dependence; not set zero or used to block independent heat",
+            "value": null
+          },
+          {
+            "name": "contact",
+            "role": "mixed K/M source contacts, subset of heat and completion where applicable",
+            "value": null
+          },
+          {
+            "name": "domain_boundary",
+            "role": "common-domain pullback and retained relative boundary terms",
+            "value": null
+          },
+          {
+            "name": "completion_counterterm",
+            "role": "same relative zeta/eta and finite matching; signed cancellations unperformed",
+            "value": null
+          },
+          {
+            "name": "strong_within_native",
+            "role": "subset of native EM-current response; no duplicate additive HVP",
+            "value": null
+          }
+        ],
+        "next_step": "project the same-action positive parent electric density/temporal lift onto the eight saved modes and generated profiles, retaining the radial coordinate and common-domain flux",
+        "old_eight_array_checks_repeated": false,
+        "old_five_controls_repeated": false,
+        "old_outputs_or_inputs_overwritten": false,
+        "old_replays_repeated": false,
+        "previous_checkpoint_sha256": "f5aa937f2148b02c4cf7014718440196d729e1567dd46106c7f7ed47df38cc2b",
+        "reference_revision": "524ed90689bd5923c249bba2e699abf627e703cd",
+        "replay": "python replay.py --output <new-directory>"
+      },
+      "sha256": "9c823b855661c4bc1e57e9f2138bdf8c7f9520eb910e5585ceb836d6324b06ad"
+    },
+    "input_hashes.json": {
+      "record": {
+        "files": [
+          {
+            "path": "reference_repository/artifacts/current_runtime/dop853_system_integration_current_finer/coupled_children/mixed_operator_jets.npz",
+            "sha256": "1f86112bea2bbc1a0bcaa8f9bf98cd1ecebfe6121be63615ca7ac78dffb59fe1"
+          },
+          {
+            "path": "local_outputs/bhsm_muon_20260930/normalized_mode_overlap/angular_currents.npz",
+            "sha256": "d94831213b4af71002d99c71a0163891de96c43ba49fab3c39a9ed1fd63fd11a"
+          },
+          {
+            "path": "local_handoff/BHSM_muon_source_application_524ed906_20261001/run_2/checkpoint.json",
+            "sha256": "f5aa937f2148b02c4cf7014718440196d729e1567dd46106c7f7ed47df38cc2b"
+          },
+          {
+            "path": "local_handoff/BHSM_muon_source_application_524ed906_20261001/run_2/input_hashes.json",
+            "sha256": "70323212de9d2c43a85d05af0d837be596e012e998559a32eb4d3d9d4b61df8f"
+          },
+          {
+            "path": "local_handoff/BHSM_muon_electric_operand_524ed906_20261001/electric_operand.py",
+            "sha256": "d94aaa6ef7998ed0302fadbe59fbf7a673222fa390c1379fd2e9631fd95311d0"
+          },
+          {
+            "path": "local_handoff/BHSM_muon_electric_operand_524ed906_20261001/replay.py",
+            "sha256": "5aad4712cbeb4c7e3401784c09088cd0aea8dc59d460cd83ea494152b2670224"
+          },
+          {
+            "path": "local_handoff/BHSM_muon_electric_operand_524ed906_20261001/test_electric_operand.py",
+            "sha256": "d04be2c0a03d9615cb69639c652baf4d887f648fef3d0b591835fda1cc5c73c4"
+          },
+          {
+            "path": "local_handoff/BHSM_muon_electric_operand_524ed906_20261001/report.md",
+            "sha256": "c19df49533b894cadaea82564adc6212802c5f4cca066097a13eeac13c202269"
+          },
+          {
+            "path": "reference_repository/src/bhsm/interface/ae3_c2_coexact_gauge_form.py",
+            "sha256": "c8dac32fc6079420550844376551b1deb1693004b276abee4c12492ec59b7303"
+          },
+          {
+            "path": "reference_repository/src/bhsm/interface/ae3_c2_lorentzian_gauge_ghost_hessian.py",
+            "sha256": "2783b74c7fb9f3e18b38d18070b9f76a05d8a6c2a0fb541ed13addb7fc987510"
+          },
+          {
+            "path": "reference_repository/src/bhsm/interface/ae31_c2_neutral_connection_hessian.py",
+            "sha256": "3fecae33bfc51a3b0fc70c5efefa743c7762641d5b19b984c08460b0497144eb"
+          },
+          {
+            "path": "reference_repository/src/bhsm/interface/aether_forward_c2_finite_core_descriptor.py",
+            "sha256": "8d037d200b4fee116186905530533c84ffa832e261edfd1b4b9817f59307bf71"
+          },
+          {
+            "path": "reference_repository/src/bhsm/interface/aether_event_weighted_unified_pushforward_v15_71.py",
+            "sha256": "3535b8894b245aa54e58550ba3647c5aa92da41672d7c78aa79f25e4892fcb6c"
+          },
+          {
+            "path": "reference_repository/src/bhsm/interface/aether_nonabelian_derham_response_v16_04.py",
+            "sha256": "989d038d46a333c103118ddecfc01d94f94bb36022c60957f98be000ed371ac1"
+          },
+          {
+            "path": "reference_repository/src/bhsm/interface/aether_rank16_u1_hs_vertex_matrices_v16_01.py",
+            "sha256": "5f630a62bbeccd7fec39fd2db86d6d0d03f63f38eeb06c055018bc89e232ad01"
+          },
+          {
+            "path": "reference_repository/src/bhsm/interface/ae4_stratified_dirac_zeta_induced_owner.py",
+            "sha256": "bc0bb5c7d7b006ae2194ed8c15b73756e49e002567b54c3f30e220d06046e1ec"
+          },
+          {
+            "path": "reference_repository/src/bhsm/interface/ae4_current_c2_canonical_stop_domain_bridge.py",
+            "sha256": "12db70aefa5d5b980303edbec18d1f87868aad1fc0df7a17b0d33ca946c44031"
+          },
+          {
+            "path": "reference_repository/src/bhsm/interface/ae4_future_collapse_relative_boundary_domain.py",
+            "sha256": "bfa7f7584eb7fdc646398fec06426ef67889fa50eaee41bf1712d3721c397ca2"
+          },
+          {
+            "path": "reference_repository/src/bhsm/interface/ae4_c2_stratified_event_flux_assembly.py",
+            "sha256": "145486b4b279dccf1994c5a0991fd29a57290d20e5460ba193810e0b260b6bce"
+          },
+          {
+            "path": "reference_repository/src/bhsm/interface/ae4_current_c2_stop_gauge_brst_calderon.py",
+            "sha256": "60fda91cc0e566a3974622197c4c61fab657e79c1a93ba1ab93ddd61a8c5d01c"
+          },
+          {
+            "path": "reference_repository/scripts/run_n12_current_coupled_environment_children.py",
+            "sha256": "024c20496b3b7c24771ae66bfa8a15c3440b4dd2f85bfb006c3413d0228e444c"
+          },
+          {
+            "path": "reference_repository/artifacts/action_extension/BHSM_AE4_CURRENT_C2_CANONICAL_STOP_DOMAIN_BRIDGE.json",
+            "sha256": "8ef40fee6b19cd28ee5a28b5bfd76f280261fd7514cfa70e015cd2b711bd10dc"
+          }
+        ]
+      },
+      "sha256": "0b9e581ac55c3d37f7bc8f47f3ed2f754f9fa64986253b3d5474fb1812a6bf98"
+    },
+    "packet_hashes.json": {
+      "record": {
+        "files": [
+          {
+            "path": "angular_frame_factors.npz",
+            "sha256": "1b2843a22504d5965582fd92a0f11ae19ff6e0fcd18417f2b04cab08ee911845"
+          },
+          {
+            "path": "checkpoint.json",
+            "sha256": "9c823b855661c4bc1e57e9f2138bdf8c7f9520eb910e5585ceb836d6324b06ad"
+          },
+          {
+            "path": "git_status.txt",
+            "sha256": "12cf6ea211f80cb8a8a4a1d1960a5afc69c3ba7f0129c174617b3ba678e8962d"
+          },
+          {
+            "path": "input_hashes.json",
+            "sha256": "0b9e581ac55c3d37f7bc8f47f3ed2f754f9fa64986253b3d5474fb1812a6bf98"
+          },
+          {
+            "path": "missing_operand.json",
+            "sha256": "77e54d7f2088625da6ae73b4746cc4be6d58fcb5101b016764e687a3e845dad9"
+          },
+          {
+            "path": "relevant_source_diff.patch",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          {
+            "path": "result.json",
+            "sha256": "efaa7329f04fa7a7612ab8ca522111b75ce2f327137182a5a8c5417ae847d874"
+          }
+        ]
+      },
+      "sha256": "1918abfbc0597ccfe5ac679d44cfac7392822f1eeccc2a6200b7a1f53b23e676"
+    },
+    "verification.json": {
+      "record": {
+        "checkpoint_sha256": "9c823b855661c4bc1e57e9f2138bdf8c7f9520eb910e5585ceb836d6324b06ad",
+        "deterministic_scientific_artifacts_compared": 6,
+        "error_classification": "Float angular/frame observations; no full-domain numerical or theory enclosure.",
+        "hash_mismatches": [],
+        "materialization_runs": [
+          "run_1",
+          "run_2"
+        ],
+        "native_E1_evaluations": 0,
+        "native_shifted_resolvent_actions": 0,
+        "new_input_hashes_verified": 22,
+        "nonidentical_scientific_artifacts": [],
+        "output_hashes_verified": 7,
+        "physical_soft_transfer_directions": 0,
+        "prior_eight_actual_array_checks_repeated": false,
+        "prior_five_controls_repeated": false,
+        "prior_two_replays_repeated": false,
+        "relevant_repository_diff_bytes": 0,
+        "review": "Independent algebraic review confirmed the Hessian factor KF5 (the action electric density has KF5/2) and the intrinsic frame derivative b_prime-H*b/2. No replacement positive parent metric or photon kernel was chosen.",
+        "targeted_test_command": "python -m pytest test_electric_operand.py -q",
+        "targeted_test_elapsed_seconds": 0.09,
+        "targeted_tests_passed": 3
+      },
+      "sha256": "6a3e236fce88adfb54683b2da206d0394e60df48eeeeec8c2b9a2041ab557967"
+    }
+  },
+  "publication_path_labels": "Portable logical labels; original local metadata retained unchanged in standalone packet. No scientific hash or array changed.",
+  "state_variation": null,
+  "strong_within_native": null
+}

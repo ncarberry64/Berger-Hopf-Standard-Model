@@ -1,0 +1,84 @@
+Physical outgoing continuation: construction boundary, 2026-10-15
+
+The requested physical outgoing continuation, energy/field derivatives,
+physical two-spin normalization and muon magnetic moment remain unevaluated.
+No coupled correction was applied. No full physical derivative pass at 2e-10
+or new Maxwell/all 226 pass is asserted. No measured mass/anomaly was used.
+
+This checkpoint records a construction finding, not another numerical solve.
+The previous finite radial/weak-field results remain at commit 0e8f041f.
+
+Why the available nonlinear callback cannot supply the requested exterior
+
+muon_holomorphic_child_action.py defines _affine_geometry(raw,time), then
+sets p=_affine_geometry(initial[0],time) and rp,rc from reference_pair. The
+inherited connection is built from these supplied trajectories. Its child
+Euler equations do not evolve the parent/reference fields jointly. The
+two-arm action retains their source contacts but explicitly does not solve
+parent stationarity. Continuing the child callback beyond retained history
+would therefore evaluate the prescribed affine-source model. It would not
+construct the requested connected physical exterior.
+
+FixedParentFiniteShooter requires explicit terminal_matrix and terminal_source;
+Y=0 is documented as a finite-natural control. It does not produce the
+physical outgoing graph. CanonicalC1History rejects evaluation beyond its
+recorded cells. Neither tool supplies the missing exterior source trajectory
+or radiation/transmission domain. Reusing them cannot silently assign those
+physical ingredients or set their derivatives to zero.
+
+Smallest sufficient physical response calculation
+
+After actual physical poles and analytic left/right modes are obtained, an
+adjoint/reached-column application can avoid assembling the entire exterior
+matrix. At each simple pole it needs the actual contractions
+  z_s=l_s Gamma_E r_s,
+  m_s,a=l_s Gamma_Ba r_s,
+  dE_s/dB_a=-m_s,a/z_s.
+For Gamma=C T, C V=0 and T r_s=V a_s, these become
+  z_s=l_s C(T_E r_s-V_E a_s),
+  m_s,a=l_s C(T_Ba r_s-V_Ba a_s).
+Changes of basis within V cancel. Its transverse energy/field motion
+still has to be produced by the actual exterior equation. The retained
+finite poles and finite field insertions do not provide those contractions
+or independently assign the two physical spin orientations.
+
+The missing construction is a connected exterior field trajectory and its
+outgoing/radiation or owned transmission domain, with the same energy/field
+source, geometry and domain variations. These must evaluate Q_ext,-+Y_+
+beyond the supplied history. The implemented local evolution law alone does
+not specify the unavailable fields on which that application depends.
+
+Scope distinctions
+
+A fixed free retarded operator and its complex-pole residue do not require
+an additional positive finite-collar norm or a separate CAR/Hadamard state
+selection. Those are not added as barriers to that calculation. A full
+interacting BHSM magnetic-moment prediction additionally needs its same-action
+quantum vertex and operator realization. The global induced-action/domain
+and native scale contractions remain unevaluated at that broader scope.
+
+The repository's Ward identity constrains the longitudinal vertex and
+explicitly leaves F2 undetermined: q_mu sigma^(mu nu) q_nu=0. Charge/current
+normalization cannot supply the missing transverse Pauli response. Neither
+the conditional tree value F2=0 nor a unit point-spin response is promoted
+to the physical muon moment. All nonzero spin terms remain preserved.
+
+Related local repositories inspected without modification:
+BHSM-system-puzzle-20261013, BHSM-cumulative-virtual-sea-20261013,
+BHSM-engine-integration and BHSM-norman-canonical-recovery. Their strongest
+Calderon, exterior-Schur and round-cap candidates either match the current
+providers or consume caller-supplied operators/terminal jets. The newer
+system-puzzle mixed-response/pole-readout modules likewise require supplied
+retarded jets or an already physically promoted pole. No physical exterior
+producer was found; importing those consumers would not close this gap.
+
+The next physical solve requires implementing that exterior construction
+from a specified action-owned coupled field problem. There is currently no
+evaluable producer in the inspected realization to run for the requested
+energy/field response. Further finite quadrature refinement does not create
+that missing application. This limits the current implementation; it is
+not a disproof of BHSM or a prediction of a zero magnetic moment.
+
+source_inspection_run_1.json and run_2.json pin exact source spans and hashes.
+Their equality is repeatable source inspection, not an independent physics
+calculation. publication_checks records the five repository audit exits.

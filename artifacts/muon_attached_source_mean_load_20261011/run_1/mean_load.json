@@ -1,0 +1,529 @@
+{
+  "At_Gauss_rows_removed": false,
+  "action_chain_rule": "D_z S_AB=D3S[z,u_A,u_B]+D2S[D_z u_A,u_B]+D2S[u_A,D_z u_B]",
+  "all_represented_mean_rows_retained": true,
+  "all_solved_first_Gauss_gauge_and_H_fields_used": true,
+  "applications": [
+    {
+      "At_time_derivative_scope": "derivative of saved Gauss interpolant; unused by literal Maxwell/Higgs action",
+      "coordinate_time": -5e-06,
+      "first_H_norm": 2.989858364241387e-12,
+      "first_H_rate_norm": 7.972950179116258e-07,
+      "first_gauge_norm": 5.720219580914063e-06,
+      "first_gauge_rate_norm": 5.753217221336504e-05,
+      "geometry_fixed_field_norm": 2.30792970812648e-10,
+      "geometry_source_motion_norm": 0.0,
+      "norms": {
+        "Maxwell_gauge_rate_cotangent": 1.1708680887721363e-12,
+        "Maxwell_gauge_value_cotangent": 8.90728999142839e-12,
+        "raw_mean_cotangent": 2.3096775992246301e-10,
+        "scalar_gauge_value_cotangent": 5.493080878842548e-25,
+        "scalar_rate_cotangent": 0.0,
+        "scalar_value_cotangent": 2.685907643443092e-25
+      },
+      "pair_symmetry_relative": 2.5446118196244e-28,
+      "profile": 0.0,
+      "profile_rate": 0.0,
+      "response_time": 5e-06,
+      "side": "incoming",
+      "source_motion_zero_here_reason": "compact pulse duration=L/4, midpoint=L/2 lies outside support",
+      "temporal_position": "actual solved primal phase midpoint; fresh first response at the same retained node"
+    },
+    {
+      "At_time_derivative_scope": "derivative of saved Gauss interpolant; unused by literal Maxwell/Higgs action",
+      "coordinate_time": 5e-06,
+      "first_H_norm": 1.1894947760981896e-12,
+      "first_H_rate_norm": 3.171985023591305e-07,
+      "first_gauge_norm": 5.0325841137931584e-06,
+      "first_gauge_rate_norm": 2.5594329567483793e-05,
+      "geometry_fixed_field_norm": 9.735381834650819e-11,
+      "geometry_source_motion_norm": 0.0,
+      "norms": {
+        "Maxwell_gauge_rate_cotangent": 9.58498923466177e-13,
+        "Maxwell_gauge_value_cotangent": 4.5468967345396665e-12,
+        "raw_mean_cotangent": 9.746465480750328e-11,
+        "scalar_gauge_value_cotangent": 5.483991201859175e-26,
+        "scalar_rate_cotangent": 0.0,
+        "scalar_value_cotangent": 2.6814679263380077e-26
+      },
+      "pair_symmetry_relative": 2.54325812516196e-28,
+      "profile": 0.0,
+      "profile_rate": 0.0,
+      "response_time": 5e-06,
+      "side": "outgoing",
+      "source_motion_zero_here_reason": "compact pulse duration=L/4, midpoint=L/2 lies outside support",
+      "temporal_position": "actual solved primal phase midpoint; fresh first response at the same retained node"
+    }
+  ],
+  "archive": {
+    "bytes": 298650,
+    "path": "mean_load.npz",
+    "sha256": "2344596ba9916d4ebdd8c4dedff5c86ba9f5b16a16224c6eb4880eed326886ea"
+  },
+  "array_records": {
+    "incoming_Maxwell_gauge_rate_cotangent": {
+      "dtype": "float64",
+      "raw_sha256": "ded97fcc5ef5a9a132267dbd46f531337f3197b0d41f34f030773180c2031da0",
+      "shape": [
+        80,
+        8,
+        8
+      ]
+    },
+    "incoming_Maxwell_gauge_value_cotangent": {
+      "dtype": "float64",
+      "raw_sha256": "1742bdbd1a5eb7dff92fbfbece2c7f747c07cfaf4c97ab07a71ec7135d1f6709",
+      "shape": [
+        80,
+        8,
+        8
+      ]
+    },
+    "incoming_first_H": {
+      "dtype": "float64",
+      "raw_sha256": "c9fa86e03994e9f321ddca4f91aeb2e97bc6b6e8051a4c15ef3063cf27dd7e96",
+      "shape": [
+        8,
+        4,
+        20
+      ]
+    },
+    "incoming_first_H_rate": {
+      "dtype": "float64",
+      "raw_sha256": "edd901f9b3e0bd13c00e0ffd1a926711dbe7d2ba13bfd75d8735337921d80dc9",
+      "shape": [
+        8,
+        4,
+        20
+      ]
+    },
+    "incoming_first_wall_gauge": {
+      "dtype": "float64",
+      "raw_sha256": "0598155eefd27d79cedf3c52d4bb7bf8ed2f99ea1282f092a4ddf208999fb6bc",
+      "shape": [
+        8,
+        5,
+        4,
+        20
+      ]
+    },
+    "incoming_geometry_Maxwell_moving_source_geometry_cubic": {
+      "dtype": "float64",
+      "raw_sha256": "804dc96ea36e097ad5676e150f87068402e5e1e7eadec87c7908948e7bcec570",
+      "shape": [
+        100,
+        8,
+        8
+      ]
+    },
+    "incoming_geometry_T_b_dot_gradient": {
+      "dtype": "float64",
+      "raw_sha256": "222a7c666d1fdf4f735d57984156e7bac193f99033abf86b92689783953ab765",
+      "shape": [
+        100
+      ]
+    },
+    "incoming_geometry_T_b_dot_hessian": {
+      "dtype": "float64",
+      "raw_sha256": "2f7bc57ae7df3a71919798fbd3207f402e30bbaf22e7ee8052511ec365f2e026",
+      "shape": [
+        100,
+        100
+      ]
+    },
+    "incoming_geometry_T_b_gradient": {
+      "dtype": "float64",
+      "raw_sha256": "e06e868e18a222fe248d9e2288782715350f0e69bfbfce9986c3045b79d65fc6",
+      "shape": [
+        100
+      ]
+    },
+    "incoming_geometry_T_b_hessian": {
+      "dtype": "float64",
+      "raw_sha256": "e2efd266ea2555b3dda1ea2b318cec7feeaaddf841aabe8c8acbc8076b3bea3b",
+      "shape": [
+        100,
+        100
+      ]
+    },
+    "incoming_geometry_complete_geometry_cubic_at_fixed_interior_first_coefficients": {
+      "dtype": "float64",
+      "raw_sha256": "e37ca884622b68df5494b9760063026ec95d01dc27a72b9efbfc47aab1cfbc21",
+      "shape": [
+        100,
+        8,
+        8
+      ]
+    },
+    "incoming_geometry_fixed_field_geometry_cubic": {
+      "dtype": "float64",
+      "raw_sha256": "e37ca884622b68df5494b9760063026ec95d01dc27a72b9efbfc47aab1cfbc21",
+      "shape": [
+        100,
+        8,
+        8
+      ]
+    },
+    "incoming_geometry_moving_source_geometry_cubic": {
+      "dtype": "float64",
+      "raw_sha256": "804dc96ea36e097ad5676e150f87068402e5e1e7eadec87c7908948e7bcec570",
+      "shape": [
+        100,
+        8,
+        8
+      ]
+    },
+    "incoming_geometry_scalar_moving_source_geometry_cubic": {
+      "dtype": "float64",
+      "raw_sha256": "624995a2a9d78f01d03c8f30c7a84500c28e66e5cfa26ddab723f7740a13d813",
+      "shape": [
+        100,
+        8,
+        8
+      ]
+    },
+    "incoming_raw268": {
+      "dtype": "float64",
+      "raw_sha256": "09be87b2c9ddf37d8e2f80ab4a5ed312800db7b7b998e6b12e55dad0417cff62",
+      "shape": [
+        268
+      ]
+    },
+    "incoming_raw_mean_cotangent": {
+      "dtype": "float64",
+      "raw_sha256": "8e194e430f84a3acb4e578df1b685c24880334c190c1d81a11b8e251d8d84b6b",
+      "shape": [
+        268,
+        8,
+        8
+      ]
+    },
+    "incoming_scalar_gauge_value_cotangent": {
+      "dtype": "float64",
+      "raw_sha256": "4c0b0518074cd5bf93047f0d8b82700ddf3d4c6368988cdafa3ee24ad9b34974",
+      "shape": [
+        80,
+        8,
+        8
+      ]
+    },
+    "incoming_scalar_rate_cotangent": {
+      "dtype": "float64",
+      "raw_sha256": "e5a00aa9991ac8a5ee3109844d84a55583bd20572ad3ffcd42792f3c36b183ad",
+      "shape": [
+        4,
+        8,
+        8
+      ]
+    },
+    "incoming_scalar_value_cotangent": {
+      "dtype": "float64",
+      "raw_sha256": "e33b5614bb93eb923fc53bde4f256d85f240fc344a006100d35fe761f718a02d",
+      "shape": [
+        4,
+        8,
+        8
+      ]
+    },
+    "outgoing_Maxwell_gauge_rate_cotangent": {
+      "dtype": "float64",
+      "raw_sha256": "8b9b5d49fe6af3909e8d1776bc8d5b6de279acaa051444288a9ef399c25459d7",
+      "shape": [
+        80,
+        8,
+        8
+      ]
+    },
+    "outgoing_Maxwell_gauge_value_cotangent": {
+      "dtype": "float64",
+      "raw_sha256": "e3cbe402215301f1d03474275dd748c14ce4666f804aed02a30027fc8e5a3acb",
+      "shape": [
+        80,
+        8,
+        8
+      ]
+    },
+    "outgoing_first_H": {
+      "dtype": "float64",
+      "raw_sha256": "4a6325c00ea39ac9cbf6f603fa99cdc94241ff315a043dfe81daa44bfcd98b6d",
+      "shape": [
+        8,
+        4,
+        20
+      ]
+    },
+    "outgoing_first_H_rate": {
+      "dtype": "float64",
+      "raw_sha256": "776da6c90453b541cd4957ad6f3e000af563ce7edadfc253060cb0e77b763e3e",
+      "shape": [
+        8,
+        4,
+        20
+      ]
+    },
+    "outgoing_first_wall_gauge": {
+      "dtype": "float64",
+      "raw_sha256": "0598155eefd27d79cedf3c52d4bb7bf8ed2f99ea1282f092a4ddf208999fb6bc",
+      "shape": [
+        8,
+        5,
+        4,
+        20
+      ]
+    },
+    "outgoing_geometry_Maxwell_moving_source_geometry_cubic": {
+      "dtype": "float64",
+      "raw_sha256": "7ff5d3baae0fbae1eaf3624a123fb67fc4418e23f0303b458574bc6501030601",
+      "shape": [
+        100,
+        8,
+        8
+      ]
+    },
+    "outgoing_geometry_T_b_dot_gradient": {
+      "dtype": "float64",
+      "raw_sha256": "7fb1dc447595c5398057caaf1b52227a369fe77725c8deb766c1ff5da3e99262",
+      "shape": [
+        100
+      ]
+    },
+    "outgoing_geometry_T_b_dot_hessian": {
+      "dtype": "float64",
+      "raw_sha256": "c5926fa2d7bb550837ca1266bf9b844b3ccf5cdce2cef503cab879fe70eace6d",
+      "shape": [
+        100,
+        100
+      ]
+    },
+    "outgoing_geometry_T_b_gradient": {
+      "dtype": "float64",
+      "raw_sha256": "d737bd40805ab0fac9aa1805c512659cc25e1285bb978849331cea5959d20147",
+      "shape": [
+        100
+      ]
+    },
+    "outgoing_geometry_T_b_hessian": {
+      "dtype": "float64",
+      "raw_sha256": "4959bb59cdfaec6a1ba63756442b187d99d475e64977e96a9a4d1e1617059fb9",
+      "shape": [
+        100,
+        100
+      ]
+    },
+    "outgoing_geometry_complete_geometry_cubic_at_fixed_interior_first_coefficients": {
+      "dtype": "float64",
+      "raw_sha256": "ad631a4a519395978c1682140cd716658ffb8e4a20de6c54730f027b161abc15",
+      "shape": [
+        100,
+        8,
+        8
+      ]
+    },
+    "outgoing_geometry_fixed_field_geometry_cubic": {
+      "dtype": "float64",
+      "raw_sha256": "ad631a4a519395978c1682140cd716658ffb8e4a20de6c54730f027b161abc15",
+      "shape": [
+        100,
+        8,
+        8
+      ]
+    },
+    "outgoing_geometry_moving_source_geometry_cubic": {
+      "dtype": "float64",
+      "raw_sha256": "7ff5d3baae0fbae1eaf3624a123fb67fc4418e23f0303b458574bc6501030601",
+      "shape": [
+        100,
+        8,
+        8
+      ]
+    },
+    "outgoing_geometry_scalar_moving_source_geometry_cubic": {
+      "dtype": "float64",
+      "raw_sha256": "624995a2a9d78f01d03c8f30c7a84500c28e66e5cfa26ddab723f7740a13d813",
+      "shape": [
+        100,
+        8,
+        8
+      ]
+    },
+    "outgoing_raw268": {
+      "dtype": "float64",
+      "raw_sha256": "731092ecfe19ebbfcf29a98e7bfea76bbd3453b1fd830d9ab92d54def7cf7cb7",
+      "shape": [
+        268
+      ]
+    },
+    "outgoing_raw_mean_cotangent": {
+      "dtype": "float64",
+      "raw_sha256": "80cb98e463bd0c30d313d218656e28594d6462c41d501cb4ac5ea99135227ebd",
+      "shape": [
+        268,
+        8,
+        8
+      ]
+    },
+    "outgoing_scalar_gauge_value_cotangent": {
+      "dtype": "float64",
+      "raw_sha256": "1ffe744e10aa81bdfc08dc40bb24289be1bdf3b6c22a608b768c109ff8490cc8",
+      "shape": [
+        80,
+        8,
+        8
+      ]
+    },
+    "outgoing_scalar_rate_cotangent": {
+      "dtype": "float64",
+      "raw_sha256": "e5a00aa9991ac8a5ee3109844d84a55583bd20572ad3ffcd42792f3c36b183ad",
+      "shape": [
+        4,
+        8,
+        8
+      ]
+    },
+    "outgoing_scalar_value_cotangent": {
+      "dtype": "float64",
+      "raw_sha256": "316f0d7f08b865154eb133a9e3b24f4654dd375b328daeeaa15a3e600fc19a34",
+      "shape": [
+        4,
+        8,
+        8
+      ]
+    }
+  },
+  "classification": "EVALUATED_TOTAL_RAW268_CUBIC_MEAN_LOAD_FROM_FRESH_SAME_PHASE_RESPONSES",
+  "complete_angular_geometry_first_response_claimed": false,
+  "complete_native_or_Pauli": false,
+  "consumed_endpoint_scope": "evaluated full220 action attachment; fixed computational representation",
+  "consumed_full_attachment": true,
+  "error_scope": "literal finite action third contractions in binary64 on saved48 radial quadrature and actual ODE response node; no continuum or rounding enclosure",
+  "homogeneous_geometry_first_variations_zero_scope": "literal retained odd n1+n3 source sector has zero Haar projection to the represented homogeneous geometry100; unrepresented angular geometry not filled zero",
+  "input_hashes": {
+    "artifacts/flagship_integration/BHSM_N12_C2_REFINED_RESET_ROOT_CENTER.npz": "59dd88661b15cbeec96bc19294f9d9c64f754cccbfbc385c32329fa9c864a8fe",
+    "artifacts/flagship_integration/BHSM_N12_FULL_RESET_ACTION_JACOBIAN.npz": "35bb2b67ff784206d3a5b9dc82881f5ffd8f844b55342f2032d29cdafb38a67a",
+    "artifacts/muon_attached_reached_action_20261011/incoming_run_1/contacts.npz": "2bef3b2fef45198c5ccb155cc46a3fd18b5d890a3f6199e5ba4be96e6a3971ba",
+    "artifacts/muon_attached_reached_action_20261011/incoming_run_1/phase.npz": "01581fe23e3324e0d7db882478719c9fa33bd46f7c37a93f7dcacbefa41f3c09",
+    "artifacts/muon_attached_reached_action_20261011/incoming_run_1/primal_and_source.npz": "b217f6dfde59ce0bb65da645e899d24359d6111a03dadbcf6476a8bc991526c0",
+    "artifacts/muon_attached_reached_action_20261011/incoming_run_1/result.json": "1ece8f4549860e72c99bdc45790dd11e1ce301b5058c5d35938e81f31e7fd2c6",
+    "artifacts/muon_attached_reached_action_20261011/incoming_run_1/velocity.npz": "1e632cecaa212e1237261157652b28e794bccb1229d3f5d6bae8fc7350ebe939",
+    "artifacts/muon_attached_reached_action_20261011/outgoing_run_1/contacts.npz": "4c26855439205f43acc9dceebee555be580896e2ede11978293191b49fc13922",
+    "artifacts/muon_attached_reached_action_20261011/outgoing_run_1/phase.npz": "9163b629beb5c17a1ef22585e660762dc30b461c8062e51003e4628fc9971556",
+    "artifacts/muon_attached_reached_action_20261011/outgoing_run_1/primal_and_source.npz": "c385b30da09cb86785cd5b21d7cca720a80c8cb74c4532d02c3790062e4c355e",
+    "artifacts/muon_attached_reached_action_20261011/outgoing_run_1/result.json": "66c9fab2f8f2b7f4564b02f2b011a979286f12fea43ada38943e231acdbb885a",
+    "artifacts/muon_attached_reached_action_20261011/outgoing_run_1/velocity.npz": "814fb018776f63f4abf5c1f5a11749999cdf701e5befee79dc7bdad1601d0a22",
+    "artifacts/muon_birth_transfer_value_20261008/retained_reset/run_1/result.json": "d0fec0f8e8a05818fcce67e88ed8db73744484220a2cb213825893f481cb0a72",
+    "artifacts/muon_calibrated_pauli_20261009/inputs.json": "0b614ab6f26d169ca04a4878f767f78eb3668484840867e46aebbebf186369da",
+    "artifacts/muon_calibrated_weak_decay_20261010/run_1/weak_decay.json": "9c31575ce0889571790f8767cf53ffe043cb9906e0a45a96b194971320a0aad7",
+    "artifacts/muon_matched_mechanical_source_20261002/replay_reference/matched_source_and_weak_actions.npz": "146435df28178967c321c0aa7e89a1511395d196f96b8715532aa98e3e312c2b",
+    "artifacts/muon_parent_gauge_geometry_correction_20261010/attached_phase_incoming_1steps_run_1/application.npz": "c1246e91c4e3eb8c5a72af04294ce0163f7423559e72c9659616c2d99ae38d7e",
+    "artifacts/muon_parent_gauge_geometry_correction_20261010/attached_phase_incoming_1steps_run_1/result.json": "b2a5410764b3db436fa41a868e21379df7010dd22924c5193d85c48e7d786372",
+    "artifacts/muon_parent_gauge_geometry_correction_20261010/attached_phase_outgoing_1steps_run_1/application.npz": "4a84d1f982b65b9b9b3e6cf4ea24b4a7be2aced8e42b239bcdd0de3ff47368a5",
+    "artifacts/muon_parent_gauge_geometry_correction_20261010/attached_phase_outgoing_1steps_run_1/result.json": "87b353e0efa1cf174a9b350c8e219f8818cc26e8b627fab98d140bfeb50c6926",
+    "scripts/evaluate_muon_attached_reached_action.py": "f1c79724474ef8dbf58918d73536c571b668bd4a5fefd764038be6ce2a7cd639",
+    "scripts/evaluate_muon_attached_source_mean_load.py": "e75fa5803f743f53fbc9aa7c6570c7a0479dbaab6dd34c61df612453da2e3d97",
+    "scripts/evaluate_muon_reached_trace_action.py": "f2ecf5b614f8b3b1b5f9bf2b73490e539321049633f7deb467bdf60a81e0c260",
+    "src/bhsm/interface/aether_canonical_momentum_action_jacobian.py": "d0ade20dc8a999e43073b45ca3ef59e05c65c55e37a1d6565d4e389176295cb1",
+    "src/bhsm/interface/aether_diagonal_sp1_m4_attachment_v15_50.py": "e6482614dcb54f4890a5e66fbe724d4c302405d575a4b73ddbb64a075cb1827e",
+    "src/bhsm/interface/aether_lorentzian_child_galerkin_v15_44.py": "574a9a6267d9228170c7309bd4be3cafb36b7515a6ee558509beb968e97bdab7",
+    "src/bhsm/interface/muon_attached_source_mean_load.py": "fe3db5b9a2658eccca564bc6c10bae5716db6bc339fce6cd634a1c4ed3793c56",
+    "src/bhsm/interface/muon_birth_attached_phase.py": "948c1505e9b68cffbe8050be31dcb5727d8f8d4f25399f9037cfc94a9ae9fdeb",
+    "src/bhsm/interface/muon_birth_coupled_primal_midpoint.py": "ce321f641fa51d98710d006e246aac5cf6bd046be93a74fab452808597c599ce",
+    "src/bhsm/interface/muon_birth_full_field_attachment.py": "58b3bd8a4ae5fe7c63b5551e4d0f26d82ab82a27d4389066c894a5e1b4728d03",
+    "src/bhsm/interface/muon_birth_paired_attachment_endpoint.py": "71a69275ebeef226fd8dc7585745c5c8acac687e497a8441fe37a37553178f23",
+    "src/bhsm/interface/muon_birth_paired_field_endpoint.py": "f22b6a17b65c72b30571b3d9f721f347737a5916fa08e50bd833ad22df3cd035",
+    "src/bhsm/interface/muon_birth_phase_continuation.py": "9169a1c56bf5084d1f240043ca12d431c87e4adaff24fe09bdf7bf27fc5eb0be",
+    "src/bhsm/interface/muon_birth_trace_enriched_action.py": "c36c48482dd58ebe369ab935574b78b3693036f717fb49035dfac01164956dce",
+    "src/bhsm/interface/muon_birth_trace_enriched_phase.py": "591754957f1cc452bfd53d8adc1087308459902a822876105315b7423c2fd676",
+    "src/bhsm/interface/muon_birth_two_arm_assigned_action.py": "cf6c58dc68700315d701fb9a1e9e99e927d18d90016a6ae7f86470c36136c77a",
+    "src/bhsm/interface/muon_current_source_motion_cubic.py": "32427cda80ec7e8089e8a88f0f594f7013b825d8b00ac458f7e11a034b5339b4",
+    "src/bhsm/interface/muon_current_source_motion_mean_load.py": "e4798f31d46c6d17bc2833234d5adaf1be33350fa9b53df00484cb71890b3de2",
+    "src/bhsm/interface/muon_intrinsic_higgs_gauge_action.py": "c19354209300ab06c0f1ab6bf4e111dbb5de0cd9e8d1d31a71af357a829118d4",
+    "src/bhsm/interface/muon_intrinsic_m4_normal_pullback.py": "43187eee35f2879a43fe0fd02ae447502811349ccf2f2a78aa14beb8aa706bf0",
+    "src/bhsm/interface/muon_material_higgs_gauge_action.py": "8bca013820283614c6578be4f44c29c4ea1c919f516aa9a2783f0eb38127d035",
+    "src/bhsm/interface/muon_moving_geometric_action.py": "bf560fdb9766f563d97d3100ccb266e2a4350c910ac14a51d57576c2b5371392",
+    "src/bhsm/interface/muon_parent_gauge_geometry_correction.py": "fa29f5764dca39196c807d64e7976d5894589e7de3ffa9d4a5ddecfb136b4816",
+    "src/bhsm/interface/muon_parent_maxwell_background_euler.py": "fbb2c99d4b1c58247ac42a769fad3e1b16ccc76a1744fe0c5334e50c4a974bee",
+    "src/bhsm/interface/muon_parent_maxwell_full_weak.py": "c1fb703967a644306d3521d457a6d7c778a49d89c1e081b401487a25b7491565",
+    "src/bhsm/interface/muon_parent_maxwell_geometry_weak.py": "f0b4a49934e17ad18c40e9164b66c54e1b2cb146fb476f59b0e500f2dd6c9153",
+    "src/bhsm/interface/muon_parent_maxwell_source_mean_forcing.py": "cd3f8e9bcdbfdc248de3444d960f9616e6ce0deb16a444b33e4a8201a292f373",
+    "src/bhsm/interface/muon_parent_mean_causal_action.py": "2a84b1be22625b1a5ae88d10c76631d7a5b602d2b0e22e57f00201bb74a593ad",
+    "src/bhsm/interface/muon_parent_retarded_hypercharge.py": "2eb97a704bce63f601cc0d6e0f647266d4b4aac7f746d34dceb41b72018c3510",
+    "src/bhsm/interface/muon_pointwise_full_field_action.py": "d57cd5953de00bcae857d0e458bbead1e463e5fffe8d947c5b9e71806aabaff6",
+    "src/bhsm/interface/muon_reached_trace_action.py": "7fed7f2520a6f66e31323905359e491897f7187ccf9871ecfc2ab95e415ffade",
+    "src/bhsm/interface/muon_trace_enriched_reached_action.py": "3721d05a2e82dfc04b75a0c570fd9946ee842e0e391704687ae9ebe29eb96e9a"
+  },
+  "joint_mean_response_solved": false,
+  "midpoint_prescribed_source_native_heat_combined_with_total_mean_load": false,
+  "normalization": "Maxwell1/[8*(2pi\u00b2)^2], scalar1/(2pi\u00b2)^2; real2Re scalar and full Haar volume once",
+  "old_response_or_bare_source_substituted": false,
+  "paired_derivative_divided_by_two": false,
+  "physical_birth_domain_completed": false,
+  "raw_coordinate_order": "q37,qdot37,m24,normal,normal_rate,gauge80,gauge_rate80,Hreal4,Hrate4",
+  "response_radial_scope": "root fresh finite radial polynomial interior and inherited wall source; actual full220 attached80 background retained",
+  "source_coordinate_clock": "incoming coordinate_time=u-L; outgoing coordinate_time=u; dcoordinate_time/du=+1; signed past phase step never reverses field derivatives",
+  "source_motion_count": 1,
+  "source_records": [
+    {
+      "bytes": 12863,
+      "path": "src/bhsm/interface/muon_current_source_motion_mean_load.py",
+      "sha256": "e4798f31d46c6d17bc2833234d5adaf1be33350fa9b53df00484cb71890b3de2",
+      "symbols": {
+        "current_source_complete_mean_load": {
+          "end_line": 72,
+          "line": 20
+        },
+        "enriched_reached_first_fields": {
+          "end_line": 175,
+          "line": 142
+        }
+      }
+    },
+    {
+      "bytes": 5539,
+      "path": "src/bhsm/interface/muon_attached_source_mean_load.py",
+      "sha256": "fe3db5b9a2658eccca564bc6c10bae5716db6bc339fce6cd634a1c4ed3793c56",
+      "symbols": {
+        "load_attached_reached_mean_inputs": {
+          "end_line": 84,
+          "line": 19
+        }
+      }
+    },
+    {
+      "bytes": 7405,
+      "path": "scripts/evaluate_muon_attached_source_mean_load.py",
+      "sha256": "e75fa5803f743f53fbc9aa7c6570c7a0479dbaab6dd34c61df612453da2e3d97",
+      "symbols": {
+        "evaluate": {
+          "end_line": 71,
+          "line": 18
+        }
+      }
+    },
+    {
+      "bytes": 12348,
+      "path": "src/bhsm/interface/muon_current_source_motion_cubic.py",
+      "sha256": "32427cda80ec7e8089e8a88f0f594f7013b825d8b00ac458f7e11a034b5339b4",
+      "symbols": {
+        "current_source_cubic_application": {
+          "end_line": 163,
+          "line": 89
+        }
+      }
+    },
+    {
+      "bytes": 18049,
+      "path": "src/bhsm/interface/muon_parent_maxwell_source_mean_forcing.py",
+      "sha256": "cd3f8e9bcdbfdc248de3444d960f9616e6ce0deb16a444b33e4a8201a292f373",
+      "symbols": {
+        "higgs_mean_cotangents": {
+          "end_line": 162,
+          "line": 120
+        },
+        "maxwell_mean_cotangents": {
+          "end_line": 117,
+          "line": 83
+        }
+      }
+    }
+  ]
+}

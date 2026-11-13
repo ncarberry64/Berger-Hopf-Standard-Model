@@ -1,0 +1,123 @@
+{
+  "executions": [
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "pytest",
+        "--noconftest",
+        "-q",
+        "tests/test_muon_profile_preserving_phase_sample.py"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "stderr_path": "sampler_tests.stderr.txt",
+      "stdout_path": "sampler_tests.stdout.txt"
+    },
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "bhsm.interface.muon_profile_preserving_phase_sample",
+        "--phase-directory",
+        "artifacts/muon_finite_normal_phase_20261011/incoming_run_1",
+        "--output",
+        "artifacts/muon_profile_preserving_phase_sample_20261011/incoming_sample_run_1"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "stderr_path": "incoming_sample_run_1.stderr.txt",
+      "stdout_path": "incoming_sample_run_1.stdout.txt"
+    },
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "bhsm.interface.muon_profile_preserving_phase_sample",
+        "--phase-directory",
+        "artifacts/muon_finite_normal_phase_20261011/incoming_run_1",
+        "--output",
+        "artifacts/muon_profile_preserving_phase_sample_20261011/incoming_sample_run_2"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "stderr_path": "incoming_sample_run_2.stderr.txt",
+      "stdout_path": "incoming_sample_run_2.stdout.txt"
+    },
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "bhsm.interface.muon_profile_preserving_phase_sample",
+        "--phase-directory",
+        "artifacts/muon_inherited_finite_normal_phase_20261011/run_1",
+        "--output",
+        "artifacts/muon_profile_preserving_phase_sample_20261011/outgoing_sample_run_1"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "stderr_path": "outgoing_sample_run_1.stderr.txt",
+      "stdout_path": "outgoing_sample_run_1.stdout.txt"
+    },
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "bhsm.interface.muon_profile_preserving_phase_sample",
+        "--phase-directory",
+        "artifacts/muon_inherited_finite_normal_phase_20261011/run_1",
+        "--output",
+        "artifacts/muon_profile_preserving_phase_sample_20261011/outgoing_sample_run_2"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "stderr_path": "outgoing_sample_run_2.stderr.txt",
+      "stdout_path": "outgoing_sample_run_2.stdout.txt"
+    }
+  ],
+  "pairs": [
+    {
+      "byte_identical": true,
+      "bytes": 7171,
+      "filename": "result.json",
+      "sha256": "b518a9630ca20785d317c0c5ad46bd2777b0cc1322726c08e736437a07be005c",
+      "side": "incoming"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 22483,
+      "filename": "application.npz",
+      "sha256": "5ce58c55fed4c026482fceb869b6c3be40f6018fb3a392da290f259c6c93241c",
+      "side": "incoming"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 7188,
+      "filename": "result.json",
+      "sha256": "88be65e4e94a5d47201bf8a5eed7553f6f6da911c4eb830ed816274afab24401",
+      "side": "outgoing"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 22814,
+      "filename": "application.npz",
+      "sha256": "6c9d5744114b9d66575ed366c7584b00419285fa50263653d82f811c11f7e5d4",
+      "side": "outgoing"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "added_records": {
+    "muon_d5_birth_linked_shape_poisson_20261013": {
+      "classification": "EVALUATED_SAME_COMPLEX_BIRTH_LINKED_CHILD_AND_PARENT_SOURCE_D5_FIELD_POISSON_E_AND_SIGNED_WALL_SOURCE",
+      "path": "artifacts/muon_d5_birth_linked_shape_poisson_20261013/base_final_run_1/result.json",
+      "sha256": "bca9fca112f940879e4cdabf7769edcff489d4ee14cdb092b55a1330e1f4f473"
+    },
+    "muon_d5_induced_shape_poisson_20261013": {
+      "classification": "EVALUATED_SAME_COMPLEX_CHILD_DIRECT_INDUCED_D5_FIELD_POISSON_E_AND_SIGNED_WALL_SOURCE",
+      "path": "artifacts/muon_d5_induced_shape_poisson_20261013/base_final_run_4/result.json",
+      "sha256": "6be32140f4640c296d4840836fbe6b26a237c6085517873eb1f60697f1d4b54f"
+    },
+    "muon_incoming_own_normal_shape_20261013": {
+      "classification": "EXECUTED_CHRONOLOGICAL_INCOMING_OWN_PARENT_PROPER_NORMAL_DRIVE",
+      "path": "artifacts/muon_incoming_own_normal_shape_20261013/run_1/result.json",
+      "sha256": "931f445930a81b9bdb8666c4c5379434e99c07546b121d76a83f2568088ebe32"
+    },
+    "muon_incoming_shape_induced_response_20261013": {
+      "classification": "EXECUTED_INCOMING_OWN_PARENT_FORCED_NORMAL_SHAPE_RESPONSE_AND_BIRTH_RETURN",
+      "path": "artifacts/muon_incoming_shape_induced_response_20261013/run_1/result.json",
+      "sha256": "e7bfb8567811186422136bb409a7313f32f0c3eecd464b59560a1a19105f9120"
+    },
+    "muon_normal_shape_birth_transmission_20261013": {
+      "classification": "EXECUTED_SOURCE_COMPLETED_CONDITIONAL_BIRTH_FIELD_TRANSMISSION_AND_BORN_CHILD_RESPONSE",
+      "path": "artifacts/muon_normal_shape_birth_transmission_20261013/run_1/result.json",
+      "sha256": "f6d57feed48dc4d722f1d24954a7a2b83231b99d7bd6c5bc2458a0f5855d3cbf"
+    },
+    "muon_normal_shape_induced_canonical_response_20261013": {
+      "classification": "EVALUATED_INDUCED_MOVING_NORMAL_CANONICAL_RESPONSE_AND_FULL_SOURCE_CONTACTS",
+      "path": "artifacts/muon_normal_shape_induced_canonical_response_20261013/run_1/result.json",
+      "sha256": "4f4c251487dbc86ff77dabf3d5dd55677027f8ea3798f1ff12ac287904ff227c"
+    }
+  },
+  "after_table_sha256": "ac6548cbce2a402397f33dcd65f2ca937c8f6d772fbb87c48e3a7e686a5da058",
+  "argv": [
+    "C:\\Python314\\python.exe",
+    "scripts/advance_muon_coupled_birth_matching_accounting.py",
+    "--record",
+    "artifacts/muon_normal_shape_induced_canonical_response_20261013/run_1/result.json",
+    "--record",
+    "artifacts/muon_d5_induced_shape_poisson_20261013/base_final_run_4/result.json",
+    "--record",
+    "artifacts/muon_incoming_own_normal_shape_20261013/run_1/result.json",
+    "--record",
+    "artifacts/muon_incoming_shape_induced_response_20261013/run_1/result.json",
+    "--record",
+    "artifacts/muon_normal_shape_birth_transmission_20261013/run_1/result.json",
+    "--record",
+    "artifacts/muon_d5_birth_linked_shape_poisson_20261013/base_final_run_1/result.json",
+    "--output",
+    "artifacts/muon_coupled_birth_matching_accounting_20261012/run_3"
+  ],
+  "before_table_sha256": "e26c2c9672097fee9574672e3f5b29a3240c709264786dedc3a78322a7d22a79",
+  "classification": "EXECUTED_SAME_LEDGER_ACTION_CONSUMPTION_WITH_OBSERVABLE_ROWS_PRESERVED",
+  "complete_a_mu": null,
+  "complete_g_mu": null,
+  "complete_uncertainty": null,
+  "contribution_and_local_uncertainty_rows_unchanged": true,
+  "current_report": {
+    "path": "theory/muon_coupled_birth_normal_domain_matching_20261012.md",
+    "sha256": "eef1bc0ebcff6c3b76f2f91690276c7a0761a808776f6d732a3cf338a8e31fb5"
+  },
+  "error_scope": "Matching/action/domain diagnostics only. No source norm, surface work or algebraic residual becomes an additive anomaly contribution or an uncertainty bound.",
+  "local_subtotal": 0.0011659186179552334,
+  "physical_native_remainder": null,
+  "source_sha256": "e06a5f3fc2d42c7db3c1b5471839b12adb3ee66feedb2023fb5866903b746a5b"
+}

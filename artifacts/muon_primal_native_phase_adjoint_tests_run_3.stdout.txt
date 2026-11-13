@@ -1,0 +1,37 @@
+..F..                                                                    [100%]
+================================== FAILURES ===================================
+_ test_direct_adjoint_agrees_with_complete_forward_and_retains_reactions[radial] _
+
+representation = {'E0_policy': 'the local numerical interval is not identified with E0; external birth-source domain retains M_f=M11', ...0326734,  0.00079716,  0.00400448,  0.        ]), 'affine_interior_projection': array([-0.00326734,  0.00079716]), ...}
+frame = 'radial'
+
+    @pytest.mark.parametrize('frame',['temporal','radial'])
+    def test_direct_adjoint_agrees_with_complete_forward_and_retains_reactions(representation,frame):
+        rng=np.random.default_rng(197);J=np.diag(np.linspace(.7,2.1,358))
+        J+=.00003*rng.normal(size=J.shape)
+        # The algebra test connects the temporal/radial frame bands strongly.
+        # An unrelated diagonal control has an almost singular radial border.
+        temporal=native_phase_named_border(J,representation,frame='temporal')
+        radial=native_phase_named_border(J,representation,frame='radial')
+        J+=.2*radial['frame_matrix'].T@temporal['frame_matrix']
+        target=rng.normal(size=268);load=rng.normal(size=(268,2,3));h=.000027
+        a=contract_phase_native_target(J,representation,h,target,load,frame=frame)
+        border=native_phase_named_border(J,representation,frame=frame)
+        rhs=np.vstack((-a['phase_source_rows'].reshape(358,6),np.zeros((2,6))))
+        forward=solve(border['matrix'],rhs)
+        expected=a['phase_target_row']@forward[:358]
+        assert np.allclose(a['native_mean_response_pair'].ravel(),expected,rtol=3e-12,atol=3e-12)
+        assert np.allclose(a['auxiliary_Gauss_reactions'].reshape(2,6),forward[358:],rtol=3e-12,atol=3e-12)
+        residual=J@forward[:358]+a['phase_source_rows'].reshape(358,6)
+        reaction_rows=a['original_Euler_Gauss_reaction_rows'].reshape(358,6)
+        residual_scale=np.linalg.norm(J)*np.linalg.norm(forward[:358])+np.linalg.norm(rhs[:358])
+>       assert np.linalg.norm(residual-reaction_rows)<2e-14*residual_scale
+E       AssertionError: assert np.float64(6.308809577300631e-09) < (2e-14 * np.float64(133381.25505671152))
+E        +  where np.float64(6.308809577300631e-09) = <function norm at 0x000001B752205E30>((array([[-2.84781855e-17, -2.22970806e-18, -3.43901913e-18,\n         2.75667878e-18, -2.36569544e-17, -2.35891826e-18],...2, -9.63368818e+01,  5.63351885e+02,\n        -1.62270832e+01, -2.76253362e+02, -4.54467664e+01]],\n      shape=(358, 6)) - array([[   0.        ,    0.        ,    0.        ,    0.        ,\n           0.        ,    0.        ],\n       [   ...   [ 219.51844237,  -96.33688183,  563.35188495,  -16.22708316,\n        -276.25336197,  -45.44676638]], shape=(358, 6))))
+E        +    where <function norm at 0x000001B752205E30> = <module 'numpy.linalg' from 'C:\\Users\\carbe\\AppData\\Roaming\\Python\\Python314\\site-packages\\numpy\\linalg\\__init__.py'>.norm
+E        +      where <module 'numpy.linalg' from 'C:\\Users\\carbe\\AppData\\Roaming\\Python\\Python314\\site-packages\\numpy\\linalg\\__init__.py'> = np.linalg
+
+tests\test_muon_primal_native_phase_adjoint.py:56: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_muon_primal_native_phase_adjoint.py::test_direct_adjoint_agrees_with_complete_forward_and_retains_reactions[radial]
+1 failed, 4 passed in 6.19s

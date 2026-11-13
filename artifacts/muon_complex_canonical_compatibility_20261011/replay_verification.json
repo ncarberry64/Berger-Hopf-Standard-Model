@@ -1,0 +1,106 @@
+{
+  "byte_identical_original_environment": true,
+  "classification": "VERIFIED_ORIGINAL_CONSTITUTIVE_REPLAY_WITH_THREAD_DIFFERENCE_RETAINED",
+  "commands": [
+    {
+      "argv": [
+        "C:/Python314/python.exe",
+        "scripts/evaluate_muon_complex_canonical_compatibility.py",
+        "--output",
+        "artifacts/muon_complex_canonical_compatibility_20261011/run_2",
+        "--max-iterations",
+        "3"
+      ],
+      "completion_tool_chunk": "a1504f",
+      "environment": {
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "PYTHONPATH": "src;scripts"
+      },
+      "exit_code": 0,
+      "launch_tool_chunk": "db32be",
+      "stdout_path": "artifacts/muon_complex_canonical_compatibility_replay_20261012.log",
+      "stdout_sha256": "bbab8c8abb11922af7ab9cd43956bf1820f22334a400b148a7273b8ebcccd65c"
+    },
+    {
+      "argv": [
+        "C:/Python314/python.exe",
+        "scripts/evaluate_muon_complex_canonical_compatibility.py",
+        "--output",
+        "artifacts/muon_complex_canonical_compatibility_20261011/run_3",
+        "--max-iterations",
+        "3"
+      ],
+      "completion_tool_chunk": "3aace9",
+      "environment": {
+        "OMP_NUM_THREADS": "4",
+        "OPENBLAS_NUM_THREADS": "4",
+        "PYTHONPATH": "src;scripts"
+      },
+      "exit_code": 0,
+      "launch_tool_chunk": "21ee3c",
+      "stdout_path": "artifacts/muon_complex_canonical_compatibility_original_env_replay_20261012.log",
+      "stdout_sha256": "d136fe6a293b94c944908c983d2d63cbb53123309ce647cbf041301a6429c465"
+    }
+  ],
+  "consumed_source_pin_count": 347,
+  "consumed_source_pins_current": true,
+  "error_scope": "deterministic original finite three-step application; thread sensitivity is diagnostic, not a continuum, physical matching or anomaly error enclosure",
+  "file_pairs": [
+    {
+      "bytes": 53027,
+      "name": "result.json",
+      "sha256": "245f4b0bd9b434e38d457a59a777a0a310a07b7b06c7d489066136395d370c6e"
+    },
+    {
+      "bytes": 22734,
+      "name": "application.npz",
+      "sha256": "adeb3ef5a9a80efeae250d8ce4f4729348e641b349b89b39e7704fd2d6a15f21"
+    },
+    {
+      "bytes": 629948,
+      "name": "iteration_0_full_constitutive_action.npz",
+      "sha256": "e5cd69825e8630de1d5dc005257ba83fc51f5e0015c7dbbb36c05cbf570bf763"
+    },
+    {
+      "bytes": 633945,
+      "name": "iteration_1_full_constitutive_action.npz",
+      "sha256": "503e8e1b592e7dd2a612289e8b27197cf1464bd551ee1d7facd985c646323974"
+    },
+    {
+      "bytes": 633539,
+      "name": "iteration_2_full_constitutive_action.npz",
+      "sha256": "0d1f9119d078df9d6c89f1a9724ff8f6a1428979f30ee37ea7f4c47d63958518"
+    },
+    {
+      "bytes": 632605,
+      "name": "iteration_3_full_constitutive_action.npz",
+      "sha256": "7dd6a02ea27fca295dd9d839ddcf5ca4b16115ba84d7049971a226e739cb9a0c"
+    }
+  ],
+  "input_hashes": {
+    "scripts/verify_muon_complex_canonical_replay.py": "1361162db3e2d604e1f4a56efe17de2da6faf9136f7e9a39182f68494a7c291d"
+  },
+  "original_and_same_environment_replay": [
+    "run_1",
+    "run_3"
+  ],
+  "original_environment_original_rows_max": 1.4253307404367432,
+  "rejected_overflow_line_search_trials_remain_in_actual_logs": true,
+  "single_thread_absolute_array_differences": {
+    "canonical_force": 1.3916194774341698e-06,
+    "canonical_momentum_target": 0.0,
+    "coefficients": 1.6803004455024962e-06,
+    "coordinate_time": 0.0,
+    "frame_reactions": 1.541181889147627e-26,
+    "framed_rows": 3.5353102975736348e-09,
+    "literal_gauge_source_compatibility": 1.7525962558511447e-32,
+    "literal_generator_image": 6.217248937903314e-15,
+    "original_constitutive_rows": 3.5353102975736348e-09,
+    "original_terminal_master": 0.0,
+    "position_defect": 0.0,
+    "raw_fields": 1.6803004455024962e-06
+  },
+  "single_thread_original_rows_max": 1.4253307404465048,
+  "single_thread_result_sha256": "6709f4b874faecf57f3d51fc9c82fee148ccbd6943a8ce493c2d0b294de19ea2"
+}

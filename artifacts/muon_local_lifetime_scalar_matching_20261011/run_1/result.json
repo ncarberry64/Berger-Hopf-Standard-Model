@@ -1,0 +1,340 @@
+{
+  "all_H4_pole_candidates_retained": true,
+  "array_archives": {
+    "incoming_application.npz": {
+      "bytes": 83228,
+      "sha256": "634018fc4bcadcd7d5ca5395c9826ae60a8f4566269b32d239b61d412409c740"
+    },
+    "outgoing_application.npz": {
+      "bytes": 83315,
+      "sha256": "99e27818a006258b2e2f4c0302fb0696526cf6481209cb7ae3733a8c51effcbc"
+    }
+  },
+  "classification": "EVALUATED_JOINT_LOCAL_FULL_ACTION_LIFETIME_AND_SCALAR_PARAMETER_EQUATIONS",
+  "errors": "binary64 original finite action/Schur/eigen/phase-space application; sampled positive radial candidate relation is not a global existence theorem. NonVA radiative, spatial momentum, stationary branch, continuum kinetic and outer pole matching remain separate.",
+  "fixed_Y_preserved": true,
+  "held_base_coefficients": true,
+  "input_hashes": {
+    "artifacts/flagship_integration/BHSM_N12_C2_REFINED_RESET_ROOT_CENTER.npz": "59dd88661b15cbeec96bc19294f9d9c64f754cccbfbc385c32329fa9c864a8fe",
+    "artifacts/flagship_integration/BHSM_N12_FULL_RESET_ACTION_JACOBIAN.npz": "35bb2b67ff784206d3a5b9dc82881f5ffd8f844b55342f2032d29cdafb38a67a",
+    "artifacts/muon_birth_transfer_value_20261008/retained_reset/run_1/result.json": "d0fec0f8e8a05818fcce67e88ed8db73744484220a2cb213825893f481cb0a72",
+    "artifacts/muon_calibrated_pauli_20261009/inputs.json": "0b614ab6f26d169ca04a4878f767f78eb3668484840867e46aebbebf186369da",
+    "artifacts/muon_calibrated_weak_decay_20261010/run_1/weak_decay.json": "9c31575ce0889571790f8767cf53ffe043cb9906e0a45a96b194971320a0aad7",
+    "artifacts/muon_finite_normal_phase_20261011/incoming_run_1/application.npz": "254491c04531387f3ef3ae761cb4efccfbed54055683af00fbd8259a2520a8f9",
+    "artifacts/muon_finite_normal_phase_20261011/incoming_run_1/result.json": "8547be3232459deb8cb1d325a3d956bc0380ba0c767371ccce4bf7f5140b399f",
+    "artifacts/muon_inherited_finite_normal_phase_20261011/run_1/application.npz": "7a513c82e9e4f3e2560e2989867e00e8af3453e637a29559286c29eb7c184a59",
+    "artifacts/muon_inherited_finite_normal_phase_20261011/run_1/result.json": "d283c45cb81e86628ecec96159eae5327829d15f440bf01c78164f4b12434c51",
+    "artifacts/muon_matched_mechanical_source_20261002/replay_reference/matched_source_and_weak_actions.npz": "146435df28178967c321c0aa7e89a1511395d196f96b8715532aa98e3e312c2b",
+    "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1/application.npz": "c67363c17adfb519f399614463d5a13dbcd019aa53246d452421eea8ba982455",
+    "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1/result.json": "06867e31959910ec21385e8491bd5b794060c68e8404ae0524e3d0c9b544faa6",
+    "scripts/evaluate_muon_coupled_lorentz_radial_green.py": "cadde682558aa95a9b8356fd384db17caac801e6bf4aee9e0d9c613b0a579d3b",
+    "scripts/evaluate_muon_local_lifetime_scalar_matching.py": "1e88223d161c8fdc9a53405d422a894744aa7ac1d482596add6f198842f7e5ce",
+    "src/bhsm/interface/aether_canonical_momentum_action_jacobian.py": "d0ade20dc8a999e43073b45ca3ef59e05c65c55e37a1d6565d4e389176295cb1",
+    "src/bhsm/interface/aether_diagonal_sp1_m4_attachment_v15_50.py": "e6482614dcb54f4890a5e66fbe724d4c302405d575a4b73ddbb64a075cb1827e",
+    "src/bhsm/interface/aether_lorentzian_child_galerkin_v15_44.py": "574a9a6267d9228170c7309bd4be3cafb36b7515a6ee558509beb968e97bdab7",
+    "src/bhsm/interface/muon_birth_attached_phase.py": "948c1505e9b68cffbe8050be31dcb5727d8f8d4f25399f9037cfc94a9ae9fdeb",
+    "src/bhsm/interface/muon_birth_chronological_normal_inertia.py": "909f322d0b375ab03fc0b0a148c9d710ac77e371e029c5e92c9bfbde86883b05",
+    "src/bhsm/interface/muon_birth_coupled_primal_midpoint.py": "ce321f641fa51d98710d006e246aac5cf6bd046be93a74fab452808597c599ce",
+    "src/bhsm/interface/muon_birth_finite_geometric_trace_endpoint.py": "4f5c36144222d5d1e657061aa9352f8e86d5ae61a0ebdf05991a477e68d4be5f",
+    "src/bhsm/interface/muon_birth_finite_normal_phase.py": "660ed731bdbe0bbb71eda750c9dbffd20e7ce9f63be2a6087e5a385d76850361",
+    "src/bhsm/interface/muon_birth_finite_normal_trace_graph.py": "20eafd9a6abff3d3a89a2f6085d099584684ba19b600673dafda634cb56aad18",
+    "src/bhsm/interface/muon_birth_full_field_attachment.py": "58b3bd8a4ae5fe7c63b5551e4d0f26d82ab82a27d4389066c894a5e1b4728d03",
+    "src/bhsm/interface/muon_birth_inherited_finite_normal_phase.py": "86b082dfa0b525e9d8bb510a6c02e53c517d7ecdd8c6c9aec956d175d829add4",
+    "src/bhsm/interface/muon_birth_normal_constrained_action.py": "fe66a9116816e075cfc5e7c5f5f3c2c02d539311303b693a1d89cbc08ea62577",
+    "src/bhsm/interface/muon_birth_normal_trace_graph.py": "d012a0455d84be2ce7aae8d6833f8b482f9bbc1e9ee1b899042a421c2a782896",
+    "src/bhsm/interface/muon_birth_paired_attachment_endpoint.py": "71a69275ebeef226fd8dc7585745c5c8acac687e497a8441fe37a37553178f23",
+    "src/bhsm/interface/muon_birth_paired_field_endpoint.py": "f22b6a17b65c72b30571b3d9f721f347737a5916fa08e50bd833ad22df3cd035",
+    "src/bhsm/interface/muon_birth_phase_continuation.py": "9169a1c56bf5084d1f240043ca12d431c87e4adaff24fe09bdf7bf27fc5eb0be",
+    "src/bhsm/interface/muon_birth_trace_enriched_action.py": "c36c48482dd58ebe369ab935574b78b3693036f717fb49035dfac01164956dce",
+    "src/bhsm/interface/muon_birth_trace_enriched_phase.py": "591754957f1cc452bfd53d8adc1087308459902a822876105315b7423c2fd676",
+    "src/bhsm/interface/muon_birth_two_arm_assigned_action.py": "cf6c58dc68700315d701fb9a1e9e99e927d18d90016a6ae7f86470c36136c77a",
+    "src/bhsm/interface/muon_coupled_lorentz_field_symbol.py": "5e8feada02a7019a89d2d7c7d40e1a60133c2d772ce3662514e88cca77188f8d",
+    "src/bhsm/interface/muon_coupled_lorentz_radial_green.py": "8863c6da43aae25174085252f611f2c438f2ec1324fb657fd77a9b26bf7ffecd",
+    "src/bhsm/interface/muon_coupled_tensor_decay_rate.py": "92f251853fa31ce26436324a3c71048f447ed2c4753dfee06d6db1b0954861dc",
+    "src/bhsm/interface/muon_exact_material_response.py": "a530651e157a000dbe6935e9de1cedbce5679f98c599c6c7c641158b749307bf",
+    "src/bhsm/interface/muon_intrinsic_higgs_gauge_action.py": "c19354209300ab06c0f1ab6bf4e111dbb5de0cd9e8d1d31a71af357a829118d4",
+    "src/bhsm/interface/muon_intrinsic_m4_normal_pullback.py": "43187eee35f2879a43fe0fd02ae447502811349ccf2f2a78aa14beb8aa706bf0",
+    "src/bhsm/interface/muon_local_lifetime_scalar_matching.py": "b67f6d9c5bd8c20a2b01f9188bcf18904ecb4e03cc9db84184a4dbc87c148773",
+    "src/bhsm/interface/muon_material_higgs_gauge_action.py": "8bca013820283614c6578be4f44c29c4ea1c919f516aa9a2783f0eb38127d035",
+    "src/bhsm/interface/muon_moving_geometric_action.py": "bf560fdb9766f563d97d3100ccb266e2a4350c910ac14a51d57576c2b5371392",
+    "src/bhsm/interface/muon_parent_gauge_geometry_correction.py": "fa29f5764dca39196c807d64e7976d5894589e7de3ffa9d4a5ddecfb136b4816",
+    "src/bhsm/interface/muon_parent_maxwell_background_euler.py": "fbb2c99d4b1c58247ac42a769fad3e1b16ccc76a1744fe0c5334e50c4a974bee",
+    "src/bhsm/interface/muon_parent_maxwell_full_weak.py": "c1fb703967a644306d3521d457a6d7c778a49d89c1e081b401487a25b7491565",
+    "src/bhsm/interface/muon_parent_maxwell_geometry_weak.py": "f0b4a49934e17ad18c40e9164b66c54e1b2cb146fb476f59b0e500f2dd6c9153",
+    "src/bhsm/interface/muon_parent_mean_causal_action.py": "2a84b1be22625b1a5ae88d10c76631d7a5b602d2b0e22e57f00201bb74a593ad",
+    "src/bhsm/interface/muon_parent_retarded_hypercharge.py": "2eb97a704bce63f601cc0d6e0f647266d4b4aac7f746d34dceb41b72018c3510",
+    "src/bhsm/interface/muon_pointwise_full_field_action.py": "d57cd5953de00bcae857d0e458bbead1e463e5fffe8d947c5b9e71806aabaff6",
+    "src/bhsm/interface/muon_profile_preserving_phase_sample.py": "27ce99bf8c286b0e3fe56dc4d7f0f215dee51b228dcce1805006e1b2c8998418",
+    "src/bhsm/interface/muon_static_coupled_charged_current.py": "990ecd35685878d69f02f1f4f7c5b70610fecd92a91fe1908479ddd55556d2e9",
+    "tests/test_muon_local_lifetime_scalar_matching.py": "11e9632caf36695573df93f2513aaff4b8b3e74bd2f0c6fb7b6098744aba6518"
+  },
+  "physical_a_mu": null,
+  "physical_g_mu": null,
+  "physical_phase_recomputed": false,
+  "physical_scalar_resonance_selected": false,
+  "physical_unit_selected": false,
+  "positive_lambda_candidates_only_for_rate_application": true,
+  "records": [
+    {
+      "global_no_solution_theorem": false,
+      "joint_local_equation_roots": [],
+      "lambda_H_base": 0.1290946235307726,
+      "lambda_affinity_residual_max": 2.0816681711721685e-17,
+      "matching_equations": [
+        "E_kappa*omega=M_h_measured",
+        "C_rate(lambda_H,E_kappa)/E_kappa^4=hbar/tau_mu_plus"
+      ],
+      "positive_candidate_count": 11,
+      "positive_candidate_rows": [
+        [
+          0.02,
+          0.7907341052497849,
+          6255.5,
+          5.977976294770162e-08,
+          0.00013030661709877546,
+          1.0000000000000002,
+          9.591439407582706e-06,
+          9.04879632727118e-18
+        ],
+        [
+          0.04,
+          0.7897761143296385,
+          3127.75,
+          3.704531202484438e-09,
+          0.00012920089478572695,
+          1.0,
+          9.3129981183525e-06,
+          1.9739395056298094e-18
+        ],
+        [
+          0.08,
+          0.7859472430568838,
+          1563.875,
+          2.249017709616874e-10,
+          0.00012550040351732393,
+          1.0,
+          9.17333279614405e-06,
+          4.601321674776018e-19
+        ],
+        [
+          0.12,
+          0.7795769940194627,
+          1042.5833333333333,
+          4.315101507301297e-11,
+          0.0001219012894595524,
+          1.0000000000000002,
+          9.12735169983263e-06,
+          1.9985439403387529e-19
+        ],
+        [
+          0.2,
+          0.7592913872049141,
+          625.55,
+          6.053581436919353e-12,
+          0.0001319546414171978,
+          1.0,
+          9.099997733020176e-06,
+          7.125280368828724e-20
+        ],
+        [
+          0.3,
+          0.7201628341003612,
+          417.03333333333336,
+          2.2323274822572402e-12,
+          0.00024634016260494465,
+          0.9999999999999996,
+          9.174661397344974e-06,
+          3.356502900167932e-20
+        ],
+        [
+          0.4,
+          0.6667549685381655,
+          312.775,
+          1.768586119066208e-12,
+          0.0006168200417254557,
+          1.0,
+          9.878230522573809e-06,
+          2.7098085172030283e-20
+        ],
+        [
+          0.5,
+          0.601499098832352,
+          250.22,
+          1.7063145560915758e-12,
+          0.00145288557523384,
+          1.0,
+          1.550348325301572e-05,
+          1.1843378376725109e-19
+        ],
+        [
+          0.6,
+          0.5310168511011446,
+          208.51666666666668,
+          1.7109318543692162e-12,
+          0.003020855924132546,
+          1.0,
+          2.242826409266139e-05,
+          4.267776732084625e-19
+        ],
+        [
+          0.7,
+          0.48137361803613926,
+          178.72857142857143,
+          1.720667205218461e-12,
+          0.005628353164318374,
+          1.0,
+          3.066948156271184e-05,
+          1.3703689416315805e-18
+        ],
+        [
+          0.8,
+          0.7593710423869936,
+          156.3875,
+          6.0794958132995905e-12,
+          0.03392499643237384,
+          1.0000000000000004,
+          0.00014844766513074823,
+          5.094618952260317e-15
+        ]
+      ],
+      "row_order": "omega,lambda_H,E_kappa,C_rate,rate_over_measured,radial_fraction,series_rho2,tensor_tail_estimate",
+      "side": "incoming"
+    },
+    {
+      "global_no_solution_theorem": false,
+      "joint_local_equation_roots": [],
+      "lambda_H_base": 0.1290946235307726,
+      "lambda_affinity_residual_max": 1.3877787807814457e-17,
+      "matching_equations": [
+        "E_kappa*omega=M_h_measured",
+        "C_rate(lambda_H,E_kappa)/E_kappa^4=hbar/tau_mu_plus"
+      ],
+      "positive_candidate_count": 12,
+      "positive_candidate_rows": [
+        [
+          0.02,
+          0.7918963686219678,
+          6255.5,
+          6.763977947298978e-08,
+          0.00014743970885504099,
+          1.0000000000000002,
+          4.376399796458349e-06,
+          3.927652420460023e-19
+        ],
+        [
+          0.04,
+          0.7908460039879758,
+          3127.75,
+          4.151403449969478e-09,
+          0.00014478621208343395,
+          1.0,
+          4.05229429445169e-06,
+          7.033981796186469e-20
+        ],
+        [
+          0.08,
+          0.7866446162631539,
+          1563.875,
+          2.411619159470036e-10,
+          0.00013457394148094895,
+          1.0,
+          3.887098828782568e-06,
+          1.4689955310548605e-20
+        ],
+        [
+          0.12,
+          0.7796425542646676,
+          1042.5833333333333,
+          4.211757072535447e-11,
+          0.00011898181703576125,
+          1.0000000000000004,
+          3.828037835523659e-06,
+          6.126156627521125e-21
+        ],
+        [
+          0.2,
+          0.7572380427528711,
+          625.55,
+          3.719873608398435e-12,
+          8.10849896426449e-05,
+          1.0000000000000004,
+          6.619453145126711e-06,
+          2.016280640340848e-20
+        ],
+        [
+          0.3,
+          0.7134882100253834,
+          417.03333333333336,
+          5.418463353042629e-13,
+          5.9793428789747884e-05,
+          1.0000000000000004,
+          1.5152507227363792e-05,
+          2.763006675155162e-19
+        ],
+        [
+          0.4,
+          0.6522576788124295,
+          312.775,
+          4.2192923321289127e-13,
+          0.00014715393524233713,
+          1.0,
+          2.7402866003236847e-05,
+          2.0910799443889267e-18
+        ],
+        [
+          0.5,
+          0.5735639972906269,
+          250.22,
+          5.406314858109669e-13,
+          0.00046033463434267096,
+          1.0,
+          4.3560391498345755e-05,
+          1.142528445805968e-17
+        ],
+        [
+          0.6,
+          0.477427539608047,
+          208.51666666666668,
+          6.513125989905349e-13,
+          0.001149970712216417,
+          1.0,
+          6.386223089496957e-05,
+          4.929676571634418e-17
+        ],
+        [
+          0.7,
+          0.3638702073349638,
+          178.72857142857143,
+          7.337477001309727e-13,
+          0.00240011036260737,
+          1.0,
+          8.882906714385692e-05,
+          1.789269774960314e-16
+        ],
+        [
+          0.8,
+          0.2329141453985009,
+          156.3875,
+          7.934426454116847e-13,
+          0.004427593955406544,
+          1.0000000000000002,
+          0.0001258403265199383,
+          7.104896807421318e-16
+        ],
+        [
+          0.9,
+          0.08458056986138868,
+          139.01111111111112,
+          8.380642079464695e-13,
+          0.007490997117082182,
+          0.9999999999999999,
+          0.00017873468527522453,
+          2.8726687952019172e-15
+        ]
+      ],
+      "row_order": "omega,lambda_H,E_kappa,C_rate,rate_over_measured,radial_fraction,series_rho2,tensor_tail_estimate",
+      "side": "outgoing"
+    }
+  ],
+  "unstable_original_poles_deleted": false
+}

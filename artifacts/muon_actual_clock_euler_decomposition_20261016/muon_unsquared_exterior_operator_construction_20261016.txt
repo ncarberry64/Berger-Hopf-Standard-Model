@@ -1,0 +1,283 @@
+ACTUAL UNSQUARED EXTERIOR CONSTRUCTION AND THE REMAINING COMMON OPERATOR
+Read-only source derivation, 2026-10-16. No field, history, profile, D5,
+quadrature, spectrum, source, matching, or numerical campaign is rerun.
+
+Conclusion
+
+The supplied local action now gives an executable full-carrier Lorentz D5
+differential expression and its common gauge and once-only Higgs seam
+insertions. It also gives a future-retarded domain CLASS and exact supplied-
+operator evolution/Schur consumers. It does not yet give an evaluated real
+exterior history with its total energy/magnetic/source/domain variations.
+Those fields are coupled solution unknowns, not new theory parameters.
+
+There is a separate constructive definition still needed for the microscopic
+mean: the common closed graded D_strat (or its fully identified positive form
+and domain), its cross-stratum trace/adjoint correspondence, and the owned
+log-order/phase completion on that SAME realization. The E1 owner specifies
+the architecture and functional, but does not turn the existing classical
+Hessians, finite sector inputs, or local Spin(8) geometric block into that
+common operator. This statement is established below from actual callable
+operands, rather than from old claim flags. In particular it does not assert
+that the theory has another free coupling or that different boundary laws
+both obey all its later action requirements.
+
+A unique numerical full muon moment is therefore not determined by the
+currently supplied/evaluable operator realization. The formal common-action
+program may determine it after the remaining realization and coupled solve;
+this audit is not a proof of physical nonuniqueness of BHSM.
+
+1. What the local unsquared action actually determines
+
+Owners:
+  muon_holomorphic_d5_trace_action.py:419-486, d5_unsquared_weak_trace;
+  muon_full_d5_differential_form.py:21-85, full_d5_differential_coefficients;
+  muon_full_d5_differential_form.py:89-108, apply_full_d5_expression.
+All paths below are relative to src/bhsm/interface unless marked otherwise.
+
+Use the material coframe N dt, C(d rho+zeta dt), R theta^a, signature +----,
+sheet orientation eps=+/-1, and the actual supplied connection. For each
+family and particle/conjugate block, the source expression is
+
+  D_L(E) psi = D_r partial_rho psi + D_t partial_t psi
+               +(D_0+E D_E) psi,
+  D_r = i eps Gamma4/C - i Gamma0 zeta/N,
+  D_t = i Gamma0/N,                 D_E = Gamma0 ell_Sigma/N.
+
+D_0 retains h0,h4, the combined original f-gradient eta coefficient, the
+round-S3 spin term, all three right-body angular derivatives, the shifted
+temporal connection (A_t-zeta A_r)/N, radial connection A_r/C, and all
+angular connections A_a/R. The implementation retains family3, both
+particle/conjugate 64h branches and thus all384h rows. The saved backgrounds
+activate EW4; color complements cannot be counted as extra copies of these
+four generators. No bulk Higgs mass is appended: its actual fixed-Y term is
+the separately owned two-sheet seam.
+
+Consequently there IS an exact local radial evolution law, on its honest
+noncharacteristic chart. Clifford algebra gives
+
+  D_r^2=Delta I,   Delta=C^-2-zeta^2/N^2,
+  partial_rho psi = -D_r/Delta D_t partial_t psi
+                    -D_r/Delta (D_0+E D_E)psi + D_r/Delta j.
+
+This keeps the time derivative. It is a PDE on an actual time-dependent
+background, not automatically a fixed-E radial ODE. Delta=0 requires a
+different propagation chart; it is not a theorem of model inadmissibility.
+At a timelike material boundary |C zeta/N|<1, Delta>0. Material-wall Green
+flux is the independently owned full matrix
+
+  J_material = i R^3(eps N Gamma4-C zeta Gamma0)
+
+from d5_material_green_trace:489-519; the Dirac-bar output Gamma0 is applied
+exactly once where its action pairing requires it. A value trace/Green
+matrix alone is not an exterior projector or a second-order DtN law.
+
+For any supplied total parameter jets, the coefficient solve Dr G + D=0
+has the exact derivative equations
+
+  G_x  = -Dr^-1(D_x + Dr_x G),
+  G_xy = -Dr^-1(D_xy + Dr_xy G + Dr_x G_y + Dr_y G_x).
+
+These are useful construction equations for an eventual E/B callback, not
+evaluated physical response jets. They require the same background, clock,
+pairing, source, and moving-domain contacts. Complex analytic source
+coefficients must not be conjugated when extending the real-basis left
+insertion. No duplicate generic callback is added by this audit.
+
+2. Which energy and which angular closure
+
+d5_unsquared_weak_trace explicitly defines the off-shell phase derivative
+partial_t exp(-i E tau_Sigma)=-i E ell_Sigma exp(-i E tau_Sigma). Thus its
+E Gamma0 ell_Sigma/N term is action-owned and must be retained. It does not
+prove that a moving full exterior is stationary, select the formed-muon
+state, or identify E with sqrt(z) of a positive heat resolvent. The formal
+product placement in muon_full_d5_differential_form.py:75-85 is separately
+labelled; muon_real_positive_d5_covector_binding.py:24-80 supplies the exact
+local real-positive-coframe eta correction, rather than licensing a new
+phase by dropping the eta time term. Physical causal E and the heat spectral
+parameter remain distinct. Real-time retarded propagation itself does not
+require a stationary base; any eventual pole/state readout must explicitly
+identify its energy and normalization on the solved history.
+
+The actual common insertion's Gaunt map has complete55 output harmonics
+n<=4 for one multiplication of source n=1,3 and input n<=1. It is exact for
+that declared insertion and all1200 common coordinates, including connected
+source-square contacts. It is not a proof that repeated exterior resolvents
+close in55 harmonics or that an unknown physical spin state has only5 input
+harmonics. The full D5 expression accepts the supplied complete angular
+derivative maps; no additional angular complement may be deleted here.
+
+3. The seam and raw-normal congruence remove a false coefficient obstacle
+
+The later normalized_two_sheet_point_action:272-337 in the holomorphic
+owner and normalized_d5_dirac_bar_trace:207ff in
+muon_full_d5_localized_lepton_trace.py specify the once-only bilinear
+
+  K_L,seam = -rho_L Cbar M(H) B,       rho_L=ell_L R_wall^3.
+
+Its unsquared Hamiltonian output coefficient is exactly
+
+  W_seam = -Gamma0 K_L,seam = +rho_L Gamma0 Cbar M(H) B.
+
+The output conversion is distinct from the Gamma0 already present once in
+Cbar. The full384 extension, both eta sheets, boosts, fixed noncentral
+three-family Y, common ghost contribution -eta H, independent H80, Hdot,
+and all1200 coefficient/time kernels have already been constructed by
+muon_common_higgs_seam_insertion.py and the frozen Hamiltonian seam audit
+listed in the pin inventory. Its existing native scalar comparison is on
+the declared intrinsic/surface stratum only; it does not append this mass
+throughout the D5 bulk. The positive density isometry s=sqrt(C R^3) acts on
+both input/output traces and gives rho_L/s^2=ell_L/C, not ell_E/C.
+
+The unassigned normal amplitudes do not prevent raw full-complement bulk
+assembly. With B=R_u^-1 B0 and C=C0 L_u^-1, the full normalized seam Schur
+operator is congruent to the raw one:
+
+  Gamma_norm = L_u Gamma_raw R_u - rho_L M,
+  Gamma_raw,full = Gamma_raw-rho_L L_u^-1 M R_u^-1.
+
+Sources, readouts, Gram and all first/mixed contacts transform with it. This
+requires regular invertible amplitudes and finite positive same-domain
+normalization integrals; those premises are not proved by a point trace.
+The remaining I_eta=integral sin^2(f(X(s)))ds is an actual field/domain
+functional along the action-owned proper-normal flow with its endpoints.
+A fixed-time radial profile or an old complex normal solution is not that
+real moving flow. The previously pinned normal-congruence proof establishes
+these facts; no new free normalization or measured coupling is introduced.
+
+The local conditional isotropic seam transfer, core form closure, and
+native adjoint-square domain constructions already exist. They are real
+domain components. They do not by themselves prove that one resulting
+global graph is the interacting domain of every stratum in the master
+E1 realization. The older explicit spin-frame transmission and the later
+surface weak Euler term must be reconciled as bundle-frame identification
+versus interacting limiting-trace law; they cannot both be silently imposed
+as the same hard full-trace continuity plus a nonzero jump. No arbitrary
+average, Robin datum, extra Legendre term, or delta-square is added here.
+
+4. Existing evolution consumers already suffice once coefficients exist
+
+muon_joined_d5_causal_tail_action.py:14-52 constructs the time principal from
+the original unsquared D_t and volume, not from D_E. Its
+joined_d5_causal_prefix:81-130 evolves supplied M xdot+(K0+C S B)x=j,
+retaining all blocks, sources, initial trace and final literal-left target.
+The first-jet companion:132ff retains moving M,K,clock,C,S,B and endpoint
+contacts. It deliberately leaves a finite final remainder.
+
+muon_retarded_spinor_tail_jet.py:46-137 already performs complete E/B/EB
+unsquared future-child elimination with independent H_pc and H_cp, source
+and target jets and analytic transpose left response. Its pole lift:139ff
+is conditional on supplied left/right null states. These are not missing
+algorithms. Supplying another finite inverse would not construct the actual
+exterior, its outgoing projector, or either normalized spin state.
+
+The strongest actual causal owner is
+ae4_future_collapse_relative_boundary_domain.py:93-121:
+omega -> omega+i0 from Im omega>0; future-retarded regularity/outgoing
+support; parent Schur Hpp-Hpc(Hcc^R)^-1Hcp; same boundary value for BRST
+partners. Reset is birth trace/variation identification, not an outer
+state selector. Lines124-186 explicitly reuse the later continuum child,
+dynamic Wentzell, attachment, center and high-shell results, so the old
+five-missing-block narrative is obsolete. The remaining nonzero Calderon
+evaluation must be on the same reset-glued maximal history. This fixes a
+domain class and existing geometric correspondence, not the value of its
+outgoing projector for unspecified coefficients.
+
+5. Coupled unknown fields versus the unclosed microscopic definition
+
+For a supplied realization, write c=ell_star^2 and
+
+  Gamma_ind = -1/2 STr E1(c P) + Gamma_log,phase,
+  delta Gamma_ind = 1/2 STr[e^(-cP) P^-1 delta P]
+                     +(delta ell_star/ell_star) STr[e^(-cP)]
+                     +delta Gamma_log,phase.
+
+The quotient, zero modes and relative/log accounting must be those of that
+same owner; this formula does not introduce a new heat-reference subtraction.
+For a varying form/domain, delta P includes the Riesz, incidence and trace
+motion, not only coefficient derivatives Ddagger deltaD+deltaDdagger D.
+The coupled equations are
+
+  delta_Phi (S_classical+Gamma_ind) + C_Phi^* Lambda = 0,
+  C(Phi)=0, with original initial/corner/source and retarded exterior rows.
+
+The actual classical full-history residual/Jacobian is executable through
+muon_real_two_arm_temporal_action.py:72-167. Source and independent proper
+lapses are retained on the owned common coordinate-time chart. Native and
+boundary callbacks at132ff are explicit whole-history functional operands;
+None is not the value zero. The current real saved D5 readouts provide an
+incoming/inherited provisional real cell and local germs, not all values of
+Phi(t,rho,Omega;E,B) in the formed-muon exterior. Solving those fields and
+their E/B/EB equations is legitimate new work with explicit laws. It is not
+a need for a new lambda/gamma, absolute-unit calibration, collider history,
+or empirically inserted particle value. The actual classical nonstationary
+Euler defect must remain an equation; it is not an admissibility prerequisite
+that can be used to avoid solving the coupled system.
+
+The remaining microscopic operand is sharper than 'some numbers missing':
+ae4_stratified_dirac_zeta_induced_owner.py:272-302 defines only
+H8 direct_sum H5+ direct_sum H5- direct_sum H4,
+P=D_strat^dagger D_strat on the zero-mode/BRST quotient, canonical geometric
+graded trace, and its common E1/log-phase functional. To evaluate that
+functional and its mean force one needs the actual graded bundle/factor
+maps and closed form/domain identifying those stratum components together.
+No callable coefficient correspondence is provided in that owner.
+
+This is not repaired by substituting the other concrete components:
+  * master_action/reduction.py:334-392 gives genuine geometric pushforward,
+    constraints, Green-pairing and constrained Schur identities, with the
+    Dirac domain typed as maximal-isotropic. Its finite SM projectors are
+    intrinsic M4 data (:395ff), not a specification of the H8 graded factor.
+  * muon_m8_original_hopf_spin_lift.py:77-164 gives the complete geometric
+    Spin(8)16 coefficient rotation and all original angular directions. It
+    does not select a native graded/twisting carrier. Tensoring by an
+    arbitrary SM16 and declaring that the common heat multiplicity would be
+    a new mathematical identification, not a consequence of this helper.
+  * ae4_c2_stratified_event_flux_assembly.py:60-111 accepts precomputed six
+    sector blocks and forms sector-diagonal sums. It does not construct the
+    common operator or prove that nonzero-background cross-sector couplings
+    vanish. Classical EW/scalar/FP Hessians cannot be relabelled P_strat by
+    this assembly. Their achieved finite15-form convergence remains valid
+    within its own scope.
+  * aether_unified_m5_m4_pushforward_v15_69.py:25-84 fixes one parent bulk
+    inverse and one boundary trace, with gauge/Higgs residues and quartic as
+    derivatives of the same Gamma. It is a matching identity; its parent
+    H5/D5 domains and common renormalized functional remain operands. The
+    later AE4 owner supersedes independent Wilson ownership, so this audit
+    does not treat historical coefficients as independently free.
+  * ae4_existing_asset_system_integration.py:378-417 requires precisely
+    D_strat_ret[Phi_star,Sigma_star] on the certified event-child relation
+    and reachable component, with deltaPhi Gamma=0. Its statement that one
+    global operator evaluation remains is a common-owner requirement, not
+    a constructive map from all Phi to the missing graded coefficients.
+
+Thus a genuinely unprovided mathematical identification remains for the
+full microscopic completion, whereas the local Lorentz spinor equation,
+SM/family representation, geometric M8 spin coefficients, classical coupled
+equations, trace numerators and retarded rule already have owners. It is
+incorrect to call all of those missing, to add arbitrary UV fields, or to
+infer a new independent state/counterterm once a complete selfadjoint heat
+P/domain and its prescribed completion are actually supplied. A retarded
+Green function on a completed globally hyperbolic history is uniquely fixed
+by its retarded support; generic quantum-state freedom is not an additional
+obstruction to that causal inverse.
+
+6. Concrete next construction and claim boundary
+
+Continue the actual coupled original canonical/source/domain equations on
+the retained branch, retaining uncomputed native/exterior loads explicitly.
+In parallel complete the common factor/bundle/domain identification above,
+then evaluate its nonlocal force and differentiate the same realization.
+On an actually supplied exterior history, use the already-owned D5 radial
+PDE or joined temporal evolution and the existing retarded two-jet solver;
+derive the outgoing subspace from its same future domain. Raw-normal
+congruence avoids waiting for an arbitrary normalization choice. This is a
+construction route, not a second toy calculation or a choice of free31
+clocks, zero source, missing heat statistics, or exterior load.
+
+No new callback, numerical solve, matching correction, physical derivative
+pass, Maxwell/all226 validation, normalized spin states, or moment is
+claimed here. All original spin, temporal, angular and complement terms
+remain in the equations. The accompanying JSON binds exact bytes and line
+anchors of the cited current owners and readouts; no historical claim flag
+alone is used as the proof of this conclusion.

@@ -1,0 +1,154 @@
+BHSM scalar coupling and scale cancellation derivation
+2026-10-15; narrow action analysis, no source integration replay
+
+Finding
+
+An unknown conversion from dimensionless chart coordinates to GeV does not
+by itself obstruct a dimensionless normalized g or anomaly calculation.
+It does obstruct a dimensionful magnetic moment unless a unit is supplied.
+However a unit change cannot remove dimensionless scalar/interface ratios
+from the retained real field equations. No retained executable supplies the
+physical scalar quartic and scalar unit ratio from the full master action.
+
+1. What the v15.69 master callable actually evaluates
+
+src/bhsm/interface/aether_unified_m5_m4_pushforward_v15_69.py:
+unified_parent_boundary_functional() returns a dictionary containing the
+formal path-integral expression
+  Gamma_boundary=-log integral_(fixed boundary trace) exp(-S5[A5,Psi5]).
+common_derivative_ledger() returns derivative expressions as strings.
+It has no argument for a physical background/domain, scalar field, energy
+or momentum and evaluates no scalar derivative. Its numerical Schur witness
+uses an explicitly supplied artificial 2x2 matrix and is labelled not a
+physical coefficient prediction. Thus calling this ledger cannot yield
+lambda_H or nu in current geometric action units.
+
+This does not mean that a common regulator profile is still unselected.
+The newer ae4_stratified_dirac_zeta_induced_owner.py selects
+  Gamma_ind=-(1/2) STr E1(ell_star^2 P_strat)
+             + relative zeta/eta logarithmic/phase completion,
+  P_strat=D_strat^dagger D_strat on the BRST/zero-mode quotient.
+It gives the actual positive-order moments F_p=-ell_star^(-p)/p.
+Its scalar quartic/kinetic terms include logarithmic-order contributions;
+positive-order moments alone are not finite canonical scalar coefficients.
+The actual field-dependent global operator/domain, relative completion and
+physical branch contractions selecting c_star=ell_star^2=i_star/r_star have
+not been evaluated by that callable. No independent Wilson fit is allowed.
+
+2. Concrete extraction formula if the master action is evaluated
+
+Choose the same actual neutral scalar direction and source chart throughout.
+Let H_bare=(0,phi/sqrt(2)) along that direction, and extract its local
+renormalizable effective action in the declared common prescription:
+  L_eff = (Z/2)(d phi)^2-U(phi),
+  u2=U''(0), u4=U''''(0), U'(0)=U'''(0)=0 on the symmetric chart.
+With canonical h=sqrt(Z) phi and the retained convention
+  V(H)=lambda_H (H^dagger H-nu^2)^2,
+the exact quartic polynomial identities are
+  lambda_H = u4/(6 Z^2),
+  m0_H^2 = u2/Z,
+  nu^2 = -3 Z u2/u4 = -m0_H^2/(2 lambda_H).
+For action-unit energy kappa, nu_hat^2=nu^2/kappa^2. Equivalently use the
+dimensionless u2_hat directly in -3 Z u2_hat/u4. The broken branch requires
+u2<0 and u4>0. A general nonpolynomial effective potential must not be
+replaced by this quartic without the stated local projection/matching.
+
+For several intrinsic/composite scalar coordinates, Z and U'' are matrices.
+First identify the physical scalar direction from the same finite generalized
+problem H0_ren d=m_scalar^2 Z_ren d, retaining its intrinsic/HS mixing.
+Then the contractions defining Z,u2,u4 must use that same direction and
+include its moving-domain derivatives. A UV kinetic eigenvector or pole
+Gram matrix alone does not select this direction or its finite quartic.
+
+The exact presently unmet operands are therefore numerical finite canonical
+Z and u4 (and u2_hat or the actual broken stationary solution) on the
+physical operator/domain and scalar direction. They are not extra measured
+parameters being requested here; they are unevaluated outputs of the
+selected common action. Current code instead imports calibrated tree
+lambda_H from G_F and m_h, which must not be relabelled as this extraction.
+
+3. What cancels from both-spin pole response
+
+At each actual physical simple pole, with physical spin labels s=+/-1/2,
+  z_s=l_s Gamma_E r_s,
+  E_s,B=-(l_s Gamma_B r_s)/z_s.
+Rescaling either eigenvector cancels. More generally replacing the matching
+operator by h(E,B) L(E,B) Gamma R(E,B), with h nonzero and L,R invertible,
+does not change the pole derivative: derivative terms multiplying Gamma
+annihilate the actual left/right nullvectors. Unknown overall operator or
+residue normalization must not be manufactured as an additional barrier.
+
+If both spins share a pole at zero measuring field, keep the whole two-spin
+kernel rather than prematurely treating it as two distinct scalar roots.
+For left/right kernel bases L,R, form Z=L Gamma_E R and M_j=L Gamma_Bj R.
+With nonsingular Z, solve (M_j+E'_j Z)c=0. Equivalently normalize the paired
+bases so Z=I and diagonalize -Z^(-1)M_j, retaining off-diagonal spin entries.
+No positive real collar norm is required for this complex-pole normalization.
+The physical spin labels still require the owned rest frame and spin action;
+sorting the resulting energies cannot supply those labels by itself.
+
+Under a CONSISTENT uniform unit conversion
+  E=kappa E_hat, B=kappa^2 B_hat, m=kappa m_hat,
+  E_s,B=kappa^(-1) E_hat_s,Bhat.
+For signed charge q and fixed physical spin orientation, define
+  Delta_B = d_B(E_- - E_+),
+  g = (2m/q) Delta_B,
+  a = (m/q) Delta_B-1.
+Thus kappa cancels from g and a, whereas each projection moment
+mu_s=-E_s,B retains one inverse energy unit. These are readout identities,
+not a pole or outgoing-response computation. Complex-pole quantities may
+remain complex; no real projection is performed by these identities.
+
+Likewise if a unit-charge connection a is canonically normalized through
+  A_can=sqrt(Z_A) a, q_can=Q/sqrt(Z_A),
+then B_can=sqrt(Z_A) B_a. The explicit Z_A factors cancel between Delta_B
+and q in this readout ratio. This does NOT remove Z_A from an interacting
+operator, field equations, loop expansion or physical field preparation.
+
+4. What does not cancel as a mere unit choice
+
+Rescale the literal retained intrinsic action using
+  x_phys=x_hat/kappa, H_phys=kappa H_hat, A_phys=kappa A_hat.
+Its dimensionless scalar equation still contains
+  D_hat^2 H_hat +2 lambda_H (H_hat^dagger H_hat-nu_hat^2)H_hat
+                +Yukawa source_hat=0.
+lambda_H is dimensionless and survives. Choosing kappa=nu merely changes
+all coordinates/fields together; it leaves the physical product nu R
+invariant. Changing nu_action at fixed retained cap geometry is a different
+physical theory/candidate, not a change of units.
+
+In the retained canonical quartic model,
+  m_H^2=4 lambda_H nu^2, m_mu^2=Y_mu^2 nu^2,
+so m_mu^2/m_H^2=Y_mu^2/(4 lambda_H).
+The common dimensionful nu cancels from this ratio; the dimensionless
+coupling ratio remains. This establishes that a scalar unit cancellation
+does not prove independence from the unknown scalar action response. A
+specific correlated cancellation among master-action derivatives would
+need to be derived from that action; none is supplied by the ledger.
+
+For an m-dimensional worldvolume,
+  S_surface=-gamma integral dmu_m,
+  gamma_hat=gamma/kappa^m=alpha_FSC (kappa ell_s)^(-m).
+The selected mechanics law fixes the exponent and form. A uniform unit
+choice does not select alpha_FSC or the dimensionless relative length
+kappa ell_s, nor the surface-to-bulk action ratio. Existing code labels
+alpha_FSC positive symbolic with no selected exact decimal.
+
+5. Scope
+
+This derivation removes a spurious absolute-unit gate for dimensionless
+g/a, and removes a spurious eigenvector/overall-Gamma normalization gate.
+It does not compute physical outgoing E/B derivatives, scalar couplings,
+real field solutions, two physical spin poles or a magnetic moment.
+No fitted parameters, reflected/zero exterior, discarded spin terms,
+empirical scalar substitution or coupled correction are introduced.
+
+Relevant source owners inspected:
+  aether_unified_m5_m4_pushforward_v15_69.py
+  ae4_stratified_dirac_zeta_induced_owner.py
+  ae31_c2_intrinsic_m4_lepton_action.py
+  ae31_c2_scalar_uv_hessian_factorization.py
+  ae31_c2_full_scalar_derivative_pole.py
+  muon_calibrated_matching.py (unit conversion only)
+  covariant_bubble_interface_mechanics.py
+All paths above are under src/bhsm/interface in the retained repository.

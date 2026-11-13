@@ -1,0 +1,67 @@
+{
+  "classification": "PAIRED_CURRENT_IMAGE_REPLAY_AND_INDEPENDENT_MATH_CHECKS",
+  "commands": [
+    {
+      "argv": [
+        "C:/Python314/python.exe",
+        "-m",
+        "pytest",
+        "--noconftest",
+        "-q",
+        "tests/test_muon_parent_positive_open_current.py"
+      ],
+      "exit_code": 0,
+      "output": "...                                                                      [100%]\n3 passed in 3.69s"
+    },
+    {
+      "argv": [
+        "C:/Python314/python.exe",
+        "scripts/evaluate_muon_parent_positive_open_current.py",
+        "--output",
+        "artifacts/muon_parent_positive_open_current_20261011/run_3"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "C:/Python314/python.exe",
+        "scripts/evaluate_muon_parent_positive_open_current.py",
+        "--output",
+        "artifacts/muon_parent_positive_open_current_20261011/run_4"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "earlier_run_pair": [
+    1,
+    2
+  ],
+  "environment": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "PYTHONPATH": "src"
+  },
+  "error_scope": "Finite reference curvature/current contraction, no intermediate fermion Green or physical pole/Pauli assigned. Neumann majorants refer to exact stored normalized matrices, not upstream operator/Gram production.",
+  "files": [
+    {
+      "bytes": 2557582,
+      "name": "incoming_application.npz",
+      "sha256": "cbd866efeb9ff8407a503a24d3396a8cddef3f3df60ecc3c073d1a7e69b90072"
+    },
+    {
+      "bytes": 2557286,
+      "name": "outgoing_application.npz",
+      "sha256": "0d343781d3a737efcb6a3f5c8ac27ac3459ef326645b5c672883110311f663cf"
+    },
+    {
+      "bytes": 14000,
+      "name": "result.json",
+      "sha256": "bb737a3eede5dcba11643fbee91e78cb4b61e6605c3b7f21402c94364d5c88a1"
+    }
+  ],
+  "final_run_pair": [
+    3,
+    4
+  ],
+  "paired_files_byte_identical": true,
+  "supersession": "Runs1/2 have identical numerical arrays but preceded metadata-only renaming of backward-error output; final3/4 bind frozen source. No old artifacts changed."
+}

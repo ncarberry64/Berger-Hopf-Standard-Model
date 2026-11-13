@@ -1,0 +1,144 @@
+ACTUAL FULL27x7 SU2 deltaV(A,H) SOURCE-CORNER APPLICATION
+2026-10-16. Fixed original ea02 field, exact retained seven R/Rdot, no
+retraction, source/history/action solve, or original coupled correction.
+
+1. What the new application completes
+
+The prior central seven-column calculation had only deltaV(H), because
+the central spatial gauge image is the fixed profile derivative. The
+SU2 spatial gauge image is K_i=D_i(phi_p T_a). In the fixed external
+K(A_background) coefficient chart, V^T deltaPi alone does not include
+the physical gauge-image variation deltaK_i=[deltaA_i,phi_p T_a].
+This new application evaluates that missing unprojected contact from
+the exact actual point R coefficients. No attempt is made to fit it
+back into a finite state span. It compares the complete resulting
+charge variation against the separately evaluated all60-row Gauss H_R,
+projected onto all9 profiles times3 SU2 channels. Thus all27x7 source
+and retarded/homogeneous columns are checked without deleting a mode.
+
+Canonical source:
+ audits/bhsm_original_ea02_SU2_linearized_corner_20261016.py
+ SHA3504d6dd8fefffa7704d00321ef3e404c59313ac9b913e8256f7844dcfcfaeb2
+ 14352B.
+
+2. Exact operands and source provenance
+
+The target remains original ea02 master368 at
+ t=8.249007812499999e-5 -2.292213182443259e-8 i.
+This is the same complex analytic off-shell finite field, not a real
+physical muon/exterior solution, a different principal branch or a
+future midpoint. Full master/time equality is required in every input.
+The exact full746 R entries agree across coefficient exports, central
+momentum variation and independent Gauss Hessian application.
+
+Consumed frozen producer sources:
+ - coefficient-only R/hR and Rdot: c744590f986e47c946f128641b071808f527d230ba60fc2fa70adf87d351c851
+ - full SU2 primal/corner: 792af62bc8bc9257beeafd57894644b22272a820edfed3ff67e2ccdf33c129b2
+ - complete217 momentum variation: a4127316f999d03a67f8307d12258d4aaed809f292d8234d05d494b85381d425
+ - independent all60 Gauss H_R: 519371278ad0884047147d7b97364d2af7f5f7ae145d15cda1549b56cce35902
+All input archives and executed source copies are byte-hash checked.
+Coefficient value/h/R/hR, Rdot, raw Higgs and boundary weights come from
+the explicit early coefficient-return mode. The fixed source/reference
+composition and T/Th/W/Wh contacts remain counted exactly once. No packed
+action, gradient, Hessian, field history or response solve is called.
+
+3. Literal charge and its two gauge-map contacts
+
+At each original radial node the canonical momenta are
+ P_Ar=k X, P_Ai=e Y_i, P_At=0,
+ X=partial_t Ar-partial_r At+[At,Ar],
+ Y_i=partial_t Ai+[At,Ai]-beta(partial_r Ai+[Ar,Ai]).
+They include the original MAXWELL_TO_CAP radial weight. The scalar
+momentum is Pi_H=(2 wT/VOLUME)(Hdot+O_At H). For parameter phi_p T_a,
+
+ Q = sum_nodes,spatial P_i dot D_i(phi_p T_a)
+        + Pi_H dot(-T_a H phi_p(wall)).
+
+Direct coefficient differentiation evaluates
+ deltaQ = V^T deltaPi + contact_A + contact_H,
+ contact_A = sum P_i dot[deltaA_i,phi_p T_a],
+ contact_H = Pi_H dot(-T_a deltaH phi_p(wall)).
+
+The literal total deltaQ includes every metric/density/shift variation,
+curvature variation and wT/H/Hdot variation from the actual coefficient
+R. contact_A uses the unchanged base P and actual point deltaA; contact_H
+uses unchanged base Pi_H and actual deltaH. The independently assembled
+217x7 momentum variation supplies the held-chart V^T deltaPi. This
+decomposition checks that no physical deltaK is omitted or counted twice.
+The action's original frozen1/sqrt(2) commutator coefficient is preserved.
+
+Let Cg be the field-independent ordinary temporal parameter map. The
+primary identity and its linearization are
+ Q+Cg^T rG=0,
+ deltaQ+Cg^T H_G R=0.
+The H_G R on the right is the previously completed independent native-
+material all60-row application, not an identity-filled substitute. A
+separate literal temporal Gauss functional on phi_p T_a reproduces its
+projection and is exported as an additional cross-check.
+
+4. Actual new result
+
+Independent all27x7 deltaQ+Cg^T H_G R upper:
+ 2.7919544675808336e-32.
+Literal temporal Gauss variation versus the independent projection has
+the same bound. The held-chart momentum plus full deltaV(A,H)
+decomposition closes to1.7693871384236896e-26.
+The nonzero contact_A reaches1.0971340037067491e-10; it is retained even
+though some charge projections are smaller due to cancellations. The
+Higgs gauge-map contact reaches1.3513181155747326e-18 and is also kept.
+Literal primal charge/clock reproduce the frozen SU2 primal packet to
+3.7744e-28 and1.7577e-24 respectively.
+
+This verifies the actual complete SU2 source-corner derivative identity;
+it does not make the retained trial satisfy the Gauss equations. After
+adding the primal r only to affine column0:
+ - affine column0 SU2 projection upper1.2876618606298222e-11;
+ - maximum over all seven affine-system columns2.6287200684738835e-10,
+   attained in homogeneous column6;
+ - existing combined-four maximum3.024232848402535e-10.
+Thus the full SU2 trial-column constraints still fail2e-10. Separately,
+the previously published central affine column0 defect remains3.8597e-9.
+No column is dropped, corrected, or relabeled a physical outgoing load.
+
+5. Clock contacts and precise independence scope
+
+The mixed coefficient hR plus the separately supplied Rdot evaluate
+ d_t(deltaQ)=D_h D_R Q + D_Rdot Q,
+including actual sourceDot, changing geometry/density and the moving
+fixed chart once. This actual total charge clock reaches3.067684778557416e-5.
+The matching literal Gauss functional clock gives the polynomial
+Noether identity control upper1.912145554950388e-41.
+
+No independent mixed-clock Gauss Hessian application is claimed. This
+last result is expressly a literal product-rule/Noether identity control
+of the supplied coefficient germ, distinct from the independent all27x7
+primary H_G R comparison above. No missing physical E/B/domain source
+direction is assigned a zero value.
+
+6. Paired files and exact inventory
+
+WORK/outputs/bhsm_original_ea02_SU2_linearized_corner_20261016/run_1 and
+run_2 repeat all3 files byte-identically:
+ actual_SU2_all27x7_deltaV_corner_and_independent_Gauss.npz
+  796625B SHA f036ed3606addc2032e52ac7735ac2852ae47b7969fa435f0b6f3cccea359c08
+ result.json
+  5876B SHA1e18bdc21077e534fb1024b24d9682b0effbd83b911828560ccf28aa21e6f84a
+ executed_producer.py
+  14352B SHA3504d6dd8fefffa7704d00321ef3e404c59313ac9b913e8256f7844dcfcfaeb2.
+The sibling paired_inventory_and_column_readout.json has
+ SHA7e49f12eb5f53563ebc558285622f143e5cbafcdebd0a236c0d34d01d2814c7b.
+All numeric outputs also retain exact256-bit acb dyadic midpoint/radius
+exports; the receipt's binary64 column maxima are labeled display only.
+
+7. Physical scope
+
+The unprojected deltaK is a legitimate weak momentum functional; it is
+not an extra admitted state coordinate, a finite projection, or a new
+physical datum. This is a D4 actual classical same-field source-corner
+component. It does not construct the full physical reset/ghost/outgoing
+domain, microscopic graded induced current, retarded Y_R/s_R or C0/Cj,
+or the full physical energy/field/source/domain derivative. The original
+coupled correction count stays0. Physical radial solution convergence,
+Maxwell/all226 AFTER validation, normalized two-spin state and the muon
+magnetic moment remain unperformed. No unsquared/native-square energy
+dictionary or physical charge units are inferred from this calculation.

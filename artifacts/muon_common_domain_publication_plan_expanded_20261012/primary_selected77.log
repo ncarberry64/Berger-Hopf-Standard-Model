@@ -1,0 +1,15 @@
+........................................................................ [ 30%]
+........................................................................ [ 60%]
+........................................................................ [ 90%]
+.......................                                                  [100%]
+============================== warnings summary ===============================
+tests/test_muon_safeguarded_complex_constitutive.py::test_optimizer_termination_does_not_promote_unresolved_action_source
+  C:\Python314\Lib\site-packages\scipy\optimize\_lsq\common.py:113: RuntimeWarning: invalid value encountered in divide
+    p_norm = norm(suf / denom)
+
+tests/test_muon_safeguarded_complex_constitutive.py::test_optimizer_termination_does_not_promote_unresolved_action_source
+  C:\Python314\Lib\site-packages\scipy\optimize\_lsq\common.py:115: RuntimeWarning: invalid value encountered in divide
+    phi_prime = -np.sum(suf ** 2 / denom**3) / p_norm
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+239 passed, 2 warnings in 153.73s (0:02:33)

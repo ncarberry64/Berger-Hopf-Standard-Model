@@ -1,0 +1,40 @@
+{
+  "all_output_files_byte_identical": true,
+  "classification": "VERIFIED_IMMUTABLE_ADDATIVE_SCIENTIFIC_APPLICATION",
+  "consumed_input_hash_count": 48,
+  "consumed_input_hashes_current": true,
+  "focused_test": {
+    "command": "C:/Python314/python.exe -m pytest --noconftest -q tests/test_muon_canonical_retarded_energy_response.py",
+    "exit_code": 0,
+    "passed": 4,
+    "tool_chunk_id": "d02ecd"
+  },
+  "output_pairs": [
+    {
+      "bytes": 57621,
+      "first": "artifacts/muon_canonical_retarded_energy_response_20261011/run_1/application.npz",
+      "second": "artifacts/muon_canonical_retarded_energy_response_20261011/run_2/application.npz",
+      "sha256": "527490a6d7821205dac2b8740a02bb6ef8413e4a8b3984e64666a99debaa79f1"
+    },
+    {
+      "bytes": 14409,
+      "first": "artifacts/muon_canonical_retarded_energy_response_20261011/run_1/result.json",
+      "second": "artifacts/muon_canonical_retarded_energy_response_20261011/run_2/result.json",
+      "sha256": "b962aa3b212426a2da5f3e068f4bc9c04ce387d65537a5c3da96cc73e36cc773"
+    }
+  ],
+  "physical_a_mu": null,
+  "physical_g_mu": null,
+  "producer_runs": [
+    {
+      "command": "C:/Python314/python.exe scripts/evaluate_muon_canonical_retarded_energy_response.py --output artifacts/muon_canonical_retarded_energy_response_20261011/run_1",
+      "exit_code": 0,
+      "tool_chunk_id": "67bf3b"
+    },
+    {
+      "command": "C:/Python314/python.exe scripts/evaluate_muon_canonical_retarded_energy_response.py --output artifacts/muon_canonical_retarded_energy_response_20261011/run_2",
+      "exit_code": 0,
+      "tool_chunk_id": "0dda76"
+    }
+  ]
+}

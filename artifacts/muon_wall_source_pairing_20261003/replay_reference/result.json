@@ -1,0 +1,284 @@
+{
+  "classification": "evaluated source-reached geometric pairing and initial wall normal jet; current wall overlap not evaluated",
+  "code_base_HEAD": "e983e4cfd98de81679d74106d181325e7b618935",
+  "equations": {
+    "B": "M4 B_required=T",
+    "M4": "2*pi^2 sqrt(nu_wall^2-C_wall^2 zeta_wall^2) r_wall^3 I64 per tau and normalized Haar",
+    "T": "T_ij=integral mu5 (W_eta e_i)^dagger p_j",
+    "source_Gram": "2*pi^2 T_b^2 integral nu C r chi_hat^2 d_rho * Gram_Haar(Xi_A e_k)",
+    "source_trial": "p_Ak=(T_b chi_hat/r) Xi_A e_k with full n1/n3"
+  },
+  "error_scope": "binary64 source/Gram/volume data; radial scalar and causal polynomial certificate only for exact binary64 affine nodal model. Actual collar/profile/transport matching and continuum/history errors unevaluated.",
+  "execution": {
+    "exterior_shifted_solves": 0,
+    "native_heat_evaluations": 0,
+    "old_H_repair_replayed": false,
+    "old_body_contact_or_trial_conormal_replayed": false,
+    "physical_transfer_directions": 0,
+    "static_eta_profile_resolved_again": false,
+    "wall_overlap_evaluations": 0
+  },
+  "interface_application": {
+    "B_required": null,
+    "K_interface": null,
+    "M4_density_evaluated": true,
+    "M_interface_off_diagonal": null,
+    "actual_overlap_T": null,
+    "stationary_exterior_response": null
+  },
+  "physical_a_mu": null,
+  "physical_g_mu": null,
+  "profile_reconciliation": {
+    "current_join": "f=chi and material overlap sin^2 f cos^2 f; v15.32 explicitly rejects transplant of the S6 radial trace",
+    "first_profile_coefficient": "m_eta,current=-partial_s log sin f_eta,current on source-reached collar support",
+    "missing_attachment": "the current-background pullback of the adopted eta wall profile/probability into the same collar/radial/Spin carrier realization; not a new freely fitted profile",
+    "required_probability_identity": "J_current abs(u0_current)^2 ds = N^2 sin^2 f_eta,current ds; not identified by the inspected equations with d sigma_join",
+    "retained_profile_exists": true,
+    "retained_static": "v13.1 p2+p8 degree-one F(r), imported by v15.26; no static solve rerun"
+  },
+  "result": {
+    "checks": {
+      "boundary_radius_match_residual": 2.220446049250313e-16,
+      "connected_n1_source_norm": 4.906795658328385,
+      "connected_n3_source_norm": 3.4696284839007108,
+      "endpoint_shift_cache_roundoff": -1.8425812189586794e-16,
+      "source_Gram_Hermitian_residual": 0.0,
+      "source_Gram_min_eigenvalue_float": -4.841272740089613e-17,
+      "source_Gram_rank_is_only_diagnostic": true,
+      "source_Gram_rank_tolerance_1e_minus10": 12,
+      "wall_geometric_density": 19.439716393985954,
+      "wall_geometric_density_tau": 5.17746720458415
+    },
+    "not_evaluated": [
+      "current wall inclusion W_eta",
+      "T=<W e,p>_5",
+      "B_required=M4^-1 T",
+      "source and pairing derivatives of W/B",
+      "same-owner exterior shifted solve",
+      "stationary conormal N_out",
+      "native heat contact",
+      "physical a_mu/g_mu"
+    ],
+    "oriented_sectors": "opposite normal orientations with both saved LR projectors; one common Spin4 x SM16 carrier, family I3 retained symbolically without multiplying density",
+    "radial_source_Gram_rational": "13492947704631734913455674193657323246411744069334172644066165926161566609337381139011237103675483/170878962873672806591601736493564169168216361788532221595763328625777578062451244001836966954926080",
+    "radial_source_Gram_scalar": {
+      "arb_interval": "[0.07936545489002741010055891080479771361621550160990711427579555824409121166712 +/- 8.31e-78]",
+      "bits": 256,
+      "midpoint": 0.07936545489002741,
+      "radius_upper": 4.395172764859347e-78,
+      "scope": "exact binary64 nodal piecewise-affine model only"
+    },
+    "source_frame": [
+      {
+        "column": 0,
+        "input_carrier_column": 7,
+        "input_spin": 0,
+        "source_A": 0
+      },
+      {
+        "column": 1,
+        "input_carrier_column": 23,
+        "input_spin": 1,
+        "source_A": 0
+      },
+      {
+        "column": 2,
+        "input_carrier_column": 39,
+        "input_spin": 2,
+        "source_A": 0
+      },
+      {
+        "column": 3,
+        "input_carrier_column": 55,
+        "input_spin": 3,
+        "source_A": 0
+      },
+      {
+        "column": 4,
+        "input_carrier_column": 7,
+        "input_spin": 0,
+        "source_A": 1
+      },
+      {
+        "column": 5,
+        "input_carrier_column": 23,
+        "input_spin": 1,
+        "source_A": 1
+      },
+      {
+        "column": 6,
+        "input_carrier_column": 39,
+        "input_spin": 2,
+        "source_A": 1
+      },
+      {
+        "column": 7,
+        "input_carrier_column": 55,
+        "input_spin": 3,
+        "source_A": 1
+      },
+      {
+        "column": 8,
+        "input_carrier_column": 7,
+        "input_spin": 0,
+        "source_A": 2
+      },
+      {
+        "column": 9,
+        "input_carrier_column": 23,
+        "input_spin": 1,
+        "source_A": 2
+      },
+      {
+        "column": 10,
+        "input_carrier_column": 39,
+        "input_spin": 2,
+        "source_A": 2
+      },
+      {
+        "column": 11,
+        "input_carrier_column": 55,
+        "input_spin": 3,
+        "source_A": 2
+      },
+      {
+        "column": 12,
+        "input_carrier_column": 7,
+        "input_spin": 0,
+        "source_A": 3
+      },
+      {
+        "column": 13,
+        "input_carrier_column": 23,
+        "input_spin": 1,
+        "source_A": 3
+      },
+      {
+        "column": 14,
+        "input_carrier_column": 39,
+        "input_spin": 2,
+        "source_A": 3
+      },
+      {
+        "column": 15,
+        "input_carrier_column": 55,
+        "input_spin": 3,
+        "source_A": 3
+      },
+      {
+        "column": 16,
+        "input_carrier_column": 7,
+        "input_spin": 0,
+        "source_A": 4
+      },
+      {
+        "column": 17,
+        "input_carrier_column": 23,
+        "input_spin": 1,
+        "source_A": 4
+      },
+      {
+        "column": 18,
+        "input_carrier_column": 39,
+        "input_spin": 2,
+        "source_A": 4
+      },
+      {
+        "column": 19,
+        "input_carrier_column": 55,
+        "input_spin": 3,
+        "source_A": 4
+      },
+      {
+        "column": 20,
+        "input_carrier_column": 7,
+        "input_spin": 0,
+        "source_A": 5
+      },
+      {
+        "column": 21,
+        "input_carrier_column": 23,
+        "input_spin": 1,
+        "source_A": 5
+      },
+      {
+        "column": 22,
+        "input_carrier_column": 39,
+        "input_spin": 2,
+        "source_A": 5
+      },
+      {
+        "column": 23,
+        "input_carrier_column": 55,
+        "input_spin": 3,
+        "source_A": 5
+      },
+      {
+        "column": 24,
+        "input_carrier_column": 7,
+        "input_spin": 0,
+        "source_A": 6
+      },
+      {
+        "column": 25,
+        "input_carrier_column": 23,
+        "input_spin": 1,
+        "source_A": 6
+      },
+      {
+        "column": 26,
+        "input_carrier_column": 39,
+        "input_spin": 2,
+        "source_A": 6
+      },
+      {
+        "column": 27,
+        "input_carrier_column": 55,
+        "input_spin": 3,
+        "source_A": 6
+      },
+      {
+        "column": 28,
+        "input_carrier_column": 7,
+        "input_spin": 0,
+        "source_A": 7
+      },
+      {
+        "column": 29,
+        "input_carrier_column": 23,
+        "input_spin": 1,
+        "source_A": 7
+      },
+      {
+        "column": 30,
+        "input_carrier_column": 39,
+        "input_spin": 2,
+        "source_A": 7
+      },
+      {
+        "column": 31,
+        "input_carrier_column": 55,
+        "input_spin": 3,
+        "source_A": 7
+      }
+    ],
+    "wall_chart_initial_jet": {
+      "coordinate": "proper spacelike Gaussian normal through true material wall",
+      "incoming": {
+        "rho_s": -1.0427038213409683,
+        "rho_ss": 0.00040074957908572446,
+        "tau_s": 0.0,
+        "tau_ss_right_time_model": -4.960206147770707
+      },
+      "inherited_boundary_rho": 1.5707963267948966,
+      "outgoing": {
+        "rho_s": 1.0427038213409683,
+        "rho_ss": 0.00040074957908572446,
+        "tau_s": 0.0,
+        "tau_ss_right_time_model": -4.960206147770707
+      },
+      "scope": "initial seam jet only; right first-cell time reconstruction separate from inherited H. No finite collar extension evaluated."
+    }
+  },
+  "start_HEAD": "e983e4cfd98de81679d74106d181325e7b618935"
+}

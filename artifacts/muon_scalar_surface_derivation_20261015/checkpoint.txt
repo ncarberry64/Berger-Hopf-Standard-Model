@@ -1,0 +1,105 @@
+BHSM scalar and surface coefficient derivation -- 2026-10-15
+
+New evaluated action components
+
+The current-C2 128-node reduced auxiliary HS pencil has now been
+differentiated through fourth order without discarding its noncommuting
+insertions. For each retained chirality and its declared w=-1 core block,
+Gamma_uuuu=-0.2741719517691182894, with u=ell*H. The four-vertex, mixed,
+and two-contact parts are approximately +17.09450349, -21.78328104,
+and +4.41460560. The negative sum is preserved. This is neither the
+intrinsic Higgs quartic nor an established physical instability.
+
+Multiprecision Weyl/bordered solves retain all 128 virtual states. A fresh
+nine-point literal-E1 difference has relative discrepancy 2.04883e-14
+at h=.003125, with the expected sixth-order step improvement. The analytic
+omitted outer-trace fourth-derivative bound is 2.17489e-36 in u. These
+calculations concern frozen binary64 input centers, not outward intervals.
+The old dense-binary64 HS second derivative differs by 2.94461e-6 relative;
+that failure and its original artifact are retained. The held ell is the
+saved conditioning witness, not the native physical ell_star. Agreement
+of MP80/105 arithmetic does not imply 70-digit input or continuum accuracy.
+
+A separate held-zero-gauge, constant-neutral intrinsic-Higgs fermion probe
+keeps the frozen noncentral Yukawa matrix and gives the real-coordinate
+phi fourth derivative 1.41205478431e-134, where h=phi/sqrt(2). This is one
+finite integrated contribution, before physical multiplicities, total
+kinetic normalization, volume/profile matching, other action terms, and
+relative completion. It must not be identified with lambda_H or with the
+auxiliary HS probe. The two chirality labels are not the two muon spins.
+
+The declared C2 graded principal heat ledger gives 24-48+4=-20. In the
+same four-dimensional proper-time principal realization this yields the
+unsubtracted local volume component
+  gamma4,a0 = 5/(16*pi^2) * ell_star^(-4).
+It is not the complete physical surface tension. The exact cap coarea
+map gives gamma7,a0=5/(32*pi^4)*ell_star^(-4)*L^(-3),
+L=sqrt(A^2+B^2). On saved real initial/stage germs its coefficient of
+symbolic ell_star^(-4) is .000224193648881/.000224193426687.
+Full value/gradient/Hessian density identities agree within 2.78e-17.
+Holding this mapped coefficient fixed would omit first contacts of norm
+about .010654. Actual length jets must additionally be included.
+
+This component belongs to the same stratified action. A heat reference
+with identical local leading density cancels it in the relative heat
+difference; adding it again where already present would double-count it.
+Ordinary matched internal transmission separately cancels the leading
+local boundary a1 term. That cancellation does not set the full stratified
+surface coefficient to zero. No convenient boundary projector is chosen.
+
+The original area term also has nonzero normal-rate inertia per gamma:
+9.29277385659/9.29230322189 in the retained initial/stage coordinate chart.
+Independent MP80 literal differentiation agrees within 3.42e-15. Thus a
+coefficient feedback solve cannot freeze the surface inertia while varying
+gamma. Moving mode normalization requires its mode and pairing jets.
+This local entry is not the total physical mode-projected inertia.
+
+What this permits, and the remaining physical calculation
+
+These applications evaluate new components using saved operands. They do
+not restart completed source, D5, finite-profile, canonical-map, pairing,
+or history campaigns. Three separate scientific producers were each run
+twice; each pair is byte-identical. New tests freshly execute those
+producers and compare against literal functional derivatives/coarea.
+The later manifest pair checks serialization only.
+
+The complete intrinsic Higgs mass/quartic and surface gamma are still not
+numerically derived. No empirical lambda_H, nu_squared=4, selected alpha,
+ell_s=ell_star equality, arbitrary scalar amplitude, or fitted retention
+has been inserted into a physical solve. Existing such initializer values
+are not relabeled action-derived. Required work is to evaluate the actual
+common stratified forms/domain and scalar profile embedding, the applicable
+kinetic and mass mixing, native length and regular-environment compatibility,
+and common relative heat/zeta/eta subtraction with all counted sectors.
+Only motion belonging to the declared physical variation enters its jets.
+
+The regular gauge/scalar reconnection transport laws are already owned;
+their physical real solution and outgoing exterior have not been evaluated.
+The full energy/weak-field, length, trace, quotient and domain derivatives
+remain unevaluated. The finite HS difference above does not pass that gate.
+No spin terms or temporal connection have been erased. Neither physical
+muon spin state is normalized and no muon magnetic moment is computed.
+Absolute energy units alone are not a gate for dimensionless g: overall
+operator and spinor scaling cancel in the pole slope. A completed intrinsic
+pole calculation also has no extra collider-history prerequisite.
+
+Matching safety order and retained original residuals
+
+Coupled matching corrections applied: ZERO.
+Full physical outgoing derivative passed at 2e-10: FALSE.
+After that derivative passes, apply exactly one coupled correction and
+evaluate original Maxwell and all original 226 rows at 2e-10. Until then,
+the retained before-correction Maxwell magnitude is 2.4777309846820184,
+and the retained original226 maximum is 9.602842247524184e-7 at one-based
+row 226, common_normal_temporal_dual[0]. Neither meets 2e-10.
+The authoritative original cut remains SHA256
+ea02ed6aee45310c5651fef5c8f103e868007d4f125582ab2b64ff7651f76b2b.
+Frozen predictions and historical coefficient/field packets are unchanged.
+
+Validation
+
+Three fresh numerical tests passed in 5.18 seconds with --noconftest.
+Five publication audit commands and their full logs are recorded in
+publication_checks/. Their passing process status does not certify the
+unevaluated physical prediction gates above. The publication manifests
+bind the exact scientific pairs, source/input bytes and checkpoint.

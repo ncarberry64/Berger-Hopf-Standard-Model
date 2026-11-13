@@ -1,7 +1,7 @@
 {
   "schema": "BHSM_RETAINED_LARGE_RESEARCH_ARTIFACTS_V1",
   "reviewed_public_main": "d0844d009fd12a10c97d79f21443df6764391203",
-  "purpose": "Retain reproducibility inputs already in public main; no blanket exemption for new large files. JSON hashes use LF, NPZ hashes use exact bytes.",
+  "purpose": "Retain individually reviewed historical reproducibility inputs. reviewed_public_main identifies the original public-main ledger; later entries record their branch provenance. No blanket exemption for new large files. JSON hashes use LF, NPZ hashes use exact bytes.",
   "physical_completion": false,
   "artifacts": [
     {
@@ -203,6 +203,260 @@
       "path": "artifacts/flagship_integration/BHSM_N12_GATE7_SIGNED_GREEN_CURRENT_CENTER_GRAPH_JACOBIAN.npz",
       "canonical_bytes": 27774601,
       "sha256": "6eab2efec9fe3460ff94de43d8fab3e9188b9e601c4c559f9ece8047a96ffedc"
+    },
+    {
+      "path": "artifacts/muon_first_order_complement_20261006/run_2/first_order_compact_reduction.npz",
+      "canonical_bytes": 11125650,
+      "sha256": "f35ae512a03639ccc887bdeead0350a8cdec147b15db5b66ed6f94da794bfdb2",
+      "classification": "HISTORICAL_SCIENTIFIC_EVIDENCE",
+      "reviewed_branch_head": "00fa89d62e4c74ee9fd0b41611b3468ad035b5db",
+      "historical_introduction_commit": "b0b5cdec48735f6e2ae40051a32662297882b7e4",
+      "scientific_reference": "524ed90689bd5923c249bba2e699abf627e703cd",
+      "provenance": "Saved run_2 output_hashes.json records these exact NPZ bytes; theory/muon_first_order_complement_20261006.md documents the proposed-seam compact first-order Galerkin reduction and its restricted scope.",
+      "preservation_reason": "Preserve the reproducible historical compact-action reduction and its retained first-order matrices; neither a full retarded/native realization nor a physical muon observable.",
+      "artifact_regenerated": false,
+      "consumed_as_new_physical_data": false,
+      "retention_review": "theory/muon_first_order_artifact_retention_20261007.md"
+    },
+    {
+      "path": "artifacts/muon_retained_response_20261018/provenance/BHSM_field_to_spin_response_20261018.zip",
+      "canonical_bytes": 38338655,
+      "sha256": "b71f1f60bcca3c55d97deee0599684b12fe98ea5430551a760a8b6a02adb1b39"
+    },
+    {
+      "path": "artifacts/muon_retained_response_20261018/provenance/BHSM_finite_time_spin_response_20261017.zip",
+      "canonical_bytes": 23923406,
+      "sha256": "c43f6e252db59c00c20dc330a87dc870b8db22c41aa046431b5ac9b41e822b75"
+    },
+    {
+      "path": "artifacts/muon_retained_response_20261018/provenance/BHSM_higgs_wall_coupled_response_20261017.zip",
+      "canonical_bytes": 14432193,
+      "sha256": "1dadefa2d23b352ab38ec7f0eb1159c43de5a1c68c39356faf09eb0758a83ae0"
+    },
+    {
+      "path": "artifacts/muon_retained_response_20261018/provenance/BHSM_integrated_magnetic_source_20261017.zip",
+      "canonical_bytes": 12118643,
+      "sha256": "224c1754a19a970b435aba609c14e74914d39d2fd518f40f5c2562d1aaa90ee2"
+    },
+    {
+      "path": "artifacts/muon_d5_valid_domain_application_20261019/run_3/refined_plus_particle.npz",
+      "canonical_bytes": 20159450,
+      "sha256": "9195ae0e4b94af742cc1e616fd4eb819c7e6ba00ba55bf3ab1e54534f1fb6a9b",
+      "classification": "SAVED_FINITE_RESPONSE_WITH_RECORDED_NONPASSES",
+      "reviewed_branch_head": "bdd993d9afe33f8cbe3181ba452ffac5e5d85976",
+      "provenance": "Exact HEAD blob and byte-identical run_3/run_4 core_result.json archive identity; original callbacks, moving radial basis and full incoming homogeneous response remain preserved.",
+      "artifact_regenerated": false,
+      "physical_admission": false,
+      "retention_review": "theory/muon_d5_event_matching_20261019.md"
+    },
+    {
+      "path": "artifacts/muon_d5_valid_domain_application_20261019/run_3/refined_plus_conjugate.npz",
+      "canonical_bytes": 20168995,
+      "sha256": "b544eebb059447a0fc3b984e86766d7b00df40dd70938c4ba44662d7bdfd7b24",
+      "classification": "SAVED_FINITE_RESPONSE_WITH_RECORDED_NONPASSES",
+      "reviewed_branch_head": "bdd993d9afe33f8cbe3181ba452ffac5e5d85976",
+      "provenance": "Exact HEAD blob and byte-identical run_3/run_4 core_result.json archive identity; original callbacks, moving radial basis and full incoming homogeneous response remain preserved.",
+      "artifact_regenerated": false,
+      "physical_admission": false,
+      "retention_review": "theory/muon_d5_event_matching_20261019.md"
+    },
+    {
+      "path": "artifacts/muon_d5_valid_domain_application_20261019/run_3/refined_minus_particle.npz",
+      "canonical_bytes": 20160102,
+      "sha256": "b21f09d187c44d3cfe0f30d94533d3933830f1760013e8dacaf3f0fb9d6e5265",
+      "classification": "SAVED_FINITE_RESPONSE_WITH_RECORDED_NONPASSES",
+      "reviewed_branch_head": "bdd993d9afe33f8cbe3181ba452ffac5e5d85976",
+      "provenance": "Exact HEAD blob and byte-identical run_3/run_4 core_result.json archive identity; original callbacks, moving radial basis and full incoming homogeneous response remain preserved.",
+      "artifact_regenerated": false,
+      "physical_admission": false,
+      "retention_review": "theory/muon_d5_event_matching_20261019.md"
+    },
+    {
+      "path": "artifacts/muon_d5_valid_domain_application_20261019/run_3/refined_minus_conjugate.npz",
+      "canonical_bytes": 20169467,
+      "sha256": "faa08ea82c41920d1a7c23eae5dd2d0c4abc6ffc690a82e30578a72055935045",
+      "classification": "SAVED_FINITE_RESPONSE_WITH_RECORDED_NONPASSES",
+      "reviewed_branch_head": "bdd993d9afe33f8cbe3181ba452ffac5e5d85976",
+      "provenance": "Exact HEAD blob and byte-identical run_3/run_4 core_result.json archive identity; original callbacks, moving radial basis and full incoming homogeneous response remain preserved.",
+      "artifact_regenerated": false,
+      "physical_admission": false,
+      "retention_review": "theory/muon_d5_event_matching_20261019.md"
+    },
+    {
+      "path": "artifacts/muon_d5_valid_domain_application_20261019/run_4/refined_plus_particle.npz",
+      "canonical_bytes": 20159450,
+      "sha256": "9195ae0e4b94af742cc1e616fd4eb819c7e6ba00ba55bf3ab1e54534f1fb6a9b",
+      "classification": "SAVED_FINITE_RESPONSE_WITH_RECORDED_NONPASSES",
+      "reviewed_branch_head": "bdd993d9afe33f8cbe3181ba452ffac5e5d85976",
+      "provenance": "Exact HEAD blob and byte-identical run_3/run_4 core_result.json archive identity; original callbacks, moving radial basis and full incoming homogeneous response remain preserved.",
+      "artifact_regenerated": false,
+      "physical_admission": false,
+      "retention_review": "theory/muon_d5_event_matching_20261019.md"
+    },
+    {
+      "path": "artifacts/muon_d5_valid_domain_application_20261019/run_4/refined_plus_conjugate.npz",
+      "canonical_bytes": 20168995,
+      "sha256": "b544eebb059447a0fc3b984e86766d7b00df40dd70938c4ba44662d7bdfd7b24",
+      "classification": "SAVED_FINITE_RESPONSE_WITH_RECORDED_NONPASSES",
+      "reviewed_branch_head": "bdd993d9afe33f8cbe3181ba452ffac5e5d85976",
+      "provenance": "Exact HEAD blob and byte-identical run_3/run_4 core_result.json archive identity; original callbacks, moving radial basis and full incoming homogeneous response remain preserved.",
+      "artifact_regenerated": false,
+      "physical_admission": false,
+      "retention_review": "theory/muon_d5_event_matching_20261019.md"
+    },
+    {
+      "path": "artifacts/muon_d5_valid_domain_application_20261019/run_4/refined_minus_particle.npz",
+      "canonical_bytes": 20160102,
+      "sha256": "b21f09d187c44d3cfe0f30d94533d3933830f1760013e8dacaf3f0fb9d6e5265",
+      "classification": "SAVED_FINITE_RESPONSE_WITH_RECORDED_NONPASSES",
+      "reviewed_branch_head": "bdd993d9afe33f8cbe3181ba452ffac5e5d85976",
+      "provenance": "Exact HEAD blob and byte-identical run_3/run_4 core_result.json archive identity; original callbacks, moving radial basis and full incoming homogeneous response remain preserved.",
+      "artifact_regenerated": false,
+      "physical_admission": false,
+      "retention_review": "theory/muon_d5_event_matching_20261019.md"
+    },
+    {
+      "path": "artifacts/muon_d5_valid_domain_application_20261019/run_4/refined_minus_conjugate.npz",
+      "canonical_bytes": 20169467,
+      "sha256": "faa08ea82c41920d1a7c23eae5dd2d0c4abc6ffc690a82e30578a72055935045",
+      "classification": "SAVED_FINITE_RESPONSE_WITH_RECORDED_NONPASSES",
+      "reviewed_branch_head": "bdd993d9afe33f8cbe3181ba452ffac5e5d85976",
+      "provenance": "Exact HEAD blob and byte-identical run_3/run_4 core_result.json archive identity; original callbacks, moving radial basis and full incoming homogeneous response remain preserved.",
+      "artifact_regenerated": false,
+      "physical_admission": false,
+      "retention_review": "theory/muon_d5_event_matching_20261019.md"
+    },
+    {
+      "path": "artifacts/muon_d5_two_sided_event_20261019/core/PARENT_H_CONSUMER_v1/sparse_original_rows.npz",
+      "canonical_bytes": 48119113,
+      "sha256": "fd86a3484b2304f65173ce8263d201b489bfd9a63f2feb670b346819de9a55fa",
+      "classification": "PROVISIONAL_TWO_SIDED_ORIGINAL_D5_SOURCE_APPLICATION",
+      "retention_review": "theory/muon_d5_two_sided_event_20261019.md",
+      "source_parent_head": "67c113ea5ba2d1558e694a2db02d9e3b245a1e1b",
+      "new_application": true,
+      "physical_admission": false,
+      "scope": "exact finite corrected homogeneous source and independent original residual rows; all coordinates retained and recorded nonpasses remain"
+    },
+    {
+      "path": "artifacts/muon_d5_two_sided_event_20261019/core/PARENT_H_SOURCE_v1/independent_rows.npz",
+      "canonical_bytes": 16030466,
+      "sha256": "28167f8fa35695910dcad4061a93794dca9950f5850a9efabf7c2e3b8c67a458",
+      "classification": "PROVISIONAL_TWO_SIDED_ORIGINAL_D5_SOURCE_APPLICATION",
+      "retention_review": "theory/muon_d5_two_sided_event_20261019.md",
+      "source_parent_head": "67c113ea5ba2d1558e694a2db02d9e3b245a1e1b",
+      "new_application": true,
+      "physical_admission": false,
+      "scope": "exact finite corrected homogeneous source and independent original residual rows; all coordinates retained and recorded nonpasses remain"
+    },
+    {
+      "path": "artifacts/muon_d5_two_sided_event_20261019/core/PARENT_H_SOURCE_v1/source_application.npz",
+      "canonical_bytes": 40141817,
+      "sha256": "be52c902247182ea4838cd5fba7ee693fe94e83b404addb3b87821d13808d6e5",
+      "classification": "PROVISIONAL_TWO_SIDED_ORIGINAL_D5_SOURCE_APPLICATION",
+      "retention_review": "theory/muon_d5_two_sided_event_20261019.md",
+      "source_parent_head": "67c113ea5ba2d1558e694a2db02d9e3b245a1e1b",
+      "new_application": true,
+      "physical_admission": false,
+      "scope": "exact finite corrected homogeneous source and independent original residual rows; all coordinates retained and recorded nonpasses remain"
+    },
+    {
+      "canonical_bytes": 16685167,
+      "classification": "PROVISIONAL_FERMION_EVENT_CHILD_WITH_ORIGINAL_NONPASSES",
+      "new_application": true,
+      "path": "artifacts/muon_d5_fermion_event_child_20261019/core/EVENT_CHILD_CORNER_v1/candidate2_minus_homogeneous.npz",
+      "physical_admission": false,
+      "retention_review": "theory/muon_d5_fermion_event_child_20261019.md",
+      "scope": "Exact executed field, derivative and original residual operators; failed trials and all free coordinates retained. No physical outer or formation closure.",
+      "sha256": "fbfcc485814bf0a95e1bd0d66a8e4a85a5515dc7602b72a0478985e0f1b28562",
+      "source_parent_head": "f9285d08a79c5b440168214d59b599b2097afee6"
+    },
+    {
+      "canonical_bytes": 16676675,
+      "classification": "PROVISIONAL_FERMION_EVENT_CHILD_WITH_ORIGINAL_NONPASSES",
+      "new_application": true,
+      "path": "artifacts/muon_d5_fermion_event_child_20261019/core/EVENT_CHILD_CORNER_v1/candidate2_plus_homogeneous.npz",
+      "physical_admission": false,
+      "retention_review": "theory/muon_d5_fermion_event_child_20261019.md",
+      "scope": "Exact executed field, derivative and original residual operators; failed trials and all free coordinates retained. No physical outer or formation closure.",
+      "sha256": "57323a6138f915c532aa005a3384110a22f351b1a9b7136a88da787c42fd61f4",
+      "source_parent_head": "f9285d08a79c5b440168214d59b599b2097afee6"
+    },
+    {
+      "canonical_bytes": 16839456,
+      "classification": "PROVISIONAL_FERMION_EVENT_CHILD_WITH_ORIGINAL_NONPASSES",
+      "new_application": true,
+      "path": "artifacts/muon_d5_fermion_event_child_20261019/core/EVENT_CHILD_CORNER_v1/candidate3_minus_homogeneous.npz",
+      "physical_admission": false,
+      "retention_review": "theory/muon_d5_fermion_event_child_20261019.md",
+      "scope": "Exact executed field, derivative and original residual operators; failed trials and all free coordinates retained. No physical outer or formation closure.",
+      "sha256": "4ede6cc9f4a02cd3d4918e83dd3c729200529f5e19b1c0fec4bfc0e8d559b788",
+      "source_parent_head": "f9285d08a79c5b440168214d59b599b2097afee6"
+    },
+    {
+      "canonical_bytes": 16831116,
+      "classification": "PROVISIONAL_FERMION_EVENT_CHILD_WITH_ORIGINAL_NONPASSES",
+      "new_application": true,
+      "path": "artifacts/muon_d5_fermion_event_child_20261019/core/EVENT_CHILD_CORNER_v1/candidate3_plus_homogeneous.npz",
+      "physical_admission": false,
+      "retention_review": "theory/muon_d5_fermion_event_child_20261019.md",
+      "scope": "Exact executed field, derivative and original residual operators; failed trials and all free coordinates retained. No physical outer or formation closure.",
+      "sha256": "6f2eabd02c25b6b921f791c1a7c1f82461dfde0e4bff400a0b07a9165ee6b0f4",
+      "source_parent_head": "f9285d08a79c5b440168214d59b599b2097afee6"
+    },
+    {
+      "canonical_bytes": 15598825,
+      "classification": "PROVISIONAL_FERMION_EVENT_CHILD_WITH_ORIGINAL_NONPASSES",
+      "new_application": true,
+      "path": "artifacts/muon_d5_fermion_event_child_20261019/core/EVENT_CHILD_v1/candidate2_minus_homogeneous.npz",
+      "physical_admission": false,
+      "retention_review": "theory/muon_d5_fermion_event_child_20261019.md",
+      "scope": "Exact executed field, derivative and original residual operators; failed trials and all free coordinates retained. No physical outer or formation closure.",
+      "sha256": "f03861e0abe7c358fd286dbd417d0dac8878ac3b95871fb55f1cf2b29e7c4375",
+      "source_parent_head": "f9285d08a79c5b440168214d59b599b2097afee6"
+    },
+    {
+      "canonical_bytes": 15572905,
+      "classification": "PROVISIONAL_FERMION_EVENT_CHILD_WITH_ORIGINAL_NONPASSES",
+      "new_application": true,
+      "path": "artifacts/muon_d5_fermion_event_child_20261019/core/EVENT_CHILD_v1/candidate2_plus_homogeneous.npz",
+      "physical_admission": false,
+      "retention_review": "theory/muon_d5_fermion_event_child_20261019.md",
+      "scope": "Exact executed field, derivative and original residual operators; failed trials and all free coordinates retained. No physical outer or formation closure.",
+      "sha256": "baf554cfdaf95a8762c4dc5888306870e61dccc7c7b7b5718efcd8b308b99d44",
+      "source_parent_head": "f9285d08a79c5b440168214d59b599b2097afee6"
+    },
+    {
+      "canonical_bytes": 15723677,
+      "classification": "PROVISIONAL_FERMION_EVENT_CHILD_WITH_ORIGINAL_NONPASSES",
+      "new_application": true,
+      "path": "artifacts/muon_d5_fermion_event_child_20261019/core/EVENT_CHILD_v1/candidate3_minus_homogeneous.npz",
+      "physical_admission": false,
+      "retention_review": "theory/muon_d5_fermion_event_child_20261019.md",
+      "scope": "Exact executed field, derivative and original residual operators; failed trials and all free coordinates retained. No physical outer or formation closure.",
+      "sha256": "4d279f5501216002ada71a8e51b0f2c6339abbb26ea9781669daebb8c5b2a2be",
+      "source_parent_head": "f9285d08a79c5b440168214d59b599b2097afee6"
+    },
+    {
+      "canonical_bytes": 15674060,
+      "classification": "PROVISIONAL_FERMION_EVENT_CHILD_WITH_ORIGINAL_NONPASSES",
+      "new_application": true,
+      "path": "artifacts/muon_d5_fermion_event_child_20261019/core/EVENT_CHILD_v1/candidate3_plus_homogeneous.npz",
+      "physical_admission": false,
+      "retention_review": "theory/muon_d5_fermion_event_child_20261019.md",
+      "scope": "Exact executed field, derivative and original residual operators; failed trials and all free coordinates retained. No physical outer or formation closure.",
+      "sha256": "e0c1784da800958ce4db3f29c7156f9eef0da84ff8f16622be524b97c6e5dc00",
+      "source_parent_head": "f9285d08a79c5b440168214d59b599b2097afee6"
+    },
+    {
+      "canonical_bytes": 15445011,
+      "classification": "PROVISIONAL_FERMION_EVENT_CHILD_WITH_ORIGINAL_NONPASSES",
+      "new_application": true,
+      "path": "artifacts/muon_d5_fermion_event_child_20261019/core/PARENT_LEPTON_POLE_GLOBAL_v1/frame.npz",
+      "physical_admission": false,
+      "retention_review": "theory/muon_d5_fermion_event_child_20261019.md",
+      "scope": "Exact executed field, derivative and original residual operators; failed trials and all free coordinates retained. No physical outer or formation closure.",
+      "sha256": "a2b92ba1a1804842b5f94cdb9d91c68ca6639679b9658d73dc7f14e6a5e76474",
+      "source_parent_head": "f9285d08a79c5b440168214d59b599b2097afee6"
     }
   ]
 }

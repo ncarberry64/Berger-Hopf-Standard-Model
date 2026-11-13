@@ -1,0 +1,22 @@
+.F                                                                       [100%]
+================================== FAILURES ===================================
+_____ test_nonnormal_changing_action_refinement_and_literal_left_pairing ______
+
+    def test_nonnormal_changing_action_refinement_and_literal_left_pairing():
+        B=np.array([[.2,.8j],[.1,-.3]],complex);S=np.array([[[1.,2.j]],[[3.j,-1.]]])
+        L=np.array([[[1.,-2.],[-1.j,2.j]]]);T=.6
+        def point(t):return dict(N=1+.2*t,B=B*(1+t),S=(.2+abs(t-T/2))*S,L=(1+t)*L)
+        a=dirichlet_source_current_collocation(point,length=T,stages=4)
+        b=dirichlet_source_current_collocation(point,length=T,stages=6)
+        c=dirichlet_source_current_collocation(point,length=T,stages=8)
+        assert np.linalg.norm(b['signed_source_current']-c['signed_source_current'])<1e-10
+>       assert np.linalg.norm(a['signed_source_current']-c['signed_source_current'])>1e-10
+E       AssertionError: assert np.float64(7.626287093127566e-11) > 1e-10
+E        +  where np.float64(7.626287093127566e-11) = <function norm at 0x00000203A229F430>((array([[0.01606925-0.04563589j]]) - array([[0.01606925-0.04563589j]])))
+E        +    where <function norm at 0x00000203A229F430> = <module 'numpy.linalg' from 'C:\\Users\\carbe\\AppData\\Roaming\\Python\\Python314\\site-packages\\numpy\\linalg\\__init__.py'>.norm
+E        +      where <module 'numpy.linalg' from 'C:\\Users\\carbe\\AppData\\Roaming\\Python\\Python314\\site-packages\\numpy\\linalg\\__init__.py'> = np.linalg
+
+tests\test_muon_dirichlet_source_green_collocation.py:29: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_muon_dirichlet_source_green_collocation.py::test_nonnormal_changing_action_refinement_and_literal_left_pairing
+1 failed, 1 passed in 1.08s

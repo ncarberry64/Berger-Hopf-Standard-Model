@@ -1,0 +1,653 @@
+Continue the BHSM muon magnetic-moment program from the current PR #465 state.
+
+Repository:
+C:\Users\carbe\OneDrive\Documents\CODEX\Berger-Hopf-Standard-Model
+
+PR:
+https://github.com/ncarberry64/Berger-Hopf-Standard-Model/pull/465
+
+Branch:
+codex/muon-parent-maxwell-density-review
+
+Current verified starting HEAD:
+20849fe1f8fae375c011b9eea1b70c400ebe6a1c
+
+Scientific reference revision:
+524ed90689bd5923c249bba2e699abf627e703cd
+
+PRIMARY DIRECTIVE
+
+Norman has explicitly ADOPTED the AE4 spectral-cutoff owner clarification below.
+
+Implement it as the current owner definition, validate it, commit/push it to PR #465, then immediately continue the native muon calculation.
+
+Do not stop after documenting the amendment if the downstream contractions can be evaluated.
+
+======================================================================
+1. GIT FIRST
+======================================================================
+
+Run:
+
+    git status
+    git branch --show-current
+    git fetch origin
+    git log -10 --oneline
+
+Verify the active PR branch contains:
+
+    20849fe1f8fae375c011b9eea1b70c400ebe6a1c
+
+Preserve any valid newer work.
+
+Do NOT:
+
+    git reset --hard
+    git clean
+    force checkout
+    rewrite history
+    discard unrelated work
+    delete historical artifacts
+
+After each substantive scientific milestone:
+
+    git add only intended files
+    git commit -m "<scientific milestone>"
+    git push origin codex/muon-parent-maxwell-density-review
+
+Then verify PR #465 remote head equals the pushed commit.
+
+Do not leave completed science only in Downloads or an uncommitted worktree.
+
+======================================================================
+2. OWNER AMENDMENT — ADOPTED
+======================================================================
+
+The old incomplete AE4 statement was:
+
+    ell_star = 1 / E_impedance
+
+at the first future surface where:
+
+    E_impedance = E_core
+
+and outward spacetime support ceases.
+
+The later operator-valued formation mechanics established that the physical
+restoring resistance is:
+
+    R = gamma J_Sigma + H_impedance
+
+and NOT H_impedance alone.
+
+The historical scalar rho_hold interpretation is superseded by:
+
+    rho_B =
+      sup_(psi != 0)
+      <psi, H_event,drive psi>
+      /
+      <psi, (gamma J_Sigma + H_impedance) psi>.
+
+Norman now adopts the following AE4 owner clarification.
+
+At AE4's own first-future support-loss event, on the action-selected physical
+mode branch psi_star, define:
+
+    R_star = gamma_star J_Sigma + H_impedance
+
+and let I_star be the positive action-owned kinetic inertia appearing in the
+retained mode equation:
+
+    I_lambda D_tau^2 a_lambda + R_lambda a_lambda = f_lambda.
+
+Then define the AE4 impedance energy in natural units by:
+
+    E_impedance
+      =
+      sqrt(
+        <psi_star, R_star psi_star>
+        /
+        <psi_star, I_star psi_star>
+      ).
+
+Define the corresponding core/event energy on the SAME mode and SAME inertia:
+
+    E_core
+      =
+      sqrt(
+        <psi_star, H_event,drive psi_star>
+        /
+        <psi_star, I_star psi_star>
+      ).
+
+The AE4 support-loss surface remains:
+
+    the FIRST FUTURE surface where
+        E_impedance = E_core
+    AND outward spacetime support ceases.
+
+Then:
+
+    ell_star = 1 / E_impedance.
+
+Equivalently, and more usefully for the heat functional:
+
+    c_star := ell_star^2
+            =
+            <psi_star, I_star psi_star>
+            /
+            <psi_star, R_star psi_star>.
+
+IMPORTANT:
+
+Formation and support loss remain DISTINCT events unless the action proves
+that they coincide.
+
+Do NOT identify the initial RHO-B2 formation zero with AE4 support loss by
+default.
+
+Do NOT drop gamma J_Sigma.
+
+Do NOT replace total resistance by bulk H_impedance.
+
+Do NOT fit ell_star, E_impedance or E_core to a_mu or any measured particle
+quantity.
+
+No new coupling, phenomenological constant or constitutive function is being
+introduced here. This is an owner-definition clarification of a quantity AE4
+already used.
+
+======================================================================
+3. IMPLEMENT OWNER UPDATE
+======================================================================
+
+Update:
+
+    src/bhsm/interface/ae4_stratified_dirac_zeta_induced_owner.py
+
+so that native_spectral_length_contract() explicitly records:
+
+    total resistance = gamma J_Sigma + H_impedance
+    E_impedance = sqrt(<psi,R psi>/<psi,I psi>)
+    ell_star = 1/E_impedance
+    ell_star^2 = <psi,I psi>/<psi,R psi>
+    formation_zero_is_support_loss_by_default = False
+    surface Jacobi contribution retained
+    no measured particle/anomaly input
+
+Also mark the old rho_hold scalar hypothesis as historical/superseded by the
+operator-valued RHO-B2 owner.
+
+Add focused helpers only if useful, e.g.:
+
+    native_mode_frequency_energy(...)
+    native_heat_length_squared(...)
+    native_heat_length_squared_jets(...)
+
+Do not refactor unrelated AE4 code.
+
+Suggested owner tag:
+
+    BHSM-AE4-MODE-FREQUENCY-CUTOFF-2026-10-07
+
+Add a short theory note recording this adopted definition.
+
+Suggested file:
+
+    theory/ae4_mode_frequency_cutoff_owner_20261007.md
+
+======================================================================
+4. CRITICAL DERIVATIVE RULE
+======================================================================
+
+Do NOT assume psi_star is an eigenvector of R.
+
+Earlier work proved:
+
+    (R-D) psi = 0
+
+does NOT imply:
+
+    R psi = E M psi.
+
+Therefore do NOT use bare Hellmann-Feynman on R unless an actual energy
+eigenproblem is separately established.
+
+Instead define the total branch contractions:
+
+    r = <psi, R psi>
+    i = <psi, I psi>
+
+and
+
+    c = i/r = ell_star^2.
+
+The required source derivatives are TOTAL derivatives on the selected physical
+branch.
+
+They must include, as applicable:
+
+    mode/eigenline embedding motion
+    support-surface motion
+    pairing/inertia motion
+    domain motion
+    source-map motion
+    normalization motion
+
+exactly once.
+
+For x=v or J:
+
+    c_x = i_x/r - i r_x/r^2.
+
+For the mixed derivative:
+
+    c_vJ
+      =
+      i_vJ/r
+      - (i_v r_J + i_J r_v + i r_vJ)/r^2
+      + 2 i r_v r_J/r^3.
+
+Do not differentiate the square root unnecessarily for the heat calculation.
+
+======================================================================
+5. FREEZE ALL COMPLETED MUON WORK
+======================================================================
+
+Do NOT recompute or reopen:
+
+    local QED result
+    radial Higgs result
+    local W/Z result
+    electron-reference QED calculation
+    electron-muon family interpolation
+    mass/source jets
+    mass-time cross terms
+    primitive 240-dimensional photon response
+    32-dimensional enriched response
+    local 32x8 source contacts
+    compact weak rows
+    corrected parent source rate
+    accepted parent solution
+    common-A connection ownership
+    index-8 normalization
+    K_Q=(2/3)K_component
+    eta zero-mode normalization
+    optional average-trace seam proposal
+    old Gate-7 full-history campaigns
+
+Frozen local values remain:
+
+    a_mu_QED_local = 0.00116550200495813
+
+    calibration-only uncertainty = 1.79e-13
+
+    0 < delta_a_mu_h_local_1 < 3.500331e-9
+
+    0.0011655039493
+        < a_mu_selected_local
+        < 0.0011655109506
+
+Do not add those terms again.
+
+Physical a_mu and g_mu remain unclaimed.
+
+======================================================================
+6. CURRENT NUMERICAL TARGET
+======================================================================
+
+The immediate target is now the action-selected support-loss branch
+contractions:
+
+    r
+    i
+
+    r_v
+    r_J
+    r_vJ
+
+    i_v
+    i_J
+    i_vJ
+
+where:
+
+    r = <psi_star, R_star psi_star>
+    i = <psi_star, I_star psi_star>.
+
+Use the smallest action-sufficient realization.
+
+Do NOT demand a complete exact global history if the existing response,
+stationarity, adjoint, reset or boundary machinery can evaluate these consumed
+scalar contractions directly.
+
+The physical branch must be transported continuously from the action-selected
+formation branch to the AE4 support-loss event.
+
+Do not select a new mode merely because it minimizes a convenient numerical
+matrix.
+
+======================================================================
+7. SUPPORT-LOSS EVENT
+======================================================================
+
+Keep distinct:
+
+    initial formation zero
+    local persistence
+    AE4 support-loss event
+
+The support-loss event is the first future surface satisfying BOTH:
+
+    E_impedance = E_core
+
+and
+
+    outward spacetime support ceases.
+
+If the existing current history already contains a certified or action-defined
+support-loss event, reuse it.
+
+If not, derive only the minimum event locator required by this owner.
+
+Do not restart a broad Gate-7 campaign.
+
+Do not silently substitute:
+
+    the formation zero
+    the artificial C2 cut
+    the last cached node
+    the canonical stop
+
+unless the action explicitly proves that it is the AE4 support-loss event.
+
+======================================================================
+8. COMPUTE c, c_v, c_J, c_vJ
+======================================================================
+
+Once the branch contractions exist, compute:
+
+    c = i/r
+
+    c_v = i_v/r - i r_v/r^2
+
+    c_J = i_J/r - i r_J/r^2
+
+    c_vJ =
+        i_vJ/r
+        - (i_v r_J + i_J r_v + i r_vJ)/r^2
+        + 2 i r_v r_J/r^3.
+
+Validate this scalar chain rule independently with a two-parameter finite
+difference on a small controlled realization.
+
+This is ell_star^2 and its jets.
+
+Do not use ell=1.
+
+======================================================================
+9. CONSUME INTO AE4 HEAT IMMEDIATELY
+======================================================================
+
+Use the already-derived mixed lower-limit contribution:
+
+    -1/2 c_v STr(e^(-cP) P_J)
+
+    -1/2 c_J STr(e^(-cP) P_v)
+
+    + T(c)/(2c) c_vJ
+
+    -1/2 [
+        STr(P e^(-cP))/c
+        + T(c)/c^2
+      ] c_v c_J.
+
+Do not stop after obtaining c_vJ if these heat contractions can be executed.
+
+Then continue the fixed-length native bulk terms:
+
+    STr[ Q(P0) P_vJ + DQ[P_J] P_v ]
+
+with:
+
+    P0 = D_strat^dagger D_strat
+
+on the inherited zero-mode/BRST quotient/domain.
+
+Retain:
+
+    contact
+    moving Gram
+    source pullback
+    domain/interface
+    relative-zeta/eta completion
+
+as required by the SAME owner.
+
+======================================================================
+10. FINISH R_ind
+======================================================================
+
+The active native target remains:
+
+    R_ind(v,J)
+      =
+      delta_v delta_J Gamma_AE4
+      - H_local_already_owned(v,J).
+
+Use the actual reached current directions and generated complement.
+
+Do not subtract the whole primitive diagnostic merely because it is available.
+
+Subtract only already-owned local terms once, with the exact same
+normalization/frame/source directions.
+
+Maintain a ledger:
+
+    primitive Maxwell
+    common-A/background
+    Higgs/gauge local mixed
+    gauge-fixing/ghost
+    induced heat
+    relative-zeta/eta
+    domain/interface
+    completion
+
+Classify each as:
+
+    OWNED_LOCAL_SUBTRACTED
+    NATIVE_REMAINDER
+    COMMON_CANCELLED
+    BOUNDED
+    UNEVALUATED
+
+Never change UNEVALUATED to zero.
+
+======================================================================
+11. PHOTON RESPONSE
+======================================================================
+
+Once R_ind is assembled, construct the completed same-owner photon action:
+
+    H_photon_native
+      =
+      H_local_already_owned
+      + R_ind
+
+without duplicate local terms.
+
+Then evaluate the actual current response:
+
+    (K_0,Q + zeta M_0,Q) u = J_gamma
+
+using the completed native operator rather than only the primitive angular
+piece.
+
+Reuse the existing source-directed/Krylov machinery where applicable.
+
+No full eigenspectrum unless genuinely required.
+
+======================================================================
+12. RETURN TO ELECTRON–MUON FAMILY DIFFERENCE
+======================================================================
+
+Immediately consume the completed photon response in the already-established
+paired family native heat route.
+
+The target is:
+
+    Delta_native_mu_e
+
+or a rigorous enclosure / explicit remaining symbolic dependence.
+
+Do NOT recompute two unrelated full electron and muon calculations if the
+paired family derivative is still the shorter route.
+
+The local difference:
+
+    5.864574188477557...e-6
+
+is already inside the frozen local muon result.
+
+Do not add it again.
+
+======================================================================
+13. PHYSICAL PAULI READOUT
+======================================================================
+
+After the native family response is available, continue to:
+
+    R_mu_e,u(t)
+
+with physical signed on-shell transfer.
+
+Retain:
+
+    moving Pauli dual
+    1/(2m) normalization
+    external-state derivatives
+    source pullback derivatives
+    contact/domain/completion
+    overlap subtraction
+
+Use at least three independent spatial transfer directions and several
+decreasing signed transfers.
+
+For central quotient:
+
+    D(h) = [R(+h)-R(-h)]/(2h)
+
+propagate numerator error AFTER division:
+
+    E_num <= (eps_plus + eps_minus)/(2|h|).
+
+Do not call a b_A amplitude derivative F2(0).
+
+======================================================================
+14. TARGETED VALIDATION
+======================================================================
+
+At minimum add checks that:
+
+1. the AE4 owner uses total resistance
+       gamma J_Sigma + H_impedance;
+
+2. bulk impedance alone is rejected;
+
+3. formation and support loss remain distinct by default;
+
+4. E_impedance^2 = r/i;
+
+5. ell_star^2 = i/r;
+
+6. c_vJ agrees with independent finite differences on a controlled model;
+
+7. support-surface motion is counted once;
+
+8. selected-branch embedding motion is not dropped;
+
+9. no default ell=1 enters a physical calculation;
+
+10. no measured a_mu or particle property enters the owner definition.
+
+Do not rerun hundreds of unrelated tests.
+
+======================================================================
+15. GIT MILESTONES
+======================================================================
+
+First milestone:
+
+    Adopt AE4 support-loss mode-frequency spectral cutoff owner
+
+Suggested files:
+
+    src/bhsm/interface/ae4_stratified_dirac_zeta_induced_owner.py
+    theory/ae4_mode_frequency_cutoff_owner_20261007.md
+    tests/test_ae4_mode_frequency_cutoff_owner.py
+
+Then push and verify PR #465 head.
+
+Second milestone:
+
+    Evaluate AE4 support-loss branch cutoff jets
+
+Suggested files:
+
+    theory/muon_native_support_loss_cutoff_20261007.md
+    src/bhsm/interface/muon_native_support_loss_cutoff.py
+    scripts/replay_muon_native_support_loss_cutoff.py
+    tests/test_muon_native_support_loss_cutoff.py
+    artifacts/muon_native_support_loss_cutoff_20261007/
+
+Then continue into R_ind rather than stopping unnecessarily.
+
+======================================================================
+16. CLAIM BOUNDARY
+======================================================================
+
+This adoption resolves the OWNER DEFINITION of AE4 cutoff energy.
+
+It does NOT by itself claim:
+
+    support-loss event numerically located
+    ell_star numerically evaluated
+    R_ind complete
+    native photon response complete
+    native muon anomaly complete
+    physical a_mu
+    physical g_mu
+
+Those become derived only when actually calculated.
+
+======================================================================
+STOP RULE
+======================================================================
+
+Preferred outcome:
+
+    adopted owner
+    -> support-loss branch r/i jets
+    -> c=ell_star^2 jets
+    -> AE4 heat contribution
+    -> R_ind
+    -> native photon response
+    -> paired electron-muon native heat
+    -> physical Pauli readout
+
+If blocked, return ONE exact unresolved operand inside that chain.
+
+Do not regress to:
+
+    jmath
+    common-A ownership
+    precursor states
+    optional seam proposals
+    scalar rho_hold
+    bulk impedance-only cutoff
+    full Gate-7 history
+    primitive 8-mode photon truncation
+    local-QED recomputation
+
+The goal is now to finish the native muon calculation, not reopen already
+settled architecture.

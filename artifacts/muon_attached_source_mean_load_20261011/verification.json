@@ -1,0 +1,35 @@
+{
+  "byte_identical_outputs": {
+    "mean_load.json": {
+      "bytes": 21912,
+      "sha256": "566608ec1dbecc99e85ece8dd3d77c072ec2fd597d13efc8adc48dd234a36286"
+    },
+    "mean_load.npz": {
+      "bytes": 298650,
+      "sha256": "2344596ba9916d4ebdd8c4dedff5c86ba9f5b16a16224c6eb4880eed326886ea"
+    }
+  },
+  "classification": "VALIDATED_DETERMINISTIC_FULL220_ATTACHED_MEAN_LOAD",
+  "focused_test_command": "C:/Python314/python.exe -m pytest --noconftest -q tests/test_muon_attached_source_mean_load.py",
+  "focused_test_exit_code": 0,
+  "focused_test_stdout": "3 passed in 4.07s",
+  "global_conftest_not_loaded": true,
+  "physical_native_or_Pauli_completed": false,
+  "runs": [
+    {
+      "exit_code": 0,
+      "output": "artifacts/muon_attached_source_mean_load_20261011/run_1",
+      "producer_command": "C:/Python314/python.exe scripts/evaluate_muon_attached_source_mean_load.py --incoming-response artifacts/muon_attached_reached_action_20261011/incoming_run_1 --outgoing-response artifacts/muon_attached_reached_action_20261011/outgoing_run_1 --output artifacts/muon_attached_source_mean_load_20261011/run_1"
+    },
+    {
+      "exit_code": 0,
+      "output": "artifacts/muon_attached_source_mean_load_20261011/run_2",
+      "producer_command": "C:/Python314/python.exe scripts/evaluate_muon_attached_source_mean_load.py --incoming-response artifacts/muon_attached_reached_action_20261011/incoming_run_1 --outgoing-response artifacts/muon_attached_reached_action_20261011/outgoing_run_1 --output artifacts/muon_attached_source_mean_load_20261011/run_2"
+    }
+  ],
+  "source_hashes": {
+    "scripts/evaluate_muon_attached_source_mean_load.py": "e75fa5803f743f53fbc9aa7c6570c7a0479dbaab6dd34c61df612453da2e3d97",
+    "src/bhsm/interface/muon_attached_source_mean_load.py": "fe3db5b9a2658eccca564bc6c10bae5716db6bc339fce6cd634a1c4ed3793c56",
+    "tests/test_muon_attached_source_mean_load.py": "b5f1f262109b01beda11d109cd351a6bebd27362ca9b769f0606da0c329d5d38"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "classification": "DETERMINISTIC_ACTUAL_POSITIVE_ADM_FP_AND_WARD_VERIFICATION",
+  "commands": [
+    {
+      "command": "PYTHONPATH=src OPENBLAS_NUM_THREADS=1 C:/Python314/python.exe -m pytest --noconftest -q tests/test_muon_parent_positive_brst_ghost.py",
+      "exit_code": 0,
+      "output": "4 passed in 4.00s"
+    },
+    {
+      "command": "PYTHONPATH=src OPENBLAS_NUM_THREADS=1 C:/Python314/python.exe scripts/evaluate_muon_parent_positive_brst_ghost.py --output artifacts/muon_parent_positive_brst_ghost_20261011/run_1",
+      "exit_code": 0
+    },
+    {
+      "command": "PYTHONPATH=src OPENBLAS_NUM_THREADS=1 C:/Python314/python.exe scripts/evaluate_muon_parent_positive_brst_ghost.py --output artifacts/muon_parent_positive_brst_ghost_20261011/run_2",
+      "exit_code": 0
+    }
+  ],
+  "error_scope": "finite positive-ADM reference germ and binary64 residual diagnostics; no outward physical domain, assembly or LSZ enclosure",
+  "prior_smoke_failure": {
+    "cause": "Existing geometry Jet accepts integer powers only; radius reconstruction changed to existing analytic sqrt helper before tests/replays.",
+    "output": "TypeError: integer powers only; exit1"
+  },
+  "replays": [
+    {
+      "byte_identical": true,
+      "bytes": 2294176,
+      "file": "application.npz",
+      "sha256": "814a26811ee96ea9046944d07a91375d5b4158fd0690faf5e31fb39d5cce4245"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 12850,
+      "file": "result.json",
+      "sha256": "36d4c61f7861fd9fc0a18179af0da9bda5fcfe04f59b4518465b1e92c0d493ea"
+    }
+  ],
+  "source_hashes": {
+    "scripts/evaluate_muon_parent_positive_brst_ghost.py": "95441198109cc69af3ceed4a1a79a96e1e28c6c829794e6c23740dbdbc405c39",
+    "src/bhsm/interface/muon_parent_positive_brst_ghost.py": "3575d412199108bd9512b2d9e7c2804fe84cf0886224c04f7138b05c2d14331a",
+    "tests/test_muon_parent_positive_brst_ghost.py": "baffb712188139b768509d51495d46d3af0c7b0ca540d854d5f0c12d3dfc27a9"
+  }
+}

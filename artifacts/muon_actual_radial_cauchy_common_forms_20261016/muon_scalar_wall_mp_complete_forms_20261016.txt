@@ -1,0 +1,134 @@
+COMPLETE CHANGING REAL SCALAR-WALL COMMON1200 FORMS
+2026-10-16. Positive classical component, not microscopic P_strat.
+
+The existing intrinsic scalar action component is
+ S_H+=(1/V)int[wt|D_t H|^2+ws sum_a|D_a H|^2
+                    +wv lambda_H(|H|^2-nu_action^2)^2]dt,
+with V=2*pi^2 in the retained binary normalization, wt=R^3/ell,
+ws=ell R,wv=ell R^3 and ell=N sqrt(1-U^2).
+This component evaluates coefficient matrices Kkin, K_lambda,
+K_(lambda*nu^2), Gscalar. Neither lambda nor lambda*nu^2 is assigned.
+
+Source owners:
+ muon_parent_positive_coupled_field.py:91-139 supplies all1120 wall
+ one-form traces and the signed coefficient normalization;
+ muon_parent_positive_coupled_temporal.py:65-100 supplies the dependent
+ scalar image h=-eta H, ht=-eta_t H-eta Hdot and the complete common
+ second variation, including BOTH off-shell deltaOmega*deltaH contacts;
+ audits/bhsm_real_ew_higgs_fp_common_forms_20261016.py:93-117 supplies
+ the four separately evaluated scalar coefficient matrices;
+ muon_holomorphic_d5_trace_action.py:52-57,133-134 supplies the same
+ intrinsic clock and raw268 H/Hdot placement without a bulk H extension.
+
+The frozen MP coefficient owner is
+ audits/bhsm_changing_lorenz_mp_coefficient_values_20261016.py,
+ SHA1b0a9713749feb062fecdb664598a7a5b3528bd72ec5aa18176ae88eb5b88eff.
+The SAME incoming/child saved REAL one-cell midpoint/affine-rate histories
+are evaluated at time8 and time12 Gauss points PER tent half, incoming
+t=u-L and child t=u. Different proper clocks remain. The original binary
+chart constants, H real generators, gauge/harmonic coefficient basis,
+reference projections and normalization are held; MP arithmetic does not
+silently renormalize the coordinate chart or representation.
+
+Only the wall rho=WALL is sampled. No radial quadrature, radial solution,
+field/history integration, or source/D5 campaign is repeated. At the wall
+Ceff*z=C*(beta+wall_dot) exactly, so U=Ceff*z/N; the actual REAL timelike
+square root is used. There is no zero, absolute-value or Wick replacement.
+The material connection includes all independent raw80 coefficients and
+the actual inherited parent-reference+child-reference angular profile.
+H=raw[260:264] and Hdot is the actual affine rate of those coordinates.
+
+The original common vector has15 profiles of80=internal4 times harmonic20:
+800 ordinary one-form,320 dependent covariant-gradient and80 independent
+scalar coordinates. At the intrinsic wall only profile labels
+5,7,8,9,11,13,14 have nonzero traces. The other profiles have identically
+zero wall trace under the OWNED maps (radial0 vanishes atWALL, and D_a H
+uses no independent normal-radial component). They remain in the full
+1200 output coordinates as their exact wall restrictions, not as erased
+physical degrees of freedom or zero external loads.
+
+Let h_p be the internal4x4 scalar-image map, and decompose an angular
+one-form map W_fp=W0_fp tensor I20+W1_fp tensor E_a. The derivative maps
+are D0_p=ht_p+Omega0 h_p+U_H W0_p and
+Da_p=(Omega_a h_p+U_H W0_ap) tensor I20
+      +(h_p+U_H W1_ap) tensor E_a.
+Their product plus the two cross placements is integrated exactly in
+internal4x4 times (I20,Ea,Ea^T,Ea^T Ea). All angular transposes are retained;
+no exact anti-symmetry projection of binary angular matrices is applied.
+Both off-shell Hessian contacts Wp^T V_f hq+hp^T V_f^T Wq remain, where
+(V_f)_cj=(D_f H)_i(T_c)_ij.
+
+Potential/Gram coefficients are, with canonical real2Re convention,
+ K_lambda=2wv/V h^T[4HH^T+2(H^T H)I4]h,
+ K_(lambda*nu^2)=-4wv/V h^T h,
+ Gscalar=2wv/V h^T h.
+Thus this supplies the dependent ghost/scalar orbit blocks and ordinary
+gauge/scalar kinetic cross terms, not merely the independent80 block.
+It introduces no new gauge fixing, scalar mass, coupling or UV copy.
+
+All full1200 matrix entries are assembled in MP80 before output. Only
+EXACT zeros are dropped; no small-entry threshold or symmetry projection
+is used. The time8-to12 comparison scans the union of every exact support
+entry BEFORE float conversion, with denominator max(1,|old|,|new|).
+Both absolute and scaled maxima and their indices/values are recorded.
+
+Canonical producer:
+ audits/bhsm_scalar_wall_mp_complete_forms_20261016.py
+18239 bytes, SHA256
+ 771f1129ff19d57484e9950adc3fbc288d7144b92baefff53dd69f7a3df612d9.
+Independent final pairs (all3 files byte-identical):
+ WORK/outputs/bhsm_scalar_wall_mp_complete_forms_20261016/reviewed_run_1
+ WORK/outputs/bhsm_scalar_wall_mp_complete_forms_20261016/reviewed_run_2
+ scalar_wall_forms.npz 663362 bytes, SHA256
+ c423346a0750c2d714f2bb395d18becb0b457afa6958a8a2c5265ae2638583ba;
+ result.json 359868 bytes, SHA256
+ 7e92e804ccd5fda936fca2b5c78beb745374a7929ef21f60eeb26f0e9901498a;
+ executed_producer.py exactly matches the canonical producer above.
+The result binds319 actual source/input pins and8 additional exact archive
+pins (the source refinement receipt, six consumed radial archives and the
+original TIME6 angular/input archive). The owner loader consumes those
+archives as input/provenance, but this execution does NOT reintegrate
+their radial rules. All125440 internal coefficient moments are exported
+as exact working-binary MP tuples, not truncated decimal reconstructions.
+
+All-entry unrounded time8->12 numerical scaled differences:
+                          incoming              child
+ Kkin                     3.52950859e-48         2.64153674e-48
+ K_lambda                 1.74320871e-49         1.18998006e-50
+ K_(lambda*nu^2)          1.52806783e-49         1.04311615e-50
+ Gscalar                  7.64033917e-50         5.21558077e-51.
+These are numerical MP comparisons for this finite coefficient cell,
+not outward interval error enclosures or physical convergence estimates.
+
+Independent controls:
+ - Direct literal MP polynomial second variations reconstruct eta,eta_t,
+   a_f,h,ht from mixed-common and independent-scalar coefficient vectors,
+   WITHOUT point_images/D/V or the tested tensor expansion. The literal
+   kinetic second variation is2w/V(|delta DH|^2+2 DH dot deltaOmega h).
+   All4 full-matrix quadratic contractions agree; worst scaled errors
+   incoming2.30967e-81/child1.60861e-86. Largest absolute incoming error
+   5.65980e-73 belongs to the large kinetic contraction.
+ - The existing binary64 literal full1200 scalar_point owner is evaluated
+   on the same rounded MP operands. Its small kinetic entries retain
+   cancellation errors, scaled7.16696e-10 incoming and1.04415e-9 child;
+   absolute maxima1.43051e-6 and2.86102e-6 occur in large entries. These
+   unfavorable controls are retained, not relabeled a2e-10 point pass.
+   Potential/Gram point differences are <=1.085e-19.
+ - Independent scalar-agent code/math review PASSED the point maps,
+   coefficients, off-shell contacts, wall clock and added literal controls.
+
+Preserved pilots:
+pilot_run_1 has an explicit failure/source packet for a pre-matrix KeyError:
+the geometry owner exports material shift rather than an original beta key.
+The exact Ceff*z/N identity fixes that implementation error; no physical
+failure is inferred. pilot_run_2 and final_run_1 retain earlier controls
+and exact source snapshots; the final pair adds independent MP controls
+and complete consumed-input metadata without changing numerical matrices.
+
+This completes the scalar-wall contribution needed in the common finite
+matrices. It does NOT identify a Hessian with microscopic P_strat, assign
+matched lambda/surface coefficients, solve the physical background, prove
+full15-form or physical radial/source/domain convergence, select an outgoing
+boundary graph, pass the physical derivative, apply a coupled correction,
+validate Maxwell/all226 after a correction, normalize spins, or predict
+the muon magnetic moment. All such physical gates remain explicitly false.

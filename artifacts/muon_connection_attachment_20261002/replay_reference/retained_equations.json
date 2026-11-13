@@ -1,0 +1,1724 @@
+[
+  {
+    "end_line": 60,
+    "function": "diagonal_quotient_contract",
+    "line": 36,
+    "literal_equations": [
+      {
+        "key": "total_spatial_cap",
+        "line": 40,
+        "value": "C_child=B4_times_S3"
+      },
+      {
+        "key": "principal_action",
+        "line": 41,
+        "value": "(u,v)mapsto(u*q,v*q),_q_in_Sp1"
+      },
+      {
+        "key": "action_is_free_at_regular_pole",
+        "line": 42,
+        "value": true
+      },
+      {
+        "key": "quotient",
+        "line": 43,
+        "value": "(B4_times_S3)/Sp1=B4"
+      },
+      {
+        "key": "boundary_quotient",
+        "line": 44,
+        "value": "(S3_u_times_S3_v)/Sp1_diag=S3"
+      },
+      {
+        "key": "M5",
+        "line": 45,
+        "value": "R_t_times_B4"
+      },
+      {
+        "key": "M4",
+        "line": 46,
+        "value": "R_t_times_S3_boundary"
+      },
+      {
+        "key": "coframes",
+        "line": 47,
+        "value": "theta_u=u^-1du,_theta_v=v^-1dv,_delta=theta_u-theta_v"
+      },
+      {
+        "key": "S",
+        "line": 48,
+        "value": "A^2+B^2"
+      },
+      {
+        "key": "lambda",
+        "line": 49,
+        "value": "A^2/S"
+      },
+      {
+        "key": "mechanical_connection",
+        "line": 50,
+        "value": "omega=lambda*theta_u+(1-lambda)*theta_v"
+      },
+      {
+        "key": "metric_completion",
+        "line": 52,
+        "value": "A^2|theta_u|^2+B^2|theta_v|^2=S|omega|^2+(A^2B^2/S)|delta|^2"
+      },
+      {
+        "key": "connection_curvature",
+        "line": 56,
+        "value": "F_omega=d(lambda)wedge(delta)-lambda(1-lambda)[delta,delta]/2"
+      },
+      {
+        "key": "new_continuous_coefficient",
+        "line": 59,
+        "value": false
+      }
+    ],
+    "path": "src/bhsm/interface/aether_diagonal_sp1_m4_attachment_v15_50.py",
+    "sha256": "e6482614dcb54f4890a5e66fbe724d4c302405d575a4b73ddbb64a075cb1827e",
+    "source": "def diagonal_quotient_contract() -> dict[str, Any]:\n    \"\"\"Return the exact global quotient and metric decomposition.\"\"\"\n\n    return {\n        \"total_spatial_cap\": \"C_child=B4_times_S3\",\n        \"principal_action\": \"(u,v)mapsto(u*q,v*q),_q_in_Sp1\",\n        \"action_is_free_at_regular_pole\": True,\n        \"quotient\": \"(B4_times_S3)/Sp1=B4\",\n        \"boundary_quotient\": \"(S3_u_times_S3_v)/Sp1_diag=S3\",\n        \"M5\": \"R_t_times_B4\",\n        \"M4\": \"R_t_times_S3_boundary\",\n        \"coframes\": \"theta_u=u^-1du,_theta_v=v^-1dv,_delta=theta_u-theta_v\",\n        \"S\": \"A^2+B^2\",\n        \"lambda\": \"A^2/S\",\n        \"mechanical_connection\": \"omega=lambda*theta_u+(1-lambda)*theta_v\",\n        \"metric_completion\": (\n            \"A^2|theta_u|^2+B^2|theta_v|^2=\"\n            \"S|omega|^2+(A^2B^2/S)|delta|^2\"\n        ),\n        \"connection_curvature\": (\n            \"F_omega=d(lambda)wedge(delta)-lambda(1-lambda)\"\n            \"[delta,delta]/2\"\n        ),\n        \"new_continuous_coefficient\": False,\n    }"
+  },
+  {
+    "end_line": 159,
+    "function": "action_ownership_ledger",
+    "line": 136,
+    "literal_equations": [
+      {
+        "key": "parent_source",
+        "line": 140,
+        "value": "S8_EH=(kappa1/2)integral_M8_sqrt(-G)R8"
+      },
+      {
+        "key": "M5_connection_term",
+        "line": 141,
+        "value": "-(1/4)K_F(rho)F_omega^a F_omega^a"
+      },
+      {
+        "key": "K_F",
+        "line": 142,
+        "value": "(kappa1/2)*Vol(S3_sqrt(S))*S"
+      },
+      {
+        "key": "classical_connection_background",
+        "line": 143,
+        "value": "mechanical_connection_omega"
+      },
+      {
+        "key": "background_curvature_already_in_parent_R8",
+        "line": 144,
+        "value": true
+      },
+      {
+        "key": "add_connection_background_energy_again",
+        "line": 145,
+        "value": false
+      },
+      {
+        "key": "independent_connection_fluctuations",
+        "line": 147,
+        "value": "sections_of_Tstar(M5)tensor_ad(P)_with_the_parent_K_F_norm"
+      },
+      {
+        "key": "boundary_operator",
+        "line": 150,
+        "value": "pullback_of_the_gauge-fixed_connection_Hessian_to_M4=R_t_times_S3"
+      },
+      {
+        "key": "physical_weak_identification",
+        "line": 153,
+        "value": "representation_attachment_required"
+      },
+      {
+        "key": "color_connection",
+        "line": 154,
+        "value": "not_the_same_as_the_diagonal_Sp1_connection"
+      },
+      {
+        "key": "fermion_background",
+        "line": 155,
+        "value": "zero_classically;_determinant_backreaction_quantum"
+      },
+      {
+        "key": "next_non_double_counted_term",
+        "line": 157,
+        "value": "the_gauge-fixed_and_spin-glued_M4_one-loop_determinant"
+      }
+    ],
+    "path": "src/bhsm/interface/aether_diagonal_sp1_m4_attachment_v15_50.py",
+    "sha256": "e6482614dcb54f4890a5e66fbe724d4c302405d575a4b73ddbb64a075cb1827e",
+    "source": "def action_ownership_ledger() -> dict[str, Any]:\n    \"\"\"Separate the derived attachment from possible extra field sectors.\"\"\"\n\n    return {\n        \"parent_source\": \"S8_EH=(kappa1/2)integral_M8_sqrt(-G)R8\",\n        \"M5_connection_term\": \"-(1/4)K_F(rho)F_omega^a F_omega^a\",\n        \"K_F\": \"(kappa1/2)*Vol(S3_sqrt(S))*S\",\n        \"classical_connection_background\": \"mechanical_connection_omega\",\n        \"background_curvature_already_in_parent_R8\": True,\n        \"add_connection_background_energy_again\": False,\n        \"independent_connection_fluctuations\": (\n            \"sections_of_Tstar(M5)tensor_ad(P)_with_the_parent_K_F_norm\"\n        ),\n        \"boundary_operator\": (\n            \"pullback_of_the_gauge-fixed_connection_Hessian_to_\"\n            \"M4=R_t_times_S3\"\n        ),\n        \"physical_weak_identification\": \"representation_attachment_required\",\n        \"color_connection\": \"not_the_same_as_the_diagonal_Sp1_connection\",\n        \"fermion_background\": \"zero_classically;_determinant_backreaction_quantum\",\n        \"next_non_double_counted_term\": (\n            \"the_gauge-fixed_and_spin-glued_M4_one-loop_determinant\"\n        ),\n    }"
+  },
+  {
+    "end_line": 53,
+    "function": "chiral_bundle_contract",
+    "line": 29,
+    "literal_equations": [
+      {
+        "key": "base",
+        "line": 32,
+        "value": "hybrid_M4=R_t_times_S3_on_each_open_flow_segment"
+      },
+      {
+        "key": "covering_gauge_group",
+        "line": 33,
+        "value": "SU3_times_Sp1_times_U1_Y"
+      },
+      {
+        "key": "faithful_gauge_group",
+        "line": 34,
+        "value": "(SU3_times_Sp1_times_U1_Y)/Z6"
+      },
+      {
+        "key": "families",
+        "line": 35,
+        "value": 3
+      },
+      {
+        "key": "family_source",
+        "line": 36,
+        "value": "C3_triality_projectors_P0_P1_P2"
+      },
+      {
+        "key": "scalar_doublet",
+        "line": 47,
+        "value": "H=(1,2)_(1/2)"
+      },
+      {
+        "key": "chirality",
+        "line": 48,
+        "value": "all_fermions_written_as_left_Weyl_fields"
+      },
+      {
+        "key": "neutral_singlet",
+        "line": 50,
+        "value": "nu_c=(1,1)_0_completes_the_rank_16_family;_its_mass_operator_is_not_fixed_by_anomaly_cancellation"
+      }
+    ],
+    "path": "src/bhsm/interface/aether_hybrid_standard_model_bundle_v15_53.py",
+    "sha256": "a983350de429125b2e2b4271c35b8abd14e984381c61b3596121ee946e6bc23a",
+    "source": "def chiral_bundle_contract() -> dict[str, Any]:\n    rows = one_family_multiplets(include_neutral_singlet=True)\n    return {\n        \"base\": \"hybrid_M4=R_t_times_S3_on_each_open_flow_segment\",\n        \"covering_gauge_group\": \"SU3_times_Sp1_times_U1_Y\",\n        \"faithful_gauge_group\": \"(SU3_times_Sp1_times_U1_Y)/Z6\",\n        \"families\": 3,\n        \"family_source\": \"C3_triality_projectors_P0_P1_P2\",\n        \"one_family_complex_dimension\": sum(row.complex_dimension for row in rows),\n        \"multiplets\": [\n            {\n                \"name\": row.name,\n                \"representation\": f\"({row.su3},{row.sp1})_{row.Y}\",\n                \"dimension\": row.complex_dimension,\n                \"Y\": str(row.Y),\n            }\n            for row in rows\n        ],\n        \"scalar_doublet\": \"H=(1,2)_(1/2)\",\n        \"chirality\": \"all_fermions_written_as_left_Weyl_fields\",\n        \"neutral_singlet\": (\n            \"nu_c=(1,1)_0_completes_the_rank_16_family;_its_mass_operator_\"\n            \"is_not_fixed_by_anomaly_cancellation\"\n        ),\n    }"
+  },
+  {
+    "end_line": 158,
+    "function": "hybrid_bundle_gluing",
+    "line": 142,
+    "literal_equations": [
+      {
+        "key": "open_segment_bundle",
+        "line": 145,
+        "value": "P_SM=P_SU3_times_P_Sp1_times_P_U1_mod_Z6_over_M4"
+      },
+      {
+        "key": "event_transport",
+        "line": 148,
+        "value": "representation_labels,_C3_family_projectors,_hypercharge_operator,_and_FR_parity_are_part_of_the_discrete_gluing_data"
+      },
+      {
+        "key": "connection_one_forms_transported_as_pregeometric_primitives",
+        "line": 151,
+        "value": false
+      },
+      {
+        "key": "post_event_connections",
+        "line": 153,
+        "value": "reconstructed_in_the_selected_zero-background_sector_with_the_Sp1_kinetic_norm_inherited_from_the_parent_diagonal_quotient"
+      },
+      {
+        "key": "fermion_vacuum",
+        "line": 156,
+        "value": "zero_classical_field_with_the_odd_FR_spin_domain"
+      },
+      {
+        "key": "hybrid_bundle_returns_to_same_isomorphism_class",
+        "line": 157,
+        "value": true
+      }
+    ],
+    "path": "src/bhsm/interface/aether_hybrid_standard_model_bundle_v15_53.py",
+    "sha256": "a983350de429125b2e2b4271c35b8abd14e984381c61b3596121ee946e6bc23a",
+    "source": "def hybrid_bundle_gluing() -> dict[str, Any]:\n    return {\n        \"open_segment_bundle\": (\n            \"P_SM=P_SU3_times_P_Sp1_times_P_U1_mod_Z6_over_M4\"\n        ),\n        \"event_transport\": (\n            \"representation_labels,_C3_family_projectors,_hypercharge_\"\n            \"operator,_and_FR_parity_are_part_of_the_discrete_gluing_data\"\n        ),\n        \"connection_one_forms_transported_as_pregeometric_primitives\": False,\n        \"post_event_connections\": (\n            \"reconstructed_in_the_selected_zero-background_sector_with_the_\"\n            \"Sp1_kinetic_norm_inherited_from_the_parent_diagonal_quotient\"\n        ),\n        \"fermion_vacuum\": \"zero_classical_field_with_the_odd_FR_spin_domain\",\n        \"hybrid_bundle_returns_to_same_isomorphism_class\": True,\n    }"
+  },
+  {
+    "end_line": 48,
+    "function": "sobolev_phase_space_contract",
+    "line": 26,
+    "literal_equations": [
+      {
+        "key": "embedding",
+        "line": 33,
+        "value": "H^s_on_the_7D_slice_embeds_continuously_in_C2_for_s>11/2"
+      },
+      {
+        "key": "configuration_fields",
+        "line": 35,
+        "value": "(h_7,eta,sigma;A_SM,H_SM,Psi)_in_H^s_with_pole,_seam,_spin,_bundle,_and_response_domains"
+      },
+      {
+        "key": "momentum_fields",
+        "line": 39,
+        "value": "(K,pi_eta,pi_sigma;E_SM,Pi_H)_in_H^(s-1)_on_the_constraint_surface"
+      },
+      {
+        "key": "quotient",
+        "line": 41,
+        "value": "X_phys^s=C_constraints^s/(Diff^(s+1)_0_times_Gauge^(s+1)_0)"
+      },
+      {
+        "key": "event_trace_well_defined",
+        "line": 42,
+        "value": true
+      },
+      {
+        "key": "Legendre_event_component",
+        "line": 44,
+        "value": "Sigma_D^s={z:the_constraint-quotiented_Euler-Dirac_pencil_loses_rank,_with_the_selected_degree-one_negative-child_odd-FR_incidence};_min_chi(1+X_eta^3)=0_is_not_required"
+      }
+    ],
+    "path": "src/bhsm/interface/aether_full_sobolev_hybrid_actualization_v15_57.py",
+    "sha256": "9628d26928edaef681cadf95bb5336df91f0d1cef811f23207c4ba7e571a5808",
+    "source": "def sobolev_phase_space_contract(s: float = 6.0) -> dict[str, Any]:\n    \"\"\"State the regularity and quotient used by the hybrid field problem.\"\"\"\n\n    if s <= 5.5:\n        raise ValueError(\"seven-dimensional C2 control requires s>11/2\")\n    return {\n        \"regularity\": s,\n        \"embedding\": \"H^s_on_the_7D_slice_embeds_continuously_in_C2_for_s>11/2\",\n        \"configuration_fields\": (\n            \"(h_7,eta,sigma;A_SM,H_SM,Psi)_in_H^s_with_pole,_seam,_spin,_\"\n            \"bundle,_and_response_domains\"\n        ),\n        \"momentum_fields\": (\n            \"(K,pi_eta,pi_sigma;E_SM,Pi_H)_in_H^(s-1)_on_the_constraint_surface\"\n        ),\n        \"quotient\": \"X_phys^s=C_constraints^s/(Diff^(s+1)_0_times_Gauge^(s+1)_0)\",\n        \"event_trace_well_defined\": True,\n        \"Legendre_event_component\": (\n            \"Sigma_D^s={z:the_constraint-quotiented_Euler-Dirac_pencil_\"\n            \"loses_rank,_with_the_selected_degree-one_negative-child_\"\n            \"odd-FR_incidence};_min_chi(1+X_eta^3)=0_is_not_required\"\n        ),\n    }"
+  },
+  {
+    "end_line": 96,
+    "function": "full_reconstruction_operator",
+    "line": 76,
+    "literal_equations": [
+      {
+        "key": "operator",
+        "line": 80,
+        "value": "R_s:{I_star}->X_phys^s"
+      },
+      {
+        "key": "value",
+        "line": 81,
+        "value": "R_s(I_star)=z_star"
+      },
+      {
+        "key": "z_star_geometry",
+        "line": 83,
+        "value": "the_v15.46_round_B4_times_S3_cap_at_R_star=(343/5)^(1/6),_followed_by_the_v15.51_attached_Euler-Dirac_constraint_projection"
+      },
+      {
+        "key": "z_star_orientation",
+        "line": 86,
+        "value": "the_unique_projected_solution_with_x_dot<0"
+      },
+      {
+        "key": "z_star_SM",
+        "line": 88,
+        "value": "the_v15.53_bundle_isomorphism_class_with_A_SM=0,_H_SM=0,_Psi=0"
+      },
+      {
+        "key": "z_star_FR",
+        "line": 90,
+        "value": "the_odd_antiperiodic_ground_ray"
+      },
+      {
+        "key": "single_valued",
+        "line": 91,
+        "value": true
+      },
+      {
+        "key": "new_continuous_coefficient",
+        "line": 92,
+        "value": false
+      },
+      {
+        "key": "extension_to_event_basin",
+        "line": 93,
+        "value": "R_hat_s(z)=z_star_for_every_z_in_D_Istar"
+      },
+      {
+        "key": "Frechet_derivative",
+        "line": 94,
+        "value": "D R_hat_s[z]=0_in_L(X_phys^s,X_phys^s)"
+      },
+      {
+        "key": "Lipschitz_constant",
+        "line": 95,
+        "value": 0.0
+      }
+    ],
+    "path": "src/bhsm/interface/aether_full_sobolev_hybrid_actualization_v15_57.py",
+    "sha256": "9628d26928edaef681cadf95bb5336df91f0d1cef811f23207c4ba7e571a5808",
+    "source": "def full_reconstruction_operator() -> dict[str, Any]:\n    \"\"\"Define the selected reconstruction as a map into the full phase space.\"\"\"\n\n    return {\n        \"operator\": \"R_s:{I_star}->X_phys^s\",\n        \"value\": \"R_s(I_star)=z_star\",\n        \"z_star_geometry\": (\n            \"the_v15.46_round_B4_times_S3_cap_at_R_star=(343/5)^(1/6),_\"\n            \"followed_by_the_v15.51_attached_Euler-Dirac_constraint_projection\"\n        ),\n        \"z_star_orientation\": \"the_unique_projected_solution_with_x_dot<0\",\n        \"z_star_SM\": (\n            \"the_v15.53_bundle_isomorphism_class_with_A_SM=0,_H_SM=0,_Psi=0\"\n        ),\n        \"z_star_FR\": \"the_odd_antiperiodic_ground_ray\",\n        \"single_valued\": True,\n        \"new_continuous_coefficient\": False,\n        \"extension_to_event_basin\": \"R_hat_s(z)=z_star_for_every_z_in_D_Istar\",\n        \"Frechet_derivative\": \"D R_hat_s[z]=0_in_L(X_phys^s,X_phys^s)\",\n        \"Lipschitz_constant\": 0.0,\n    }"
+  },
+  {
+    "end_line": 102,
+    "function": "zero_background_calderon_closure",
+    "line": 31,
+    "literal_equations": [
+      {
+        "key": "interpretation",
+        "line": 98,
+        "value": "THE_SM_BUNDLE_AND_FAMILY_DATA_PERSIST_AS_DISCRETE_CARRIER_STRUCTURE_WITHOUT_REQUIRING_NONZERO_CLASSICAL_GAUGE_SPINOR_GHOST_OR_HS_FIELD_AMPLITUDES"
+      },
+      {
+        "key": "classical_connection_fluctuation",
+        "line": 56,
+        "value": "ZERO_AROUND_THE_MECHANICAL_CONNECTION_WHOSE_CURVATURE_IS_ALREADY_INCLUDED_IN_THE_PARENT_EINSTEIN_TERM"
+      },
+      {
+        "key": "gauge",
+        "line": 69,
+        "value": "THE_GAUGE_FIXED_TRANSVERSE_HESSIAN_IS_LINEAR_ON_FLUCTUATIONS_SO_ITS_CALDERON_GRAPH_CONTAINS_(0,0)"
+      },
+      {
+        "key": "spinor",
+        "line": 73,
+        "value": "THE_ODD_FR_WEYL_OPERATOR_HAS_LEVELS_n_PLUS_3_OVER_2_AND_ZERO_CLASSICAL_SPINOR_TRACE_THEREFORE_HAS_ZERO_FLUX"
+      },
+      {
+        "key": "ghost",
+        "line": 77,
+        "value": "LONGITUDINAL_AND_COMPLEX_GHOST_BLOCKS_CANCEL_MODE_BY_MODE_AND_GLOBAL_GAUGE_ZERO_MODES_ARE_QUOTIENTED"
+      },
+      {
+        "key": "HS",
+        "line": 81,
+        "value": "THE_SELECTED_ZERO_HS_TRACE_IS_THE_ZERO_VECTOR_OF_ITS_HOMOGENEOUS_LINEARIZED_BOUNDARY_GRAPH"
+      },
+      {
+        "key": "zero_background_F_child_evaluable_without_full_matrix",
+        "line": 86,
+        "value": true
+      },
+      {
+        "key": "full_nonzero_fluctuation_Calderon_matrices_derived",
+        "line": 87,
+        "value": false
+      },
+      {
+        "key": "quantum_determinant_backreaction_zero",
+        "line": 88,
+        "value": false
+      },
+      {
+        "key": "why_quantum_backreaction_is_separate",
+        "line": 90,
+        "value": "THE_ONE_LOOP_SUPERDETERMINANT_DEPENDS_ON_THE_SCALAR_GEOMETRY_EVEN_WHEN_CLASSICAL_GAUGE_SPINOR_HS_TRACES_VANISH"
+      }
+    ],
+    "path": "src/bhsm/interface/aether_n3_zero_background_calderon_closure_v17_97.py",
+    "sha256": "f551e4d633f2bc96750c93e791bc96104356cd58da053ef13a564784c718270c",
+    "source": "def zero_background_calderon_closure() -> dict[str, Any]:\n    scalar = scalar_complete_child_boundary_solution()\n    gluing = hybrid_bundle_gluing()\n    ownership = action_ownership_ledger()\n    operators = graded_operator_ledger()\n\n    # These are field amplitudes in the selected classical background, not\n    # the discrete bundle/topology data that are transported by the event.\n    trace = np.zeros(4)\n    event_flux = np.zeros(4)\n    child_flux = np.zeros(4)\n    matching = event_flux + child_flux\n    return {\n        \"sector_order\": [\n            \"gauge_transverse\", \"Weyl\", \"BRST_longitudinal_ghost\", \"HS\",\n        ],\n        \"boundary_trace\": trace.tolist(),\n        \"event_outward_flux\": event_flux.tolist(),\n        \"child_outward_flux\": child_flux.tolist(),\n        \"F_child_zero_background\": matching.tolist(),\n        \"F_child_zero_background_norm\": float(np.linalg.norm(matching)),\n        \"provenance\": {\n            \"post_event_connection_sector\": gluing[\"post_event_connections\"],\n            \"fermion_vacuum\": gluing[\"fermion_vacuum\"],\n            \"classical_connection_fluctuation\": (\n                \"ZERO_AROUND_THE_MECHANICAL_CONNECTION_WHOSE_CURVATURE_IS_\"\n                \"ALREADY_INCLUDED_IN_THE_PARENT_EINSTEIN_TERM\"\n            ),\n            \"fermion_background\": ownership[\"fermion_background\"],\n            \"Weyl_spatial_spectrum\": operators[\"Weyl\"][\"spatial_eigenvalue\"],\n            \"Weyl_levels\": operators[\"Weyl\"][\"levels\"],\n            \"BRST_quotient\": operators[\"gauge_longitudinal_ghost\"][\"statement\"],\n            \"same_bundle_isomorphism_class\": gluing[\n                \"hybrid_bundle_returns_to_same_isomorphism_class\"\n            ],\n        },\n        \"homogeneous_boundary_argument\": {\n            \"gauge\": (\n                \"THE_GAUGE_FIXED_TRANSVERSE_HESSIAN_IS_LINEAR_ON_\"\n                \"FLUCTUATIONS_SO_ITS_CALDERON_GRAPH_CONTAINS_(0,0)\"\n            ),\n            \"spinor\": (\n                \"THE_ODD_FR_WEYL_OPERATOR_HAS_LEVELS_n_PLUS_3_OVER_2_AND_\"\n                \"ZERO_CLASSICAL_SPINOR_TRACE_THEREFORE_HAS_ZERO_FLUX\"\n            ),\n            \"ghost\": (\n                \"LONGITUDINAL_AND_COMPLEX_GHOST_BLOCKS_CANCEL_MODE_BY_MODE_\"\n                \"AND_GLOBAL_GAUGE_ZERO_MODES_ARE_QUOTIENTED\"\n            ),\n            \"HS\": (\n                \"THE_SELECTED_ZERO_HS_TRACE_IS_THE_ZERO_VECTOR_OF_ITS_\"\n                \"HOMOGENEOUS_LINEARIZED_BOUNDARY_GRAPH\"\n            ),\n        },\n        \"scope\": {\n            \"zero_background_F_child_evaluable_without_full_matrix\": True,\n            \"full_nonzero_fluctuation_Calderon_matrices_derived\": False,\n            \"quantum_determinant_backreaction_zero\": False,\n            \"why_quantum_backreaction_is_separate\": (\n                \"THE_ONE_LOOP_SUPERDETERMINANT_DEPENDS_ON_THE_SCALAR_\"\n                \"GEOMETRY_EVEN_WHEN_CLASSICAL_GAUGE_SPINOR_HS_TRACES_VANISH\"\n            ),\n            \"scalar_geometry_child_from_v17_96_closed\": scalar[\n                \"F_child_scalar\"\n            ][\"closed_to_resolved_derivative_tolerance\"],\n        },\n        \"interpretation\": (\n            \"THE_SM_BUNDLE_AND_FAMILY_DATA_PERSIST_AS_DISCRETE_CARRIER_\"\n            \"STRUCTURE_WITHOUT_REQUIRING_NONZERO_CLASSICAL_GAUGE_SPINOR_\"\n            \"GHOST_OR_HS_FIELD_AMPLITUDES\"\n        ),\n    }"
+  },
+  {
+    "end_line": 134,
+    "function": "foundational_action_payload",
+    "line": 92,
+    "literal_equations": [
+      {
+        "key": "action_status_explicitly_foundational",
+        "line": 94,
+        "value": true
+      },
+      {
+        "key": "canonical_kinetic_coefficient_is_field_definition_not_new_input",
+        "line": 96,
+        "value": true
+      },
+      {
+        "key": "eta_mass_profile_has_no_new_localization_coefficient",
+        "line": 97,
+        "value": true
+      },
+      {
+        "key": "two_oriented_sheets_supply_opposite_chiral_zero_modes",
+        "line": 98,
+        "value": true
+      },
+      {
+        "key": "seam_Higgs_normal_overlap_is_unit",
+        "line": 99,
+        "value": true
+      },
+      {
+        "key": "artifact",
+        "line": 103,
+        "value": "BHSM_foundational_eta_Dirac_action_v14_45"
+      },
+      {
+        "key": "status",
+        "line": 105,
+        "value": "FOUNDATIONAL_EFFECTIVE_ACTION_ADOPTED"
+      },
+      {
+        "key": "not_status",
+        "line": 106,
+        "value": "DERIVED_FROM_THE_BOSONIC_PATH_B_ACTION"
+      },
+      {
+        "key": "five_dimensional_collar_action",
+        "line": 108,
+        "value": "S_F=sum_eps integral dmu4 ds J bar(Psi_eps) [i gamma^mu nabla_mu^total + i eps Gamma_perp (partial_s + 1/2 partial_s log J + m_eta)] Psi_eps + S_H"
+      },
+      {
+        "key": "eta_mass_profile",
+        "line": 112,
+        "value": "m_eta(s)=-partial_s log(sin f_eta(s))"
+      },
+      {
+        "key": "normal_zero_mode",
+        "line": 113,
+        "value": "u0=N J^(-1/2) sin(f_eta)"
+      },
+      {
+        "key": "canonical_field_convention",
+        "line": 115,
+        "value": "the overall positive fermion kinetic residue is absorbed into the definition of the local Grassmann field before physical bilinear couplings are read"
+      },
+      {
+        "key": "two_sided_chirality",
+        "line": 120,
+        "value": "the same eta profile on the two opposite collar orientations gives the retained left/right pair"
+      },
+      {
+        "key": "seam_bridge",
+        "line": 124,
+        "value": "S_H=-integral dmu4 [bar(Psi_+) Y_f H Psi_- + h.c.]; the normal pullback leaves Y_f unchanged"
+      },
+      {
+        "key": "no_double_counting_role",
+        "line": 128,
+        "value": "Psi is the second-quantized collective/topological sector; the same collective zero modes are excluded from the bosonic fluctuation determinant"
+      }
+    ],
+    "path": "src/bhsm/interface/completion/foundational_dirac_spin_glue_v14_45.py",
+    "sha256": "ad05ede643af517ded29823b6f5d3076ae64bc2e985ebf500ba48564ad8c8015",
+    "source": "def foundational_action_payload() -> dict[str, Any]:\n    validation = {\n        \"action_status_explicitly_foundational\": True,\n        \"Path_B_derivation_not_claimed\": not GUARDS[\"claimed_derived_from_Path_B\"],\n        \"canonical_kinetic_coefficient_is_field_definition_not_new_input\": True,\n        \"eta_mass_profile_has_no_new_localization_coefficient\": True,\n        \"two_oriented_sheets_supply_opposite_chiral_zero_modes\": True,\n        \"seam_Higgs_normal_overlap_is_unit\": True,\n        \"frozen_predictions_unchanged\": not GUARDS[\"frozen_predictions_changed\"],\n    }\n    return {\n        \"artifact\": \"BHSM_foundational_eta_Dirac_action_v14_45\",\n        \"version\": VERSION,\n        \"status\": \"FOUNDATIONAL_EFFECTIVE_ACTION_ADOPTED\",\n        \"not_status\": \"DERIVED_FROM_THE_BOSONIC_PATH_B_ACTION\",\n        \"five_dimensional_collar_action\": (\n            \"S_F=sum_eps integral dmu4 ds J bar(Psi_eps) [i gamma^mu \"\n            \"nabla_mu^total + i eps Gamma_perp (partial_s + 1/2 partial_s \"\n            \"log J + m_eta)] Psi_eps + S_H\"\n        ),\n        \"eta_mass_profile\": \"m_eta(s)=-partial_s log(sin f_eta(s))\",\n        \"normal_zero_mode\": \"u0=N J^(-1/2) sin(f_eta)\",\n        \"canonical_field_convention\": (\n            \"the overall positive fermion kinetic residue is absorbed into the \"\n            \"definition of the local Grassmann field before physical bilinear \"\n            \"couplings are read\"\n        ),\n        \"two_sided_chirality\": (\n            \"the same eta profile on the two opposite collar orientations gives \"\n            \"the retained left/right pair\"\n        ),\n        \"seam_bridge\": (\n            \"S_H=-integral dmu4 [bar(Psi_+) Y_f H Psi_- + h.c.]; \"\n            \"the normal pullback leaves Y_f unchanged\"\n        ),\n        \"no_double_counting_role\": (\n            \"Psi is the second-quantized collective/topological sector; the same \"\n            \"collective zero modes are excluded from the bosonic fluctuation determinant\"\n        ),\n        \"primary_verdict\": PRIMARY_VERDICT,\n        \"validation\": validation,\n        \"validation_passed\": all(validation.values()),\n    }"
+  },
+  {
+    "end_line": 227,
+    "function": "zero_mode_pullback_payload",
+    "line": 185,
+    "literal_equations": [
+      {
+        "key": "four_dimensional_kinetic_pullback_coefficient_is_one",
+        "line": 194,
+        "value": true
+      },
+      {
+        "key": "normal_Kosmann_factor_is_one",
+        "line": 195,
+        "value": true
+      },
+      {
+        "key": "artifact",
+        "line": 198,
+        "value": "BHSM_eta_zero_mode_canonical_pullback_v14_45"
+      },
+      {
+        "key": "normal_operator",
+        "line": 201,
+        "value": "A_eta=partial_s+1/2 partial_s log J+m_eta, m_eta=-partial_s log sin(f_eta)"
+      },
+      {
+        "key": "exact_mode",
+        "line": 204,
+        "value": "u0=N J^(-1/2) sin(f_eta)"
+      },
+      {
+        "key": "exact_identity",
+        "line": 205,
+        "value": "A_eta u0=0"
+      },
+      {
+        "key": "normalization_identity",
+        "line": 207,
+        "value": "integral ds J |u0|^2=N^2 integral ds sin^2(f_eta)=1"
+      },
+      {
+        "key": "four_dimensional_pullback",
+        "line": 210,
+        "value": "integral ds J |u0|^2 bar(psi) i gamma^mu nabla_mu psi =bar(psi) i gamma^mu nabla_mu psi"
+      },
+      {
+        "key": "Kosmann_pullback",
+        "line": 214,
+        "value": "for a tangential shift beta, <u0 chi_t|V_beta|u0 chi_s>_5D =<chi_t|V_beta|chi_s>_4D"
+      },
+      {
+        "key": "profile",
+        "line": 218,
+        "value": "sin(f)=sech(s)"
+      },
+      {
+        "key": "jacobian",
+        "line": 219,
+        "value": "J=1+sech(s)^2/4"
+      }
+    ],
+    "path": "src/bhsm/interface/completion/foundational_dirac_spin_glue_v14_45.py",
+    "sha256": "ad05ede643af517ded29823b6f5d3076ae64bc2e985ebf500ba48564ad8c8015",
+    "source": "def zero_mode_pullback_payload() -> dict[str, Any]:\n    arrays = _eta_profile_arrays()\n    weighted_norm = float(arrays[\"weighted_norm\"])\n    overlap = float(arrays[\"two_sheet_overlap\"])\n    residual = float(arrays[\"operator_residual\"])\n    validation = {\n        \"weighted_zero_mode_normalized\": abs(weighted_norm - 1.0) < 1.0e-12,\n        \"normal_first_order_equation_satisfied\": residual < 1.0e-13,\n        \"two_sheet_normal_overlap_is_one\": abs(overlap - 1.0) < 1.0e-12,\n        \"four_dimensional_kinetic_pullback_coefficient_is_one\": True,\n        \"normal_Kosmann_factor_is_one\": True,\n    }\n    return {\n        \"artifact\": \"BHSM_eta_zero_mode_canonical_pullback_v14_45\",\n        \"version\": VERSION,\n        \"normal_operator\": (\n            \"A_eta=partial_s+1/2 partial_s log J+m_eta, \"\n            \"m_eta=-partial_s log sin(f_eta)\"\n        ),\n        \"exact_mode\": \"u0=N J^(-1/2) sin(f_eta)\",\n        \"exact_identity\": \"A_eta u0=0\",\n        \"normalization_identity\": (\n            \"integral ds J |u0|^2=N^2 integral ds sin^2(f_eta)=1\"\n        ),\n        \"four_dimensional_pullback\": (\n            \"integral ds J |u0|^2 bar(psi) i gamma^mu nabla_mu psi \"\n            \"=bar(psi) i gamma^mu nabla_mu psi\"\n        ),\n        \"Kosmann_pullback\": (\n            \"for a tangential shift beta, <u0 chi_t|V_beta|u0 chi_s>_5D \"\n            \"=<chi_t|V_beta|chi_s>_4D\"\n        ),\n        \"numerical_witness\": {\n            \"profile\": \"sin(f)=sech(s)\",\n            \"jacobian\": \"J=1+sech(s)^2/4\",\n            \"weighted_norm\": weighted_norm,\n            \"two_sheet_overlap\": overlap,\n            \"max_first_order_residual\": residual,\n        },\n        \"secondary_verdict\": SECONDARY_VERDICT,\n        \"validation\": validation,\n        \"validation_passed\": all(validation.values()),\n    }"
+  },
+  {
+    "end_line": 45,
+    "function": "first_order_parent_action",
+    "line": 30,
+    "literal_equations": [
+      {
+        "key": "fields",
+        "line": 32,
+        "value": "coframe_e,_spin_connection_omega,_rank16_gauge_connection_A,_Psi"
+      },
+      {
+        "key": "action",
+        "line": 34,
+        "value": "S5=(K_G5/2)*integral W*e*e_A^M*e_B^N*R_MN^AB(omega)+(K_F5/4)*integral W*Tr_16(F_A^2)+S_Dirac[e,omega,A,Psi]"
+      },
+      {
+        "key": "event_weight",
+        "line": 37,
+        "value": "W=(1-4sigma^2)*(1+X_eta^3)"
+      },
+      {
+        "key": "K_G5",
+        "line": 38,
+        "value": "kappa1*Vol(S3_RF)"
+      },
+      {
+        "key": "K_F5",
+        "line": 39,
+        "value": "K_G5*RF^2/2"
+      },
+      {
+        "key": "coefficient_relation",
+        "line": 40,
+        "value": "K_F5/K_G5=RF^2/2"
+      },
+      {
+        "key": "new_continuous_coefficient",
+        "line": 41,
+        "value": false
+      },
+      {
+        "key": "historically_retained_metric_form",
+        "line": 42,
+        "value": true
+      },
+      {
+        "key": "first_order_spin_connection_completion_historically_explicit",
+        "line": 43,
+        "value": false
+      }
+    ],
+    "path": "src/bhsm/interface/aether_einstein_cartan_joint_pushforward_v15_75.py",
+    "sha256": "44e6512c6ed7646a74f438ed160420d829dcb8dbbe32ceb8bcff218a1a86acb0",
+    "source": "def first_order_parent_action() -> dict[str, Any]:\n    return {\n        \"fields\": \"coframe_e,_spin_connection_omega,_rank16_gauge_connection_A,_Psi\",\n        \"action\": (\n            \"S5=(K_G5/2)*integral W*e*e_A^M*e_B^N*R_MN^AB(omega)+\"\n            \"(K_F5/4)*integral W*Tr_16(F_A^2)+S_Dirac[e,omega,A,Psi]\"\n        ),\n        \"event_weight\": \"W=(1-4sigma^2)*(1+X_eta^3)\",\n        \"K_G5\": \"kappa1*Vol(S3_RF)\",\n        \"K_F5\": \"K_G5*RF^2/2\",\n        \"coefficient_relation\": \"K_F5/K_G5=RF^2/2\",\n        \"new_continuous_coefficient\": False,\n        \"historically_retained_metric_form\": True,\n        \"first_order_spin_connection_completion_historically_explicit\": False,\n        \"provenance\": CLASSIFICATION,\n    }"
+  },
+  {
+    "end_line": 61,
+    "function": "contorsion_schur_complement",
+    "line": 48,
+    "literal_equations": [
+      {
+        "key": "decomposition",
+        "line": 50,
+        "value": "omega=omega_LeviCivita+C"
+      },
+      {
+        "key": "spin_current",
+        "line": 51,
+        "value": "J_S^ABC=(1/4)*barPsi*Gamma^[A*Gamma^B*Gamma^C]*Psi"
+      },
+      {
+        "key": "quadratic_form",
+        "line": 53,
+        "value": "S_C=(1/2)<C,M_C[W]C>+<C,J_S>,_M_C[W]=K_G5*W*M_Clifford"
+      },
+      {
+        "key": "stationary_contorsion",
+        "line": 55,
+        "value": "C_star=-M_C[W]^(-1)J_S"
+      },
+      {
+        "key": "induced_current_action",
+        "line": 57,
+        "value": "Gamma_EC=-1/2<J_S,M_C[W]^(-1)J_S>"
+      },
+      {
+        "key": "coefficient_inserted_by_hand",
+        "line": 59,
+        "value": false
+      },
+      {
+        "key": "same_parent_Hessian_as_gauge_pushforward",
+        "line": 60,
+        "value": true
+      }
+    ],
+    "path": "src/bhsm/interface/aether_einstein_cartan_joint_pushforward_v15_75.py",
+    "sha256": "44e6512c6ed7646a74f438ed160420d829dcb8dbbe32ceb8bcff218a1a86acb0",
+    "source": "def contorsion_schur_complement() -> dict[str, Any]:\n    return {\n        \"decomposition\": \"omega=omega_LeviCivita+C\",\n        \"spin_current\": \"J_S^ABC=(1/4)*barPsi*Gamma^[A*Gamma^B*Gamma^C]*Psi\",\n        \"quadratic_form\": (\n            \"S_C=(1/2)<C,M_C[W]C>+<C,J_S>,_M_C[W]=K_G5*W*M_Clifford\"\n        ),\n        \"stationary_contorsion\": \"C_star=-M_C[W]^(-1)J_S\",\n        \"induced_current_action\": (\n            \"Gamma_EC=-1/2<J_S,M_C[W]^(-1)J_S>\"\n        ),\n        \"coefficient_inserted_by_hand\": False,\n        \"same_parent_Hessian_as_gauge_pushforward\": True,\n    }"
+  },
+  {
+    "end_line": 48,
+    "function": "diagonal_fiber_dirac_contract",
+    "line": 26,
+    "literal_equations": [
+      {
+        "key": "fiber_metric",
+        "line": 28,
+        "value": "g_F=(A^2+B^2)*sum_a(omega^a)^2"
+      },
+      {
+        "key": "fiber_radius",
+        "line": 29,
+        "value": "L_F=sqrt(A^2+B^2)"
+      },
+      {
+        "key": "fiber_stretch",
+        "line": 30,
+        "value": 1.0
+      },
+      {
+        "key": "homogeneous_block",
+        "line": 32,
+        "value": "D_n=C*I+2*L_F^-1*(sigma_z*J_z+sigma_y*J_y+sigma_x*J_x)"
+      },
+      {
+        "key": "round_block_spectrum",
+        "line": 35,
+        "value": "-(n+1/2)/L_F_with_internal_multiplicity_n_and_+(n+3/2)/L_F_with_internal_multiplicity_n+2"
+      },
+      {
+        "key": "full_positive_level",
+        "line": 39,
+        "value": "+(ell+3/2)/L_F_with_multiplicity_(ell+1)(ell+2)"
+      },
+      {
+        "key": "full_negative_level",
+        "line": 42,
+        "value": "-(ell+3/2)/L_F_with_multiplicity_(ell+1)(ell+2)"
+      },
+      {
+        "key": "radial_time_dependence",
+        "line": 44,
+        "value": "D_n(t,chi)=Dhat_n/L_F(t,chi)"
+      },
+      {
+        "key": "blocks_at_distinct_points_commute",
+        "line": 45,
+        "value": true
+      },
+      {
+        "key": "anisotropic_Berger_monodromy_active",
+        "line": 46,
+        "value": false
+      },
+      {
+        "key": "new_continuous_coefficient",
+        "line": 47,
+        "value": false
+      }
+    ],
+    "path": "src/bhsm/interface/aether_diagonal_fiber_dirac_lift_v15_55.py",
+    "sha256": "ee7bba82ebcc00b7a160b4cc478f62d72b2c6531a1efaacb095dfc246c866a10",
+    "source": "def diagonal_fiber_dirac_contract() -> dict[str, Any]:\n    return {\n        \"fiber_metric\": \"g_F=(A^2+B^2)*sum_a(omega^a)^2\",\n        \"fiber_radius\": \"L_F=sqrt(A^2+B^2)\",\n        \"fiber_stretch\": 1.0,\n        \"homogeneous_block\": (\n            \"D_n=C*I+2*L_F^-1*(sigma_z*J_z+sigma_y*J_y+sigma_x*J_x)\"\n        ),\n        \"round_block_spectrum\": (\n            \"-(n+1/2)/L_F_with_internal_multiplicity_n_and_\"\n            \"+(n+3/2)/L_F_with_internal_multiplicity_n+2\"\n        ),\n        \"full_positive_level\": (\n            \"+(ell+3/2)/L_F_with_multiplicity_(ell+1)(ell+2)\"\n        ),\n        \"full_negative_level\": (\n            \"-(ell+3/2)/L_F_with_multiplicity_(ell+1)(ell+2)\"\n        ),\n        \"radial_time_dependence\": \"D_n(t,chi)=Dhat_n/L_F(t,chi)\",\n        \"blocks_at_distinct_points_commute\": True,\n        \"anisotropic_Berger_monodromy_active\": False,\n        \"new_continuous_coefficient\": False,\n    }"
+  },
+  {
+    "end_line": 118,
+    "function": "spinor_lift_incidence",
+    "line": 100,
+    "literal_equations": [
+      {
+        "key": "scalar_irrep",
+        "line": 102,
+        "value": "(k/2,k/2)_under_Sp1_L_times_Sp1_R"
+      },
+      {
+        "key": "positive_spinor_irrep",
+        "line": 103,
+        "value": "((k+1)/2,k/2)"
+      },
+      {
+        "key": "negative_spinor_partner",
+        "line": 104,
+        "value": "(k/2,(k+1)/2)"
+      },
+      {
+        "key": "positive_level",
+        "line": 105,
+        "value": "+(k+3/2)/L_F"
+      },
+      {
+        "key": "negative_level",
+        "line": 106,
+        "value": "-(k+3/2)/L_F_from_the_adjacent_homogeneous_block"
+      },
+      {
+        "key": "K_plus_wall_chirality",
+        "line": 108,
+        "value": "selects_the_normalizable_four-dimensional_left-Weyl_profile_but_does_not_change_the_internal_absolute_Dirac_level"
+      },
+      {
+        "key": "bare_internal_eigenvalue_called_physical_SM_mass",
+        "line": 117,
+        "value": false
+      },
+      {
+        "key": "up",
+        "line": 112,
+        "value": "Q_L*H*u_c"
+      },
+      {
+        "key": "down",
+        "line": 113,
+        "value": "Q_L*H_dagger*d_c"
+      },
+      {
+        "key": "charged_lepton",
+        "line": 114,
+        "value": "L_L*H_dagger*e_c"
+      },
+      {
+        "key": "neutral_Dirac",
+        "line": 115,
+        "value": "L_L*H*nu_c"
+      }
+    ],
+    "path": "src/bhsm/interface/aether_diagonal_fiber_dirac_lift_v15_55.py",
+    "sha256": "ee7bba82ebcc00b7a160b4cc478f62d72b2c6531a1efaacb095dfc246c866a10",
+    "source": "def spinor_lift_incidence() -> dict[str, Any]:\n    return {\n        \"scalar_irrep\": \"(k/2,k/2)_under_Sp1_L_times_Sp1_R\",\n        \"positive_spinor_irrep\": \"((k+1)/2,k/2)\",\n        \"negative_spinor_partner\": \"(k/2,(k+1)/2)\",\n        \"positive_level\": \"+(k+3/2)/L_F\",\n        \"negative_level\": \"-(k+3/2)/L_F_from_the_adjacent_homogeneous_block\",\n        \"K_plus_wall_chirality\": (\n            \"selects_the_normalizable_four-dimensional_left-Weyl_profile_\"\n            \"but_does_not_change_the_internal_absolute_Dirac_level\"\n        ),\n        \"gauge_invariant_pairings\": {\n            \"up\": \"Q_L*H*u_c\",\n            \"down\": \"Q_L*H_dagger*d_c\",\n            \"charged_lepton\": \"L_L*H_dagger*e_c\",\n            \"neutral_Dirac\": \"L_L*H*nu_c\",\n        },\n        \"bare_internal_eigenvalue_called_physical_SM_mass\": False,\n    }"
+  },
+  {
+    "end_line": 63,
+    "function": "action_composition_contract",
+    "line": 29,
+    "literal_equations": [
+      {
+        "key": "composition",
+        "line": 35,
+        "value": "S_AE3_1=S_AE3_0+S_4_lH_BHSM"
+      },
+      {
+        "key": "imported_term_source",
+        "line": 37,
+        "value": "V11_3_FINAL_PARENT_ACTION_LEPTON_MASS_COMPLETION_INTRINSIC_M4_BLOCK"
+      },
+      {
+        "key": "action_term",
+        "line": 47,
+        "value": "S_4_lH=integral_M4[|D H|^2-V_BH(H)+i*bar(L_L)*slash(D)*L_L+i*bar(e_R)*slash(D)*e_R-(bar(L_L)*Y_l_BH*H*e_R+h.c.)]"
+      },
+      {
+        "key": "potential",
+        "line": 50,
+        "value": "V_BH=lambda_H*(H_dagger*H-nu_BH^2)^2,_lambda_H>0"
+      },
+      {
+        "key": "independent_Y_e_retained",
+        "line": 51,
+        "value": false
+      },
+      {
+        "key": "separate_post_EWSB_mass_term_added",
+        "line": 52,
+        "value": false
+      },
+      {
+        "key": "new_field_added_by_transport",
+        "line": 53,
+        "value": false
+      },
+      {
+        "key": "new_family_coefficient_added_by_transport",
+        "line": 54,
+        "value": false
+      },
+      {
+        "key": "inherited_positive_radial_stiffness",
+        "line": 55,
+        "value": "lambda_H>0"
+      },
+      {
+        "key": "up_down_Yukawa_terms_added",
+        "line": 56,
+        "value": false
+      },
+      {
+        "key": "why_up_down_untouched",
+        "line": 58,
+        "value": "THE_FROZEN_RATIO_OPERATORS_ARE_ATTACHED_BUT_NO_MATCHING_HISTORICAL_ACTION_OWNED_UP_DOWN_PREFACTORS_ARE_TRANSPORTED_HERE"
+      },
+      {
+        "key": "stratum_moved",
+        "line": 61,
+        "value": false
+      },
+      {
+        "key": "same_C2_carrier_preserved",
+        "line": 62,
+        "value": true
+      },
+      {
+        "key": "H",
+        "line": 40,
+        "value": "INTRINSIC_M4_ACTIVE_FIELD"
+      },
+      {
+        "key": "L_L",
+        "line": 41,
+        "value": "INTRINSIC_M4_ACTIVE_FIELD"
+      },
+      {
+        "key": "e_R",
+        "line": 42,
+        "value": "INTRINSIC_M4_ACTIVE_FIELD"
+      },
+      {
+        "key": "T_l",
+        "line": 43,
+        "value": "FIXED_INTERNAL_FAMILY_OPERATOR"
+      },
+      {
+        "key": "C2_carrier",
+        "line": 44,
+        "value": "AE3_PREDECESSOR_DOMAIN_FACTOR"
+      }
+    ],
+    "path": "src/bhsm/interface/ae31_c2_intrinsic_m4_lepton_action.py",
+    "sha256": "f3fee1ef24a3f13ef94d4ce5b146f9ac7a827045e369819b35ee8af5ccf0678a",
+    "source": "def action_composition_contract() -> dict[str, Any]:\n    \"\"\"State the additive action composition and its no-double-counting rule.\"\"\"\n\n    return {\n        \"action_version\": ACTION_VERSION,\n        \"predecessor_action_version\": PREDECESSOR_ACTION_VERSION,\n        \"composition\": \"S_AE3_1=S_AE3_0+S_4_lH_BHSM\",\n        \"imported_term_source\": (\n            \"V11_3_FINAL_PARENT_ACTION_LEPTON_MASS_COMPLETION_INTRINSIC_M4_BLOCK\"\n        ),\n        \"field_ownership\": {\n            \"H\": \"INTRINSIC_M4_ACTIVE_FIELD\",\n            \"L_L\": \"INTRINSIC_M4_ACTIVE_FIELD\",\n            \"e_R\": \"INTRINSIC_M4_ACTIVE_FIELD\",\n            \"T_l\": \"FIXED_INTERNAL_FAMILY_OPERATOR\",\n            \"C2_carrier\": \"AE3_PREDECESSOR_DOMAIN_FACTOR\",\n        },\n        \"action_term\": (\n            \"S_4_lH=integral_M4[|D H|^2-V_BH(H)+i*bar(L_L)*slash(D)*L_L+\"\n            \"i*bar(e_R)*slash(D)*e_R-(bar(L_L)*Y_l_BH*H*e_R+h.c.)]\"\n        ),\n        \"potential\": \"V_BH=lambda_H*(H_dagger*H-nu_BH^2)^2,_lambda_H>0\",\n        \"independent_Y_e_retained\": False,\n        \"separate_post_EWSB_mass_term_added\": False,\n        \"new_field_added_by_transport\": False,\n        \"new_family_coefficient_added_by_transport\": False,\n        \"inherited_positive_radial_stiffness\": \"lambda_H>0\",\n        \"up_down_Yukawa_terms_added\": False,\n        \"why_up_down_untouched\": (\n            \"THE_FROZEN_RATIO_OPERATORS_ARE_ATTACHED_BUT_NO_MATCHING_\"\n            \"HISTORICAL_ACTION_OWNED_UP_DOWN_PREFACTORS_ARE_TRANSPORTED_HERE\"\n        ),\n        \"stratum_moved\": False,\n        \"same_C2_carrier_preserved\": True,\n    }"
+  },
+  {
+    "end_line": 112,
+    "function": "conditional_higgs_saddle",
+    "line": 91,
+    "literal_equations": [
+      {
+        "key": "universal_energy_calibration_action_derived",
+        "line": 102,
+        "value": false
+      },
+      {
+        "key": "measured_Higgs_VEV_used",
+        "line": 103,
+        "value": false
+      },
+      {
+        "key": "action_cost_formula",
+        "line": 105,
+        "value": "4*pi^2+(a-1)/(4*pi^2)"
+      },
+      {
+        "key": "stationarity_equation",
+        "line": 108,
+        "value": "(H_dagger*H-nu_BH^2)*H=0"
+      },
+      {
+        "key": "nonzero_branch",
+        "line": 109,
+        "value": "H_vac=(0,v_BH/sqrt(2))"
+      },
+      {
+        "key": "radial_Hessian",
+        "line": 110,
+        "value": "2*lambda_H*v_BH^2>0_for_lambda_H>0"
+      },
+      {
+        "key": "classification",
+        "line": 111,
+        "value": "CONDITIONAL_ON_INHERITED_UNIVERSAL_UNIT_CALIBRATION"
+      }
+    ],
+    "path": "src/bhsm/interface/ae31_c2_intrinsic_m4_lepton_action.py",
+    "sha256": "f3fee1ef24a3f13ef94d4ce5b146f9ac7a827045e369819b35ee8af5ccf0678a",
+    "source": "def conditional_higgs_saddle() -> dict[str, Any]:\n    \"\"\"Evaluate the inherited conditional universal-scale Higgs saddle.\"\"\"\n\n    action_cost = 4.0 * pi**2 + (\n        FROZEN_INTERNAL_BERGER_SHAPE - 1.0\n    ) / (4.0 * pi**2)\n    v_bh = 2.0 * sqrt(2.0) * PLANCK_ENERGY_GEV * exp(-action_cost)\n    nu_squared = 0.5 * v_bh**2\n    return {\n        \"action_version\": ACTION_VERSION,\n        \"universal_energy_calibration_GeV\": PLANCK_ENERGY_GEV,\n        \"universal_energy_calibration_action_derived\": False,\n        \"measured_Higgs_VEV_used\": False,\n        \"action_cost\": action_cost,\n        \"action_cost_formula\": \"4*pi^2+(a-1)/(4*pi^2)\",\n        \"nu_BH_squared_GeV2\": nu_squared,\n        \"v_BH_GeV\": v_bh,\n        \"stationarity_equation\": \"(H_dagger*H-nu_BH^2)*H=0\",\n        \"nonzero_branch\": \"H_vac=(0,v_BH/sqrt(2))\",\n        \"radial_Hessian\": \"2*lambda_H*v_BH^2>0_for_lambda_H>0\",\n        \"classification\": \"CONDITIONAL_ON_INHERITED_UNIVERSAL_UNIT_CALIBRATION\",\n    }"
+  },
+  {
+    "end_line": 173,
+    "function": "first_variation_and_pole_gate",
+    "line": 148,
+    "literal_equations": [
+      {
+        "key": "Euler_L_L",
+        "line": 153,
+        "value": "i*slash(D)*L_L-Y_l*H*e_R=0"
+      },
+      {
+        "key": "Euler_e_R",
+        "line": 154,
+        "value": "i*slash(D)*e_R-Y_l_dagger*H_dagger*L_L=0"
+      },
+      {
+        "key": "Euler_H",
+        "line": 156,
+        "value": "-D^2*H-2*lambda_H*(H_dagger*H-nu_BH^2)*H-bar(e_R)*Y_l_dagger*L_L=0"
+      },
+      {
+        "key": "variation_is_family_noncentral",
+        "line": 159,
+        "value": true
+      },
+      {
+        "key": "same_current_C2_first_order_LR_block_assembled",
+        "line": 160,
+        "value": false
+      },
+      {
+        "key": "same_current_C2_domain_determinant_evaluated",
+        "line": 161,
+        "value": false
+      },
+      {
+        "key": "simple_pole_residues_evaluated",
+        "line": 162,
+        "value": false
+      },
+      {
+        "key": "matched_parent_Delta_H_xi_evaluated",
+        "line": 163,
+        "value": false
+      },
+      {
+        "key": "exact_next_operator",
+        "line": 165,
+        "value": "CURRENT_C2_FIRST_ORDER_CHIRAL_BLOCK_[[D_L,M_l],[M_l_DAGGER,D_R]]_ON_THE_RETAINED_MAXIMAL_ISOTROPIC_DOMAIN_WITH_ITS_SIMPLE_POLES"
+      }
+    ],
+    "path": "src/bhsm/interface/ae31_c2_intrinsic_m4_lepton_action.py",
+    "sha256": "f3fee1ef24a3f13ef94d4ce5b146f9ac7a827045e369819b35ee8af5ccf0678a",
+    "source": "def first_variation_and_pole_gate() -> dict[str, Any]:\n    \"\"\"Record the derived Euler variations and the exact remaining pole join.\"\"\"\n\n    return {\n        \"action_version\": ACTION_VERSION,\n        \"Euler_L_L\": \"i*slash(D)*L_L-Y_l*H*e_R=0\",\n        \"Euler_e_R\": \"i*slash(D)*e_R-Y_l_dagger*H_dagger*L_L=0\",\n        \"Euler_H\": (\n            \"-D^2*H-2*lambda_H*(H_dagger*H-nu_BH^2)*H-\"\n            \"bar(e_R)*Y_l_dagger*L_L=0\"\n        ),\n        \"variation_is_family_noncentral\": True,\n        \"same_current_C2_first_order_LR_block_assembled\": False,\n        \"same_current_C2_domain_determinant_evaluated\": False,\n        \"simple_pole_residues_evaluated\": False,\n        \"matched_parent_Delta_H_xi_evaluated\": False,\n        \"exact_next_operator\": (\n            \"CURRENT_C2_FIRST_ORDER_CHIRAL_BLOCK_[[D_L,M_l],[M_l_DAGGER,D_R]]_\"\n            \"ON_THE_RETAINED_MAXIMAL_ISOTROPIC_DOMAIN_WITH_ITS_SIMPLE_POLES\"\n        ),\n        \"do_not_use\": [\n            \"THE_SEPARATE_CHIRAL_SQUARED_PENCILS_AS_IF_THEY_ALREADY_CONTAIN_M_l\",\n            \"A_FITTED_WAVEFUNCTION_RESIDUE\",\n            \"AN_OBSERVED_LEPTON_MASS_TO_SELECT_THE_BRANCH\",\n        ],\n    }"
+  },
+  {
+    "end_line": 224,
+    "function": "local_tangent_frame_poles",
+    "line": 176,
+    "literal_equations": [
+      {
+        "key": "domain",
+        "line": 208,
+        "value": "REGULAR_INTERIOR_POINT_OF_AE3_ENCLOSURE_D_enc"
+      },
+      {
+        "key": "metric",
+        "line": 209,
+        "value": "ACTION_SELECTED_INDUCED_LORENTZIAN_METRIC_h=X_star_g"
+      },
+      {
+        "key": "local_symbol",
+        "line": 210,
+        "value": "D_l(x,p)=gamma^a*e_a^mu(x)*p_mu-M_l"
+      },
+      {
+        "key": "determinant_per_family",
+        "line": 211,
+        "value": "det(D_f)=(h_inverse(p,p)-m_f^2)^2"
+      },
+      {
+        "key": "propagator_per_family",
+        "line": 212,
+        "value": "S_f=i*(gamma.p+m_f)/(p^2-m_f^2+i0)"
+      },
+      {
+        "key": "continuous_frequency",
+        "line": 213,
+        "value": true
+      },
+      {
+        "key": "independent_wavefunction_residue_fitted",
+        "line": 217,
+        "value": false
+      },
+      {
+        "key": "canonical_tree_kinetic_residue_used",
+        "line": 218,
+        "value": true
+      },
+      {
+        "key": "global_time_translation_invariance_claimed",
+        "line": 219,
+        "value": false
+      },
+      {
+        "key": "global_current_C2_Green_function_derived",
+        "line": 220,
+        "value": false
+      },
+      {
+        "key": "curvature_and_connection_lower_order_dressing_derived",
+        "line": 221,
+        "value": false
+      },
+      {
+        "key": "absolute_unit_remains_conditional",
+        "line": 222,
+        "value": true
+      },
+      {
+        "key": "result",
+        "line": 223,
+        "value": "LOCAL_CURRENT_C2_ENCLOSURE_TREE_MASS_SHELLS_AND_SIMPLE_POLES_DERIVED_CONDITIONALLY"
+      },
+      {
+        "key": "spinor_residue_formula",
+        "line": 202,
+        "value": "(gamma.p+m_f)/(2*E_f)"
+      },
+      {
+        "key": "pole_order",
+        "line": 203,
+        "value": 1
+      }
+    ],
+    "path": "src/bhsm/interface/ae31_c2_intrinsic_m4_lepton_action.py",
+    "sha256": "f3fee1ef24a3f13ef94d4ce5b146f9ac7a827045e369819b35ee8af5ccf0678a",
+    "source": "def local_tangent_frame_poles() -> dict[str, Any]:\n    \"\"\"Derive the local Lorentzian tree poles inside the smooth enclosure.\n\n    At any regular interior point, choose the action-selected orthonormal\n    tetrad for the induced Lorentzian metric.  Freezing lower-order connection\n    coefficients gives the standard local symbol ``gamma.p-M``.  This is a\n    local principal/pole statement, not a global stationary Green function.\n    \"\"\"\n\n    mass = conditional_tree_mass_operator()\n    values = mass[\"eigenvalues_GeV_heavy_middle_light\"]\n    roles = (\"heavy\", \"middle\", \"light\")\n    rows = []\n    for index, (role, value) in enumerate(zip(roles, values)):\n        projector = np.zeros((3, 3), dtype=float)\n        projector[index, index] = 1.0\n        rows.append(\n            {\n                \"role\": role,\n                \"family_projector\": projector.tolist(),\n                \"tree_mass_GeV\": value,\n                \"mass_squared_GeV2\": value**2,\n                \"dispersion\": f\"omega^2=|k|^2+{value**2:.17g}_GeV^2\",\n                \"rest_frequency_poles_GeV\": [-value, value],\n                \"positive_pole_denominator_derivative\": 2.0 * value,\n                \"positive_pole_scalar_residue_GeV_inverse\": 1.0 / (2.0 * value),\n                \"spinor_residue_formula\": \"(gamma.p+m_f)/(2*E_f)\",\n                \"pole_order\": 1,\n            }\n        )\n    return {\n        \"action_version\": ACTION_VERSION,\n        \"domain\": \"REGULAR_INTERIOR_POINT_OF_AE3_ENCLOSURE_D_enc\",\n        \"metric\": \"ACTION_SELECTED_INDUCED_LORENTZIAN_METRIC_h=X_star_g\",\n        \"local_symbol\": \"D_l(x,p)=gamma^a*e_a^mu(x)*p_mu-M_l\",\n        \"determinant_per_family\": \"det(D_f)=(h_inverse(p,p)-m_f^2)^2\",\n        \"propagator_per_family\": \"S_f=i*(gamma.p+m_f)/(p^2-m_f^2+i0)\",\n        \"continuous_frequency\": True,\n        \"rows\": rows,\n        \"three_distinct_positive_local_mass_shells\": len(set(values)) == 3,\n        \"all_energy_poles_simple\": all(row[\"pole_order\"] == 1 for row in rows),\n        \"independent_wavefunction_residue_fitted\": False,\n        \"canonical_tree_kinetic_residue_used\": True,\n        \"global_time_translation_invariance_claimed\": False,\n        \"global_current_C2_Green_function_derived\": False,\n        \"curvature_and_connection_lower_order_dressing_derived\": False,\n        \"absolute_unit_remains_conditional\": True,\n        \"result\": \"LOCAL_CURRENT_C2_ENCLOSURE_TREE_MASS_SHELLS_AND_SIMPLE_POLES_DERIVED_CONDITIONALLY\",\n    }"
+  },
+  {
+    "end_line": 59,
+    "function": "domain_provenance_reconciliation",
+    "line": 25,
+    "literal_equations": [
+      {
+        "key": "pre_AE2_no_go",
+        "line": 31,
+        "value": "THE_UNCHANGED_RETAINED_ACTION_LEFT_A_U1_PARENT_TIMES_U1_CHILD_MAXIMAL_ISOTROPIC_BIRTH_PHASE_FAMILY"
+      },
+      {
+        "key": "AE2_successor_decision",
+        "line": 35,
+        "value": "ONE_GLOBAL_SPIN_TIMES_G_SM_SECTION_WITH_TRACE_GRAPH_Gamma0_child=U_R*Gamma0_event"
+      },
+      {
+        "key": "AE2_flux_graph",
+        "line": 39,
+        "value": "Gamma1_child=-U_R*Gamma1_event_ON_Dom(D_AE2_squared)"
+      },
+      {
+        "key": "old_phase_family_live_in_AE31",
+        "line": 41,
+        "value": false
+      },
+      {
+        "key": "why",
+        "line": 43,
+        "value": "THE_OLD_RESOLVENT_WITNESS_COMPARED_DISTINCT_PRE_AE2_ACTION_DOMAINS;_THEY_ARE_NOT_MEMBERS_OF_THE_SINGLE_AE2_SUCCESSOR_DOMAIN"
+      },
+      {
+        "key": "AE3_enclosure_surface_type",
+        "line": 46,
+        "value": "RESOLVED_INTERNAL_MATERIAL_LEVEL_SET"
+      },
+      {
+        "key": "AE3_enclosure_is_terminal_boundary",
+        "line": 47,
+        "value": false
+      },
+      {
+        "key": "independent_enclosure_fermion_boundary_parameter_required",
+        "line": 48,
+        "value": false
+      },
+      {
+        "key": "enclosure_fermion_law",
+        "line": 50,
+        "value": "SMOOTH_TRACE_WITH_OPPOSITE_NORMAL_GREEN_FORMS_CANCELLING"
+      },
+      {
+        "key": "legacy_master_v7_domain_rows",
+        "line": 53,
+        "value": "HISTORICAL_PRE_AE2_GENERAL_DOMAIN_LEDGER_NOT_CURRENT_AE31_SEAM_AUTHORITY"
+      },
+      {
+        "key": "remaining_domain_question",
+        "line": 56,
+        "value": "A_SINGLE_PHYSICAL_MEMBER_OR_MAXIMAL_CONTINUATION_OF_THE_CURRENT_C2_FAMILY_AND_ANY_ASYMPTOTIC_OR_FEYNMAN_STATE_DATA"
+      }
+    ],
+    "path": "src/bhsm/interface/ae31_c2_chiral_green_domain.py",
+    "sha256": "98fdf6a943a8934c7d2bf82f3510fc5ea30226aac60a24a965e7aa28874ac146",
+    "source": "def domain_provenance_reconciliation() -> dict[str, Any]:\n    \"\"\"Separate the superseded birth-phase family from live domain questions.\"\"\"\n\n    return {\n        \"action_version\": ACTION_VERSION,\n        \"pre_AE2_no_go\": (\n            \"THE_UNCHANGED_RETAINED_ACTION_LEFT_A_U1_PARENT_TIMES_U1_CHILD_\"\n            \"MAXIMAL_ISOTROPIC_BIRTH_PHASE_FAMILY\"\n        ),\n        \"AE2_successor_decision\": (\n            \"ONE_GLOBAL_SPIN_TIMES_G_SM_SECTION_WITH_TRACE_GRAPH_\"\n            \"Gamma0_child=U_R*Gamma0_event\"\n        ),\n        \"AE2_flux_graph\": (\n            \"Gamma1_child=-U_R*Gamma1_event_ON_Dom(D_AE2_squared)\"\n        ),\n        \"old_phase_family_live_in_AE31\": False,\n        \"why\": (\n            \"THE_OLD_RESOLVENT_WITNESS_COMPARED_DISTINCT_PRE_AE2_ACTION_\"\n            \"DOMAINS;_THEY_ARE_NOT_MEMBERS_OF_THE_SINGLE_AE2_SUCCESSOR_DOMAIN\"\n        ),\n        \"AE3_enclosure_surface_type\": \"RESOLVED_INTERNAL_MATERIAL_LEVEL_SET\",\n        \"AE3_enclosure_is_terminal_boundary\": False,\n        \"independent_enclosure_fermion_boundary_parameter_required\": False,\n        \"enclosure_fermion_law\": (\n            \"SMOOTH_TRACE_WITH_OPPOSITE_NORMAL_GREEN_FORMS_CANCELLING\"\n        ),\n        \"legacy_master_v7_domain_rows\": (\n            \"HISTORICAL_PRE_AE2_GENERAL_DOMAIN_LEDGER_NOT_CURRENT_AE31_SEAM_AUTHORITY\"\n        ),\n        \"remaining_domain_question\": (\n            \"A_SINGLE_PHYSICAL_MEMBER_OR_MAXIMAL_CONTINUATION_OF_THE_CURRENT_\"\n            \"C2_FAMILY_AND_ANY_ASYMPTOTIC_OR_FEYNMAN_STATE_DATA\"\n        ),\n    }"
+  },
+  {
+    "end_line": 90,
+    "function": "chiral_operator_assembly",
+    "line": 62,
+    "literal_equations": [
+      {
+        "key": "operator",
+        "line": 72,
+        "value": "D_l,C2=[[D_L,M_l],[M_l_dagger,D_R]]"
+      },
+      {
+        "key": "domain",
+        "line": 74,
+        "value": "AE2_RESET_GLUED_FIRST_ORDER_DIRAC_DOMAIN_WITH_SMOOTH_AE3_INTERNAL_ENCLOSURE_TRANSMISSION"
+      },
+      {
+        "key": "bounded_on_finite_family_fiber",
+        "line": 83,
+        "value": true
+      },
+      {
+        "key": "first_order_principal_symbol_unchanged",
+        "line": 84,
+        "value": true
+      },
+      {
+        "key": "maximal_isotropic_Green_trace_form_unchanged",
+        "line": 85,
+        "value": true
+      },
+      {
+        "key": "domain_preserved_by_zero_order_mass_term",
+        "line": 86,
+        "value": true
+      },
+      {
+        "key": "same_current_C2_first_order_LR_block_assembled",
+        "line": 87,
+        "value": true
+      },
+      {
+        "key": "measured_mass_used",
+        "line": 88,
+        "value": false
+      },
+      {
+        "key": "independent_wavefunction_factor_added",
+        "line": 89,
+        "value": false
+      }
+    ],
+    "path": "src/bhsm/interface/ae31_c2_chiral_green_domain.py",
+    "sha256": "98fdf6a943a8934c7d2bf82f3510fc5ea30226aac60a24a965e7aa28874ac146",
+    "source": "def chiral_operator_assembly() -> dict[str, Any]:\n    \"\"\"Assemble the family-resolved first-order LR operator on current C2.\"\"\"\n\n    mass = conditional_tree_mass_operator()\n    matrix = np.asarray(mass[\"matrix_GeV\"], dtype=float)\n    zeros = np.zeros_like(matrix)\n    mass_block = np.block([[zeros, matrix], [matrix.T, zeros]])\n    eigenvalues = np.linalg.eigvalsh(mass_block)\n    return {\n        \"action_version\": ACTION_VERSION,\n        \"operator\": \"D_l,C2=[[D_L,M_l],[M_l_dagger,D_R]]\",\n        \"domain\": (\n            \"AE2_RESET_GLUED_FIRST_ORDER_DIRAC_DOMAIN_WITH_SMOOTH_AE3_\"\n            \"INTERNAL_ENCLOSURE_TRANSMISSION\"\n        ),\n        \"family_mass_matrix_GeV\": matrix.tolist(),\n        \"LR_zero_order_mass_block_GeV\": mass_block.tolist(),\n        \"LR_mass_block_eigenvalues_GeV\": eigenvalues.tolist(),\n        \"Hermitian_zero_order_perturbation\": bool(\n            np.allclose(mass_block, mass_block.T, atol=0.0, rtol=0.0)\n        ),\n        \"bounded_on_finite_family_fiber\": True,\n        \"first_order_principal_symbol_unchanged\": True,\n        \"maximal_isotropic_Green_trace_form_unchanged\": True,\n        \"domain_preserved_by_zero_order_mass_term\": True,\n        \"same_current_C2_first_order_LR_block_assembled\": True,\n        \"measured_mass_used\": False,\n        \"independent_wavefunction_factor_added\": False,\n    }"
+  },
+  {
+    "end_line": 34,
+    "function": "higgs_neutral_charge_ledger",
+    "line": 19,
+    "literal_equations": [
+      {
+        "key": "H_representation",
+        "line": 23,
+        "value": "(1,2,+1/2)"
+      },
+      {
+        "key": "vacuum_component",
+        "line": 24,
+        "value": "H_0=(0,v_BH/sqrt(2))"
+      },
+      {
+        "key": "T3_on_vacuum",
+        "line": 25,
+        "value": -0.5
+      },
+      {
+        "key": "Y_BH_on_vacuum",
+        "line": 26,
+        "value": 0.5
+      },
+      {
+        "key": "Q_em_on_vacuum",
+        "line": 27,
+        "value": 0.0
+      },
+      {
+        "key": "Q_em",
+        "line": 28,
+        "value": "T3+Y_BH"
+      },
+      {
+        "key": "independent_g2_or_g1_inserted",
+        "line": 33,
+        "value": false
+      },
+      {
+        "key": "W3_hat",
+        "line": 30,
+        "value": "g2*W3_physical_before_canonical_normalization"
+      },
+      {
+        "key": "B_hat",
+        "line": 31,
+        "value": "g1*B_physical_before_canonical_normalization"
+      }
+    ],
+    "path": "src/bhsm/interface/ae31_c2_neutral_connection_hessian.py",
+    "sha256": "3fecae33bfc51a3b0fc70c5efefa743c7762641d5b19b984c08460b0497144eb",
+    "source": "def higgs_neutral_charge_ledger() -> dict[str, Any]:\n    \"\"\"Return the exact charges of the selected neutral Higgs component.\"\"\"\n\n    return {\n        \"H_representation\": \"(1,2,+1/2)\",\n        \"vacuum_component\": \"H_0=(0,v_BH/sqrt(2))\",\n        \"T3_on_vacuum\": -0.5,\n        \"Y_BH_on_vacuum\": 0.5,\n        \"Q_em_on_vacuum\": 0.0,\n        \"Q_em\": \"T3+Y_BH\",\n        \"connection_coordinates\": {\n            \"W3_hat\": \"g2*W3_physical_before_canonical_normalization\",\n            \"B_hat\": \"g1*B_physical_before_canonical_normalization\",\n        },\n        \"independent_g2_or_g1_inserted\": False,\n    }"
+  },
+  {
+    "end_line": 100,
+    "function": "neutral_field_current_rotation",
+    "line": 74,
+    "literal_equations": [
+      {
+        "key": "field_rotation",
+        "line": 82,
+        "value": "A_Q=(W3_hat+B_hat)/sqrt(2);_Z_H=(W3_hat-B_hat)/sqrt(2)"
+      },
+      {
+        "key": "current_rotation",
+        "line": 87,
+        "value": "J_Q=(J3+JY)/sqrt(2);_J_H=(J3-JY)/sqrt(2)"
+      },
+      {
+        "key": "interaction_identity",
+        "line": 90,
+        "value": "W3_hat*J3+B_hat*JY=A_Q*J_Q+Z_H*J_H"
+      },
+      {
+        "key": "Q_em_current",
+        "line": 92,
+        "value": "J_Q proportional_to J3+JY"
+      },
+      {
+        "key": "broken_neutral_current",
+        "line": 93,
+        "value": "J_H proportional_to J3-JY"
+      },
+      {
+        "key": "same_current_C2_source_domain",
+        "line": 97,
+        "value": true
+      },
+      {
+        "key": "canonical_kinetic_rotation_claimed",
+        "line": 98,
+        "value": false
+      },
+      {
+        "key": "Weinberg_angle_derived",
+        "line": 99,
+        "value": false
+      }
+    ],
+    "path": "src/bhsm/interface/ae31_c2_neutral_connection_hessian.py",
+    "sha256": "3fecae33bfc51a3b0fc70c5efefa743c7762641d5b19b984c08460b0497144eb",
+    "source": "def neutral_field_current_rotation() -> dict[str, Any]:\n    \"\"\"Rotate fields and currents in the unnormalized connection coordinates.\"\"\"\n\n    transform = np.asarray(((1.0, 1.0), (1.0, -1.0))) / sqrt(2.0)\n    return {\n        \"input_field_basis\": [\"W3_hat\", \"B_hat\"],\n        \"output_field_basis\": [\"A_Q\", \"Z_H\"],\n        \"field_rotation\": (\n            \"A_Q=(W3_hat+B_hat)/sqrt(2);_Z_H=(W3_hat-B_hat)/sqrt(2)\"\n        ),\n        \"input_current_basis\": [\"J3\", \"JY\"],\n        \"output_current_basis\": [\"J_Q\", \"J_H\"],\n        \"current_rotation\": (\n            \"J_Q=(J3+JY)/sqrt(2);_J_H=(J3-JY)/sqrt(2)\"\n        ),\n        \"interaction_identity\": (\n            \"W3_hat*J3+B_hat*JY=A_Q*J_Q+Z_H*J_H\"\n        ),\n        \"Q_em_current\": \"J_Q proportional_to J3+JY\",\n        \"broken_neutral_current\": \"J_H proportional_to J3-JY\",\n        \"orthogonal_coordinate_transform\": bool(\n            np.allclose(transform @ transform.T, np.eye(2), atol=1.0e-15, rtol=0.0)\n        ),\n        \"same_current_C2_source_domain\": True,\n        \"canonical_kinetic_rotation_claimed\": False,\n        \"Weinberg_angle_derived\": False,\n    }"
+  },
+  {
+    "end_line": 194,
+    "function": "action_definition",
+    "line": 156,
+    "literal_equations": [
+      {
+        "key": "configuration_space",
+        "line": 163,
+        "value": "SECTIONS_OF_E_event_GLUED_TO_E_child_BY_THE_RESET_OWNED_Spin_TIMES_G_SM_LIFT_U_R_ON_THE_LAST_AND_FIRST_REGULAR_TRACES"
+      },
+      {
+        "key": "pregeometric_core_field_content",
+        "line": 166,
+        "value": "NO_CONTINUOUS_SPINOR_TRACE_OR_FLUX"
+      },
+      {
+        "key": "reset_lift",
+        "line": 168,
+        "value": "U_R=rho(SpinLift(Lambda_R))_tensor_G_R_WITH_G_R_THE_RETURNED_GAUGE_BUNDLE_ISOMORPHISM"
+      },
+      {
+        "key": "bulk_action",
+        "line": 172,
+        "value": "S_F_AE2=(1/2)*integral_(M_event_union_R_M_child)[barPsi*iD*Psi-overline(iD*Psi)*Psi]dmu_WITH_THE_RETAINED_CANONICAL_NORMALIZATION"
+      },
+      {
+        "key": "independent_normal_matter_boundary_action",
+        "line": 175,
+        "value": "S_Sigma_F_AE2=0"
+      },
+      {
+        "key": "why_zero_is_owned",
+        "line": 177,
+        "value": "THE_RESET_LOCUS_IS_AN_INTERNAL_GLUE_OF_ONE_GLOBAL_FIELD_DOMAIN_AND_HAS_NO_DELTA_SUPPORTED_MATTER_DENSITY"
+      },
+      {
+        "key": "trace_graph",
+        "line": 180,
+        "value": "Gamma0_child(Psi)=U_R*Gamma0_event(Psi)"
+      },
+      {
+        "key": "variation_graph",
+        "line": 181,
+        "value": "Gamma0_child(deltaPsi)=U_R*Gamma0_event(deltaPsi)"
+      },
+      {
+        "key": "squared_operator_flux_graph",
+        "line": 183,
+        "value": "Gamma1_child(Psi)=-U_R*Gamma1_event(Psi)_ON_Dom(D_AE2^2)"
+      },
+      {
+        "key": "squared_operator_domain",
+        "line": 186,
+        "value": "Dom(D_AE2^2)={Psi_in_Dom(D_AE2):D_AE2*Psi_in_Dom(D_AE2)}"
+      },
+      {
+        "key": "common_reset_frame",
+        "line": 188,
+        "value": "U_R=I_UP_TO_GLOBAL_SPIN_SIGN_AND_GAUGE_FRAME"
+      },
+      {
+        "key": "independent_Cayley_phase",
+        "line": 189,
+        "value": null
+      },
+      {
+        "key": "new_continuous_coefficient",
+        "line": 190,
+        "value": null
+      },
+      {
+        "key": "new_physical_scale",
+        "line": 191,
+        "value": null
+      },
+      {
+        "key": "new_propagating_field",
+        "line": 192,
+        "value": null
+      }
+    ],
+    "path": "src/bhsm/interface/action_extension_global_spin_reset_ae2.py",
+    "sha256": "cc46df6372196e610ebfe0921cbb7f438f08d645f5b144faebdf1c6d2a991ccb",
+    "source": "def action_definition() -> dict[str, Any]:\n    \"\"\"Return the exact coefficient-free AE2 action/domain definition.\"\"\"\n\n    return {\n        \"action_version\": ACTION_VERSION,\n        \"decision_type\": DECISION_TYPE,\n        \"configuration_space\": (\n            \"SECTIONS_OF_E_event_GLUED_TO_E_child_BY_THE_RESET_OWNED_\"\n            \"Spin_TIMES_G_SM_LIFT_U_R_ON_THE_LAST_AND_FIRST_REGULAR_TRACES\"\n        ),\n        \"pregeometric_core_field_content\": \"NO_CONTINUOUS_SPINOR_TRACE_OR_FLUX\",\n        \"reset_lift\": (\n            \"U_R=rho(SpinLift(Lambda_R))_tensor_G_R_WITH_G_R_THE_RETURNED_\"\n            \"GAUGE_BUNDLE_ISOMORPHISM\"\n        ),\n        \"bulk_action\": (\n            \"S_F_AE2=(1/2)*integral_(M_event_union_R_M_child)[barPsi*iD*Psi-\"\n            \"overline(iD*Psi)*Psi]dmu_WITH_THE_RETAINED_CANONICAL_NORMALIZATION\"\n        ),\n        \"independent_normal_matter_boundary_action\": \"S_Sigma_F_AE2=0\",\n        \"why_zero_is_owned\": (\n            \"THE_RESET_LOCUS_IS_AN_INTERNAL_GLUE_OF_ONE_GLOBAL_FIELD_DOMAIN_\"\n            \"AND_HAS_NO_DELTA_SUPPORTED_MATTER_DENSITY\"\n        ),\n        \"trace_graph\": \"Gamma0_child(Psi)=U_R*Gamma0_event(Psi)\",\n        \"variation_graph\": \"Gamma0_child(deltaPsi)=U_R*Gamma0_event(deltaPsi)\",\n        \"squared_operator_flux_graph\": (\n            \"Gamma1_child(Psi)=-U_R*Gamma1_event(Psi)_ON_Dom(D_AE2^2)\"\n        ),\n        \"squared_operator_domain\": (\n            \"Dom(D_AE2^2)={Psi_in_Dom(D_AE2):D_AE2*Psi_in_Dom(D_AE2)}\"\n        ),\n        \"common_reset_frame\": \"U_R=I_UP_TO_GLOBAL_SPIN_SIGN_AND_GAUGE_FRAME\",\n        \"independent_Cayley_phase\": None,\n        \"new_continuous_coefficient\": None,\n        \"new_physical_scale\": None,\n        \"new_propagating_field\": None,\n        \"FULL_BHSM_COMPLETE\": FULL_BHSM_COMPLETE,\n    }"
+  },
+  {
+    "end_line": 49,
+    "function": "unified_parent_boundary_functional",
+    "line": 25,
+    "literal_equations": [
+      {
+        "key": "parent_fields",
+        "line": 27,
+        "value": "bulk_connection_A5_and_global_spinor_Psi5_with_wall_trace_B"
+      },
+      {
+        "key": "single_parent_quadratic_operator",
+        "line": 29,
+        "value": "H5=diag(K_F^(5)*Delta_Maxwell5,_D5)_with_action-owned_domains"
+      },
+      {
+        "key": "single_boundary_trace",
+        "line": 32,
+        "value": "B=(Dirichlet_trace,_normal_flux_trace,_normalized_wall_spinor_trace)"
+      },
+      {
+        "key": "wall_normalization",
+        "line": 34,
+        "value": "integral_ds*J*abs(u0)^2=1"
+      },
+      {
+        "key": "carrier_extension",
+        "line": 36,
+        "value": "one_rank16_trace_extends_the_diagonal_Sp1_operator_to_(SU3_times_Sp1_times_U1Y)/Z6"
+      },
+      {
+        "key": "boundary_effective_action",
+        "line": 40,
+        "value": "Gamma_boundary=-log_integral_over_fixed-trace_bulk_fields_exp(-S5[A5,Psi5])"
+      },
+      {
+        "key": "tree_Schur_term",
+        "line": 44,
+        "value": "Gamma_tree=(K_F^(5)/2)<a,N_DtN*a>-(1/(2*K_F^(5)))<J,G_DtN*J>"
+      },
+      {
+        "key": "one_loop_term",
+        "line": 47,
+        "value": "Gamma_1loop=(1/2)*STr_log(H5_with_boundary_sources)"
+      },
+      {
+        "key": "one_pushforward_only",
+        "line": 48,
+        "value": true
+      }
+    ],
+    "path": "src/bhsm/interface/aether_unified_m5_m4_pushforward_v15_69.py",
+    "sha256": "e612cd5e96fe6a4757554fbc5431c1c9c76d60d830aba570af1e2967cdfe41c1",
+    "source": "def unified_parent_boundary_functional() -> dict[str, Any]:\n    return {\n        \"parent_fields\": \"bulk_connection_A5_and_global_spinor_Psi5_with_wall_trace_B\",\n        \"single_parent_quadratic_operator\": (\n            \"H5=diag(K_F^(5)*Delta_Maxwell5,_D5)_with_action-owned_domains\"\n        ),\n        \"single_boundary_trace\": (\n            \"B=(Dirichlet_trace,_normal_flux_trace,_normalized_wall_spinor_trace)\"\n        ),\n        \"wall_normalization\": \"integral_ds*J*abs(u0)^2=1\",\n        \"carrier_extension\": (\n            \"one_rank16_trace_extends_the_diagonal_Sp1_operator_to_\"\n            \"(SU3_times_Sp1_times_U1Y)/Z6\"\n        ),\n        \"boundary_effective_action\": (\n            \"Gamma_boundary=-log_integral_over_fixed-trace_bulk_fields_\"\n            \"exp(-S5[A5,Psi5])\"\n        ),\n        \"tree_Schur_term\": (\n            \"Gamma_tree=(K_F^(5)/2)<a,N_DtN*a>-\"\n            \"(1/(2*K_F^(5)))<J,G_DtN*J>\"\n        ),\n        \"one_loop_term\": \"Gamma_1loop=(1/2)*STr_log(H5_with_boundary_sources)\",\n        \"one_pushforward_only\": True,\n    }"
+  },
+  {
+    "end_line": 79,
+    "function": "common_derivative_ledger",
+    "line": 52,
+    "literal_equations": [
+      {
+        "key": "gauge_two_point",
+        "line": 55,
+        "value": "K_A=delta^2_Gamma_boundary/(delta_a*delta_a)|star=K_F^(5)*N_DtN+Pi_AA"
+      },
+      {
+        "key": "left_right_four_point",
+        "line": 59,
+        "value": "G_LR=-delta^4_Gamma_boundary/(delta_barL*delta_R*delta_barR*delta_L)|star"
+      },
+      {
+        "key": "composite_inverse_two_point",
+        "line": 62,
+        "value": "K_H,f=(2*C_f*G_DtN)^(-1)-Chi_LR,f"
+      },
+      {
+        "key": "gap_equation",
+        "line": 64,
+        "value": "K_H,f*Delta_f=0"
+      },
+      {
+        "key": "Higgs_wavefunction_residue",
+        "line": 66,
+        "value": "Z_H=partial_(p^2)<Delta_star,K_H(p)*Delta_star>|p^2=0"
+      },
+      {
+        "key": "absolute_local_gauge_residue",
+        "line": 69,
+        "value": "Z_g=partial_(p^2)<a_T,K_A(p)*a_T>|p^2=mu_star^2"
+      },
+      {
+        "key": "Yukawa_residue",
+        "line": 72,
+        "value": "Y_f=Z_H^(-1/2)*Res_Delta_star[Gamma_boundary^(barL,R,H)]"
+      },
+      {
+        "key": "Higgs_mass_and_quartic",
+        "line": 75,
+        "value": "m_H^2_and_lambda_H_are_the_second_and_fourth_derivatives_of_Gamma_boundary_along_the_same_normalized_Delta_star"
+      },
+      {
+        "key": "same_Gamma_generates_every_entry",
+        "line": 78,
+        "value": true
+      }
+    ],
+    "path": "src/bhsm/interface/aether_unified_m5_m4_pushforward_v15_69.py",
+    "sha256": "e612cd5e96fe6a4757554fbc5431c1c9c76d60d830aba570af1e2967cdfe41c1",
+    "source": "def common_derivative_ledger() -> dict[str, Any]:\n    return {\n        \"gauge_two_point\": (\n            \"K_A=delta^2_Gamma_boundary/(delta_a*delta_a)|star=\"\n            \"K_F^(5)*N_DtN+Pi_AA\"\n        ),\n        \"left_right_four_point\": (\n            \"G_LR=-delta^4_Gamma_boundary/(delta_barL*delta_R*delta_barR*delta_L)|star\"\n        ),\n        \"composite_inverse_two_point\": (\n            \"K_H,f=(2*C_f*G_DtN)^(-1)-Chi_LR,f\"\n        ),\n        \"gap_equation\": \"K_H,f*Delta_f=0\",\n        \"Higgs_wavefunction_residue\": (\n            \"Z_H=partial_(p^2)<Delta_star,K_H(p)*Delta_star>|p^2=0\"\n        ),\n        \"absolute_local_gauge_residue\": (\n            \"Z_g=partial_(p^2)<a_T,K_A(p)*a_T>|p^2=mu_star^2\"\n        ),\n        \"Yukawa_residue\": (\n            \"Y_f=Z_H^(-1/2)*Res_Delta_star[Gamma_boundary^(barL,R,H)]\"\n        ),\n        \"Higgs_mass_and_quartic\": (\n            \"m_H^2_and_lambda_H_are_the_second_and_fourth_derivatives_of_\"\n            \"Gamma_boundary_along_the_same_normalized_Delta_star\"\n        ),\n        \"same_Gamma_generates_every_entry\": True,\n    }"
+  },
+  {
+    "end_line": 210,
+    "function": "microscopic_owner_contract",
+    "line": 180,
+    "literal_equations": [
+      {
+        "key": "owner_status",
+        "line": 186,
+        "value": "SELECTED__GLOBAL_OPERATOR_DOMAIN_STILL_REQUIRED"
+      },
+      {
+        "key": "stratified_Hilbert_architecture",
+        "line": 188,
+        "value": "H8 direct_sum H5_plus direct_sum H5_minus direct_sum H4"
+      },
+      {
+        "key": "trace_rule",
+        "line": 191,
+        "value": "canonical_geometric_L2_direct_sum_supertrace_with_statistics_grading_and_BRST_ghost_multiplicities"
+      },
+      {
+        "key": "positive_operator",
+        "line": 195,
+        "value": "P_strat=D_strat^dagger*D_strat_on_the_zero_mode_and_BRST_quotient"
+      },
+      {
+        "key": "microscopic_functional",
+        "line": 198,
+        "value": "-(1/2)STr E1(ell_star^2*P_strat),_with_relative_zeta/eta_completion_for_logarithmic_order_and_determinant_phase"
+      },
+      {
+        "key": "zeta_completion_is_second_independent_determinant",
+        "line": 201,
+        "value": false
+      },
+      {
+        "key": "local_M8_M5_M4_actions_are",
+        "line": 203,
+        "value": "ASYMPTOTIC_AND_BOUNDARY_EXPANSIONS_OF_ONE_MICROSCOPIC_FUNCTIONAL"
+      },
+      {
+        "key": "independent_M8_M5_M4_Wilson_owners_retained",
+        "line": 205,
+        "value": false
+      },
+      {
+        "key": "independent_ZA_g_gprime_alpha_metric_cone_or_particle_fit_allowed",
+        "line": 206,
+        "value": false
+      },
+      {
+        "key": "measured_particle_data_used_to_select_owner",
+        "line": 207,
+        "value": false
+      }
+    ],
+    "path": "src/bhsm/interface/ae4_stratified_dirac_zeta_induced_owner.py",
+    "sha256": "bc0bb5c7d7b006ae2194ed8c15b73756e49e002567b54c3f30e220d06046e1ec",
+    "source": "def microscopic_owner_contract() -> dict[str, Any]:\n    \"\"\"State the selected owner without overclaiming its physical realization.\"\"\"\n\n    return {\n        \"action_version\": ACTION_VERSION,\n        \"predecessor_action_version\": PREDECESSOR_ACTION_VERSION,\n        \"owner_status\": \"SELECTED__GLOBAL_OPERATOR_DOMAIN_STILL_REQUIRED\",\n        \"stratified_Hilbert_architecture\": (\n            \"H8 direct_sum H5_plus direct_sum H5_minus direct_sum H4\"\n        ),\n        \"trace_rule\": (\n            \"canonical_geometric_L2_direct_sum_supertrace_with_statistics_\"\n            \"grading_and_BRST_ghost_multiplicities\"\n        ),\n        \"positive_operator\": (\n            \"P_strat=D_strat^dagger*D_strat_on_the_zero_mode_and_BRST_quotient\"\n        ),\n        \"microscopic_functional\": (\n            \"-(1/2)STr E1(ell_star^2*P_strat),_with_relative_zeta/eta_\"\n            \"completion_for_logarithmic_order_and_determinant_phase\"\n        ),\n        \"zeta_completion_is_second_independent_determinant\": False,\n        \"local_M8_M5_M4_actions_are\": (\n            \"ASYMPTOTIC_AND_BOUNDARY_EXPANSIONS_OF_ONE_MICROSCOPIC_FUNCTIONAL\"\n        ),\n        \"independent_M8_M5_M4_Wilson_owners_retained\": False,\n        \"independent_ZA_g_gprime_alpha_metric_cone_or_particle_fit_allowed\": False,\n        \"measured_particle_data_used_to_select_owner\": False,\n        \"native_spectral_length\": native_spectral_length_contract(),\n        \"forward_time_domain\": forward_time_domain_contract(),\n    }"
+  },
+  {
+    "end_line": 108,
+    "function": "graded_operator_ledger",
+    "line": 75,
+    "literal_equations": [
+      {
+        "key": "supertrace_sign",
+        "line": 80,
+        "value": 1
+      },
+      {
+        "key": "species",
+        "line": 81,
+        "value": 12
+      },
+      {
+        "key": "levels",
+        "line": 82,
+        "value": "m>=2"
+      },
+      {
+        "key": "spatial_eigenvalue",
+        "line": 83,
+        "value": "m^2/R4(tau)^2"
+      },
+      {
+        "key": "degeneracy_per_species",
+        "line": 84,
+        "value": "2*(m^2-1)"
+      },
+      {
+        "key": "net_supertrace_sign",
+        "line": 87,
+        "value": 0
+      },
+      {
+        "key": "statement",
+        "line": 89,
+        "value": "BRST_longitudinal_and_complex_ghost_blocks_cancel_mode_by_mode;_global_gauge_zero_modes_are_quotiented"
+      },
+      {
+        "key": "supertrace_sign",
+        "line": 94,
+        "value": -1
+      },
+      {
+        "key": "species",
+        "line": 95,
+        "value": 48
+      },
+      {
+        "key": "levels",
+        "line": 96,
+        "value": "n>=0"
+      },
+      {
+        "key": "spatial_eigenvalue",
+        "line": 97,
+        "value": "(n+3/2)^2/R4(tau)^2"
+      },
+      {
+        "key": "degeneracy_per_species",
+        "line": 98,
+        "value": "(n+1)*(n+2)"
+      },
+      {
+        "key": "squared_operator",
+        "line": 99,
+        "value": "D_Weyl^dagger*D_Weyl"
+      },
+      {
+        "key": "supertrace_sign",
+        "line": 102,
+        "value": 1
+      },
+      {
+        "key": "species",
+        "line": 103,
+        "value": 4
+      },
+      {
+        "key": "levels",
+        "line": 104,
+        "value": "m>=1"
+      },
+      {
+        "key": "spatial_eigenvalue",
+        "line": 105,
+        "value": "m^2/R4(tau)^2"
+      },
+      {
+        "key": "degeneracy_per_species",
+        "line": 106,
+        "value": "m^2"
+      }
+    ],
+    "path": "src/bhsm/interface/aether_common_quantum_superdeterminant_v15_96.py",
+    "sha256": "275bdd409281ffc3699bd59471d8f5a22abc5de45305b25b63ab63565469adf7",
+    "source": "def graded_operator_ledger() -> dict[str, Any]:\n    \"\"\"Statistics, multiplicities, and spatial spectra before truncation.\"\"\"\n\n    return {\n        \"gauge_transverse\": {\n            \"supertrace_sign\": 1,\n            \"species\": 12,\n            \"levels\": \"m>=2\",\n            \"spatial_eigenvalue\": \"m^2/R4(tau)^2\",\n            \"degeneracy_per_species\": \"2*(m^2-1)\",\n        },\n        \"gauge_longitudinal_ghost\": {\n            \"net_supertrace_sign\": 0,\n            \"statement\": (\n                \"BRST_longitudinal_and_complex_ghost_blocks_cancel_mode_by_mode;_\"\n                \"global_gauge_zero_modes_are_quotiented\"\n            ),\n        },\n        \"Weyl\": {\n            \"supertrace_sign\": -1,\n            \"species\": 48,\n            \"levels\": \"n>=0\",\n            \"spatial_eigenvalue\": \"(n+3/2)^2/R4(tau)^2\",\n            \"degeneracy_per_species\": \"(n+1)*(n+2)\",\n            \"squared_operator\": \"D_Weyl^dagger*D_Weyl\",\n        },\n        \"Hubbard_Strattonovich\": {\n            \"supertrace_sign\": 1,\n            \"species\": 4,\n            \"levels\": \"m>=1\",\n            \"spatial_eigenvalue\": \"m^2/R4(tau)^2\",\n            \"degeneracy_per_species\": \"m^2\",\n        },\n    }"
+  },
+  {
+    "end_line": 120,
+    "function": "_block",
+    "line": 111,
+    "literal_equations": [],
+    "path": "src/bhsm/interface/aether_common_quantum_superdeterminant_v15_96.py",
+    "sha256": "275bdd409281ffc3699bd59471d8f5a22abc5de45305b25b63ab63565469adf7",
+    "source": "def _block(\n    laplacian: np.ndarray,\n    radii: np.ndarray,\n    energy: float,\n    scale_log: float = 0.0,\n) -> tuple[np.ndarray, np.ndarray]:\n    spatial = (energy / (np.exp(scale_log) * radii)) ** 2\n    operator = laplacian + np.diag(spatial)\n    derivative = np.diag(-2.0 * spatial)\n    return operator, derivative"
+  },
+  {
+    "end_line": 59,
+    "function": "rank16_connection_attachment",
+    "line": 11,
+    "literal_equations": [],
+    "path": "src/bhsm/interface/muon_connection_weight.py",
+    "sha256": "a81767970ec203ff80e7485eaf0f3ea17d4ef9c2ac882e94badc4919bca8ec2d",
+    "source": "def rank16_connection_attachment(multiplets):\n    \"\"\"Materialize the inherited unit-quaternion representation, not a fit.\n\n    A doublet realizes e_a by -i*sigma_a; [e_a,e_b]=2 eps_abc e_c.\n    The component-to-ordinary-Tr16 index is fixed by these supplied rows.\n    The orientation convention is d+rho(omega)=d-i*T_a*W_hat^a,\n    W_hat=2*omega. Q=T3+Y is the existing connection-coordinate source.\n    \"\"\"\n    pauli=np.array([[[0,1],[1,0]],[[0,-1j],[1j,0]],[[1,0],[0,-1]]],complex)\n    blocks=[]\n    ys=[]\n    labels=[]\n    doublets=0\n    for row in multiplets:\n        dim=int(row['dimension'])\n        # Explicit retained representation string, not a phenomenological\n        # identification by a field's mass or observed charge.\n        weak=int(row['weak_dimension'])\n        if weak not in (1,2) or dim % weak:\n            raise ValueError('retained weak singlets/doublets required')\n        color=dim//weak\n        block=np.zeros((3,dim,dim),complex)\n        if weak==2:\n            block=np.array([np.kron(np.eye(color),s/2) for s in pauli])\n            doublets+=color\n        blocks.append(block)\n        ys.extend([Fraction(row['Y'])]*dim)\n        labels.extend([str(row['name'])+':'+str(i) for i in range(dim)])\n    if sum(len(b[0]) for b in blocks)!=16 or doublets!=4:\n        raise ValueError('the supplied one-family rank16 carrier is required')\n    T=np.zeros((3,16,16),complex)\n    offset=0\n    for block in blocks:\n        dim=len(block[0]);T[:,offset:offset+dim,offset:offset+dim]=block\n        offset+=dim\n    Y=np.diag([float(y) for y in ys]).astype(complex)\n    Q=T[2]+Y\n    jmath=-2j*T\n    t3_exact=[Fraction(float(x.real)) for x in np.diag(T[2])]\n    qs=[t+y for t,y in zip(t3_exact,ys)]\n    index=Fraction(2*doublets)\n    traces=dict(I_jmath=str(index),Tr_T3_squared=str(sum(t*t for t in t3_exact)),\n                Tr_Y_squared=str(sum(y*y for y in ys)),\n                Tr_T3Y=str(sum(t*y for t,y in zip(t3_exact,ys))),\n                Tr_Q_squared=str(sum(q*q for q in qs)))\n    ratio=sum(q*q for q in qs)/index\n    return dict(T=T,Y=Y,Q=Q,jmath=jmath,component_to_Tr16_index=index,\n                K_Q_over_K_component=ratio,exact_traces=traces,labels=labels,\n                exact_Q_diagonal=[str(q) for q in qs])"
+  },
+  {
+    "end_line": 28,
+    "function": "chiral_generators",
+    "line": 22,
+    "literal_equations": [],
+    "path": "artifacts/muon_connection_attachment_20261002/inputs/fermion_body.py",
+    "sha256": "6aaab74462fa802fe294f74113a78675a056b70321884f636c4ab147491c337e",
+    "source": "def chiral_generators(spatial_dirac_unit):\n    \"\"\"H = R^-1 diag(-D3,+D3) + m sigma1_LR tensor I.\"\"\"\n    d = hermitian(spatial_dirac_unit, \"unit spatial Dirac block\")\n    zeros, identity = np.zeros_like(d), np.eye(len(d))\n    kinetic = np.block([[-d, zeros], [zeros, d]])\n    mass = np.block([[zeros, identity], [identity, zeros]])\n    return kinetic, mass"
+  },
+  {
+    "end_line": 47,
+    "function": "photon_source_generators",
+    "line": 31,
+    "literal_equations": [],
+    "path": "artifacts/muon_connection_attachment_20261002/inputs/fermion_body.py",
+    "sha256": "6aaab74462fa802fe294f74113a78675a056b70321884f636c4ab147491c337e",
+    "source": "def photon_source_generators(spatial_currents, charge=-1.):\n    \"\"\"First derivative of B_H=i*d_tau-H for real gauge mode amplitudes.\n\n    J is the Hermitian spatial sigma.A action on the retained spatial block.\n    H_a = diag(Q*J,-Q*J), hence B_H,a = -H_a. Multiply by\n    1/sqrt(2*pi^2*R^3) for the saved physical-volume mode convention.\n    Photon residue/coupling normalization is not supplied here.\n    \"\"\"\n    q = float(charge)\n    if not np.isfinite(q):\n        raise ValueError(\"finite conserved charge required\")\n    out = []\n    for matrix in spatial_currents:\n        j = hermitian(matrix, \"real gauge current\")\n        zero = np.zeros_like(j)\n        out.append(np.block([[-q*j, zero], [zero, q*j]]))\n    return np.array(out)"
+  },
+  {
+    "end_line": 145,
+    "function": "fermion_body_data",
+    "line": 106,
+    "literal_equations": [],
+    "path": "artifacts/muon_connection_attachment_20261002/inputs/fermion_body.py",
+    "sha256": "6aaab74462fa802fe294f74113a78675a056b70321884f636c4ab147491c337e",
+    "source": "def fermion_body_data(geometry, angular):\n    \"\"\"Reusable coefficients and geometry jets; no mass or state selected.\n\n    Geometry derivatives are inherited parent motions, NOT physical photon\n    soft-transfer derivatives. The mass is held as a separate coefficient.\n    The n0+n1 spatial truncation does not certify discarded current modes.\n    \"\"\"\n    h, x = np.asarray(geometry[\"proper_durations\"]), np.asarray(geometry[\"log_radius\"])\n    dx, dh = np.asarray(geometry[\"log_radius_first_jet\"]), np.asarray(geometry[\"proper_durations_first_jet\"])\n    if len(x) != len(h)+1 or np.any(h <= 0) or not np.isfinite(x).all():\n        raise ValueError(\"retained positive finite-core geometry required\")\n    midpoint = .5*(x[:-1]+x[1:])\n    dmid = .5*(dx[:-1]+dx[1:])\n    inverse = np.exp(-midpoint)\n    d1 = np.kron(angular[\"D_round_n1_times_R_one_right_copy\"], np.eye(2))\n    d = np.zeros((10, 10), complex)\n    d[:2, :2], d[2:, 2:] = 1.5*np.eye(2), d1\n    js = []\n    for current in angular[\"reduced_Weyl_angular_currents_real_gauge_basis\"]:\n        j = np.zeros_like(d)\n        j[2:, :2], j[:2, 2:] = current, current.conj().T\n        js.append(j)\n    kinetic, mass = chiral_generators(d)\n    # This factor belongs to physical-volume-normalized spatial test modes.\n    volume_factor = np.exp(-1.5*midpoint)/np.sqrt(2*np.pi**2)\n    return {\n        \"spatial_D3_unit\": d, \"kinetic_generator\": kinetic,\n        \"mass_generator\": mass, \"spatial_real_current_generators\": np.array(js),\n        \"B_H_photon_source_unit_generators_Q_minus_one\": photon_source_generators(js),\n        \"inverse_radius\": inverse, \"proper_durations\": h,\n        \"inverse_radius_geometry_jets\": -inverse[:, None]*dmid,\n        \"integrated_kinetic_coefficients\": h*inverse,\n        \"integrated_kinetic_coefficient_geometry_jets\": inverse[:, None]*(dh-h[:, None]*dmid),\n        \"integrated_mass_coefficient_geometry_jets_per_unit_mass\": dh,\n        \"volume_normalized_photon_source_factor\": volume_factor,\n        \"volume_normalized_photon_source_factor_geometry_jets\": -1.5*volume_factor[:, None]*dmid,\n        \"spinor_rescaling_R_three_halves\": np.exp(1.5*x),\n        \"proper_times\": np.asarray(geometry[\"proper_times\"]),\n        \"birth_slice_Q72\": np.asarray(geometry[\"birth_slice_Q72\"]),\n    }"
+  },
+  {
+    "end_line": 50,
+    "function": "product_tensor",
+    "line": 40,
+    "literal_equations": [],
+    "path": "src/bhsm/interface/muon_matched_mechanical_source.py",
+    "sha256": "ab119bb053280d8da2a8d03db2e521aba4033ae0966c9d3520ca902a027c05de",
+    "source": "def product_tensor(ng, ns, nt):\n    out = np.zeros((nt+1, nt+1, ng+1, ng+1, ns+1, ns+1))\n    for gi, mg in enumerate(range(ng, -ng-1, -2)):\n        for gj, kg in enumerate(range(ng, -ng-1, -2)):\n            for si, ms in enumerate(range(ns, -ns-1, -2)):\n                for sj, ks in enumerate(range(ns, -ns-1, -2)):\n                    mt, kt = mg+ms, kg+ks\n                    if abs(mt) <= nt and abs(kt) <= nt:\n                        out[(nt-mt)//2, (nt-kt)//2, gi, gj, si, sj] = (\n                            _gaunt((nt, mt, kt), (ng, mg, kg), (ns, ms, ks)))\n    return out"
+  },
+  {
+    "end_line": 55,
+    "function": "product",
+    "line": 53,
+    "literal_equations": [],
+    "path": "src/bhsm/interface/muon_matched_mechanical_source.py",
+    "sha256": "ab119bb053280d8da2a8d03db2e521aba4033ae0966c9d3520ca902a027c05de",
+    "source": "def product(g, f, ns, nt):\n    \"\"\"Scalar normalized-harmonic multiplication; f may have leading axes.\"\"\"\n    return np.einsum('uvijkl,ij,...kl->...uv', product_tensor(2, ns, nt), g, f)"
+  },
+  {
+    "end_line": 25,
+    "function": "_gaunt",
+    "line": 22,
+    "literal_equations": [],
+    "path": "src/bhsm/interface/muon_local_source_jet.py",
+    "sha256": "caa3da0f665d64c2fb6810d4afa276c7ac0ada0e2d0c7a4d2923b275613d258b",
+    "source": "def _gaunt(target,gauge,source):\n    nt,mt,kt=target;ng,mg,kg=gauge;ns,ms,ks=source\n    return (np.sqrt((ns+1)*(ng+1)/(nt+1))*\n            _cg(ns,ms,ng,mg,nt,mt)*_cg(ns,ks,ng,kg,nt,kt))"
+  }
+]

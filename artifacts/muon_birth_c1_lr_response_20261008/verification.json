@@ -1,0 +1,241 @@
+{
+  "schema": "BHSM_MUON_BIRTH_C1_LR_RESPONSE_VERIFICATION_V1",
+  "date": "2026-10-08",
+  "baseline": "ad750077f1a3138418a2dc4ee65f7c50236b5608",
+  "archive": {
+    "archive": "C:\\Users\\carbe\\Downloads\\BHSM_C1_LR_reduction_20261008.zip",
+    "sha256": "60c2005c4ad13a703772d7c1b5e7c602d2fbe102310ef93479561f35c9872ae2",
+    "entries": 17,
+    "extraction": "C:\\Users\\carbe\\Downloads\\BHSM_C1_LR_reduction_20261008",
+    "overwrite": false
+  },
+  "actual_commands": [
+    {
+      "command": "git -c gc.auto=0 -c maintenance.auto=false fetch origin",
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "result": {
+        "chunk_id": "d79c34",
+        "wall_time_seconds": 0.2239269,
+        "exit_code": 0,
+        "original_token_count": 0,
+        "output": ""
+      }
+    },
+    {
+      "command": "gh pr view 465 --json headRefOid,headRefName,url,state",
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "result": {
+        "chunk_id": "834905",
+        "wall_time_seconds": 0.0000195,
+        "exit_code": 0,
+        "original_token_count": 52,
+        "output": "{\"headRefName\":\"codex/muon-parent-maxwell-density-review\",\"headRefOid\":\"ad750077f1a3138418a2dc4ee65f7c50236b5608\",\"state\":\"OPEN\",\"url\":\"https://github.com/ncarberry64/Berger-Hopf-Standard-Model/pull/465\"}\n"
+      }
+    },
+    {
+      "command": "python -c \"import zipfile,pathlib; p=pathlib.Path(r'C:\\Users\\carbe\\Downloads\\BHSM_C1_LR_reduction_20261008.zip'); print(p.is_file()); z=zipfile.ZipFile(p); print('\\n'.join(z.namelist()))\"",
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "result": {
+        "chunk_id": "f2a390",
+        "wall_time_seconds": 0.1958879,
+        "exit_code": 0,
+        "original_token_count": 226,
+        "output": "True\r\nBHSM_C1_LR_reduction_20261008/README.md\r\nBHSM_C1_LR_reduction_20261008/analysis_car.md\r\nBHSM_C1_LR_reduction_20261008/analysis_response.md\r\nBHSM_C1_LR_reduction_20261008/analysis_scalar.md\r\nBHSM_C1_LR_reduction_20261008/artifact_manifest.json\r\nBHSM_C1_LR_reduction_20261008/car_reduction_verify.py\r\nBHSM_C1_LR_reduction_20261008/carrier_bounds_independent_audit.md\r\nBHSM_C1_LR_reduction_20261008/pinned_source_manifest.json\r\nBHSM_C1_LR_reduction_20261008/response_carrier_bounds.py\r\nBHSM_C1_LR_reduction_20261008/response_reduction_verify.py\r\nBHSM_C1_LR_reduction_20261008/run_1/results.json\r\nBHSM_C1_LR_reduction_20261008/run_1/summary.json\r\nBHSM_C1_LR_reduction_20261008/run_2/results.json\r\nBHSM_C1_LR_reduction_20261008/run_2/summary.json\r\nBHSM_C1_LR_reduction_20261008/scalar_reduction_verify.py\r\nBHSM_C1_LR_reduction_20261008/verification.json\r\nBHSM_C1_LR_reduction_20261008/verify_all.py\r\n"
+      }
+    },
+    {
+      "command": "@'\nfrom pathlib import Path\nfrom hashlib import sha256\nimport zipfile,json\nbase=Path(r'C:\\Users\\carbe\\Downloads').resolve()\narchive=base/'BHSM_C1_LR_reduction_20261008.zip'\nwith zipfile.ZipFile(archive) as z:\n    entries=z.infolist()\n    for item in entries:\n        path=(base/item.filename).resolve()\n        path.relative_to(base)\n        if not item.filename.startswith('BHSM_C1_LR_reduction_20261008/'):\n            raise ValueError('Unexpected archive root')\n        if path.exists() and not item.is_dir() and path.read_bytes()!=z.read(item):\n            raise ValueError('Existing extraction differs; will not overwrite '+str(path))\n    for item in entries:\n        path=(base/item.filename).resolve()\n        if item.is_dir(): path.mkdir(parents=True,exist_ok=True)\n        elif not path.exists():\n            path.parent.mkdir(parents=True,exist_ok=True)\n            path.write_bytes(z.read(item))\nprint(json.dumps(dict(archive=str(archive),sha256=sha256(archive.read_bytes()).hexdigest(),entries=len(entries),extraction=str(base/'BHSM_C1_LR_reduction_20261008'),overwrite=False)))\n'@ | python -",
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "result": {
+        "chunk_id": "c6ccae",
+        "wall_time_seconds": 0.1418739,
+        "exit_code": 0,
+        "original_token_count": 67,
+        "output": "{\"archive\": \"C:\\\\Users\\\\carbe\\\\Downloads\\\\BHSM_C1_LR_reduction_20261008.zip\", \"sha256\": \"60c2005c4ad13a703772d7c1b5e7c602d2fbe102310ef93479561f35c9872ae2\", \"entries\": 17, \"extraction\": \"C:\\\\Users\\\\carbe\\\\Downloads\\\\BHSM_C1_LR_reduction_20261008\", \"overwrite\": false}\r\n"
+      }
+    },
+    {
+      "command": "& C:\\Python314\\python.exe .\\verify_all.py --source-root 'C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001' --out codex_source_replay",
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_C1_LR_reduction_20261008",
+      "result": {
+        "exit_code": 0,
+        "output": "{\r\n  \"exact_control_groups_passed\": 43,\r\n  \"physical_LR_enclosure\": \"UNEVALUATED\",\r\n  \"physical_a_mu_and_g_mu\": \"UNEVALUATED\",\r\n  \"result_bytes\": 19350,\r\n  \"result_sha256\": \"269452297e37de4d19450413d8422e281ae2402cef52acd4a4d811083ddffcf0\",\r\n  \"source_files_verified\": 43\r\n}\r\n"
+      }
+    },
+    {
+      "command": "C:\\Python314\\python.exe -m pytest -q tests/test_muon_birth_c1_lr_form_response.py tests/test_muon_birth_c1_lr_scalar_contraction.py tests/test_muon_birth_c1_lr_replay.py tests/test_muon_birth_covariance_sensitivity.py tests/test_muon_birth_fermion_event_kkt_inputs.py tests/test_muon_birth_parametric_fermion_seam.py",
+      "cwd": "C:/Users/carbe/Downloads/BHSM_muon_parent_maxwell_worktree_20261001",
+      "result": {
+        "output": "........................................................................ [ 44%]\r\n........................................................................ [ 88%]\r\n...................                                                      [100%]",
+        "session_id": 59701
+      }
+    },
+    {
+      "command": "poll focused pytest session 59701",
+      "cwd": "C:/Users/carbe/Downloads/BHSM_muon_parent_maxwell_worktree_20261001",
+      "result": {
+        "exit_code": 0,
+        "output": "\r\n163 passed in 8.41s\r\n"
+      }
+    },
+    {
+      "command": "& C:\\Python314\\python.exe scripts/replay_muon_birth_c1_lr_response.py --out artifacts/muon_birth_c1_lr_response_20261008/run_1",
+      "cwd": "C:/Users/carbe/Downloads/BHSM_muon_parent_maxwell_worktree_20261001",
+      "result": {
+        "exit_code": 0,
+        "output": "{\"actual_LR_enclosure\": false, \"audit_passed\": true, \"complete_CAR_verdict\": null, \"first_unavailable\": {\"argument\": \"parent_jet\", \"derivative_order\": 0, \"operand\": \"P_F\", \"tuple_index\": 0}, \"imported_exact_checks\": 43, \"imported_pinned_sources\": 43, \"physical_member_selected\": false, \"physical_underdetermination_proved\": false, \"preserved_milestone_files\": 38, \"products\": {\"c1_lr_response.json\": {\"bytes\": 61038, \"sha256\": \"9ab23386fe49b2ddb31e8bc28510199a927981a9a797e6cc788e58dce8c3b4e3\"}, \"source_manifest.json\": {\"bytes\": 15212, \"sha256\": \"d98e645e622a7d0b0280e88106934ab5057c492d407c8ee43ef3bc16e08a5268\"}}}\r\n"
+      }
+    },
+    {
+      "command": "& C:\\Python314\\python.exe scripts/replay_muon_birth_c1_lr_response.py --out artifacts/muon_birth_c1_lr_response_20261008/run_2",
+      "cwd": "C:/Users/carbe/Downloads/BHSM_muon_parent_maxwell_worktree_20261001",
+      "result": {
+        "exit_code": 0,
+        "output": "{\"actual_LR_enclosure\": false, \"audit_passed\": true, \"complete_CAR_verdict\": null, \"first_unavailable\": {\"argument\": \"parent_jet\", \"derivative_order\": 0, \"operand\": \"P_F\", \"tuple_index\": 0}, \"imported_exact_checks\": 43, \"imported_pinned_sources\": 43, \"physical_member_selected\": false, \"physical_underdetermination_proved\": false, \"preserved_milestone_files\": 38, \"products\": {\"c1_lr_response.json\": {\"bytes\": 61038, \"sha256\": \"9ab23386fe49b2ddb31e8bc28510199a927981a9a797e6cc788e58dce8c3b4e3\"}, \"source_manifest.json\": {\"bytes\": 15212, \"sha256\": \"d98e645e622a7d0b0280e88106934ab5057c492d407c8ee43ef3bc16e08a5268\"}}}\r\n"
+      }
+    },
+    {
+      "command": "exact run_1/run_2 byte comparison",
+      "cwd": "C:/Users/carbe/Downloads/BHSM_muon_parent_maxwell_worktree_20261001",
+      "result": {
+        "exit_code": 0,
+        "output": "{\"products\": [{\"byte_identical\": true, \"bytes\": 61038, \"file\": \"c1_lr_response.json\", \"sha256\": \"9ab23386fe49b2ddb31e8bc28510199a927981a9a797e6cc788e58dce8c3b4e3\"}, {\"byte_identical\": true, \"bytes\": 270, \"file\": \"output_hashes.json\", \"sha256\": \"27e31e0ca57b3aad461940490768aff4894e029f85937cf67f7b9dae1eb31795\"}, {\"byte_identical\": true, \"bytes\": 15212, \"file\": \"source_manifest.json\", \"sha256\": \"d98e645e622a7d0b0280e88106934ab5057c492d407c8ee43ef3bc16e08a5268\"}], \"two_replays_byte_identical\": true}\r\n"
+      }
+    },
+    {
+      "command": "git diff --cached --check; git diff --cached --stat",
+      "cwd": "C:/Users/carbe/Downloads/BHSM_muon_parent_maxwell_worktree_20261001",
+      "result": {
+        "exit_code": 0,
+        "output": " .../companion/.gitattributes                       |    2 +\n .../companion/README.md                            |  422 ++++++++\n .../companion/analysis_car.md                      |  216 ++++\n .../companion/analysis_response.md                 |  550 +++++++++++\n .../companion/analysis_scalar.md                   |  159 +++\n .../companion/artifact_manifest.json               |   87 ++\n .../companion/car_reduction_verify.py              |  235 +++++\n .../companion/carrier_bounds_independent_audit.md  |   80 ++\n .../companion/pinned_source_manifest.json          |  264 +++++\n .../companion/response_carrier_bounds.py           |  104 ++\n .../companion/response_reduction_verify.py         |  352 +++++++\n .../companion/run_1/results.json                   |  268 +++++\n .../companion/run_1/summary.json                   |    8 +\n .../companion/run_2/results.json                   |  268 +++++\n .../companion/run_2/summary.json                   |    8 +\n .../companion/scalar_reduction_verify.py           |  126 +++\n .../companion/verification.json                    |   54 +\n .../companion/verify_all.py                        |  131 +++\n .../incoming_source_domain_receipt.json            |  422 ++++++++\n .../lr_embedding_receipt.json                      |  258 +++++\n .../run_1/c1_lr_response.json                      | 1038 ++++++++++++++++++++\n .../run_1/output_hashes.json                       |   10 +\n .../run_1/source_manifest.json                     |  375 +++++++\n .../run_2/c1_lr_response.json                      | 1038 ++++++++++++++++++++\n .../run_2/output_hashes.json                       |   10 +\n .../run_2/source_manifest.json                     |  375 +++++++\n .../verification.json                              |  167 ++++\n scripts/replay_muon_birth_c1_lr_response.py        |  225 +++++\n .../interface/muon_birth_c1_lr_form_response.py    |  210 ++++\n .../muon_birth_c1_lr_scalar_contraction.py         |  187 ++++\n tests/test_muon_birth_c1_lr_form_response.py       |  118 +++\n tests/test_muon_birth_c1_lr_replay.py              |   49 +\n tests/test_muon_birth_c1_lr_scalar_contraction.py  |  232 +++++\n theory/muon_birth_c1_lr_response_20261008.md       |  250 +++++\n 34 files changed, 8298 insertions(+)\n"
+      }
+    },
+    {
+      "command": "& C:\\Python314\\python.exe -m pytest -q tests/test_muon_birth_c1_lr_replay.py",
+      "cwd": "C:/Users/carbe/Downloads/BHSM_muon_parent_maxwell_worktree_20261001",
+      "result": {
+        "exit_code": 0,
+        "output": "....                                                                     [100%]\r\n4 passed in 5.78s\r\n"
+      }
+    },
+    {
+      "command": "& C:\\Python314\\python.exe scripts/replay_muon_birth_c1_lr_response.py --out artifacts/muon_birth_c1_lr_response_20261008/run_1",
+      "cwd": "C:/Users/carbe/Downloads/BHSM_muon_parent_maxwell_worktree_20261001",
+      "result": {
+        "exit_code": 0,
+        "output": "{\"actual_LR_enclosure\": false, \"audit_passed\": true, \"complete_CAR_verdict\": null, \"first_unavailable\": {\"argument\": \"parent_jet\", \"derivative_order\": 0, \"operand\": \"P_F\", \"tuple_index\": 0}, \"imported_exact_checks\": 43, \"imported_pinned_sources\": 43, \"physical_member_selected\": false, \"physical_underdetermination_proved\": false, \"preserved_milestone_files\": 38, \"products\": {\"c1_lr_response.json\": {\"bytes\": 61038, \"sha256\": \"9ab23386fe49b2ddb31e8bc28510199a927981a9a797e6cc788e58dce8c3b4e3\"}, \"source_manifest.json\": {\"bytes\": 15418, \"sha256\": \"5c74f1c12ed381c74d660d50eed2c64486230ac0addc7bce69fad629047e41a3\"}}}\r\n"
+      }
+    },
+    {
+      "command": "& C:\\Python314\\python.exe scripts/replay_muon_birth_c1_lr_response.py --out artifacts/muon_birth_c1_lr_response_20261008/run_2",
+      "cwd": "C:/Users/carbe/Downloads/BHSM_muon_parent_maxwell_worktree_20261001",
+      "result": {
+        "exit_code": 0,
+        "output": "{\"actual_LR_enclosure\": false, \"audit_passed\": true, \"complete_CAR_verdict\": null, \"first_unavailable\": {\"argument\": \"parent_jet\", \"derivative_order\": 0, \"operand\": \"P_F\", \"tuple_index\": 0}, \"imported_exact_checks\": 43, \"imported_pinned_sources\": 43, \"physical_member_selected\": false, \"physical_underdetermination_proved\": false, \"preserved_milestone_files\": 38, \"products\": {\"c1_lr_response.json\": {\"bytes\": 61038, \"sha256\": \"9ab23386fe49b2ddb31e8bc28510199a927981a9a797e6cc788e58dce8c3b4e3\"}, \"source_manifest.json\": {\"bytes\": 15418, \"sha256\": \"5c74f1c12ed381c74d660d50eed2c64486230ac0addc7bce69fad629047e41a3\"}}}\r\n"
+      }
+    },
+    {
+      "command": "C:\\Python314\\python.exe - (exact run_1/run_2 byte comparison with hashlib.sha256)",
+      "cwd": "C:/Users/carbe/Downloads/BHSM_muon_parent_maxwell_worktree_20261001",
+      "result": {
+        "exit_code": 0,
+        "output": "{\"products\": [{\"byte_identical\": true, \"bytes\": 61038, \"file\": \"c1_lr_response.json\", \"sha256\": \"9ab23386fe49b2ddb31e8bc28510199a927981a9a797e6cc788e58dce8c3b4e3\"}, {\"byte_identical\": true, \"bytes\": 270, \"file\": \"output_hashes.json\", \"sha256\": \"6eb694568f15b46c0e32d9135dfbfd201c75d6b0f0717ece0ffac9faae519b23\"}, {\"byte_identical\": true, \"bytes\": 15418, \"file\": \"source_manifest.json\", \"sha256\": \"5c74f1c12ed381c74d660d50eed2c64486230ac0addc7bce69fad629047e41a3\"}], \"two_replays_byte_identical\": true}\r\n"
+      }
+    }
+  ],
+  "focused_tests": {
+    "passed": 163,
+    "new_checks": 47,
+    "preserved_CAR_checks": 23,
+    "preserved_point_input_checks": 26,
+    "preserved_parametric_checks": 67,
+    "failures": 0
+  },
+  "deterministic_replay": {
+    "products": [
+      {
+        "byte_identical": true,
+        "bytes": 61038,
+        "file": "c1_lr_response.json",
+        "sha256": "9ab23386fe49b2ddb31e8bc28510199a927981a9a797e6cc788e58dce8c3b4e3"
+      },
+      {
+        "byte_identical": true,
+        "bytes": 270,
+        "file": "output_hashes.json",
+        "sha256": "6eb694568f15b46c0e32d9135dfbfd201c75d6b0f0717ece0ffac9faae519b23"
+      },
+      {
+        "byte_identical": true,
+        "bytes": 15418,
+        "file": "source_manifest.json",
+        "sha256": "5c74f1c12ed381c74d660d50eed2c64486230ac0addc7bce69fad629047e41a3"
+      }
+    ],
+    "two_replays_byte_identical": true
+  },
+  "preservation": {
+    "baseline_milestone_files": 38,
+    "guard_modified": false,
+    "old_producers_recomputed": false
+  },
+  "scientific_error_scope": {
+    "arithmetic": "Exact rational/symbolic identities; directed decimal rounding on inherited enclosure inputs. Additional digits do not improve physical input precision.",
+    "local_symbol": "Actual gamma/Euler coefficient identity, no physical m or momentum evaluated; no Lorentzian-to-heat embedding inferred.",
+    "form_enclosure": "Conditional verified A1=A0+E on full one-end domain and controlled closed channel/sector; actual incoming E norm and bound remain null.",
+    "contraction": "Exact fully supplied finite real-linear constraint identifiability; no physical C1 nullspace or independent-datum necessity proved.",
+    "remaining": "P_F order0 actual incoming paired LR response; directional real scalar-adjoint source/domain contraction then required. Complete E1/CAR/moment/Pauli values unevaluated.",
+    "diagnostic_errors": "One Windows rg path-glob read produced invalid-filename diagnostic; corrected with rg -g and exact source path. No scientific operand substituted and no test/replay failure.",
+    "line_endings": "Git printed anticipated LF-to-CRLF warnings while staging. A scoped companion/.gitattributes (* -text) preserves imported original-byte manifest identities on Windows; bounded import guards passed after this correction.",
+    "receipt_write": "Final verification receipt exceeded Windows CreateProcess command-line length in a shell write attempt (os error206). No command ran; regenerated the owned JSON with apply_patch instead. No scientific calculation or test failure."
+  },
+  "classifications": [
+    "DERIVED",
+    "EVALUATED",
+    "CONTROL_ONLY",
+    "UNEVALUATED",
+    "OWNER_DEFINITION_GAP"
+  ],
+  "owner_definition_gap": [],
+  "publication": {
+    "five_audits_completed": true,
+    "verified_additive_result_ready": true,
+    "standalone_companion_originally_published": false,
+    "new_repository_companion_integrated": true,
+    "physical_LR_enclosure_obtained": false,
+    "complete_E1_instantiated": false,
+    "remote_head_verification": "Performed after push; no self-referential commit SHA embedded"
+  },
+  "publication_audits": [
+    {
+      "command": "& C:\\Python314\\python.exe tools/audit_bhsm_status.py --format json",
+      "exit_code": 0,
+      "output": "{\r\n  \"audit\": \"bhsm_status\",\r\n  \"checks\": {\r\n    \"candidate_architecture_complete\": true,\r\n    \"completion_payload_candidate_only\": true,\r\n    \"completion_payload_not_proven\": true,\r\n    \"dark_matter_not_solved\": true,\r\n    \"frozen_predictions_unchanged\": true,\r\n    \"full_bhsm_not_proven\": true,\r\n    \"mass_numerical_closure_open\": true,\r\n    \"official_predictions_unchanged\": true,\r\n    \"standard_model_not_fully_derived\": true\r\n  },\r\n  \"passed\": true,\r\n  \"verdict_labels\": [\r\n    \"BHSM_REPO_STATUS_REFRESH_COMPLETE\",\r\n    \"FULL_BHSM_STATUS_SYNCHRONIZED\",\r\n    \"SM_DERIVATION_REMAINS_OPEN\",\r\n    \"MASS_NUMERICAL_CLOSURE_REMAINS_OPEN\"\r\n  ]\r\n}\r\n",
+      "passed": true
+    },
+    {
+      "command": "& C:\\Python314\\python.exe tools/audit_forbidden_claims.py --format json",
+      "exit_code": 0,
+      "output": "{\r\n  \"allowed_example_paths\": [\r\n    \"docs/forbidden_claims.md\"\r\n  ],\r\n  \"audit\": \"forbidden_claims\",\r\n  \"findings\": [],\r\n  \"passed\": true,\r\n  \"verdict_labels\": [\r\n    \"FORBIDDEN_CLAIM_GUARDRAILS_ADDED\"\r\n  ]\r\n}\r\n",
+      "passed": true
+    },
+    {
+      "command": "& C:\\Python314\\python.exe tools/audit_frozen_prediction_integrity.py --format json",
+      "exit_code": 0,
+      "output": "{\r\n  \"audit\": \"frozen_prediction_integrity\",\r\n  \"files\": [\r\n    {\r\n      \"actual_sha256\": \"9EA147C56537520C86D3C4F9B864C6BA98BAC9E64931EDAE96449F3B335A36C4\",\r\n      \"expected_sha256\": \"9EA147C56537520C86D3C4F9B864C6BA98BAC9E64931EDAE96449F3B335A36C4\",\r\n      \"path\": \"docs/frozen_predictions.md\",\r\n      \"unchanged\": true\r\n    },\r\n    {\r\n      \"actual_sha256\": \"F38210E0689871A25A9D5B0A1A4239883B7240CD7D0E25CDCF4C8CAB72A2CBE7\",\r\n      \"expected_sha256\": \"F38210E0689871A25A9D5B0A1A4239883B7240CD7D0E25CDCF4C8CAB72A2CBE7\",\r\n      \"path\": \"docs/frozen_predictions.json\",\r\n      \"unchanged\": true\r\n    }\r\n  ],\r\n  \"frozen_predictions_changed\": false,\r\n  \"passed\": true\r\n}\r\n",
+      "passed": true
+    },
+    {
+      "command": "& C:\\Python314\\python.exe tools/verify_precision.py",
+      "exit_code": 0,
+      "output": "PASS: precision gate verified (1.066e-14 <= 1.000e-13).\r\n",
+      "passed": true
+    },
+    {
+      "command": "& C:\\Python314\\python.exe tools/audit_public_readiness.py --format json",
+      "exit_code": 0,
+      "output": "{\r\n  \"audit\": \"bhsm_public_readiness\",\r\n  \"checks\": {\r\n    \"citation\": {\r\n      \"cff_version\": \"1.2.0\",\r\n      \"doi\": \"10.5281/zenodo.20663419\",\r\n      \"failures\": [],\r\n      \"license\": \"LicenseRef-AllRightsReserved\",\r\n      \"passed\": true,\r\n      \"release_date\": \"2026-06-26\",\r\n      \"release_tag\": \"v1.1.0\",\r\n      \"title\": \"Berger-Hopf Standard Model: Artifact-Backed Geometric Physics Research Framework\",\r\n      \"zenodo_archive_date\": \"2026-06-12\",\r\n      \"zenodo_archive_version\": \"v1.2.0\"\r\n    },\r\n    \"current_claims\": {\r\n      \"findings\": [],\r\n      \"passed\": true\r\n    },\r\n    \"frozen_predictions\": {\r\n      \"files\": [\r\n        {\r\n          \"actual_sha256\": \"9EA147C56537520C86D3C4F9B864C6BA98BAC9E64931EDAE96449F3B335A36C4\",\r\n          \"expected_sha256\": \"9EA147C56537520C86D3C4F9B864C6BA98BAC9E64931EDAE96449F3B335A36C4\",\r\n          \"path\": \"docs/frozen_predictions.md\",\r\n          \"unchanged\": true\r\n        },\r\n        {\r\n          \"actual_sha256\": \"F38210E0689871A25A9D5B0A1A4239883B7240CD7D0E25CDCF4C8CAB72A2CBE7\",\r\n          \"expected_sha256\": \"F38210E0689871A25A9D5B0A1A4239883B7240CD7D0E25CDCF4C8CAB72A2CBE7\",\r\n          \"path\": \"docs/frozen_predictions.json\",\r\n          \"unchanged\": true\r\n        }\r\n      ],\r\n      \"frozen_predictions_changed\": false,\r\n      \"passed\": true\r\n    },\r\n    \"hygiene\": {\r\n      \"allowed_large_artifact_limit_bytes\": 12582912,\r\n      \"allowed_large_artifacts\": [\r\n        {\r\n          \"bytes\": 10525866,\r\n          \"path\": \"artifacts/BHSM_aether_n3_fresh_sbp_fifth_v0_priority_v17_36.json\"\r\n        },\r\n        {\r\n          \"bytes\": 10722599,\r\n          \"path\": \"artifacts/BHSM_aether_n3_fresh_sbp_three_owner_priority_v17_47.json\"\r\n        },\r\n        {\r\n          \"bytes\": 12515555,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_C2_STOP_DOP853_ADAPTIVE_BORDERED_RHS_RESPONSE.json\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 15841669,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_C2_STOP_DOP853_ADAPTIVE_BORDERED_RHS_RESPONSE_CERTIFICATE.json\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 14094876,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_C2_STOP_DOP853_ADAPTIVE_SELECTED_PROJECTOR_GRAPH.json\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 17478672,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_C2_STOP_DOP853_BORDERED_RESPONSE_SECOND_VARIATION.json\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 15073608,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_C2_STOP_FULL_BORDERED_RHS_RESPONSE.json\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 25291911,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_C2_STOP_FULL_SELECTED_PROJECTOR_GRAPH.json\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 13925602,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_C2_STOP_HALF_STEP_FINE_HYBRID_GRAPH_JACOBIAN_RECONNAISSANCE.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 27774619,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_C2_STOP_QUARTER_STEP_FINE_HYBRID_GRAPH_JACOBIAN_RECONNAISSANCE.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 14361466,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_ARB_INTERACTION_TAYLOR26_MACRO_MAPS.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 72207241,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_BLOCK_NEWTON_PREDICTOR.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 22595029,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_AUGMENTED_FIXED_DESCRIPTOR_NEWTON_ENDPOINT_CANDIDATE.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 98072216,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_CORRELATED_DESCRIPTOR_AUGMENTED_JACOBIANS.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 15882019,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_GREEN_COMPONENTWISE_TWO_RADIUS_SCREEN.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 55828875,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_GREEN_MIDPOINT_AMBIENT_DF.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 15728311,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_GREEN_MIXED_HS_CAUSAL_TRANSPORT.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 41722453,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_CURRENT_GREEN_MIXED_TRANSVERSE_ALL_ENDPOINTS.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 25304028,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_AFFINE_CENTER_BORDERED_RESPONSE_FIRST_VARIATION.json\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 33555226,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_AFFINE_CENTER_BORDERED_RESPONSE_SECOND_VARIATION.json\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 28974337,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_AFFINE_CENTER_BORDERED_RHS_RESPONSE.json\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 24911535,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_AFFINE_CENTER_SELECTED_PROJECTOR_GRAPH.json\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 56354452,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_SIGNED_FULL_TRANSVERSE_CURVATURE_NODES_00_23.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 56326421,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_EXACT_SIGNED_FULL_TRANSVERSE_CURVATURE_NODES_24_47.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 15474079,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_FINITE_PROPAGATOR_Z1_RECONNAISSANCE.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 27774704,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_FIRST_HS_NEWTON_CENTER_GRAPH_JACOBIAN.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 20453304,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_FIRST_HS_NEWTON_ENDPOINT_TANGENT.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 27982884,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_FIRST_HS_NEWTON_MIDPOINT_GRAPH_JACOBIAN.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 55117636,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_HERMITE_SIMPSON_BLOCK_NEWTON_PREDICTOR.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 27983297,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_HERMITE_SIMPSON_MIDPOINT_GRAPH_JACOBIAN.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 55117625,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_RATE_CONSISTENT_BLOCK_NEWTON_PREDICTOR.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 36414592,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_RECENTERED_CONE_BORDERED_RESPONSE_FIRST_VARIATION.json\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 48333122,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_RECENTERED_CONE_BORDERED_RESPONSE_SECOND_VARIATION.json\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 41758016,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_RECENTERED_CONE_BORDERED_RHS_RESPONSE.json\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 24911532,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_RECENTERED_CONE_SELECTED_PROJECTOR_GRAPH.json\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 27774707,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_CURRENT_CENTER_GRAPH_JACOBIAN.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 55117900,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_HERMITE_SIMPSON_BLOCK_NEWTON_PREDICTOR.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 55678350,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_HS_NEWTON_LINE_SEARCH_PREDICTOR.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 55118294,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_RATE_CONSISTENT_BLOCK_NEWTON_PREDICTOR.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 27774560,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_RATE_CONSISTENT_CENTER_GRAPH_JACOBIAN.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 27983314,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_SECOND_RATE_CONSISTENT_MIDPOINT_GRAPH_JACOBIAN.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 27774601,\r\n          \"path\": \"artifacts/flagship_integration/BHSM_N12_GATE7_SIGNED_GREEN_CURRENT_CENTER_GRAPH_JACOBIAN.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        },\r\n        {\r\n          \"bytes\": 11125650,\r\n          \"path\": \"artifacts/muon_first_order_complement_20261006/run_2/first_order_compact_reduction.npz\",\r\n          \"retention\": \"EXACT_REVIEWED_HASH\"\r\n        }\r\n      ],\r\n      \"credential_files\": [],\r\n      \"large_file_threshold_bytes\": 10485760,\r\n      \"malformed_lfs_pointers\": [],\r\n      \"merge_markers\": [],\r\n      \"passed\": true,\r\n      \"secret_findings\": [],\r\n      \"tracked_cache_or_build_junk\": [],\r\n      \"tracked_env_files\": [],\r\n      \"unexpected_large_files\": []\r\n    },\r\n    \"license_visibility\": {\r\n      \"failures\": [],\r\n      \"passed\": true\r\n    },\r\n    \"markdown_links\": {\r\n      \"broken\": [],\r\n      \"checked\": 60,\r\n      \"passed\": true\r\n    },\r\n    \"reproduction\": {\r\n      \"missing_cli_commands\": [],\r\n      \"missing_documented_commands\": [],\r\n      \"missing_scripts\": [],\r\n      \"passed\": true,\r\n      \"reviewer_smoke_target\": true\r\n    },\r\n    \"required_files\": {\r\n      \"empty\": [],\r\n      \"missing\": [],\r\n      \"passed\": true\r\n    },\r\n    \"science_alignment\": {\r\n      \"missing_phrases\": {},\r\n      \"passed\": true\r\n    }\r\n  },\r\n  \"external_urls\": [\r\n    \"https://doi.org/10.5281/zenodo.20663419\",\r\n    \"https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml/badge.svg\",\r\n    \"https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/institutional.yml/badge.svg\",\r\n    \"https://ncarberry64.github.io/Berger-Hopf-Standard-Model/\",\r\n    \"https://orcid.org/0009-0000-6650-3485\",\r\n    \"https://zenodo.org/badge/DOI/10.5281/zenodo.20663419.svg\"\r\n  ],\r\n  \"passed\": true,\r\n  \"verdict\": \"BHSM_REPOSITORY_PUBLIC_REVIEW_READY\",\r\n  \"version\": \"v6.21.0\"\r\n}\r\n",
+      "passed": true
+    }
+  ]
+}

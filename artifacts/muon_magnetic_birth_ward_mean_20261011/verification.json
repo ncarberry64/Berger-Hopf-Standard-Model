@@ -1,0 +1,85 @@
+{
+  "executions": [
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "bhsm.interface.muon_magnetic_birth_ward_mean",
+        "--mean-directory",
+        "artifacts/muon_magnetic_birth_mean_rows_20261011/run_1",
+        "--output",
+        "artifacts/muon_magnetic_birth_ward_mean_20261011/run_1"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "stderr_path": "run_1.stderr.txt",
+      "stdout_path": "run_1.stdout.txt"
+    },
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "bhsm.interface.muon_magnetic_birth_ward_mean",
+        "--mean-directory",
+        "artifacts/muon_magnetic_birth_mean_rows_20261011/run_1",
+        "--output",
+        "artifacts/muon_magnetic_birth_ward_mean_20261011/run_2"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "stderr_path": "run_2.stderr.txt",
+      "stdout_path": "run_2.stdout.txt"
+    }
+  ],
+  "files": [
+    {
+      "bytes": 12717,
+      "path": "artifacts/muon_magnetic_birth_ward_mean_20261011/run_1/result.json",
+      "sha256": "f8dc51da0a89a4060c309d3626d213fed2ab9d063584c7d04071b9f106834c7e"
+    },
+    {
+      "bytes": 735457,
+      "path": "artifacts/muon_magnetic_birth_ward_mean_20261011/run_1/application.npz",
+      "sha256": "bd254130a1cd6110adea8650778f8a444d2cd975ec2dda1250dc21105932fe5d"
+    },
+    {
+      "bytes": 12717,
+      "path": "artifacts/muon_magnetic_birth_ward_mean_20261011/run_2/result.json",
+      "sha256": "f8dc51da0a89a4060c309d3626d213fed2ab9d063584c7d04071b9f106834c7e"
+    },
+    {
+      "bytes": 735457,
+      "path": "artifacts/muon_magnetic_birth_ward_mean_20261011/run_2/application.npz",
+      "sha256": "bd254130a1cd6110adea8650778f8a444d2cd975ec2dda1250dc21105932fe5d"
+    }
+  ],
+  "independent_replay_pairs": [
+    {
+      "byte_identical": true,
+      "filename": "result.json"
+    },
+    {
+      "byte_identical": true,
+      "filename": "application.npz"
+    }
+  ],
+  "physical_formation_or_Pauli_completed": false,
+  "tests": {
+    "argv": [
+      "C:\\Python314\\python.exe",
+      "-m",
+      "pytest",
+      "--noconftest",
+      "-q",
+      "tests/test_muon_magnetic_birth_ward_mean.py"
+    ],
+    "exit_code": 0,
+    "stdout": "2 passed in 1.25s"
+  }
+}

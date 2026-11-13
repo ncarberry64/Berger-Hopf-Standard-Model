@@ -1,0 +1,177 @@
+{
+  "actual_evaluations": {
+    "all_256_ordered_current_products_vs_exact_Slater_mixture_residual": 0.0,
+    "all_256_ordered_current_products_vs_mean_covariance_quasifree_maximum": 0.25,
+    "current_bilinear_adjoint_residual": 0.0,
+    "exact_field_expectation_even_pair_maximum": 0.0,
+    "exact_pair_total_charge": 0.0,
+    "exact_pair_total_charge_variance": 0.0,
+    "mean_covariance_quasifree_total_charge_variance": 1.0,
+    "original_action_electron_family_invariance_residual": 0.0,
+    "original_action_full18_current_Gram_identity_residual": 0.0,
+    "original_action_vertex_Hermiticity_residual": 0.0,
+    "original_material_Gauss_vs_Hamiltonian_vertex_numerator_residual": 0.0
+  },
+  "artifact": {
+    "path": "original_full18_vertices_and_exact_pair_incoming_field_current.npz",
+    "sha256": "73983a069053d9f21e574c7988b6f0915f7236ae57fa0c615eaff944011969a6"
+  },
+  "benchmark_id": "BHSM_NEW_COLLIDER_ELECTRON_POSITRON_TO_MUON_ANTIMUON_V1",
+  "classification": "EXECUTED_ORIGINAL_ACTION_FULL18_VERTEX_COEFFICIENTS_AND_EXACT_INCOMING_OPERATOR_FIELD_CURRENT_ALGEBRA_WITH_PHYSICAL_PACKET_BACKGROUND_OPEN",
+  "equations": {
+    "EM_density": "rho_Q(x)=-(1/2)*sum_s U_s^dagger U_s+(1/2)*sum_s V_s^dagger V_s, only when U,V are actual Higgs-selected charge -1 Dirac sections and their CAR/antiparticle embedding is bound.",
+    "Hamiltonian_vertices": "delta Hcan/dA_t=(-i G_c)/N; delta Hcan/dA_i=(-i alpha_i G_c)/R4; delta Hcan/dH_r=M_fixedY(basis_r)",
+    "actual_round_slice_Hcan": "-i alpha^a(E_a+Omega_a)/R4+(3/2)gamma5/R4+M_fixedY(H)-i Omega_tau",
+    "bilinear_difference": "J_V(x)=sum_ij (F(x)^dagger V(x)F(x))_ij B_ij; F=[U_up,U_down,V_up,V_down]",
+    "first_moment": "mean(B)=diag(1/2,1/2,-1/2,-1/2); mean(chi_hat)=0 by even parity",
+    "head_on_charge_dipole": "For normalized packets centered at z_e=-separation/2 and z_p=+separation/2, integral z*rho_Q=separation; this moment uses only declared centers, not a chosen packet shape.",
+    "incoming_operator_field": "chi_hat(x)=sum_s U_s(x)*a_s+V_s(x)*b_s^dagger",
+    "original_central_radial_sign": "X=dot(A_r)-partial_r(A_t)+[A_t,A_r], q=M*k*X. For the radial-only central reduction, the Maxwell A_t Euler term is +partial_r(q), so partial_r(q)=-lepton_material_action_source-other_actual_action_sources. General angular/interface loads remain in the full Gauss equation.",
+    "original_full18_evolution": "i partial_tau chi=Hcan chi; chi=R4^(3/2)*psi",
+    "original_material_Gauss_lepton_source": "delta S_lepton/dA_t^c = canonical_spatial_density*(1/2)*sum_s[U_s^dagger*(iG_c)*U_s-V_s^dagger*(iG_c)*V_s]; G_c are the ORIGINAL unitTr16 H1,H2,H3,HY matrices. No extra e, trace factor or family multiplicity. N*dHcan/dA_t cancels N once.",
+    "packet_energy": "Each physical packet must be a section in the selected particle/antiparticle spectral subspace of the same action Dirac Cauchy problem, with central-energy expectation E_beam and the declared opposite incoming momentum/center data.",
+    "shared_Gauss": "delta S_total/dA_t=delta S_gauge/dA_t+delta S_H/dA_t+delta S_lepton/dA_t=0, including interface normal flux on the actual Cauchy domain.",
+    "source_sign": "At fixed canonical measure the lepton action variation is -<delta Hcan>; measure/coframe/domain variations must also be included in full metric and event rows.",
+    "total_charge": "integral rho_Q=0 for normalized particle and antiparticle sections; this does not imply rho_Q(x)=0.",
+    "width_separation": "Width and separation constrain moments of the supplied sections; these moments do not select their spectral coefficients, phases, polarizations or transverse homogeneous fields."
+  },
+  "executable_apis": {
+    "Gauss_source": "original_material_Gauss_source(U,V,canonical_spatial_density,rho,annihilators,normalization_owner,tests=None,quadrature=None) returns all four original material A_t action-cotangent source densities and optionally their actual weak loads. It retains distributed density and supplies no net-charge-to-local-zero substitution.",
+    "convention": "Pure component current applications may be averaged on a common observable/background. Wick of the mean covariance is rejected by the exact two-current tensor.",
+    "current": "apply_incoming_packet_current(U,V,canonical_Hamiltonian_vertices,rho,annihilators,metadata) constructs actual operator field, exact current mean and ordered/connected two-current products on supplied physical packet/background maps.",
+    "packet": "construct_action_packet_sections(F,D,H,R4,Omega,Cu,Cv,Cauchy_quadrature) synthesizes U/V and spatial derivatives from supplied same-action basis coefficients, checks the full Cauchy CAR Gram, and executes original canonical_lepton_hamiltonian_maps for both Dirac proper-time first jets. It supplies no default spectral coefficients.",
+    "pairing": "validate_action_packet_Cauchy_Gram(U,V,quadrature) enforces the complete represented canonical CAR pairing, with no replacement by point-fiber Gram."
+  },
+  "existing_background_routes_checked": [
+    "The intrinsic lepton constructor consumes actual H, R4, gauge connection, value and spatial-derivative maps; it selects no stationary background.",
+    "The raw228 primal operator consumes the earlier common enclosure fields and uses a constant-angular invariant trial subspace, not a localized two-beam spatial eigenbasis.",
+    "The v15.38 conformal constraint solver assumes a particular conformal S7 metric, time-symmetric scalar eta/sigma and normalized FR source. Its callable signature has no electron/positron packet or full18 CAR-current operand; its selected branch is not this collider preparation.",
+    "The old Higgs stationary branch uses an explicitly non-action-derived universal GeV calibration and does not solve the new common Einstein/gauge/Higgs/matter constraints. It was not imported."
+  ],
+  "immutable_preparation": {
+    "packet_sha256": "20db0b3b1a5cb09be1979b0fb24027bbb70f713d4001bd8c50e9807137a136d3",
+    "path": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\outputs\\bhsm_collider_ee_mumu_preparation_20261014\\run_2\\result.json",
+    "sha256": "4eb26ad104914e6d78cd686157aecbad83e8bb376e642eb514430377d35fe369"
+  },
+  "operand_roles": {
+    "controllable_preparation": "Beam energy, width/spread, separation, timing, polarization and explicitly selected packet family describe the preparation; they do not modify BHSM action coefficients.",
+    "dynamical_unknowns": "The common metric/extrinsic curvature, gauge connection/canonical flux and Higgs/scalar fields respond through the original coupled constraints and evolution. Their sourced residuals cannot be removed by setting the prepared local current to zero.",
+    "independent_homogeneous_preparation": "Incoming radiative/transverse Cauchy data and boundary/asymptotic preparation remain independent state data until chosen or supplied. They are not automatically a zero exterior.",
+    "mathematical_controls": "Quadrature, represented basis and numerical tolerances approximate the owned domain and equations; they are not new physical closure terms.",
+    "physical_residual": "A nonzero sourced Gauss/action residual can be the expected signal of an unevaluated physical current or field variable, or of an incorrect zero-source/background assumption. The finite identities here do not require that physical residual to vanish."
+  },
+  "output_scope": "Actual retained action vertices and exact finite prepared field/current operators were evaluated. No physical U/V packet section or incoming Maxwell/Higgs/metric Cauchy field was supplied or claimed evaluated.",
+  "physical_collider_incoming_Cauchy_fields_or_scattering_prediction_admitted": false,
+  "preserved": {
+    "QED_amplitude_substituted": false,
+    "all_other_outgoing_action_coupled_zoo_preserved": true,
+    "head_on_equal_central_energy": true,
+    "measured_mass_or_coupling_fitting": false,
+    "muon_pair_is_output_readout": true,
+    "numerical_energy_width_separation_profile_unselected": true,
+    "odd_field_mean_used_as_classical_commuting_spinor_source": false,
+    "old_C2_geometry_or_history_spliced": false,
+    "unpolarized_pair": true,
+    "zero_impact_parameter": true
+  },
+  "producer_sha256": "0a42e6f0f271d2704b7b4ae0142167a9f17fa28a2979093b46c2b65a796d1b1f",
+  "smallest_actual_missing_input_and_solve": {
+    "constraint": "For that supplied preparation, solve the original coupled Hamiltonian/momentum/gauge constraints with the nonzero local packet gauge/Higgs currents and interface fluxes. Setting every bosonic field to an old vacuum or a zero current from <psi>=0 would violate this source application.",
+    "no_new_BHSM_equation_required_for_this_obstruction": true,
+    "preparation": "One common collision Cauchy preparation/domain: its background matter/geometry and incoming radiation/asymptotic boundary condition, together with spectral packet coefficients or an explicitly selected experimental packet family. E_beam, width and separation alone fix finitely many moments, not a Cauchy section.",
+    "spectral": "On that same regular geometry/domain, build the full18 Dirac spatial/Cauchy operator and its actual particle/antiparticle subspaces; insert supplied packet coefficients, normalize in the complete action Cauchy Gram, and apply these exported original vertices.",
+    "unselected_freedom": "Even for fixed packet charge, Gauss constrains the divergence/longitudinal momentum and its boundary flux. It does not select transverse homogeneous/radiative Cauchy data; they belong to the external preparation. No such fields were set to zero."
+  },
+  "source_citations": {
+    "H_selected_charged_injection": {
+      "first_line": 104,
+      "last_line": 135,
+      "path": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\muon_magnetic_open_lepton_vertex.py",
+      "sha256": "08c637687e7279434bb1f91a37b57403778f7f1558229f41cb52f623dd61b526"
+    },
+    "canonical_current_representation": {
+      "first_line": 57,
+      "last_line": 90,
+      "path": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\muon_native_dirac_hamiltonian.py",
+      "sha256": "7344b1dfc0358962a281fffea59c8d40c1449a6fbcf9b171f514a28eb7b26ccd"
+    },
+    "canonical_full18_action": {
+      "first_line": 131,
+      "last_line": 168,
+      "path": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\muon_native_dirac_hamiltonian.py",
+      "sha256": "7344b1dfc0358962a281fffea59c8d40c1449a6fbcf9b171f514a28eb7b26ccd"
+    },
+    "common_raw_background_required": {
+      "first_line": 33,
+      "last_line": 42,
+      "path": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\muon_primal_intrinsic_lepton_operator.py",
+      "sha256": "d3415b13dea7831997c8ffeff5d457b3a008d4393048e642d7df831036e8ffe4"
+    },
+    "conditional_Higgs_scale": {
+      "first_line": 91,
+      "last_line": 114,
+      "path": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\ae31_c2_intrinsic_m4_lepton_action.py",
+      "sha256": "f3fee1ef24a3f13ef94d4ce5b146f9ac7a827045e369819b35ee8af5ccf0678a"
+    },
+    "incomplete_physical_poles": {
+      "first_line": 148,
+      "last_line": 174,
+      "path": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\ae31_c2_intrinsic_m4_lepton_action.py",
+      "sha256": "f3fee1ef24a3f13ef94d4ce5b146f9ac7a827045e369819b35ee8af5ccf0678a"
+    },
+    "literal_vertices": {
+      "first_line": 78,
+      "last_line": 107,
+      "path": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\muon_magnetic_open_lepton_vertex.py",
+      "sha256": "08c637687e7279434bb1f91a37b57403778f7f1558229f41cb52f623dd61b526"
+    },
+    "native_spatial_trial_scope": {
+      "first_line": 21,
+      "last_line": 34,
+      "path": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\muon_primal_intrinsic_lepton_operator.py",
+      "sha256": "d3415b13dea7831997c8ffeff5d457b3a008d4393048e642d7df831036e8ffe4"
+    },
+    "no_implicit_H_background": {
+      "first_line": 7,
+      "last_line": 12,
+      "path": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\muon_intrinsic_higgs_weak_action.py",
+      "sha256": "6f61f85cadf99e8e4a049f6a4965b030db8fc8eaf9b1c1a903df77b1c7491be5"
+    },
+    "old_conformal_constraint_domain": {
+      "first_line": 62,
+      "last_line": 92,
+      "path": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\aether_semiclassical_conformal_constraint_v15_38.py",
+      "sha256": "b8bbe39c683bc4c8182c0282e301e0fdea5851ab799ed53223cccd66e228c550"
+    },
+    "old_constant_angular_basis": {
+      "first_line": 51,
+      "last_line": 59,
+      "path": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\muon_primal_intrinsic_lepton_operator.py",
+      "sha256": "d3415b13dea7831997c8ffeff5d457b3a008d4393048e642d7df831036e8ffe4"
+    },
+    "old_constraint_solver_inputs": {
+      "first_line": 93,
+      "last_line": 127,
+      "path": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\aether_semiclassical_conformal_constraint_v15_38.py",
+      "sha256": "b8bbe39c683bc4c8182c0282e301e0fdea5851ab799ed53223cccd66e228c550"
+    },
+    "original_radial_curvature_sign": {
+      "first_line": 112,
+      "last_line": 117,
+      "path": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\muon_parent_maxwell_full_weak.py",
+      "sha256": "c1fb703967a644306d3521d457a6d7c778a49d89c1e081b401487a25b7491565"
+    },
+    "original_unit_trace_charge_normalization": {
+      "first_line": 49,
+      "last_line": 65,
+      "path": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\muon_native_product_factor_graph.py",
+      "sha256": "4a5feeb0e32edc0505a44b45a19d6bdc821220cc9cf5187e35f59fe7720a7c18"
+    },
+    "scalar_action_requires_fields": {
+      "first_line": 258,
+      "last_line": 274,
+      "path": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\muon_intrinsic_higgs_weak_action.py",
+      "sha256": "6f61f85cadf99e8e4a049f6a4965b030db8fc8eaf9b1c1a903df77b1c7491be5"
+    }
+  }
+}

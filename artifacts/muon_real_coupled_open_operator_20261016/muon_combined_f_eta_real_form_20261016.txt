@@ -1,0 +1,115 @@
+COMBINED f_eta CONTACT AND ACTUAL REAL FULL-D5 OPEN FORMS
+2026-10-16 -- coefficient/form construction, not physical-domain admission
+
+Primary source relation:
+completion/foundational_dirac_spin_glue_v14_45.py:107-112 owns
+  i Gamma_perp (partial_s+1/2 partial_s log J+m_eta),
+  m_eta=-partial_s log sin f_eta.
+aether_eta_wall_material_response_v15_26.py:176 owns the orientation carrier
+  u_eta=grad(f_eta)/|grad(f_eta)| ON THE REGULAR WALL COLLAR.
+The exact signed D5 convention uses
+  Eta=i(-n0 Gamma0+eps n4 Gamma4)m_eta.
+
+Put f0=(f_t-z f_rho)/N, f4=f_rho/C and Q=f4^2-f0^2.
+On a regular spacelike f-collar, n0=-f0/sqrt(Q), n4=f4/sqrt(Q).
+Then n(f)=sqrt(Q), m_eta=-cot(f)sqrt(Q). Consequently
+  Eta=-i cot(f)(f0 Gamma0+eps f4 Gamma4).
+The normalizing square root cancels BEFORE any extension. The combined
+coefficient and all its supplied source derivatives are regular across Q=0
+where sin(f) is nonzero. This does not manufacture a spacelike unit normal
+or extend a Gaussian/normal-coordinate chart into the core.
+
+For an independent analytic source x,
+  f0_x=(ft_x-z_x fr-z fr_x)/N-f0 N_x/N,
+  f4_x=fr_x/C-f4 C_x/C,
+  Eta_x=i csc(f)^2 f_x (f0 Gamma0+eps f4 Gamma4)
+         -i cot(f)(f0_x Gamma0+eps f4_x Gamma4).
+No source coefficient is conjugated. All particle/conjugate Clifford
+matrices, spin rows, internal carriers and sheet orientations are retained.
+
+At the anchored wall ft=0 in fixed material rho and U=C z/N, so
+  f0=-U f4,
+  m_eta=-sqrt(1-U^2) f4 cot(f),
+  Eta=-i f4 cot(f)(eps Gamma4-U Gamma0).
+This agrees with the exact d5_wall_material_eta result, including its
+normal sqrt factors; it is not the old constant radial mass shortcut.
+
+The later d5_sigma_foliation_eta expression instead projects df onto d sigma:
+  Eta_sigma=-i cot(f)(s0 Gamma0+eps s4 Gamma4)
+               *(-s0 f0+s4 f4)/(s4^2-s0^2).
+It equals the f-contact only where df and d sigma are parallel, including
+the anchored wall. The new full-cap coefficient is therefore not claimed
+numerically identical to the old global sigma-normal component.
+The actual failed sigma-normal attempt is retained with full real raw
+coefficients, source firsts, both causal squares and the guard exception:
+  outputs/bhsm_real_full_d5_open_form_20261016/full_cap_failure_run_1.
+That failure diagnoses the inappropriate global foliation restriction;
+it does not prove a failure of the real theory or native ellipticity.
+
+On sin(f)!=0 the Lorentz differential expression has the local identity
+  D_eta=sin(f) D_min sin(f)^(-1).
+This is NONUNITARY in the original geometric current norm, and sin(f)
+vanishes at the polar endpoint. It never licenses deleting eta, altering
+the Riesz metric, setting a normalized mode to1, dropping source contacts,
+or heating a purportedly equivalent free positive square. Domains and
+D_eta^dagger D_eta remain sensitive to those terms and endpoint data.
+
+Executable construction:
+  muon_combined_f_eta_contact.py
+uses the actual coframe/profile value and complete provided first arrays.
+Four independent tests include MP64 normalized-normal source differentiation,
+full spin/carrier rows, the exact material-wall formula, finite Q=0 and
+timelike-gradient combined coefficients, and polar sin(f)=0 rejection.
+
+The fresh producer
+  bhsm_real_full_d5_combined_eta_open_form_20261016.py
+binds that contact explicitly into the existing full384 D5 A assembler.
+It consumes actual float64 real archives, not a projection of a complex one:
+  incoming: artifacts/muon_finite_normal_phase_20261011/incoming_run_1,
+            one cell span -1e-5;
+  child: artifacts/muon_inherited_finite_normal_phase_20261011/run_1,
+         one cell span +1e-5 with the unprojected inherited profile.
+The exact saved cell interpolation is used; parent/reference affine clock
+germs are composed once. These are historical assigned/provisional-action
+numerical histories, not a continuous physical mean or selected future.
+
+The finite open trial maps are P1 time x P1 radial x the owned full scalar
+Peter-Weyl band n<=1, all5 angular coefficients, times the complete384 fiber.
+All3 families are applied exactly via identical bulk family blocks; they
+are not projected onto a single physical family. Both actual eta sheets,
+particle/conjugate carriers, all temporal/shift/radial/spatial spin and
+gauge terms, and nonzero combined eta are retained.
+The Haar Gram is integrated exactly, with 2pi^2 only once.
+The geometric pairing is the derived mu=N C R^3 and Eulerian current Gram I.
+
+For each family/branch/sheet the producer assembles:
+  K=integral mu (A V)^dagger A V, M=integral mu V^dagger V;
+  actual fixed-material-wall conormal form V^dagger mu a_rho^dagger A V;
+  both oriented temporal endpoint conormal forms
+       plus/minus integral V^dagger (mu/N) A V;
+  original Dirac-bar wall Green matrices with Gamma0 once.
+The physical wall velocity is already in the material shift and is not
+added again. All endpoint trial coefficients remain free. No outgoing,
+incoming or birth matter load is inserted as zero.
+
+The actual nonzero H18 and induced wall density supply the intrinsic
+normalized-q, once-only Higgs seam form. Its moving spin trace numerators
+are exported with the full complementary fiber retained. The required
+sigma/proper-normal full-collar mode amplitudes uL,uR are still unevaluated:
+  B=D/uR, Cbar=S Gamma0 W/uL.
+They are NOT assigned1. The first-order seam changes the operator domain;
+it is never appended as an arbitrary potential to positive bulk K.
+
+Independent full384h differential applications with distinct test vectors
+on all families/branches agree with assembled K to relative2.05e-16.
+Final executions are under
+  outputs/bhsm_real_full_d5_open_form_20261016/combined_eta_final_run_1
+  outputs/bhsm_real_full_d5_open_form_20261016/combined_eta_final_run_2.
+The earlier successful combined_eta_run_1 is preserved as a prototype before
+the explicit temporal-face conormal exports were added.
+
+Still unclaimed: full polar regular-center domain, physical sigma/proper
+normal mode normalization, full stratified incidence/BRST/exterior domain,
+relative determinant completion, radial/angular convergence, coupled
+physical background, full derivative admission at2e-10, any correction,
+Maxwell/all226 validation, normalized two-spin pole, or muon moment.

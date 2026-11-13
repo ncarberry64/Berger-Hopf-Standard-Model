@@ -1,0 +1,14 @@
+{
+  "applicable_scope": "Only trace-only local child terms; global heat/domain/trace jets not assigned zero",
+  "boundary_traction": "retained in f_gamma",
+  "classification": "conditional exact exclusion for the explicit trace-only part, not the full induced Hessian",
+  "conditions": [
+    "B5 fixed in the unreduced material-trace problem",
+    "B5 v_Z=0",
+    "This term has no independent parent, interface, pairing or completion dependence"
+  ],
+  "equation": "delta_Z delta_A Gamma4[B5 A5]=Gamma4_second[B5 v_Z,B5 a_L]=0",
+  "full_induced_zero_trace_row": null,
+  "full_weak_source_cross_preserved": true,
+  "source": "muon_source_weak_extension.weak_extension_contract fixed_internal_trace_child_return; same-trace second variation"
+}

@@ -1,0 +1,292 @@
+M8 GEOMETRIC DIRAC AND FULL HOPF INCIDENCE
+2026-10-16 -- analytic construction; no field solve or physical gate admission
+
+Repository: C:/Users/carbe/Downloads/BHSM_muon_parent_maxwell_worktree_20261001
+This note derives the untwisted Levi-Civita spin-Dirac block on the ACTUAL
+cohomogeneity metric already used by the retained q37 action. It does not
+replace that metric by a round background, truncate its angular spectrum,
+assign a native internal connection zero, or identify a Kaluza-Klein level
+with the muon mass. No old numerical campaign was replayed.
+
+1. ACTUAL OWNED M8 METRIC, NOT A PUTATIVE CODIMENSION-THREE TRACE
+
+Strong concrete source operands are:
+  src/bhsm/interface/muon_moving_geometric_action.py:91-123 (_fields);
+  src/bhsm/interface/muon_holomorphic_normal_geometry.py:101-140 (_fields);
+  src/bhsm/interface/aether_post_cut_nonround_lorentzian_cap_v15_48.py
+    (lorentzian_cap_contract/cap_fields, volume at145);
+  src/bhsm/interface/aether_n3_exact_full_local_action_jet_v17_60.py:180;
+  src/bhsm/interface/aether_diagonal_sp1_m4_attachment_v15_50.py:36-96.
+
+For real regular A,B,C,N>0 and signature (+-------), the supplied metric is
+
+  e0=N dt, echi=C(dchi+beta dt),
+  eu^a=A theta_u^a, ev^a=B theta_v^a,
+  ds8^2=(e0)^2-(echi)^2-sum_a[(eu^a)^2+(ev^a)^2].
+
+The source theta_u=u^-1du and theta_v=v^-1dv are LEFT Maurer forms. In
+the Lie algebra convention [Ti,Tj]=2 epsilon_ijk Tk, their duals obey
+  [Ua,Ub]=+2 epsilon_abc Uc, [Va,Vb]=+2 epsilon_abc Vc.
+Their density is mu8=N C A^3 B^3 times dt dchi and the two unit-S3
+Haar densities. This is an eight-dimensional metric, with S3 x S3
+principal orbits. It is a cohomogeneity restriction of metric fields,
+not an angular cutoff on spinors.
+
+The exact existing _fields output means
+  la=partial_t log A, lb=partial_t log B, lc=partial_t log C,
+  ap=partial_chi log A, bp=partial_chi log B, cp=partial_chi log C,
+  np=partial_chi log N, betap=partial_chi beta.
+In particular la/lb/lc are coordinate-time rates, not E0 rates.
+  E0=(partial_t-beta partial_chi)/N, Echi=partial_chi/C.
+
+2. EXPLICIT GEOMETRIC D8 COEFFICIENTS
+
+Use {GammaA,GammaB}=2 etaAB. The contracted Levi-Civita connection gives
+
+  h08 = [lc+3la+3lb-beta(cp+3ap+3bp)-betap]/(2N),
+  hchi8 = [np+3ap+3bp]/(2C),
+
+and hence the geometric Lorentz spin-Dirac expression is
+
+  D8_LC = i Gamma0 (E0+h08) + i Gammachi (Echi+hchi8)
+          +(i/A) sum_a Gamma_ua Ua +(i/B) sum_a Gamma_va Va
+          +(3i/(2A)) Gamma_u1 Gamma_u2 Gamma_u3
+          +(3i/(2B)) Gamma_v1 Gamma_v2 Gamma_v3.
+
+The first two h terms are exactly half the mu8 divergences of E0,Echi.
+This independently fixes every lapse/shift density term, including betap.
+No temporal connection or spin term has been deleted.
+
+The displayed angular triple signs are for the source LEFT Maurer duals.
+With RIGHT invariant derivatives [Ra,Rb]=-2 epsilon_abc Rc the triple
+signs reverse. The latter convention gives the retained D5 contracted
+spin term -3i Gamma123/(2R). Mixing the left principal derivatives with
+the right triple sign would describe a different operator.
+
+One compatible complex Cl(1,7) module has rank16. That algebraic fact
+does not specify the native statistics grading, physical SM multiplicity,
+or an independent new UV fermion. The formula can be kept abstract on a
+compatible full Clifford module. An action-owned internal twisting adds
+its actual i GammaA rho8(A8_A), and a native finite endomorphism its Phi8;
+this note neither invents those operands nor sets them to zero.
+
+There is no additional physical Clifford-representation choice needed to
+make this GEOMETRIC spin block explicit. If gamma_mu is the owned 4x4
+Cl(1,4) set (mu=0,chi,1,2,3), one valid rank16 construction is
+  Gamma8_mu=gamma_mu tensor I2 tensor sigma1,
+  Gamma8_i=I4 tensor (i sigma_i) tensor sigma2, i=1,2,3 vertical.
+The Pauli anticommutators directly verify Cl(1,7), including every mixed
+anticommutator. In particular
+  Gamma8_mu Gamma8_nu Gamma8_i
+       =(gamma_mu gamma_nu) tensor (i sigma_i) tensor sigma2.
+Thus the geometric KK contact below is an explicit full16x16 matrix once
+the already-owned gamma_mu set is inserted. The last Pauli factor is the
+odd-base/odd-fiber spin branching bookkeeping, not an extra physical UV
+species. This construction does not identify the native statistics/SM
+twist with that untwisted spin module or delete a branching summand.
+
+3. EXACT HOPF SPLIT AND NORMALIZED FIBER DENSITY CANCELLATION
+
+The current v15.50 source owns the free principal right action
+  (u,v) -> (u q,v q), q in Sp(1),
+also at the regular cap pole. Define
+  L=sqrt(A^2+B^2), lambda=A^2/L^2, r=A B/L,
+  delta=theta_u-theta_v,
+  omega=lambda theta_u+(1-lambda)theta_v.
+Then
+  A^2|theta_u|^2+B^2|theta_v|^2
+       =L^2|omega|^2+r^2|delta|^2.
+The base M5 metric has coframe e0, echi, ea=r delta_a. The fiber is a
+round S3 of radius L, in the source UNIT-S3 convention
+  Vol(F_x)=2 pi^2 L^3,
+  mu8=mu5 L^3, mu5=N C r^3.
+The earlier full-cover 16 pi^2 convention must not be inserted here.
+
+All required derivatives are direct algebraic functions of _fields:
+  Lt=(A^2 la+B^2 lb)/L^2 = partial_t log L,
+  Lchi=(A^2 ap+B^2 bp)/L^2 = partial_chi log L,
+  rt=la+lb-Lt, rchi=ap+bp-Lchi.
+The corresponding base spin-density terms are
+  h05=[lc+3rt-beta(cp+3rchi)-betap]/(2N),
+  hchi5=[np+3rchi]/(2C).
+Therefore the EXACT differences are
+  h08-h05=(3/2)(Lt-beta Lchi)/N,
+  hchi8-hchi5=(3/2)Lchi/C.
+
+If uhat_alpha is orthonormal in the unit-S3 measure, the correctly
+normalized fiber mode is
+  u_alpha(x,g)=L(x)^(-3/2) uhat_alpha(g).
+Its E0/Echi logarithmic derivative cancels precisely those differences.
+No 2 pi^2 factor is added when uhat is already unit-normalized. A scalar
+constant mode alone has uhat=(2 pi^2)^(-1/2); this is not a vertical spinor
+zero mode. The cancellation is a constructible M8-to-M5 coefficient map,
+not an unspecified boundary law.
+
+4. MECHANICAL CURVATURE AND THE MISSINGLY UNEVALUATED KK SPIN CONTACT
+
+The source exact curvature is
+  F_omega=d lambda wedge delta-lambda(1-lambda)[delta,delta]/2.
+In the orthonormal BASE frame mu in {0,chi,1,2,3}, its components are
+
+  E0lambda=2lambda(1-lambda)[la-lb-beta(ap-bp)]/N,
+  Echilambda=2lambda(1-lambda)(ap-bp)/C,
+  F^i_0a=(E0lambda/r) delta_ia,
+  F^i_chia=(Echilambda/r) delta_ia,
+  F^i_ab=-2lambda(1-lambda) epsilon_iab/r^2.
+
+All other components follow by antisymmetry or vanish for this supplied
+cohomogeneity connection. The final expression uses F=(1/2)Fmunu e^mu
+wedge e^nu, so there is no extra factor2 in F_ab.
+
+Let Hmu be horizontal orthonormal lifts and Ei the vertical orthonormal
+frame. Their vertical bracket is [Hmu,Hnu]^V=-L F^i_munu Ei. With
+  omega_ABC=<nabla_EA EB,EC>, Omega_A=-(1/4)omega_ABC GammaB GammaC,
+the mixed spin contraction is
+  Gamma^mu Omega_mu|mixed = -(L/4)sum_i,mu,nu F^i_munu Gammamu Gammanu Gammai,
+  Gamma^i Omega_i|mixed = +(L/8)sum_i,mu,nu F^i_munu Gammamu Gammanu Gammai.
+Thus the total coefficient in i GammaA nabla_A is
+
+  K_KK = -(iL/8) sum_i,mu,nu F^i_munu Gammamu Gammanu Gammai.
+
+The sums run over ALL ORDERED mu,nu. A sum only over mu<nu has coefficient
+-iL/4. This sign/factor was independently checked using the same Cartan
+convention that yields the owned left-S3 +3i Gamma123/(2A).
+The horizontal spin connection and associated fiber-mode connection must
+also be retained; K_KK is not a substitute for them.
+
+Locally the universal decomposition is
+  D8_LC = D5_horizontal + Dhat_F/L
+          +(3i/2)Gammamu E_mu(log L) + K_KK,
+with the density term canceled after inserting the normalized modes above.
+Here D5_horizontal includes the actual horizontal associated-mode
+connection. Defining it by P_alpha nabla_H I_beta fixes its sign without
+guessing an equivariance convention. A full operator coefficient still
+acts on its compatible spin/module branching; the displayed geometric
+scalar prefactors do not impose a physical carrier choice.
+
+The existing exact vertical owner is
+  aether_diagonal_fiber_dirac_lift_v15_55.py:26-47,100+
+and completion/exact_berger_dirac_cap_obstruction_v14_59.py
+  (homogeneous_dirac_block/berger_dirac_block).
+For the round current fiber its complete spectrum is
+  plus/minus(ell+3/2)/L, multiplicity(ell+1)(ell+2), ell>=0.
+There is no vertical spinor zero mode. The source explicitly says its
+MODE_LEDGER lift is an internal KK eigenvalue seed, not a four-dimensional
+mass; a gauge-invariant left/right Higgs/topographic matrix element is
+needed. Existing intrinsic Y_f are preserved.
+
+5. CONSTRUCTIVE FULL INCIDENCE WITHOUT A POINT-TRACE ASSUMPTION
+
+completion/full_hopf_preimage_effective_action_v14_30.py:36-50 owns
+  M8=I_t x S7, M5=I_t x S4, M4=I_t x S3,
+  Ctilde=pi85^-1(C5), dimension8,
+  Sigmatilde=pi85^-1(M4), dimension7,
+  Ctilde -> C5 has compact S3 fiber; C5 -> M4 is collar retraction.
+completion/degree_one_lorentzian_full_preimage_phase_space_v14_91.py:184+
+owns caps B4 x S3 and lifted seam S3 x S3. The latter is a spatial6,
+spacetime7 internal hypersurface, not an embedded M5 point-evaluation
+inside M8. No global Hopf section is needed.
+
+For a COMPLETE orthonormal vertical spin/mode family on the correctly
+branched module define
+  (P_alpha psi)(x)=integral_F u_alpha(x,g)^dagger psi(x,g) dmu_F,
+  (I_alpha phi_alpha)(x,g)=u_alpha(x,g)phi_alpha(x),
+  P_alpha I_beta=delta_alpha,beta,
+  sum_alpha I_alpha P_alpha=I.
+These define the full unitary fiber-mode pushforward and full blocks
+  D_alpha,beta=P_alpha D8 I_beta.
+If only selected modes are retained, the omitted orthogonal complement
+remains an actual operator block. Eliminating it requires its Schur
+feedback; no invariant finite truncation follows from orthonormality.
+The odd/odd Spin8-to-Spin5/Spin3 branching must be implemented faithfully;
+its representation bookkeeping is not an extra physical fermion copy.
+
+This construction also realizes the earlier DECLARED covariant functor in
+  master_action/reduction.py:148-196:
+  R85=(pi_!,P_ret,Q_H), Phi8=sum_ret phi_alpha u_alpha+Phi_perp,
+  D5 P_alpha=P_alpha D8 on invariant/equivariant retained modes,
+with curvature transitions explicitly left in Phi_perp. Its connection
+acts on the associated bundle and does not choose a global U(1) axis.
+That source's normalization at119-144 is the historical full-cover
+16 pi^2 convention, while the present explicit metric uses v15.50's
+2 pi^2 unit-S3 convention. Its independent-Wilson-owner sentences are
+historical and are superseded by the selected AE4 one-functional rule.
+The formal intertwiner is therefore already owned; the current task is
+its full native spin/graded-coefficient evaluation, not to invent R85.
+
+For regular compatible bundles/modes the boundary incidence factors as
+  B48=P_F,Sigma gamma7,
+and trace/pushforward commute in the precise local form
+  P_F,Sigma gamma7 = gamma4 P85.
+gamma7 is an ordinary codimension-one trace to Sigmatilde. Compact-fiber
+integration is the other operation. Consequently a generic codim3
+pointtrace obstruction is inapplicable to this owned architecture.
+
+At a fixed-chi wall, the normal Green coefficient of D8 after ONE Dirac
+bar, with the induced orientation, is
+  J8=i A^3 B^3 Gamma0(N Gammachi-C beta Gamma0).
+It follows directly from mu8 times the principal partial_chi coefficient.
+At a moving wall chi=chi_wall(t), replace beta by beta+wall_dot once.
+Its proper mode pushforward yields the M5 coefficient with r^3; the
+L^3 fiber density is canceled by the normalized left/right modes. It
+must not be counted as both an extra trace weight and mode normalization.
+
+An isometric pushforward is a representation of a single field. It does
+NOT by itself construct a dense hard graph in independently duplicated
+H8 plus H5 Hilbert slots. Equality to the canonical stratified direct-sum
+owner still requires its actual once-only incidence/output realization.
+This is an accounting/domain distinction, not a codimension argument or
+proof that the coupling is absent.
+
+6. WHAT THIS ADVANCES AND THE NEXT ACTUAL OPERATOR BLOCK
+
+The canonical AE4 source
+  ae4_stratified_dirac_zeta_induced_owner.py:272-302
+selects H8 plus H5+ plus H5- plus H4, the canonical geometric graded
+trace, and P_strat=D_strat^dagger D_strat. It identifies the local actions
+as expansions of one microscopic functional. This note does not replace
+that selection by independent Wilson actions or arbitrary multiplicities.
+
+The strongest reviewed concrete geometric owners already determine D8_LC
+and the coefficients above. The next unevaluated, constructible block is
+
+  (K_KK)_alpha,beta(x)=-(iL/8)F^i_munu(x)
+        P_alpha(Gammamu Gammanu Gammai)I_beta,
+
+together with the horizontal connection P_alpha nabla_H I_beta and the
+complete Dhat_F/L blocks. This uses the OWNED actual metric/connection;
+it does not require a new empirical coefficient, a quiet-field choice,
+or a new collision history. The scalar map from actual _fields into
+L,r,lambda,h8,h5,F and K_KK prefactors can be evaluated without solving
+the metric again. Applying the full spin-mode block requires a compatible
+full Clifford/module realization, including its retained complement; the
+explicit rank16 realization above supplies the untwisted geometric one.
+
+The bounded source inspection has not located an executable identification
+of the entire native graded H8 carrier/twist/endomorphism with the actual
+full H5 SM carrier. In particular:
+  - complete_berger_hopf_operator.py is the older formal report, not a
+    concrete all-carrier D8 implementation;
+  - master_action/fields.py:42-54 and terms.py retain historical bosonic
+    M8 plus effective M4 fermions; those older statements cannot overrule
+    the later AE4 microscopic owner or prove an absent modern coupling;
+  - aether_hybrid_standard_model_bundle_v15_53.py owns the actual M4 SM
+    representation rather than automatically specifying a full E8 twist;
+  - aether_einstein_cartan_joint_pushforward_v15_75.py:30+ supplies the
+    first-order M5 coframe/spin/rank16-gauge action, not by that formula
+    alone a native full M8-to-M5 graded intertwiner;
+  - aether_hybrid_yukawa_mass_semantics_v15_56.py:42-108 separates exact
+    wall/fiber overlaps from intrinsic Yukawa entries. Its old symmetric
+    zero-H background is not adopted for the present massive muon solve.
+
+Therefore the correct advancement is to build and evaluate the full
+geometric D8/Hopf blocks, then bind them to the selected native graded
+carrier/common operator. It would be too strong to say that M8 geometry,
+Hopf incidence, or all connection coefficients are unspecified. It would
+also be too strong to call this partial geometric construction the full
+physical P_strat or to infer its outgoing response/normalization/moment.
+
+Physical outgoing derivative admission: false.
+Coupled correction performed: false.
+Maxwell/all226 physical validation at2e-10: false.
+Two-spin physical pole normalization/muon moment prediction: not computed.

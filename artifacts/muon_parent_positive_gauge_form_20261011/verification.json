@@ -1,0 +1,95 @@
+{
+  "classification": "PAIRED_FINITE_FORM_REPLAY_AND_FOCUSED_MATH_CHECKS",
+  "commands": [
+    {
+      "argv": [
+        "C:/Python314/python.exe",
+        "-m",
+        "pytest",
+        "--noconftest",
+        "-q",
+        "tests/test_muon_parent_positive_gauge_form.py"
+      ],
+      "exit_code": 0,
+      "output": "......                                                                   [100%]\n6 passed in 12.29s"
+    },
+    {
+      "argv": [
+        "C:/Python314/python.exe",
+        "scripts/evaluate_muon_parent_positive_gauge_form.py",
+        "--output",
+        "artifacts/muon_parent_positive_gauge_form_20261011/run_1"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "C:/Python314/python.exe",
+        "scripts/evaluate_muon_parent_positive_gauge_form.py",
+        "--output",
+        "artifacts/muon_parent_positive_gauge_form_20261011/run_2"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "earlier_diagnostics": [
+    {
+      "cause": "curvature output needed explicit harmonic20 axis before weighted map; corrected before tests/replays",
+      "exit_code": 1,
+      "stage": "initial unmaterialized smoke"
+    },
+    {
+      "exit_code": 0,
+      "issue": "original-coordinate residual17.8951; replaced eigen reconstruction with solve of actual stored normalized matrix. Final residuals and guarded inverse scope are exported without hiding original-coordinate defects",
+      "stage": "initial eigen-based inverse smoke"
+    },
+    {
+      "cause": "required keyword repository omitted; rerun supplied ROOT. No producer or values changed",
+      "exit_code": 1,
+      "stage": "metadata-only probe"
+    }
+  ],
+  "environment": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "PYTHONPATH": "src"
+  },
+  "error_scope": "Stored normalized matrix Neumann bounds assume IEEE guarded products/reduction; not a certificate of field/Gram production, continuum or physical Pauli. Source-product complement is explicit.",
+  "files": [
+    {
+      "bytes": 761521,
+      "name": "incoming_action.npz",
+      "sha256": "023e9e6b9819c5f82b40230cdf2019f6d9b780327b96b23c1b4a714b99d9e9df"
+    },
+    {
+      "bytes": 2924503,
+      "name": "incoming_green.npz",
+      "sha256": "65e46b2ae2956c6a9ba283602922546a07395c0cdf2fc222dc678f274b85013f"
+    },
+    {
+      "bytes": 554996,
+      "name": "incoming_hilbert.npz",
+      "sha256": "6a807a924926acce9763a285bdbb38f22f44b071187426082761d4363f5f5fc5"
+    },
+    {
+      "bytes": 761555,
+      "name": "outgoing_action.npz",
+      "sha256": "be02d7a3844f4f5dd4d91f0b0c9289d47d8d9fe39ff67dcb46f961e718718593"
+    },
+    {
+      "bytes": 2991845,
+      "name": "outgoing_green.npz",
+      "sha256": "e9633455c364568ba3858cf35a7cf5f848a41317028cc8cbbc795d7e9b31396e"
+    },
+    {
+      "bytes": 554295,
+      "name": "outgoing_hilbert.npz",
+      "sha256": "d8e17557e2170dc95c5da4420ed14fab8eca80eb110766b9c5f1c3b53f86a3aa"
+    },
+    {
+      "bytes": 17377,
+      "name": "result.json",
+      "sha256": "4ac7e41bee651070b25f93fb9bb19c0f1cb8e768b751c161c1dbb12fc8190004"
+    }
+  ],
+  "paired_files_byte_identical": true
+}

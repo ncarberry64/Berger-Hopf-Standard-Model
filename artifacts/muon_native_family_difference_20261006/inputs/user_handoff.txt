@@ -1,0 +1,392 @@
+Continue the BHSM muon magnetic-moment calculation and KEEP PR #465
+UPDATED AS YOU WORK.
+
+Repository:
+C:\Users\carbe\OneDrive\Documents\CODEX\Berger-Hopf-Standard-Model
+
+PR:
+https://github.com/ncarberry64/Berger-Hopf-Standard-Model/pull/465
+
+Scientific reference:
+524ed90689bd5923c249bba2e699abf627e703cd
+
+Observed remote PR head before this handoff:
+b0b5cdec48735f6e2ae40051a32662297882b7e4
+
+IMPORTANT GIT RULE
+
+Begin with:
+    git status
+    git branch --show-current
+    git log -8 --oneline
+    git fetch origin
+
+Do NOT reset, clean, force-checkout, discard local files, or rewrite
+existing scientific history.
+
+If the local branch contains commits newer than the remote PR head,
+preserve and push them. If the local workspace contains valid uncommitted
+science, inspect and preserve it before doing new work.
+
+After EACH substantial scientific milestone:
+    - update/create the derivation report;
+    - update replay/tests/checkpoint/hashes;
+    - run the targeted tests;
+    - git add only intended files;
+    - commit with a scientific milestone message;
+    - push the active PR branch;
+    - verify PR #465 head changed to that commit.
+
+Do not leave a completed scientific milestone only in Downloads or an
+uncommitted worktree.
+
+CURRENT SCIENTIFIC RECONCILIATION
+
+The recent average-trace seam proposal remains UNADOPTED and is NOT on the
+critical path for the native muon result.
+
+Do not continue its G_Q^R/complement campaign unless a concrete defect in
+the native operator proves it indispensable.
+
+Preserve all prior proposal work as historical evidence. Do not delete it.
+
+Frozen conditional local results remain:
+
+    a_mu_QED_local = 0.00116550200495813
+    calibration-only uncertainty = 1.79e-13
+
+    0 < delta_a_mu_h_local_1 < 3.500331e-9
+
+    0.0011655039493
+        < a_mu_selected_local
+        < 0.0011655109506
+
+Do not refit, recompute or add these again.
+
+The electron-reference calculation already found:
+
+    a_e_local_QED =
+      0.00115963743076965584750881398607732694...
+
+    Delta_mu_e_local_QED =
+      5.86457418847755723102847111141422212e-6
+
+and reconstructs the frozen muon QED value.
+
+That difference is ALREADY INCLUDED in the frozen muon local result.
+Do not add it again.
+
+NEW NATIVE FAMILY-DIFFERENCE REDUCTION
+
+The adopted eta-bound charged-lepton action supplies one common normalized
+external Pauli/spin structure for electron and muon. Reuse it.
+
+Do NOT infer equal full anomalies.
+
+Use the family-resolved chiral block:
+
+    D(s,t) = D0(t) + m(s) tau_x
+
+with mathematical interpolation
+
+    m(s) = m_e + s Delta_m,      0 <= s <= 1.
+
+This interpolation is a divided-difference device between the exact
+electron and muon projectors. It is not a new continuous physical family
+parameter.
+
+Using the retained BHSM conditional mass ratios:
+
+    r_e  =
+      0.000297291064564924397291856041345
+
+    r_mu =
+      0.0600744709326097750329819901387
+
+    Delta_r =
+      0.059777179868044850635690134097355
+
+    r_mu + r_e =
+      0.060371761997174699430273846180045
+
+    r_mu^2 - r_e^2 =
+      0.00360885367585590662756562359254775
+
+Keep these dimensionless ratios when possible.
+
+Do not introduce measured electron or muon masses.
+
+If the existing native convention explicitly requires the retained
+conditional GeV calibration, its values are:
+
+    m_e  = 0.0005229143548875558 GeV
+    m_mu = 0.10566682607467506 GeV
+
+    Delta_m = 0.10514391171978751 GeV
+    m_mu + m_e = 0.10618974042956261 GeV
+    m_mu^2 - m_e^2 = 0.011165204693273083 GeV^2
+
+Do NOT promote these conditional tree masses to fully dressed physical
+poles merely to complete the calculation.
+
+OPERATOR JETS
+
+Use
+
+    P(s,t) = D(s,t)^dagger D(s,t).
+
+Then
+
+    D_s = Delta_m tau_x.
+
+Use the SAME photon coordinate/source convention in both families.
+
+Verify from the actual source builder that the electromagnetic insertion
+is family central and that the family mass operator has no independent
+photon-source derivative.
+
+If verified:
+
+    D_t  = V_gamma
+    D_ts = 0.
+
+Then construct:
+
+    P_s  = D_s^dagger D + D^dagger D_s
+
+    P_t  = D_t^dagger D + D^dagger D_t
+
+    P_ts =
+        D_s^dagger D_t
+      + D_t^dagger D_s
+
+when D_ts=0.
+
+If D_ts is nonzero in the retained action, evaluate it and include
+
+    D_ts^dagger D + D^dagger D_ts
+
+rather than setting it to zero.
+
+Do NOT assume the kinetic mass form M of the generalized heat pencil is
+family independent. Check it.
+
+If M_s=0 and M_ts=0, record that as a derived result.
+Otherwise retain the actual moving-M terms.
+
+EXACT PAIRED HEAT TARGET
+
+Instead of separately reconstructing a complete native electron vertex and
+a complete native muon vertex, evaluate the paired family divided difference:
+
+    Delta_Gamma_mu_e(t)
+      = Gamma_native_mu(t) - Gamma_native_e(t).
+
+For the bulk heat part use
+
+    Delta_Gamma_heat(t)
+      = integral_0^1 ds partial_s Gamma_heat[P(s,t)].
+
+Then
+
+    Delta_a_mu_e_native_heat
+      = integral_0^1 ds
+          [partial_t partial_s Gamma_heat[P(s,t)]]_(t=0).
+
+Use the EXISTING generalized heat-pencil implementation.
+
+For A=M^-1 K and
+    Q(A)=1/2 A^-1 exp(-ell_star^2 A),
+
+the required mixed contraction is exactly of the existing form
+
+    Gamma_ts =
+        STr( DQ[A_t] A_s + Q A_ts ).
+
+Reuse:
+    src/bhsm/interface/arb_heat_pencil_contractions.py
+
+and specifically its existing:
+    HeatPencil.mixed(...)
+or
+    HeatPencil.mixed_direction(...).
+
+Preserve both moving-mass terms in A_ts.
+
+Do not create a surrogate scalar heat formula.
+
+SOURCE / THREE-POINT SCOPE
+
+The Pauli observable is still a three-point response.
+
+Reuse the actual previously materialized:
+    bar-muon insertion,
+    muon insertion,
+    photon insertion,
+    contact terms,
+    source-generated carrier columns.
+
+Do not mistake a geometry Hessian for the fermion-photon three-point
+insertion.
+
+Apply the family interpolation to the SAME already-sourced native operator.
+
+If the current source representation has already contracted the two fermion
+legs into the generated native source image, keep that structure and apply
+the family derivative there.
+
+Do not discard Grassmann signs, mixed contacts or moving external-state
+normalization terms.
+
+FAMILY QUADRATURE
+
+Numerically integrate s in [0,1] only after the action jets exist.
+
+Use a reproducible quadrature with convergence/error control, preferably:
+    - nested Gauss-Legendre, or
+    - Arb/interval adaptive enclosure if compatible with the existing kernel.
+
+Start small. This is a one-dimensional interpolation.
+
+Do not launch another full-history or full-spectrum campaign by default.
+
+Compare:
+    direct endpoint difference
+versus
+    integrated family derivative
+on any finite test block where both are affordable.
+
+They should agree within the declared numerical error.
+
+This is an important independent check.
+
+STATE DEPENDENCE
+
+Do not restart a full covariance-construction project.
+
+Previous work established:
+    - a fixed entire sourced heat family is covariance independent;
+    - possible additional covariance sensitivity reduces to a restricted
+      charge/family-compatible self-dual-odd kernel.
+
+For the PAIRED electron-muon observable, first evaluate whether that
+surviving state-sensitive functional is common and cancels, or whether its
+family mass dependence survives.
+
+Only the surviving paired contraction is needed.
+
+Do not require an entire unique Cauchy covariance if the paired observable
+depends on a smaller moment or is state independent.
+
+CONTACT / DOMAIN / COMPLETION / STRONG LEDGER
+
+Carry, in the paired difference:
+
+    native_bulk_heat
+    state_variation
+    contact
+    domain_boundary
+    completion_counterterm
+    strong_within_native
+
+Classify every item as:
+    COMMON_CANCELLED,
+    FAMILY_DIFFERENCE_EVALUATED,
+    BOUNDED,
+    or UNEVALUATED.
+
+Never relabel UNEVALUATED as zero.
+
+Check overlap against the already frozen local QED/Higgs/W/Z pieces before
+adding anything to a_mu_selected_local.
+
+SIGNED SOFT TRANSFER
+
+The final observable is still
+
+    R_mu_e,u(t)
+      = R_mu,u(t) - R_e,u(t)
+
+and
+
+    Delta_a_mu_e_native = d/dt R_mu_e,u(t)|_(t=0).
+
+Use at least three independent allowed spatial transfer directions and
+several decreasing signed transfers.
+
+The common normalized Pauli tensor should be reused.
+
+Retain on-shell external kinematic derivatives.
+
+For a numerical central quotient:
+
+    D(h) = [R(+h)-R(-h)]/(2h)
+
+propagate numerator error AFTER division by 2|h|.
+
+Do not quote pre-division residuals as Pauli accuracy.
+
+If the analytic mixed-jet derivative is available, use the signed-transfer
+sequence as an independent validation of it rather than discarding the
+analytic derivative.
+
+GIT DELIVERABLE
+
+Add a repo-native milestone, suggested names:
+
+    theory/muon_native_family_difference_20261006.md
+    scripts/replay_muon_native_family_difference.py
+    tests/test_muon_native_family_difference.py
+    artifacts/muon_native_family_difference_20261006/
+
+The report should record:
+
+    reference revision 524ed906...
+    actual starting HEAD
+    final commit
+    branch
+    input hashes
+    source/domain IDs
+    equations above
+    exact mass-ratio inputs
+    family-centrality checks
+    M_s/M_ts status
+    evaluated family quadrature
+    endpoint-vs-integral replay
+    contribution ledger
+    numerical error scope
+    signed-transfer status
+    what remains missing
+
+Commit and PUSH this milestone to PR #465.
+
+Then verify the remote PR head equals the new commit.
+
+If a later substantial numerical milestone is reached, commit and push it
+too rather than accumulating many uncommitted hours of work.
+
+STOP CONDITION
+
+The preferred result is:
+
+    boxed Delta_a_mu_e_native
+
+or a rigorous enclosure of it, followed by
+
+    a_mu_native =
+        a_e_native + Delta_a_mu_e_native
+
+only if an action-sufficient electron native reference is available.
+
+If no electron native absolute reference exists yet, still report the
+paired native difference numerically. Do not hide that useful result behind
+the missing absolute reference.
+
+If blocked before the paired difference can be evaluated, identify ONE
+specific missing operand in the family-mixed heat contraction. Do not reopen
+the optional seam proposal, precursor derivation, local-QED calculation,
+whole Gate-7 campaign, or an exact full-history reconstruction unless that
+specific operand mathematically requires it.
+
+Physical a_mu and g_mu remain unclaimed until the absolute native term and
+no-double-counting ledger are justified.

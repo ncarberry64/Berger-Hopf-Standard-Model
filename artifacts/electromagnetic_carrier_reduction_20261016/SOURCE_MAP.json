@@ -1,0 +1,67 @@
+{
+  "adopted_preparation": {
+    "path": "artifacts/muon_ideal_collider_preparation_20261016/BHSM_IDEAL_COLLIDER_PREPARATION_V1.json",
+    "sha256": "dcc4ad850ea38dcd405637d24b306efe8789ab08e144f559d7cc294cd72e8f0f"
+  },
+  "base_revision": "b6cb15f5ab6f6b44057f13895c5fd498ce928d83",
+  "canonical_map": {
+    "carrier_reference_math.py": [
+      "positive_projector_jet (validated finite inputs)",
+      "gram_sqrt_jet (validated finite inputs)",
+      "unrestricted_affine_car_range (tiny-spectrum witness corrected)"
+    ],
+    "electromagnetic_carrier_mode_reduction.py": [
+      "exact_checks (unchanged function source)",
+      "numerical_checks (unchanged function source)",
+      "carrier_map_jet",
+      "nonlinear_action_pullback",
+      "round_mode_residual",
+      "right_frame_s3_modes",
+      "released_amplitude_phase_map"
+    ]
+  },
+  "derivations": {
+    "BHSM_electromagnetic_carrier_reduction_20261016": {
+      "byte_preserved": true,
+      "canonical_path": "theory/bhsm_electromagnetic_carrier_reduction_20261016.md",
+      "source_sha256": "3a1c04c102f572cc4729b41b46c886436d33192b2f79b1634b58d3bf1d9f5e12"
+    },
+    "BHSM_operator_reference_construction_20261016": {
+      "byte_preserved": true,
+      "canonical_path": "theory/bhsm_operator_reference_construction_20261016.md",
+      "source_sha256": "9bfbe30bf6f9c3f8134a0d0fe4bd8b45cdef6ad86946c3f43aeed36ae7fdc081"
+    },
+    "BHSM_scalar_reference_continuation_20261016": {
+      "byte_preserved": true,
+      "canonical_path": "theory/bhsm_scalar_reference_continuation_20261016.md",
+      "source_sha256": "a98d07f4c03cde3279ac2832cdca9f6ae531fbb18d9037403a73a43c64d7da8f"
+    }
+  },
+  "existing_owners_reused": [
+    "muon_birth_covariance_sensitivity.py",
+    "muon_two_collar_weak_domain.py",
+    "muon_isotropic_seam_transfer.py",
+    "muon_literal_wall_matching_state_jet.py"
+  ],
+  "outer_archive_sha256": "511b4310c49008dd1903ffaf554b698148fdad95fe950850bcf0845b516f9c0b",
+  "source_archives": {
+    "BHSM_electromagnetic_carrier_reduction_20261016.zip": "d79d6bae950060cd7b38af37bb3a79440c8af1d6748116182fdfabdbd1e58fa0",
+    "BHSM_ideal_collider_benchmark_20261016.zip": "1611061212026da2890afdb0c859bcac58971126924f7a18f885d468bd03aa8f",
+    "BHSM_operator_reference_construction_20261016.zip": "d9b72e1cbc4557b508fa9981953ca24b2336825a2f1d182f1327797e2321c810",
+    "BHSM_scalar_reference_continuation_20261016.zip": "618bf4c2712c41169399aaa92bee6967b9dbaf70b5ecb5018c0396d109bda3e0"
+  },
+  "source_scripts": {
+    "electromagnetic": {
+      "archive_member": "BHSM_electromagnetic_carrier_reduction_20261016/check_carrier_reduction.py",
+      "sha256": "f76c648ffc716deb88146c59af4892adafd4bddd9dfb99a63e18cecebecffcbd"
+    },
+    "operator": {
+      "archive_member": "BHSM_operator_reference_construction_20261016/verify_constructions.py",
+      "sha256": "ca81567246432dc15c37b5fab0e1a44f4561422866eb8e91004e389f27b798ab"
+    },
+    "scalar": {
+      "archive_member": "BHSM_scalar_reference_continuation_20261016/continue_operator_reference.py",
+      "sha256": "6352db5f0b9aefb0205c5151d9597bd28d6af3af362aa115faf9ba035804929e"
+    }
+  }
+}

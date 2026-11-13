@@ -1,0 +1,104 @@
+{
+  "action_owner": "AE4 canonical geometric L2; adopted common-A effective Dirac action",
+  "branch": "codex/muon-parent-maxwell-density-review",
+  "calculation_HEAD": "0ec64ea11cd52661b567c2efaf96ebedefc41e4f",
+  "checkpoint": "BHSM_MUON_PARENT_TANGENTIAL_SOURCE_CONTACT_20261003",
+  "checks": {
+    "connected_n3_source_action_norm": 6.5319726474218065,
+    "contact_quadrature_residual": 0.0,
+    "gram_quadrature_residual": 6.938893903907228e-18,
+    "lifting_material_trace": 1.0,
+    "material_test_trace": 0.0,
+    "n1_source_action_norm": 11.313708498984756,
+    "pole_test_trace": 0.0,
+    "test_hypercharge_commutator_residual": 0.0,
+    "test_hypercharge_constraint_residual": 5.063396036227354e-15,
+    "unit_contact_Hermitian_residual": 0.0,
+    "unit_trace_identity_residual": 6.531584628124504e-14
+  },
+  "complement_scope": "All n1/n3 outputs of source acting on n0 probes retained. No tail theorem for Q, repeated actions or resolvent.",
+  "contribution_ledger": {
+    "completion_counterterm": null,
+    "contact": {
+      "local_parent_K_ZA_cut_density": "parent_source_contact.npz",
+      "native_heat_weighted_trace": null,
+      "paired_DQ_term": null
+    },
+    "domain_boundary": null,
+    "native_bulk_heat": null,
+    "state_variation": null,
+    "strong_within_native": null
+  },
+  "differentiation_coordinate": "b; beta=T_b b; saved source is (-iQ) times beta, no additional sqrt2 or 2/3",
+  "domain_scope": "Central hypercharge coexact H1 test, compact radial support, zero material trace; temporal/prefix extension and full quotient not evaluated",
+  "equations": {
+    "K_ZA_contact": "Xi_Z^dagger Xi_A + Xi_A^dagger Xi_Z",
+    "M_probe_cut_density": "2*pi^2 integral d_rho nu C r^3 chi^2 I64",
+    "Xi_A": "(T_b L/r) i gamma_LR^a S_A,a^sigma1",
+    "Xi_Z": "(T_b z/r) i gamma_LR^a Y_B,a (-iY)",
+    "cut_density": "2*pi^2 integral d_rho nu C r^3 chi^2 K_ZA_contact",
+    "full_A_ZA": "solve(M, K_ZA-M_ZA A-M_Z A_A-M_A A_Z)",
+    "local_Xi_ZA": "0 only at fixed metric/section for the affine local minimal coupling",
+    "native_length": "ell_star=1/E_impedance[Phi_star;Sigma_star], retained unevaluated",
+    "target": "c_D,ZA_contact=-Tr(Q(A_strat) A_ZA)"
+  },
+  "error_scope": "256-bit Arb scalar enclosure for exact binary64 piecewise-affine nodal model. Matrix contractions binary64, unvalidated roundoff. History/interpolation, temporal integration, domain, spectral tails and native uncertainties unevaluated.",
+  "evaluated": {
+    "T_b_squared_rational": "66097198743304168078941882630625/1298074214633706907132624082305024",
+    "algebraic_trace_diagonal": {
+      "arb_interval": "[1.581678638206436476100475462740932027768269383014217362948505072484946503368 +/- 4.92e-76]",
+      "bits": 256,
+      "midpoint": 1.5816786382064365,
+      "radius_upper": 7.811740711827213e-77,
+      "scope": "exact binary64 nodal piecewise-affine model only"
+    },
+    "contact_integral_rational": "508630783882223391023775084197892913252703300495073307918254633410423494062082085016741901188983659101989428939815/8619188855461292327686040021906415519861192965414316458613689182178751637515014821246870743256075296426449872879616",
+    "contact_scalar": {
+      "arb_interval": "[0.05931294893274136785376782985278495104131010186303315111056894021818549387628 +/- 7.30e-78]",
+      "bits": 256,
+      "midpoint": 0.05931294893274137,
+      "radius_upper": 2.68827008697897e-78,
+      "scope": "exact binary64 nodal piecewise-affine model only"
+    },
+    "gram_integral_rational": "466479523662620249421165360676919944139219186681066674385731043432195659822471449038509891541878336555695016127530566763287064551/12130429911778565010655562055625991202534412204769197516370848165188968221649612100799888026705610654176086547956140626751761940480",
+    "gram_scalar": {
+      "arb_interval": "[0.7590775254038181166653795259160049008975622770624159677248767178229829262093 +/- 6.72e-77]",
+      "bits": 256,
+      "midpoint": 0.7590775254038181,
+      "radius_upper": 3.826477496884864e-77,
+      "scope": "exact binary64 nodal piecewise-affine model only"
+    }
+  },
+  "execution": {
+    "native_heat_evaluations": 0,
+    "old_production_runs": 0,
+    "old_symbolic_replays": 0,
+    "parent_local_source_actions": true,
+    "parent_test_source_labels": 8,
+    "physical_transfer_directions": 0,
+    "radial_nodes": 65,
+    "spin_carrier_probe_columns": 64
+  },
+  "frozen_local": {
+    "a_mu_QED_local": "0.00116550200495813",
+    "a_mu_selected_local_open_interval": [
+      "0.0011655039493",
+      "0.0011655109506"
+    ],
+    "already_combined_selected_local": true,
+    "calibration_convention": "alpha_inverse=137.035999084; standard uncertainty=2.1e-8; other original conditional inputs fixed",
+    "calibration_only_standard_uncertainty": "1.79e-13",
+    "delta_a_mu_h_local_1_open_interval": [
+      "0",
+      "3.500331e-9"
+    ],
+    "native_added": false,
+    "publication_paths": "Portable logical provenance; original local metadata and evaluated revision snapshot preserved in standalone handoff."
+  },
+  "physical_a_mu": null,
+  "physical_g_mu": null,
+  "realization": "M5 plus, sigma1 carrier, saved right spatial coframe, C2 step1222 past cut",
+  "reference_checkpoint": "0ec64ea11cd52661b567c2efaf96ebedefc41e4f",
+  "scientific_reference": "524ed90689bd5923c249bba2e699abf627e703cd",
+  "state_scope": "64 Spin4 x SM16 coordinate probes per fixed family; no physical muon state, child16 basis, pole or LSZ substituted"
+}

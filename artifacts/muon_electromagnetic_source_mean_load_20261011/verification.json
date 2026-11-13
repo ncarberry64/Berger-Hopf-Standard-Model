@@ -1,0 +1,158 @@
+{
+  "classification": "EXECUTED_SAME_ACTION_H_SELECTED_EM_MEAN_AND_DIRECT_PAIR_VERIFICATION",
+  "complete_native": false,
+  "cutoff_is_numerical_probe": true,
+  "evaluated_mean_norms": [
+    {
+      "At_time_derivative_scope": "derivative of saved Gauss interpolant; unused by literal Maxwell/Higgs action",
+      "coordinate_time": -5e-06,
+      "first_H_norm": 1.2115265429147938e-12,
+      "first_H_rate_norm": 3.2307352422179443e-07,
+      "first_gauge_norm": 3.8068846711425246e-06,
+      "first_gauge_rate_norm": 3.836529051990101e-05,
+      "geometry_fixed_field_norm": 2.1582835161984074e-10,
+      "geometry_source_motion_norm": 0.0,
+      "norms": {
+        "Maxwell_gauge_rate_cotangent": 5.151748983517295e-13,
+        "Maxwell_gauge_value_cotangent": 4.320168913820585e-12,
+        "raw_mean_cotangent": 2.158721997561461e-10,
+        "scalar_gauge_value_cotangent": 1.0959953987326187e-25,
+        "scalar_rate_cotangent": 0.0,
+        "scalar_value_cotangent": 3.5548962044304444e-26
+      },
+      "pair_symmetry_relative": 1.9421663930651075e-28,
+      "profile": 0.0,
+      "profile_rate": 0.0,
+      "response_time": 5e-06,
+      "side": "incoming",
+      "source_motion_zero_here_reason": "compact pulse duration=L/4, midpoint=L/2 lies outside support",
+      "temporal_position": "actual solved primal phase midpoint; fresh first response at the same retained node"
+    },
+    {
+      "At_time_derivative_scope": "derivative of saved Gauss interpolant; unused by literal Maxwell/Higgs action",
+      "coordinate_time": 5e-06,
+      "first_H_norm": 4.819976584158094e-13,
+      "first_H_rate_norm": 1.285326652823083e-07,
+      "first_gauge_norm": 4.633871189204359e-06,
+      "first_gauge_rate_norm": 1.98854989163737e-05,
+      "geometry_fixed_field_norm": 8.990476683954844e-11,
+      "geometry_source_motion_norm": 0.0,
+      "norms": {
+        "Maxwell_gauge_rate_cotangent": 5.180815911143245e-13,
+        "Maxwell_gauge_value_cotangent": 2.330114722666638e-12,
+        "raw_mean_cotangent": 8.993644947199887e-11,
+        "scalar_gauge_value_cotangent": 1.0941815574856158e-26,
+        "scalar_rate_cotangent": 0.0,
+        "scalar_value_cotangent": 3.5490209240594274e-27
+      },
+      "pair_symmetry_relative": 4.1639743245224614e-29,
+      "profile": 0.0,
+      "profile_rate": 0.0,
+      "response_time": 5e-06,
+      "side": "outgoing",
+      "source_motion_zero_here_reason": "compact pulse duration=L/4, midpoint=L/2 lies outside support",
+      "temporal_position": "actual solved primal phase midpoint; fresh first response at the same retained node"
+    }
+  ],
+  "fermion_statistics_factor": 0.5,
+  "finite_TrP_coefficient_subtracted": false,
+  "focused_tests": {
+    "command": "C:/Python314/python.exe -m pytest --noconftest -q tests/test_muon_electromagnetic_source_mean_load.py",
+    "exit_code": 0,
+    "passed": 6,
+    "scope": "active source motion recovers owned Tb limit; actual H/Hdot analytic jets; fresh EM binding; support zero; required rate and oldQ rejection",
+    "stdout": "6 passed in 12.64s"
+  },
+  "full_angular_H_dependent_nonlinear_source_family_claimed": false,
+  "independent_replay": [
+    {
+      "byte_identical": true,
+      "run_1": {
+        "bytes": 25299,
+        "path": "artifacts/muon_electromagnetic_source_mean_load_20261011/run_1/mean_load.json",
+        "sha256": "e9b7be056f5850a665829cd6a114fbeaa5c00353ef1abc1bead6d66c3e8ea198"
+      },
+      "run_2": {
+        "bytes": 25299,
+        "path": "artifacts/muon_electromagnetic_source_mean_load_20261011/run_2/mean_load.json",
+        "sha256": "e9b7be056f5850a665829cd6a114fbeaa5c00353ef1abc1bead6d66c3e8ea198"
+      }
+    },
+    {
+      "byte_identical": true,
+      "run_1": {
+        "bytes": 355889,
+        "path": "artifacts/muon_electromagnetic_source_mean_load_20261011/run_1/mean_load.npz",
+        "sha256": "d4d16f7d87e5ac788a9dbb4f6f951e3189959cbbc61e38bdcf6f3af358551913"
+      },
+      "run_2": {
+        "bytes": 355889,
+        "path": "artifacts/muon_electromagnetic_source_mean_load_20261011/run_2/mean_load.npz",
+        "sha256": "d4d16f7d87e5ac788a9dbb4f6f951e3189959cbbc61e38bdcf6f3af358551913"
+      }
+    }
+  ],
+  "independent_review": {
+    "equation": "D_z S_AB=D3S[z,u_A,u_B]+D2S[D_z u_A,u_B]+D2S[u_A,D_z u_B]",
+    "result": "no material chain-rule/sign/normalization defect in source_jet_motion_contact; two ordered contacts, batch order, future rate and relative factors reviewed",
+    "reviewer": "/root/validation"
+  },
+  "nonlinear_axis_contact_scope": "if a different nonlinear angular charge chart were adopted, D_HQ[H_A] beta_B+swap and off-shell residual contacts would be required; their boundary value/rate vanish at this midpoint by support only, not throughout active history",
+  "physical_soft_vertex_or_complete_observable_evaluated": false,
+  "producer_runs": [
+    {
+      "command": "C:/Python314/python.exe scripts/evaluate_muon_electromagnetic_source_mean_load.py --incoming-response artifacts/muon_primal_electromagnetic_source_20261011/incoming_run_1 --outgoing-response artifacts/muon_primal_electromagnetic_source_20261011/outgoing_run_1 --output artifacts/muon_electromagnetic_source_mean_load_20261011/run_1",
+      "exit_code": 0,
+      "printed_archive": {
+        "bytes": 355889,
+        "path": "mean_load.npz",
+        "sha256": "d4d16f7d87e5ac788a9dbb4f6f951e3189959cbbc61e38bdcf6f3af358551913"
+      },
+      "printed_receipt_sha256": "e9b7be056f5850a665829cd6a114fbeaa5c00353ef1abc1bead6d66c3e8ea198",
+      "receipt": {
+        "bytes": 25299,
+        "path": "artifacts/muon_electromagnetic_source_mean_load_20261011/run_1/mean_load.json",
+        "sha256": "e9b7be056f5850a665829cd6a114fbeaa5c00353ef1abc1bead6d66c3e8ea198"
+      }
+    },
+    {
+      "command": "C:/Python314/python.exe scripts/evaluate_muon_electromagnetic_source_mean_load.py --incoming-response artifacts/muon_primal_electromagnetic_source_20261011/incoming_run_1 --outgoing-response artifacts/muon_primal_electromagnetic_source_20261011/outgoing_run_1 --output artifacts/muon_electromagnetic_source_mean_load_20261011/run_2",
+      "exit_code": 0,
+      "printed_archive": {
+        "bytes": 355889,
+        "path": "mean_load.npz",
+        "sha256": "d4d16f7d87e5ac788a9dbb4f6f951e3189959cbbc61e38bdcf6f3af358551913"
+      },
+      "printed_receipt_sha256": "e9b7be056f5850a665829cd6a114fbeaa5c00353ef1abc1bead6d66c3e8ea198",
+      "receipt": {
+        "bytes": 25299,
+        "path": "artifacts/muon_electromagnetic_source_mean_load_20261011/run_2/mean_load.json",
+        "sha256": "e9b7be056f5850a665829cd6a114fbeaa5c00353ef1abc1bead6d66c3e8ea198"
+      }
+    }
+  ],
+  "source_prescription": "linear external electromagnetic probe Q_H(H_base(t)) bound on actual incoming/outgoing same-action fields; base homogeneous H/Hdot/geometry source jets retained",
+  "source_records": [
+    {
+      "bytes": 13730,
+      "path": "src/bhsm/interface/muon_electromagnetic_source_mean_load.py",
+      "sha256": "b07d48c05a09a2119e6196065a64475eb97e635b2f17e2bfaebb9566617b09d4"
+    },
+    {
+      "bytes": 5530,
+      "path": "tests/test_muon_electromagnetic_source_mean_load.py",
+      "sha256": "2c8e2a234c93054c1c29588bdae3ff696ab82f27c1e1447cacbac7970237ea96"
+    },
+    {
+      "bytes": 7935,
+      "path": "scripts/evaluate_muon_electromagnetic_source_mean_load.py",
+      "sha256": "14ff64e5665a9f1e60daa8ec376c42df09af3fa1ce07e151e0b9366260fc984d"
+    },
+    {
+      "bytes": 12612,
+      "path": "scripts/evaluate_muon_electromagnetic_native_source_pair.py",
+      "sha256": "15a68427fabbb1a8739b3397878fd8fdac77a3ecc0a0e4af7ce1f73a1a64adca"
+    }
+  ],
+  "unproven_Nambu_or_charge_conjugate_doubling_applied": false
+}

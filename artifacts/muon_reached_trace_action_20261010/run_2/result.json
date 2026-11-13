@@ -1,0 +1,161 @@
+{
+  "Gauss_relative_maximum": 1.7200021397064544e-15,
+  "action_boundary_relative_defect": 4.385422241313615e-13,
+  "action_parameters": {
+    "nu_squared_action": 4.0,
+    "surface_gamma": null
+  },
+  "actual_new_reached_source_response": true,
+  "adjoint_pairing_maximum_defect": 4.423335400930244e-21,
+  "array_archives": {
+    "adjoint.npz": {
+      "arrays": [
+        "advanced_adjoint"
+      ],
+      "bytes": 1873697,
+      "sha256": "1a81618060863e9a47854fe642540d3433637d568be9366854884f4b76aef748"
+    },
+    "contact.npz": {
+      "arrays": [
+        "A_tau",
+        "Gauss_residual",
+        "action_boundary_pairing",
+        "action_temporal_endpoint",
+        "adjoint_output",
+        "adjoint_readout_map",
+        "adjoint_source_pairing",
+        "gauge_Euler_reaction_integrand",
+        "intrinsic_H_canonical_momenta",
+        "intrinsic_H_response",
+        "intrinsic_scalar_wall_current_pairing",
+        "paired_gauge_Euler_reaction",
+        "source_trace",
+        "source_trace_rate",
+        "times",
+        "wall_trace_reaction_pairing"
+      ],
+      "bytes": 4321369,
+      "sha256": "bd32349f72dfc5d8327f7369294d4807e3e5db9052ed2fbb53ee56cc558a5952"
+    },
+    "operator_B.npz": {
+      "arrays": [
+        "B",
+        "time_nodes"
+      ],
+      "bytes": 671485,
+      "sha256": "cc93aee6d30fa11f4c326198e47b4866acb327ea65f3b22cb089cb9154668088"
+    },
+    "operator_K.npz": {
+      "arrays": [
+        "K",
+        "time_nodes"
+      ],
+      "bytes": 1415484,
+      "sha256": "f62b30a536a6a26783410ec2b72927ca511969631ec42e19256651b69382eb81"
+    },
+    "operator_M.npz": {
+      "arrays": [
+        "M",
+        "time_nodes"
+      ],
+      "bytes": 476445,
+      "sha256": "61c7714cfccbb91090616cd1707624084e20d67f164b9005dafb1fd04d4db606"
+    },
+    "phase.npz": {
+      "arrays": [
+        "state"
+      ],
+      "bytes": 7695771,
+      "sha256": "6fb2a5504fea9a4cbf0a7aad493775329d8760ae4ae66df9caa645a818645e11"
+    },
+    "source.npz": {
+      "arrays": [
+        "R4",
+        "T_b",
+        "T_b_dot",
+        "actual_gauge_gradient_weak_rows",
+        "coordinate_times",
+        "current_angular_residual",
+        "current_angular_response",
+        "current_angular_return",
+        "cut_b_source_coefficients",
+        "full400_source_Q",
+        "full400_source_Qdot",
+        "raw_common_field_jets",
+        "response_times",
+        "source_normal_gradient",
+        "source_normal_hessian"
+      ],
+      "bytes": 1212453,
+      "sha256": "c35be14ac7e50653187e572d3da9fb2e77aceddf6a6830976ce3331282976f44"
+    },
+    "velocity.npz": {
+      "arrays": [
+        "velocity"
+      ],
+      "bytes": 3819992,
+      "sha256": "c59de6bcaacbef49db97699d28fb313fb3cf3804a0c61e9da9ed1ccdb11bd135"
+    }
+  },
+  "background_scope": "retained corrected outgoing24 local backward numerical chart; not incoming history or full stationary physical event",
+  "classification": "EVALUATED_FRESH_COUPLED_MAXWELL_HIGGS_RESPONSE_ON_CURRENT_REACHED_ANGULAR_COLUMNS",
+  "conditioned_angular_shift": 35.74168472403082,
+  "error_scope": "actual finite analytic action samples and DOP853 forward/adjoint residual diagnostics; quadrature/time interpolation and continuous/native-domain errors not enclosed",
+  "gauge_Euler_reaction_norm": 0.03656766058748043,
+  "gauge_response_norm": 0.010087299942210918,
+  "independent_At_Ar_Ai_retained": true,
+  "input_hashes": {
+    "scripts\\evaluate_muon_reached_trace_action.py": "f2ecf5b614f8b3b1b5f9bf2b73490e539321049633f7deb467bdf60a81e0c260",
+    "src/bhsm/interface/muon_intrinsic_m4_normal_pullback.py": "43187eee35f2879a43fe0fd02ae447502811349ccf2f2a78aa14beb8aa706bf0",
+    "src/bhsm/interface/muon_native_current_component_heat.py": "3d1eb504032ddb526c03f9caf773ffbb64ee22d4fb43cb28703ce6312b74b487",
+    "src/bhsm/interface/muon_native_photon_response.py": "1d633e7370a0ded6f01adf3b3547637c9acc0f32e0ad246655e6863637de5cea",
+    "src/bhsm/interface/muon_parent_gauge_geometry_correction.py": "fa29f5764dca39196c807d64e7976d5894589e7de3ffa9d4a5ddecfb136b4816",
+    "src/bhsm/interface/muon_parent_maxwell_corrected_retarded.py": "00bf7053e289297afd4f10dc0ef9522ac8326f2bd07609c9979bb9f5f6f74a4d",
+    "src/bhsm/interface/muon_parent_maxwell_full_q_application.py": "936386142f5f0732210fa7ddba38f3e497341089e2eafe8ff5d1b4b959b8249b",
+    "src/bhsm/interface/muon_parent_maxwell_full_retarded.py": "1ecf85a6da94b84b69af1ff4394301232d9d4cad4b0f0bc08de56d5943e0c478",
+    "src/bhsm/interface/muon_parent_maxwell_geometry_weak.py": "f0b4a49934e17ad18c40e9164b66c54e1b2cb146fb476f59b0e500f2dd6c9153",
+    "src/bhsm/interface/muon_reached_trace_action.py": "7fed7f2520a6f66e31323905359e491897f7187ccf9871ecfc2ab95e415ffade"
+  },
+  "intrinsic_H_canonical_norm": 0.0018329674866206572,
+  "intrinsic_H_response_norm": 1.9618208327859943e-09,
+  "minimum_interior_mass_eigenvalue": 443.8385414212831,
+  "numerical_integrator": {
+    "atol": 2e-11,
+    "evaluations": 2897,
+    "method": "DOP853",
+    "rtol": 2e-09
+  },
+  "old_source_span_response_substituted": false,
+  "original_Q8_outside_relative_norm": 0.006983632474236954,
+  "physical_Pauli_value": false,
+  "physical_free_wall_inverse": false,
+  "physical_native_heat_closed": false,
+  "physical_source_current_selected": false,
+  "scalar_Maxwell_relative_normalization": 8.0,
+  "scalar_wall_current_norm": 1.0779923422120116e-07,
+  "shift_is_physical_soft_momentum": false,
+  "source_motion_count": 1,
+  "source_motion_derivative_identity": "beta_dot=gdot*Tb*b + g*(-.5*dlogR4_dt*Tb)*b",
+  "source_motion_differentiated_before_Gauss": true,
+  "source_records": [
+    {
+      "bytes": 9736,
+      "path": "artifacts/muon_parent_maxwell_corrected_retarded_20261010/run_3/result.json",
+      "sha256": "f94bf8920356f27176de9a00278c13f5d90cedcb207e7a78d67f6ac7f082de93"
+    },
+    {
+      "bytes": 9510663,
+      "path": "artifacts/muon_parent_maxwell_corrected_retarded_20261010/run_3/application.npz",
+      "sha256": "7908eb2bb8faf3f054fad2b9b6e65751f3589adf04e823da69283fe9dbb775f1"
+    },
+    {
+      "bytes": 4900380,
+      "path": "artifacts/muon_parent_maxwell_corrected_retarded_20261010/run_3/operator.npz",
+      "sha256": "a54ca77e1b5815517c9fc42578528d3b2fc8d173c683089428854d9d5449ac0e"
+    }
+  ],
+  "source_scope": "fresh current angular b-frame response at birth; moving material beta=Tb*b; all400 angular actions retained",
+  "temporal_source_scope": "numerical compact Green pulse, not selected physical soft transfer",
+  "time_nodes": 17,
+  "time_steps": 64
+}

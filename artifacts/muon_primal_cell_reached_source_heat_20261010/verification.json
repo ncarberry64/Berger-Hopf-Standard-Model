@@ -1,0 +1,71 @@
+{
+  "classification": "FOCUSED_TEST_AND_INDEPENDENT_REPLAY_VERIFICATION",
+  "deterministic_pairs": [
+    {
+      "byte_identical": true,
+      "left": "artifacts/muon_primal_cell_reached_source_heat_20261010/run_5/source_heat.json",
+      "right": "artifacts/muon_primal_cell_reached_source_heat_20261010/run_6/source_heat.json",
+      "sha256": "231960a77d211853b42b7e5650703a5dcf5f1b6ca2d8603a227e9106748526ce"
+    },
+    {
+      "byte_identical": true,
+      "left": "artifacts/muon_primal_cell_reached_source_heat_20261010/run_5/source_heat.npz",
+      "right": "artifacts/muon_primal_cell_reached_source_heat_20261010/run_6/source_heat.npz",
+      "sha256": "e6623dc0ac4c1d29179207aad26f7583e64c760ab01c420ed895da9f27aa54d8"
+    }
+  ],
+  "no_commit_or_push": true,
+  "producers": [
+    {
+      "command": "C:/Python314/python.exe scripts/evaluate_muon_primal_cell_reached_source_heat.py --incoming-response artifacts/muon_trace_enriched_reached_action_20261010/incoming_run_1 --outgoing-response artifacts/muon_trace_enriched_reached_action_20261010/outgoing_run_1 --cutoff 1.0421771918944492e-11 --output artifacts/muon_primal_cell_reached_source_heat_20261010/run_5",
+      "exit_code": 0,
+      "stdout_final_archive": {
+        "bytes": 359034,
+        "path": "source_heat.npz",
+        "sha256": "e6623dc0ac4c1d29179207aad26f7583e64c760ab01c420ed895da9f27aa54d8"
+      },
+      "stdout_final_receipt_sha256": "231960a77d211853b42b7e5650703a5dcf5f1b6ca2d8603a227e9106748526ce"
+    },
+    {
+      "command": "C:/Python314/python.exe scripts/evaluate_muon_primal_cell_reached_source_heat.py --incoming-response artifacts/muon_trace_enriched_reached_action_20261010/incoming_run_1 --outgoing-response artifacts/muon_trace_enriched_reached_action_20261010/outgoing_run_1 --cutoff 1.0421771918944492e-11 --output artifacts/muon_primal_cell_reached_source_heat_20261010/run_6",
+      "exit_code": 0,
+      "stdout_final_archive": {
+        "bytes": 359034,
+        "path": "source_heat.npz",
+        "sha256": "e6623dc0ac4c1d29179207aad26f7583e64c760ab01c420ed895da9f27aa54d8"
+      },
+      "stdout_final_receipt_sha256": "231960a77d211853b42b7e5650703a5dcf5f1b6ca2d8603a227e9106748526ce"
+    }
+  ],
+  "review_scope": "finite scientific contractions on declared numerical component; no physical-domain or completed native Pauli certification",
+  "runtime_environment": {
+    "OPENBLAS_NUM_THREADS": "1",
+    "PYTHONPATH": "src"
+  },
+  "source_records": [
+    {
+      "bytes": 8157,
+      "path": "src/bhsm/interface/muon_primal_cell_reached_source_heat.py",
+      "sha256": "6f323be296d620c8edf9a333c45c280c3360cf8c9bab12a9cdb2dde39fadde82"
+    },
+    {
+      "bytes": 6867,
+      "path": "scripts/evaluate_muon_primal_cell_reached_source_heat.py",
+      "sha256": "bdedff66c5216be633d71619d2cd880c13b4d8e3181c0c29eed7ff2d5ca1c663"
+    },
+    {
+      "bytes": 3640,
+      "path": "tests/test_muon_primal_cell_reached_source_heat.py",
+      "sha256": "06de649f6f5c3ef2841746e56f200e52bf40a3e49f756ff377b501dec4d41930"
+    }
+  ],
+  "tests": {
+    "command": "C:/Python314/python.exe -m pytest --noconftest -q tests/test_muon_primal_cell_reached_source_heat.py",
+    "exit_code": 0,
+    "passed": 4,
+    "prior_test_failure_and_correction": [
+      "Initial entry-relative Haar-contact assertion compared off-diagonal cancellations16orders below the diagonal scale; replaced by the independent whole-matrix norm identity. Production formula unchanged."
+    ],
+    "seconds": 3.16
+  }
+}

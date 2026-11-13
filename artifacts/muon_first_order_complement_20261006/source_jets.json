@@ -1,0 +1,26 @@
+{
+  "A_QQ_A": null,
+  "A_QR_A": null,
+  "A_RQ_A": null,
+  "A_RR_A": null,
+  "coordinate": "same photon b_A; beta=T_b b; A_Q=sqrt(2) beta",
+  "equations": {
+    "Aeff_A": "A_RR_A-A_RQ_A X-A_RQ X_A",
+    "X_A": "solve(A_QQ,A_QR_A-A_QQ_A X)",
+    "affine": "f_eff=f_R-A_RQ solve(A_QQ,f_Q); retain total same-source derivative"
+  },
+  "finite_subtraction": null,
+  "frame_index": "no new2/3 vertex factor or rescale",
+  "full_photon_vertex": null,
+  "previous_corrected_auxiliary_photon": "preserved, not full vertex",
+  "quantum_measure_jet": null,
+  "required_total_variations": [
+    "chi_j",
+    "W",
+    "allowed domain",
+    "G0/G1/E",
+    "pairings",
+    "canonical C",
+    "same-source stationary return"
+  ]
+}

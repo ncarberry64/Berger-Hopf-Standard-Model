@@ -1,0 +1,74 @@
+{
+  "all_output_bytes_identical": true,
+  "all_output_count": 2,
+  "all_output_sha256": {
+    "application.npz": "0f066b98b8fdf302d3336e9571d33e6bae06a96e33e43d9e50bc1154f378d82d",
+    "result.json": "0c8028af909db4e151835386034fee32f338daecabfe5ca86444ff720d954dbd"
+  },
+  "candidate_full_reset_guard_passed": false,
+  "capture_provenance": "complete actual PowerShell Tee-Object bytes",
+  "classification": "INDEPENDENT_REPLAY_SAME_COUPLED_CANDIDATE_CANONICAL_FORCE_AND_TRACE_APPLICATION",
+  "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+  "environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "PYTHONPATH": "src;scripts"
+  },
+  "executions": [
+    {
+      "argv": [
+        "C:/Python314/python.exe",
+        "scripts/evaluate_muon_coupled_reset_canonical_trace.py",
+        "--output",
+        "artifacts/muon_coupled_reset_canonical_trace_20261012/run_1"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "C:/Python314/python.exe",
+        "scripts/evaluate_muon_coupled_reset_canonical_trace.py",
+        "--output",
+        "artifacts/muon_coupled_reset_canonical_trace_20261012/run_2"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "focused_review": {
+    "argv": [
+      "C:/Python314/python.exe",
+      "-m",
+      "pytest",
+      "--noconftest",
+      "-q",
+      "tests/test_muon_coupled_reset_canonical_trace_review.py"
+    ],
+    "duration_seconds": 1.67,
+    "exit_code": 0,
+    "passed": 1,
+    "source_sha256": "6b4041e347a9507700b10cfa4afce1a6236c1e0a1d7212ce32896fd38c7a9740"
+  },
+  "initial_import_probe": "metadata owner import action_domain_contract failed before any action execution; corrected to the existing action_definition API",
+  "input_pins_current": true,
+  "joint_Pi_not_substituted_for_standalone_parent_Pi": true,
+  "new_proper_clock_span_exterior_Bin_Bout_first_hit_or_Pauli_selected": false,
+  "saved_v1_parent_energy_alias": "prior continued_run_1 parent_energy alias was Lparent, not Ep; this consumer ignores it and reexecutes Ep=pv*L_v\u2212Lparent. The separate v2 driver writes parent_action_value and correct parent_energy",
+  "standalone_parent_Ly_evaluated_not_inferred": true,
+  "stdout": {
+    "focused_review.stdout.txt": {
+      "bytes": 100,
+      "sha256": "833a6c8f4d9ce7a26fd1ac5c65561aa59846f84fd19c0eea4c2905066cb20b38"
+    },
+    "run_1.stdout.txt": {
+      "bytes": 317,
+      "sha256": "3f26efb85e442c10e9f945c4c92c58d2b3b2597d1bdcbee34445a7c26b0f7631"
+    },
+    "run_2.stdout.txt": {
+      "bytes": 317,
+      "sha256": "3f26efb85e442c10e9f945c4c92c58d2b3b2597d1bdcbee34445a7c26b0f7631"
+    }
+  },
+  "stored302_review": "exact-stored Acb solve/transpose/contraction retains full292+6+4; its residual upper bounds apply only to exact stored K/rhs/dual, and midpoint ports inserted into binary original226 are diagnostics",
+  "v2_resume_schema_review": "explicit prior application/raw_pair/reference/master lift plus original weights/action parameters and hashes; accepted-probe branch only for original first-probe receipt; all226 absolute rows checked",
+  "verifier_source_sha256": "dca5bc7e8493e2907d3dbd630d102836b7281d5f6c2da08e38b2440d4ffb962b"
+}

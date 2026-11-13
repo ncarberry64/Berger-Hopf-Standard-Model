@@ -1,0 +1,54 @@
+{
+  "JSON_LF": true,
+  "all_arrays_bit_exact_to_original_unpartitioned_runs_1_2": true,
+  "all_arrays_finite": true,
+  "array_count": 39,
+  "failures_before_final_revision": [
+    "Coarse16-step finite advanced quadrature assertion failed9.408922e-7 against3e-7; actual130 32-step coarse advanced defect3.257959e-7; refined48-step focused application passed.",
+    "Intrinsic-H interoperability control initially indexed Ar at incorrect matrix slice240:320; corrected test ordering to160:240.",
+    "Original unpartitioned run1/2 NPZ exceeded10MiB publication threshold; complete deterministic response/operator split retains39 arrays bit exact."
+  ],
+  "focused_tests": {
+    "command": "C:\\Python314\\python.exe -m pytest --noconftest -q tests/test_muon_parent_maxwell_corrected_retarded.py",
+    "exit_code": 0,
+    "output": ".............. [100%]\n14 passed in 49.73s"
+  },
+  "native_heat_evaluated": false,
+  "paired_files": {
+    "application.npz": {
+      "byte_identical": true,
+      "bytes": 9510663,
+      "sha256": "7908eb2bb8faf3f054fad2b9b6e65751f3589adf04e823da69283fe9dbb775f1"
+    },
+    "operator.npz": {
+      "byte_identical": true,
+      "bytes": 4900380,
+      "sha256": "a54ca77e1b5815517c9fc42578528d3b2fc8d173c683089428854d9d5449ac0e"
+    },
+    "result.json": {
+      "byte_identical": true,
+      "bytes": 9736,
+      "sha256": "f94bf8920356f27176de9a00278c13f5d90cedcb207e7a78d67f6ac7f082de93"
+    }
+  },
+  "physical_Pauli_evaluated": false,
+  "physical_stationary_base_claimed": false,
+  "producer_source": {
+    "bytes": 41759,
+    "path": "src/bhsm/interface/muon_parent_maxwell_corrected_retarded.py",
+    "sha256": "00bf7053e289297afd4f10dc0ef9522ac8326f2bd07609c9979bb9f5f6f74a4d"
+  },
+  "replay_commands": [
+    "$env:PYTHONPATH='src'\nC:\\Python314\\python.exe -m bhsm.interface.muon_parent_maxwell_corrected_retarded --output artifacts/muon_parent_maxwell_corrected_retarded_20261010/run_3",
+    "$env:PYTHONPATH='src'\nC:\\Python314\\python.exe -m bhsm.interface.muon_parent_maxwell_corrected_retarded --output artifacts/muon_parent_maxwell_corrected_retarded_20261010/run_4"
+  ],
+  "replays_exit_code": [
+    0,
+    0
+  ],
+  "scope": "FINITE_SAME_ACTION_PARENT_PLUS_INTRINSIC_H_PRESCRIBED_TRACE_APPLICATION",
+  "test_source": {
+    "path": "tests/test_muon_parent_maxwell_corrected_retarded.py",
+    "sha256": "8326e56429211296b7ddc88ce3baf73797048bed2867ec02427c2b47a07e84d8"
+  }
+}

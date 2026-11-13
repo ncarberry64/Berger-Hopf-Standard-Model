@@ -1,0 +1,256 @@
+CHANGING REAL-CELL YANG--MILLS SQUARE AND CURVATURE-CONTACT VALUES
+2026-10-16. Final independently repeated actual radial/time readout.
+
+New canonical audit:
+ audits/bhsm_changing_yang_mills_mp_values_20261016.py
+ SHA256a70200780782da13fbdbe4700c939c93b3e2487fd9edf14f81bbe14601d184b3
+Frozen MP value owner, unchanged:
+ audits/bhsm_changing_lorenz_mp_coefficient_values_20261016.py
+ SHA2561b0a9713749feb062fecdb664598a7a5b3528bd72ec5aa18176ae88eb5b88eff
+
+This constructs the remaining full1120 Yang--Mills positive-reference
+one-form Hessian and its separate curvature square and off-shell contact
+on the same two provisional REAL affine histories. It does not identify
+this classical reference Hessian with the microscopic graded P_strat.
+The original test space has ten ordinary radial-profile/component blocks
+and four dependent DG blocks, each adjoint4 x harmonic20. All1120 test
+coefficient directions remain. The separate independent scalar80 and the SM color8 complement
+are not added to this EW4 constituent. The common1200 kinetic matrix is
+obtained only after adding the independently constructed scalar block
+and the original MAXWELL_TO_CAP times this Yang--Mills block; it is not
+declared complete by this producer alone.
+
+1. ACTUAL CONNECTION FIRST DERIVATIVES, NOT A NEW FIELD HISTORY
+
+The fixed reference basis is the existing four-function value basis:
+the two normalized regular Jacobi profiles, the held boundary-anchored
+affine complement, and x^alpha. Its projection, wall coefficient and
+normalization are held at the original reference values. The derivative
+of every function is evaluated analytically in the same material rho.
+In particular the affine-complement derivative includes BOTH reference
+lambda_rho terms and all three held projection/wall subtraction terms.
+
+Let chi=rho*wall/WALL, lambda=A^2/(A^2+B^2), and
+ b=sin(2chi)^2 sum_j q_(25+j) cos(4jchi).
+Since logA-logB=2b+log(cot chi), define
+ D=2 b_chi-tan chi-cot chi.
+On the owned coherent affine source chart, qdot=v and sdot=raw99,
+ chi_t=rho*delta_dot/WALL, chi_rho=wall/WALL.
+Then the exact same geometric lambda derivatives are
+ lambda_t=2lambda(1-lambda)[2sin(2chi)^2 sum_j qdot_(25+j)cos(4jchi)+chi_t D],
+ lambda_rho=2lambda(1-lambda)chi_rho D.
+This is the original mechanical connection lambda, not the separately
+anchored f-response or localization probability, and it is distinct from
+the intrinsic Higgs potential coefficient lambda_H. No anchor derivative
+is needed for this partial time/rho connection derivative.
+
+At every actual quadrature point,
+ A=sum_j B_j(rho) a_j + M*(lambda_source-1) on angular components,
+ A_t=sum_j B_j(rho) adot_j + M*lambda_source,t,
+ A_rho=sum_j B'_j(rho) a_j + M*lambda_source,rho.
+Incoming lambda_source is its own. On the inherited-child history it is
+lambda_parent-lambda_reference_parent+lambda_reference_child; the three
+source profiles are each evaluated at the SAME owned coordinate t with
+their own saved affine geometry germ. Their time derivatives are added
+once with the same signs. The independent actual child gauge rate is
+the retained phase tangent, not an invented frequency substitution.
+There is no extra Ar advection term after this material-coordinate map.
+
+The MP metric values from the frozen owner are mu,gt,gr,gs,beta,R. With
+Ceff=C*wall/WALL, the original positive two-form densities are exactly
+ e=gt/R^2, r=gr/R^2, d=gs/R^2, k=gt/Ceff^2.
+The stable common factor remains2*pi^4*LF^5*4p(1-p). The anchored96
+response rule, actual roots and held binary chart constants remain the
+same explicitly numerical action operands as in the prior MP readout.
+
+2. COMPLETE FOUR-ANGULAR-COEFFICIENT CURVATURE CONSTRUCTION
+
+Put H0=I20,H_a=E_a (a1..3), with the original real Haar derivative
+matrices. For each five-component value map and each ten-component
+curvature map, retain the exact coefficient expression
+ V_mu=sum_(p0..3) V_mu,p tensor H_p,
+ C_f=sum_(p0..3) C_f,p tensor H_p.
+Every V_mu,p and C_f,p is a4x56 internal matrix (14blocks x4adjoints).
+The full coefficient index therefore has4*14*4=224 values.
+
+Ordinary columns use the exact tent and tent derivative times their
+radial value/rate. Their unweighted curvature is the original
+ X=vt_r-vrho_t+[A_t,v_r]-[A_r,v_t],
+ T_a=vt_a-E_a v_t+[A_t,v_a]-[A_a,v_t],
+ R_a=vrho_a-E_a v_r+[A_r,v_a]-[A_a,v_r],
+ B_a=2v_a+sum_jk eps_ajk(E_j v_k+[A_j,v_k]).
+The notation A_t in a commutator denotes the TEMPORAL CONNECTION VALUE,
+not the time derivative of A; the latter is separately retained in F.
+The implemented arrays consistently distinguish A[0] from A_time.
+
+All dependent DG columns have their complete temporal/radial connection
+values, temporal ghost derivative, radial ghost derivative and E_a eta.
+Their curvature is exactly d_A DG=[F,eta], as in the original point owner;
+no independent angular operator is left in that curvature after the
+owned commutator identity. The full background F retains actual A_time,
+A_radial and every nonabelian temporal/radial/angular component.
+
+The square is integrated without introducing square-root roundoff:
+ k X^T X + e(T-beta R)^T(T-beta R)+r R^T R+d B^T B.
+The separate contact is the literal original V^T Q(F) V, including
+temporal-radial, electric-shift, radial and ordered magnetic contacts.
+It is retained off shell; no Euler equation or Ward-zero projection is
+used to remove it. Neither At nor Ar nor nonzero gauge couplings vanish.
+
+The small coefficient quadratic forms are integrated before the final
+Haar lift, then multiplied by the exact MP products H_p^T H_q computed
+from the original held binary E entries. Both transpose placements and
+all cross-products are retained. No antiadjoint projection or new angular
+multiplicity is used. The final output is full1120x1120 in the original
+fixed coefficient coordinates, not a selected subset of matrix entries.
+
+Storage of only the exact algebraic upper coefficient triangle does not
+symmetrize an approximate full result. For the square each row outer
+product contributes a_i a_j to its upper entry. For a symmetric contact
+pair Q_rs, r<s, the two terms V_r^T Q_rs V_s and its transpose contribute
+once to offdiagonal upper entries and twice to coefficient-diagonal
+entries. The lift explicitly restores the corresponding transpose term.
+No measured residual is replaced with zero. Tiny cancellation residues
+are kept in the exact working-binary MP tuple archive.
+
+3. INDEPENDENT CONTROLS AND SCOPE OF THE NEW QUADRATURE AXES
+
+The actual prototype used4 radial nodes and6 temporal Gauss nodes per
+tent half, both histories. It is preserved as pilot4_run_1 with exact
+executed source SHA256d61b02ba56effe3c1545f6045c30ba61a1734124b170c5f54f5f6356f07cc10a.
+Only source-provenance/axis labels were added for the final producer.
+
+Independent MP differentiation of a separate value-only A(t,rho) map
+checks ALL20 time and radial derivatives at first/middle/last radial128
+nodes, not merely one proxy coefficient. It keeps the inherited source
+profile clocks. Prototype max absolute discrepancy is6.29e-77 for A_rho,
+1.69e-80 for the non-polar A_t samples, and8.48e-76 for the fixed-basis
+derivative at the polar node. Nonzero mechanical derivatives are reported.
+
+Independent full5x4x20 literal columns and their ten curvature components
+are Haar paired directly. The contact control evaluates the mixed Lie
+brackets against F, without using the encoded V/C maps or contact matrix.
+Four declared matrix pairs are integrated across ALL actual nodes.
+Prototype absolute differences are at most2.78e-77; nonzero square and
+contact terms and their tiny total cancellation residues are retained.
+Complete1120 binary64 original point-owner shadow comparisons are also
+saved at first/middle/last radial nodes. Their separate large absolute
+differences at huge entries and near-zero cancellation floors are not
+used as an absolute2e-10 precision claim.
+
+An independent read-only review passed the material lambda derivatives,
+source-clock incidence, density conversion, complete ordinary/DG maps,
+all contact signs and the exact coefficient upper-storage/lift factors.
+
+The actual production pair uses cases
+ radial64,time8 -> radial128,time8 -> radial128,time12
+on BOTH same histories. This separates radial and temporal rule changes
+while keeping the field/reference/test chart and anchor96 fixed. Time
+order means nodes per tent half. Every full unrounded1120 matrix entry
+is compared using max|new-old|/max(1,|old|,|new|), and the separate maximum
+absolute error is retained. This is an MP arithmetic/quadrature comparison,
+not an outward interval enclosure of upstream physical coefficients.
+
+Both independent executions completed. All14 corresponding files are
+byte-identical, and all current source/owner pins match. Every exact MP
+tuple was decoded, validated and re-encoded; coefficient lower triangles
+are exactly zero by the declared upper-storage convention. The complete
+square, contact and total1120 matrix readouts were reconstructed from
+those operands and reproduce every saved binary64 entry bit-for-bit.
+
+No physical outgoing/domain or source-field derivative gate, original
+Maxwell/all226 validation, coupled matching correction, normalized spin
+state or muon moment is asserted. The label outgoing in the archive means
+the inherited-child provisional REAL history, not a physical exterior.
+
+4. ALL-ENTRY MATCHED-RULE RESULTS AND FINAL PAIRED RECEIPT
+
+Each line is: form, maximum entry-scaled difference, SEPARATE maximum
+absolute difference. Every1120x1120 unrounded matrix entry is scanned.
+All12 comparisons pass2e-10 in BOTH displayed numerical metrics; these
+are finite value/quadrature controls, not the physical derivative gate.
+
+incoming: 64:8 -> 128:8 (radial_at_fixed_time_rule)
+ square_curvature: 9.4876174595005971078548925930304869544381030482517969671707037221e-21 ; 0.0000000000000044364974437299901307684005618449997288481560001450726649655766779
+ curvature_contact: 3.8481011959099391797843052923918524181929389919464906515514161586e-21 ; 0.00000000000000000028689542456491456609842146187518289445098115742215133413238182536
+ one_form_Hessian: 9.4876174595005971078548925930304869544381030482517969671707037221e-21 ; 0.0000000000000044364974437299901307684005618449997288481560001450726649655766779
+
+incoming: 128:8 -> 128:12 (temporal_at_fixed_radial_rule)
+ square_curvature: 2.0972982149399020739071943845672563214510821969244250535191301973e-41 ; 2.0972982149399020739071943845672563214510821969244250535191301973e-41
+ curvature_contact: 9.0507800313973321596209184790492999352512319824142056616378397145e-41 ; 9.0507800313973321596209184790492999352512319824142056616378397145e-41
+ one_form_Hessian: 9.0507800313973321596209184790492999352512319824142056616378397145e-41 ; 9.0507800313973321596209184790492999352512319824142056616378397145e-41
+
+outgoing: 64:8 -> 128:8 (radial_at_fixed_time_rule)
+ square_curvature: 0.000000000000000000017770520240918329794536285536043210822263976884264640205333884255 ; 0.00000000000000045041162365635185264682589051311364798194282222339391109242365297
+ curvature_contact: 3.0044039481854352186632308122023043667817740350236933872639726769e-21 ; 0.00000000000000000025627659772524721075345896467616869981827024301260179904635196294
+ one_form_Hessian: 0.000000000000000000017770520240918329794536285536043210822263976884264640205333884255 ; 0.00000000000000045041162365635185264682589051311364798194282222339391109242365297
+
+outgoing: 128:8 -> 128:12 (temporal_at_fixed_radial_rule)
+ square_curvature: 1.0488215268440490940018347766686954972659140396343404126954679572e-40 ; 1.0488215268440490940018347766686954972659140396343404126954679572e-40
+ curvature_contact: 3.1582491877528786340575101330415050504934384164720687416901439206e-41 ; 3.1582491877528786340575101330415050504934384164720687416901439206e-41
+ one_form_Hessian: 8.8920503484731895168194341214096645234267695396468880915780622527e-41 ; 8.8920503484731895168194341214096645234267695396468880915780622527e-41
+
+The largest radial absolute difference is4.4364974437299901e-15;
+the largest radial scaled difference is1.7770520240918330e-20. The
+largest temporal absolute/scaled difference is1.0488215268440491e-40.
+These values apply to this held finite EW4 reference/action chart only.
+
+All independent integrated full-Haar MP control absolute discrepancies
+are at most3.65814268630099e-78. The complete original binary64 point
+shadow comparisons have worst entry-scaled2.3125437020382206e-14 for
+the total Hessian and1.9636900935631542e-14 for contact. Separate large
+absolute differences at large point entries remain in each record.
+
+Actual pair folders:
+C:\Users\carbe\OneDrive\Documents\CODEX\outputs\bhsm_changing_yang_mills_mp_values_20261016\run_1
+C:\Users\carbe\OneDrive\Documents\CODEX\outputs\bhsm_changing_yang_mills_mp_values_20261016\run_2
+
+Paired verification receipt:
+C:\Users\carbe\OneDrive\Documents\CODEX\outputs\bhsm_changing_yang_mills_mp_values_20261016\final_pair_verification.json
+SHA256896b7b78ec246d112dc93a4cf13bdd2a67632578adee17ba22ac6e5ba2256364
+
+All14 corresponding per-run files (bytes, SHA256):
+ executed_producer.py 21798
+  a70200780782da13fbdbe4700c939c93b3e2487fd9edf14f81bbe14601d184b3
+ incoming_radial128_time12/forms.npz 875891
+  292848497604c64dcfcb5a5e34af35dc1889bf94d4b42e33e03ca1fca8431d48
+ incoming_radial128_time12/result.json 9206
+  87ae75b7e455d8c8dbbd8fca6fa5945fddd2043c828e317584757e2a14f3a9e8
+ incoming_radial128_time8/forms.npz 875630
+  678a3a0161ae57618a0d27ee85153c86dce18b9dfc7853245ddebdde107cd8ca
+ incoming_radial128_time8/result.json 9112
+  62b9020180011b948c368fde67e1b652889dbd956d8721f5f90f64e8a47f9168
+ incoming_radial64_time8/forms.npz 873378
+  1ea816d272123065554ea358505a514022f8bd0b7f2ac8a13533a395bbdafe16
+ incoming_radial64_time8/result.json 7466
+  2e2c8532cc5b283bd2b1bc30cae77b6606055ba938915efa44a96c57fa97dc46
+ outgoing_radial128_time12/forms.npz 879291
+  bacae3d3b5318aff66af4dfcc1c879d0797ff441f936e7860b1856e91574668b
+ outgoing_radial128_time12/result.json 9281
+  b59e8920525937a0107afc7fda2297a61d4365da31b28e76284e5bb504162676
+ outgoing_radial128_time8/forms.npz 877092
+  87eb3362039579a7ddbcde197ef3beb71c6db8e1e140e9ee7c41b4e42a9790d6
+ outgoing_radial128_time8/result.json 9234
+  6e2dbfaadd6491598e5dc64f9940dec71adbf30324cb6ecdff686845be2e55d4
+ outgoing_radial64_time8/forms.npz 874527
+  0e25609040a569467c89aeffc4e9a4f1b51821e829a45691a2e09d5f7b01e91e
+ outgoing_radial64_time8/result.json 7522
+  c24bd2758296291ecc924959178f9a01c61e939df100e83c52368b7fcaa21067
+ result.json 114017
+  871f85e9fc6e4e1bc34be5bde07b31942df890d2e021d0124377edb8d37c555b
+
+Every archive is below1MiB. Six archives carry602112 exact MP coefficient
+tuples in total (including declared zeros); full tensor shapes, nonzero
+counts, mantissa-bit maxima and exact readout reconstruction results are
+retained in the paired verification receipt. No output archive was
+reencoded to manufacture byte agreement.
+
+The final top result source_and_owner_sha256 map binds the exact local
+action/field/map owners. Its input_archive_sha256 aliases additionally
+bind the preserved original TIME6 archive and the consumed refinement
+result plus all six radial32/64/128 source archives. These existing data
+are read, not recomputed or renormalized. The prior coarse prototype,
+binary64 failures, weak-Lorenz cancellation floors and all earlier rules
+remain unchanged. This readout supplies saved exact operands for the
+subsequent common15 composition; no native heat/operator identification
+or physical matching correction follows merely from numerical convergence.

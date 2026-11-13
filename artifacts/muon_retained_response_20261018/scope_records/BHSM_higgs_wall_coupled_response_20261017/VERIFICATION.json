@@ -1,0 +1,129 @@
+{
+  "a_mu": null,
+  "all_new_scoped_checks_pass": true,
+  "classification": "DYNAMIC_INTRINSIC_HIGGS_PLUS_SAVED_MAXWELL_WALL_RESPONSE_ON_PROVISIONAL_HISTORIES",
+  "complete_physical_outgoing_derivative_admitted": false,
+  "coupled_background_corrections": 0,
+  "environment": {
+    "numpy": "2.3.5",
+    "python": "3.13.5 (main, Jul 15 2026, 20:25:40) [GCC 14.2.0]",
+    "scipy": "1.17.0"
+  },
+  "g_mu": null,
+  "git_writes": false,
+  "initial_fields_or_quantum_state_selected": false,
+  "input_manifests": {
+    "BHSM_RETAINED_HISTORY_INPUTS_20261017": {
+      "manifest_sha256": "769c152b86b352b4d509b406fe0415d561708ac0f932bd811a506d7952a8d3a1",
+      "verified_count": 47
+    },
+    "BHSM_port_preserving_retarded_response_20261017": {
+      "manifest_sha256": "3b7bde4fb28ea318437ae3b6389a991b05013df662848fd04f1757891a20c675",
+      "verified_count": 30
+    }
+  },
+  "input_source_revision": "70e82fd4dbe5f53ff27ae17f6aaac7a4727c1fde",
+  "measured_calibration_preserved": {
+    "GF_GeV_minus2": 1.1663774240217167e-05,
+    "lambda_H": 0.1290946235307726,
+    "m_h_GeV": 125.11,
+    "nu_squared_action": 4.0
+  },
+  "native_quantum_response_evaluated": false,
+  "physical_collider_solved": false,
+  "physical_wall_equation_closed": false,
+  "previous_stricter_Maxwell_gauge_reconstruction_pass": false,
+  "records": [
+    {
+      "measures": {
+        "Higgs_initial_to_wall_max": 0.10795657876673712,
+        "Higgs_wall_rate_momentum_max": 0.0,
+        "combined_wall_temporal_Green_identity": 3.3492089310249717e-15,
+        "complete_moving_neutral_axis_cross_max": 6.938893903907228e-18,
+        "fixed_original_trace_magnetic_Higgs_response_max": 2.5694164129003024e-13,
+        "free_wall_Higgs_response_max": 1.5428393919928373e-12,
+        "independent_angular_rule_max": 3.3306690738754696e-16,
+        "independent_final_difference": 2.220446049250313e-16,
+        "independent_original_action_max": 3.7539416020138106e-15,
+        "independent_original_equation_residual": 2.220446049250313e-16,
+        "independent_stage_difference": 3.3306690738754696e-16,
+        "nu2_derivative_equation_residual": 6.462348535570529e-27,
+        "nu2_fd_max": 1.1196398575314817e-15,
+        "original_Higgs_gauge_identity_max": 5.4643789493269423e-17,
+        "scalar_Green_identity": 4.876755296330851e-19,
+        "scalar_momentum_residual": 2.220446049250313e-16,
+        "scalar_stage_residual": 2.220446049250313e-16,
+        "scalar_symplectic": 4.673452192123856e-17
+      },
+      "side": "incoming"
+    },
+    {
+      "measures": {
+        "Higgs_initial_to_wall_max": 0.13602928743218823,
+        "Higgs_wall_rate_momentum_max": 0.0,
+        "combined_wall_temporal_Green_identity": 6.0285164447254624e-15,
+        "complete_moving_neutral_axis_cross_max": 3.469446951953614e-18,
+        "fixed_original_trace_magnetic_Higgs_response_max": 1.6183471571041233e-13,
+        "free_wall_Higgs_response_max": 9.717539428918694e-13,
+        "independent_angular_rule_max": 1.6653345369377348e-16,
+        "independent_final_difference": 1.3877787807814457e-17,
+        "independent_original_action_max": 5.793976409762536e-16,
+        "independent_original_equation_residual": 3.0093211752140057e-16,
+        "independent_stage_difference": 1.1102230246251565e-16,
+        "nu2_derivative_equation_residual": 1.6155871338926322e-27,
+        "nu2_fd_max": 9.70361632194189e-16,
+        "original_Higgs_gauge_identity_max": 4.163336342344337e-17,
+        "scalar_Green_identity": 1.0935052988473765e-18,
+        "scalar_momentum_residual": 1.1102230246251565e-16,
+        "scalar_stage_residual": 2.220446049250313e-16,
+        "scalar_symplectic": 3.755172432338165e-17
+      },
+      "side": "outgoing"
+    }
+  ],
+  "replay_byte_identical": true,
+  "replay_comparisons": [
+    {
+      "byte_identical": true,
+      "path": "incoming_combined_response.npz",
+      "sha256": "c4d54070c1fb1f26d2068859a864a35e24c5d45937dc561e050f9b9551ae5e2a"
+    },
+    {
+      "byte_identical": true,
+      "path": "incoming_higgs_coefficients.npz",
+      "sha256": "5f5d3918b75b416eb53599006c8fb358583e5dd61a756baa9b5d319b7474aa79"
+    },
+    {
+      "byte_identical": true,
+      "path": "incoming_higgs_response.npz",
+      "sha256": "c220e60e2a73fd915e7ed278f6e29f7ef7dc7f79e4ab53e7af39d865ccc2f306"
+    },
+    {
+      "byte_identical": true,
+      "path": "outgoing_combined_response.npz",
+      "sha256": "8e3c654dd938af2e5910b9d86333efa175c074f2b2b6b681842d71bd3d62f313"
+    },
+    {
+      "byte_identical": true,
+      "path": "outgoing_higgs_coefficients.npz",
+      "sha256": "d58ec13184df42c95f710864ef95c28e71cd8f2d9dc3da54aa909224c7d917ad"
+    },
+    {
+      "byte_identical": true,
+      "path": "outgoing_higgs_response.npz",
+      "sha256": "76cc6a131bca1fb1241fa6c01f760ae8715ca677065bb1d40fefe3c852511580"
+    },
+    {
+      "byte_identical": true,
+      "path": "progress.json",
+      "sha256": "2ab0d250b496c28f4032b2e43a11cef509d049425516cb7b106188f7d2ae11d6"
+    },
+    {
+      "byte_identical": true,
+      "path": "result.json",
+      "sha256": "038e51457057225f9b923709fb2ff1564d3157236532a00c74a5c54f74afad50"
+    }
+  ],
+  "scoped_categories_per_arm": 10,
+  "total_uncertainty": null
+}

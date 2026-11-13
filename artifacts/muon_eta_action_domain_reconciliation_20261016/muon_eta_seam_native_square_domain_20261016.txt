@@ -1,0 +1,312 @@
+ETA SEAM -> NATIVE ADJOINT DOMAIN -> P=D^dagger D CONORMAL GRAPH
+2026-10-16. Exact regular local construction and source contacts.
+
+This note does not identify the Lorentz Euler square with the native positive
+operator, choose an exterior, or turn a local graph into the full stratified
+microscopic realization. It constructs the square-domain map that is available
+once the same native first-order factor and its positive pairing are bound.
+
+1. Actual owners and what each one supplies
+
+muon_holomorphic_d5_trace_action.py:419-486 applies the UNSQUARED D5 expression
+to explicit full trial/left maps. Its coordinate-radial principal is
+
+  a_rho=-i Gamma0 shift/N+i eps Gamma4/C_rho,
+  a_t=i Gamma0/N.
+
+All time, angular, gauge, spin and eta contacts remain. Energy in this declared
+surface-proper phase chart has the source coefficient
+
+  (D5)_E=Gamma0 ell_Sigma/N.
+
+The returned KE is a first-order physical-frequency partial on the supplied
+maps. This is not an E^2 pencil, stationary moving-history proof, or physical
+exterior. The script evaluate_muon_trial_d5_trace_action.py:74-87 uses its
+literal left V^T Gamma0; the subsequent normalized point action converts the
+Dirac-bar pairing once, not again in the square.
+
+The same source at489-518 gives the FIRST-ORDER Dirac-bar material Green
+coefficient J_L=i rho Gamma0 Gamma_N. It explicitly says this is not the weak
+square Gamma1. The nilpotent seam graph S=I+N, N=J_L^-1 C T B, supplies the
+local value graph under its stated action/domain interpretation; all384 common
+fibre coordinates remain. Here T=rho M18 and B J_L^-1 C=0.
+
+muon_native_dirac_hamiltonian.py:131-166 owns the actual spatial Hamiltonian
+principal -i alpha^a E_a/R, full round spin and fixed-Y Higgs vertices.
+At214-240 and244-280 it owns the DIFFERENT positive factor
+
+  A=D_tau,factor+W_spatial,  D_tau,factor=partial_tau+Omega_tau,factor.
+
+muon_owned_native_product_connection.py:34-77 binds this component on a real
+common-A germ using the same anti-Hermitian connection. Its A body W+Omega
+is not the Lorentz Hcan=W-i Omega. Its18-component W is Hermitian on the
+reduced intrinsic operator; that statement is NOT transferred to the full
+384-component collar eta operator.
+
+The AE4 owner at ae4_stratified_dirac_zeta_induced_owner.py:274-299 selects
+P_strat=D_strat^dagger D_strat in the geometric L2 direct sum with the quotient,
+grading and relative completion. It does not license substituting Lorentz
+D5^2 for that product. No extra Wick/phase assumption is introduced here.
+
+2. General native adjoint transmission: no self-adjoint D assumption
+
+Let D:E->F have an actually supplied closed dense realization, positive
+coordinate densities G_E,G_F, and normal principal beta. Work in a common
+regular interface chart whose normal increases from the in region to out.
+Write K_in=G_F,in beta_in and K_out=G_F,out beta_out. Normal traces of u
+are in the input bundle; those of v are in the output/adjoint-input bundle.
+
+With the usual inner product linear in its second entry,
+
+  <v,D u>_F-<D^sharp v,u>_E
+   =v_in^dagger K_in u_in-v_out^dagger K_out u_out.
+
+For Dom D with u_out=S u_in and arbitrary admitted common u_in, the adjoint
+trace condition is exactly
+
+  v_in^dagger K_in=v_out^dagger K_out S,
+  K_in^dagger v_in=S^dagger K_out^dagger v_out.             (1)
+
+If the normal coefficients are invertible this is
+
+  v_out=K_out^(-dagger) S^(-dagger) K_in^dagger v_in.       (2)
+
+Neither D=D^dagger nor v_out=S v_in has been assumed. The temporal/outer
+conditions of D^dagger are the Green annihilator of the actual corresponding
+Dom D traces. They must not simply be copied from a causal initial or future
+domain. For example an initial restriction on D induces the complementary
+terminal adjoint restriction; local spatial equality would not change that.
+
+In fixed coordinates the formal interior adjoint is
+
+  D^sharp v=G_E^-1[-partial_mu(a_mu^dagger G_F v)+C^dagger G_F v]
+
+for D=a_mu partial_mu+C. This retains density and coframe derivatives.
+
+3. Exact weak square conormal and square-domain graph
+
+For u in Dom(D^dagger D), v=D u must satisfy(1). Define the SAME positive
+form conormal, in common normal orientation, by
+
+  p_in=beta_in^dagger G_F,in (D u)_in,
+  p_out=beta_out^dagger G_F,out (D u)_out.                 (3)
+
+Then the square domain conditions are
+
+  u_out=S u_in,
+  p_in=S^dagger p_out,
+  p_out=S^(-dagger) p_in.                                (4)
+
+In outward conormals p_in,outward=p_in and p_out,outward=-p_out, the second
+row is p_in,outward+S^dagger p_out,outward=0. This is obtained directly by
+integrating q[v,u]=integral(Dv)^dagger G_F(Du), or equivalently by applying
+the adjoint-domain definition. There is no second membrane/Yukawa term:
+the original SH is already encoded in Dom D's value graph S.
+
+For the canonical square state Y=(u,p), the seam transfer is therefore
+
+  Y_out=diag(S,S^(-dagger)) Y_in.                         (5)
+
+It preserves the standard second-order Green matrix
+J2=[[0,I],[-I,0]]. It is not diag(S,S) in general. Lorentz-current J_L
+unitarity need not be Euclidean unitarity. In the separate AE2 temporal
+reset, the owned unitary U_R does give S^(-dagger)=U_R, and reversing the
+child outward normal recovers its Gamma1_child=-U_R Gamma1_event statement.
+The eta-Higgs S must not inherit that unitary simplification by notation.
+
+The two operator domains have the precise relation
+
+  Dom P={u in Dom D : D u in Dom D^dagger},
+  P=D^dagger D,
+
+not Dom(D^2) unless a separate equality of the whole domains/operators is
+proved. P's canonical form positivity follows for a closed dense D; it does
+not prove closedness or the full physical adoption of a proposed D domain.
+
+4. Same-current native normal principal and independent analytic continuation
+
+In a real adapted collar let alpha_n=Gamma_T Gamma_N, with
+alpha_n^2=I and alpha_n^dagger G=G alpha_n for the positive current density
+G=rho Gamma0 Gamma_T. The same Hamiltonian decomposition has
+
+  Lorentz current: i D_tau-W,
+  native factor:   A=D_tau+W,
+  beta_native=-i alpha_n,
+  G beta_native=-J_L,
+  beta_native^dagger G=J_L.                              (6)
+
+The spatial differential and the once-only spatial Higgs seam change sign
+together between iD_tau-W and D_tau+W. Thus their source-derived stationary
+spatial jump is the same S; the temporal connection is placed by its own
+native owner, not inferred from -i Omega. Equation(6) binds the principal,
+not the remaining full collar body or its complete domain.
+
+For this common real principal K=-J_L, current preservation S^dagger J_L S=J_L
+implies that the local spatial adjoint graph(2) is again v_out=S v_in.
+Here A^dagger=-D_tau+W^dagger requires D_tau already to be anti-adjoint and
+metric-compatible in the ACTUAL time-dependent positive Hilbert density,
+after its full native coframe/density isometry, including any Cauchy-normal
+density and boost. The reduced owned18 component has that binding; its
+Omega18/density isometry is not automatically the full384 collar binding.
+Without it the time-measure adjoint connection from the density derivative
+must also be retained, as in the general formal adjoint of section2.
+With this qualification and the actual full spatial formal adjoint/boundary
+domain, the displayed adjoint does NOT make A self-adjoint or equate
+the temporal/exterior adjoint data. The square conormal is p=J_L A u, and
+its graph is still p_out=S^(-dagger)p_in, not S p_in.
+
+The full normal eta action contains i Gamma_N(partial_n+half d_n logJ+m_eta),
+m_eta=-d_n log sin f. In the Hamiltonian it contributes -i alpha_n m_eta,
+which is generally not Hermitian in the raw positive current. The reduced
+normal mode can annihilate this combination; arbitrary full complement
+fields do not. Thus one must keep W^dagger distinct from W in the full
+collar. Its interior positive product is formally
+
+  A^dagger A=-D_tau^2+(W^dagger-W)D_tau-[D_tau,W]+W^dagger W.  (7)
+
+Equation(7) uses that same anti-adjoint D_tau qualification; otherwise its
+additional time-measure adjoint-connection terms must be included.
+The commutator includes time variation, Omega commutators, and spatial
+derivatives of Omega when W is differential. No eta/body term is deleted.
+
+On the real slice define Lrow=J_L S^-1 J_L^-1=S^dagger. The independently
+continued analytic left row map is exactly the helper's
+
+  Lrow=J_L(I-N)J_L^-1,
+  R_p=Lrow^-1=J_L(I+N)J_L^-1.                            (8)
+
+The real physical R_p is S^(-dagger). All analytic jets of(8) use the
+supplied independent J_L/C/T/B coefficients and inverse/product rules;
+one never conjugates an independent complex source to obtain its partner.
+At a complex off-shell stage these are analytic dual identities, not a
+new Hermitian/positive realization there. If the in/out current matrices
+are not already identified, replace R_p by J_L,out S J_L,in^-1 and
+Lrow by J_L,in S^-1 J_L,out^-1 using the actual measures/frames.
+
+5. All first and mixed seam/domain contacts
+
+Let a=x or y denote a real physical source before independent analytic
+continuation. For the value row u_out-S u_in=0,
+
+  u_out,a=S_a u_in+S u_in,a,
+  u_out,xy=S_xy u_in+S_x u_in,y+S_y u_in,x+S u_in,xy.      (9)
+
+The conormal row has the identical ordered formula with S replaced by R_p:
+
+  p_out,a=R_p,a p_in+R_p p_in,a,
+  p_out,xy=R_p,xy p_in+R_p,x p_in,y+R_p,y p_in,x+R_p p_in,xy. (10)
+
+R_p can be differentiated from S^dagger R_p=I on actual real source axes,
+or by the independent analytic expression(8). For the nilpotent family
+S^-1=I-N on its whole source germ, so S^(-dagger)=I-N^dagger on real axes;
+this simplification also requires the differentiated isotropy identities.
+
+For completeness the current right transfer jets solve
+
+  J_L N=C T B,
+  J_L N_a=(C T B)_a-J_L,a N,
+  J_L N_xy=(C T B)_xy-J_L,xy N-J_L,x N_y-J_L,y N_x.       (11)
+
+The three-factor mixed product contains its three genuine mixed contacts
+and all six ordered placements of x/y. If T=rho M, retain rho_xy M,
+rho_x M_y, rho_y M_x and rho M_xy. The helper evaluates these, and returns
+isotropy/nilpotence/original-jump residuals separately from any domain claim.
+
+For p=Kp Z, Kp=beta^dagger G_F and Z=Gamma0_F(D u),
+
+  p_a=Kp_a Z+Kp Z_a,
+  p_xy=Kp_xy Z+Kp_x Z_y+Kp_y Z_x+Kp Z_xy,
+  Kp_xy=beta_xy^dagger G_F+beta_x^dagger G_F,y
+        +beta_y^dagger G_F,x+beta^dagger G_F,xy.           (12)
+
+Z's first/mixed product is that of the MOVING output trace, D and u, with
+all nine mixed terms. This retains moving inclusion/coframe/normal jets.
+If all objects have instead been pulled to a fixed reference domain, those
+same contacts must already be present in the pulled operator and trace;
+they are not added twice. Explicitly declaring a fixed-geometry partial
+does not prove zero total geometry/domain response to a measuring field.
+
+On a fixed Hilbert/domain pullback, the square operator/source contacts are
+
+  P_x=D_x^dagger D+D^dagger D_x,
+  P_xy=D_xy^dagger D+D_x^dagger D_y+D_y^dagger D_x+D^dagger D_xy. (13)
+
+The two ordered source-square products survive even when D_xy=0. Moving
+densities in raw coordinates are additional product factors: if
+G_E P=D_flat^dagger G_F D, differentiate that equation rather than dropping
+G_E,x/G_F,x. Equivalently use the already-owned density/frame isometries
+and include their total source jets before applying(13).
+
+6. Reuse of the existing strong conormal implementation
+
+muon_reflected_native_conormal_graph.py:53-125 already derives the strong
+graph for q=integral|(b partial_s+C)u|_G^2 with scalar b, arbitrary C and
+positive matrix density G. Its C need NOT be anti-Hermitian or Hermitian.
+Therefore it does not discard the full eta/body by its assumptions.
+
+For a general matrix normal principal beta, the exact tangential-operator
+normal graph is
+
+  u'= -beta^-1 C u+(beta^dagger G_F beta)^-1 p,
+  p'= C_flat^dagger(beta^(-dagger)p)-z G_E u.             (14)
+
+C_flat^dagger is the tangential COORDINATE-DENSITY formal adjoint: the
+argument beta^(-dagger)p is already a density covector, so no additional
+G_E^-1 or G_F is inserted in this row. It is distinct from the Hilbert
+adjoint D^sharp in section2. After a complete declared tangential form-core
+representation with those densities accounted for, it becomes the literal
+matrix C^dagger; for zero-order C the row is exactly
+p'=C^dagger beta^(-dagger)p-z G_E u. It is not obtained by pointwise daggering
+a differential coefficient and dropping its tangential derivatives.
+
+In the adapted native case(6), beta^dagger G beta=G. Left-multiplying only
+the OUTPUT of A by beta^-1 is thus a codomain isometry:
+
+  Atilde=beta^-1 A=partial_n+beta^-1 C,
+  ||Atilde u||_G^2=||A u||_G^2,
+  p=G Atilde u=beta^dagger G A u.                        (15)
+
+This leaves the square form and its actual conormal unchanged. One may
+therefore feed the existing module b=1, density=G, body=beta^-1 C. If the
+coordinate principal is beta=kappa U_beta with U_beta^dagger G U_beta=G,
+feed b=kappa and body=U_beta^-1 C. Every source jet of the output isometry,
+body and density must be included. There is no new contour or coefficient.
+No derivative of beta is simply discarded: the transformed formal adjoint
+and full product contacts carry the required cancellation.
+
+For b=1 the returned strong generator is
+
+  H_z=[[-Ctilde,G^-1],[-z G,Ctilde^dagger]],
+  p=G(partial_n+Ctilde)u.
+
+This is usable on an ACTUAL supplied full tangential coefficient core.
+The earlier18-component temporal W+Omega alone is not the full384 collar
+C, and a radially Schur-eliminated point matrix is not that strong body.
+Combining those by a Kronecker guess would invent an operator. Retain the
+actual D5 time/radial/angular/eta trial maps and the same field/coframe jets
+before any such local representation. No old integration is restarted here.
+
+7. Energy, weak field and the remaining physical calculation
+
+The existing unsquared KE, source-affine fixed-geometry photon/Higgs
+vertices, native temporal connection placement, and the algebra(9)-(15)
+can construct conditional coefficient and domain derivatives on supplied
+real germs. They do not evaluate the total E/B/EB response of the unknown
+physical exterior. Native z is the P resolvent parameter; it is not physical
+unsquared E or E^2 by default. Any physical-frequency insertion into A must
+be obtained through its actual same-action phase/frame dictionary, including
+the moving trace; the Lorentz D5 KE is not silently reidentified as A_E.
+
+The local seam's explicit E dependence can vanish in a declared fixed-field
+partial while its energy-dependent outgoing Calderon graph still moves.
+Likewise a weak measuring field generally changes the coupled mean/Higgs,
+coframe, normal mode and full outgoing domain. Their source jets are not
+supplied by setting a primitive Maxwell insertion to zero or by the local
+nilpotent identity.
+
+The full real common-field/background, all active strata and quotient,
+actual closed temporal/exterior domains, physical coefficient matching,
+relative completion and radial/angular continuum control remain the same
+required action application. Local adjoint/square-domain construction is
+not an additional free law. Full physical derivative at2e-10: not passed;
+coupled corrections: zero; no new spin normalization or muon moment.

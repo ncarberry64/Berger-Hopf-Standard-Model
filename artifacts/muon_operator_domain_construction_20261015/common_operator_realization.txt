@@ -1,0 +1,74 @@
+Common physical operator: what the selected action fixes, and what it needs
+2026-10-15. Constructive specification boundary; no new BHSM term is selected.
+
+The current AE4 owner fixes Gamma=-STr E1(c P_strat)/2 with the common
+relative logarithmic/phase completion and P_strat=D_strat^dagger D_strat
+on the owned BRST/zero-mode quotient. It fixes the regulator, trace rule
+and the branch definition of c. It does not make an arbitrary positive
+finite pencil, a Lorentz Hamiltonian, or a finite outer edge equal to that
+P_strat. A complete realization must supply the actual coefficient/domain
+family on the common Hilbert space before its source derivatives are taken.
+
+The local charged-lepton insertion is already explicit: the fixed-Y Higgs
+Hamiltonian has both LR placements and all three existing family factors.
+The regular reset graph and its affine connection law are also owned.
+Metric incidence has the quotient map Q_H(G)=A-B C^-1 B^dagger and the
+seam pullback h=T^dagger Q_H T. These facts exclude treating those known
+maps as arbitrary new parameters. They do not identify a completed common
+stratified operator with all its physical coefficients and exterior.
+
+A useful exact non-inference lemma concerns the positive heat realization.
+On the static globally hyperbolic cylinder R_t x S1, take a self-adjoint
+Dirac Hamiltonian H(k) with energies +/-sqrt(k^2+m^2). The canonical
+Lorentz evolution operator has symbol D_L(omega,k)=omega-H(k).
+Its positive Hilbert square has eigenvalues
+  (omega-sqrt(k^2+m^2))^2, (omega+sqrt(k^2+m^2))^2.
+For every spatial Fourier mode and either sign,
+  integral_R exp[-s(omega-E_k)^2] d omega/(2 pi)
+     = 1/sqrt(4 pi s).
+Consequently the heat trace PER UNIT physical time of D_L^dagger D_L
+diverges after summing spatial k, for every s>0 and every m. This is a
+characteristic high-frequency divergence, not just infinite time volume.
+Removing exact zero modes does not remove this continuous-frequency band.
+Thus positivity, the Dirac local equations and the retarded causal rule
+alone do not justify substituting this Hilbert square into the heat action.
+This is an ordinary per-block trace statement. Any relative or graded
+cancellation proposed instead needs its own common trace-class argument;
+this example does not rule out an independently proved such cancellation.
+
+For comparison only, the static Euclidean factor partial_tau+H has square
+-partial_tau^2+H^2 and heat density
+  [1/sqrt(4 pi s)] sum_(k in Z) 2 exp[-s(k^2+m^2)],
+which is finite. This is an elementary operator-class counterexample,
+not the choice of a Wick contour or exterior for BHSM. A nonstationary
+coupled field adds actual connection, curvature, measure and domain terms;
+none can be discarded by this static example. The source
+muon_local_wick_action.py explicitly preserves analytic continuation of
+nonzero temporal fields while declining to select a global positive
+native operator or contour. muon_native_product_factor_graph.py likewise
+labels its positive finite component as not a global native/Wick certificate.
+
+The current missing binding is explicit in
+muon_native_dirac_hamiltonian.canonical_product_factor_contract:
+factor_temporal_native_binding=None. The first-germ implementation in
+muon_intrinsic_fermion_wick_application.py separately records
+full_finite_contour_or_positive_native_square_identified=False.
+Neither flag is a new free parameter or a request to drop the temporal
+connection; both identify the common positive realization still to construct.
+
+The missing realization is therefore substantive: construct the common
+positive spectral form and its domain in the selected geometry, its
+physical compatibility with the future retarded Lorentzian application,
+all stratum/incidence/quotient blocks and their field/energy jets. The
+already established finite-core heat-tail theorems are not contradicted;
+they concern their specified positive product-Dirac form, not the naive
+Lorentz square excluded above. No new signature, coefficient, state or
+boundary projector is inferred by this lemma.
+
+Once P_strat and the physical matching map are realized, AE4 fixes its
+finite E1 trace contributions. Independent fitted finite Higgs or gauge
+counterterms are not a completion allowed by that owner. Absolute common
+energy units and arbitrary spinor norm do not obstruct dimensionless g.
+No collider Cauchy-history prerequisite is added to a completed intrinsic
+vacuum pole. The unknown physical exterior is an unevaluated application
+of the common operator, not a freely selectable terminal load.

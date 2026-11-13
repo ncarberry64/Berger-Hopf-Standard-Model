@@ -1,0 +1,203 @@
+FULL ORIGINAL-(u,v) TO HORIZONTAL/FIBRE SPIN INCIDENCE
+2026-10-16. Geometric component only; no retained vertical mode is selected.
+
+1. Exact scope and source operands
+
+The original owned coframe is
+ e0=N dt, ec=C(dchi+beta dt), eu_a=A theta_u,a, ev_a=B theta_v,a,
+with LEFT Maurer convention dtheta_a=-epsilon_abc theta_b wedge theta_c.
+The associated original duals satisfy [U_a,U_b]=2epsilon_abc U_c, and
+similarly for V. The complete untwisted original geometric Dirac body is
+ i Gamma0 h08+i Gammac hc8+3i Gamma_u123/(2A)+3i Gamma_v123/(2B).
+Sources: muon_original_m8_geometric_expression.py:48-94 and its coefficient
+assembly; muon_m8_m5_geometric_coefficients.py:1-11,114-188; the original
+coframe fields and coordinate-time/radial log rates are evaluated by
+muon_holomorphic_normal_geometry.py:101-132.
+
+The existing source R85 functor is broader: master_action/reduction.py:
+148-196 owns normalized associated-mode intertwiners, D5 P_alpha=P_alpha
+D8 on admissible retained modes, and complement corrections. The present
+calculation constructs the complete geometric frame incidence needed
+BEFORE such a projection. It neither supplies a normalized vertical
+eigenspinor nor replaces the full complement/Schur operator by zero.
+It does not identify geometric Spin16 with a microscopic H8 graded
+carrier, a physical SM multiplet, or a new UV species.
+
+2. Full spin map and source contacts
+
+Put L=sqrt(A^2+B^2), r=AB/L, lambda=A^2/L^2,
+ c=B/L, s=A/L, theta=atan2(A,B) on the regular real A,B>0 chart.
+The adapted coframe and dual vector directions are
+ eh_a=c eu_a-s ev_a, ei_a=s eu_a+c ev_a,
+ Eh_a=((1-lambda)U_a-lambda V_a)/r, Ei_a=(U_a+V_a)/L.
+The x/y axes below are analytic, independent axes. No conjugation of
+source contacts is allowed, even though the physical base is real.
+
+Use the fixed full16 Cl(1,7) arrays from the existing owned gamma5 input
+in base order (0,chi,1,2,3); the final three matrices are supplied by its
+existing odd/odd Clifford construction. Let
+ K_a=Gamma_u,a Gamma_v,a, K=sum_a K_a.
+Then [K_a,K_b]=0 and K_a^2=-I, up to the explicit finite source gamma
+rounding. The continuously anchored lift is
+ S=exp(theta K/2)=product_a exp(theta K_a/2),
+ psi_ad=S psi_original, D_ad=S D_original S^-1.
+It gives S Gamma_u,a S^-1=c Gamma_h,a+s Gamma_i,a and
+S Gamma_v,a S^-1=-s Gamma_h,a+c Gamma_i,a.
+All three original U and all three original V symbols therefore survive.
+For example their adapted coefficients are
+ i[(1-lambda)Gamma_h,a/r+Gamma_i,a/L] U_a,
+ i[-lambda Gamma_h,a/r+Gamma_i,a/L] V_a.
+
+For any supplied source axes,
+ theta_x=(B A_x-A B_x)/(A^2+B^2),
+ theta_xy=(B A_xy-A B_xy)/(A^2+B^2)
+ +[-2AB A_x A_y+2AB B_x B_y
+   +(A^2-B^2)(A_x B_y+B_x A_y)]/(A^2+B^2)^2.
+Consequently S_x=theta_x(K/2)S and
+ S_xy=[theta_xy K/2+theta_x theta_y K^2/4]S;
+S^-1 has the corresponding sign changes, not conjugated source jets.
+All matrix products retain the four mixed product-rule contacts.
+The actual coordinate contacts are
+ theta_t=AB(la-lb)/L^2, theta_chi=AB(ap-bp)/L^2,
+ S partial_mu S^-1=-theta_mu K/2.
+Thus time/shift and radial contact contributions are, respectively,
+ (iGamma0/N)(-theta_t K/2) and
+ (-i beta Gamma0/N+iGammac/C)(-theta_chi K/2).
+None is set to zero.
+
+3. Complete adapted Cartan/KK body
+
+In the fixed adapted Clifford frame the full body is
+ iGamma0 h08+iGammac hc8
+ +3i(1-2lambda)Gamma_h123/(2r)+3iGamma_i123/(2L)
+ +(i/L)sum_a Gamma_i,a J_h,a
+ -iL/8 sum_(i,mu,nu) F^i_(mu,nu) Gamma_mu Gamma_nu Gamma_i,
+where J_h,a=(1/2)sum_bc epsilon_abc Gamma_h,b Gamma_h,c.
+The last sum is the FULL ordered mu,nu sum, as in the existing KK owner.
+The nonzero vertical horizontal-spin connection (i/L)sum Gamma_i J_h
+is essential. For the hhi angular triple the KK part supplies i/(2L),
+while this connection supplies i/L; together they give 3i/(2L).
+It cannot be omitted by calling the fibre derivative scalar.
+
+The existing geometric curvature is retained literally:
+ F^i_0a=(E0 lambda/r)delta_ia,
+ F^i_ca=(Ec lambda/r)delta_ia,
+ F^i_ab=-2lambda(1-lambda)epsilon_iab/r^2.
+Using E_mu lambda=(2r/L)E_mu theta shows the full ordered KK time/radial
+contacts agree with the above moving-spin contact, including its sign.
+
+An independent check starts from the adapted Lie brackets, applies
+Koszul, and contracts the full lower spin connection. In particular
+ [Eh_a,Eh_b]=2(1-2lambda)epsilon_abc Eh_c/r
+             +2Llambda(1-lambda)epsilon_iab Ei_i/r^2,
+ [Ei_a,Eh_b]=2epsilon_abc Eh_c/L,
+ [Ei_a,Ei_b]=2epsilon_abc Ei_c/L,
+ [E_mu,Eh_a]=-(E_mu log r)Eh_a-L F^i_mu,a Ei_i,
+ [E_mu,Ei_a]=-(E_mu log L)Ei_a,
+for mu=0,c. Also [E0,Ec]=(np/C)E0
+ -(lc-beta cp-betap)Ec/N. These give the complete above body, not only
+its projected fibre block. The tests differentiate this independent
+bracket/Koszul expression through all four contacts using MP64.
+
+Multiplication by L^-3/2 changes the geometric time/normal density from
+h_M8 to h_M5 as already derived by the scalar owner. The module exports
+that full normalized body without selecting a vertical mode or deleting
+the vertical principal/spin/curvature terms. This is not a claimed
+native determinant identity or a physical state normalization.
+
+4. Canonical code and independent controls
+
+New module:
+ src/bhsm/interface/muon_m8_original_hopf_spin_lift.py
+ SHA256 2801fa5c5bf397ea6bf94e71999514291aebae068435d40aaa84db57520743a9
+New focused tests:
+ tests/test_muon_m8_original_hopf_spin_lift.py
+ SHA256 8b5aaf97f5599833ac3ca51fe3ad9a0bd9d07b59891595413e338e4f234d9fc1
+Four tests pass in 35.78s. They independently test:
+ - literal integrable time/radial/source germs, MP64 all-four-jet Lie
+   bracket/Koszul body and angle derivatives;
+ - MP64 literal ordered product of the three spin rotations, including
+   complex analytic independent axes and inverse-vs-adjoint distinction;
+ - complete original u<=2 and v<=1 Peter-Weyl tensor spaces (14 and5),
+   applying the full16 differential expression to arbitrary vectors and
+   time/radial derivatives without a retained-fibre projection;
+ - explicit mixed-contact and real regular-base guards.
+Finite PW spaces are independent implementation controls, not a claimed
+physical cutoff or angular convergence result. The symbols returned by
+the module retain all U/V directions before any cutoff.
+
+5. Actual REAL application and exact provenance
+
+Canonical producer:
+ audits/bhsm_real_m8_hopf_spin_lift_20261016.py
+ SHA256 76ec221da4c0af6b60ee867e25b58bc671f673ae041809fdd3b08f94a97aeb76
+It consumes the exact stable_time6_run_1/changing_forms.npz snapshot
+inside artifacts/muon_real_changing_gauge_transport_20261016, reconstructing
+the exact original archive from its supplied raw chunks if necessary.
+Archive SHA256
+ 9a132366d729c85ea1d83815a5482fbf6352b117507e9f447abb4c3b7534739d.
+The receipt binds 244 repo-relative consumed source files and 4 raw input
+files. Both existing incoming and inherited-child REAL one-cell numerical
+histories are used at stored time indices0,6,11 and original chi .13,.37,.69.
+All raw values are checked finite and exactly real BEFORE coercion; no
+complex field projection or numerical history integration is performed.
+
+Source germs are raw(x,y)=raw0+x rawtime0+y e25, with raw_xy=0.
+The original chi point is held fixed. Thus x is the actual retained local
+affine time tangent with that tangent held fixed under y, and y is the
+declared geometry coefficient direction. These are actual coefficient
+partial derivatives, not physical energy/field or outgoing derivatives.
+All13 field gradients/Hessians are contracted before the spin lift.
+The actual stored rate obeys qdot=v and has held lapse/shift multipliers,
+so N_t=beta_t=0 used in the independent Cartan calculation is verified,
+not assumed for a general physical history.
+
+The independent check rotates the full original eight-dimensional
+coframe and its time/radial/angular derivatives, constructs the Lorentz
+metric and all8 Christoffel directions, reconstructs its uncontracted
+lower spin connection, then contracts the full16 Dirac body. This path
+uses neither the transformed original body nor a KK contraction formula.
+
+Two independent runs:
+ WORK/outputs/bhsm_real_m8_hopf_spin_lift_20261016/run_1
+ WORK/outputs/bhsm_real_m8_hopf_spin_lift_20261016/run_2
+Both files in each pair are byte-identical:
+ spin_lift.npz 440194 bytes
+ SHA256 8ae7631fc5ffeb9818ab16be04a3b0572a37ed358f8f51c69ae4f4f3ae292d68
+ result.json 58867 bytes
+ SHA256 8549615a6c75d4187d4cffd5d4eb9ea73f207a5c3ea9150039befe4171db9511
+
+Worst absolute actual residuals across all18 records:
+ - independent full8D metric/Cartan body: 7.994376728335114e-15;
+ - independent tetrad: 3.552713678800501e-15;
+ - lower spin metric antisymmetry: 8.171189416453633e-15;
+ - transformed body vs full adapted decomposition, value/x/y/xy:
+   7.355227538141662e-15 / 3.734576388870294e-14 /
+   2.959354868229236e-15 / 1.4405143744511406e-14;
+ - all original u/v principal contacts, value/x/y/xy:
+   2.886579864025407e-15 / 1.2434497875801753e-14 /
+   7.632783294297951e-16 / 1.9984014443252818e-15;
+ - analytic inverse contacts <=8.881784197001252e-16;
+ - ordered commuting product and real-base unitarity <=4.440892098500626e-16.
+KK norms range2.65871..3.63136 and the retained vertical horizontal-spin
+connection norms range3.60570..3.72416. Nonzero shift principal norms
+range .74194..4.96510. No small spin/shift term is truncated.
+
+6. What this constructs and what it does not
+
+This closes the explicit geometric original/adapted spin-frame incidence,
+including its full differential coefficients and supplied source jets,
+and binds the existing KK body to the original full geometric expression.
+The result is a local full16 geometric operator identity on the supplied
+regular real chart, before a mode projection. Across other patches its
+usual spin transition functions must be composed; no global preferred
+Sp(1) direction or native graded module is inferred here.
+
+The retained normalized associated-mode map, full fibre/complement
+resolvent, full stratified microscopic grading/incidence, physical mean,
+outgoing domain/response, physical energy/field derivatives, normalized
+two-spin pole, and muon moment are not evaluated by these controls.
+The complete complement remains present symbolically as required by the
+R85 construction; no heat-moment matching is substituted for it.
+Physical derivative gate remains false, coupled corrections=0, and no
+Maxwell/all226 validation or physical moment prediction is claimed.

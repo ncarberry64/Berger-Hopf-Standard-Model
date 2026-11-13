@@ -1,0 +1,26 @@
+F.                                                                       [100%]
+================================== FAILURES ===================================
+___ test_unprojected_wall_contact_matches_original_covariant_dirac_equation ___
+
+    def test_unprojected_wall_contact_matches_original_covariant_dirac_equation():
+        base=load_finite_normal_endpoint('artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1',side='outgoing')
+        with np.load(ROOT/'artifacts/muon_inherited_finite_normal_phase_20261011/run_1/application.npz',allow_pickle=False) as a:
+            raw=a['stage_independent_raw'][0];wall=a['stage_wall_gauge'][0]
+        r=inherited_wall_lepton_application(raw,wall,base['representation'])
+        old=primal_trace_enriched_lepton_operator(raw,base['representation'])
+        generators=lepton_unit_trace_gauge_representation()['generators']
+        delta=wall-old['wall_trace'];alpha=lepton_current_hilbert_representation()['alpha']
+        independent=-1j*sum(alpha[k]@sum(delta[k+2,c]*generators[c] for c in range(4)) for k in range(3))/r['R4']
+        independent-=1j*sum(delta[0,c]*generators[c] for c in range(4))/r['N']
+        np.testing.assert_allclose(r['H_can_profile_contact'],independent,rtol=1e-12,atol=1e-15)
+        np.testing.assert_allclose(r['reconstructed_wall'],wall,rtol=0,atol=2e-16)
+>       assert np.linalg.norm(r['H_can_profile_contact'])>1e-4
+E       AssertionError: assert np.float64(2.749514753541682e-06) > 0.0001
+E        +  where np.float64(2.749514753541682e-06) = <function norm at 0x0000023AB2BE69F0>(array([[-4.58252459e-07+0.j,  0.00000000e+00+0.j,  0.00000000e+00+0.j,\n         0.00000000e+00+0.j,  0.00000000e+00+0....0.j,  0.00000000e+00+0.j,  0.00000000e+00+0.j,\n         0.00000000e+00+0.j,  0.00000000e+00+0.j,  0.00000000e+00+0.j]]))
+E        +    where <function norm at 0x0000023AB2BE69F0> = <module 'numpy.linalg' from 'C:\\Users\\carbe\\AppData\\Roaming\\Python\\Python314\\site-packages\\numpy\\linalg\\__init__.py'>.norm
+E        +      where <module 'numpy.linalg' from 'C:\\Users\\carbe\\AppData\\Roaming\\Python\\Python314\\site-packages\\numpy\\linalg\\__init__.py'> = np.linalg
+
+tests\test_muon_inherited_wall_lepton_application.py:22: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_muon_inherited_wall_lepton_application.py::test_unprojected_wall_contact_matches_original_covariant_dirac_equation
+1 failed, 1 passed in 4.38s

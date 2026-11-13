@@ -1,0 +1,169 @@
+ACTUAL ea02 FULL217 POSITION-FORCE MATRIX-FREE SUPPLEMENT
+2026-10-16. Same encoded off-shell field/source, no physical correction.
+
+Source:
+C:/Users/carbe/Downloads/BHSM_muon_parent_maxwell_worktree_20261001/audits/bhsm_original_ea02_d4_position_operator_20261016.py
+SHA256 70670f411a2a11d301677359500be28fb9769f1557000b3262eb5939816ae389
+
+The supplement composes, and does not edit, the frozen phase backend
+audits/bhsm_original_ea02_d4_phase_operator_20261016.py
+SHA256 c2f11bd4890631c03afee8b0db1fe8a93e505a12071da9cd2b9923744e8a5c6d.
+That backend locks the original ea02 full368 cut, actual source/reference
+fields, complete D4 carrier, corrected native point/wall maps and same
+material chart4. Original packed/runtime source SHA pins remain enforced.
+
+Constructed block
+-----------------
+For the finite classical inherited-child action L at the unchanged cut,
+write q217, v217, y60 and parent source coordinates. The supplement
+constructs the FULL217 q-test block:
+  H_q R = D_R (partial L / partial q),
+with arbitrary explicit full746 parent/child right coefficients. It is
+not restricted to the previous added59 position rows.
+
+API:
+  op = ActualEa02D4PositionOperator(precision=256)
+  HqR, app = op.apply_full_position(R746)
+  HqQ, app = op.apply_position(Q217)
+The composed frozen phase backend remains op.phase.
+
+The call uses the original phase_action_contractions owner, tests
+252+arange(217), zero h, include_directional_first=False,
+allow_geometry_position_tests=True, independent_mp_same_material_equations,
+and the same corrected T/W, source/profile/reference, action parameters
+and material chart owner. Parent source entries in each full746 R enter
+the inherited child action once. Parent-own action is not added as a
+second child source. Reference profile fields stay in the original
+owner's fixed-reference convention.
+
+The base Hessian needs material derivative order3, not an unevaluated
+fourth geometry clock derivative. No dense position Hessian is formed.
+One fresh q-test application has seven retained actual rights and two
+bounded phase-only tests. A separate frozen phase-test application on
+two q-only controls reverses the mixed test order independently.
+
+Actual source/field and controls
+--------------------------------
+Exact original ea02 archive:
+ea02ed6aee45310c5651fef5c8f103e868007d4f125582ab2b64ff7651f76b2b.
+Full217 native Cauchy/clock archive:
+7e11ceedc78de309d8944797982ed35aded42056f5b3fd9bccd871455591d5b3.
+
+The actual seven rights are identical to both old158 and added59
+separate reference applications. The expanded original368-to-D4 map is
+used labelwise; no source or chronology splice is admitted.
+
+Actual fresh comparisons, all retained:
+  old158 H_q R versus separate cached native call:
+    4.933782731553737e-65
+  new59 H_q R versus separate cached native call:
+    7.431413075520257e-69
+  new59 H_q R versus independent literal polynomial/product rule:
+    5.70716424750019e-30
+  old158 primal force reproduction:
+    8.905862889186622e-68
+  new59 primal force reproduction:
+    2.2660024238460917e-39
+  reversed q/phase analytic-transpose comparison:
+    7.103356388313009e-68.
+
+The reversed check uses transpose, never adjoint, in this complex
+analytic action:
+  Q^T H_q Phase - (H_phase Q)^T Phase = 0.
+The two declared q controls exercise an original geometry coordinate
+and a newly added gauge coordinate. They are coefficient controls, not
+selected physical states or exterior loads.
+
+Canonical clock relation and off-shell forcing
+----------------------------------------------
+Let Pi=L_v and let PiDot_native be the complete supplied217 native
+momentum clock, not the original stored old158 canonical target.
+The separately retained primal Euler residual is
+  E = Gq - PiDot_native.
+Its actual maximum is35.59695216238156. It is not set to zero and does
+not prevent evaluating an off-shell action derivative.
+
+For a response R, define
+  K_q R = H_q R - deltaPiDot.
+The affine residual-cancellation equation is
+  E * e0 + K_q R = 0,
+hence the required RESPONSE momentum clock is
+  deltaPiDot_required = H_q R + E * e0.
+The primal residual is added once only in affine column0. This equation
+does not replace the bare total canonical momentum or impose a
+stationary mean background. The archive exports Gq, supplied PiDot,
+E, H_q R and this affine response target separately.
+
+Actual H_q R maximum on the retained seven is202826.49354845218.
+The supplement supplies this force block; it does not itself solve a
+new continuous D4 clock or choose open momentum/kernel/frame data.
+
+Continuous-clock source compatibility: conditional derived identity
+--------------------------------------------------------------------
+The next actual phase-clock solve can use known kinematic/source rate s
+and unknown child phase rate. With h the supplied background/source
+clock, its phase RHS is
+  f_v = H_q R + E*e0 - J_v(h,R) - H_v s,
+  f_y = -J_y(h,R) - H_y s - Gdot_y*e0.
+All217 velocity and60 Gauss rows must remain present. J(h,R), full
+source/reference and Tdot/Wdot contacts must be evaluated; no Noether
+identity fills those rows.
+
+For an action-owned physical gauge generator V and fixed temporal
+incidence C, the primary identity is C^T rG+V^T Pi=0. When the full
+physical weak gauge law has static identity
+  V^T Gq + Vdot^T Pi + W* rG = 0,
+where W eta=[At,eta] and W* denotes the exact temporal weak functional,
+differentiating gives the useful off-shell compatibility comparison
+  Z^T f =
+    -deltaV^T E - deltaW* rG - W*(H_G R + rG*e0).
+It retains Euler, Gauss and source terms; it does not assume any of
+them vanish. Central W=deltaW=0 leaves -deltaV_H^T E.
+
+Here deltaV/deltaW are the FULL physical generator/test variations
+including their actual pullback/incidence to the fixed native carrier,
+not merely derivatives of a cached numeric Z matrix. In SU2 channels W
+can lie outside the old temporal coordinate span. It must then be
+evaluated as the already owned unprojected weak test, not projected or
+promoted to a new admitted coordinate. This paragraph is a derived
+consistency identity, not an evaluated replacement for a new RHS or
+full physical/source/domain compatibility calculation.
+
+Paired reproducibility
+-----------------------
+Two independent full executions are byte-identical:
+C:/Users/carbe/OneDrive/Documents/CODEX/outputs/bhsm_original_ea02_d4_position_operator_20261016/final_run_1
+C:/Users/carbe/OneDrive/Documents/CODEX/outputs/bhsm_original_ea02_d4_position_operator_20261016/final_run_2
+
+actual_full217_position_force_backend_and_same_cut_controls.npz
+1040522 bytes, SHA256
+5f0322d034c54f9a33b93a9f1bc408b46f52ab00f39438c52286a9476605925c
+
+fresh_native_full217_position_force_on_actual_seven_and_two_phase.npz
+1310679 bytes, SHA256
+7b78d5993348dc336ed7a06de9adb3cbf08a7c4063efef34e12291546d70b675
+
+fresh_native_phase_force_on_two_position_controls.npz
+598809 bytes, SHA256
+19294381fbeea129323cdd95da5e0bce8e994c783947490a77983c5d0f560d36
+
+result.json:48526 bytes, SHA256
+c969316a4db1a836647def892bec093dd894b74cd583776f66ae22228caebf7c
+executed_producer.py:13246 bytes, source SHA above.
+
+final_paired_inventory.json SHA256
+ad79c3b99eedcba2d24fae49cdc7b1c92a64b52f50cec914621da949e881d2c4.
+The initial pilot is preserved separately.
+
+Scope
+-----
+This is an actual new finite classical action block, with a locked
+native material chart at the complex analytic off-shell cut. It is not
+an identification of the unsquared/native heat operator, a physical
+Lorentz outgoing solution or an exterior terminal realization. No old
+history/source/D5/canonical campaign is replayed. No dense Hxx, new
+primal retraction or original coupled correction is applied. Four
+physical retarded histories, terminal C0/Cj, full source/domain jets,
+physical2e-10 derivative/radial convergence, Maxwell/all226 AFTER,
+normalized two-spin state and muon magnetic moment remain unevaluated.
+

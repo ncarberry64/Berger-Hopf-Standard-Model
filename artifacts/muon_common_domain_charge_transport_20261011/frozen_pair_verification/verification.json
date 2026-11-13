@@ -1,0 +1,114 @@
+{
+  "all_completed_replay_files_byte_identical": true,
+  "classifications": {
+    "CONTROL_ONLY": "declared full18 n0 edge-average Cauchy test chart; no pole or LSZ selected",
+    "DERIVED": "holomorphic Higgs-selected generator quotient derivative and independent analytic source-dual transport",
+    "EVALUATED": "all3832 original point/source-frame weak residuals, charge derivative and retained gauge exchange",
+    "OWNER_DEFINITION_GAP": "none inferred",
+    "UNEVALUATED": "physical exterior moving-stop continuation, measured mass/lifetime matching and combined native Pauli projection"
+  },
+  "commands": [
+    {
+      "arguments": [
+        "scripts/evaluate_muon_common_domain_charge_transport.py",
+        "--output",
+        "artifacts/muon_common_domain_charge_transport_20261011/run_1"
+      ],
+      "environment": {
+        "OPENBLAS_NUM_THREADS": "1",
+        "PYTHONPATH": "src;scripts"
+      },
+      "executable": "C:\\Python314\\python.exe",
+      "exit_code": 1,
+      "scope": "pre-export reader diagnostic; no scientific arrays",
+      "stdout_path": "artifacts/muon_common_domain_charge_transport_run_1_20261011.log",
+      "tool_chunk": "f93810"
+    },
+    {
+      "arguments": [
+        "scripts/evaluate_muon_common_domain_charge_transport.py",
+        "--output",
+        "artifacts/muon_common_domain_charge_transport_20261011/run_2"
+      ],
+      "environment": {
+        "OPENBLAS_NUM_THREADS": "1",
+        "PYTHONPATH": "src;scripts"
+      },
+      "executable": "C:\\Python314\\python.exe",
+      "exit_code": 1,
+      "scope": "pre-export reader diagnostic; no scientific arrays",
+      "stdout_path": "artifacts/muon_common_domain_charge_transport_run_2_20261011.log",
+      "tool_chunk": "13323d"
+    },
+    {
+      "arguments": [
+        "scripts/evaluate_muon_common_domain_charge_transport.py",
+        "--output",
+        "artifacts/muon_common_domain_charge_transport_20261011/run_3"
+      ],
+      "environment": {
+        "OPENBLAS_NUM_THREADS": "1",
+        "PYTHONPATH": "src;scripts"
+      },
+      "executable": "C:\\Python314\\python.exe",
+      "exit_code": 0,
+      "scope": "completed physical coefficient application",
+      "stdout_path": "artifacts/muon_common_domain_charge_transport_run_3_20261011.log",
+      "tool_chunk": "59f280"
+    },
+    {
+      "arguments": [
+        "scripts/evaluate_muon_common_domain_charge_transport.py",
+        "--output",
+        "artifacts/muon_common_domain_charge_transport_20261011/run_4"
+      ],
+      "environment": {
+        "OPENBLAS_NUM_THREADS": "1",
+        "PYTHONPATH": "src;scripts"
+      },
+      "executable": "C:\\Python314\\python.exe",
+      "exit_code": 0,
+      "scope": "completed physical coefficient application",
+      "stdout_path": "artifacts/muon_common_domain_charge_transport_run_4_20261011.log",
+      "tool_chunk": "c07e29"
+    },
+    {
+      "arguments": [
+        "-m",
+        "pytest",
+        "--noconftest",
+        "-q",
+        "tests/test_muon_common_domain_charge_transport.py"
+      ],
+      "environment": {
+        "OPENBLAS_NUM_THREADS": "1",
+        "PYTHONPATH": "src;scripts"
+      },
+      "executable": "C:\\Python314\\python.exe",
+      "exit_code": 0,
+      "passing_tests": 2,
+      "stdout_path": "artifacts/muon_common_domain_charge_transport_tests_20261011.log",
+      "tool_chunk": "2b80a8"
+    }
+  ],
+  "complete_a_mu": null,
+  "complete_g_mu": null,
+  "diagnostics": {
+    "action_minus_represented_charge_first_norm": 2.0535634935951497e-08,
+    "action_source_chart_weak_residual_norm": 2.624253812192777e-08,
+    "actual_covariant_charge_first_norm": 1.490112840318877,
+    "analytic_source_dual_pairing_max": 3.330669073918552e-16,
+    "charge_first_idempotence_max": 6.352744966594858e-22,
+    "charge_idempotence_max": 1.1102230246251602e-16,
+    "charge_match_max": 1.1102230246251565e-16,
+    "charge_source_clock_first_norm": 8.900506602599744e-13,
+    "original_charge_exchange_norm": 1.4901128403188753,
+    "point_body_match_max": 1.3322676295501878e-15,
+    "represented_source_chart_charge_first_norm": 1.4901128403188795
+  },
+  "error_scope": "binary action coefficient/first-germ application on every actual source-chart point; the edge-average weak residual is an approximation residual, not a continuum or physical matching enclosure",
+  "failed_reader_attempts_preserved": true,
+  "heat_production": false,
+  "manifest_sha256": "b912fc193a96209ea55c30a440bff4705e87544f827a85b5fac38f8f5d04e91d",
+  "result_sha256": "03988b1679d4a37303e7917b493c0edeaae4c29bed0e0a17ce446b54eba11a8a"
+}

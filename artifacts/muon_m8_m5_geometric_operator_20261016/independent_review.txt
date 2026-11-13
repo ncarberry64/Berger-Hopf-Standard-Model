@@ -1,0 +1,23 @@
+Independent source/math reviews
+
+reset_law_derivation and scalar_reset_derivation reviewed the scalar
+helper and its integrable MP64 and round-S7 controls. Both pass. They
+identified and corrected the need to expose -beta/N Gamma0 in the
+coordinate-normal principal, rather than labeling inverse coframe scales
+as the complete coordinate principal.
+
+reset_law_derivation reviewed variational_uniqueness's complete rank16
+Clifford helper and independent tests. Pass: source gamma order, Clifford
+algebra, full ordered/upper curvature factor2, mixed jets, time/shift and
+vertical terms, density cancellation and adapted-frame scope agree.
+
+reset_law_derivation independently verified that root's canonical scalar
+producer differs only in imports, paths and source-manifest labels. Every
+numerical record/control value equals the independently reviewed WORK
+producer; both repository executions are byte-identical.
+
+variational_uniqueness reviewed root's actual KK producer: [0,4,1,2,3]
+reorders the owned gamma5 correctly; JSON decoding preserves all complex
+source coefficients and contacts; all adapted-frame and partial-source
+scope restrictions remain. Pass. No physical outgoing, convergence,
+physical state, carrier, moment, or correction gate is promoted.

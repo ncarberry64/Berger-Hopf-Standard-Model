@@ -1,0 +1,99 @@
+{
+  "classification": "VERIFIED_GLOBAL_SCALAR_SAME_CLOCK_MATCHING_AND_REFERENCE_PAIR",
+  "focused_tests": {
+    "argv": [
+      "C:\\Python314\\python.exe",
+      "-m",
+      "pytest",
+      "--noconftest",
+      "-q",
+      "tests/test_muon_global_scalar_matching_weight.py"
+    ],
+    "completed_exit_code": 0,
+    "original_log_path": "C:\\Users\\carbe\\Downloads\\BHSM_global_scalar_matching_weight_tests.stdout.txt",
+    "original_log_sha256": "81ab79f03797d46fd349494ff9046ac429500954cd8b5b8dd6bf07b8f854161f",
+    "stdout_stderr": "artifacts/muon_global_scalar_matching_weight_20261011/frozen_pair_verification/focused_tests.stdout.txt"
+  },
+  "identical_files_per_run": 5,
+  "impulse_and_both_nonzero_final_conormal_contacts_retained": true,
+  "no_static_meromorphic_reference_or_old_high_frequency_tail_graft": true,
+  "omitted_y_above_32_or_physical_Pauli_selected": false,
+  "original_complex_clock_and_diagonal_spectator_trace_retained": true,
+  "preserved_failed_pre_export_probe": {
+    "completed_exit_code": 1,
+    "consumed_as_scientific_application": false,
+    "failure": "pre-export reader requested an excluded complex scalar key; corrected by the exact saved proper-clock node difference",
+    "original_log_path": "C:\\Users\\carbe\\Downloads\\BHSM_global_scalar_matching_weight_run_1.stdout.txt",
+    "original_log_sha256": "47df6e426e67170ab5bf0e17f8cb9f570e24fc8707f7b16334053b518aa89306",
+    "scientific_arrays_written": false,
+    "stdout_stderr": "artifacts/muon_global_scalar_matching_weight_20261011/frozen_pair_verification/failed_run_1.stdout.txt"
+  },
+  "preserved_metadata_probe": {
+    "archive_hashes": {
+      "incoming_global_same_clock_matching_q6.npz": {
+        "bytes": 60230,
+        "sha256": "1d22b58b2ef53deae1ce1a77a15e51dc2a7e4c1dbe75ef92827844d32d93e222"
+      },
+      "incoming_global_same_clock_matching_q8.npz": {
+        "bytes": 66496,
+        "sha256": "4659f29f1c7fcf93513a5f05581d75d7699df19c3259defb3425827ab2943210"
+      },
+      "outgoing_global_same_clock_matching_q6.npz": {
+        "bytes": 60231,
+        "sha256": "d39c6c45292ef934656cd3e3cc61dbf42da380ca261df78eff6995eecab16ff1"
+      },
+      "outgoing_global_same_clock_matching_q8.npz": {
+        "bytes": 66483,
+        "sha256": "71e5a170e1a71aca7cdbdd518f5967d8df649d6a6578b33f41936d0a88d2ce08"
+      }
+    },
+    "completed_exit_code": 0,
+    "consumed_as_canonical_application": false,
+    "correction": "phase maximum mislabeled future although evaluated over all original points; numerical arrays unchanged, fixed canonical run3/run4 label",
+    "preserved_output_directory": "artifacts/muon_global_scalar_matching_weight_20261011/run_2",
+    "result_sha256": "7bdc3ccfd7e38dcf18e157415dfa6c3a53c2ccd0451e378fda0dc3236b486f4e"
+  },
+  "q6_q8_difference_is_outward_error_enclosure": false,
+  "reference_from_literal_signed_action_with_same_initial_Cauchy_domain": true,
+  "result_sha256": "ccb4d1351d25af5dd8910da6f75276d2f8aaed8743904ac87bf24d476535c1af",
+  "runs": [
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "scripts/evaluate_muon_global_scalar_matching_weight.py",
+        "--output",
+        "artifacts/muon_global_scalar_matching_weight_20261011/run_3"
+      ],
+      "completed_exit_code": 0,
+      "environment": {
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "PYTHONPATH": "src;."
+      },
+      "executed_powershell_command": "$env:PYTHONPATH='src;.'; $env:OPENBLAS_NUM_THREADS='1'; $env:OMP_NUM_THREADS='1'; C:\\Python314\\python.exe scripts/evaluate_muon_global_scalar_matching_weight.py --output artifacts/muon_global_scalar_matching_weight_20261011/run_3 2>&1 | Tee-Object -FilePath C:\\Users\\carbe\\Downloads\\BHSM_global_scalar_matching_weight_run_3.stdout.txt; exit $LASTEXITCODE",
+      "original_log_path": "C:\\Users\\carbe\\Downloads\\BHSM_global_scalar_matching_weight_run_3.stdout.txt",
+      "original_log_sha256": "02608b60b6186363fac97dc2043418763a14c158514a6da87ac30a6ed6b18fa3",
+      "stdout_stderr": "artifacts/muon_global_scalar_matching_weight_20261011/frozen_pair_verification/run_3.stdout.txt",
+      "working_directory": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001"
+    },
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "scripts/evaluate_muon_global_scalar_matching_weight.py",
+        "--output",
+        "artifacts/muon_global_scalar_matching_weight_20261011/run_4"
+      ],
+      "completed_exit_code": 0,
+      "environment": {
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "PYTHONPATH": "src;."
+      },
+      "executed_powershell_command": "$env:PYTHONPATH='src;.'; $env:OPENBLAS_NUM_THREADS='1'; $env:OMP_NUM_THREADS='1'; C:\\Python314\\python.exe scripts/evaluate_muon_global_scalar_matching_weight.py --output artifacts/muon_global_scalar_matching_weight_20261011/run_4 2>&1 | Tee-Object -FilePath C:\\Users\\carbe\\Downloads\\BHSM_global_scalar_matching_weight_run_4.stdout.txt; exit $LASTEXITCODE",
+      "original_log_path": "C:\\Users\\carbe\\Downloads\\BHSM_global_scalar_matching_weight_run_4.stdout.txt",
+      "original_log_sha256": "02608b60b6186363fac97dc2043418763a14c158514a6da87ac30a6ed6b18fa3",
+      "stdout_stderr": "artifacts/muon_global_scalar_matching_weight_20261011/frozen_pair_verification/run_4.stdout.txt",
+      "working_directory": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001"
+    }
+  ]
+}

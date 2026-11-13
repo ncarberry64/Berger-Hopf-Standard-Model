@@ -1,0 +1,74 @@
+{
+  "byte_identical_independent_processes": true,
+  "canonical_LF_JSON": true,
+  "complete_native_action": false,
+  "compressed_npz_array_count": 42,
+  "compressed_npz_below_10MiB": true,
+  "compressed_npz_decompressed_arrays_bit_identical_to_run_4": true,
+  "earlier_unpublished_provisional_pair": [
+    "run_1",
+    "run_2",
+    "run_3",
+    "run_4"
+  ],
+  "evaluated_reference": {
+    "Gauss_reference_max": 0.0,
+    "action_value": -8319.5455728175,
+    "additional_independent_action": 0.0,
+    "spatial_reference_weak_norm": 75945.9147055921,
+    "weak_geometry_jacobian_norm": 10444802.32179216
+  },
+  "focused_tests": {
+    "command": "C:\\Python314\\python.exe -m pytest --noconftest -q tests/test_muon_parent_maxwell_full_weak.py tests/test_muon_parent_maxwell_geometry_weak.py",
+    "exit_code": 0,
+    "output": ".................. [100%]\n18 passed in 2.79s"
+  },
+  "physical_Pauli_contraction": false,
+  "physical_stationary_base": false,
+  "prior_failures": [],
+  "producer_commands": [
+    "$env:PYTHONPATH='src'\n$env:OPENBLAS_NUM_THREADS='1'\n@'\nimport json\nfrom bhsm.interface.muon_parent_maxwell_full_weak import materialize\nr=materialize('artifacts/muon_parent_maxwell_full_weak_20261010/run_5')\nprint(json.dumps({k:r[k] for k in ['action_value','additional_independent_action','Gauss_reference_max','spatial_reference_weak_norm','weak_geometry_jacobian_norm','numerical_application_sha256']}))\n'@ | C:\\Python314\\python.exe -",
+    "$env:PYTHONPATH='src'\n$env:OPENBLAS_NUM_THREADS='1'\n@'\nimport json\nfrom bhsm.interface.muon_parent_maxwell_full_weak import materialize\nr=materialize('artifacts/muon_parent_maxwell_full_weak_20261010/run_6')\nprint(json.dumps({k:r[k] for k in ['action_value','additional_independent_action','Gauss_reference_max','spatial_reference_weak_norm','weak_geometry_jacobian_norm','numerical_application_sha256']}))\n'@ | C:\\Python314\\python.exe -"
+  ],
+  "producer_exit_codes": [
+    0,
+    0
+  ],
+  "publication_pair": [
+    "run_5",
+    "run_6"
+  ],
+  "records": [
+    {
+      "bytes": 29044,
+      "path": "src/bhsm/interface/muon_parent_maxwell_full_weak.py",
+      "sha256": "c1fb703967a644306d3521d457a6d7c778a49d89c1e081b401487a25b7491565"
+    },
+    {
+      "bytes": 10802,
+      "path": "tests/test_muon_parent_maxwell_full_weak.py",
+      "sha256": "3a38139a44265e18f861b271f7a5a166be36b0c8763efbf88a074fef536660c3"
+    },
+    {
+      "bytes": 3097435,
+      "path": "artifacts/muon_parent_maxwell_full_weak_20261010/run_5/application.npz",
+      "sha256": "544f52fb5dcd606bab0fc40fa1e46d016984dc7fee97931af4c2cf1d138d2214"
+    },
+    {
+      "bytes": 25124,
+      "path": "artifacts/muon_parent_maxwell_full_weak_20261010/run_5/result.json",
+      "sha256": "892dd86689bb014e4144257d901755a03d1e3ec3ddda87511d92f06a43cdbc92"
+    },
+    {
+      "bytes": 3097435,
+      "path": "artifacts/muon_parent_maxwell_full_weak_20261010/run_6/application.npz",
+      "sha256": "544f52fb5dcd606bab0fc40fa1e46d016984dc7fee97931af4c2cf1d138d2214"
+    },
+    {
+      "bytes": 25124,
+      "path": "artifacts/muon_parent_maxwell_full_weak_20261010/run_6/result.json",
+      "sha256": "892dd86689bb014e4144257d901755a03d1e3ec3ddda87511d92f06a43cdbc92"
+    }
+  ],
+  "relative_attachment_factor_assigned": false
+}

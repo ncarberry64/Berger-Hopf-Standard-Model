@@ -1,0 +1,120 @@
+NEW59 WALL TRACE: EXACT SOURCE FUNCTIONS VERSUS FROZEN MIDPOINT MAP
+2026-10-16. Read-only source algebra and frozen-file inspection. No action,
+field/source/history sampling, profile campaign, state correction, rank
+selection, flux choice or coefficient re-encoding is performed.
+
+The original radial formulas prove exact wall-value identities for 47 of
+the 59 new position directions. They do NOT prove an exact 47-dimensional
+kernel of the already frozen finite wall matrix. The latter retains tiny,
+nonzero dyadic midpoint coefficients, including entries excluding zero.
+
+1. Exact source formula and coordinate incidence
+
+The literal radial owner is
+artifacts/muon_baton_zoo_radial_convergence_20261014/
+literal_MP_radial_complex192_run_2/
+executed_bhsm_baton_zoo_literal_radial_profile_precision.py,
+literal_profiles(), notably the expressions x=r/WALL, y=2x-1 and
+
+  phi_l(r)=(1-y^2)^2 P_l(y), l=0,...,4.
+
+WALL=np.pi/2 is the SAME frozen binary constant used by the wall call
+literal_profiles(rep,[np.pi/2],degree). No true-pi replacement is needed for
+the algebraic equality r=WALL. For an exact evaluation of the source
+function, y=1 at that wall and
+
+  phi_l(WALL)=0,
+  phi_l'(WALL)=0,
+  phi_l''(WALL)=32/WALL^2, since P_l(1)=1.
+
+The literal point-table owner
+literal_MP_point_wall_tables_run_1/
+executed_bhsm_baton_zoo_literal_point_lift_tables.py:36-46
+puts phi_l into each spatial gauge component/internal direction. Its
+36*l+4*(f-1)+c ordering, together with the frozen full coordinate lookup,
+identifies q154:169 as l=3 and q170:185 as l=4, for f=1,...,4,c=0,...,3.
+These 32 source functions therefore have zero value and zero radial first
+derivative at the wall.
+
+The actual external covariant product owner is
+actual_linear_cut_degree4_complete_clock_epoch_maps_run_1/
+executed_bhsm_baton_zoo_complete_covariant_epoch_maps.py:12-80.
+Its labels are (p,c), p=0,...,8,c=0,1,2, and it appends the 27 position
+coordinates q=190+3*p+c. Its wall map is the explicit expression
+
+  K_r=chi_p' T_c+chi_p[A_r,T_c],
+  K_a=chi_p[A_a,T_c], a=1,2,3.
+
+The literal profiles p=4,...,8 are phi_0,...,phi_4. Thus q202:216 (15
+source-function directions) also have zero wall value. This proves the
+stated 32+15 exact source FUNCTION identities, rather than detecting them
+with a numerical threshold. The q190:201 block corresponds to p=0,...,3
+(B0,B1,affine-complement,regular), whose radial or value traces need not
+vanish. In particular the frozen affine-complement constants need not give
+an exact endpoint cancellation; no such identity is asserted here.
+
+The coordinate incidence follows directly from extra_coordinates_to_full
+in actual_degree_04_complete_clock_covariant_product_epoch_maps.npz and
+new_dynamic_position_indices in the frozen degree4 momentum-projection
+packet. The literal native epoch reconstruction retains that position
+ordering. No normalized phase-coordinate reordering is silently applied.
+
+2. Why these formula identities are not exact zeros of the saved matrix
+
+The profile evaluator uses interval reciprocal/multiplication. At the wall
+its unsimplified r/WALL evaluation can enclose 1 with a small radius. The
+unsimplified polynomial therefore carries small endpoint arithmetic balls.
+The helper muon_stored_fiber_canonical_tangent._split (lines21-22) exports
+
+  hi=_mid(a), lo=_mid(a-_matrix(hi)).
+
+It exports two midpoint dyadics, not the original interval radii.
+muon_stored_admission_correction._matrix (lines11-15) subsequently treats
+each saved binary hi/lo entry as an exact coefficient before later Acb
+operations. The literal point-table producer copies these stored values.
+Consequently the frozen coefficient matrix is not identical to a new
+endpoint-simplified reevaluation of its source function.
+
+Inspection of the existing profile archive, without reevaluating profiles,
+finds the bubble wall values approximately 1.6242827758820155e-114 and
+their firsts approximately -6.490840382884973e-57. The exact dyadic output
+of the reviewed new59 q-map producer retains those crumbs. In its archived
+20-by59 actual_new59_wall_gauge_value_map_exact:
+
+  * every q154:185 column has a nonzero entry excluding zero; its largest
+    absolute upper value is approximately 1.6242827758820155e-114;
+  * every q202:216 column also has entries excluding zero; the largest
+    absolute upper value is approximately 6.490840382884973e-57.
+
+Thus 'all other 47 columns are zero-containing balls' is not correct for
+this frozen output, and is_zero()==False cannot establish contains(0).
+Both the source formula and the fixed-coefficient numerical readout must
+be preserved. The accompanying receipt records the exact inspected bytes
+and each column's non-overlap row labels. No tiny entry is deleted.
+
+3. What the identities do not establish
+
+Even at the ideal source-function level, a zero value trace does not imply
+zero conormal/flux variation. For the added product bubbles,
+
+  partial_r K_r|wall = phi_l''(WALL) T_c != 0,
+  partial_r K_a|wall = 0.
+
+The ordinary bubble directions have first radial trace zero but second
+trace nonzero. Full proper-normal, canonical momentum, moving incidence,
+reset and exterior/source constraints are separate equations. This audit
+does not prove they are unchanged, and does not select any of the new q
+values or free clocks.
+
+For work with the published finite M and W, a safe constructive route is
+to certify the M range on a declared subset while carrying the FULL W
+ball action and its resulting bound. It is not valid to replace that W
+with an exact zero block based only on the symbolic identity, nor to infer
+the exact kernel/rank of W from the 47 small column norms. A future
+endpoint-stable evaluation would be a separately pinned numerical repair;
+the original data and comparison would remain unchanged.
+
+No exact-kernel dimension, coupled correction, physical domain, outgoing
+solution, derivative gate, Maxwell/all226, normalized spins or muon moment
+is claimed. Exact source/input bytes and the read-only contains-zero
+inspection are bound in the accompanying source-pins receipt.

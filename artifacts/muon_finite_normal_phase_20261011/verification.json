@@ -1,0 +1,172 @@
+{
+  "executions": [
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "pytest",
+        "--noconftest",
+        "-q",
+        "tests/test_muon_birth_finite_normal_phase.py"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "stderr_path": "tests.stderr.txt",
+      "stdout_path": "tests.stdout.txt"
+    },
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "bhsm.interface.muon_birth_finite_normal_phase",
+        "--base-directory",
+        "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1",
+        "--output",
+        "artifacts/muon_finite_normal_phase_20261011/incoming_run_1",
+        "--side",
+        "incoming",
+        "--span=-1e-5",
+        "--steps",
+        "1"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "stderr_path": "incoming_run_1.stderr.txt",
+      "stdout_path": "incoming_run_1.stdout.txt"
+    },
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "bhsm.interface.muon_birth_finite_normal_phase",
+        "--base-directory",
+        "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1",
+        "--output",
+        "artifacts/muon_finite_normal_phase_20261011/incoming_run_2",
+        "--side",
+        "incoming",
+        "--span=-1e-5",
+        "--steps",
+        "1"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "stderr_path": "incoming_run_2.stderr.txt",
+      "stdout_path": "incoming_run_2.stdout.txt"
+    },
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "bhsm.interface.muon_birth_finite_normal_phase",
+        "--base-directory",
+        "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1",
+        "--output",
+        "artifacts/muon_finite_normal_phase_20261011/outgoing_run_1",
+        "--side",
+        "outgoing",
+        "--span=1e-5",
+        "--steps",
+        "1"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "stderr_path": "outgoing_run_1.stderr.txt",
+      "stdout_path": "outgoing_run_1.stdout.txt"
+    },
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "bhsm.interface.muon_birth_finite_normal_phase",
+        "--base-directory",
+        "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1",
+        "--output",
+        "artifacts/muon_finite_normal_phase_20261011/outgoing_run_2",
+        "--side",
+        "outgoing",
+        "--span=1e-5",
+        "--steps",
+        "1"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "stderr_path": "outgoing_run_2.stderr.txt",
+      "stdout_path": "outgoing_run_2.stdout.txt"
+    }
+  ],
+  "files": {
+    "artifacts/muon_finite_normal_phase_20261011/incoming_run_1/application.npz": {
+      "bytes": 543181,
+      "sha256": "254491c04531387f3ef3ae761cb4efccfbed54055683af00fbd8259a2520a8f9"
+    },
+    "artifacts/muon_finite_normal_phase_20261011/incoming_run_1/result.json": {
+      "bytes": 7903,
+      "sha256": "8547be3232459deb8cb1d325a3d956bc0380ba0c767371ccce4bf7f5140b399f"
+    },
+    "artifacts/muon_finite_normal_phase_20261011/incoming_run_2/application.npz": {
+      "bytes": 543181,
+      "sha256": "254491c04531387f3ef3ae761cb4efccfbed54055683af00fbd8259a2520a8f9"
+    },
+    "artifacts/muon_finite_normal_phase_20261011/incoming_run_2/result.json": {
+      "bytes": 7903,
+      "sha256": "8547be3232459deb8cb1d325a3d956bc0380ba0c767371ccce4bf7f5140b399f"
+    },
+    "artifacts/muon_finite_normal_phase_20261011/outgoing_run_1/application.npz": {
+      "bytes": 544783,
+      "sha256": "21903c5e0f9318eec9795e0079c2e50689eb81ef73fcc4bbd62afaab5d2db646"
+    },
+    "artifacts/muon_finite_normal_phase_20261011/outgoing_run_1/result.json": {
+      "bytes": 24406,
+      "sha256": "c6a8af986e50ce8924cf67ffdefd9645630c9ed14cb33e4d1df5541c56dda93f"
+    },
+    "artifacts/muon_finite_normal_phase_20261011/outgoing_run_2/application.npz": {
+      "bytes": 544783,
+      "sha256": "21903c5e0f9318eec9795e0079c2e50689eb81ef73fcc4bbd62afaab5d2db646"
+    },
+    "artifacts/muon_finite_normal_phase_20261011/outgoing_run_2/result.json": {
+      "bytes": 24406,
+      "sha256": "c6a8af986e50ce8924cf67ffdefd9645630c9ed14cb33e4d1df5541c56dda93f"
+    }
+  },
+  "finite_outer_face_not_identified_with_E0": true,
+  "independent_replay_pairs": [
+    {
+      "byte_identical": true,
+      "filename": "result.json",
+      "side": "incoming"
+    },
+    {
+      "byte_identical": true,
+      "filename": "application.npz",
+      "side": "incoming"
+    },
+    {
+      "byte_identical": true,
+      "filename": "result.json",
+      "side": "outgoing"
+    },
+    {
+      "byte_identical": true,
+      "filename": "application.npz",
+      "side": "outgoing"
+    }
+  ],
+  "phase_source_sha256": "660ed731bdbe0bbb71eda750c9dbffd20e7ce9f63be2a6087e5a385d76850361",
+  "physical_cutoff_or_Pauli_completed": false
+}

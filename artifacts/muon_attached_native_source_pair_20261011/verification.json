@@ -1,0 +1,37 @@
+{
+  "byte_identical_outputs": {
+    "source_pair.json": {
+      "bytes": 149648,
+      "sha256": "c6e9d1dd4ec71304800dbc37f1587d752ce48d998829355f2d95859f3ff2671d"
+    },
+    "source_pair.npz": {
+      "bytes": 579369,
+      "sha256": "5c2b1246dd0e3f4215637d78fd11adc937996caff2217404fed4bcf1b2ba57d3"
+    }
+  },
+  "classification": "VALIDATED_DETERMINISTIC_SAME_ATTACHED_CELL_FERMION_PAIR",
+  "focused_test_command": "C:/Python314/python.exe -m pytest --noconftest -q tests/test_muon_attached_source_mean_load.py tests/test_muon_attached_native_source_pair.py",
+  "focused_test_exit_code": 0,
+  "focused_test_stdout": "7 passed in 3.58s",
+  "global_conftest_not_loaded": true,
+  "physical_native_or_Pauli_completed": false,
+  "prior_test_failure": "One entrywise mass-map identity assertion failed on strongly cancelling off-diagonal contractions. Replaced with whole-pair norm identity at binary64 rounding scale; production formulas and numerical NPZ unchanged. Preliminary run1 preserved.",
+  "runs": [
+    {
+      "exit_code": 0,
+      "output": "artifacts/muon_attached_native_source_pair_20261011/run_3",
+      "producer_command": "C:/Python314/python.exe scripts/evaluate_muon_attached_native_source_pair.py --incoming-response artifacts/muon_attached_reached_action_20261011/incoming_run_1 --outgoing-response artifacts/muon_attached_reached_action_20261011/outgoing_run_1 --mean-directory artifacts/muon_attached_native_phase_adjoint_20261011/run_1 --output artifacts/muon_attached_native_source_pair_20261011/run_3"
+    },
+    {
+      "exit_code": 0,
+      "output": "artifacts/muon_attached_native_source_pair_20261011/run_4",
+      "producer_command": "C:/Python314/python.exe scripts/evaluate_muon_attached_native_source_pair.py --incoming-response artifacts/muon_attached_reached_action_20261011/incoming_run_1 --outgoing-response artifacts/muon_attached_reached_action_20261011/outgoing_run_1 --mean-directory artifacts/muon_attached_native_phase_adjoint_20261011/run_1 --output artifacts/muon_attached_native_source_pair_20261011/run_4"
+    }
+  ],
+  "source_hashes": {
+    "scripts/evaluate_muon_attached_native_source_pair.py": "150dabaf71b40e16b3c4730d635adcc41ee2b0265d8e0a478844b1ce23da0ef6",
+    "src/bhsm/interface/muon_attached_native_source_pair.py": "09e613de4f0a8b09c1f63e0952a5cec3879dae324546686c0596eee15f5247a7",
+    "tests/test_muon_attached_native_source_pair.py": "9bd1dfd74e2c63f5ae109487480f05d503b24512697845a7840eac00e8cd353d"
+  },
+  "statistics_factor_applied_once": 0.5
+}

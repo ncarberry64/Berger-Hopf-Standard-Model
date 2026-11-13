@@ -1,0 +1,156 @@
+CHANGING REAL-CELL LORENZ TIME6->8->12 CONTROL
+2026-10-16. Final independently repeated actual readout.
+
+New canonical audit:
+ audits/bhsm_changing_lorenz_mp_time_control_20261016.py
+ SHA256cbb9280f9cadd18f73be462b0d1c87643135ae95910640690586ed228a3d67ea
+Frozen value/kernel owner:
+ audits/bhsm_changing_lorenz_mp_coefficient_values_20261016.py
+ SHA2561b0a9713749feb062fecdb664598a7a5b3528bd72ec5aa18176ae88eb5b88eff
+No existing source or earlier readout is modified. The new readout uses
+same original REAL affine midpoint/rate histories, same held reference
+basis/constants, radial128 and anchored-response96. Only temporal Gauss
+order changes from6 to8 and12 per tent half. Incoming t=u-L and child t=u
+retain the same positive chronological integration and independent proper
+lapses. No constant-background moment replaces changing coefficients.
+
+1. COMPLETED TIME6 IS REUSED WITH AN EXPLICIT ROUNDING ENVELOPE
+
+Let a be an already computed MP80 time6 entry and c its stored nearest
+float64 conversion. Define the conservative MP-valued radius
+ r=one half*max(c-nextafter(c,-infinity),nextafter(c,+infinity)-c).
+The code lifts both neighboring floats exactly and performs the differences
+and halving in MP. It checks finiteness of c and BOTH neighbors. This
+handles powers-of-two binades, zero, positive/negative subnormals without
+pretending Windows longdouble has higher precision. Explicit controls at
+0,+/-smallest subnormal,+/-1 are retained.
+
+For a new unrounded MP8 value b, |a-c|<=r implies
+ |b-a|<=|b-c|+r,
+ max(1,|a|,|b|)>=max(1,|c|-r,|b|).
+The reported every-entry ratio upper bound is therefore
+ (|b-c|+r)/max(1,|c|-r,|b|).
+The maximum is scanned over every full B,F and fixing matrix entry, with
+absolute bound, worst index and values recorded. This reuses the completed
+MP80 arithmetic reference; it is not a claim that the underlying physical
+operator or upstream coefficients are interval certified. It avoids
+recomputing settled time6 fields just to recover sub-ulp output digits.
+
+2. TIME8->12 IS COMPARED BEFORE ANY OUTPUT CONVERSION
+
+The new producer retains all full MP8 matrices and compares every MP12
+entry before rounding. The same original retained-unit metric
+ max |new-old|/max(1,|old|,|new|)
+is used. Separate absolute maxima and indices/values remain visible.
+No Frobenius-only or selected-step replacement is made. Actual mirror
+nodes keep both independently evaluated coefficients and weights.
+
+All exact tensor contributions remain: normal/radial ghost-gradient
+cross terms, both angular mixed transpose placements, all20 harmonics,
+800 ordinary/320 gradient-image coordinates and zero scalar80 columns
+owned by this particular pure one-form Lorenz representative. B,F and
+the complete fixing matrix are evaluated in MP. The separate intrinsic
+Higgs action and full native/physical quotient are not identified with
+this finite Lorenz map. Literal full5x80 vector controls are independently
+integrated over all new nodes; actual response-root coefficients,
+residuals and both generic/special normalization values are stored.
+
+The small integrated tensor moments are archived exactly as the working
+binary MP tuple sign:hex_mantissa:binary_exponent:bitcount, not as rounded
+decimal coefficients. Thus the numerical moment operands can be recovered
+without replaying histories or fields, including every exact zero and
+nonzero cancellation residue. The NPZ also retains source midpoint/rate,
+actual sample coordinates/raw fields, weights and final sparse matrices.
+
+Independent read-only review confirmed the conversion-envelope proof,
+zero/subnormal treatment, unrounded8->12 comparison, exact moment encoding
+and same source-clock/radial/anchoring protocol. No actionable issue was
+found. Both executions completed; the complete pair and every comparison
+are retained below. The archive label outgoing denotes the inherited-child
+test history, not a selected physical outgoing domain.
+
+3. ACTUAL WHOLE-ENTRY TEMPORAL COMPARISONS
+
+Each line gives max entry-scaled difference/bound, then the SEPARATE
+maximum absolute difference/bound. Their worst entries need not coincide.
+MP6->8 is the conservative conversion-envelope comparison above; MP8->12
+uses both full unrounded MP matrices. Radial128 and response-anchor96 are
+fixed throughout. All12 component comparisons meet scaled2e-10.
+
+incoming6->8:
+ B       2.1628754617181842e-16    3.3746487954217214e-9
+ F       3.8344159749476375e-14    7.6502725801549220e-4
+ fixing  8.4403446522739330e-14    1.7271569143311939
+incoming8->12:
+ B       7.1653086720745676e-43    3.4104187690312399e-41
+ F       4.0647637296190123e-37    3.2800610304555425e-26
+ fixing  1.7177390082097386e-36    5.2600346525397860e-23
+inherited-child6->8:
+ B       2.1572786381885074e-16    7.3516275419614110e-9
+ F       2.2491790912460496e-15    1.0500073282752353e-3
+ fixing  3.2965646932972952e-13    3.1289679307991481
+inherited-child8->12:
+ B       5.4332625166302127e-43    2.5770391040090393e-41
+ F       1.6312221274880131e-37    7.5836510626779959e-26
+ fixing  5.1668910762198950e-36    1.0943470471513849e-22
+
+The6->8 absolute maxima are not absolute2e-10 passes. These retained-unit
+matrix entry comparisons are not the original physical derivative or226
+row norms. In particular, a scaled finite-component pass must not be
+substituted for the requested absolute physical row validation. The new
+8->12 check is an additional changing-coefficient time-rule control, not
+an assertion that a Gauss rule is exact for all nonpolynomial backgrounds.
+
+4. TWO INDEPENDENT EXECUTIONS AND EXACT OPERAND RETENTION
+
+WORK/outputs/bhsm_changing_lorenz_mp_time_control_20261016/run_1
+WORK/outputs/bhsm_changing_lorenz_mp_time_control_20261016/run_2
+All9 corresponding files are byte-identical. Every source/owner pin in
+the final result was checked against current repository bytes. Every
+archive was checked against its report. Each archive contains6344 exact
+MP moment tuples,1168 nonzero; decoding and re-encoding every tuple was
+exact. No numerical archive exceeds0.38MiB; each whole run is below2MiB.
+
+Paired receipt:
+ WORK/outputs/bhsm_changing_lorenz_mp_time_control_20261016/final_pair_verification.json
+ SHA2560396efbcef1d4283fc71743edcaa08115c89fb33505520f9cbe4944753a05ccb
+Top result.json (both runs),159415bytes:
+ SHA256d4c2d92fb01be31b8944bd1a09f67dcd8ffac346751e3e070f038d344bf2453a
+
+Corresponding per-run file inventory (bytes, SHA256):
+ incoming_time8/forms.npz 373085
+  36d593ef0e21a9cf739403322d79b22e0d34240067baa5dfe00e4e46bbd1b996
+ incoming_time8/result.json 23975
+  bb827c814876f24fc3de993e19271f92805d7e3c1fde232e7d2875856c645c72
+ incoming_time12/forms.npz 379342
+  d7f598264ae6d0598b98d978bf8527c1a21074598170bef92fad8203ef8492dc
+ incoming_time12/result.json 27550
+  02152138cd425f5be4f2a392e7d14af1449c224cd15f4f86fc08d0853720d95f
+ outgoing_time8/forms.npz 372159
+  bec853990291a1df105577d8600a30e6017ea92fb0741035e4ac43768552b314
+ outgoing_time8/result.json 23910
+  810aae46a2fbb2d00d6d0ecbc71fe10e57025b2b3cd72b2fef14d02b04f4d340
+ outgoing_time12/forms.npz 378399
+  9303856f76ef133a7c93d871a9e5a5f4d22a4acad0b35da34d54263164d48ce0
+ outgoing_time12/result.json 27592
+  a150b5c6f7f87b5ea953d20fdefaf67ef7c226bfdd7b5322fe2e14e73104b507
+
+The completed time6 arithmetic reference is the previously evaluated pair
+WORK/outputs/bhsm_changing_lorenz_mp_coefficient_values_20261016/mp80_final_run_1
+(identical run_2), top receipt SHA256
+abdfc5897dfa555645e43fdd4e8e1e913281308caff3d7c271ec7ecec899c568.
+Its incoming_radial128/forms.npz is3ec425157d97aabebbc5784e2031a91444478c023c6dffe2d335951b9f8b8ebe;
+outgoing_radial128/forms.npz is549988c08190cb8cf30dce566682c9cb04833b48bf41e190f635a4cebc9b5ac6.
+The new result binds these exact baseline bytes and the prior result.
+The source field/reference/anchoring provenance remains in the complete
+source_and_owner_sha256 map, including the original TIME6 input archive
+and radial-refinement inputs. Earlier binary64, binary-rule, coarse and
+failed full15-form readouts remain unchanged; none is replaced by this
+new component control.
+
+These remain finite EW4 constituent calculations on provisional retained
+histories. They do not provide the remaining15-form curvature/scalar/
+quotient pieces, physical source/field/domain derivatives, full graded
+native heat application or an outgoing domain. No physical derivative
+pass, Maxwell/all226 validation, coupled correction, normalized spin state
+or magnetic moment is claimed.

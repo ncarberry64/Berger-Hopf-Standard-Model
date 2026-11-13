@@ -1,0 +1,112 @@
+FULL ORIGINAL MAXWELL EM-COLUMN RADIAL COMPARISON, 2026-10-16
+
+Declared operation
+------------------
+This supplement consumes the already evaluated real one-cell phase data and
+the official original-Maxwell application. It does not rerun a history,
+formation, normal-profile, D5, native-heat, or outgoing campaign. The script
+imports the frozen canonical snapshot/rows/direction functions. Those rebuild
+the actual held midpoint coefficients on the requested original radial Gauss
+nodes and apply the independent original Maxwell polynomial. No parameter,
+field, normal profile, or radial envelope is selected by this supplement.
+
+Official same-primal reference
+-----------------------------
+Repository: C:/Users/carbe/Downloads/BHSM_muon_parent_maxwell_worktree_20261001
+artifacts/electromagnetic_carrier_original_maxwell_20261016/run_2/result.json
+SHA256 79072b58e6cd13f0297a4efbcc65543822a5ef5260187b219e491d96fedae38b
+artifacts/electromagnetic_carrier_original_maxwell_20261016/run_2/application.npz
+SHA256 2eb865ae7b9e73edc236085655954919bd8fc0eed78a15fd034a8774b1384bb0
+Every official input/source hash is checked before the new applications.
+The consumed saved operator is the complete radial96 operator, not a norm or
+selected entry. The exact current executed supplement is saved in each run.
+
+Coordinates and action
+----------------------
+The 800 original value coordinates have ordering
+  (radial4, field5, internal4, even-real-harmonic10).
+The five fields are A_tau,A_rho,A_1,A_2,A_3. The harmonics are the complete
+real n=0,2 scalar basis. All original value rows and all 800 independent rate
+rows remain, including the A_tau rate rows that evaluate to zero in this
+Maxwell sector. The 32 columns are amplitude/rate x radial4 x EMmode4.
+
+The four radial maps are the original two regular interior profiles, the
+original frozen source-complement profile, and independent wall lift. Their
+reference projection/norm and source states do not change with quadrature.
+The Higgs-aligned charge and its actual inside-cell clock first are reused.
+The stored inclusions and their clock first agree bitwise with the official
+reference at each newly evaluated radial rule; this is a checked guard.
+
+The complete 1600x32 operator is evaluated with the same canonical imaginary
+complex step 1e-20. This is the original polynomial on fixed real field
+directions, not a Hessian of a different positive reference action. The fixed
+geometry/Higgs Maxwell variation includes the original curvature contacts,
+shift and material time/radial placements. No geometry/source/domain total
+derivative, ghost quotient, fermion statistic or physical heat realization is
+inserted. The angular24-cell rule is unchanged; its local weak/first-field
+degree scope is the same as the official application.
+
+Comparisons and retained failures
+---------------------------------
+All entries of the full operator, baseline value800, baseline rate800 and
+seed kinetic16x16 are compared. The absolute maximum and its affected index,
+the maximum |new-old|/max(1,|old|,|new|), the maximum relative error over
+nonzero denominators, and relative Frobenius diagnostic are separately
+recorded. No norm replaces another. The full A_tau/Gauss subsets are also
+compared separately. Complete difference arrays are saved, without dropping
+tiny or analytically expected zero entries.
+
+Incoming midpoint t=-5e-6:
+  Full operator48->96 absolute maximum 3.360778322303304e-10 FAILS2e-10.
+  Maximum entry-scaled difference 4.3104555022639744e-11.
+  Absolute witness row550,column9: original VALUE field3/internal3/harmonic0,
+  source-complement radial2; EM amplitude mode1/source-complement radial2.
+  Values are 7.796805512870106 at48 and 7.7968055125340285 at96.
+  Baseline value maximum change 1.1185274928493527e-11;
+  baseline rate2.55351295663786e-14; kinetic3.40394379350073e-13.
+  Gauss operator maximum change1.529282256385045e-11.
+
+The failed full-operator ABS guard triggers the predetermined192 rule:
+  Full operator96->192 absolute maximum3.2883917810977437e-11.
+  Maximum entry-scaled difference1.2908476175005844e-12.
+  Absolute witness row350,column5 now uses ordinary radial1 on both sides,
+  the same value field3/internal3/harmonic0 and EM mode1.
+  Values25.474670569254933 at96 and25.474670569287817 at192.
+  Baseline value maximum change9.14601727686204e-13;
+  baseline rate2.864375403532904e-14; kinetic5.755396159656812e-13.
+  Gauss operator maximum change6.004086117172847e-13.
+
+Outgoing midpoint t=+5e-6:
+  Full operator48->96 absolute maximum9.652723065300961e-11.
+  Maximum entry-scaled difference8.462341938297868e-12.
+  Absolute witness row550,column9 is the same source-complement placement.
+  Values-18.30190436095625 at48 and-18.301904361052777 at96.
+  Baseline value maximum change3.674616166904343e-12;
+  baseline rate5.6288307348495437e-14; kinetic4.762856775641922e-13.
+  Gauss operator maximum change4.29190016859593e-12.
+  The prescribed conditional192 trigger is false, so outgoing192 is not run.
+
+Interpretation
+--------------
+The incoming48->96 failure is preserved even though its scaled diagnostic
+is smaller than2e-10. Its worst placement involves the frozen source
+complement, whose norm is0.004004478619211728. At the next rule the maximum
+moves to an ordinary profile. This identifies sensitivity locations and
+observed stabilization on the fixed basis; it does not prove a cause or
+certify an arithmetic floor. No basis normalization or quadrature parameter
+has been tuned to remove a residual. Native Windows np.longdouble exposes
+only52 fraction bits here, so casting to longdouble would not supply a
+precision certificate.
+
+Near-zero Gauss values retain their ordinary relative diagnostics, including
+order-one relative changes of approximately1e-17 absolute entries. These are
+not discarded or converted into exact-zero claims. The rate-Gauss operator
+rows are exactly zero in these saved numerical arrays and remain present.
+
+These are finite-rule numerical comparisons. Binary64 evaluation error,
+upstream coefficient uncertainty and continuum truncation are not enclosed.
+There is no blanket physical radial-convergence assertion. Temporal and
+source/domain derivatives, the adopted collider realization, native mean,
+Maxwell/matter/interface coupling, all226 matching rows, normalized physical
+spin states, and the magnetic moment are not completed by this supplement.
+No coupled correction is applied.

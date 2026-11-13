@@ -1,0 +1,109 @@
+Independent daughter-frequency derivative control, 2026-10-16
+
+RESULT
+The small-step binary64 finite-difference deterioration is arithmetic
+cancellation/solve rounding for this EXACT STORED local original84 operand.
+All 64 complex entries of the parent's analytic frequency tensor agree with
+the independent Acb256 derivative to at most 7.476702127004432e-15 absolute.
+This is not the complete physical outgoing derivative or any physical
+Maxwell/original226 admission. No original coupled correction was applied.
+
+OWNERS AND FROZEN INPUTS
+The parent calculation is
+  WORK/outputs/muon_daughter_source_20261016/initial_electron_only
+with application.npz SHA256
+  b4b98bcbe79a29b96edaa7712a0319d80be64356d049144848876a994caeaae5.
+It uses the corrected weak-major spin injections from
+muon_owned_static_charged_current, preserving all 24 gauge/Higgs legs and the
+literal independent left vertex. The input archive is
+  REPO/artifacts/muon_coupled_lorentz_field_symbol_20261011/run_1/application.npz
+SHA256 21838fe6355cb2b151e12194442549526179ed9ea4422ede3a56c39e5e65ae97.
+All original parent source/input hashes are checked before either execution.
+The saved parent R/L and all64 analytic first entries are consumed directly.
+No daughter spectrum, history, profile, action assembly, nonlinear solution,
+or original campaign is rerun. No bhsm module is imported by this producer.
+
+LITERAL INDEPENDENT APPLICATION
+At original proper-frequency w=0, fixed Q,T,H,R4,N and all original vertices:
+  K(w) = K0 + w K1 + w^2 K2                         (84x84)
+  A(w) = Q^T K(w) Q, P = T Q                       (80x80,24x80)
+  U(w) = solve(A(w),P^T)                           (80x24)
+  G(w) = P U(w)                                   (24x24)
+  C_flat(w) = R_flat^T G(w) L_flat                  (8x8).
+C_flat reshapes to C_(neutral2,charged4,charged4,neutral2), hence64 entries.
+All transposes above are analytic coefficient transposes. There is no
+conjugation of the stored source/left coefficient entries.
+
+Each actual input float/complex component is imported using arb(float).
+is_exact() is checked on every real and imaginary component. Thus the
+binary64 entries and each binary64 h are exact dyadic point inputs, rather
+than decimal approximations. Acb192 and Acb256 execute independently.
+For each h=1e-4,1e-6,1e-8, the original84 polynomial is formed anew at
+w=2h,h,-h,-2h, with a full80x24 solve at every value. The finite difference is
+  F_h = [-C(2h)+8C(h)-8C(-h)+C(-2h)]/(12h).
+No daughter_tensor_first or quotient_trace_return_first helper is called.
+
+The separate MP derivative evaluates the exact inverse-variation identity
+  A0 U0=P^T, A0 U1=-A1 U0,
+  C1=R_flat^T P U1 L_flat.
+It is independently assembled in this producer, not read from the parent's
+derivative helper. Its residual A0 U1+A1 U0 is exported as an upper bound.
+The literal finite-difference comparisons do not depend on this derivative
+for their construction. Difference from C1 quantifies the observed finite-h
+truncation for this actual rational tensor. No asymptotic extrapolation or
+selected favorable step replaces a requested comparison.
+
+ALL64 ABSOLUTE COMPARISONS
+Incoming independent MP derivative versus saved binary64 analytic first:
+  5.495108029768016e-16.
+Outgoing independent MP derivative versus saved binary64 analytic first:
+  7.476702127004432e-15.
+
+Acb256 literal FD minus independent MP derivative, absolute upper bound:
+           incoming                  outgoing
+  h=1e-4   6.340207635414960e-17      2.436715894419919e-15
+  h=1e-6   6.340205680760361e-25      2.436718384497320e-23
+  h=1e-8   6.340205680564898e-33      2.436718384746328e-31
+The h^4 behavior is resolved over all three requested steps. Acb192/256
+enclosures overlap for the value, independent derivative and every FD entry.
+
+Independent binary64 literal FD versus the saved binary64 analytic first:
+           incoming                  outgoing
+  h=1e-4   1.233626967378485e-13      7.291694373002935e-12
+  h=1e-6   2.663354215672620e-11      4.955112722547594e-10
+  h=1e-8   1.692253837060148e-09      1.991372273692607e-08
+The parent's original binary64 sweep is retained separately and verbatim in
+both result.json files. Its operation ordering differs from this literal
+matrix contraction, so it need not reproduce the same binary64 last bits.
+Both exhibit cancellation; the high-precision full-entry controls show it
+is not a truncation mismatch of the analytic jet on the stored finite data.
+
+At Acb256 the largest literal original80x24 equation residual upper bound
+over all actual finite probes is 4.111217469997813e-67. The derivative
+equation residual upper bound is at most7.944569541314910e-65. These are
+certified interval arithmetic bounds on exact stored entries, not bounds on
+the upstream physical coefficient/domain assembly or continuum limit.
+
+REPRODUCIBILITY
+Producer evaluate_daughter_frequency_mp.py (11369 bytes), SHA256
+  04f57de15be967bb2c30280b0786b8dae398fdebd5cd0ead546b7ae3d0663ff9.
+run_1 and run_2 were separate executions, approximately4s each. Direct byte
+comparison passes for all three files in each output folder:
+  result.json (22065 bytes), SHA256
+    5536590c4a0153ccb9c89a41f4ac19cd67e7144f0380e295360826655d02fe3f
+  frequency_control.npz (21517 bytes), SHA256
+    20d9eb147b30c31b88233db22c81b90f5e5d88ee84ee08e00254c661e9e45b99
+  executed_producer.py (11369 bytes), SHA256 equal to producer above.
+Runtime: Python3.14.3, numpy2.4.6, python-flint0.9.0; Acb192/256 bits.
+The numerical archive includes every FD tensor and its export error upper
+array, saved binary64 first, independent MP derivative and error, and all
+independent binary64 FD tensors. JSON includes all requested steps, original
+parent failures, equation bounds, source pins and exact dyadic step ratios.
+
+SCIENTIFIC LIMIT
+This confirms the local fixed-inherited-domain frequency first derivative,
+with full scalar/gauge/spin tensor retained. It neither evaluates moving
+physical E/B/domain jets nor selects a physical muon pole, state, prepared
+collider history, native common operator, outgoing graph or soft Pauli limit.
+Physical full outgoing derivative flag remains false. Original Maxwell and
+226 after-state values remain unevaluated; original coupled corrections0.

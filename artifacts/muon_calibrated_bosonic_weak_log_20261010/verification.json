@@ -1,0 +1,102 @@
+{
+  "byte_identical": true,
+  "claim_scope": "isolated minimal calibrated gauge-current EW2 logarithm; finite bosonic remainder/native response/overlap not evaluated",
+  "classification": "DETERMINISTIC_PARTIAL_BOSONIC_WEAK_LOG_VERIFICATION",
+  "consumed_hash_checks": [
+    {
+      "bytes_match": true,
+      "path": "artifacts/muon_calibrated_pauli_20261009/inputs.json",
+      "sha256_matches": true
+    },
+    {
+      "bytes_match": true,
+      "path": "artifacts/muon_calibrated_weak_decay_20261010/run_1/weak_decay.json",
+      "sha256_matches": true
+    },
+    {
+      "bytes_match": true,
+      "path": "src/bhsm/interface/ae31_c2_intrinsic_m4_lepton_action.py",
+      "sha256_matches": true
+    },
+    {
+      "bytes_match": true,
+      "path": "src/bhsm/interface/muon_calibrated_bosonic_weak_log.py",
+      "sha256_matches": true
+    },
+    {
+      "bytes_match": true,
+      "path": "scripts/evaluate_muon_calibrated_bosonic_weak_log.py",
+      "sha256_matches": true
+    },
+    {
+      "bytes_match": true,
+      "path": "src/bhsm/interface/muon_calibrated_weak_decay.py",
+      "sha256_matches": true
+    },
+    {
+      "bytes_match": true,
+      "path": "scripts/evaluate_muon_calibrated_weak_decay.py",
+      "sha256_matches": true
+    },
+    {
+      "bytes_match": true,
+      "path": "src/bhsm/interface/muon_calibrated_higher_qed.py",
+      "sha256_matches": true
+    }
+  ],
+  "full_native": false,
+  "new_source_records": [
+    {
+      "bytes": 5912,
+      "path": "src/bhsm/interface/muon_calibrated_bosonic_weak_log.py",
+      "sha256": "a7b2df30b966ea5e5255ce50dbc5781d42a580da620240309c556c90311d26e0"
+    },
+    {
+      "bytes": 10317,
+      "path": "scripts/evaluate_muon_calibrated_bosonic_weak_log.py",
+      "sha256": "e669ba3bdc86533868f99c0daa1f8b9d22233ce56c433522ebeb8d6ab8be747f"
+    },
+    {
+      "bytes": 5106,
+      "path": "tests/test_muon_calibrated_bosonic_weak_log.py",
+      "sha256": "99e5895b1bbaeb6577ca8fac5f233715c8a3c34e90e3efaf966c4397c4c87f0e"
+    }
+  ],
+  "outputs": [
+    {
+      "bytes": 10881,
+      "path": "artifacts/muon_calibrated_bosonic_weak_log_20261010/run_1/bosonic_weak_log.json",
+      "sha256": "64b89011c453108e651cb2a1d461b97f8c68d2f61ee20ce096ad18677f57f85c"
+    },
+    {
+      "bytes": 10881,
+      "path": "artifacts/muon_calibrated_bosonic_weak_log_20261010/run_2/bosonic_weak_log.json",
+      "sha256": "64b89011c453108e651cb2a1d461b97f8c68d2f61ee20ce096ad18677f57f85c"
+    }
+  ],
+  "producer_commands": [
+    {
+      "command": "C:\\Python314\\python.exe scripts/evaluate_muon_calibrated_bosonic_weak_log.py --output artifacts/muon_calibrated_bosonic_weak_log_20261010/run_1",
+      "exit_code": 0,
+      "stdout_record": {
+        "bytes": 10881,
+        "path": "artifacts/muon_calibrated_bosonic_weak_log_20261010/run_1/bosonic_weak_log.json",
+        "sha256": "64b89011c453108e651cb2a1d461b97f8c68d2f61ee20ce096ad18677f57f85c"
+      }
+    },
+    {
+      "command": "C:\\Python314\\python.exe scripts/evaluate_muon_calibrated_bosonic_weak_log.py --output artifacts/muon_calibrated_bosonic_weak_log_20261010/run_2",
+      "exit_code": 0,
+      "stdout_record": {
+        "bytes": 10881,
+        "path": "artifacts/muon_calibrated_bosonic_weak_log_20261010/run_2/bosonic_weak_log.json",
+        "sha256": "64b89011c453108e651cb2a1d461b97f8c68d2f61ee20ce096ad18677f57f85c"
+      }
+    }
+  ],
+  "raw_file_comparison": true,
+  "stable_packets_modified": false,
+  "test_command": "C:\\Python314\\python.exe -m pytest tests/test_muon_calibrated_bosonic_weak_log.py -q",
+  "tests_exit_code": 0,
+  "tests_stdout": "17 passed"
+}

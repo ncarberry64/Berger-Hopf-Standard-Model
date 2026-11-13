@@ -1,0 +1,137 @@
+CURRENT HEAT/ZETA ACCOUNTING AND SURFACE-STRESS REVIEW
+Read-only review of the retained action; no physical matching correction.
+
+Repository: C:/Users/carbe/Downloads/BHSM_muon_parent_maxwell_worktree_20261001
+All source anchors below are relative to that repository.
+
+1. The retained replacement is not an identical heat-reference subtraction
+
+src/bhsm/interface/aether_quantum_functional_accounting_v16_00.py:17-43
+states the exact bookkeeping identity
+
+  Gamma_attached_zeta = Gamma_parent + Gamma_SM_zeta[Phi;0,0,0],
+  Gamma_Q = Gamma_parent + Gamma_SM_heat[Phi;A,H,Psi]
+          = Gamma_attached_zeta - Gamma_SM_zeta[Phi;0,0,0]
+            + Gamma_SM_heat[Phi;A,H,Psi].
+
+The zero-source subtraction is not sector-specific: geometry, gauge and
+Yukawa responses must use the same replacement. The old temporal cycle
+in that module is historical; this algebra does not select a cycle domain.
+
+The CURRENT domain-agnostic implementation is
+src/bhsm/interface/forward_finite_endpoint_heat_force.py:384-399:
+Gamma_heat_minus_zeta = heat[Gamma_heat] - zeta[Gamma_SM_zeta], with the
+same subtraction of the supplied directional forces. Its zeta function
+at lines 171-208 is the retained Casimir functional
+
+  Gamma_SM_zeta = -(59/30) sum_j w_j/R_j.
+
+It is not a second E1 trace of an identical local reference operator.
+The precursor aether_replacement_geometry_force_v16_06.py:162-199
+uses precisely this replacement residual; its retired numerical cycle
+need not, and must not, be rerun to establish the accounting identity.
+
+The current AE4 owner independently retains that identity:
+src/bhsm/interface/ae4_stratified_dirac_zeta_induced_owner.py:272-321.
+Its single microscopic owner is -(1/2)STr E1(ell_star^2 P_strat), with
+relative zeta/eta completion for logarithmic order and phase. It explicitly
+sets zeta_completion_is_second_independent_determinant=False. Positive
+orders have F_p=-ell_star^(-p)/p (lines 38-55); p=0 belongs to that relative
+completion. Local M8/M5/M4 actions are expansions of this same functional.
+
+The older v15.96 joint_quantum_derivative_contract at
+aether_common_quantum_superdeterminant_v15_96.py:222 describes a heat
+difference with a P_reference. An IDENTICAL leading local heat reference
+would cancel a0 in such a difference. That conditional mathematical fact
+is not evidence that the CURRENT heat-minus-Casimir-zeta replacement
+subtracts the C2 a0 volume term. The earlier packet's identical-reference
+caution is therefore conditional, not a statement of actual cancellation.
+
+2. What can be concluded for the newly evaluated C2 component
+
+The declared C2 integer ledger gives graded high-shell coefficient -20.
+Under its stated proper-time Laplace principal realization, the uncompleted
+local M4 contribution is
+
+  a0,4 = -20 Vol4/(4 pi)^2,
+  gamma4,a0 = [5/(16 pi^2)] ell_star^(-4).
+
+The retained Casimir shape is proportional to d_tau/R, whereas this local
+volume component has shape ell_star^(-4) R^3 d_tau. At independent fixed
+cutoff these are different action functions, so the Casimir replacement is
+not an automatic subtraction of the local a0 density. This establishes a
+component of the same action, not its full net surface coefficient.
+
+This is NOT a theorem of noncancellation on the physical native-length
+shell. If the solved cutoff scales as ell_star proportional to R, both
+shapes can scale as d_tau/R. Moving proper duration also changes their
+contacts: forward_finite_endpoint_heat_force.py:287-307 explicitly gives
+zero common-scale Casimir force when both radii and weights scale together.
+The complete spectrum, relative completion, all graded strata, native
+cutoff/field/domain jets and the solved geometry determine the actual
+contraction. None is replaced by an off-shell power-counting argument.
+
+For the actual two-orbit coarea identity, L=sqrt(A^2+B^2),
+R=AB/L, V=2 pi^2, and dmu7=(V L^3)dmu4. Therefore this component maps to
+
+  gamma7,a0 = 5/(32 pi^4) ell_star^(-4) L^(-3).
+
+Its geometry dependence is essential. At fixed R, lapse and cutoff, the
+quotient volume component has zero vertical L stress. A constant ambient
+area coefficient matched at one geometry instead gives 3 S delta(log L).
+Differentiating gamma7,a0 itself cancels that response. A value-matched
+constant tension and this induced component consequently have different
+stress covectors. The actual retained initial/stage geometry evaluation in
+WORK/bhsm_C2_vertical_stress_contrast_20261016.py gives unit-direction
+constant-tension derivatives -0.00027534146069928614 and
+-0.0002753198125398898 per ell_star^(-4), versus less than 1.7e-16 for
+the full quotient expression; delta log L is about 0.09166. This is an
+off-shell action-contact test, not a physical constraint-family proof.
+
+Thus one must not replace the FSC minimal-area primitive by the isolated
+C2 volume coefficient merely by equating their values. The full stress,
+inertia, support, measure and existing coefficient ledger must agree, and
+one must not add a local expansion to the same determinant a second time.
+No ell_s=ell_star identification, physical alpha_FSC, or physical gamma is
+selected here.
+
+3. Review of new saved-source cutoff contacts: PASS within stated scope
+
+WORK/bhsm_saved_c2_scalar_cutoff_jets_20261015.py reuses the pinned saved
+multiprecision eigenline coefficients lambda(u) through u^4, keeping the
+original u=ell_witness H chart fixed and varying s=log(c/c_witness).
+For weight w=-1 its Gamma=+Tr E1(exp(s)P(u))/2, hence exactly
+
+  Gamma_s = -Tr exp(-exp(s)P(u))/2,
+  Gamma_ss = Tr[exp(s)P(u) exp(-exp(s)P(u))]/2.
+
+The E1 source derivatives through fourth order have the correct Taylor
+factorials and mixed terms, including 24ac+12b^2 and 12a^2 b. Their s
+derivatives agree with independently differentiating the heat expressions.
+The plus-channel fourth mixed contacts are approximately
+Gamma_u4_s=0.37720841953587880155 and
+Gamma_u4_ss=1.56674935355825125439. The first mixed centered-FD relative
+error is 1.1222167294e-10 and improves by a factor four on halving its step.
+
+The first-contact outer-tail bound is appropriate for this saved finite
+problem: the prior 128-mode audit separates five low modes at cut=100,
+rho=.025, and norm perturbation delta=rho*b+rho^2*q/2. On the complex
+source circle each of the 123 outer eigenvalues has Re lambda>=100-delta;
+trace exp is bounded by 123 exp(-(100-delta)). Cauchy's estimate then gives
+
+  |omitted Gamma_u4_s| <= 4! 123 exp(-(100-delta))/(2 rho^4)
+                       = 2.1654903307515702251e-34.
+
+The needed separation check and norm-bound construction are in
+audits/bhsm_current_c2_e1_quartic_20261015.py:159-167. This bound is
+conditional on that saved finite analytic cluster and its norm estimates;
+it is not outward-rounded input validation or a continuum/radial bound.
+No corresponding second-cutoff tail certificate is asserted by the file.
+The two new result.json outputs are byte-identical, SHA256
+93c77c4acee1e581d1b2cc41cd04036c7c501c77c8a820a523fe7e810f181e3c.
+
+The total native-energy derivative also contains P, quotient, field and
+domain variations. The partial identity -2 Gamma_s does not supply them.
+No physical full outgoing derivative pass, spin normalization, magnetic
+moment, coupled correction, or final surface coefficient follows from
+these new finite mixed contacts.

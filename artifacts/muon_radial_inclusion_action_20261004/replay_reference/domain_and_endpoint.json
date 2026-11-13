@@ -1,0 +1,45 @@
+{
+  "center": {
+    "exact_nodal_powers": "r~rho, sin(rho/2)~rho/2: u~rho^-1/2, mu5 |u|^2~rho^2, mu5 |D5W|^2 bounded",
+    "green_flux_limit": 0,
+    "meaning": "finite first-order local graph closure; no smoothness or strong squared-domain claim",
+    "r_first_cell_slope": 0.9942891678211913,
+    "r_zero": 0.0
+  },
+  "future": "inherited canonical-stop domain unchanged; no future tail",
+  "material": {
+    "matching": "gamma0_plus=u_plus|wall psi_plus; gamma0_minus=S_cw u_minus|wall psi_minus; opposite normal Green forms cancel when these full traces agree",
+    "physical_material_extension_evaluated": false,
+    "same_scalar_two_sheet_trial_flux_cancels": true,
+    "trace_is_wall_coefficient": false,
+    "trace_multiplier": 1.3450765982938255
+  },
+  "normal_insertion": {
+    "Gaussian_normal_direction_or_mass_replaced": false,
+    "equation": "i epsilon Gamma_perp m_eta; ds=C_rho d rho and current radial coframe identify plus-sheet Gamma_perp=gamma4=i gamma5",
+    "geometric_action_separate": true,
+    "normal_eta_not_physical_LR_mass": true,
+    "radial_eta_action_separate": true
+  },
+  "oriented_chiral_sectors": "both saved LR spin coordinates and full64 carrier outputs retained; normal reversal changes derivative/mass/frame signs together",
+  "reset": {
+    "actual_event_child_reset_trace_arrays_evaluated": false,
+    "child_current_cut_trace_evaluated": true,
+    "common_frame": "U_R=I up to the fixed Spin sign and inherited gauge frame, not a new radial parallel transport",
+    "cut_trace_Gram_scalar": {
+      "arb": "[1.10922393610066386435 +/- 9.62e-22]",
+      "interval": [
+        1.1092239361006637,
+        1.1092239361006642
+      ]
+    },
+    "cut_trace_pairing": "mu_Sigma=2*pi^2 C r^3; G_Sigma=M4 <1/nu>; NOT the bulk geometric-L2 Gram",
+    "equation": "Gamma0_child W_child T_R = U_R Gamma0_event W_event",
+    "first_order_graph_required": true,
+    "full_coupled_graph": "Gamma0_child(W_child psi_child+chi_child)=U_R Gamma0_event(W_event psi_event+chi_event)",
+    "reduced_mode_invariance_required": false,
+    "strong_flux_condition": "Gamma1_child=-U_R Gamma1_event only when strong squared domain is asserted",
+    "zero_reset_complement_required": false
+  },
+  "spin": "scalar frame-component W; actual spin connection retained in D5W, no Euclidean-unitary boost assumed"
+}

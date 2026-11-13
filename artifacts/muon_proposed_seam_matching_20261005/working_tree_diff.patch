@@ -1,0 +1,769 @@
+diff --git a/src/bhsm/interface/muon_proposed_seam_matching.py b/src/bhsm/interface/muon_proposed_seam_matching.py
+new file mode 100644
+index 00000000..406fb002
+--- /dev/null
++++ b/src/bhsm/interface/muon_proposed_seam_matching.py
+@@ -0,0 +1,190 @@
++"""Direct localized matching of the NOT-ADOPTED dynamic seam proposal.
++
++Only cached node3 actions and the instantaneous metric reconstruction are
++used. No parent production, complement elimination or native solve occurs.
++The physical e_R radial coefficients follow the proposed common scalar
++inclusion; this is not a completed conjugate-carrier/global realization.
++"""
++from __future__ import annotations
++import numpy as np
++from flint import arb, ctx
++from bhsm.interface.muon_parent_maxwell_velocity import current_parent_fields
++from bhsm.interface.muon_proposed_dynamic_seam import charged_left_projector
++
++
++def enclosure(x):
++    return dict(arb=str(x), interval=[float(np.nextafter(float(x.lower()),-np.inf)),
++                                    float(np.nextafter(float(x.upper()),np.inf))])
++
++
++def coefficients(point, wall, cut, receipt, grid, contact):
++    """Full-cap first-action coefficients in one fixed node3 convention.
++
++    The metric producer supplies missing r,A,B values, not a new trajectory
++    or field action. Time jets are the saved node3 proper-clock jets.
++    """
++    ctx.prec=192
++    if not np.array_equal(point['actual_state'],wall['actual_state']):
++        raise ValueError('node3 state mismatch')
++    if not np.array_equal(point['Y_tau'],wall['actual_Y_tau']):
++        raise ValueError('node3 proper-clock mismatch')
++    f=current_parent_fields(point['actual_state'][None],
++        np.array([np.log(float(wall['radius']))]),grid)
++    rho=cut['points'];cells=cut['cells'];w=cut['radial_weights']
++    if len(rho)!=512 or set(cells.tolist())!=set(range(64)):
++        raise ValueError('required full-cap512-point cache absent')
++    x=(rho-grid[cells])/np.diff(grid)[cells]
++    interp=lambda z:z[cells]*(1-x)+z[cells+1]*x
++    if not np.array_equal(contact['rho'],grid):
++        raise ValueError('auxiliary source lifting and cap grids differ')
++    # This is the retained nodal computational trace lifting, not the
++    # stationary physical source extension. Its partial time derivative
++    # vanishes only in the fixed-rho auxiliary representation used here.
++    source_lifting=interp(contact['lifting_nodes'])
++    r,C,A,B=(interp(f[key][0]) for key in ('base_radius','C_rho','A','B'))
++    nu=point['volume']/point['Cauchy']
++    bg=-B/(A*np.hypot(A,B))
++    Ct=interp(point['C_tau_nodes']);rt=interp(point['r_tau_nodes'])
++    I=arb(receipt['I']['arb']);Idot=arb(receipt['I_tau']['arb'])
++    H=arb(float(receipt['H']));Rb=arb(float(wall['radius']));Tb=arb(float(receipt['T_b']))
++    mu=arb(float(wall['M4']));vol=point['volume'];u=point['u']
++    probability=[arb(float(a))*arb(float(b))*arb(float(c))**2/mu for a,b,c in zip(w,vol,u)]
++    moment=lambda array:sum((p*arb(float(a)) for p,a in zip(probability,array)),arb(0))
++    nv=moment(np.ones(len(w)));at=moment(1/nu);aa=moment(1/r)
++    av=moment(source_lifting/r)
++    ag=moment(bg);a0=moment(point['a0'])
++    # Preserve the action-generated direct Fourier lapse jet and I_tau.
++    dl=[arb(float(ct))/arb(float(cc))-Idot/I for ct,cc in zip(Ct,C)]
++    at_tau=sum((p*(d-arb(float(l)))/arb(float(v))
++                for p,d,l,v in zip(probability,dl,point['Lnu_direct'],nu)),arb(0))
++    aa_tau=sum((p*(d/arb(float(rr))-arb(float(dr))/arb(float(rr))**2)
++                for p,d,rr,dr in zip(probability,dl,r,rt)),arb(0))
++    av_tau=sum((p*arb(float(l))*(d/arb(float(rr))-arb(float(dr))/arb(float(rr))**2)
++                for p,d,l,rr,dr in zip(probability,dl,source_lifting,r,rt)),arb(0))
++    nv_tau=sum((p*d for p,d in zip(probability,dl)),arb(0))
++    Z=1+at;N=1+nv;spatial=aa+1/Rb
++    if not Z>0 or not N>0:raise ArithmeticError('positive actual scalar residues required')
++    c=1/Z.sqrt();c_tau=-at_tau*c/(2*Z)
++    wallg=arb(float(wall['wall_bg_reference']))
++    result=dict(parent_volume_norm=nv,parent_time=at,parent_angular=aa,
++        parent_commonA=ag,parent_raw_zero_time=a0,parent_volume_norm_tau=nv_tau,
++        parent_time_tau=at_tau,parent_angular_tau=aa_tau,
++        parent_auxiliary_photon=av,parent_auxiliary_photon_tau=av_tau,
++        joint_volume_norm=N,joint_Cauchy_norm=Z,Z_L=Z,Z_R=Z,Z_H=arb(1),
++        canonical_field_C=c,canonical_field_C_tau=c_tau,
++        canonical_volume_norm=N/Z,canonical_Cauchy_norm=arb(1),
++        raw_spatial=spatial,canonical_spatial=spatial/Z,target_spatial=1/Rb,
++        spatial_ratio=Rb*spatial/Z,spatial_residual=(aa-at/Rb)/Z,
++        raw_commonA=ag+wallg,canonical_commonA=(ag+wallg)/Z,
++        target_commonA=wallg,commonA_residual=(ag-at*wallg)/Z,
++        raw_auxiliary_photon=Tb*(av+1/Rb),canonical_auxiliary_photon=Tb*(av+1/Rb)/Z,
++        target_photon=Tb/Rb,auxiliary_photon_ratio=Rb*(av+1/Rb)/Z,
++        auxiliary_photon_residual=Tb*(av-at/Rb)/Z,
++        raw_auxiliary_photon_tau=Tb*(av_tau-H*av/2-3*H/(2*Rb)),
++        canonical_auxiliary_photon_tau=Tb*(av_tau-H*av/2-3*H/(2*Rb))/Z
++                             -Tb*(av+1/Rb)*at_tau/Z**2,
++        raw_Yukawa_factor=arb(1),canonical_Yukawa_factor=1/Z,
++        Yukawa_factor_residual=1/Z-1,canonical_Yukawa_factor_tau=-at_tau/Z**2,
++        raw_time_comparison=a0+3*H/2,
++        raw_time_symmetric=(at_tau+3*H*Z)/2,
++        raw_time_comparison_defect=a0+3*H/2-(at_tau+3*H*Z)/2,
++        canonical_time_symmetric=3*H/2,
++        canonical_time_comparison=(a0+3*H/2-at_tau/2)/Z,
++        log_Grassmann_Jacobian_density_symbolic_coefficient=Z.log())
++    z=float(Z.mid());cz=float(c.mid());ct=float(c_tau.mid())
++    fields=dict(rho=rho,cells=cells,quadrature_weights=w,nu=nu,r=r,C=C,A=A,B=B,
++        C_tau=Ct,r_tau=rt,Lnu_direct=point['Lnu_direct'],
++        auxiliary_source_lifting=source_lifting,auxiliary_source_lifting_nodes=contact['lifting_nodes'],
++        probability=np.array([float(p.mid()) for p in probability]),
++        actual_state=point['actual_state'],actual_Y_tau=point['Y_tau'],
++        physical_chiral_Z=np.array([z,z]),canonical_field_C=np.array([cz,cz]),
++        canonical_field_C_tau=np.array([ct,ct]),source_coordinates=wall['source_coordinates'])
++    guards=dict(nu_relative_reconstruction=float(np.max(np.abs(nu-interp(f['proper_lapse'][0]))/nu)),
++        volume_relative_reconstruction=float(np.max(np.abs(vol-2*np.pi**2*nu*C*r**3)/vol)),
++        all64_cap_cells=True,source_supported_only_norm=False,
++        full_cap_I_input=receipt['I'],full_cap_I_tau_input=receipt['I_tau'],
++        derivative_clock='same node3 branch24 boundary proper tau; cached Y_tau/C_tau_nodes/r_tau_nodes and direct Fourier Lnu',
++        source_lifting='existing piecewise-affine nodal computational L, not selected physical extension',
++        auxiliary_lifting_time_partial='zero at fixed rho by computational definition only',
++        full_same_source_stationary_return_evaluated=False,
++        all_total_photon_state_jets_evaluated=False)
++    return result,fields,guards
++
++
++def actual_maps(coeff,wall,radial,contact,proposal,Y):
++    """New first-order coefficient maps, not squared wall/native Grams."""
++    if not np.array_equal(proposal['actual_state'],wall['actual_state']) or not np.array_equal(proposal['source_coordinates'],wall['source_coordinates']):
++        raise ValueError('proposed readout/source frame is not node3')
++    G=radial['common_parent_Gamma'];g0=G[0];P=charged_left_projector()
++    val=lambda k:float(coeff[k].mid())
++    Z=val('Z_L');aa=val('parent_angular');ag=val('parent_commonA');a0=val('parent_raw_zero_time')
++    data=dict(Y_owned=Y,Y_canonical=Y/Z,Y_residual=(1/Z-1)*Y,
++        Y_canonical_tau=val('canonical_Yukawa_factor_tau')*Y,
++        chiral_projector_L=P,common_parent_Gamma=G)
++    proof={};max_cancel=0.
++    for n in (1,3):
++        xi=wall[f'normalized_wall_W_input_n{n}'];E=radial[f'angular_E_n{n}']
++        app=lambda m,z:np.einsum('oi,imkj->omkj',m,z,optimize=True)
++        angular=sum(np.einsum('oi,imkj,vm->ovkj',1j*G[a+1],xi,E[a],optimize=True) for a in range(3))
++        angular+=app(radial['angular_spin'],xi)
++        parent0=app(a0*1j*G[0]+ag*radial['commonA_gauge_unit'],xi)+aa*angular
++        wall0=wall[f'kinetic_reference_W_0_n{n}']
++        raw0=parent0+wall0
++        rawt=val('Z_L')*app(1j*G[0],xi)
++        # This retains the supplied unsymmetrized compression as comparison.
++        # The symmetric action's temporal connection is recorded separately.
++        canonical0=app(g0,raw0)/Z-.5*val('parent_time_tau')/Z*1j*xi
++        symmetric0=canonical0+1j*(val('raw_time_symmetric')-val('raw_time_comparison'))/Z*xi
++        canonicalt=app(g0,rawt)/Z
++        target0=app(g0,wall0)
++        data.update({f'parent_localized_D0_n{n}':parent0,
++            f'joint_raw_D0_n{n}':raw0,f'joint_raw_Dtau_n{n}':rawt,
++            f'canonical_action_A0_comparison_n{n}':canonical0,
++            f'canonical_action_A0_symmetric_n{n}':symmetric0,
++            f'canonical_action_Atau_n{n}':canonicalt,
++            f'target_action_A0_n{n}':target0,
++            f'canonical_action_residual_comparison_n{n}':canonical0-target0})
++        data[f'canonical_action_residual_symmetric_n{n}']=symmetric0-target0
++        # Reuse the accepted conditional J; independently use cached WBp.
++        wb=app(P,wall[f'normalized_wall_p_input_n{n}'])
++        chi=proposal[f'J_chi_left_n{n}']
++        total=wb+chi
++        max_cancel=max(max_cancel,float(np.max(np.abs(total))))
++        data.update({f'F_L_WBp_n{n}':wb,f'F_L_chi_reused_n{n}':chi,
++            f'F_L_compact_p_n{n}':np.zeros_like(wb),f'F_L_full_field_identity_residual_n{n}':total,
++            f'canonical_F_L_full_field_identity_residual_n{n}':np.sqrt(Z)*total})
++        # Actual auxiliary b-source kernels retain all rank16 input/output
++        # channels. The same-source zero-trace stationary correction remains
++        # unevaluated; this auxiliary lift is not the full physical vertex.
++        unit=contact[f'Xi_A_unit_n{n}']
++        action=np.einsum('oi,Aicmk->Aocmk',g0,unit,optimize=True)
++        data.update({f'raw_auxiliary_b_vertex_kernel_n{n}':val('raw_auxiliary_photon')*action,
++            f'canonical_auxiliary_b_vertex_kernel_n{n}':val('canonical_auxiliary_photon')*action,
++            f'target_same_b_vertex_kernel_n{n}':val('target_photon')*action,
++            f'auxiliary_b_vertex_residual_kernel_n{n}':val('auxiliary_photon_residual')*action,
++            f'canonical_auxiliary_b_vertex_tau_kernel_n{n}':val('canonical_auxiliary_photon_tau')*action})
++    proof['full_compact_source_readout_cancellation_max_abs']=max_cancel
++    proof['old_conditional_J_recomputed']=False
++    proof['source_zero_reason']='compact hat has separated material support; matched linear trace readout applied to FULL p gives zero'
++    proof['e_R_scope']='same scalar radial Z_R from the proposed opposite-orientation physical singlet inclusion; e_c kernels kept as ledger bookkeeping, no extra quantum trace or full e_R/global-domain claim'
++    proof['full_physical_same_photon_vertex']='unevaluated: auxiliary source lift plus same-source zero-trace stationary return required'
++    return data,proof
++
++
++def cached_action_comparison(coeff,wall,point,radial,cut):
++    """Contract saved selected DW/DtauW, rather than regenerate parent actions."""
++    result={};mu=float(wall['M4']);weights=cut['radial_weights']*point['volume']*point['u']/mu
++    c=wall['source_coordinates'];g0=radial['common_parent_Gamma'][0]
++    for n in (1,3):
++        xi=np.einsum('omki,i->omk',wall[f'normalized_wall_W_input_n{n}'],c,optimize=True)
++        saved0=np.einsum('g,gomk->omk',weights,point[f'DWp_n{n}'],optimize=True)
++        savedt=np.einsum('g,gomk->omk',weights,point[f'DtauW_n{n}'],optimize=True)
++        E=radial[f'angular_E_n{n}'];G=radial['common_parent_Gamma']
++        angular=sum(np.einsum('oi,imk,vm->ovk',1j*G[a+1],xi,E[a]) for a in range(3))
++        angular+=np.einsum('oi,imk->omk',radial['angular_spin'],xi)
++        a0,ag,aa,at=[float(coeff[k].mid()) for k in ('parent_raw_zero_time','parent_commonA','parent_angular','parent_time')]
++        expected0=np.einsum('oi,imk->omk',a0*1j*G[0]+ag*radial['commonA_gauge_unit'],xi)+aa*angular
++        expectedt=at*np.einsum('oi,imk->omk',1j*G[0],xi)
++        result[f'n{n}']=dict(saved_full_parent_zero_action_projection_residual=float(np.linalg.norm(saved0-expected0)),
++            saved_full_parent_time_action_projection_residual=float(np.linalg.norm(savedt-expectedt)))
++    return result
+diff --git a/scripts/replay_muon_proposed_seam_matching.py b/scripts/replay_muon_proposed_seam_matching.py
+new file mode 100644
+index 00000000..b278a654
+--- /dev/null
++++ b/scripts/replay_muon_proposed_seam_matching.py
+@@ -0,0 +1,134 @@
++"""New full-cap direct action matching; no old parent calculation replay."""
++from pathlib import Path
++import argparse,hashlib,json,os,subprocess,sys
++os.environ.setdefault('OPENBLAS_NUM_THREADS','1')
++os.environ.setdefault('OMP_NUM_THREADS','1')
++import numpy as np
++
++
++def load(p):
++    with np.load(p,allow_pickle=False) as z:return {k:np.array(z[k]) for k in z.files}
++
++
++def save(p,d):p.write_bytes((json.dumps(d,indent=2,sort_keys=True,allow_nan=False)+'\n').encode())
++def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
++
++
++def references(root):
++    a=root/'artifacts'
++    return dict(point=a/'muon_retained_tail_core_20261005/run_1/points/node_03.npz',
++        point_receipt=a/'muon_retained_tail_core_20261005/run_1/points/node_03.json',
++        wall=a/'muon_wall_input_attachment_20261005/run_1/node3_projected_intrinsic_kinetic.npz',
++        cut=a/'muon_coupled_cut_forms_20261004/run_1/coupled_cut_source_actions.npz',
++        geometry=a/'muon_parent_geometry_20261001/replay_reference/local_parent_velocity_density.npz',
++        radial=a/'muon_radial_inclusion_action_20261004/replay_reference/radial_source_action_and_interface.npz',
++        contact=a/'muon_parent_source_contact_20261003/replay_reference/parent_source_contact.npz',
++        proposed=a/'muon_proposed_dynamic_seam_20261005/run_2/proposed_seam_actions.npz',
++        intrinsic=a/'action_extension/BHSM_AE31_C2_INTRINSIC_M4_LEPTON_ACTION.json',
++        norm_producer=root/'src/bhsm/interface/muon_wall_input_attachment.py',
++        point_producer=root/'src/bhsm/interface/muon_prefix_time_element.py',
++        source_producer=root/'src/bhsm/interface/muon_parent_source_contact.py',
++        metric_producer=root/'src/bhsm/interface/muon_parent_maxwell_velocity.py',
++        premode_action=root/'src/bhsm/interface/completion/foundational_dirac_spin_glue_v14_45.py',
++        boundary_pushforward=root/'src/bhsm/interface/aether_unified_m5_m4_pushforward_v15_69.py',
++        owner=root/'src/bhsm/interface/ae4_stratified_dirac_zeta_induced_owner.py',
++        proposed_producer=root/'src/bhsm/interface/muon_proposed_dynamic_seam.py',
++        module=root/'src/bhsm/interface/muon_proposed_seam_matching.py',
++        report=root/'theory/muon_proposed_seam_matching_20261005.md',
++        tests=root/'tests/test_muon_proposed_seam_matching.py',script=Path(__file__).resolve())
++
++
++def calculate(root):
++    sys.path.insert(0,str(root/'src'))
++    from bhsm.interface.muon_proposed_seam_matching import (
++        coefficients,actual_maps,cached_action_comparison,enclosure)
++    refs=references(root)
++    d={k:load(refs[k]) for k in ('point','wall','cut','geometry','radial','contact','proposed')}
++    receipt=json.loads(refs['point_receipt'].read_text())
++    intrinsic=json.loads(refs['intrinsic'].read_text())
++    Y=np.array(intrinsic['charged_lepton_yukawa_operator']['family_operator'])
++    c,fields,guards=coefficients(d['point'],d['wall'],d['cut'],receipt['attachment'],d['geometry']['rho'],d['contact'])
++    maps,identity=actual_maps(c,d['wall'],d['radial'],d['contact'],d['proposed'],Y)
++    comparison=cached_action_comparison(c,d['wall'],d['point'],d['radial'],d['cut'])
++    vals={k:enclosure(v) for k,v in c.items()}
++    return refs,c,fields,maps,guards,identity,comparison,vals,intrinsic
++
++
++def run(root,out):
++    if out.exists():raise FileExistsError('new dedicated directory required')
++    refs,c,fields,maps,guards,identity,comparison,vals,intrinsic=calculate(root)
++    out.mkdir(parents=True)
++    np.savez_compressed(out/'localized_matching_maps.npz',**fields,**maps)
++    save(out/'coefficients.json',vals)
++    ledger=dict(parent='existing geometric/common-A/radial-eta S5 symmetric kinetic action; NO independent second Yukawa bridge',
++        intrinsic='existing S4 kinetic and SAME v14.45/AE31 Y_l H bridge, owned once; Z_H=1 for this direct proposal',
++        seam='explicit proposed normal bilinear; zero on smooth Rw=(Ww,w), G1 Rw=0; no alteration or installation',
++        restriction='direct pullback along R; not stationary complement elimination or effective boundary action',
++        complement='retained connected outputs; no complement determinant/Schur response claimed or dropped from native operator',
++        complement_domain='bulk-only joint variation (chi,0) requires P G0 chi=0 and Q G1 chi=0; p-WBvol p is a diagnostic decomposition, not automatically this domain',
++        source='evaluated existing auxiliary photon trace lifting L(rho); full physical source includes its same-source zero-trace stationary return, UNEVALUATED, never zero',
++        field_norm='M4+Wdag M5 W in volume; M4+Wdag M_Cauchy W on temporal slice, not interchangeable',
++        chiral='one correctly typed bulk orientation per physical chirality; e_R is charge conjugate of e_c; no Nambu or sheet trace duplication',
++        Jacobian='formal Grassmann logJ=Tr_physical(logZ) for the scalar C=Z^-1/2 with bar dual transformed; no regulated infinite trace evaluated',
++        suggested_compensation='none selected; Delta S_c=S_R,canonical-S_retained is evaluated; its negative would be an extra proposed action, not a derived subtraction')
++    save(out/'contribution_ledger.json',ledger)
++    equations=dict(
++        direct='S_R=S5_sym[Ww]+S4[w]+S_seam[Ww,w]; S_seam=0 on smooth matched trace',
++        norm='Nvol=1+<1>_P; NCauchy=Zt=1+<1/nu>_P',
++        Z='Z_L=Z_R=Zt; Z_H=1; NOT an independently verified full e_R/global domain',
++        P='radial probability dP=(w_rho mu5 u^2/M4), all64 cells',
++        kinetic='Zs=1/Rb+<1/r>_P; Zg=b_g,wall+<b_g>_P',
++        canonical='w=C w_c, barw=barw_c Cdag, C=Zt^-1/2; C_tau=-Z_tau C/(2Z)',
++        time_symmetric='i/2 mu4 Z (wdag d_tau w-d_tau wdag w); canonical Euler i d_tau+3iH/2',
++        raw_comparison='beta_raw=<a0>+3H/2; compare with (Z_tau+3HZ)/2; never a mass',
++        Yukawa='Y_c=Z_L^-1/2 Y_owned Z_R^-1/2; H kinetic unchanged; no Y refit',
++        source_auxiliary='alpha_gamma,L=<L/r>_P; V_b,L,raw=T_b(alpha_gamma,L+1/Rb)V_unit; V_b,L,c=V_b,L,raw/Z; V_b,target=(T_b/Rb)V_unit',
++        source_physical='V_b,c=V_b,L,c+(1/Z) M4^-1 integral mu5 u^2 Gamma0 c_src(a_A,zero_trace)(-iQ); zero-trace stationary source return UNEVALUATED',
++        source_auxiliary_time='alpha_gamma,L,tau=<L[(C_tau/C-I_tau/I)/r-r_tau/r^2]>_P; L_tau=0 ONLY for this fixed-rho computational partial',
++        source_derivative='D_b(Csharp A_R C)=C_b^sharp A_R C+Csharp (A_R)_b C+Csharp A_R C_b; operators act on C and its spacetime derivatives',
++        full_total_jets='retain source/frame/trace/normal/pairing/domain derivatives; Z_b total is unevaluated, direct fixed-history partial Z_b=0 by declared geometry independence',
++        compact_source='F_L(W Bp)+F_L(p-W Bp)=F_L p=0; canonical rescaling preserves the full sum',
++        residual='Delta Zs=Zs/Z-1/Rb; Delta Zg=Zg/Z-b_g,wall; Delta(YH)=(1/Z-1)YH; full photon residual requires the same-source stationary correction, not an independent extra addend',
++        elimination='A_eff=A_RR-A_RQ solve(A_QQ,A_QR), with same joint domain/field/source/subtraction; bulk-only complement obeys P G0 chi=0,Q G1 chi=0; not evaluated by this restriction')
++    save(out/'equations.json',equations)
++    result=dict(classification='PROPOSED_SEAM_DIRECT_LOCALIZED_MATCHING_RESIDUAL_NOT_NATIVE',
++        continuation='00dac33bd0d42434315b4b46e76e70b2d47f1c74',
++        action_history='current C2 node3/action_arc6, branch24, saved proper clock',
++        domain_scope='smooth matched material traces under proposed law; inherited reset/past-prefix/canonical-stop unchanged; global realization not completed',
++        commonA_resolved=True,eta_profile_unchanged=True,old_J_arrays_reused=True,
++        old_production_checks_repeated=0,new_parent_or_tail_solves=0,new_field_actions=0,
++        ZL_and_ZR='equal radial scalar principal residues conditional on proposed common inclusion; e_R global mapping not completed',
++        Yukawa_ownership=intrinsic['charged_lepton_yukawa_operator'],
++        instantaneous_metric_reconstruction_only=True,guards=guards,diagnostic_field_identity=identity,
++        cached_parent_action_checks=comparison,
++        same_photon='eight saved b-source unit kernels, actual computational T_b L(rho)/r trace lift plus wall T_b/Rb; full same-source stationary correction unevaluated; no index2/3 or contact-fraction multiplier',
++        full_physical_photon_vertex=None,same_source_zero_trace_correction=None,
++        photon_total_jet_evaluated=False,subtraction_installed=False,proposal_adopted=False,native_operator_updated=False,
++        direct_matching_established=False,
++        residual='canonical angular ratio and once-owned Yukawa factor differ from1; full photon matching needs the stationary source return. Field norm or scalar rescaling cannot establish equality',
++        prior_run1='preserved historical attempt: full-cap L=1 photon assumption superseded; kinetic/Yukawa/norm/readout unchanged; exact old source snapshot retained',
++        error_scope=dict(arithmetic='192-bit Arb enclosures of stated frozen binary and saved nodal-model scalar inputs; reconstructed metric scalars frozen after binary64 evaluation',
++            spatial_quadrature='same full-cap512-point/8-per-cell Gauss model; NO new quadrature or continuum bound',
++            history='cached node3 numerical state/clock; no endpoint tube or certified continuum enclosure promoted',
++            canonical_map_arrays='binary64 representatives of enclosed coefficients; not certified operator norm bounds',
++            field_measure='formal regulated functional trace remains unevaluated; no new counterterm chosen'),
++        native_ledger={k:None for k in ('native_bulk_heat','state_variation','contact','domain_boundary','completion_counterterm','strong_within_native')},
++        parent_solution_unchanged=True,frozen_locals_unchanged=True,
++        physical_a_mu=None,physical_g_mu=None,native_uncertainty=None,
++        next='action-owned replacement/compensation or evaluated same-owner complementary response that cancels the joint kinetic AND interaction residual; none supplied by normalization or the average-trace law')
++    save(out/'result.json',result)
++    save(out/'input_hashes.json',{k:dict(path=str(p),sha256=sha(p)) for k,p in refs.items()})
++    git=lambda *a:subprocess.check_output(['git','-C',str(root),*a],text=True).strip()
++    save(out/'workspace.json',dict(head=git('rev-parse','HEAD'),branch=git('branch','--show-current'),status=git('status','--short'),
++        scientific_reference='524ed90689bd5923c249bba2e699abf627e703cd'))
++    save(out/'checkpoint.json',dict(id='BHSM_MUON_PROPOSED_SEAM_LOCALIZED_MATCHING_20261005',
++        outcome='explicit canonical action residual; native proposal remains unadopted',
++        next=result['next'],source_identity='full compact source zero; no added J_chi source'))
++    save(out/'output_hashes.json',{p.name:sha(p) for p in out.iterdir() if p.is_file()})
++    print(json.dumps(dict(coefficients={k:vals[k] for k in ('joint_volume_norm','Z_L','Z_R','spatial_ratio','canonical_Yukawa_factor','parent_auxiliary_photon','auxiliary_photon_ratio','canonical_auxiliary_photon','target_photon','raw_time_comparison_defect')},
++        identity=identity,cached_actions=comparison),indent=2))
++
++
++if __name__=='__main__':
++    p=argparse.ArgumentParser();p.add_argument('--repository',type=Path,default=Path(__file__).resolve().parents[1]);p.add_argument('--output',type=Path,required=True)
++    a=p.parse_args();run(a.repository.resolve(),a.output.resolve())
+diff --git a/tests/test_muon_proposed_seam_matching.py b/tests/test_muon_proposed_seam_matching.py
+new file mode 100644
+index 00000000..87b7e613
+--- /dev/null
++++ b/tests/test_muon_proposed_seam_matching.py
+@@ -0,0 +1,76 @@
++"""New direct-action matching checks; no previous production/check replay."""
++from pathlib import Path
++import importlib.util
++import numpy as np
++import pytest
++ROOT=Path(__file__).resolve().parents[1]
++spec=importlib.util.spec_from_file_location('matching_replay',ROOT/'scripts/replay_muon_proposed_seam_matching.py')
++replay=importlib.util.module_from_spec(spec);spec.loader.exec_module(replay)
++
++
++@pytest.fixture(scope='module')
++def computed():return replay.calculate(ROOT)
++
++
++def test_full_cap_norm_and_actual_both_chiral_residues(computed):
++    refs,c,fields,*_=computed
++    assert abs(float(c['parent_volume_norm'].mid())-1)<3e-14
++    assert float(c['Z_L'].mid())==float(c['Z_R'].mid())
++    assert float(c['Z_L'].mid())>2.1
++    assert abs(float(c['joint_volume_norm'].mid())-2)<3e-14
++    assert not np.isclose(float(c['joint_volume_norm'].mid()),float(c['Z_L'].mid()),rtol=1e-3)
++    with np.load(refs['wall']) as z:
++        cached=1+z['Cauchy_moments'][0]/z['M4']
++    assert abs(float(c['Z_L'].mid())-cached)<2e-14
++    assert set(fields['cells'].tolist())==set(range(64))
++
++
++def test_one_canonical_transform_preserves_time_but_exposes_interactions(computed):
++    _,c,fields,maps,guards,identity,comparison,*_=computed
++    Z=float(c['Z_L'].mid());C=fields['canonical_field_C'][0]
++    Ct=fields['canonical_field_C_tau'][0];zt=float(c['parent_time_tau'].mid())
++    assert abs(Z*C*C-1)<4e-16
++    assert abs(zt*C*C+2*Z*C*Ct)<4e-15
++    assert float(c['spatial_ratio'].mid())>1.05
++    assert .47<float(c['canonical_Yukawa_factor'].mid())<.48
++    assert np.linalg.norm(maps['Y_canonical_tau']-2*C*Ct*maps['Y_owned'])<2e-17
++    assert float(c['canonical_volume_norm'].mid())<.95
++    assert abs(float(c['raw_time_comparison_defect'].mid()))<2e-13
++    for receipt in comparison.values():
++        assert receipt['saved_full_parent_zero_action_projection_residual']<4e-13
++        assert receipt['saved_full_parent_time_action_projection_residual']<4e-13
++
++
++def test_same_photon_auxiliary_lift_is_not_unit_radial_or_complete_vertex(computed):
++    refs,c,fields,maps,guards,identity,*_=computed
++    # Independently bind L to the source producer's saved nodal profile.
++    with np.load(refs['contact']) as z:
++        away=z['base_radius']>0
++        assert np.max(np.abs(z['profile_a'][away]*z['base_radius'][away]/z['T_b']-z['lifting_nodes'][away]))<3e-16
++        assert z['lifting_nodes'][0]==0 and z['lifting_nodes'][-1]==1
++        assert np.all(z['lifting_nodes'][z['spinor_probe_hat_nodes']>0]==1)
++    av=float(c['parent_auxiliary_photon'].mid())
++    aa=float(c['parent_angular'].mid())
++    assert 0<av<aa
++    assert float(c['auxiliary_photon_ratio'].mid())!=float(c['spatial_ratio'].mid())
++    assert np.any(fields['auxiliary_source_lifting']==0)
++    assert guards['full_same_source_stationary_return_evaluated'] is False
++    assert 'unevaluated' in identity['full_physical_same_photon_vertex']
++    ratio=float(c['auxiliary_photon_ratio'].mid())
++    for n in (1,3):
++        target=maps[f'target_same_b_vertex_kernel_n{n}']
++        canonical=maps[f'canonical_auxiliary_b_vertex_kernel_n{n}']
++        assert np.max(np.abs(canonical-ratio*target))<2e-16
++        assert np.linalg.norm(maps[f'auxiliary_b_vertex_residual_kernel_n{n}'])>0
++        assert canonical.shape[:3]==(8,64,64)
++
++
++def test_full_compact_source_identity_uses_reused_J_not_an_added_load(computed):
++    _,_,_,maps,_,identity,*_=computed
++    assert identity['old_conditional_J_recomputed'] is False
++    assert identity['full_compact_source_readout_cancellation_max_abs']<1e-16
++    for n in (1,3):
++        assert np.linalg.norm(maps[f'F_L_WBp_n{n}'])>0
++        assert np.linalg.norm(maps[f'F_L_chi_reused_n{n}'])>0
++        assert not np.any(maps[f'F_L_full_field_identity_residual_n{n}'])
++        assert not np.any(maps[f'canonical_F_L_full_field_identity_residual_n{n}'])
+diff --git a/theory/muon_proposed_seam_matching_20261005.md b/theory/muon_proposed_seam_matching_20261005.md
+new file mode 100644
+index 00000000..28a456be
+--- /dev/null
++++ b/theory/muon_proposed_seam_matching_20261005.md
+@@ -0,0 +1,345 @@
++# Same-owner matching of the proposed average-trace seam
++
++Continuation from `00dac33bd0d42434315b4b46e76e70b2d47f1c74`, preserving
++the completed proposal, normal bilinear, J_chi arrays, four checks, parent
++solution and frozen locals. Scientific reference:
++`524ed90689bd5923c249bba2e699abf627e703cd`; branch
++`codex/muon-parent-maxwell-density-review`, initially clean. This calculation
++does not install the proposal, rerun the parent production or solve a tail.
++
++**Result:** the proposed summed action has a well-defined direct localized
++pullback, but its canonical angular and once-owned Yukawa coefficients
++do not match the adopted intrinsic action. The discrepancy persists after
++tracking both field norms and normalizing all terms together. It is an
++explicit proposed-action residual, not proof that an unnormalized sum alone
++constitutes physical double counting. No compensating action is selected.
++The differentiation coordinate is the existing photon **b_A**, with the
++cached geometry held fixed for the evaluated auxiliary partial. A physical
++total source jet is distinguished below and remains unevaluated.
++
++## Which action and operation are being matched
++
++`foundational_dirac_spin_glue_v14_45.py::foundational_action_payload` owns
++the parent geometric/common-A/eta kinetic action and the separate S_H
++bridge. Its displayed normal-mode restriction, lines200–215, substitutes
++the normalized mode with A_eta u0=0 and normal integral1; that is a **direct
++restriction**. The canonical collective fermion field is defined before
++reading physical bilinear couplings. The same S_H becomes the intrinsic
++Y_l H bridge with unchanged Y, not an additional second Yukawa interaction.
++`ae31_c2_intrinsic_m4_lepton_action.action_composition_contract` displays
++that intrinsic bridge once. Its family operator is reused unchanged.
++
++The previous **proposal** specifies S5,sym (kinetic/common-A/eta), the
++intrinsic S4 (kinetic and that one bridge), and its new normal bilinear.
++It does not attach another parent copy of S_H. The bridge's ownership
++must be retained when taking this proposed direct pullback. Z_H=1 here:
++the intrinsic active H kinetic action is unchanged; the proposal adds no
++second Higgs kinetic term. This is a direct fermion-quadratic test in the
++owned Higgs background, not a new Higgs-state solution.
++
++`aether_unified_m5_m4_pushforward_v15_69.py`, lines39–78, separately owns
++a **fixed-trace boundary effective action**, integrating complementary
++fields. `ae4_stratified_dirac_zeta_induced_owner.py`, lines187–205, makes
++the local actions expansions of one completed owner. Those statements
++neither add a free action copy nor turn restriction into elimination.
++At quadratic order, the latter would require the actual same-owner blocks
++
++\[
++ A_{\rm eff}=A_{RR}-A_{RQ}\,\mathrm{solve}(A_{QQ},A_{QR}),              \tag{1}
++\]
++
++and the source return, domains, pairing/field derivatives and saved finite
++subtraction of that functional. This sprint evaluates A_RR of the proposal.
++It does not evaluate (1), declare complementary fields stationary, or use
++an adjustable Schur term to rescue the direct restriction. The existing
++parent-bulk component solve is not the missing complete joint Schur action.
++In particular a bulk-only joint variation (chi,0) must satisfy
++P_boundary G0 chi=0 and (I-P_boundary)G1 chi=0. The diagnostic volume
++complement p-W B_vol p is not automatically such a variation: its matched
++average trace is nonzero. Its readout identity below is valid without
++using it as a coordinate for the operator block A_QQ in (1).
++
++## Actual Rw and the complete direct quadratic density
++
++Keep the independent wall w=(L_L,e_R) when defining the joint action.
++For this matching test alone restrict to Rw=(Ww,w), with the retained
++current full-cap scalar inclusion in the common Spin x SM section. Smooth
++matched traces give G1 Rw=0, so the proposed normal seam bilinear vanishes.
++Explicitly that new bilinear is
++-1/2 {<w,E_attachment^sharp G1 Psi>_4
+++<G1 Psi,E_attachment w>_Sigma}, with the established ordered Dirac-bar
++variation. Its contribution on Rw is exactly zero, not an adjustable
++localized kinetic or Yukawa correction.
++Its derivative also vanishes along a consistently varied smooth localized
++path; this does not assign its general source/domain jets zero.
++
++The volume wall measure is mu4=2 pi² R_b³ in the proper boundary clock.
++The parent volume measure is mu5=2 pi² nu C r³; the temporal Cauchy measure
++is mu5/nu. Use the full-cap probability
++
++\[
++ dP=\mu_4^{-1}\mu_5u^2d\rho,\quad
++ u=I^{-1/2}(\nu/\nu_b)^{-1/2}(r/R_b)^{-3/2}\sin(\rho/2),
++ \quad I=\int_0^{\pi/2}C\sin^2(\rho/2)d\rho.                         \tag{2}
++\]
++
++Node3 uses the cached current I≈0.276366467174252355, its action-generated
++I_tau≈1.31030283886746669, branch24, action_arc6 and the saved proper-clock
++Y_tau. The 512 cached Gauss points cover **all64 cap cells**, not just the
++compact source. I and the u/actions are reused, not refined. The metric
++producer reconstructs only the instantaneous r,A,B values missing from
++the consumed point NPZ, using that actual state and the saved R_b, then
++the same nodal interpolation. No historical RADIUS0, new field actions,
++endpoint-frozen coefficients or affine-logR rate are introduced.
++
++Set alpha_t=<1/nu>_P, alpha_s=<1/r>_P, alpha_g=<b_g>_P,
++where b_g=-B/(A sqrt(A²+B²)). The supplied current radial prescription
++retains the normal cancellation, angular spin/Kosmann action, shift and
++normalization/time/frame terms already present in D5 W. The general
++unmatched carrier and connected angular outputs are retained. The direct
++first-order spatial/action coefficients are
++
++\[
++ Z_L=Z_R=Z=1+\alpha_t,\quad K_s=R_b^{-1}+\alpha_s,\quad
++ K_g=b_{g,4}+\alpha_g,\qquad Z_H=1.                               \tag{3}
++\]
++
++Equality of these **scalar principal residues** follows from the proposed
++same radial density for the two physical chiral orientations, not from
++misidentifying right-spin LL with e_R. L_L is the left doublet; e_R is
++the charge conjugate of the e_c singlet. Each physical chiral mode uses
++its designated bulk orientation once. Neither a second wall copy per
++sheet nor the Nambu bookkeeping doubles its physical trace. The e_R
++scalar coefficient follows the stated proposal, but a full e_R carrier
++attachment and global domain are not claimed from the supplied LL tests.
++The inherited weak common-A acts on L_L; the singlet's weak action is zero
++by its actual representation. Spin, hypercharge, color and family stay
++separate. The family Yukawa matrix remains the action-owned three-family
++matrix; no GeV conversion or measured mass is used.
++
++Let K_spin+ang denote the retained S_S3+i Gamma^a E_a action and G_SM the
++common-A gauge unit. The direct density contains K_s times that action,
++K_g G_SM, the once-owned -bar L YH e_R+h.c., and the symmetric temporal
++term
++
++\[
++ S_t={i\over2}\int\mu_4 Z\,[w^\dagger\partial_\tau w
++                         -(\partial_\tau w^\dagger)w].            \tag{4}
++\]
++
++Use Dirac-bar/action pairings for first-order action maps, not a positive
++D5^dagger D5 Gram. The saved unsymmetrized comparison coefficient is
++beta_raw=<a0>_P+3H/2; the Hermitian action's Euler connection is
++
++\[
++ \beta_{\rm sym}=\tfrac12(Z_\tau+3HZ).                            \tag{5}
++\]
++
++A real scalar i beta_raw w†w cancels from the explicit symmetric density.
++It is not a mass. The new computation saves beta_raw, beta_sym and their
++small frozen-model discrepancy separately, and contracts the **saved**
++selected DW/DtauW outputs to verify the new coefficient reconstruction.
++It does not regenerate full parent point actions.
++
++## Norm and simultaneous canonical transformation
++
++In the independent joint architecture, the direct volume norm is
++
++\[
++ N_{\rm vol}=1+\langle1\rangle_P\simeq2,
++ \qquad N_\Sigma=1+\langle\nu^{-1}\rangle_P=Z.                     \tag{6}
++\]
++
++Thus the volume Gram alone is not the kinetic residue. On this proper
++boundary clock the temporal Cauchy norm and temporal kinetic residue agree.
++Define w=C w_c, bar w=bar w_c C† with C=Z^-1/2 on both physical sectors.
++The canonical Cauchy norm becomes1, while the volume norm is N_vol/Z.
++There is no change to the physical wall radius or source coframe.
++
++Time dependence is included, using exactly the same saved first actions:
++
++\[
++ \alpha_{t,\tau}=\left\langle{1\over\nu}
++       (C_\tau/C-I_\tau/I-L_\nu)\right\rangle_P,
++ \quad C_{\rm field,\tau}=-{Z_\tau\over2Z}C_{\rm field}.          \tag{7}
++\]
++
++Here metric C and field C_field are distinct. L_nu is the saved direct
++Fourier rate, not interpolation of nodal nu_tau. Angular derivatives of
++the scalar residue vanish in this radial homogeneous realization; matrix
++frame/carrier and Higgs derivatives still belong to their owned operators.
++Scalar normalization derivatives cancel in (4)'s bidirectional density;
++the canonical Euler measure term is 3iH/2. Equivalently, transform the raw
++Euler comparison row and include its C_tau term before comparing (5).
++
++**All interactions transform at the same time:**
++
++\[
++ K_{s,c}=K_s/Z,\quad K_{g,c}=K_g/Z,\quad
++ (YH)_c=Z_L^{-1/2}(YH)Z_R^{-1/2}=(YH)/Z.                         \tag{8}
++\]
++
++The H field, its kinetic normalization/potential and background amplitude
++are not retuned. Even under a different justified H_c=sqrt(Z_H)H,
++Y_c=Y/sqrt(Z_L Z_R Z_H) and H_c=sqrt(Z_H)H, so their product remains
++YH/sqrt(Z_L Z_R). A Higgs rescaling alone cannot restore this bridge.
++The saved family matrices Y_c, Y_c,tau and Delta Y are numerical maps;
++H and its physical amplitude retain their existing provenance.
++
++For the same independent photon coordinate b_A, beta=T_b b and A_Q=sqrt(2)
++beta remain applied once. The actual saved parent **computational trace
++lifting** is T_b L(rho)/r times the unit kernel; the wall trace is T_b/R_b
++times that kernel. The concrete producer is
++`muon_parent_source_contact.computational_profiles/evaluate_cut`:
++L is zero near the pole, rises on nodes8:16, and is one on the compact
++probe's nodes24:40 support. Its nodal piecewise-affine representation is
++transported to the same 512 cap Gauss points. Thus the evaluated auxiliary
++coefficient, with alpha_gamma,L=<L/r>_P, is
++
++\[
++ V_{b,L,\rm raw}=T_b(\alpha_{\gamma,L}+R_b^{-1}) V_{\rm unit},\quad
++ V_{b,L,c}=V_{b,L,\rm raw}/Z,\quad
++ V_{b,4}=T_bV_{\rm unit}/R_b.                                   \tag{9}
++\]
++
++The actual eight-lift rank16 kernels for n1/n3 are saved before any physical
++projection. The LL source restriction is kept distinct from e_c ledger
++bookkeeping and a completed physical e_R realization. No index2/3, contact
++fraction or family/mode multiplier is inserted. The photon and spatial
++derivative cannot be assigned a shared numerical ratio from this auxiliary
++lifting. The full physical photon source must include the same-source
++zero-trace stationary correction a_A,0, so the full action vertex requires
++
++\[
++ V_{b,c}=V_{b,L,c}+{1\over Z\mu_4}
++  \int\mu_5u^2\Gamma^0 c_{\rm src}(a_{A,0})(-iQ)\,d\rho .       \tag{9a}
++\]
++
++This additional contraction is **unevaluated**, never zero. The retained
++lifting producer explicitly says L does not select a physical extension.
++Neither an auxiliary-lift mismatch nor its ratio is a charge measurement:
++the generator Q is unchanged. The temporal kinetic/current norm is fixed
++by the canonical Cauchy normalization, with total source jets still required.
++
++All source/spacetime transformations must be differentiated together:
++
++\[
++ (A_c)_A=(C^\sharp)_A A_R C+C^\sharp(A_R)_A C+C^\sharp A_R C_A,    \tag{10}
++\]
++
++where an operator acts on C and its derivatives. (A_R)_A includes R_A,
++trace/normal transport, pairing and domain movement from the same source.
++The geometric-adjoint derivative contains the measure derivatives. For
++scalars C_A=-(Z_A/(2Z))C, and (Y_c)_A=Y_A/Z-Y Z_A/Z². The direct b-source
++partial holds the cached geometry/history fixed, so this scalar Z partial
++is zero by that declared source-coordinate independence. It is **not**
++an evaluation of the total physical Z_A, state response or global source
++jet. Those unknown total derivatives remain unevaluated, not zero. The
++code saves the **auxiliary partial** temporal vertex derivative using
++T_b,tau=-H T_b/2, R_b,tau=H R_b and
++alpha_gamma,L,tau=<L[(C_tau/C-I_tau/I)/r-r_tau/r²]>_P.
++L_tau=0 is the fixed-rho computational shape convention only. It does
++not declare the physical source extension or its time jet constant.
++
++For reduced independent Grassmann coordinates this field change has
++formal log Jacobian Tr_physical log Z (both bar/unbar variables transform).
++No unconstrained doubled trace is used. This is the formal measure rule
++for a reduced coordinate transformation, **not proof that restriction
++defines the full joint path integral or its measure**. A regulated infinite
++functional trace, its source variation and finite subtraction are not
++evaluated or silently discarded. They cannot be chosen to force matching.
++
++## Evaluated mismatch and the full diagnostic identity
++
++Approximate node3 values in the frozen full-cap nodal quadrature model:
++
++| Quantity | Value |
++|---|---:|
++| alpha_t | 1.108982901971856 |
++| alpha_s | 1.2286849486710774 |
++| Z_L=Z_R | 2.108982901971856 |
++| N_vol | 2.0 |
++| canonical volume norm | 0.948324426020733 |
++| canonical angular ratio to adopted | 1.0537969211428857 |
++| once-owned Yukawa/Higgs factor | 0.4741622130103665 |
++| canonical auxiliary b-vertex scalar | see accepted run2 coefficients.json |
++| adopted b-vertex scalar | 0.22680612271226067 |
++
++The explicit residual is
++
++\[
++ \Delta K_s={\alpha_s-\alpha_t/R_b\over Z},\quad
++ \Delta K_g={\alpha_g-\alpha_t b_{g,4}\over Z},\quad
++ \Delta(YH)=(Z^{-1}-1)YH,\quad
++ \Delta V_b=V_{b,L,c}-V_{b,4}+V_{b,0,c}.                         \tag{11}
++\]
++
++V_b,0,c denotes the undetermined correction (9a); the full photon residual
++is not inferred from Delta K_s. A complete same-source derivative of the
++joint action, rather than an extra addend, must be used for matching.
++The already-evaluated kinetic and Yukawa residuals alone obstruct direct
++equivalence, independently of that unresolved physical source extension.
++The normal seam bilinear supplies no
++localized correction when G1=0. A proposed replacement/compensation would
++have to address (11), its source/spacetime derivatives, representation,
++norm and measure together. Its negative is only a formal required
++compensation; no examined equation makes it an adopted subtraction. Nor
++is an unevaluated complementary Schur term (1) permission to select that
++negative value. Direct matching is therefore **not established**.
++
++The compact diagnostic p is not a joint-domain field or a prescribed wall
++unknown. Use its **full** trace readout. From the saved proposal and cached
++normalized WBp input, without recalculating J_chi,
++
++\[
++ F_L(WBp)+F_L(p-WBp)=b_{\rm vol}\Pi_L\Xi
++                      -b_{\rm vol}\Pi_L\Xi=F_Lp=0.              \tag{12}
++\]
++
++The actual n1/n3 arrays and the residual of (12) are saved. Multiplying the
++complete readout by sqrt(Z) for the canonical wall coordinate preserves
++the zero. Differentiating the full identity retains all moving F,W,B,p
++terms; none is an independent extra source. Compact support remains
++separated from the material wall for the inherited source family. J_chi
++alone cannot be inserted as a new forcing or anomaly contribution.
++
++## Reproducibility and error boundary
++
++`replay_muon_proposed_seam_matching.py` creates a new output directory with
++coefficient enclosures, actual first-order/canonical/source maps, both
++norms, temporal jets, interaction ledger, input hashes, revision and compact
++checkpoint. `test_muon_proposed_seam_matching.py` checks full-cap norm versus
++kinetic residue, simultaneous canonical transformations, cached-action
++consistency, the actual auxiliary source lifting and complete source cancellation.
++Previous checks and parent production were not replayed.
++
++The original new run1 and its exact source snapshot are preserved as
++historical evidence: its photon contraction assumed L=1 over the full cap.
++Review identified that this is only true on the compact probe support.
++Accepted run2 corrects the full-cap auxiliary contraction with the actual
++L. The kinetic, norm, Yukawa and readout results are unchanged. Three
++unaffected new matching checks retain their original passing receipt;
++only the affected new photon check is rerun with the corrected source
++provenance and explicit unevaluated stationary-return scope.
++
++Arb at192 bits encloses the indicated products of frozen binary operands
++and the saved full-cap I/I_tau nodal certificate. The small instantaneous
++metric reconstruction is frozen after its binary64 evaluation. These are
++arithmetic enclosures of the existing512-point/8-per-cell quadrature model;
++they are **not** a new quadrature, history/tube or continuum certificate.
++Matrix outputs are binary64 representatives. An explicit nonzero model
++residual is not a physical operator norm, anomaly or uncertainty estimate.
++
++```powershell
++C:\Python314\python.exe scripts/replay_muon_proposed_seam_matching.py --output artifacts/muon_proposed_seam_matching_20261005/replay_new
++C:\Python314\python.exe -m pytest --noconftest -q tests/test_muon_proposed_seam_matching.py
++```
++
++The accepted parent response is unchanged. Frozen a_QED=0.00116550200495813,
++calibration-only uncertainty1.79e-13, Higgs local interval(0,3.500331e-9),
++and already-combined selected-local interval(0.0011655039493,0.0011655109506)
++are neither modified nor re-added. All six native contributions, physical
++a_mu/g_mu and native uncertainty remain null. Next: an action-owned
++replacement/compensation or evaluated same-owner complementary response
++that supplies the **joint kinetic and interaction** matching; no such
++term is derived merely by normalizing this proposed summed action.

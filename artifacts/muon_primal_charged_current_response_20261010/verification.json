@@ -1,0 +1,94 @@
+{
+  "E_kappa_GeV": null,
+  "artifact_records": [
+    {
+      "bytes": 511290,
+      "path": "artifacts/muon_primal_charged_current_response_20261010/run_1/application.npz",
+      "sha256": "700897d33bf3e562d1c3c591fc32ed680b0e1d8ac9f7e2a8fe096bed35d9a871"
+    },
+    {
+      "bytes": 511290,
+      "path": "artifacts/muon_primal_charged_current_response_20261010/run_2/application.npz",
+      "sha256": "700897d33bf3e562d1c3c591fc32ed680b0e1d8ac9f7e2a8fe096bed35d9a871"
+    },
+    {
+      "bytes": 52487,
+      "path": "artifacts/muon_primal_charged_current_response_20261010/run_1/result.json",
+      "sha256": "b78d7c4e3eb151c62bd7a0b8cdb79a3245b5c17e5feeec2c974f05353e06f2fa"
+    },
+    {
+      "bytes": 52487,
+      "path": "artifacts/muon_primal_charged_current_response_20261010/run_2/result.json",
+      "sha256": "b78d7c4e3eb151c62bd7a0b8cdb79a3245b5c17e5feeec2c974f05353e06f2fa"
+    }
+  ],
+  "byte_identical_independent_processes": true,
+  "classification": "VERIFIED_ACTUAL_FINITE_CHARGED_CURRENT_APPLICATION_REPLAY",
+  "commands": [
+    {
+      "argv": [
+        "C:/Python314/python.exe",
+        "-m",
+        "pytest",
+        "--noconftest",
+        "-q",
+        "tests/test_muon_primal_charged_current_response.py"
+      ],
+      "exit_code": 0,
+      "output": "...........                                                              [100%]\n11 passed in 2.12s\n"
+    },
+    {
+      "archive_sha256": "700897d33bf3e562d1c3c591fc32ed680b0e1d8ac9f7e2a8fe096bed35d9a871",
+      "argv": [
+        "C:/Python314/python.exe",
+        "scripts/evaluate_muon_primal_charged_current_response.py",
+        "--output",
+        "artifacts/muon_primal_charged_current_response_20261010/run_1"
+      ],
+      "exit_code": 0,
+      "receipt_sha256": "b78d7c4e3eb151c62bd7a0b8cdb79a3245b5c17e5feeec2c974f05353e06f2fa"
+    },
+    {
+      "archive_sha256": "700897d33bf3e562d1c3c591fc32ed680b0e1d8ac9f7e2a8fe096bed35d9a871",
+      "argv": [
+        "C:/Python314/python.exe",
+        "scripts/evaluate_muon_primal_charged_current_response.py",
+        "--output",
+        "artifacts/muon_primal_charged_current_response_20261010/run_2"
+      ],
+      "exit_code": 0,
+      "receipt_sha256": "b78d7c4e3eb151c62bd7a0b8cdb79a3245b5c17e5feeec2c974f05353e06f2fa"
+    }
+  ],
+  "environment": {
+    "PYTHONPATH": "src"
+  },
+  "exact_stored_Arb_source_adjoint_identity_verified": true,
+  "focused_test_failures": 0,
+  "focused_tests_passed": 11,
+  "measured_anomaly_or_magnetic_target_used": false,
+  "named_central_gauge_frames": 2,
+  "old_nonlinear_action_producer_rerun": false,
+  "original306_rows_retained": true,
+  "physical_c_F": null,
+  "physical_low_energy_LSZ_Fermi_coefficient_evaluated": false,
+  "source_or_action_assembly_error_enclosed": false,
+  "source_records": [
+    {
+      "bytes": 14143,
+      "path": "src/bhsm/interface/muon_primal_charged_current_response.py",
+      "sha256": "df2c278056e2058feccb3d893c553f8e0ad3f3b09188a7578bb1c01051d6c176"
+    },
+    {
+      "bytes": 3206,
+      "path": "scripts/evaluate_muon_primal_charged_current_response.py",
+      "sha256": "d64440580bfea7f8935af84d310f46b67527e0c5d48a6128fb175cec1307c195"
+    },
+    {
+      "bytes": 4995,
+      "path": "tests/test_muon_primal_charged_current_response.py",
+      "sha256": "bab89171d52268d5c1506b6ca316574885f34185c310d350f9a4b481ba5a8080"
+    }
+  ],
+  "working_directory": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001"
+}

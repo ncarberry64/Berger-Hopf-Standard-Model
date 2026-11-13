@@ -1,0 +1,49 @@
+{
+  "all_consumed_hashes_current": true,
+  "birth_total_difference_origin": "saved incoming source-spline node reconstruction; values preserved",
+  "classification": "VERIFIED_REACHED_OPEN_LEPTON_VERTEX_APPLICATION",
+  "commands": [
+    {
+      "command": "$env:PYTHONPATH=\"src\"; $env:OPENBLAS_NUM_THREADS=\"1\"; C:/Python314/python.exe -m pytest --noconftest -q tests/test_muon_magnetic_open_lepton_vertex.py",
+      "exit_code": 0,
+      "output": "...... [100%]\n6 passed in 4.36s"
+    },
+    {
+      "command": "$env:PYTHONPATH=\"src\"; $env:OPENBLAS_NUM_THREADS=\"1\"; C:/Python314/python.exe scripts/evaluate_muon_magnetic_open_lepton_vertex.py --output artifacts/muon_magnetic_open_lepton_vertex_20261011/run_1",
+      "exit_code": 0
+    },
+    {
+      "command": "$env:PYTHONPATH=\"src\"; $env:OPENBLAS_NUM_THREADS=\"1\"; C:/Python314/python.exe scripts/evaluate_muon_magnetic_open_lepton_vertex.py --output artifacts/muon_magnetic_open_lepton_vertex_20261011/run_2",
+      "exit_code": 0
+    }
+  ],
+  "exact_zero_padding_axes": [
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "incoming_outgoing_birth_fixed_Y_scalar_vertex_arrays_bit_identical": true,
+  "incoming_outgoing_birth_total_vertex_maximum_difference": 1.3877787807814457e-17,
+  "physical_anomaly_or_LSZ_certified": false,
+  "prior_run_failures": [
+    {
+      "cause": "frozen exact source-law equality rejected incoming birth spline reconstruction at2.78e-17; no artifact directory created",
+      "command": "same producer --output .../run_1 before additive sampler",
+      "exit_code": 1
+    }
+  ],
+  "replay_files": {
+    "application.npz": {
+      "bytes": 79152,
+      "independent_replays_byte_identical": true,
+      "sha256": "14b32e7b64e2879a49f3d046a307e16ba3556f5670767b516bef2e754d522e1a"
+    },
+    "result.json": {
+      "bytes": 14933,
+      "independent_replays_byte_identical": true,
+      "sha256": "612fa56323c70c34f9e6dcf7afe00e2d1d903f6e896abbf4931e6252fb859b6e"
+    }
+  }
+}

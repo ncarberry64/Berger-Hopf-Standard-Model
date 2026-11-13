@@ -1,0 +1,44 @@
+[
+  {
+    "command": [
+      "C:\\Python314\\python.exe",
+      "tools/audit_bhsm_status.py"
+    ],
+    "exit_code": 0,
+    "receipt": "audit_bhsm_status.txt"
+  },
+  {
+    "command": [
+      "C:\\Python314\\python.exe",
+      "tools/audit_forbidden_claims.py"
+    ],
+    "exit_code": 0,
+    "receipt": "audit_forbidden_claims.txt"
+  },
+  {
+    "command": [
+      "C:\\Python314\\python.exe",
+      "tools/audit_frozen_prediction_integrity.py"
+    ],
+    "exit_code": 0,
+    "receipt": "audit_frozen_prediction_integrity.txt"
+  },
+  {
+    "command": [
+      "C:\\Python314\\python.exe",
+      "tools/verify_precision.py"
+    ],
+    "exit_code": 0,
+    "receipt": "verify_precision.txt"
+  },
+  {
+    "command": [
+      "C:\\Python314\\python.exe",
+      "tools/audit_public_readiness.py",
+      "--format",
+      "json"
+    ],
+    "exit_code": 0,
+    "receipt": "audit_public_readiness.txt"
+  }
+]

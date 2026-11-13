@@ -1,0 +1,323 @@
+ETA-HIGGS SEAM: GEOMETRIC TRANSITION AND PROFILE-INDEPENDENT WEAK COMPLETION
+2026-10-16. Constructive action-level reconciliation; no numerical campaign.
+
+RESULT
+
+The same original two collar traces, each of dimension d=384, admit the
+modern interacting relation
+
+     Gamma_-Psi_-=U_geo S Gamma_+Psi_+,  S=I_d+J^-1 C T B,             (1)
+
+where U_geo is the already owned Spin/gauge frame transition, T=rho M18(H)
+is the once-only original Higgs source, and J,C,B are in one common wall
+fiber. The full trace relation is [-U_geo S, I_d] on the ORIGINAL 2d=768
+trace space. It is NOT a transfer on a doubled2d field with two more copies.
+The full complementary spin/SM/family rows remain present.
+
+This corrects the invalid inference 'one geometric bundle implies equal
+interacting limiting field values'. The historical hard-transmission
+sentence is preserved as historical source; its free/geometric matcher
+remains U_geo. At nonzero SH source the modern field relation is (1), not
+the unchanged hard equality. The correction is derived from the original
+unsquared bulk action and surface functional, using its maximal weak bulk-L2
+Euler realization. It is not a change of coupling or a free Robin/Cayley
+choice. The allowed weak solution regularity is a genuine part of this
+completion; it must not be described as the closure of the unchanged hard
+H1 operator with its unchanged nonzero delta term.
+
+A direct local theorem below shows (1) is independent of ANY uniformly
+L1-bounded normalized smoothing of that surface delta on a fixed regular
+background. No physical layer profile, width or new normal-mode function is
+selected. The theorem is a local normal-transfer result at each finite
+tangential frequency/span, or for controlled smooth solution families. It
+is not an all-high-shell norm-resolvent theorem or a completed global native
+operator/outgoing realization.
+
+1. EXACT SOURCE AND TOPOLOGY
+
+Paths are relative to C:/Users/carbe/Downloads/
+BHSM_muon_parent_maxwell_worktree_20261001 . Byte pins accompany this note.
+
+A. completion/foundational_dirac_spin_glue_v14_45.py:92-135 explicitly adopts
+
+ S_F=sum_eps int dmu4 ds J_vol barPsi_eps
+   [i gamma^mu nabla_mu^total+i eps Gamma_perp
+     (partial_s+half partial_s log J_vol+m_eta)]Psi_eps+S_H,
+ m_eta=-partial_s log sin f_eta,
+ S_H=-int dmu4[barPsi_+ Y H Psi_-+h.c.].
+
+This is a left-D-right action. Its normal pullback keeps Y unchanged. The
+overall positive residue is absorbed in the source's field definition, not
+inserted as another coefficient below.
+
+B. The SAME source:248-287 says the collars are restrictions of one parent
+spin manifold and writes the hard field equality by SpinLift. Its finite
+witness:230-245 tests only opposite-normal free kinetic Green cancellation;
+it contains no H/Y/seam first variation. One bundle fixes the fiber matcher;
+that witness does not establish unchanged interacting limiting values.
+
+C. master_action/reduction.py:83-117 gives the actual two cap collars:
+M4 is their equator, opposite outward normals, and
+c_eps(t,x,rho)=(t,pi/2-eps*rho,x), rho>=0. Thus the regular local geometry
+supports one signed normal neighborhood obtained by adjoining the two
+half-collars, not two independent fields each crossing another two sides.
+The round formula establishes the topology/orientation. A regular nonnull
+deformation uses its actual owned coframe and density, not the round values.
+completion/full_hopf_preimage_effective_action_v14_30.py:36-50 also identifies
+M5=I x S4, M4=I x S3 and the equatorial collar. No continuation through a
+singular/null or unsupported exterior region is inferred here.
+
+D. muon_full_d5_localized_lepton_trace.py:19-101,156-237 gives the full384
+fiber (Spin4 x self-dual SM carrier x family3), normalized POINT trace and
+its independent Dirac-bar dual. The conjugate representation is not another
+independent particle loop. All complement rows are retained.
+
+E. muon_holomorphic_d5_trace_action.py:272-337 constructs the two physical
+eta-sheet action, B_tot=[P_L b_+,P_R b_-], the original independent left
+maps and -rho Cbar_tot M18 B_tot. P_L/P_R have ranks12/6. It states these
+are NOT temporal parent/child arms, no second kinetic/Higgs mass is added,
+and its full2d field border keeps the complementary rows. Its:419-486 is
+the unsquared original weak bulk action. Its:489-517 exports the actual
+first-order normal Green density, with the single Dirac-bar Gamma0.
+
+F. The existing local algebra muon_isotropic_seam_transfer.py:84-150 returns
+N, I+N, I-N and original jump/isotropy residuals. It does not by itself bind
+the original two-trace topology; that binding is supplied explicitly next.
+AE2 regular temporal birth, with S_Sigma,F=0, is a DIFFERENT interface.
+
+2. TRUE TWO-TRACE WEAK EQUATION AND ITS EXACT SOLUTION
+
+Let x=Gamma_+Psi_+, z=Gamma_-Psi_- be the original d-valued limiting traces.
+Put y=U_geo^-1 z in the plus fiber. No new field is introduced by y. In that
+fiber use J, the plus-oriented actual first-order Green DENSITY. The other
+outward matrix obeys U_geo^dagger J_- U_geo=-J on the real physical pairing,
+with the actual boundary measure already counted. J is not a bare radial
+derivative, not the weak square conormal, and not the volume Jacobian J_vol.
+
+Let b_+,b_- be the normalized right point traces, c_+,c_- their canonical
+left Euler incidences after EXACTLY ONE conversion of Dirac bar by Gamma0.
+Define
+
+ A=P_L b_+,             D=P_R b_- U_geo,
+ B=A+D,
+ C=c_+ P_L+U_geo^sharp c_- P_R,       T=rho M18(H).                    (2)
+
+On a real Riesz slice U_geo^sharp=U_geo^dagger and C=B^dagger. On analytic
+source germs sharp is its independently continued left map; it is not
+formed by conjugating complex source weights. In the real Lorentz Spin
+frame U^dagger Gamma0=Gamma0 U^-1, so the second term of C is equivalently
+Gamma0 U^-1 Cbar_- P_R. This keeps the original single Gamma0 and the single
+surface density. Do not add rho_++rho_- to an already once-only seam.
+
+The original asymmetric, one-sided trace is
+
+                  q=A x+D y.                                         (3)
+
+A smooth global left test has one common trace v; its original-frame test
+values are (v,U_geo v). Varying the ORIGINAL ordered SH once in its left
+argument therefore gives -C T q in the common pairing. The distributional
+normal derivative of the piecewise right field contributes J(y-x). The
+maximal weak Euler output is bulk L2 precisely when its surface coefficient
+cancels:
+
+                  J(y-x)=C T(A x+D y).                                (4)
+
+Equation (4), not two unrelated p=Mq equations on two further copies, is
+the actual full d-row interface equation on the original (x,z). Explicitly
+its original-frame matrix is
+
+ [-J-C T A,  J U_geo^-1-C T P_R b_-] (x,z)^T=0.                        (5)
+
+The owned normal-Clifford/chiral trace gives
+
+              B J^-1 C=0,
+              A J^-1 C=0,       D J^-1 C=0.                           (6)
+
+The component statements follow by multiplying the first with P_L/P_R,
+since P_L B=A and P_R B=D. Isotropy itself uses the original W: normal
+Clifford changes the selected Spin chirality within a fixed internal block;
+particle L and conjugate e_R occupy different blocks. The geometric
+Spin x G_SM transition respects those blocks. No spin, family or complement
+projection is deleted. The supplied normal trace values must be finite and
+nonzero; their numerical normalization is not fixed by this derivation.
+
+Multiply (4) by A J^-1 and D J^-1. Then A y=A x and D y=D x. Hence the
+ACTUAL one-sided source agrees with both complete common traces:
+
+                   q=B x=B y.                                        (7)
+
+Substitution gives N=J^-1 C T B, N^2=0 and y=S x with S=I+N. Its inverse
+is I-N. Conversely this graph satisfies (3)-(4), including each separate
+L/R trace placement. Thus (5) and (1) are equivalent, with rank d, on
+exactly2d limiting values. There are not four one-sided field copies.
+
+One may also solve the literal mixed trace without first using (7):
+
+ (I-J^-1 C T D)y=(I+J^-1 C T A)x.
+
+The left factor has inverse I+J^-1 C T D because D J^-1 C=0. Its product
+is exactly I+N, not an approximation. Any Cayley expression built from the
+SAME N also reduces algebraically to I+N:
+
+              (I-N/2)^-1(I+N/2)=I+N.                                 (8)
+
+Equation (8) is a consistency check, NOT adoption of an arithmetic trace
+average. Original equation (3) already fixes the source evaluation; (7)
+explains why no average remains relevant. A different non-isotropic source
+need not have this property and is not substituted here.
+
+On the real slice J^dagger=-J, T=T^dagger and C=B^dagger give S^dagger J S=J.
+With E=(I;U_geo S), E^dagger diag(J,J_-) E=0. Every common complementary
+direction is retained, and any vector in ker(B) is transmitted by the
+original U_geo. This is a local Green statement. Non-Hermitian eta body
+terms may still distinguish the full formal adjoint; global self-adjointness
+of the unsquared Lorentz operator is not asserted.
+
+3. PROFILE-INDEPENDENT LOCAL RESOLVED-TO-DELTA THEOREM
+
+This theorem analyzes a mathematical smoothing of the ALREADY STATED surface
+functional. It does not choose a physical finite-width interaction or alter
+the action's eta background/profile. Work in one smooth common parent frame
+and a fixed regular noncharacteristic normal chart s in [-epsilon,epsilon].
+The actual coefficient J(s) is invertible there. The geometry, gauge, spin,
+eta body and trace coefficients have bounded smooth germs, with their wall
+values from section2. In particular at a regular wall with sin f!=0,
+-partial_s log sin f is locally bounded for a fixed smooth background.
+No universal numerical value of f at the wall is used.
+This is not a claim about a singular pole or about narrowing the background
+f_eta together with the surface source.
+
+Let t_epsilon(s) be ANY integrable approximate identity with support of
+width2epsilon,
+
+      int t_epsilon ds=1,       int |t_epsilon| ds<=L<infinity.        (9)
+
+Signed or nonsymmetric profiles are allowed; positivity/evenness is not
+needed. Under a change of normal coordinate t_epsilon ds is the density
+approximating delta, while the actual surface T is unchanged. L is an
+estimate constant, not an added action parameter.
+
+First freeze ONLY the singular coefficient at its actual wall value:
+N0=J0^-1 C0 T0 B0. Keep the original regular bulk contribution R(s). The
+normal Euler equation is
+
+       partial_s psi=t_epsilon(s)N0 psi+R(s)psi.                      (10)
+
+The sign is fixed by J partial_s psi+L_regular psi-t C T B psi=0;
+R=-J^-1 L_regular. It includes the original spin/gauge/eta/time/tangential
+terms; no term is deleted from the finite-width equation.
+
+With F(s)=int_{-epsilon}^s t_epsilon, the EXACT singular propagator is
+
+             U0(s,-epsilon)=I+F(s)N0,
+             U0^-1=I-F(s)N0,
+             U0(epsilon,-epsilon)=I+N0.                              (11)
+
+No commutation between the original regular body and N0 is assumed. More
+generally, if its singular matrix is J0^-1 C0 W_epsilon(s)B0, every ordered
+product at two distinct points vanishes:
+
+ J0^-1 C0 W(s1) B0 J0^-1 C0 W(s2) B0=0.
+
+Thus its propagator is I+J0^-1 C0[int W_epsilon ds]B0 even when the W matrices
+do not commute. With integral T0 it gives the same I+N0 exactly. This is the
+reason the specified source has no profile-ordering/Cayley ambiguity.
+
+Now allow the ACTUAL smooth J(s),C(s),B(s),T(s) germs, and use the same source
+profile t_epsilon. If N(s)=J(s)^-1 C(s)T(s)B(s) obeys
+||N(s)-N0||<=M_N |s|, write the exact equation as
+
+       psi'=[t_epsilon N0+E_epsilon(s)]psi,
+       E_epsilon=R(s)+t_epsilon(s)[N(s)-N0].                          (12)
+
+For finite-dimensional/fixed tangential-symbol R, let ||R||<=M_R. Then
+
+ eta_epsilon:=int||E_epsilon||ds<=2epsilon M_R+epsilon M_N L.
+
+Set K=1+L||N0||. Substituting psi=U0 z gives
+z'=U0^-1 E_epsilon U0 z, and the standard integral-series estimate gives
+
+ ||U_epsilon(epsilon,-epsilon)-(I+N0)||
+              <=K[exp(K^2 eta_epsilon)-1] ->0.                       (13)
+
+This is an explicit O(epsilon) bound. The actual noncommuting spin/gauge/eta
+body remains in the error estimate and in the full equation outside the
+shrinking layer. 'Its integral across vanishing width tends to zero' is
+not 'set its physical value to zero'. Any smooth coefficient extension with
+the same wall values and uniform bounds has the SAME limit. No arbitrary
+extension becomes a physical source/coupling through (13).
+
+The finite U_geo is a fiber/frame transition, not an extra physical Wilson
+holonomy across zero distance. In original frames the propagator is
+G(epsilon)U_epsilon G(-epsilon)^-1; its limit is U_geo(I+N0) after using the
+original endpoint frames. A rapidly changing coordinate frame can contain
+a pure-gauge G'G^-1 of order1/epsilon; it must be factored EXACTLY by G, not
+incorrectly counted as another bounded physical body. The actual physical
+LC/gauge connection is bounded in a smooth parent frame on this regular
+local chart. Spin is preserved by the entire conjugated equation.
+
+Time and angular DIFFERENTIAL operators are not bounded on the full
+continuum Hilbert space. Accordingly (13) is rigorous for each fixed
+tangential frequency/symbol or explicitly bounded/Galerkin normal system
+on a finite complete Haar span, with ALL384 spin/SM/family rows and constants
+that can grow with tangential frequency. No invariant finite Fourier/Haar
+subspace is asserted for arbitrary variable tangential coefficients.
+It also applies to smooth solution families with the required uniform
+integrated tangential estimates. It does NOT prove uniform high-shell,
+operator-norm/resolvent or continuum heat convergence. No angular or temporal
+derivative is assigned zero to obtain it. Such PDE estimates are an
+additional global analysis, not a new local seam coefficient.
+
+4. WHAT HAS BEEN RECONCILED, AND THE GENUINE OBSTRUCTIONS
+
+For every globally smooth test pair the smoothed source actions approach
+the original SH surface functional with its fixed normalization. Their
+unsquared Euler equations select (4) in the maximal bulk-L2 distributional
+limit. The theorem proves all normalized uniformly-L1 smoothings with the
+stated regular-background bounds select the same local graph. Hence the
+modern correction preserves the adopted bulk action, SH, geometric bundle,
+SpinLift and fixed-Y source; no particular mollifier is physical data.
+
+This completion does allow broken limiting field values. On the literal old
+hard H1 domain y=x, the bulk derivative has no compensating delta and the
+bulk-L2 Euler requirement would force C T Bx=0. In general the two hard and
+interacting domains therefore differ. The historical formula cannot remain
+an additional limiting-value constraint when that source is nonzero. It is
+the old INFERENCE from the geometric bundle to interacting field equality
+that is corrected; the geometric matcher itself is retained. This is not
+supersession merely by a file date and not a claim that the unchanged hard
+operator's graph closure magically develops the nonzero jump.
+
+The source topology in section1 is essential. If two fields were genuinely
+independent channels rather than restrictions on adjacent half-collars,
+this derivation could not turn their whole2d direct-sum carrier into a
+single d-valued transfer without another incidence law. The actual cap
+cover/global-bundle statements are why that mistake is avoided here. The
+finite normalized two-sheet point action is a consumer of those two
+original branches, not evidence for a second duplicated interface.
+
+Actual failures of the local theorem include a null/characteristic J,
+zero/nonfinite normalized trace amplitudes, singular sin f or background
+normalization, an additional singular spin/gauge/eta contact, unbounded
+profile total variation, or loss of the required controlled tangential
+solution class. These would require evaluating their OWN action terms or
+endpoint domains, not choosing an average or changing T. They are not
+assumed present at the stated regular wall, nor ruled out globally.
+
+5. NATIVE AND PHYSICAL CLAIM BOUNDARY
+
+The relation derived here belongs to the original Lorentz unsquared action.
+The actual native-positive graph S_N and its carrier/pairing require the
+same-action native binding; (1) is not promoted through an unowned Wick
+rotation or by replacing Lorentz D^2 with D^dagger D. Its positive adjoint
+conormal law must be derived from that actual native graph. Neither a
+norm-resolvent/native heat theorem nor an outgoing support condition follows
+from this local width limit.
+
+Physical E/B source jets and both-spin state normalization are not set to
+zero or supplied by the homogeneous geometric matcher. No normal mode,
+coupled mean, exterior field, free complement, initial Spin lift, finite
+layer profile, measured constant or new statistics multiplicity was chosen.
+No original coupled correction, Maxwell226 AFTER validation or muon moment
+claim is made. The new reusable operator-domain component is the exact
+modern two-trace row [-U_geo S,I] with its original source equation (5).

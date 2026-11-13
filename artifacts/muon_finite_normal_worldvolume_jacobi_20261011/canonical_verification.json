@@ -1,0 +1,131 @@
+{
+  "executions": [
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "pytest",
+        "--noconftest",
+        "-q",
+        "tests/test_muon_finite_normal_worldvolume_jacobi.py"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "stderr_path": "canonical_tests.stderr.txt",
+      "stdout_path": "canonical_tests.stdout.txt"
+    },
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "bhsm.interface.muon_finite_normal_worldvolume_jacobi",
+        "--incoming-phase",
+        "artifacts/muon_finite_normal_phase_20261011/incoming_run_1",
+        "--outgoing-phase",
+        "artifacts/muon_inherited_finite_normal_phase_20261011/run_1",
+        "--output",
+        "artifacts/muon_finite_normal_worldvolume_jacobi_20261011/base_run_3"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "stderr_path": "base_run_3.stderr.txt",
+      "stdout_path": "base_run_3.stdout.txt"
+    },
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "bhsm.interface.muon_finite_normal_worldvolume_jacobi",
+        "--incoming-phase",
+        "artifacts/muon_finite_normal_phase_20261011/incoming_run_1",
+        "--outgoing-phase",
+        "artifacts/muon_inherited_finite_normal_phase_20261011/run_1",
+        "--output",
+        "artifacts/muon_finite_normal_worldvolume_jacobi_20261011/base_run_4"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "stderr_path": "base_run_4.stderr.txt",
+      "stdout_path": "base_run_4.stdout.txt"
+    },
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "bhsm.interface.muon_finite_normal_worldvolume_jacobi",
+        "--incoming-phase",
+        "artifacts/muon_area_coupled_endpoint_20261011/incoming_phase_run_1",
+        "--outgoing-phase",
+        "artifacts/muon_area_coupled_endpoint_20261011/outgoing_phase_run_1",
+        "--output",
+        "artifacts/muon_finite_normal_worldvolume_jacobi_20261011/area_run_3"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "stderr_path": "area_run_3.stderr.txt",
+      "stdout_path": "area_run_3.stdout.txt"
+    },
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "bhsm.interface.muon_finite_normal_worldvolume_jacobi",
+        "--incoming-phase",
+        "artifacts/muon_area_coupled_endpoint_20261011/incoming_phase_run_1",
+        "--outgoing-phase",
+        "artifacts/muon_area_coupled_endpoint_20261011/outgoing_phase_run_1",
+        "--output",
+        "artifacts/muon_finite_normal_worldvolume_jacobi_20261011/area_run_4"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "stderr_path": "area_run_4.stderr.txt",
+      "stdout_path": "area_run_4.stdout.txt"
+    }
+  ],
+  "pairs": [
+    {
+      "byte_identical": true,
+      "bytes": 11410,
+      "family": "base",
+      "filename": "result.json",
+      "sha256": "cb78c58c9aec5a8f01a43c7edc075fffee120588c4c3933b1ba1e8ae1ac0aa54"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 10167,
+      "family": "base",
+      "filename": "application.npz",
+      "sha256": "a888673ec7b15a367a81759ea36417ce0dca67ccb963f07d3dfc26394823421a"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 12170,
+      "family": "area",
+      "filename": "result.json",
+      "sha256": "ebdd6632120155ec98bc2f275272449894ae2cace81f83d25154f9d7b537ad44"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 10161,
+      "family": "area",
+      "filename": "application.npz",
+      "sha256": "a01a50e38f9f3cd4a3cfd7966072390bdb2bc54d535727deea83e1a2973c77c9"
+    }
+  ]
+}

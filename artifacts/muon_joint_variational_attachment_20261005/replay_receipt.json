@@ -1,0 +1,26 @@
+{
+  "native_heat_evaluations": 0,
+  "new_calculations": [
+    {
+      "reason": "Clifford matrix was applied to flattened angular direct sum; failed source snapshots retained",
+      "run": "run_1",
+      "status": "failed_before_arrays"
+    },
+    {
+      "reason": "separate n1/n3 Clifford layouts corrected; cache-only first-variation computation",
+      "run": "run_2",
+      "seconds": 0.93,
+      "status": "completed"
+    }
+  ],
+  "new_stationary_solves": 0,
+  "old_point_actions_rerun": 0,
+  "old_reference_wall_rows_recomputed": false,
+  "old_tests_rerun": 0,
+  "physical_transfer_directions": 0,
+  "targeted_test": {
+    "command": "C:\\Python314\\python.exe -m pytest --noconftest -q tests/test_muon_joint_variational_attachment.py",
+    "passed": 3,
+    "seconds": 0.48
+  }
+}

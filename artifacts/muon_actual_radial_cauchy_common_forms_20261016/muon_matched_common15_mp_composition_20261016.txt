@@ -1,0 +1,109 @@
+MATCHED FINITE POSITIVE-REFERENCE ALL15 FORM COMPOSITION
+2026-10-16
+
+This closes the finite positive-reference coefficient/quadrature comparison
+at the supplied real affine incoming and daughter cells. It does not solve
+the physical fields, establish physical radial solution convergence, select
+a native graded operator/domain, or close the physical outgoing terminal.
+The original coupled matching correction count remains ZERO.
+
+Canonical source:
+ audits/bhsm_matched_common15_mp_composition_20261016.py
+ SHA a7122b5801405d67d762586ee757edc8809495e6e1660e741c3d8b54968173e8.
+Outputs WORK/outputs/bhsm_matched_common15_mp_composition_20261016/
+ corrected_run_{1,2}: all14 files byte-identical,7222035 bytes/run,
+ largest file1180662 bytes. Top result.json SHA
+ 426bf1cc6082d3b7691e0b215d8f2352212791e92203a5dcba6ac6d95c97822a.
+
+The matched cases on EACH arm are radial64:time8, radial128:time8,
+radial128:time12, with the actual anchored response rule96 held.
+Each of the original15 matrices is retained on its original coordinate
+space: one-form1120, common1200, and ghost320. No angular/internal direction
+or off-shell contact is deleted. Exact saved MP80 coefficient tuples own
+the Yang--Mills square/contact, Lorenz tensors, ghost norm and scalar wall.
+The full original rounded YM/scalar/B components reproduce bitwise.
+No source/D5/history calculation or background field solve is repeated.
+
+G1=[[Goo,Bord^T],[Bord,S]], with Goo=Goo10 tensor I80, I80=I4 tensor I20.
+S is the FP kinetic block B[:,800:1120]. Gghost=G4 tensor I80 is its
+DISTINCT pure ghost norm. F=Gghost^{-1}B, while the finite Lorenz projector
+uses Pi=I1200-D S^{-1}B, D the original ghost-coordinate embedding.
+Scalar potential lambda and lambda*nu_squared remain separate polynomial
+coefficient matrices; no physical value has been assigned.
+CommonK=Kscalar_kinetic+kappa*embed(KYM) and
+CommonG=Gscalar+kappa*embed(G1) use the original held binary kappa ONCE.
+The sums are formed before every comparison, so cancellations are retained.
+The finite fixing is kappa*B^T*F, with all columns and actual transposes.
+
+All-entry comparisons use abs(new-old)/max(1,abs(old),abs(new)). Composite
+arithmetic is ARB384 on the finite MP80 lifted operands. The ordinary Gram
+128:8/12 operands retain a conservative relative1e-62 serialization radius
+around their existing65-digit reports; no settled field sampling is replayed.
+Saved finite-projector high+low floats retain their explicit conversion
+radius. The ARB denominator uses lower bounds of each entry's absolute
+value. Exact zero support complements are included analytically.
+These bounds exclude upstream coefficient/history/quadrature uncertainty.
+all15_forms.npz files contain FLOATING CENTERS/READOUTS, not standalone
+interval archives; exact consumed operands and reported radii own the bounds.
+
+Largest all15 scaled changes:
+ incoming64:8 ->128:8       9.487617459500599e-21
+ daughter64:8 ->128:8       1.7770520240918333e-20
+ incoming128:8 ->128:12     1.717739008209739e-36
+ daughter128:8 ->128:12     5.1668910762198956e-36.
+Every one of the60 matrix/rule comparisons passes scaled2e-10.
+
+Common kinetic radial scaled/absolute bounds:
+ incoming3.0437410149520757e-24 /1.4232813759463908e-18;
+ daughter5.7009951703055126e-24 /1.4449742924248964e-19.
+Common Gram radial scaled/absolute bounds:
+ incoming9.216054517001339e-24 /7.530075847781635e-21;
+ daughter1.37686048357149e-25 /1.0350495431659316e-21.
+Finite projector radial scaled=absolute bounds:
+ incoming8.785681735431092e-28; daughter2.2695212990247317e-29.
+The finite fixing raw ABSOLUTE radial changes remain4.178641299101556e-9
+and9.936957376825313e-10. Its scaled changes pass; this is NOT a claim that
+all raw matrix entries satisfy an absolute2e-10 convergence criterion.
+
+Reviewed finite projector source:
+ audits/bhsm_finite_lorenz_projector_ball_20261016.py
+ SHA c409d5247ed17ce3c2279aeea294eb2a0baa45f47b857b6083ecd3e95ca054da.
+Matched source:
+ audits/bhsm_matched_finite_lorenz_projectors_20261016.py.
+Both matched runs have13 byte-identical files; result.json SHA
+ 49733e0d6e253b0912f3af81b5a4208e0d54e1c377847070e82db5262c891731.
+For all six exact finite B operands, ARB384 checks BPi and Pi^2-Pi. Worst
+max-entry bounds are1.78220e-106 and5.97206e-114 respectively. The largest
+X high+low conversion radius is1.84552e-37. These are finite arithmetic
+certificates, not construction of the physical BRST quotient/domain.
+
+Missing radial64:time8 moments were evaluated once in each independent
+run by audits/bhsm_lorenz_radial64_time8_exact_moments_20261016.py, SHA
+ e070df015a4b6f46e95d70e15741a91b9de50c2af91136296f9ccb3ed58d2a38.
+Their two files reproduce byte identically. Numerical archive SHA
+ 66fc166ff1ebb953c450995e4297085b2db0bace45d5879afa1f0432edb61ff4;
+JSON SHAab762231a41506e96ad782debe8ffca5fe1919e296c003fc420c1d75ea919ae3.
+The original exact TIME6 archive and all six frozen refinement operands
+are bound separately; they are not inferred from an incomplete alias list.
+
+The first two composition executions reached the second case but failed
+JSON serialization of a NumPy integer index. Their source snapshot SHA
+ ed6b597ce2dedac92857ada93dfd8fcd8121ec686417da858ac7c78003fb4ec6,
+first completed readouts and partial second readouts are preserved under
+diagnostics_composition_serialization. The corrected source converts only
+the reported index to Python integers and adds an executed-source copy.
+It changes no mathematical expression or field/quadrature input.
+
+The actual same-field complex ea02 radial Euler audit is a DIFFERENT test.
+It retains the old physical field while adding compatible D4/D6 tests and
+finds nonzero added primal forces and Gauss residuals. Its independently
+checked result is preserved alongside this finite real reference evidence.
+This all15 quadrature pass cannot close those unresolved field equations.
+
+The geometric full-spin terms in the prior committed packet remain
+nonzero and unmodified. These bosonic finite forms do not replace their
+microscopic/native representation matching. Physical outgoing Y_R,s_R,
+proper-normal four C0/Cj with all energy/weak-field/source/domain jets,
+the full derivative2e-10 gate, one subsequent original coupled correction,
+Maxwell/all226 after-validation, physical spin normalization and magnetic
+moment remain open. No measured muon moment has been used as an input.

@@ -1,0 +1,118 @@
+EXACT STRONG REALIZATION OF THE EXISTING REFLECTED NATIVE FORM
+2026-10-15. Construction and application, not a physical pole prediction.
+
+The code now constructs the canonical strong graph of the already retained
+reflected-geometric positive form. It does not choose another Wick contour
+or replace the original analytic action's measure or independent dual.
+
+On its declared real integration parameter s, let
+  A=b(s) partial_s+C(s),
+  q[u,v]=integral (Au)^dagger G(s) Av ds,
+  <u,v>_G=integral u^dagger G(s) v ds.
+G is the positive Hermitian matrix density, without numerical quadrature
+weights. b is nonzero and complex. C can contain general complex gauge,
+spin and Higgs bodies. Neither C nor its temporal part need be Hermitian
+or anti-Hermitian. Direct integration by parts, without deleting any rate,
+gives
+  A*_G=-conj(b) partial_s+G^-1 C^dagger G
+       -G^-1 partial_s(conj(b) G),
+  p_v=conj(b) G Av,
+  q[u,v]-<u,A*_G Av>_G=[u^dagger p_v].
+
+For P=A*_G A and P u=z u, the state Y=(u,p) obeys
+  u'=-b^-1 C u+(|b|^2 G)^-1 p,
+  p'=-z G u+conj(b)^-1 C^dagger p.
+The clock/density derivatives are absorbed into the exact canonical p;
+they have not been discarded. Their full expanded contribution is in the
+displayed formal adjoint. With S=(0,I;-I,0), its matrix H satisfies
+  H(z1)^dagger S+S H(z2)
+    =diag((conj(z1)-z2)G,0).
+The same-real-z graph therefore conserves the canonical Green pairing.
+An inhomogeneous equation P u=z u+f adds (0,-G f), including actual source
+transport and corner data when supplied. This local graph does not create
+an outgoing boundary condition or turn the heat spectral parameter z into
+the unsquared physical pole energy E.
+
+All value,x,y,xy generator jets are now computed by differentiated linear
+solves. They include G,b,C,z jets, both ordered mixed products and all
+inverse contacts. Every input jet is mandatory, including an action-owned
+zero. The parameters x,y are REAL: derivatives of a Hilbert adjoint then
+dagger each coefficient jet. Independent holomorphic source coefficients
+in the analytic action are a different construction and are not conjugated
+or replaced by this operation.
+
+Existing temporal connection: reconciliation
+
+The stronger retained source
+  muon_owned_native_product_connection.owned_native_product_node
+already binds the real common-A component Omega_factor=Omega_L,t/N with
+the actual spin/gauge/Higgs body, source conversion, geometric pairing and
+finite initial/free-final core. Its completed physical exterior is open.
+The corrected coefficient graph additionally has the explicitly retained
+reflected-coframe geometric form in muon_transported_native_pairing.py.
+The generic factor_temporal_native_binding=None contract is not evidence
+that these derived components or their nonzero connection are absent.
+The missing task is their joint full-domain/exterior realization; it is
+not permission to invent a new temporal connection or erase Omega.
+
+Application to actual frozen coefficients
+
+All 3832 saved corrected coefficient points were consumed, using the full
+18-component point fiber (three families, complete two-component Weyl spin
+entries) on its represented normalized constant-angular space. No current,
+source, field, inverse, D5, profile, history or pairing campaign was replayed.
+No complex primal field was projected to real. The independently saved
+body branch Csharp equals C^dagger and wsharp equals conj(w) exactly in
+these frozen operands. The original quadrature weight was stripped before
+constructing G=|w| I, with b=1/w. Thus the independently reconstructed graph
+is exactly
+  H_z=(-w C, |w| I; -z |w| I, conj(w) Csharp).
+The generic solve-based graph agrees within 3.112e-16 relative; the Green
+identity within 4.994e-17 relative; the conormal's reconstructed u' within
+4.949e-16 relative. The represented non-Hermitian body has maximum norm
+5.524e-8 and is preserved. Spin and temporal terms remain in C unchanged.
+
+The evaluated z derivative holds those saved coefficients and pairing
+fixed, with z0=0 and dz/dx=1. Its only block is H_x,21=-G. This is a
+formal local spectral coefficient, not the requested total outgoing E/B
+derivative. The zero other-direction jets belong only to that explicitly
+fixed-background algebraic path. No unknown physical variation is zeroed.
+
+Actual original corner domain
+
+The already evaluated analytic density transport keeps original right u
+continuous and transports its native conormal by p_plus=t p_minus, where
+t=rho_minus/rho_plus. Its independent left trace has inverse transfer.
+For M_R=diag(I,t I), an ordinary Hilbert identification would require
+  M_R^dagger S M_R=S,
+whose defect has upper-right (t-1)I and lower-left -(conj(t)-1)I.
+On all 1149 saved internal joins that defect is nonzero; its largest
+entry magnitude is 1.8477590652457272. However the independent analytic
+dual satisfies ell*t=1 within 2.221e-16. The two facts are consistent:
+the analytic pairing is contragredient, not an imposed Hilbert dagger.
+This is no failed physical equation and no evidence for changing a corner
+phase. It proves that the unchanged-primal analytic domain is not already
+the ordinary reflected-geometric self-adjoint domain. The physical joint
+primal/dual spin-bundle lift and exterior must establish that matching.
+
+The original independent-left density transport also includes the bulk
+contact -(partial_s log rho)/wsharp. A corner-only phase replacement
+followed by changing the left body to C^dagger would lose that same-action
+contact. The new strong graph realizes the already declared positive
+geometric form; it does not prove equivalence to the analytic-dual action.
+
+Independent verification
+
+Five focused tests compare full noncommuting complex mixed jets to MP70
+literal matrix formulas, retain a nonzero temporal Omega, and compare a
+variable-clock/density/body Green integral to its literal endpoint term at
+MP65. The latter tests the omitted-rate risk directly and independently.
+Missing, nonpositive and incompatible density jets are rejected. Two actual
+3832-point applications are materialized separately with identical bytes.
+These component checks are not a physical derivative or convergence gate.
+
+No coupled matching correction, full native P_strat, physical outgoing
+solution, radial/complete angular enclosure, normalized physical spin pair
+or magnetic moment is produced. The next domain step must use the actual
+owned cross-stratum form and joint primal/dual transport. After that comes
+the full outgoing derivative test, before the one authorized correction.

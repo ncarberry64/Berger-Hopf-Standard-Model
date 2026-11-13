@@ -1,0 +1,216 @@
+{
+  "Gate7_invoked": false,
+  "arithmetic_control": {
+    "E": 2.0,
+    "E_x": 0.1076923076923077,
+    "E_xy": 0.033374773374773375,
+    "E_y": -0.06153846153846153,
+    "M_x_norm": 0.047434164902525694,
+    "M_xy_norm": 0.007,
+    "M_y_norm": 0.0304138126514911,
+    "checks": {
+      "M_norm_residual": 0.0,
+      "eigen_residual": 0.0,
+      "mixed_symmetry_residual": 0.0,
+      "x_directional_residual": 6.938893903907228e-18,
+      "x_normalization_residual": 3.469446951953614e-18,
+      "y_directional_residual": 0.0,
+      "y_normalization_residual": 0.0
+    },
+    "classification": "ARITHMETIC_CONTROL_ONLY__NO_PHYSICAL_ENERGY",
+    "dimension": 3,
+    "explicit_inverse_formed": false,
+    "finite_differences": [
+      {
+        "E_x": 0.10769230774609895,
+        "E_xy": 0.033374773389382995,
+        "E_y": -0.06153846155099174,
+        "max_M_normalization_residual": 4.440892098500626e-16,
+        "min_branch_overlap": 0.9999884617981486,
+        "mixed_error": 1.4609619070071744e-11,
+        "step": 0.001,
+        "x_error": 5.3791249232659766e-11,
+        "y_error": 1.253021297831225e-11
+      },
+      {
+        "E_x": 0.10769230770613092,
+        "E_xy": 0.03337477272324918,
+        "E_y": -0.06153846154077769,
+        "max_M_normalization_residual": 4.440892098500626e-16,
+        "min_branch_overlap": 0.999994230834155,
+        "mixed_error": 6.515241957050222e-10,
+        "step": 0.0005,
+        "x_error": 1.382322034615413e-11,
+        "y_error": 2.3161611517608094e-12
+      },
+      {
+        "E_x": 0.10769230769724913,
+        "E_xy": 0.03337477672005207,
+        "E_y": -0.06153846153944542,
+        "max_M_normalization_residual": 6.661338147750939e-16,
+        "min_branch_overlap": 0.999997115400847,
+        "mixed_error": 3.3452786929455414e-09,
+        "step": 0.00025,
+        "x_error": 4.941436149152878e-12,
+        "y_error": 9.838935222106215e-13
+      }
+    ],
+    "fixed_M_mixed": 0.035591815591815595,
+    "moving_M_changes_mixed": 0.00221704221704222,
+    "selected_physical_mode": false
+  },
+  "classification": "AE4_LENGTH_IDENTIFICATION_UNRECONCILED_AFTER_RHO_B2",
+  "error_scope": {
+    "finite_control": "binary64 generalized eigensolve, directional/normalization residuals and finite-difference consistency; NOT a rigorous truncation or physical error bound",
+    "identities": "exact symbolic identities",
+    "physical_numerical": null,
+    "physical_theoretical": null
+  },
+  "exact_reduction": {
+    "bulk_only_threshold_residual": "-S/M",
+    "classification": "EXACT_ALGEBRA_AND_IDENTIFICATION_CONTROL_ONLY",
+    "formation_vs_energy": {
+      "E_x": -2,
+      "E_xy": 2,
+      "E_y": -2,
+      "analytic_crossing": "tau=(x+y)^2",
+      "bare_R_x": 0,
+      "bare_R_xy": 0,
+      "bare_R_y": 0,
+      "control_A_at_zero": [
+        [
+          0,
+          0
+        ],
+        [
+          0,
+          1
+        ]
+      ],
+      "control_R": [
+        [
+          2,
+          1
+        ],
+        [
+          1,
+          3
+        ]
+      ],
+      "crossing_tau_x": 0,
+      "crossing_tau_xy": 2,
+      "crossing_tau_y": 0,
+      "energy_eigenline_residual_squared_at_zero": 1,
+      "formation_equation": true,
+      "hypothetical_formation_example_not_installed": true,
+      "line_normalized": true,
+      "selected_energy": "(-x - y + (x + y)*(3*x + 3*y - 1) + 2)/((x + y)**2 + 1)"
+    },
+    "geometric_pairing_not_assumed_identity": true,
+    "one_mode_ratio": "D/(gamma J+Z); no independently selected scalar impedance",
+    "total_resistance_threshold_identity": "0"
+  },
+  "execution": {
+    "elapsed_seconds": 0.9213407000061125,
+    "new_control_dimension": 3,
+    "old_producers_replayed": 0,
+    "old_targeted_checks_rerun": 0,
+    "physical_eigenbranches_evaluated": 0,
+    "physical_heat_contractions": 0
+  },
+  "frozen_local": {
+    "a_mu_QED_local": "0.00116550200495813",
+    "a_mu_selected_local_open_interval": [
+      "0.0011655039493",
+      "0.0011655109506"
+    ],
+    "already_combined_selected_local": true,
+    "calibration_convention": "alpha_inverse=137.035999084; standard uncertainty=2.1e-8; other original conditional inputs fixed",
+    "calibration_only_standard_uncertainty": "1.79e-13",
+    "delta_a_mu_h_local_1_open_interval": [
+      "0",
+      "3.500331e-9"
+    ],
+    "native_added": false,
+    "publication_paths": "Portable logical provenance; original local metadata and evaluated revision snapshot preserved in standalone handoff."
+  },
+  "inherited_domains_changed": false,
+  "native_heat_default_length_used": false,
+  "new_result": "operator-level supersession and exact one-mode threshold residual; missing AE4 energy/surface identification established without inventing a scalar law",
+  "new_scalar_constitutive_law_inserted": false,
+  "physical": {
+    "AE4_length_contribution": null,
+    "E": null,
+    "E_J": null,
+    "E_v": null,
+    "E_vJ": null,
+    "H_J": null,
+    "H_owned": null,
+    "H_v": null,
+    "H_vJ": null,
+    "M_J": null,
+    "M_owned": null,
+    "M_v": null,
+    "M_vJ": null,
+    "R_ind": null,
+    "a_mu": null,
+    "c_jets": null,
+    "completed_photon_response": null,
+    "crossing_jets": null,
+    "ell_jets": null,
+    "family_native_heat": null,
+    "g_mu": null,
+    "psi_star": null
+  },
+  "physical_eigenvalue_or_frequency_chosen": false,
+  "preferred_physical_E_vJ_evaluated": false,
+  "prior_local_source_result_preserved": {
+    "compact_K_J_norm": 0.19919498467801033,
+    "contacts_norm": 0.6575736489779195,
+    "targeted_checks_not_rerun": 7
+  },
+  "reconciliation": {
+    "AE4_inverse_energy_amended_by_mechanics": false,
+    "actual_AE4_length": "ell_star=1/E_impedance[Phi_star;Sigma_star]",
+    "actual_AE4_surface": "Sigma_star=FIRST_FUTURE_SURFACE_WHERE_E_impedance[Phi;Sigma]=E_core[Phi;Sigma]_AND_OUTWARD_SPACETIME_SUPPORT_CEASES",
+    "actual_formation_definition": "rho_B=sup_(psi!=0) <psi,H_event,drive psi>/<psi,(gamma_s J_Sigma+H_impedance)psi>",
+    "actual_formation_threshold": "rho_B=1 exactly when the corresponding simple mode of H_form vanishes",
+    "actual_historical_relation": "corrected operator-valued version of E_mode/E_impedance; the old scalar rho_hold is recovered only after a one-mode common-charge reduction",
+    "bulk_only_threshold_residual": "at (R-D)psi=0: psi_dagger(H_impedance-D)psi=-gamma psi_dagger J_Sigma psi",
+    "classification": "AE4_LENGTH_IDENTIFICATION_UNRECONCILED_AFTER_RHO_B2",
+    "common_charge_energy_pairing_supplied": false,
+    "current_formation_operator": "R=gamma J_Sigma+H_impedance; D=H_event,drive; A_form=R-D on the common reduced space",
+    "formation_authority": "BHSM-AE-3.2.16-COVARIANT-BUBBLE-INTERFACE-MECHANICS",
+    "full_heat_owner_superseded": false,
+    "independent_scalar_law_route_withdrawn": true,
+    "interface_scalar_exclusion": [
+      "rho_hold before common charges exist",
+      "historical synthetic E_mode/E_impedance numbers",
+      "Planck or phenomenological thresholds",
+      "independent child-mode amplitudes"
+    ],
+    "minimal_amendment": {
+      "alternative": "a different already-owned scalarization/event relation would require its explicit action equality and provenance",
+      "equation": "E_impedance_AE4 = iota_star_dagger R iota_star / (iota_star_dagger M_E iota_star); E_core_AE4 = iota_star_dagger D iota_star / (iota_star_dagger M_E iota_star)",
+      "name": "same-action one-mode/common-charge identification of AE4 length and crossing",
+      "prohibited": "no arbitrary function, fitted scale, M_E=I shortcut, ell_s=ell_star equality, inverse eigenvalue/frequency choice or surface-term deletion",
+      "required_derivation": "identify the SAME AE4 support-loss surface/eigenline with the relevant constrained formation branch, and derive M_E with energy units from the owned common-charge/clock pairing",
+      "scope": "compatibility schema for the historical formation-ratio interpretation; NOT adopted here and NOT uniquely fixed by RHO-B2"
+    },
+    "not_a_logical_no_go_for_compatible_future_matching": true,
+    "not_an_unfinished_scalar_numerical_solve": true,
+    "physical_E": null,
+    "physical_E_J": null,
+    "physical_E_v": null,
+    "physical_E_vJ": null,
+    "physical_H_owned": null,
+    "physical_M_owned": null,
+    "physical_psi_star": null,
+    "resistance_in_historical_formation_ratio": "gamma J_Sigma+H_impedance, not H_impedance alone",
+    "scalar_formation_reduction": "rho_line=(psi_dagger D psi)/(psi_dagger R psi) on the same common-charge line",
+    "scalar_holding_hypothesis_superseded_by_RHO_B2": true,
+    "selected_event_equivalence_supplied": false,
+    "surface_term_proved_zero": false
+  },
+  "synthetic_rho_hold_inserted": false
+}

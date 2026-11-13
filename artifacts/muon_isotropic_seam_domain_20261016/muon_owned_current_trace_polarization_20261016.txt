@@ -1,0 +1,230 @@
+OWNED REAL CURRENT DETERMINES SELECTED DIRAC GREEN COORDINATES
+
+Analytic source-level derivation. This constructs trace coordinates and a
+retained complementary projector, not a new interface law, a closed
+continuum domain, a numerical packet, or a physical outgoing solution.
+
+Repository:
+C:/Users/carbe/Downloads/BHSM_muon_parent_maxwell_worktree_20261001
+
+1. Source operands and real-slice scope
+
+muon_full_d5_localized_lepton_trace.py:19 constructs the full384 carrier,
+the actual W: C18 -> C384, W^dagger W=I18, and the charge-conjugate and SM
+complements. W selects L on left Spin4 in the particle module and e_R on
+right Spin4 in the conjugate module. It does not replace the full carrier
+by an invented normal Clifford matrix on18.
+
+The moving real-wall spin frame S and its analytic inverse are owned at
+line118. Its real current identity is
+
+ S^dagger G S=I,             G=Gamma0 Gamma_T >0.
+
+The actual signed principal adapter is
+muon_holomorphic_d5_trace_action.py:199. For orientation eps it uses
+
+ Gamma_T=(Gamma0-eps U Gamma4)/sqrt(1-U^2),
+ Gamma_N=(eps Gamma4-U Gamma0)/sqrt(1-U^2),
+
+and the stable helper's velocity -eps U. Thus S^-1 Gamma_T S=Gamma0 and
+S^-1 Gamma_N S=eps Gamma4. Here and below all128 Clifford matrices are
+lifted to all three families; no family, spin or conjugate sector is
+discarded. These identities concern a real timelike wall, |U|<1, with
+the originating Lorentz signature Gamma_T^2=I, Gamma_N^2=-I and
+{Gamma_T,Gamma_N}=0.
+
+The normalized geometric point trace and mode lift (line156) are
+
+ E=u_R S W,           B=W^dagger S^-1/u_R,          B E=I18.
+
+W is real in the fixed source frame, so its literal transpose there is
+also its dagger. This real Riesz calculation does not conjugate an
+independent analytically continued source coefficient or its jets.
+u_R may have a mode phase and must be nonzero at the selected wall. Its
+actual value still has to be supplied by the owned normal-mode problem;
+the formulas do not choose a value or normalize the physical pole.
+
+2. Exact current Riesz identity and normal isotropy
+
+Let rho>0 denote the physical wall density relative to the chosen
+coordinate boundary measure; outward orientation is in Gamma_N, not in
+the sign of rho. Define
+
+ H=rho G,                 A=Gamma_T Gamma_N,
+ J=i H A=i rho Gamma0 Gamma_N.
+
+Then
+
+ A^2=I,       A^dagger H=H A,       J^dagger=-J.
+
+The selected trace is normal-Green isotropic:
+
+ E^dagger J E=0.                                           (1)
+
+Indeed S^dagger Gamma0 Gamma_N S=eps Gamma0 Gamma4, and
+W^dagger Gamma0 Gamma4 W=0. The latter follows directly from the owned
+W and Clifford blocks: Gamma0 Gamma4 changes the selected Lorentz
+chirality inside a fixed internal carrier, while W has only one of those
+chiralities for that carrier. Particle L and conjugate e_R occupy
+different carrier blocks, so their cross terms are zero as well. This
+checks the full18 trace, rather than just one family or one spin.
+
+Its positive current Gram is
+
+ K=E^dagger H E=rho |u_R|^2 I18.
+
+Consequently its current Riesz left inverse is exactly the provided B:
+
+ K^-1 E^dagger H
+ =(|u_R|^2)^-1 u_R^* W^dagger S^dagger G
+ =W^dagger S^-1/u_R=B.                                    (2)
+
+Thus this inverse is derived from the owned current and mode lift. No
+additional choice of phase, polarization angle, or constant is needed
+to obtain these selected trace coordinates.
+
+3. Canonical partner and complete complementary projector
+
+The following specific partner is determined by the same H,A,E:
+
+ F=-i A E K^-1.                                           (3)
+
+Using (1), (2), A^2=I and A^dagger H=H A gives
+
+ B E=I,              B F=0,
+ E^dagger J E=0,      E^dagger J F=I,
+ F^dagger J E=-I,     F^dagger J F=0,
+ F^dagger J=-B,       J F=B^dagger.                        (4)
+
+For an arbitrary full-carrier boundary trace x define
+
+ q=B x,                    p=E^dagger J x,
+ P=E B+F E^dagger J,        R=I-P.
+
+There is the exact decomposition
+
+ x=E q+F p+r,              r=R x.                         (5)
+
+The identities (4) imply
+
+ P^2=P,           P^dagger J=J P,
+ R^2=R,           R^dagger J=J R,
+ R E=R F=0,       B R=E^dagger J R=0.
+
+In particular the remaining field is Green-orthogonal to BOTH selected
+pieces. The complete Green pairing is
+
+ x^dagger J y=q_x^dagger p_y-p_x^dagger q_y+r_x^dagger J r_y. (6)
+
+Equations (5)-(6) are genuine canonical selected Green coordinates, not
+a projection that deletes the original SM/charge-conjugate complement.
+This specific F is current-derived; alternative coordinate changes need
+not be investigated or used to select a boundary condition here.
+
+4. Both physical eta sheets and the actual LR trace partition
+
+The action at muon_holomorphic_d5_trace_action.py:272 already specifies
+
+ B_tot=[P_L B_+, P_R B_-],
+ E_tot=[E_+ P_L; E_- P_R],
+
+where P_L has rank12, P_R has rank6, P_L+P_R=I18, P_L P_R=0.
+Use the block physical current and outward normal coefficients
+
+ H_tot=diag(rho_+ G_+,rho_- G_-),
+ A_tot=diag(A_+,A_-),       J_tot=i H_tot A_tot.
+
+Each outward sign is already in its A_eta. Separate rho_eta>0 allow the
+coordinate density on each physical side to be handled explicitly;
+their equality can be imposed when the actual common wall chart supplies
+it. There is no orientation sign hidden in a positive current measure.
+
+The entire stacked E_tot is isotropic, since its diagonal Green terms
+are P_L E_+^dagger J_+ E_+ P_L and
+P_R E_-^dagger J_- E_- P_R, each zero by (1), and there are no sheet cross
+terms in the bulk Green form. Its positive current Gram is
+
+ K_tot=rho_+ |u_+|^2 P_L+rho_- |u_-|^2 P_R.
+
+The current left inverse again reproduces the action's exact map:
+
+ K_tot^-1 E_tot^dagger H_tot=[P_L B_+, P_R B_-]=B_tot.
+
+Now substitute H_tot,A_tot,E_tot,K_tot in (3)-(6). This constructs the
+full two-sheet partner F_tot and the full two-sheet complementary
+projector R_tot with no new incidence. The LR Higgs bridge remains its
+already-owned once-only seam action. The physical eta sheets in this
+calculation are not temporal parent/child arms of the AE2 reset.
+
+For the supplied384 carrier on each side, E_tot and F_tot each have
+rank18, P_tot has rank36, and R_tot retains732 trace dimensions. In a
+regular noncharacteristic neutral-signature Dirac boundary setting, a
+maximal isotropic full trace subspace has dimension384. A selected
+Hermitian p-versus-q graph would account for only18 such dimensions;
+the complementary original domain would still have to supply the other
+366. This count does not select those complementary conditions or prove
+their Sobolev closure/well-posedness. The separate retained complement
+is not an extra fermion copy or an extra loop multiplicity.
+
+5. What these coordinates do not derive from the seam form
+
+The current construction provides (q,p,r), not a relation p=M q. On the
+real slice a Hermitian selected matrix T makes p=T q isotropic in (6),
+but isotropy alone is not stationarity of the originating action and is
+not maximality or closure of the full domain.
+
+In particular consider the abstract formal-symmetry convention
+
+ <V,L U>-<L V,U>=<gamma V,J gamma U>.
+
+Then the symmetrized bulk weak expression is
+
+ a_sym(V,U)=1/2[<V,L U>+<L V,U>]
+          =<V,L U>-1/2<gamma V,J gamma U>.
+
+On the selected coordinates its real boundary variation is proportional
+to Re[delta p^dagger q-delta q^dagger p]. A Hermitian generating seam
+-q^dagger T q adds -2 Re[delta q^dagger T q]. Thus freely varying BOTH
+q and p in this symmetrized expression does not give p=T q or p=-T q.
+If, conditionally, one added the boundary Legendre term
+-Re(q^dagger p), the selected boundary variation instead becomes
+-2 Re[delta q^dagger(p+T q)], producing p=-T q in this convention.
+No such addition is made here. Its admissibility must come from the
+originating action/variation class; a coordinate change cannot supply it.
+If the seam is written with an explicit common rho, T here denotes its
+full density-weighted coefficient, including that rho once.
+
+More generally, with a trace form <gamma V,V_H gamma U>, unrestricted
+broken-H1 tests and a purely bulk-L2 operator output would force
+(V_H-J/2)gamma U=0. Already at V_H=0 and invertible J this gives zero
+trace, not the owned transparent internal transmission. Keeping an
+unchanged one-global-H1 transmission and adding a nonzero trace form as
+if it were an ordinary bounded bulk mass also leaves a surface-supported
+Euler distribution. These are warnings about two invalid shortcuts,
+not a universal model no-go or proof of a new action/coupling gap.
+
+The correct next mathematical construction is to use the actual full
+action-owned admissible variation/trace class, including all retained
+complementary equations and its physical exterior, and prove its Green
+maximality and closed continuum realization. The finite point border
+and the normal-mode identity do not establish that theorem by themselves.
+Conversely, this note does not rule out that stronger foundational
+owners complete it. No additional Cayley phase, trace average, UV field,
+second intrinsic kinetic action, or guessed delta regularization follows.
+
+AE2's regular temporal internal glue separately already owns the trace
+AND variation graph, and opposite-normal Green cancellation, with no
+independent fermion surface action. The nonzero eta-Higgs seam must not
+be silently identified with that different locus.
+
+6. Scope
+
+The exact constructible advancement is the normalized real B identity,
+selected isotropy on both physical eta sheets, its current-derived F,
+canonical q/p Green decomposition, and explicit retained complement.
+This is a source-level algebraic derivation on a real regular wall. It
+does not pick u_eta, a physical mean field, an outgoing exterior, a pole,
+the full microscopic D_strat domain, or energy/field derivatives. It does
+not apply conjugation rules to independent complex analytic source axes.
+No physical derivative admission, coupled correction, two-spin pole
+normalization, or muon magnetic moment is claimed.

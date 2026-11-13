@@ -1,0 +1,886 @@
+diff --git "a/C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\scripts\\complete_muon_first_order_LL_restriction.py" "b/C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\scripts\\complete_muon_first_order_LL_restriction.py"
+new file mode 100644
+index 00000000..027be876
+--- /dev/null
++++ "b/C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\scripts\\complete_muon_first_order_LL_restriction.py"
+@@ -0,0 +1,83 @@
++"""Add the once-owned intrinsic LL action to saved first-order blocks.
++
++No QQ solve, parent action, mode normalization or source response is rerun.
++This uses the now-justified physical LL test lift of the unadopted proposal.
++"""
++from pathlib import Path
++import argparse,hashlib,json,os,sys
++os.environ.setdefault('OPENBLAS_NUM_THREADS','1')
++import numpy as np
++
++
++def read(p):
++    with np.load(p,allow_pickle=False) as z:return {k:np.array(z[k]) for k in z.files}
++
++
++def compute(root,base):
++    sys.path.insert(0,str(root/'src'))
++    from bhsm.interface.muon_first_order_complement import bubble_element
++    from bhsm.interface.muon_parent_maxwell_velocity import current_parent_fields
++    a=read(base/'first_order_compact_reduction.npz')
++    # Relocatable paths are established from the preserved repository layout.
++    wall_path=root/'artifacts/muon_wall_input_attachment_20261005/run_1/node3_projected_intrinsic_kinetic.npz'
++    radial_path=root/'artifacts/muon_radial_inclusion_action_20261004/replay_reference/radial_source_action_and_interface.npz'
++    retained_path=root/'artifacts/muon_retained_tail_core_20261005/run_1/retained_tail_points.npz'
++    intrinsic_path=root/'artifacts/action_extension/BHSM_AE31_C2_INTRINSIC_M4_LEPTON_ACTION.json'
++    contact_path=root/'artifacts/muon_parent_source_contact_20261003/replay_reference/parent_source_contact.npz'
++    w=read(wall_path);rad=read(radial_path);history=read(retained_path)
++    grid=read(contact_path)['rho']
++    G=rad['common_parent_Gamma'];rmap=a['wall_input_in_full_source_coordinates'];moments=[];target=[];points=[]
++    for k,node in enumerate((3,4)):
++        index=int(np.flatnonzero(history['node_indices']==node)[0]);lr=float(history['log_radius'][index])
++        geom=current_parent_fields(history['states'][index:index+1],np.array([lr]),grid)
++        R=float(np.exp(lr));bg=float(-geom['B'][0,-1]/(geom['A'][0,-1]*np.hypot(geom['A'][0,-1],geom['B'][0,-1])))
++        mu=2*np.pi**2*R**3;cf,ct=a['canonical_maps'][k]
++        h=np.zeros((6,6),complex);gram=h.copy()
++        for n in (1,3):
++            xi=np.einsum('omki,ij->omkj',w[f'normalized_wall_W_input_n{n}'],rmap,optimize=True)
++            E=rad[f'angular_E_n{n}']
++            angular=sum(np.einsum('oi,imkj,vm->ovkj',1j*G[j+1],xi,E[j],optimize=True) for j in range(3))
++            angular+=np.einsum('oi,imkj->omkj',rad['angular_spin'],xi)
++            zero=angular/R+bg*np.einsum('oi,imkj->omkj',rad['commonA_gauge_unit'],xi)
++            barred=np.einsum('oi,imkj->omkj',G[0],zero)
++            x=xi.reshape(-1,6);z=barred.reshape(-1,6)
++            h+=mu*(x.conj().T@z+z.conj().T@x)/2
++            gram+=mu*x.conj().T@x
++        # The pure imaginary time connection / C_tau terms cancel in the
++        # bidirectional density. Their Euler measure term remains inherited.
++        moments.append((cf*cf*h,1j*cf*cf*gram));target.append((h,1j*gram))
++        points.append(dict(node=node,radius=R,wall_commonA=bg,canonical_C=cf,canonical_C_tau=ct,
++            proper_clock='same retained point',temporal_density='symmetric: scalar C_tau cancels; Euler measure derivative retained',
++            one_owned_LL_Yukawa_block='zero on LL-only test since e_R component=0; full YH bridge unchanged, not zeroed'))
++    A4=bubble_element(*moments,a['temporal_jacobians'],6)['A_full']
++    target4=bubble_element(*target,a['temporal_jacobians'],6)['A_full']
++    ARR=a['A_RR_parent']+A4;eff=ARR+a['restricted_correction']
++    data=dict(A_intrinsic_LL_canonical=A4,A_retained_local_LL_reference=target4,
++        A_RR_complete_LL=ARR,A_eff_complete_LL_compact=eff,
++        A_eff_minus_local_LL_reference=eff-target4,
++        intrinsic_point_S0=np.array([p[0] for p in moments]),intrinsic_point_S1=np.array([p[1] for p in moments]))
++    result=dict(classification='COMPLETE_PROPOSED_LL_COMPACT_ACTION_WITH_REUSED_Q_CORRECTION_NOT_FULL_RETARDED_MATCHING',
++        points=points,QQ_solution_reused=True,QQ_solution_rerun=False,
++        parent_plus_intrinsic_plus_seam='same proposed action; seam zero on applicable smooth/compact traces',
++        local_reference_difference_norm=float(np.linalg.norm(eff-target4)),
++        interpreted_as_required_nonlocal_zero=False,kinetic_low_energy_matching_coefficient=None,
++        explicit_YH_bridge='once, unchanged in previous canonical convention; e_R response not realized by LL-only restriction',
++        physical_photon_vertex=None,quantum_measure=None,same_owner_subtraction=None,
++        full_causal_effective_action=None,native_operator_updated=False,physical_a_mu=None,physical_g_mu=None,
++        comparison_scope='difference from adopted local kinetic reference on two temporal bubbles, not a low-energy expansion or proof that permissible nonlocal dressing must vanish')
++    inputs=dict(base_arrays=base/'first_order_compact_reduction.npz',base_result=base/'result.json',wall=wall_path,
++        radial=radial_path,retained=retained_path,intrinsic=intrinsic_path,contact=contact_path,script=Path(__file__).resolve(),
++        module=root/'src/bhsm/interface/muon_first_order_complement.py')
++    return data,result,inputs
++
++
++if __name__=='__main__':
++    p=argparse.ArgumentParser();p.add_argument('--repository',type=Path,default=Path(__file__).resolve().parents[1]);p.add_argument('--input',type=Path,required=True);p.add_argument('--output',type=Path,required=True)
++    arg=p.parse_args();out=arg.output.resolve()
++    if out.exists():raise FileExistsError('new completion directory required')
++    data,result,inputs=compute(arg.repository.resolve(),arg.input.resolve());out.mkdir(parents=True)
++    np.savez_compressed(out/'complete_LL_action.npz',**data)
++    (out/'result.json').write_text(json.dumps(result,indent=2)+'\n')
++    hashes={k:dict(path=str(v),sha256=hashlib.sha256(v.read_bytes()).hexdigest()) for k,v in inputs.items()}
++    (out/'input_hashes.json').write_text(json.dumps(hashes,indent=2)+'\n')
++    print(json.dumps(result,indent=2))
+diff --git "a/C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\scripts\\replay_muon_first_order_complement.py" "b/C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\scripts\\replay_muon_first_order_complement.py"
+new file mode 100644
+index 00000000..9ca59a27
+--- /dev/null
++++ "b/C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\scripts\\replay_muon_first_order_complement.py"
+@@ -0,0 +1,163 @@
++"""First-order compact complementary solve; no old production replay."""
++from pathlib import Path
++import argparse,hashlib,json,os,subprocess,sys,time
++os.environ.setdefault('OPENBLAS_NUM_THREADS','1')
++os.environ.setdefault('OMP_NUM_THREADS','1')
++import numpy as np
++
++
++def load(p):
++    with np.load(p,allow_pickle=False) as d:return {k:np.array(d[k]) for k in d.files}
++
++
++def save(p,d):p.write_bytes((json.dumps(d,indent=2,sort_keys=True,allow_nan=False)+'\n').encode())
++def sha(p):return hashlib.sha256(p.read_bytes()).hexdigest()
++
++
++def references(root):
++    a=root/'artifacts';b=a/'muon_retained_tail_core_20261005/run_1'
++    return dict(node3=b/'points/node_03.npz',node4=b/'points/node_04.npz',
++        receipt3=b/'points/node_03.json',receipt4=b/'points/node_04.json',
++        retained=b/'retained_tail_points.npz',
++        wall=a/'muon_wall_input_attachment_20261005/run_1/node3_projected_intrinsic_kinetic.npz',
++        cut=a/'muon_coupled_cut_forms_20261004/run_1/coupled_cut_source_actions.npz',
++        contact=a/'muon_parent_source_contact_20261003/replay_reference/parent_source_contact.npz',
++        radial=a/'muon_radial_inclusion_action_20261004/replay_reference/radial_source_action_and_interface.npz',
++        matching=a/'muon_proposed_seam_matching_20261005/run_2/localized_matching_maps.npz',
++        frozen=a/'muon_proposed_seam_matching_20261005/frozen_locals.json',
++        proposed_equations=a/'muon_proposed_dynamic_seam_20261005/run_2/equations.json',
++        terminal=b/'terminal_core_element.json',
++        raw_producer=root/'src/bhsm/interface/muon_coupled_cut_forms.py',
++        metric_producer=root/'src/bhsm/interface/muon_parent_maxwell_velocity.py',
++        point_producer=root/'src/bhsm/interface/muon_prefix_time_element.py',
++        green_domain=root/'src/bhsm/interface/ae31_c2_chiral_green_domain.py',
++        reset_domain=root/'src/bhsm/interface/action_extension_global_spin_reset_ae2.py',
++        stop_domain=root/'src/bhsm/interface/ae4_current_c2_canonical_stop_domain_bridge.py',
++        boundary_prescription=root/'src/bhsm/interface/aether_unified_m5_m4_pushforward_v15_69.py',
++        module=root/'src/bhsm/interface/muon_first_order_complement.py',
++        proposal_producer=root/'src/bhsm/interface/muon_proposed_dynamic_seam.py',
++        script=Path(__file__).resolve())
++
++
++def calculate(root):
++    sys.path.insert(0,str(root/'src'))
++    from flint import ctx
++    ctx.prec=192
++    from bhsm.interface.muon_first_order_complement import (
++        point_coefficients,canonical_map,first_order_moments,bubble_element,restricted_solve)
++    from bhsm.interface.muon_proposed_dynamic_seam import charged_left_projector
++    refs=references(root)
++    d={k:load(refs[k]) for k in ('node3','node4','retained','wall','cut','contact','radial','matching')}
++    receipts=[json.loads(refs[f'receipt{n}'].read_text()) for n in (3,4)]
++    xi={n:d['wall'][f'normalized_wall_W_input_n{n}'] for n in (1,3)}
++    source=d['wall']['source_coordinates'];G0=d['radial']['common_parent_Gamma'][0]
++    if not np.array_equal(d['node3']['actual_state'],d['wall']['actual_state']):raise ValueError('source/state provenance mismatch')
++    gram=np.zeros((12,12),complex);cross=gram.copy();gram_L=gram.copy()
++    PL=charged_left_projector()
++    for a in xi.values():
++        x=a.reshape(-1,12);y=np.einsum('oi,imkj->omkj',G0,a).reshape(-1,12)
++        gram+=x.conj().T@x;cross+=x.conj().T@y
++        lx=np.einsum('oi,imkj->omkj',PL,a).reshape(-1,12)
++        gram_L+=lx.conj().T@lx
++    transport=np.linalg.solve(gram,cross)
++    closure=sum(np.linalg.norm(np.einsum('oi,imkj->omkj',G0,a)-np.einsum('omki,ij->omkj',a,transport))**2 for a in xi.values())**.5
++    if closure>1e-12:raise ValueError('Gamma0 reached source image requires an additional independent frame')
++    ev,U=np.linalg.eigh(gram_L);keep=ev>1e-12*ev[-1]
++    if sum(keep)!=6:raise ValueError('physical LL source frame rank differs from saved representation')
++    TL=U[:,keep]/np.sqrt(ev[keep])[None,:]
++    r_transform=np.linalg.solve(gram,gram_L@TL)
++    r_source=TL.conj().T@gram_L@source
++    r_frame_error=sum(np.linalg.norm(np.einsum('omki,ij->omkj',a,r_transform)-
++        np.einsum('oi,imkj,jv->omkv',PL,a,TL))**2 for a in xi.values())**.5
++    if r_frame_error>1e-12:raise ValueError('physical wall restriction not contained in supplied source image')
++    fields={};proofs=[];moment_list=[];maps=[];point_ids=[]
++    for k,node in enumerate((3,4)):
++        p=d[f'node{node}'];rc=receipts[k];index=int(np.flatnonzero(d['retained']['node_indices']==node)[0])
++        if not np.array_equal(p['actual_state'],d['retained']['states'][index]):raise ValueError('retained point mismatch')
++        logr=float(d['retained']['log_radius'][index]);grid=d['contact']['rho']
++        s,pf=point_coefficients(p,rc['attachment'],logr,grid,d['cut'],d['contact'])
++        C,Ct=canonical_map(p,rc['attachment'],np.exp(logr),d['cut'],s,d['matching'] if node==3 else None)
++        m0,m1,actions,checks=first_order_moments(p,s,xi,d['radial'],d['cut'],C,Ct,source,r_transform)
++        fields.update({f'node{node}_{a}':v for a,v in s.items()})
++        fields.update({f'node{node}_{a}':v for a,v in actions.items()})
++        moment_list.append((m0,m1));maps.append([C,Ct]);proofs.append(dict(coefficient_proof=pf,action_proof=checks))
++        point_ids.append(dict(node=node,arc=rc['arc'],clock_density=float(p['clock_density']),
++            branch=rc['first_action']['branch'],signed_descriptor=rc['first_action']['signed_descriptor'],
++            canonical_C=C,canonical_C_tau=Ct,normalization='cached I/I_tau/u and WW Cauchy matrix; no mode re-normalization'))
++    width=float(receipts[1]['arc']-receipts[0]['arc'])
++    jac=width*np.array([float(d[f'node{n}']['clock_density']) for n in (3,4)])
++    blocks=bubble_element(*moment_list,jac,6)
++    direction=np.r_[r_source,np.zeros_like(r_source)]
++    solved,status=restricted_solve(blocks,direction)
++    status['restricted_correction_contraction']=[status['restricted_correction_contraction'].real,status['restricted_correction_contraction'].imag]
++    arrays=dict(**fields,**blocks,**solved,source_R_direction=direction,
++        node_moments_S0=np.array([m[0] for m in moment_list]),node_moments_S1=np.array([m[1] for m in moment_list]),
++        canonical_maps=np.array(maps),Gamma0_source_coordinates=transport,source_coordinates=source,
++        source_image_Gram=gram,physical_left_projector=PL,wall_projected_source_Gram=gram_L,
++        wall_frame_TL=TL,wall_input_in_full_source_coordinates=r_transform,
++        wall_test_source_coordinates=r_source,temporal_jacobians=jac)
++    result=dict(classification='DOMAIN_VALID_COMPACT_FIRST_ORDER_GALERKIN_REDUCTION_NOT_RETARDED_OR_NATIVE',
++        first_order_B='Gamma0 D5 raw; A5=(B+Bformal)/2 for literal symmetric proposal',
++        first_order_eta='B_eta=i Gamma0 Gamma4 eta is skew; formal sign reverses; A5W=B5W-B_eta W on interior compacts',
++        source_frame=dict(Q_columns=12,R_physical_LL_columns=6,Gamma0_closure_residual=closure,
++            wall_input_frame_residual=r_frame_error,wall_projected_Gram_eigenvalues=ev.tolist(),
++            wall_test_original_load_projection_norm=float(np.linalg.norm(r_source)),
++            dependent_Gamma0_columns_not_added=True,
++            unmatched_right_spin_LL_retained=True,physical_e_R_realization=False),
++        domain=dict(material='P G0 chi=0,Q_boundary G1 chi=0; each compact p trace is zero',
++            temporal='phi0=x(1-x),phi1=x(1-x)(2x-1), extended by zero on inherited arc6..8 interior segment',
++            other_faces='zero trace on reset,past-prefix,true stop,pole by compact support; not new physical endpoint conditions',
++            seam='all mixed material seam terms zero for these compact Q tests, not zero on general Q domain',
++            complement='not p-W Bvol p; actual bulk-only Q variations in independent H5+H4',
++            wall='R_L=(W Phi_L,w_L), Phi_L=Pi_L Xi T_L; P G0 R_L=E w_L, G1 R_L=0; no right-spin LL declared e_R',
++            test_role='wall basis and original-load projection are diagnostic test directions, not Theta_p, prescribed wall forcing or external muon state'),
++        evaluated_points=point_ids,first_order_column_checks=proofs,restricted_solve=status,
++        same_owner_terms=dict(parent_symmetric_first_order='evaluated on compact trial subspace',
++            proposed_seam='included, zero by applicable traces',intrinsic_wall='Q component zero; intrinsic term remains in A_RR once, not omitted from proposed action',
++            Yukawa='once-owned wall bridge unchanged; no explicit Y/H term in compact QQ,QR,RQ at this fixed background/frame order',
++            quantum_measure=None,completion_and_subtraction=None),
++        matching=dict(direct_result_preserved=True,complete_A_eff=None,
++            correction_scope='24 Q and12 physical LL R coordinates, two bubbles; not the full Q domain or e_R realization; parent contribution only in A_eff_parent_restricted',
++            kinetic_coefficients_of_full_effective_action=None,
++            Yukawa_in_previous_canonical_convention='unchanged once-owned C_L^sharp YH C_R; elimination has no extra explicit YH bridge here',
++            nonlocal_kernel_not_discarded=True,full_matching_outcome='unevaluated; direct restriction remains nonmatching at its preserved scope'),
++        source_jet=dict(coordinate='same photon b_A; beta=T_b b; A_Q=sqrt(2)beta; no rescaling or index2/3',
++            total_AQQ_A=None,total_AQR_A=None,total_ARQ_A=None,physical_source_stationary_return=None,
++            auxiliary_photon_result='previous corrected L contraction preserved; not substituted for physical vertex'),
++        missing_action=dict(name='retarded complementary first-order Green action on reached normal/temporal/angular outputs',
++            equation='a_QQ(eta,X_Q^R w)=a_QR(eta,w) for every eta in Q_domain; support(X_Q^R w) in J_plus support(a_QR w)',
++            material='P G0 X=0,Q_boundary G1 X=0',reset='same inherited U_R trace graph',
++            producer='first-order Euler of proposed S5sym plus proposed material domain and inherited causal/reset continuation; numerical realization not supplied by squared-action tail cache',
++            consumer='a_RQ(v,X_Q^R w) in A_eff and total same-photon derivative',
++            stop_scope='saved stop supplies a nonnegative Friedrichs form closure, not an evaluated first-order retarded terminal relation; no new endpoint parameter asserted',
++            category='unevaluated causal realization of unadopted proposal, not inferred physical absence or new vacuum datum'),
++        error_scope='binary64 model: existing512-point nodal spatial quadrature, linear interpolants of FIRST-ORDER weak moment densities on one retained element, exact degree-polynomial temporal quadrature; no interpolation/history/continuum bound',
++        old_production_rerun=False,old_checks_repeated=False,accepted_parent_solution_changed=False,
++        historical_run1='unaccepted full-carrier R attempt preserved; corrected run2 restricts physical wall LL while keeping unmatched outputs and full Q',
++        native_operator_updated=False,proposal_adopted=False,frozen_locals_changed=False,physical_a_mu=None,physical_g_mu=None)
++    return refs,arrays,result
++
++
++def run(root,out):
++    if out.exists():raise FileExistsError('dedicated new output directory required')
++    start=time.perf_counter();refs,arrays,result=calculate(root);out.mkdir(parents=True)
++    np.savez_compressed(out/'first_order_compact_reduction.npz',**arrays)
++    save(out/'result.json',result)
++    save(out/'input_hashes.json',{k:dict(path=str(p),sha256=sha(p)) for k,p in refs.items()})
++    git=lambda *a:subprocess.check_output(['git','-C',str(root),*a],text=True).strip()
++    save(out/'workspace.json',dict(head=git('rev-parse','HEAD'),branch=git('branch','--show-current'),status=git('status','--short'),
++        scientific_reference='524ed90689bd5923c249bba2e699abf627e703cd'))
++    save(out/'execution.json',dict(command='replay_muon_first_order_complement.py --output '+str(out),
++        wall_seconds=time.perf_counter()-start,old_production_repeated=False,new_Q_solve='first-order compact Galerkin only',
++        full_causal_Q_solve=False,native_heat_evaluations=0,physical_transfer_directions=0))
++    save(out/'checkpoint.json',dict(id='BHSM_MUON_FIRST_ORDER_COMPACT_COMPLEMENT_20261006',
++        new='first-order Green-cancelled forcing and domain-valid restricted stationary solve',
++        next=result['missing_action'],native_adoption=False))
++    save(out/'output_hashes.json',{p.name:sha(p) for p in out.iterdir() if p.is_file()})
++    print(json.dumps(dict(frame=result['source_frame'],points=result['evaluated_points'],
++        solve=result['restricted_solve'],point_actions=result['first_order_column_checks']),indent=2))
++
++
++if __name__=='__main__':
++    p=argparse.ArgumentParser();p.add_argument('--repository',type=Path,default=Path(__file__).resolve().parents[1]);p.add_argument('--output',type=Path,required=True)
++    a=p.parse_args();run(a.repository.resolve(),a.output.resolve())
+diff --git "a/C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\muon_first_order_complement.py" "b/C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\muon_first_order_complement.py"
+new file mode 100644
+index 00000000..b648c804
+--- /dev/null
++++ "b/C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\muon_first_order_complement.py"
+@@ -0,0 +1,180 @@
++"""Compact, domain-valid first-order reduction of the UNADOPTED seam.
++
++This is a restricted stationary action diagnostic on one retained interior
++element. It is not the retarded complementary Green action or a native
++operator update. Cached mode norms, point clocks and profiles are reused.
++"""
++from __future__ import annotations
++import numpy as np
++from bhsm.interface.muon_parent_maxwell_velocity import current_parent_fields
++from bhsm.interface.muon_coupled_cut_forms import field_actions
++
++
++def point_coefficients(point, receipt, log_radius, grid, cut, contact):
++    """Only coefficient reconstruction needed for first-order columns.
++
++    No field/clock/normalization producer is rerun. u,p,I,I_tau,proper
++    clock and metric time jets are the actual retained point operands.
++    """
++    f=current_parent_fields(point['actual_state'][None],np.array([log_radius]),grid)
++    rho=cut['points'];cells=cut['cells'];width=np.diff(grid)[cells]
++    x=(rho-grid[cells])/width
++    val=lambda a:a[cells]*(1-x)+a[cells+1]*x
++    dr=lambda a:np.diff(a)[cells]/width
++    nu,C,r,z=(val(f[k][0]) for k in ('proper_lapse','C_rho','base_radius','proper_shift_rho'))
++    nr,Cr,rr,zr=(dr(f[k][0]) for k in ('proper_lapse','C_rho','base_radius','proper_shift_rho'))
++    Ct=val(point['C_tau_nodes']);rt=val(point['r_tau_nodes'])
++    H=float(receipt['H']);Tb=float(receipt['T_b'])
++    hat=val(contact['spinor_probe_hat_nodes']);hatr=dr(contact['spinor_probe_hat_nodes'])
++    p=point['p'];pr=Tb*(hatr/r-hat*rr/r**2);pt=(-H/2-rt/r)*p
++    h0=(Ct/C+3*rt/r-z*(Cr/C+3*rr/r)-zr)/(2*nu)
++    h4=(nr/nu+3*rr/r)/(2*C);eta=-.5/(C*np.tan(rho/2))
++    s=dict(points=rho,cells=cells,nu=nu,C=C,r=r,z=z,u=point['u'],p=p,
++        pr=pr,pt=pt,h0=h0,h4=h4,eta=eta,a0=point['a0'],
++        bg=-val(f['B'][0])/(val(f['A'][0])*np.hypot(val(f['A'][0]),val(f['B'][0]))),
++        volume=point['volume'],cauchy=point['Cauchy'],Ct_over_C=Ct/C)
++    # Formal divergence is evaluated algebraically, with this same density.
++    div_time=(Ct/C+3*rt/r)/nu
++    div_shift=-(zr+z*(Cr/C+3*rr/r))/nu
++    div_normal=(nr/nu+3*rr/r)/C
++    proof=dict(geometric_formal_dual_time_divergence_residual=float(np.max(abs(div_time+div_shift-2*h0))),
++        geometric_formal_dual_normal_divergence_residual=float(np.max(abs(div_normal-2*h4))),
++        source_profile_reconstruction_residual=float(np.max(abs(p-Tb*hat/r))),
++        radial_probe_end_traces=[float(contact['spinor_probe_hat_nodes'][0]),float(contact['spinor_probe_hat_nodes'][-1])],
++        normalization_producer_rerun=False,clock_producer_rerun=False)
++    return s,proof
++
++
++def canonical_map(point, receipt, radius, cut, s, previous=None):
++    """Use saved WW Cauchy norm; compute only a newly consumed time jet."""
++    if previous is not None:
++        return float(previous['canonical_field_C'][0]),float(previous['canonical_field_C_tau'][0])
++    mu4=2*np.pi**2*radius**3
++    diagonal=point['Ms'][0,0]
++    if abs(diagonal.imag)>1e-13*abs(diagonal.real):raise ValueError('Cauchy diagonal not real within saved arithmetic scope')
++    Z=1+float(diagonal.real)/mu4
++    # I_tau/I is already supplied. No new integral selects or refines u.
++    from flint import arb
++    ratio=float((arb(receipt['I_tau']['arb'])/arb(receipt['I']['arb'])).mid())
++    probability=cut['radial_weights']*point['volume']*point['u']**2/mu4
++    # nu is the saved ratio, avoiding reinterpretation of Cauchy pairing.
++    nu=point['volume']/point['Cauchy']
++    # C_tau was already interpolated when constructing h0; obtain it from
++    # the defining identity with existing r_tau, shift and geometric rates.
++    # The caller supplies the direct scalar expression below.
++    Ct_over_C=s['Ct_over_C']
++    Zt=float(probability@((Ct_over_C-ratio-point['Lnu_direct'])/nu))
++    c=Z**-.5;return c,-Zt*c/(2*Z)
++
++
++def first_order_moments(point, s, xi, radial, cut, Cfield, Cfield_tau, source, r_transform):
++    """Literal symmetrized action, with Gamma0 as the bar map once.
++
++    Matrix S0 is 1/2(Eâ€  M B0+B0â€  M E); S1 is Eâ€ M(i/nu)E.
++    It is not F0â€ MF0. All n1/n3 output channels enter the contraction.
++    """
++    d=len(source);rd=r_transform.shape[1];dim=d+rd;S0=np.zeros((dim,dim),complex);S1=S0.copy()
++    G0=radial['common_parent_Gamma'][0];eta_unit=1j*G0@radial['common_parent_Gamma'][4]
++    apply=lambda a,z:np.einsum('oi,gimkj->gomkj',a,z,optimize=True)
++    data={};selected_checks={};normal_norm=normal_outside=0.
++    gqq=np.zeros((d,d),complex);qrbody=np.zeros((d,rd),complex)
++    forcing_norm=forcing_perp=0.
++    all_forcing=[]
++    weight=cut['radial_weights']*point['volume']
++    for n in (1,3):
++        a=xi[n];ra=np.einsum('omki,ij->omkj',a,r_transform,optimize=True)
++        normal_unit=np.einsum('oi,imkj->omkj',eta_unit,ra)
++        stored_normal=[];stored_forcing=[];wp_error=pp_error=0.
++        for lo in range(0,len(weight),32):
++            hi=min(lo+32,len(weight));sl=slice(lo,hi)
++            sc={k:v[sl] for k,v in s.items()}
++            E=np.concatenate([Cfield*sc['u'][:,None,None,None,None]*ra[None],
++                sc['p'][:,None,None,None,None]*a[None]],axis=-1)
++            DW,Dp,DtW,Dtp=field_actions(sc,a,n,radial)
++            rcols=lambda z:np.einsum('gomki,ij->gomkj',z,r_transform,optimize=True)
++            BR0=Cfield*rcols(apply(G0,DW))+Cfield_tau*rcols(apply(G0,DtW))
++            BQ0=apply(G0,Dp)
++            B0=np.concatenate([BR0,BQ0],axis=-1)
++            B1=np.concatenate([Cfield*rcols(apply(G0,DtW)),apply(G0,Dtp)],axis=-1)
++            count=hi-lo;Ef=E.reshape(count,-1,dim);Bf=B0.reshape(count,-1,dim)
++            pair=lambda x,y:np.einsum('g,gai,gaj->ij',weight[sl],x.conj(),y,optimize=True)
++            S0+=(pair(Ef,Bf)+pair(Bf,Ef))/2
++            S1+=pair(Ef,B1.reshape(count,-1,dim))
++            contract=lambda z:np.einsum('gomki,i->gomk',z,source,optimize=True)
++            pp_error+=np.linalg.norm(contract(Dp)-point[f'Dp_n{n}'][sl])**2
++            wp_error+=np.linalg.norm(contract(DW)-point[f'DWp_n{n}'][sl])**2
++            normal=-Cfield*sc['u'][:,None,None,None,None]*sc['eta'][:,None,None,None,None]*normal_unit[None]
++            forcing=BR0+normal;nf=normal
++            normal_norm+=float(np.einsum('g,gomkj,gomkj->',weight[sl],nf.conj(),nf).real)
++            normal_outside+=float(np.einsum('g,gomkj,gomkj->',weight[sl]*(sc['p']==0),nf.conj(),nf).real)
++            q=sc['p'][:,None,None,None,None]*a[None]
++            gqq+=pair(q.reshape(count,-1,d),q.reshape(count,-1,d))
++            qrbody+=np.einsum('g,gomki,gomkj->ij',weight[sl],q.conj(),forcing,optimize=True)
++            stored_normal.append(nf);stored_forcing.append(forcing)
++        forcing=np.concatenate(stored_forcing);nf=np.concatenate(stored_normal)
++        selected_checks[f'n{n}']=dict(raw_p_columns_vs_cache=float(np.sqrt(pp_error)),
++            raw_W_columns_vs_cache=float(np.sqrt(wp_error)))
++        all_forcing.append((a,forcing))
++        data.update({f'normal_Euler_unit_LL_columns_n{n}':normal_unit,
++            f'normal_Euler_LL_columns_n{n}':nf,f'full_Euler_LL_columns_n{n}':forcing})
++    projection=np.linalg.solve(gqq,qrbody)
++    for a,forcing in all_forcing:
++        q_project=s['p'][:,None,None,None,None]*np.einsum('omki,ij->omkj',a,projection,optimize=True)[None]
++        residual=forcing-q_project
++        forcing_norm+=float(np.einsum('g,gomkj,gomkj->',weight,forcing.conj(),forcing).real)
++        forcing_perp+=float(np.einsum('g,gomkj,gomkj->',weight,residual.conj(),residual).real)
++    proof=dict(selected_cached_raw_actions=selected_checks,
++        symmetric_density_Hermitian_residual=float(np.linalg.norm(S0-S0.conj().T)),
++        first_order_time_density_skew_residual=float(np.linalg.norm(S1+S1.conj().T)),
++        normal_Euler_LL_columns_L2_norm=float(np.sqrt(normal_norm)),
++        normal_Euler_outside_compact_p_support_L2_norm=float(np.sqrt(normal_outside)),
++        full_Euler_LL_columns_L2_norm=float(np.sqrt(forcing_norm)),
++        full_Euler_off_p_frame_L2_norm=float(np.sqrt(forcing_perp)),
++        diagnostic_L2_not_used_as_first_order_inverse=True)
++    return S0,S1,data,proof
++
++
++def bubble_element(left,right,jacobians,r_columns):
++    """Exact Gauss moments of declared linear FIRST-ORDER densities.
++
++    phi0=x(1-x), phi1=x(1-x)(2x-1). Compact extension by zero is H1;
++    both artificial element faces have zero traces. They are trial tests,
++    not selected physical endpoint conditions or a causal inverse.
++    """
++    d=left[0].shape[0];A=np.zeros((2*d,2*d),complex)
++    x,w=np.polynomial.legendre.leggauss(5);x=(x+1)/2;w=w/2
++    for t,wt in zip(x,w):
++        phi=np.array([t*(1-t),t*(1-t)*(2*t-1)])
++        dp=np.array([1-2*t,-6*t*t+6*t-1])
++        h0=(1-t)*jacobians[0]*left[0]+t*jacobians[1]*right[0]
++        h1=(1-t)*left[1]+t*right[1]
++        for i in range(2):
++            for j in range(2):
++                A[i*d:(i+1)*d,j*d:(j+1)*d]+=wt*(phi[i]*phi[j]*h0+
++                    (phi[i]*dp[j]-dp[i]*phi[j])*h1/2)
++    # R,Q at each temporal bubble -> all R coordinates then all Q.
++    ri=np.r_[np.arange(r_columns),d+np.arange(r_columns)]
++    qi=np.r_[np.arange(r_columns,d),d+np.arange(r_columns,d)]
++    return dict(A_full=A,A_RR_parent=A[np.ix_(ri,ri)],A_RQ=A[np.ix_(ri,qi)],
++        A_QR=A[np.ix_(qi,ri)],A_QQ=A[np.ix_(qi,qi)])
++
++
++def restricted_solve(blocks,source):
++    """One solve with all required R columns, never an explicit inverse."""
++    A=blocks['A_QQ'];B=blocks['A_QR'];C=blocks['A_RQ']
++    X=np.linalg.solve(A,B)
++    correction=-C@X
++    rhs=B@source;solution=-X@source
++    residual=A@solution+rhs
++    scale=np.linalg.norm(A)*np.linalg.norm(solution)+np.linalg.norm(rhs)
++    result=dict(A_QQ_condition=float(np.linalg.cond(A)),
++        actual_equation_residual=float(np.linalg.norm(residual)),
++        actual_equation_backward_residual=float(np.linalg.norm(residual)/scale) if scale else 0.,
++        matrix_equation_residual=float(np.linalg.norm(A@X-B)),
++        restricted_correction_contraction=complex(np.vdot(source,correction@source)),
++        restricted_correction_matrix_norm=float(np.linalg.norm(correction)),
++        full_retarded_complementary_action=False,regularizer_added=False,
++        positive_squared_inverse_used=False)
++    return dict(complement_solution_map=-X,complement_rhs=rhs,complement_solution=solution,
++        complement_equation_residual=residual,restricted_correction=correction,
++        A_eff_parent_restricted=blocks['A_RR_parent']+correction),result
+diff --git "a/C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\tests\\test_muon_first_order_complement.py" "b/C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\tests\\test_muon_first_order_complement.py"
+new file mode 100644
+index 00000000..d4fa8f44
+--- /dev/null
++++ "b/C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\tests\\test_muon_first_order_complement.py"
+@@ -0,0 +1,122 @@
++"""Checks of the newly saved first-order reduction, without production replay."""
++from pathlib import Path
++from fractions import Fraction as F
++import json
++import numpy as np
++import pytest
++
++ROOT=Path(__file__).resolve().parents[1]
++OUT=ROOT/'artifacts/muon_first_order_complement_20261006/run_2'
++
++
++@pytest.fixture(scope='module')
++def cached():
++    with np.load(OUT/'first_order_compact_reduction.npz') as z:
++        a={k:np.array(z[k]) for k in z.files}
++    return a,json.loads((OUT/'result.json').read_text())
++
++
++def test_joint_domain_and_physical_wall_frame(cached):
++    a,r=cached;P=a['physical_left_projector']
++    assert np.linalg.norm(P@P-P)==0
++    assert a['wall_frame_TL'].shape==(12,6)
++    assert a['A_QQ'].shape==(24,24) and a['A_QR'].shape==(24,12)
++    assert r['source_frame']['wall_input_frame_residual']<2e-14
++    assert r['source_frame']['Gamma0_closure_residual']<2e-14
++    assert r['source_frame']['dependent_Gamma0_columns_not_added']
++    assert not r['source_frame']['physical_e_R_realization']
++    for p in r['first_order_column_checks']:
++        assert p['coefficient_proof']['radial_probe_end_traces']==[0,0]
++    assert r['domain']['complement'].startswith('not p-W Bvol p')
++
++
++def test_actual_formal_eta_dual_and_reached_complement(cached):
++    a,r=cached
++    path=ROOT/'artifacts/muon_radial_inclusion_action_20261004/replay_reference/radial_source_action_and_interface.npz'
++    with np.load(path) as z:G=z['common_parent_Gamma']
++    mass=1j*G[0]@G[4]
++    assert np.linalg.norm(mass+mass.conj().T)<2e-14
++    for p in r['first_order_column_checks']:
++        proof=p['coefficient_proof'];act=p['action_proof']
++        assert proof['geometric_formal_dual_time_divergence_residual']<1e-13
++        assert proof['geometric_formal_dual_normal_divergence_residual']<1e-13
++        assert act['normal_Euler_outside_compact_p_support_L2_norm']>6
++        assert act['full_Euler_off_p_frame_L2_norm']>40
++        assert act['diagnostic_L2_not_used_as_first_order_inverse']
++    for node in (3,4):
++        with np.load(ROOT/f'artifacts/muon_retained_tail_core_20261005/run_1/points/node_{node:02}.npz') as z:
++            assert abs(z['Ms'][0,0].imag)/abs(z['Ms'][0,0].real)<5*np.finfo(float).eps
++            proofs=r['first_order_column_checks'][node-3]['action_proof']['selected_cached_raw_actions']
++            for n in (1,3):
++                assert proofs[f'n{n}']['raw_p_columns_vs_cache']/np.linalg.norm(z[f'Dp_n{n}'])<5e-15
++                assert proofs[f'n{n}']['raw_W_columns_vs_cache']/np.linalg.norm(z[f'DWp_n{n}'])<5e-15
++
++
++def multiply(a,b):
++    c=[F(0)]*(len(a)+len(b)-1)
++    for i,x in enumerate(a):
++        for j,y in enumerate(b):c[i+j]+=x*y
++    return c
++
++
++def integral(p):return sum((x/F(i+1) for i,x in enumerate(p)),F(0))
++
++
++def test_temporal_element_against_exact_rational_moments(cached):
++    a,_=cached
++    phi=[[F(0),F(1),F(-1)],[F(0),F(-1),F(3),F(-2)]]
++    dp=[[F(1),F(-2)],[F(-1),F(6),F(-6)]]
++    d=a['node_moments_S0'].shape[-1];expected=np.zeros((2*d,2*d),complex)
++    for i in range(2):
++        for j in range(2):
++            product=multiply(phi[i],phi[j])
++            q=multiply(phi[i],dp[j]);v=multiply(dp[i],phi[j])
++            q=[x-y for x,y in zip(q,v)]
++            h0=[float(integral(multiply(product,w))) for w in ([F(1),F(-1)],[F(0),F(1)])]
++            h1=[float(integral(multiply(q,w))/2) for w in ([F(1),F(-1)],[F(0),F(1)])]
++            expected[i*d:(i+1)*d,j*d:(j+1)*d]=sum(h0[k]*a['temporal_jacobians'][k]*a['node_moments_S0'][k]+
++                h1[k]*a['node_moments_S1'][k] for k in (0,1))
++    assert np.linalg.norm(expected-a['A_full'])/np.linalg.norm(expected)<3e-15
++
++
++def test_first_order_restricted_solve_and_claim_boundary(cached):
++    a,r=cached;QQ=a['A_QQ'];QR=a['A_QR'];RQ=a['A_RQ']
++    X=-a['complement_solution_map']
++    assert np.linalg.norm(QQ@X-QR)<3e-16
++    assert np.linalg.norm(a['restricted_correction']+RQ@X)<3e-16
++    spectrum=np.linalg.eigvalsh(QQ)
++    assert spectrum[0]<0<spectrum[-1]  # first-order action, not positive square
++    assert r['restricted_solve']['A_QQ_condition']<1.01
++    assert r['restricted_solve']['restricted_correction_matrix_norm']>.18
++    assert r['source_frame']['wall_test_original_load_projection_norm']<2e-14
++    assert abs(complex(*r['restricted_solve']['restricted_correction_contraction']))<1e-30
++    assert r['matching']['complete_A_eff'] is None
++    assert r['source_jet']['physical_source_stationary_return'] is None
++    assert not r['restricted_solve']['positive_squared_inverse_used']
++    assert not r['native_operator_updated'] and not r['proposal_adopted']
++    assert not r['accepted_parent_solution_changed'] and not r['frozen_locals_changed']
++
++
++def test_once_owned_intrinsic_LL_completion(cached):
++    a,_=cached
++    out=OUT/'ll_completion'
++    with np.load(out/'complete_LL_action.npz') as z:
++        c={k:np.array(z[k]) for k in z.files}
++    r=json.loads((out/'result.json').read_text())
++    assert np.linalg.norm(c['A_RR_complete_LL']-a['A_RR_parent']-c['A_intrinsic_LL_canonical'])<1e-15
++    assert np.linalg.norm(c['A_eff_complete_LL_compact']-c['A_RR_complete_LL']-a['restricted_correction'])<1e-15
++    # The intrinsic time density has the same physical LL pairing and
++    # canonical transformation as the parent. No independent field rescale.
++    for k in (0,1):
++        S1=c['intrinsic_point_S1'][k]
++        gram=(-1j*S1).real
++        assert np.linalg.norm(S1+S1.conj().T)<1e-13
++        assert np.linalg.eigvalsh(gram)[0]>0
++        C=a['canonical_maps'][k,0]
++        assert np.linalg.norm(gram/(C*C)-np.eye(6)*np.trace(gram/(C*C))/6)<1e-12
++    assert r['QQ_solution_reused'] and not r['QQ_solution_rerun']
++    assert not r['interpreted_as_required_nonlocal_zero']
++    assert r['kinetic_low_energy_matching_coefficient'] is None
++    assert all('e_R component=0' in p['one_owned_LL_Yukawa_block'] for p in r['points'])
++    assert r['physical_photon_vertex'] is None and r['full_causal_effective_action'] is None
++    assert not r['native_operator_updated']
+diff --git "a/C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\theory\\muon_first_order_complement_20261006.md" "b/C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\theory\\muon_first_order_complement_20261006.md"
+new file mode 100644
+index 00000000..d46a0557
+--- /dev/null
++++ "b/C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\theory\\muon_first_order_complement_20261006.md"
+@@ -0,0 +1,308 @@
++# First-order complementary action of the proposed seam
++
++Continuation from `262621da4f006929ee62b73d7565e2624054fb75` on
++`codex/muon-parent-maxwell-density-review`, initially clean. Scientific
++reference remains `524ed90689bd5923c249bba2e699abf627e703cd`.
++The average-trace law and its new normal bilinear remain **unadopted**.
++No completed parent production, normalization producer, direct-matching
++residual or corrected auxiliary photon calculation is repeated or refined.
++
++**New result:** the complete proposed action has an executable first-order
++mixed form on a compact, domain-valid LL restriction. Its complementary
++Galerkin solve and correction matrix are evaluated. This is a restricted
++stationary action reduction, **not** the full retarded complementary
++reduction or a physical muon observable. The reached forcing is not closed
++in the trial frame. Full kinetic/interaction matching remains unevaluated;
++the earlier direct restriction remains nonmatching at its stated scope.
++
++## Action, dual and cancellation
++
++Use the literal symmetric parent action in the proposal, its intrinsic
++wall action including the once-owned Yukawa bridge, and its ordered seam
++term together. In the existing common frame the raw action row is
++
++\[
++ B_5=\Gamma^0D_5,\qquad
++ A_5=\tfrac12(B_5+B_5^{\mathrm{formal}}).                         \tag{1}
++\]
++
++The formal dual uses the volume density and the transported Dirac-bar
++convention. It is not the positive L2 inverse of D5â€ D5. The instantaneous
++volume density is mu5=2 piÂ² nu C rÂ³; the temporal-Cauchy density is mu5/nu.
++The known normal action coefficient is
++
++\[
++ B_\eta=i\Gamma^0\Gamma^4\eta,\qquad
++ \eta=-[2C\tan(\rho/2)]^{-1}.                                   \tag{2}
++\]
++
++The actual cached Clifford representation makes Gamma0 Gamma4 Hermitian,
++so B_eta is skew-Hermitian and its formal-dual sign reverses. For the
++displayed metric/common-A realization the divergence completion of the
++geometric coefficients is checked from the same density and clock:
++
++\[
++ \mu_5^{-1}\{\partial_\tau(\mu_5 i/\nu)
++       +\partial_\rho[-\mu_5 iz/\nu]\}=2ih_0,\qquad
++ \mu_5^{-1}\partial_\rho(\mu_5/C)=2h_4.                          \tag{3}
++\]
++
++Therefore A5 psi=B5 psi-B_eta psi on interior compact tests. In particular
++the raw normal cancellation in D5 W does not remove the connected normal
++output of A5 W. This is a consequence of the **literal proposed symmetric
++action**, not a change to the saved D5, eta identification or native action.
++Projection of a bare D codomain with a wall chiral projector would erase
++legitimate opposite-spin output; it is not performed.
++
++For Rw=(Ww,w), smooth matched G1 Rw=0, and bulk-only Qchi=(chi,0),
++
++\[
++ P_\partial G_0\chi=0,\quad(1-P_\partial)G_1\chi=0,\qquad
++ a_{QQ}(\zeta,\chi)=\langle\zeta,A_5\chi\rangle_5,\quad
++ a_{QR}(\zeta,w)=\langle\zeta,A_5Ww\rangle_5,                    \tag{4}
++\]
++\[
++ a_{RQ}(v,\chi)=\langle Wv,A_5\chi\rangle_5
++                    -\langle Ev,G_1\chi\rangle_\Sigma
++ =\langle A_5^{\mathrm{formal}}Wv,\chi\rangle_5
++                    +\mathcal G_{\rm other}(Wv,\chi).          \tag{5}
++\]
++
++This combines the cancelling material terms before numerical application.
++On a general history the other-face term remains. The literal symmetric
++finite-element action has an additional -G_other/2 relative to the Euler
++row (5). Both formulations agree on the compact tests used here, since
++all other-face products vanish. No symmetry is imposed on an unknown
++causal return. Hermitian finite compact action matrices follow from the
++explicit symmetric density, not a claimed retarded adjoint equality.
++
++The intrinsic wall and seam terms have zero QQ/QR contribution on these
++compact bulk-only variations. They are included in this classification,
++not treated as missing zero-filled native blocks. The unchanged intrinsic
++action stays in A_RR once. The saved `A_eff_parent_restricted` is explicitly
++the parent component plus the complementary correction, not the complete
++intrinsic-plus-parent action and not an independent wall determinant.
++The additional `run_2/ll_completion` assembles that unchanged intrinsic LL
++term in the same canonical convention and reuses the complementary solve:
++
++\[
++ A_{RR}^{LL}=A_{RR,5}^{LL}+A_{4}^{LL},\qquad
++ A_{\rm eff,compact}^{LL}=A_{RR}^{LL}+\Delta A_{RR}^{\rm compact}.
++\]
++
++This is the complete classical parent/intrinsic/seam action on the tested
++LL/compact-Q subspace. It does not complete the other chiral sectors,
++causal response, quantum measure or global domain realization.
++
++## Actual domain and frames
++
++Use node3/action_arc6 and node4/action_arc8 from the retained tail cache,
++each with its own branch24, descriptor and clock. Reuse I, I_tau, u, p,
++C_tau_nodes, r_tau_nodes and direct Fourier L_nu. No trajectory, first-field
++campaign, mode normalization or endpoint freezing is used. The saved raw
++DW/Dp arrays are selected-source contractions, so the retained
++`muon_coupled_cut_forms.field_actions` recipe evaluates the needed full
++columns with these existing coefficients. Independent comparison to the
++selected caches is saved. Instantaneous r,C,nu,shift values/derivatives use
++the same metric producer and nodal cells.
++
++The twelve-column angular source image Xi contains both Lorentz spins of
++the SM weak doublet. Its Gamma0 image is already in that span (residual
++6.54e-16); dependent companion columns are not added or regularized.
++The physical wall LL frame is the rank6 quotient
++
++\[
++ \Phi_L=\Pi_L\Xi T_L,\qquad
++ w_L=\iota^\sharp\Phi_La,\quad R_Lw_L=(W\Phi_La,w_L).            \tag{6}
++\]
++
++The actual input-frame reconstruction residual is 3.71e-16. The retained
++material trace gives G0 W Phi_L=kappa Phi_L, G1 W Phi_L=0, hence
++P_boundary G0 R_L=Ew_L. Right-spin LL is **unmatched**, not physical e_R.
++The full twelve-column Q frame and full64 carrier output are retained;
++the physical e_R sector and global chiral realization are not supplied
++by this LL test. Charge-conjugate bookkeeping introduces no extra trace
++or orientation multiplicity. Pairings are counted as in the preserved
++direct calculation, not duplicated per trace sheet.
++
++Let x run over this one interior arc element. The two temporal tests are
++phi0=x(1-x), phi1=x(1-x)(2x-1), extended by zero. The Q fields are
++phi_i p Xi with **zero wall component**. Their radial compact support is
++the original saved hat; both material traces and the pole trace vanish.
++The temporal tests have zero traces on both artificial element faces and
++are zero at the inherited reset, past-prefix and true stop. Smooth cutoff
++approximation gives the same H1 test class. This selects a computational
++subspace, not a new physical endpoint law. It is not p-W B_vol p and does
++not impose the latter's nonzero average trace as a Q-domain coordinate.
++
++The R test basis and the original load's projection into it are diagnostic
++variations. They do not prescribe Theta_p, a wall forcing or an external
++muon state. Inputs are projected to physical LL **before** action; action
++outputs, including the unmatched spin and connected angular fields, are
++not projected back to that input span.
++
++## Evaluated first-order reduction
++
++Keep the previous canonical field convention. Node3 C and C_tau are
++loaded directly from the matching packet. Node4 C comes from the saved
++WW Cauchy moment; only the time derivative consumed by this new element
++is constructed from its already-supplied I_tau/I and metric/clock jets.
++No field/profile is normalized again. The moving R columns obey
++B0,R=C B0,W+C_tau B1,W and B1,R=C B1,W. All terms are transformed together.
++
++For E=(C W Phi_L,p Xi), the first-order moment densities are
++
++\[
++ S_0=\tfrac12(E^\dagger M_5 B_0+B_0^\dagger M_5 E),\qquad
++ S_1=E^\dagger M_5 B_1,\qquad S_1^\dagger=-S_1.                 \tag{7}
++\]
++
++They are not the squared-action A/B/C caches. On the declared linear
++density model, interpolate tau_x S0 and S1 between the two actual points
++and integrate
++
++\[
++ A_{ij}=\int_0^1[\phi_i\phi_j\,\tau_x S_0
++     +\tfrac12(\phi_i\phi'_j-\phi'_i\phi_j)S_1]dx.              \tag{8}
++\]
++
++Five-point Gauss integrates these polynomial moments; an independent
++exact rational-moment check passes. The model has 24 Q coordinates and
++12 physical LL R coordinates. Solve all required R columns together:
++
++\[
++ A_{QQ}X=A_{QR},\qquad\Delta A_{RR}^{\rm compact}=-A_{RQ}X.       \tag{9}
++\]
++
++No explicit inverse, diagonal regularizer or positive D5â€ D5 component
++inverse is used. QQ has both signs. Its condition estimate is
++1.000014862251973; the matrix equation residual is 7.56e-18. The correction
++matrix's Frobenius norm is 0.1858604319471593 in the saved geometric/test
++coordinates. It is a coordinate/model diagnostic, not a physical norm or
++Pauli coefficient.
++
++The original diagnostic load has LL test-coordinate norm6.43e-17; its
++correction contraction is -2.47e-39+1.63e-55 i. This is at the inherited
++source/frame arithmetic scale and is **not a measured nonzero effect or
++exact global decoupling theorem**. The spatial Clifford chirality map
++explains the near-zero LL projection of this chosen input; the full
++six-column correction remains nonzero. Neither the source nor the
++witness is changed to force a nonzero selected contraction.
++
++Full first-order forcing is not closed in the compact p frame. At node3
++its six-column volume L2 norm is45.27 and its off-frame norm43.71. The
++normal part alone has norm8.10, with6.96 outside the compact p support.
++Node4 corresponding values are66.15/53.79 and8.10/6.96. These are saved
++model diagnostics, not certified tail bounds. They prevent promoting (9)
++to the full complementary action or using its residual as continuum
++accuracy. No propagation complement is discarded from the full target.
++
++## Matching, same source and remaining causal action
++
++The once-owned YH bridge occurs only in the intrinsic wall action at this
++fixed Higgs orientation/background order. The computed compact mixed/QQ
++forms add no explicit Y/H bridge. In the previous canonical convention
++the retained C_L^sharp YH C_R therefore remains unchanged. No retuning of
++Y,H,radius or photon coordinate occurs. No full physical e_R coefficient,
++post-elimination pole residue or low-energy coefficient expansion is
++inferred from two temporal bubbles. Genuine nonlocal dressing is retained
++as a needed kernel rather than required to vanish.
++
++The intrinsic LL amplitude and time-jet densities are evaluated at the
++same two retained states, with the same wall radius, common-A background,
++angular spin action, physical left input and Dirac-bar dual. Both transform
++by C squared into the preserved canonical convention. The scalar C_tau
++and pure imaginary time connection cancel in the explicit bidirectional
++action density; its Euler measure derivative is not discarded or replaced
++by a new physical rate. The LL-only Yukawa matrix is zero because the test
++has no e_R component; the physical once-owned YH bridge is unchanged.
++There is no independently added determinant or Yukawa copy.
++Here "unchanged" preserves ownership and the prior raw bridge, together
++with the existing canonical convention C_L^sharp(YH)C_R. The new LL script
++does not evaluate that off-diagonal coefficient or eliminate e_R. This is
++an LL--LL restriction, not an effective LL action after eliminating e_R.
++
++The completed compact LL matrix minus the retained local kinetic reference
++has Frobenius norm 0.1858604319440642. This compares the two temporal test
++forms in one field convention. It does **not** extract Z_L/Z_R at a pole,
++prove low-energy matching, or require an allowed nonlocal term to vanish.
++The full retarded matching outcome remains unevaluated. No compensating
++action is selected by subtraction.
++
++For the same photon b_A, all total domain/frame/pairing/source variations
++must be taken on one common pullback. Algebraically,
++
++\[
++ X_A=\mathrm{solve}(A_{QQ},(A_{QR})_A-(A_{QQ})_A X),\qquad
++ (A_{\rm eff})_A=(A_{RR})_A-(A_{RQ})_A X-A_{RQ}X_A.              \tag{10}
++\]
++
++The subscripts denote total jets, including moving allowed variations,
++trace/normal maps, measures, canonical maps and photon source return.
++For a nonzero complementary affine load also retain
++f_eff=f_R-A_RQ solve(A_QQ,f_Q) and its total derivative. None of these
++physical jets or loads is set to zero. The earlier corrected auxiliary
++L lift is preserved and is not the full stationary photon extension.
++The quantum measure, its regulated source variation and the same-owner
++finite subtraction remain unevaluated; they are not replaced by a finite
++Galerkin determinant or chosen compensation.
++
++The **one next required action** is
++
++\[
++ X_Q^R(w)=G_Q^R a_{QR}w,\quad
++ a_{QQ}(\zeta,X_Q^Rw)=a_{QR}(\zeta,w)\quad(\forall\zeta\in Q),
++ \quad\mathrm{supp}(X_Q^Rw)\subset J^+\mathrm{supp}(a_{QR}w).    \tag{11}
++\]
++
++It must act on the reached normal, temporal and angular outputs with
++P G0 X=0,Q_boundary G1 X=0, inherited U_R reset transport and the actual
++first-order other-face realization. Its consumer is (5), then (10).
++The supplied squared-action tail pivots do not evaluate it. AE31's finite
++intrinsic M4 retarded-existence statement does not construct this proposed
++bulk complementary response. The stop bridge supplies a **nonnegative
++Friedrichs form** closure; it does not evaluate a first-order retarded
++terminal relation. The saved terminal packet's physical_terminal_graph
++is null. A compatible first-order trace/normal relation must be realized
++or retained in full when an inverse chart fails. No terminal condition,
++state, new physical endpoint parameter or desired compensation is inferred
++from this gap. This is an unevaluated causal realization of the proposal,
++not a demonstrated absence theorem or a new microscopic prerequisite.
++
++## Evidence and scope
++
++Accepted run2, actual coefficient/actions, canonical/frame maps, QQ/QR/RQ,
++right-hand side, solution, residual and correction are saved under
++`artifacts/muon_first_order_complement_20261006/run_2`. The old full-carrier
++R attempt is retained as **unaccepted run1** with its exact source snapshot:
++it included right-spin LL in R and cannot represent the physical wall.
++Only the affected new calculation was rerun after fixing that domain
++defect. No accepted parent/old production was rerun or changed.
++
++Five new cache-based checks pass: domain/physical frames, actual formal
++dual and reached complement, rational temporal moments, and first-order
++solve/claim boundary, plus once-owned intrinsic LL completion. An initial
++test wrongly required an exactly real
++cached Cauchy diagonal; its imaginary part is2.16e-17 on a real diagonal
++of21.56. The check now uses the declared binary64 arithmetic scope; the
++failed receipt is retained and only that check was rerun. No byte-level
++or precision campaign followed.
++
++All numerical outputs are binary64 representatives of the existing
++512-point nodal spatial quadrature and a new, declared linear **first-order
++moment-density** temporal model. There is no certified interpolation,
++history, quadrature-continuum or operator-norm bound. Existing endpoint,
++tube and interpolation authorities are not relabelled. Residuals measure
++only the executed finite equations.
++
++```powershell
++C:\Python314\python.exe scripts/replay_muon_first_order_complement.py --output artifacts/muon_first_order_complement_20261006/replay_new
++C:\Python314\python.exe scripts/complete_muon_first_order_LL_restriction.py --input artifacts/muon_first_order_complement_20261006/replay_new --output artifacts/muon_first_order_complement_20261006/replay_new/ll_completion
++C:\Python314\python.exe -m pytest --noconftest -q tests/test_muon_first_order_complement.py
++```
++
++Input hashes, defining equations, source-jet ledger, runtime and revision
++are saved. The earlier direct residuals, corrected auxiliary source,
++accepted parent solution and every frozen local contribution are unchanged.
++No native operator, compensation, wall Gram or local determinant is
++installed. Physical a_mu/g_mu and native uncertainty remain unevaluated.

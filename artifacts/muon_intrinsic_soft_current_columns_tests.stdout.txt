@@ -1,0 +1,27 @@
+F.                                                                       [100%]
+================================== FAILURES ===================================
+___________ test_two_field_placements_match_original_source_action ____________
+
+    def test_two_field_placements_match_original_source_action():
+        d,s=control();r=_branch_application(d,s,0,12,.75,6)
+        for axis in range(3):
+            h=1e-5;finite=(original(d,s,axis,h)-original(d,s,axis,-h))/(2*h)
+>           np.testing.assert_allclose(r['forward']['total'][axis],finite[:2,2:],rtol=2e-7,atol=2e-13)
+E           AssertionError: 
+E           Not equal to tolerance rtol=2e-07, atol=2e-13
+E           
+E           Mismatched elements: 2 / 2 (100%)
+E           Mismatch at indices:
+E            [0, 0]: (0.00021107220289643801-0.0001219149817490119j) (ACTUAL), (0.00019030028900060943-0.00011871857693589329j) (DESIRED)
+E            [1, 0]: (-8.796014453641932e-06-3.860367247216346e-05j) (ACTUAL), (1.5535683860967965e-05+3.8542393485805724e-05j) (DESIRED)
+E           Max absolute difference among violations: 8.08921939e-05
+E           Max relative difference among violations: 1.94659832
+E            ACTUAL: array([[ 2.110722e-04-1.219150e-04j],
+E                  [-8.796014e-06-3.860367e-05j]])
+E            DESIRED: array([[1.903003e-04-1.187186e-04j],
+E                  [1.553568e-05+3.854239e-05j]])
+
+tests\test_muon_intrinsic_soft_current_columns.py:34: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_muon_intrinsic_soft_current_columns.py::test_two_field_placements_match_original_source_action
+1 failed, 1 passed in 3.05s

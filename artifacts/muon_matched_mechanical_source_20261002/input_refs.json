@@ -1,0 +1,108 @@
+{
+  "current_history_reconciliation": {
+    "consumed_fields": {
+      "initial_state": "byte-value identical",
+      "terminal_descriptor": "identical zero"
+    },
+    "current_face_snapshot_path": "artifacts/muon_exterior_face_source_20261002/inputs/current_center_faces.npz",
+    "current_face_snapshot_sha256": "8337b1ae853b9b88f56fcf310419959512eac3e046139ca7755697991f4d4e13",
+    "current_local_center_path": "C:\\Users\\carbe\\OneDrive\\Documents\\CODEX\\Berger-Hopf-Standard-Model\\artifacts\\flagship_integration\\BHSM_N12_C2_STOP_HIGH_ORDER_QUARTER_STEP_RETAINED_RECONNAISSANCE.npz",
+    "current_local_center_sha256": "6d966cb6c731dc545d520522f897b82250e0a7817c0447f262363d6d22858635",
+    "entire_center_arrays_identical": false,
+    "full_history_recertified": false,
+    "max_action_length_difference": 4.490726638550768e-06,
+    "max_state_absolute_difference": 3.959810044307233e-06,
+    "numerical_rerun": false,
+    "reason": "Only initial state and terminal descriptor were consumed from the baseline center. They exactly equal the newer current local center. Replay now uses its compact faces; cached arrays remain valid.",
+    "reference_center_sha256": "086c41068b9f3a6c0e5f8040b661202e067d017c909a381010e45ff352498d00",
+    "reference_path": "artifacts/flagship_integration/BHSM_N12_C2_STOP_HIGH_ORDER_QUARTER_STEP_RETAINED_RECONNAISSANCE.npz"
+  },
+  "inputs": {
+    "center": {
+      "repository_path": "artifacts/muon_exterior_face_source_20261002/inputs/current_center_faces.npz",
+      "role": "compact actual newer local center faces; only initial state and terminal descriptor consumed",
+      "sha256": "8337b1ae853b9b88f56fcf310419959512eac3e046139ca7755697991f4d4e13"
+    },
+    "frames": {
+      "repository_path": "artifacts/muon_source_jet_20261002/source_inputs.npz",
+      "sha256": "3eec5f38a5822809e7e4e069d6431dd17403de9c09447a124976dfe1b74ffd0d"
+    },
+    "frozen_local": {
+      "repository_path": "artifacts/muon_source_jet_20261002/frozen_local.json",
+      "sha256": "4b31cd5a599c7d469ff22de2902716084c6b988cfed1b91e1e8add95336fd98b"
+    },
+    "geometry_inputs": {
+      "repository_path": "artifacts/muon_parent_geometry_20261001/inputs.npz",
+      "sha256": "3535f373df3ad4ec92c82ea8b50482747153e0645c82e53e940284deacac4494"
+    },
+    "parent": {
+      "repository_path": "artifacts/muon_parent_geometry_20261001/replay_reference/local_parent_velocity_density.npz",
+      "sha256": "34ab3500a98197aa3db35f5f3d2e6e7234145e7bd819477e81efcbda3bebd95c"
+    },
+    "prefix": {
+      "repository_path": "artifacts/flagship_integration/BHSM_N12_C2_LOHNER_STEP_1222.npz",
+      "sha256": "97cc1860028a0f24638823f6ecc4543668f1dcb8de875ca595836318cf1102b0"
+    },
+    "prefix_report": {
+      "repository_path": "artifacts/flagship_integration/BHSM_N12_C2_LOHNER_STEP_1222.json",
+      "sha256": "5ec231ef5d66376be5f39cc95f57b74c9b20bc29f77e5bdbc07d7859f5c8f294"
+    },
+    "previous_result": {
+      "repository_path": "artifacts/muon_exterior_face_source_20261002/replay_reference/result.json",
+      "sha256": "523e452440810f87da8fd0f54d1106c0ce9ba09ac6b76ceb1633e7f2e3b3f096"
+    },
+    "principal": {
+      "repository_path": "artifacts/muon_source_weak_extension_20261002/replay_reference/inherited_parent_weak_coefficients.npz",
+      "sha256": "609d893a9670117d930499abf463da3fa89d14bfa278355b291b54fccc9a7120"
+    },
+    "source": {
+      "repository_path": "artifacts/muon_source_jet_20261002/replay_reference/local_source_actions.npz",
+      "sha256": "615ac8e9b75ac2e8b8da8904e3798af48b66af43bdb9732c0728cbf0ed9cbcfa"
+    },
+    "weighted": {
+      "repository_path": "artifacts/muon_connection_weight_20261001/replay_reference/attachment_and_weighted_density.npz",
+      "sha256": "d55dad66ec719a3c88530be15322671d448bd5b81253902c18fc7a6aea12899d"
+    }
+  },
+  "producers": [
+    {
+      "repository_path": "src/bhsm/interface/aether_diagonal_sp1_m4_attachment_v15_50.py",
+      "sha256": "e6482614dcb54f4890a5e66fbe724d4c302405d575a4b73ddbb64a075cb1827e"
+    },
+    {
+      "repository_path": "src/bhsm/interface/aether_nonabelian_derham_response_v16_04.py",
+      "sha256": "df56e8f7b5c798a09a768ca914e7ae4812db42ca7d06d9250587cbfdbfcc3458"
+    },
+    {
+      "repository_path": "src/bhsm/interface/muon_connection_weight.py",
+      "sha256": "a81767970ec203ff80e7485eaf0f3ea17d4ef9c2ac882e94badc4919bca8ec2d"
+    },
+    {
+      "repository_path": "src/bhsm/interface/muon_local_source_jet.py",
+      "sha256": "caa3da0f665d64c2fb6810d4afa276c7ac0ada0e2d0c7a4d2923b275613d258b"
+    },
+    {
+      "repository_path": "src/bhsm/interface/muon_parent_maxwell_velocity.py",
+      "sha256": "61ee61202ee08ee76a5669adaadd03b6694874ef9a855bde02f42b2ea6a4605d"
+    },
+    {
+      "repository_path": "src/bhsm/interface/aether_hybrid_standard_model_bundle_v15_53.py",
+      "sha256": "a983350de429125b2e2b4271c35b8abd14e984381c61b3596121ee946e6bc23a"
+    },
+    {
+      "repository_path": "src/bhsm/interface/aether_unified_m5_m4_pushforward_v15_69.py",
+      "sha256": "e612cd5e96fe6a4757554fbc5431c1c9c76d60d830aba570af1e2967cdfe41c1"
+    },
+    {
+      "repository_path": "src/bhsm/interface/ae4_stratified_dirac_zeta_induced_owner.py",
+      "sha256": "bc0bb5c7d7b006ae2194ed8c15b73756e49e002567b54c3f30e220d06046e1ec"
+    },
+    {
+      "repository_path": "src/bhsm/interface/ae31_c2_chiral_green_domain.py",
+      "sha256": "98fdf6a943a8934c7d2bf82f3510fc5ea30226aac60a24a965e7aa28874ac146"
+    }
+  ],
+  "publication_start_HEAD": "cee6fdb8221097109b73cf382dcb5a1f08615f3c",
+  "repository": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+  "scientific_reference": "524ed90689bd5923c249bba2e699abf627e703cd"
+}

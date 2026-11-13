@@ -1,0 +1,345 @@
+{
+  "Gate7_closed": false,
+  "action_selected": false,
+  "classification": "VERIFIED_EXECUTED_REACHED_SOURCE_ACTION_COMPONENT",
+  "commands": [
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "scripts/evaluate_muon_reached_trace_action.py",
+        "--output",
+        "artifacts/muon_reached_trace_action_20261010/run_1",
+        "--time-nodes",
+        "17",
+        "--time-steps",
+        "64"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "PYTHONPATH": "src"
+      },
+      "error": "Traceback (most recent call last):\n  File \"C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\scripts\\evaluate_muon_reached_trace_action.py\", line 121, in <module>\n    a=p.parse_args();print(json.dumps(materialize(a.output,time_nodes=a.time_nodes,time_steps=a.time_steps),sort_keys=True))\n                                      ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\scripts\\evaluate_muon_reached_trace_action.py\", line 93, in materialize\n    if len(data)>10*1024**2:raise ValueError('preserve all arrays; split complete action archive')\n                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nValueError: preserve all arrays; split complete action archive\n",
+      "outcome": "PACKAGING_FAILURE_AFTER_NUMERICAL_APPLICATION",
+      "python_exit_code": 1,
+      "stderr": {
+        "bytes": 831,
+        "path": "artifacts/muon_reached_trace_action_run1.stderr.txt",
+        "sha256": "91471a262f62c7e2d1e58989c1483da7c16cfeccc337a6b76020b264d0038b52"
+      },
+      "stdout": {
+        "bytes": 1403,
+        "path": "artifacts/muon_reached_trace_action_run1.stdout.txt",
+        "sha256": "eb331bc0c90dbd171c872b23f46e63aa63efabfe63caeb7459a14ac3de6211c3"
+      }
+    },
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "scripts/evaluate_muon_reached_trace_action.py",
+        "--output",
+        "artifacts/muon_reached_trace_action_20261010/run_2",
+        "--time-nodes",
+        "17",
+        "--time-steps",
+        "64"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "OPENBLAS_NUM_THREADS": "1",
+        "PYTHONPATH": "src"
+      },
+      "error": null,
+      "outcome": "PASSED",
+      "python_exit_code": 0,
+      "stderr": {
+        "bytes": 0,
+        "path": "artifacts/muon_reached_trace_action_run2.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "bytes": 7063,
+        "path": "artifacts/muon_reached_trace_action_run2.stdout.txt",
+        "sha256": "9fe5d5652ae00aa55565f6a77dfdcd60ed19138dd56b4b0c0692fb8aa6e75559"
+      }
+    },
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "scripts/evaluate_muon_reached_trace_action.py",
+        "--output",
+        "artifacts/muon_reached_trace_action_20261010/run_3",
+        "--time-nodes",
+        "17",
+        "--time-steps",
+        "64"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "OPENBLAS_NUM_THREADS": "1",
+        "PYTHONPATH": "src"
+      },
+      "error": null,
+      "outcome": "PASSED",
+      "python_exit_code": 0,
+      "stderr": {
+        "bytes": 0,
+        "path": "artifacts/muon_reached_trace_action_run3.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout": {
+        "bytes": 7063,
+        "path": "artifacts/muon_reached_trace_action_run3.stdout.txt",
+        "sha256": "9fe5d5652ae00aa55565f6a77dfdcd60ed19138dd56b4b0c0692fb8aa6e75559"
+      }
+    }
+  ],
+  "complete_observable": false,
+  "consumed_owner_identities": [
+    {
+      "bytes": 8350,
+      "path": "scripts/evaluate_muon_reached_trace_action.py",
+      "sha256": "f2ecf5b614f8b3b1b5f9bf2b73490e539321049633f7deb467bdf60a81e0c260"
+    },
+    {
+      "bytes": 10458,
+      "path": "src/bhsm/interface/muon_intrinsic_m4_normal_pullback.py",
+      "sha256": "43187eee35f2879a43fe0fd02ae447502811349ccf2f2a78aa14beb8aa706bf0"
+    },
+    {
+      "bytes": 14355,
+      "path": "src/bhsm/interface/muon_native_current_component_heat.py",
+      "sha256": "3d1eb504032ddb526c03f9caf773ffbb64ee22d4fb43cb28703ce6312b74b487"
+    },
+    {
+      "bytes": 12396,
+      "path": "src/bhsm/interface/muon_native_photon_response.py",
+      "sha256": "1d633e7370a0ded6f01adf3b3547637c9acc0f32e0ad246655e6863637de5cea"
+    },
+    {
+      "bytes": 47783,
+      "path": "src/bhsm/interface/muon_parent_gauge_geometry_correction.py",
+      "sha256": "fa29f5764dca39196c807d64e7976d5894589e7de3ffa9d4a5ddecfb136b4816"
+    },
+    {
+      "bytes": 41759,
+      "path": "src/bhsm/interface/muon_parent_maxwell_corrected_retarded.py",
+      "sha256": "00bf7053e289297afd4f10dc0ef9522ac8326f2bd07609c9979bb9f5f6f74a4d"
+    },
+    {
+      "bytes": 18646,
+      "path": "src/bhsm/interface/muon_parent_maxwell_full_q_application.py",
+      "sha256": "936386142f5f0732210fa7ddba38f3e497341089e2eafe8ff5d1b4b959b8249b"
+    },
+    {
+      "bytes": 21203,
+      "path": "src/bhsm/interface/muon_parent_maxwell_full_retarded.py",
+      "sha256": "1ecf85a6da94b84b69af1ff4394301232d9d4cad4b0f0bc08de56d5943e0c478"
+    },
+    {
+      "bytes": 15358,
+      "path": "src/bhsm/interface/muon_parent_maxwell_geometry_weak.py",
+      "sha256": "f0b4a49934e17ad18c40e9164b66c54e1b2cb146fb476f59b0e500f2dd6c9153"
+    },
+    {
+      "bytes": 15318,
+      "path": "src/bhsm/interface/muon_reached_trace_action.py",
+      "sha256": "7fed7f2520a6f66e31323905359e491897f7187ccf9871ecfc2ab95e415ffade"
+    }
+  ],
+  "continued_production_required": true,
+  "error_scope": {
+    "action_boundary_residual_is_not_continuum_error": true,
+    "conditioned_shift_is_not_physical_soft_momentum": true,
+    "current_frame_motion_count": 1,
+    "forward_adjoint_and_Gauss_are_finite_application_checks": true,
+    "full_native_or_anomaly_enclosure": false,
+    "inherited_backward_core_is_not_incoming_history": true,
+    "old_Q8_response_substitution": false
+  },
+  "focused_tests": {
+    "argv": [
+      "C:\\Python314\\python.exe",
+      "-m",
+      "pytest",
+      "--noconftest",
+      "-q",
+      "tests/test_muon_reached_trace_action.py"
+    ],
+    "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+    "environment_overrides": {
+      "OPENBLAS_NUM_THREADS": "1",
+      "PYTHONPATH": "src"
+    },
+    "exit_code": 0,
+    "source": {
+      "bytes": 15318,
+      "path": "src/bhsm/interface/muon_reached_trace_action.py",
+      "sha256": "7fed7f2520a6f66e31323905359e491897f7187ccf9871ecfc2ab95e415ffade"
+    },
+    "stderr": "",
+    "stdout": "....                                                                     [100%]\n4 passed in 3.09s\n",
+    "test": {
+      "bytes": 7260,
+      "path": "tests/test_muon_reached_trace_action.py",
+      "sha256": "404f0870ea4ed7c08e156135c84b03162c8bf1847cdd97627457c463bd6cc5ce"
+    }
+  },
+  "independent_process_replays": [
+    {
+      "byte_identical": true,
+      "first": {
+        "bytes": 1873697,
+        "path": "artifacts/muon_reached_trace_action_20261010/run_2/adjoint.npz",
+        "sha256": "1a81618060863e9a47854fe642540d3433637d568be9366854884f4b76aef748"
+      },
+      "second": {
+        "bytes": 1873697,
+        "path": "artifacts/muon_reached_trace_action_20261010/run_3/adjoint.npz",
+        "sha256": "1a81618060863e9a47854fe642540d3433637d568be9366854884f4b76aef748"
+      }
+    },
+    {
+      "byte_identical": true,
+      "first": {
+        "bytes": 4321369,
+        "path": "artifacts/muon_reached_trace_action_20261010/run_2/contact.npz",
+        "sha256": "bd32349f72dfc5d8327f7369294d4807e3e5db9052ed2fbb53ee56cc558a5952"
+      },
+      "second": {
+        "bytes": 4321369,
+        "path": "artifacts/muon_reached_trace_action_20261010/run_3/contact.npz",
+        "sha256": "bd32349f72dfc5d8327f7369294d4807e3e5db9052ed2fbb53ee56cc558a5952"
+      }
+    },
+    {
+      "byte_identical": true,
+      "first": {
+        "bytes": 671485,
+        "path": "artifacts/muon_reached_trace_action_20261010/run_2/operator_B.npz",
+        "sha256": "cc93aee6d30fa11f4c326198e47b4866acb327ea65f3b22cb089cb9154668088"
+      },
+      "second": {
+        "bytes": 671485,
+        "path": "artifacts/muon_reached_trace_action_20261010/run_3/operator_B.npz",
+        "sha256": "cc93aee6d30fa11f4c326198e47b4866acb327ea65f3b22cb089cb9154668088"
+      }
+    },
+    {
+      "byte_identical": true,
+      "first": {
+        "bytes": 1415484,
+        "path": "artifacts/muon_reached_trace_action_20261010/run_2/operator_K.npz",
+        "sha256": "f62b30a536a6a26783410ec2b72927ca511969631ec42e19256651b69382eb81"
+      },
+      "second": {
+        "bytes": 1415484,
+        "path": "artifacts/muon_reached_trace_action_20261010/run_3/operator_K.npz",
+        "sha256": "f62b30a536a6a26783410ec2b72927ca511969631ec42e19256651b69382eb81"
+      }
+    },
+    {
+      "byte_identical": true,
+      "first": {
+        "bytes": 476445,
+        "path": "artifacts/muon_reached_trace_action_20261010/run_2/operator_M.npz",
+        "sha256": "61c7714cfccbb91090616cd1707624084e20d67f164b9005dafb1fd04d4db606"
+      },
+      "second": {
+        "bytes": 476445,
+        "path": "artifacts/muon_reached_trace_action_20261010/run_3/operator_M.npz",
+        "sha256": "61c7714cfccbb91090616cd1707624084e20d67f164b9005dafb1fd04d4db606"
+      }
+    },
+    {
+      "byte_identical": true,
+      "first": {
+        "bytes": 7695771,
+        "path": "artifacts/muon_reached_trace_action_20261010/run_2/phase.npz",
+        "sha256": "6fb2a5504fea9a4cbf0a7aad493775329d8760ae4ae66df9caa645a818645e11"
+      },
+      "second": {
+        "bytes": 7695771,
+        "path": "artifacts/muon_reached_trace_action_20261010/run_3/phase.npz",
+        "sha256": "6fb2a5504fea9a4cbf0a7aad493775329d8760ae4ae66df9caa645a818645e11"
+      }
+    },
+    {
+      "byte_identical": true,
+      "first": {
+        "bytes": 6507,
+        "path": "artifacts/muon_reached_trace_action_20261010/run_2/result.json",
+        "sha256": "dcd8e15171b54f61718779ae1b8b9d2dedfc221c1db8f19a40e4fd9fb22d8ca8"
+      },
+      "second": {
+        "bytes": 6507,
+        "path": "artifacts/muon_reached_trace_action_20261010/run_3/result.json",
+        "sha256": "dcd8e15171b54f61718779ae1b8b9d2dedfc221c1db8f19a40e4fd9fb22d8ca8"
+      }
+    },
+    {
+      "byte_identical": true,
+      "first": {
+        "bytes": 1212453,
+        "path": "artifacts/muon_reached_trace_action_20261010/run_2/source.npz",
+        "sha256": "c35be14ac7e50653187e572d3da9fb2e77aceddf6a6830976ce3331282976f44"
+      },
+      "second": {
+        "bytes": 1212453,
+        "path": "artifacts/muon_reached_trace_action_20261010/run_3/source.npz",
+        "sha256": "c35be14ac7e50653187e572d3da9fb2e77aceddf6a6830976ce3331282976f44"
+      }
+    },
+    {
+      "byte_identical": true,
+      "first": {
+        "bytes": 3819992,
+        "path": "artifacts/muon_reached_trace_action_20261010/run_2/velocity.npz",
+        "sha256": "c59de6bcaacbef49db97699d28fb313fb3cf3804a0c61e9da9ed1ccdb11bd135"
+      },
+      "second": {
+        "bytes": 3819992,
+        "path": "artifacts/muon_reached_trace_action_20261010/run_3/velocity.npz",
+        "sha256": "c59de6bcaacbef49db97699d28fb313fb3cf3804a0c61e9da9ed1ccdb11bd135"
+      }
+    }
+  ],
+  "numerical_results": {
+    "Gauss_relative_maximum": 1.7200021397064544e-15,
+    "action_boundary_relative_defect": 4.385422241313615e-13,
+    "adjoint_pairing_maximum_defect": 4.423335400930244e-21,
+    "gauge_Euler_reaction_norm": 0.03656766058748043,
+    "intrinsic_H_canonical_norm": 0.0018329674866206572,
+    "intrinsic_H_response_norm": 1.9618208327859943e-09,
+    "scalar_wall_current_norm": 1.0779923422120116e-07
+  },
+  "retained_failures": [
+    {
+      "command": "C:/Python314/python.exe -m pytest --noconftest -q tests/test_muon_reached_trace_action.py",
+      "output": "3 setup errors in 2.04s: KeyError incoming_raw_coefficients",
+      "repair": "bind actual raw_endpoint_coefficients[0] archive key; production operator unchanged",
+      "scope": "test fixture only"
+    },
+    {
+      "repair": "fixed-metadata lossless compression and complete separate action/phase/contact archives; no numerical rows or arrays removed",
+      "run": 1,
+      "scope": "archive serialization only"
+    }
+  ],
+  "runtime": {
+    "executable": "C:\\Python314\\python.exe",
+    "packages": {
+      "numpy": "2.4.6",
+      "pytest": "9.0.3",
+      "python-flint": "0.9.0",
+      "scipy": "1.17.1"
+    },
+    "python": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]"
+  },
+  "scientific_classification": {
+    "CONTROL_ONLY": "finite outgoing24 backward core, compact Green pulse, conditioning shift and nu-squared4 parameter member",
+    "DERIVED": "literal moving full400 trace pullback and Qdot*b electric contact; source motion differentiated before same-action Gauss; intrinsic material H80 seagull and mixed rows",
+    "EVALUATED": "fresh current angular response outside old Q8, coupled full5 Maxwell/H retarded and advanced action on those reached columns; actual nonzero H response and wall currents",
+    "OWNER_DEFINITION_GAP": "none established",
+    "UNEVALUATED": "physical birth/cutoff and current selection; physical unit matching; complete return/relative completion and renormalized soft Pauli readout"
+  }
+}

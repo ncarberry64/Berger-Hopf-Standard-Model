@@ -1,0 +1,151 @@
+EXACT EA02 COEFFICIENT JETS AND INDEPENDENT FULL59x7 JACOBI CHECK
+2026-10-16. No original history, Cauchy state, response, action law, or
+coupled correction is changed. This is a new supplied-coefficient export
+and an independent finite weak-action derivative application.
+
+1. New actual operands and branch identity
+
+The coefficient exporter consumes the exact original ea02 master368 and
+native CUT clock, corrected native D4 product maps and their actual first,
+and the admitted same-cut retained seven response fields R and clocks Rdot.
+The full746 coordinates include252 parent/source and494 child entries.
+Every original master368/time and source/archive/producer identity is
+checked; no equal-clock principal-branch or future-midpoint splice is used.
+The cut is the complex analytic off-shell t=8.249007812499999e-5
+-2.292213182443259e-8 i, not a physical real outgoing muon state.
+
+At all48 original radial-rule nodes and the separate actual wall, the new
+coefficient-only export stores exact256-bit acb dyadic midpoint/radius
+fields for value, h, seven R axes and seven mixed hR axes of:
+ - all60 full connection/time/radial point coefficients,
+ - all5 metric-density/shift coefficients,
+ - the full20 wall connection,
+ - boundary wT,wS,wV,R4,lapse,U,
+ - raw268 child and parent coefficients and both raw268 references,
+ - material delta, delta-rate, wall and Cstar coordinates.
+It exports implicit chart coefficients, all four available delta
+derivatives, normalization derivatives, Jacobian and Taylor residuals.
+It also stores exact full R, h and the reference clock counted once.
+A second coefficient-only call supplies Rdot variations with h explicitly
+zero, retaining actual parent sourceDot and the original fixed chart.
+The corrected T/Th/W/Wh input map archive is pinned, not reselected.
+
+2. Explicit copied runtime and the early return
+
+The immutable original scalar runtime remains SHA
+ 8fcc5e3a5c0e2724cf24789c8326fb9725601f5a991e4f5e0b3189a27c0ca5fe.
+A separately named copied source adds a guarded coefficient_export_only
+mode with zero J tests and an early return before ANY cap/bulk/scalar
+action-density, gradient or Hessian assembly. It copies the original
+point/density/inherited-source/wall construction arithmetic. The new
+boundary weight extraction uses only the final owned formulas
+ R4=A B/sqrt(A^2+B^2), U=C(delta_rate+beta)/N,
+ lapse=N sqrt(1-U^2), (wT,wS,wV)=(R4^3/lapse,lapse R4,lapse R4^3).
+It avoids the cap bulk/FR/action loop entirely. The regular action-mode
+equations remain unchanged; the only zero-J seed guard is conditional on
+this new early mode. The original source is not edited or shadowed.
+
+New copy:
+ audits/retained_muon_ea02_coefficient_export_runtime_20261016.py
+ 60269B SHAbc84be9f173d05d2c1f9aaefd05469cbe6f49a911f414c9b5e5d75d5a4bc3ac2.
+Disclosed exact unified diff:
+ audits/retained_muon_ea02_coefficient_export_runtime_20261016.patch
+ 6963B SHA676676c3107c634999f0460d3bc5a55238cc59927da2b3c4fc77443a43040a40.
+The producer reconstructs that diff and checks original/copy/patch SHAs.
+Both the source copy and patch are included verbatim in each output.
+
+Exporter:
+ audits/bhsm_original_ea02_coefficient_right_clock_export_20261016.py
+ SHA c744590f986e47c946f128641b071808f527d230ba60fc2fa70adf87d351c851.
+The existing native point/time coefficients reproduce to6.388e-36, metric
+time coefficients to2.230e-38, and wall time coefficients to7.472e-48.
+Differences are small acb arithmetic/reassociation enclosures; no physical
+coefficient or clock is fitted to improve agreement.
+
+3. Independent weak-polynomial Jacobi calculation
+
+The second producer does NOT import or call the copied/original packed
+action evaluator. It reads the coefficient jets and differentiates the
+ordinary explicit weak first variation, using a separate two-direction
+polynomial product rule with scalar value/h and seven R/hR slots. There
+is no J axis, no packed J*h*R operation, dense Hessian, or linear solve.
+
+Its source is
+ audits/bhsm_original_ea02_literal_seven_Jacobi_control_20261016.py
+ SHA4ef5b934bee64c9f9a4a9b2e187fd82a537bef37a0b3b51e1eb8ce74325a2ca2.
+
+For the retained scalar Maxwell action it explicitly forms
+ X=partial_t Ar-partial_r At+[At,Ar],
+ R_i=partial_r Ai+[Ar,Ai],
+ Y_i=partial_t Ai+[At,Ai]-beta R_i,
+ B_i=2Ai+[Aj,Ak].
+With each of the59 actual fixed-chart position test functions, its
+literal first variation is
+ MAXWELL_TO_CAP sum w {k X.dX+e sum Y.dY-r sum R.dR-d sum B.dB}.
+The literal scalar-wall contribution is
+ -(2 wS/VOLUME) sum O(Ai,H).O(testAi,H).
+The R derivative includes metric/shift/curvature, wS_R and both Higgs
+placements. All new q tests have no temporal wall component and all new
+velocity tests have no wall/ordinary-field/radial component; these facts
+are checked, never assumed to suppress a term.
+
+Canonical momentum in the bulk is P_At=0, P_Ar=kX, P_Ai=eY, with the
+original measure factor. The original fixed velocity test b and its
+actual time derivative b_h from Th yield
+ D_R Lv = sum P_R.b,
+ D_h D_R Lv = sum(P_hR.b+P_R.b_h),
+ D_Rdot Lv = sum P_Rdot.b.
+No physical Kdot is added twice. The position Jacobi rows are then
+ K_position R=D_R Lq-D_h D_R Lv-D_Rdot Lv.
+The actual primal Euler residual is added once only to affine column0,
+and the existing retarded-plus-homogeneous seven-to-four combination is
+retained without selecting coefficients or deleting directions.
+
+4. Actual independent derivative result, and unsolved residual
+
+All59x7 literal rows were compared separately with the previously frozen
+native packed results:
+ HqR defect upper5.70716424750019e-30,
+ hHvR defect upper6.599542756521751e-34,
+ HvRdot defect upper8.209844821413239e-65,
+ K_position R defect upper5.7071642475011885e-30.
+Independent primal Lq/Lv/d_tLv/Euler reproduction is at most2.418e-34.
+This finite all59x7 algebraic derivative check therefore passes2e-10.
+
+The retained response trial is still not an enlarged radial solution:
+ actual K_position R upper26496.352349126955,
+ actual affine seven rows upper26496.352349126955,
+ actual combined four rows upper38735.046649404736.
+The small derivative discrepancy verifies these large nonzero rows; it
+does not remove them or establish convergence/stationarity. No correction
+or Gauss retraction is chosen or applied.
+
+5. Exact independent paired outputs
+
+WORK/outputs/bhsm_original_ea02_coefficient_right_clock_export_20261016/
+run_1 and run_2 repeat all6 files byte-identically:
+ R/hR NPZ4338880B SHA6cf8979c6d81fb427a23a93848f13a87400a615daae0e1496698d042f85755a2
+ Rdot NPZ3614702B SHAb187d1c4a5c275879fcb6a6f02c446e49b25c7b0dd8209dbc583d33c9ed17fbe
+ JSON43398B SHAdf4f23c85b6e658310092e12afcfbfec597a12f5338a3cc06dab6f5c25361c81
+ plus the executed exporter, exact copied runtime and disclosed patch.
+
+WORK/outputs/bhsm_original_ea02_literal_seven_Jacobi_control_20261016/
+run_1 and run_2 repeat all3 files byte-identically:
+ NPZ457764B SHA8a9a46fd7c51a536aed136cb7449c8f6b4a39c342666728cbf98476fb9319a95
+ JSON5184B SHAaa2d87e3cf88abd53c99f6b352eb28c466580bb4bab6eedcf833f7c4031eff14
+ plus executed literal-control source4ef5b934... .
+The combined sibling receipt coefficient_and_literal_control_paired_inventory.json
+has SHAfd37fd73c623906ec1627193f8d06105b39de35ac6194747bff37a149e3480e0.
+
+6. Remaining physical scope
+
+This closes the formerly missing independent check of this finite59x7
+classical Jacobi block. It does not pass the whole physical outgoing
+energy/field/source/domain derivative, identify a full native graded
+operator/domain or an unsquared/squared energy dictionary, repair old
+prefixcell7 protocol, or supply physical Y_R/s_R and terminal C0/Cj.
+The all226/Maxwell AFTER gate, original coupled correction, physical
+radial solution convergence, spin-state normalization and muon moment
+remain unperformed. Exact new coefficient jets can now support the
+remaining SU2 gauge-map variation deltaK=[deltaA,phi] as an unprojected
+momentum functional, without inventing a new physical state coordinate.

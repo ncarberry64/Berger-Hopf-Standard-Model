@@ -1,0 +1,189 @@
+Surface coefficient: microscopic heat term and native-length feedback
+Independent derivation/review, 2026-10-15. No physical gamma is assigned.
+
+1. Source lineage and what the primitive actually fixes
+
+The original alpha-scaled band construction in
+completion/alpha_dynamic_band_p8_bridge_v14_79.py owns Q=alpha Qhat and
+H_lift=alpha Omega G, not an absolute membrane tension. It explicitly labels
+its diagnostic 1/137 value as nonphysical and leaves canonical attachment
+open. The historical Weyl factor 1/(6 pi^2), the 1:2:7 gauge screen, and the
+older normalized vacuum value -1/8 do not have an action-owned conversion
+into the surface coefficient. In particular -1/8 is not a tension density.
+
+fsc_encapsulation_constitutive_adjudication.primitive_coupling_definition
+retains a positive dimensionless alpha_FSC with no exact selected value,
+reference scale, renormalization scheme or physical U1 projection. The
+current minimal mechanics selects the area member and
+  gamma_s=alpha_FSC ell_s^(-m_s), m_s=dim W_s,
+where ell_s is the regular environmental length in Lambda_s. This is a
+specific constitutive form, not an alpha normalization derived by factoring
+one arbitrary functional into alpha times another functional.
+
+The newer AE4 owner fixes a different object: the microscopic spectral
+functional and its proper-time moments. It does not turn an older coupling
+screen or a diagnostic alpha into a surface heat coefficient.
+
+2. Exact leading surface coefficient if the actual domain is local mixed
+
+Let d=m+1, with a Laplace-type operator, a smooth regular boundary, and the
+ACTUAL local mixed Dirichlet/Robin projectors. Write chi=P_R-P_D and retain
+the actual statistics/ghost/zero-mode multiplicities in STr. The standard
+surface coefficient is
+  a1,Sigma = [4(4 pi)^(m/2)]^(-1) integral_Sigma STr(chi) dmu_h.
+This requires those domain projectors; it cannot be obtained by counting
+bulk particles alone. Source: Vassilevich, Eq. (5.30),
+  https://arxiv.org/pdf/hep-th/0306138 .
+
+Insert precisely that coefficient into the retained AE4 functional
+  Gamma=-(1/2) integral_(ell_star^2)^infinity ds/s STr exp(-sP).
+Since the surface term scales as s^(-m/2), its leading zero-derivative
+Euclidean area coefficient is
+  gamma_heat = -STr(chi)/[4m(4 pi)^(m/2)] ell_star^(-m).
+The integral is elementary: integral_c^infinity s^(-m/2-1)ds
+=2 c^(-m/2)/m. This agrees with the owner's F_m=-ell_star^(-m)/m.
+For a scalar bosonic Dirichlet component, chi=-1 and gamma_heat is positive;
+for a Robin component chi=+1 and it is negative in this regulated convention.
+Neither sign is a permissible physical domain choice by convenience.
+
+Only if the action identifies this exact local area term with the classical
+membrane coefficient, binds the same measure and ell_s=ell_star, and excludes
+all other surface contributions, would one get
+  alpha_FSC = -STr(chi)/[4m(4 pi)^(m/2)].
+No such identification follows merely from the common proper-time moment.
+The equation is a compatibility test for actual supplied domains, not a
+choice of projectors, a new value of alpha, or an evaluation of full BHSM.
+
+3. Internal transmission cancels the leading area term
+
+For two matched-principal-symbol sides with a unitary transmission lift U,
+fold the interface into one boundary on a doubled fiber. Its principal
+Dirichlet and Robin projectors are
+  P_D=(I-S_U)/2, P_R=(I+S_U)/2,
+  S_U=[[0,U^dagger],[U,0]].
+Then S_U^2=I and Tr S_U=0. Each transmitted rank-N sector has N principal
+Dirichlet and N principal Robin components. The opposite image contributions
+to the leading boundary heat term cancel. The general transmittal theorem
+also gives a1,Sigma=0 with continuous leading symbol, even when normal metric
+derivatives jump and a finite surface endomorphism is present. Source:
+Gilkey/Kirsten/Vassilevich, Theorem 2.3,
+  https://arxiv.org/pdf/hep-th/0101105 .
+
+Thus a strictly positive FSC membrane coefficient cannot be derived by
+silently replacing an internal transmission seam with a one-sided Dirichlet
+wall and using its a1. The ordinary AE2 transparent fermion principal graph
+has this cancellation on its actual declared sector.
+
+This DOES NOT prove gamma_BHSM=0. The full stratified operator includes
+different-dimensional tangential blocks, constraints, ghosts, possible
+Wentzell/spectral boundary dynamics and moving geometry. The local mixed
+formula is not a substitute for those domains. Higher heat coefficients,
+nonlocal finite terms and microscopic interface dynamics can contribute to
+surface stress. On a curved fixed background some such terms scale like an
+effective tension, but they must not be relabeled a universal coefficient
+of the zero-derivative area invariant. Full boundary stress also is not
+automatically a new classical restoring term; the retained AE4 downstream
+determinant and original classical membrane must not be double-counted.
+
+The correct constructive spectral task is to assemble the actual domain,
+compute its surface invariant with full multiplicities and both orbit
+measures, and compare that result with the owned classical area term on the
+same regular stratum. One must retain separate M8/M5/M4 scaling powers.
+No assumed boundary condition or M8-to-M4 volume conversion is inserted here.
+
+4. The two length owners are not automatically equal
+
+Mechanics uses ell_s from the regular environment, with ell_kappa as the
+common reference where no finer derived scale is supplied. AE4 now uses the
+created branch's proper normal frequency:
+  c=ell_star^2=i/r,
+  i=<psi,I psi>, r=<psi,(gamma J+H_impedance)psi>.
+The October 8 owner corrects its event/energy meaning to muon birth. It does
+not by itself state that every environmental ell_s equals that frequency
+length. The October 6 source explicitly rejects making ell_s=ell_star by
+assumption; the still-retained consumer helpers gamma=alpha c^(-m/2) must
+therefore be read with their required common-length compatibility scope.
+
+Relevant exact anchors:
+  covariant_bubble_interface_mechanics.py, interface_stiffness.ell_s;
+  ae4_stratified_dirac_zeta_induced_owner.py, native_spectral_length_contract;
+  ae4_branch_relative_support_transition.py, branch_relative_cutoff_contract;
+  theory/muon_native_impedance_energy_response_20261006.md, length paragraph;
+  muon_native_impedance_energy_response.py, reconcile_owners.minimal_amendment;
+  muon_coupled_birth_gamma_response.py, cutoff_area_matching_residual.
+The event-identification portions of the old reconciliation are superseded
+where the later owner says so; this review does not reopen those old gaps.
+
+5. Conditional native-length closure, including membrane inertia
+
+Suppose the common-length equality is established on one selected physical
+branch. Put p=m/2. The exact coefficient equation is
+  F(gamma,X)=gamma-alpha [r(gamma,X)/i(gamma,X)]^p=0,
+on gamma>0, i>0, r>0. The mode, pairing, field, geometry and domain are X.
+This is a coupled equation; the native cutoff is not an extra independently
+adjustable scale. Positivity applies to i and TOTAL r. J need not be positive.
+
+If one artificially freezes i,j,h as positive constants and r=gamma j+h,
+set y=j gamma/h and beta=alpha j h^(p-1)/i^p. Then
+  y/(1+y)^p=beta.
+For p>1 its unique maximum is at y*=1/(p-1), with
+  beta_crit=(p-1)^(p-1)/p^p.
+There are two, one double, or no positive roots for beta below, equal to, or
+above this maximum. This is a correct FROZEN-I algebraic control only.
+
+Even at fixed background/mode, the membrane has direct Legendre inertia.
+For its area coefficient a_Sigma=-N rho sqrt(1-U^2), rho=A^3 B^3,
+  U_sdot=C/(N C_star),
+  partial_sdot^2 a_Sigma
+    =rho C^2/[N C_star^2 (1-U^2)^(3/2)] >0.
+The actual new real-state area packet gives this coordinate Hessian per gamma
+as 9.292773856586832 initially and 9.292303221887881 at the stage. These are
+coordinate contacts, not the selected physical mode contraction i_surface.
+They prove that deleting the direct gamma derivative of inertia is generally
+unjustified before mode or background motion is even considered.
+One may instead enforce the preferred normalization <psi,I psi>=1 at every
+gamma by rescaling the mode. Its mode derivative then cancels this direct
+inertia derivative, while changing the contractions j and h. This is a valid
+normalization change, not permission to freeze i,j,h simultaneously. The
+ratio i/r and the full closure remain invariant under common mode rescaling.
+
+A more faithful frozen-base model is
+  i=i0+k gamma, r=h+j gamma,
+with i0,k,h,j>0. Let d=k h/(j i0), y=j gamma/h,
+beta=alpha j h^(p-1)/i0^p. Its equation is
+  f_d(y)=y[(1+d y)/(1+y)]^p=beta.
+Now f_d(0)=0 and f_d(infinity)=infinity, so at least one positive root exists
+for every beta>0. Its critical-point numerator is
+  d y^2+[(1-p)+(1+p)d]y+1.
+For p>1 two positive stationary points occur precisely when
+  0<d<[(p-1)/(p+1)]^2.
+They give one or three positive roots as beta crosses the local minimum and
+maximum, with a double and a simple root at either critical value. Otherwise
+the function is strictly increasing, apart from the single flat stationary
+point at equality, and has one root. For m=7 the bound on d is 25/81.
+The k=0 model is a singular limit in which a large positive root can escape
+to infinity. Its no-root classification is not the physical membrane result.
+
+Full branch motion adds further terms and can change this frozen-base root
+classification. It is not an existence or uniqueness theorem for BHSM.
+
+6. Correct implicit derivative and outgoing contacts
+
+On a regular closure branch, define
+  D=1-p gamma(r_gamma/r-i_gamma/i).
+For another parameter x, with partial x derivatives holding gamma fixed,
+  gamma_x = gamma[alpha_x/alpha+p(r_x/r-i_x/i)]/D.
+All direct surface-inertia terms belong in i_gamma. Total branch contractions
+must additionally include mode, pairing, embedding, frame, event and domain
+motion. If D=0 the implicit-function formula fails at that closure fold.
+For two parameters use the full implicit identity
+  gamma_xy=-(F_xy+F_xgamma gamma_y+F_ygamma gamma_x
+                    +F_gammagamma gamma_x gamma_y)/F_gamma.
+Omitting these contacts while differentiating the outgoing operator would
+not pass the requested full energy/field derivative gate.
+
+No physical root, alpha, environmental length, future continuation, spin
+normalization or magnetic moment is assigned by these derivations. The exact
+heat and feedback equations specify evaluations to perform once their same
+action/domain and physical branch operands are supplied. Zero coupled
+matching corrections have been applied by this review.

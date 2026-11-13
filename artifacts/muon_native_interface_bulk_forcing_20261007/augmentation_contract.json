@@ -1,0 +1,10 @@
+{
+  "classification": "EXACT_DERIVED_KKT_CONVENTION__NO_NEW_NUMERICAL_EVALUATION",
+  "control_evidence": "test_direct_mixed_action_derivative_includes_constraint_source and test_residual_row_scaling_preserves_response_but_changes_naive_impedance",
+  "full_consumed_KKT_column": "h_psi=(L_eta,s,R_s), L=Gamma_owner+lambda^dagger R",
+  "multiplier_contact": "L_eta,s=f_psi,bulk+lambda^dagger R_eta,s in common coordinates",
+  "no_control_or_producer_rerun_for_this_clarification": true,
+  "packet_convention": "The defining_weak_equation in run_1/result.json denotes the bulk part; the same-owner Euler/constraint column and solver consume the full augmented column. Neither has been evaluated physically.",
+  "physical_bulk_covector": "<eta,f_psi,bulk>=D_Phi D_X S_bulk^owner[eta,xi_psi]",
+  "replay_scope": "control.json records owner and naive row contractions; corrected dual contraction is evaluated exactly by the targeted test"
+}

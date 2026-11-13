@@ -1,0 +1,19 @@
+F.                                                                       [100%]
+================================== FAILURES ===================================
+________________ test_coincident_lag_has_signed_boundary_value ________________
+
+    def test_coincident_lag_has_signed_boundary_value():
+        p=np.array([2.]);c=.37
+        actual=cutoff_lag_partial(p,p,c)
+>       np.testing.assert_allclose(actual,-c*np.exp(-c*p)/2,rtol=2e-15)
+E       AssertionError: 
+E       Not equal to tolerance rtol=2e-15, atol=0
+E       
+E       (shapes (1, 1), (1,) mismatch)
+E        ACTUAL: array([[-0.088266+0.j]])
+E        DESIRED: array([-0.088266])
+
+tests\test_muon_magnetic_full_cutoff_contact.py:10: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_muon_magnetic_full_cutoff_contact.py::test_coincident_lag_has_signed_boundary_value
+1 failed, 1 passed in 1.60s

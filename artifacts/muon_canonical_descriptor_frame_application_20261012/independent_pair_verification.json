@@ -1,0 +1,67 @@
+{
+  "all_output_bytes_identical": true,
+  "all_output_count": 2,
+  "all_output_sha256": {
+    "application.npz": "6a95bd23a020f6b9bb89089eacaa31cf6f437f746285b592f6901e79a543320c",
+    "result.json": "3e0bd95ec267479d14ec4619dac5b638aaac9b1faabf293c5095e8a6f981ce7d"
+  },
+  "capture_provenance": "complete actual PowerShell Tee-Object bytes",
+  "classification": "INDEPENDENT_REPLAY_CONTROL_ONLY_ACTUAL_FRAME_REFERENCE_SOURCE_APPLICATION",
+  "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+  "exact_default_inputs": {
+    "endpoint": "artifacts/muon_complex_canonical_endpoint_20261012/continued_run_1",
+    "reference_archive": "artifacts/flagship_integration/BHSM_N12_C2_LOHNER_STEP_1222.npz"
+  },
+  "executions": [
+    {
+      "argv": [
+        "C:/Python314/python.exe",
+        "scripts/evaluate_muon_canonical_descriptor_frame_application.py",
+        "--output",
+        "artifacts/muon_canonical_descriptor_frame_application_20261012/run_1"
+      ],
+      "exit_code": 0
+    },
+    {
+      "argv": [
+        "C:/Python314/python.exe",
+        "scripts/evaluate_muon_canonical_descriptor_frame_application.py",
+        "--output",
+        "artifacts/muon_canonical_descriptor_frame_application_20261012/run_2"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "full_ancestor_rematerialization_executed": false,
+  "input_pins_current": true,
+  "physical_stop_reference_or_pole_selected": false,
+  "shared_environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "PYTHONPATH": "src;scripts"
+  },
+  "stdout": {
+    "run_1.stdout.txt": {
+      "bytes": 446,
+      "sha256": "51402dfcf4f5680f3a48f65e525b611d65cf34a6d4aad98552896026d127b5b4"
+    },
+    "run_2.stdout.txt": {
+      "bytes": 446,
+      "sha256": "51402dfcf4f5680f3a48f65e525b611d65cf34a6d4aad98552896026d127b5b4"
+    }
+  },
+  "test": {
+    "argv": [
+      "C:/Python314/python.exe",
+      "-m",
+      "pytest",
+      "--noconftest",
+      "-q",
+      "tests/test_muon_canonical_descriptor_frame_application.py"
+    ],
+    "exit_code": 0,
+    "stdout_path": "artifacts/muon_canonical_descriptor_frame_application_20261012/tests_final.stdout.txt",
+    "stdout_sha256": "8886901133ce185a9c1179dbe39455b2f5a7b948cf7c796625809daf774a3086"
+  },
+  "verifier_source_sha256": "94efecd370e0f022b14ee5494249c7c3f893ed81161513674924ef998645694b"
+}

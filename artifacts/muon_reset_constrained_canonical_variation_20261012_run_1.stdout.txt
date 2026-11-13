@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "C:\Users\carbe\Downloads\BHSM_muon_parent_maxwell_worktree_20261001\scripts\evaluate_muon_reset_constrained_canonical_variation.py", line 156, in <module>
+    p.add_argument('--output',type=Path,required=True);a=p.parse_args();materialize(a.normal_folder,a.reset_folder,a.output)
+                                                                        ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\carbe\Downloads\BHSM_muon_parent_maxwell_worktree_20261001\scripts\evaluate_muon_reset_constrained_canonical_variation.py", line 48, in materialize
+    trace_ids=ids(('gauge_trace','Higgs_trace','moving_geometric_trace','normal_position_trace'))
+  File "C:\Users\carbe\Downloads\BHSM_muon_parent_maxwell_worktree_20261001\scripts\evaluate_muon_reset_constrained_canonical_variation.py", line 47, in ids
+    def ids(names):return np.array([j for name in names for j in groups[name]['indices']],int)
+                                                                 ~~~~~~~~~~~~^^^^^^^^^^^
+TypeError: list indices must be integers or slices, not str

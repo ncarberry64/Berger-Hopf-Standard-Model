@@ -1,0 +1,420 @@
+{
+  "actual_action": "A_E=partial_tau_E+Hcan(t(tau_E)); dt/dtau_E=-i/N; independent reflected branch dt_sharp/dtau_E=+i/N",
+  "archives": {
+    "incoming_cells_4.npz": {
+      "bytes": 630826,
+      "sha256": "8170b17e98dc13333aadb35f21f6e9c4ea11f05912976ebeec0f1d95092654b6"
+    },
+    "incoming_cells_4_target_vectors_0_240.npz": {
+      "bytes": 1772355,
+      "sha256": "4215f456a9f7649c1a67de36cc86765987e860332384f47f5457f794f7654d3d"
+    },
+    "incoming_cells_4_target_vectors_240_480.npz": {
+      "bytes": 1770110,
+      "sha256": "7523a4bb6fdaae429982e004d5b1537d6619905dcdb6b526b0c11bd33f67e553"
+    },
+    "incoming_cells_8.npz": {
+      "bytes": 1390554,
+      "sha256": "07791d0524a404862dd29c8064960dba780367a8da08df1a6c863cead06266bb"
+    },
+    "incoming_cells_8_target_vectors_0_240.npz": {
+      "bytes": 3561388,
+      "sha256": "d1e0a1e40514cc8c21790a0596f93d0768febea1c1b3c6ac9aded8a7f5455e78"
+    },
+    "incoming_cells_8_target_vectors_240_480.npz": {
+      "bytes": 3560242,
+      "sha256": "500838a401725e4af258a8e0bd2c73a4e42c48d5d91cd9cd5c7be880d75a5416"
+    },
+    "incoming_cells_8_target_vectors_480_720.npz": {
+      "bytes": 3555846,
+      "sha256": "b109b69253a0b5a9e42c5e8b730c7cc431f93aa5ecbd11991e92fa9c835bce5a"
+    },
+    "incoming_cells_8_target_vectors_720_960.npz": {
+      "bytes": 3552669,
+      "sha256": "f5d2ddc72551de109eb1506b15052e1a8b1d75d44a92f0a6e964e5dade68c4bd"
+    },
+    "incoming_nodes.npz": {
+      "bytes": 1954888,
+      "sha256": "3cd7543552db5fabe9959165e349eff8e3b577271cbee30d0be6942bffd34e4c"
+    },
+    "outgoing_cells_4.npz": {
+      "bytes": 631011,
+      "sha256": "ac394db13bd08e7e53b907d93fcbb06bde4d52714248b54084586964f14a8e26"
+    },
+    "outgoing_cells_4_target_vectors_0_240.npz": {
+      "bytes": 1774244,
+      "sha256": "f5034581b9befb149cafda42ce13d55082e8cd0ec93c0bf6f661467048b48327"
+    },
+    "outgoing_cells_4_target_vectors_240_480.npz": {
+      "bytes": 1773156,
+      "sha256": "1f33e25b222a9efd335f36395d4dc869ca6e70df7acb794b62cb7ab1246a9b9e"
+    },
+    "outgoing_cells_8.npz": {
+      "bytes": 1383549,
+      "sha256": "7f3c14ef8e59955f07a6935e6e08a74b574e87fe3788c85ccf917f92ca93997d"
+    },
+    "outgoing_cells_8_target_vectors_0_240.npz": {
+      "bytes": 3564884,
+      "sha256": "bd68f75346b5cc9cc422ae1787803693a79c72a672fa8919068113f76fe5055d"
+    },
+    "outgoing_cells_8_target_vectors_240_480.npz": {
+      "bytes": 3565046,
+      "sha256": "da7970187eab3f6a0895b32b3259937fc44710c0654eb9ae18dd21f7e1162155"
+    },
+    "outgoing_cells_8_target_vectors_480_720.npz": {
+      "bytes": 3561142,
+      "sha256": "16472332feabd062d87f3f42fec01c9e0d5cc4b9f1844bea494c113a1f126f65"
+    },
+    "outgoing_cells_8_target_vectors_720_960.npz": {
+      "bytes": 3559120,
+      "sha256": "49eda4ae34c2c0fffcfdb3a1bcb1ed32eeebd922bee9f0c2fa27366db91e5f6d"
+    },
+    "outgoing_nodes.npz": {
+      "bytes": 1938482,
+      "sha256": "debc474fd84183f84c3612d02b98e7ae3572ab01b5c97ac5d9765d5ecb6b0798"
+    }
+  },
+  "boundary_comparison": "full minus SAME K/M final-Dirichlet heat action, including dK and dB; this is an actual finite-domain return, not a zero-frequency Schur heat replacement",
+  "classification": "EVALUATED_PIECEWISE_CLIFFORD_EUCLIDEAN_ACTION_AND_SAME_FORM_BOUNDARY_RETURN",
+  "cutoff": 1.0329133712274834e-11,
+  "error_scope": "binary64 ODE/quadrature/FE/spectral action diagnostics and 4/8 FE comparison; no physical temporal/exterior/tail/overlap uncertainty certificate",
+  "input_hashes": {
+    "artifacts/flagship_integration/BHSM_N12_C2_REFINED_RESET_ROOT_CENTER.npz": "59dd88661b15cbeec96bc19294f9d9c64f754cccbfbc385c32329fa9c864a8fe",
+    "artifacts/flagship_integration/BHSM_N12_FULL_RESET_ACTION_JACOBIAN.npz": "35bb2b67ff784206d3a5b9dc82881f5ffd8f844b55342f2032d29cdafb38a67a",
+    "artifacts/muon_birth_transfer_value_20261008/retained_reset/run_1/result.json": "d0fec0f8e8a05818fcce67e88ed8db73744484220a2cb213825893f481cb0a72",
+    "artifacts/muon_calibrated_pauli_20261009/inputs.json": "0b614ab6f26d169ca04a4878f767f78eb3668484840867e46aebbebf186369da",
+    "artifacts/muon_calibrated_weak_decay_20261010/run_1/weak_decay.json": "9c31575ce0889571790f8767cf53ffe043cb9906e0a45a96b194971320a0aad7",
+    "artifacts/muon_corrected_profile_magnetic_response_20261011/run_1/incoming_contacts.npz": "427094c0d93147bc143a1378f007e5eeb287dd5fac2eefcac962ff28e9f897a5",
+    "artifacts/muon_corrected_profile_magnetic_response_20261011/run_1/incoming_phase.npz": "5bd2933bc65890c8a1da7699e8de91ce5d1cdef55a22fbbcc6205eb58d31d350",
+    "artifacts/muon_corrected_profile_magnetic_response_20261011/run_1/incoming_primal_and_source.npz": "96b2d8f5d9b18229fce85601e6ba912af0326446c2a0f63eb1cacce00ce1ed63",
+    "artifacts/muon_corrected_profile_magnetic_response_20261011/run_1/incoming_velocity.npz": "3118e2127b24c04a3ac51f6191d1fd217b6561feaf9586bc502214c808f58cf5",
+    "artifacts/muon_corrected_profile_magnetic_response_20261011/run_1/outgoing_contacts.npz": "b6e9d323f3c55cd2c6eb0fff84a68a52393c017bf4a50adff82686bdcc3baa6e",
+    "artifacts/muon_corrected_profile_magnetic_response_20261011/run_1/outgoing_phase.npz": "d86d15b1209b970e258d784bd2979f5095250698981a09efc45908aa53fc6dc6",
+    "artifacts/muon_corrected_profile_magnetic_response_20261011/run_1/outgoing_primal_and_source.npz": "d9b5bb396f478183c928e3ebb49f9dfc752f827ca9dd3132894fb8e54bf5f2ec",
+    "artifacts/muon_corrected_profile_magnetic_response_20261011/run_1/outgoing_velocity.npz": "4d463858ff9161a103f776e9f6658eaaba1621a5bbe3215254f28b6aa2c4348d",
+    "artifacts/muon_corrected_profile_magnetic_response_20261011/run_1/result.json": "67d10f7d2064219916ba4abc9caf66f7e673dfc96453aba3c91458363624740b",
+    "artifacts/muon_finite_normal_phase_20261011/incoming_run_1/application.npz": "254491c04531387f3ef3ae761cb4efccfbed54055683af00fbd8259a2520a8f9",
+    "artifacts/muon_finite_normal_phase_20261011/incoming_run_1/result.json": "8547be3232459deb8cb1d325a3d956bc0380ba0c767371ccce4bf7f5140b399f",
+    "artifacts/muon_inherited_finite_normal_phase_20261011/run_1/application.npz": "7a513c82e9e4f3e2560e2989867e00e8af3453e637a29559286c29eb7c184a59",
+    "artifacts/muon_inherited_finite_normal_phase_20261011/run_1/result.json": "d283c45cb81e86628ecec96159eae5327829d15f440bf01c78164f4b12434c51",
+    "artifacts/muon_matched_mechanical_source_20261002/replay_reference/matched_source_and_weak_actions.npz": "146435df28178967c321c0aa7e89a1511395d196f96b8715532aa98e3e312c2b",
+    "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1/application.npz": "c67363c17adfb519f399614463d5a13dbcd019aa53246d452421eea8ba982455",
+    "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1/result.json": "06867e31959910ec21385e8491bd5b794060c68e8404ae0524e3d0c9b544faa6",
+    "scripts/evaluate_muon_corrected_profile_magnetic_response.py": "7921658039c4a2890151c331ad8516f8a651686c35f14ef51fa95e7ecf5b7b8d",
+    "scripts/evaluate_muon_piecewise_euclidean_action.py": "e16f0e41e5326c80026209488b6354a544c2a811e58b356287ec3e75cf06069e",
+    "scripts/evaluate_muon_reached_trace_action.py": "f2ecf5b614f8b3b1b5f9bf2b73490e539321049633f7deb467bdf60a81e0c260",
+    "src/bhsm/interface/aether_canonical_momentum_action_jacobian.py": "d0ade20dc8a999e43073b45ca3ef59e05c65c55e37a1d6565d4e389176295cb1",
+    "src/bhsm/interface/aether_diagonal_sp1_m4_attachment_v15_50.py": "e6482614dcb54f4890a5e66fbe724d4c302405d575a4b73ddbb64a075cb1827e",
+    "src/bhsm/interface/aether_lorentzian_child_galerkin_v15_44.py": "574a9a6267d9228170c7309bd4be3cafb36b7515a6ee558509beb968e97bdab7",
+    "src/bhsm/interface/muon_birth_attached_phase.py": "948c1505e9b68cffbe8050be31dcb5727d8f8d4f25399f9037cfc94a9ae9fdeb",
+    "src/bhsm/interface/muon_birth_chronological_normal_inertia.py": "909f322d0b375ab03fc0b0a148c9d710ac77e371e029c5e92c9bfbde86883b05",
+    "src/bhsm/interface/muon_birth_coupled_primal_midpoint.py": "ce321f641fa51d98710d006e246aac5cf6bd046be93a74fab452808597c599ce",
+    "src/bhsm/interface/muon_birth_finite_geometric_trace_endpoint.py": "4f5c36144222d5d1e657061aa9352f8e86d5ae61a0ebdf05991a477e68d4be5f",
+    "src/bhsm/interface/muon_birth_finite_normal_phase.py": "660ed731bdbe0bbb71eda750c9dbffd20e7ce9f63be2a6087e5a385d76850361",
+    "src/bhsm/interface/muon_birth_finite_normal_trace_graph.py": "20eafd9a6abff3d3a89a2f6085d099584684ba19b600673dafda634cb56aad18",
+    "src/bhsm/interface/muon_birth_full_field_attachment.py": "58b3bd8a4ae5fe7c63b5551e4d0f26d82ab82a27d4389066c894a5e1b4728d03",
+    "src/bhsm/interface/muon_birth_inherited_finite_normal_phase.py": "86b082dfa0b525e9d8bb510a6c02e53c517d7ecdd8c6c9aec956d175d829add4",
+    "src/bhsm/interface/muon_birth_normal_constrained_action.py": "fe66a9116816e075cfc5e7c5f5f3c2c02d539311303b693a1d89cbc08ea62577",
+    "src/bhsm/interface/muon_birth_normal_trace_graph.py": "d012a0455d84be2ce7aae8d6833f8b482f9bbc1e9ee1b899042a421c2a782896",
+    "src/bhsm/interface/muon_birth_paired_attachment_endpoint.py": "71a69275ebeef226fd8dc7585745c5c8acac687e497a8441fe37a37553178f23",
+    "src/bhsm/interface/muon_birth_paired_field_endpoint.py": "f22b6a17b65c72b30571b3d9f721f347737a5916fa08e50bd833ad22df3cd035",
+    "src/bhsm/interface/muon_birth_phase_continuation.py": "9169a1c56bf5084d1f240043ca12d431c87e4adaff24fe09bdf7bf27fc5eb0be",
+    "src/bhsm/interface/muon_birth_trace_enriched_action.py": "c36c48482dd58ebe369ab935574b78b3693036f717fb49035dfac01164956dce",
+    "src/bhsm/interface/muon_birth_trace_enriched_phase.py": "591754957f1cc452bfd53d8adc1087308459902a822876105315b7423c2fd676",
+    "src/bhsm/interface/muon_birth_two_arm_assigned_action.py": "cf6c58dc68700315d701fb9a1e9e99e927d18d90016a6ae7f86470c36136c77a",
+    "src/bhsm/interface/muon_corrected_profile_magnetic_response.py": "8d09cd726393d59b6843553c085ffaf61f84f009b44678d1465fe7ebe645f1d8",
+    "src/bhsm/interface/muon_electromagnetic_magnetic_birth_continuation.py": "51d9cd03cfa6047dfe0fafd249734b26172193c78c860af65d6a6b0148c7c9e4",
+    "src/bhsm/interface/muon_electromagnetic_soft_magnetic_source.py": "e0ec4c67e29e8f2ac9ce003559c3d9257d00a30a79a373bd2caff58f5dd4d231",
+    "src/bhsm/interface/muon_exact_material_response.py": "a530651e157a000dbe6935e9de1cedbce5679f98c599c6c7c641158b749307bf",
+    "src/bhsm/interface/muon_intrinsic_higgs_gauge_action.py": "c19354209300ab06c0f1ab6bf4e111dbb5de0cd9e8d1d31a71af357a829118d4",
+    "src/bhsm/interface/muon_intrinsic_m4_normal_pullback.py": "43187eee35f2879a43fe0fd02ae447502811349ccf2f2a78aa14beb8aa706bf0",
+    "src/bhsm/interface/muon_material_higgs_gauge_action.py": "8bca013820283614c6578be4f44c29c4ea1c919f516aa9a2783f0eb38127d035",
+    "src/bhsm/interface/muon_moving_geometric_action.py": "bf560fdb9766f563d97d3100ccb266e2a4350c910ac14a51d57576c2b5371392",
+    "src/bhsm/interface/muon_parent_gauge_geometry_correction.py": "fa29f5764dca39196c807d64e7976d5894589e7de3ffa9d4a5ddecfb136b4816",
+    "src/bhsm/interface/muon_parent_maxwell_background_euler.py": "fbb2c99d4b1c58247ac42a769fad3e1b16ccc76a1744fe0c5334e50c4a974bee",
+    "src/bhsm/interface/muon_parent_maxwell_corrected_retarded.py": "00bf7053e289297afd4f10dc0ef9522ac8326f2bd07609c9979bb9f5f6f74a4d",
+    "src/bhsm/interface/muon_parent_maxwell_full_retarded.py": "1ecf85a6da94b84b69af1ff4394301232d9d4cad4b0f0bc08de56d5943e0c478",
+    "src/bhsm/interface/muon_parent_maxwell_full_weak.py": "c1fb703967a644306d3521d457a6d7c778a49d89c1e081b401487a25b7491565",
+    "src/bhsm/interface/muon_parent_maxwell_geometry_weak.py": "f0b4a49934e17ad18c40e9164b66c54e1b2cb146fb476f59b0e500f2dd6c9153",
+    "src/bhsm/interface/muon_parent_mean_causal_action.py": "2a84b1be22625b1a5ae88d10c76631d7a5b602d2b0e22e57f00201bb74a593ad",
+    "src/bhsm/interface/muon_parent_positive_coupled_field.py": "f26b1c395c8059555d1f3e217705998c5e0437122ab761354ce0f085d891d5c2",
+    "src/bhsm/interface/muon_parent_retarded_hypercharge.py": "2eb97a704bce63f601cc0d6e0f647266d4b4aac7f746d34dceb41b72018c3510",
+    "src/bhsm/interface/muon_piecewise_euclidean_action.py": "7126b991bc6130cc5956f21fcf4c31f389b9b1f223b4514d3035adc4f05d074e",
+    "src/bhsm/interface/muon_pointwise_full_field_action.py": "d57cd5953de00bcae857d0e458bbead1e463e5fffe8d947c5b9e71806aabaff6",
+    "src/bhsm/interface/muon_profile_preserving_phase_sample.py": "27ce99bf8c286b0e3fe56dc4d7f0f215dee51b228dcce1805006e1b2c8998418",
+    "src/bhsm/interface/muon_reached_trace_action.py": "7fed7f2520a6f66e31323905359e491897f7187ccf9871ecfc2ab95e415ffade",
+    "tests/test_muon_piecewise_euclidean_action.py": "aec5733c3a077d76c8505193e7e59a68d5ea0774d80eb591b3c505a2e2da1afe"
+  },
+  "physical_a_mu": null,
+  "physical_g_mu": null,
+  "positive_pairing": "real positive proper-clock quadrature; A_Edagger from the independently evaluated reflected real-action coefficients",
+  "quantum_loop_or_stratified_relative_completion": false,
+  "records": [
+    {
+      "c0_original_action_residual_max": 1.71025794585332e-14,
+      "contacts": [
+        {
+          "axis": 0,
+          "boundary_return_norm": 1.6984336981876533e-11,
+          "c0_direct_inverse_difference_max": 1.3072487245133745e-25,
+          "c0_original_action_contact_residual_max": 9.648901083308225e-21,
+          "delta_K_norm": 0.2145403991696241,
+          "delta_numerator_norm": 9.875658292186447e-07,
+          "numerator_contact_norm": 1.6378469380511726e-11,
+          "response_norm": 1.593207239008268e-11,
+          "square_contact_norm": 3.2031403236969927e-11
+        },
+        {
+          "axis": 1,
+          "boundary_return_norm": 1.6984336981876533e-11,
+          "c0_direct_inverse_difference_max": 1.3288052156403665e-25,
+          "c0_original_action_contact_residual_max": 8.216548063072336e-21,
+          "delta_K_norm": 0.21454039916962372,
+          "delta_numerator_norm": 9.875658292186428e-07,
+          "numerator_contact_norm": 1.6378469380511758e-11,
+          "response_norm": 1.5932072390082684e-11,
+          "square_contact_norm": 3.203140323696996e-11
+        },
+        {
+          "axis": 2,
+          "boundary_return_norm": 1.698433698183594e-11,
+          "c0_direct_inverse_difference_max": 1.1337159814367216e-25,
+          "c0_original_action_contact_residual_max": 6.876983771125827e-21,
+          "delta_K_norm": 0.21454039916929948,
+          "delta_numerator_norm": 9.875658292186443e-07,
+          "numerator_contact_norm": 1.6378469380511703e-11,
+          "response_norm": 1.5932072390035803e-11,
+          "square_contact_norm": 3.203140323689723e-11
+        }
+      ],
+      "current_previous_resolution_difference_norm": null,
+      "represented_source_cells": 192,
+      "side": "incoming",
+      "source_Hermiticity_rounding_max": 3.165537263385675e-33,
+      "source_P_minimum": 20341858197.7628,
+      "source_boundary_return_norm": 2.3417558529144012e-05,
+      "source_current_norm": 1.0218447637403063e-10,
+      "target_Hermiticity_rounding_max": 0.0,
+      "target_P_minimum": 20341281697.992237,
+      "target_eigenvector_parts": [
+        {
+          "archive": "incoming_cells_4_target_vectors_0_240.npz",
+          "column_start": 0,
+          "column_stop": 240
+        },
+        {
+          "archive": "incoming_cells_4_target_vectors_240_480.npz",
+          "column_start": 240,
+          "column_stop": 480
+        }
+      ],
+      "temporal_cells": 4,
+      "total_proper_clock": 1.1084271861566385e-05
+    },
+    {
+      "c0_original_action_residual_max": 4.200628223780756e-14,
+      "contacts": [
+        {
+          "axis": 0,
+          "boundary_return_norm": 2.1934620999521315e-11,
+          "c0_direct_inverse_difference_max": 2.534947858156278e-25,
+          "c0_original_action_contact_residual_max": 1.3120805426059969e-20,
+          "delta_K_norm": 0.23413050845590835,
+          "delta_numerator_norm": 7.247470904560402e-07,
+          "numerator_contact_norm": 2.2024120678080152e-11,
+          "response_norm": 2.0167790095010802e-11,
+          "square_contact_norm": 4.184367265628977e-11
+        },
+        {
+          "axis": 1,
+          "boundary_return_norm": 2.1934620999521486e-11,
+          "c0_direct_inverse_difference_max": 2.976529749597937e-25,
+          "c0_original_action_contact_residual_max": 1.9580985084663615e-20,
+          "delta_K_norm": 0.234130508455908,
+          "delta_numerator_norm": 7.247470904560389e-07,
+          "numerator_contact_norm": 2.2024120678080443e-11,
+          "response_norm": 2.0167790095010958e-11,
+          "square_contact_norm": 4.184367265629021e-11
+        },
+        {
+          "axis": 2,
+          "boundary_return_norm": 2.193462099949743e-11,
+          "c0_direct_inverse_difference_max": 3.064506281052715e-25,
+          "c0_original_action_contact_residual_max": 1.3555691806214213e-20,
+          "delta_K_norm": 0.23413050845575106,
+          "delta_numerator_norm": 7.247470904560398e-07,
+          "numerator_contact_norm": 2.2024120678079707e-11,
+          "response_norm": 2.0167790094976733e-11,
+          "square_contact_norm": 4.184367265622454e-11
+        }
+      ],
+      "current_previous_resolution_difference_norm": 1.0734719056069688e-13,
+      "represented_source_cells": 192,
+      "side": "incoming",
+      "source_Hermiticity_rounding_max": 5.0966110667273297e-33,
+      "source_P_minimum": 20147078536.61151,
+      "source_boundary_return_norm": 3.113439416900061e-05,
+      "source_current_norm": 1.0229182356312948e-10,
+      "target_Hermiticity_rounding_max": 0.0,
+      "target_P_minimum": 20146513042.782505,
+      "target_eigenvector_parts": [
+        {
+          "archive": "incoming_cells_8_target_vectors_0_240.npz",
+          "column_start": 0,
+          "column_stop": 240
+        },
+        {
+          "archive": "incoming_cells_8_target_vectors_240_480.npz",
+          "column_start": 240,
+          "column_stop": 480
+        },
+        {
+          "archive": "incoming_cells_8_target_vectors_480_720.npz",
+          "column_start": 480,
+          "column_stop": 720
+        },
+        {
+          "archive": "incoming_cells_8_target_vectors_720_960.npz",
+          "column_start": 720,
+          "column_stop": 960
+        }
+      ],
+      "temporal_cells": 8,
+      "total_proper_clock": 1.1084271861566385e-05
+    },
+    {
+      "c0_original_action_residual_max": 1.1982330780088999e-14,
+      "contacts": [
+        {
+          "axis": 0,
+          "boundary_return_norm": 6.8058835115076604e-12,
+          "c0_direct_inverse_difference_max": 4.7183701599823705e-26,
+          "c0_original_action_contact_residual_max": 4.9412677362670965e-21,
+          "delta_K_norm": 0.20628588444719964,
+          "delta_numerator_norm": 6.490727914940733e-07,
+          "numerator_contact_norm": 4.829444585891426e-12,
+          "response_norm": 6.6798176426908184e-12,
+          "square_contact_norm": 1.1473829339611022e-11
+        },
+        {
+          "axis": 1,
+          "boundary_return_norm": 6.805883511507652e-12,
+          "c0_direct_inverse_difference_max": 4.8817664173029834e-26,
+          "c0_original_action_contact_residual_max": 5.78759788437279e-21,
+          "delta_K_norm": 0.20628588444719928,
+          "delta_numerator_norm": 6.490727914940722e-07,
+          "numerator_contact_norm": 4.829444585891424e-12,
+          "response_norm": 6.67981764269081e-12,
+          "square_contact_norm": 1.1473829339611013e-11
+        },
+        {
+          "axis": 2,
+          "boundary_return_norm": 6.805883511533762e-12,
+          "c0_direct_inverse_difference_max": 3.0494260764458005e-26,
+          "c0_original_action_contact_residual_max": 3.414604186486067e-21,
+          "delta_K_norm": 0.20628588444705903,
+          "delta_numerator_norm": 6.490727914940731e-07,
+          "numerator_contact_norm": 4.829444585891346e-12,
+          "response_norm": 6.679817642716348e-12,
+          "square_contact_norm": 1.1473829339631313e-11
+        }
+      ],
+      "current_previous_resolution_difference_norm": null,
+      "represented_source_cells": 192,
+      "side": "outgoing",
+      "source_Hermiticity_rounding_max": 1.437755062039739e-33,
+      "source_P_minimum": 51277087416.7161,
+      "source_boundary_return_norm": 1.0675511387792334e-05,
+      "source_current_norm": 2.960577154680627e-11,
+      "target_Hermiticity_rounding_max": 0.0,
+      "target_P_minimum": 51276172108.52486,
+      "target_eigenvector_parts": [
+        {
+          "archive": "outgoing_cells_4_target_vectors_0_240.npz",
+          "column_start": 0,
+          "column_stop": 240
+        },
+        {
+          "archive": "outgoing_cells_4_target_vectors_240_480.npz",
+          "column_start": 240,
+          "column_stop": 480
+        }
+      ],
+      "temporal_cells": 4,
+      "total_proper_clock": 6.981396777852131e-06
+    },
+    {
+      "c0_original_action_residual_max": 3.8976433673177344e-14,
+      "contacts": [
+        {
+          "axis": 0,
+          "boundary_return_norm": 8.808917624522658e-12,
+          "c0_direct_inverse_difference_max": 2.0605974340849655e-25,
+          "c0_original_action_contact_residual_max": 1.0518731228435296e-20,
+          "delta_K_norm": 0.20628589049128152,
+          "delta_numerator_norm": 4.847197622525016e-07,
+          "numerator_contact_norm": 6.512998837631437e-12,
+          "response_norm": 8.590057497253685e-12,
+          "square_contact_norm": 1.5060896225594675e-11
+        },
+        {
+          "axis": 1,
+          "boundary_return_norm": 8.808917624522711e-12,
+          "c0_direct_inverse_difference_max": 2.0544508938815003e-25,
+          "c0_original_action_contact_residual_max": 9.644546858314533e-21,
+          "delta_K_norm": 0.20628589049128118,
+          "delta_numerator_norm": 4.847197622525006e-07,
+          "numerator_contact_norm": 6.512998837631512e-12,
+          "response_norm": 8.590057497253737e-12,
+          "square_contact_norm": 1.5060896225594805e-11
+        },
+        {
+          "axis": 2,
+          "boundary_return_norm": 8.808917624526684e-12,
+          "c0_direct_inverse_difference_max": 1.9794987321683895e-25,
+          "c0_original_action_contact_residual_max": 1.0027007879075138e-20,
+          "delta_K_norm": 0.20628589049120263,
+          "delta_numerator_norm": 4.847197622525014e-07,
+          "numerator_contact_norm": 6.512998837631618e-12,
+          "response_norm": 8.590057497256937e-12,
+          "square_contact_norm": 1.5060896225591535e-11
+        }
+      ],
+      "current_previous_resolution_difference_norm": 1.4820089489908635e-13,
+      "represented_source_cells": 192,
+      "side": "outgoing",
+      "source_Hermiticity_rounding_max": 2.3541706430912787e-33,
+      "source_P_minimum": 50786089779.85442,
+      "source_boundary_return_norm": 1.425656780782861e-05,
+      "source_current_norm": 2.975397244162667e-11,
+      "target_Hermiticity_rounding_max": 0.0,
+      "target_P_minimum": 50785191945.74765,
+      "target_eigenvector_parts": [
+        {
+          "archive": "outgoing_cells_8_target_vectors_0_240.npz",
+          "column_start": 0,
+          "column_stop": 240
+        },
+        {
+          "archive": "outgoing_cells_8_target_vectors_240_480.npz",
+          "column_start": 240,
+          "column_stop": 480
+        },
+        {
+          "archive": "outgoing_cells_8_target_vectors_480_720.npz",
+          "column_start": 480,
+          "column_stop": 720
+        },
+        {
+          "archive": "outgoing_cells_8_target_vectors_720_960.npz",
+          "column_start": 720,
+          "column_stop": 960
+        }
+      ],
+      "temporal_cells": 8,
+      "total_proper_clock": 6.981396777852131e-06
+    }
+  ],
+  "source_image": "middle fixed-Y family C6 source and all20 n1+n3 angular target images, axes0:3; no source-compressed square",
+  "temporal_domain": "continuous piecewise linear trace with initial value zero and final natural cotangent; shared corner value/weak flux rows, no imposed final Dirichlet in the primary form"
+}

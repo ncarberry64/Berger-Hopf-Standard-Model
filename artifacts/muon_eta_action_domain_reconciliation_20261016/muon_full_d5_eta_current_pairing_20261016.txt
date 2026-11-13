@@ -1,0 +1,238 @@
+FULL D5 ETA CONTACT: FORMAL ADJOINT, CURRENT AND NATIVE POSITIVE PRODUCT
+2026-10-16. Exact local source audit; no action modification or campaign replay.
+
+Repository C:/Users/carbe/Downloads/BHSM_muon_parent_maxwell_worktree_20261001.
+
+1. THE ACTUAL SCALAR NORMAL OPERATOR AND ITS RETAINED SCOPE
+
+completion/foundational_dirac_spin_glue_v14_45.py:104-130 adopts
+  D5=i gamma^mu nabla_mu+i eps Gamma_perp A_eta,
+  A_eta=partial_s+(1/2)partial_s log J+m_eta,
+  m_eta=-partial_s log sin(f_eta),
+  u0=N J^(-1/2) sin(f_eta), integral J|u0|^2 ds=1.
+Its lines185-226 prove the scalar normal cancellation and unit reduced
+four-dimensional kinetic pullback. Lines98,119-122 also say opposite
+oriented sheets supply opposite chiral modes. That chirality statement
+must be distinguished from what the displayed scalar differential
+operator alone proves; section5 makes the exact distinction.
+
+muon_full_d5_localized_lepton_trace.py:19-101 constructs the actual full
+384 Spin/SM/family carrier, fixes Gamma_perp=i gamma5 on the particle
+module and its charge-conjugate counterpart, and explicitly retains the
+full complement. Its normal_operator_rule is the same scalar A_eta.
+The rank18 W is an explicit M4 chiral trace/lift, not an inserted normal
+mass matrix or a proof of a full-D5 chiral kernel theorem.
+
+muon_holomorphic_d5_trace_action.py:140-196 and340-369 place the scalar
+normal mass as i Gamma_N m_eta, including its actual moving timelike
+normal component. Lines419-487 require that complete eta matrix in the
+literal ordered left*D5*right action; the code does not multiply it by a
+new Lorentz-chirality projector. muon_sigma_collar_d5_weak_action.py:40-76
+does the same in an actual supplied collar coordinate Jacobian. The
+coordinate-radial control is not substituted for the material/sigma
+normal action. No nonzero temporal, spin or gauge term is deleted here.
+
+muon_full_d5_localized_lepton_trace.py:156-243 supplies independently
+continued left/right trace amplitudes and exactly one Gamma0 Dirac-bar
+conversion. This is a valid analytic dual rule; it does not say arbitrary
+full-D5 right solutions have their complex conjugates as the left Euler
+solutions. The real point-trace Riesz identity is a separate local matrix
+identity, not a theorem of full-body formal self-adjointness.
+
+2. EXACT FULL-CURRENT FORMAL ADJOINT DEFECT
+
+Work in a regular REAL adapted timelike collar. Let the normal current
+matrix alpha_n=eps Gamma_T Gamma_perp be self-adjoint in the positive
+physical spin current metric G=Gamma0 Gamma_T, with alpha_n^2=I. In a
+current-orthonormal frame it is an ordinary Hermitian involution.
+Retain the geometric normal measure J ds. Put a=(1/2)partial_s log J.
+The normal Hamiltonian part of i D_tau Psi=W Psi is
+  W_n=-i alpha_n(partial_s+a+m_eta).
+The normal geometric derivative without m_eta already has the standard
+current-compatible formal adjoint. For real scalar m_eta, the additional
+zero-order body is
+  W_eta=-i alpha_n m_eta,
+  W_eta^dagger G=-G W_eta,
+  W_eta^dagger G-G W_eta=2i m_eta G alpha_n.               (1)
+Thus the unreduced contact is G-anti-Hermitian, not a real scalar Dirac
+mass Hamiltonian. The opposite eps/orientation reverses the relevant
+normal matrix and flux together; it does not turn (1) into zero for
+arbitrary full fields on each collar.
+
+Equivalently A_eta^dagger_J=-partial_s-a+m_eta=-A_eta+2m_eta.
+Freezing a current-compatible frame for the normal integration, the
+Hamiltonian Green identity has, in addition to its usual endpoint term,
+  <phi,W_n psi>-<W_n phi,psi>
+    =[-i J phi^dagger G alpha_n psi]_ends
+      -2i integral J m_eta phi^dagger G alpha_n psi ds.    (2)
+For the Lorentz Euler expression L=iD_tau-W, the eta contribution has
+the opposite sign, +2i times the same interior bilinear. These are
+interior defects, not interface/outgoing flux terms. A seam J-unitary
+value graph cancels boundary Green terms; it cannot by itself cancel (2).
+
+This is the eta ADDITION to the full identity. All ordinary geometric
+spin/gauge and moving-density terms must still be evaluated in their
+actual metric-compatible pairing. No unrelated contact is assumed to
+cancel (1) without a source-derived equality, and no theorem that the
+whole BHSM is inconsistent follows from this one local expression.
+
+For the physical right solution and its Hermitian conjugate, its current
+therefore obeys the relative local balance
+  div j=-2m_eta j_n,                                    (3)
+including the ordinary geometric divergence. For two different right
+solutions the analogous mixed-current equation holds. The sign follows
+i D_tau Psi=W Psi and j_n=Psi^dagger G alpha_n Psi. A vanishing normal
+current on a selected state makes this source vanish, but does not prove
+that W is formally Hermitian on every full-complement field.
+
+3. INDEPENDENT LEFT EULER CURRENT IS NOT A POSITIVE RIESZ REPAIR
+
+The ordered Grassmann action has a perfectly defined independent left
+Euler equation obtained by integration by parts. Pairing its left
+solution with the right solution yields the usual conserved BILINEAR
+Green current, because the same m_eta term occurs on the two opposite
+sides of that identity. This left equation is not, in general, obtained
+by Hermitian conjugating the right equation in the geometric JG norm.
+The existing analytic transpose/independent-left action machinery is
+consistent with that distinction; it does not establish positive
+physical probability conservation for arbitrary full right fields.
+
+Even in a scalar, constant-frame normal channel the distinction is
+explicit. Right A_eta u_R=0 gives u_R proportional to J^-1/2 sin f.
+The adjoint normal channel gives u_L proportional to J^-1/2/sin f.
+Their biorthogonal density J u_L u_R is constant. This is a statement
+about the isolated formal normal channels, not a calculation of the
+full interacting left state. A chosen Galerkin left trial with the same
+u_R is an allowed weak test and need not solve that adjoint equation;
+its use alone is not a mistake or a physical left-state normalization.
+
+4. THE SCALAR WEIGHT THAT WOULD SYMMETRIZE IT CHANGES THE OWNED NORM
+
+In the best-case normal-only scalar profile, replacing J by Jw would
+make this derivative formally current symmetric only if
+  (1/2)partial_s log w=m_eta,
+  w=C exp(2 integral m_eta ds)=C/sin^2 f.                (4)
+This follows directly from the derivative formal adjoint; it is not an
+available arbitrary normalization. With the owned u0 it gives
+  Jw |u0|^2=C N^2,
+rather than N^2 sin^2 f. On a complete infinite normal line the former
+is not integrable. On a finite collar it gives a different norm and
+different source/kinetic pullback. In particular it is not the existing
+canonical probability one-form alpha_eta=N^2 sin^2 f ds, explicitly
+derived in aether_eta_wall_material_response_v15_26.py:85-136.
+
+The similarity A_eta=sin f (partial_s+a)(sin f)^-1 exhibits the same
+fact. It is a nonunitary similarity in the ORIGINAL geometric norm.
+Transforming the field and the original norm together preserves the
+original adjoint defect; choosing instead the weight(4) changes the
+physical Riesz identification/probability measure. This is not the
+previously owned coframe dual-density correction in
+muon_transported_native_pairing.py:70-96, which represents the same
+analytic action with its transformed left body and explicit original
+measure. No source there adds an eta-specific weight(4) while preserving
+the original J|u0|^2 normalization.
+
+For a varying material profile, (4) only controls the normal derivative.
+A global scalar weight would additionally require an integrable
+one-form and consistent tangential/time contacts. Those are not inferred
+by setting the normal antiderivative equal to a full metric change.
+
+5. LOCAL NORMAL KERNEL: WHAT ORIENTATION DOES AND DOES NOT SELECT
+
+Gamma_N is invertible on the full retained384 carrier. Since A_eta is
+scalar on that carrier, at a fixed normal channel
+  i Gamma_N A_eta [u0 chi]=0
+for EVERY constant full carrier chi, independently of eps and Lorentz
+chirality. Equivalently the scalar A_eta alone does not select W or its
+rank18 particleL/conjugate-eR pattern. This is a local differential
+kernel fact. It is NOT a count of global normalizable eigenstates or
+extra light particles: the full angular/gauge/Higgs equations, topology,
+BRST/zero-mode quotient, endpoint conditions and adopted chiral bundle
+can restrict the admitted global states.
+
+The actual M4 chirality IS action-owned:
+aether_hybrid_standard_model_bundle_v15_53.py:28-52 declares the chiral
+SM bundle, and muon_intrinsic_higgs_weak_action.py:38-77 binds its LR
+spin/charge representation. The latter explicitly says it evaluates
+representations, not fields or state expectations. The full-D5 trace W
+implements that admitted M4 pattern. These stronger representation
+owners therefore avoid claiming chirality absent. They do not replace
+the displayed full-D5 scalar normal contact by a chiral mass operator.
+
+In the inspected actual full-D5 coefficient/weak-action consumers, no
+opposite-sign chiral eta mass matrix or extra eta Riesz/left-contact
+completion supersedes i Gamma_N m_eta. The older eta/color projector
+module completion/eta_knot_action_completion_v14_0.py:144-170 gives only
+conditional Weyl normal forms and a color-conjugation projector; it is
+not that full Lorentz normal-operator replacement. Neither changing the
+scalar contact to a conventional domain-wall Dirac mass nor deleting
+the complement is authorized by this audit. This is a narrow source
+result, not an exhaustive no-existence theorem over all BHSM archives.
+
+6. WHY THE REDUCED18 AND THE NATIVE POSITIVE PRODUCT STILL WORK
+
+On the supplied normal inclusion A_eta u0=0, the normal derivative,
+geometric half-density and eta terms annihilate together. One must not
+isolate W_eta on that constrained mode while dropping its compensating
+normal derivative. The owned reduced kinetic coefficient is unit, and
+the intrinsic18 angular/fixed-Y W is Hermitian in its canonical current
+frame. Also the actually transported selected lift E=u S W has
+E^dagger G alpha_n E=0, equivalently W^dagger S^dagger G alpha_n S W=0
+up to the scalar |u|^2. The fixed W alone gives this identity in the
+adapted current-orthonormal frame; an unboosted W is not substituted at
+a moving wall. Thus j_n vanishes for that pure selected polarization.
+Neither fact implies full384
+formal self-adjointness after arbitrary complement modes/couplings return.
+
+For the microscopic native positive operator a closed densely defined
+D is enough: P=D^dagger D is positive self-adjoint with canonical form
+q[u]=||D u||^2 on Dom D. D itself need not be self-adjoint. Thus the eta
+defect is NOT an obstruction to constructing a legitimate native square.
+It requires retaining the actual full D^dagger, with eta sign reversal,
+measure derivatives and its Green-annihilator boundary domain. One may
+not replace that product by D^2 or copy all causal endpoint conditions.
+
+In the actual adapted normal channel, the Clifford output is an isometry
+and this gives the particularly concrete same-action normal factor
+  P_eta=A_eta^dagger_J A_eta
+    =-partial_s^2-(partial_s log J)partial_s
+      +m_eta^2-m_eta'-a'-a^2,  a=(1/2)partial_s log J.
+After the UNITARY half-density map chi=J^(1/2)u, it becomes
+  P_eta,flat=-partial_s^2+m_eta^2-m_eta'.
+The owned chi0=N sin f is its exact null mode because
+(partial_s+m_eta)chi0=0. This preserves integral J|u0|^2=1 and requires
+no eta-specific Riesz change. Its operator domain is the actual
+Dom A_eta with A_eta u in Dom A_eta^dagger; endpoint/boundary conditions
+must still be supplied by that same action. This is a constructive
+positive normal component, not a claim of the global physical spectrum
+or a new Clifford/UV doubling. Full tangential/moving contacts are kept
+when constructing the complete product rather than summing an isolated
+normal potential as a replacement.
+
+For A=D_tau+W, suppose D_tau is the anti-adjoint metric-compatible
+derivative in the ACTUAL full time-dependent positive native pairing,
+after any owned density/frame isometry and with its complementary
+endpoint adjoint domains. Then
+  A^dagger A=-D_tau^2+(W^dagger-W)D_tau-[D_tau,W]+W^dagger W.
+In raw time-dependent metric coordinates that anti-adjoint property
+must be derived: any additional partial_tau G density/frame adjoint
+contact remains in D_tau^dagger and the product until accounted for.
+The W^dagger-W contact survives for full W_eta. Existing strong conormal
+forms with arbitrary complex body C already permit this; they do not
+require C Hermitian and should not be restricted to W18 by name. The
+reset agent's independent native-square note supplies the corresponding
+inverse-dagger conormal transmission and moving source contacts.
+
+This positive-product construction does not alone prove physical
+Lorentz-current unitarity, full off-mode state normalization or equality
+to an independently continued Lorentz determinant. A non-Hermitian
+retarded effective kernel may describe an open subsystem with flux;
+the local interior balance(3) is not automatically such an exterior
+flux identity. Its full physical interpretation must use the same
+action-owned state/domain or reduction, without declaring the entire
+model wrong from the isolated contact.
+
+No physical outgoing derivative, radial convergence certificate,
+coupled correction, Maxwell/226 validation, normalized two-spin state
+or muon magnetic moment is produced here. No new theory, empirical
+input or arbitrary pairing has been selected.

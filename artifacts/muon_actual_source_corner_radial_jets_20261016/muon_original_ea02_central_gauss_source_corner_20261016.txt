@@ -1,0 +1,170 @@
+ACTUAL ea02 CENTRAL GAUSS / INITIAL SOURCE-CORNER APPLICATION
+2026-10-16. Fixed original field, native material precision, no new history.
+
+The new evaluated block is the classical action's nonzero initial Gauss
+charge/conormal contact and its source-conservation law. It supplies a
+necessary affine corner row for the defect response z0. It does not select
+the physical outgoing graph, solve the exterior, retract the Cauchy data,
+or evaluate a physical muon charge or magnetic moment.
+
+1. EXACT INPUT AND ACTION OWNERS
+
+Repository C:/Users/carbe/Downloads/BHSM_muon_parent_maxwell_worktree_20261001.
+The unchanged original full368 cut is
+ artifacts/muon_baton_zoo_maximal_current_realization_20261013/
+ actual_linear_cut_compatible368_MP_full_operator_blocked_run_2/
+ actual_precise_direct_CHILD620_and_full368_canonical_source_operands.npz,
+ SHA ea02ed6aee45310c5651fef5c8f103e868007d4f125582ab2b64ff7651f76b2b.
+Its exact coordinate clock is8.249007812499999e-5-2.292213182443259e-8 i.
+This is a complex analytic finite-action iterate, not a physical real mean.
+
+The matching native CUT clock is
+ actual_same_cut_native_MP_matrixfree_continuous_clock_run_1/
+ actual_continuous_phase210_clock_and_same_owner_point_density_rate.npz,
+ SHA18fcc0d4fa588c4fcd7aaa8822be76c132b660e0a2f223f7be55fcb9d8d41290.
+Both master368 and coordinate_time must match ea02 exactly. A nearby
+midpoint, equal-clock different branch, or newly chosen state is rejected.
+
+The new q/v/Gauss data are the already evaluated corrected native-epoch
+D4 and D6 same-field applications, source
+ audits/bhsm_original_ea02_same_field_position_euler_20261016.py,
+ SHA d6b0dbb2e34185011f243f7f571da2f536ebc58c6138fab380f856a2f5db96b9.
+The actual source, full368 field, high-order old-to-new q/v map, native
+point/wall/density germ and reconstructed native epoch-map archive are
+checked. No polynomial coefficients, Cauchy momenta or Gauss data change.
+
+Owned temporal gauge incidence:
+ artifacts/muon_baton_zoo_radial_convergence_20261014/
+ actual_common_cut_degree{4,6}_complete_phase_blocks_run_1/
+ executed_bhsm_baton_zoo_current_covariant_phase_blocks.py,
+ temporal_generators(), lines9-60.
+There are degree+5 literal radial profiles phi_p. The central U(1) columns
+are j=4*p+3. These columns use only the literal derivative-complex
+coefficients, At profiles, and -T_Y H phi_p(wall). They use no old-clock
+SU2 product K or Kdot column. Consequently their coordinate matrices are
+the same on the old/native time charts at the identical field. The actual
+Hdot is taken from the native field clock, not assigned by assumption.
+
+The literal radial functions and derivatives are pinned from
+ literal_MP_radial_complex192_run_2/
+ degree_{04,06}_literal_MP_radial_profiles_and_derivative_complex.npz.
+The scalar wall is actually present in the native scalar source through
+_scalar_wall(...), in the frozen full action runtime; no scalar-wall term
+or contact is omitted. The gauge generators use the same owned real Higgs
+representation as that action. No extra Haar, electric charge or other
+normalization is inserted.
+
+2. ACTION DERIVATION AND CORNER SIGNS
+
+For a central gauge parameter chi=g(t)*phi_p(rho), the owned conventions
+give deltaAt=gdot*phi, deltaAr=g*phi_rho, and
+deltaH=-g*T_Y H*phi(wall). Write the coordinate position map as V and
+the Gauss-potential map as C. Then deltaq=gV,
+deltav=gdot V+g Vdot, deltaAt=gdot C.
+The only field-dependent central Vdot is the retained scalar-wall contact
+-T_Y Hdot*phi(wall). All nine(D4)/eleven(D6) profiles are kept, including
+profiles with nonzero wall value and their Higgs charge term.
+
+With Pi=L_v, Gq=L_q, rG=L_At and E=Gq-dotPi, gauge invariance gives the
+actual off-shell identities
+ Q+r=0,             Q=V^T Pi, r=C^T rG;
+ static=V^T Gq+Vdot^T Pi=0;
+ dotQ+dotr=0;
+ V^T E-dotr=static-(dotQ+dotr)=0.
+All transposes are literal analytic placements, without Hilbert conjugation.
+
+The old158 position Euler rows are NOT set to zero. They are recovered
+from the actual native clock residual dotLv-Lq; all new position rows,
+momenta, momentum clock derivatives and all Gauss rows come from their
+actual saved native action application. No source/field sampling repeats.
+
+Q is a canonical temporal charge pairing. Integration by parts gives
+[Pi deltaq] at the two time endpoints, so the future arm's INITIAL outward
+corner flux is -Q. Both signs are exported explicitly.
+
+For the affine defect equation DrG[z0]=-rG, differentiating the primary
+identity requires DQ[z0]=+r (including the field dependence of V(H)).
+The corresponding initial OUTWARD conormal target is -r. These are required
+linear source/corner rows, not an applied correction or a distribution
+chosen among fields/momenta. In particular a zero initial corner return
+cannot represent this nonzero affine source. The actual native linearized
+corner on the seven response columns is still unevaluated and explicitly
+None. Saved original-binary K_G*z_trial is exported separately from native
+primal rG and their formation difference; it is not promoted to native K_Gz.
+
+3. ACTUAL PAIRED RESULTS
+
+Producer:
+ audits/bhsm_original_ea02_central_gauss_corner_20261016.py
+ SHA56c5dc1d082e01e2903d544f327ebf16e64155125e01af0601c2c7038c55aa47.
+Outputs under WORK/outputs/bhsm_original_ea02_central_gauss_corner_20261016/
+ native_D4_run_{1,2} and native_D6_run_{1,2}.
+Each independent pair's three files are byte identical.
+
+D4, all9 profiles,217 positions,60 Gauss/auxiliary rows:
+ initial canonical charge upper=3.0054371840114643e-9;
+ Gauss charge total-clock upper=3.93804432213242e-6.
+The largest new profile is p8=phi*P4:
+ r=(2.885369441632298e-9 +8.410088301161191e-10 i), Q=-r;
+ dotr=(1.159888511987559e-6 -3.763356443766479e-6 i).
+These components are not zero, and r exceeds the original2e-10 guard.
+Result SHAceccae576f92c6fdf39d7f93c8fe279083f5043e5629deb502332caf2fd89aa9.
+Numerical archive291754B:
+ b0a554eafe31d83165243d5f2b5c70a6a8f083b78a806ef7415e34550f7ca0ae.
+
+D6, all11 profiles,255 positions,68 Gauss/auxiliary rows:
+ initial canonical charge upper=1.034606234137401e-7;
+ Gauss charge total-clock upper=2.1879352831173372e-4.
+The largest new profile is p10=phi*P6:
+ r=(1.005952771322622e-7 +2.418038080434448e-8 i), Q=-r;
+ dotr=(5.84144965180695e-5 -2.108514989931015e-4 i).
+Result SHA5c0d0641a0c1df7fb30dafda75ba50f2e13f20dea44cf8f0bbf344483128a541.
+Numerical archive329395B:
+ f2c3ca4b5015a7bbc69ffb689546bbcd769d848f8b2be51ee7b6f73815d1fc5e.
+
+On both degrees the actual primary Noether residual is <=3.553e-38,
+its differentiated residual <=7.468e-33 and source conservation <=2.069e-32.
+The nine common profile charge/Gauss/clock vectors are exactly equal in
+the stored high/low representations across D4/D6. This is a same-field
+source test-space identity, not convergence of a solved field sequence.
+The additional D6 tests expose further nonzero constraint/corner source.
+
+Pair and common-profile receipt:
+ WORK/outputs/bhsm_original_ea02_central_gauss_corner_20261016/
+ paired_inventory_and_common_profile_receipt.json
+ SHAf91079efe1b13f471a3983ffef440addb74d1305d20913c6be315756397d888f.
+The tiny Noether arithmetic identities are not a continuum, radial,
+physical outgoing-domain or full derivative2e-10 certificate.
+
+4. PLACE IN THE OUTGOING OPERATOR CHAIN; REMAINING BLOCKS
+
+The coupled action variation produces its bulk Euler/Gauss equations and
+temporal/wall conormals. Its retarded inverse must respect those constraints
+and the nonzero affine corner row above on the same field/source epoch.
+This application evaluates that previously unused initial-source block.
+It does not create the connected future/exterior operator, its event/reset
+fields, or its outgoing invariant subspace/affine load Y_R,s_R.
+
+muon_terminal_exterior_action_generator.reached_canonical_generator owns
+the local Legendre/Gauss law J,f. A complete future realization must use
+those coefficients and the action-selected outgoing condition. The ready
+full terminal consumer requires Y_R,s_R and their jets; it does not select
+them. The PR468 mixed terminal consumer requires action-produced two-boundary
+Weyl jets and the same-domain terminal load and derivatives. A sourced
+corner covector, C0/Cj and that terminal operator are distinct objects.
+No numeric value from this application is substituted for a missing B/Y.
+
+The active unsquared fermion boundary pole uses Gamma(E), energy/field
+vertices and independent spin modes. The native graded positive realization
+P=D^dagger D and its heat-minus-relative action have different domains and
+spectral roles. No E^2=z, Lorentz D^2=P, determinant duplication or pole
+identification is made here. Native in these filenames means precise
+material scalar arithmetic, not a completed native operator identification.
+
+This is one conserved classical contribution. The microscopic graded
+induced current, full SU2 gauge/source corner, ghost/reset global domain,
+physical future return, full physical source/domain derivative, all226
+after-pass validation and normalized two-spin state remain to be evaluated.
+No microscopic current has been declared zero. The original prefix cell7
+incomplete density/time flag remains false. Original coupled correction
+count is zero and no muon magnetic moment is claimed.

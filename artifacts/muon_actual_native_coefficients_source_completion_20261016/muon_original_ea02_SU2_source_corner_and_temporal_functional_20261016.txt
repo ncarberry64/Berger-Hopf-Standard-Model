@@ -1,0 +1,186 @@
+ACTUAL EA02 SU2 SOURCE CORNERS AND THE UNPROJECTED TEMPORAL GAUSS TEST
+2026-10-16. New actual classical weak-function applications. No field solve,
+Gauss retraction, source/history replay, or original coupled correction.
+
+1. Constructive result
+
+All three SU2 channels are evaluated on the same original ea02 complex
+analytic field and native-material CUT clock used by the central packet.
+The represented primary corner and its clock derivative retain every
+ordinary temporal profile:9 profiles at D4 and11 at D6, hence27/33 SU2
+parameters. The source conservation equation needs an additional temporal
+test W=[A_t,phi T_a]. Its image is not in the finite At state span. This
+application evaluates its full unprojected Gauss functional and clock
+contact directly from the saved point, radial-first, wall and density
+operands. No finite projection or zero load is substituted for this test.
+
+Source:
+ audits/bhsm_original_ea02_nonabelian_gauss_corner_20261016.py
+ SHA256 792af62bc8bc9257beeafd57894644b22272a820edfed3ff67e2ccdf33c129b2
+ 21926B. Canonical ROOT comes from __file__; all externally supplied input
+ paths and every imported bhsm source used are pinned in each result.
+
+2. Exact physical/numerical ownership
+
+Target NPZ:
+ artifacts/muon_baton_zoo_maximal_current_realization_20261013/
+ actual_linear_cut_compatible368_MP_full_operator_blocked_run_2/
+ actual_precise_direct_CHILD620_and_full368_canonical_source_operands.npz
+ SHA ea02ed6aee45310c5651fef5c8f103e868007d4f125582ab2b64ff7651f76b2b.
+Native CUT clock NPZ SHA:
+ 18fcc0d4fa588c4fcd7aaa8822be76c132b660e0a2f223f7be55fcb9d8d41290.
+The full master368 and t=8.249007812499999e-5 -2.292213182443259e-8 i
+must agree exactly across the target, native clock and corrected D4/D6
+applications. This is not a different principal branch, new future tail
+cell, real physical background, or selected collider outgoing state.
+
+Input sources are the frozen central primal source56c5dc1d... and corrected
+native-epoch position source d6b0dbb2... . Both complete product basis value
+and total-clock maps were reconstructed from native point germs by that
+position source. Their archive/source hashes are checked before use.
+
+Actual generator owner:
+ artifacts/muon_baton_zoo_radial_convergence_20261014/
+ actual_common_cut_degree{4,6}_complete_phase_blocks_run_1/
+ executed_bhsm_baton_zoo_current_covariant_phase_blocks.py:temporal_generators
+ inserts all SU2 D_i phi products as explicit product position/rate
+ coordinates, all At phi profiles, and -T_a H phi(wall) in Higgs velocity.
+The complete_product_lifts constructor in the corresponding epoch-map
+source explicitly gives D_i phi=[A_i,phi]+delta_i,rho phi_rho, with all
+native K_t/K_tt/K_r/K_rt contacts. It is an external chart selected on
+this same background, held on variations. Coordinate Vdot therefore has
+the Higgs Hdot rows; physical Kdot is already in the moving basis lift
+and is not added a second time to Vdot.
+
+3. Action identities and the previously missing term
+
+For gauge parameter g(t) phi_p(rho) T_a, write the represented spatial/
+Higgs transformation delta q=Vg and delta v=V gdot+Vdot g. The temporal
+connection transformation is delta At=Cg gdot+Wg, W=[At,phi_p T_a].
+Let Pi=L_v, rG=L_At, E=L_q-d_t Pi. With analytic transpose,
+
+ Q=V^T Pi, r=Cg^T rG,
+ primary: Q+r=0,
+ differentiated primary: d_t Q+d_t r=0,
+ static: V^T L_q+Vdot^T Pi+G_At[W]=0,
+ covariant source conservation: V^T E-Cg^T d_t rG+G_At[W]=0.
+
+The conservation row equals static minus differentiated primary. The
+central special case has W=0; setting W=0 for SU2 would discard an actual
+nonzero term. This application retains it as an augmented functional test.
+Primal rG and the required affine correction charge are not retracted.
+The future-arm initial outward flux is -Q, and for affine Gauss RHS -rG
+the required canonical charge change is +r, outward change -r. Both signs
+are exported explicitly. These are action covectors without physical
+charge-unit calibration.
+
+4. Literal unprojected functional and clock
+
+Using the saved full60 point coefficients A, A_t, A_rho, define
+ X=partial_t Ar-partial_r At+[At,Ar],
+ Y_i=partial_t Ai+[At,Ai]-beta(partial_r Ai+[Ar,Ai]).
+The retained added Maxwell action has the original coefficient weights
+ k=electric_radial and e=electric. For a pure temporal test W,
+ delta X=-W_r+[W,Ar], delta Y_i=[W,Ai]. Thus
+
+ G_At[W]_bulk = MAXWELL_TO_CAP sum_j w_j
+  { k X dot(-W_r+[W,Ar])+e sum_i Y_i dot[W,Ai] }.
+
+The actual W_r=[At_r,phi]+[At,phi_r] is used. Every source/inherited
+mechanical connection already present in the full saved A and its clock
+remains present. The frozen literal action coefficient1/sqrt(2) is used
+exactly as its original binary64 scalar owner uses it; no replacement
+normalization is fitted.
+
+The scalar wall adds
+ G_At[W]_wall = (2 wT/VOLUME) DtH dot O_W H,
+ DtH=Hdot+O_At H.
+Its clock includes wTdot, DtHdot, Wdot, and Hdot exactly once. Hddot comes
+from the supplied complete native field clock. At/At_r/wall/density clocks
+come from the corrected saved actual source composition; none is zero-
+assigned. The only new geometry evaluation computes the original cap wT
+and its supplied total-clock direction, without action-gradient/test/right
+seeds. All bulk scalar and test clock product placements are explicit.
+
+An independent value-only FD4 path evaluates this same literal functional
+on the declared affine saved point/wall/density/H/Hdot germ. It does not
+call the analytic clock expression. All fixed steps are retained:
+ h=2^-12: relative error .10553825011690528,
+ h=2^-18: relative error6.290569908434467e-9,
+ h=2^-24: relative error3.7494718482699794e-16.
+The coarse failures are visible, with fourth-order refinement. The last
+absolute error is4.613673998113841e-30. The independent value at0 agrees
+to4.366100519724822e-76. These are controls of a supplied finite germ,
+not a new mean/history solution or a physical outgoing derivative gate.
+The full clock derivative of the entire static conservation equation is
+not claimed; the temporal Gauss functional clock itself is evaluated.
+
+5. Exact finite-span witness without a projection
+
+The retained At profiles are B0,B1,f,regular,phi P_l. With x=rho/WALL and
+the frozen noninteger alpha=1.8541019662496847, B0/B1/regular have
+fractional part x^alpha times a polynomial of degree<=2. The fixed f is
+an analytic reference-lambda difference minus such fractional profiles,
+divided by its fixed owned norm; the reference lambdas and phi P_l are
+analytic at x0. The actual fractional polynomial of each At component
+is reconstructed from its actual original raw coefficients and frozen
+norm/projection constants, with no numerical fit.
+
+For phi0=16x^2(1-x)^2, [At,phi0 T_a] has fractional coefficients at powers
+above x^(alpha+2), outside the complete finite At state span, for each
+a=0,1,2. Their acb interval nonzero lower witnesses are respectively
+ .01711284966156938, .01711284966156938, .005497703783983453.
+These are polynomial-coefficient witnesses, not point-field amplitudes.
+No arbitrary state extension, least-squares projection or dropped mode
+is used. The full unprojected test values, radial derivatives, clocks,
+wall traces, and fractional polynomial coefficients are in the NPZ.
+
+6. Actual values and limits
+
+Both D4 and D6 attain:
+ primary Noether upper3.774396606987e-28,
+ differentiated primary upper1.757658008481542e-24,
+ full static variation upper2.877335422811146e-26,
+ full covariant source conservation upper1.7758027861721496e-24,
+ conservation-static+differentiated-primary upper3.212223541804612e-43.
+The nonzero augmented temporal Gauss functional reaches1.2085735654497456e-18
+and its clock reaches1.230486368431492e-14.
+
+D4 actual SU2 charge reaches1.2678915036465416e-11 and its projected Gauss
+clock reaches1.6886563318731438e-8. D6 adds two profiles: charge reaches
+1.3406608583806204e-10 and its Gauss clock2.971944991000705e-7.
+The entire primal Gauss residual remains3.0054371840114643e-9 at D4 and
+1.034606234137401e-7 at D6, explicitly unsatisfied at2e-10. Identity
+closure does not turn those nonzero off-shell constraints into solutions.
+Common first9 profiles/all3 channels agree exactly in stored high/low
+charge, clock, functional and conservation rows between D4/D6. This is
+same-field test-space consistency, not radial solution convergence.
+
+7. Paired evidence
+
+WORK output base:
+ C:/Users/carbe/OneDrive/Documents/CODEX/outputs/bhsm_original_ea02_nonabelian_gauss_corner_20261016
+Use final_D4_run_{1,2} and final_D6_run_{1,2}; all3 files in each pair are
+byte-identical independent executions. Earlier pilot/first source runs
+remain preserved separately and are not relabeled final.
+
+D4 NPZ1260380B SHA387bce6add45ea518b5767aff21c3ff0f0156dd651fb870b4419aa9d9e679e29
+D4 JSON50152B SHAea905ac87e66211bf11b1532ad66b239a1151385cf918e356e6836a4452b1849
+D6 NPZ1512144B SHAc48f3eed9971a1cce82740d6b1c1fefb4b51ee17b521bbcc5cb5c8a96f93f5ae
+D6 JSON50150B SHA401889b494b4b8c5fa84ea610f45077807937f59356cdb04b673528ad108e76f
+Both executed source copies have the SHA in section1.
+ final_paired_inventory_and_common_profile_receipt.json
+ SHAb8842b6315b4e620ee1c110f4d0d09236abc85bf2e6cd3b85971a099b0de2159.
+
+8. Physical return still required
+
+The new result is an actual full-SU2 classical primal source/corner Ward
+component. It does not yet linearize every non-Abelian contact on all7
+retained response fields, nor evaluate the microscopic graded induced
+current, physical reset/ghost domain, exterior mean, retarded Y_R/s_R,
+physical C0/Cj or their full energy/field/source/domain derivatives. It
+does not identify an unsquared Gamma with native P or infer E^2=z.
+The original prefixcell7 incomplete protocol remains unadmitted. No
+coupled correction, Maxwell/all226 AFTER validation, physical spin-state
+normalization or muon magnetic moment is reported. Their flags remain
+false/None. No new physical initial data or initial Spin map is selected.

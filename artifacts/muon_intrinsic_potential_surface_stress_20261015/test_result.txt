@@ -1,0 +1,11 @@
+Executed with PYTHONPATH=<repository>/src:
+C:\Python314\python.exe -m pytest --noconftest -q tests/test_muon_intrinsic_potential_surface_stress.py
+....                                                                     [100%]
+4 passed in 3.66s
+
+The module fixture freshly executes all four new producers. Tests compare
+cutoff/source derivatives with direct heat identities and finite differences;
+surface stress with literal original value differences; saved outgoing
+subspace transport with its current Gram and nonzero spin terms; and the
+neutral Higgs fourth variation with compensated E1 differences and separate
+direct eigenspectrum E1 actions. None is the full physical outgoing gate.

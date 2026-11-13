@@ -1,0 +1,43 @@
+{
+  "all_input_hashes_current": true,
+  "all_output_files_byte_identical": true,
+  "classification": "VERIFIED_IMMUTABLE_LOCAL_CHARGE_IDENTITY_AND_ACTUAL_SOURCE_RESTRICTION",
+  "focused_test": {
+    "command": "C:/Python314/python.exe -m pytest --noconftest -q tests/test_muon_local_charge_matching_response.py",
+    "exit_code": 0,
+    "passed": 3,
+    "tool_chunk_id": "bb5244"
+  },
+  "output_pairs": [
+    {
+      "bytes": 13144,
+      "first": "artifacts/muon_local_charge_matching_response_20261011/run_1/application.npz",
+      "second": "artifacts/muon_local_charge_matching_response_20261011/run_2/application.npz",
+      "sha256": "6ddb2fb5479e9e6240472329928251be2519d60897bf8998782d0eddc60a710b"
+    },
+    {
+      "bytes": 21828,
+      "first": "artifacts/muon_local_charge_matching_response_20261011/run_1/result.json",
+      "second": "artifacts/muon_local_charge_matching_response_20261011/run_2/result.json",
+      "sha256": "c2088dff7036120df713ceb9c42c49a471532c1ea6ef0612d211e21770d19fa4"
+    }
+  ],
+  "physical_locality_or_Pauli_inferred": false,
+  "preserved_initial_test_attempt": {
+    "exit_code": 1,
+    "reason": "imported helper name started tested_, collected as a test; renamed helper before any producer runs; all three math tests passed in initial attempt",
+    "tool_chunk_id": "afdd03"
+  },
+  "producer_runs": [
+    {
+      "command": "C:/Python314/python.exe scripts/evaluate_muon_local_charge_matching_response.py --output artifacts/muon_local_charge_matching_response_20261011/run_1",
+      "exit_code": 0,
+      "tool_chunk_id": "865b65"
+    },
+    {
+      "command": "C:/Python314/python.exe scripts/evaluate_muon_local_charge_matching_response.py --output artifacts/muon_local_charge_matching_response_20261011/run_2",
+      "exit_code": 0,
+      "tool_chunk_id": "2cc3fa"
+    }
+  ]
+}

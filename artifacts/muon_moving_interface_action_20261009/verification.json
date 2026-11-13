@@ -1,0 +1,239 @@
+{
+  "PR": "https://github.com/ncarberry64/Berger-Hopf-Standard-Model/pull/465",
+  "audit_status": "ALL_FIVE_PUBLICATION_AUDITS_PASSED",
+  "branch": "codex/muon-parent-maxwell-density-review",
+  "commands": [
+    {
+      "command": "$env:PYTHONPATH='src'; C:\\Python314\\python.exe -m pytest -q tests/test_muon_moving_material_response.py tests/test_muon_birth_candidate_geometry_action.py tests/test_muon_moving_geometric_action.py",
+      "exit_code": 0,
+      "output": "51 passed in 9.28s"
+    },
+    {
+      "command": "$env:PYTHONPATH='src'; C:\\Python314\\python.exe -m pytest -q tests/test_muon_native_kkt_interface_source.py tests/test_muon_birth_fermion_event_kkt_inputs.py tests/test_ae4_branch_relative_support_transition.py",
+      "exit_code": 0,
+      "output": "84 passed in 5.73s"
+    },
+    {
+      "command": "$env:PYTHONPATH='src'; C:\\Python314\\python.exe scripts/evaluate_muon_moving_interface_action.py --output-dir artifacts/muon_moving_interface_action_20261009/run_1",
+      "exit_code": 0,
+      "output_summary": {
+        "normal_first": 3.6864628798657613,
+        "response_rows_max": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "result_sha256": "3e03fc1dfe15862de6fb9d87ade421663c739b29afa4256efbf16e17ab30365a"
+      }
+    },
+    {
+      "command": "$env:PYTHONPATH='src'; C:\\Python314\\python.exe scripts/evaluate_muon_moving_interface_action.py --output-dir artifacts/muon_moving_interface_action_20261009/run_2",
+      "exit_code": 0,
+      "output_summary": {
+        "normal_first": 3.6864628798657613,
+        "response_rows_max": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "result_sha256": "3e03fc1dfe15862de6fb9d87ade421663c739b29afa4256efbf16e17ab30365a"
+      }
+    }
+  ],
+  "deterministic_replay": [
+    {
+      "byte_identical": true,
+      "bytes": 32459,
+      "file": "incoming_C1_E1_proper_response.json",
+      "sha256": "d19bbcf454109967b39a0b84c9458633b98169f5f6104153ca8f1bdeaf086437"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 381790,
+      "file": "incoming_C1_E1_weak_action.json",
+      "sha256": "c6fbe0b09052c7c90da72fd186b5b8fb98a50f2da7d14c821cb770ebe2b0d039"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 32661,
+      "file": "outgoing_C2_proper_response.json",
+      "sha256": "fc710a1feec947887ea1786aa3b716ac4c2d92502f1d2a2660aff22e703f060a"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 382576,
+      "file": "outgoing_C2_weak_action.json",
+      "sha256": "e4726df425f96337509ef56cd793bd4301cd6af48055c9738f887f9b4ac31e27"
+    },
+    {
+      "byte_identical": true,
+      "bytes": 29659,
+      "file": "result.json",
+      "sha256": "3e03fc1dfe15862de6fb9d87ade421663c739b29afa4256efbf16e17ab30365a"
+    }
+  ],
+  "error_scope": {
+    "anomaly_enclosure": false,
+    "arithmetic": "binary64 finite N12/Gauss plus Arb supplied-coefficient three-port arithmetic",
+    "complete_coupled_response_enclosure": false,
+    "continuum_or_UV_enclosure": false,
+    "input": "retained binary64 reset center; bit-exact both sides, original receipt-pinned NPZ SHA",
+    "quadrature": "96/128/192Gauss and8193/16385/32769proper-response refinement diagnostics; not rigorous bounds",
+    "root_distance_propagated": false,
+    "soft_Pauli_error_enclosure": false
+  },
+  "file_hashes": [
+    {
+      "path": "src/bhsm/interface/muon_moving_material_response.py",
+      "sha256": "ec1137a92b57d1da37071f394075ac327998096dc4dc142e1b1a8a591ee9c93f"
+    },
+    {
+      "path": "src/bhsm/interface/muon_moving_geometric_action.py",
+      "sha256": "bf560fdb9766f563d97d3100ccb266e2a4350c910ac14a51d57576c2b5371392"
+    },
+    {
+      "path": "src/bhsm/interface/muon_birth_candidate_geometry_action.py",
+      "sha256": "ef4eab1d8855cb73c6d05cc12ef48953df56e27d86e8a358b8a004b9eb98443e"
+    },
+    {
+      "path": "scripts/evaluate_muon_moving_interface_action.py",
+      "sha256": "c8edf55e090784936b35c58af146473fe60c40220e2a2a21cc250cd76af4a7db"
+    },
+    {
+      "path": "tests/test_muon_moving_material_response.py",
+      "sha256": "5a3909585bb795b1eb0ac7a1bf39396c18e0a93913d4b714cd2f78d265a020d6"
+    },
+    {
+      "path": "tests/test_muon_moving_geometric_action.py",
+      "sha256": "ac00e1ae69e4c6dc0e426195a613a581e1b8cd7aee4fd8aeba4c574908e8b240"
+    },
+    {
+      "path": "tests/test_muon_birth_candidate_geometry_action.py",
+      "sha256": "05edc4d51f2238523a6071c42e5cadbdb81a259a512c27af4422b6a2ce1fe53d"
+    },
+    {
+      "path": "theory/muon_moving_interface_action_20261009.md",
+      "sha256": "bb32428697a8f90a889eb5fcd725d6d8b932f1e3963fa5acc3263a6ebd4e29c3"
+    }
+  ],
+  "line_ending_scope": "New hash-audited sources/tests/report explicitly LF in .gitattributes; deterministic JSON preserved as bytes; numerical output unchanged after normalization",
+  "physical_scope": {
+    "complete_stationary_base": false,
+    "complete_z_psi": false,
+    "final_a_mu_g_mu_evaluated": false,
+    "first_unexecuted_application": "b_H[phi]=D_s(delta_H S_full)[phi] in the coupled base/source; existing equation and causal domain; not a proved independent unsupplied datum",
+    "formation_mode_selected": false,
+    "native_remainder_evaluated": false,
+    "owner_definition_gap_inferred": false
+  },
+  "publication_checks": {
+    "all_source_test_report_hashes_match_staged_git_bytes": true,
+    "frozen_prediction_files_changed": false,
+    "only_modified_existing_path": ".gitattributes; appended exact new LF source paths",
+    "point_input_guard_changed": false,
+    "prior_scientific_source_or_milestone_modified": false,
+    "staged_diff_whitespace_check_passed": true
+  },
+  "rejected_diagnostic_solve": {
+    "absolute_replay_max": 0.030355973321519514,
+    "acceleration_norm": 8262742218329.063,
+    "command": "C:\\Python314\\python.exe - (inline SciPy solve of local qdot/m Hessian A at128Gauss)",
+    "condition_estimate": 2.1829926135148042e+18,
+    "consumed_as_physical_response": false,
+    "matrix_shape": [
+      61,
+      61
+    ],
+    "multiplier_rate_norm": 13846675877.172598,
+    "numerical_rank": 60,
+    "reason": "Local instantaneous matrix lacks justified weak temporal/domain/gauge reduction; small relative algebraic replay is insufficient",
+    "rejected": true,
+    "relative_replay": 2.7861287090795596e-18,
+    "warning": "LinAlgWarning: ill-conditioned matrix; rcond=1.7424280851258238e-20"
+  },
+  "repository_audit_transcript_sha256": "583859be958135e280706bd3481201e25342b7bcb925a85696feaeaf4f9c410d",
+  "repository_audits": [
+    {
+      "command": "C:\\Python314\\python.exe tools/audit_bhsm_status.py --format json",
+      "exit_code": 0,
+      "output_file": "artifacts/muon_moving_interface_action_20261009/repository_audits.json",
+      "passed": true,
+      "record_index": 0
+    },
+    {
+      "command": "C:\\Python314\\python.exe tools/audit_forbidden_claims.py --format json",
+      "exit_code": 0,
+      "output_file": "artifacts/muon_moving_interface_action_20261009/repository_audits.json",
+      "passed": true,
+      "record_index": 1
+    },
+    {
+      "command": "C:\\Python314\\python.exe tools/audit_frozen_prediction_integrity.py --format json",
+      "exit_code": 0,
+      "output_file": "artifacts/muon_moving_interface_action_20261009/repository_audits.json",
+      "passed": true,
+      "record_index": 2
+    },
+    {
+      "command": "C:\\Python314\\python.exe tools/verify_precision.py",
+      "exit_code": 0,
+      "output_file": "artifacts/muon_moving_interface_action_20261009/repository_audits.json",
+      "passed": true,
+      "record_index": 3
+    },
+    {
+      "command": "C:\\Python314\\python.exe tools/audit_public_readiness.py --format json",
+      "exit_code": 0,
+      "output_file": "artifacts/muon_moving_interface_action_20261009/repository_audits.json",
+      "passed": true,
+      "record_index": 4
+    }
+  ],
+  "reviewed_corrections": [
+    {
+      "correction": "w/b/shift j=0..11, actual C inverse=.5213519106704843; prior committed receipts not edited",
+      "problem": "w/b endpoint indices wrongly shared u k=1..12 signs",
+      "scope": "Earlier C diagnostic"
+    },
+    {
+      "correction": "both sides receipt-pinned source SHA and bit-exact q/v/m checked; two tamper regressions passed",
+      "problem": "loaded receipt blocks could disagree with independently validated original state",
+      "scope": "Source provenance"
+    },
+    {
+      "correction": "increasing-normal and oriented derivatives explicitly distinct",
+      "problem": "incoming negative trial summary had unsigned coefficient label",
+      "scope": "Oriented source"
+    }
+  ],
+  "runtime": {
+    "numpy": "2.4.6",
+    "python": "3.14.3 (tags/v3.14.3:323c59a, Feb  3 2026, 16:04:56) [MSC v.1944 64 bit (AMD64)]",
+    "python_flint": "0.9.0",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0"
+  },
+  "starting_HEAD": "8213b10f8ac50ded98c5e2fab4d9009460123bd9",
+  "superseded_failed_checks": [
+    {
+      "command": "C:\\Python314\\python.exe -m pytest -q tests/test_muon_moving_geometric_action.py",
+      "output": "1 failed, 8 passed in 8.19s",
+      "reason": "stale lower bound >800 on momentum-contact norm from before adding the required GHY completion; actual norm94.984469678389 retained"
+    },
+    {
+      "command": "C:\\Python314\\python.exe -m pytest -q tests/test_muon_moving_material_response.py tests/test_muon_birth_candidate_geometry_action.py tests/test_muon_moving_geometric_action.py",
+      "output": "1 failed, 41 passed in 9.32s",
+      "reason": "test initially presumed nonzero surface mixed source; even area and U_base=0 prove this particular mixed block zero while internal surface Hessian remains nonzero"
+    },
+    {
+      "command": "candidate geometry focused test initial run",
+      "output": "1 failed, 15 passed",
+      "reason": "stale inverse-C literal exposed endpoint-index diagnostic error; corrected via original cos basis"
+    },
+    {
+      "command": "material response continuous J quadrature test at16385nodes",
+      "output": "failed2e-9 assertion",
+      "reason": "observed trapezoid error2.94e-9; refined32769nodes, continuous comparison passed; no enclosure claimed"
+    }
+  ]
+}

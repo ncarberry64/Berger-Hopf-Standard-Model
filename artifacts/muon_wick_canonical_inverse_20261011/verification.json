@@ -1,0 +1,76 @@
+{
+  "classification": "VERIFIED_CONTINUED_SAME_DOMAIN_FULL488_CANONICAL_INVERSE_REPLAY",
+  "commands": [
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "scripts/evaluate_muon_wick_canonical_inverse.py",
+        "--output",
+        "artifacts/muon_wick_canonical_inverse_20261011/run_1",
+        "--refinements",
+        "16",
+        "32",
+        "64"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "path": "artifacts/muon_wick_canonical_inverse_20261011/execution_logs/run_1.command.json",
+      "stderr_path": "run_1.stderr.txt",
+      "stdout_path": "run_1.stdout.txt"
+    },
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "scripts/evaluate_muon_wick_canonical_inverse.py",
+        "--output",
+        "artifacts/muon_wick_canonical_inverse_20261011/run_2",
+        "--refinements",
+        "16",
+        "32",
+        "64"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "OMP_NUM_THREADS": "1",
+        "OPENBLAS_NUM_THREADS": "1",
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "path": "artifacts/muon_wick_canonical_inverse_20261011/execution_logs/run_2.command.json",
+      "stderr_path": "run_2.stderr.txt",
+      "stdout_path": "run_2.stdout.txt"
+    }
+  ],
+  "earlier_fixture_or_loader_corrections": [],
+  "error_scope": "binary64 continued canonical inverse and transpose adjoint on inherited finite action domain; refinement diagnostics are not certified continuum or physical Pauli errors",
+  "pairs": [
+    {
+      "byte_identical": true,
+      "paths": [
+        "artifacts/muon_wick_canonical_inverse_20261011/run_1/application.npz",
+        "artifacts/muon_wick_canonical_inverse_20261011/run_2/application.npz"
+      ],
+      "sha256": "69b55ee91c312895a36d1c05779d2f27febbd2e6d6603342b98caa1412bd3d5d"
+    },
+    {
+      "byte_identical": true,
+      "paths": [
+        "artifacts/muon_wick_canonical_inverse_20261011/run_1/result.json",
+        "artifacts/muon_wick_canonical_inverse_20261011/run_2/result.json"
+      ],
+      "sha256": "3c96b33e49cedf265c145f76b92df8403752a567ec0d392c8390217d9832249f"
+    }
+  ],
+  "physical_native_heat_or_Pauli_completed": false,
+  "source_dependencies_verified": true,
+  "tests": {
+    "command": "PYTHONPATH=src C:/Python314/python.exe -m pytest --noconftest tests/test_muon_wick_canonical_inverse.py -q",
+    "exit_code": 0,
+    "stdout": "2 passed in 2.21s"
+  }
+}

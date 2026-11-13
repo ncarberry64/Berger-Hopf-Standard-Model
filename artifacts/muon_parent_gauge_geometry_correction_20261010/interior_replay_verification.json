@@ -1,0 +1,29 @@
+{
+  "error_scope": "106-row zero-Higgs/interior-gauge finite Galerkin application; the historical density field is CAP_ONLY, not total interacting density; no physical formation/Pauli conclusion.",
+  "independent_byte_comparison": {
+    "application.npz": {
+      "byte_identical": true,
+      "bytes": 1039574,
+      "sha256": "c2819f23fc3e51efffe5fcd65ccf1ffa6dec7f5dfe2395c4896f8a3b97a16eea"
+    },
+    "result.json": {
+      "byte_identical": true,
+      "bytes": 14335,
+      "sha256": "fea9213b954c1b6e224a97d5ba579fe47c282401fad2eba95630dfbf26a4760e"
+    }
+  },
+  "recorded_launch": {
+    "chunk_id": "a4e9cd",
+    "cmd": "$env:PYTHONPATH=(Join-Path (Get-Location) 'src')\n$env:OPENBLAS_NUM_THREADS='1'\n& 'C:\\Python314\\python.exe' -m bhsm.interface.muon_parent_gauge_geometry_correction --time-points 8 --radial-points 48 --cap-points 48 --output artifacts/muon_parent_gauge_geometry_correction_20261010/canonical_interior_run_2",
+    "completion": {
+      "chunk_id": "688f6f",
+      "exit_code": 0,
+      "stdout_capture": null,
+      "stdout_scope": "Terminal completion printed the producer result; its verbatim text was not retained. The complete deterministic result.json is retained and hashed."
+    },
+    "original_token_count": 0,
+    "output": "",
+    "session_id": 63501,
+    "wall_time_seconds": 10.0080376
+  }
+}

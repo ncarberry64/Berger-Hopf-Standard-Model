@@ -1,0 +1,9 @@
+Executed with PYTHONPATH=<repository>/src:
+C:\Python314\python.exe -m pytest --noconftest -q tests/test_muon_scalar_surface_derivation.py
+...                                                                      [100%]
+3 passed in 5.18s
+
+The fixture freshly executes all three coefficient producers and compares
+the results against literal E1 differences, exact coarea identities and
+an independent MP80 derivative of the original area action.
+This is not a full outgoing derivative, Maxwell or original226 validation.

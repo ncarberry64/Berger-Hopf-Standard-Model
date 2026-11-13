@@ -1,0 +1,48 @@
+{
+  "environment": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "PYTHONPATH": "src"
+  },
+  "focused_tests": {
+    "argv": [
+      "C:\\Python314\\python.exe",
+      "-m",
+      "pytest",
+      "--noconftest",
+      "-q",
+      "tests/test_muon_continued_action_dual.py"
+    ],
+    "exit_code": 0,
+    "stdout": ".... [100%]\n4 passed in 1.41s\n"
+  },
+  "independent_process_byte_identity": {
+    "joined_16.npz": true,
+    "joined_32.npz": true,
+    "result.json": true
+  },
+  "review": "downstream read-only mathematical/domain review found no consequential defect",
+  "run_1": {
+    "argv": [
+      "C:\\Python314\\python.exe",
+      "scripts/evaluate_muon_continued_action_dual.py",
+      "--output",
+      "artifacts/muon_continued_action_dual_20261011/run_1"
+    ],
+    "complete_structured_output": "run_1/result.json",
+    "exit_code": 0,
+    "stdout": null,
+    "stdout_capture_scope": "original tool output displayed all stage rows and result JSON; no local stdout file was captured"
+  },
+  "run_2": {
+    "argv": [
+      "C:\\Python314\\python.exe",
+      "scripts/evaluate_muon_continued_action_dual.py",
+      "--output",
+      "artifacts/muon_continued_action_dual_20261011/run_2"
+    ],
+    "exit_code": 0,
+    "stderr": "execution_logs/run_2.stderr.txt",
+    "stdout": "execution_logs/run_2.stdout.txt"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "LL_completion": "A_RR_complete_LL=A_RR_parent+A_intrinsic_LL_canonical; A_eff_complete_LL_compact=A_RR_complete_LL+delta_A_RR",
+  "action": "literal unadopted S5 symmetric + intrinsic S4 with once-owned YH + ordered proposed material term",
+  "densities": {
+    "temporal_Cauchy": "2 pi^2 C r^3",
+    "volume": "2 pi^2 nu C r^3",
+    "wall": "2 pi^2 R_wall^3"
+  },
+  "distinctions": [
+    "direct restriction differs from complementary elimination",
+    "positive squared solve not first-order Green solve",
+    "compact stationary inverse not retarded response",
+    "YH LL-only block zero does not zero physical YH"
+  ],
+  "domain": {
+    "Q": "(chi,0), P_boundary G0 chi=0,(I-P_boundary)G1 chi=0 and inherited other faces/reset/causal support",
+    "R": "(W Phi_L,w_L), w_L=iota^sharp Phi_L a; Phi_L=Pi_L Xi T_L",
+    "compact": "phi_i p Xi; phi0=x(1-x),phi1=x(1-x)(2x-1); extended zero on inherited arc6..8"
+  },
+  "finite_element": "integral phi_i phi_j tau_x S0+(phi_i phi_j_prime-phi_i_prime phi_j)S1/2 dx",
+  "first_order_moments": "S0=(E^dagger M5 B0+B0^dagger M5 E)/2; S1=E^dagger M5 B1; E=(C W Phi_L,p Xi)",
+  "full_causal": "a_QQ(zeta,X_Q^R w)=a_QR(zeta,w) for every zeta in Q; support(X_Q^R w) in J_plus support(a_QR w)",
+  "mixed": "a_RQ(v,chi)=<Wv,A5 chi>5-<Ev,G1 chi>boundary=<A5^formal Wv,chi>5+G_other(Wv,chi)",
+  "normal": "B_eta=i Gamma0 Gamma4 eta; eta=-1/(2 C tan(rho/2)); B_eta^dagger=-B_eta; A5=B5-B_eta on interior compacts",
+  "other_faces": "literal symmetric density additionally has -G_other/2 relative to Euler form; zero only on these compact tests",
+  "raw_and_formal": "B5=Gamma0 D5; A5=(B5+B5^formal)/2; formal uses mu5 and Dirac-bar",
+  "restricted_solve": "A_QQ X=A_QR; delta_A_RR=-A_RQ X; no explicit inverse/regularizer/D5daggerD5 inverse"
+}

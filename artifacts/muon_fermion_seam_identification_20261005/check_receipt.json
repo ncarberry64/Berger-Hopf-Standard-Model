@@ -1,0 +1,20 @@
+{
+  "classification": "exact algebra and action-evidence controls, not a physical-operator or anomaly calculation",
+  "initial_checks": {
+    "command": "C:\\Python314\\python.exe -m pytest -q tests/test_muon_fermion_seam_identification.py",
+    "result": "3 passed in2.51s",
+    "startup": "repository conftest read its whole-tree tracked-file snapshot; no old tests or calculations executed. Targeted stop was attempted after startup, but process had already finished. Subsequent command excludes conftest."
+  },
+  "review_correction": "Run1 said only first identification jets were required. The nonlinear chain rule also needs gradient/second mixed jets and their photon derivative. Run2 and report retain them.",
+  "added_control_first_attempt": {
+    "result": "3 passed,1 failed in0.85s",
+    "failure": "structural has() comparison used an unevaluated Derivative(w,g,b) while SymPy canonicalized the derivative order to(b,g,w); both chain-rule identities passed",
+    "repair": "compare with the evaluated sp.diff(F,w,g,b) canonical derivative"
+  },
+  "accepted_checks": {
+    "command": "C:\\Python314\\python.exe -m pytest --noconftest -q tests/test_muon_fermion_seam_identification.py",
+    "result": "4 passed in0.74s",
+    "old_milestone_checks_rerun": 0,
+    "old_production_calculations_rerun": 0
+  }
+}

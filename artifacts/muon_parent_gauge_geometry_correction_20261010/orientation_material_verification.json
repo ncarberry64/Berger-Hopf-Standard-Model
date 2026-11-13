@@ -1,0 +1,54 @@
+{
+  "actual_runs": [
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "bhsm.interface.muon_finite_orientation_ward",
+        "--application",
+        "artifacts/muon_parent_gauge_geometry_correction_20261010/material_wall_mean_run_1",
+        "--output",
+        "artifacts/muon_parent_gauge_geometry_correction_20261010/orientation_material_run_3"
+      ],
+      "chunk_id": "19243d",
+      "exit_code": 0,
+      "original_token_count": 363,
+      "output": "{\"Hessian_on_orientation_norm\": 6.72682236558042e-16, \"Ward_law\": \"R^T M c=0; H M c+M^T R=0\", \"consumed_application_sha256\": \"4a16d56ec64eeb6c2db10000debf9695f24f7bef634e793011066ed88f8b9383\", \"consumed_receipt_sha256\": \"3137302eb7b92d7c6b5f999095e82f84f55996ed20b2a47ec35a56c96495539c\", \"differentiated_Ward_defect_norm\": 8.899706029117269e-16, \"domain_scope\": \"homogeneous n0 body frame; all finite radial/time columns rotate together\", \"error_scope\": \"floating-point Ward application and literal eigendirections; no exact stored-matrix null theorem or physical-domain quotient certificate\", \"finite_residual_is_pointwise_action_solution\": false, \"first_Ward_defect_max\": 4.975384315504281e-37, \"frozen_matrix_nullity_proved\": false, \"infinitesimal_law\": \"delta A_t/r=[A_t/r,eta]; delta A_i=[A_i,eta]+Omega_ij A_j; delta H=-rho_H(eta)H\", \"literal_numeric_nullity\": 2, \"normal_source_projection\": \"g_internal^T B; normal coordinate is invariant under these transformations\", \"numeric_rank_is_action_orbit_count\": false, \"numerical_sha256\": \"ef49382a862584f0c63e1fdee6325079dca62f0f001b323002b10c9a75ccbd75\", \"orientation_image_rank\": 3, \"physical_Pauli_contraction\": false, \"physical_gauge_quotient_selected\": false, \"physical_nullity_identified\": false, \"producer_sha256\": \"7a218d47c1718902bad4562c3d789c460dfe854aaf31112837d70aa241775bbd\", \"scope\": \"EVALUATED_HOMOGENEOUS_FINITE_CHART_ORIENTATION_WARD_DIRECTIONS\", \"stationary_E1_claim\": false}\r\n",
+      "wall_time_seconds": 1.8891783
+    },
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "bhsm.interface.muon_finite_orientation_ward",
+        "--application",
+        "artifacts/muon_parent_gauge_geometry_correction_20261010/material_wall_mean_run_1",
+        "--output",
+        "artifacts/muon_parent_gauge_geometry_correction_20261010/orientation_material_run_4"
+      ],
+      "chunk_id": "a232ce",
+      "exit_code": 0,
+      "original_token_count": 363,
+      "output": "{\"Hessian_on_orientation_norm\": 6.72682236558042e-16, \"Ward_law\": \"R^T M c=0; H M c+M^T R=0\", \"consumed_application_sha256\": \"4a16d56ec64eeb6c2db10000debf9695f24f7bef634e793011066ed88f8b9383\", \"consumed_receipt_sha256\": \"3137302eb7b92d7c6b5f999095e82f84f55996ed20b2a47ec35a56c96495539c\", \"differentiated_Ward_defect_norm\": 8.899706029117269e-16, \"domain_scope\": \"homogeneous n0 body frame; all finite radial/time columns rotate together\", \"error_scope\": \"floating-point Ward application and literal eigendirections; no exact stored-matrix null theorem or physical-domain quotient certificate\", \"finite_residual_is_pointwise_action_solution\": false, \"first_Ward_defect_max\": 4.975384315504281e-37, \"frozen_matrix_nullity_proved\": false, \"infinitesimal_law\": \"delta A_t/r=[A_t/r,eta]; delta A_i=[A_i,eta]+Omega_ij A_j; delta H=-rho_H(eta)H\", \"literal_numeric_nullity\": 2, \"normal_source_projection\": \"g_internal^T B; normal coordinate is invariant under these transformations\", \"numeric_rank_is_action_orbit_count\": false, \"numerical_sha256\": \"ef49382a862584f0c63e1fdee6325079dca62f0f001b323002b10c9a75ccbd75\", \"orientation_image_rank\": 3, \"physical_Pauli_contraction\": false, \"physical_gauge_quotient_selected\": false, \"physical_nullity_identified\": false, \"producer_sha256\": \"7a218d47c1718902bad4562c3d789c460dfe854aaf31112837d70aa241775bbd\", \"scope\": \"EVALUATED_HOMOGENEOUS_FINITE_CHART_ORIENTATION_WARD_DIRECTIONS\", \"stationary_E1_claim\": false}\r\n",
+      "wall_time_seconds": 1.8518556
+    }
+  ],
+  "byte_identical_replay": true,
+  "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+  "environment_overrides": {
+    "PYTHONPATH": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src"
+  },
+  "outputs": [
+    {
+      "bytes": 690776,
+      "name": "application.npz",
+      "sha256": "ef49382a862584f0c63e1fdee6325079dca62f0f001b323002b10c9a75ccbd75"
+    },
+    {
+      "bytes": 1494,
+      "name": "result.json",
+      "sha256": "e1258fabe641e9a5b8f7a4b372d0c9351b28dfa88a7d2f541457d46a850b65cf"
+    }
+  ],
+  "scope": "Literal finite material-chart orientation Ward application; no physical quotient or mode selection."
+}

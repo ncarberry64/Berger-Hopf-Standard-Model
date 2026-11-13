@@ -1,0 +1,81 @@
+{
+  "schema": "BHSM_RETAINED_RESPONSE_INTEGRATION_REPLAY_V1",
+  "source_revision": "70e82fd4dbe5f53ff27ae17f6aaac7a4727c1fde",
+  "files": [
+    {
+      "name": "incoming_field_maps.npz",
+      "sha256": "3ee55d8c29327c2737821d180817b02731c006569b22b55045c7884c6f7815d0",
+      "byte_identical": true
+    },
+    {
+      "name": "incoming_finite_state_ranges.npz",
+      "sha256": "93dd3e4b2ba31237d553f5f902dfce9712c520f268432eceabe35a9334f352b4",
+      "byte_identical": true
+    },
+    {
+      "name": "incoming_joint_open_response.npz",
+      "sha256": "7c8ede6202f3d5d2ae052d6f0ced66e6377d3d31438cb8c933d5fe0177d8cbd0",
+      "byte_identical": true
+    },
+    {
+      "name": "incoming_spin_response.npz",
+      "sha256": "451a6a3ef3e14e4e8a578ee188091fa1160426ed67868b9d0f55dd227596cbfa",
+      "byte_identical": true
+    },
+    {
+      "name": "operator_bases.npz",
+      "sha256": "defeb783a0bfc1748b0fb546ce292ba4174e3d9b5d2b0774f3f8bcd2c37056a3",
+      "byte_identical": true
+    },
+    {
+      "name": "outgoing_field_maps.npz",
+      "sha256": "444bd875f156752201b9b5d11e452d298f0d21e78d82d3026d4113101bd793e9",
+      "byte_identical": true
+    },
+    {
+      "name": "outgoing_finite_state_ranges.npz",
+      "sha256": "8f90d2b35f718797707c9106b71406fe66dba1cc4948903ab0820b43e96ead37",
+      "byte_identical": true
+    },
+    {
+      "name": "outgoing_joint_open_response.npz",
+      "sha256": "51ea2a157f6e35e84d88e15bc80928b7878414244367e73eaa78b3e377d16581",
+      "byte_identical": true
+    },
+    {
+      "name": "outgoing_spin_response.npz",
+      "sha256": "940dadfc46da331af6707a090cab175029d7e0d57301a0bc05c5bc055b1c4728",
+      "byte_identical": true
+    },
+    {
+      "name": "progress.json",
+      "sha256": "786fb9606ea8e8b4f53fd0a75c6acacaf517ec1bc5e3389c314dfd1c60306292",
+      "byte_identical": true
+    },
+    {
+      "name": "result.json",
+      "sha256": "65d7a883353936d7e982c6ea0bf03a36fb7437d49aeea974c81ca076cc4203c7",
+      "byte_identical": true
+    }
+  ],
+  "all_byte_identical": true,
+  "ancestor_solves_rerun": false,
+  "physical_admission": false,
+  "NEXT_OPERAND": "Finish integration tests and audits; publish, then evaluate actual matter feedback current in the compatible wall action.",
+  "environment": {
+    "python": "3.14.3",
+    "numpy": "2.4.6",
+    "scipy": "1.17.1",
+    "sympy": "1.14.0"
+  },
+  "commands": [
+    "python -B scripts/evaluate_muon_retained_field_spin.py --output artifacts/muon_retained_response_20261018/run_A",
+    "python -B scripts/evaluate_muon_retained_field_spin.py --output artifacts/muon_retained_response_20261018/run_B"
+  ],
+  "producer_sha256": {
+    "scripts/evaluate_muon_retained_field_spin.py": "90b06168fa978d0a2cc65f6c869508574c8b819ef905046fa74fcce2ef02e22e",
+    "scripts/import_muon_retained_response_20261018.py": "1500b2e9e72486a97339a46fdeb648c5dd5d65239efb72486cb64f9fb63eb9e5"
+  },
+  "validation_amendment": "After the numerical runs, source/owner/output guards and the optional graph import were amended; the eleven numerical files were preserved. BINDING.json is a separately identical metadata supplement.",
+  "binding_byte_identical": true
+}

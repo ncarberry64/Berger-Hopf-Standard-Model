@@ -1,0 +1,169 @@
+SUPPORTED ACTUAL REAL CHILD-WALL FUNDAMENTAL TRANSPORT
+2026-10-16. Kinematic/operator component, not a physical reset or state.
+
+REPO=C:/Users/carbe/Downloads/BHSM_muon_parent_maxwell_worktree_20261001
+WORK=C:/Users/carbe/OneDrive/Documents/CODEX
+Canonical producer:
+  REPO/audits/bhsm_real_child_wall_fundamental_transport_20261016.py
+  SHA256 2d0d8d7f3e4179f5987d1409abebf27f47a24b276a69044f254d1f85a3ecd3c4
+Independent final executions:
+  WORK/outputs/bhsm_real_child_wall_transport_20261016/final_run_1
+  WORK/outputs/bhsm_real_child_wall_transport_20261016/final_run_2
+Both pairs are byte-identical:
+  application.npz 46067bytes SHA256
+    bbc2901ed83fa96e44209d20c909528b7c31955449adafe6c13f0e1b9eae098a
+  result.json 49456bytes SHA256
+    d524d3382096b6fc5326197891f0a3124c00aad3cf4229113a7bdc40fdde9ee3
+The earlier application_run_1 pilot remains preserved separately.
+
+1. SOURCE AND MAP TYPE
+
+The source is the original complete REAL inherited one-cell child phase,
+  artifacts/muon_inherited_finite_normal_phase_20261011/run_1,
+on the supported coordinate interval[0,1e-5]. The owned sampler reconstructs
+exactly its represented affine x and fixed midpoint v/y. Every clock and
+gauge operand is evaluated inside that support. No physical field/history,
+source, profile or exterior IVP is solved again.
+
+The geometric/gauge transport equations are the existing induced-worldvolume
+ADM and connection equations in muon_intrinsic_worldvolume_scalar_transport
+and muon_birth_homogeneous_worldvolume. Their birth identification is not
+automatically physical H evolution or a prescription of a later child state.
+Here they define a fundamental kinematic operator on the supplied trial wall.
+Physical F0,DF0,U0 and formation/event conditions remain coupled unknowns.
+
+The actual cohomogeneous wall has f=f(t,rho), no angular component of df,
+and induced metric h=diag(ell^2,-R^2 I3), with the actual material-wall
+ell=N*sqrt(1-U_wall^2). Applying induced_worldvolume_flow gives b=0 and
+div_Haar b=0 at every sampled point. Hence the fundamental angular flow
+obeys
+  Qdot=0, Q(t)=Q0, D_Q0 Q=I, HaarJac(t,0)=1.
+This identity is derived from the flow, not an event-to-child F0=Id choice.
+The physical correspondence is flow(t,0) composed F0 and still contains F0.
+The wall's outward f-normal flow is not used; it leaves the supplied radial
+cap and does not provide an exterior extension.
+
+2. ACTUAL CLOCK AND U2 GAUGE FACTOR
+
+On the supported child wall,
+  tau(t)=integral_0^t ell(s)ds,
+  Gdot(t)=-At_material(t)G(t), G(0)=I2.
+The I2 initial datum defines the fundamental operator, not physical U0.
+The physical gauge transport is G(t)U0. The source's normalized complex
+U2 generators are the same ones used by the existing homogeneous evaluator.
+At is the independent material A_t once; no second Ar advection is added.
+The inherited parent/reference mechanical profile is included in all3 Ai.
+
+Actual child At is verified constant at every sampled time of this cell,
+and its supplied inside-cell source first is exactly0. This is an observed
+property of these fixed v/y coefficients, not a general physical response.
+Its norm is4.149042039931757e-10. Its central U1 coefficient has magnitude
+2.933815761180679e-10; its traceless SU2 part has norm8.953623874588275e-15.
+Both factors are retained. G-I has norm4.149042039931757e-15 over this cell.
+
+The application integrates the INCREMENT Y=G-I,
+  Ydot=-At-At Y,
+so a tiny phase is not lost by subtracting two near-unit matrices. It keeps
+all exponential contacts via a directly convergent matrix series, an exact
+commuting central/traceless split, and independent RK4 refinements.
+
+3. REFINEMENT AND INDEPENDENT CONTROLS
+
+Gauss8,16,32 proper-clock integrals:
+  6.9813967778521315e-6,
+  6.9813967778521300e-6,
+  6.9813967778521310e-6.
+Their fixed-endpoint supplied-source firsts are all approximately
+  2.084328109915812e-7.
+Independent composite Simpson/RK4 with8,16,32 steps agrees near rounding.
+Every step/order remains in the report. This is convergence of the displayed
+constituent integral on a fixed supplied cell, not physical time convergence.
+
+The source axis is the actual inside-cell rawtime coefficient germ with
+fixed integration endpoints. The independent fundamental-theorem check
+  integral ell_t dt = ell(h)-ell(0)
+has absolute1.92135130404e-17 and nonzero-relative9.21808468983e-11 error.
+This preserves the raw endpoint-subtraction error; it is not a proof of
+physical E/B/domain response or an enclosure of all continuum error.
+
+RK4 increment versus the exact constant-At exponential has at most
+8.06651281263e-16 relative error. Increment unitarity residuals are displayed
+without replacing the increment by a unitary projection. Independent
+MP80/MP100 matrix-exponential controls convert exact binary64 At/h operands
+to MP, then compare EACH real and imaginary component. Worst nonzero
+component relative error is1.53024359209e-16; MP80/100 absolute difference
+is1.96807383263e-82.
+
+The real diagonal quadratic increments are explicitly nonzero:
+  -4.303697374794761e-30 and -4.303577549765776e-30.
+Reproducing the naive diagnostic from the saved At as
+  scipy.linalg.expm(-1e-5*At)-I2
+returns0 for both real diagonals, losing these components entirely; maximum
+complex increment discrepancy is4.32161487280e-30. The stable increment and
+its MP component controls retain them. The existing SciPy near-I value
+comparison also remains saved, and is not substituted for this component
+check.
+
+At0,h/2,h the lightweight actual source construction is rebound against
+the full d5_trial_stage_coefficients inherited constructor. Full5x4 gauge
+values, At source first, and proper-clock value/first agree exactly. No
+fixed-basis projection of the inherited spatial profile is used.
+
+4. INITIAL DATA, ENDPOINTS AND NONHOMOGENEOUS VARIATIONS REMAIN ACTIVE
+
+For general perturbations of the wall, background b=0 does NOT imply db=0.
+At this background,
+  delta b=R^-2 delta h_it,
+  delta Qdot=delta b,
+  delta A_effective=delta At+delta b^i Ai,
+  delta Gdot=-At delta G-(delta At+delta b^i Ai)G,
+  delta HaarJacdot=div(delta b), delta taudot=delta ell.
+The nonzero matrix kernels Ai/R^2 are saved at0,h/2,h. They have not been
+deleted because the background angular drift vanishes. An actual E/B
+response may excite these and additional angular/spin contacts and has not
+been evaluated here.
+
+Physical initial variations are not zeroed:
+  delta U(t)=delta G(t,0)U0+G(t,0)delta U0,
+  delta Q(t)=delta Q0+integral delta b dt,
+and the initial Haar Jacobian multiplies the fundamental unit Jacobian.
+For moving limits0=t0,t1=h the required total contacts are
+  delta tau_total=delta tau_coeff+ell(t1)delta t1-ell(t0)delta t0,
+  delta G_total=delta G_coeff-At(t1)G delta t1+G At(t0)delta t0.
+Those initial/end contacts are symbolic unknowns, not silently frozen
+physical domain variations. Only the stated fixed-endpoint source first
+was numerically applied.
+
+Actual moving-wall eta-sheet spin boosts S_eps(U_wall) and their analytic
+source firsts are saved for BOTH eps signs at0,h/2,h. They retain the
+nonzero current/coframe contacts from moving_d5_material_trace_frame. They
+are kinematic coframe transformations, not a substitute for the full Spin
+parallel lift or a new tensor assignment of gauge U2 onto the full carrier.
+No normalization amplitude uL/uR, spin eigenstate or pole is chosen.
+
+5. CONDITIONAL TWO-SIDE POINT GERM; NO UNSUPPORTED MATCHED INTERVAL
+
+Parent/child wall clock values at the common birth point are
+  ellp=1.108427234091954, ellc=.698139573567991,
+with supplied coordinate-time firsts
+  ellp'=.00958672913001246, ellc'=.0208437711359635.
+IF a homogeneous induced-metric identification F(t,q)=(T(t),Phi(q)) with
+fixed angular isometry is to hold, its future clock obeys
+  T'=ellp/ellc(T),
+  T'(0)=1.587687156061217,
+  T''(0)=ellp'/ellc-ellp^2 ellc'/ellc^3=-.0615281229202004.
+These are conditional point coefficients only. The saved incoming support
+is t<=0 and the child support T>=0, sharing only0; with T(0)=0 and positive
+slope there is no nonzero common supported interval. No time reversal or
+one-sided-history extrapolation is inserted.
+
+The actual radii agree at0, but the same conditional clock slope gives
+  Rp'-Rc'*T'=.0200207429611854.
+This is an evaluated residual of a prospective coupled metric constraint
+on this OFF-SHELL trial pair; it is not a theory no-go or a new gate/law.
+It cannot be removed by imposing the clock equation alone. In particular,
+this wall-clock comparison does not define a radial x S3 Cauchy-cap map.
+
+No physical reset F_B, full common native domain or outgoing continuation,
+E/B derivative, normalized physical spins, magnetic moment, coupled
+correction, or final Maxwell/all226-row pass is inferred.

@@ -1,0 +1,44 @@
+{
+  "files": {
+    "scripts/evaluate_muon_native_product_factor_graph.py": {
+      "bytes": 14143,
+      "sha256": "c86e277a9c7b9f9ed1229f3a147e1fd402821b036fe7fdecae074fa2b8c566a9"
+    },
+    "src/bhsm/interface/muon_native_product_factor_graph.py": {
+      "bytes": 44797,
+      "sha256": "4a5feeb0e32edc0505a44b45a19d6bdc821220cc9cf5187e35f59fe7720a7c18"
+    },
+    "tests/test_muon_native_product_factor_graph.py": {
+      "bytes": 14276,
+      "sha256": "fb3061e3de6815898199aac9c116ac4e2e488f8777545df680921e1e4b17b4e2"
+    }
+  },
+  "notes": [
+    "OPENBLAS_NUM_THREADS=1 and PYTHONPATH=src for producers.",
+    "No full native heat, relative eta/overlap, physical cutoff or Pauli claim.",
+    "Separate middle/light subtraction is below certified relative precision; all convergence diagnostics are retained."
+  ],
+  "paired_outputs": {
+    "product_factor_graph_and_heat.json": {
+      "byte_identical": true,
+      "bytes": 1064577,
+      "sha256": "aac59f831b5e5cd328e352993427159ca1d4c89ebde25d1687e3a036b9510197"
+    },
+    "source_paired_graph.npz": {
+      "byte_identical": true,
+      "bytes": 1291807,
+      "sha256": "1e5a972e91456e2cbdb9abcbf5afbb6c3734ed19321097665a8e15c8d52f2824"
+    }
+  },
+  "producer_commands": [
+    "C:\\Python314\\python.exe scripts/evaluate_muon_native_product_factor_graph.py --output artifacts/muon_native_product_factor_graph_20261010/run_1",
+    "C:\\Python314\\python.exe scripts/evaluate_muon_native_product_factor_graph.py --output artifacts/muon_native_product_factor_graph_20261010/run_2"
+  ],
+  "producer_exit_codes": [
+    0,
+    0
+  ],
+  "test_command": "C:\\Python314\\python.exe -m pytest --noconftest -q tests/test_muon_native_product_factor_graph.py",
+  "test_exit_code": 0,
+  "test_stdout": "13 passed in 8.12s"
+}

@@ -1,0 +1,133 @@
+CHANGING REAL SM12 CLASSICAL CONSTITUENT FORMS: COLOR COMPLEMENT
+2026-10-16. Exact supplied coefficient-cell map, not a physical state solve.
+
+The frozen-color derivation in muon_real_color_common_forms_20261016.txt
+remains unchanged. This application extends it to the ACTUAL changing
+real incoming/child coefficient archive, with every time, radial node,
+weight, density and fixed trial coordinate taken from that same archive.
+It never substitutes the fermion's separate quadrature check for gauge
+or ghost integration convergence.
+
+1. CONSUMED BACKGROUND AND THE NUMERICAL REPAIRS
+
+Input is the final stable-weight, time-order6-per-tent-half EW application:
+WORK/outputs/bhsm_real_changing_cell_ew_higgs_fp_stable_weight_20261016/
+time6_run_1, independently duplicated by time6_run_2.
+ changing_forms.npz
+  9a132366d729c85ea1d83815a5482fbf6352b117507e9f447abb4c3b7534739d
+ result.json
+  182928faef437728923fa279d44be51bdc4739f5a0ddb10eff83c01f1c95d95a.
+The pinned canonical source is
+audits/bhsm_real_changing_cell_ew_higgs_fp_stable_weight_20261016.py,
+SHA2a536410954923a6a4cd7865264fbae1b14ad61d8db1a7d58b1c1cfc84eb3874.
+
+All12 actual Gauss times per real arm and radial rules4/8/16/32 are used.
+The archive already contains the exact incoming t=u-L and child t=u
+clock incidences; both have dt/du=1 and their distinct proper lapses.
+The production positive YM metric comes from the original holomorphic
+geometry row with the stable probability factor4p(1-p), not a recovery
+of1-4sigma^2 from rounded sigma. The known Gauss4 temporal miss of the
+degree10 odd-ghost moment is avoided by the supplied Gauss6 rule. Gauss6
+exactness for constant polynomial moments is NOT a theorem of temporal
+convergence for the changing coefficients. Prior naive-weight and
+time4 readouts are retained separately by their producing calculation.
+
+The color consumer reads these saved arrays directly. It performs ZERO
+new history, field/profile or geometry evaluations. All input/source
+hashes are verified. The prototype WORK receipt uses logical
+retained_inputs/changing_forms.npz and retained_inputs/result.json aliases
+for the exact hashes above. A publication rerun can point to their
+repository artifact copies without changing any scientific array.
+
+2. THE POINT AND CELL OPERATORS
+
+The single positive rank16 trace fixes Hc=-iTc/sqrt2, with
+-Tr16(Hc Hd)=delta_cd. The color background is0 in this retained EW
+ansatz; it is not a selected physical SM12 stationary mean. Commuting,
+trace-orthogonal EW and color factors plus the color-singlet Higgs make
+the classical cross blocks exactly zero. Nonzero color fluctuations,
+FP operators and nonlinear color representation tensors remain.
+
+At every supplied point the one-color trial maps have280 columns:
+200 ordinary radial-profile/one-form/harmonic columns and80 exact d-eta
+one-form image columns. The images belong to BOSONIC one-form coordinate
+space; the independent FP ghost/antighost variables are Grassmann and
+are not inserted into that bosonic field. The map includes both temporal
+ghost parities, both radial profiles, all20 real n1+n3 functions and all
+five spacetime one-form components.
+
+The literal right-frame linear curvature has
+ Ftr=dt ar-dr at,
+ Fti=dt ai-Ei at, Fri=dr ai-Ei ar,
+ Bi=2ai+epsilon_ijk Ej ak.
+The 2ai contact is essential for d(d eta)=0 because [Ei,Ej]=-2eps_ijk Ek.
+Its exact mathematical gradient identity fixes the80 gradient columns
+of the Maxwell Hessian to zero. The separate direct floating-map
+curvature residual is recorded at every point; no unknown physical
+field term is removed to force this identity.
+
+With the supplied metric(mu,gt,gr,gs,beta,R),
+ G1=gt(Vt-beta Vr)^T(Vt-beta Vr)+gr Vr^T Vr+gs sum Vi^T Vi,
+ Gghost=mu eta^T eta,
+ Kghost=gt(et-beta er)^T(et-beta er)+gr er^T er+gs sum(Ei eta)^T(Ei eta).
+The actual changing Gauss weights then integrate K1,G1,Kghost,Gghost
+before forming B=D^T G1, F=Gghost^-1 B and the finite Lorenz representative
+Pi=I-D Kghost^-1 B. No pointwise inverse is substituted for that one
+integrated inverse.
+
+The action-normalized color contribution is the adjoint-I8 direct sum
+of the one-color block, with the existing MAXWELL_TO_CAP factor retained
+once. The unmodified actual changing EW/Higgs matrices are the other
+block. Common sizes are3440 bosonic test coordinates and960 separate FP
+ghost coordinates. Kkin, G, Klambda, Klambda_nu2, B, F, D, ghost forms,
+finite gauge fixing and finite representative are exported for every
+arm/radial rule. The physical scalar matching coefficients are still
+unassigned. There is no new physical g3 or factor-dependent coefficient.
+
+3. INDEPENDENT CHECKS AND EXACT READOUTS
+
+Canonical source:
+audits/bhsm_real_changing_cell_sm12_color_forms_20261016.py
+SHA683aab4f75708b574fa8f0aa790bd930a4efe7ca3cc77407402a0d5cede0e077.
+Independent WORK runs:
+outputs/bhsm_real_changing_cell_sm12_color_forms_20261016/run_1 and run_2.
+Both files are byte-identical:
+ changing_SM12_forms.npz 7,816,247 bytes
+  38dbda46a22edc8720ada4af168fc768f89b00f14bd5678d357a58f5ecde22c1
+ result.json
+  edf9fd1beb431ed6f12c038d37b8951c450fab965463e2689d046e4ccb7ed968.
+
+The independently assembled scalar-unit point form is checked against
+the existing zero-connection one_form_point_row at an actual point of
+each arm/rule; the maximum relative Hessian/Gram discrepancy is3.40e-16.
+An independent unprojected Haar evaluation of fixed full-color coefficient
+directions, using the actual full-rank16 trace Gram at EVERY supplied
+time/radial point, agrees with the integrated Hessian to1.123e-15 maximum.
+The integrated FP form equals the gauge-gradient Gram; the computed
+relative discrepancy is0. Pi idempotence is at most2.29e-15. The separately
+saved direct weighted d-squared floating residual is at most2.77e-14.
+These are finite directional/algebra controls, not a physical derivative
+or full operator-norm certificate.
+
+Radial sensitivity remains UNRESOLVED. Symmetric relative Frobenius
+differences for the single-color Hessian are:
+             incoming          child
+ 4->8        .0743496270        .0540900068
+ 8->16       .000988403733      .000503724675
+16->32       4.28895379e-6      7.90092715e-7.
+For the color FP form the16->32 differences are3.56057237e-6 and
+3.33579886e-7. Raw maximum-entry changes and ALL coarser steps, as well
+as the full common-SM12 matrix differences, are preserved. Large time
+coefficients are not hidden by presenting only one norm as a physical
+precision result. No 2e-10 radial/state/physical pass is asserted.
+
+4. PHYSICAL AND MICROSCOPIC SCOPE
+
+This is a classical constituent form family on the supplied retained
+real histories. It is not an identification of that Hessian with the
+microscopic positive Pstrat. It does not tensor the geometric M8 Spin16
+with a newly invented SM16 or assign extra fermion copies/statistics.
+It does not solve the common graded native operator, reset/adjoint or
+outgoing domain, quantum mean force, state normalization or magnetic
+moment. No physical color background, no measured coupling and no
+matching coefficient are fitted here. Coupled corrections performed:0.

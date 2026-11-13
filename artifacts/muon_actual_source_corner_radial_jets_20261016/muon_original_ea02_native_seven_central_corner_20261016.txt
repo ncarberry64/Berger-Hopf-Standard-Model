@@ -1,0 +1,129 @@
+ACTUAL ORIGINAL-EA02 SEVEN-COLUMN CENTRAL INITIAL CORNER
+2026-10-16. No original coupled correction, Gauss retraction, field sampling,
+or replay of a source/history/action application is performed here.
+
+1. What is newly evaluated
+
+The retained seven field/source columns R are the exact preprojection ea02
+columns, embedded into the complete D4 coefficient carrier. The new result
+uses independently computed native-material momentum and Gauss Hessian
+applications on these identical seven columns. It evaluates the actual
+linearized central canonical boundary charge, including the variation of
+the Higgs part of the gauge generator. It then compares that charge with
+the separately computed all60-row Gauss Hessian application. This is an
+actual sourced classical constraint/corner block, not a choice of an
+exterior boundary load, a physical retarded determinant, or a new state.
+
+2. Source and epoch
+
+Canonical producer, repository-relative:
+ audits/bhsm_original_ea02_central_linearized_corner_20261016.py
+ SHA256 a4127316f999d03a67f8307d12258d4aaed809f292d8234d05d494b85381d425
+
+The target is the original full368 ea02 cut, not the distinct principal
+branch and not the new future tail midpoint. The producer requires the
+target NPZ SHA ea02ed6aee45310c5651fef5c8f103e868007d4f125582ab2b64ff7651f76b2b
+and bit-identical master368/coordinate_time in every input packet.
+The cut is t=8.249007812499999e-5 - 2.292213182443259e-8 i. These are
+complex analytic off-shell action germs, not a physical real background.
+
+Exact frozen sources consumed:
+ - central primal corner: 56c5dc1d082e01e2903d544f327ebf16e64155125e01af0601c2c7038c55aa47
+ - corrected D4 position Jacobi: a761a939cffb6b426ac254f59a8263feeb644ebdfc3843f69b061ee607b4ba3f
+ - same-cut seven continuous clock: 95a64f63e2a541abf698ce7e65afc75a3f4eddb5932f239b74458a171e5be1be
+ - independent all60 Gauss H_R: 519371278ad0884047147d7b97364d2af7f5f7ae145d15cda1549b56cce35902
+
+The old velocity Hessian application SHA is
+ e15ff54e2294222594782e6a329da34605b264fa20d750e4d987e27198e00e59.
+The new velocity Hessian application SHA is
+ e233ca63a7c9dd611d27162b4cb8e3bde08fb33d01f5b35b56274186ace6e744.
+The complete enlarged R in the momentum and Gauss applications agrees
+exactly (upper bound0), including its original252 parent/source entries.
+No equality of clocks alone is used to identify different field branches.
+
+3. Action identity and explicit contacts
+
+Let L(q,v,a) be the retained classical action in this coefficient chart,
+Pi=L_v, rG=L_a, and let the nine retained central parameter profiles be
+phi_p, p=0..8. Its time-dependent gauge variation has
+ delta q = V g, delta v = V gdot + Vdot g, delta a = Cg gdot.
+The central Cg is field independent in this retained chart. Its Higgs
+rows are V_H=-T_Y H phi_p(wall). Therefore, with analytic transpose,
+
+ Q=V^T Pi,   r=Cg^T rG,   Q+r=0,
+ delta Pi = L_v,field R,
+ delta V_H = -T_Y delta H phi_p(wall),
+ delta Q = V^T delta Pi + (delta V)^T Pi,
+ delta Q + Cg^T (L_a,field R) = 0.
+
+There is no conjugation of source columns. All158 old and59 new momentum
+rows enter deltaPi. The deltaH is reconstructed from the full actual R
+through the owned original252 coordinate lift. The four Higgs rows of
+deltaV, all nine profiles, and their nonzero Pi contraction are exported.
+The full all60 Gauss rows are independently evaluated by the frozen Gauss
+producer; they are not filled from this Noether identity. Their primal
+gradient reproduces the central primal packet to5.3393e-59.
+
+The same retained seven split columns are also combined into four:
+ column0 stays column0; columns1..3 each add the corresponding homogeneous
+ column4..6. This is the existing retarded-plus-homogeneous combination;
+no column is dropped and no coefficient is chosen by this application.
+
+4. Actual results and the failure that remains
+
+Independent deltaQ + Cg^T H_G R: upper7.35380591293564e-36.
+The affine-primary identity, with primal Q/r added only to column0, has
+the same upper bound. The nonzero gauge-map contact is1.0467265301825916e-18;
+it is retained even though it is much smaller than the momentum contact.
+The actual total deltaQ reaches2.5343652873709995e-8.
+
+These tiny identity residuals do not mean the original seven trial
+columns solve the enlarged Gauss constraint. For the affine correction
+equation D rG[R0] = -rG, the required canonical deltaQ0 is +r. The actual
+column0 defect deltaQ0-r is3.85972421072373e-9. It exceeds2e-10. Other
+retarded/homogeneous trial columns likewise have nonzero projected Gauss
+rows; the maximum is2.5343652873709995e-8. No correction or retraction is
+selected or applied to remove these rows. In particular this result is
+not a full derivative/constraint admission at2e-10.
+
+The original saved binary KGz central projection and the new native-
+material projection differ by at most4.693708364157218e-21. This measured
+small difference does not explain the retained projected constraint
+defects and is not presented as a large precision mismatch.
+
+Canonical charge Q and future-arm initial outward conormal flux have
+opposite signs. The latter is -Q, its variation is -deltaQ, and its
+required affine variation is -r. The archive exports both signs.
+
+5. Paired reproducibility
+
+WORK output root:
+ C:/Users/carbe/OneDrive/Documents/CODEX/outputs/bhsm_original_ea02_central_linearized_corner_20261016
+Independent process run_1 and run_2 produced all three files byte-identically:
+ actual_native_seven_central_linearized_corner_and_Gauss.npz
+  802148B SHA c9559a93d1af088365ccf5921a1cc6fba0dcdb66548f114c712cf0e1a7e9a9df
+ result.json
+  12513B SHA 36c0f47ad5795a19d1bbd6044eb5bcbe4b96abd74740c69359aa947883cf73bb
+ executed_producer.py
+  14607B SHA a4127316f999d03a67f8307d12258d4aaed809f292d8234d05d494b85381d425
+
+The sibling paired_inventory_and_column_readout.json records byte tests
+and binary64 display-only column maxima. The numerical NPZ additionally
+exports exact dyadic midpoint/radius fields from256-bit acb arithmetic;
+the producer's upper bounds are not inferred from that display readout.
+
+6. Scope and next physical return
+
+This evaluates one actual central initial source-corner component of the
+classical action. It does not evaluate all three non-Abelian channels,
+microscopic graded induced current, the full reset/ghost domain, exterior
+mean fields, outgoing Y_R/s_R, or physical terminal C0/Cj and their jets.
+It does not identify an unsquared Dirac trace Gamma with a squared native
+spectral boundary operator or impose E^2=z. No physical charge units or
+initial spin map are assigned. Original prefixcell7's incomplete density/
+time-derivative protocol remains unadmitted.
+
+The full original action-space exterior and sourced retarded boundary
+return is still required before the literal full derivative, one original
+coupled correction, Maxwell and all226-row validation, normalized two-spin
+state and physical muon magnetic moment. Those gates remain false/None.

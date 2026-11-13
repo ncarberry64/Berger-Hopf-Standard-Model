@@ -1,0 +1,59 @@
+{
+  "accepted_run": "run_4",
+  "comparison": {
+    "contribution_ledger.json": {
+      "identical": true,
+      "run4": "d269dde3675830a3eb3d11e51188dbe347aea23863766bb5bc2ef97fa6e30c61",
+      "run5": "d269dde3675830a3eb3d11e51188dbe347aea23863766bb5bc2ef97fa6e30c61"
+    },
+    "exact_nodal_eta.json": {
+      "identical": true,
+      "run4": "de9c2512bd35221daceb2efe904714ade93b7f0899f272883c2b22d37afff835",
+      "run5": "de9c2512bd35221daceb2efe904714ade93b7f0899f272883c2b22d37afff835"
+    },
+    "input_hashes.json": {
+      "identical": true,
+      "run4": "4013929c653f1568f01aeed25016bf9a1cef38d18d8daa4a35a1658ccc72ac9d",
+      "run5": "4013929c653f1568f01aeed25016bf9a1cef38d18d8daa4a35a1658ccc72ac9d"
+    },
+    "joint_equations.json": {
+      "identical": true,
+      "run4": "296adf3fd4abd5573ad8a86326620f93575cccfea988bc5f7d121d3289790745",
+      "run5": "296adf3fd4abd5573ad8a86326620f93575cccfea988bc5f7d121d3289790745"
+    },
+    "offmode_source_witness.npz": {
+      "identical": true,
+      "run4": "84c2aa1582eb8515ffd3edf133d1ef5caa6e7299a01a809182551d069c6c2994",
+      "run5": "84c2aa1582eb8515ffd3edf133d1ef5caa6e7299a01a809182551d069c6c2994"
+    },
+    "output_hashes.json": {
+      "identical": true,
+      "run4": "48490b04afc7ebd874722e472fd1eeb439cbe94139950638a59c426c3df53276",
+      "run5": "48490b04afc7ebd874722e472fd1eeb439cbe94139950638a59c426c3df53276"
+    },
+    "result.json": {
+      "identical": true,
+      "run4": "613e599e3049306f3afc0b8c8bea547d178d165e21e72f402723fd4736036601",
+      "run5": "613e599e3049306f3afc0b8c8bea547d178d165e21e72f402723fd4736036601"
+    },
+    "workspace.json": {
+      "identical": true,
+      "run4": "81d489624a383be4c5f0a4558a0b140714bf2177a5ad17a150797589f1f20941",
+      "run5": "81d489624a383be4c5f0a4558a0b140714bf2177a5ad17a150797589f1f20941"
+    }
+  },
+  "duplicate_run": "run_5",
+  "initial_numerical_arrays_unchanged": true,
+  "native_operator_updated": false,
+  "new_stationary_solve": false,
+  "new_targeted_tests": {
+    "command": "C:\\Python314\\python.exe -m pytest --noconftest -q tests/test_muon_seam_offmode_identifiability.py",
+    "elapsed_seconds": 1.34,
+    "exit_code": 0,
+    "passed": 4
+  },
+  "old_production_replayed": 0,
+  "old_tests_replayed": 0,
+  "one_new_in_memory_calculation": true,
+  "review_correction": "general F5 adjoint is a bulk Euler term for volume maps; boundary cotangent only when F5=T gamma_trace"
+}

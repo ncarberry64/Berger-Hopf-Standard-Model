@@ -1,0 +1,75 @@
+{
+  "classification": "VERIFIED_CORRECTED_BIRTH_CANONICAL_MEAN_AND_PARENT_FORCING_REPLAY",
+  "commands": [
+    {
+      "capture_limitation": "Initial direct CLI output was truncated by the tool; independent runs 2 and 3 have complete captured commands/stdout/stderr.",
+      "exit_code": 0,
+      "output_preserved": true,
+      "run": 1,
+      "stdout": null
+    },
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "scripts/evaluate_muon_corrected_birth_canonical_mean.py",
+        "--mean-directory",
+        "artifacts/muon_corrected_birth_mean_20261011/run_1",
+        "--output",
+        "artifacts/muon_corrected_birth_canonical_mean_20261011/run_2"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "path": "artifacts/muon_corrected_birth_canonical_mean_20261011/execution_logs/run_2.command.json",
+      "stderr_path": "run_2.stderr.txt",
+      "stdout_path": "run_2.stdout.txt"
+    },
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "scripts/evaluate_muon_corrected_birth_canonical_mean.py",
+        "--mean-directory",
+        "artifacts/muon_corrected_birth_mean_20261011/run_1",
+        "--output",
+        "artifacts/muon_corrected_birth_canonical_mean_20261011/run_3"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "path": "artifacts/muon_corrected_birth_canonical_mean_20261011/execution_logs/run_3.command.json",
+      "stderr_path": "run_3.stderr.txt",
+      "stdout_path": "run_3.stdout.txt"
+    }
+  ],
+  "earlier_fixture_or_loader_corrections": [],
+  "error_scope": "binary64 same-action canonical Hessian/source applications; upstream mean/Dg, continuum, and physical chronological state errors excluded",
+  "pairs": [
+    {
+      "byte_identical": true,
+      "paths": [
+        "artifacts/muon_corrected_birth_canonical_mean_20261011/run_2/application.npz",
+        "artifacts/muon_corrected_birth_canonical_mean_20261011/run_3/application.npz"
+      ],
+      "sha256": "d90cd5106177573f2a24579926b708bd674745bc43e6d3260172d0c2c0ab4de3"
+    },
+    {
+      "byte_identical": true,
+      "paths": [
+        "artifacts/muon_corrected_birth_canonical_mean_20261011/run_2/result.json",
+        "artifacts/muon_corrected_birth_canonical_mean_20261011/run_3/result.json"
+      ],
+      "sha256": "a000dbea7e2bee64efaefe09220c49654468c257f0e7803d61858f4a8d46a1f7"
+    }
+  ],
+  "physical_native_heat_or_Pauli_completed": false,
+  "source_dependencies_verified": true,
+  "tests": {
+    "command": "PYTHONPATH=src C:/Python314/python.exe -m pytest --noconftest tests/test_muon_corrected_birth_canonical_mean.py -q",
+    "exit_code": 0,
+    "stdout": "2 passed"
+  }
+}

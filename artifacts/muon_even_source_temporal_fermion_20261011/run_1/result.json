@@ -1,0 +1,929 @@
+{
+  "action_parameters": {
+    "nu_squared_action": 4.0,
+    "surface_gamma": null
+  },
+  "angular_image": "magnetic n1 times odd n1/n3 has complete even n0/n2/n4 image; no statistical or small-mode truncation",
+  "classification": "EVALUATED_COMPLETE_EVEN_SAME_PHASE_SOURCE_TEMPORAL_FERMION_FORM",
+  "completed_P_strat_or_physical_Wick_LSZ_Pauli": false,
+  "error_scope": "binary64 split-Gauss finite weak integration and generalized-eigen diagnostics; no upstream producer/Gram/eigen/continuum or physical-matching enclosure",
+  "exact_reduction": "literal fixed-family and complex Wigner spectator blocks of the homogeneous changing angular body; all rows retained",
+  "full_canonical_fiber_count": 18,
+  "full_even_harmonic_count": 35,
+  "full_fermion_dimension": 5040,
+  "geometry_clock": "same chronological x-linear/vy-midpoint phase; outgoing inherited profile and explicit reference-clock image once",
+  "input_hashes": {
+    "artifacts/flagship_integration/BHSM_N12_C2_REFINED_RESET_ROOT_CENTER.npz": "59dd88661b15cbeec96bc19294f9d9c64f754cccbfbc385c32329fa9c864a8fe",
+    "artifacts/flagship_integration/BHSM_N12_FULL_RESET_ACTION_JACOBIAN.npz": "35bb2b67ff784206d3a5b9dc82881f5ffd8f844b55342f2032d29cdafb38a67a",
+    "artifacts/muon_birth_transfer_value_20261008/retained_reset/run_1/result.json": "d0fec0f8e8a05818fcce67e88ed8db73744484220a2cb213825893f481cb0a72",
+    "artifacts/muon_calibrated_pauli_20261009/inputs.json": "0b614ab6f26d169ca04a4878f767f78eb3668484840867e46aebbebf186369da",
+    "artifacts/muon_calibrated_weak_decay_20261010/run_1/weak_decay.json": "9c31575ce0889571790f8767cf53ffe043cb9906e0a45a96b194971320a0aad7",
+    "artifacts/muon_corrected_profile_magnetic_response_20261011/run_1/incoming_contacts.npz": "427094c0d93147bc143a1378f007e5eeb287dd5fac2eefcac962ff28e9f897a5",
+    "artifacts/muon_corrected_profile_magnetic_response_20261011/run_1/outgoing_contacts.npz": "b6e9d323f3c55cd2c6eb0fff84a68a52393c017bf4a50adff82686bdcc3baa6e",
+    "artifacts/muon_corrected_profile_magnetic_response_20261011/run_1/result.json": "67d10f7d2064219916ba4abc9caf66f7e673dfc96453aba3c91458363624740b",
+    "artifacts/muon_even_coupled_temporal_field_20261011/run_3/result.json": "fd093a8c3b41c31d08b975deed9a3490dc532b13611c4e95da7979ad6f9869c5",
+    "artifacts/muon_finite_normal_phase_20261011/incoming_run_1/application.npz": "254491c04531387f3ef3ae761cb4efccfbed54055683af00fbd8259a2520a8f9",
+    "artifacts/muon_finite_normal_phase_20261011/incoming_run_1/result.json": "8547be3232459deb8cb1d325a3d956bc0380ba0c767371ccce4bf7f5140b399f",
+    "artifacts/muon_inherited_finite_normal_phase_20261011/run_1/application.npz": "7a513c82e9e4f3e2560e2989867e00e8af3453e637a29559286c29eb7c184a59",
+    "artifacts/muon_inherited_finite_normal_phase_20261011/run_1/result.json": "d283c45cb81e86628ecec96159eae5327829d15f440bf01c78164f4b12434c51",
+    "artifacts/muon_matched_mechanical_source_20261002/replay_reference/matched_source_and_weak_actions.npz": "146435df28178967c321c0aa7e89a1511395d196f96b8715532aa98e3e312c2b",
+    "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1/application.npz": "c67363c17adfb519f399614463d5a13dbcd019aa53246d452421eea8ba982455",
+    "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1/result.json": "06867e31959910ec21385e8491bd5b794060c68e8404ae0524e3d0c9b544faa6",
+    "scripts/evaluate_muon_corrected_profile_magnetic_response.py": "7921658039c4a2890151c331ad8516f8a651686c35f14ef51fa95e7ecf5b7b8d",
+    "scripts/evaluate_muon_even_coupled_temporal_field.py": "b9ec2f37438b567267bfe76ac57cffa131e491d7420f4ff81204c4c171e2a41a",
+    "scripts/evaluate_muon_even_source_temporal_fermion.py": "a375904b4ecd146bd03d4ba45e0e00944299e2f5c12b024c791dcc77ac728034",
+    "scripts/evaluate_muon_reached_trace_action.py": "f2ecf5b614f8b3b1b5f9bf2b73490e539321049633f7deb467bdf60a81e0c260",
+    "src/bhsm/interface/aether_canonical_momentum_action_jacobian.py": "d0ade20dc8a999e43073b45ca3ef59e05c65c55e37a1d6565d4e389176295cb1",
+    "src/bhsm/interface/aether_diagonal_sp1_m4_attachment_v15_50.py": "e6482614dcb54f4890a5e66fbe724d4c302405d575a4b73ddbb64a075cb1827e",
+    "src/bhsm/interface/aether_lorentzian_child_galerkin_v15_44.py": "574a9a6267d9228170c7309bd4be3cafb36b7515a6ee558509beb968e97bdab7",
+    "src/bhsm/interface/muon_birth_attached_phase.py": "948c1505e9b68cffbe8050be31dcb5727d8f8d4f25399f9037cfc94a9ae9fdeb",
+    "src/bhsm/interface/muon_birth_chronological_normal_inertia.py": "909f322d0b375ab03fc0b0a148c9d710ac77e371e029c5e92c9bfbde86883b05",
+    "src/bhsm/interface/muon_birth_coupled_primal_midpoint.py": "ce321f641fa51d98710d006e246aac5cf6bd046be93a74fab452808597c599ce",
+    "src/bhsm/interface/muon_birth_finite_geometric_trace_endpoint.py": "4f5c36144222d5d1e657061aa9352f8e86d5ae61a0ebdf05991a477e68d4be5f",
+    "src/bhsm/interface/muon_birth_finite_normal_phase.py": "660ed731bdbe0bbb71eda750c9dbffd20e7ce9f63be2a6087e5a385d76850361",
+    "src/bhsm/interface/muon_birth_finite_normal_trace_graph.py": "20eafd9a6abff3d3a89a2f6085d099584684ba19b600673dafda634cb56aad18",
+    "src/bhsm/interface/muon_birth_full_field_attachment.py": "58b3bd8a4ae5fe7c63b5551e4d0f26d82ab82a27d4389066c894a5e1b4728d03",
+    "src/bhsm/interface/muon_birth_inherited_finite_normal_phase.py": "86b082dfa0b525e9d8bb510a6c02e53c517d7ecdd8c6c9aec956d175d829add4",
+    "src/bhsm/interface/muon_birth_normal_constrained_action.py": "fe66a9116816e075cfc5e7c5f5f3c2c02d539311303b693a1d89cbc08ea62577",
+    "src/bhsm/interface/muon_birth_normal_trace_graph.py": "d012a0455d84be2ce7aae8d6833f8b482f9bbc1e9ee1b899042a421c2a782896",
+    "src/bhsm/interface/muon_birth_paired_attachment_endpoint.py": "71a69275ebeef226fd8dc7585745c5c8acac687e497a8441fe37a37553178f23",
+    "src/bhsm/interface/muon_birth_paired_field_endpoint.py": "f22b6a17b65c72b30571b3d9f721f347737a5916fa08e50bd833ad22df3cd035",
+    "src/bhsm/interface/muon_birth_phase_continuation.py": "9169a1c56bf5084d1f240043ca12d431c87e4adaff24fe09bdf7bf27fc5eb0be",
+    "src/bhsm/interface/muon_birth_trace_enriched_action.py": "c36c48482dd58ebe369ab935574b78b3693036f717fb49035dfac01164956dce",
+    "src/bhsm/interface/muon_birth_trace_enriched_phase.py": "591754957f1cc452bfd53d8adc1087308459902a822876105315b7423c2fd676",
+    "src/bhsm/interface/muon_birth_two_arm_assigned_action.py": "cf6c58dc68700315d701fb9a1e9e99e927d18d90016a6ae7f86470c36136c77a",
+    "src/bhsm/interface/muon_corrected_profile_magnetic_response.py": "8d09cd726393d59b6843553c085ffaf61f84f009b44678d1465fe7ebe645f1d8",
+    "src/bhsm/interface/muon_coupled_field_angular_images.py": "16c9a1dd9f36832b9507087d49b8ad7edb366337d3c972a09010a4228a62e578",
+    "src/bhsm/interface/muon_coupled_higgs_magnetic_source.py": "2d0c1f4e6231ba258c3e1afa52437735c41a65c3739cf6592265ede90c0244fb",
+    "src/bhsm/interface/muon_electromagnetic_magnetic_birth_continuation.py": "51d9cd03cfa6047dfe0fafd249734b26172193c78c860af65d6a6b0148c7c9e4",
+    "src/bhsm/interface/muon_electromagnetic_soft_magnetic_source.py": "e0ec4c67e29e8f2ac9ce003559c3d9257d00a30a79a373bd2caff58f5dd4d231",
+    "src/bhsm/interface/muon_even_coupled_temporal_field.py": "d865825ebb22f138e30c1e068e6e2c6ce1e99d33a11b7cd0c4ac56c11a6474df",
+    "src/bhsm/interface/muon_even_source_temporal_fermion.py": "04dbb34f82c54aeeeffc240de9d242a6f9bbf969c0c24adf00e1998adf4e52fc",
+    "src/bhsm/interface/muon_exact_material_response.py": "a530651e157a000dbe6935e9de1cedbce5679f98c599c6c7c641158b749307bf",
+    "src/bhsm/interface/muon_intrinsic_higgs_gauge_action.py": "c19354209300ab06c0f1ab6bf4e111dbb5de0cd9e8d1d31a71af357a829118d4",
+    "src/bhsm/interface/muon_intrinsic_m4_normal_pullback.py": "43187eee35f2879a43fe0fd02ae447502811349ccf2f2a78aa14beb8aa706bf0",
+    "src/bhsm/interface/muon_material_higgs_gauge_action.py": "8bca013820283614c6578be4f44c29c4ea1c919f516aa9a2783f0eb38127d035",
+    "src/bhsm/interface/muon_moving_geometric_action.py": "bf560fdb9766f563d97d3100ccb266e2a4350c910ac14a51d57576c2b5371392",
+    "src/bhsm/interface/muon_parent_gauge_geometry_correction.py": "fa29f5764dca39196c807d64e7976d5894589e7de3ffa9d4a5ddecfb136b4816",
+    "src/bhsm/interface/muon_parent_maxwell_background_euler.py": "fbb2c99d4b1c58247ac42a769fad3e1b16ccc76a1744fe0c5334e50c4a974bee",
+    "src/bhsm/interface/muon_parent_maxwell_corrected_retarded.py": "00bf7053e289297afd4f10dc0ef9522ac8326f2bd07609c9979bb9f5f6f74a4d",
+    "src/bhsm/interface/muon_parent_maxwell_full_retarded.py": "1ecf85a6da94b84b69af1ff4394301232d9d4cad4b0f0bc08de56d5943e0c478",
+    "src/bhsm/interface/muon_parent_maxwell_full_weak.py": "c1fb703967a644306d3521d457a6d7c778a49d89c1e081b401487a25b7491565",
+    "src/bhsm/interface/muon_parent_maxwell_geometry_weak.py": "f0b4a49934e17ad18c40e9164b66c54e1b2cb146fb476f59b0e500f2dd6c9153",
+    "src/bhsm/interface/muon_parent_mean_causal_action.py": "2a84b1be22625b1a5ae88d10c76631d7a5b602d2b0e22e57f00201bb74a593ad",
+    "src/bhsm/interface/muon_parent_positive_coupled_field.py": "f26b1c395c8059555d1f3e217705998c5e0437122ab761354ce0f085d891d5c2",
+    "src/bhsm/interface/muon_parent_retarded_hypercharge.py": "2eb97a704bce63f601cc0d6e0f647266d4b4aac7f746d34dceb41b72018c3510",
+    "src/bhsm/interface/muon_pointwise_full_field_action.py": "d57cd5953de00bcae857d0e458bbead1e463e5fffe8d947c5b9e71806aabaff6",
+    "src/bhsm/interface/muon_profile_preserving_phase_sample.py": "27ce99bf8c286b0e3fe56dc4d7f0f215dee51b228dcce1805006e1b2c8998418",
+    "src/bhsm/interface/muon_reached_trace_action.py": "7fed7f2520a6f66e31323905359e491897f7187ccf9871ecfc2ab95e415ffade",
+    "src/bhsm/interface/muon_source_directed_temporal_green.py": "85b0cf0a9c0601efdc4914285c8c87f3e72a33b0a1844acc5b1745db3781fd94",
+    "tests/test_muon_even_source_temporal_fermion.py": "ad091f5a0c56e4ad9e2306c2b80c06a1d0b4340a1ce1c0131aff3d112972cc3f"
+  },
+  "numerical_files": {
+    "incoming_block_0.npz": {
+      "bytes": 71291,
+      "sha256": "b842ca0653f1d26e01ebe667cddabdafc46ac98c1762f27249c8c2458140274f"
+    },
+    "incoming_block_1.npz": {
+      "bytes": 484440,
+      "sha256": "60f51ee08ec51bf48784137802433ab86b43247f3899afe39db5ca589a555ea1"
+    },
+    "incoming_block_10.npz": {
+      "bytes": 484835,
+      "sha256": "1c001072fccc90621646c333973dae705f8fb7d0aa7308a405381c529cf7a2fb"
+    },
+    "incoming_block_11.npz": {
+      "bytes": 484835,
+      "sha256": "95093695943b8b08cfec36ba0cb9098c8fbd28de6654b5032fefddee5869e9f5"
+    },
+    "incoming_block_12.npz": {
+      "bytes": 484835,
+      "sha256": "9cce3fd6be7fb7ba41e27f5db4685f136783630a4555aa4dcf971991be2132d1"
+    },
+    "incoming_block_13.npz": {
+      "bytes": 1194707,
+      "sha256": "9390316e48eb37dd6eadfd064304cbf777f91ab360ba87c8596c922d3c585995"
+    },
+    "incoming_block_14.npz": {
+      "bytes": 1194707,
+      "sha256": "2e18bb905a9371479e190c3dfcf4de7b1efc1521ffbd6ca39bf1aa8910e6dde4"
+    },
+    "incoming_block_15.npz": {
+      "bytes": 1194707,
+      "sha256": "1f77ae9c08d9cbdd1c1f70f8ef58549af6693628826a1978b258c5b1468ea565"
+    },
+    "incoming_block_16.npz": {
+      "bytes": 1194707,
+      "sha256": "c56d2152e3fc5e487c948decf6e36c51e8df78c82046f992d2939311925331db"
+    },
+    "incoming_block_17.npz": {
+      "bytes": 1194707,
+      "sha256": "5bf66942d8a786944f5b0ad7a24603760807933e3ee9925a135c4ca803cae8f3"
+    },
+    "incoming_block_18.npz": {
+      "bytes": 71336,
+      "sha256": "1d689ae228221bcfb14ffedbfa7b9347a20c70901a6131182b18b660f0c534c1"
+    },
+    "incoming_block_19.npz": {
+      "bytes": 485104,
+      "sha256": "577efdf2c7a9f10ef788ae4a8c22d1ecda3ba2befa600d3a6d6a4ff83dfa9fc9"
+    },
+    "incoming_block_2.npz": {
+      "bytes": 484440,
+      "sha256": "bd9fd4ada94c574ec88aa453726cd58ecff49b1b92a8e16ca7d5432d23883dd4"
+    },
+    "incoming_block_20.npz": {
+      "bytes": 485104,
+      "sha256": "e4a5f441f3785868f1fcbb5cd1240afa0af0de43a260d0f400d64065e71e724d"
+    },
+    "incoming_block_21.npz": {
+      "bytes": 485104,
+      "sha256": "67f7bb61f40b3ebb577e960b7bf802b682a815b640fe1a26a86433a8a5c5bf02"
+    },
+    "incoming_block_22.npz": {
+      "bytes": 1195009,
+      "sha256": "5af4993748a10625af4d86aa3ffc0833e4533e22503ec93674c5c64ae76c9ea4"
+    },
+    "incoming_block_23.npz": {
+      "bytes": 1195009,
+      "sha256": "edb5583cfde121349c3fd4315069492b72eb16be7cbeb4fff97edd745052740a"
+    },
+    "incoming_block_24.npz": {
+      "bytes": 1195009,
+      "sha256": "b3572f5382699cef193ae94b45f48f68b4dff34946dcd7ef1c6032581392728e"
+    },
+    "incoming_block_25.npz": {
+      "bytes": 1195009,
+      "sha256": "76649d22a08628394571b4231257c25ea258b6008c93f509e7d1c4d2efd9105e"
+    },
+    "incoming_block_26.npz": {
+      "bytes": 1195009,
+      "sha256": "8ae87ca5fa36f7d7adf6426f5d8c584463fa0e7ce4007025dda74045d4d07733"
+    },
+    "incoming_block_3.npz": {
+      "bytes": 484440,
+      "sha256": "250e3e671074917af2c81d1c5769db48ff7734c3c286d6a203406c49e3e950dc"
+    },
+    "incoming_block_4.npz": {
+      "bytes": 1194325,
+      "sha256": "12f2c6c8c2d4e4944c9762d70084c9a8e7eac6e3e8ff434074240ed0eb4625f0"
+    },
+    "incoming_block_5.npz": {
+      "bytes": 1194325,
+      "sha256": "311f9d092380404efa6fb65f1018f91aef48ee14158f4871fcd640fe4bfb456b"
+    },
+    "incoming_block_6.npz": {
+      "bytes": 1194325,
+      "sha256": "1b45cf567b9eecf594e8908e795b90f2991d5556bf51fb739ae7621a9c898cd5"
+    },
+    "incoming_block_7.npz": {
+      "bytes": 1194325,
+      "sha256": "2a9a9200083177610a95b1ffdf286ee561244b688fb224a8aa17f52b6d6a02b7"
+    },
+    "incoming_block_8.npz": {
+      "bytes": 1194325,
+      "sha256": "35de678b0a69098ed015315471b3d62ae9ae33d7a68011d31229a467bb16634d"
+    },
+    "incoming_block_9.npz": {
+      "bytes": 71250,
+      "sha256": "38fec7f726d39f2ef6f153d68139e2cd37d90dd9f032fc946455dd95da46bbd7"
+    },
+    "incoming_samples.npz": {
+      "bytes": 17088,
+      "sha256": "08f6a930448feb4571f758528230e469af35bbaf82d90557ce3d0ef5b6ec3618"
+    },
+    "outgoing_block_0.npz": {
+      "bytes": 71026,
+      "sha256": "1e68ce1e8e7e509ff48846753ed2904fe92a41e12f3230b8bd7837669acfd847"
+    },
+    "outgoing_block_1.npz": {
+      "bytes": 482191,
+      "sha256": "fa91c9d9551da7c7aa26b6c8c2d79bf6f2c6da8ee7e76570bac6f5a9f7cd41e8"
+    },
+    "outgoing_block_10.npz": {
+      "bytes": 481789,
+      "sha256": "3c08c2b181c78e4e7a72bd503ed1527aa588d2089d4232e5eb576768ce2cdf66"
+    },
+    "outgoing_block_11.npz": {
+      "bytes": 481789,
+      "sha256": "717a63373e1553bf205745bfd45befa298526ba9660e1d85a0889a37be2396c0"
+    },
+    "outgoing_block_12.npz": {
+      "bytes": 481789,
+      "sha256": "e3b3da4f2bf36c33b72efb95e21c6a159b005b3f5416ae9bdf6f1ac25904e1aa"
+    },
+    "outgoing_block_13.npz": {
+      "bytes": 1189280,
+      "sha256": "a148fa0f937e7da1ae7e669e27be5a4a33448544265203c291e9d1097b6cbdc0"
+    },
+    "outgoing_block_14.npz": {
+      "bytes": 1189280,
+      "sha256": "f3503d501fc336e150e4187d2b8e95f38fb06746429302b4ec26c526b5b485a0"
+    },
+    "outgoing_block_15.npz": {
+      "bytes": 1189280,
+      "sha256": "287653b95fef2b4f7271eb3c6daacb43cc3297be46dc22ab0c10e20ddfe0333a"
+    },
+    "outgoing_block_16.npz": {
+      "bytes": 1189280,
+      "sha256": "228cf153aa14c0fe24767a6cfc280e6ef873d1523b5f13e8a45853c929aad6aa"
+    },
+    "outgoing_block_17.npz": {
+      "bytes": 1189280,
+      "sha256": "28ed986d6451a0f306439325753ee2ff2913ec5a97ab71bb3315bbae1c78e80c"
+    },
+    "outgoing_block_18.npz": {
+      "bytes": 71009,
+      "sha256": "d284c2c8e7a641d58105c390c003b16890752ebf6d1f253e492becfe62e1295d"
+    },
+    "outgoing_block_19.npz": {
+      "bytes": 482429,
+      "sha256": "4f4f56746f617ac9da62dfb4eab7c786e4a924a529ca2c55d184916f382d9b10"
+    },
+    "outgoing_block_2.npz": {
+      "bytes": 482191,
+      "sha256": "f54c9c83f07b62efd1ae6f1415dc6038c3d99db809f6ff5f308c4dde442caa4e"
+    },
+    "outgoing_block_20.npz": {
+      "bytes": 482429,
+      "sha256": "19c73c8b435461689226a94872a4bf7f1fc0285ea5703abb0a7aaf48758d99fe"
+    },
+    "outgoing_block_21.npz": {
+      "bytes": 482429,
+      "sha256": "837cb1971e31e7c2c224f0449398df7447b45f762a4a230a1b39e87ebaae0724"
+    },
+    "outgoing_block_22.npz": {
+      "bytes": 1189984,
+      "sha256": "8ccb7b9de8d7131f5861cfe76f21df2f5b94c2d62fc1dd465d1e7db5df479379"
+    },
+    "outgoing_block_23.npz": {
+      "bytes": 1189984,
+      "sha256": "402b51d0b7223f66238dae216542ca4cccb7c717f8ea115f8edb1eae5256184e"
+    },
+    "outgoing_block_24.npz": {
+      "bytes": 1189984,
+      "sha256": "2be2d9e86c56a0d996ae5b5812df1ff18f2ef20210e21d9e96a159e3562cb334"
+    },
+    "outgoing_block_25.npz": {
+      "bytes": 1189984,
+      "sha256": "d2a1644dc918ee4515a2079634865f5f49febbd6de5dff8b35769dfbbed126bb"
+    },
+    "outgoing_block_26.npz": {
+      "bytes": 1189984,
+      "sha256": "38eeac3ee202485e312cfcac3f60bd87c30ec049bdcc7689eaba3fe9101c6bc5"
+    },
+    "outgoing_block_3.npz": {
+      "bytes": 482191,
+      "sha256": "d393990e829a627e7c5dd0e3463439f152faffe4080372a14532a89a2018e9f1"
+    },
+    "outgoing_block_4.npz": {
+      "bytes": 1189917,
+      "sha256": "27300fc7e7615d22824a577cebcb1cf635ff72e834fc424c56e3bd6aa461bc33"
+    },
+    "outgoing_block_5.npz": {
+      "bytes": 1189917,
+      "sha256": "e0d473688d68f3e51062c8c93436e7c8928433b3fb7b27505cc78581255db57d"
+    },
+    "outgoing_block_6.npz": {
+      "bytes": 1189917,
+      "sha256": "af1304e3e1eb61f27156a0cc1a6d08a8b289570b9b8ca74175e8520d06141fab"
+    },
+    "outgoing_block_7.npz": {
+      "bytes": 1189917,
+      "sha256": "cc41c20fb221b0c80d544b823db1bb63656431d8a318835ed5ead9d1db3359a8"
+    },
+    "outgoing_block_8.npz": {
+      "bytes": 1189917,
+      "sha256": "39ebfa3e2e1c8f4a2443941797594ed850da52ac80676bb623ac1455206a5878"
+    },
+    "outgoing_block_9.npz": {
+      "bytes": 70829,
+      "sha256": "d61226fdde643a2b2afb38a59a6a857c916bebe6f96b92813f1f38cf07698c99"
+    },
+    "outgoing_samples.npz": {
+      "bytes": 17179,
+      "sha256": "9b1f0f673b1cd38bc5b8ac3663a62d0259eee7894bfa1499ccb267f3c015909c"
+    }
+  },
+  "numerical_rank_deletion": false,
+  "physical_a_mu": null,
+  "physical_g_mu": null,
+  "quadrature_order": 12,
+  "records": [
+    {
+      "block_records": [
+        {
+          "Gram_orthonormal_residual": 2.8839531251654445e-13,
+          "dimension": 48,
+          "family": 0,
+          "generalized_eigen_residual": 1.2497049506032736e-15,
+          "level": 0,
+          "maximum_generalized_eigenvalue": 12050843560613.006,
+          "minimum_generalized_eigenvalue": 80331583299.44614,
+          "normalized_symmetry_defect": 3.142554781741653e-39,
+          "spectator": 0
+        },
+        {
+          "Gram_orthonormal_residual": 1.1967580678385805e-14,
+          "dimension": 144,
+          "family": 0,
+          "generalized_eigen_residual": 8.563908937239046e-16,
+          "level": 2,
+          "maximum_generalized_eigenvalue": 12050843560625.717,
+          "minimum_generalized_eigenvalue": 80331583304.6602,
+          "normalized_symmetry_defect": 5.956440968967146e-39,
+          "spectator": 0
+        },
+        {
+          "Gram_orthonormal_residual": 1.1967580678385805e-14,
+          "dimension": 144,
+          "family": 0,
+          "generalized_eigen_residual": 8.563908937239046e-16,
+          "level": 2,
+          "maximum_generalized_eigenvalue": 12050843560625.717,
+          "minimum_generalized_eigenvalue": 80331583304.6602,
+          "normalized_symmetry_defect": 5.956440968967146e-39,
+          "spectator": 1
+        },
+        {
+          "Gram_orthonormal_residual": 1.1967580678385805e-14,
+          "dimension": 144,
+          "family": 0,
+          "generalized_eigen_residual": 8.563908937239046e-16,
+          "level": 2,
+          "maximum_generalized_eigenvalue": 12050843560625.717,
+          "minimum_generalized_eigenvalue": 80331583304.6602,
+          "normalized_symmetry_defect": 5.956440968967146e-39,
+          "spectator": 2
+        },
+        {
+          "Gram_orthonormal_residual": 1.99772876244379e-14,
+          "dimension": 240,
+          "family": 0,
+          "generalized_eigen_residual": 1.0412507021866246e-15,
+          "level": 4,
+          "maximum_generalized_eigenvalue": 12050843560647.049,
+          "minimum_generalized_eigenvalue": 80331583317.80511,
+          "normalized_symmetry_defect": 1.3522734508000507e-38,
+          "spectator": 0
+        },
+        {
+          "Gram_orthonormal_residual": 1.99772876244379e-14,
+          "dimension": 240,
+          "family": 0,
+          "generalized_eigen_residual": 1.0412507021866246e-15,
+          "level": 4,
+          "maximum_generalized_eigenvalue": 12050843560647.049,
+          "minimum_generalized_eigenvalue": 80331583317.80511,
+          "normalized_symmetry_defect": 1.3522734508000507e-38,
+          "spectator": 1
+        },
+        {
+          "Gram_orthonormal_residual": 1.99772876244379e-14,
+          "dimension": 240,
+          "family": 0,
+          "generalized_eigen_residual": 1.0412507021866246e-15,
+          "level": 4,
+          "maximum_generalized_eigenvalue": 12050843560647.049,
+          "minimum_generalized_eigenvalue": 80331583317.80511,
+          "normalized_symmetry_defect": 1.3522734508000507e-38,
+          "spectator": 2
+        },
+        {
+          "Gram_orthonormal_residual": 1.99772876244379e-14,
+          "dimension": 240,
+          "family": 0,
+          "generalized_eigen_residual": 1.0412507021866246e-15,
+          "level": 4,
+          "maximum_generalized_eigenvalue": 12050843560647.049,
+          "minimum_generalized_eigenvalue": 80331583317.80511,
+          "normalized_symmetry_defect": 1.3522734508000507e-38,
+          "spectator": 3
+        },
+        {
+          "Gram_orthonormal_residual": 1.99772876244379e-14,
+          "dimension": 240,
+          "family": 0,
+          "generalized_eigen_residual": 1.0412507021866246e-15,
+          "level": 4,
+          "maximum_generalized_eigenvalue": 12050843560647.049,
+          "minimum_generalized_eigenvalue": 80331583317.80511,
+          "normalized_symmetry_defect": 1.3522734508000507e-38,
+          "spectator": 4
+        },
+        {
+          "Gram_orthonormal_residual": 5.718696811244417e-15,
+          "dimension": 48,
+          "family": 1,
+          "generalized_eigen_residual": 6.932408005730313e-16,
+          "level": 0,
+          "maximum_generalized_eigenvalue": 12050843560613.002,
+          "minimum_generalized_eigenvalue": 80331583299.44748,
+          "normalized_symmetry_defect": 3.1425548220648106e-39,
+          "spectator": 0
+        },
+        {
+          "Gram_orthonormal_residual": 1.1097420306780389e-14,
+          "dimension": 144,
+          "family": 1,
+          "generalized_eigen_residual": 8.603353354750981e-16,
+          "level": 2,
+          "maximum_generalized_eigenvalue": 12050843560625.713,
+          "minimum_generalized_eigenvalue": 80331583304.66025,
+          "normalized_symmetry_defect": 5.956442849581397e-39,
+          "spectator": 0
+        },
+        {
+          "Gram_orthonormal_residual": 1.1097420306780389e-14,
+          "dimension": 144,
+          "family": 1,
+          "generalized_eigen_residual": 8.603353354750981e-16,
+          "level": 2,
+          "maximum_generalized_eigenvalue": 12050843560625.713,
+          "minimum_generalized_eigenvalue": 80331583304.66025,
+          "normalized_symmetry_defect": 5.956442849581397e-39,
+          "spectator": 1
+        },
+        {
+          "Gram_orthonormal_residual": 1.1097420306780389e-14,
+          "dimension": 144,
+          "family": 1,
+          "generalized_eigen_residual": 8.603353354750981e-16,
+          "level": 2,
+          "maximum_generalized_eigenvalue": 12050843560625.713,
+          "minimum_generalized_eigenvalue": 80331583304.66025,
+          "normalized_symmetry_defect": 5.956442849581397e-39,
+          "spectator": 2
+        },
+        {
+          "Gram_orthonormal_residual": 2.0268461655494267e-14,
+          "dimension": 240,
+          "family": 1,
+          "generalized_eigen_residual": 1.0078421271321219e-15,
+          "level": 4,
+          "maximum_generalized_eigenvalue": 12050843560647.045,
+          "minimum_generalized_eigenvalue": 80331583317.80286,
+          "normalized_symmetry_defect": 1.3522726627931838e-38,
+          "spectator": 0
+        },
+        {
+          "Gram_orthonormal_residual": 2.0268461655494267e-14,
+          "dimension": 240,
+          "family": 1,
+          "generalized_eigen_residual": 1.0078421271321219e-15,
+          "level": 4,
+          "maximum_generalized_eigenvalue": 12050843560647.045,
+          "minimum_generalized_eigenvalue": 80331583317.80286,
+          "normalized_symmetry_defect": 1.3522726627931838e-38,
+          "spectator": 1
+        },
+        {
+          "Gram_orthonormal_residual": 2.0268461655494267e-14,
+          "dimension": 240,
+          "family": 1,
+          "generalized_eigen_residual": 1.0078421271321219e-15,
+          "level": 4,
+          "maximum_generalized_eigenvalue": 12050843560647.045,
+          "minimum_generalized_eigenvalue": 80331583317.80286,
+          "normalized_symmetry_defect": 1.3522726627931838e-38,
+          "spectator": 2
+        },
+        {
+          "Gram_orthonormal_residual": 2.0268461655494267e-14,
+          "dimension": 240,
+          "family": 1,
+          "generalized_eigen_residual": 1.0078421271321219e-15,
+          "level": 4,
+          "maximum_generalized_eigenvalue": 12050843560647.045,
+          "minimum_generalized_eigenvalue": 80331583317.80286,
+          "normalized_symmetry_defect": 1.3522726627931838e-38,
+          "spectator": 3
+        },
+        {
+          "Gram_orthonormal_residual": 2.0268461655494267e-14,
+          "dimension": 240,
+          "family": 1,
+          "generalized_eigen_residual": 1.0078421271321219e-15,
+          "level": 4,
+          "maximum_generalized_eigenvalue": 12050843560647.045,
+          "minimum_generalized_eigenvalue": 80331583317.80286,
+          "normalized_symmetry_defect": 1.3522726627931838e-38,
+          "spectator": 4
+        },
+        {
+          "Gram_orthonormal_residual": 5.5240470367243624e-15,
+          "dimension": 48,
+          "family": 2,
+          "generalized_eigen_residual": 7.557693219536001e-16,
+          "level": 0,
+          "maximum_generalized_eigenvalue": 12050843560613.002,
+          "minimum_generalized_eigenvalue": 80331583299.44733,
+          "normalized_symmetry_defect": 3.1425547804401694e-39,
+          "spectator": 0
+        },
+        {
+          "Gram_orthonormal_residual": 1.2481107758735546e-14,
+          "dimension": 144,
+          "family": 2,
+          "generalized_eigen_residual": 9.21743477084164e-16,
+          "level": 2,
+          "maximum_generalized_eigenvalue": 12050843560625.713,
+          "minimum_generalized_eigenvalue": 80331583304.65912,
+          "normalized_symmetry_defect": 5.956440968282398e-39,
+          "spectator": 0
+        },
+        {
+          "Gram_orthonormal_residual": 1.2481107758735546e-14,
+          "dimension": 144,
+          "family": 2,
+          "generalized_eigen_residual": 9.21743477084164e-16,
+          "level": 2,
+          "maximum_generalized_eigenvalue": 12050843560625.713,
+          "minimum_generalized_eigenvalue": 80331583304.65912,
+          "normalized_symmetry_defect": 5.956440968282398e-39,
+          "spectator": 1
+        },
+        {
+          "Gram_orthonormal_residual": 1.2481107758735546e-14,
+          "dimension": 144,
+          "family": 2,
+          "generalized_eigen_residual": 9.21743477084164e-16,
+          "level": 2,
+          "maximum_generalized_eigenvalue": 12050843560625.713,
+          "minimum_generalized_eigenvalue": 80331583304.65912,
+          "normalized_symmetry_defect": 5.956440968282398e-39,
+          "spectator": 2
+        },
+        {
+          "Gram_orthonormal_residual": 2.001273424847858e-14,
+          "dimension": 240,
+          "family": 2,
+          "generalized_eigen_residual": 1.0490399205634486e-15,
+          "level": 4,
+          "maximum_generalized_eigenvalue": 12050843560647.045,
+          "minimum_generalized_eigenvalue": 80331583317.80244,
+          "normalized_symmetry_defect": 1.3522726583436325e-38,
+          "spectator": 0
+        },
+        {
+          "Gram_orthonormal_residual": 2.001273424847858e-14,
+          "dimension": 240,
+          "family": 2,
+          "generalized_eigen_residual": 1.0490399205634486e-15,
+          "level": 4,
+          "maximum_generalized_eigenvalue": 12050843560647.045,
+          "minimum_generalized_eigenvalue": 80331583317.80244,
+          "normalized_symmetry_defect": 1.3522726583436325e-38,
+          "spectator": 1
+        },
+        {
+          "Gram_orthonormal_residual": 2.001273424847858e-14,
+          "dimension": 240,
+          "family": 2,
+          "generalized_eigen_residual": 1.0490399205634486e-15,
+          "level": 4,
+          "maximum_generalized_eigenvalue": 12050843560647.045,
+          "minimum_generalized_eigenvalue": 80331583317.80244,
+          "normalized_symmetry_defect": 1.3522726583436325e-38,
+          "spectator": 2
+        },
+        {
+          "Gram_orthonormal_residual": 2.001273424847858e-14,
+          "dimension": 240,
+          "family": 2,
+          "generalized_eigen_residual": 1.0490399205634486e-15,
+          "level": 4,
+          "maximum_generalized_eigenvalue": 12050843560647.045,
+          "minimum_generalized_eigenvalue": 80331583317.80244,
+          "normalized_symmetry_defect": 1.3522726583436325e-38,
+          "spectator": 3
+        },
+        {
+          "Gram_orthonormal_residual": 2.001273424847858e-14,
+          "dimension": 240,
+          "family": 2,
+          "generalized_eigen_residual": 1.0490399205634486e-15,
+          "level": 4,
+          "maximum_generalized_eigenvalue": 12050843560647.045,
+          "minimum_generalized_eigenvalue": 80331583317.80244,
+          "normalized_symmetry_defect": 1.3522726583436325e-38,
+          "spectator": 4
+        }
+      ],
+      "complex_frame_unitary_residual": 1.2566714823621658e-15,
+      "real_to_complex_derivative_residual": 8.54222814130045e-15,
+      "side": "incoming",
+      "spectator_off_block_max": 0.0,
+      "temporal_Gram_condition": 5492.228230593844
+    },
+    {
+      "block_records": [
+        {
+          "Gram_orthonormal_residual": 1.0056275356634539e-13,
+          "dimension": 48,
+          "family": 0,
+          "generalized_eigen_residual": 1.3349298691762393e-15,
+          "level": 0,
+          "maximum_generalized_eigenvalue": 30377158300657.656,
+          "minimum_generalized_eigenvalue": 202495801242.1441,
+          "normalized_symmetry_defect": 4.05820163345997e-43,
+          "spectator": 0
+        },
+        {
+          "Gram_orthonormal_residual": 1.1923798677352375e-14,
+          "dimension": 144,
+          "family": 0,
+          "generalized_eigen_residual": 8.589477473501527e-16,
+          "level": 2,
+          "maximum_generalized_eigenvalue": 30377158300670.438,
+          "minimum_generalized_eigenvalue": 202495801246.21255,
+          "normalized_symmetry_defect": 1.5499292167852336e-38,
+          "spectator": 0
+        },
+        {
+          "Gram_orthonormal_residual": 1.1923798677352375e-14,
+          "dimension": 144,
+          "family": 0,
+          "generalized_eigen_residual": 8.589477473501527e-16,
+          "level": 2,
+          "maximum_generalized_eigenvalue": 30377158300670.438,
+          "minimum_generalized_eigenvalue": 202495801246.21255,
+          "normalized_symmetry_defect": 1.5499292167852336e-38,
+          "spectator": 1
+        },
+        {
+          "Gram_orthonormal_residual": 1.1923798677352375e-14,
+          "dimension": 144,
+          "family": 0,
+          "generalized_eigen_residual": 8.589477473501527e-16,
+          "level": 2,
+          "maximum_generalized_eigenvalue": 30377158300670.438,
+          "minimum_generalized_eigenvalue": 202495801246.21255,
+          "normalized_symmetry_defect": 1.5499292167852336e-38,
+          "spectator": 2
+        },
+        {
+          "Gram_orthonormal_residual": 1.8771221011878866e-14,
+          "dimension": 240,
+          "family": 0,
+          "generalized_eigen_residual": 1.0305822040416577e-15,
+          "level": 4,
+          "maximum_generalized_eigenvalue": 30377158300691.81,
+          "minimum_generalized_eigenvalue": 202495801259.3158,
+          "normalized_symmetry_defect": 6.193432557053988e-39,
+          "spectator": 0
+        },
+        {
+          "Gram_orthonormal_residual": 1.8771221011878866e-14,
+          "dimension": 240,
+          "family": 0,
+          "generalized_eigen_residual": 1.0305822040416577e-15,
+          "level": 4,
+          "maximum_generalized_eigenvalue": 30377158300691.81,
+          "minimum_generalized_eigenvalue": 202495801259.3158,
+          "normalized_symmetry_defect": 6.193432557053988e-39,
+          "spectator": 1
+        },
+        {
+          "Gram_orthonormal_residual": 1.8771221011878866e-14,
+          "dimension": 240,
+          "family": 0,
+          "generalized_eigen_residual": 1.0305822040416577e-15,
+          "level": 4,
+          "maximum_generalized_eigenvalue": 30377158300691.81,
+          "minimum_generalized_eigenvalue": 202495801259.3158,
+          "normalized_symmetry_defect": 6.193432557053988e-39,
+          "spectator": 2
+        },
+        {
+          "Gram_orthonormal_residual": 1.8771221011878866e-14,
+          "dimension": 240,
+          "family": 0,
+          "generalized_eigen_residual": 1.0305822040416577e-15,
+          "level": 4,
+          "maximum_generalized_eigenvalue": 30377158300691.81,
+          "minimum_generalized_eigenvalue": 202495801259.3158,
+          "normalized_symmetry_defect": 6.193432557053988e-39,
+          "spectator": 3
+        },
+        {
+          "Gram_orthonormal_residual": 1.8771221011878866e-14,
+          "dimension": 240,
+          "family": 0,
+          "generalized_eigen_residual": 1.0305822040416577e-15,
+          "level": 4,
+          "maximum_generalized_eigenvalue": 30377158300691.81,
+          "minimum_generalized_eigenvalue": 202495801259.3158,
+          "normalized_symmetry_defect": 6.193432557053988e-39,
+          "spectator": 4
+        },
+        {
+          "Gram_orthonormal_residual": 2.2035184918720318e-13,
+          "dimension": 48,
+          "family": 1,
+          "generalized_eigen_residual": 1.38919343277487e-15,
+          "level": 0,
+          "maximum_generalized_eigenvalue": 30377158300657.645,
+          "minimum_generalized_eigenvalue": 202495801242.14096,
+          "normalized_symmetry_defect": 5.915814346019416e-43,
+          "spectator": 0
+        },
+        {
+          "Gram_orthonormal_residual": 1.204967495530955e-14,
+          "dimension": 144,
+          "family": 1,
+          "generalized_eigen_residual": 8.599113394718316e-16,
+          "level": 2,
+          "maximum_generalized_eigenvalue": 30377158300670.434,
+          "minimum_generalized_eigenvalue": 202495801246.2091,
+          "normalized_symmetry_defect": 1.5499291067193297e-38,
+          "spectator": 0
+        },
+        {
+          "Gram_orthonormal_residual": 1.204967495530955e-14,
+          "dimension": 144,
+          "family": 1,
+          "generalized_eigen_residual": 8.599113394718316e-16,
+          "level": 2,
+          "maximum_generalized_eigenvalue": 30377158300670.434,
+          "minimum_generalized_eigenvalue": 202495801246.2091,
+          "normalized_symmetry_defect": 1.5499291067193297e-38,
+          "spectator": 1
+        },
+        {
+          "Gram_orthonormal_residual": 1.204967495530955e-14,
+          "dimension": 144,
+          "family": 1,
+          "generalized_eigen_residual": 8.599113394718316e-16,
+          "level": 2,
+          "maximum_generalized_eigenvalue": 30377158300670.434,
+          "minimum_generalized_eigenvalue": 202495801246.2091,
+          "normalized_symmetry_defect": 1.5499291067193297e-38,
+          "spectator": 2
+        },
+        {
+          "Gram_orthonormal_residual": 1.8766089864130926e-14,
+          "dimension": 240,
+          "family": 1,
+          "generalized_eigen_residual": 1.3349723108879395e-15,
+          "level": 4,
+          "maximum_generalized_eigenvalue": 30377158300691.816,
+          "minimum_generalized_eigenvalue": 202495801259.31845,
+          "normalized_symmetry_defect": 6.193429543405094e-39,
+          "spectator": 0
+        },
+        {
+          "Gram_orthonormal_residual": 1.8766089864130926e-14,
+          "dimension": 240,
+          "family": 1,
+          "generalized_eigen_residual": 1.3349723108879395e-15,
+          "level": 4,
+          "maximum_generalized_eigenvalue": 30377158300691.816,
+          "minimum_generalized_eigenvalue": 202495801259.31845,
+          "normalized_symmetry_defect": 6.193429543405094e-39,
+          "spectator": 1
+        },
+        {
+          "Gram_orthonormal_residual": 1.8766089864130926e-14,
+          "dimension": 240,
+          "family": 1,
+          "generalized_eigen_residual": 1.3349723108879395e-15,
+          "level": 4,
+          "maximum_generalized_eigenvalue": 30377158300691.816,
+          "minimum_generalized_eigenvalue": 202495801259.31845,
+          "normalized_symmetry_defect": 6.193429543405094e-39,
+          "spectator": 2
+        },
+        {
+          "Gram_orthonormal_residual": 1.8766089864130926e-14,
+          "dimension": 240,
+          "family": 1,
+          "generalized_eigen_residual": 1.3349723108879395e-15,
+          "level": 4,
+          "maximum_generalized_eigenvalue": 30377158300691.816,
+          "minimum_generalized_eigenvalue": 202495801259.31845,
+          "normalized_symmetry_defect": 6.193429543405094e-39,
+          "spectator": 3
+        },
+        {
+          "Gram_orthonormal_residual": 1.8766089864130926e-14,
+          "dimension": 240,
+          "family": 1,
+          "generalized_eigen_residual": 1.3349723108879395e-15,
+          "level": 4,
+          "maximum_generalized_eigenvalue": 30377158300691.816,
+          "minimum_generalized_eigenvalue": 202495801259.31845,
+          "normalized_symmetry_defect": 6.193429543405094e-39,
+          "spectator": 4
+        },
+        {
+          "Gram_orthonormal_residual": 1.625285803100476e-13,
+          "dimension": 48,
+          "family": 2,
+          "generalized_eigen_residual": 1.800020421519189e-15,
+          "level": 0,
+          "maximum_generalized_eigenvalue": 30377158300657.65,
+          "minimum_generalized_eigenvalue": 202495801242.1453,
+          "normalized_symmetry_defect": 1.2706585722731046e-44,
+          "spectator": 0
+        },
+        {
+          "Gram_orthonormal_residual": 1.1746598884763607e-14,
+          "dimension": 144,
+          "family": 2,
+          "generalized_eigen_residual": 8.680879402636603e-16,
+          "level": 2,
+          "maximum_generalized_eigenvalue": 30377158300670.438,
+          "minimum_generalized_eigenvalue": 202495801246.214,
+          "normalized_symmetry_defect": 1.5499291061024522e-38,
+          "spectator": 0
+        },
+        {
+          "Gram_orthonormal_residual": 1.1746598884763607e-14,
+          "dimension": 144,
+          "family": 2,
+          "generalized_eigen_residual": 8.680879402636603e-16,
+          "level": 2,
+          "maximum_generalized_eigenvalue": 30377158300670.438,
+          "minimum_generalized_eigenvalue": 202495801246.214,
+          "normalized_symmetry_defect": 1.5499291061024522e-38,
+          "spectator": 1
+        },
+        {
+          "Gram_orthonormal_residual": 1.1746598884763607e-14,
+          "dimension": 144,
+          "family": 2,
+          "generalized_eigen_residual": 8.680879402636603e-16,
+          "level": 2,
+          "maximum_generalized_eigenvalue": 30377158300670.438,
+          "minimum_generalized_eigenvalue": 202495801246.214,
+          "normalized_symmetry_defect": 1.5499291061024522e-38,
+          "spectator": 2
+        },
+        {
+          "Gram_orthonormal_residual": 1.8149613507281654e-14,
+          "dimension": 240,
+          "family": 2,
+          "generalized_eigen_residual": 1.4238133695377024e-15,
+          "level": 4,
+          "maximum_generalized_eigenvalue": 30377158300691.805,
+          "minimum_generalized_eigenvalue": 202495801259.31604,
+          "normalized_symmetry_defect": 6.193429528372e-39,
+          "spectator": 0
+        },
+        {
+          "Gram_orthonormal_residual": 1.8149613507281654e-14,
+          "dimension": 240,
+          "family": 2,
+          "generalized_eigen_residual": 1.4238133695377024e-15,
+          "level": 4,
+          "maximum_generalized_eigenvalue": 30377158300691.805,
+          "minimum_generalized_eigenvalue": 202495801259.31604,
+          "normalized_symmetry_defect": 6.193429528372e-39,
+          "spectator": 1
+        },
+        {
+          "Gram_orthonormal_residual": 1.8149613507281654e-14,
+          "dimension": 240,
+          "family": 2,
+          "generalized_eigen_residual": 1.4238133695377024e-15,
+          "level": 4,
+          "maximum_generalized_eigenvalue": 30377158300691.805,
+          "minimum_generalized_eigenvalue": 202495801259.31604,
+          "normalized_symmetry_defect": 6.193429528372e-39,
+          "spectator": 2
+        },
+        {
+          "Gram_orthonormal_residual": 1.8149613507281654e-14,
+          "dimension": 240,
+          "family": 2,
+          "generalized_eigen_residual": 1.4238133695377024e-15,
+          "level": 4,
+          "maximum_generalized_eigenvalue": 30377158300691.805,
+          "minimum_generalized_eigenvalue": 202495801259.31604,
+          "normalized_symmetry_defect": 6.193429528372e-39,
+          "spectator": 3
+        },
+        {
+          "Gram_orthonormal_residual": 1.8149613507281654e-14,
+          "dimension": 240,
+          "family": 2,
+          "generalized_eigen_residual": 1.4238133695377024e-15,
+          "level": 4,
+          "maximum_generalized_eigenvalue": 30377158300691.805,
+          "minimum_generalized_eigenvalue": 202495801259.31604,
+          "normalized_symmetry_defect": 6.193429528372e-39,
+          "spectator": 4
+        }
+      ],
+      "complex_frame_unitary_residual": 1.2566714823621658e-15,
+      "real_to_complex_derivative_residual": 8.54222814130045e-15,
+      "side": "outgoing",
+      "spectator_off_block_max": 0.0,
+      "temporal_Gram_condition": 5492.228230595441
+    }
+  ],
+  "source_temporal_function_count": 8,
+  "temporal_derivative_and_changing_coefficient_contacts_retained": true,
+  "variable_coefficient_differential_closure_claimed": false
+}

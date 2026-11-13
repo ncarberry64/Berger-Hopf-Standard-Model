@@ -1,0 +1,251 @@
+CHANGING REAL LORENZ PAIRING: STRUCTURE-PRESERVING MP TENSOR ARITHMETIC
+2026-10-16. Final MP80 pair, whole-q128 MP100 arithmetic check and retained failures.
+
+Canonical audit:
+ audits/bhsm_changing_lorenz_tensor_precision_20261016.py
+ SHA256 a0fafae124d00be5954e0284fb2ed5891f645b4955af211a53a2e7494b39238a
+It consumes the preserved actual changing-cell radial32/64/128 point
+archives from the preceding5421fc2b producer. No phase/history is replayed,
+no field or basis is solved, and no coefficient is fitted or assigned.
+The earlier original/faster complete-matrix failures remain unchanged.
+
+1. EXACT TENSOR EXPANSION OF THE OWNED ONE-FORM GRAM
+
+The source is muon_parent_positive_coupled_temporal.one_form_point_row,
+using the same muon_parent_positive_brst_ghost DG images and positive
+metric. At a fixed actual time/radial point let
+ gt,gr,gs,beta = the saved positive reference metric coefficients,
+ A_mu = its actual four-component EW connection VALUES,
+ T_mu=ad(A_mu), a real4x4 source matrix, and E_a the retained real20x20
+right-body angular derivative matrices. T_1 denotes the radial connection
+VALUE, not A_radial=d_rho A. Let ghost coordinate g=(p,j) with actual
+stored temporal value/rate t_p,t'_p and fixed radial value/rate u_j,u'_j.
+Set
+ H=T_0-beta*T_1,
+ a_g=t'_p*u_j-beta*t_p*u'_j,
+ b_g=t_p*u_j,
+ c_g=t_p*u'_j.
+Then the complete ghost-gradient image, in internal4 tensor harmonic20,
+has normal, radial and angular maps
+ N_g=a_g*I80+b_g*(H tensor I20),
+ R_g=c_g*I80+b_g*(T_1 tensor I20),
+ D_ag=b_g*(T_(2+a) tensor I20+I4 tensor E_a).
+This keeps temporal/radial cross placements, both ghost temporal parities,
+both radial profiles and all20 harmonics.
+
+The existing ordinary coordinate block has radial profile v_i, common
+tent value b, and one coordinate component mu. Its normal image is
+ b*v_i*(delta_mu0-beta*delta_mu1)*I80,
+its radial image is b*v_i*delta_mu1*I80, and its angular image is
+ b*v_i*delta_mu(2+a)*I80. Consequently B=<D eta,a>_g is exactly
+ B_g,i0=b*v_i*gt*N_g^T,
+ B_g,i1=b*v_i*(-beta*gt*N_g^T+gr*R_g^T),
+ B_g,i(2+a)=b*v_i*gs*D_ag^T.
+The ordinary block order is i*5+mu, ten blocks of eighty columns.
+
+For a second ghost coordinate h=(q,k),
+ B_gh=gt*N_g^T*N_h+gr*R_g^T*R_h+gs*sum_a D_ag^T*D_ah.
+The first two products give the full internal4x4 term tensor I20,
+including H,H^T,H^T*H,T_1,T_1^T,T_1^T*T_1. The angular product is
+ b_g*b_h*gs*[
+ sum_a(T_(2+a)^T*T_(2+a)) tensor I20
+ +sum_a(T_(2+a)^T tensor E_a+T_(2+a) tensor E_a^T)
+ +I4 tensor sum_a(E_a^T*E_a)].
+Both mixed angular transpose placements are essential and retained.
+No integration-by-parts Euler term or curvature contact belongs in this
+one-form Gram: those remain in their separate classical Hessian/Ward
+owners. At and d_rho A do not enter B; this does not remove them from the
+full curvature Hessian. All80 independent scalar-coordinate Lorenz
+columns remain zero because this is the already owned one-form Lorenz
+representative, not a new full Higgs gauge-fixing functional.
+
+Thus every B block is a sum of small internal matrices tensor I20,E_a,
+E_a^T and sum E_a^T E_a. Accumulating their actual varying coefficients
+before large angular contractions prevents repeated binary64 cancellation.
+The producer preserves actual transposes throughout. The stored E_a happen
+to satisfy E_a^T+E_a=0 EXACTLY in these finite input arrays; that property
+is diagnosed, not imposed by projecting a small residual to zero.
+
+2. ACTUAL NODE PAIRS, MP ARITHMETIC AND ITS PRECISE LIMIT
+
+All metrics, A values, radial/temporal basis jets and quadrature weights
+are lifted as their exact stored finite binary64 numbers. MP80 accumulates
+all small tensor coefficients. Actual mirror time nodes are paired before
+addition, with BOTH node coefficients and BOTH weights independently
+retained. No constant background or assumed even field is substituted.
+The positive reference Gram is Gghost=G4 tensor I80 exactly on this chart;
+its4x4 factor is accumulated in MP. F=Gghost^-1 B is applied to every
+retained coordinate in MP. The complete fixing matrix is
+ MAXWELL_TO_CAP * B^T*F,
+contracted in MP over exact zero sparsity only, with no threshold or
+symmetry projection. Only final output entries are rounded to binary64.
+The binary64 B^T F counterpart is separately retained as a precision
+comparison, not silently substituted for the full MP result.
+
+This improves arithmetic OVER FROZEN BINARY64 COEFFICIENTS. It does not
+increase their input precision, bound the upstream finite response/basis
+uncertainty, or prove the physical derivative. Windows NumPy longdouble
+was checked to be identical to float64, so no false extended-precision
+claim is made. The source point ad(A) values preserve the existing source
+normalization at the held finite inputs and are lifted independently.
+A further precision repair, if needed, must evaluate the specified affine
+geometry/connection and response map more accurately, not merely change
+the final inverse or replace variable coefficients by constant moments.
+
+3. INDEPENDENT LITERAL CONTROLS AND NONZERO MIXED TERMS
+
+The independent literal route constructs each complete five-component,
+eighty-dimensional ghost image and ordinary/ghost test column directly,
+then computes its positive metric dot product. It does not use the small
+tensor moments. Four selected entries are integrated independently across
+ALL actual time and radial nodes, and point controls at first/middle/last
+time/radial indices are retained. In the first q32 prototype the integrated
+agreement was9.3513513e-77 incoming and3.5373746e-74 child.
+
+Additional controls deliberately expose nonzero angular connection and
+mixed placements, rather than relying only on diagonal or zero entries:
+ audits/bhsm_changing_lorenz_mixed_tensor_control_20261016.py
+ SHA256 d480b2fba36c813fb6722a8db58636c3ebe0a9f46655cdcd7862640d93f398c5
+At actual q32 time6/radial16, incoming values include
+ B[40,180]=167.993448441818517238106366005804338031894228635439801874636,
+ B[20,183]=-428.288997022035302099404467110311198172775033663155446197510,
+ B[40,823]=21.6834741403493517431103861294583813841469788140998121825858.
+The last value has two nonzero independent angular mixed contributions,
+each10.8417370701746758715551930647291906920734894070499060912929.
+The analogous child mixed contributions each10.370456777287349980848598...
+also remain. Literal vectors and expanded tensors agree at MP80 and100,
+with the displayed60 significant digits unchanged. The two independent
+control output files are byte-identical:
+ WORK/outputs/bhsm_changing_lorenz_tensor_precision_20261016/
+ mixed_point_control_run_1.json and mixed_point_control_run_2.json
+ SHA2564710c247c7e6537d1e71ee9c6a15b415aec16d92f40dba2b773d75290d846b63.
+Independent read-only math/code review of the full tensor source found no
+actionable sign, column-order, transpose, inverse or scope issue.
+
+4. PRESERVED INITIAL PROTOTYPE
+
+The initial q32 execution contracted B and F in MP but still formed the
+full fixing matrix in binary64. That limitation was explicitly labeled.
+It is preserved, including the complete source bytes, in
+ WORK/outputs/bhsm_changing_lorenz_tensor_precision_20261016/initial_q32_run_1/
+ producer_at_initial.py SHA25603246935e1abfb74a3e027b221f231f117fcea34a8603e98d6c3a46fa4c404b4.
+The final canonical source adds the full MP fixing contraction, while
+retaining its binary64 counterpart and independent scalar MP sum. The
+initial readout is not rewritten or relabeled as the improved computation.
+
+The final independent MP80 pair and whole-q128 MP100 readout are complete.
+The full15-matrix physical derivative/convergence gate remains FALSE.
+No coupled correction, normalized spin state or magnetic moment is claimed.
+
+5. FINAL ADJACENT-RULE NUMBERS AND NO-PASS CONCLUSION
+
+These are max_ij |new-old|/max(1,|old|,|new|) comparisons in the original
+retained coordinate units, not a favorable global or Frobenius norm.
+Every index, entry value, absolute maximum and other norm remains in the
+receipts. Outgoing below means inherited child, not a solved exterior.
+
+RADIAL32->64, incoming / child:
+ B_adjacent_rule: 1.7613324913460889e-09 / 7.3476721316061694e-11
+ F_adjacent_rule: 1.5462115692075942e-08 / 1.4172279209153321e-10
+ fixing_adjacent_rule: 2.3965798363817945e-08 / 2.5963360650573328e-08
+
+RADIAL64->128, incoming / child:
+ B_adjacent_rule: 6.0954221211152916e-12 / 1.9872881750319918e-11
+ F_adjacent_rule: 3.4384402336306666e-10 / 2.4475732770852156e-10
+ fixing_adjacent_rule: 2.0699951579037001e-10 / 8.8715155467790499e-09
+
+At64->128 the full MP algebra markedly reduces the old q128 entry floor,
+but the incoming F discrepancy3.4384402336306666e-10 and child fixing
+8.87151554677905e-9 STILL FAIL2e-10. Incoming fixing also slightly exceeds
+the target. Neither the new B contraction nor the good curvature/strong
+form readout is substituted for a complete15-matrix convergence pass.
+
+Whole-q128 MP80 versus MP100 on IDENTICAL frozen input samples gives
+identical final binary64 B,F and G4 arrays on both arms. Fixing differences
+are only residual arithmetic cancellations of at most1.37158486953873e-99
+incoming and8.14577205786059e-101 child; these tiny residues are retained,
+not thresholded or projected to zero. All selected integrated literal
+controls have identical displayed65 significant digits at MP80/100.
+The observed remaining radial discrepancy is therefore not repaired by
+increasing only this tensor arithmetic precision. Upstream coefficient
+sample precision and finite quadrature remain separate unbounded errors.
+
+Full MP fixing versus the retained binary64 final-product counterpart at
+q128 differs at most1.805302358911903e-14 incoming /1.3713273822400915e-13
+child entry-scaled. This also rules out that final product as the source
+of the remaining8.9e-9 child entry discrepancy on these samples.
+
+6. COMPLETE PAIR AND MP100 OUTPUT BINDINGS
+
+WORK/outputs/bhsm_changing_lorenz_tensor_precision_20261016/run_1 and run_2
+are independent MP80 executions. Every corresponding file is byte-identical
+and every source/owner pin was verified. All individual files are below
+10MiB. Pair receipt pair_verification.json
+ SHA2567a3afc8791d2ba6fd1b02c52148c100d52af1dfbc4eeddc6a0f7069deff3ec32.
+The complete inventory (same bytes in both runs) is:
+ incoming_radial128/forms.npz (301384 bytes)
+ SHA256 ff2d3617b2f539ac2765adfe829dbe6871e34f9137967676ba0d492c10a9f192
+ incoming_radial128/result.json (14635 bytes)
+ SHA256 f46ed6f4e2a6c963746dd578f06d2daa38dee993225338ec485ef071f0709983
+ incoming_radial32/forms.npz (301456 bytes)
+ SHA256 59fb42680fb8f896524d22fbf8dac941c7b6a083304432ecbabf2a7bab7977cf
+ incoming_radial32/result.json (14835 bytes)
+ SHA256 117608f869f0623dd84e8c52b9ac03acf06c69266ef596ebaa6cb3194757e71f
+ incoming_radial64/forms.npz (301428 bytes)
+ SHA256 db3d0dae84cb171d032dc289b48c6c3e57c04c5998108d607fc2f036df817524
+ incoming_radial64/result.json (14600 bytes)
+ SHA256 90fd3ef6a2f6bc76a468cff9b35c60365c37efb5c6979f1d0817e5ec895bd43e
+ outgoing_radial128/forms.npz (300593 bytes)
+ SHA256 040f45a5b78b76f4c23ea56ad0eda444d5ae17c2e03ba26980724277adbac983
+ outgoing_radial128/result.json (14565 bytes)
+ SHA256 d17e36d37026470a0d98a4adc997c7c9016afb68cd346ecec8f80985cf726f59
+ outgoing_radial32/forms.npz (300676 bytes)
+ SHA256 59e78c75c6b3355ab308e4263c5b14018a59619ea8252e3e57c6535026c0e8cb
+ outgoing_radial32/result.json (14841 bytes)
+ SHA256 7f2b14ee053f45cfb44586b37258dbd34a2331a6e5f295e64ec200da3dfd1fbf
+ outgoing_radial64/forms.npz (300682 bytes)
+ SHA256 b1b370e549fd03a1b82742c1fe78e2bd3651f616b3f664324b3d2dbbb0cdb634
+ outgoing_radial64/result.json (14614 bytes)
+ SHA256 396adcd631e3ae06d6a7002683ecb8fb073cfa97e685f86ed86c18008e360a83
+ result.json (142555 bytes)
+ SHA256 31b1821bdac526eb7e42c986dda1b5fce1de6863370b454ee453cd1706f882f9
+
+Whole-q128 MP100 output, same canonical producer, in precision100_q128:
+ incoming_radial128/forms.npz (301355 bytes)
+ SHA256 3c98795899163837215fa94d86b6e1427a3bb70dbf6a1d0d8e8983fab2f7fcb0
+ incoming_radial128/result.json (13531 bytes)
+ SHA256 14062b940a4c9ade680dca89adb878f2d2011ded6ca76ec53b501e7a18926749
+ outgoing_radial128/forms.npz (300584 bytes)
+ SHA256 4b78328efdeb8be8d370d296ce50d1a1ea356c83332fa98cbb7e0cedf3adcdeb
+ outgoing_radial128/result.json (13473 bytes)
+ SHA256 508188b9e52daa0142b5079ccf14b1c296179ee587a15218dc97af51cc085cd4
+ result.json (73149 bytes)
+ SHA256 ddc4f4d40a9725ee57f1d1e890640494d6a0b5941db6acc7f9a07f3ad1e337ce
+
+The numerical precision comparison is MP80_100_comparison.json
+ SHA256b62ee04d5aa6c86ce80d106bc566f2574fb2765d849c4724eaa417a69551d620.
+It states explicitly that upstream coefficient uncertainty is NOT bounded.
+All per-rule actual input hashes are in the new top-level receipts, and
+the original TIME6 source archive9a132366... remains explicitly bound.
+The preceding exact byte-chunk reconstruction recipe remains unchanged.
+
+7. CONSTRUCTIVE NEXT OPERAND, NOT A NEW PHYSICAL PARAMETER
+
+All value formulas needed for a higher-precision coefficient readout are
+already specified by the existing geometry, connection and anchored
+response owners. The next numerical operation is to evaluate the EXACT
+same retained affine midpoint/rate histories and fixed reference basis
+with high-precision arithmetic, keeping source clocks and Gauss-rule
+choices explicit. It must distinguish the original binary64 rule nodes
+from precision-generated evaluations of the same mathematical rules.
+The anchored response's original96-point integration must remain declared,
+and a higher anchoring rule must be compared at actual key coefficients;
+96 is not relabeled the exact full action. No new history/field solution
+or scalar/surface matching coefficient is selected by this repair.
+
+These are EW4 classical positive-reference constituents and finite Lorenz
+representatives. They do not identify the microscopic graded P_strat or
+its heat action, select the physical BRST quotient/reset/exterior loads,
+complete the coupled real mean, pass its physical energy/field derivative,
+validate Maxwell/all226 rows, normalize either spin state, or predict a
+muon magnetic moment. No coupled correction has been applied.

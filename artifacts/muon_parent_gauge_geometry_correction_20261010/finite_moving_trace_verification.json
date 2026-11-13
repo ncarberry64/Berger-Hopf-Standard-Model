@@ -1,0 +1,670 @@
+{
+  "all226rows_retained": true,
+  "checkpoint_json_difference": "resume_argv names each independent output folder; numeric accepted states are bit-identical",
+  "derivative_check": {
+    "jacobian_absolute_difference_max": 0.0002681201570453595,
+    "jacobian_absolute_difference_norm": 0.000644154171967891,
+    "last3_row_difference_norms": [
+      0.0005389120703472992,
+      0.00033840428213449117,
+      9.99545873417853e-05
+    ],
+    "last3_row_norms": [
+      1991.022646403361,
+      1466.0617200950874,
+      216.16009935656567
+    ],
+    "numerical_sha256": "69d5ecea1ead9298653545c54c6d4559c40782d7994bd0130ca13802df29778c",
+    "physical_formation_claim": false,
+    "residual_reapplication_max": 0.0,
+    "rigorous_bound": false,
+    "scope": "FINITE_REPRESENTED_TRIAL_DIRECTIONAL_HESSIAN_STEP_HALVING_CHECK",
+    "steps": [
+      2e-05,
+      1e-05
+    ]
+  },
+  "executions": [
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "bhsm.interface.muon_birth_finite_geometric_trace_endpoint",
+        "--initial-application",
+        "artifacts/muon_parent_gauge_geometry_correction_20261010/paired_attachment_endpoint_run_1",
+        "--output",
+        "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\artifacts\\muon_parent_gauge_geometry_correction_20261010\\finite_moving_trace_run_1",
+        "--max-iterations",
+        "6",
+        "--difference-step",
+        "2e-5"
+      ],
+      "environment": {
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "stderr": "",
+      "stderr_file": "finite_moving_trace_run_1.stderr.txt",
+      "stdout": "{\"action_parameters\": {\"nu_squared_action\": 4.0, \"surface_gamma\": null}, \"affine_profile_enrichment\": {\"boundary_anchored_complement_norm\": 0.004004478619211728, \"fixed_velocity_multiplier_jet_max\": 0.0, \"former_radial_space_L2_complement\": 0.003666940061380503, \"radial_derivative_reconstruction_max\": 6.938893903907228e-18, \"value_reconstruction_max\": 1.734723475976807e-18, \"wall_coefficient\": 0.0}, \"canonical_projection\": \"joint same-action kinetic stationarity with80 multiplier/Gauss rows,4 attachment and2 normal trace coordinates\", \"canonical_pullback\": \"theta_birth=2*pad(Pi_parent)-Pi_joint_graph; incomingfinal+Pi, childinitial-Pi\", \"cap_points\": 48, \"common_scale_equation\": \"GF=c_F/E_kappa^2\", \"consumed_receipt_sha256\": \"e76e00f4a7fa013ab59c05ffa5cb9b073e0c29edff5f4dc234147cd76b605939\", \"difference_step\": 2e-05, \"energy_pullback\": \"E_child=E_joint_graph-E_parent-reference_clock_work; F_t=-M*delta_lambda_ref,t\", \"error_scope\": \"binary64 represented action and adjoint directional-Hessian cotangent derivatives; minimum weighted Newton correction is not branch selection\", \"gauge_count\": 80, \"gauge_labels\": [{\"affine_source_enrichment\": false, \"field\": \"A_tau\", \"internal\": 0, \"radial\": 0, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_tau\", \"internal\": 1, \"radial\": 0, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_tau\", \"internal\": 2, \"radial\": 0, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_tau\", \"internal\": 3, \"radial\": 0, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_rho\", \"internal\": 0, \"radial\": 0, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_rho\", \"internal\": 1, \"radial\": 0, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_rho\", \"internal\": 2, \"radial\": 0, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_rho\", \"internal\": 3, \"radial\": 0, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_1\", \"internal\": 0, \"radial\": 0, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_1\", \"internal\": 1, \"radial\": 0, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_1\", \"internal\": 2, \"radial\": 0, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_1\", \"internal\": 3, \"radial\": 0, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_2\", \"internal\": 0, \"radial\": 0, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_2\", \"internal\": 1, \"radial\": 0, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_2\", \"internal\": 2, \"radial\": 0, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_2\", \"internal\": 3, \"radial\": 0, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_3\", \"internal\": 0, \"radial\": 0, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_3\", \"internal\": 1, \"radial\": 0, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_3\", \"internal\": 2, \"radial\": 0, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_3\", \"internal\": 3, \"radial\": 0, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_tau\", \"internal\": 0, \"radial\": 1, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_tau\", \"internal\": 1, \"radial\": 1, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_tau\", \"internal\": 2, \"radial\": 1, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_tau\", \"internal\": 3, \"radial\": 1, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_rho\", \"internal\": 0, \"radial\": 1, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_rho\", \"internal\": 1, \"radial\": 1, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_rho\", \"internal\": 2, \"radial\": 1, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_rho\", \"internal\": 3, \"radial\": 1, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_1\", \"internal\": 0, \"radial\": 1, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_1\", \"internal\": 1, \"radial\": 1, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_1\", \"internal\": 2, \"radial\": 1, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_1\", \"internal\": 3, \"radial\": 1, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_2\", \"internal\": 0, \"radial\": 1, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_2\", \"internal\": 1, \"radial\": 1, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_2\", \"internal\": 2, \"radial\": 1, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_2\", \"internal\": 3, \"radial\": 1, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_3\", \"internal\": 0, \"radial\": 1, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_3\", \"internal\": 1, \"radial\": 1, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_3\", \"internal\": 2, \"radial\": 1, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_3\", \"internal\": 3, \"radial\": 1, \"wall_lift\": false}, {\"affine_source_enrichment\": true, \"field\": \"A_tau\", \"internal\": 0, \"radial\": 2, \"wall_lift\": false}, {\"affine_source_enrichment\": true, \"field\": \"A_tau\", \"internal\": 1, \"radial\": 2, \"wall_lift\": false}, {\"affine_source_enrichment\": true, \"field\": \"A_tau\", \"internal\": 2, \"radial\": 2, \"wall_lift\": false}, {\"affine_source_enrichment\": true, \"field\": \"A_tau\", \"internal\": 3, \"radial\": 2, \"wall_lift\": false}, {\"affine_source_enrichment\": true, \"field\": \"A_rho\", \"internal\": 0, \"radial\": 2, \"wall_lift\": false}, {\"affine_source_enrichment\": true, \"field\": \"A_rho\", \"internal\": 1, \"radial\": 2, \"wall_lift\": false}, {\"affine_source_enrichment\": true, \"field\": \"A_rho\", \"internal\": 2, \"radial\": 2, \"wall_lift\": false}, {\"affine_source_enrichment\": true, \"field\": \"A_rho\", \"internal\": 3, \"radial\": 2, \"wall_lift\": false}, {\"affine_source_enrichment\": true, \"field\": \"A_1\", \"internal\": 0, \"radial\": 2, \"wall_lift\": false}, {\"affine_source_enrichment\": true, \"field\": \"A_1\", \"internal\": 1, \"radial\": 2, \"wall_lift\": false}, {\"affine_source_enrichment\": true, \"field\": \"A_1\", \"internal\": 2, \"radial\": 2, \"wall_lift\": false}, {\"affine_source_enrichment\": true, \"field\": \"A_1\", \"internal\": 3, \"radial\": 2, \"wall_lift\": false}, {\"affine_source_enrichment\": true, \"field\": \"A_2\", \"internal\": 0, \"radial\": 2, \"wall_lift\": false}, {\"affine_source_enrichment\": true, \"field\": \"A_2\", \"internal\": 1, \"radial\": 2, \"wall_lift\": false}, {\"affine_source_enrichment\": true, \"field\": \"A_2\", \"internal\": 2, \"radial\": 2, \"wall_lift\": false}, {\"affine_source_enrichment\": true, \"field\": \"A_2\", \"internal\": 3, \"radial\": 2, \"wall_lift\": false}, {\"affine_source_enrichment\": true, \"field\": \"A_3\", \"internal\": 0, \"radial\": 2, \"wall_lift\": false}, {\"affine_source_enrichment\": true, \"field\": \"A_3\", \"internal\": 1, \"radial\": 2, \"wall_lift\": false}, {\"affine_source_enrichment\": true, \"field\": \"A_3\", \"internal\": 2, \"radial\": 2, \"wall_lift\": false}, {\"affine_source_enrichment\": true, \"field\": \"A_3\", \"internal\": 3, \"radial\": 2, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_tau\", \"internal\": 0, \"radial\": 3, \"wall_lift\": true}, {\"affine_source_enrichment\": false, \"field\": \"A_tau\", \"internal\": 1, \"radial\": 3, \"wall_lift\": true}, {\"affine_source_enrichment\": false, \"field\": \"A_tau\", \"internal\": 2, \"radial\": 3, \"wall_lift\": true}, {\"affine_source_enrichment\": false, \"field\": \"A_tau\", \"internal\": 3, \"radial\": 3, \"wall_lift\": true}, {\"affine_source_enrichment\": false, \"field\": \"A_rho\", \"internal\": 0, \"radial\": 3, \"wall_lift\": true}, {\"affine_source_enrichment\": false, \"field\": \"A_rho\", \"internal\": 1, \"radial\": 3, \"wall_lift\": true}, {\"affine_source_enrichment\": false, \"field\": \"A_rho\", \"internal\": 2, \"radial\": 3, \"wall_lift\": true}, {\"affine_source_enrichment\": false, \"field\": \"A_rho\", \"internal\": 3, \"radial\": 3, \"wall_lift\": true}, {\"affine_source_enrichment\": false, \"field\": \"A_1\", \"internal\": 0, \"radial\": 3, \"wall_lift\": true}, {\"affine_source_enrichment\": false, \"field\": \"A_1\", \"internal\": 1, \"radial\": 3, \"wall_lift\": true}, {\"affine_source_enrichment\": false, \"field\": \"A_1\", \"internal\": 2, \"radial\": 3, \"wall_lift\": true}, {\"affine_source_enrichment\": false, \"field\": \"A_1\", \"internal\": 3, \"radial\": 3, \"wall_lift\": true}, {\"affine_source_enrichment\": false, \"field\": \"A_2\", \"internal\": 0, \"radial\": 3, \"wall_lift\": true}, {\"affine_source_enrichment\": false, \"field\": \"A_2\", \"internal\": 1, \"radial\": 3, \"wall_lift\": true}, {\"affine_source_enrichment\": false, \"field\": \"A_2\", \"internal\": 2, \"radial\": 3, \"wall_lift\": true}, {\"affine_source_enrichment\": false, \"field\": \"A_2\", \"internal\": 3, \"radial\": 3, \"wall_lift\": true}, {\"affine_source_enrichment\": false, \"field\": \"A_3\", \"internal\": 0, \"radial\": 3, \"wall_lift\": true}, {\"affine_source_enrichment\": false, \"field\": \"A_3\", \"internal\": 1, \"radial\": 3, \"wall_lift\": true}, {\"affine_source_enrichment\": false, \"field\": \"A_3\", \"internal\": 2, \"radial\": 3, \"wall_lift\": true}, {\"affine_source_enrichment\": false, \"field\": \"A_3\", \"internal\": 3, \"radial\": 3, \"wall_lift\": true}], \"geometric_trace\": \"same metric/quotient radius pulled to the moving wall; all q and normal derivatives active\", \"groups\": {\"Higgs_temporal_dual\": {\"indices\": [214, 215, 216, 217], \"norm\": 7.859612882883345e-24}, \"Higgs_trace\": {\"indices\": [210, 211, 212, 213], \"norm\": 3.8881062683661133e-23}, \"child_constraints\": {\"indices\": [40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79], \"norm\": 7.810614548775782e-13}, \"child_energy\": {\"indices\": [81], \"norm\": 4.3220982348657344e-13}, \"common_attachment_temporal_dual\": {\"indices\": [223, 224], \"norm\": 1.954101448346966e-09}, \"common_normal_temporal_dual\": {\"indices\": [225], \"norm\": 1.2738476939944121e-11}, \"gauge_temporal_dual\": {\"indices\": [146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209], \"norm\": 6.940650119293081e-14}, \"gauge_trace\": {\"indices\": [82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145], \"norm\": 2.4532694776678633e-18}, \"incoming_constraints\": {\"indices\": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39], \"norm\": 7.741266761077422e-13}, \"incoming_energy\": {\"indices\": [80], \"norm\": 2.923217223838037e-13}, \"moving_geometric_trace\": {\"indices\": [218, 219, 220, 221], \"norm\": 9.193264042655568e-16}, \"normal_position_trace\": {\"indices\": [222], \"norm\": 0.0}}, \"history\": [{\"damping_history\": [{\"accepted\": true, \"damping\": 1.0, \"scaled_residual\": 0.0054615623361604715}], \"iteration\": 0, \"linearized_scaled_residual\": 2.5248525338601416e-16, \"omitted_left_source_norm\": 9.985686549927426e-18, \"rank\": 224, \"scaled_residual\": 0.009515433418258631, \"weighted_step_norm\": 0.09720244152113752}, {\"damping_history\": [{\"accepted\": true, \"damping\": 1.0, \"scaled_residual\": 0.001478283219792498}], \"iteration\": 1, \"linearized_scaled_residual\": 4.8806998582831816e-17, \"omitted_left_source_norm\": 2.7930574140689338e-18, \"rank\": 224, \"scaled_residual\": 0.0054615623361604715, \"weighted_step_norm\": 0.02519690550968785}, {\"damping_history\": [{\"accepted\": true, \"damping\": 1.0, \"scaled_residual\": 0.0007664137895869613}], \"iteration\": 2, \"linearized_scaled_residual\": 4.0606570391468684e-17, \"omitted_left_source_norm\": 3.714038269178207e-19, \"rank\": 224, \"scaled_residual\": 0.001478283219792498, \"weighted_step_norm\": 0.023565750887576477}, {\"damping_history\": [{\"accepted\": true, \"damping\": 1.0, \"scaled_residual\": 3.509465249729494e-05}], \"iteration\": 3, \"linearized_scaled_residual\": 1.4004580110679173e-17, \"omitted_left_source_norm\": 3.597125125088151e-19, \"rank\": 224, \"scaled_residual\": 0.0007664137895869613, \"weighted_step_norm\": 0.010655993227455333}, {\"damping_history\": [{\"accepted\": true, \"damping\": 1.0, \"scaled_residual\": 1.5102596943362974e-07}], \"iteration\": 4, \"linearized_scaled_residual\": 3.6478448360077387e-19, \"omitted_left_source_norm\": 1.1553505066232917e-20, \"rank\": 224, \"scaled_residual\": 3.509465249729494e-05, \"weighted_step_norm\": 0.0002419103077492854}, {\"damping_history\": [{\"accepted\": true, \"damping\": 1.0, \"scaled_residual\": 5.890346650453102e-12}], \"iteration\": 5, \"linearized_scaled_residual\": 8.533058274861693e-22, \"omitted_left_source_norm\": 2.4072827171311233e-23, \"rank\": 224, \"scaled_residual\": 1.5102596943362974e-07, \"weighted_step_norm\": 3.6296302438504575e-07}], \"input_hashes\": {\"artifacts/flagship_integration/BHSM_N12_C2_REFINED_RESET_ROOT_CENTER.npz\": \"59dd88661b15cbeec96bc19294f9d9c64f754cccbfbc385c32329fa9c864a8fe\", \"artifacts/flagship_integration/BHSM_N12_FULL_RESET_ACTION_JACOBIAN.npz\": \"35bb2b67ff784206d3a5b9dc82881f5ffd8f844b55342f2032d29cdafb38a67a\", \"artifacts/muon_birth_transfer_value_20261008/retained_reset/run_1/result.json\": \"d0fec0f8e8a05818fcce67e88ed8db73744484220a2cb213825893f481cb0a72\", \"artifacts/muon_calibrated_pauli_20261009/inputs.json\": \"0b614ab6f26d169ca04a4878f767f78eb3668484840867e46aebbebf186369da\", \"artifacts/muon_calibrated_weak_decay_20261010/run_1/weak_decay.json\": \"9c31575ce0889571790f8767cf53ffe043cb9906e0a45a96b194971320a0aad7\", \"artifacts/muon_matched_mechanical_source_20261002/replay_reference/matched_source_and_weak_actions.npz\": \"146435df28178967c321c0aa7e89a1511395d196f96b8715532aa98e3e312c2b\", \"src/bhsm/interface/aether_canonical_momentum_action_jacobian.py\": \"d0ade20dc8a999e43073b45ca3ef59e05c65c55e37a1d6565d4e389176295cb1\", \"src/bhsm/interface/aether_diagonal_sp1_m4_attachment_v15_50.py\": \"e6482614dcb54f4890a5e66fbe724d4c302405d575a4b73ddbb64a075cb1827e\", \"src/bhsm/interface/aether_lorentzian_child_galerkin_v15_44.py\": \"574a9a6267d9228170c7309bd4be3cafb36b7515a6ee558509beb968e97bdab7\", \"src/bhsm/interface/muon_birth_attached_phase.py\": \"948c1505e9b68cffbe8050be31dcb5727d8f8d4f25399f9037cfc94a9ae9fdeb\", \"src/bhsm/interface/muon_birth_coupled_primal_midpoint.py\": \"ce321f641fa51d98710d006e246aac5cf6bd046be93a74fab452808597c599ce\", \"src/bhsm/interface/muon_birth_finite_geometric_trace_endpoint.py\": \"4f5c36144222d5d1e657061aa9352f8e86d5ae61a0ebdf05991a477e68d4be5f\", \"src/bhsm/interface/muon_birth_finite_normal_trace_graph.py\": \"20eafd9a6abff3d3a89a2f6085d099584684ba19b600673dafda634cb56aad18\", \"src/bhsm/interface/muon_birth_full_field_attachment.py\": \"58b3bd8a4ae5fe7c63b5551e4d0f26d82ab82a27d4389066c894a5e1b4728d03\", \"src/bhsm/interface/muon_birth_normal_constrained_action.py\": \"fe66a9116816e075cfc5e7c5f5f3c2c02d539311303b693a1d89cbc08ea62577\", \"src/bhsm/interface/muon_birth_normal_trace_graph.py\": \"d012a0455d84be2ce7aae8d6833f8b482f9bbc1e9ee1b899042a421c2a782896\", \"src/bhsm/interface/muon_birth_paired_attachment_endpoint.py\": \"71a69275ebeef226fd8dc7585745c5c8acac687e497a8441fe37a37553178f23\", \"src/bhsm/interface/muon_birth_paired_field_endpoint.py\": \"f22b6a17b65c72b30571b3d9f721f347737a5916fa08e50bd833ad22df3cd035\", \"src/bhsm/interface/muon_birth_phase_continuation.py\": \"9169a1c56bf5084d1f240043ca12d431c87e4adaff24fe09bdf7bf27fc5eb0be\", \"src/bhsm/interface/muon_birth_trace_enriched_action.py\": \"c36c48482dd58ebe369ab935574b78b3693036f717fb49035dfac01164956dce\", \"src/bhsm/interface/muon_birth_trace_enriched_phase.py\": \"591754957f1cc452bfd53d8adc1087308459902a822876105315b7423c2fd676\", \"src/bhsm/interface/muon_birth_two_arm_assigned_action.py\": \"cf6c58dc68700315d701fb9a1e9e99e927d18d90016a6ae7f86470c36136c77a\", \"src/bhsm/interface/muon_exact_material_response.py\": \"a530651e157a000dbe6935e9de1cedbce5679f98c599c6c7c641158b749307bf\", \"src/bhsm/interface/muon_intrinsic_higgs_gauge_action.py\": \"c19354209300ab06c0f1ab6bf4e111dbb5de0cd9e8d1d31a71af357a829118d4\", \"src/bhsm/interface/muon_intrinsic_m4_normal_pullback.py\": \"43187eee35f2879a43fe0fd02ae447502811349ccf2f2a78aa14beb8aa706bf0\", \"src/bhsm/interface/muon_material_higgs_gauge_action.py\": \"8bca013820283614c6578be4f44c29c4ea1c919f516aa9a2783f0eb38127d035\", \"src/bhsm/interface/muon_moving_geometric_action.py\": \"bf560fdb9766f563d97d3100ccb266e2a4350c910ac14a51d57576c2b5371392\", \"src/bhsm/interface/muon_parent_gauge_geometry_correction.py\": \"fa29f5764dca39196c807d64e7976d5894589e7de3ffa9d4a5ddecfb136b4816\", \"src/bhsm/interface/muon_parent_maxwell_background_euler.py\": \"fbb2c99d4b1c58247ac42a769fad3e1b16ccc76a1744fe0c5334e50c4a974bee\", \"src/bhsm/interface/muon_parent_maxwell_full_weak.py\": \"c1fb703967a644306d3521d457a6d7c778a49d89c1e081b401487a25b7491565\", \"src/bhsm/interface/muon_parent_maxwell_geometry_weak.py\": \"f0b4a49934e17ad18c40e9164b66c54e1b2cb146fb476f59b0e500f2dd6c9153\", \"src/bhsm/interface/muon_parent_mean_causal_action.py\": \"2a84b1be22625b1a5ae88d10c76631d7a5b602d2b0e22e57f00201bb74a593ad\", \"src/bhsm/interface/muon_parent_retarded_hypercharge.py\": \"2eb97a704bce63f601cc0d6e0f647266d4b4aac7f746d34dceb41b72018c3510\", \"src/bhsm/interface/muon_pointwise_full_field_action.py\": \"d57cd5953de00bcae857d0e458bbead1e463e5fffe8d947c5b9e71806aabaff6\"}, \"iteration_archives\": [{\"path\": \"iterations/iteration_0000.npz\", \"sha256\": \"3976bc299e86c60a26687019e7ec5efd72b25c8cb88ccb7a23084ae17ed4e408\"}, {\"path\": \"iterations/iteration_0001.npz\", \"sha256\": \"af4bc32e54ef67106ea7fa66a98cb81348bd0826212d08fc41b94c41a621742a\"}, {\"path\": \"iterations/iteration_0002.npz\", \"sha256\": \"c92fce8d25108fd7bf9b3d45d8a1c03a03bbc6a9347cef0b7255fc0644127145\"}, {\"path\": \"iterations/iteration_0003.npz\", \"sha256\": \"07eaf2e0b8bec42a50911151416363f656b1e0b0db702f649fa3fb9138a9d6a4\"}, {\"path\": \"iterations/iteration_0004.npz\", \"sha256\": \"235ff57ef4652302bb83bbb62828c24448e4ff4c89e19ad432bd38a684960e04\"}, {\"path\": \"iterations/iteration_0005.npz\", \"sha256\": \"f0a9403e4a61ad3ccb1c910c5718856bf9d83fd5b8ad34155c2360ce29b63c1f\"}], \"master_unknown_count\": 504, \"normal_temporal_row_not_physical_formation_condition\": true, \"numerical_sha256\": \"c67363c17adfb519f399614463d5a13dbcd019aa53246d452421eea8ba982455\", \"physical_Pauli_value\": false, \"physical_formation_closed\": false, \"physical_fullfield_junction_closed\": false, \"physical_native_heat_closed\": false, \"radial_points\": 48, \"raw_arm_count\": 268, \"reference_clock_work\": 0.6521050091087239, \"reference_value_anchor_preserved\": true, \"response_chart\": \"exact normalized two-harmonic admissible trial; anchors solved at every iterate; no physicalprofile selected\", \"resumed_checkpoint_sha256\": null, \"row_count\": 226, \"scaled_residual\": 5.890346650453102e-12, \"scope\": \"EVALUATED_FINITE_ANCHORED_TRIAL_GEOMETRIC_NORMAL_TEMPORAL_TRACE_ENDPOINT_CORRECTION\", \"source_profile_projected\": false, \"status\": \"REPRESENTED_MOVING_TRACE_TOLERANCE\", \"unassigned_area_equation\": \"gamma=alpha_FSC*ell_current^(-m); no zero or alpha_EM assignment\", \"unscaled_residual_norm\": 1.95414334828103e-09}\n",
+      "stdout_file": "finite_moving_trace_run_1.stdout.txt"
+    },
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "bhsm.interface.muon_birth_finite_geometric_trace_endpoint",
+        "--initial-application",
+        "artifacts/muon_parent_gauge_geometry_correction_20261010/paired_attachment_endpoint_run_1",
+        "--output",
+        "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\artifacts\\muon_parent_gauge_geometry_correction_20261010\\finite_moving_trace_run_2",
+        "--max-iterations",
+        "6",
+        "--difference-step",
+        "2e-5"
+      ],
+      "environment": {
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "stderr": "",
+      "stderr_file": "finite_moving_trace_run_2.stderr.txt",
+      "stdout": "{\"action_parameters\": {\"nu_squared_action\": 4.0, \"surface_gamma\": null}, \"affine_profile_enrichment\": {\"boundary_anchored_complement_norm\": 0.004004478619211728, \"fixed_velocity_multiplier_jet_max\": 0.0, \"former_radial_space_L2_complement\": 0.003666940061380503, \"radial_derivative_reconstruction_max\": 6.938893903907228e-18, \"value_reconstruction_max\": 1.734723475976807e-18, \"wall_coefficient\": 0.0}, \"canonical_projection\": \"joint same-action kinetic stationarity with80 multiplier/Gauss rows,4 attachment and2 normal trace coordinates\", \"canonical_pullback\": \"theta_birth=2*pad(Pi_parent)-Pi_joint_graph; incomingfinal+Pi, childinitial-Pi\", \"cap_points\": 48, \"common_scale_equation\": \"GF=c_F/E_kappa^2\", \"consumed_receipt_sha256\": \"e76e00f4a7fa013ab59c05ffa5cb9b073e0c29edff5f4dc234147cd76b605939\", \"difference_step\": 2e-05, \"energy_pullback\": \"E_child=E_joint_graph-E_parent-reference_clock_work; F_t=-M*delta_lambda_ref,t\", \"error_scope\": \"binary64 represented action and adjoint directional-Hessian cotangent derivatives; minimum weighted Newton correction is not branch selection\", \"gauge_count\": 80, \"gauge_labels\": [{\"affine_source_enrichment\": false, \"field\": \"A_tau\", \"internal\": 0, \"radial\": 0, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_tau\", \"internal\": 1, \"radial\": 0, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_tau\", \"internal\": 2, \"radial\": 0, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_tau\", \"internal\": 3, \"radial\": 0, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_rho\", \"internal\": 0, \"radial\": 0, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_rho\", \"internal\": 1, \"radial\": 0, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_rho\", \"internal\": 2, \"radial\": 0, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_rho\", \"internal\": 3, \"radial\": 0, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_1\", \"internal\": 0, \"radial\": 0, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_1\", \"internal\": 1, \"radial\": 0, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_1\", \"internal\": 2, \"radial\": 0, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_1\", \"internal\": 3, \"radial\": 0, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_2\", \"internal\": 0, \"radial\": 0, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_2\", \"internal\": 1, \"radial\": 0, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_2\", \"internal\": 2, \"radial\": 0, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_2\", \"internal\": 3, \"radial\": 0, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_3\", \"internal\": 0, \"radial\": 0, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_3\", \"internal\": 1, \"radial\": 0, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_3\", \"internal\": 2, \"radial\": 0, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_3\", \"internal\": 3, \"radial\": 0, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_tau\", \"internal\": 0, \"radial\": 1, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_tau\", \"internal\": 1, \"radial\": 1, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_tau\", \"internal\": 2, \"radial\": 1, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_tau\", \"internal\": 3, \"radial\": 1, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_rho\", \"internal\": 0, \"radial\": 1, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_rho\", \"internal\": 1, \"radial\": 1, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_rho\", \"internal\": 2, \"radial\": 1, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_rho\", \"internal\": 3, \"radial\": 1, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_1\", \"internal\": 0, \"radial\": 1, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_1\", \"internal\": 1, \"radial\": 1, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_1\", \"internal\": 2, \"radial\": 1, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_1\", \"internal\": 3, \"radial\": 1, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_2\", \"internal\": 0, \"radial\": 1, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_2\", \"internal\": 1, \"radial\": 1, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_2\", \"internal\": 2, \"radial\": 1, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_2\", \"internal\": 3, \"radial\": 1, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_3\", \"internal\": 0, \"radial\": 1, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_3\", \"internal\": 1, \"radial\": 1, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_3\", \"internal\": 2, \"radial\": 1, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_3\", \"internal\": 3, \"radial\": 1, \"wall_lift\": false}, {\"affine_source_enrichment\": true, \"field\": \"A_tau\", \"internal\": 0, \"radial\": 2, \"wall_lift\": false}, {\"affine_source_enrichment\": true, \"field\": \"A_tau\", \"internal\": 1, \"radial\": 2, \"wall_lift\": false}, {\"affine_source_enrichment\": true, \"field\": \"A_tau\", \"internal\": 2, \"radial\": 2, \"wall_lift\": false}, {\"affine_source_enrichment\": true, \"field\": \"A_tau\", \"internal\": 3, \"radial\": 2, \"wall_lift\": false}, {\"affine_source_enrichment\": true, \"field\": \"A_rho\", \"internal\": 0, \"radial\": 2, \"wall_lift\": false}, {\"affine_source_enrichment\": true, \"field\": \"A_rho\", \"internal\": 1, \"radial\": 2, \"wall_lift\": false}, {\"affine_source_enrichment\": true, \"field\": \"A_rho\", \"internal\": 2, \"radial\": 2, \"wall_lift\": false}, {\"affine_source_enrichment\": true, \"field\": \"A_rho\", \"internal\": 3, \"radial\": 2, \"wall_lift\": false}, {\"affine_source_enrichment\": true, \"field\": \"A_1\", \"internal\": 0, \"radial\": 2, \"wall_lift\": false}, {\"affine_source_enrichment\": true, \"field\": \"A_1\", \"internal\": 1, \"radial\": 2, \"wall_lift\": false}, {\"affine_source_enrichment\": true, \"field\": \"A_1\", \"internal\": 2, \"radial\": 2, \"wall_lift\": false}, {\"affine_source_enrichment\": true, \"field\": \"A_1\", \"internal\": 3, \"radial\": 2, \"wall_lift\": false}, {\"affine_source_enrichment\": true, \"field\": \"A_2\", \"internal\": 0, \"radial\": 2, \"wall_lift\": false}, {\"affine_source_enrichment\": true, \"field\": \"A_2\", \"internal\": 1, \"radial\": 2, \"wall_lift\": false}, {\"affine_source_enrichment\": true, \"field\": \"A_2\", \"internal\": 2, \"radial\": 2, \"wall_lift\": false}, {\"affine_source_enrichment\": true, \"field\": \"A_2\", \"internal\": 3, \"radial\": 2, \"wall_lift\": false}, {\"affine_source_enrichment\": true, \"field\": \"A_3\", \"internal\": 0, \"radial\": 2, \"wall_lift\": false}, {\"affine_source_enrichment\": true, \"field\": \"A_3\", \"internal\": 1, \"radial\": 2, \"wall_lift\": false}, {\"affine_source_enrichment\": true, \"field\": \"A_3\", \"internal\": 2, \"radial\": 2, \"wall_lift\": false}, {\"affine_source_enrichment\": true, \"field\": \"A_3\", \"internal\": 3, \"radial\": 2, \"wall_lift\": false}, {\"affine_source_enrichment\": false, \"field\": \"A_tau\", \"internal\": 0, \"radial\": 3, \"wall_lift\": true}, {\"affine_source_enrichment\": false, \"field\": \"A_tau\", \"internal\": 1, \"radial\": 3, \"wall_lift\": true}, {\"affine_source_enrichment\": false, \"field\": \"A_tau\", \"internal\": 2, \"radial\": 3, \"wall_lift\": true}, {\"affine_source_enrichment\": false, \"field\": \"A_tau\", \"internal\": 3, \"radial\": 3, \"wall_lift\": true}, {\"affine_source_enrichment\": false, \"field\": \"A_rho\", \"internal\": 0, \"radial\": 3, \"wall_lift\": true}, {\"affine_source_enrichment\": false, \"field\": \"A_rho\", \"internal\": 1, \"radial\": 3, \"wall_lift\": true}, {\"affine_source_enrichment\": false, \"field\": \"A_rho\", \"internal\": 2, \"radial\": 3, \"wall_lift\": true}, {\"affine_source_enrichment\": false, \"field\": \"A_rho\", \"internal\": 3, \"radial\": 3, \"wall_lift\": true}, {\"affine_source_enrichment\": false, \"field\": \"A_1\", \"internal\": 0, \"radial\": 3, \"wall_lift\": true}, {\"affine_source_enrichment\": false, \"field\": \"A_1\", \"internal\": 1, \"radial\": 3, \"wall_lift\": true}, {\"affine_source_enrichment\": false, \"field\": \"A_1\", \"internal\": 2, \"radial\": 3, \"wall_lift\": true}, {\"affine_source_enrichment\": false, \"field\": \"A_1\", \"internal\": 3, \"radial\": 3, \"wall_lift\": true}, {\"affine_source_enrichment\": false, \"field\": \"A_2\", \"internal\": 0, \"radial\": 3, \"wall_lift\": true}, {\"affine_source_enrichment\": false, \"field\": \"A_2\", \"internal\": 1, \"radial\": 3, \"wall_lift\": true}, {\"affine_source_enrichment\": false, \"field\": \"A_2\", \"internal\": 2, \"radial\": 3, \"wall_lift\": true}, {\"affine_source_enrichment\": false, \"field\": \"A_2\", \"internal\": 3, \"radial\": 3, \"wall_lift\": true}, {\"affine_source_enrichment\": false, \"field\": \"A_3\", \"internal\": 0, \"radial\": 3, \"wall_lift\": true}, {\"affine_source_enrichment\": false, \"field\": \"A_3\", \"internal\": 1, \"radial\": 3, \"wall_lift\": true}, {\"affine_source_enrichment\": false, \"field\": \"A_3\", \"internal\": 2, \"radial\": 3, \"wall_lift\": true}, {\"affine_source_enrichment\": false, \"field\": \"A_3\", \"internal\": 3, \"radial\": 3, \"wall_lift\": true}], \"geometric_trace\": \"same metric/quotient radius pulled to the moving wall; all q and normal derivatives active\", \"groups\": {\"Higgs_temporal_dual\": {\"indices\": [214, 215, 216, 217], \"norm\": 7.859612882883345e-24}, \"Higgs_trace\": {\"indices\": [210, 211, 212, 213], \"norm\": 3.8881062683661133e-23}, \"child_constraints\": {\"indices\": [40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78, 79], \"norm\": 7.810614548775782e-13}, \"child_energy\": {\"indices\": [81], \"norm\": 4.3220982348657344e-13}, \"common_attachment_temporal_dual\": {\"indices\": [223, 224], \"norm\": 1.954101448346966e-09}, \"common_normal_temporal_dual\": {\"indices\": [225], \"norm\": 1.2738476939944121e-11}, \"gauge_temporal_dual\": {\"indices\": [146, 147, 148, 149, 150, 151, 152, 153, 154, 155, 156, 157, 158, 159, 160, 161, 162, 163, 164, 165, 166, 167, 168, 169, 170, 171, 172, 173, 174, 175, 176, 177, 178, 179, 180, 181, 182, 183, 184, 185, 186, 187, 188, 189, 190, 191, 192, 193, 194, 195, 196, 197, 198, 199, 200, 201, 202, 203, 204, 205, 206, 207, 208, 209], \"norm\": 6.940650119293081e-14}, \"gauge_trace\": {\"indices\": [82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108, 109, 110, 111, 112, 113, 114, 115, 116, 117, 118, 119, 120, 121, 122, 123, 124, 125, 126, 127, 128, 129, 130, 131, 132, 133, 134, 135, 136, 137, 138, 139, 140, 141, 142, 143, 144, 145], \"norm\": 2.4532694776678633e-18}, \"incoming_constraints\": {\"indices\": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39], \"norm\": 7.741266761077422e-13}, \"incoming_energy\": {\"indices\": [80], \"norm\": 2.923217223838037e-13}, \"moving_geometric_trace\": {\"indices\": [218, 219, 220, 221], \"norm\": 9.193264042655568e-16}, \"normal_position_trace\": {\"indices\": [222], \"norm\": 0.0}}, \"history\": [{\"damping_history\": [{\"accepted\": true, \"damping\": 1.0, \"scaled_residual\": 0.0054615623361604715}], \"iteration\": 0, \"linearized_scaled_residual\": 2.5248525338601416e-16, \"omitted_left_source_norm\": 9.985686549927426e-18, \"rank\": 224, \"scaled_residual\": 0.009515433418258631, \"weighted_step_norm\": 0.09720244152113752}, {\"damping_history\": [{\"accepted\": true, \"damping\": 1.0, \"scaled_residual\": 0.001478283219792498}], \"iteration\": 1, \"linearized_scaled_residual\": 4.8806998582831816e-17, \"omitted_left_source_norm\": 2.7930574140689338e-18, \"rank\": 224, \"scaled_residual\": 0.0054615623361604715, \"weighted_step_norm\": 0.02519690550968785}, {\"damping_history\": [{\"accepted\": true, \"damping\": 1.0, \"scaled_residual\": 0.0007664137895869613}], \"iteration\": 2, \"linearized_scaled_residual\": 4.0606570391468684e-17, \"omitted_left_source_norm\": 3.714038269178207e-19, \"rank\": 224, \"scaled_residual\": 0.001478283219792498, \"weighted_step_norm\": 0.023565750887576477}, {\"damping_history\": [{\"accepted\": true, \"damping\": 1.0, \"scaled_residual\": 3.509465249729494e-05}], \"iteration\": 3, \"linearized_scaled_residual\": 1.4004580110679173e-17, \"omitted_left_source_norm\": 3.597125125088151e-19, \"rank\": 224, \"scaled_residual\": 0.0007664137895869613, \"weighted_step_norm\": 0.010655993227455333}, {\"damping_history\": [{\"accepted\": true, \"damping\": 1.0, \"scaled_residual\": 1.5102596943362974e-07}], \"iteration\": 4, \"linearized_scaled_residual\": 3.6478448360077387e-19, \"omitted_left_source_norm\": 1.1553505066232917e-20, \"rank\": 224, \"scaled_residual\": 3.509465249729494e-05, \"weighted_step_norm\": 0.0002419103077492854}, {\"damping_history\": [{\"accepted\": true, \"damping\": 1.0, \"scaled_residual\": 5.890346650453102e-12}], \"iteration\": 5, \"linearized_scaled_residual\": 8.533058274861693e-22, \"omitted_left_source_norm\": 2.4072827171311233e-23, \"rank\": 224, \"scaled_residual\": 1.5102596943362974e-07, \"weighted_step_norm\": 3.6296302438504575e-07}], \"input_hashes\": {\"artifacts/flagship_integration/BHSM_N12_C2_REFINED_RESET_ROOT_CENTER.npz\": \"59dd88661b15cbeec96bc19294f9d9c64f754cccbfbc385c32329fa9c864a8fe\", \"artifacts/flagship_integration/BHSM_N12_FULL_RESET_ACTION_JACOBIAN.npz\": \"35bb2b67ff784206d3a5b9dc82881f5ffd8f844b55342f2032d29cdafb38a67a\", \"artifacts/muon_birth_transfer_value_20261008/retained_reset/run_1/result.json\": \"d0fec0f8e8a05818fcce67e88ed8db73744484220a2cb213825893f481cb0a72\", \"artifacts/muon_calibrated_pauli_20261009/inputs.json\": \"0b614ab6f26d169ca04a4878f767f78eb3668484840867e46aebbebf186369da\", \"artifacts/muon_calibrated_weak_decay_20261010/run_1/weak_decay.json\": \"9c31575ce0889571790f8767cf53ffe043cb9906e0a45a96b194971320a0aad7\", \"artifacts/muon_matched_mechanical_source_20261002/replay_reference/matched_source_and_weak_actions.npz\": \"146435df28178967c321c0aa7e89a1511395d196f96b8715532aa98e3e312c2b\", \"src/bhsm/interface/aether_canonical_momentum_action_jacobian.py\": \"d0ade20dc8a999e43073b45ca3ef59e05c65c55e37a1d6565d4e389176295cb1\", \"src/bhsm/interface/aether_diagonal_sp1_m4_attachment_v15_50.py\": \"e6482614dcb54f4890a5e66fbe724d4c302405d575a4b73ddbb64a075cb1827e\", \"src/bhsm/interface/aether_lorentzian_child_galerkin_v15_44.py\": \"574a9a6267d9228170c7309bd4be3cafb36b7515a6ee558509beb968e97bdab7\", \"src/bhsm/interface/muon_birth_attached_phase.py\": \"948c1505e9b68cffbe8050be31dcb5727d8f8d4f25399f9037cfc94a9ae9fdeb\", \"src/bhsm/interface/muon_birth_coupled_primal_midpoint.py\": \"ce321f641fa51d98710d006e246aac5cf6bd046be93a74fab452808597c599ce\", \"src/bhsm/interface/muon_birth_finite_geometric_trace_endpoint.py\": \"4f5c36144222d5d1e657061aa9352f8e86d5ae61a0ebdf05991a477e68d4be5f\", \"src/bhsm/interface/muon_birth_finite_normal_trace_graph.py\": \"20eafd9a6abff3d3a89a2f6085d099584684ba19b600673dafda634cb56aad18\", \"src/bhsm/interface/muon_birth_full_field_attachment.py\": \"58b3bd8a4ae5fe7c63b5551e4d0f26d82ab82a27d4389066c894a5e1b4728d03\", \"src/bhsm/interface/muon_birth_normal_constrained_action.py\": \"fe66a9116816e075cfc5e7c5f5f3c2c02d539311303b693a1d89cbc08ea62577\", \"src/bhsm/interface/muon_birth_normal_trace_graph.py\": \"d012a0455d84be2ce7aae8d6833f8b482f9bbc1e9ee1b899042a421c2a782896\", \"src/bhsm/interface/muon_birth_paired_attachment_endpoint.py\": \"71a69275ebeef226fd8dc7585745c5c8acac687e497a8441fe37a37553178f23\", \"src/bhsm/interface/muon_birth_paired_field_endpoint.py\": \"f22b6a17b65c72b30571b3d9f721f347737a5916fa08e50bd833ad22df3cd035\", \"src/bhsm/interface/muon_birth_phase_continuation.py\": \"9169a1c56bf5084d1f240043ca12d431c87e4adaff24fe09bdf7bf27fc5eb0be\", \"src/bhsm/interface/muon_birth_trace_enriched_action.py\": \"c36c48482dd58ebe369ab935574b78b3693036f717fb49035dfac01164956dce\", \"src/bhsm/interface/muon_birth_trace_enriched_phase.py\": \"591754957f1cc452bfd53d8adc1087308459902a822876105315b7423c2fd676\", \"src/bhsm/interface/muon_birth_two_arm_assigned_action.py\": \"cf6c58dc68700315d701fb9a1e9e99e927d18d90016a6ae7f86470c36136c77a\", \"src/bhsm/interface/muon_exact_material_response.py\": \"a530651e157a000dbe6935e9de1cedbce5679f98c599c6c7c641158b749307bf\", \"src/bhsm/interface/muon_intrinsic_higgs_gauge_action.py\": \"c19354209300ab06c0f1ab6bf4e111dbb5de0cd9e8d1d31a71af357a829118d4\", \"src/bhsm/interface/muon_intrinsic_m4_normal_pullback.py\": \"43187eee35f2879a43fe0fd02ae447502811349ccf2f2a78aa14beb8aa706bf0\", \"src/bhsm/interface/muon_material_higgs_gauge_action.py\": \"8bca013820283614c6578be4f44c29c4ea1c919f516aa9a2783f0eb38127d035\", \"src/bhsm/interface/muon_moving_geometric_action.py\": \"bf560fdb9766f563d97d3100ccb266e2a4350c910ac14a51d57576c2b5371392\", \"src/bhsm/interface/muon_parent_gauge_geometry_correction.py\": \"fa29f5764dca39196c807d64e7976d5894589e7de3ffa9d4a5ddecfb136b4816\", \"src/bhsm/interface/muon_parent_maxwell_background_euler.py\": \"fbb2c99d4b1c58247ac42a769fad3e1b16ccc76a1744fe0c5334e50c4a974bee\", \"src/bhsm/interface/muon_parent_maxwell_full_weak.py\": \"c1fb703967a644306d3521d457a6d7c778a49d89c1e081b401487a25b7491565\", \"src/bhsm/interface/muon_parent_maxwell_geometry_weak.py\": \"f0b4a49934e17ad18c40e9164b66c54e1b2cb146fb476f59b0e500f2dd6c9153\", \"src/bhsm/interface/muon_parent_mean_causal_action.py\": \"2a84b1be22625b1a5ae88d10c76631d7a5b602d2b0e22e57f00201bb74a593ad\", \"src/bhsm/interface/muon_parent_retarded_hypercharge.py\": \"2eb97a704bce63f601cc0d6e0f647266d4b4aac7f746d34dceb41b72018c3510\", \"src/bhsm/interface/muon_pointwise_full_field_action.py\": \"d57cd5953de00bcae857d0e458bbead1e463e5fffe8d947c5b9e71806aabaff6\"}, \"iteration_archives\": [{\"path\": \"iterations/iteration_0000.npz\", \"sha256\": \"3976bc299e86c60a26687019e7ec5efd72b25c8cb88ccb7a23084ae17ed4e408\"}, {\"path\": \"iterations/iteration_0001.npz\", \"sha256\": \"af4bc32e54ef67106ea7fa66a98cb81348bd0826212d08fc41b94c41a621742a\"}, {\"path\": \"iterations/iteration_0002.npz\", \"sha256\": \"c92fce8d25108fd7bf9b3d45d8a1c03a03bbc6a9347cef0b7255fc0644127145\"}, {\"path\": \"iterations/iteration_0003.npz\", \"sha256\": \"07eaf2e0b8bec42a50911151416363f656b1e0b0db702f649fa3fb9138a9d6a4\"}, {\"path\": \"iterations/iteration_0004.npz\", \"sha256\": \"235ff57ef4652302bb83bbb62828c24448e4ff4c89e19ad432bd38a684960e04\"}, {\"path\": \"iterations/iteration_0005.npz\", \"sha256\": \"f0a9403e4a61ad3ccb1c910c5718856bf9d83fd5b8ad34155c2360ce29b63c1f\"}], \"master_unknown_count\": 504, \"normal_temporal_row_not_physical_formation_condition\": true, \"numerical_sha256\": \"c67363c17adfb519f399614463d5a13dbcd019aa53246d452421eea8ba982455\", \"physical_Pauli_value\": false, \"physical_formation_closed\": false, \"physical_fullfield_junction_closed\": false, \"physical_native_heat_closed\": false, \"radial_points\": 48, \"raw_arm_count\": 268, \"reference_clock_work\": 0.6521050091087239, \"reference_value_anchor_preserved\": true, \"response_chart\": \"exact normalized two-harmonic admissible trial; anchors solved at every iterate; no physicalprofile selected\", \"resumed_checkpoint_sha256\": null, \"row_count\": 226, \"scaled_residual\": 5.890346650453102e-12, \"scope\": \"EVALUATED_FINITE_ANCHORED_TRIAL_GEOMETRIC_NORMAL_TEMPORAL_TRACE_ENDPOINT_CORRECTION\", \"source_profile_projected\": false, \"status\": \"REPRESENTED_MOVING_TRACE_TOLERANCE\", \"unassigned_area_equation\": \"gamma=alpha_FSC*ell_current^(-m); no zero or alpha_EM assignment\", \"unscaled_residual_norm\": 1.95414334828103e-09}\n",
+      "stdout_file": "finite_moving_trace_run_2.stdout.txt"
+    },
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "bhsm.interface.muon_birth_finite_wall_fields",
+        "--endpoint-application",
+        "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1",
+        "--reference-application",
+        "artifacts/muon_parent_gauge_geometry_correction_20261010/paired_attachment_endpoint_run_1",
+        "--output",
+        "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_wall_fields_run_1"
+      ],
+      "environment": {
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "stderr": "",
+      "stderr_file": "finite_wall_fields_run_1.stderr.txt",
+      "stdout": "{\"bulk_profile_projected\": false, \"child_affine_profile_increment\": [[1.1102230246251565e-16, -0.08821102967925187, 0.0012635325526780816]], \"connection_order\": [\"value\", \"material_tau\", \"material_rho\"], \"coordinate_convention\": \"material At_ref/Ar_ref; coordinate-time tau derivatives; no second wall advection\", \"endpoint_numeric_sha256\": \"c67363c17adfb519f399614463d5a13dbcd019aa53246d452421eea8ba982455\", \"endpoint_receipt_sha256\": \"06867e31959910ec21385e8491bd5b794060c68e8404ae0524e3d0c9b544faa6\", \"error_scope\": \"binary64 same-action coefficient/implicit-chart derivatives; no continuum or physical-state certificate\", \"first_shape\": [2, 3, 5, 4, 536], \"full_wall_connection_jump_norm\": 1.9908937049537637e-15, \"geometry_order\": [\"R4\", \"induced_lapse\", \"wall\", \"wall_rate\", \"Cstar\", \"U\", \"wT\", \"wS\", \"wV\"], \"input_hashes\": {\"artifacts/flagship_integration/BHSM_N12_C2_REFINED_RESET_ROOT_CENTER.npz\": \"59dd88661b15cbeec96bc19294f9d9c64f754cccbfbc385c32329fa9c864a8fe\", \"artifacts/flagship_integration/BHSM_N12_FULL_RESET_ACTION_JACOBIAN.npz\": \"35bb2b67ff784206d3a5b9dc82881f5ffd8f844b55342f2032d29cdafb38a67a\", \"artifacts/muon_birth_transfer_value_20261008/retained_reset/run_1/result.json\": \"d0fec0f8e8a05818fcce67e88ed8db73744484220a2cb213825893f481cb0a72\", \"artifacts/muon_calibrated_pauli_20261009/inputs.json\": \"0b614ab6f26d169ca04a4878f767f78eb3668484840867e46aebbebf186369da\", \"artifacts/muon_calibrated_weak_decay_20261010/run_1/weak_decay.json\": \"9c31575ce0889571790f8767cf53ffe043cb9906e0a45a96b194971320a0aad7\", \"artifacts/muon_matched_mechanical_source_20261002/replay_reference/matched_source_and_weak_actions.npz\": \"146435df28178967c321c0aa7e89a1511395d196f96b8715532aa98e3e312c2b\", \"src/bhsm/interface/aether_canonical_momentum_action_jacobian.py\": \"d0ade20dc8a999e43073b45ca3ef59e05c65c55e37a1d6565d4e389176295cb1\", \"src/bhsm/interface/aether_diagonal_sp1_m4_attachment_v15_50.py\": \"e6482614dcb54f4890a5e66fbe724d4c302405d575a4b73ddbb64a075cb1827e\", \"src/bhsm/interface/aether_lorentzian_child_galerkin_v15_44.py\": \"574a9a6267d9228170c7309bd4be3cafb36b7515a6ee558509beb968e97bdab7\", \"src/bhsm/interface/muon_birth_attached_phase.py\": \"948c1505e9b68cffbe8050be31dcb5727d8f8d4f25399f9037cfc94a9ae9fdeb\", \"src/bhsm/interface/muon_birth_coupled_primal_midpoint.py\": \"ce321f641fa51d98710d006e246aac5cf6bd046be93a74fab452808597c599ce\", \"src/bhsm/interface/muon_birth_finite_geometric_trace_endpoint.py\": \"4f5c36144222d5d1e657061aa9352f8e86d5ae61a0ebdf05991a477e68d4be5f\", \"src/bhsm/interface/muon_birth_finite_normal_trace_graph.py\": \"20eafd9a6abff3d3a89a2f6085d099584684ba19b600673dafda634cb56aad18\", \"src/bhsm/interface/muon_birth_finite_wall_fields.py\": \"3b6a158ee3c308e3b781943ddc90af67bace7350076273094e2cdb9c392cc531\", \"src/bhsm/interface/muon_birth_full_field_attachment.py\": \"58b3bd8a4ae5fe7c63b5551e4d0f26d82ab82a27d4389066c894a5e1b4728d03\", \"src/bhsm/interface/muon_birth_normal_constrained_action.py\": \"fe66a9116816e075cfc5e7c5f5f3c2c02d539311303b693a1d89cbc08ea62577\", \"src/bhsm/interface/muon_birth_normal_trace_graph.py\": \"d012a0455d84be2ce7aae8d6833f8b482f9bbc1e9ee1b899042a421c2a782896\", \"src/bhsm/interface/muon_birth_paired_attachment_endpoint.py\": \"71a69275ebeef226fd8dc7585745c5c8acac687e497a8441fe37a37553178f23\", \"src/bhsm/interface/muon_birth_paired_field_endpoint.py\": \"f22b6a17b65c72b30571b3d9f721f347737a5916fa08e50bd833ad22df3cd035\", \"src/bhsm/interface/muon_birth_phase_continuation.py\": \"9169a1c56bf5084d1f240043ca12d431c87e4adaff24fe09bdf7bf27fc5eb0be\", \"src/bhsm/interface/muon_birth_trace_enriched_action.py\": \"c36c48482dd58ebe369ab935574b78b3693036f717fb49035dfac01164956dce\", \"src/bhsm/interface/muon_birth_trace_enriched_phase.py\": \"591754957f1cc452bfd53d8adc1087308459902a822876105315b7423c2fd676\", \"src/bhsm/interface/muon_birth_two_arm_assigned_action.py\": \"cf6c58dc68700315d701fb9a1e9e99e927d18d90016a6ae7f86470c36136c77a\", \"src/bhsm/interface/muon_exact_material_response.py\": \"a530651e157a000dbe6935e9de1cedbce5679f98c599c6c7c641158b749307bf\", \"src/bhsm/interface/muon_intrinsic_higgs_gauge_action.py\": \"c19354209300ab06c0f1ab6bf4e111dbb5de0cd9e8d1d31a71af357a829118d4\", \"src/bhsm/interface/muon_intrinsic_m4_normal_pullback.py\": \"43187eee35f2879a43fe0fd02ae447502811349ccf2f2a78aa14beb8aa706bf0\", \"src/bhsm/interface/muon_material_higgs_gauge_action.py\": \"8bca013820283614c6578be4f44c29c4ea1c919f516aa9a2783f0eb38127d035\", \"src/bhsm/interface/muon_moving_geometric_action.py\": \"bf560fdb9766f563d97d3100ccb266e2a4350c910ac14a51d57576c2b5371392\", \"src/bhsm/interface/muon_parent_gauge_geometry_correction.py\": \"fa29f5764dca39196c807d64e7976d5894589e7de3ffa9d4a5ddecfb136b4816\", \"src/bhsm/interface/muon_parent_maxwell_background_euler.py\": \"fbb2c99d4b1c58247ac42a769fad3e1b16ccc76a1744fe0c5334e50c4a974bee\", \"src/bhsm/interface/muon_parent_maxwell_full_weak.py\": \"c1fb703967a644306d3521d457a6d7c778a49d89c1e081b401487a25b7491565\", \"src/bhsm/interface/muon_parent_maxwell_geometry_weak.py\": \"f0b4a49934e17ad18c40e9164b66c54e1b2cb146fb476f59b0e500f2dd6c9153\", \"src/bhsm/interface/muon_parent_mean_causal_action.py\": \"2a84b1be22625b1a5ae88d10c76631d7a5b602d2b0e22e57f00201bb74a593ad\", \"src/bhsm/interface/muon_parent_retarded_hypercharge.py\": \"2eb97a704bce63f601cc0d6e0f647266d4b4aac7f746d34dceb41b72018c3510\", \"src/bhsm/interface/muon_pointwise_full_field_action.py\": \"d57cd5953de00bcae857d0e458bbead1e463e5fffe8d947c5b9e71806aabaff6\"}, \"material_At_reference_advection_count\": 1, \"numerical_sha256\": \"8540a78c7bbb3936b82ea8f5e3a90cb394033c00df153f5efd8678ece4fc48a6\", \"physical_Pauli_value\": false, \"physical_native_heat_closed\": false, \"physical_stationary_birth_or_formation_selected\": false, \"scope\": \"EVALUATED_EXACT_INTRINSIC_WALL_FIELDS_ON_SOLVED_FINITE_TRIAL_GRAPH\", \"second_shape\": [2, 3, 5, 4, 536, 536], \"spatial_wall_connection_jump_norm\": 3.8459253727671755e-16, \"value_shape\": [2, 3, 5, 4]}\n",
+      "stdout_file": "finite_wall_fields_run_1.stdout.txt"
+    },
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "bhsm.interface.muon_birth_finite_wall_fields",
+        "--endpoint-application",
+        "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1",
+        "--reference-application",
+        "artifacts/muon_parent_gauge_geometry_correction_20261010/paired_attachment_endpoint_run_1",
+        "--output",
+        "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_wall_fields_run_2"
+      ],
+      "environment": {
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "stderr": "",
+      "stderr_file": "finite_wall_fields_run_2.stderr.txt",
+      "stdout": "{\"bulk_profile_projected\": false, \"child_affine_profile_increment\": [[1.1102230246251565e-16, -0.08821102967925187, 0.0012635325526780816]], \"connection_order\": [\"value\", \"material_tau\", \"material_rho\"], \"coordinate_convention\": \"material At_ref/Ar_ref; coordinate-time tau derivatives; no second wall advection\", \"endpoint_numeric_sha256\": \"c67363c17adfb519f399614463d5a13dbcd019aa53246d452421eea8ba982455\", \"endpoint_receipt_sha256\": \"06867e31959910ec21385e8491bd5b794060c68e8404ae0524e3d0c9b544faa6\", \"error_scope\": \"binary64 same-action coefficient/implicit-chart derivatives; no continuum or physical-state certificate\", \"first_shape\": [2, 3, 5, 4, 536], \"full_wall_connection_jump_norm\": 1.9908937049537637e-15, \"geometry_order\": [\"R4\", \"induced_lapse\", \"wall\", \"wall_rate\", \"Cstar\", \"U\", \"wT\", \"wS\", \"wV\"], \"input_hashes\": {\"artifacts/flagship_integration/BHSM_N12_C2_REFINED_RESET_ROOT_CENTER.npz\": \"59dd88661b15cbeec96bc19294f9d9c64f754cccbfbc385c32329fa9c864a8fe\", \"artifacts/flagship_integration/BHSM_N12_FULL_RESET_ACTION_JACOBIAN.npz\": \"35bb2b67ff784206d3a5b9dc82881f5ffd8f844b55342f2032d29cdafb38a67a\", \"artifacts/muon_birth_transfer_value_20261008/retained_reset/run_1/result.json\": \"d0fec0f8e8a05818fcce67e88ed8db73744484220a2cb213825893f481cb0a72\", \"artifacts/muon_calibrated_pauli_20261009/inputs.json\": \"0b614ab6f26d169ca04a4878f767f78eb3668484840867e46aebbebf186369da\", \"artifacts/muon_calibrated_weak_decay_20261010/run_1/weak_decay.json\": \"9c31575ce0889571790f8767cf53ffe043cb9906e0a45a96b194971320a0aad7\", \"artifacts/muon_matched_mechanical_source_20261002/replay_reference/matched_source_and_weak_actions.npz\": \"146435df28178967c321c0aa7e89a1511395d196f96b8715532aa98e3e312c2b\", \"src/bhsm/interface/aether_canonical_momentum_action_jacobian.py\": \"d0ade20dc8a999e43073b45ca3ef59e05c65c55e37a1d6565d4e389176295cb1\", \"src/bhsm/interface/aether_diagonal_sp1_m4_attachment_v15_50.py\": \"e6482614dcb54f4890a5e66fbe724d4c302405d575a4b73ddbb64a075cb1827e\", \"src/bhsm/interface/aether_lorentzian_child_galerkin_v15_44.py\": \"574a9a6267d9228170c7309bd4be3cafb36b7515a6ee558509beb968e97bdab7\", \"src/bhsm/interface/muon_birth_attached_phase.py\": \"948c1505e9b68cffbe8050be31dcb5727d8f8d4f25399f9037cfc94a9ae9fdeb\", \"src/bhsm/interface/muon_birth_coupled_primal_midpoint.py\": \"ce321f641fa51d98710d006e246aac5cf6bd046be93a74fab452808597c599ce\", \"src/bhsm/interface/muon_birth_finite_geometric_trace_endpoint.py\": \"4f5c36144222d5d1e657061aa9352f8e86d5ae61a0ebdf05991a477e68d4be5f\", \"src/bhsm/interface/muon_birth_finite_normal_trace_graph.py\": \"20eafd9a6abff3d3a89a2f6085d099584684ba19b600673dafda634cb56aad18\", \"src/bhsm/interface/muon_birth_finite_wall_fields.py\": \"3b6a158ee3c308e3b781943ddc90af67bace7350076273094e2cdb9c392cc531\", \"src/bhsm/interface/muon_birth_full_field_attachment.py\": \"58b3bd8a4ae5fe7c63b5551e4d0f26d82ab82a27d4389066c894a5e1b4728d03\", \"src/bhsm/interface/muon_birth_normal_constrained_action.py\": \"fe66a9116816e075cfc5e7c5f5f3c2c02d539311303b693a1d89cbc08ea62577\", \"src/bhsm/interface/muon_birth_normal_trace_graph.py\": \"d012a0455d84be2ce7aae8d6833f8b482f9bbc1e9ee1b899042a421c2a782896\", \"src/bhsm/interface/muon_birth_paired_attachment_endpoint.py\": \"71a69275ebeef226fd8dc7585745c5c8acac687e497a8441fe37a37553178f23\", \"src/bhsm/interface/muon_birth_paired_field_endpoint.py\": \"f22b6a17b65c72b30571b3d9f721f347737a5916fa08e50bd833ad22df3cd035\", \"src/bhsm/interface/muon_birth_phase_continuation.py\": \"9169a1c56bf5084d1f240043ca12d431c87e4adaff24fe09bdf7bf27fc5eb0be\", \"src/bhsm/interface/muon_birth_trace_enriched_action.py\": \"c36c48482dd58ebe369ab935574b78b3693036f717fb49035dfac01164956dce\", \"src/bhsm/interface/muon_birth_trace_enriched_phase.py\": \"591754957f1cc452bfd53d8adc1087308459902a822876105315b7423c2fd676\", \"src/bhsm/interface/muon_birth_two_arm_assigned_action.py\": \"cf6c58dc68700315d701fb9a1e9e99e927d18d90016a6ae7f86470c36136c77a\", \"src/bhsm/interface/muon_exact_material_response.py\": \"a530651e157a000dbe6935e9de1cedbce5679f98c599c6c7c641158b749307bf\", \"src/bhsm/interface/muon_intrinsic_higgs_gauge_action.py\": \"c19354209300ab06c0f1ab6bf4e111dbb5de0cd9e8d1d31a71af357a829118d4\", \"src/bhsm/interface/muon_intrinsic_m4_normal_pullback.py\": \"43187eee35f2879a43fe0fd02ae447502811349ccf2f2a78aa14beb8aa706bf0\", \"src/bhsm/interface/muon_material_higgs_gauge_action.py\": \"8bca013820283614c6578be4f44c29c4ea1c919f516aa9a2783f0eb38127d035\", \"src/bhsm/interface/muon_moving_geometric_action.py\": \"bf560fdb9766f563d97d3100ccb266e2a4350c910ac14a51d57576c2b5371392\", \"src/bhsm/interface/muon_parent_gauge_geometry_correction.py\": \"fa29f5764dca39196c807d64e7976d5894589e7de3ffa9d4a5ddecfb136b4816\", \"src/bhsm/interface/muon_parent_maxwell_background_euler.py\": \"fbb2c99d4b1c58247ac42a769fad3e1b16ccc76a1744fe0c5334e50c4a974bee\", \"src/bhsm/interface/muon_parent_maxwell_full_weak.py\": \"c1fb703967a644306d3521d457a6d7c778a49d89c1e081b401487a25b7491565\", \"src/bhsm/interface/muon_parent_maxwell_geometry_weak.py\": \"f0b4a49934e17ad18c40e9164b66c54e1b2cb146fb476f59b0e500f2dd6c9153\", \"src/bhsm/interface/muon_parent_mean_causal_action.py\": \"2a84b1be22625b1a5ae88d10c76631d7a5b602d2b0e22e57f00201bb74a593ad\", \"src/bhsm/interface/muon_parent_retarded_hypercharge.py\": \"2eb97a704bce63f601cc0d6e0f647266d4b4aac7f746d34dceb41b72018c3510\", \"src/bhsm/interface/muon_pointwise_full_field_action.py\": \"d57cd5953de00bcae857d0e458bbead1e463e5fffe8d947c5b9e71806aabaff6\"}, \"material_At_reference_advection_count\": 1, \"numerical_sha256\": \"8540a78c7bbb3936b82ea8f5e3a90cb394033c00df153f5efd8678ece4fc48a6\", \"physical_Pauli_value\": false, \"physical_native_heat_closed\": false, \"physical_stationary_birth_or_formation_selected\": false, \"scope\": \"EVALUATED_EXACT_INTRINSIC_WALL_FIELDS_ON_SOLVED_FINITE_TRIAL_GRAPH\", \"second_shape\": [2, 3, 5, 4, 536, 536], \"spatial_wall_connection_jump_norm\": 3.8459253727671755e-16, \"value_shape\": [2, 3, 5, 4]}\n",
+      "stdout_file": "finite_wall_fields_run_2.stdout.txt"
+    },
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "pytest",
+        "--noconftest",
+        "-q",
+        "tests/test_muon_exact_material_response.py",
+        "tests/test_muon_birth_finite_normal_trace_graph.py",
+        "tests/test_muon_birth_finite_geometric_trace_endpoint.py",
+        "tests/test_muon_birth_finite_wall_fields.py"
+      ],
+      "environment": {
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "..............                                                           [100%]\n14 passed in 62.24s (0:01:02)\n"
+    },
+    {
+      "argv": [
+        "C:/Python314/python.exe",
+        "artifacts/muon_parent_gauge_geometry_correction_20261010/execution_logs/check_finite_endpoint_derivative.py"
+      ],
+      "capture_method": "completed tools.exec_command/write_stdin output; result_json retained by actual producer",
+      "environment": {
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "{\"jacobian_absolute_difference_max\": 0.0002681201570453595, \"jacobian_absolute_difference_norm\": 0.000644154171967891, \"last3_row_difference_norms\": [0.0005389120703472992, 0.00033840428213449117, 9.99545873417853e-05], \"last3_row_norms\": [1991.022646403361, 1466.0617200950874, 216.16009935656567], \"numerical_sha256\": \"69d5ecea1ead9298653545c54c6d4559c40782d7994bd0130ca13802df29778c\", \"physical_formation_claim\": false, \"residual_reapplication_max\": 0.0, \"rigorous_bound\": false, \"scope\": \"FINITE_REPRESENTED_TRIAL_DIRECTIONAL_HESSIAN_STEP_HALVING_CHECK\", \"steps\": [2e-05, 1e-05]}\r\n"
+    }
+  ],
+  "files": [
+    {
+      "bytes": 2120,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/execution_logs/check_finite_endpoint_derivative.py",
+      "sha256": "411779c3a29dbfa3340071f09b4e2093087a51f869910764bc96046d1dcbc3b0"
+    },
+    {
+      "bytes": 21505,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/execution_logs/finite_moving_trace_run_1.execution.json",
+      "sha256": "d2c02725cdb3232a3bb0a6dd8b26713e77adc3bb068b68877954a26eccecb3f1"
+    },
+    {
+      "bytes": 0,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/execution_logs/finite_moving_trace_run_1.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 19338,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/execution_logs/finite_moving_trace_run_1.stdout.txt",
+      "sha256": "30d51704aeed1b20e27fae343983150e1b31ae012a56f0217d3e0e0ce0595ee6"
+    },
+    {
+      "bytes": 21505,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/execution_logs/finite_moving_trace_run_2.execution.json",
+      "sha256": "b188bc5f10a809b7d256b63b048792b83b0f70aa338efb88277dffa3c448edd5"
+    },
+    {
+      "bytes": 0,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/execution_logs/finite_moving_trace_run_2.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 19338,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/execution_logs/finite_moving_trace_run_2.stdout.txt",
+      "sha256": "30d51704aeed1b20e27fae343983150e1b31ae012a56f0217d3e0e0ce0595ee6"
+    },
+    {
+      "bytes": 539,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/execution_logs/finite_moving_trace_tests.execution.json",
+      "sha256": "51a37fbffa226fca746339c1b818967771a91d06c764963d4de29f1395fd7ee9"
+    },
+    {
+      "bytes": 0,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/execution_logs/finite_moving_trace_tests.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 110,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/execution_logs/finite_moving_trace_tests.stdout.txt",
+      "sha256": "1552f2a269d0727e624ea978eedf26bae54ea1b42cf8a0a1d5405f437622da65"
+    },
+    {
+      "bytes": 6753,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/execution_logs/finite_wall_fields_run_1.execution.json",
+      "sha256": "44dac8069d340fd801f661a17981861d44e5200255f1d5c66738449511298d45"
+    },
+    {
+      "bytes": 0,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/execution_logs/finite_wall_fields_run_1.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 5859,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/execution_logs/finite_wall_fields_run_1.stdout.txt",
+      "sha256": "c3ddd2f84d04432b6276ea2449cea15d0ca52b276c7ef407ca1c0397271f3024"
+    },
+    {
+      "bytes": 6753,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/execution_logs/finite_wall_fields_run_2.execution.json",
+      "sha256": "503def9ef8211dd7a9c252360bfe0b3cc864482b2069c0e8400d2d9b3d98e829"
+    },
+    {
+      "bytes": 0,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/execution_logs/finite_wall_fields_run_2.stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "bytes": 5859,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/execution_logs/finite_wall_fields_run_2.stdout.txt",
+      "sha256": "c3ddd2f84d04432b6276ea2449cea15d0ca52b276c7ef407ca1c0397271f3024"
+    },
+    {
+      "bytes": 4890,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/execution_logs/record_finite_moving_trace_verification.py",
+      "sha256": "69d1902d3ddcfa338500d27b0ca1dc54d3c0b04ceb1322934692e1918217b568"
+    },
+    {
+      "bytes": 1271,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/execution_logs/run_finite_moving_endpoint.py",
+      "sha256": "2e2c4cdaf71102ac3af3204917a571980902d210b62bb3c8cc5cb42f90175c30"
+    },
+    {
+      "bytes": 1109,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/execution_logs/run_finite_wall_fields.py",
+      "sha256": "494946f3f6efc03aa92f2beb047e03724c94ba020a2cb7a4a324fc73f696b905"
+    },
+    {
+      "bytes": 960,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/execution_logs/test_finite_moving_trace.py",
+      "sha256": "4e4d82e496af5f0908e052cae5b368f6cde0490ccaa8358c04deaf9783da8152"
+    },
+    {
+      "bytes": 479601,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_derivative_check/application.npz",
+      "sha256": "69d5ecea1ead9298653545c54c6d4559c40782d7994bd0130ca13802df29778c"
+    },
+    {
+      "bytes": 650,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_derivative_check/result.json",
+      "sha256": "3c7907d1b48edf5f995f20743ca7be3d561ad2e1d8b3b64608d398cb4543762d"
+    },
+    {
+      "bytes": 1226092,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1/application.npz",
+      "sha256": "c67363c17adfb519f399614463d5a13dbcd019aa53246d452421eea8ba982455"
+    },
+    {
+      "bytes": 235762,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1/checkpoints/accepted_0000/application.npz",
+      "sha256": "1d69cbfb631c67102d528d1c6b7ee57bff08e16d2b8418775ad9b36b17096b2f"
+    },
+    {
+      "bytes": 5632,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1/checkpoints/accepted_0000/result.json",
+      "sha256": "6ac7a4dcad07c11e63c24858e92a27db1ea5b86f476e165f53b530d1afba8fea"
+    },
+    {
+      "bytes": 243293,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1/checkpoints/accepted_0001/application.npz",
+      "sha256": "5bbaa0ed087c731e9fe50cb722561076ebafb404522fc7ecd16c740e98c3840a"
+    },
+    {
+      "bytes": 6061,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1/checkpoints/accepted_0001/result.json",
+      "sha256": "681ba2a4860175e9dc37e96bb3ebd999691bce77d10ee5c113281fbda7bb6d3a"
+    },
+    {
+      "bytes": 243258,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1/checkpoints/accepted_0002/application.npz",
+      "sha256": "beec8f84c2db9f95b83d7ebbe3c124cd0f7d6a5943c0f627fe00f1fdc51f3ae3"
+    },
+    {
+      "bytes": 6489,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1/checkpoints/accepted_0002/result.json",
+      "sha256": "1fa3318290ab654d5656b23846f65b70f91a63b99f06c5d1b3bb8bbb3bdf4e95"
+    },
+    {
+      "bytes": 243010,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1/checkpoints/accepted_0003/application.npz",
+      "sha256": "4a18acc968b48040fca5b0918668e470738a19722e79477fb4bd8fb93d5756d9"
+    },
+    {
+      "bytes": 6917,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1/checkpoints/accepted_0003/result.json",
+      "sha256": "a04149427639ea3caa2efa0a330a7127f9db1448ad980bc61615cc22111c3be7"
+    },
+    {
+      "bytes": 243124,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1/checkpoints/accepted_0004/application.npz",
+      "sha256": "79555d93c3eb8d9b617c24a11646ddaf522f668b88d16dc14167bea3d74d6692"
+    },
+    {
+      "bytes": 7346,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1/checkpoints/accepted_0004/result.json",
+      "sha256": "2b99f4baa0ce0950bf69c8769a11dd2b084f28631926e1dea857244d607172f8"
+    },
+    {
+      "bytes": 242936,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1/checkpoints/accepted_0005/application.npz",
+      "sha256": "1e695d0438a1b8dbb00eb57c44f5b6d5a10889da5e753465ca9b202d01020c31"
+    },
+    {
+      "bytes": 7778,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1/checkpoints/accepted_0005/result.json",
+      "sha256": "83247f773514861030f86e1dfe636bf35c67c3e62717390ddd277b32a25f1ac8"
+    },
+    {
+      "bytes": 242753,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1/checkpoints/accepted_0006/application.npz",
+      "sha256": "525b265c8d69bb92ef3f6e1e083fc6d23927566159c2e2d747b3ef269dbcc1b2"
+    },
+    {
+      "bytes": 8210,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1/checkpoints/accepted_0006/result.json",
+      "sha256": "8cb9ded10b70ebdf3d49058f94e8dd08e7066875f01c4c76d464ad092c2e2435"
+    },
+    {
+      "bytes": 2469094,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1/iterations/iteration_0000.npz",
+      "sha256": "3976bc299e86c60a26687019e7ec5efd72b25c8cb88ccb7a23084ae17ed4e408"
+    },
+    {
+      "bytes": 2473760,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1/iterations/iteration_0001.npz",
+      "sha256": "af4bc32e54ef67106ea7fa66a98cb81348bd0826212d08fc41b94c41a621742a"
+    },
+    {
+      "bytes": 2475752,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1/iterations/iteration_0002.npz",
+      "sha256": "c92fce8d25108fd7bf9b3d45d8a1c03a03bbc6a9347cef0b7255fc0644127145"
+    },
+    {
+      "bytes": 2475835,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1/iterations/iteration_0003.npz",
+      "sha256": "07eaf2e0b8bec42a50911151416363f656b1e0b0db702f649fa3fb9138a9d6a4"
+    },
+    {
+      "bytes": 2475733,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1/iterations/iteration_0004.npz",
+      "sha256": "235ff57ef4652302bb83bbb62828c24448e4ff4c89e19ad432bd38a684960e04"
+    },
+    {
+      "bytes": 2474794,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1/iterations/iteration_0005.npz",
+      "sha256": "f0a9403e4a61ad3ccb1c910c5718856bf9d83fd5b8ad34155c2360ce29b63c1f"
+    },
+    {
+      "bytes": 25758,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1/result.json",
+      "sha256": "06867e31959910ec21385e8491bd5b794060c68e8404ae0524e3d0c9b544faa6"
+    },
+    {
+      "bytes": 1226092,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_2/application.npz",
+      "sha256": "c67363c17adfb519f399614463d5a13dbcd019aa53246d452421eea8ba982455"
+    },
+    {
+      "bytes": 235762,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_2/checkpoints/accepted_0000/application.npz",
+      "sha256": "1d69cbfb631c67102d528d1c6b7ee57bff08e16d2b8418775ad9b36b17096b2f"
+    },
+    {
+      "bytes": 5632,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_2/checkpoints/accepted_0000/result.json",
+      "sha256": "f697431fccdbc6105b1b8229bbe4ad572fd1b8b1fc73003d3f589619174b88b9"
+    },
+    {
+      "bytes": 243293,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_2/checkpoints/accepted_0001/application.npz",
+      "sha256": "5bbaa0ed087c731e9fe50cb722561076ebafb404522fc7ecd16c740e98c3840a"
+    },
+    {
+      "bytes": 6061,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_2/checkpoints/accepted_0001/result.json",
+      "sha256": "95ee02688f7958e1ed68cc09fe1def408fa86f8175d76edd5ed73a8d7b83a05e"
+    },
+    {
+      "bytes": 243258,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_2/checkpoints/accepted_0002/application.npz",
+      "sha256": "beec8f84c2db9f95b83d7ebbe3c124cd0f7d6a5943c0f627fe00f1fdc51f3ae3"
+    },
+    {
+      "bytes": 6489,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_2/checkpoints/accepted_0002/result.json",
+      "sha256": "d89d2e1aad56ad151081b4c11e087d714aaf5c371436cb997974a62f82894024"
+    },
+    {
+      "bytes": 243010,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_2/checkpoints/accepted_0003/application.npz",
+      "sha256": "4a18acc968b48040fca5b0918668e470738a19722e79477fb4bd8fb93d5756d9"
+    },
+    {
+      "bytes": 6917,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_2/checkpoints/accepted_0003/result.json",
+      "sha256": "5cde093fddf0ea8d3a1bb44d01da25cabd270060169bcbdc1b3b1ca1bb620f56"
+    },
+    {
+      "bytes": 243124,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_2/checkpoints/accepted_0004/application.npz",
+      "sha256": "79555d93c3eb8d9b617c24a11646ddaf522f668b88d16dc14167bea3d74d6692"
+    },
+    {
+      "bytes": 7346,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_2/checkpoints/accepted_0004/result.json",
+      "sha256": "a9417da034bff4767f851bc9fdadf0484046d00965eae57a566df6d42543fe6f"
+    },
+    {
+      "bytes": 242936,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_2/checkpoints/accepted_0005/application.npz",
+      "sha256": "1e695d0438a1b8dbb00eb57c44f5b6d5a10889da5e753465ca9b202d01020c31"
+    },
+    {
+      "bytes": 7778,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_2/checkpoints/accepted_0005/result.json",
+      "sha256": "143380f138c99d5ab690cbfac39f6d599a17847a4abad53d400be9e19521ae77"
+    },
+    {
+      "bytes": 242753,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_2/checkpoints/accepted_0006/application.npz",
+      "sha256": "525b265c8d69bb92ef3f6e1e083fc6d23927566159c2e2d747b3ef269dbcc1b2"
+    },
+    {
+      "bytes": 8210,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_2/checkpoints/accepted_0006/result.json",
+      "sha256": "60a3d5cc77588fe874fc2fc9fb041a3195504344b7d205cec75a7869ec291877"
+    },
+    {
+      "bytes": 2469094,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_2/iterations/iteration_0000.npz",
+      "sha256": "3976bc299e86c60a26687019e7ec5efd72b25c8cb88ccb7a23084ae17ed4e408"
+    },
+    {
+      "bytes": 2473760,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_2/iterations/iteration_0001.npz",
+      "sha256": "af4bc32e54ef67106ea7fa66a98cb81348bd0826212d08fc41b94c41a621742a"
+    },
+    {
+      "bytes": 2475752,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_2/iterations/iteration_0002.npz",
+      "sha256": "c92fce8d25108fd7bf9b3d45d8a1c03a03bbc6a9347cef0b7255fc0644127145"
+    },
+    {
+      "bytes": 2475835,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_2/iterations/iteration_0003.npz",
+      "sha256": "07eaf2e0b8bec42a50911151416363f656b1e0b0db702f649fa3fb9138a9d6a4"
+    },
+    {
+      "bytes": 2475733,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_2/iterations/iteration_0004.npz",
+      "sha256": "235ff57ef4652302bb83bbb62828c24448e4ff4c89e19ad432bd38a684960e04"
+    },
+    {
+      "bytes": 2474794,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_2/iterations/iteration_0005.npz",
+      "sha256": "f0a9403e4a61ad3ccb1c910c5718856bf9d83fd5b8ad34155c2360ce29b63c1f"
+    },
+    {
+      "bytes": 25758,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_2/result.json",
+      "sha256": "06867e31959910ec21385e8491bd5b794060c68e8404ae0524e3d0c9b544faa6"
+    },
+    {
+      "bytes": 603865,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_wall_fields_run_1/application.npz",
+      "sha256": "8540a78c7bbb3936b82ea8f5e3a90cb394033c00df153f5efd8678ece4fc48a6"
+    },
+    {
+      "bytes": 6205,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_wall_fields_run_1/result.json",
+      "sha256": "1351b0c6c470036d7b9a3cc73c4008d097ec8e48dad28711386634265fcbb42f"
+    },
+    {
+      "bytes": 603865,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_wall_fields_run_2/application.npz",
+      "sha256": "8540a78c7bbb3936b82ea8f5e3a90cb394033c00df153f5efd8678ece4fc48a6"
+    },
+    {
+      "bytes": 6205,
+      "path": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_wall_fields_run_2/result.json",
+      "sha256": "1351b0c6c470036d7b9a3cc73c4008d097ec8e48dad28711386634265fcbb42f"
+    },
+    {
+      "bytes": 29516,
+      "path": "src/bhsm/interface/muon_birth_finite_geometric_trace_endpoint.py",
+      "sha256": "4f5c36144222d5d1e657061aa9352f8e86d5ae61a0ebdf05991a477e68d4be5f"
+    },
+    {
+      "bytes": 16291,
+      "path": "src/bhsm/interface/muon_birth_finite_normal_trace_graph.py",
+      "sha256": "20eafd9a6abff3d3a89a2f6085d099584684ba19b600673dafda634cb56aad18"
+    },
+    {
+      "bytes": 8724,
+      "path": "src/bhsm/interface/muon_birth_finite_wall_fields.py",
+      "sha256": "3b6a158ee3c308e3b781943ddc90af67bace7350076273094e2cdb9c392cc531"
+    },
+    {
+      "bytes": 16636,
+      "path": "src/bhsm/interface/muon_exact_material_response.py",
+      "sha256": "a530651e157a000dbe6935e9de1cedbce5679f98c599c6c7c641158b749307bf"
+    },
+    {
+      "bytes": 6977,
+      "path": "tests/test_muon_birth_finite_geometric_trace_endpoint.py",
+      "sha256": "2623285db598819fab9a8764d797232c01f7f64d8815b13b0afac456eab856b8"
+    },
+    {
+      "bytes": 2809,
+      "path": "tests/test_muon_birth_finite_normal_trace_graph.py",
+      "sha256": "c412fdc1660f9b1bb0e9dca38127614b87acce24c8ccace6039e855b9f22b9ab"
+    },
+    {
+      "bytes": 2272,
+      "path": "tests/test_muon_birth_finite_wall_fields.py",
+      "sha256": "6942cf7af820519c13e8b9767085ef4a2339d6ebd9c9cf0a03d0c0b8f6088d6a"
+    },
+    {
+      "bytes": 7085,
+      "path": "tests/test_muon_exact_material_response.py",
+      "sha256": "f8ecec4c7404d10cada7a0c8587cad84e9687c3c41c6d04e32296578e480537c"
+    }
+  ],
+  "final_scaled_residual": 5.890346650453102e-12,
+  "finite_chart": "two-harmonic computational chart with exact inherited f/sigma anchors; no physicalprofile selected",
+  "finite_normal_coordinate": "delta_chi=n/Cstar(q); proper unit at n=0, finite proper differential includes C(wall)/Cstar and remains an explicit trial coordinate",
+  "independent_reviews": [
+    {
+      "agent": "/root/validation",
+      "result": "temporal cotangent/reference-clock signs and implicit chart derivatives consistent; zeroLyy scope explicit"
+    },
+    {
+      "agent": "/root/downstream",
+      "result": "Eulerian/material derivative split, cumulative normalization, action-sector and nonlinear graph contacts consistent"
+    }
+  ],
+  "master_unknown_count": 504,
+  "minimum_weighted_step_not_branch_selection": true,
+  "numerical_newton_rank": 224,
+  "pair_comparisons": [
+    {
+      "byte_identical": true,
+      "first": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1/application.npz",
+      "second": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_2/application.npz",
+      "sha256": "c67363c17adfb519f399614463d5a13dbcd019aa53246d452421eea8ba982455"
+    },
+    {
+      "byte_identical": true,
+      "first": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1/result.json",
+      "second": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_2/result.json",
+      "sha256": "06867e31959910ec21385e8491bd5b794060c68e8404ae0524e3d0c9b544faa6"
+    },
+    {
+      "byte_identical": true,
+      "first": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_wall_fields_run_1/application.npz",
+      "second": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_wall_fields_run_2/application.npz",
+      "sha256": "8540a78c7bbb3936b82ea8f5e3a90cb394033c00df153f5efd8678ece4fc48a6"
+    },
+    {
+      "byte_identical": true,
+      "first": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_wall_fields_run_1/result.json",
+      "second": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_wall_fields_run_2/result.json",
+      "sha256": "1351b0c6c470036d7b9a3cc73c4008d097ec8e48dad28711386634265fcbb42f"
+    },
+    {
+      "byte_identical": true,
+      "first": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1/iterations/iteration_0000.npz",
+      "second": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_2/iterations/iteration_0000.npz",
+      "sha256": "3976bc299e86c60a26687019e7ec5efd72b25c8cb88ccb7a23084ae17ed4e408"
+    },
+    {
+      "byte_identical": true,
+      "first": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1/iterations/iteration_0001.npz",
+      "second": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_2/iterations/iteration_0001.npz",
+      "sha256": "af4bc32e54ef67106ea7fa66a98cb81348bd0826212d08fc41b94c41a621742a"
+    },
+    {
+      "byte_identical": true,
+      "first": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1/iterations/iteration_0002.npz",
+      "second": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_2/iterations/iteration_0002.npz",
+      "sha256": "c92fce8d25108fd7bf9b3d45d8a1c03a03bbc6a9347cef0b7255fc0644127145"
+    },
+    {
+      "byte_identical": true,
+      "first": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1/iterations/iteration_0003.npz",
+      "second": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_2/iterations/iteration_0003.npz",
+      "sha256": "07eaf2e0b8bec42a50911151416363f656b1e0b0db702f649fa3fb9138a9d6a4"
+    },
+    {
+      "byte_identical": true,
+      "first": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1/iterations/iteration_0004.npz",
+      "second": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_2/iterations/iteration_0004.npz",
+      "sha256": "235ff57ef4652302bb83bbb62828c24448e4ff4c89e19ad432bd38a684960e04"
+    },
+    {
+      "byte_identical": true,
+      "first": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1/iterations/iteration_0005.npz",
+      "second": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_2/iterations/iteration_0005.npz",
+      "sha256": "f0a9403e4a61ad3ccb1c910c5718856bf9d83fd5b8ad34155c2360ce29b63c1f"
+    },
+    {
+      "byte_identical": true,
+      "first": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1/checkpoints/accepted_0000/application.npz",
+      "second": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_2/checkpoints/accepted_0000/application.npz",
+      "sha256": "1d69cbfb631c67102d528d1c6b7ee57bff08e16d2b8418775ad9b36b17096b2f"
+    },
+    {
+      "byte_identical": true,
+      "first": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1/checkpoints/accepted_0001/application.npz",
+      "second": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_2/checkpoints/accepted_0001/application.npz",
+      "sha256": "5bbaa0ed087c731e9fe50cb722561076ebafb404522fc7ecd16c740e98c3840a"
+    },
+    {
+      "byte_identical": true,
+      "first": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1/checkpoints/accepted_0002/application.npz",
+      "second": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_2/checkpoints/accepted_0002/application.npz",
+      "sha256": "beec8f84c2db9f95b83d7ebbe3c124cd0f7d6a5943c0f627fe00f1fdc51f3ae3"
+    },
+    {
+      "byte_identical": true,
+      "first": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1/checkpoints/accepted_0003/application.npz",
+      "second": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_2/checkpoints/accepted_0003/application.npz",
+      "sha256": "4a18acc968b48040fca5b0918668e470738a19722e79477fb4bd8fb93d5756d9"
+    },
+    {
+      "byte_identical": true,
+      "first": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1/checkpoints/accepted_0004/application.npz",
+      "second": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_2/checkpoints/accepted_0004/application.npz",
+      "sha256": "79555d93c3eb8d9b617c24a11646ddaf522f668b88d16dc14167bea3d74d6692"
+    },
+    {
+      "byte_identical": true,
+      "first": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1/checkpoints/accepted_0005/application.npz",
+      "second": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_2/checkpoints/accepted_0005/application.npz",
+      "sha256": "1e695d0438a1b8dbb00eb57c44f5b6d5a10889da5e753465ca9b202d01020c31"
+    },
+    {
+      "byte_identical": true,
+      "first": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1/checkpoints/accepted_0006/application.npz",
+      "second": "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_2/checkpoints/accepted_0006/application.npz",
+      "sha256": "525b265c8d69bb92ef3f6e1e083fc6d23927566159c2e2d747b3ef269dbcc1b2"
+    }
+  ],
+  "physical_Pauli_value": false,
+  "physical_cutoff_evaluated": false,
+  "physical_mode_selected": false,
+  "physical_native_heat_closed": false,
+  "physical_stationary_birth_or_formation_closed": false,
+  "projection_scope": "kinetic stationarity zeroLyy saddle; distinct from true temporal Legendre/canonical response",
+  "scope": "VERIFIED_REPRESENTED_FINITE_ANCHORED_MATERIAL_TRIAL_ENDPOINT_AND_WALL_APPLICATION",
+  "spectral_directions_deleted_from_action": 0,
+  "status": "REPRESENTED_MOVING_TRACE_TOLERANCE"
+}

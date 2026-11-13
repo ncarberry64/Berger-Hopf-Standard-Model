@@ -1,0 +1,141 @@
+ACTUAL EA02 OPEN NEW59 MOMENTUM FAMILY AND LOCAL CONSTITUTIVE COEFFICIENTS
+2026-10-16; independent read-only review: reset_law_derivation PASS.
+
+1. What is constructed
+
+This is an open finite constitutive family at the exact original ea02 field,
+source, complex time, and corrected native D4 material chart.  It is not a
+changed primal, new chronological solution, selected retarded/outgoing domain,
+or the authorized outer coupled correction.  The word native here denotes the
+original-variable MP classical action chart; it does not identify this complex
+Hessian with the positive AE4 D_strat operator.
+
+Let g be the full60 native affine Gauss trial residual for the retained seven
+rays. It equals K_G z plus primal r_G in column0 only. Its first24 rows are the
+mechanical auxiliary rows and last36 the temporal gauge rows. All60 remain.
+Let b=g[24:60]. B=V_new^T is the independently certified36 by59 momentum map.
+Its28 nonzero rows occupy28 distinct pivot columns. L selects its eight exact
+zero rows (temporal labels3,7,11,15,19,23,27,31).
+
+Define P[pivot_col,row]=1/B[row,pivot_col] and zero elsewhere. Let N embed the
+remaining31 coordinate labels. Then BP=I-L^T L, BN=0, LB=0, and
+
+    deltaPi_new = P b + N c31.
+
+The31 entries of c31 remain symbols/free coordinates. The numerical particular
+at the coordinate origin is not a physical zero assignment or minimization.
+The eight equations L b=0 are retained as coupled source/domain compatibility
+rows. They are nonzero for the supplied rays: max7.945700056930942e-14. No choice
+of c31 cancels these rows at fixedq/source. A source/domain completion can change
+their load; it is not supplied or selected here. Mechanical/Legendre/global
+relations may further constrain the31 coordinates. No31 physical freedoms are
+asserted from temporal rank alone.
+
+The P/N coefficient algebra is enclosed by the saved ACB balls: BP error upper
+5.719867508042736e-58, BN and LB exactlyzero. Every algebra residual ball contains0.
+The nonzero interval radius is retained, not interpreted as an exact floating
+identity. The exact sign identity is Z^T rhs = -L^T L b, where
+
+    rhs_v[old158]=0; rhs_v[new59]=P b; rhs_y=-g.
+
+The sign follows from the owned primary identity G=-V^T Pi. Its independent
+literal coefficient-map residual upper is1.4496233826956943e-65.
+
+2. Fresh evaluated particular and open phase relation
+
+For all seven known affine coefficients, solve the computational bordered
+system with cached277 Hessian and literal allAt36 frame only as preconditioner.
+The actual Hessian matvec is freshly reevaluated from the locked native scalar
+and independent material chart; point/density/wall base-germ guards remain.
+One fresh7-right application sufficed for the requested2e-10 original-row check;
+the iterative loop did not repeat an already passing application.
+
+    H_phase deltaeta = rhs_known + rhs_free c31
+
+is the open operator relation. rhs_free inserts N into new59 momentum rows,
+with all old momentum and60 Gauss coefficientszero as algebraic coefficients.
+The31 phase solution columns have NOT been evaluated or a physical c31 chosen.
+The evaluated seven particular phase columns, full rhs_known/rhs_free, P/N,
+and the eight compatibility rows are exported separately.
+
+Fresh results (absolute coefficient-row upper bounds):
+ original277 rows                      7.945700056562664e-14
+ plus explicit frame reaction          3.4134426109290425e-20
+ fixed computational frame             0
+ explicit frame reaction               7.945700056930851e-14
+ old158 native response momentumchange  3.4134426109290425e-20
+ new59 momentum target error           2.0724835611581356e-22
+ full60 remaining affine Gauss          7.945700056562664e-14
+ old24 mechanical Gauss                 7.642765160989693e-25
+ active28 temporal Gauss (hi+lo readout) 2.717573850509303e-22
+ eight retained cokernel Gauss          7.945700056562664e-14
+ fresh Z^T H_phase deltaeta             1.85785476223391e-25
+ primalr-once affine counting check     5.339326126167506e-59
+
+The full60 maximum by ray (hi+lo readout) is
+ [7.945700056562664e-14,1.4684680427373362e-20,4.002007585632338e-23,
+  1.0490684165889318e-20,1.3826791855329246e-20,2.88780750109032e-23,
+  3.3767785500763096e-20].
+
+These pass2e-10 for these local known coefficients, but do not solve the exact
+eight compatibility equations. Frame reactions are shown separately and never
+counted as satisfying unframed Gauss rows. Gauge-kernel identities are not
+assumed exact from the cached matrix: the fresh compression is itself reported.
+
+Scale disclosure: maxdeltaPi_new=1.4217756014853067e-9, but the computational
+phase particular has maxvelocitycoefficient172658.99015211748 (row109,ray6),
+auxiliary24 max6.535952965594218e-9 and temporal36 exactlyzero in this frame.
+The coefficient maximum is not an action norm or a physical smallness claim.
+No such particular has been applied to a physical field/history.
+
+The held old158 momentum is the fresh native RESPONSE momentum from the exact
+seven-ray Cauchy collector. The original saved canonical primal momentum and
+native bare primal Lv0 are both exported separately; they are not substituted
+for each other. Parent/source Hessian effects are already in the retained
+response momentum, so no additional parent gv is added. Bare primal Lv0 remains
+outside responsePi. Total Newton momentum, if used later, is Lv0+responsePi.
+
+3. Frozen source, inputs, and pair
+
+Canonical source:
+ REPO/audits/bhsm_original_ea02_open_new59_constitutive_family_20261016.py
+ SHA256972d919260a53d24bfebf77d3a6890f0cc2621f996cdc60fb62522c97464b83b
+
+It locks the reviewed fresh backend sourcec2f11bd4890631c03afee8b0db1fe8a93e505a12071da9cd2b9923744e8a5c6d,
+rank producer7682206f2b824ed500e4091799feea246641163dacb6b3f849a2f2829d8e06c7,
+rank archive202df02e2978df08c5b4e682ca8ae2471434fe6a477e2fadece35c19f1ebfcf0,
+and exact Cauchy collector source63d04359f42673671169f61bcfa395b04fe5008c05912b65c95090c0a4458942,
+archive7e11ceedc78de309d8944797982ed35aded42056f5b3fd9bccd871455591d5b3.
+Each result receipt contains337 source/input byte pins.
+
+Independent execution directories, ALL4 files byte-identical:
+ C:/Users/carbe/OneDrive/Documents/CODEX/outputs/bhsm_original_ea02_open_new59_constitutive_family_20261016/run_2
+ C:/Users/carbe/OneDrive/Documents/CODEX/outputs/bhsm_original_ea02_open_new59_constitutive_family_20261016/run_3
+
+ actual_open_new59_affine_constitutive_family_and_fresh_seven.npz,2582518bytes
+ SHA2567cb64de2130a2d3967f3a470132f0ae426ca3283da88d3ddc9b354fc040f15d4
+ fresh_particular_phase_application_00.npz,1227205bytes
+ SHA256cc14f2cf9c367f45afc0a56062a30fe067241b3f0f0c4f728d1a69b8a0c9ff0d
+ result.json,49119bytes
+ SHA25621d98b0b89e6137080b53ac6d24d0ae041316bbdf7fa41e791ead478babc2860
+ executed_producer.py,13878bytes; canonical source SHA above.
+
+Pair receipt:
+ WORK/outputs/bhsm_original_ea02_open_new59_constitutive_family_20261016/pair_receipt.json
+ SHA256fe2de7acf7ad0be4e5d2af130b022ddd8cb398dd6db6c7e9dca1511b1014e4c0
+
+Preserved run_1 stopped BEFORE any matvec: an initially overstrict1e-60 reciprocal
+interval-radius guard rejected5.72e-58. Its executed source and failure remain.
+The admitted source checks zero-enclosure AND upper1e-50; no physical tolerance
+or rank requirement was relaxed. run_2/run_3 independently executed that same
+corrected source, rather than merely copying outputs.
+
+4. Remaining scope
+
+This advances the actual coupled initial constitutive relation on the unchanged
+offshell primal. It neither selects31 outgoing/Cauchy coordinates nor supplies
+the global incoming/event/outgoing domain. The source-domain cokernel equations
+are still open even though their current coefficients are below2e-10.
+No chronological retarded solve, physical radial convergence, full outgoing
+energy/field derivative, Maxwell/all226 validation, spin normalization, or muon
+moment prediction has been claimed. Original outer coupled corrections applied0.

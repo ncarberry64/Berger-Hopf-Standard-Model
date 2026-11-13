@@ -1,0 +1,224 @@
+HIGH-PRECISION SAME REAL CELL: COEFFICIENT VALUES AND LORENZ COMPONENT
+2026-10-16. Final independent MP80 pair and whole-q128 MP100 control.
+
+Canonical new audit producer:
+ audits/bhsm_changing_lorenz_mp_coefficient_values_20261016.py
+ SHA2561b0a9713749feb062fecdb664598a7a5b3528bd72ec5aa18176ae88eb5b88eff
+No old source, phase, full-D5 action or quadrature result is rewritten.
+No physical field solution, matching correction or outgoing load is selected.
+
+1. THE REACHED NUMERICAL BOTTLENECK
+
+The preceding exact tensor MP arithmetic over frozen binary64 coefficient
+samples substantially reduced the Lorenz component discrepancy but did not
+pass its full entrywise radial comparison. Merely solving its4x4 Gram
+factor more accurately could not remove errors already present in the
+integrated operand B. This new calculation evaluates the SAME supplied
+coefficient formulas and affine numerical histories more accurately.
+It does not introduce a new coupling, action term, boundary law or history.
+
+The incoming and inherited-child source data are the original REAL saved
+one-cell midpoint vectors and their stored affine coordinate-time rates.
+Inside each cell raw(t)=raw_mid+(t-span/2)*raw_rate is evaluated in MP,
+without first rounding every sampled q/gauge/H value to binary64. Incoming
+uses future coordinate time t=u-L and child t=u, L=1e-5. The actual two
+proper induced lapses remain independent. Parent and reference geometric
+sources use their OWN unchanged affine germs at that same coordinate time.
+There is no complex.real projection or inferred physical vacuum history.
+These numerical backgrounds are still provisional retained iterates.
+
+The fixed computational chart remains frozen: reference endpoint states,
+trace-enrichment projection/wall coefficient/norm, binary ALPHA, Jacobi
+normalization constants, RADIUS0, WALL, pi, sqrt2, mechanical M and angular
+matrices are explicitly held. No basis is refitted or re-normalized at
+new nodes. The original second-derivative ghost normalization is separately
+held and its nonzero second jets are preserved; B itself uses value/first.
+The original ad(A) epsilon contraction is evaluated as a division by the
+held binary sqrt2, preserving the exact held M/sqrt2 ratio, rather than
+rounding the resulting connection matrices before MP contraction.
+
+2. EXACT SOURCE VALUE MAPS AND ANCHORED RESPONSE
+
+The geometry expressions are literal value counterparts of
+ muon_holomorphic_normal_geometry._geometry_variables/_fields and
+ holomorphic_geometry_rows; the source constant/normalization owners are
+ muon_parent_retarded_hypercharge.regular_radial_basis and
+ muon_birth_trace_enriched_action.trace_enriched_radial_basis.
+The complete q37/v37/m24/source/source-rate blocks enter as owned. The
+physical original orbit radii A,B,C,N and shift are retained. With
+ wall=pi/4+s/Cstar, chi=(rho/WALL)*wall,
+ C_eff=C*wall/WALL, LF=sqrt(A^2+B^2), R=A*B/LF,
+the positive-reference coefficients are
+ mu=common*N*C_eff*R^3,
+ gt=common*C_eff*R^3/N,
+ gr=common*N*R^3/C_eff,
+ gs=common*N*C_eff*R,
+ beta_material=(2*beta_original+2*rho*delta_dot/WALL)/(2*wall/WALL).
+Here common=2*pi^4*LF^5*4*p*(1-p); the same stable cumulative probability
+p is used, never reconstructed by subtracting rounded sigma squares.
+
+For f(chi)=chi+a0*sin(2chi)+a1*sin(6chi), the original finite96-point
+constraints are refined in MP:
+ f(wall)=pi/4,
+ integral_0^wall [sin(2f)^2/4]/integral_0^(pi/2) [sin(2f)^2/4]=1/2.
+The analytic2x2 constraint Jacobian and the same regular branch are used;
+no new response is fitted. The original coefficient root, residual and
+Jacobian are recorded in the key controls. Its stopping tolerance is4e-15;
+on these actual nonzero-delta samples the original residual is about
+1e-16 and the refined root correction is at most1.37e-16. Thus tolerance
+alone is not claimed to explain the earlier precision problem.
+
+The source _response special case delta==0 sets its production Z=pi/16.
+Both this special production normalization and the generic finite-rule
+chart Z are recorded separately, including an explicit delta0 sentinel.
+Neither the special case nor binary pi is silently replaced by true MP pi.
+A separately labeled true-pi sensitivity control changes only that stated
+constant, without selecting a new physical state.
+
+Production uses MP-generated nodes and weights for the SAME declared
+mathematical radial/time/anchoring orders. An independent original-binary
+Gauss-node/weight execution is preserved, so this numerical change is
+explicit. At actual first/last times and first/middle/last q128 radii,
+original-binary96 versus MP-generated96 metrics differ relatively by up to
+1.43474e-14 near the pole. MP-generated96 versus128 anchoring differences
+are at the MP80 arithmetic floor (less than6.4e-80 in the sampled metric
+control). These are actual finite-rule comparisons, not a rigorous uniform
+quadrature enclosure or a declaration that96 is the exact physical action.
+Binary-pi versus true-pi metric controls are below2.05e-16. All alternatives,
+original residuals/J and root corrections remain in the final receipt.
+
+3. COMPLETE LORENZ MATRIX CONSTRUCTION AND WHAT IT DOES NOT COMPLETE
+
+The reviewed exact small-internal/angular tensor identity is reused with
+MP-valued coefficients before any downcast. Both angular mixed transpose
+placements are retained, as are all800 ordinary gauge,320 gradient-image
+and80 independent scalar coordinates in the existing1200-coordinate chart.
+The pure one-form Lorenz representative has its scalar80 columns zero
+by its owned definition; this does not delete the separate Higgs action.
+All20 retained n1+n3 harmonics remain. No threshold or mode projection is
+used. The full B320x1200, F=(G4 tensor I80)^-1 B and fixing
+ MAXWELL_TO_CAP*B^T*F
+are contracted in MP, not formed by squaring a Lorentz Hessian. Actual
+mirror-node coefficients remain independently evaluated. Four selected
+full5x80 literal vector contractions are also integrated over every point;
+nonzero connection/angular mixed placements are independently checked.
+
+All entries of adjacent full MP matrices are compared BEFORE output float
+conversion, using max_ij |new-old|/max(1,|old|,|new|) in the retained units.
+Separate absolute maxima, scaled-max indices and values are recorded.
+The resulting numerical MP comparison is not an outward interval proof
+of upstream physical or analytic-operator accuracy.
+
+RADIAL64->128: all-entry scaled maxima, incoming / inherited-child
+ B: 7.1787186771283691151126263579388822454126401513673182183209477631e-22 / 8.8301803268260468767547631682183079469353722017356635938584345099e-24
+ F: 4.324051419800698411076231057714531619903284095967176458232479641e-21 / 1.502990178531120947382220456494793547592760262644112491339344984e-23
+ fixing: 7.2093461007873710610654343699639435443800765867646015713208462006e-21 / 1.1344366008521155001234414733426267230789837328408500530168240421e-22
+
+RADIAL64->128: separate absolute maxima, incoming / child
+ B: 0.000000000000000023471930999984134098504142275496667337141445419031158531327953854 / 0.000000000000000003226343525598490728604142272806837968602344711180270115405339401
+ F: 0.0000000000022291998612192517999367254200812145300293275080014352667325435457 / 0.00000000000053642100406007579269862877050049509291812804234034213586310865868
+ fixing: 0.0000000041786412991010921994582959435320103270716234286497896594271362118 / 0.00000000099369573768256673184794896648683315351192294903505405508295765163
+
+The component passes the declared SCALED radial comparison; its large
+fixing entries do not satisfy an absolute2e-10 matrix-difference statement.
+This is not the user-required physical equation/derivative test. The
+preceding unfavorable32->64 and frozen-binary discrepancies remain in the
+receipts. No blanket15-form, Maxwell, outgoing or spin-state pass follows.
+
+MP80 and100 recomputation of the whole q128 coefficient/matrix readout
+gives identical final binary64 B,F and G4 on both arms. Only fixing
+cancellation residues differ, below9.3e-97 incoming/1.9e-97 child, and
+these residues are kept. All selected literal65-digit values agree. Input
+chart constants are held, not endowed with new physical precision by MP.
+
+4. INDEPENDENT PAIR AND PRESERVED NUMERICAL VERSIONS
+
+All13 corresponding files in
+ WORK/outputs/bhsm_changing_lorenz_mp_coefficient_values_20261016/
+ mp80_final_run_1 and mp80_final_run_2
+are byte-identical. Every source/owner pin was verified. Pair receipt:
+ final_pair_verification.json
+ SHA256fc6c8c104f97322d893c7c47a67aa0c244fda8ea3f85a0007f533f9c51e97ebd.
+Each archive is well below10MiB; full file inventory follows:
+ incoming_radial128/forms.npz (592917 bytes)
+ SHA256 3ec425157d97aabebbc5784e2031a91444478c023c6dffe2d335951b9f8b8ebe
+ incoming_radial128/result.json (16669 bytes)
+ SHA256 5b6f9130add26fcf8487aafa68e7fc1f55b8f928c034da89049707f099c5452e
+ incoming_radial32/forms.npz (385950 bytes)
+ SHA256 0856df8a2bde9d9d7036961924c8f30b7410e48678994f4ed432c2ea019db8e0
+ incoming_radial32/result.json (14349 bytes)
+ SHA256 ad6c7163ee6adb6793e90f105050aa0c93ea13e8e685d7e66d41e544a8edf719
+ incoming_radial64/forms.npz (454513 bytes)
+ SHA256 b6bfb0e603cc661451bb6252c016366bd94068bd060cd1cc514c5579d1844637
+ incoming_radial64/result.json (16701 bytes)
+ SHA256 bb52b91dcc3a5ad7bcd4c2e255c0a56ea5620a39a322fd940da5d38e5a8e0f98
+ outgoing_radial128/forms.npz (587378 bytes)
+ SHA256 549988c08190cb8cf30dce566682c9cb04833b48bf41e190f635a4cebc9b5ac6
+ outgoing_radial128/result.json (16699 bytes)
+ SHA256 d8c640383e6654260e697baafe2a56aa31d3a7b7c002935c55a754fc4135e9e0
+ outgoing_radial32/forms.npz (383763 bytes)
+ SHA256 a86dbfe9ed22b9cb6304eab5bdb1bd7d5f6f4cac321cae119e884f23815649ab
+ outgoing_radial32/result.json (14351 bytes)
+ SHA256 1a4ac87b730dd3f3c42d0790ae40a9d718e7c094968f881597c384f59f243528
+ outgoing_radial64/forms.npz (451093 bytes)
+ SHA256 cf57e1f691be32b04e4ef50b27e66c333f671cafc09e11c0e1dd90547088ac9f
+ outgoing_radial64/result.json (16725 bytes)
+ SHA256 9685cac258d08de1470e2b07fea24016354aee1e9e5e1c62a89846f4a7ae542e
+ result.json (184008 bytes)
+ SHA256 abdfc5897dfa555645e43fdd4e8e1e913281308caff3d7c271ec7ecec899c568
+
+Whole-q128 MP100 files, same final source, directory mp100_q128:
+ incoming_radial128/forms.npz (592929 bytes)
+ SHA256 c04ff7bb4de77291773a19d0459574a9c5369afb82b1ecec52a9cf6eeebba774
+ incoming_radial128/result.json (14117 bytes)
+ SHA256 b6dd022c3cc2a635c1a21874fe5d2dadde8baf34f8eed3b291a67284f7419e8e
+ outgoing_radial128/forms.npz (587417 bytes)
+ SHA256 83995bf674fe098de1138a4bb6ce9cd21148678ec4ca401e1b9601b9fcfeb1c4
+ outgoing_radial128/result.json (14116 bytes)
+ SHA256 85a2f430322ba43c4a89204a1235b221c8e5ac888a4f02b00f033c1e981fd533
+ result.json (108625 bytes)
+ SHA256 7661b069da5cfad0b6ee9594c332ca00564c79082637e127846015ebab7f4d9d
+
+Preserved initial source80b845ad3b66a39982976382ff2b17640b01e7c239ab1b5fbb8f8c4756e1e98c
+and its full source snapshots remain as producer_at_initial.py in
+ mp80_run_1 and original_binary_rule_q32.
+Those first readouts compared rounded matrices. The final source adds the
+complete unrounded comparison; its value equations are unchanged. Neither
+earlier output is rewritten or relabeled. Exact held constant bits are
+also preserved in held_chart_constant_hex.json
+ SHA256712200b6730705a634ecb21934f62459700b2d042d053a2c3f48ca5d51cbcc3d
+(the source hash inside binds the preserved initial value implementation).
+The initial actual key controls remain in initial_key_controls.json.
+
+The explicit original-binary versus MP-generated q32 comparison is
+ original_binary_vs_MP_rule_q32.json
+ SHA256a0a2841bc2130f2f4a4adabe6a2369ae5a9402fce9f9aa84e5c9ba29cda534aa.
+On the same MP coefficient map, this rule-generation change alone gives
+fixing differences3.93e-9 incoming/3.22e-8 child entry-scaled, showing why
+binary-rule arithmetic cannot be hidden inside a precision claim.
+
+5. REMAINING WORK IS EXPLICIT
+
+The next independent numerical axis is changing-coefficient time6->8/12
+at fixed radial128 and anchoring96, with the same coordinate/source clock
+and coefficient chart. Polynomial degree10 test exactness does not prove
+that variable geometry has converged in time. A separate reviewed time
+control now evaluates those rules, keeping every unfavorable outcome.
+
+The original15-form completion additionally needs the ordinary one-form
+Gram, its finite quotient representative, complete intrinsic scalar wall
+kinetic/Gram/potential coefficient matrices, and full curvature/Hessian
+contacts consistently evaluated with the new precision and time rules.
+Root's separate ordinary Gram calculation supplies one such component;
+good B/F/fixing values alone do not supply all of them. Source/field/domain
+derivative jets are a further calculation; they are not inferred from
+these value matrices. No settled full-D5 or historical source campaign
+is replayed by these local coefficient/form evaluations.
+
+The full native graded heat/operator application, physical exterior and
+reset loads, coupled real mean and retarded outgoing realization remain
+uncomputed here. Historical iterates do not become physical solutions by
+being evaluated accurately. This work neither passes the full energy/field
+derivative at2e-10 nor authorizes the requested coupled correction. It
+does not validate Maxwell/all226 equations, normalize the two muon spin
+states or compute a magnetic moment. No coupled correction was applied.

@@ -1,0 +1,139 @@
+{
+  "classification": "ACTUAL_COMMON_SOURCE_CURRENT_AND_EXTERIOR_SOURCE_TEST_RUNTIME",
+  "commands": [
+    {
+      "command": [
+        "C:/Python314/python.exe",
+        "scripts/evaluate_muon_chronological_common_y_current.py",
+        "--action-folder",
+        "artifacts/muon_chronological_n1_field_action_20261011/run_1",
+        "--current-base",
+        "artifacts/muon_chronological_literal_current_20261011",
+        "--source-side",
+        "incoming",
+        "--output",
+        "artifacts/muon_chronological_common_y_current_20261011/incoming_run_1"
+      ],
+      "completion_chunk": "3cc037",
+      "environment": {
+        "OPENBLAS_NUM_THREADS": "4",
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "C:/Python314/python.exe",
+        "scripts/evaluate_muon_chronological_common_y_current.py",
+        "--action-folder",
+        "artifacts/muon_chronological_n1_field_action_20261011/run_1",
+        "--current-base",
+        "artifacts/muon_chronological_literal_current_20261011",
+        "--source-side",
+        "incoming",
+        "--output",
+        "artifacts/muon_chronological_common_y_current_20261011/incoming_run_2"
+      ],
+      "completion_chunk": "6982f5",
+      "environment": {
+        "OPENBLAS_NUM_THREADS": "4",
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "C:/Python314/python.exe",
+        "scripts/evaluate_muon_chronological_common_y_current.py",
+        "--action-folder",
+        "artifacts/muon_chronological_n1_field_action_20261011/run_1",
+        "--current-base",
+        "artifacts/muon_chronological_literal_current_20261011",
+        "--source-side",
+        "outgoing",
+        "--output",
+        "artifacts/muon_chronological_common_y_current_20261011/outgoing_run_1"
+      ],
+      "completion_chunk": "976abb",
+      "environment": {
+        "OPENBLAS_NUM_THREADS": "4",
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "C:/Python314/python.exe",
+        "scripts/evaluate_muon_chronological_common_y_current.py",
+        "--action-folder",
+        "artifacts/muon_chronological_n1_field_action_20261011/run_1",
+        "--current-base",
+        "artifacts/muon_chronological_literal_current_20261011",
+        "--source-side",
+        "outgoing",
+        "--output",
+        "artifacts/muon_chronological_common_y_current_20261011/outgoing_run_2"
+      ],
+      "completion_chunk": "b95dc9",
+      "environment": {
+        "OPENBLAS_NUM_THREADS": "4",
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0
+    }
+  ],
+  "exterior_source_API_review": "Owner independently reviewed exp\u00b1E*tau, independent trace jets, literal transpose and explicit -p^T K_Eu contacts clean.",
+  "independent_replays": [
+    {
+      "all_files_byte_identical": true,
+      "left": "artifacts/muon_chronological_common_y_current_20261011/incoming_run_1",
+      "result_sha256": "65f4b4356af29119a37800f4545da499257d83e3fd8ddc08e78df312f517ca92",
+      "right": "artifacts/muon_chronological_common_y_current_20261011/incoming_run_2"
+    },
+    {
+      "all_files_byte_identical": true,
+      "left": "artifacts/muon_chronological_common_y_current_20261011/outgoing_run_1",
+      "result_sha256": "1ccecb6dfa882d85ee24206b94e2ff1e34bde75e6e97c9096a1bfc2215bf309b",
+      "right": "artifacts/muon_chronological_common_y_current_20261011/outgoing_run_2"
+    }
+  ],
+  "no_arbitrary_nonzero_energy_or_exterior_state_production": true,
+  "tests": [
+    {
+      "command": [
+        "C:/Python314/python.exe",
+        "-m",
+        "pytest",
+        "--noconftest",
+        "-q",
+        "tests/test_muon_chronological_common_y_current.py"
+      ],
+      "completion_chunk": "515c2b",
+      "duration_seconds": 0.85,
+      "environment": {
+        "OPENBLAS_NUM_THREADS": "4",
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "passed": 2
+    },
+    {
+      "command": [
+        "C:/Python314/python.exe",
+        "-m",
+        "pytest",
+        "--noconftest",
+        "-q",
+        "tests/test_muon_chronological_exterior_current_source.py"
+      ],
+      "completion_chunk": "9e28a7",
+      "duration_seconds": 0.83,
+      "environment": {
+        "OPENBLAS_NUM_THREADS": "4",
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "passed": 2
+    }
+  ]
+}

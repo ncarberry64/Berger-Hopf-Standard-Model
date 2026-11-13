@@ -1,0 +1,85 @@
+{
+  "classification": "NEW_FROZEN_PER_ARM_SOURCE_CONTROL_VERIFICATION_SUMMARY",
+  "copy_receipt": {
+    "path": "artifacts/muon_common_domain_publication_plan_expanded_20261012/focused_per_arm_source_copy.json",
+    "sha256": "3c284f3612e91b2c2c92ce1a4655f57e419168e451bc2d027b251719e64ee5d3"
+  },
+  "cumulative_distinct_cases": 278,
+  "cumulative_selected_test_files": 100,
+  "full100_file_invocation_claimed": false,
+  "isolated": {
+    "argv": [
+      "C:/Python314/python.exe",
+      "-m",
+      "pytest",
+      "--noconftest",
+      "-q",
+      "tests/test_muon_reset_constrained_canonical_variation.py",
+      "tests/test_muon_reset_secondary_canonical_source.py",
+      "tests/test_muon_per_arm_canonical_source.py"
+    ],
+    "classification": "EXECUTED_SELECTED_REGRESSION_WITH_EXACT_TEST_BYTES",
+    "complete_selected_suite_executed": false,
+    "elapsed_seconds": 1.6201531887054443,
+    "environment": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "PYTHONPATH": "src;scripts"
+    },
+    "exit_code": 0,
+    "fixtures_and_imports_are_computational_regression_inputs": true,
+    "full_numerical_producer_regeneration_proved": false,
+    "passed": 5,
+    "physical_matching_proved": false,
+    "previous_logs_overwritten": false,
+    "selected_test_files": 3,
+    "selected_test_sha256": {
+      "tests/test_muon_per_arm_canonical_source.py": "1bd1366f9e58677a72ceaceacd58dcab33239918487f2f90f8960a5f088206b0",
+      "tests/test_muon_reset_constrained_canonical_variation.py": "dae5ab9113de06382eb928a908ebb5f0e814024ddf49ea25bc967c288369dad9",
+      "tests/test_muon_reset_secondary_canonical_source.py": "683c2d188264ba4a2fe32c308ac3310935742922d133d5f3033f652d918d9942"
+    },
+    "selection_plan_sha256": "03c3232e4e41cc4da2b460a166f91bb17a157fb3cc328dd01f1d00a38a6026b0",
+    "stdout_log": "artifacts/muon_common_domain_publication_plan_expanded_20261012/isolated_per_arm_source_controls.log",
+    "stdout_sha256": "bef1e1293e86ea851411ed66a8264ffcd36b8e21d062b50e917807860d9d68bc",
+    "working_directory": "C:\\Users\\carbe\\Downloads\\BHSM_common_domain_publication_fixture_isolation_20261012_expanded81"
+  },
+  "new_files": 3,
+  "new_unique_cases": 5,
+  "physical_guard_matching_or_numerical_regeneration_proved": false,
+  "primary": {
+    "classification": "FROZEN_EXISTING_PRIMARY_SOURCE_CONTROL_EVIDENCE",
+    "duplicate_cases_scope": "Secondary log contains3cases including2parent controls already present in the conditional-basis log; unique three-file primary coverage is5cases.",
+    "environment": {
+      "OMP_NUM_THREADS": "4",
+      "OPENBLAS_NUM_THREADS": "4",
+      "PYTHONPATH": "src;scripts"
+    },
+    "exact_primary_argv_not_separately_recorded": true,
+    "manifest_path": "artifacts/muon_per_arm_canonical_source_20261012/pair_verification/publication_manifest.json",
+    "manifest_sha256": "451ae7eeac193c2ff10a123f20f8f9e0573ff8ea9108fa1d7dbe27d64ed3264f",
+    "primary_rerun": false,
+    "stdout_logs": [
+      {
+        "bytes": 100,
+        "path": "artifacts/muon_reset_constrained_canonical_variation_tests_20261012_run_1.stdout.txt",
+        "sha256": "2d3a518b2fc1262b2932c8b09c489c626cb9cdd8be8c494f441c92b336936be3"
+      },
+      {
+        "bytes": 100,
+        "path": "artifacts/muon_reset_secondary_canonical_source_tests_20261012_run_1.stdout.txt",
+        "sha256": "2901152db5c59963b359d043d4d3d2b692a07eb75d9e68da26e0dc0ed5aaa976"
+      },
+      {
+        "bytes": 100,
+        "path": "artifacts/muon_per_arm_canonical_source_tests_20261012_run_1.stdout.txt",
+        "sha256": "363d39ce015196a5a7090282bd0bcd903a798bc0c241fd419effdb9f42399287"
+      }
+    ],
+    "test_source_hashes": {
+      "tests/test_muon_per_arm_canonical_source.py": "1bd1366f9e58677a72ceaceacd58dcab33239918487f2f90f8960a5f088206b0",
+      "tests/test_muon_reset_constrained_canonical_variation.py": "dae5ab9113de06382eb928a908ebb5f0e814024ddf49ea25bc967c288369dad9",
+      "tests/test_muon_reset_secondary_canonical_source.py": "683c2d188264ba4a2fe32c308ac3310935742922d133d5f3033f652d918d9942"
+    },
+    "unique_cases": 5
+  }
+}

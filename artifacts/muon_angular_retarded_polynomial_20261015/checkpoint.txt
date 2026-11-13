@@ -1,0 +1,95 @@
+BHSM formed-muon weak-field checkpoint, 2026-10-15
+
+Evaluated finite angular and retarded response; physical moment remains open.
+The benchmark is the user-selected formed muon in a weak measuring field.
+The retained self-fields, nonzero Higgs response, spin/orbital operators and
+nonzero final canonical position/momentum were preserved. No measured muon
+mass, anomaly or empirical branch ordering was used to set this calculation.
+
+The exact one-n1-insertion angular map has 90 input and 252 output components,
+including its nonzero n2 image. A nonzero n2-to-n3 witness prevents treating
+this as a closed angular cap. Its completeness is for one insertion under
+the supplied homogeneous finite unperturbed operator, not a completed
+physical angular/exterior continuation.
+
+New n1 forms were assembled at the actual saved raw coefficient epoch,
+retaining all 336 signed field rows and the gauge/Higgs/Gauss/frame/wall
+terms. Old n1 forms from a different epoch were not reused. The source,
+D5, profile, history, canonical-map and pairing campaigns were not restarted.
+
+The observed time sensitivity was diagnosed analytically. For the C2 ramp
+g(u)=10u^3-15u^4+6u^5, composite midpoint_m[g_prime]=1+7/(8m^4).
+The 8/16/32-step errors against the repaired finite solution are about
+5.46875002%, 0.341796876% and 0.0213623048%. They are quadrature bias in
+source transport, not an inferred physical instability or radial convergence.
+No fitted bias was added to any action coefficient.
+
+The repair uses z'=Az+B0Q+B1Q', w=z-B1Q, and
+w'=Aw+(AB1+B0)Q, with the actual three source-polynomial pieces. Canonical z
+is continuous at the stage corner: w_plus=w_minus+(B1_left-B1_right)Q.
+MP256 polynomial propagation retains state/rate/acceleration tails and all
+wall96 polynomial coefficients. The largest original336 linearized field-row
+bound at evaluated midpoints and one-sided nodes is 4.803857026583071e-34.
+This is not a demonstrated uniform-in-time original-row supremum. The largest
+state tail is 6.174156976424262e-54.
+Final probe position and momentum remain nonzero, approximately 0.1317434672
+and 0.4193349267. This is the supplied finite piecewise-stage problem.
+
+The final lepton consumer uses those continuous polynomials, all 18 fibers,
+all three axes/families and the full one-insertion angular map. It does not
+hold midpoint samples constant. Gauge and natural Higgs responses remain
+separate: norms 8.754627110250888e-10 and 1.6831957557696175e-31.
+Independent five-point finite-B differences against DOP853 give maximum
+relative discrepancy 2.498739683535549e-13, below 2e-10. The 24/32 quadrature
+comparison is 2.514645194264312e-16; the finite temporal-E product rule is
+1.191243424527526e-16. The B probes check response coefficients of this
+finite operator with supplied classical field polynomials held as operands;
+their rescaled numerical steps are not selected physical field strengths.
+The E check is the common finite-clock phase, not the outgoing Gamma_E.
+New lepton checks use floating arithmetic, not outward interval certificates.
+The earlier diagnostic helper's infinity-norm/Frobenius remainder bound was
+replaced with the induced-2-norm bound sqrt(norm1*norminf). The final consumer
+uses that correction. No physical derivative gate was admitted by either.
+
+Two-spin normalization is not established. In particular, the finite complex
+collar current (diagonals about 0.07120-0.000821i) is diagnostic and is not a
+new positive-L2 admission gate for an unstable pole. For an actual unsquared
+outgoing symbol Gamma, left/right null vectors would instead supply the
+nonzero complex residue z_s=l_s Gamma_E r_s and E_s,B=-l_s Gamma_B r_s/z_s.
+A positive prepared-wavepacket norm is a separate preparation question.
+The old collar report's positive-current language is restricted accordingly;
+its historical bytes are preserved. No complex spin or absorptive term is
+zeroed to make a real stable-form-factor consumer accept the state.
+Primary context for unstable-particle pole states and complex magnetic
+response: https://journals.aps.org/prd/abstract/10.1103/PhysRevD.14.2030
+and https://arxiv.org/abs/0704.0377 . These are conceptual checks, not numerical
+BHSM input data or substitutes for its missing operator.
+
+Still missing: the action-produced physical outgoing trace/domain C(E,B),
+its continuation beyond the retained history, the same-operator E/B/source/
+domain/quantum jets, and the corresponding physical spin/clock/field and
+soft-vertex identification. A retarded selector alone does not evaluate these
+coefficients. The finite checks do not pass the requested full outgoing
+derivative. Physical two-spin poles, magnetic moment, g_mu and a_mu stay null.
+Coupled matching corrections applied: zero. No new physical Maxwell/all226
+after-correction pass is asserted. The prior Maxwell magnitude 2.4777309847
+and best saved all226 maximum 9.602842247524184e-7 remain before-state data.
+Physical radial convergence remains unproved; the repaired time quadrature
+does not settle it. No terminal-zero or reflected exterior was substituted.
+
+Reproducibility: binding_run_1.json and binding_run_2.json enumerate ten
+actual independent scientific repeat pairs and their output hashes. All57
+files from each polynomial-field run are archived. The final polynomial
+lepton runs are run_3/run_4; run_1/run_2 and pre_review_producer.py are retained
+drafts, superseded for claims by run_3/run_4. The midpoint diagnostic folders
+archive only result and endpoint samples; the binding records hashes of all
+locally retained intermediate samples. Manifest serialization is not counted
+as another numerical evaluation. Producers retain local input paths and
+saved histories; a fresh clone alone is not advertised as a portable full
+physical solver. The two reduced source-map NPZs are preserved byte-for-byte
+as 4MiB chunks; restore_reduced_maps.py verifies and reassembles them into an
+explicit destination. No original common-cut bytes were changed; its SHA256
+is ea02ed6aee45310c5651fef5c8f103e868007d4f125582ab2b64ff7651f76b2b.
+
+See tests_run.json and publication_checks/result.json for actual check exits,
+and publication_manifest_run_1.json for packet/source hashes and boundaries.

@@ -1,0 +1,175 @@
+{
+  "NEXT_OPERAND": "Adjudicate or derive an action-owned incoming boundary-state prescription, including physical constrained reference history/domain and long-range comparison. Do not adopt this manufactured background.",
+  "adopted_preparation_residuals": {
+    "RMS_width_fm": null,
+    "centroid_fm": null,
+    "energy_MeV": null,
+    "reason": "Not represented by this homogeneous control; physical X/scale/mass-shell realization remains unsolved. These are unexecuted, never passes.",
+    "spectral_projection": null
+  },
+  "base_head": "7fc4d8109ab25d4683e325f1bf896869d9ef960c",
+  "calibration_and_inherited_nonpasses": "unchanged; inherited gauge reconstruction, membrane finite-step, continuum and time-error limits retained",
+  "classification": "REVIEWED_UNADOPTED_INCOMING_BOUNDARY_SELECTOR_AND_NONSTATIONARY_ACTION_CONTROL",
+  "commands": [
+    "python scripts/evaluate_muon_incoming_polarization_candidate.py --output artifacts/muon_incoming_polarization_candidate_20261018/run_3",
+    "python scripts/evaluate_muon_incoming_polarization_candidate.py --output artifacts/muon_incoming_polarization_candidate_20261018/run_4",
+    "python -m pytest -q tests/test_muon_incoming_polarization_candidate.py tests/test_muon_native_dirac_hamiltonian.py tests/test_muon_magnetic_open_lepton_vertex.py"
+  ],
+  "coupled_correction": false,
+  "exact_repeat": {
+    "byte_identical": true,
+    "paths": [
+      "run_3/result.json",
+      "run_4/result.json"
+    ],
+    "sha256": "f379bb41e6a636b7ce20f37ab3d91dfd778737c69a48780362914db71046e4e4"
+  },
+  "files": {
+    "artifacts/muon_incoming_polarization_candidate_20261018/run_3/result.json": {
+      "bytes": 59275,
+      "sha256": "f379bb41e6a636b7ce20f37ab3d91dfd778737c69a48780362914db71046e4e4"
+    },
+    "artifacts/muon_incoming_polarization_candidate_20261018/run_4/result.json": {
+      "bytes": 59275,
+      "sha256": "f379bb41e6a636b7ce20f37ab3d91dfd778737c69a48780362914db71046e4e4"
+    },
+    "audits/bhsm_collider_incoming_field_current.py": {
+      "bytes": 27723,
+      "sha256": "a423d3da1ce1060309e49367c72ace828cd227b57725fad5fcdbf09fe73adce8"
+    },
+    "scripts/evaluate_muon_incoming_polarization_candidate.py": {
+      "bytes": 7275,
+      "sha256": "e95a5bee9744d84a78d647e572663c6412134b3fc29436cdb689537e4b54a37f"
+    },
+    "src/bhsm/interface/muon_incoming_polarization_candidate.py": {
+      "bytes": 9324,
+      "sha256": "44b90292a423180e26ae078cc19774dfd89881e8f89d03ae82b23b32bfca7f9e"
+    },
+    "tests/test_muon_incoming_polarization_candidate.py": {
+      "bytes": 3683,
+      "sha256": "58bfb39b8881e2bf71a80b9c728f1eaa92d567ecd8cc9b6d32f5242aab90bf24"
+    },
+    "theory/muon_incoming_polarization_boundary_application_20261018.md": {
+      "bytes": 13133,
+      "sha256": "cfed2a847e5a7f14bf5c4f66598a7698ea550fbcf6c812cd4a1ab8429933afdb"
+    }
+  },
+  "first_new_nonnull_physical_packet_collision_source_operand": null,
+  "focused_tests": {
+    "exit_code": 0,
+    "passed": 29
+  },
+  "fresh_physical_Maxwell_all226": false,
+  "initial_control_nonpass": {
+    "corrected_constant_sector_Cauchy_Dirac": 5.974275316987775e-10,
+    "originally_reported_pointwise_Dirac": 1.3446843862746904e-10,
+    "receipt_sha256": "d028b1ee870ac1158f825c2e2140157af2665ef80f8ba17e42b362a49add4c18",
+    "retained_local_paths": [
+      "run_1/result.json",
+      "run_2/result.json"
+    ],
+    "scope": "initial finite ODE control; original-norm review nonpass retained, final norm reporting corrected and integration refined; no physical derivative test passed"
+  },
+  "input_sha256": {
+    "artifacts/muon_collider_common_state_constraint_family_20261014/retained_preparation/actual_frozen_family_and_exact_pair_spin_CAR_preparation.npz": "20db0b3b1a5cb09be1979b0fb24027bbb70f713d4001bd8c50e9807137a136d3",
+    "artifacts/muon_collider_common_state_constraint_family_20261014/retained_preparation/executed_producer.py": "af20441573fc7d63407f90ad66a8ed714d7d0c3c467eb8c7226035a0e41b2c3c",
+    "artifacts/muon_ideal_collider_preparation_20261016/BHSM_IDEAL_COLLIDER_PREPARATION_V1.json": "dcc4ad850ea38dcd405637d24b306efe8789ab08e144f559d7cc294cd72e8f0f",
+    "audits/bhsm_collider_incoming_field_current.py": "a423d3da1ce1060309e49367c72ace828cd227b57725fad5fcdbf09fe73adce8",
+    "scripts/evaluate_muon_incoming_polarization_candidate.py": "e95a5bee9744d84a78d647e572663c6412134b3fc29436cdb689537e4b54a37f",
+    "src/bhsm/interface/muon_incoming_polarization_candidate.py": "44b90292a423180e26ae078cc19774dfd89881e8f89d03ae82b23b32bfca7f9e",
+    "src/bhsm/interface/muon_intrinsic_higgs_weak_action.py": "6f61f85cadf99e8e4a049f6a4965b030db8fc8eaf9b1c1a903df77b1c7491be5",
+    "src/bhsm/interface/muon_magnetic_open_lepton_vertex.py": "08c637687e7279434bb1f91a37b57403778f7f1558229f41cb52f623dd61b526",
+    "src/bhsm/interface/muon_native_dirac_hamiltonian.py": "7344b1dfc0358962a281fffea59c8d40c1449a6fbcf9b171f514a28eb7b26ccd",
+    "src/bhsm/interface/muon_native_product_factor_graph.py": "4a5feeb0e32edc0505a44b45a19d6bdc821220cc9cf5187e35f59fe7720a7c18",
+    "theory/bhsm_operator_reference_construction_20261016.md": "9bfbe30bf6f9c3f8134a0d0fe4bd8b45cdef6ad86946c3f43aeed36ae7fdc081",
+    "theory/muon_ideal_preparation_action_derivation_20261016.md": "1461358f42938ec2077b69e02e50009550fa7af2b014d0a193a632a11f6384ad"
+  },
+  "magnetic_moment_or_uncertainty": null,
+  "nonnull_conditional_operand": {
+    "consumed_by": [
+      "construct_action_packet_sections",
+      "apply_incoming_packet_current",
+      "original_material_Gauss_source"
+    ],
+    "material_At_source_density": [
+      0.0,
+      0.0,
+      0.015712101499192534,
+      -0.012170541488058656
+    ],
+    "sections": "run_3/result.json:trial_application.sections"
+  },
+  "original_equations_executed": {
+    "independent_Dirac": "i*five_point_d_t F-H_full18(t)*F",
+    "instantaneous_defect": "||i*d_t P_inst-[H,P_inst]||=|a*m_dot-m*a_dot|/(2*(a^2+m^2))",
+    "selector": "P_plus(0)=1_(0,infinity)(H_trial(0)) on the declared charged invariant carrier",
+    "transport": "i*d_t U=H_trial(t)*U, U(0)=I; P_D=U*P_plus(0)*U_dagger"
+  },
+  "original_local_Gauss_subtotal_nonpass": 0.015712101499192534,
+  "original_residuals": {
+    "all_24_by_24_ordered_currents_vs_direct_exact_Fock_trace": 1.0842441538544783e-19,
+    "analytic_instantaneous_defect_midpoint": 0.32,
+    "finite_stationary_past_cutoff_projector_difference": 4.47670663632516e-16,
+    "full18_invariant_carrier_leakage_max": 5.305632318711799e-16,
+    "instantaneous_defect_formula_check": 4.078959392472825e-13,
+    "instantaneous_projector_transport_defect_midpoint": 0.3200000000004079,
+    "original_full18_Dirac_Cauchy_five_point_max": 1.5569152377359834e-11,
+    "original_full18_Dirac_pointwise_five_point_max": 3.5042904785183143e-12,
+    "past_Cook_tail_bound": 0.0,
+    "projector_transport_five_point_max": 2.4644941838282114e-11,
+    "transported_vs_instantaneous_projector_midpoint": 0.08543907253908631,
+    "unitary_evolution_max": 1.423695964327734e-13
+  },
+  "physical_derivative_admitted": false,
+  "physical_guard": 2e-10,
+  "publication_audits": {
+    "tools/audit_bhsm_status.py": {
+      "exit_code": 0,
+      "passed": true
+    },
+    "tools/audit_forbidden_claims.py": {
+      "exit_code": 0,
+      "passed": true
+    },
+    "tools/audit_frozen_prediction_integrity.py": {
+      "exit_code": 0,
+      "passed": true
+    },
+    "tools/audit_public_readiness.py": {
+      "exit_code": 0,
+      "passed": true
+    },
+    "tools/verify_precision.py": {
+      "exit_code": 0,
+      "passed": true
+    }
+  },
+  "representation_owner_sha256": {
+    "src/bhsm/interface/ae31_c2_intrinsic_m4_lepton_action.py": "f3fee1ef24a3f13ef94d4ce5b146f9ac7a827045e369819b35ee8af5ccf0678a",
+    "src/bhsm/interface/ae3_c2_hopf_semigroup_transport.py": "78a55f79e63881724497d6bb61b769e3100fa411330e6ce87c32522082817937",
+    "src/bhsm/interface/aether_hybrid_standard_model_bundle_v15_53.py": "a983350de429125b2e2b4271c35b8abd14e984381c61b3596121ee946e6bc23a",
+    "src/bhsm/interface/bhsm_standard_model_gauge_vertices.py": "f652d1ec576ab138e58cdeb3a0cecc5da84b4e9cb7f6d8464c7ad24e3bb7c5bf",
+    "src/bhsm/interface/completion/foundational_dirac_spin_glue_v14_45.py": "ad05ede643af517ded29823b6f5d3076ae64bc2e985ebf500ba48564ad8c8015",
+    "src/bhsm/interface/muon_local_source_jet.py": "caa3da0f665d64c2fb6810d4afa276c7ac0ada0e2d0c7a4d2923b275613d258b"
+  },
+  "required_publication_precision": {
+    "delta": 1.066e-14,
+    "limit": 1e-13,
+    "physical_guard_changed": false
+  },
+  "runtime": {
+    "numpy": "2.4.6",
+    "python": "3.14.3",
+    "scipy": "1.17.1"
+  },
+  "scope": "W_in incoming subspace selection only; no archive import, CI repair or completed response solve repeated",
+  "total_background_constraints": "unsolved; native/exterior/reference/interface terms not assigned zero",
+  "unrelated_tracked_sha256": {
+    ".gitattributes": "5e165f7c67d7017848f7cb8f9c55c78048a82838a879732b60d04a974bdb04de",
+    "artifacts/muon_observable_combination_20261011/contribution_error_table.json": "19b7ce5b3a863a0b79bd952e20ab7e0a0e553a92a607f0d34db2a9ba864cce36",
+    "artifacts/muon_observable_combination_20261011/contribution_error_table.md": "18961d0f32d86a39977c58737fa693208f48110e0baa78d15f7c8fb610b12869",
+    "scripts/verify_muon_changing_source_publication.py": "4c526bcefe3de405d5103197332de129737e2aaf15d3722066d88e516584a47a",
+    "src/bhsm/interface/ae4_stratified_dirac_zeta_induced_owner.py": "ab0537e52db679979bc85109f27b85d534507459dde256bd24ac7742b2d5efe2",
+    "src/bhsm/interface/aether_quantum_functional_accounting_v16_00.py": "8ea906a9b3dd489474b45da8117398547dcf32a1dae96defebb6891998b64f3e"
+  }
+}

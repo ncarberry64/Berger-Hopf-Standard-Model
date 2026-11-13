@@ -1,0 +1,47 @@
+FACTUAL CORRECTION TO THE FROZEN NEW59 CONTACT-MAP PROOF
+2026-10-16
+
+This addendum supersedes ONLY the claim in section4 of
+WORK/muon_original_ea02_new59_spatial_Euler_contact_map_20261016.txt
+SHA2568d5754c9a25714d61cfeba31ffb7af307f1cd3b953799b3b3dbd1a3c40e227da
+that every small wall column has zero-containing entries. That generalization
+was incorrect. The canonical ee70fbcc producer, matrices, independent run pair,
+rank27 proof and full trace coefficients remain unchanged and correct.
+
+The47 small frozen wall columns are NOT an exact kernel and are NOT universally
+zero-containing: every one has at leastone entry excludingzero. For q154:185
+the nonzero midpoint crumbs are approximately1.6242827758820155e-114; for
+q202:216 the maximum is approximately6.490840382884973e-57. No threshold may
+replace those actual stored coefficients byzero or infer rank/kernel from them.
+
+Independent source/algebra audit by scalar_reset_derivation establishes the
+different FORMULA-level statement. With x=rho/W, y=2x-1,
+
+    phi_l=(1-y^2)^2 P_l(y),
+
+the original function has phi_l(W)=phi_l'(W)=0 exactly, but
+phi_l''(W)=32/W^2. The corresponding ordinary bubble q154:185 (l3/4) and
+product q202:216 (p4:8) therefore have ideal exact value traceszero. The frozen
+profile/table route used _split, which exported two midpoint dyadics while
+discarding the original radii. It subsequently consumed nonzero midpoint
+crumbs as exact finite coefficients. Original function identities and the
+frozen consumed finite map must be distinguished.
+
+For product K_r=phi' T_c+phi[Ar,T_c], K_a=phi[Aa,T_c], even the original
+function's zero value trace does not imply zero normal derivative:
+partial_r K_r(W)=phi''(W)T_c. Thus neither layer proves unchanged flux, proper
+momentum ports, or the full outgoing/retarded domain.
+
+Independent audit and exact receipts:
+ WORK/muon_new59_wall_trace_formula_vs_frozen_map_20261016.txt
+ SHA256d9287b25cebdf81b380e514f1f65d1ec9ceb91320cc198dd83cb7ed120d0a2af
+ WORK/muon_new59_wall_trace_formula_vs_frozen_map_20261016_source_pins.json
+ SHA25685f6998feac8237743c3ef72dfd744869507ba00accca185fa4af063f204a6d0
+The receipt binds17 sources/archives and explicitly decodes all47 nonoverlap
+columns without action/profile sampling.
+
+The following open-range supplement uses the full frozen W, without repairing
+or zeroing its coefficients:
+ REPO/audits/bhsm_original_ea02_open_spatial_contact_range_20261016.py.
+It retains W*P, W*N and bounded W*particular in the coupled boundary relation.
+No physical q values, boundary values or minimum-norm completion are chosen.

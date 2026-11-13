@@ -50,13 +50,14 @@ def test_owner_retires_independent_wilson_sectors_without_claiming_domain():
     assert not boundary["AE4_COMMON_SPECTRAL_LENGTH_PHYSICAL_ORIGIN_DERIVED"]
 
 
-def test_spectral_length_is_native_first_future_surface_not_free_cutoff():
+def test_spectral_length_is_native_child_birth_surface_not_free_cutoff():
     native = native_spectral_length_contract()
     time = forward_time_domain_contract()
     stability = enclosure_holding_threshold_hypothesis()
     assert native["ell_star_is_BHSM_native_geometry_functional"]
     assert not native["ell_star_is_free_universal_cutoff"]
-    assert native["first_crossing_not_singular_endpoint_evaluation"]
+    assert native["birth_child_side_requires_owned_endpoint_pullback"]
+    assert native["cutoff_event"] == "MUON_BIRTH__P_TO_MU"
     assert not native["numerical_ell_star_evaluated_on_current_C2"]
     assert time["physical_time_orientation"] == "FUTURE_DIRECTED_ONLY"
     assert time["retarded_domain_required"]

@@ -1,0 +1,45 @@
+{
+  "forbidden_claims": {
+    "command": [
+      "tools/audit_forbidden_claims.py",
+      "--format",
+      "json"
+    ],
+    "elapsed_seconds": 0.05,
+    "exit_code": 0
+  },
+  "frozen_integrity": {
+    "command": [
+      "tools/audit_frozen_prediction_integrity.py",
+      "--format",
+      "json"
+    ],
+    "elapsed_seconds": 0.051,
+    "exit_code": 0
+  },
+  "precision": {
+    "command": [
+      "tools/verify_precision.py"
+    ],
+    "elapsed_seconds": 0.074,
+    "exit_code": 0
+  },
+  "public_readiness": {
+    "command": [
+      "tools/audit_public_readiness.py",
+      "--format",
+      "json"
+    ],
+    "elapsed_seconds": 16.408,
+    "exit_code": 0
+  },
+  "status": {
+    "command": [
+      "tools/audit_bhsm_status.py",
+      "--format",
+      "json"
+    ],
+    "elapsed_seconds": 0.049,
+    "exit_code": 0
+  }
+}

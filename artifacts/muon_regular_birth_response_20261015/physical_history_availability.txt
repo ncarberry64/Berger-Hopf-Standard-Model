@@ -1,0 +1,95 @@
+Read-only availability review: intrinsic scalar/gauge/worldvolume data
+2026-10-15
+
+No actual real timelike, nonzero scalar/gauge coefficient history with owned
+initial F/U/J and physical interval was found in the inspected current assets.
+This is an availability finding, not a theorem that such a solution cannot
+exist or a new BHSM definition gap.
+
+1. Current concrete owners
+
+src/bhsm/interface/muon_intrinsic_worldvolume_scalar_transport.py provides
+worldvolume_scalar_transport_ivp and scalar_birth_transport_application.
+The IVP requires an explicit coupled evaluator, strictly future time interval,
+initial material points, unitary Higgs bundle identification and positive
+material Jacobian. It includes nonzero A_t, spatial connection, induced flow,
+bundle transport and their coefficient/moving-point variations.
+
+src/bhsm/interface/muon_intrinsic_scalar_birth_rows.py provides the actual
+same-E1 trace/conormal rows. These equations are owned; their physical F/U
+application remains unevaluated. They are not the AE4 singular-firewall map.
+
+No producer invocation was found in current audits/scripts. Existing test
+invocations explicitly identify their coefficients as nonphysical controls.
+No material_points/bundle_transport/haar_jacobian JSON packet was found in
+the current artifact search.
+
+2. Closest stored primal packet
+
+artifacts/muon_intrinsic_coupled_primal_20261009/run_1/result.json explicitly
+records physical_T_evaluated=false, physical_time_interval_assigned=false,
+normal_section_selected=false and production_states_stationary=false.
+Its numerical scalar/gauge iterate is zero; geometry advances affinely.
+Its mesh [-.01,0,.01] is a computational local chart, not physical duration.
+It identifies still-unevaluated physical event Cauchy projections and
+worldvolume/bundle conditions. It is not a physical initial-data packet.
+
+The newer full536 trial_0000 candidate is a complex analytic action germ.
+Its maximum geometry-coordinate imaginary magnitude is 163.5178120404382.
+Discarding its imaginary parts would change the retained state and does not
+instantiate the real timelike/anti-Hermitian IVP requirements.
+
+The saved finite scalar conormal identity is evaluated separately in
+outputs/bhsm_intrinsic_scalar_reset_incidence_20261015/run_1 and run_2.
+Those two runs do not contain physical F/U/J or its spatial/energy/field jets.
+
+3. Collider preparation evidence
+
+WORK/outputs/bhsm_collider_numerical_repair_continuation_20261014.json records
+physical_collider_fields_evaluated=false and lists the still-unselected
+common collision Cauchy fields, actual packet sections, independent radiative
+preparation and collision-to-event field/Fock pullback. The benchmark process
+choice did not supply a concrete physical coefficient history or F/U data.
+No complete collider reconstruction is imposed as an extra logical gate for
+an intrinsic moment of an otherwise specified formed-muon operator.
+
+4. Parameter provenance
+
+The finite candidate uses nu_squared_action=4.0 and surface_gamma=null.
+These are assigned finite-action parameters, not a completed physical unit
+matching application.
+
+muon_parent_gauge_geometry_correction.retained_scalar_matching_coefficients
+uses lambda_H=G_F*m_h^2/sqrt(2) and nu_GeV^2=1/(2sqrt(2)G_F), with E_kappa=None.
+The saved lambda_H=0.12909460903411638 is calibrated tree matching and is
+not an action-derived numerical quartic. It must not be relabelled as one.
+
+ae31_c2_intrinsic_m4_lepton_action.conditional_higgs_saddle gives
+nu_BH^2=v_BH^2/2 using its inherited universal energy calibration; the source
+explicitly sets universal_energy_calibration_action_derived=false.
+It does not fix the conversion to current geometric action units, and only
+lambda_H>0 is retained at the action-definition level.
+
+covariant_bubble_interface_mechanics.build_payload supplies
+gamma_s=alpha_FSC*ell_s^(-m_s). Its alpha_FSC is positive symbolic, with
+exact_decimal_selected=false; the common length authority is symbolic.
+No new numerical gamma follows from that formula without its scale operands.
+
+5. Local scope searched
+
+Current repository src/audits/scripts/artifacts; WORK outputs/artifacts;
+related local repositories BHSM-system-puzzle-20261013,
+BHSM-cumulative-virtual-sea-20261013, BHSM-engine-integration,
+BHSM-norman-canonical-recovery, BHSM-oriented-event-return,
+BHSM-singular-event-reset, Berger-Hopf-Standard-Model,
+berger_hopf_sm_completion, BHSM-full-field-action-attachment-pre-g7;
+download work folders BHSM_muon_recovery_20261013,
+BHSM_muon_joint_variational_attachment_20261005,
+BHSM_muon_parent_geometry_524ed906_20261001,
+BHSM_muon_coupled_cut_forms_20261004.
+
+Searches used current owner/function/field names and likely physical-history,
+worldvolume, scalar-birth and collider filenames. They are bounded local
+availability checks, not a proof over every disk file. No source solve,
+constraint solve or completed source integration was restarted. No empirical
+parameter was consumed by a new action calculation.

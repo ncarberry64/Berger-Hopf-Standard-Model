@@ -1,0 +1,356 @@
+NATIVE GRADED CARRIER, FACTOR AND STATISTICS FROM THE CURRENT BHSM ACTION
+2026-10-16. Source-algebra derivation, not a numerical campaign.
+
+Result
+
+The action already forces substantial parts of the dictionary: statistics
+are Grassmann/BRST parity rather than spin chirality; the declared M4 seed
+has actual vector/ghost, Weyl and HS operator constructions; the full D5
+spin connection, gauge action, eta contact, fixed-Y seam and conjugation
+carrier are explicit; duplicate eta collective modes and old vacuum terms
+must be removed exactly once. These facts give useful constitutive pieces.
+
+They do not force a unique full microscopic native carrier/factor merely
+from the list of classical Euler fields. The precise remaining datum is
+the graded Clifford-module/kinetic-complex and field-to-positive-operator
+correspondence on the M8/M5/M4 architecture, with its interface/quotient
+domain. In particular, ordinary geometric spin D8(G), at fixed regulator
+and domain, has no independent chi/sigma local heat invariants at fixed G.
+A complete scalar response correspondence must therefore be derived and
+checked, including any factor, cutoff, domain and relative-completion
+dependence. Nothing below assigns a scalar-to-factor ansatz or declares
+those other contacts physically zero.
+This is a mathematical type/variation distinction, not an inference from
+the absence of a Python function and not a claim of a new free coefficient.
+
+1. Distinct objects that must not be identified
+
+The current AE4 owner, ae4_stratified_dirac_zeta_induced_owner.py:
+272-302, fixes
+
+ H_native = H8 direct_sum H5+ direct_sum H5- direct_sum H4,
+ P_native = D_strat^dagger D_strat on the zero-mode/BRST quotient,
+ Gamma_ind = -1/2 STr E1(ell_star^2 P_native) + log/eta completion.
+
+The geometric direct-sum measure, common profile and length rule are
+adopted; the older independent Wilson/profile fork is superseded. These
+are not four independently fitted determinants.
+
+There are nevertheless three different vector bundles:
+
+ (a) the classical configuration fields Phi and their tangent bundle;
+ (b) the fields actually integrated by a specified Gaussian/BRST measure;
+ (c) the induced spectral carrier E_s on which the native D_s acts.
+
+The action need not identify (b) or (c) with (a). In particular an auxiliary
+geometric spinor used to define a spectral action is not automatically a
+new physical Grassmann species, and classical metric variations are not
+automatically integrated metric loops. Making either identification would
+be a microscopic prescription. AE4's adoption of the E1 functional does
+not silently supply that prescription for every stratum.
+
+The action-level classical field dictionary is concrete. The registry
+master_action/terms.py and the stronger reduction.authoritative_action /
+field_transport give:
+
+ M8: Lorentz metric G, real carrier chi, real sigma; no declared independent
+     SM fermion or SM gauge field in the S8 matter content.
+ M5+/-: cap metric, lapse/shift, scalar trace and the actual admitted collar
+        connection/spinor action in its declared extension; geometric
+        quotient connection is not automatically the SM connection.
+ M4: h, SM connection A in ad(SU3+SU2+U1), chiral rank16/family3 matter,
+     intrinsic complex Higgs doublet H, and any explicitly enabled auxiliary
+     or HS fields on their own action terms.
+ Compatibility multipliers: constraint duals with no independent kinetic
+     term; their rescaling is redundant, not a new particle/determinant.
+ Charged currents: composites of the existing gauge/fermion fields, not
+     another independently integrated charged sector.
+
+The tangent types at M8 are Sym2(T*M8) plus R_chi plus R_sigma. They are not
+the Spin(8)16 bundle. This type statement survives the later AE4 removal of
+independent Wilson ownership; it does not reinstate old coefficient gates.
+
+2. The statistics that are actually forced
+
+completion/coefficient_provenance_quotient_v14_62.py,
+determinant_prefactor_ledger, derives the Gaussian algebra. With a common
+positive-operator convention 1/2 STr log P (equivalently the prescribed
+-1/2 STr E1 regularization), the conditional dictionary is:
+
+ real commuting field, 1/2 b P b:         w=+1 on its real carrier;
+ complex commuting field, bbar P b:      w=+2 on one complex carrier,
+                                        or +1 on its two-real-component
+                                        realification, never both;
+ complex FP pair, cbar M_FP c:            w=-2 on one complex scalar ghost
+                                        carrier when P=M_FP;
+ complex Dirac field, psibar D psi:       w=-1 on the independent D-input
+                                        carrier for P=D^dagger D, with
+                                        the determinant phase separate.
+
+These weights are not Wilson parameters. They do NOT decide which fields
+AE4 integrates. A Weyl block must use its actual chiral input/range and
+owned determinant convention; no additional half factor may be inferred
+from a computational Dirac doubling alone. Likewise the complex ghost
+pair contributes one determinant with the stated weight, not two freely
+chosen covariances. A ghost sign is in the trace, not a negative Hilbert
+Gram. Auxiliary multiplier and collective-coordinate measures require
+their own action-owned elimination/Jacobian rather than an invented local
+Laplace block.
+
+The common source files explicitly support the same signs: v16.04 evaluates
+the full one-form block with +1 and its complex FP block with -2; v15.96
+uses -1 for its declared Weyl species. This fixes the convention locally.
+
+Statistics grading is NOT spin chirality. On an even-dimensional balanced
+spin Clifford module, tr(gamma_*)=0 pointwise. The interior leading heat
+coefficient for the chirality supertrace is therefore
+
+ a0(gamma_*,P)=(4pi)^(-d/2) integral tr(gamma_*) dmu=0.
+
+Under the usual closed, elliptic, grade-compatible domain assumptions with
+{gamma_*,D}=0, the whole chirality heat supertrace is the index. With a
+boundary, the index statement requires its boundary/domain contacts; the
+pointwise interior a0 cancellation still holds. Such a grading cannot by
+itself generate AE4's intended nonzero bulk volume F8*a0 and ordinary
+relevant terms. The same warning applies to blindly using form-degree
+parity of the entire de Rham complex. A geometric spin Dirac can instead
+carry an external statistics assignment, but that assignment must be
+declared; its spinor appearance alone does not select fermionic loops.
+
+3. Constructed M4 operator/carrier dictionary: it is not all missing
+
+aether_common_quantum_superdeterminant_v15_96.graded_operator_ledger
+actually selects the free proper-cycle M4 seed:
+
+ gauge: 12 physical transverse vector species, with zero global gauge modes
+        quotiented and longitudinal/ghost cancellation on that free branch;
+ Weyl: 48 complex two-component species from rank16 times family3, with
+       P_W=D_W^dagger D_W and the supplied spin spectrum;
+ HS: four real components in the declared HS doublet representative.
+
+The stronger v16.04 full_oneform_ghost_matrices retains the temporal scalar
+and spatial one-form blocks separately, their gradient/curl coupling, the
+non-Abelian F0z source contact and ghost scalar block before taking their
++1/-2 trace combination. It is a real constructive Hodge/FP component.
+Its angular maps include the spin-one connection through curl, not scalar
+copies substituted for the vector field.
+
+v16.01 weyl_squared_operator_and_vertices constructs the product block
+
+ A_W=partial_tau+B_Berger,
+ D_W=[[0,A_W],[A_W^dagger,0]],   P_W=D_W^2,
+
+with the complete Berger spin matrix and both first/second source contacts.
+The conformal HS scalar block is separately constructed there; its unit
+Einstein-Cartan HS vertex and I3 family structure are not the intrinsic
+Higgs fixed-Y map. v16.05 supplies actual rank16/adjoint trace factors,
+including SU3 as well as SU2 and U1; no fourth-generator EW array can stand
+for all twelve SM generators.
+
+These implementations are scoped to a periodic, free/selected source
+proper-cycle representative. They do not replace the later future-retarded
+domain or evaluate the nonzero actual outgoing history. Their fixed species
+counts must not be copied into a new H8 or counted once per local stratum
+without the actual correspondence.
+
+v16.00 determinant_accounting_identity also gives a useful exact ownership
+law: Gamma_Q=Gamma_parent+Gamma_SM_heat equals
+Gamma_attached_zeta-Gamma_SM_zeta[Phi;0]+Gamma_SM_heat.
+The old SM vacuum is replaced once, not added a second time. This earlier
+construction left the parent classical while integrating the specified SM
+heat block. The later AE4 extension makes the M8/M5 local actions expansions
+of the common microscopic functional. Extending the architecture in this
+way does not retroactively equate a classical parent Hessian with P8.
+
+4. What the D5 and intrinsic fermion action fix, without new copies
+
+The foundational v14.45 sector is adopted Grassmann low-energy data, not a
+derivation of local fermions from a bosonic eta equation. It owns
+
+ D5 = i gamma^mu nabla_mu^total
+       + i eps Gamma_perp(partial_s+1/2 partial_s log J+m_eta),
+ m_eta=-partial_s log sin f, and the once-only intrinsic Higgs seam.
+
+The actual full D5 implementation retains lapse/shift and density contacts,
+all radial/angular derivatives, the complete round-S3 spin connection, all
+three family matrices, gauge generators and the eta covector including its
+time component. The real-positive-coframe native covector map retains
+
+ A_eta=-f0 cot(f) I+i eps Gamma0 Gamma4 f4 cot(f),
+
+and is distinct from simply treating the Lorentz phase term as a heat
+energy. The known formal-to-positive scalar contact is not dropped. The
+Hamiltonian seam coefficient follows the same unsquared action,
++rho_L Gamma0 Cbar M_Y(H)B, with the output Gamma0 separate from the single
+Dirac-bar Gamma0. H is not appended as an invented bulk D5 mass.
+
+muon_full_d5_localized_lepton_trace constructs
+Spin4 tensor (SM16+conjugate SM16) tensor family3 with 384 computational
+rows, its chiral inclusion, charge-conjugate Clifford, both boosts and full
+complement. It explicitly says the self-dual conjugate copy is NOT another
+physical loop multiplicity. Thus raw dimension384, two sheets, particle/
+conjugate storage, or the localized18 map cannot be converted into new loop
+counts. The trace on independent fields, its chiral/reality identification
+and the common interface/domain must accompany the operator. No ad hoc
+factor1/2 or factor1/4 on the raw384 carrier is selected by this audit.
+
+AE2 fixes regular reset spin/gauge transmission and its independent analytic
+dual. It inserts no additional reset-localized matter determinant. The
+intrinsic fixed-Y Higgs interaction lives on its declared stratum; the
+separate normalized seam is its owned correspondence, not a second species.
+
+5. The collective replacement gives an explicit projector rule
+
+v14.45 no_double_counting_payload is stronger than the older v14.29 open
+matching narrative. It explicitly adopts
+
+ zeta_A=partial eta_*/partial q^A,
+ G_AB=<zeta_A,zeta_B>,
+ P_coll v=zeta_A G^(AB)<zeta_B,v>,     Q_eta=I-P_coll,
+ bosonic factor det-prime(Q_eta H_eta Q_eta),
+
+while Psi represents that collective/topological fermionic sector. The
+collective-coordinate/FP Jacobian occurs once. The classical eta background
+remains active. This is not permission to delete all eta fluctuations, add
+a second independently varied M8 eta copy, or sum the full classical and
+collective fermionic currents twice. Actual zeta/Gram values on a solved
+branch are field/state-dependent operands of this law, not free couplings.
+
+This projector splits a specified eta fluctuation space. It does not decide
+whether all M8 metric/scalar fields are part of the microscopic integration
+carrier. Compatibility constraints, gauge or collective quotient factors
+must not be replaced by counts of the15 finite constituent form matrices.
+
+6. Why ordinary spin Dirac, Hodge Dirac and classical Hessian are not forced
+   to be the same native operator
+
+The strongest source calls for a Dirac-TYPE stratified factor. A local
+Dirac-type expression has the form
+
+ D_s[Phi]=c_s(e^A) nabla_A^(E_s,Phi)+Phi_s[Phi],
+ {c_s(xi),c_s(eta)}=2 g_s^(-1)(xi,eta) I
+
+(with the chosen signature/positive continuation and domain). A metric
+supplies the Levi-Civita connection and, after spin structure, a geometric
+spin Dirac. It does not determine the auxiliary twisting module E_s,
+statistics, scalar endomorphism Phi_s, which physical fields it represents,
+or its correspondence to neighbouring strata. Full geometric Spin(8)16
+coefficients and their Hopf rotation already exist, so their spin connection
+is not a missing coefficient. Their module is not automatically
+Spin8 tensor SM16, nor the metric/scalar tangent space.
+
+There is an immediate action-level test of the bare geometric choice.
+For D8=D_LC(G) with no chi/sigma coefficient dependence, holding G, c and
+the domain/completion fixed for this COEFFICIENT-ONLY comparison,
+
+ partial_chi P8 = partial_sigma P8 = 0,
+ delta_chi Gamma8|coefficient = delta_sigma Gamma8|coefficient = 0.
+
+But the declared S8 contains
+
+ -Zchi(1+g sigma^2)|dchi|^2/2
+ -Zsigma|dsigma|^2/2-A0 sigma^2/2-G0 sigma^4/4.
+
+Its chi equation has div[Zchi(1+g sigma^2)dchi] and its sigma equation has
+the kinetic, potential and mixed g sigma|dchi|^2 terms. Those are not
+identically zero. At fixed regulator/domain, the local heat coefficients
+of bare D_LC(G) have no independent chi/sigma invariants to match these
+densities. A lower-dimensional trace term also cannot stand for a local
+eight-dimensional bulk heat coefficient. This is the precise scoped
+non-inference: choosing the geometric spin connection does not by itself
+construct the independent scalar coefficient dependence.
+
+The TOTAL physical functional is different. AE4 c=I/R can depend on chi
+and sigma, as can support, the moving domain and relative completion. Even
+if the coefficient-only deltaP8 is zero, these contacts can give a nonzero
+total deltaGamma. They must be retained and evaluated; they are not set
+physically zero by this test. In a completed construction the scalar work
+could be distributed among the factor map, the action-owned cutoff and
+domain/completion terms. One must prove that this complete response matches
+the independent scalar action, rather than assuming a scalar-to-G
+elimination at fixed independent G or imposing an arbitrary scalar mass
+ansatz on D8. This identifies the needed correspondence and matching
+calculation without proving it impossible or selecting a new UV field.
+
+Conversely, taking the gauge-fixed Hessian of S8 acts on
+Sym2(T*M8) plus its scalars (and the chosen diffeomorphism ghost complex),
+not on Spin8. It is second order and not generally a positive Ddagger D
+off shell. Squaring that Hessian would change its order and heat scaling.
+A Hodge factor d+d^dagger acts on exterior forms; it is another Clifford
+module. For one-form kinetic terms Q:a -> (d_A a,d_A^dagger a) supplies the
+de Rham part, but actual Yang-Mills curvature endomorphisms and DH mixing
+must also be retained. Such a construction is not established merely by
+saying 'use Hodge Dirac'. Its auxiliary output/codomain is not another
+independently integrated physical species.
+
+None of these observations forbids a fully specified one of these routes.
+They show that classical field content plus the word 'Dirac-type' does not
+identify them. Factor uniqueness stronger than P uniqueness is unnecessary:
+Q and UQ with a compatible output-unitary U give the SAME Qdagger Q and
+equivalent norms/domain, not a physical ambiguity. The needed datum is the
+positive operator/field/domain correspondence modulo such equivalences.
+
+7. Why the field variation cannot supply the omitted correspondence
+
+Let F denote the microscopic correspondence (E_s,statistics,c_s,nabla_s,
+Phi_s,incidence/quotient domain), and write P_F[Phi]. The adopted field
+equation is, on that realization,
+
+ deltaPhi Gamma_F = 1/2 STr[e^(-cP_F) P_F^-1 DP_F[deltaPhi]]
+                   + cutoff/relative-phase/domain contacts,
+ plus the action constraints and existing source/matcher equations.
+
+This equation varies Phi inside a specified F. Authorized variations of
+(Phi,F_B,L_nonfermion,embeddings), including action-owned boundary-domain
+and shape variables, ARE allowed inside that supplied common functor;
+this is not a claim that all domain variables must be held fixed in the
+physical Euler system. Their current Gamma supplies the corresponding
+work/cotangents, with all cutoff, incidence and quotient contacts retained.
+The classical scalar and
+metric equations do not supply DP_F until the scalar/metric-to-factor map
+has been given. Neither the classical configuration space nor the current
+AE4 owner introduces a variation over Clifford-module rank, twisting
+representation, choice of integrated fields, or a functor F. Treating those
+as new EL variables would add a variational principle. In particular,
+deriving equations for an unknown chi/sigma background is legitimate once
+its native coupling map is known; demanding stationarity first cannot
+define that coupling map or justify setting its force to zero.
+
+The classical gauge identity is nevertheless constructive. If K_Phi xi is
+the actual infinitesimal gauge/diffeomorphism action, differentiating
+S'[K_Phi xi]=0 gives
+
+ S''[deltaPhi,K_Phi xi]+S'[D_Phi K[deltaPhi]xi]=0.
+
+It fixes the off-shell Euler contacts, rather than allowing HK=0 at a
+nonstationary background. Gauge fixing F_gf gives the FP map F_gf K and
+the matching primal/antighost/conormal domain. The current finite common
+EW/color/scalar/FP constructions evaluate pieces of exactly these laws.
+They are not a proof that their classical Hessian equals the common native
+microscopic P. Gauge/ghost cancellation can only be asserted on the same
+actual complex/domain, not by deleting nonzero modes from a table.
+
+The exact unresolved mathematical datum can therefore be stated without a
+generic missing-number list:
+
+  a source-level natural graded module/kinetic correspondence which tells
+  how the declared fields determine the SAME P_strat (including whether a
+  scalar coefficient contact is zero), which independent carrier its
+  statistics trace counts, and how its trace/quotient domain implements
+  the existing R85/reset/Higgs laws. Scalar response matching must also
+  retain the action-owned cutoff, support and relative-completion contacts;
+  no nonzero scalar endomorphism is assumed mandatory before that matching.
+
+Local heat-coefficient matching, BRST and the scalar equations impose real
+constraints on that datum. They are not yet a derivation of it. This audit
+does not assert that two different completed correspondences both satisfy
+every BHSM axiom, or prove physical theory nonuniqueness. It identifies the
+uncompleted mathematical definition that must be derived or specified
+before the field equations yield a unique full microscopic prediction.
+
+No new field, carrier copy, statistics weight, coupling, time contour,
+boundary law, measured value or physical moment has been chosen. No old
+profile/source/D5 campaign or numerical eigensystem was rerun. The next
+construction should bind this correspondence, then solve its existing
+coupled field and outgoing equations; it should not add another finite
+trace probe and label it the full native action.

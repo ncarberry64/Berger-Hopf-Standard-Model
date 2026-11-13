@@ -1,0 +1,21 @@
+{
+  "arrays": [
+    "tail_interior_elements.npz",
+    "terminal_core_element.npz",
+    "tail_response.npz",
+    "partial_system_with_tail_core.npz"
+  ],
+  "assembled": "all remaining retained-tail core elements plus saved partial system",
+  "full_owned_source_solved": false,
+  "id": "BHSM_MUON_RETAINED_TAIL_CORE_20261005",
+  "next": {
+    "consumer": "promote core-tail Schur component to full coupled exterior source solve",
+    "equation": "q_owned[iota_Wp X]=q5_can[X]+q_owned_seam[iota_Wp X];iota_Wp^-1 V_F=closure(Dmin_Wp) in q5_can+q_owned_seam+m",
+    "operand": "source-restricted owned seam/domain pullback for full W/p inclusion",
+    "physical_terminal_load_to_select": false,
+    "producer": "AE4 canonical minimal form plus total material/reset wall-spinor inclusion and constraint complex"
+  },
+  "physical_prediction": false,
+  "solved": "inhomogeneous tail core with given source trace",
+  "stage": "tail reduced and consumed"
+}

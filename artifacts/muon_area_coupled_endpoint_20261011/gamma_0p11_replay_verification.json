@@ -1,0 +1,132 @@
+{
+  "executions": [
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "bhsm.interface.muon_birth_area_coupled_endpoint",
+        "--base-directory",
+        "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1",
+        "--area-response-directory",
+        "artifacts/muon_area_endpoint_response_20261011/run_1",
+        "--output",
+        "artifacts/muon_area_coupled_endpoint_20261011/gamma_0p11_run_2",
+        "--gamma",
+        "0.11",
+        "--max-iterations",
+        "8"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "stderr_path": "execution_logs/gamma_0p11_run_2.stderr.txt",
+      "stdout_path": "execution_logs/gamma_0p11_run_2.stdout.txt"
+    },
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "bhsm.interface.muon_birth_finite_normal_phase",
+        "--base-directory",
+        "artifacts/muon_area_coupled_endpoint_20261011/gamma_0p11_run_1",
+        "--output",
+        "artifacts/muon_area_coupled_endpoint_20261011/gamma_0p11_incoming_phase_run_2",
+        "--steps",
+        "1",
+        "--span=-1e-5",
+        "--max-iterations",
+        "12",
+        "--side",
+        "incoming"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "stderr_path": "execution_logs/gamma_0p11_incoming_phase_run_2.stderr.txt",
+      "stdout_path": "execution_logs/gamma_0p11_incoming_phase_run_2.stdout.txt"
+    },
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "bhsm.interface.muon_birth_finite_normal_boundary_action",
+        "--phase-directory",
+        "artifacts/muon_area_coupled_endpoint_20261011/gamma_0p11_incoming_phase_run_1",
+        "--output",
+        "artifacts/muon_area_coupled_endpoint_20261011/gamma_0p11_incoming_boundary_run_2"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "stderr_path": "execution_logs/gamma_0p11_incoming_boundary_run_2.stderr.txt",
+      "stdout_path": "execution_logs/gamma_0p11_incoming_boundary_run_2.stdout.txt"
+    },
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "bhsm.interface.muon_birth_inherited_finite_normal_phase",
+        "--base-directory",
+        "artifacts/muon_area_coupled_endpoint_20261011/gamma_0p11_run_1",
+        "--output",
+        "artifacts/muon_area_coupled_endpoint_20261011/gamma_0p11_outgoing_phase_run_2",
+        "--steps",
+        "1",
+        "--span=1e-5",
+        "--max-iterations",
+        "12"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "stderr_path": "execution_logs/gamma_0p11_outgoing_phase_run_2.stderr.txt",
+      "stdout_path": "execution_logs/gamma_0p11_outgoing_phase_run_2.stdout.txt"
+    },
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "bhsm.interface.muon_birth_finite_normal_boundary_action",
+        "--phase-directory",
+        "artifacts/muon_area_coupled_endpoint_20261011/gamma_0p11_outgoing_phase_run_1",
+        "--output",
+        "artifacts/muon_area_coupled_endpoint_20261011/gamma_0p11_outgoing_boundary_run_2"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "stderr_path": "execution_logs/gamma_0p11_outgoing_boundary_run_2.stderr.txt",
+      "stdout_path": "execution_logs/gamma_0p11_outgoing_boundary_run_2.stdout.txt"
+    },
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "-m",
+        "bhsm.interface.muon_common_normal_boundary_form",
+        "--incoming-boundary",
+        "artifacts/muon_area_coupled_endpoint_20261011/gamma_0p11_incoming_boundary_run_1",
+        "--child-boundary",
+        "artifacts/muon_area_coupled_endpoint_20261011/gamma_0p11_outgoing_boundary_run_1",
+        "--output",
+        "artifacts/muon_common_normal_boundary_form_20261011/gamma_0p11_run_2"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "PYTHONPATH": "src"
+      },
+      "exit_code": 0,
+      "stderr_path": "execution_logs/gamma_0p11_common_run_2.stderr.txt",
+      "stdout_path": "execution_logs/gamma_0p11_common_run_2.stdout.txt"
+    }
+  ]
+}

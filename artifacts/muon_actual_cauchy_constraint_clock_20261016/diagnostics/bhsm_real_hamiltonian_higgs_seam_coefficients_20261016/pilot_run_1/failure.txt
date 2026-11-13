@@ -1,0 +1,10 @@
+Preserved first pilot, before coefficient application or archive admission.
+2026-10-16: an unjustified bit-equality guard required the source binary64
+Gamma0 square to equal identity exactly. The actual retained constant
+Clifford has max |Gamma0^2-I|=4.440892098500626e-16 and is exactly Hermitian
+in its stored coefficients. Source SHA at failure:
+5cec593ea152d8d48aa5d87ddf09d2ee7a16169ebc9c580f67559b862f08a408.
+ValueError: Original constant time Clifford required.
+No field, normal-mode, domain or physical derivative calculation failed.
+The repair retains every original Clifford entry and records the residual;
+it neither normalizes Gamma0 nor drops its small entries.

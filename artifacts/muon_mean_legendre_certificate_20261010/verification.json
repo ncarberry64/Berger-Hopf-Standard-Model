@@ -1,0 +1,146 @@
+{
+  "complete_observable": false,
+  "error_scope": "Exact stored binary64 action matrices/source only: all17 sample inverses and inertia signs verified with192-bit Arb. Certified signcount changes imply singularity for continuous interpolation between samples; no continuous inverse claim. Producer rounding and continuum/off-shell/observable errors excluded.",
+  "independent_replays": [
+    {
+      "byte_identical": true,
+      "first": {
+        "bytes": 8567080,
+        "path": "artifacts/muon_mean_legendre_certificate_20261010/run_2/action_samples.npz",
+        "sha256": "e260a451cba183c94b0d30c29e43b5a06a7503730c68403232c23664b0ff5dbe"
+      },
+      "second": {
+        "bytes": 8567080,
+        "path": "artifacts/muon_mean_legendre_certificate_20261010/run_3/action_samples.npz",
+        "sha256": "e260a451cba183c94b0d30c29e43b5a06a7503730c68403232c23664b0ff5dbe"
+      }
+    },
+    {
+      "byte_identical": true,
+      "first": {
+        "bytes": 5084730,
+        "path": "artifacts/muon_mean_legendre_certificate_20261010/run_2/application.npz",
+        "sha256": "072e291533af502de06cc57c388410a79ff03d92622499336a11668a4b71058b"
+      },
+      "second": {
+        "bytes": 5084730,
+        "path": "artifacts/muon_mean_legendre_certificate_20261010/run_3/application.npz",
+        "sha256": "072e291533af502de06cc57c388410a79ff03d92622499336a11668a4b71058b"
+      }
+    },
+    {
+      "byte_identical": true,
+      "first": {
+        "bytes": 26360,
+        "path": "artifacts/muon_mean_legendre_certificate_20261010/run_2/result.json",
+        "sha256": "1a48870417924007fe511d62c73530998397c53bcf9b3283a17c041d722db8e6"
+      },
+      "second": {
+        "bytes": 26360,
+        "path": "artifacts/muon_mean_legendre_certificate_20261010/run_3/result.json",
+        "sha256": "1a48870417924007fe511d62c73530998397c53bcf9b3283a17c041d722db8e6"
+      }
+    }
+  ],
+  "prior_run_scope": "run_1 retained original constitutive matrices and application before exact stored inertia and full action samples were added; not the final replay pair. Its terminal stdout was truncated, not reconstructed.",
+  "producer_commands": [
+    {
+      "argv": [
+        "C:/Python314/python.exe",
+        "scripts/evaluate_muon_mean_legendre_certificate.py",
+        "--time-points",
+        "17",
+        "--output",
+        "artifacts/muon_mean_legendre_certificate_20261010/run_2"
+      ],
+      "completion_tool_chunk": "31bb8a",
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "OPENBLAS_NUM_THREADS": "1",
+        "PYTHONPATH": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src"
+      },
+      "exit_code": 0,
+      "stderr_file": {
+        "bytes": 0,
+        "path": "artifacts/muon_mean_legendre_certificate_20261010/run_2.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout_file": {
+        "bytes": 22807,
+        "path": "artifacts/muon_mean_legendre_certificate_20261010/run_2.stdout.txt",
+        "sha256": "e26500c0a968ae8a6484af99a3e152ee16aa2edec37adc475fdb4b900f21d94d"
+      }
+    },
+    {
+      "argv": [
+        "C:/Python314/python.exe",
+        "scripts/evaluate_muon_mean_legendre_certificate.py",
+        "--time-points",
+        "17",
+        "--output",
+        "artifacts/muon_mean_legendre_certificate_20261010/run_3"
+      ],
+      "completion_tool_chunk": "501a0f",
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "OPENBLAS_NUM_THREADS": "1",
+        "PYTHONPATH": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src"
+      },
+      "exit_code": 0,
+      "stderr_file": {
+        "bytes": 0,
+        "path": "artifacts/muon_mean_legendre_certificate_20261010/run_3.stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "stdout_file": {
+        "bytes": 22807,
+        "path": "artifacts/muon_mean_legendre_certificate_20261010/run_3.stdout.txt",
+        "sha256": "e26500c0a968ae8a6484af99a3e152ee16aa2edec37adc475fdb4b900f21d94d"
+      }
+    }
+  ],
+  "schema": "executed_mean_constitutive_verification_v1",
+  "source_identities": [
+    {
+      "bytes": 11091,
+      "path": "src/bhsm/interface/muon_mean_legendre_certificate.py",
+      "sha256": "f22cd282b977e4349a2d351b27ad4509bf0be79b189c687f1578383a4de87fcd"
+    },
+    {
+      "bytes": 579,
+      "path": "scripts/evaluate_muon_mean_legendre_certificate.py",
+      "sha256": "6ad6380fdabb21ed12189cad3a54dacd865444bb7125c70c646741235fe5cd3e"
+    },
+    {
+      "bytes": 2111,
+      "path": "tests/test_muon_mean_legendre_certificate.py",
+      "sha256": "bc59af042784c5dce73c11f015f95fd52a754e232be96c2f3cbfdcc0d92fe45c"
+    },
+    {
+      "bytes": 11776,
+      "path": "src/bhsm/interface/muon_parent_mean_causal_action.py",
+      "sha256": "2a84b1be22625b1a5ae88d10c76631d7a5b602d2b0e22e57f00201bb74a593ad"
+    }
+  ],
+  "tests": [
+    {
+      "argv": [
+        "C:/Python314/python.exe",
+        "-m",
+        "pytest",
+        "--noconftest",
+        "-q",
+        "tests/test_muon_mean_legendre_certificate.py"
+      ],
+      "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+      "environment_overrides": {
+        "OPENBLAS_NUM_THREADS": "1",
+        "PYTHONPATH": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src"
+      },
+      "exit_code": 0,
+      "stderr": "",
+      "stdout": "...                                                                      [100%]\n3 passed in 1.06s\n",
+      "stdout_capture_scope": "Exact completed tool text transcribed; final source includes inertia congruence proof."
+    }
+  ]
+}

@@ -1,0 +1,176 @@
+{
+  "byte_identical_replay": true,
+  "complete_observable": false,
+  "corrected_error": "Directly executing a module inside interface put its types.py ahead of the Python standard library. The package-context CLI entry point fixes import resolution; no action or arithmetic operand changed.",
+  "cwd": "C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001",
+  "density_scope_correction": "The historical application receipt key is the CAP-sector multiplier density only. It is not the total coupled constraint residual. Current certificates explicitly retain that scope; arithmetic operands and enclosure are unchanged.",
+  "focused_tests": {
+    "argv": [
+      "C:\\Python314\\python.exe",
+      "-m",
+      "pytest",
+      "--noconftest",
+      "-q",
+      "tests/test_muon_frozen_normal_schur_certificate.py"
+    ],
+    "exit_code": 0,
+    "stdout": ".....                                                                    [100%]\n5 passed in 0.83s\n"
+  },
+  "initial_attempts": [
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "src/bhsm/interface/muon_frozen_normal_schur_certificate.py",
+        "--application",
+        "artifacts/muon_parent_gauge_geometry_correction_20261010/normal_interior_run_1",
+        "--output",
+        "artifacts/muon_frozen_normal_schur_certificate_20261010/interior_run_0"
+      ],
+      "chunk_id": "05855a",
+      "exit_code": 1,
+      "original_token_count": 365,
+      "output": "Traceback (most recent call last):\r\n  File \"C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\muon_frozen_normal_schur_certificate.py\", line 11, in <module>\r\n    import json\r\n  File \"C:\\Python314\\Lib\\json\\__init__.py\", line 106, in <module>\r\n    from .decoder import JSONDecoder, JSONDecodeError\r\n  File \"C:\\Python314\\Lib\\json\\decoder.py\", line 3, in <module>\r\n    import re\r\n  File \"C:\\Python314\\Lib\\re\\__init__.py\", line 125, in <module>\r\n    import enum\r\n  File \"C:\\Python314\\Lib\\enum.py\", line 3, in <module>\r\n    from types import MappingProxyType, DynamicClassAttribute\r\n  File \"C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\types.py\", line 5, in <module>\r\n    from dataclasses import asdict, dataclass, field\r\n  File \"C:\\Python314\\Lib\\dataclasses.py\", line 3, in <module>\r\n    import copy\r\n  File \"C:\\Python314\\Lib\\copy.py\", line 53, in <module>\r\n    import weakref\r\n  File \"C:\\Python314\\Lib\\weakref.py\", line 22, in <module>\r\n    from _weakrefset import WeakSet\r\n  File \"C:\\Python314\\Lib\\_weakrefset.py\", line 6, in <module>\r\n    from types import GenericAlias\r\nImportError: cannot import name 'GenericAlias' from 'types' (consider renaming 'C:\\\\Users\\\\carbe\\\\Downloads\\\\BHSM_muon_parent_maxwell_worktree_20261001\\\\src\\\\bhsm\\\\interface\\\\types.py' since it has the same name as the standard library module named 'types' and prevents importing that standard library module)\r\n",
+      "wall_time_seconds": 0.1126884
+    },
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "src/bhsm/interface/muon_frozen_normal_schur_certificate.py",
+        "--application",
+        "artifacts/muon_parent_gauge_geometry_correction_20261010/normal_interior_run_1",
+        "--output",
+        "artifacts/muon_frozen_normal_schur_certificate_20261010/interior_run_1"
+      ],
+      "chunk_id": "4cc4df",
+      "exit_code": 1,
+      "original_token_count": 365,
+      "output": "Traceback (most recent call last):\r\n  File \"C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\muon_frozen_normal_schur_certificate.py\", line 11, in <module>\r\n    import json\r\n  File \"C:\\Python314\\Lib\\json\\__init__.py\", line 106, in <module>\r\n    from .decoder import JSONDecoder, JSONDecodeError\r\n  File \"C:\\Python314\\Lib\\json\\decoder.py\", line 3, in <module>\r\n    import re\r\n  File \"C:\\Python314\\Lib\\re\\__init__.py\", line 125, in <module>\r\n    import enum\r\n  File \"C:\\Python314\\Lib\\enum.py\", line 3, in <module>\r\n    from types import MappingProxyType, DynamicClassAttribute\r\n  File \"C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\types.py\", line 5, in <module>\r\n    from dataclasses import asdict, dataclass, field\r\n  File \"C:\\Python314\\Lib\\dataclasses.py\", line 3, in <module>\r\n    import copy\r\n  File \"C:\\Python314\\Lib\\copy.py\", line 53, in <module>\r\n    import weakref\r\n  File \"C:\\Python314\\Lib\\weakref.py\", line 22, in <module>\r\n    from _weakrefset import WeakSet\r\n  File \"C:\\Python314\\Lib\\_weakrefset.py\", line 6, in <module>\r\n    from types import GenericAlias\r\nImportError: cannot import name 'GenericAlias' from 'types' (consider renaming 'C:\\\\Users\\\\carbe\\\\Downloads\\\\BHSM_muon_parent_maxwell_worktree_20261001\\\\src\\\\bhsm\\\\interface\\\\types.py' since it has the same name as the standard library module named 'types' and prevents importing that standard library module)\r\n",
+      "wall_time_seconds": 0.2055653
+    }
+  ],
+  "output_identities": [
+    {
+      "bytes": 1672,
+      "path": "artifacts/muon_frozen_normal_schur_certificate_20261010/interior_run_3/certificate.json",
+      "sha256": "a56a7a771ae2a3d8649b069a1a618c833aca4efcb8433864d90ec5416bd9b760"
+    },
+    {
+      "bytes": 1672,
+      "path": "artifacts/muon_frozen_normal_schur_certificate_20261010/interior_run_4/certificate.json",
+      "sha256": "a56a7a771ae2a3d8649b069a1a618c833aca4efcb8433864d90ec5416bd9b760"
+    }
+  ],
+  "precision_bits": 192,
+  "proof": "For symmetric K, r=K delta+B and z*=D\u2212B^T K^-1 B. Center=D+B^Tdelta+delta^Tr; |z*\u2212center|\u2264||K^-1||2||r||2\u00b2. Verified ||I\u2212QK||F<1 bounds the inverse without assuming positivity.",
+  "rejected_certificate_guard": {
+    "argv": [
+      "C:\\Python314\\python.exe",
+      "scripts/certify_muon_frozen_normal_schur.py",
+      "--application",
+      "artifacts/muon_parent_gauge_geometry_correction_20261010/normal_wall_mean_run_1",
+      "--output",
+      "artifacts/muon_frozen_normal_schur_certificate_20261010/wall_mean_guard_run_1"
+    ],
+    "chunk_id": "4d1740",
+    "exit_code": 1,
+    "original_token_count": 414,
+    "output": "Traceback (most recent call last):\r\n  File \"C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\scripts\\certify_muon_frozen_normal_schur.py\", line 7, in <module>\r\n    runpy.run_module('bhsm.interface.muon_frozen_normal_schur_certificate',run_name='__main__')\r\n    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"<frozen runpy>\", line 229, in run_module\r\n  File \"<frozen runpy>\", line 88, in _run_code\r\n  File \"C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\muon_frozen_normal_schur_certificate.py\", line 120, in <module>\r\n    print(json.dumps(materialize_certificate(args.application,args.output,\r\n                     ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n                                            precision_bits=args.precision_bits),sort_keys=True))\r\n                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\muon_frozen_normal_schur_certificate.py\", line 97, in materialize_certificate\r\n    result=certify_frozen_normal_contraction(data['internal_hessian'],data['source_B'],\r\n        receipt['normal_D'],data['internal_response'],precision_bits=precision_bits)\r\n  File \"C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\src\\bhsm\\interface\\muon_frozen_normal_schur_certificate.py\", line 60, in certify_frozen_normal_contraction\r\n    raise ArithmeticError('inverse preconditioner fails the verified Neumann test')\r\nArithmeticError: inverse preconditioner fails the verified Neumann test\r\n",
+    "scope": "Certificate guard rejection for the old mixed-chart 129-row saved block. This is not proof of physical singularity or of a valid physical quotient.",
+    "wall_time_seconds": 1.0518942
+  },
+  "rejected_guard_wrote_no_result": true,
+  "scientific_classification": {
+    "CONTROL_ONLY": [
+      "represented compact normal coefficient and numerical parameter family"
+    ],
+    "DERIVED": [
+      "indefinite Neumann inverse bound and residual-corrected quadratic contraction"
+    ],
+    "EVALUATED": [
+      "outward interval for exact stored 105-row internal block"
+    ],
+    "OWNER_DEFINITION_GAP": [],
+    "UNEVALUATED": [
+      "producer rounding, continuum/base/mode error and physical native Pauli response"
+    ]
+  },
+  "scope": "Exact-stored finite normal contraction only; no physical impedance, formation cutoff or anomaly enclosure.",
+  "source_identities": [
+    {
+      "path": "src/bhsm/interface/muon_frozen_normal_schur_certificate.py",
+      "sha256": "2810cd2eeda39190faf002c6579387cd745c467c9de96a08dd6602b526bba670"
+    },
+    {
+      "path": "tests/test_muon_frozen_normal_schur_certificate.py",
+      "sha256": "6a280639b9add5b891885cf12d7077209989f832830119d1d6614bfd2e05d7cd"
+    },
+    {
+      "path": "scripts/certify_muon_frozen_normal_schur.py",
+      "sha256": "7b7644ea504e92d471482f399c8c127df503c72c4be286f42a96cd63fd8e6aba"
+    }
+  ],
+  "successful_runs": [
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "scripts/certify_muon_frozen_normal_schur.py",
+        "--application",
+        "artifacts/muon_parent_gauge_geometry_correction_20261010/normal_interior_run_1",
+        "--output",
+        "artifacts/muon_frozen_normal_schur_certificate_20261010/interior_run_3"
+      ],
+      "chunk_id": "cc47a3",
+      "exit_code": 0,
+      "original_token_count": 403,
+      "output": "{\"Neumann_preconditioner_defect_upper\": 1.0608069065867608e-07, \"cap_sector_constraint_density_max\": 0.36343600453940844, \"complete_observable\": false, \"continuum_base_native_or_Pauli_error_enclosed\": false, \"dimension\": 105, \"error_scope\": \"only exact saved normal K,B,D arithmetic; producer discretization/rounding, nonlinear residual and native response excluded\", \"exact_input_convention\": \"each stored binary64 entry is an exact real number\", \"inherited_density_scope\": \"historical receipt key unprojected_constraint_density_max stores CAP-only density, not total coupled action residual\", \"input_archive_sha256\": \"d4ee812f4121d1ef5bb754563e27173c38a9a8b3945555853402c3638efb92a5\", \"input_receipt_sha256\": \"21acd7912fade8a0eb6c4bd1524d5c5d1721c5effdcb1adce816534a5ddcbbab\", \"inverse_operator_norm_upper\": 172385.04056716792, \"linear_residual_norm_upper\": 1.800886304950249e-08, \"physical_impedance_or_mode_identified\": false, \"physical_mode_selected\": false, \"positive_internal_operator_assumed\": false, \"precision_bits\": 192, \"producer_source_sha256\": \"2810cd2eeda39190faf002c6579387cd745c467c9de96a08dd6602b526bba670\", \"quadratic_residual_error_upper\": 5.590776954256519e-11, \"residual_corrected_center_ball\": \"[18026.18789451224756292403395157791173501313274313599976 +/- 1.79e-51]\", \"response_norm_upper\": 1207.610933158635, \"response_z_interval\": [18026.18789451219, 18026.187894512306], \"scope\": \"CERTIFIED_EXACT_STORED_FINITE_NORMAL_MATRIX_ARITHMETIC\", \"simple_contraction_ball\": \"[18026.1878944570069041432165485986977311099177005409573866 +/- 3.96e-53]\", \"source_norm_upper\": 1172952.9612180586}\r\n",
+      "wall_time_seconds": 0.806445
+    },
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "scripts/certify_muon_frozen_normal_schur.py",
+        "--application",
+        "artifacts/muon_parent_gauge_geometry_correction_20261010/normal_interior_run_1",
+        "--output",
+        "artifacts/muon_frozen_normal_schur_certificate_20261010/interior_run_4"
+      ],
+      "chunk_id": "f0d6ff",
+      "exit_code": 0,
+      "original_token_count": 403,
+      "output": "{\"Neumann_preconditioner_defect_upper\": 1.0608069065867608e-07, \"cap_sector_constraint_density_max\": 0.36343600453940844, \"complete_observable\": false, \"continuum_base_native_or_Pauli_error_enclosed\": false, \"dimension\": 105, \"error_scope\": \"only exact saved normal K,B,D arithmetic; producer discretization/rounding, nonlinear residual and native response excluded\", \"exact_input_convention\": \"each stored binary64 entry is an exact real number\", \"inherited_density_scope\": \"historical receipt key unprojected_constraint_density_max stores CAP-only density, not total coupled action residual\", \"input_archive_sha256\": \"d4ee812f4121d1ef5bb754563e27173c38a9a8b3945555853402c3638efb92a5\", \"input_receipt_sha256\": \"21acd7912fade8a0eb6c4bd1524d5c5d1721c5effdcb1adce816534a5ddcbbab\", \"inverse_operator_norm_upper\": 172385.04056716792, \"linear_residual_norm_upper\": 1.800886304950249e-08, \"physical_impedance_or_mode_identified\": false, \"physical_mode_selected\": false, \"positive_internal_operator_assumed\": false, \"precision_bits\": 192, \"producer_source_sha256\": \"2810cd2eeda39190faf002c6579387cd745c467c9de96a08dd6602b526bba670\", \"quadratic_residual_error_upper\": 5.590776954256519e-11, \"residual_corrected_center_ball\": \"[18026.18789451224756292403395157791173501313274313599976 +/- 1.79e-51]\", \"response_norm_upper\": 1207.610933158635, \"response_z_interval\": [18026.18789451219, 18026.187894512306], \"scope\": \"CERTIFIED_EXACT_STORED_FINITE_NORMAL_MATRIX_ARITHMETIC\", \"simple_contraction_ball\": \"[18026.1878944570069041432165485986977311099177005409573866 +/- 3.96e-53]\", \"source_norm_upper\": 1172952.9612180586}\r\n",
+      "wall_time_seconds": 0.7850464
+    }
+  ],
+  "superseded_density_scope_runs": [
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "scripts/certify_muon_frozen_normal_schur.py",
+        "--application",
+        "artifacts/muon_parent_gauge_geometry_correction_20261010/normal_interior_run_1",
+        "--output",
+        "artifacts/muon_frozen_normal_schur_certificate_20261010/interior_run_0"
+      ],
+      "chunk_id": "c32af7",
+      "exit_code": 0,
+      "original_token_count": 368,
+      "output": "{\"Neumann_preconditioner_defect_upper\": 1.0608069065867608e-07, \"complete_observable\": false, \"continuum_base_native_or_Pauli_error_enclosed\": false, \"dimension\": 105, \"error_scope\": \"only exact saved normal K,B,D arithmetic; producer discretization/rounding, nonlinear residual and native response excluded\", \"exact_input_convention\": \"each stored binary64 entry is an exact real number\", \"input_archive_sha256\": \"d4ee812f4121d1ef5bb754563e27173c38a9a8b3945555853402c3638efb92a5\", \"input_receipt_sha256\": \"21acd7912fade8a0eb6c4bd1524d5c5d1721c5effdcb1adce816534a5ddcbbab\", \"inverse_operator_norm_upper\": 172385.04056716792, \"linear_residual_norm_upper\": 1.800886304950249e-08, \"physical_impedance_or_mode_identified\": false, \"physical_mode_selected\": false, \"positive_internal_operator_assumed\": false, \"precision_bits\": 192, \"producer_source_sha256\": \"e2e90a24f0c8e29a976f46fe46aae8012554a9390553f60e48414888b31ed16d\", \"quadratic_residual_error_upper\": 5.590776954256519e-11, \"residual_corrected_center_ball\": \"[18026.18789451224756292403395157791173501313274313599976 +/- 1.79e-51]\", \"response_norm_upper\": 1207.610933158635, \"response_z_interval\": [18026.18789451219, 18026.187894512306], \"scope\": \"CERTIFIED_EXACT_STORED_FINITE_NORMAL_MATRIX_ARITHMETIC\", \"simple_contraction_ball\": \"[18026.1878944570069041432165485986977311099177005409573866 +/- 3.96e-53]\", \"source_norm_upper\": 1172952.9612180586, \"unprojected_base_constraint_density_max\": 0.36343600453940844}\r\n",
+      "wall_time_seconds": 0.8632384
+    },
+    {
+      "argv": [
+        "C:\\Python314\\python.exe",
+        "scripts/certify_muon_frozen_normal_schur.py",
+        "--application",
+        "artifacts/muon_parent_gauge_geometry_correction_20261010/normal_interior_run_1",
+        "--output",
+        "artifacts/muon_frozen_normal_schur_certificate_20261010/interior_run_1"
+      ],
+      "chunk_id": "bc7861",
+      "exit_code": 0,
+      "original_token_count": 368,
+      "output": "{\"Neumann_preconditioner_defect_upper\": 1.0608069065867608e-07, \"complete_observable\": false, \"continuum_base_native_or_Pauli_error_enclosed\": false, \"dimension\": 105, \"error_scope\": \"only exact saved normal K,B,D arithmetic; producer discretization/rounding, nonlinear residual and native response excluded\", \"exact_input_convention\": \"each stored binary64 entry is an exact real number\", \"input_archive_sha256\": \"d4ee812f4121d1ef5bb754563e27173c38a9a8b3945555853402c3638efb92a5\", \"input_receipt_sha256\": \"21acd7912fade8a0eb6c4bd1524d5c5d1721c5effdcb1adce816534a5ddcbbab\", \"inverse_operator_norm_upper\": 172385.04056716792, \"linear_residual_norm_upper\": 1.800886304950249e-08, \"physical_impedance_or_mode_identified\": false, \"physical_mode_selected\": false, \"positive_internal_operator_assumed\": false, \"precision_bits\": 192, \"producer_source_sha256\": \"e2e90a24f0c8e29a976f46fe46aae8012554a9390553f60e48414888b31ed16d\", \"quadratic_residual_error_upper\": 5.590776954256519e-11, \"residual_corrected_center_ball\": \"[18026.18789451224756292403395157791173501313274313599976 +/- 1.79e-51]\", \"response_norm_upper\": 1207.610933158635, \"response_z_interval\": [18026.18789451219, 18026.187894512306], \"scope\": \"CERTIFIED_EXACT_STORED_FINITE_NORMAL_MATRIX_ARITHMETIC\", \"simple_contraction_ball\": \"[18026.1878944570069041432165485986977311099177005409573866 +/- 3.96e-53]\", \"source_norm_upper\": 1172952.9612180586, \"unprojected_base_constraint_density_max\": 0.36343600453940844}\r\n",
+      "wall_time_seconds": 0.9055648
+    }
+  ]
+}

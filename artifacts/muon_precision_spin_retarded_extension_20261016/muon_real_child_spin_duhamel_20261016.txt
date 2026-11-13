@@ -1,0 +1,184 @@
+ACTUAL ALL10 LORENTZ-GENERATOR SPIN RESPONSE KERNELS
+2026-10-16. Supported constituent derivative, not a selected physical E/B source.
+
+REPO=C:/Users/carbe/Downloads/BHSM_muon_parent_maxwell_worktree_20261001
+WORK=C:/Users/carbe/OneDrive/Documents/CODEX
+New source:
+  src/bhsm/interface/muon_spin_duhamel_insertion.py
+    SHA1fe853dcc7325d28f7092174dcf65c2bfa4e2df9846fbb6ac27c65487675a0ca
+  tests/test_muon_spin_duhamel_insertion.py
+    SHAc718e903d16c893810603ec8025b1e60af66236d4c9dbf4f19c3f9c8eebfe08a
+  audits/bhsm_real_child_spin_duhamel_20261016.py
+    SHA8d2dc383e96930a147c767ca4417bb47d8814f0eb90a4c8632e64023b49f1e5f
+Three tests passed7.24s. Test XML:
+  WORK/outputs/bhsm_real_child_spin_duhamel_20261016/unit_tests.xml
+    SHA9493fa402432fc62c76e259deac4b09dc9627c765a32af7e30d016c97e4f40e2
+Independent final applications:
+  WORK/outputs/bhsm_real_child_spin_duhamel_20261016/final_run_1
+  WORK/outputs/bhsm_real_child_spin_duhamel_20261016/final_run_2
+Both pairs byte-identical:
+  application.npz2348500bytes
+    SHA41414cfb04369e658989665fb4e5351481405ab8ec01c4228dc9d94a9c3ab65e
+  result.json249262bytes
+    SHAe3e962dd313090498b9838a1483ca394d3619f31121d76af15fac394288e6353
+Earlier pilot application_run_1 remains preserved. Independent variational
+helper/producer review PASS. No previously published file was changed.
+
+1. FIXED PUBLISHED ACTUAL BACKGROUND
+
+The consumed background is exactly
+  artifacts/muon_real_radial_spin_bolt_20261016/geometric_spin_run_1,
+its application.npz SHA287888657ad739da19982a6dbe71958b300e20c655e9fa66a38fcd4f05b514de,
+and frozen Spin producer SHA0c3b8a7e2d2009276f460d316259a92efb8450e65a8362badc6edcb987cce7d3.
+The original real inherited child cell is sampled only within[0,1e-5].
+The field/history/profile IVP is not solved again. New numerical integrals
+evaluate response kernels on this same supplied background.
+
+Frame order is(0,4,1,2,3). Existing M5 geometric Gamma matrices are used,
+with K=Gamma0 Gamma4 and J_AB=GammaA GammaB/2 for all A<B: TEN independent
+Spin(1,4) Lorentz generators, not only the background boost channel.
+The source convention is Omega=sum_(A<B)omega_AB J_AB, equivalent to the
+earlier FULL ordered1/4 sum. There are4 commuting and6 anticommuting
+generator channels relative to K.
+
+The existing full128 is EXACTLY the particle Spin4 and conjugate Spin4
+blocks, each tensored with its existing internal16, and the full384 is
+the existing3-family repetition. This factorization is checked with error0.
+The computational8x8 particle/conjugate reduced matrix is not Spin(8),
+an M8 geometric Spin16 assignment, a new species, or a trace/statistics
+choice. Both full128 and384 ROWS AND COLUMNS are explicitly present in
+the saved sparse kernel/response arrays. No lepton18 projection is used.
+
+2. THE FULL NONCOMMUTING INSERTION
+
+For Pdot=-Omega P and arbitrary fixed-endpoint source deltaOmega,
+  delta P(t1,t0)=-integral P(t1,s)deltaOmega(s)P(s,t0)ds.
+Thus for each of the10 components the actual kernel is
+  K_AB(s)=-P(t1,s)J_AB P(s,t0).
+No deltaOmega_E or deltaOmega_B is supplied or assigned zero.
+
+On this background Omega_eps=eps*omega(t)K/2 in the ambient frame,
+and eps*(omega+eta_dot)K/2 in the actual adapted wall frame.
+Let alpha(s)=integral_0^s omega_effective/2, a=alpha(h),
+d(s)=a-2alpha(s). Then
+  K_AB=-cosh(q)J_AB+eps*sinh(q)K J_AB,
+where q=a in commuting channels and q=d in anticommuting channels.
+The ORDER of Pleft,J,Pright is preserved. An unknown insertion is not
+commuted through the background boost merely because Omega itself commutes
+with itself at different times.
+
+The data keep base-J and the correction separately:
+  correction= -2sinh(q/2)^2 J_AB+eps*sinh(q)K J_AB.
+This retains tiny quadratic and cross-channel terms that a full near-base
+matrix sum can round away. Sparse storage removes no small entries: exact
+zeros alone are absent. Both128/384 corrections at all32 Gauss nodes,
+the separate endpoints/midpoint, and the base generators are saved.
+
+3. THE ACTUAL CANCELLATION-SENSITIVE MIDPOINT
+
+Direct a-2alpha(s) subtraction is avoided. The exact integration-by-parts
+identity is
+  d(s)=(h-2s)*omega(s)/2
+       +integral_0^s t*omega_prime(t)/2 dt
+       +integral_s^h (h-t)*omega_prime(t)/2 dt.
+The supplied actual rawtime source first is the derivative of the same
+represented inside-cell coefficient, so it evaluates this identity without
+exterior/history extrapolation. BOTH ambient and adapted effective omega
+and their derivatives are retained.
+
+At the actual midpoint h/2:
+  d_ambient=-1.522356521165513e-11,
+  d_adapted=-1.4573998567747054e-11.
+The8/16/32 split refinement has worst3.82046754564e-15 relative difference.
+For an ambient noncommuting channel, the separately saved coefficients are
+  J coefficient=-1.158784687e-22,
+  KJ coefficient=-1.522356521165513e-11 (eps=+1).
+Independent MP80 evaluation of those scalar coefficients gives about
+8.05715e-17 and3.86262e-23 nonzero-relative errors, respectively. Neither
+coefficient is zeroed because the field/history is homogeneous.
+
+4. INDEPENDENT MATRIX AND ORDERED-ODE VALIDATION
+
+MP80 exponentials use the ACTUAL fixed particle/conjugate gamma entries
+and every one of the10 generators, both orientations, both frames, at
+both endpoints and the midpoint. These are120 full matrix controls.
+Worst full-kernel absolute difference is4.97727819940e-23; worst stable
+CORRECTION matrix-relative difference is3.26947872398e-12.
+
+The literal finite-gamma matrix-exponential correction is also saved and
+compared independently, rather than silently imposing exact finite-input
+Clifford relations. Its MP matrix-relative error is at most2.30229864223e-11.
+The displayed difference from the ideal Clifford identity retains the
+small source-gamma roundoff effects. Individual arbitrarily tiny entries
+are preserved but are not each claimed to have a relative error enclosure.
+The diagnostic uses Taylor order17 with an explicit per-increment remainder
+bound, at most3.64953139310e-110 on these actual arguments. It is not an
+unqualified exact exponential formula for arbitrarily large arguments.
+
+Declared bounded cubic unit-source profiles are
+  f_j(u)=1+.031*(j+1)u-.17u^2+.11u^3, u=t/h.
+They test kernel application, not physical E/B source profiles or fitted
+parameters. The independent perturbed ORDERED ODE is
+  Pdot_xi=-(Omega+xi*f_j J_j)P_xi.
+It is solved through the increment P_xi-I on the entire supplied cell.
+All10 generators, both frames/orientations,8/16/32 time steps and ALL
+parameter steps(.08,.04,.02) are retained:360 derivative controls.
+The fourth-order centered derivative is compared against the Duhamel
+integral; no favorable step is selected. Worst nonzero matrix-relative
+errors are
+  8 time steps:9.94008316444e-13,
+  16 steps:6.21255197301e-14,
+  32 steps:9.59552701142e-15.
+All360 pass2e-10 as controls of this supplied constituent response.
+The Gauss8/16/32 integrated response comparisons are within3.00945e-16
+relative. These checks do not establish physical-field/time/domain error.
+
+5. MOVING TIMES, FRAMES AND INITIAL LIFT; EXACTLY ONCE
+
+The explicit moving-limit kernels are
+  delta_t1 P=-Omega(t1)P delta t1,
+  delta_t0 P=+P Omega(t0)delta t0.
+For adapted P_ad=B1^-1 P_amb B0, use independent endpoint frame Lie
+coordinates L_i=B_i^-1 delta B_i, with all10 components retained:
+  delta P_ad=-L1 P_ad+B1^-1(delta P_amb)B0+P_ad L0.
+Full128/384 coefficient arrays for every initial/final frame direction,
+both time contacts, and the left multiplier of arbitrary physical
+delta(initial Spin lift) are saved. Initial physical lift remains None.
+The actual wall-velocity frame kernels also retain
+  L_i=eps*K*delta Uwall_i/[2(1-Uwall_i^2)].
+No initial Spin frame, reset F0 or physical endpoint variation is chosen.
+
+These frame contact kernels have an independent actual all10 Ward check.
+For lambda(t)=f_j(t/h)J_j,
+  deltaOmega_frame=lambda_dot+[Omega,lambda],
+  -integral Pleft deltaOmega_frame Pright
+      =-lambda(t1)P+P lambda(t0).
+All120 frame/orientation/quadrature/generator controls are saved; worst
+nonzero-relative error is7.37257477290e-14. This validates the noncommuting
+endpoint signs on the actual background, not only on a constant fixture.
+
+Use ONE consistent variation route: ambient bulk source plus explicit
+endpoint B variations, OR the complete adapted deltaOmega including its
+interior B variation. The pure-frame adapted integral already equals its
+endpoint terms, so those same frame terms must not be added a second time.
+Likewise physical moving-limit contacts apply to fixed-limit coefficient
+sources; they must not duplicate motion already included in a total source.
+
+If the physical propagated initial datum is P L0 psi_event, its variation
+also contains P deltaL0 psi_event and P L0 deltapsi_event. Neither datum
+nor those variations are replaced by identity/zero physical values here.
+
+6. PHYSICAL ENERGY/FIELD MATCHING STILL REQUIRED
+
+The constructed kernels accept general noncommuting deltaOmega_E/B once
+the coupled physical fields and moving reset/domain determine them. The
+previous uncontracted Cartan/tetrad variation fixes the map from delta e,
+delta g and moving trajectory to deltaOmega. It includes angular/normal
+rotations beyond the homogeneous rawtime chart; none is presumed zero.
+U2 gauge Wilson, eta zero-order contact and statistics/stratified domains
+remain distinct from this geometric Spin factor. No new UV species or
+empirical coefficient enters this kernel construction.
+
+No full physical outgoing derivative, normalized two-spin muon state,
+magnetic moment, coupled correction, or final Maxwell/all226-row pass is
+inferred from these supplied-background constituent controls.

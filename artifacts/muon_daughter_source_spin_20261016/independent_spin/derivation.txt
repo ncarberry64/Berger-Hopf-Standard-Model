@@ -1,0 +1,234 @@
+LOCAL BHSM CHARGED-CURRENT DAUGHTER SPIN INSTRUMENT
+2026-10-16 -- conditional local calculation, no physical moment/decay claim
+
+1. Actual retained conventions and scope
+
+The source owners are:
+  src/bhsm/interface/muon_primal_charged_current_response.py:22
+    charged_current_matrices: HS-normalized Hermitian SU2 charged currents,
+    spin sigma_mu/sqrt(2), family projector, complete L_L block;
+  src/bhsm/interface/muon_charged_current_fermi_reduction.py:19
+    transported_fermi_template: same transported Cauchy-frame current
+    contraction, canonical chi=R4^(3/2) psi/V, Haar carrier 1/sqrt(V),
+    V=2pi^2; no extra V/N or quadratic-action multiplicity on a spinor;
+  src/bhsm/interface/muon_coupled_tensor_decay_rate.py:31
+    supplied complete C[a,b,c,d] multiplies
+    (nu_mu^dagger[a] mu[b]) (e^dagger[c] anti_nu_e[d]);
+    initial unpolarized spin average occurs once;
+  src/bhsm/interface/completion/foundational_dirac_spin_glue_v14_45.py:79
+    gamma signature (+---), transformed by source_spin_frame at
+    src/bhsm/interface/muon_local_source_jet.py:33.
+
+The gamma_LR array obtained by evaluating the ACTUAL two source functions
+is compared with this prototype's independent explicit Weyl matrices:
+  gamma0=(0 I; I 0), gammai=(0 sigmai; -sigmai 0),
+  gamma5=diag(-I,+I), PL=diag(I,0).
+
+All masses/couplings in the controls are declared dimensionless test
+values. No lifetime, observed muon/electron mass or Fermi datum is fitted.
+The full supplied C is accepted; the V-A special tensor is used ONLY for
+independent analytic and gamma-trace controls. An actual non-template
+BHSM tensor is never replaced by this special tensor.
+
+Neutrinos are massless in this component. The charged daughter mass is
+retained exactly. The local C must be independent of neutrino relative
+momentum for the exact degree-two average below. A supplied temporal
+symbol C((M-E_nu)/E_kappa), nonlocal vertex or outgoing wavefunction must
+be retained inside its phase-space integration. The older temporal
+producer already treats its higher polynomial moments separately.
+
+2. Complete two-spin instrument and amplitude
+
+Let p_mu=(M,0), k=(E,p n), p=sqrt(E^2-m^2), |n|=1, and q=p_mu-k.
+In the retained Weyl basis the parent columns are
+  U_mu=sqrt(M) (I;I),
+and the electron columns are
+  U_e=(t I-sigma.p/t; t I+sigma.p/t)/sqrt(2), t=sqrt(E+m).
+Thus U_mu U_mu^dagger is the UNSUMMED parent-spin column map; inserting
+rho_mu=I/2 reproduces the existing initial average exactly once. Also
+  U_e U_e^dagger=(E I-sigma.p, m I; m I, E I+sigma.p).
+
+For fixed neutral momenta choose either normalized rank-one spinor
+factor of rho_n=E_n I-p_n.sigma and rho_a=E_a I-p_a.sigma. Their phases
+cancel in every following kernel. The amplitude is
+  A[r,s]=sum_abcd C[a,b,c,d] w_n[a]^* U_mu[b,s]
+                           U_e[c,r]^* w_a[d].
+It retains both electron spin r and parent input spin s.
+
+The unnormalized instrument kernel is
+  K[r,l,s,t]=< A[r,s] A[l,t]^* >_neutral_angles.
+For any parent rho, rho_e_un[r,l]=sum_st K[r,l,s,t] rho[s,t].
+The parent analyzer has D[t,s]=sum_r K[r,r,s,t], so its event weight is
+Tr(rho D), INCLUDING complex off-diagonal rho (e.g. sigma2 polarization).
+The flattening K[r,l,s,t] -> Choi[(r,s),(l,t)] is positive semidefinite
+for a physical adjoint left tensor. This is a quantum instrument, not
+a density of a surviving muon after decay. Applying it to one factor of
+an entangled parent pair retains the other parent's spin correlations;
+no unpolarized covariance replacement is needed.
+
+3. Exact neutral integration, including an arbitrary complete local C
+
+In the neutral-pair rest frame, rotational averaging gives
+  <p_n^alpha p_a^beta>=q^alpha q^beta/6+q^2 eta^alpha beta/12.
+Define Q=q0 I-q_vec.sigma and s=q^2. Consequently
+  N[e,a,d,h]=<rho_n[e,a] rho_a[d,h]>
+    = Q[e,a] Q[d,h]/6
+      +s (I[e,a]I[d,h]-sum_i sigmai[e,a]sigmai[d,h])/12.
+The exact complete kernel is
+  K[r,l,s,t]=sum C_abcd C^sharp_efgh U_mu[b,s] U_mu^*[f,t]
+                  U_e^*[c,r] U_e[g,l] N[e,a,d,h].
+On a physical family C^sharp=C^*. On independent analytic source axes,
+C^sharp and its source first are independent supplied data; the code
+does NOT conjugate the complex source coordinate by fiat.
+
+The differential rate is
+  dGamma/(dE dOmega_e/(4pi))= p/(64 pi^3 M) Tr(rho_mu D).
+Combining dE=-ds/(2M) recovers the old retained convention
+  dGamma=ds p/(128 pi^3 M^2) <|A|^2>.
+No further angular-volume factor, initial spin average, flavor copy,
+Haar factor or charge-current trace index occurs.
+
+4. V-A exact analyzer and parity sign
+
+For the CONTROL tensor C=g sum_mu bar_sigma^mu_ab bar_sigma_mu_cd,
+with both charged indices in their first two (left) slots, a literal
+four-component gamma calculation gives, after summing daughter spins,
+  |A|^2_s=8 |g|^2 [(p_mu-M s_mu).p_a] [k.p_n].
+For rho_mu=(I+S.sigma)/2 this corresponds to the full 2x2 analyzer
+  D_point=8 |g|^2 M (k.p_n) [E_a I+p_a_vec.sigma].
+Inserting the exact neutral moments yields
+  D_minus(E,n)=(2 |g|^2 M/3) {
+    [E(3M^2+3m^2-4ME)-2M m^2] I
+    +p[M^2+3m^2-4ME] n.sigma }.
+This holds for m <= E <= (M^2+m^2)/(2M).
+
+At m=0, x=2E/M and Gamma0=|g|^2 M^5/(1536 pi^3),
+  dGamma_minus/(dx dOmega/(4pi))
+     =2 Gamma0 x^2 [(3-2x) I+(1-2x) n.sigma].
+Equivalently for a degree-P parent polarized along the reference axis,
+  d^2Gamma_minus/(dx dcos(theta))
+     =Gamma0 x^2 [(3-2x)+P cos(theta)(1-2x)].
+High-energy electrons from mu-minus therefore prefer OPPOSITE the muon
+physical spin; low-energy electrons have the opposite asymmetry sign.
+
+For mu-plus the Hermitian-conjugate action is evaluated with physical
+antiparticle spin labels v_s=i gamma2 u_s^*. Incoming v_mu occurs daggered
+and outgoing positron v_e occurs undaggered. Thus the exact complete
+positive-charge kernel contracts C^* with V_mu^* and V_e, and C with
+V_mu and V_e^*, with N[a,e,h,d]. It gives the SAME scalar analyzer and
+the OPPOSITE n.sigma coefficient, also at finite m. A canonical v spin
+column index cannot simply be called the same physical Pauli label as a
+u column without this charge-conjugation conversion. The massless
+daughter polarization is -1 (electron) and +1 (positron).
+
+The conventional Fermi normalization is g=2sqrt(2) G_F, so Gamma0 becomes
+G_F^2 M^5/(192 pi^3). This is solely a coefficient dictionary. It does
+not identify a reached BHSM local tensor with a one-parameter V-A fit.
+The independently checked sign and coefficient agree with PDG Muon
+Decay Parameters, Eq.(57.3), and its current normalization Eq.(57.9):
+https://pdg.lbl.gov/2025/reviews/rpp2025-rev-muon-decay-params.pdf
+
+5. Finite charged mass and all three daughter energy marginals
+
+Let r=m^2/M^2 and
+  f(r)=1-8r+8r^3-r^4-12r^2 log(r), f(0)=1.
+The electron formula above integrates to Gamma0 f(r).
+
+For the neutral daughters let y=2E_neutral/M, 0<=y<=1-r, z=r/(1-y).
+In units of Gamma0 and relative to dy dOmega/(4pi), the mu-minus analyzers
+are
+  D_nu_mu=2y^2(1-z)^2 {
+     [(3-2y)+z(3-y)] I+[(1-2y)-z(1+y)] n.sigma },
+  D_anti_nu_e=12y^2 (1-y-r)^2/(1-y) [I+n.sigma].
+Each spin-averaged energy integral is f(r), since every decay has one
+of each daughter. At r=0, the nu_mu energy spectrum is
+2y^2(3-2y), and the anti_nu_e spectrum is 12y^2(1-y). The mu-plus CP
+daughter labels and their spin-asymmetric terms are charge conjugated.
+
+These finite-mass neutral expressions were obtained from the actual
+unequal-mass two-body moments, not an empirical Michel fit. For a
+massless daughter a paired with a charged mass m at invariant s,
+  <a^alpha>=(1-m^2/s) q^alpha/2,
+  <a^alpha a^beta>=(1-m^2/s)^2
+                    [q^alpha q^beta/3-s eta^alpha beta/12],
+with pair phase factor 1-m^2/s. The independent four-gamma controls
+integrate these pairs explicitly using six Cartesian directions.
+
+6. Exact first variations and normalized spin response
+
+At fixed kinematics the full local functional derivative is
+  delta K=K_bilinear(delta C,C^sharp)+K_bilinear(C,delta C^sharp).
+For a physical real parameter delta C^sharp=(delta C)^*; for analytic
+source coordinates it is an independent supplied cotangent direction.
+The code implements both. It verifies delta C=iC -> delta K=0 and
+delta C=C -> delta K=2K. This alone is not a field/outgoing derivative.
+
+For a supplied real kinematic family the code also differentiates ALL
+products U_mu, U_e, N and phase p/(64pi^3M). In an interior momentum chart,
+  delta p=(E delta E-m delta m)/p,
+  delta t=(delta E+delta m)/(2t),
+  delta U_mu=(delta M/(2M)) U_mu,
+  delta q=(delta M-delta E,-delta(p n)),
+  delta s=2q0 delta q0-2q_vec.delta q_vec,
+  delta N=(delta Q tensor Q+Q tensor delta Q)/6
+              +delta s eta_sigma/12.
+Direction firsts must satisfy n.delta n=0. Endpoint momentum charts
+need a regular parameterization; no division by p=0 is silently used.
+
+If R=K[r,l,s,t]rho[s,t], w=Tr R, the conditional daughter spin state is
+R/w and its derivative is (delta R-(R/w)delta w)/w. Parent rho firsts
+are included if supplied. No conditional state is defined at zero event
+weight.
+
+For an actual induced local coefficient C=L A^{-1} R, its field first
+has the resolvent identity
+  delta C=delta L A^{-1}R+L A^{-1}delta R
+          -L A^{-1}(delta A)A^{-1}R,
+with all supplied trace/source/domain-map contacts retained. This
+prototype starts AFTER that coefficient map. It does not invent its
+full physical field, domain, pole residue, LSZ or E/B source derivatives.
+
+7. Independent numerical controls and reproducibility
+
+Final source snapshots (no further edits):
+  daughter_spin_math.py
+    f92eb07dd81a30457595d05cc2863151641fb84f90e2498474593efbd7bcbe92
+  evaluate_daughter_spin_controls.py
+    74da76d2a9187129414c4689deb3996d188e0ed5ecc5b504b5ad2d8c57cd2bec
+
+run_1 and run_2 contain byte-identical application.npz, result.json,
+executed_producer.py and executed_math.py. Exact paths and all file
+digests are in pair_inventory.json. Each result binds every actual BHSM
+source read/imported, including both gamma/source-frame owners.
+
+Selected independent results (relative unless stated):
+  literal 4x4 gamma FULL joint spin vs exact neutral moment: 4.286e-16;
+  complete arbitrary complex C vs 65-dps six-direction amplitude: 1.884e-16;
+  literal polarized invariant vs four-gamma trace: 4.761e-16;
+  mu-minus finite-mass analyzer: 1.344e-15;
+  explicit hc mu-plus finite-mass sign: 1.344e-15;
+  independent left/right analytic coefficient first: 3.351e-15;
+  physical coefficient first: 2.199e-15;
+  COMPLETE coefficient+M/m/E/n first vs 65-dps literal diff: 2.261e-16;
+  phase-space first vs 65-dps diff: 2.180e-16;
+  both finite-mass neutrino marginals vs literal gamma: 5.731e-16;
+  electron integrated finite-mass rate: 2.361e-15;
+  existing retained spin-sum phase space: 4.357e-15;
+  neutrino energy integral worst (96-point m=.07 nu_mu): 1.643e-11.
+
+The normalized-spin quotient finite-difference sweep retains ALL steps:
+  h=.01: 4.425e-5, .001:4.425e-7, .0001:4.425e-9,
+  .00001:5.497e-11. The coarse failures are not omitted or relabeled.
+The final specified local controls pass 2e-10; worst 5.497e-11. Raw Choi
+minimum -1.205e-17 and Hermiticity error4.907e-18 are retained as binary64
+roundoff diagnostics, not projected to exact positivity.
+
+The 65-dps controls compare independently formed literal amplitudes and
+their derivatives. They are not an outward interval enclosure of all
+source/operator/physical errors. The full physical outgoing derivative
+gate remains FALSE, the local coefficient's actual low-energy validity
+is not selected by this component, no physical muon decay prediction or
+moment is asserted, and no original coupled correction is performed.
+
+Runnable command (use a fresh output path):
+  C:\Python314\python.exe evaluate_daughter_spin_controls.py --out <path>

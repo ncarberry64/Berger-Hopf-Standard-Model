@@ -1,0 +1,106 @@
+Source-owned graded field/operator assembly: bounded current-source review
+2026-10-16. Read-only repository review; no physical solve or new coupling.
+
+1. Three different mathematical maps must remain distinct.
+
+AE4 owns H8 (+) H5+ (+) H5- (+) H4, its geometric L2 supertrace and
+P_strat=D_strat^dagger D_strat on the zero-mode/BRST quotient. See
+ae4_stratified_dirac_zeta_induced_owner.py:274-299. This is the microscopic
+operator specification; the dictionary is not a numeric field-to-D map.
+
+The local-action second variation maps fields/test fields to a Hessian.
+It is constructive and currently implemented in substantial sectors.
+It must not be silently identified with D_strat, or with a chosen square
+root of its own induced Hessian. Nor may an untwisted geometric Spin16
+block be tensored with an arbitrarily selected SM multiplicity to finish it.
+
+2. Nonzero-background constituents that already are executable.
+
+muon_parent_positive_coupled_temporal.py:23-61 gives the full one-form
+first-curvature map and curvature contact at an actual point:
+  H_YM(a,b)=<d_A a,d_A b>+<F_A,[a wedge b]>.
+The bracket convention here is precisely the mixed coefficient of
+F(A+t a+s b); any alternative bracket convention must move its factor
+into that definition. The existing implementation returns
+curv.T@curv+contact, rather than discarding the second term.
+The same file:65-112 supplies dependent scalar gauge-orbit images,
+independent scalar images, both DH(deltaOmega h) placements, potential
+Hessian and the same intrinsic density convention.
+
+muon_parent_positive_brst_ghost.py constructs d_A^dagger d_A from actual
+gauge-generator images and the positive ADM reference metric. The
+off-shell identity balances H_YM(D_A eta,a) against the background
+Euler-current contact; it is not an on-shell zero-row assertion.
+universal_brst_quotient.py consumes the actual constraint/generator/FP
+matrices. muon_regular_reset_brst_domain.py supplies regular trace and
+cotangent/independent-antighost incidence, not the differential FP body.
+
+Consequently a proposed Hodge-Dirac identification has a concrete test.
+For K_1 a=(d_A^dagger a,d_A a),
+  K_1^dagger K_1=d_A d_A^dagger+d_A^dagger d_A.
+The gauge-fixed YM Hessian has the additional F-contact endomorphism.
+A plain K_1 square therefore cannot be substituted for that Hessian on
+a nonflat background. This is ONLY a check on that proposed substitution:
+AE4 does not require P_strat itself to equal the classical YM Hessian.
+The heat functional of P_strat generates the local action, whose Hessian
+is then a derivative of that functional. The full twisted de Rham operator also has the
+off-degree curvature pieces d_A^2=ad(F_A); projecting to one-forms is
+another specified operation, not automatic closure. This is an exact
+matching identity, not a proof that no microscopic Dirac can match it.
+
+The full384 D5 fermion coefficient map is now constructive, including
+time/shift, all angular rows, both eta orientations and non-Hermitian eta
+body. Its local native factor and positive density proof are separate
+from equality to the complete graded D_strat. The full536 real action
+two-jet backend is likewise a mean-action derivative, not that equality.
+
+3. Bundle and statistics owners that constrain the remaining assembly.
+
+master_action/reduction.py:148-196 owns the R85 geometric/equivariant
+pushforward, normalized fibre modes, associated-mode connection and
+the retained/complement split. D5 P_alpha=P_alpha D8 is an intertwining
+statement on the stated invariant/equivariant modes; curvature coupling
+to Phi_perp remains. It is not a finite SM twist assignment. Current
+v15.50 fibre volume is 2 pi^2 LF^3; historical 16 pi^2 normalization must
+not be copied into the new scalar/coframe map.
+
+aether_einstein_cartan_joint_pushforward_v15_75.py:30ff owns M5 coframe,
+spin connection, rank16 gauge connection and Psi action; algebraic
+contorsion elimination fixes its EC interaction. The rank16 carrier,
+faithful SM quotient, M4 chiral pattern and single positive trace are
+owned by v15.53/v15.58. They constrain actual lower bundles; they do not
+by themselves identify every full M8 microscopic twisted block.
+
+aether_common_quantum_superdeterminant_v15_96.py:75-107 fixes the seed
+statistics: 12 transverse gauge species (+), 48 Weyl (-), four real HS
+(+), with matched longitudinal/complex-ghost cancellation. Its implemented
+spectrum is a periodic zero-source radius seed. v16.01 supplies genuine
+finite rank16/source vertices on that seed; v16.05 supplies the associated
+trace accounting. A matched ghost cancellation on this seed cannot be
+used as a boolean cancellation for a nonzero, moving, retarded domain.
+
+aether_quantum_functional_accounting_v16_00.py:17-43 owns the replacement
+Gamma_parent+Gamma_SM_heat=Gamma_attached_zeta-Gamma_SM_zeta[Phi;0]
+                           +Gamma_SM_heat[Phi;A,H,Psi].
+This forbids adding the same determinant as a second independent action.
+
+4. Smallest legitimate next assembly, without inventing theory.
+
+On the actual real common background, assemble existing nonzero gauge,
+scalar and FP constituent forms on one common test/domain complex;
+retain gauge-orbit/scalar mixing, all F and off-shell Euler contacts,
+regular-interface cotangents, the full fermion complement, and the
+already-owned fixed-Y/SM statistics. In parallel bind the explicit
+geometric M8 coefficient map through R85 to the same associated-mode
+connection and complement. Bind the microscopic field-to-operator map
+separately. Its regulated functional and derivatives, rather than P_strat
+itself, must generate the owned local-action terms in their stated
+expansion regime, with boundary/domain contacts and the heat-minus-zeta
+replacement retained. No P_strat=classical-Hessian identity is imposed.
+
+This is a concrete assembly/matching problem. The inspected current
+sources do not yet evaluate that complete M8 tensor/diffeomorphism-BRST/
+twisting/stratified-domain map on the physical background. Older v5/v7/v9
+status dictionaries are not used to declare a present theory no-go, and
+no nonuniqueness result is asserted here. No new coefficient, reference
+state or owner decision is introduced by this review.

@@ -1,0 +1,334 @@
+{
+  "classification": "FROZEN_POSITIVE_AREA_COUPLED_BASE_PHASE_AND_SHARED_NORMAL_APPLICATION",
+  "dependencies": {
+    "artifacts/flagship_integration/BHSM_N12_C2_REFINED_RESET_ROOT_CENTER.npz": "59dd88661b15cbeec96bc19294f9d9c64f754cccbfbc385c32329fa9c864a8fe",
+    "artifacts/flagship_integration/BHSM_N12_FULL_RESET_ACTION_JACOBIAN.npz": "35bb2b67ff784206d3a5b9dc82881f5ffd8f844b55342f2032d29cdafb38a67a",
+    "artifacts/muon_area_coupled_endpoint_20261011/gamma_0p11_incoming_boundary_run_1/application.npz": "3d459b562c616c09d1c1c1f57d143953da4e9812f73ef40dec6684104e61f5a6",
+    "artifacts/muon_area_coupled_endpoint_20261011/gamma_0p11_incoming_boundary_run_1/result.json": "4d48f9c9fcaec2dbba7092bcf95e1c13e89b3dd3758f8cbd78e7b4e8c58084aa",
+    "artifacts/muon_area_coupled_endpoint_20261011/gamma_0p11_incoming_phase_run_1/application.npz": "ccd1fa3b5cdc46f140f06298dd11eb8c72c42801a08f1cb4ed6c97eb52b1eccc",
+    "artifacts/muon_area_coupled_endpoint_20261011/gamma_0p11_incoming_phase_run_1/result.json": "9b6e05514c0a0aa3937c4a444606bb1dcaa766e74e7d7012a5dfdd8d83b2b356",
+    "artifacts/muon_area_coupled_endpoint_20261011/gamma_0p11_outgoing_boundary_run_1/application.npz": "a7a79fbc2f48aae07ef24a20abaee890e0d7f266489f184aeb01246984c699a8",
+    "artifacts/muon_area_coupled_endpoint_20261011/gamma_0p11_outgoing_boundary_run_1/result.json": "66c5c3828124b7e70f14cdc526faf4cfd1d085b735a44d2df35f01631976b55b",
+    "artifacts/muon_area_coupled_endpoint_20261011/gamma_0p11_outgoing_phase_run_1/application.npz": "e3a8ef208990b5e5d25be89463a0c905c0fc411ec9cadbee3b5f71109fcd4f5e",
+    "artifacts/muon_area_coupled_endpoint_20261011/gamma_0p11_outgoing_phase_run_1/result.json": "e85883d0411ca2e1a9e3378e280f0d9df9a209b3d523ce0ccbbc86789cb0cf5c",
+    "artifacts/muon_area_coupled_endpoint_20261011/gamma_0p11_run_1/application.npz": "78c0f68d05d45ca091b74832824d586a0691e33aec1c17ad1c162652e3dc79b8",
+    "artifacts/muon_area_coupled_endpoint_20261011/gamma_0p11_run_1/result.json": "2dacad861a2f811b8d02cfb3c600b6c3d8da6af35720741034c57808d0e27aad",
+    "artifacts/muon_area_endpoint_response_20261011/run_1/application.npz": "7a279035502273e8962cd36dcaf1f1f21610fc2e03a4b659bc2a7d778f5df502",
+    "artifacts/muon_area_endpoint_response_20261011/run_1/result.json": "b2c5db5a61894fb1b351bc06f28c7fed05760bee32f7c03521cc53c774ddcc42",
+    "artifacts/muon_birth_transfer_value_20261008/retained_reset/run_1/result.json": "d0fec0f8e8a05818fcce67e88ed8db73744484220a2cb213825893f481cb0a72",
+    "artifacts/muon_calibrated_pauli_20261009/inputs.json": "0b614ab6f26d169ca04a4878f767f78eb3668484840867e46aebbebf186369da",
+    "artifacts/muon_calibrated_weak_decay_20261010/run_1/weak_decay.json": "9c31575ce0889571790f8767cf53ffe043cb9906e0a45a96b194971320a0aad7",
+    "artifacts/muon_matched_mechanical_source_20261002/replay_reference/matched_source_and_weak_actions.npz": "146435df28178967c321c0aa7e89a1511395d196f96b8715532aa98e3e312c2b",
+    "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1/application.npz": "c67363c17adfb519f399614463d5a13dbcd019aa53246d452421eea8ba982455",
+    "artifacts/muon_parent_gauge_geometry_correction_20261010/finite_moving_trace_run_1/result.json": "06867e31959910ec21385e8491bd5b794060c68e8404ae0524e3d0c9b544faa6",
+    "src/bhsm/interface/aether_canonical_momentum_action_jacobian.py": "d0ade20dc8a999e43073b45ca3ef59e05c65c55e37a1d6565d4e389176295cb1",
+    "src/bhsm/interface/aether_diagonal_sp1_m4_attachment_v15_50.py": "e6482614dcb54f4890a5e66fbe724d4c302405d575a4b73ddbb64a075cb1827e",
+    "src/bhsm/interface/aether_lorentzian_child_galerkin_v15_44.py": "574a9a6267d9228170c7309bd4be3cafb36b7515a6ee558509beb968e97bdab7",
+    "src/bhsm/interface/muon_birth_area_coupled_endpoint.py": "06393328c3885535ca9b0cb3697674ce119b2ccbb6f50b4bfec62bb60530b294",
+    "src/bhsm/interface/muon_birth_attached_phase.py": "948c1505e9b68cffbe8050be31dcb5727d8f8d4f25399f9037cfc94a9ae9fdeb",
+    "src/bhsm/interface/muon_birth_chronological_boundary_action.py": "ad8f6ecbf1734544c635e8aa158b1f0ad9150cbb18a9ad4c76aec89ad8190224",
+    "src/bhsm/interface/muon_birth_chronological_normal_boundary_response.py": "4915a7a3fca845622fe2f8d394610efdacfe78545838295fe5bc6f8a692f27e5",
+    "src/bhsm/interface/muon_birth_chronological_normal_inertia.py": "909f322d0b375ab03fc0b0a148c9d710ac77e371e029c5e92c9bfbde86883b05",
+    "src/bhsm/interface/muon_birth_coupled_primal_midpoint.py": "ce321f641fa51d98710d006e246aac5cf6bd046be93a74fab452808597c599ce",
+    "src/bhsm/interface/muon_birth_finite_geometric_trace_endpoint.py": "4f5c36144222d5d1e657061aa9352f8e86d5ae61a0ebdf05991a477e68d4be5f",
+    "src/bhsm/interface/muon_birth_finite_normal_boundary_action.py": "49c1fe4ba6d39e23c3f014cabcd64065ae1a79680ae8e079dbce4727b65557f8",
+    "src/bhsm/interface/muon_birth_finite_normal_phase.py": "660ed731bdbe0bbb71eda750c9dbffd20e7ce9f63be2a6087e5a385d76850361",
+    "src/bhsm/interface/muon_birth_finite_normal_trace_graph.py": "20eafd9a6abff3d3a89a2f6085d099584684ba19b600673dafda634cb56aad18",
+    "src/bhsm/interface/muon_birth_full_field_attachment.py": "58b3bd8a4ae5fe7c63b5551e4d0f26d82ab82a27d4389066c894a5e1b4728d03",
+    "src/bhsm/interface/muon_birth_inherited_finite_normal_phase.py": "86b082dfa0b525e9d8bb510a6c02e53c517d7ecdd8c6c9aec956d175d829add4",
+    "src/bhsm/interface/muon_birth_normal_constrained_action.py": "fe66a9116816e075cfc5e7c5f5f3c2c02d539311303b693a1d89cbc08ea62577",
+    "src/bhsm/interface/muon_birth_normal_trace_graph.py": "d012a0455d84be2ce7aae8d6833f8b482f9bbc1e9ee1b899042a421c2a782896",
+    "src/bhsm/interface/muon_birth_paired_attachment_endpoint.py": "71a69275ebeef226fd8dc7585745c5c8acac687e497a8441fe37a37553178f23",
+    "src/bhsm/interface/muon_birth_paired_field_endpoint.py": "f22b6a17b65c72b30571b3d9f721f347737a5916fa08e50bd833ad22df3cd035",
+    "src/bhsm/interface/muon_birth_phase_continuation.py": "9169a1c56bf5084d1f240043ca12d431c87e4adaff24fe09bdf7bf27fc5eb0be",
+    "src/bhsm/interface/muon_birth_trace_enriched_action.py": "c36c48482dd58ebe369ab935574b78b3693036f717fb49035dfac01164956dce",
+    "src/bhsm/interface/muon_birth_trace_enriched_phase.py": "591754957f1cc452bfd53d8adc1087308459902a822876105315b7423c2fd676",
+    "src/bhsm/interface/muon_birth_two_arm_assigned_action.py": "cf6c58dc68700315d701fb9a1e9e99e927d18d90016a6ae7f86470c36136c77a",
+    "src/bhsm/interface/muon_common_normal_boundary_form.py": "2f05bfda94e70db5ea94545a5e6a1a08b7add793116b120956d6eaf6407e5001",
+    "src/bhsm/interface/muon_exact_material_response.py": "a530651e157a000dbe6935e9de1cedbce5679f98c599c6c7c641158b749307bf",
+    "src/bhsm/interface/muon_intrinsic_higgs_gauge_action.py": "c19354209300ab06c0f1ab6bf4e111dbb5de0cd9e8d1d31a71af357a829118d4",
+    "src/bhsm/interface/muon_intrinsic_m4_normal_pullback.py": "43187eee35f2879a43fe0fd02ae447502811349ccf2f2a78aa14beb8aa706bf0",
+    "src/bhsm/interface/muon_material_higgs_gauge_action.py": "8bca013820283614c6578be4f44c29c4ea1c919f516aa9a2783f0eb38127d035",
+    "src/bhsm/interface/muon_moving_geometric_action.py": "bf560fdb9766f563d97d3100ccb266e2a4350c910ac14a51d57576c2b5371392",
+    "src/bhsm/interface/muon_parent_gauge_geometry_correction.py": "fa29f5764dca39196c807d64e7976d5894589e7de3ffa9d4a5ddecfb136b4816",
+    "src/bhsm/interface/muon_parent_maxwell_background_euler.py": "fbb2c99d4b1c58247ac42a769fad3e1b16ccc76a1744fe0c5334e50c4a974bee",
+    "src/bhsm/interface/muon_parent_maxwell_full_weak.py": "c1fb703967a644306d3521d457a6d7c778a49d89c1e081b401487a25b7491565",
+    "src/bhsm/interface/muon_parent_maxwell_geometry_weak.py": "f0b4a49934e17ad18c40e9164b66c54e1b2cb146fb476f59b0e500f2dd6c9153",
+    "src/bhsm/interface/muon_parent_mean_causal_action.py": "2a84b1be22625b1a5ae88d10c76631d7a5b602d2b0e22e57f00201bb74a593ad",
+    "src/bhsm/interface/muon_parent_retarded_hypercharge.py": "2eb97a704bce63f601cc0d6e0f647266d4b4aac7f746d34dceb41b72018c3510",
+    "src/bhsm/interface/muon_pointwise_full_field_action.py": "d57cd5953de00bcae857d0e458bbead1e463e5fffe8d947c5b9e71806aabaff6"
+  },
+  "files": {
+    "artifacts/muon_area_coupled_endpoint_20261011/execution_logs/freeze_gamma_0p11.py": {
+      "bytes": 3266,
+      "sha256": "38239ccf07cb76ac2cf028b596e0f1a74292270c4178d63c316ec18febbdad84"
+    },
+    "artifacts/muon_area_coupled_endpoint_20261011/execution_logs/gamma_0p11_common_run_1.command.json": {
+      "bytes": 706,
+      "sha256": "31a9775117147ffde428de72d95939e1c6ae277afc8fc084336f3f803063961a"
+    },
+    "artifacts/muon_area_coupled_endpoint_20261011/execution_logs/gamma_0p11_common_run_1.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "artifacts/muon_area_coupled_endpoint_20261011/execution_logs/gamma_0p11_common_run_1.stdout.txt": {
+      "bytes": 9509,
+      "sha256": "67117cfdce56fe7421c7b55274a88d90cbc10c1dc9e3360682c3db709877d4e7"
+    },
+    "artifacts/muon_area_coupled_endpoint_20261011/execution_logs/gamma_0p11_common_run_2.command.json": {
+      "bytes": 736,
+      "sha256": "af3269eea14dd8277242a0e8816edc56e8dbc61b3c14aa1f9ebf0ecc6d1759aa"
+    },
+    "artifacts/muon_area_coupled_endpoint_20261011/execution_logs/gamma_0p11_common_run_2.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "artifacts/muon_area_coupled_endpoint_20261011/execution_logs/gamma_0p11_common_run_2.stdout.txt": {
+      "bytes": 9509,
+      "sha256": "67117cfdce56fe7421c7b55274a88d90cbc10c1dc9e3360682c3db709877d4e7"
+    },
+    "artifacts/muon_area_coupled_endpoint_20261011/execution_logs/gamma_0p11_incoming_boundary_run_1.command.json": {
+      "bytes": 631,
+      "sha256": "ebe5d99d9f9eb9499e396a52dd295b094fb48cff0fedfcce91e3e9482db68e54"
+    },
+    "artifacts/muon_area_coupled_endpoint_20261011/execution_logs/gamma_0p11_incoming_boundary_run_1.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "artifacts/muon_area_coupled_endpoint_20261011/execution_logs/gamma_0p11_incoming_boundary_run_1.stdout.txt": {
+      "bytes": 9186,
+      "sha256": "f5969de4a81cc0c6ba01a265ace9d6d0988458b11df99dcdd81ff9f14890bd6b"
+    },
+    "artifacts/muon_area_coupled_endpoint_20261011/execution_logs/gamma_0p11_incoming_boundary_run_2.command.json": {
+      "bytes": 661,
+      "sha256": "f2cbf6bb1e4c0bf56403103df662954645dce5159a98475aea278e1f991b2a85"
+    },
+    "artifacts/muon_area_coupled_endpoint_20261011/execution_logs/gamma_0p11_incoming_boundary_run_2.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "artifacts/muon_area_coupled_endpoint_20261011/execution_logs/gamma_0p11_incoming_boundary_run_2.stdout.txt": {
+      "bytes": 9186,
+      "sha256": "f5969de4a81cc0c6ba01a265ace9d6d0988458b11df99dcdd81ff9f14890bd6b"
+    },
+    "artifacts/muon_area_coupled_endpoint_20261011/execution_logs/gamma_0p11_incoming_phase_run_1.command.json": {
+      "bytes": 704,
+      "sha256": "53d060014a8bca936fef68907af1ed1caffa2659dea76eb7f12ea42cdffe6c79"
+    },
+    "artifacts/muon_area_coupled_endpoint_20261011/execution_logs/gamma_0p11_incoming_phase_run_1.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "artifacts/muon_area_coupled_endpoint_20261011/execution_logs/gamma_0p11_incoming_phase_run_1.stdout.txt": {
+      "bytes": 7938,
+      "sha256": "c967b4cd3a5ae7f9f09e087f7e903009eee58c38b87cb2589dddb71aad5ce4c0"
+    },
+    "artifacts/muon_area_coupled_endpoint_20261011/execution_logs/gamma_0p11_incoming_phase_run_2.command.json": {
+      "bytes": 734,
+      "sha256": "60c59356d238b00fb0f9f288cf48bdcfae386f6cecc9268965717497beed6fe9"
+    },
+    "artifacts/muon_area_coupled_endpoint_20261011/execution_logs/gamma_0p11_incoming_phase_run_2.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "artifacts/muon_area_coupled_endpoint_20261011/execution_logs/gamma_0p11_incoming_phase_run_2.stdout.txt": {
+      "bytes": 7938,
+      "sha256": "c967b4cd3a5ae7f9f09e087f7e903009eee58c38b87cb2589dddb71aad5ce4c0"
+    },
+    "artifacts/muon_area_coupled_endpoint_20261011/execution_logs/gamma_0p11_outgoing_boundary_run_1.command.json": {
+      "bytes": 631,
+      "sha256": "3485568e9baac569acbfefc1ef37d41e1b57d0aa8a1088252f7cdab11d0cb146"
+    },
+    "artifacts/muon_area_coupled_endpoint_20261011/execution_logs/gamma_0p11_outgoing_boundary_run_1.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "artifacts/muon_area_coupled_endpoint_20261011/execution_logs/gamma_0p11_outgoing_boundary_run_1.stdout.txt": {
+      "bytes": 9326,
+      "sha256": "7ec503b4e1c243086a0d891af7a9f1de03d2eb0f99f1d409ee75c68c03c024be"
+    },
+    "artifacts/muon_area_coupled_endpoint_20261011/execution_logs/gamma_0p11_outgoing_boundary_run_2.command.json": {
+      "bytes": 661,
+      "sha256": "4f5fcabea5277cc39da6f85b9b97553daf5e1f8a43fe13784e0e3c260daadda5"
+    },
+    "artifacts/muon_area_coupled_endpoint_20261011/execution_logs/gamma_0p11_outgoing_boundary_run_2.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "artifacts/muon_area_coupled_endpoint_20261011/execution_logs/gamma_0p11_outgoing_boundary_run_2.stdout.txt": {
+      "bytes": 9326,
+      "sha256": "7ec503b4e1c243086a0d891af7a9f1de03d2eb0f99f1d409ee75c68c03c024be"
+    },
+    "artifacts/muon_area_coupled_endpoint_20261011/execution_logs/gamma_0p11_outgoing_phase_run_1.command.json": {
+      "bytes": 683,
+      "sha256": "ff9179729f68d8d5cb77b934871de1b332ebdbd08eb8a3bdf05185004a1a98b4"
+    },
+    "artifacts/muon_area_coupled_endpoint_20261011/execution_logs/gamma_0p11_outgoing_phase_run_1.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "artifacts/muon_area_coupled_endpoint_20261011/execution_logs/gamma_0p11_outgoing_phase_run_1.stdout.txt": {
+      "bytes": 7680,
+      "sha256": "04af951500e4e3194eba0827dce016a616c651af0945f5e3644d1d6595b0d93c"
+    },
+    "artifacts/muon_area_coupled_endpoint_20261011/execution_logs/gamma_0p11_outgoing_phase_run_2.command.json": {
+      "bytes": 713,
+      "sha256": "2c0548de3243dffd13f18edc00f021f5d1d7435405312a30385c7b0fd4b59d7c"
+    },
+    "artifacts/muon_area_coupled_endpoint_20261011/execution_logs/gamma_0p11_outgoing_phase_run_2.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "artifacts/muon_area_coupled_endpoint_20261011/execution_logs/gamma_0p11_outgoing_phase_run_2.stdout.txt": {
+      "bytes": 7680,
+      "sha256": "04af951500e4e3194eba0827dce016a616c651af0945f5e3644d1d6595b0d93c"
+    },
+    "artifacts/muon_area_coupled_endpoint_20261011/execution_logs/gamma_0p11_run_1.command.json": {
+      "bytes": 726,
+      "sha256": "aa2809323a338098a97bf48b3f295ba6bd0d9c1c53695d56853543503b81c318"
+    },
+    "artifacts/muon_area_coupled_endpoint_20261011/execution_logs/gamma_0p11_run_1.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "artifacts/muon_area_coupled_endpoint_20261011/execution_logs/gamma_0p11_run_1.stdout.txt": {
+      "bytes": 17731,
+      "sha256": "219783c1c680c5e571053747460c266f5f9a889ef22f76ef1dfc17278c39f1c0"
+    },
+    "artifacts/muon_area_coupled_endpoint_20261011/execution_logs/gamma_0p11_run_2.command.json": {
+      "bytes": 756,
+      "sha256": "27d79fe9c14564aee3cab0935981a23cfac8d7cb517baaa7bbadf905a47b8217"
+    },
+    "artifacts/muon_area_coupled_endpoint_20261011/execution_logs/gamma_0p11_run_2.stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "artifacts/muon_area_coupled_endpoint_20261011/execution_logs/gamma_0p11_run_2.stdout.txt": {
+      "bytes": 17731,
+      "sha256": "219783c1c680c5e571053747460c266f5f9a889ef22f76ef1dfc17278c39f1c0"
+    },
+    "artifacts/muon_area_coupled_endpoint_20261011/execution_logs/run_gamma_0p11_action.py": {
+      "bytes": 2757,
+      "sha256": "1fa0383346bec6d48f1f1b00a7ab0a40f12bf828c6c0635249267fe21bf664f0"
+    },
+    "artifacts/muon_area_coupled_endpoint_20261011/execution_logs/run_gamma_0p11_replay.py": {
+      "bytes": 2931,
+      "sha256": "b13a1013c17323f0ea35ed2ecf89083481bd95a000a80272c683af362eb24c44"
+    },
+    "artifacts/muon_area_coupled_endpoint_20261011/gamma_0p11_action_verification.json": {
+      "bytes": 4624,
+      "sha256": "c9154fc24f6b1d011e56fc20766147579ca154657d2c523fadc72996ab73383d"
+    },
+    "artifacts/muon_area_coupled_endpoint_20261011/gamma_0p11_incoming_boundary_run_1/application.npz": {
+      "bytes": 1689801,
+      "sha256": "3d459b562c616c09d1c1c1f57d143953da4e9812f73ef40dec6684104e61f5a6"
+    },
+    "artifacts/muon_area_coupled_endpoint_20261011/gamma_0p11_incoming_boundary_run_1/result.json": {
+      "bytes": 9714,
+      "sha256": "4d48f9c9fcaec2dbba7092bcf95e1c13e89b3dd3758f8cbd78e7b4e8c58084aa"
+    },
+    "artifacts/muon_area_coupled_endpoint_20261011/gamma_0p11_incoming_boundary_run_2/application.npz": {
+      "bytes": 1689801,
+      "sha256": "3d459b562c616c09d1c1c1f57d143953da4e9812f73ef40dec6684104e61f5a6"
+    },
+    "artifacts/muon_area_coupled_endpoint_20261011/gamma_0p11_incoming_boundary_run_2/result.json": {
+      "bytes": 9714,
+      "sha256": "4d48f9c9fcaec2dbba7092bcf95e1c13e89b3dd3758f8cbd78e7b4e8c58084aa"
+    },
+    "artifacts/muon_area_coupled_endpoint_20261011/gamma_0p11_incoming_phase_run_1/application.npz": {
+      "bytes": 542996,
+      "sha256": "ccd1fa3b5cdc46f140f06298dd11eb8c72c42801a08f1cb4ed6c97eb52b1eccc"
+    },
+    "artifacts/muon_area_coupled_endpoint_20261011/gamma_0p11_incoming_phase_run_1/result.json": {
+      "bytes": 8600,
+      "sha256": "9b6e05514c0a0aa3937c4a444606bb1dcaa766e74e7d7012a5dfdd8d83b2b356"
+    },
+    "artifacts/muon_area_coupled_endpoint_20261011/gamma_0p11_incoming_phase_run_2/application.npz": {
+      "bytes": 542996,
+      "sha256": "ccd1fa3b5cdc46f140f06298dd11eb8c72c42801a08f1cb4ed6c97eb52b1eccc"
+    },
+    "artifacts/muon_area_coupled_endpoint_20261011/gamma_0p11_incoming_phase_run_2/result.json": {
+      "bytes": 8600,
+      "sha256": "9b6e05514c0a0aa3937c4a444606bb1dcaa766e74e7d7012a5dfdd8d83b2b356"
+    },
+    "artifacts/muon_area_coupled_endpoint_20261011/gamma_0p11_outgoing_boundary_run_1/application.npz": {
+      "bytes": 1661820,
+      "sha256": "a7a79fbc2f48aae07ef24a20abaee890e0d7f266489f184aeb01246984c699a8"
+    },
+    "artifacts/muon_area_coupled_endpoint_20261011/gamma_0p11_outgoing_boundary_run_1/result.json": {
+      "bytes": 9858,
+      "sha256": "66c5c3828124b7e70f14cdc526faf4cfd1d085b735a44d2df35f01631976b55b"
+    },
+    "artifacts/muon_area_coupled_endpoint_20261011/gamma_0p11_outgoing_boundary_run_2/application.npz": {
+      "bytes": 1661820,
+      "sha256": "a7a79fbc2f48aae07ef24a20abaee890e0d7f266489f184aeb01246984c699a8"
+    },
+    "artifacts/muon_area_coupled_endpoint_20261011/gamma_0p11_outgoing_boundary_run_2/result.json": {
+      "bytes": 9858,
+      "sha256": "66c5c3828124b7e70f14cdc526faf4cfd1d085b735a44d2df35f01631976b55b"
+    },
+    "artifacts/muon_area_coupled_endpoint_20261011/gamma_0p11_outgoing_phase_run_1/application.npz": {
+      "bytes": 533051,
+      "sha256": "e3a8ef208990b5e5d25be89463a0c905c0fc411ec9cadbee3b5f71109fcd4f5e"
+    },
+    "artifacts/muon_area_coupled_endpoint_20261011/gamma_0p11_outgoing_phase_run_1/result.json": {
+      "bytes": 8282,
+      "sha256": "e85883d0411ca2e1a9e3378e280f0d9df9a209b3d523ce0ccbbc86789cb0cf5c"
+    },
+    "artifacts/muon_area_coupled_endpoint_20261011/gamma_0p11_outgoing_phase_run_2/application.npz": {
+      "bytes": 533051,
+      "sha256": "e3a8ef208990b5e5d25be89463a0c905c0fc411ec9cadbee3b5f71109fcd4f5e"
+    },
+    "artifacts/muon_area_coupled_endpoint_20261011/gamma_0p11_outgoing_phase_run_2/result.json": {
+      "bytes": 8282,
+      "sha256": "e85883d0411ca2e1a9e3378e280f0d9df9a209b3d523ce0ccbbc86789cb0cf5c"
+    },
+    "artifacts/muon_area_coupled_endpoint_20261011/gamma_0p11_pair_verification.json": {
+      "bytes": 2919,
+      "sha256": "5ca664f5ea0089c4e700347e544182841486cabad7fd3b60f1d772b834406ed0"
+    },
+    "artifacts/muon_area_coupled_endpoint_20261011/gamma_0p11_replay_verification.json": {
+      "bytes": 4804,
+      "sha256": "efe1aa166096a7fcd0c965916dd0abf5ac54ed91937355956d893cc8dc7d3e4a"
+    },
+    "artifacts/muon_area_coupled_endpoint_20261011/gamma_0p11_run_1/application.npz": {
+      "bytes": 1196350,
+      "sha256": "78c0f68d05d45ca091b74832824d586a0691e33aec1c17ad1c162652e3dc79b8"
+    },
+    "artifacts/muon_area_coupled_endpoint_20261011/gamma_0p11_run_1/result.json": {
+      "bytes": 23691,
+      "sha256": "2dacad861a2f811b8d02cfb3c600b6c3d8da6af35720741034c57808d0e27aad"
+    },
+    "artifacts/muon_area_coupled_endpoint_20261011/gamma_0p11_run_2/application.npz": {
+      "bytes": 1196350,
+      "sha256": "78c0f68d05d45ca091b74832824d586a0691e33aec1c17ad1c162652e3dc79b8"
+    },
+    "artifacts/muon_area_coupled_endpoint_20261011/gamma_0p11_run_2/result.json": {
+      "bytes": 23691,
+      "sha256": "2dacad861a2f811b8d02cfb3c600b6c3d8da6af35720741034c57808d0e27aad"
+    },
+    "artifacts/muon_common_normal_boundary_form_20261011/gamma_0p11_run_1/application.npz": {
+      "bytes": 3165,
+      "sha256": "9e5d5eb88ab802ba60199aee13ae8f1a2bdd39aee6eafbf51618d0254179bdbd"
+    },
+    "artifacts/muon_common_normal_boundary_form_20261011/gamma_0p11_run_1/result.json": {
+      "bytes": 9805,
+      "sha256": "f6010f80fe22f5b3af26791ed9f4e50f58f456f27f63d53343b9fe77d6cecc3a"
+    },
+    "artifacts/muon_common_normal_boundary_form_20261011/gamma_0p11_run_2/application.npz": {
+      "bytes": 3165,
+      "sha256": "9e5d5eb88ab802ba60199aee13ae8f1a2bdd39aee6eafbf51618d0254179bdbd"
+    },
+    "artifacts/muon_common_normal_boundary_form_20261011/gamma_0p11_run_2/result.json": {
+      "bytes": 9805,
+      "sha256": "f6010f80fe22f5b3af26791ed9f4e50f58f456f27f63d53343b9fe77d6cecc3a"
+    }
+  },
+  "no_static_boundary_pairing_promoted_to_event_drive": true,
+  "parameter_trial": {
+    "gamma": 0.11,
+    "nu_squared_action": 4.0
+  },
+  "physical_surface_gamma_or_normal_section_or_E0_or_local_R_I_c_selected": false,
+  "scope": "full finite represented birth rows and chronological action kernels with recorded numerical outer canonical faces"
+}

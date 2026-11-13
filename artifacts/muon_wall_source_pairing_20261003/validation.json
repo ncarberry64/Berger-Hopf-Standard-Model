@@ -1,0 +1,23 @@
+{
+  "final_new_checks_passed": 4,
+  "first_run": {
+    "command": "python -m pytest -q tests/test_muon_wall_source_pairing.py",
+    "failure": "floating 2x2 inverse comparison with fixed rtol/atol 2e-15; largest relative discrepancy 3.02515669e-15",
+    "repair": "conditioning-scaled roundoff comparison; exact polynomial certificate and arrays unchanged",
+    "result": "1 failed, 3 passed in 2.45s"
+  },
+  "full_suite": false,
+  "old_H_body_contact_conormal_five_checks_replays": 0,
+  "rerun": {
+    "command": "python -m pytest -q tests/test_muon_wall_source_pairing.py::test_radial_slice_signature_from_actual_metric_inverse_and_polynomial_certificate",
+    "result": "1 passed in 1.97s"
+  },
+  "scientific_run": {
+    "count": 1,
+    "output": "C:\\Users\\carbe\\Downloads\\BHSM_muon_wall_source_pairing_20261003\\run_1",
+    "script": "scripts/replay_muon_wall_source_pairing.py"
+  },
+  "scope": "actual supplied source/metric controls; no synthetic wall inclusion or physical anomaly test",
+  "static_eta_BVP_replays": 0,
+  "wall_overlap_or_exterior_operator_checks": 0
+}

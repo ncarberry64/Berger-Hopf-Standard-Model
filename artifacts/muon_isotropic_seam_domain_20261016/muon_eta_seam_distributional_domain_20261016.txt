@@ -1,0 +1,223 @@
+ETA-HIGGS SEAM: CURRENT-DERIVED NILPOTENT JUMP AND ITS DOMAIN STATUS
+2026-10-16. Source-level distributional construction; no new action term.
+
+1. SOURCE OWNERS AND THE ACTUAL FRAME ALIGNMENT
+
+Repository C:/Users/carbe/Downloads/BHSM_muon_parent_maxwell_worktree_20261001.
+
+completion/foundational_dirac_spin_glue_v14_45.py:104-130 owns the two
+oriented collar Dirac actions and once-only SH=-int dmu4(barPsi+ YH Psi-+hc).
+Its global_spin_glue_payload, lines247-286, also literally states
+psi-=SpinLift(Lambda_cw)psi+, identity in a common parent frame up to
+the fixed spin sign. This is stronger language than just a bundle chart
+transition; section7 below records its compatibility with nonzero SH.
+
+muon_full_d5_localized_lepton_trace.py:156-243 explicitly supplies normalized
+one-sided geometric point traces and their independent Dirac-bar duals.
+The source muon_holomorphic_d5_trace_action.py:199-224 uses
+  GT_eps=(G0-eps U G4)/sqrt(1-U^2),
+  GN_eps=(eps G4-U G0)/sqrt(1-U^2).
+The actual old producer scripts/evaluate_muon_trial_d5_trace_action.py:106
+passes the SAME real material U to eps=+1 and eps=-1; one must not replace
+the second velocity by -U. With eta=atanh(U) for this common material
+velocity, the principal adapter calls the stable helper at -eps U, so
+the owned spin frames are S+=exp(+eta A/2), S-=exp(-eta A/2). Their
+actual parent-frame transport is
+  U_mp=S- S+^(-1).
+It maps GT+ to GT- and GN+ to -GN-. After aligning x-=U_mp^(-1)psi-,
+both sides use the same physical tangent frame and opposite outward
+normal currents. This is the global spin frame identification, not a
+new phase, scalar normalization or selected boundary condition.
+
+Write D+=W^dagger S+^(-1), with the actual full384 carrier lift W retaining
+all three families, spin and particle/conjugate blocks. On the real wall,
+  B+=D+/u+, B- U_mp=D+/u-.
+The original selected18 trace uses PL rank12 and PR rank6. Consequently
+  B1=PL B+, B2=PR B- U_mp,
+  B=B1+B2=(PL/u++PR/u-)D+,
+  E=S+ W(u+PL+u-PR), B E=I18.
+No equality of the two nonzero mode values u+/u- is required. Their
+independently supplied analytic source derivatives are not conjugated.
+The real Riesz restriction uses uL=conj(uR) only on the physical real
+slice, where the once-only G0 conversion gives G0 Cbar=B^dagger. This
+is not a rule for independent complex source coefficients.
+
+2. EXACT CURRENT ISOTROPY AND THE NILPOTENT OPERATOR
+
+Let rho_bulk>0 be the common physical boundary density, with orientation
+in GN+, and set H=rho_bulk G0 GT+, A=GT+ GN+, J=i H A. Then
+  A^2=I, A^dagger H=H A, J^dagger=-J.
+The actual W has W^dagger G0 G4 W=0: normal Clifford action changes the
+selected Lorentz chirality inside each fixed carrier, and particle L /
+conjugate eR cross terms are in different internal blocks. Thus
+  E^dagger J E=0,
+  K=E^dagger H E>0, B=K^(-1)E^dagger H,
+  B J^(-1)B^dagger=0.
+The different u+/u- weights preserve this isotropy. These identities
+are the common-frame version of the exact current polarization already
+derived in muon_owned_current_trace_polarization_20261016.txt.
+
+Define F=J^(-1)B^dagger=-i A E K^(-1). Then
+  B F=0, E^dagger J F=I, F^dagger J=-B, F^dagger J F=0.
+The retained complementary projector is R=I-E B-F E^dagger J.
+Let T=rho_surface M18 be the FULL once-only density-weighted SH matrix;
+rho_surface is counted once, not multiplied again inside T. On real
+fields T=T^dagger. Define
+  N=F T B=J^(-1)B^dagger T B.
+It follows exactly that N^2=0, B N=0 and R N=0. No inverse of M18 or
+truncation of a normal Clifford matrix to18 is used.
+
+3. DISTRIBUTIONAL EULER JUMP WITH NO AVERAGE PRESCRIPTION
+
+Choose the normal coordinate increasing FROM the plus collar TO the
+aligned minus collar, so its principal distribution coefficient is the
+plus outward J above. Denote those limiting fields x+ and x-. A global
+smooth spin-glued TEST section has one common trace after U_mp alignment.
+Its distributional bulk Dirac variation has the surface coefficient
+  J(x--x+).
+The original negative SH gives -B^dagger T q, with its ACTUAL one-sided
+selected trace q=B1 x+ +B2 x-. Hence a bulk-L2 Euler output requires
+  J(x--x+)=B^dagger T q.                              (1)
+This sign follows the displayed normal orientation and SH sign. Reversing
+the normal reverses the jump convention, not the surface action.
+
+Apply B1=PL B and B2=PR B to (1). Current isotropy gives
+  B1(x--x+)=B2(x--x+)=0.
+Therefore the relevant q is uniquely defined:
+  q=B x+=B x-.
+There is no product of delta with an unspecified averaged discontinuous
+selected field. The full jump, canonical selected p=E^dagger J x and
+retained complement are then
+  x-=(I+N)x+,
+  p--p+=T q, q-=q+, R x-=R x+.                       (2)
+In the original frames psi-=U_mp(I+N)psi+.
+This is a TRANSMISSION jump across the global seam. It is not a one-sided
+condition p=Tq inferred by freely varying q and p in a symmetrized action.
+It needs no boundary Legendre term, new UV field or second kinetic action.
+
+The GLOBAL DISTRIBUTIONAL extension of the originating symmetrized
+kinetic expression is essential to this statement. For a global smooth
+test v and a discontinuous u, the broken-piece expression instead obeys
+  1/2[<v,L_pw u>+<L v,u>]
+    =<v,L_pw u>+1/2 v_Sigma^dagger J(x--x+).
+Combining only that broken-piece extension with the displayed SH would
+give J(x--x+)=2 B^dagger Tq. In the full distributional symmetrized
+expression its first term contains another half of the same delta jump,
+so it gives (1). Both extensions agree on the original continuous smooth
+core. A finite point border or the word 'symmetrized' does not by itself
+select their extension to discontinuous fields. The controlled smooth
+thin-layer limit below selects the full distributional extension, rather
+than adding a boundary action or silently dropping this distinction.
+
+For T Hermitian, (I+N)^dagger J(I+N)=J and (I+N)^(-1)=I-N. Thus the full
+two-sided graph is pointwise maximal Green-isotropic (dimension384 in
+the two384 boundary traces). The full complement is transmitted rather
+than assigned348 additional arbitrary complement conditions. This count
+and Green identity are algebraic; continuum closure is addressed below.
+
+4. PROFILE-INDEPENDENT WEAK COMPLETION OF THE SAME SURFACE ACTION
+
+Equation(2) is also the universal thin-layer distributional limit; it
+does not select a physical smoothing or an average convention. On a
+controlled tangential block, consider ANY real approximate identity
+eta_e(s) supported in a shrinking normal layer, with int eta_e=1 and
+int |eta_e|<=L uniformly. Continue the SAME current/trace coefficient
+smoothly in that already-owned collar and write its normal equation
+  psi'=[eta_e(s)N(s)+R0(s)]psi.
+Suppose sup_layer||N(s)-N0||=omega_e->0 and
+b_e=int_layer||R0(s)||ds->0. The comparison equation with N0 has exact
+transfer exp(N0 int eta_e)=I+N0, because N0^2=0. Variation of constants
+and Gronwall give, for the full transfer U_e,
+  ||U_e-(I+N0)||
+   <=exp(L sup||N||+b_e)(1+L||N0||)(L omega_e+b_e).
+Thus the limiting transfer is independent of the approximate identity.
+The singular part of q'=B psi' vanishes because BN0=0; the surface
+bilinear converges to the original q^dagger Tq with its unique trace.
+No profile width, regulator parameter or finite coupling renormalization
+survives in this retained-block limit.
+
+This proves a legitimate weak DISTRIBUTIONAL COMPLETION of the later
+surface action. It does not prove uniform continuum high-angular bounds:
+the tangential Dirac remainder is unbounded as an operator on raw L2.
+A global norm/strong-resolvent claim requires a common controlled Sobolev
+class and uniform transfer/Calderon estimates. No old normal-profile or
+history integration is repeated to assert those estimates.
+
+5. DOMAIN AND EXACT RESOLVENT, ESTABLISHED VERSUS CONDITIONAL
+
+On a regular real patch the natural candidate domain is broken-H1 fields
+with the full graph psi-=U_mp(I+N)psi+ (or its appropriate maximal weak
+trace closure), plus the already-owned remote/regular reset conditions.
+The pointwise graph is exactly current preserving and maximal. If its
+actual Sobolev trace relation and Calderon transversality give a closed
+maximal realization, the associated Dirac operator is self-adjoint on
+the physical spatial current Hilbert space. Current preservation alone
+does not prove H1 elliptic regularity or continuum well-posedness for all
+surface coefficients; no such automatic theorem is asserted here.
+For time-dependent walls the actual moving-domain transport is retained
+before the causal inverse is constructed. Retarded uniqueness is then a
+property of the completed real history, not another boundary parameter.
+
+The existing fixed-trace weak action has exactly the finite border law
+  Gamma_T(z)=Gamma_bulk(z)-T,
+with unchanged full Poisson maps. With the SAME admissible continuum
+trace/domain class and resolvent existence, its Krein form is
+  (D_T-z)^(-1)=G_D(z)+P(z)[Gamma_bulk(z)-T]^(-1)L(z),
+where G_D is the fixed selected-trace complement and P/L are the original
+right/independent-left Poisson lifts in that convention. On a real
+boundary triple their adjoint relation and sign follow the Green form;
+one must not insert a dagger into independent analytic source lifts.
+This formula is already exact finite algebra. Its continuum use requires
+the actual maps/domains and trace convergence, not a new inverse model.
+The outgoing E+i0 boundary value must come from the SAME retarded bulk
+Green; no arbitrary terminal load is selected by the formula.
+
+6. A POSSIBLE H4 OUTPUT MUST COME FROM AN OWNED DYNAMIC BLOCK
+
+The master Hilbert architecture includes H4. A surface Euler distribution
+could alternatively be represented as a boundary component of a genuine
+bulk-plus-surface dynamic operator IF that action already owns the
+boundary Hilbert/inertia and its once-only kinetic pairing. In canonical
+Green coordinates a consistent such output has the form
+  D_W(u,q)=(D_max u,K4^(-1)(Tq-p)), q=Gamma0 u,
+under the convention in which the bulk Green form is q_u^dagger p_v-
+p_u^dagger q_v. Its boundary eigen-equation is p=(T-zK4)q. This is a
+dynamic Wentzell interpretation, not the static p=Tq condition.
+
+That route cannot be chosen just because 'H4' appears in a direct sum.
+The normalized wall kinetic response is already generated by the common
+bulk pushforward in aether_unified_m5_m4_pushforward_v15_69.py:25-48.
+Adding a new independent K4 to that same response would count it twice.
+Nor does retaining a strictly transparent full-H1 trace graph while
+adding an independent boundary output automatically make the enlarged
+operator maximal. The actual action-owned dynamic block/domain must be
+identified first. No such extra block is invented by this alternative.
+
+7. THE PRECISE SOURCE COMPATIBILITY THAT MUST BE RECORDED
+
+The global spin BUNDLE/frame glue is retained by U_mp throughout. The
+derived SH jump refines the free kinetic LIMITING-TRACE domain. If the
+older v14.45 literal psi-=U_mp psi+ is imposed as an additional hard full
+trace equation EVEN AFTER nonzero SH, (1) instead forces Tq=0. Therefore
+one cannot claim both that literal unchanged trace equation and the
+nontrivial transmission jump(2) simultaneously for a general massive
+selected field.
+
+The later normalized_two_sheet_point_action supplies the full weak
+matrix Kbulk-rho C M B and the exact point-trace SH action. It supports
+the distributional completion above. It does not, by its matrix inverse
+alone, explicitly declare the older hard limiting-trace formula retired
+or prove the continuum Galerkin limit. The mathematically coherent
+reconciliation is to retain v14.45 as the global spin frame/free kinetic
+glue and derive the interacting domain from the full weak action. This
+is an interpretation/completion of the already supplied SH, not a new
+coefficient or interaction. If the literal old hard trace graph is still
+intended for the interacting field, the owner must explain its compatible
+boundary-output or trace-variation class; it cannot be silently replaced.
+
+Thus there is constructive progress: a current-derived, full-complement,
+nilpotent jump with an average-independent weak limit and exact resolvent
+route. It is not a proof of a new arbitrary phase, action-definition gap
+or fundamental nonuniqueness. The exact point-action seam already exists.
+No physical outgoing derivative, convergence certificate, correction,
+spin normalization or muon magnetic moment is produced by this derivation.

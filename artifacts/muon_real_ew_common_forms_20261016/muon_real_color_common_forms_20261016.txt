@@ -1,0 +1,141 @@
+REAL COLOR COMPLEMENT OF THE EW/HIGGS/FP CONSTITUENT FORM
+2026-10-16. Classical, supplied real midpoint coefficient-cell scope only.
+
+1. ACTION NORMALIZATION AND REPRESENTATION MAP
+
+The actual multiplet ledger one_family_multiplets has dimensions
+6+2+3+3+1+1=16. bhsm_standard_model_gauge_vertices supplies the fundamental
+SU3 generators, their conjugate-triplet maps, and all multiplet tensors.
+The single-family traces are I3=I2=2 and IY=10/3. The selected completion
+aether_sm_gauge_color_completion_v15_58.carrier_trace_extension_contract
+uses ONE positive rank16 trace, fixed in overall normalization by the
+action-owned Sp1 term, without new factor-dependent bilinear coefficients.
+Its uniqueness has precisely that stated scope; no absolute physical g3
+or local renormalized color residue follows from this convention alone.
+
+Thus the same connection convention is
+  Hc=-i Tc/sqrt(2), Hweak=-i Tweak/sqrt(2), HY=-i Y/sqrt(10/3),
+  -Tr16(HI HJ)=deltaIJ.
+The normalized color structure constants are f_abc/sqrt(2). Their norm is
+nonzero; the cubic/quartic nonabelian vertices are not deleted. The color
+index8 counts the adjoint Lie directions once. It is not eight rank16
+fermion copies. The displayed rank16 matrix order is the explicit
+multiplet ledger order, used for invariant trace mathematics, not an
+asserted intertwiner to the full D5 carrier or geometric M8 Spin16 basis.
+
+2. WHY THE CLASSICAL MIXED BLOCKS VANISH ON THIS BACKGROUND
+
+For the retained EW-only background the color connection is zero in that
+declared coefficient ansatz, not a solved SM12 stationary background.
+The actual representation tensors obey
+  [g_EW,g_color]=0, Tr16(g_EW g_color)=0.
+The owned Higgs has representation (1,2,1/2), so every color generator
+annihilates it. For arbitrary EW and color perturbations on fixed geometry,
+  F(AEW+aEW+aC)=FEW(AEW+aEW)+FC(aC),
+and the selected trace action splits exactly. The Higgs action is wholly
+independent of aC. Therefore all EW/color and Higgs/color mixed classical
+Hessian blocks vanish by algebra. The off-shell EW curvature contacts and
+Higgs contacts remain in the previously supplied EW block. They are not
+replaced with zero or assumed stationary.
+
+At aC=0, the color linearized covariant derivative is d. Its quadratic
+one-form Hessian is the same abelian d†d form in each of the eight unit
+trace directions. FC has nonlinear [aC,aC] terms, but its background
+curvature is zero, so the color second-curvature contact vanishes at this
+point. This does not remove the nonzero color fluctuation or ghost blocks,
+nor calculate colored fermion loops or their background-dependent residues.
+
+3. ACTUAL EXECUTABLE MAP, WITH NO SOURCE REPLAY
+
+The canonical audit consumes published EW forms.npz/result.json from
+artifacts/muon_real_ew_common_forms_20261016/application_run_1, verifies their
+frozen byte hashes, and verifies all transitive source/input pins. It uses
+the saved actual positive YM metrics and two-form densities at the original
+four radial nodes plus wall. It does not recompute a profile or history.
+The pairing remains the YM common pushforward
+2 pi^4 LF^5(1-4 sigma^2), not the bare fermion N C R^3 measure.
+
+The existing one_form_cell_row and _ghost_form_row are evaluated at zero
+color connection, keeping the same full20 real n1+n3 angular maps, two
+radial profiles, tent and both smooth ghost temporal parities. A single
+unit direction is extracted from their existing four-internal-component
+zero-connection matrices and checked against the other three. Color8 is
+then the exact adjoint direct sum of that scalar-unit form.
+
+Per color there are200 ordinary one-form trial columns and80 exact
+gauge-gradient one-form image columns. These280 columns are BOSONIC
+one-form coordinates. The80 coefficients of the independent FP ghost
+and antighost are separate Grassmann variables. They are not inserted
+into the bosonic field, despite using the same gauge-parameter function
+basis to define the generator map.
+
+Writing D0=[0;I80], the saved single-color matrices obey
+  B0=D0^T G1, KFP0=D0^T G1 D0,
+  F0=Gghost0^-1 B0, FP0=F0 D0,
+  Pi0=I-D0 KFP0^-1 B0.
+Pi0 is a finite Lorenz representative, not the physical BRST quotient.
+Kcolor D0=0 here follows from the exact free color gauge identity; it
+does not make the nonstationary EW/Higgs Hessian annihilate its gauge image.
+
+The common coefficient order is EW/H1200 then eight color280 blocks:
+3440 total bosonic TEST coordinates, with separate960 ghost coefficients.
+The common exported classical family is
+  K(lambda,nu2)=Kkin+lambda Klambda+(lambda nu2) Klambda_nu2,
+with G, D, B, F, ghost Gram/FP form and finite Lorenz fixing provided.
+The existing MAXWELL_TO_CAP action factor is retained once. No physical
+lambda, nu2, g3, scalar extension, gauge-mass fixing or additional kinetic
+term is selected by this construction.
+
+4. INDEPENDENT CHECKS AND RESULTS
+
+Final canonical producer:
+audits/bhsm_real_color_common_forms_20261016.py
+SHA256 cc72f127af65009e14a2d5f78009d1026a372442143416ce5be9a73c7b6670ec.
+Independent final runs are WORK/outputs/bhsm_real_color_common_forms_20261016/
+run_2 and run_3. They have identical bytes:
+ forms.npz 1,641,920 bytes
+  4a1348ebc65c5c9e99bfe435a453539dceb3100cca6c4e7ed5fcd4101b8d07f7
+ result.json
+  1cddcdbd784a8767262d0e4765d52259dba524d811ef8554a32768af3d0c24a1.
+The earlier successful prototype run_1 and its actual producer source
+snapshot are preserved; the final source clarifies statistics and guards
+the exact algebra. Its scientific matrices are not substituted for a
+failed physical result.
+
+The rank16 unit-trace Gram defect is2.22e-16, EW/color commutators are
+exactly zero in the actual representation matrices, and normalized SU3
+Lie closure has defect5.55e-17. Lepton color tensors are exactly zero,
+whereas quark tensors are nonzero. The full16 matrix trace is used in an
+independent unprojected Haar action control; nonlinear color commutators
+are retained there. Its linear-curvature quadratic contraction agrees
+with the assembled coefficient form to relative0 /4.80e-16 on the two
+actual backgrounds. The three literal action difference steps are all
+retained; their largest relative discrepancy is1.45e-12 and largest raw
+absolute discrepancy1.10e-8. These are directional coefficient controls,
+not operator-norm or physical derivative certificates.
+
+The single-color Hessian norms are8.340777e10 and1.090739e11; FP form
+norms are1.601885e8 and2.044457e8. These nonzero values make explicit that
+zero background color has not been used to delete color fluctuations.
+FP versus gradient-Gram discrepancies are6.60e-17 and8.33e-17 relative.
+Finite Pi idempotence residuals are at most2.85e-15. All final raw values,
+matrix maps and nonzero denominators are retained in the exact receipts.
+
+5. NATIVE BUNDLE AND STATISTICS LIMITS
+
+AE4 owns the canonical geometric Hilbert direct sum H8+H5plus+H5minus+H4,
+statistics supertrace and Pstrat=Dstrat†Dstrat after the zero-mode/BRST
+quotient. This calculation constructs an SM12 classical gauge/Higgs/FP
+coefficient component, not that completed common microscopic operator.
+The twelve real gauge directions are bosonic. The FP ghost/independent
+antighost pairs are Grassmann; the real-weight minus2 rule only applies
+to an actually matched common operator/domain and is not applied as a
+physical mode count here. No spinor, Clifford module or SM multiplicity
+is assigned to the pure geometric M8 Spin16 component by this trace.
+
+Physical reset/center/outgoing domains, native adjoints/incidence,
+relative determinant and quantum mean force are not selected by this
+finite Lorenz representative. Actual stationary background, physical
+radial/time/ angular convergence, full outgoing energy/field derivative,
+coupled correction, normalized two-spin state and muon moment remain
+unevaluated. Coupled corrections performed: zero.

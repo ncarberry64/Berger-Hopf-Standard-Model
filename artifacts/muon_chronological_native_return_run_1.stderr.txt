@@ -1,0 +1,11 @@
+Traceback (most recent call last):
+  File "C:\Users\carbe\Downloads\BHSM_muon_parent_maxwell_worktree_20261001\scripts\evaluate_muon_chronological_native_return.py", line 89, in <module>
+    a=p.parse_args();print(json.dumps(materialize(a.output,a.contact_directory,precision_bits=a.precision_bits),sort_keys=True))
+                                      ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\carbe\Downloads\BHSM_muon_parent_maxwell_worktree_20261001\scripts\evaluate_muon_chronological_native_return.py", line 54, in materialize
+    result=enclosed_chronological_magnetic_return(bare['source_quadratic_action'],
+        contacts[label+'_direct_source_contact_and_both_insertions'],
+        contacts[label+'_mean_contact_lower'],contacts[label+'_mean_contact_upper'],precision_bits=precision_bits)
+  File "C:\Users\carbe\Downloads\BHSM_muon_parent_maxwell_worktree_20261001\src\bhsm\interface\muon_chronological_native_return.py", line 20, in enclosed_chronological_magnetic_return
+    raise ValueError('five inactive magnetic source axes must remain exact zeros')
+ValueError: five inactive magnetic source axes must remain exact zeros

@@ -1,0 +1,161 @@
+{
+  "actual_execution": {
+    "background_solution_evaluated": false,
+    "exterior_source_responses": 0,
+    "native_evaluations": 0,
+    "new_conditional_mixed_Higgs_source_columns": 8,
+    "new_exact_Higgs_integrability_derivation": true,
+    "old_producers_rerun": 0,
+    "old_source_or_weak_rows_recomputed": 0,
+    "physical_transfer_directions": 0
+  },
+  "checkpoint": "BHSM_MUON_ACTION_CONNECTION_ATTACHMENT_20261002",
+  "compatibility_obligation": {
+    "DH_norm2_over_nu2_unit_coframe": "3*lambda**2",
+    "Q_H": [
+      "0",
+      "0"
+    ],
+    "conditional_equations": [
+      "H1=U_H H0; Q1=U_H Q0 U_H^-1; Q1 H1=0",
+      "Omega1=(lambda-1)e_a theta_R^a, dH1=e_a theta_R^a H1, D_Omega1 H1=lambda e_a theta_R^a H1",
+      "F_Omega1,*a=2lambda(lambda-1)e_a; sum ||F_*a H1||^2=12lambda^2(lambda-1)^2 ||H0||^2",
+      "R_angular^-2 Delta_Omega H0=-3lambda^2/R_angular^2 H0 in fixed sigma0 local-Higgs chart",
+      "No nonzero covariantly constant H exists where these curvature components span su2",
+      "For q_H(v,H)=<D v,D H> and a H=0, delta_a q_H(v,H)=<v,a^dagger D H>; this mixed Higgs row need not vanish",
+      "This does not exclude a nonconstant Higgs solution or prove any alternative background solves the full equations"
+    ],
+    "covariant_angular_laplacian_H_over_nu_unit_coframe": [
+      "0",
+      "-3*lambda**2"
+    ],
+    "curvature_H_images": [
+      [
+        "-2*I*lambda*(lambda - 1)",
+        "0"
+      ],
+      [
+        "-2*lambda*(lambda - 1)",
+        "0"
+      ],
+      [
+        "0",
+        "2*I*lambda*(lambda - 1)"
+      ]
+    ],
+    "curvature_H_norm2_over_nu2_unit_coframe": "12*lambda**2*(lambda - 1)**2",
+    "exact_checks": {
+      "Q_annihilates_H": true,
+      "curvature_identity": true,
+      "derivative_identity": true
+    },
+    "one_curvature_component_determinant": "4*lambda**2*(lambda - 1)**2",
+    "photon_Higgs_mixed_kernel_per_lambda_nu": [
+      [
+        "1",
+        "0"
+      ],
+      [
+        "-I",
+        "0"
+      ],
+      [
+        "0",
+        "0"
+      ]
+    ]
+  },
+  "conclusion": "The zero mechanical-sector amplitude is a fluctuation, as explicitly declared by v17.97. The actual fermion connection-preserving attachment is not specified by the inspected covariant action/interface expressions.",
+  "declared_reference": "Omega_SM,total=Omega_SM,ref+a_SM; Omega_SM,ref intended rho16_*(omega_mech); a_SM^(0)=0 in that declared sector. This is not an established current-D substitution.",
+  "error_scope": "Exact symbolic conditional compatibility identities and source-identity extraction, plus finite binary64 conditional Higgs source contractions. No new physical background, certified numerical native bound or state selection.",
+  "field_zero_scope": "v15.57 writes A_SM=H_SM=Psi=0 at reset; v17.97 identifies its gauge trace as a zero fluctuation. Neither fixes the current fermion horizontal attachment or a nonzero source response.",
+  "first_unresolved_operand": {
+    "bundle_map": "J5:S(g5) tensor E_SM,16 tensor C3_family -> E5_physical; J4:S(h4) tensor E_SM,16 tensor C3_family -> E4_physical; isometric Clifford intertwiners on the inherited trace/form domain",
+    "classification": "Reference/fluctuation meaning declared; current covariant attachment is not specified by the inspected retained action expressions. Computing a supplied attachment is not the blocker: the equation/embedding to compute is absent. No claim of an exhaustive absence theorem for all BHSM records.",
+    "coefficient_type": "Omega5_SM,total in Omega^1(M5, rho16_*(ad P_SM)); trace to M4 by the retained connection-compatible T54. Any additional Clifford-degree zero potential must be recorded separately, not called another connection.",
+    "consumer": "Current D_L,D_R/D_strat source action, background-compatible parent mixed weak operator, SAME-source prefix return j_ext and finite-E1 response",
+    "defining_equation": "I_spin tensor A_hor^(0) tensor I3 = [J5^-1 nabla5_total[A_SM=0] J5 - nabla5_spin tensor I16 tensor I3]; T54 J5=J4 T54_canonical. A supplied contracted coefficient on the retained source/test space suffices; a complete kernel or new J reconstruction is not required.",
+    "higgs_tangent": "Transport H and Q together by the derived associated-bundle map; the electromagnetic tangent satisfies delta_b Omega_H H=0 because Q_H H=0. This does not make D_background H or curvature zero.",
+    "horizontal_projection": "If a parent spinor reduction is used: (A_ind,mu)_rs=<eta_r,nabla_parent,X_mu^H eta_s>_owned_fibre_wall - (base spin connection)_rs; X_mu^H=partial_mu-omega_mech,mu^a V_a. Neither eigenvalues alone nor trace index supplies eta_r and this projection.",
+    "no_new_interpolation_parameter": true,
+    "not_supplied": "expanded current nabla_total or connection-preserving J5/T54 establishing where the mechanical horizontal connection occurs; associated physical Higgs background on that attachment",
+    "operand": "Current action-to-carrier horizontal internal connection coefficient A_hor^(0), with its M5/M4 attachment",
+    "reference_substitution": "v17.97 declares zero fluctuation about the mechanical connection. To implement that declaration in S_Dirac[e,omega_spin,A_SM,Psi], one needs the actual substitution A_hor^(0)=rho16_*(omega_mech), equivalently a connection-compatible attachment Phi of P_diag to the SM Sp1 factor. The retained action writes F_A and nabla_total without specifying this substitution. No alternative background is certified here.",
+    "source_tangent": "delta_b Omega4_SM,total=T_b Y_A(-iQ) in saved sigma0/right coframe; after saved U, delta_b Omega4,1=U delta_b Omega4,0 U^-1. delta_b U=0 for that fixed source-independent frame; any attachment variation must be included if the actual action makes J source-dependent.",
+    "supplied": "mechanical principal connection; rank16 representation and charge normalization; intended zero fluctuation; vertical Dirac eigenvalue blocks; local Dirac template; reset trace graph"
+  },
+  "frozen_local": {
+    "a_mu_QED_local": "0.00116550200495813",
+    "a_mu_selected_local_open_interval": [
+      "0.0011655039493",
+      "0.0011655109506"
+    ],
+    "already_combined_selected_local": true,
+    "calibration_convention": "alpha_inverse=137.035999084; standard uncertainty=2.1e-8; other original conditional inputs fixed",
+    "calibration_only_standard_uncertainty": "1.79e-13",
+    "delta_a_mu_h_local_1_open_interval": [
+      "0",
+      "3.500331e-9"
+    ],
+    "native_added": false,
+    "publication_paths": "Portable logical provenance; original local metadata and evaluated revision snapshot preserved in standalone handoff."
+  },
+  "local_body": "H_free=R^-1 diag(-D3,+D3)+m sigma1_LR tensor I; separate affine Q source. It omits an explicit rank16 mechanical connection and is documented as a parameterized free block, not an interacting background determination.",
+  "native_ledger": {
+    "completion_counterterm": null,
+    "contact": null,
+    "domain_boundary": null,
+    "native_bulk_heat": null,
+    "state_variation": null,
+    "strong_within_native": null
+  },
+  "new_conditional_Higgs_source_application": {
+    "connected_levels": [
+      1,
+      3
+    ],
+    "direct_fixed_H_photon_quadratic_column": "zero since a H=0; does not remove this Higgs/gauge mixed row or its elimination response",
+    "equation": "U_H^-1 a1^dagger D_Omega1 H1 = (T_b lambda nu/R_angular^2) sum_a Y_A,a (R_a1-i R_a2,0)",
+    "error_scope": "Binary64 finite Gaunt contractions, normalized Haar support exact; not a certified physical error enclosure",
+    "exterior_response": false,
+    "physical_Higgs_background_selected": false,
+    "scope": "conditional mechanical associated connection and transported retained local H branch; positive angular pairing, prior Lorentz sign not reapplied here",
+    "source_coordinate": "b; T_b inserted once in cut actions; no 2/3 or Tr16 multiplier",
+    "unit_column_norm2": [
+      0.6666666666666663,
+      0.6666666666666663,
+      0.6666666666666663,
+      0.6666666666666663,
+      0.6666666666666663,
+      0.6666666666666663,
+      0.6666666666666663,
+      0.6666666666666663
+    ]
+  },
+  "physical_a_mu": null,
+  "physical_g_mu": null,
+  "prior_mechanical_checks_preserved": {
+    "QQ_contact_residual": 8.088351673759241e-17,
+    "angular_QQ_Hermitian_residual": 2.5475570405478103e-15,
+    "full_angular_mixed_row_norm": 64.16152903672352,
+    "full_mixed_curvature_contact_norm": 4.6179923118940325,
+    "old_curvature_frame_result_reused": false,
+    "retained_n5_cancellation": 1.9724042404289787e-16,
+    "source_Gram_residual": 1.0038639566199302e-15,
+    "source_covariance_absolute": 2.0050401905981628e-15,
+    "transported_n3_source_norm": 3.2659863237109037
+  },
+  "prior_mechanical_result_sha256": "2ac177759a04f5913629795249e157746ea2e31006abbd89de17ab771e660687",
+  "reference": "524ed90689bd5923c249bba2e699abf627e703cd",
+  "row_use": {
+    "physical_complete_weak_operator": null,
+    "physical_exterior_return": null,
+    "quantum_matching": null,
+    "required_extra": "actual background J5/T54; associated Higgs/current terms and any nonminimal horizontal potential from the owned parent action",
+    "saved_curvature_and_constraint_contacts": "required for that mechanical gauge reference; may not be dropped from a promoted Hessian",
+    "saved_electric_radial_coefficients": "reusable inherited primitive weight/metric data, with same-owner matching still required",
+    "saved_mechanical_angular_rows": "exact primitive mechanical reference contributions if the declared associated connection is shown to enter the physical gauge operator; no recalculation"
+  },
+  "start_HEAD": "bc27b082542ccb3c4c64fadc7b894430d71292a6",
+  "total_covariant_derivative": "nabla_total=nabla_spin(e,omega_LC+C) tensor I_rep + I_spin tensor nabla_SM,total; family factor I3. C_star=-M_C^-1 J_S vanishes at zero classical Psi, not at a general quantum state."
+}

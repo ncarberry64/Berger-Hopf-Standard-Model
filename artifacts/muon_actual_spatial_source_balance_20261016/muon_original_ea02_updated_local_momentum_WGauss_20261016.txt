@@ -1,0 +1,177 @@
+ACTUAL UPDATED LOCAL MOMENTA, W*A_G AND CLOCK PRODUCT-RULE CHECK
+2026-10-16. Original ea02/D4 complex analytic cut; no outer correction.
+
+Source:
+C:/Users/carbe/Downloads/BHSM_muon_parent_maxwell_worktree_20261001/audits/bhsm_original_ea02_updated_local_momentum_WGauss_20261016.py
+SHA256 c904d9d1d7125cdb5f9f869413362b5a447b1f8a52340e66a8a7c601c5dfadd3
+
+1. New operand and preserved source
+
+The saved open particular changes child phase(v,y), leaving parent and
+all child spatial/H positions fixed. The prior deltaW packet proves
+that its actual A0, radial A0 and wall A0 potential changes are all0.
+This supplement reconstructs the resulting local spatial gauge/Higgs
+momentum variations by literal algebra, using the already retained
+coefficient germs and particular coefficients.
+
+No action, AD/coefficient sampler, profile/history or clock solver is
+called. The frozen979045f0 literal physical context is compiled exactly,
+with full owner/block hashes and explicit namespace. Its context block
+SHA is c8a9d5f7a1aed6b81e3a5577d45b9ffab06c72c639f5c9f9cba3524b546eba0c.
+
+2. Exact phase-particular geometry contacts
+
+At fixed q/s, N=exp(sum m_k cos(4k chi)), and the original densities have
+e,k proportional to N^-1 and r,d proportional to N. Thus
+  deltae=-e deltaLogN, deltak=-k deltaLogN,
+  deltar= r deltaLogN, deltad= d deltaLogN.
+
+The actual material shift is
+  beta_material=(2 beta_original+2rho dr/WALL)/jac,
+  jac=2 chi_wall/WALL.
+Its variation retains both the shift-multiplier and wall-speed terms.
+
+The original Cstar and lcstar use the FIXED reference chi*=pi/4,
+with exact owner sign weights, not a numerical evaluation of trig at
+the displaced wall:
+  delta lcstar=delta v0
+     +sum_{k=1..12}(-1)^k delta v_u,k
+     +sum_{j=0..11}(-1)^j delta v_w,j,
+  delta dr=(delta sdot-s delta lcstar)/Cstar.
+Cwall/Cstar likewise uses the exact signed reference shape. The phase
+N/beta fields themselves are evaluated at each actual moving node/wall.
+
+Boundary U=Cwall(dr+beta_wall)/Nwall, so
+  deltaU=(Cwall/Nwall)(delta dr+delta beta_wall)-U deltaLogNwall,
+  deltaLogell=deltaLogNwall-U deltaU/(1-U^2),
+  delta wT=-wT deltaLogell.
+The same inherited Lorentz boundary branch is anchored by the actual
+retained U. Literal U reconstruction discrepancy is4.236855495930605e-74.
+No absolute value, Wick substitution or new length/normalization enters.
+
+The connection-time derivative increment is the exact original
+gauge-velocity basis plus native T_At applied to the phase particular.
+The inherited mechanical lambda_t profile is parent-minus-reference-
+parent-plus-reference-child; parent/reference data are unchanged by
+this child-only particular, so it is not added a second time.
+
+3. Local physical momenta and independent admission
+
+For p_r=kX and p_a=eY_a, first compute the full original R variations
+from the retained exact point_R and density_R. Add the phase particular:
+  deltaX_part=delta At_r,
+  deltaY_a,part=delta At_a-delta beta_material R_a,
+  delta p_r,part=delta k X+k deltaX_part,
+  delta p_a,part=delta e Y_a+e deltaY_a,part.
+The actual A0/spatial-position preservation is separately established,
+not inserted as a convenient zero.
+
+For PiH=2wT DtH/V, retain original weight/H/A0 variations and add
+  delta PiH_part=2/V[
+        delta wT_part DtH+wT delta Hdot_part].
+Full original density, source, wall and reference contacts occur once.
+
+The reconstructed local gauge/Higgs delta p is independently projected
+onto EVERY179 pure-gauge/Higgs velocity row, including all new59, using
+the actual original/native velocity-test maps held on R. It is compared
+with the freshly saved updated H_v R from mixed application455dd5ad...
+on EXACTLY the same full746 updated R.
+
+Maximum independent179 discrepancy:
+  6.794086544518808e-23.
+
+The other38 momentum rows are geometry/wall momenta containing cap/eta/
+surface contributions. Their ACTUAL values remain separately cached.
+They are NOT reconstructed from gauge p/H, NOT zeroed, and NOT labeled
+an independent projection check. The full217 native vector and both
+index partitions are exported explicitly.
+
+4. Actual unprojected W*A_G
+
+For W=[A0,phi T_a], its radial derivative retains
+[A0_rho,phi T_a]+[A0,phi_rho T_a]. Hold this test FIXED while varying
+the actual weak Gauss functional:
+  delta G(W)=sum weight[
+      delta p_r dot (-W_rho+[W,A_r])
+      +p_r dot [W,delta A_r]
+      +sum_a(delta p_a dot [W,A_a]+p_a dot [W,delta A_a])]
+      +delta PiH dot O(Wwall,H)+PiH dot O(Wwall,deltaH).
+
+This is W*H_G R. The distinct deltaW*G term was already evaluated in
+the preceding packet and is NOT counted again here. The affine term
+W*A_G adds W*G_primal only once in column0.
+
+Before using W, the same arbitrary-test variation is checked on ALL36
+represented temporal profiles against the independently saved fresh
+native H_G R. Maximum discrepancy:
+  3.0525468497897254e-31.
+
+W is not projected into the old At span and is not added as a new
+state coordinate. Actual fixed material48-rule weights and scalar wall
+current are retained once.
+
+5. Numerical decomposition and actual candidate comparison
+
+  max |chi+D+deltaW*G|               6.2893648454376955e-15
+  max |W*A_G|                       6.2886949772575155e-15
+  max |chi+D+deltaW*G+W*A_G|         1.0731604903784908e-17.
+
+All36x7 signed matrices are retained, not only their maxima.
+
+The exact same-cut candidate source9dfa4106.../archivef26c2302... is read
+without re-evaluating any action. Its ACTUAL projected LHS is
+  max |Z^T Hphase omega_candidate|   1.0731607328792862e-17.
+
+The full comparison is
+  Z^T Hphase omega_candidate
+    -(chi+D+deltaW*G+W*A_G),
+with maximum1.2073780937449202e-21. It is retained as the measurable
+COMBINED finite source/domain/pullback/product-rule defect, not declared
+exactzero or decomposed into individually zero P/S terms.
+
+The candidate ORIGINAL277 residual remains
+  1.0925678628070804e-7.
+Its small framed residual/reaction balance is not an original-equation
+or physical-clock pass. This calculation does not prove exact Z
+left-nullity, require chi=0, exclude an unframed solution, or select
+free momentum/q/source/domain data.
+
+Thus the actual evaluated Euler and both Gauss source contacts account
+for the projected relation to the displayed precision on this finite
+slice. No stationary mean, exterior load or new physical parameter
+was introduced to enforce that agreement.
+
+6. Reproducibility and preserved pilots
+
+Two independent final executions are byte-identical:
+C:/Users/carbe/OneDrive/Documents/CODEX/outputs/bhsm_original_ea02_updated_local_momentum_WGauss_20261016/final_run_1
+C:/Users/carbe/OneDrive/Documents/CODEX/outputs/bhsm_original_ea02_updated_local_momentum_WGauss_20261016/final_run_2
+
+actual_updated_local_momenta_and_unprojected_W_affine_Gauss.npz
+3620389 bytes, SHA256
+eb4c80c631b617ab75538bcb5c185830cecf41829bd7557b2ce23ea6fcfaf648
+result.json:50278 bytes, SHA256
+a71d7c1c084ac251d4dfa0aca8eb9fe33dcdfdbb42f2aea7e7f1e5614a9a5654
+executed_producer.py:18729 bytes, source SHA above.
+
+final_paired_inventory.json SHA256
+9faa27486e7be61acbbe6cc90a96a5938f0cc58d17e4589cb6e8323167da3d28.
+
+pilot1 preserves the original local reconstruction; pilot2 also
+includes the candidate comparison. The final source uses literal
+signed fixed-reference Cstar shape rather than MP trig of a binary
+pi/4 argument, as required by the original owner. The pilots and their
+sources/arrays remain unchanged. Root/scalar reviewed the placements
+and fixed-reference correction before the final pair.
+
+All input/source/state/map hashes are reported. Bare primal, actual
+response, affine once-counting and cached geometry momenta remain
+distinct. No source/history/D5 campaign, coefficient sampler, new
+primal, clock solve or original coupled correction was applied.
+
+This is a finite classical YM/Higgs source/domain product-rule block.
+It does not construct the physical outgoing/native graded determinant,
+full four histories/terminal C0/Cj, physical2e-10 derivative or radial
+solution convergence, Maxwell/all226 AFTER, normalized two-spin state
+or muon magnetic moment.
+

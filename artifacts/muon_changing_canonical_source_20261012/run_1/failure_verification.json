@@ -1,0 +1,15 @@
+{
+  "classification": "CONTROL_ONLY_ABORTED_OVERSTRICT_BYTE_BINDING_CHECK",
+  "command": "C:/Python314/python.exe scripts/evaluate_muon_changing_canonical_source.py --output artifacts/muon_changing_canonical_source_20261012/run_1",
+  "exit_code": 1,
+  "stdout": "Traceback (most recent call last):\r\n  File \"C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\scripts\\evaluate_muon_changing_canonical_source.py\", line 180, in <module>\r\n    a=p.parse_args();materialize(a.output,a.step,a.steps,a.max_iterations)\r\n                     ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\n  File \"C:\\Users\\carbe\\Downloads\\BHSM_muon_parent_maxwell_worktree_20261001\\scripts\\evaluate_muon_changing_canonical_source.py\", line 57, in materialize\r\n    if not np.array_equal(initial_actions[0]['hessian'],trace['parent_standalone_Hessian']):raise ValueError('same complete standalone parent action required')\r\n                                                                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r\nValueError: same complete standalone parent action required\r\n",
+  "diagnostic_command": "C:/Python314/python.exe -c (recorded exact raw projection and same action/Hessian comparison)",
+  "raw_projection_max": 0,
+  "raw_projection_norm": 0,
+  "master_lift_difference_max": 0,
+  "fresh_parent_Hessian_minus_pinned_max": 4.440892098500626e-16,
+  "fresh_parent_Hessian_minus_pinned_norm": 4.965068306494546e-16,
+  "fresh_parent_gradient_minus_pinned_max": 3.552713678800501e-15,
+  "correction": "byte equality was stronger than identical-input arithmetic agreement; later actual action sources are freshly reassembled with unchanged x/Pi/frame and original guard",
+  "scope": "no physical source, action or observable failure inferred"
+}

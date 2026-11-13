@@ -1,0 +1,402 @@
+{
+  "branch": "codex/muon-parent-maxwell-density-review",
+  "classification": "DIRECT_OWNER_ACTION_KKT_SOURCE_IMPLEMENTED_AND_CONTROLLED__PHYSICAL_SOURCE_UNEVALUATED",
+  "downstream": {
+    "classification": "CONDITIONAL_SAME_OWNER_KKT_DOWNSTREAM_COMPOSITION",
+    "exact_error_scope": "Supplied binary64 scalar/form composition only; no continuum, tail, physical-input or transfer-limit enclosure.",
+    "native_operator_or_source_produced": false,
+    "owner_identity": null,
+    "physical_a_mu": null,
+    "physical_g_mu": null,
+    "physical_promotion": false,
+    "stages": {
+      "AE4_heat": {
+        "missing": [
+          "r_value",
+          "r_v",
+          "r_J",
+          "r_vJ",
+          "i_value",
+          "i_v",
+          "i_J",
+          "i_vJ"
+        ],
+        "status": "UNEVALUATED",
+        "value": null
+      },
+      "Pauli_readout": {
+        "missing": [
+          "r_value",
+          "r_v",
+          "r_J",
+          "r_vJ",
+          "i_value",
+          "i_v",
+          "i_J",
+          "i_vJ"
+        ],
+        "status": "UNEVALUATED",
+        "value": null
+      },
+      "R_ind": {
+        "missing": [
+          "r_value",
+          "r_v",
+          "r_J",
+          "r_vJ",
+          "i_value",
+          "i_v",
+          "i_J",
+          "i_vJ"
+        ],
+        "status": "UNEVALUATED",
+        "value": null
+      },
+      "exact_heat_coefficients": {
+        "missing": [
+          "r_value",
+          "r_v",
+          "r_J",
+          "r_vJ",
+          "i_value",
+          "i_v",
+          "i_J",
+          "i_vJ"
+        ],
+        "status": "UNEVALUATED",
+        "value": null
+      },
+      "heat_length_squared": {
+        "missing": [
+          "r_value",
+          "r_v",
+          "r_J",
+          "r_vJ",
+          "i_value",
+          "i_v",
+          "i_J",
+          "i_vJ"
+        ],
+        "status": "UNEVALUATED",
+        "value": {
+          "c": null,
+          "c_J": null,
+          "c_v": null,
+          "c_vJ": null
+        }
+      },
+      "matching_inertia": {
+        "missing": [
+          "i_value",
+          "i_v",
+          "i_J",
+          "i_vJ"
+        ],
+        "status": "UNEVALUATED",
+        "value": {
+          "J": null,
+          "v": null,
+          "vJ": null,
+          "value": null
+        }
+      },
+      "native_photon_response": {
+        "missing": [
+          "r_value",
+          "r_v",
+          "r_J",
+          "r_vJ",
+          "i_value",
+          "i_v",
+          "i_J",
+          "i_vJ"
+        ],
+        "status": "UNEVALUATED",
+        "value": null
+      },
+      "owner_impedance": {
+        "missing": [
+          "z_value",
+          "z_v",
+          "z_J",
+          "z_vJ"
+        ],
+        "status": "UNEVALUATED",
+        "value": {
+          "J": null,
+          "v": null,
+          "vJ": null,
+          "value": null
+        }
+      },
+      "paired_electron_muon_native_heat": {
+        "missing": [
+          "r_value",
+          "r_v",
+          "r_J",
+          "r_vJ",
+          "i_value",
+          "i_v",
+          "i_J",
+          "i_vJ"
+        ],
+        "status": "UNEVALUATED",
+        "value": null
+      },
+      "relative_zeta_eta": {
+        "missing": [
+          "r_value",
+          "r_v",
+          "r_J",
+          "r_vJ",
+          "i_value",
+          "i_v",
+          "i_J",
+          "i_vJ"
+        ],
+        "status": "UNEVALUATED",
+        "value": null
+      },
+      "total_resistance": {
+        "missing": [
+          "r_value",
+          "r_v",
+          "r_J",
+          "r_vJ"
+        ],
+        "status": "UNEVALUATED",
+        "value": {
+          "J": null,
+          "v": null,
+          "vJ": null,
+          "value": null
+        }
+      }
+    }
+  },
+  "executed_HEAD": "da155f24a2663d1570d9d78acc9771197fc16670",
+  "execution": {
+    "cached_F_p_consumed": false,
+    "cached_g_n_consumed": false,
+    "finite_source_columns": 1,
+    "full_Gate7_campaigns": 0,
+    "historical_producers_invoked": [],
+    "launch_73_recomputations": 0,
+    "local_QED_changed": false,
+    "physical_heat_evaluations": 0,
+    "physical_response_solves": 0,
+    "physical_source_columns": 0,
+    "primitive_photon_refinement_runs": 0,
+    "same_column_exact_and_Arb_replays": true
+  },
+  "next_consumed_operand": {
+    "fixed_coordinates": [
+      "eta",
+      "lambda"
+    ],
+    "further_inputs": "Same-branch surface Jacobi, inertia and total v,J,vJ jets; native heat/domain/completion and response operands",
+    "impedance": "z_psi=L_ss+h_psi^dagger delta_psi",
+    "producer": "Current same-owner weak-action pullback along action-selected xi_psi at AE4 support loss",
+    "required": [
+      "xi_psi",
+      "b_psi(3+2+2)",
+      "stationary owner base",
+      "lambda",
+      "L_etaeta",
+      "R_eta",
+      "S_eta_s",
+      "R_eta_s",
+      "R_s",
+      "L_ss"
+    ],
+    "solve": "H_KKT delta_psi=-h_psi",
+    "source": "h_psi=[S_eta_s+R_eta_s^dagger lambda;R_s]"
+  },
+  "owner_action_domain_identity": {
+    "action": "BHSM-AE-4.0.0",
+    "domain": null,
+    "pairing": null,
+    "stationary_branch": null
+  },
+  "owner_action_version": "BHSM-AE-4.0.0",
+  "owner_contract": {
+    "black_hole_magnetar_neutron_and_atomic_data_set_ell_star": false,
+    "branch_rule": "CONTINUOUS_TRANSPORT_OF_ACTION_SELECTED_FORMATION_BRANCH_TO_AE4_FIRST_FUTURE_SUPPORT_LOSS_EVENT",
+    "bulk_impedance_only_cutoff_allowed": false,
+    "core_energy_rule_natural_units": "E_core=sqrt(<psi_star,H_event,drive psi_star>/<psi_star,I_star psi_star>)",
+    "cutoff_owner_tag": "BHSM-AE4-MODE-FREQUENCY-CUTOFF-2026-10-07",
+    "definition_status": "ADOPTED_OWNER__PHYSICAL_BRANCH_CONTRACTIONS_UNEVALUATED",
+    "ell_star_is_BHSM_native_geometry_functional": true,
+    "ell_star_is_free_universal_cutoff": false,
+    "first_crossing_not_singular_endpoint_evaluation": true,
+    "formation_zero_is_support_loss_by_default": false,
+    "heat_length_squared_rule": "c_star=ell_star^2=<psi_star,I_star psi_star>/<psi_star,R_star psi_star>",
+    "impedance_energy_rule_natural_units": "E_impedance=sqrt(<psi_star,R_star psi_star>/<psi_star,I_star psi_star>)",
+    "kinetic_inertia": "I_star=positive action-owned kinetic inertia in I_lambda D_tau^2 a_lambda+R_lambda a_lambda=f_lambda",
+    "measured_particle_or_anomaly_input": false,
+    "numerical_ell_star_evaluated_on_current_C2": false,
+    "physical_default_ell_equals_one_allowed": false,
+    "proper_clock_units": "hbar=c_light=1; frequency energy uses the owned physical D_tau",
+    "selected_mode_is_resistance_eigenvector_by_default": false,
+    "source_jets_are_total_branch_derivatives": true,
+    "spectral_length_rule_natural_units": "ell_star=1/E_impedance[Phi_star;Sigma_star]",
+    "surface_Jacobi_contribution_retained": true,
+    "surface_rule": "Sigma_star=FIRST_FUTURE_SURFACE_WHERE_E_impedance[Phi;Sigma]=E_core[Phi;Sigma]_AND_OUTWARD_SPACETIME_SUPPORT_CEASES",
+    "those_systems_are_downstream_tests_of_one_surface_rule": true,
+    "total_restoring_resistance": "R_star=gamma_star J_Sigma+H_impedance"
+  },
+  "physical": {
+    "H_KKT": {
+      "formula": "[[L_etaeta,R_eta^dagger],[R_eta,0]]",
+      "status": "UNEVALUATED",
+      "value": null
+    },
+    "L_etaeta": {
+      "status": "UNEVALUATED",
+      "value": null
+    },
+    "L_ss": {
+      "status": "UNEVALUATED",
+      "value": null
+    },
+    "R_eta": {
+      "status": "UNEVALUATED",
+      "value": null
+    },
+    "R_eta_s": {
+      "status": "UNEVALUATED",
+      "value": null
+    },
+    "R_s": {
+      "status": "UNEVALUATED",
+      "value": null
+    },
+    "S_eta_s": {
+      "status": "UNEVALUATED",
+      "value": null
+    },
+    "b_psi": {
+      "canonical_order": [
+        "trace_1",
+        "trace_2",
+        "trace_3",
+        "canonical_momentum_1",
+        "canonical_momentum_2",
+        "dynamic_flux_1",
+        "dynamic_flux_2"
+      ],
+      "status": "UNEVALUATED",
+      "value": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    },
+    "delta_psi": {
+      "formula": "solve(H_KKT,-h_psi)",
+      "retained_response_coordinates": [
+        "delta_eta_psi",
+        "delta_lambda_psi"
+      ],
+      "status": "UNEVALUATED",
+      "value": null
+    },
+    "direct_vs_schur": {
+      "status": "UNEVALUATED",
+      "value": null
+    },
+    "h_psi": {
+      "fixed_coordinates": [
+        "eta",
+        "lambda"
+      ],
+      "formula": "[S_eta_s+R_eta_s^dagger lambda;R_s]",
+      "lambda_s_in_forcing": false,
+      "status": "UNEVALUATED",
+      "value": null
+    },
+    "lambda": {
+      "scope": "Same-owner stationary multiplier coordinates; historical lapse/shift/event multipliers cannot be identified by name alone.",
+      "status": "UNEVALUATED",
+      "value": null
+    },
+    "owned_residual": {
+      "status": "UNEVALUATED",
+      "value": null
+    },
+    "stationary_base": {
+      "owner_identity_proved": false,
+      "required_equations": [
+        "L_eta=0",
+        "R=0"
+      ],
+      "status": "UNEVALUATED",
+      "value": null
+    },
+    "xi_psi": {
+      "required_provenance": "Action-selected normal-interface displacement on the continuously transported branch at AE4 first future support loss; descriptor, launch, SVD and right-inverse substitutes are forbidden.",
+      "status": "UNEVALUATED",
+      "value": null
+    },
+    "z_psi": {
+      "formula": "L_ss+h_psi^dagger delta_psi",
+      "pairing": "Actual same-owner action/KKT dual; no naive cached-row contraction.",
+      "status": "UNEVALUATED",
+      "value": null
+    }
+  },
+  "physical_signed_sector_ledger": [
+    {
+      "name": "bulk_geometric",
+      "status": "UNEVALUATED",
+      "value": null
+    },
+    {
+      "name": "reset",
+      "status": "UNEVALUATED",
+      "value": null
+    },
+    {
+      "name": "trace_momentum_conormal",
+      "status": "UNEVALUATED",
+      "value": null
+    },
+    {
+      "name": "dynamic_flux",
+      "status": "UNEVALUATED",
+      "value": null
+    },
+    {
+      "name": "Wentzell",
+      "status": "UNEVALUATED",
+      "value": null
+    },
+    {
+      "name": "scalar_topographic",
+      "status": "UNEVALUATED",
+      "value": null
+    },
+    {
+      "name": "gauge_BRST_constraints",
+      "status": "UNEVALUATED",
+      "value": null
+    },
+    {
+      "name": "contact",
+      "status": "UNEVALUATED",
+      "value": null
+    },
+    {
+      "name": "multiplier_owned_constraint_terms",
+      "status": "UNEVALUATED",
+      "value": null
+    }
+  ],
+  "scientific_error_scope": "Physical operands and their error estimates remain UNEVALUATED. Finite control rounding is not an uncertainty for BHSM or its muon Pauli coefficient.",
+  "scientific_reference": "524ed90689bd5923c249bba2e699abf627e703cd",
+  "starting_HEAD": "da155f24a2663d1570d9d78acc9771197fc16670"
+}

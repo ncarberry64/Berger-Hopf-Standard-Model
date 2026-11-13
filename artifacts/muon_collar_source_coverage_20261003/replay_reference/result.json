@@ -1,0 +1,811 @@
+{
+  "B54_required": null,
+  "I_full": null,
+  "I_partial": 0.003234015478131905,
+  "I_remainder": null,
+  "T_required": null,
+  "atol": 2e-12,
+  "cache_exit_J": 1.0015886348802674,
+  "cache_exit_axis": 0,
+  "cache_exit_phase": [
+    0.0,
+    1.564030196575592,
+    -0.029571640719287792,
+    -1.0437589497587703
+  ],
+  "cache_exit_s": 0.0064899805503247044,
+  "cache_exit_transverse": [
+    1.0028685162070525,
+    0.051311426171412815,
+    14.358428150510273,
+    9.072429014679363
+  ],
+  "cached_phase_reintegrated": false,
+  "covered_compact_source_integral": "exactly zero on disjoint covered patch only; full required overlap remains unevaluated",
+  "covered_source_support": false,
+  "elapsed_seconds": 0.8760477000032552,
+  "exterior_K_M": null,
+  "first_unresolved_operand": {
+    "consumer": "saved compact-source T=<W_eta e,p>_5 then M4 B=T and coupled exterior K/M",
+    "equation": "X(s_j,y_j)=(tau_cut=0,rho_j) for actual saved Gauss source points in the inherited domain; W=J^-1/2 sin(rho(X)/2) U54/sqrt(I); W^dagger M5 W=M4",
+    "input": "resolved daughter eta field, current collar values, inherited E1 reset and source-support data; no new state/profile/arm",
+    "name": "inverse/patched collar action on the saved source-support points",
+    "output": "source-relevant overlap W_eta^sharp p across a justified domain/patch representation",
+    "producer": "adopted v14.45 normalized inclusion and current normal/patch geometry; if the owned representation crosses E1 use AE2 Gamma0_child W_child T_R=U_R Gamma0_event W_event with its inherited wall-input map",
+    "status": "uncomputed compatible source-restricted patch action; this Gaussian realization exits before support, not proof that reset crossing is the unique route or that another physical datum is required"
+  },
+  "function_evaluations": 4595,
+  "interfaces": [
+    {
+      "axis": 0,
+      "eta_jump": [
+        0.06536055982587496,
+        0.0008550898417487574
+      ],
+      "new_cell": [
+        22,
+        63
+      ],
+      "old_cell": [
+        23,
+        63
+      ],
+      "old_segment": true,
+      "s": 0.0009522160882081663
+    },
+    {
+      "axis": 0,
+      "eta_jump": [
+        0.02690392828379673,
+        0.0007571572299616136
+      ],
+      "new_cell": [
+        21,
+        63
+      ],
+      "old_cell": [
+        22,
+        63
+      ],
+      "old_segment": false,
+      "s": 0.0016693192552176077
+    },
+    {
+      "axis": 0,
+      "eta_jump": [
+        0.0237986921287478,
+        0.000934886957002945
+      ],
+      "new_cell": [
+        20,
+        63
+      ],
+      "old_cell": [
+        21,
+        63
+      ],
+      "old_segment": false,
+      "s": 0.002174667634354017
+    },
+    {
+      "axis": 0,
+      "eta_jump": [
+        0.03026152628999712,
+        0.0013350590703131715
+      ],
+      "new_cell": [
+        19,
+        63
+      ],
+      "old_cell": [
+        20,
+        63
+      ],
+      "old_segment": false,
+      "s": 0.0025940868187454462
+    },
+    {
+      "axis": 0,
+      "eta_jump": [
+        0.026212365277830163,
+        0.0013606978069988784
+      ],
+      "new_cell": [
+        18,
+        63
+      ],
+      "old_cell": [
+        19,
+        63
+      ],
+      "old_segment": false,
+      "s": 0.002963213491780779
+    },
+    {
+      "axis": 0,
+      "eta_jump": [
+        0.02580147885752032,
+        0.001466321840840834
+      ],
+      "new_cell": [
+        17,
+        63
+      ],
+      "old_cell": [
+        18,
+        63
+      ],
+      "old_segment": false,
+      "s": 0.003297848800383779
+    },
+    {
+      "axis": 0,
+      "eta_jump": [
+        0.016064230159460402,
+        0.001115358419293777
+      ],
+      "new_cell": [
+        16,
+        63
+      ],
+      "old_cell": [
+        17,
+        63
+      ],
+      "old_segment": false,
+      "s": 0.0036064438852136827
+    },
+    {
+      "axis": 0,
+      "eta_jump": [
+        0.015196158489817535,
+        0.0011060273074745552
+      ],
+      "new_cell": [
+        15,
+        63
+      ],
+      "old_cell": [
+        16,
+        63
+      ],
+      "old_segment": false,
+      "s": 0.003894019363508445
+    },
+    {
+      "axis": 0,
+      "eta_jump": [
+        0.019034961938550143,
+        0.001321588168853971
+      ],
+      "new_cell": [
+        14,
+        63
+      ],
+      "old_cell": [
+        15,
+        63
+      ],
+      "old_segment": false,
+      "s": 0.004163759563870656
+    },
+    {
+      "axis": 0,
+      "eta_jump": [
+        0.020988031610643887,
+        0.0014438613607898887
+      ],
+      "new_cell": [
+        13,
+        63
+      ],
+      "old_cell": [
+        14,
+        63
+      ],
+      "old_segment": false,
+      "s": 0.004417769200426079
+    },
+    {
+      "axis": 0,
+      "eta_jump": [
+        0.02026974421853761,
+        0.0014108709073044068
+      ],
+      "new_cell": [
+        12,
+        63
+      ],
+      "old_cell": [
+        13,
+        63
+      ],
+      "old_segment": false,
+      "s": 0.004657468891563611
+    },
+    {
+      "axis": 0,
+      "eta_jump": [
+        0.02054747370138621,
+        0.0014270547846777504
+      ],
+      "new_cell": [
+        11,
+        63
+      ],
+      "old_cell": [
+        12,
+        63
+      ],
+      "old_segment": false,
+      "s": 0.0048838166571955445
+    },
+    {
+      "axis": 0,
+      "eta_jump": [
+        0.022211809613505717,
+        0.0015274786148351538
+      ],
+      "new_cell": [
+        10,
+        63
+      ],
+      "old_cell": [
+        11,
+        63
+      ],
+      "old_segment": false,
+      "s": 0.005097432662380162
+    },
+    {
+      "axis": 0,
+      "eta_jump": [
+        0.03678687949837711,
+        0.0024949694595806093
+      ],
+      "new_cell": [
+        9,
+        63
+      ],
+      "old_cell": [
+        10,
+        63
+      ],
+      "old_segment": false,
+      "s": 0.005298668005587122
+    },
+    {
+      "axis": 0,
+      "eta_jump": [
+        0.04662521498591932,
+        0.0031983069932755015
+      ],
+      "new_cell": [
+        8,
+        63
+      ],
+      "old_cell": [
+        9,
+        63
+      ],
+      "old_segment": false,
+      "s": 0.005487637285794369
+    },
+    {
+      "axis": 0,
+      "eta_jump": [
+        0.05681019079959726,
+        0.0039619267927362145
+      ],
+      "new_cell": [
+        7,
+        63
+      ],
+      "old_cell": [
+        8,
+        63
+      ],
+      "old_segment": false,
+      "s": 0.005664224086258589
+    },
+    {
+      "axis": 0,
+      "eta_jump": [
+        0.08240471665447247,
+        0.005889194907043205
+      ],
+      "new_cell": [
+        6,
+        63
+      ],
+      "old_cell": [
+        7,
+        63
+      ],
+      "old_segment": false,
+      "s": 0.005828063099859093
+    },
+    {
+      "axis": 0,
+      "eta_jump": [
+        0.11095493350839047,
+        0.008117366862588682
+      ],
+      "new_cell": [
+        5,
+        63
+      ],
+      "old_cell": [
+        6,
+        63
+      ],
+      "old_segment": false,
+      "s": 0.005978494489809323
+    },
+    {
+      "axis": 0,
+      "eta_jump": [
+        0.1864757326995211,
+        0.014035259169614456
+      ],
+      "new_cell": [
+        4,
+        63
+      ],
+      "old_cell": [
+        5,
+        63
+      ],
+      "old_segment": false,
+      "s": 0.0061144863058209
+    },
+    {
+      "axis": 0,
+      "eta_jump": [
+        0.3249460596776508,
+        0.025070196950416346
+      ],
+      "new_cell": [
+        3,
+        63
+      ],
+      "old_cell": [
+        4,
+        63
+      ],
+      "old_segment": false,
+      "s": 0.006234506886441647
+    },
+    {
+      "axis": 0,
+      "eta_jump": [
+        0.6608020220823072,
+        0.052091817037362986
+      ],
+      "new_cell": [
+        2,
+        63
+      ],
+      "old_cell": [
+        3,
+        63
+      ],
+      "old_segment": false,
+      "s": 0.006336316487242794
+    },
+    {
+      "axis": 0,
+      "eta_jump": [
+        1.7638651319511613,
+        0.14142382482985028
+      ],
+      "new_cell": [
+        1,
+        63
+      ],
+      "old_cell": [
+        2,
+        63
+      ],
+      "old_segment": false,
+      "s": 0.0064166184854564014
+    },
+    {
+      "axis": 0,
+      "eta_jump": [
+        10.60862880417912,
+        0.8602854645637912
+      ],
+      "new_cell": [
+        0,
+        63
+      ],
+      "old_cell": [
+        1,
+        63
+      ],
+      "old_segment": false,
+      "s": 0.006470443073692555
+    }
+  ],
+  "maximum_cached_Hermite_geodesic_defect": 6.13335073218407e-05,
+  "maximum_orthogonality_residual": 6.5391596322631615e-12,
+  "maximum_transverse_metric_identity_residual": 7.438494264988549e-14,
+  "maximum_unit_normal_residual": 7.416289804496046e-14,
+  "minimum_J": 0.9999060127467855,
+  "minimum_abs_Delta": 1.0419477793105136,
+  "native_heat_contact": null,
+  "native_physical_transfer_directions": 0,
+  "nearest_radial_gap_to_source": 0.5822824923287817,
+  "numerical_error": {
+    "ODE_absolute_bound": null,
+    "cached_segment": "explicit Hermite reconstruction, sampled geodesic defect recorded; no stability bound inferred",
+    "continuum_history_bound": null,
+    "inherited_H": "unchanged independent source-rate interval; not substituted for metric time derivatives",
+    "normalization_remainder": null,
+    "source_transport_pairing_domain_derivatives": null
+  },
+  "old_phase_reintegrated": false,
+  "old_production_or_replay_count": 0,
+  "physical_a_mu": null,
+  "physical_g_mu": null,
+  "prefix_chronology": {
+    "inherited_scope": "previous certified duration intervals; proof-center metric data are not a new continuum collar certificate",
+    "physical_prefix_reintegrated": false,
+    "prefix_metric_continuation_evaluated": false,
+    "proper_duration_interval": [
+      1.082320108470697e-27,
+      1.4944995686293672e-27
+    ],
+    "records": [
+      {
+        "end": 1,
+        "interval": [
+          1.2648641751559e-32,
+          1.4901588553929975e-32
+        ],
+        "producer": "BHSM_N12_C2_POLE_FREE_OUTER_MARGIN_EXTENSION",
+        "segments": 1,
+        "start": 0
+      },
+      {
+        "end": 2,
+        "interval": [
+          8.284246704623304e-34,
+          1.4553427377776458e-33
+        ],
+        "producer": "BHSM_N12_C2_TRANSLATED_POLE_FREE_SEGMENT",
+        "segments": 1,
+        "start": 1
+      },
+      {
+        "end": 436,
+        "interval": [
+          2.7458339796883626e-32,
+          5.162853114255557e-32
+        ],
+        "producer": "BHSM_N12_C2_EXTENDED_DESCRIPTOR_RESOLUTION_AUDIT",
+        "segments": 434,
+        "start": 2
+      },
+      {
+        "end": 451,
+        "interval": [
+          5.012612772126042e-47,
+          1.0283061971525654e-46
+        ],
+        "producer": "BHSM_N12_C2_COMPENSATED_DESCRIPTOR_CONTINUATION",
+        "segments": 15,
+        "start": 436
+      },
+      {
+        "end": 791,
+        "interval": [
+          4.786433974513248e-33,
+          1.2171456118660535e-32
+        ],
+        "producer": "BHSM_N12_C2_ADAPTIVE_BALL_CONTINUATION",
+        "segments": 340,
+        "start": 451
+      },
+      {
+        "end": 1064,
+        "interval": [
+          9.90588146000307e-34,
+          2.9721936380266326e-33
+        ],
+        "producer": "BHSM_N12_C2_RECENTERED_ADAPTIVE_CONTINUATION",
+        "segments": 273,
+        "start": 791
+      },
+      {
+        "end": 1128,
+        "interval": [
+          1.161388655995509e-30,
+          5.1132422866717476e-30
+        ],
+        "producer": "BHSM_N12_C2_DESCRIPTOR_FIBER_CANCELLED_CONTINUATION",
+        "segments": 64,
+        "start": 1064
+      },
+      {
+        "end": 1192,
+        "interval": [
+          8.801012940026046e-28,
+          1.056014320769565e-27
+        ],
+        "producer": "BHSM_N12_C2_UNIFORM_GAP_CONTINUATION",
+        "segments": 64,
+        "start": 1128
+      },
+      {
+        "end": 1214,
+        "interval": [
+          1.5268537591243692e-28,
+          3.3950860298461767e-28
+        ],
+        "producer": "BHSM_N12_C2_SECOND_UNIFORM_GAP_CONTINUATION",
+        "segments": 22,
+        "start": 1192
+      },
+      {
+        "end": 1215,
+        "interval": [
+          2.541191201876563e-29,
+          4.11249089352429e-29
+        ],
+        "producer": "BHSM_N12_C2_CANCELLED_FIELD_LOHNER_STEP",
+        "segments": 1,
+        "start": 1214
+      },
+      {
+        "end": 1216,
+        "interval": [
+          4.799852304045751e-30,
+          7.954117956173866e-30
+        ],
+        "producer": "BHSM_N12_C2_LOHNER_STEP_1216",
+        "segments": 1,
+        "start": 1215
+      },
+      {
+        "end": 1217,
+        "interval": [
+          2.1873814723391898e-30,
+          3.702519451202059e-30
+        ],
+        "producer": "BHSM_N12_C2_LOHNER_STEP_1217",
+        "segments": 1,
+        "start": 1216
+      },
+      {
+        "end": 1218,
+        "interval": [
+          1.3028911877268242e-30,
+          2.2319302720043633e-30
+        ],
+        "producer": "BHSM_N12_C2_LOHNER_STEP_1218",
+        "segments": 1,
+        "start": 1217
+      },
+      {
+        "end": 1219,
+        "interval": [
+          1.0009195305465158e-29,
+          2.3459804692656926e-29
+        ],
+        "producer": "BHSM_N12_C2_LOHNER_STEP_1219",
+        "segments": 1,
+        "start": 1218
+      },
+      {
+        "end": 1220,
+        "interval": [
+          3.1109897418470354e-30,
+          9.252624218266281e-30
+        ],
+        "producer": "BHSM_N12_C2_LOHNER_STEP_1220",
+        "segments": 1,
+        "start": 1219
+      },
+      {
+        "end": 1221,
+        "interval": [
+          1.2155675530244155e-30,
+          4.593077163450849e-30
+        ],
+        "producer": "BHSM_N12_C2_LOHNER_STEP_1221",
+        "segments": 1,
+        "start": 1220
+      },
+      {
+        "end": 1222,
+        "interval": [
+          2.8754788810672686e-31,
+          1.4612907873245228e-30
+        ],
+        "producer": "BHSM_N12_C2_LOHNER_STEP_1222",
+        "segments": 1,
+        "start": 1221
+      }
+    ],
+    "reset_in_tail_clock_interval": [
+      -1.4944995686293672e-27,
+      -1.082320108470697e-27
+    ],
+    "tail_clock_origin": "proper time zero at inherited C2 step1222 frontier",
+    "total_segments": 1222
+  },
+  "prefix_coefficient_receipt": {
+    "actual_production_solve_count": 0,
+    "attachment": "boundary_log_radius -> current_parent_fields; same current q_W attachment, not copied RADIUS0",
+    "history_segments": 1222,
+    "prefix_center_count": 1238,
+    "recenter_junctions": [
+      {
+        "interpretation": "proof-center recentering; not a new physical metric discontinuity",
+        "producer": "BHSM_N12_C2_EXTENDED_DESCRIPTOR_RESOLUTION_AUDIT",
+        "weighted_center_recenter_difference": 0.0
+      },
+      {
+        "interpretation": "proof-center recentering; not a new physical metric discontinuity",
+        "producer": "BHSM_N12_C2_COMPENSATED_DESCRIPTOR_CONTINUATION",
+        "weighted_center_recenter_difference": 0.0
+      },
+      {
+        "interpretation": "proof-center recentering; not a new physical metric discontinuity",
+        "producer": "BHSM_N12_C2_ADAPTIVE_BALL_CONTINUATION",
+        "weighted_center_recenter_difference": 0.0
+      },
+      {
+        "interpretation": "proof-center recentering; not a new physical metric discontinuity",
+        "producer": "BHSM_N12_C2_RECENTERED_ADAPTIVE_CONTINUATION",
+        "weighted_center_recenter_difference": 0.0
+      },
+      {
+        "interpretation": "proof-center recentering; not a new physical metric discontinuity",
+        "producer": "BHSM_N12_C2_DESCRIPTOR_FIBER_CANCELLED_CONTINUATION",
+        "weighted_center_recenter_difference": 0.0
+      },
+      {
+        "interpretation": "proof-center recentering; not a new physical metric discontinuity",
+        "producer": "BHSM_N12_C2_UNIFORM_GAP_CONTINUATION",
+        "weighted_center_recenter_difference": 0.0
+      },
+      {
+        "interpretation": "proof-center recentering; not a new physical metric discontinuity",
+        "producer": "BHSM_N12_C2_SECOND_UNIFORM_GAP_CONTINUATION",
+        "weighted_center_recenter_difference": 0.0
+      }
+    ],
+    "source": "same beta=T_b b coefficient, same Q and saved rho hat; no new continuation profile",
+    "tail_join_maximum_absolute_difference": {
+      "C_rho": 0.0,
+      "base_radius": 0.0,
+      "proper_lapse": 2.6645352591003757e-15,
+      "proper_shift_rho": 8.881784197001252e-16
+    }
+  },
+  "prefix_collar_enclosure": {
+    "bootstrap_closed": true,
+    "bootstrap_momentum_width": 1e-12,
+    "bootstrap_rho_width": 1e-12,
+    "center_interpolation_roundoff": "Arb arithmetic on exact binary64 nodal coefficients/grid; continuum/input reconstruction error excluded",
+    "first_needed_patch_action": "compatible source-restricted collar/half-density pullback beyond this evaluated Gaussian patch; reset compatibility applies if the chosen owned route crosses E1",
+    "method": "Hamiltonian first-exit enclosure using actual prefix nodal coefficients and inherited positive proper-clock duration",
+    "normal_proper_length_upper": {
+      "arb": "[5.05382702502396252345445217748717846574788924822157331088e-26 +/- 2.38e-83]",
+      "interval": [
+        5.053827025023962e-26,
+        5.053827025023963e-26
+      ]
+    },
+    "normal_turning_excluded_in_nodal_strip": true,
+    "p_rho_initial": {
+      "arb": "[0.95946645053508594276513493006504930468392766627448987694 +/- 3.76e-57]",
+      "interval": [
+        0.9594664505350858,
+        0.9594664505350861
+      ]
+    },
+    "partial_normalization_addition_upper": {
+      "arb": "[5.05382702502396252345445217748717846574788924822157331088e-26 +/- 2.38e-83]",
+      "interval": [
+        5.053827025023962e-26,
+        5.053827025023963e-26
+      ]
+    },
+    "prefix_margin": {
+      "arb": "[0.00087386955 +/- 2.81e-12]",
+      "interval": [
+        0.0008738695471993301,
+        0.0008738695513738747
+      ]
+    },
+    "prefix_state_geometry_reconstruction_error": null,
+    "prefix_transport": "rapidity centers evaluated with momentum error enclosure; full source/pairing/domain jet remains unevaluated",
+    "prefix_transverse_J_evaluated": false,
+    "preserved_norm_kappa": {
+      "arb": "[1.0000000000000720901155988213716111713206215639674753139 +/- 9.99e-57]",
+      "interval": [
+        1.000000000000072,
+        1.0000000000000724
+      ]
+    },
+    "radial_cell": 63,
+    "radial_displacement_upper": {
+      "arb": "[5.27497718791108588810417519300900640152079251751327929837e-26 +/- 8.93e-84]",
+      "interval": [
+        5.274977187911085e-26,
+        5.274977187911087e-26
+      ]
+    },
+    "radial_momentum_change_upper": {
+      "arb": "[4.29501977026586168072055101524461467038670471508251788410e-27 +/- 4.47e-84]",
+      "interval": [
+        4.295019770265861e-27,
+        4.295019770265862e-27
+      ]
+    },
+    "reached_inherited_E1_reset": true,
+    "reset_scope": "outgoing daughter patch reaches actual inherited reset; no pre-E0 arm and no assertion of physical absence",
+    "reused_tail_norm_defect": 7.194245199571014e-14,
+    "rho_at_cut": 1.564030196575592,
+    "rho_s_enclosure": {
+      "arb": "[-1.043758949758770 +/- 5.48e-16]",
+      "interval": [
+        -1.0437589497587707,
+        -1.0437589497587696
+      ]
+    },
+    "tau_s_enclosure": {
+      "arb": "[-0.02957164071929 +/- 6.57e-15]",
+      "interval": [
+        -0.0295716407192913,
+        -0.02957164071928343
+      ]
+    }
+  },
+  "realization_identifiers": {
+    "action": [
+      "v14.45 adopted effective Dirac normal-mode action",
+      "ae4_stratified_dirac_zeta_induced_owner; same common-A attachment"
+    ],
+    "domain": "existing AE2 first-order reset graph; fixed current collar; inherited past-prefix and canonical future-stop prescriptions",
+    "history": "retained N12 C2 E1-to-step1222 prefix and saved step1222-to-canonical-stop center",
+    "source": "saved eight b-source photon lifts, beta=T_b b, A_Q=sqrt(2)beta, Q=T3+Y; same compact spinor source support",
+    "spin_carrier": "saved parent_gamma(signature +----), SM16 and family I3; both chiral outputs transported",
+    "state": "current canonical history/operator test inputs; physical muon Cauchy state and pole not evaluated here"
+  },
+  "resumed_collar_actions": {
+    "new_phase_integrations": 0,
+    "path": "C:\\Users\\carbe\\Downloads\\BHSM_muon_collar_source_coverage_20261003\\run_1",
+    "sha256": "908936e4031f43c96f5b9a4f2c75b1ec69bd1e8dc985b173946b230a7b672d8f"
+  },
+  "rho_range": [
+    1.564030196575592,
+    1.5707963267948966
+  ],
+  "rtol": 2e-10,
+  "saved_source_support": [
+    0.5890486225480862,
+    0.9817477042468103
+  ],
+  "scope": "binary64 nodal metric and explicit cached-curve Hermite reconstruction; no rigorous ODE/continuum/history enclosure",
+  "spin_transport": {
+    "Dirac_pairing_residual": 3.3306698821406156e-16,
+    "SM_normal_pullback": "zero in adopted angular section; internal I16 and family I3 remain symbolic",
+    "both_chiral_sectors_retained": true,
+    "fixed_4D_chirality_mixing": 0.029558056774303794,
+    "oriented_normal_gamma_minus": "-saved parent_gamma[4]",
+    "oriented_normal_gamma_plus": "saved parent_gamma[4]",
+    "transported_chiral_projector_residual": 8.881784197001252e-16,
+    "uncomputed_source_transport_and_pairing_derivatives": true
+  },
+  "stationary_response": null,
+  "time_range": [
+    0.0,
+    9.585390525338264e-05
+  ],
+  "wall_proper_time_coordinate": 9.585390525338264e-05
+}
