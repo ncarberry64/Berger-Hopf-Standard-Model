@@ -1,0 +1,94 @@
+{
+  "additional_primary_checks": [
+    {
+      "relative_receipt": "geometry/RADIUS_FORCE_CHECK.json",
+      "scoped_checks": 9,
+      "sha256_original_bytes": "6206fab3a0ca78d69a0d014de53eaf3f4bfe687e02012a3618a34d466e99e666"
+    },
+    {
+      "relative_receipt": "charge/ACTUAL_CURRENT_PHASE_CHECK.json",
+      "scoped_checks": 33,
+      "sha256_original_bytes": "e81a752b8564d18146f59b7c8abc4c1b2be9949e7e0cd870f6217bb52bb6e3b8"
+    },
+    {
+      "relative_receipt": "charge/SCALAR_STRESS_CHECK.json",
+      "scoped_checks": 13,
+      "sha256_original_bytes": "1d56bd60d76622357c8edf19e8feaa4d4a6d92fadf898b3d44bee311519beda3"
+    },
+    {
+      "relative_receipt": "preparation/SAME_EVENT_GEOMETRIC_ROWS_CHECK.json",
+      "scoped_checks": 9,
+      "sha256_original_bytes": "9d5ab21717fa8bee4a22c4ef5cc7b6adb0df5c41bcf00ca046eefad2f2c9af21"
+    }
+  ],
+  "claim_class": "CONDITIONAL_RESTRICTED_ACTION_AND_FINITE_INITIAL_DATA",
+  "independent_scientific_checks": 147,
+  "physical_mass_gap_established": false,
+  "physical_solution_established": false,
+  "public_action_sources": [
+    {
+      "commit": "78bb39fe86d7c0652ae049379677c291fd04dd05",
+      "repository_path": "src/bhsm/interface/muon_holomorphic_normal_geometry.py",
+      "sha256": "92d8613e3022ab7931225e596d36749076aafb71ab3fa51837dd788a0f2ce3f4",
+      "verified_equal_to_retained_source": true
+    },
+    {
+      "commit": "78bb39fe86d7c0652ae049379677c291fd04dd05",
+      "repository_path": "src/bhsm/interface/muon_parent_maxwell_full_weak.py",
+      "sha256": "c1fb703967a644306d3521d457a6d7c778a49d89c1e081b401487a25b7491565",
+      "verified_equal_to_retained_source": true
+    },
+    {
+      "commit": "78bb39fe86d7c0652ae049379677c291fd04dd05",
+      "repository_path": "src/bhsm/interface/muon_parent_mean_causal_action.py",
+      "sha256": "2a84b1be22625b1a5ae88d10c76631d7a5b602d2b0e22e57f00201bb74a593ad",
+      "verified_equal_to_retained_source": true
+    }
+  ],
+  "receipt_identities": [
+    {
+      "relative_receipt": "review/INDEPENDENT_MIXED_INTEGRAL_CHECK.json",
+      "scoped_checks": 16,
+      "sha256_original_bytes": "e306ff8dcfe418bfc503c0b68ddafba23acebbc29a63b93732ccc964853ad97e"
+    },
+    {
+      "relative_receipt": "review/mixed_field_check/MIXED_FIELD_IDENTITIES_REVIEW_CHECK.json",
+      "scoped_checks": 39,
+      "sha256_original_bytes": "e5c1f054f6bfb5044840ce5be657b9c14542f99b4f2ead05b9467af0e7bfd155"
+    },
+    {
+      "relative_receipt": "review/RADIUS_SCALING_IDENTITY_REVIEW_CHECK.json",
+      "scoped_checks": 12,
+      "sha256_original_bytes": "719ade1f3e75883c9352c948e4d0362f030858b6da454ee6cfb0fcf31738f75e"
+    },
+    {
+      "relative_receipt": "review/HIGGS_PHASE_PROJECTION_REVIEW_CHECK.json",
+      "scoped_checks": 18,
+      "sha256_original_bytes": "0eaa3e9692fc0f484b288d494f1f4ef40d945283b17d705c5c4ad86b71c31ec3"
+    },
+    {
+      "relative_receipt": "review/preparation_check/SAME_EVENT_PREPARATION_INDEPENDENT_CHECK.json",
+      "scoped_checks": 40,
+      "sha256_original_bytes": "3f3145f781d6898ef0e6b28363b174bc91bd8ef5aee975b1eeab54b7b419d6bd"
+    },
+    {
+      "relative_receipt": "review/preparation_check/HIGGS_GAUSS_COKERNEL_INDEPENDENT_CHECK.json",
+      "scoped_checks": 9,
+      "sha256_original_bytes": "b56f1c59c6289f26c8830e6dad99f1ddfa01c72230f277dbdc787ebc2229e138"
+    },
+    {
+      "relative_receipt": "review/preparation_check/PREPARED_GEOMETRY_INDEPENDENT_CHECK.json",
+      "scoped_checks": 13,
+      "sha256_original_bytes": "7b0d296a8dd6af8f44771be49337b4973176ec53b20391102659f40b878dfb23"
+    }
+  ],
+  "scope": "Review extract only. The private receipts identified by relative name/hash are retained, not included. The exported evaluator reproduces the mixed-field integral rows, not the full preparation, scalar or bulk-parent machinery.",
+  "sealed_review": {
+    "evidence_integrity_checks": 414,
+    "new_scientific_files": 54,
+    "prior_sealed_files_unchanged": 310,
+    "relative_receipt": "review/FINAL_COUPLED_EVENT_REVIEW_RECEIPT.json",
+    "retained_supporting_files": 39,
+    "sha256_original_bytes": "7dc3ec65af57e8407ae001d7317c98851316e1a052fb4d836d3b85369e447741"
+  }
+}
