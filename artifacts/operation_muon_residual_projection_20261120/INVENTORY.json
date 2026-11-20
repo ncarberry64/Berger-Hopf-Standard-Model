@@ -1,0 +1,48 @@
+{
+  "files": [
+    {
+      "bytes": 8,
+      "path": ".gitattributes",
+      "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da"
+    },
+    {
+      "bytes": 9496,
+      "path": "README.md",
+      "sha256": "8e55ea7d44d16422cc652010446331a44d4590afb32bb0cb57f02cf6b80998bc"
+    },
+    {
+      "bytes": 1041,
+      "path": "REPLAY_RECEIPT.json",
+      "sha256": "8579996ce2e8a6ee87baef816901336e41de55b1ac1d2ce0aed5e7bd19f612ac"
+    },
+    {
+      "bytes": 21608,
+      "path": "RESULT.json",
+      "sha256": "d15300fba55b170aac1db6a1d5f0354e27316faacca00817573d0856b5c01419"
+    },
+    {
+      "bytes": 3642,
+      "path": "SOURCE_LEDGER.json",
+      "sha256": "d15cef279ac948eb2324e872a6a81a105dbe8a2a254ddaa7fdafd5a00e80aa0d"
+    },
+    {
+      "bytes": 11622,
+      "path": "verify_projection.py",
+      "sha256": "da18380b984879e83f8733223e5cfcfda7ce2a88c5d13342bcf10fb07fa1ba7b"
+    }
+  ],
+  "review": {
+    "findings": [],
+    "passed": true,
+    "patterns": [
+      "private_key",
+      "token",
+      "personal_path",
+      "private_link",
+      "library_identifier"
+    ],
+    "scope": "Exact incremental text payload only; no blanket historic secret audit.",
+    "unrelated_or_private_material_included": false
+  },
+  "self_excluded": true
+}
