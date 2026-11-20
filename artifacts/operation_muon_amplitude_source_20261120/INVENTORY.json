@@ -1,0 +1,56 @@
+{
+  "files": [
+    {
+      "bytes": 8,
+      "path": ".gitattributes",
+      "sha256": "705fd4d6451a31d36b3df7de96f83f30ac976c9b4a6d1e51671d8e2f33e2d0da"
+    },
+    {
+      "bytes": 10991,
+      "path": "README.md",
+      "sha256": "54b8f824a23ebfb40f4aa63e800186173080025de5b28d3f36a1dfff5174fe1e"
+    },
+    {
+      "bytes": 1142,
+      "path": "REPLAY_RECEIPT.json",
+      "sha256": "fb7afef97dea90aaf09c3a5f42b99f8f351bc48701560f22526d88c1cb3dfc1a"
+    },
+    {
+      "bytes": 12543,
+      "path": "RESULT.json",
+      "sha256": "ae00ae5676bb12019560aebf2aaa56e617997dad056909d8af8cc61179bfa17e"
+    },
+    {
+      "bytes": 8709,
+      "path": "SOURCE_LEDGER.json",
+      "sha256": "4d5571d946ca883442fc42ce199510477d2ddaa0bbdc562b4c18fe8107a3f87d"
+    },
+    {
+      "bytes": 8709,
+      "path": "verify_source.py",
+      "sha256": "54b4c96d321c07d1286b4b02f18e1a9d3352eb6afe1bb65e4985542a5282803e"
+    }
+  ],
+  "review": {
+    "excluded": [
+      "old dirty worktree code",
+      "personal paths",
+      "private conversation and Library references",
+      "old archives",
+      "new generated binaries"
+    ],
+    "findings": [],
+    "passed": true,
+    "patterns": [
+      "private_key",
+      "token",
+      "personal_path",
+      "private_link",
+      "email_address",
+      "library_identifier"
+    ],
+    "scope": "Exact seven-file incremental text payload only; no guarantee about unexamined historical data.",
+    "unrelated_or_private_material_included": false
+  },
+  "self_excluded": true
+}
