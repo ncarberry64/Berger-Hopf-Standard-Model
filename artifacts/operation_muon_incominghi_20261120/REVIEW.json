@@ -1,0 +1,812 @@
+{
+  "binary_justification": "Numeric-only NPZ seeds and compact reproducible finite matrices needed by the replay; pickle and string/object arrays excluded.",
+  "branch": "codex/operation-muon-incominghi-20261120",
+  "bytes_reviewed": 724034,
+  "classification": "BOUNDED_PAYLOAD_REVIEW",
+  "exclusions": [
+    "source ZIP",
+    "transfer metadata",
+    "private conversations",
+    "personal paths",
+    "unrelated worktrees",
+    "caches",
+    "duplicate replay directories"
+  ],
+  "files_reviewed": 67,
+  "findings": [],
+  "numerical_archives": [
+    {
+      "arrays": [
+        {
+          "dtype": "<f8",
+          "name": "lo_raw_fields.npy",
+          "shape": [
+            268
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "lo_raw_coordinate_time_derivative.npy",
+          "shape": [
+            268
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "lo_H_selected_charge_coefficients.npy",
+          "shape": [
+            4
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "lo_H_selected_charge_coordinate_rate.npy",
+          "shape": [
+            4
+          ]
+        },
+        {
+          "dtype": "<c16",
+          "name": "lo_coefficient_intrinsic_H_realified.npy",
+          "shape": [
+            4
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "q000_raw_fields.npy",
+          "shape": [
+            268
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "q000_raw_coordinate_time_derivative.npy",
+          "shape": [
+            268
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "q000_H_selected_charge_coefficients.npy",
+          "shape": [
+            4
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "q000_H_selected_charge_coordinate_rate.npy",
+          "shape": [
+            4
+          ]
+        },
+        {
+          "dtype": "<c16",
+          "name": "q000_coefficient_intrinsic_H_realified.npy",
+          "shape": [
+            4
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "q001_raw_fields.npy",
+          "shape": [
+            268
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "q001_raw_coordinate_time_derivative.npy",
+          "shape": [
+            268
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "q001_H_selected_charge_coefficients.npy",
+          "shape": [
+            4
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "q001_H_selected_charge_coordinate_rate.npy",
+          "shape": [
+            4
+          ]
+        },
+        {
+          "dtype": "<c16",
+          "name": "q001_coefficient_intrinsic_H_realified.npy",
+          "shape": [
+            4
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "q002_raw_fields.npy",
+          "shape": [
+            268
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "q002_raw_coordinate_time_derivative.npy",
+          "shape": [
+            268
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "q002_H_selected_charge_coefficients.npy",
+          "shape": [
+            4
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "q002_H_selected_charge_coordinate_rate.npy",
+          "shape": [
+            4
+          ]
+        },
+        {
+          "dtype": "<c16",
+          "name": "q002_coefficient_intrinsic_H_realified.npy",
+          "shape": [
+            4
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "q003_raw_fields.npy",
+          "shape": [
+            268
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "q003_raw_coordinate_time_derivative.npy",
+          "shape": [
+            268
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "q003_H_selected_charge_coefficients.npy",
+          "shape": [
+            4
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "q003_H_selected_charge_coordinate_rate.npy",
+          "shape": [
+            4
+          ]
+        },
+        {
+          "dtype": "<c16",
+          "name": "q003_coefficient_intrinsic_H_realified.npy",
+          "shape": [
+            4
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "hi_raw_fields.npy",
+          "shape": [
+            268
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "hi_raw_coordinate_time_derivative.npy",
+          "shape": [
+            268
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "hi_H_selected_charge_coefficients.npy",
+          "shape": [
+            4
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "hi_H_selected_charge_coordinate_rate.npy",
+          "shape": [
+            4
+          ]
+        },
+        {
+          "dtype": "<c16",
+          "name": "hi_coefficient_intrinsic_H_realified.npy",
+          "shape": [
+            4
+          ]
+        }
+      ],
+      "path": "evidence/incoming_history.npz"
+    },
+    {
+      "arrays": [
+        {
+          "dtype": "<c16",
+          "name": "H_coordinate_time.npy",
+          "shape": [
+            6,
+            84,
+            84
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "angular_parity.npy",
+          "shape": [
+            84,
+            84
+          ]
+        },
+        {
+          "dtype": "<c16",
+          "name": "direct_magnetic_insertions_per_e.npy",
+          "shape": [
+            6,
+            3,
+            84,
+            84
+          ]
+        },
+        {
+          "dtype": "<i8",
+          "name": "family_indices.npy",
+          "shape": [
+            6
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "family_yukawa.npy",
+          "shape": [
+            3
+          ]
+        },
+        {
+          "dtype": "<c16",
+          "name": "sample_U.npy",
+          "shape": [
+            6,
+            84,
+            84
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "sample_lapse.npy",
+          "shape": [
+            6
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "sample_time.npy",
+          "shape": [
+            6
+          ]
+        },
+        {
+          "dtype": "<c16",
+          "name": "spin_generators.npy",
+          "shape": [
+            3,
+            84,
+            84
+          ]
+        }
+      ],
+      "path": "evidence/incoming_spin_operators.npz"
+    },
+    {
+      "arrays": [
+        {
+          "dtype": "<c16",
+          "name": "incoming_approximate_n0_spin_pair.npy",
+          "shape": [
+            84,
+            2
+          ]
+        },
+        {
+          "dtype": "<c16",
+          "name": "outgoing_approximate_n0_spin_pair.npy",
+          "shape": [
+            84,
+            2
+          ]
+        }
+      ],
+      "path": "evidence/independent_review/n0_spin_pair_audit.npz"
+    },
+    {
+      "arrays": [
+        {
+          "dtype": "<f8",
+          "name": "incoming_spin_odd_internal_spatial3x4.npy",
+          "shape": [
+            3,
+            4
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "incoming_spin_odd_internal_density4.npy",
+          "shape": [
+            4
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "incoming_spin_odd_EM_spatial3.npy",
+          "shape": [
+            3
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "incoming_spin_odd_circulation4x4.npy",
+          "shape": [
+            4,
+            4
+          ]
+        },
+        {
+          "dtype": "<c16",
+          "name": "incoming_density_difference6.npy",
+          "shape": [
+            6,
+            6
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "outgoing_spin_odd_internal_spatial3x4.npy",
+          "shape": [
+            3,
+            4
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "outgoing_spin_odd_internal_density4.npy",
+          "shape": [
+            4
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "outgoing_spin_odd_EM_spatial3.npy",
+          "shape": [
+            3
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "outgoing_spin_odd_circulation4x4.npy",
+          "shape": [
+            4,
+            4
+          ]
+        },
+        {
+          "dtype": "<c16",
+          "name": "outgoing_density_difference6.npy",
+          "shape": [
+            6,
+            6
+          ]
+        }
+      ],
+      "path": "evidence/independent_review/native_spin_odd_current.npz"
+    },
+    {
+      "arrays": [
+        {
+          "dtype": "<f8",
+          "name": "K4.npy",
+          "shape": [
+            4,
+            4
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "M4.npy",
+          "shape": [
+            4,
+            4
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "B4.npy",
+          "shape": [
+            4,
+            4
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "unit_trace_radial_lift4.npy",
+          "shape": [
+            4
+          ]
+        }
+      ],
+      "path": "evidence/native_n0_central_radial_return.npz"
+    },
+    {
+      "arrays": [
+        {
+          "dtype": "<f8",
+          "name": "K80.npy",
+          "shape": [
+            80,
+            80
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "B80.npy",
+          "shape": [
+            80,
+            80
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "M80.npy",
+          "shape": [
+            80,
+            80
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "KH20.npy",
+          "shape": [
+            20,
+            20
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "K84.npy",
+          "shape": [
+            84,
+            84
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "B84.npy",
+          "shape": [
+            84,
+            84
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "M84.npy",
+          "shape": [
+            84,
+            84
+          ]
+        },
+        {
+          "dtype": "<i8",
+          "name": "interior64.npy",
+          "shape": [
+            64
+          ]
+        },
+        {
+          "dtype": "<i8",
+          "name": "boundary20.npy",
+          "shape": [
+            20
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "lift84x20.npy",
+          "shape": [
+            84,
+            20
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "Dirichlet_trial_return20.npy",
+          "shape": [
+            20,
+            20
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "interior_singular_values.npy",
+          "shape": [
+            64
+          ]
+        }
+      ],
+      "path": "evidence/native_n0_coupled_static.npz"
+    },
+    {
+      "arrays": [
+        {
+          "dtype": "<f8",
+          "name": "invariant_companion.npy",
+          "shape": [
+            16
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "raw_companion.npy",
+          "shape": [
+            16
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "field.npy",
+          "shape": [
+            3,
+            16
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "six_force_state_lift.npy",
+          "shape": [
+            16,
+            6
+          ]
+        }
+      ],
+      "path": "evidence/native_patch_first_jet/formed_higgs_invariant_companion.npz"
+    },
+    {
+      "arrays": [
+        {
+          "dtype": "<f8",
+          "name": "field_covector.npy",
+          "shape": [
+            3,
+            16
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "spin_gap_covector.npy",
+          "shape": [
+            16
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "target.npy",
+          "shape": [
+            3
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "central_wall_response.npy",
+          "shape": [
+            16
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "H_aligned_wall_response.npy",
+          "shape": [
+            16
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "field_null_difference.npy",
+          "shape": [
+            16
+          ]
+        }
+      ],
+      "path": "evidence/native_patch_first_jet/formed_n0_equal_local_field_test.npz"
+    },
+    {
+      "arrays": [
+        {
+          "dtype": "<f8",
+          "name": "field_force_map.npy",
+          "shape": [
+            3,
+            16
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "spin_force_dual.npy",
+          "shape": [
+            16
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "temporal_wall_force_rows.npy",
+          "shape": [
+            4,
+            16
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "curvature_only_visible_null_force_unit.npy",
+          "shape": [
+            16
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "curvature_only_dual.npy",
+          "shape": [
+            3
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "curvature_and_scalar_zero_rhs_visible_null_force_unit.npy",
+          "shape": [
+            16
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "curvature_and_scalar_zero_rhs_dual.npy",
+          "shape": [
+            7
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "curvature_and_temporal_zero_reaction_visible_null_force_unit.npy",
+          "shape": [
+            16
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "curvature_and_temporal_zero_reaction_dual.npy",
+          "shape": [
+            7
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "curvature_and_scalar_zero_rhs_and_temporal_zero_reaction_visible_null_force_unit.npy",
+          "shape": [
+            16
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "curvature_and_scalar_zero_rhs_and_temporal_zero_reaction_dual.npy",
+          "shape": [
+            11
+          ]
+        }
+      ],
+      "path": "evidence/native_patch_first_jet/formed_n0_minimal_exterior_adjoint.npz"
+    },
+    {
+      "arrays": [
+        {
+          "dtype": "<f8",
+          "name": "action_A.npy",
+          "shape": [
+            16,
+            16
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "spin_gap_covector.npy",
+          "shape": [
+            16
+          ]
+        }
+      ],
+      "path": "evidence/native_patch_first_jet/formed_n0_wall_spin_transfer.npz"
+    },
+    {
+      "arrays": [
+        {
+          "dtype": "<f8",
+          "name": "reference_states.npy",
+          "shape": [
+            2,
+            98
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "projection.npy",
+          "shape": [
+            2
+          ]
+        },
+        {
+          "dtype": "<f8",
+          "name": "wall.npy",
+          "shape": []
+        },
+        {
+          "dtype": "<f8",
+          "name": "norm.npy",
+          "shape": []
+        }
+      ],
+      "path": "evidence/reconstructed_radial_frame.npz"
+    }
+  ],
+  "passed": true,
+  "patterns": [
+    "private_key",
+    "credential_token",
+    "home_path",
+    "private_conversation",
+    "library_identifier",
+    "email",
+    "signed_url"
+  ],
+  "private_transfer_files_included": false,
+  "repository": "ncarberry64/Berger-Hopf-Standard-Model",
+  "reproducibility": "Seven saved calculations twice; new weighted-current diagnostic twice; original manifest verified; optional action rebuild not repeated locally.",
+  "reviewed_false_positives": [
+    {
+      "category": "email",
+      "disposition": "Reviewed Python matrix-multiplication expression; not an email address.",
+      "line": 29,
+      "path": "evidence/native_patch_first_jet/formed_n0_wall_spin_transfer.py"
+    },
+    {
+      "category": "email",
+      "disposition": "Reviewed Python matrix-multiplication expression; not an email address.",
+      "line": 21,
+      "path": "evidence/native_patch_first_jet/formed_wall_local_field_projection.py"
+    },
+    {
+      "category": "email",
+      "disposition": "Reviewed Python matrix-multiplication expression; not an email address.",
+      "line": 145,
+      "path": "evidence/source_build_higgs_response.py"
+    },
+    {
+      "category": "email",
+      "disposition": "Reviewed Python matrix-multiplication expression; not an email address.",
+      "line": 167,
+      "path": "evidence/source_build_higgs_response.py"
+    },
+    {
+      "category": "email",
+      "disposition": "Reviewed Python matrix-multiplication expression; not an email address.",
+      "line": 256,
+      "path": "evidence/source_build_higgs_response.py"
+    }
+  ],
+  "scope": "Reviewed exact artifact payload; no assertion about unselected historical files or a guarantee of no secrets.",
+  "unnecessary_generated_binaries_included": false
+}

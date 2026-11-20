@@ -1,0 +1,360 @@
+{
+  "actual_exterior_force_supplied": false,
+  "adjoint_identity_max_error": 2.220446049250313e-16,
+  "assumptions": [
+    "Use archived calibrated Higgs potential unchanged.",
+    "No assertion that arbitrary finite forces are admissible physical loads.",
+    "Weighted Higgs current is intrinsic action work, not an added exterior traction."
+  ],
+  "baseline": "archived incoming-hi; n=0; fixed geometry; temporal trace held",
+  "cases": {
+    "field_and_both_currents": {
+      "coefficients": [
+        2.4008925968276864e-15,
+        -2.1250362580715887e-15,
+        0.462385691541507,
+        0.7718213274820678,
+        -5.140355306130013e-06
+      ],
+      "contractions": {
+        "H_aligned_wall_response": {
+          "gap": 0.4646622598116612,
+          "independent_interior_residual": 3.351362351070492e-14,
+          "readouts": [
+            -1.3805065841367707e-30,
+            0.0,
+            0.9999999999999999,
+            0.0029494668561305115,
+            -0.025744072688862134
+          ],
+          "reconstructed_from_readouts": 0.4646622852994507,
+          "remaining_force_projection": -2.5487789508365294e-08,
+          "rhs_norm": 1.8875107795435317
+        },
+        "central_wall_response": {
+          "gap": 0.726417973549738,
+          "independent_interior_residual": 2.5232997640569255e-14,
+          "readouts": [
+            -1.0846837446788912e-30,
+            -6.409494854920721e-31,
+            1.0000000000000002,
+            0.34208992018573103,
+            0.002783417648427373
+          ],
+          "reconstructed_from_readouts": 0.7264179735497369,
+          "remaining_force_projection": 9.231978667212342e-16,
+          "rhs_norm": 2.375836325037531
+        },
+        "field_null_difference": {
+          "gap": 0.2617557137380767,
+          "independent_interior_residual": 3.210397561084413e-14,
+          "readouts": [
+            5.9164567891575885e-31,
+            -7.888609052210118e-31,
+            2.220446049250313e-16,
+            0.3391404533296005,
+            0.028527490337289508
+          ],
+          "reconstructed_from_readouts": 0.26175568825028633,
+          "remaining_force_projection": 2.5487790431563166e-08,
+          "rhs_norm": 1.4549260643820527
+        }
+      },
+      "force_relative_residual": 6.97551223244045e-08,
+      "force_residual_norm": 2.3226498456511595e-08,
+      "orthogonality_error": 1.1311614655723272e-11,
+      "rank": 5,
+      "remaining_force_covector": [
+        5.131605379342374e-09,
+        7.41995747008801e-21,
+        -5.233159586876415e-18,
+        -2.661359455617915e-13,
+        -7.56258882500499e-21,
+        5.131605337709011e-09,
+        5.016694322051335e-17,
+        2.4449160033913417e-13,
+        1.1827726322521316e-18,
+        -1.1111705422009336e-17,
+        -2.2050939987167117e-08,
+        3.885780586188048e-16,
+        -3.5339989625515024e-15,
+        -7.480167041329366e-10,
+        -3.333995425319207e-14,
+        -5.7181512442379416e-18
+      ],
+      "singular_values": [
+        362.9289114631577,
+        362.92891145183137,
+        1.7787283669927916,
+        0.42519874686130965,
+        0.2682265348939479
+      ],
+      "six_force_relative_residual": 7.799316626372917e-14,
+      "state_relative_residual": 3.356054091063016e-08
+    },
+    "field_and_phase_current": {
+      "coefficients": [
+        2.4008925968276864e-15,
+        -1.9225072922512965e-15,
+        0.46238614115353227,
+        0.7718234639838264
+      ],
+      "contractions": {
+        "H_aligned_wall_response": {
+          "gap": 0.4646622598116612,
+          "independent_interior_residual": 3.351362351070492e-14,
+          "readouts": [
+            -1.3805065841367707e-30,
+            0.0,
+            0.9999999999999999,
+            0.0029494668561305115
+          ],
+          "reconstructed_from_readouts": 0.4646626088793364,
+          "remaining_force_projection": -3.4906767523018896e-07,
+          "rhs_norm": 1.8875107795435317
+        },
+        "central_wall_response": {
+          "gap": 0.726417973549738,
+          "independent_interior_residual": 2.5232997640569255e-14,
+          "readouts": [
+            -1.0846837446788912e-30,
+            -6.409494854920721e-31,
+            1.0000000000000002,
+            0.34208992018573103
+          ],
+          "reconstructed_from_readouts": 0.726419168345234,
+          "remaining_force_projection": -1.194795496046706e-06,
+          "rhs_norm": 2.375836325037531
+        },
+        "field_null_difference": {
+          "gap": 0.2617557137380767,
+          "independent_interior_residual": 3.210397561084413e-14,
+          "readouts": [
+            5.9164567891575885e-31,
+            -7.888609052210118e-31,
+            2.220446049250313e-16,
+            0.3391404533296005
+          ],
+          "reconstructed_from_readouts": 0.26175655946589754,
+          "remaining_force_projection": -8.457278208165172e-07,
+          "rhs_norm": 1.4549260643820527
+        }
+      },
+      "force_relative_residual": 4.8291731019451245e-06,
+      "force_residual_norm": 1.60797913989628e-06,
+      "orthogonality_error": 3.7982916189448223e-11,
+      "rank": 4,
+      "remaining_force_covector": [
+        7.195572436120845e-07,
+        3.655012439740054e-21,
+        -5.235579028302702e-18,
+        -2.6613594302011645e-13,
+        -8.217875233904212e-21,
+        7.195572443918427e-07,
+        1.6077423990043478e-16,
+        2.4383253414739793e-13,
+        1.183855535032975e-18,
+        -3.559563022805858e-17,
+        3.472359236672551e-07,
+        -5.028947000496053e-07,
+        -3.5343219940489373e-15,
+        -1.0847100043454017e-06,
+        -1.0684080263090593e-13,
+        -5.717675485323182e-18
+      ],
+      "singular_values": [
+        362.9289114631577,
+        362.92891145183154,
+        1.7593109166362961,
+        0.3686538624725387
+      ],
+      "six_force_relative_residual": 7.80113422550972e-14,
+      "state_relative_residual": 1.3490238796879383e-07
+    },
+    "field_and_weighted_sheet_current": {
+      "coefficients": [
+        2.4008925968276864e-15,
+        -2.1371793224034263e-15,
+        0.08083503668715,
+        -0.4587617089781365
+      ],
+      "contractions": {
+        "H_aligned_wall_response": {
+          "gap": 0.4646622598116612,
+          "independent_interior_residual": 3.351362351070492e-14,
+          "readouts": [
+            -1.3805065841367707e-30,
+            0.0,
+            0.9999999999999999,
+            -0.025744072688862134
+          ],
+          "reconstructed_from_readouts": 0.09264543146994976,
+          "remaining_force_projection": 0.37201682834171135,
+          "rhs_norm": 1.8875107795435317
+        },
+        "central_wall_response": {
+          "gap": 0.726417973549738,
+          "independent_interior_residual": 2.5232997640569255e-14,
+          "readouts": [
+            -1.0846837446788912e-30,
+            -6.409494854920721e-31,
+            1.0000000000000002,
+            0.002783417648427373
+          ],
+          "reconstructed_from_readouts": 0.07955811124995756,
+          "remaining_force_projection": 0.6468598622997802,
+          "rhs_norm": 2.375836325037531
+        },
+        "field_null_difference": {
+          "gap": 0.2617557137380767,
+          "independent_interior_residual": 3.210397561084413e-14,
+          "readouts": [
+            5.9164567891575885e-31,
+            -7.888609052210118e-31,
+            2.220446049250313e-16,
+            0.028527490337289508
+          ],
+          "reconstructed_from_readouts": -0.013087320219992194,
+          "remaining_force_projection": 0.27484303395806886,
+          "rhs_norm": 1.4549260643820527
+        }
+      },
+      "force_relative_residual": 0.867019370614708,
+      "force_residual_norm": 0.2886931224877626,
+      "orthogonality_error": 1.1347193999916232e-11,
+      "rank": 4,
+      "remaining_force_covector": [
+        -0.06429204377616105,
+        3.195677399056834e-16,
+        2.1042939803447107e-16,
+        -2.6639005313298077e-13,
+        9.447908075326839e-17,
+        -0.06429204384104738,
+        -2.7469427787721963e-17,
+        2.4474542392017647e-13,
+        -1.0354404608176374e-16,
+        2.949077200748443e-17,
+        -0.029641154222178265,
+        0.2722661723296792,
+        2.887247674715224e-14,
+        -0.008325776773478594,
+        -1.5744100653512706e-15,
+        -2.0639069533291013e-18
+      ],
+      "singular_values": [
+        362.9289114631577,
+        362.9289114518317,
+        1.5240644063230142,
+        0.35586097397498867
+      ],
+      "six_force_relative_residual": 7.541254347086848e-14,
+      "state_relative_residual": 0.5540839607747114
+    },
+    "field_only": {
+      "coefficients": [
+        2.4008925968276864e-15,
+        -2.1996293675385914e-15,
+        0.00893888748658725
+      ],
+      "contractions": {
+        "H_aligned_wall_response": {
+          "gap": 0.4646622598116612,
+          "independent_interior_residual": 3.351362351070492e-14,
+          "readouts": [
+            -9.860761315262648e-31,
+            -3.944304526105059e-31,
+            0.9999999999999999
+          ],
+          "reconstructed_from_readouts": 0.00893888748658725,
+          "remaining_force_projection": 0.45572337232507387,
+          "rhs_norm": 1.8875107795435317
+        },
+        "central_wall_response": {
+          "gap": 0.726417973549738,
+          "independent_interior_residual": 2.5232997640569255e-14,
+          "readouts": [
+            -1.1832913578315177e-30,
+            -5.423418723394456e-31,
+            1.0000000000000002
+          ],
+          "reconstructed_from_readouts": 0.008938887486587251,
+          "remaining_force_projection": 0.7174790860631506,
+          "rhs_norm": 2.375836325037531
+        },
+        "field_null_difference": {
+          "gap": 0.2617557137380767,
+          "independent_interior_residual": 3.210397561084413e-14,
+          "readouts": [
+            3.944304526105059e-31,
+            -7.888609052210118e-31,
+            2.220446049250313e-16
+          ],
+          "reconstructed_from_readouts": 2.6020852139652106e-18,
+          "remaining_force_projection": 0.2617557137380767,
+          "rhs_norm": 1.4549260643820527
+        }
+      },
+      "force_relative_residual": 0.9991838846723088,
+      "force_residual_norm": 0.3327001972297203,
+      "orthogonality_error": 1.3240497260566908e-12,
+      "rank": 3,
+      "remaining_force_covector": [
+        -0.0007063101715388907,
+        -2.183870045646422e-17,
+        -5.585014701747931e-18,
+        -2.6617216444194513e-13,
+        4.781002784437932e-17,
+        -0.0007063101689467593,
+        -5.672498961111618e-17,
+        2.447649467257873e-13,
+        -9.54986523848355e-18,
+        5.087412962806744e-17,
+        0.004404702628853458,
+        0.30199011543937754,
+        1.2165451412292288e-15,
+        -0.1395384974128802,
+        -2.3346987740292105e-15,
+        5.552632053123398e-17
+      ],
+      "singular_values": [
+        362.9289114631577,
+        362.9289114518317,
+        1.5046181798822689
+      ],
+      "six_force_relative_residual": 0.2197586217148937,
+      "state_relative_residual": 0.6123724706402516
+    }
+  },
+  "classification": "FINITE_CONDITIONAL_FORCE_SPACE_DIAGNOSTIC",
+  "conditional_bound": "abs(r.T f_ext) <= norm(r) * norm(project_kernel(force_rows, f_ext)); no physical force norm is supplied",
+  "coordinate_norm_is_physical_norm": false,
+  "exact_remaining_quantity": "r.T f_ext for the same-background held-incident retarded exterior; coefficients above are in fixed archived coordinate norm",
+  "matrix_condition_2": 433.42720768935516,
+  "physical_guard": "2e-10",
+  "physical_moment": null,
+  "physical_uncertainty": null,
+  "source_sha256": {
+    "native_n0_coupled_static.npz": "ef19466bc2fc4e0ec6bab9171601662240f602ab9af8387ba051025b67cf3d6b",
+    "native_patch_first_jet/formed_higgs_invariant_companion.npz": "44658b43ee56a553557e9232f137a8324e06ac03968c26b90fcf3bf31d4dc009",
+    "native_patch_first_jet/formed_n0_equal_local_field_test.npz": "317a819cbe81cbc798c84ab7c7f24567d834d2891001f308a6d972cbebe0712a",
+    "native_patch_first_jet/formed_n0_wall_spin_transfer.npz": "070b80a002cd9ae469a0b3f7ac92b052fa4dfedf02cedacdb644adf4081e73aa"
+  },
+  "weighted_sheet_current_row": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    -8.058154698296976e-18,
+    1.1848462783001001e-17,
+    0.011950790976607915,
+    -0.009257042885281667,
+    2.5286973799251236e-17,
+    -0.03212230664601953,
+    1.4554534743945762e-17,
+    1.4098716481592814e-17
+  ]
+}

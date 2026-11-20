@@ -1,0 +1,22 @@
+# Moving junction and mixed magnetic/displacement derivative
+
+Sources read at pin 4a650a61a6e0e4cd3674650c399b435c106d66c3, all in src/bhsm/interface:
+- muon_birth_finite_normal_trace_graph.py:30–57, affine_connection_profile_two_jet. At fixed material reference rho it gives parent-minus-child connection lambda, lambda_tau, lambda_rho with first/second derivatives including Eulerian coefficient motion and embedding advection exactly once. It keeps reference radial frame fixed. These are particular mechanical connection/finite graph data, NOT a retarded electromagnetic exterior.
+- muon_birth_finite_geometric_trace_endpoint.py:42–124, moving_geometric_trace_jet and temporal_birth_cotangent. Metric/attachment trace Hessians and parent-final +Pi / child-initial −Pi are owned. That temporal orientation cannot replace a material spatial conormal.
+- muon_moving_reference_trace_source.py:11–32. Fixed actual parent, affine reference parents/children varied with signed −rp_dot+rc_dot, and literal temporal/radial derivative slots. This is NOT holding an external laboratory incident wave fixed.
+- muon_moving_material_response.py:452–477. Explicit material vs Eulerian split for sigma: delta(F* sigma)=delta_E sigma+L_xi sigma=0 on the owned level set. This does not set delta_E A or the material gauge derivative to zero.
+- muon_electromagnetic_soft_magnetic_source.py:62–104, uniform_magnetic_source_first_jets. Local normalized insertion B Q with Q=(e R4²/2) wave tensor Q_H, analytic Q_first_jet and Qdot_first_jet. Thus local field/displacement cross contact partial_s partial_B(BQ)=D_sQ is already owned: includes 2 delta R4/R4 term, Higgs-axis shift, and the source rate differentiation, once only. This is a local magnetic chart and not an asymptotic incident solution. The existing magnetic ramp solver consumes already-built finite forms and does not admit the physical incident or retarded outer graph.
+
+## Missing derivative, stated working form
+For independently varied B and embedding F_s with velocity xi,
+  ∂s∂B (F_s^* A_inc(B)) = F^*(∂s^E∂B A_inc + L_xi ∂B A_inc).
+Holding the lab incident family fixed under s kills the first term only. For a one-form L_xi A includes transport and the change of tangent pullback (Cartan d i_xi A+i_xi dA). A concurrent moving gauge trivialization requires its companion contact, not a separate arbitrary source. In full coordinates one can use source curvature and covariant variations to test this cleanly.
+
+For the exterior rho ≥ S(t) in the material-coordinate action chart, the lower-face outward action pairing against delta b is C_M[(s_shift+dot S) pi + r b_rho], pi=e(b_t−s_shift b_rho), with the chart's own densities plus any other coupled components. The dot S term is written for a moving graph in this chart; if the action is first transformed to fixed-face material coordinates the shift already includes motion, so do not add it a second time. Differentiate background, trace evaluation, normal/clock/density, and solution data together. A purely transparent pair on the same solution checks cancellation of its opposite outward conormals only.
+
+Write common incident RHS j=Lambda q_inc + t_inc in the sign convention of APPLIED_FIELD_EXTERIOR_INPUT_AUDIT, or reverse both incident traction signs consistently if choosing another convention. At a given shape,
+  j_B = Lambda_B q_inc + Lambda q_inc,B + t_inc,B,
+and j_Bs includes Lambda_Bs q_inc + Lambda_B q_inc,s + Lambda_s q_inc,B + Lambda q_inc,Bs + t_inc,Bs.
+For a linear exterior whose operator does not depend on B, this simplifies to Lambda_s q_inc,B + Lambda q_inc,Bs + t_inc,Bs. Compare in the same chart and combine interior/exterior before releasing common complementary directions. If the wall direction is selected in response to B rather than independent, include its chain rules; absence of B-dependence cannot be assumed.
+
+No inspected producer supplies the retarded external electromagnetic map and its shape jet on the actual matched domain, or the lab-incident trace/conormal pullback. Preserve that distinction from the existing local insertion. Practical next test: apply centered signed wall displacements to a single fixed lab incident solution and compare pulled trace plus action conormal firsts against analytic Lie/normal-density jets, first on transparent control and then with the same-domain physical continuation. The bounded source audit is not a physical field/moment determination.

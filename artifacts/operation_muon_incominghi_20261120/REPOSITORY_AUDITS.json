@@ -1,0 +1,128 @@
+{
+  "audit_results": {
+    "audit_bhsm_status.py": {
+      "exit_code": 0,
+      "passed": true
+    },
+    "audit_forbidden_claims.py": {
+      "exit_code": 0,
+      "passed": true
+    },
+    "audit_frozen_prediction_integrity.py": {
+      "exit_code": 0,
+      "passed": true
+    },
+    "audit_public_readiness.py": {
+      "exit_code": 0,
+      "passed": true
+    },
+    "verify_precision.py": {
+      "exit_code": 0,
+      "passed": true
+    }
+  },
+  "public_readiness": {
+    "audit": "bhsm_public_readiness",
+    "checks": {
+      "citation": {
+        "cff_version": "1.2.0",
+        "doi": "10.5281/zenodo.20663419",
+        "failures": [],
+        "license": "LicenseRef-AllRightsReserved",
+        "passed": true,
+        "release_date": "2026-06-26",
+        "release_tag": "v1.1.0",
+        "title": "Berger-Hopf Standard Model: Artifact-Backed Geometric Physics Research Framework",
+        "zenodo_archive_date": "2026-06-12",
+        "zenodo_archive_version": "v1.2.0"
+      },
+      "current_claims": {
+        "findings": [],
+        "passed": true
+      },
+      "frozen_predictions": {
+        "files": [
+          {
+            "actual_sha256": "9EA147C56537520C86D3C4F9B864C6BA98BAC9E64931EDAE96449F3B335A36C4",
+            "expected_sha256": "9EA147C56537520C86D3C4F9B864C6BA98BAC9E64931EDAE96449F3B335A36C4",
+            "path": "docs/frozen_predictions.md",
+            "unchanged": true
+          },
+          {
+            "actual_sha256": "F38210E0689871A25A9D5B0A1A4239883B7240CD7D0E25CDCF4C8CAB72A2CBE7",
+            "expected_sha256": "F38210E0689871A25A9D5B0A1A4239883B7240CD7D0E25CDCF4C8CAB72A2CBE7",
+            "path": "docs/frozen_predictions.json",
+            "unchanged": true
+          }
+        ],
+        "frozen_predictions_changed": false,
+        "passed": true
+      },
+      "hygiene": {
+        "allowed_large_artifact_limit_bytes": 12582912,
+        "allowed_large_artifacts": [],
+        "credential_files": [],
+        "large_file_threshold_bytes": 10485760,
+        "malformed_lfs_pointers": [],
+        "merge_markers": [],
+        "passed": true,
+        "secret_findings": [],
+        "tracked_cache_or_build_junk": [],
+        "tracked_env_files": [],
+        "unexpected_large_files": []
+      },
+      "license_visibility": {
+        "failures": [],
+        "passed": true
+      },
+      "markdown_links": {
+        "broken": [],
+        "checked": 74,
+        "passed": true
+      },
+      "reproduction": {
+        "missing_cli_commands": [],
+        "missing_documented_commands": [],
+        "missing_scripts": [],
+        "passed": true,
+        "reviewer_smoke_target": true
+      },
+      "required_files": {
+        "empty": [],
+        "missing": [],
+        "passed": true
+      },
+      "science_alignment": {
+        "missing_phrases": {},
+        "passed": true
+      }
+    },
+    "external_urls": [
+      "https://doi.org/10.5281/zenodo.20663419",
+      "https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/ci.yml/badge.svg",
+      "https://github.com/ncarberry64/Berger-Hopf-Standard-Model/actions/workflows/institutional.yml/badge.svg",
+      "https://ncarberry64.github.io/Berger-Hopf-Standard-Model/",
+      "https://ncarberry64.github.io/Berger-Hopf-Standard-Model/#blackhole-tracker",
+      "https://orcid.org/0009-0000-6650-3485",
+      "https://zenodo.org/badge/DOI/10.5281/zenodo.20663419.svg"
+    ],
+    "passed": true,
+    "verdict": "BHSM_REPOSITORY_PUBLIC_REVIEW_READY",
+    "version": "v6.21.0"
+  },
+  "scope": {
+    "checkout": "sparse",
+    "cli": "Actual bhsm.interface --help in a bounded -I -S child with inspected explicit site-packages; original audit source unchanged.",
+    "content_hygiene_scope": "Materialized tracked text plus separate complete new-payload review. This is not a full historic repository secret audit.",
+    "materialized_tracked_paths": 4683,
+    "tracked_paths": 13220
+  },
+  "source_audit_hashes": {
+    "audit_bhsm_status.py": "6adcef4e32133239b8e10c7c818674647d5604efd47fbbe3026675850dc83567",
+    "audit_forbidden_claims.py": "06090ad902e8c6ad8312aee01a034cb4f87f88d5c3d2e6ff118858bdb5bfa076",
+    "audit_frozen_prediction_integrity.py": "a86b7792791b4aae0b699fce58ccce338e903bccbcd5e9a8fc251410c6b66e4f",
+    "audit_public_readiness.py": "98a0de63177a2376f1c945a08db683a9cb4d930e922f8cabc1a796c10b861ec6",
+    "verify_precision.py": "b1888098e0bd37dc96cb7db3e5c1aa1a09efbb766b0e3c57e238c28062976b05"
+  },
+  "source_base": "551ce2c8e4e672538e520629b0d4a8962cbba968"
+}
