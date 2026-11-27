@@ -1,0 +1,65 @@
+#
+#   VizieR Astronomical Server vizier.cfa.harvard.edu
+#    Date: 2026-11-26T12:46:02 [V7.6.1]
+#   In case of problem, please report to:	cds-question@unistra.fr
+#
+#
+#Coosys	J2000:	eq_FK5 J2000
+#INFO	service_protocol=ASU	  IVOID of the protocol through which the data was retrieved
+#INFO	request_date=2026-11-26T12:46:02	  Query execution date
+#INFO	request=https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FA%2BA%2F685%2FA106&-c=146.73617048+%2B10.11469530&-c.rm=30&-out.max=100	  Full request URL
+#INFO	contact=cds-question@unistra.fr	  Email or URL to contact publisher
+#INFO	server_software=VizieR/7.6.1	  Software version
+#INFO	publisher=CDS	  Data centre that produced the VOTable
+#INFO	-c=146.736170+10.114695,rm=30.	
+#Constraint -out.max=100
+
+#RESOURCE=yCat_36850106
+#Name: J/A+A/685/A106
+#Title: eRASS. Galaxy clusters and groups in WGH (Bulbul+, 2024)
+#INFO	ivoid=ivo://cds.vizier/j/a+a/685/a106	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/a+a/685/a106	    IVOID of underlying data collection
+#INFO	creator=Bulbul E.	    First author or institution
+#INFO	cites=bibcode:2024A&A...685A.106B	    Article or Data origin sources
+#INFO	journal=A&A	    Journal name
+#INFO	original_date=2024	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/A+A/685/A106	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.36850106	    Dataset identifier that can be used for citation
+#INFO	publication_date=2024-11-07	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_A_A_685_A106_emain:
+#Name: J/A+A/685/A106/emain
+#Title: Primary galaxy clusters and groups catalog
+#Column	Name	(A23)	Source name, 1eRASS JHHMMSS.s+DDMMSS	[ucd=meta.id;meta.main]
+#Column	RAJ2000	(F15.11)	Right ascension (J2000)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(F15.11)	Declination J2000)	[ucd=pos.eq.dec;meta.main]
+#Column	Exp	(F6.1)	Average exposure	[ucd=time.expo]
+#Column	zBest	(F7.4)	Best available redshift	[ucd=src.redshift]
+#Column	CR500	(F8.3)	0.2-2.3keV count rate within R500	[ucd=phot.count;em.X-ray]
+#Column	CTS500	(F8.1)	0.2-2.3keV counts within R500	[ucd=phot.count;em.X-ray]
+#Column	F500	(F10.3)	? 0.2-2.3keV flux within R500	[ucd=phot.flux;em.X-ray]
+#Column	L500	(F9.3)	? 0.2-2.3keV luminosity within R500	[ucd=phys.luminosity;em.X-ray]
+#Column	KT	(F6.2)	? Temperature measured by MBProj2D	[ucd=phys.temperature]
+#Column	Mgas500	(F7.2)	? Calibrated cluster gas mass within R500	[ucd=phys.mass]
+#Column	YX500	(F8.2)	? The mass proxy within R500	[ucd=phys.mass]
+#Column	M500	(F7.2)	? CLuster total mass M500 from eROCOP	[ucd=phys.mass]
+#Column	Fgas500	(F6.3)	? Cluster gas mass fraction within R500	[ucd=phys.mass]
+#Column	R500	(I5)	? Overdensity radius R500 from eROCOP	[ucd=phys.size.radius]
+Name	RAJ2000	DEJ2000	Exp	zBest	CR500	CTS500	F500	L500	KT	Mgas500	YX500	M500	Fgas500	R500
+ 	deg	deg	s	 	ct/s	ct	mW/m2	10+35J	keV	10+11Msun	10+11keV.Msun	10+13Msun	 	kpc
+-----------------------	---------------	---------------	------	-------	--------	--------	----------	---------	------	-------	--------	-------	------	-----
+1eRASS J094520.0+100507	146.33333610581	+10.08535044288	  83.6	 0.2183	   0.120	    10.0	    11.130	   16.138	      	   9.06	    0.00	   8.56	 0.013	  623
+
+#Table	J_A_A_685_A106_ecosmos:
+#Name: J/A+A/685/A106/ecosmos
+#Title: Cosmology Sample
+#Column	Name	(A23)	Source name 1eRASS JHHMMSS.s+DDMMSS	[ucd=meta.id;meta.main]
+#Column	RAJ2000	(F15.11)	Right ascension (J2000)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(F15.11)	Declination (J2000)	[ucd=pos.eq.dec;meta.main]
+#Column	zlambda	(F7.4)	Photometric redshift of the cluster based on the LS DR10 data	[ucd=src.redshift.phot]
+#Column	CR500	(F6.2)	? 0.2-2.3keV count rate within R500 measured at zlambda	[ucd=phot.count;em.X-ray]
+#Column	CR500NH0	(F8.3)	? 0.2-2.3keV unabsorbed count rate within R500 at zlambda	[ucd=phot.count;em.X-ray]
+#Column	L500	(F6.3)	0.2-2.3keV luminosity within R500 at zlambda	[ucd=phys.luminosity;em.X-ray]
+#Column	KT	(F6.3)	Temperature measured by MBProj2D at zlambda	[ucd=phys.temperature]
+#Column	Mgas500	(F7.2)	? MGAS within R500 at zlambda	[ucd=phys.mass]
+#Column	YX500	(F8.2)	? The mass proxy within R500 at zlambda	[ucd=phys.mass]

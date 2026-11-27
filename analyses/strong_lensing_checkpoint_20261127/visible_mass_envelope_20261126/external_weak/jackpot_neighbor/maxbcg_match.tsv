@@ -1,0 +1,52 @@
+#
+#   VizieR Astronomical Server vizier.cfa.harvard.edu
+#    Date: 2026-11-26T09:43:08 [V7.6.1]
+#   In case of problem, please report to:	cds-question@unistra.fr
+#
+#
+#Coosys	J2000:	eq_FK5 J2000
+#INFO	service_protocol=ASU	  IVOID of the protocol through which the data was retrieved
+#INFO	request_date=2026-11-26T09:43:08	  Query execution date
+#INFO	request=https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FApJ%2F660%2F239%2Ftable1&-c=146.87912%20%2B10.07800&-c.rs=20&-out.all=1	  Full request URL
+#INFO	contact=cds-question@unistra.fr	  Email or URL to contact publisher
+#INFO	server_software=VizieR/7.6.1	  Software version
+#INFO	publisher=CDS	  Data centre that produced the VOTable
+#INFO	MaxTuples=50000	
+#INFO	-c=146.879120+10.078000,rs=20.	
+#Constraint -out.all=1
+
+#RESOURCE=yCat_16600239
+#Name: J/ApJ/660/239
+#Title: MaxBCG catalog of 13823 galaxy clusters from SDSS (Koester+, 2007)
+#INFO	ivoid=ivo://cds.vizier/j/apj/660/239	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/apj/660/239	    IVOID of underlying data collection
+#INFO	creator=Koester B.P.	    First author or institution
+#INFO	cites=bibcode:2007ApJ...660..239K	    Article or Data origin sources
+#INFO	journal=ApJ	    Journal name
+#INFO	original_date=2007	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/ApJ/660/239	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.16600239	    Dataset identifier that can be used for citation
+#INFO	publication_date=2019-12-17	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_ApJ_660_239_table1:
+#Name: J/ApJ/660/239/table1
+#Title: Cluster catalog
+#Column	_r	(F5.2)	Distance from center (146.87912+10.07800)[FK5/J2000]	[ucd=pos.angDistance]
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	MaxBCG	(f)	Name of the galaxy cluster; <[KMA2007] DDD.ddddd+DD.ddddd> in Simbad	[ucd=meta.id;meta.main]
+#Column	RAJ2000	(F9.5)	BCG Right Ascension in decimal degrees (J2000)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(F9.5)	BCG Declination in decimal degrees (J2000)	[ucd=pos.eq.dec;meta.main]
+#Column	zph	(F5.3)	Photometric redshift	[ucd=src.redshift]
+#Column	zsp	(F7.5)	? Spectroscopic BCG redshift	[ucd=src.redshift]
+#Column	LBr	(F5.2)	BCG r-band luminosity	[ucd=phys.luminosity]
+#Column	LBi	(F5.2)	BCG i-band luminosity	[ucd=phys.luminosity]
+#Column	LTr	(F5.1)	Total r-band luminosity	[ucd=phys.luminosity]
+#Column	LTi	(F5.1)	Total i-band luminosity	[ucd=phys.luminosity]
+#Column	Ngal	(I3)	Detection richness	[ucd=meta.number]
+#Column	NR200	(I3)	Scaled richness (1)	[ucd=src.class.richness]
+#Column	NED	(A3)	NED column added by the CDS	[ucd=meta.ref.url]
+_r	recno	MaxBCG	RAJ2000	DEJ2000	zph	zsp	LBr	LBi	LTr	LTi	Ngal	NR200	NED
+arcsec	 	 	deg	deg	 	 	10+10solLum	10+10solLum	10+10solLum	10+10solLum	 	 	
+-----	--------	------------------	---------	---------	-----	-------	-----	-----	-----	-----	---	---	---
+ 0.03	   13044	146.87912+10.07800	146.87912	+10.07801	0.151	0.14228	 2.26	 2.73	 20.7	 25.1	 18	 15	NED
+

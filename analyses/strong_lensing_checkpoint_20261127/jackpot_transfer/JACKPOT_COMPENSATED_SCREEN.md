@@ -1,0 +1,25 @@
+# Jackpot equal-exterior-charge redistribution
+
+This is an optical screening test, not a recovered BHSM settled branch. Keep the main lens's ordinary stellar profiles and compact point fixed and add a relative redistribution. No S3 data used in fits. Equal far-field monopole relative to the visible-only main lens is an explicit conditional choice, not a general BHSM requirement.
+
+## Exact redistribution construction
+
+Take the stationary response optical potentials from JACKPOT_STATIONARY_SCREEN.md at two scales, short s and long l, with the same amplitude Q>0. The potential difference is -GQ[exp(-r/l)-exp(-r/s)]/r. Both ordinary 1/r contributions cancel exactly. The optical-equivalent density change is positive near the center and negative outside r*=2 log(l/s)/(1/s-1/l). The negative region is a difference, not literal negative material. The cylindrical mass change at R is Q[F(R/s)-F(R/l)]>0 for any finite R>0, vanishing as R tends to infinity. Similarly the 3D enclosed mass difference is positive at finite R and tends to zero. Thus the answer to the narrow mathematical question is yes: a redistribution can change ring bending at fixed exterior charge.
+
+## Curvature limitation, independent of S3
+
+Since F'(x)=x K0(x), the pair response is Q times the integral of H(x)=x² K0(x) from R/l to R/s in log x. The linear curvature operator at fixed aperture mass used in the previous test, [D²+(eta-4)D] for D=d/dlog R, gives C_eta(x)= x²+2eta-4 - eta x K1(x)/K0(x) when applied to H and divided by H. Therefore the associated curvature number of any positive mixture of inward pairs is a positive weighted mean of C_eta(x).
+
+For eta in [0.93,0.98], C_eta exceeds -2.726 over x>0. For [.01,4] bound x K1(x)/K0(x) from above within each of 5999 cells by b K1(a)/K0(b) and x² below by a². Numerical special functions with an explicit margin give the minimum lower bound -2.725015 (not interval-certified arithmetic). Below .01 use x K1(x)<1 and K0 monotonic. Above 4 use K1/K0 ≤1+1/(2x): under the integral for K0 the u=cosh(t)-1 measure is a gamma shape-1/2 weight tilted by the decreasing factor (u+2)^(-1/2), so its mean u is no larger than 1/(2x). The resulting quadratic lower bound increases on x≥4.
+
+The required Salpeter curvature number is -3.154 to -2.955 with the nominal inner aperture mass and fixed stellar/compact inputs. The whole positive superposition class of these specific inward pairs fails even before S3. A general signed/nonlocal redistribution does not have to satisfy this inequality.
+
+## Chabrier witnesses and observational check
+
+On lighter fixed Chabrier stars, prepared twelve two-pair witnesses matching both aperture masses and eta=.96. Each trial uses a fixed short scale from the existing stellar radii (.066,.50,6.05 arcsec) and a declared long-to-short ratio (1.25,2,4,8). The other short length and the two positive strengths are set by the two aperture targets and curvature. These scales are choices for a test, not BHSM-derived coefficients. No S3 fit, no S2 deflector in this nominal comparison. Ring-only fits for shear and S1 leave S3 misclosure 210.5–395.9 mas under the shared normalization, or 299.3–471.0 mas under the aperture-anchored one. The separate conventional Chabrier control gives 17.6 mas nominal; no statistical significance test and no evidence for a stellar normalization. Every Chabrier witness has some radii with negative total implied spherical optical-equivalent density when added to the visible stars alone.
+
+## Independent mass budget
+
+The last feature has a model-independent explanation within the assumed spherical positive mass description. If the total central projected effective mass is nonnegative and monotonic, and its far-field charge is held to stars plus the fixed point, then no cylinder can enclose more than that total. The nominal Chabrier total is 2.586e11 solar masses, already below the first aperture's 3.080e11 solar masses. The Salpeter total is 4.676e11 against the second aperture's 4.436e11, leaving only 2.401e10 solar masses (5.41% of the second aperture) for all larger cylinders. The conventional control places roughly 8.03e11 solar masses of equivalent central projected mass within the farther S3 ray (before shear and adjacent deflectors); it is a model comparison, not a direct mass measurement or a proof that all same-charge lens reconstructions fail. With these inputs, a model wishing to avoid negative effective density at Chabrier must either change the exterior charge relative to visible alone, relax the assumed matter-equivalent projection, or revisit independent mass inputs. Redistributing about an existing halo-charge reference is a different hypothesis, not a replacement of its monopole.
+
+Next: identify which reference far field the actual BHSM junction fixes and derive the projected metric instead of selecting new signed kernels from the third source. No pass for transfer to HE 0435. Replay: jackpot_compensated_screen.py and .json. Sources of calibrated and held-out data are unchanged from JACKPOT_STATIONARY_SCREEN.md.

@@ -1,0 +1,1366 @@
+The Astrophysical Journal, 941:203 (23pp), 2022 December 20                                                          https://doi.org/10.3847/1538-4357/ac927a
+© 2022. The Author(s). Published by the American Astronomical Society.
+
+
+
+
+    The Cosmic Telescope That Lenses the Sunburst Arc, PSZ1 G311.65–18.48: Strong
+               Gravitational Lensing Model and Source Plane Analysis*
+      Keren Sharon1 , Guillaume Mahler1 , T. Emil Rivera-Thorsen2 , Håkon Dahle3 , Michael D. Gladders4,5 ,
+Matthew B. Bayliss6 , Michael K. Florian7 , Keunho J. Kim6 , Gourav Khullar4,5,8 , Ramesh Mainali9 , Kate A. Napier1                                        ,
+            Alexander Navarre6 , Jane R. Rigby9 , Juan David Remolina González1 , and Soniya Sharma9
+                     1
+                    Department of Astronomy, University of Michigan, 1085 S. University Ave., Ann Arbor, MI 48109, USA; kerens@umich.edu
+                        2
+                          The Oskar Klein Centre, Department of Astronomy, Stockholm University, AlbaNova, SE-10691 Stockholm, Sweden
+                             3
+                               Institute of Theoretical Astrophysics, University of Oslo, P.O. Box 1029, Blindern, NO-0315 Oslo, Norway
+                        4
+                          Department of Astronomy and Astrophysics, University of Chicago, 5640 South Ellis Ave., Chicago, IL 60637, USA
+                          5
+                            Kavli Institute for Cosmological Physics, University of Chicago, 5640 South Ellis Ave., Chicago, IL 60637, USA
+                                              6
+                                                Department of Physics, University of Cincinnati, Cincinnati, OH 45221, USA
+                                     7
+                                       Steward Observatory, University of Arizona, 933 North Cherry Ave., Tucson, AZ 85721, USA
+         8
+           Kavli Institute for Astrophysics & Space Research, Massachusetts Institute of Technology, 77 Massachusetts Ave., Cambridge, MA 02139, USA
+                 9
+                   Observational Cosmology Lab, Code 665, NASA Goddard Space Flight Center, 8800 Greenbelt Rd., Greenbelt, MD 20771, USA
+                             Received 2022 July 2; revised 2022 September 7; accepted 2022 September 14; published 2022 December 23
+
+                                                                               Abstract
+             We present a strong-lensing analysis of the cluster PSZ1 G311.65−18.48, based on Hubble Space Telescope
+             imaging, archival VLT/MUSE spectroscopy, and Chandra X-ray data. This cool-core cluster (z = 0.443) lenses the
+             brightest lensed galaxy known, dubbed the “Sunburst Arc” (z = 2.3703), a Lyman continuum (LyC) emitting
+             galaxy multiply imaged 12 times. We identify in this ﬁeld 14 additional strongly lensed galaxies to constrain a
+             strong-lens model and report secure spectroscopic redshifts of four of them. We measure a projected cluster core
+                                             +0.01
+             mass of M(<250 kpc) = 2.93-      0.02 ´ 10 Me. The two least magniﬁed but complete images of the Sunburst Arc’s
+                                                        14
+
+             source galaxy are magniﬁed by ∼13×, while the LyC clump is magniﬁed by ∼4–80×. We present time delay
+             predictions and conclusive evidence that a discrepant clump in the Sunburst Arc, previously claimed to be a
+             transient, is not variable, thus strengthening the hypothesis that it results from an exceptionally high magniﬁcation.
+             A source plane reconstruction and analysis of the Sunburst Arc ﬁnds its physical size to be 1 × 2 kpc and that it is
+             resolved in three distinct directions in the source plane, 0°, 40°, and 75° (east of north). We place an upper limit of
+             r  50 pc on the source plane size of unresolved clumps and r  32 pc for the LyC clump. Finally, we report that
+             the Sunburst Arc is likely in a system of two or more galaxies separated by 6 kpc in projection. Their interaction
+             may drive star formation and could play a role in the mechanism responsible for the leaking LyC radiation.
+             Uniﬁed Astronomy Thesaurus concepts: Galaxy clusters (584); Strong gravitational lensing (1643); Reionization
+             (1383); Star formation (1569)
+
+
+                                    1. Introduction                                      like stellar population ages, metallicity, and velocities. In
+                                                                                         addition, in calculating some relative quantities such as speciﬁc
+   Nature’s most powerful telescopes, strong gravitational
+                                                                                         star formation rate, the lensing magniﬁcation cancels out,
+lenses, are now routinely used as a tool to study the highly
+                                                                                         making the quotient independent of the magniﬁcation.
+magniﬁed universe behind them. Observations of gravitation-                                 By contrast, the interpretation of absolute measurements—
+ally lensed galaxies at z ∼ 1–3 can probe spatial scales on the                          like luminosity, star formation rate, and stellar mass—relies
+order of tens of parsecs (e.g., Johnson et al. 2017; James et al.                        heavily on properly understanding how gravitational lensing
+2018) and can enable spectral diagnostics (e.g., Rigby et al.                            affects the observed quantities, as they are sensitive to the
+2018; Chisholm et al. 2019; Fischer et al. 2019; Patrício et al.                         details of the transformation of measured properties from the
+2019) that are otherwise beyond the capabilities of current                              observed frame to the intrinsic frame of the source.
+observatories.                                                                              The strong-lensing galaxy cluster PSZ1 G311.65−18.48,
+   Since gravitational lensing is wavelength independent, the                            which is the focus of this paper, was discovered by Dahle et al.
+interpretation of many observed physical properties of lensed                            (2016) in an optical imaging program to follow up the Planck
+sources is lensing invariant. These include all measurements                             catalog of Sunyaev–Zel’dovich (SZ) cluster candidates. The
+that rely on color, line ratios, optical depth, and wavelength—                          imaging data conﬁrmed that the candidate is indeed a cluster
+                                                                                         and revealed a 55 0-long giant arc, which is projected 25″–34″
+* Based on observations made with the NASA/ESA Hubble Space Telescope,                   from the brightest cluster galaxy (BCG), and with an azimuthal
+obtained at the Space Telescope Science Institute, which is operated by the              extent of 108°. Dahle et al. (2016) reported integrated Vega
+Association of Universities for Research in Astronomy, Inc., under NASA                  magnitudes of R, z, J, Ks = 17.82, 17.38, 16.75, 15.43 mag,
+contract NAS 5-26555. These observations are associated with programs GO-
+15101, GO-15377, GO-15418, and GO-15949.                                                 making it brighter by more than 1 mag than any previously
+                                                                                         known lensed galaxy at z = 2–3. Shallow long-slit spectrosc-
+                 Original content from this work may be used under the terms
+                                                                                         opy of the giant arc, using the Inamori-Magellan Areal Camera
+                 of the Creative Commons Attribution 4.0 licence. Any further            & Spectrograph (IMACS) instrument on the Magellan-I 6.5 m
+distribution of this work must maintain attribution to the author(s) and the title       telescope (spectral resolution R ; 700), revealed numerous
+of the work, journal citation and DOI.                                                   emission and absorption lines, including Lyα in emission,
+
+                                                                                     1
+The Astrophysical Journal, 941:203 (23pp), 2022 December 20                                                                    Sharon et al.
+
+Si II λλ1259, 1294, C IV λλ1548, 1550, and nebular semi-                 concluded that the LyC knot is a gravitationally bound star
+forbidden transitions of O III] λ1666, Si III] λ1892, and C III]         cluster, with an effective radius smaller than 20 pc and stellar
+λλ1907, 1909 at z = 2.3686 ± 0.0006. Observations targeting              mass in the range 106–107 Me depending on magniﬁcation and
+the foreground cluster lens include a spectrum of the BCG,               initial mass function, implying that it is very massive and very
+which places it at redshift z = 0.44316 ± 0.00035. The BCG               dense and that the LyC leaking radiation is highly localized.
+spectrum interestingly reveals strong emission of the [OII]                 Using the z = 2.3703 giant arc as an extended backlight,
+λλ3727, 3729 doublet, which is generally an indication of dust-          Lopez et al. (2020) studied the absorbing circumgalactic
+unobscured star formation activity (Calzetti 2013). Dahle et al.         medium halo of a foreground galaxy at z = 0.7. The interloper
+(2016) estimated the mass of the core of the cluster from the            is seen in the HST imaging directly, and its gas halo is revealed
+projected radial distance of the giant arc, assuming spherical           in the MUSE and MagE spectra of the giant arc as absorption
+symmetry. The total projected mass density enclosed within the           lines from Mg II, Fe II, and Mg I. The background arc, which
+radius of the arc was estimated as M = (1.8 ± 0.6) × 1014 Me,            probes the gaseous envelope of the intervening absorber from 0
+which, with crude extrapolation of the cluster core mass to              to 30 kpc, enables a dense sampling of the rotation curve, the
+larger radii, is consistent with the estimated SZ-inferred mass.         gas distribution, and its enrichment proﬁle. This study adds to a
+   Rivera-Thorsen et al. (2017) observed the brightest region of         growing literature of using extended arcs as backlight, which
+the arc with the Magellan Echellette (MagE) and with the                 complements the traditional pencil-beam approach of using
+Folded-port InfraRed Echelle (FIRE) instruments on the                   background quasars as a light source to study intervening
+Magellan-I 6.5 m telescope, obtaining broad wavelength                   absorbers. The absorber plane impact parameters, i.e., distances
+coverage and higher spectral resolution than the previous                between segments of the Sunburst Arc images and the studied
+IMACS data. They found that the Lyα emission is triple                   foreground galaxy in Lopez et al. (2020), were measured using
+peaked, which they interpreted as a combination of emission              an early version of the lens model presented here.
+from Lyα that underwent a large number of scatterings and a                 Two lens models have been published for this system in the
+narrow component that emerges directly from the source                   past year. Pignataro et al. (2021) used a subset of the HST data
+without scattering. To explain this triple-peaked proﬁle, they           we present here and the same archival MUSE data to identify
+proposed that the galaxy has a perforated neutral medium,                lensing constraints and measure spectroscopic redshifts of
+where some radiation escapes the source directly through an              lensed galaxies. Their parametric lens model is based on
+ionized channel, while some radiation experiences multiple               constraints from four multiply imaged lensed galaxies. They
+scatterings in an optically thick neutral medium. They                   also used the velocity dispersion of several cluster-member
+nicknamed the source “the Sunburst Arc,” for its resemblance
+                                                                         galaxies to inform their contribution to the lensing potential.
+to a “direct view of the Sun through rifted clouds.”
+                                                                         They estimated a cluster core mass of ∼2 × 1014 Me within
+   In a follow-up work, using data from the Hubble Space
+                                                                         ∼200 kpc and found that the mass distribution is fairly
+Telescope (HST), Rivera-Thorsen et al. (2019) found that large
+                                                                         symmetrical, with a contribution of less than 10% from
+quantities of ionizing photons are escaping from this lensed
+                                                                         subhalos.
+galaxy, by targeting the ﬁeld with the HST/WFC3 F275W
+                                                                            Building on the lensing evidence identiﬁed by Pignataro
+broadband ﬁlter (GO-15418). At the redshift of the giant arc,
+                                                                         et al. (2021), Diego et al. (2022) modeled the cluster with the
+the F275W ﬁlter captures the λ < 912rest Å photons that are
+                                                                         hybrid algorithm WSLAP+ (Diego et al. 2005). They added
+capable of ionizing hydrogen—also called the Lyman con-
+tinuum (LyC). Given the compact region exhibiting LyC                    strong-lensing constraints on the positions of the critical curve
+escape and the Lyα proﬁle, Rivera-Thorsen et al. (2019)                  as identiﬁed from the observed symmetry in the giant arcs.
+concluded that the observed emission is consistent with LyC              Their analysis pays close attention to the nontrivial lensing
+radiation escaping through a narrow clear channel in otherwise           conﬁguration in the northwest image of the Sunburst Arc in
+optically thick gas. The leaked LyC radiation is coming from a           PSZ1 G311.65−18.48 and, in particular, explores models that
+star-forming region within the source galaxy, which is strongly          can produce the high multiplicity and the appearance of a
+lensed into 12 images. The images of the LyC source are                  discrepant point source by forcing the critical curve to pass
+unresolved in the HST data and appear as point sources. The              through certain positions. They reported limits on the mass and
+variation of up to a factor of ﬁve in the apparent escape fraction       location of the substructure that is required in order to explain
+measured in the different copies of the source was attributed to         the observed magniﬁcations and morphology within this arc.
+varying absorption by neutral hydrogen along the different               Diego et al. (2022) also presented time delay and magniﬁcation
+lines of sight to these images, thus probing the patchiness of the       predictions in their analysis and concluded that the discrepant
+intergalactic or circumgalactic medium.                                  clump is unlikely to be a transient as was claimed by Vanzella
+   Chisholm et al. (2019) ﬁt Starburst99 models to MagE                  et al. (2020b). As we discuss below, our analysis supports their
+spectroscopy (see Section 2.3) of the LyC knot and derived its           conclusion with additional evidence.
+UV-light-weighted age and stellar metallicity, ﬁnding an age of             The two lens modeling papers mentioned above appeared in
+3 Myr and Z* = 0.55 ± 0.04 Ze.                                           the literature after our lensing analysis was ﬁnalized. We
+   Vanzella et al. (2020a) used lensing symmetry arguments to            emphasize that our lens modeling and source analysis, which
+estimate a model-independent lower limit of the average                  we present here, were conducted entirely independently from
+magniﬁcation of the arc, μ > 20. They presented archival Very            the lensing analysis, source identiﬁcation, and redshift
+Large Telescope (VLT) Multi Unit Spectroscopic Explorer                  measurements of Diego et al. (2022) and Pignataro et al.
+(MUSE) spectroscopy (see Section 2.3) and, absent a lens                 (2021). Our analysis is based on all the HST imaging available
+model, derived the physical properties of the source as a                to date; we increase the number of lensed systems that are used
+function of the unknown magniﬁcation, based on the age and               as constraints from 5 to 15 and update the redshift measurement
+metallicity measured by Chisholm et al. (2019). They                     of one of these systems.
+
+                                                                     2
+The Astrophysical Journal, 941:203 (23pp), 2022 December 20                                                                           Sharon et al.
+
+   In this paper, we present a detailed lensing analysis of            given the higher-than-usual failure rate due to the gyroscope
+PSZ1 G311.65−18.48 based on extensive HST imaging and                  problems in Cycles 25–26. We used the Drizzlepac10 software
+VLT/MUSE spectroscopy. A number of science questions can               package to reduce the data and align the frames to a common
+be addressed with accurate strong gravitational lensing models         reference grid, as follows. First, exposures in each ﬁlter that
+of clusters of galaxies such as PSZ1 G311.65−18.48. The                were taken within a single visit were drizzled using the
+strong-lensing model maps the projected mass density                   astrodrizzle routine using a Gaussian kernel with a drop
+distribution at the core of the cluster, which can in turn be          size (final_pixfrac) of 0.8. Next, for each ﬁlter in which
+used to study its structure and the interplay between the dark         observations were executed over multiple visits, the drizzled
+and luminous components that reside in clusters’ deep potential        images from each visit were aligned to a common world
+wells. Other model outputs facilitate investigations of the            coordinate system (WCS) using the tweakreg routine. These
+background universe using the cluster as a cosmic telescope.           WCS solutions were propagated back to the individual
+We derive the lensing magniﬁcation in this ﬁeld, with emphasis         exposures using tweakback before all exposures in a single
+on the Sunburst Arc and the LyC knot. A measurement of the             ﬁlter were drizzled together using astrodrizzle, with the
+lensing magniﬁcation is required for converting the observed to        same parameters listed above. Finally, the drizzled images were
+intrinsic properties of lensed sources. To fully understand the        aligned in WCS space, again using tweakreg, and drizzled
+morphology of the source, we derive deﬂection maps with                using astrodrizzle with the same kernel and drop size
+which to construct a qualitative view of the Sunburst Arc’s            onto a common reference grid with north up and a pixel scale
+source plane and constrain the unlensed, intrinsic sizes of            of 0 03 pixel–1.
+unresolved clumps in this galaxy. A prediction of the time                WFC3 IR G141 grism observations from GO-15101 were
+delay between images of the source helps in interpreting its           executed with two telescope roll angles, ORIENT=27°. 37 and
+observed components and could be useful to constrain                   355°. 37. The data were reduced using the reduction package
+cosmological parameters if a variable source is found.                 Grizli,11 using standard reduction procedures. We used
+   The paper is organized as follows. In Section 2 we present          these data to search for or attempt to conﬁrm candidate lensed
+the imaging and spectroscopy data sets used in this work.              galaxies in the grism spectra.
+Section 3 details the lensing evidence. Section 4 describes the
+lens modeling process. We present and discuss our results in
+                                                                                              2.2. Chandra X-Ray Data
+Section 5, and we summarize our ﬁndings in Section 6.
+Throughout this work we assume a ﬂat cosmology with                       The ﬁeld containing the Sunburst Arc was observed with the
+ΩΛ = 0.7, Ωm = 0.3, and H0 = 70 km s−1 Mpc−1. Magnitudes               Chandra X-ray Observatory under observation ID 20442. The
+are reported in the AB system unless otherwise stated. We              purpose of this observation was to constrain any bright X-ray
+adopt a cluster redshift of z = 0.443 and a systemic redshift of       emission from the lensed galaxy, while also producing a robust
+z = 2.3703 for the Sunburst Arc.                                       detection of the foreground cluster lens. The observation was
+                                                                       executed as a single 39.53 ks exposure with the aim point
+                                                                       located near the center of the I3 chip in the ACIS-I array. To
+                             2. Data                                   minimize background, the observation was performed in
+                                                                       VFAINT telemetry mode. We reduced the Chandra data using
+          2.1. HST Imaging and Grism Spectroscopy
+                                                                       Chandra Interactive Analysis of Observations (CIAO v4.13)
+   PSZ1 G311.65−18.48 was the target of several HST                    with CALDB v4.9.6 to apply routine processing. The data
+programs in Cycle 25. GO-15101 (PI: Dahle) obtained                    were ﬁltered for ﬂares using the lc_sigma_clip function in
+multiband imaging and grism spectroscopy of PSZ1 G311.65               the lightcurves Python package that is included in CIAO,
+−18.48 with the goals of enabling a robust lensing analysis and        resulting in a usable integration time of 38.53 ks. We apply a
+investigating the physical conditions of the lensed galaxy. That       0.5–7 keV energy ﬁlter to the reduced event ﬁle and correct for
+program used ﬁve orbits of broadband imaging in the F555W,             a small (∼1″) astrometric offset between the Chandra and HST
+F814W, F105W, and F140W ﬁlters; four orbits of F410M                   data by comparing the coordinates of a galaxy that appears both
+medium-band imaging; and ﬁve orbits of WFC3 G141 grism                 in the HST ﬁeld of view and as an X-ray point source in the
+spectroscopy. A second program, GO-15377 (PI: Bayliss),                Chandra data. We then use the 0.5–7 keV Chandra image to
+complemented these data with four orbits of HST imaging in             measure the basic X-ray properties of the foreground cluster
+F606W, F098M, F125W, and F160W as part of a Chandra                    lens. The X-ray peak (brightest pixel) is at R.A. 15:50:07.053,
+Cycle-19 program, to determine whether the source galaxy               decl. −78:11:29.165, and the X-ray centroid is at R.A.
+hosts an active galactic nucleus (AGN) and to observe the              15:50:06.82, decl. −78:11:29.921, both within 1″ of the
+diffuse X-ray gas of the lensing cluster. Third, the Cycle 25          BCG in projection.
+midcycle program GO-15418 (PI: Dahle) used three HST orbits               The total observed 0.5 − 7 keV X-ray ﬂux is 2.54 × 10−12
+to probe the LyC of the lensed source in F275W. Some of the            erg cm−2 s−1. Excising the central r ∼ 150 kpc to estimate a
+visits failed owing to gyroscope problems and were repeated.           core-excised ﬂux results in f0.5−7keV = 1.06 × 10−12 erg cm−2
+Table 1 tabulates the successful and failed HST Cycle 25               s−1. The ratio of those two values (core-excised to total ﬂuxes)
+observations from the programs listed above.                           makes it clear that the cluster has an extremely strong cool
+   The target was also observed by two programs in HST                 core. For example, a comparison to other Planck clusters
+Cycle 27. A two-orbit integration in F390W was executed in             analyzed by Mantz et al. (2018) places this cluster on the
+2020 July 13 by GO-15949 (PI: Gladders) and is used in this            extreme end in terms of fce/ftotal, meaning that its X-ray
+work; the remaining data from Cycle 27 will be presented and           emission is among the most core dominated. This is consistent
+analyzed in forthcoming publications.
+                                                                       10
+   The HST imaging data were reduced following standard                     http://www.stsci.edu/scientiﬁc-community/software/drizzlepac.html
+                                                                       11
+procedures, after inspecting each image for quality assurance,              https://github.com/gbrammer/grizli
+
+                                                                   3
+The Astrophysical Journal, 941:203 (23pp), 2022 December 20                                                                                            Sharon et al.
+
+                                                                            Table 1
+                                                                        HST Observations
+
+Program                                Camera                             Filter/Grating                          Date (UT)                          Exp. Time (s)
+GO-15101                            WFC3/UVIS                                 F410M                              2019-08-13                              13,285
+                                    WFC3/UVIS                                 F555W                              2019-03-11                              2852*
+                                    WFC3/UVIS                                 F555W                              2019-03-11                              2964*
+                                    WFC3/UVIS                                 F555W                              2019-06-24                               2792
+                                    WFC3/UVIS                                 F555W                              2019-06-24                               2824
+                                      ACS                                     F814W                              2018-02-21                               2544
+                                      ACS                                     F814W                              2018-02-22                               2736
+                                     WFC3/IR                                  F105W                              2019-03-12                              1312*
+                                     WFC3/IR                                  F105W                              2019-06-24                               1312
+                                     WFC3/IR                                  F140W                              2019-03-12                              1312*
+                                     WFC3/IR                                  F140W                              2019-06-24                               1312
+                                    WFC3/grism                                F140W                              2019-05-12                                868
+                                    WFC3/grism                                F140W                              2019-06-30                                562
+                                    WFC3/grism                                 G141                              2019-05-12                               8418
+                                    WFC3/grism                                 G141                              2019-06-30                               5612
+GO-15377                             WFC3/IR                                  F098M                              2019-03-06                               1359
+                                     WFC3/IR                                  F125W                              2019-03-06                               1359
+                                     WFC3/IR                                  F125W                              2019-04-30                               1359
+                                     WFC3/IR                                  F160W                              2018-09-27                               1359
+                                    WFC3/UVIS                                 F606W                              2018-09-27                               1484
+                                    WFC3/UVIS                                 F606W                              2019-01-17                              2982*
+                                    WFC3/UVIS                                 F606W                              2019-03-06                              1484*
+                                    WFC3/UVIS                                 F606W                              2019-03-06                              1484*
+                                    WFC3/UVIS                                 F606W                              2019-03-12                               2922
+                                    WFC3/UVIS                                 F606W                              2019-04-30                               1424
+GO-15418                            WFC3/UVIS                                 F275W                              2018-04-14                               6318
+                                    WFC3/UVIS                                 F275W                              2018-04-08                               3104
+GO-15949a                           WFC3/UVIS                                 F390W                              2020-07-14                               3922
+
+Notes. HST observations that were used for the lensing analysis presented in this paper. An asterisk denotes that these visits failed owing to gyroscope problems in
+Cycles 25–26 and were subsequently repeated.
+a
+  Additional data from GO-15949 beyond those listed here were not used in this work.
+
+with what is observed in the optical and IR; the BCG appears                                                   3. Lensing Evidence
+dust obscured, with evident ﬁlamentary star formation activity
+                                                                                           3.1. The Strong-lensing Interpretation of Source 1: The
+in both imaging and spectroscopy, similar to what is seen in
+                                                                                                                Sunburst Arc
+other extremely strong cool cores (e.g., the Phoenix Cluster;
+McDonald et al. 2012, 2019).                                                             The most prominent lensing feature in the ﬁeld of
+                                                                                      PSZ1 G311.65−18.48 (Figure 1) is the highly magniﬁed
+                  2.3. Ground-based Spectroscopy                                      galaxy discovered by Dahle et al. (2016). In the discovery
+                                                                                      paper, based on ground-based R- and z-band imaging data from
+   PSZ1 G311.65−18.48 was observed with MUSE on the                                   the ESO New Technology Telescope (NTT), Dahle et al.
+VLT on 2016 May 13 (ESO program 297.A-2012(A); PI
+                                                                                      (2016) reported that the source is lensed into three giant arcs,
+Aghanim). The data were retrieved from the ESO archive; the
+                                                                                      which appear north, northwest, and west of the BCG (S1, S2,
+data reduction process is detailed in Weilbacher et al. (2020)
+and Urrutia et al. (2019). The ﬁeld was observed for 2966 s                           S3 in their notation), with a possible fourth image to the
+under good conditions, with 0 7 seeing, spanning 4750                                 southeast. They measure a spectroscopic redshift of
+−9300 Å with R ; 2100. The MUSE cube results in a spectrum                            z = 2.3686 ± 0.0006 from nebular emission lines and
+for each resolution unit, which is a powerful way to derive                           z = 2.3708 ± 0.0004 from the Lyα emission line. Rivera-
+redshifts for numerous sources in the ﬁeld of view, since there                       Thorsen et al. (2017) determined the systemic redshift of the
+is no need to decide in advance which sources to target. We use                       system as z = 2.37094 ± 0.00001 from nebular line emission in
+the MUSE data to conﬁrm counterimages in lensed systems                               the     FIRE      spectra.   A      systemic     redshift     of
+and measure their redshifts.                                                          z = 2.37034 ± 0.00024 was obtained from an average of the
+   The ﬁeld was observed with Magellan Echellette on the                              velocities of the narrow components of the [O III] λλ4959,
+Magellan-I 6.5 m Baade telescope, covering multiple distinct                          5007 line in several FIRE pointings (Mainali et al. 2022).
+image plane regions in the north and northwest arcs. The details                      Differences of this order are within expectation owing to
+of the observation and data reduction are given in Rivera-                            velocity differences between the galaxy components, e.g.,
+Thorsen et al. (2017, 2019) and Lopez et al. (2020), and most                         winds and relative motions, and insigniﬁcant for the purpose of
+comprehensively in J. Rigby et al. (2022, in preparation). These                      lens modeling. In this work we adopt z = 2.3703 as the
+data were used to conﬁrm the identiﬁcations of some of the                            systemic redshift.
+clumps in the sunburst arc.
+
+                                                                                 4
+The Astrophysical Journal, 941:203 (23pp), 2022 December 20                                                                                                 Sharon et al.
+
+
+
+
+Figure 1. Imaging data of PSZ1 G311.65−18.48, composed of F140W+F160W (R), F606W (G), and F390W (B). The secure and candidate multiple-image systems
+are labeled and color coded; candidate images are annotated with a question mark. The individual clumps within each image are not labeled, to reduce clutter. The
+critical curve for a source at z = 2.3703 is overlaid in red. Gray rectangles mark the giant arcs of the Sunburst Arc; they are shown in more detail in Figure 2. See also
+Figure 3 for zoomed-in view of the multiple images.
+
+
+   High-resolution HST imaging data are invaluable in under-                            HST F140W, F606W, and F410M. These bands are selected
+standing the lensing conﬁguration. Studying the ﬁrst F814W                              for this color rendition in order to display the clump-to-clump
+and F275W observations, obtained in 2018 February and April,                            color variations. For a source at z = 2.3703, the broadband
+respectively, Rivera-Thorsen et al. (2019) found that the north                         ﬁlters F140W and F606W sample emission redward of the
+and northwest arcs are each composed of multiple images, and                            4000 Å break and rest-frame UV, respectively, while the
+in particular, the bright emission clump in the source is lensed                        medium-band ﬁlter F410M is centered on the Lyα emission.
+into a dozen images: six in the north arc, four in the northwest                        The scale and stretch in this ﬁgure are tuned to bring out the
+arc, and one each in the west and southeast arcs. With the                              clumpiness of the arc and visually resolve its numerous
+multiband HST imaging available to date, we are able to                                 emission knots. We label and color-code the emission knots in
+identify numerous emission knots in each image and match                                the panel adjacent to each color rendition. Knot 1.x (i.e., the
+these emission knots between images. Table 2 and Figure 2 list                          one emitting LyC radiation, hereafter the LyC emitter (LCE)
+the positions of the emission knots and label their mapping                             clump) is labeled with a red square in all the arcs. We label the
+between the lensed images. The identiﬁed emission knots                                 next three brightest knots with 2.x, 3.x, 4.x, and the remaining
+within the Sunburst Arc are labeled with preﬁxes 1 through 19.                          knots are labeled and color coded to guide the eye to their
+ID 1.xx is assigned to the bright LyC-emitting knots identiﬁed                          projected location and arc-to-arc symmetry rather than by
+by Rivera-Thorsen et al. (2019). The sufﬁx xx denotes the ID                            brightness.
+of the lensed image within the multiple-image family. For                                  The north arc (arc 1) consists of six partial images of the
+consistency, we follow the multiplicity ID numbers 1−12 that                            source (labeled x.1 through x.6 in Table 2 and Figure 2). In two
+were introduced by Rivera-Thorsen et al. (2019).                                        of the images, x.5 and x.6, only the bright LyC-emitting knot is
+   In Figure 2 we show the four images of the Sunburst Arcs:                            seen. The other four include several more emission knots in
+north, northwest, west, and southeast, in color rendition from                          addition to the bright knot: knots 2, 5, 6, 7, and 8 in images x.1
+
+                                                                                    5
+The Astrophysical Journal, 941:203 (23pp), 2022 December 20                                                                                       Sharon et al.
+
+                                Table 2                                                                            Table 2
+           List of Lensing Constraints within the Sunburst Arc                                                   (Continued)
+
+ID        R.A. (deg)      Decl. (deg)        μ        1σ Uncertainty on μ       ID          R.A. (deg)       Decl. (deg)         μ        1σ Uncertainty on μ
+            J2000           J2000                       (Lower−Upper)                         J2000            J2000                        (Lower−Upper)
+1.1       237.530818      −78.182515       34.7              [29–38]            11.3       237.523067       −78.182913         11.7              [10–13]
+1.2       237.525561      −78.182754       82.7              [75–97]            11.4       237.521062       −78.182998         19.4              [17–21]
+1.3       237.524859      −78.182817       58.7              [56–71]            12.3       237.522753       −78.182948         16.0              [13–17]
+1.4       237.519097      −78.183181       15.3             [9.3–23]            12.4       237.521510       −78.182999         37.0              [32–48]
+1.5       237.518255      −78.183256        2.3            [0.5–10.0]           13.7       237.507614       −78.185015         45.9              [32–46]
+1.6       237.517455      −78.183354       13.2             [7.6–23]            13.8       237.506255       −78.185277         101.1            [82–123]
+1.7       237.509198      −78.184647        4.3             [3.9–5.0]           14.7       237.507415       −78.185061         74.4              [51–75]
+1.8       237.501508      −78.186259       29.6              [27–34]            14.8       237.506400       −78.185256         123.9           [102–161]
+1.9       237.499785      −78.186745       27.3             [25–34]a            15.7       237.507203       −78.185102         149.0            [97–148]
+1.10      237.498917      −78.187077       30.1             [28–37]a            15.8       237.506595       −78.185218         180.0           [159–277]
+1.11      237.493859      −78.190767       12.1              [12–13]            16.11      237.494050       −78.191144         14.6              [14–16]
+1.12      237.562830      −78.196471       13.4              [12–16]            16.12      237.563858       −78.196174         13.5              [12–15]
+2.1       237.528078      −78.182604       128.9            [92–128]            17.11      237.494158       −78.191336         15.6              [15–17]
+2.2       237.527379      −78.182635       109.4           [127–180]            17.12      237.564375       −78.196021         13.7              [12–15]
+2.3       237.523906      −78.182902       15.0              [13–16]            18.11      237.494696       −78.192019         15.9              [15–17]
+2.4       237.520126      −78.183100       12.9              [11–14]            18.12      237.565800       −78.195482         16.3              [14–18]
+2.7       237.508784      −78.184748        6.0             [4.8–6.3]           19.11      237.494679       −78.192066         16.1              [15–18]
+2.8       237.503795      −78.185731       42.8              [35–49]            19.12      237.566061       −78.195415         16.6              [15–18]
+2.11      237.493953      −78.190812       12.0              [12–13]
+2.12      237.563214      −78.196386       13.2              [12–15]            51.11b     237.495214       −78.192641          13.5            [13–15]
+3.3       237.523472      −78.182926       13.0              [11–14]            51.12      237.567111       −78.194878          22.8            [19–25]
+3.4       237.520701      −78.183058       15.5              [13–17]            52.11      237.495142       −78.192566          12.3            [12–14]
+3.7       237.508271      −78.184839       12.5             [9.2–13]            52.12      237.566914       −78.194972          21.4            [18–24]
+3.8       237.504896      −78.185501       51.2              [40–59]            53.1       237.570080       −78.193511         1246.8           [83–K]
+3.11      237.493989      −78.190867       12.3              [12–13]            53.2       237.572192       −78.191494         726.5            [29–K]
+3.12      237.563459      −78.196326       13.1              [12–15]            53.3       237.572516       −78.191086          32.9            [24–37]
+4.3       237.523614      −78.182962       15.5              [14–17]
+                                                                                101.1c     237.532701       −78.182363          37.8            [27–49]
+4.4       237.520679      −78.183110       15.7              [13–17]
+                                                                                101.6      237.517073       −78.183258          17.7            [11–36]
+4.7       237.509090      −78.184749        5.2             [4.3–5.7]
+                                                                                101.8      237.503649       −78.185600          34.8            [29–39]
+4.8       237.502257      −78.186149       35.5              [32–41]
+                                                                                101.11     237.493719       −78.191473          17.2            [16–19]
+4.9       237.499970      −78.186785       31.1             [28–40]a
+                                                                                101.12     237.563151       −78.196242          14.5            [13–17]
+4.10      237.499155      −78.187089       33.9             [31–44]a
+4.11      237.494057      −78.190672       11.1              [11–12]
+4.12      237.563109      −78.196465       12.9              [12–15]            Notes. The IDs and positions of emission knots in the Sunburst Arc, identiﬁed
+5.1       237.530472      −78.182525       33.7              [28–35]            in the multiple images of the source and used as lensing constraints. Clumps
+5.2       237.525924      −78.182728       53.0              [48–62]            are labeled as A.X, where A is a number of the clump and X is a number or a
+5.3       237.524665      −78.182835       35.8              [33–41]            letter indicating the ID of the lensed image within the multiple-image family.
+5.4       237.519300      −78.183166       13.3             [8.6–17]            The best-ﬁt model-predicted magniﬁcations for a point source located at the
+6.1       237.530282      −78.182473       36.5              [31–38]            exact position of each feature are given in the fourth column, and the brackets
+6.2       237.526374      −78.182639       34.4              [31–39]            indicate the lower and upper magniﬁcation corresponding to the 1σ conﬁdence
+7.1       237.529282      −78.182482       32.1              [27–37]            interval in the parameter space, sampled from the MCMC chain. The redshift of
+7.2       237.527034      −78.182569       43.0              [40–50]            the Sunburst Arc, z = 2.3703, was measured by Dahle et al. (2016), Rivera-
+7.3       237.523693      −78.182846       10.9             [9.7–12]            Thorsen et al. (2019), and Rivera-Thorsen et al. (2017) and conﬁrmed with
+7.4       237.520049      −78.183013       12.2              [10–13]            MUSE spectroscopy by this work.
+                                                                                a
+7.7       237.507458      −78.184894       45.5              [26–47]              The magniﬁcations of images 1.9, 1.10, 4.9, and 4.10 are measured at their
+7.8       237.505953      −78.185193       59.6              [52–66]            observed positions; they should be used with caution, as the lens model does
+7.11      237.493967      −78.191389       16.3              [16–18]            not correctly recover these positions.
+                                                                                b
+7.12      237.563746      −78.196152       13.9              [13–16]              The redshift of source 50 was measured by this work, placing it at the same
+8.1       237.528607      −78.182557       48.8              [38–53]            redshift as the main arc.
+                                                                                c
+8.2       237.527136      −78.182623       62.2              [61–79]              Source 100 is possibly associated with the same source as the Sunburst Arc
+8.3       237.523917      −78.182875       14.1              [13–16]            and is either part of the same galaxy or a companion (see Section 5).
+8.4       237.520032      −78.183080       12.6              [10–14]
+8.7       237.508469      −78.184775        8.4             [6.4–8.5]
+                                                                                and x.2; and knots 2–12 in images x.3 and x.4. The unusually
+8.8       237.504388      −78.185573       44.7              [36–51]
+8.11      237.493900      −78.190958       13.3              [13–14]            high multiplicity within the north arc is due to contributions to
+8.12      237.563346      −78.196316       13.4              [12–15]            the lensing potential from three cluster-member galaxies, which
+9.3       237.523676      −78.182928       14.1              [12–15]            complicate the shape of the critical curve in this region.
+9.4       237.520492      −78.183090       14.3              [12–16]               The west arc (arc 3) and the southeast arc (arc 4) are both full
+9.8       237.504180      −78.185652       45.7              [37–53]            images of the source. As such, these are the only instances
+10.3      237.523251      −78.182942       13.4              [12–14]            where the properties of the galaxy as a whole can be measured
+10.4      237.521002      −78.183046       18.7              [16–21]
+10.7      237.508163      −78.184876       15.7              [11–16]
+                                                                                (J. K. Kim et al. 2022, in preparation). Only in these two
+10.8      237.505064      −78.185473       53.6              [42–61]            images do we observe a likely companion galaxy, labeled 50 in
+                                                                                Table 3 (see also the next section). The knots associated with it,
+
+                                                                            6
+The Astrophysical Journal, 941:203 (23pp), 2022 December 20                                                                                             Sharon et al.
+
+
+
+
+Figure 2. Zoomed-in view of the giant arcs of the Sunburst system. The color frames are a composite of F140W (R), F606W (G), and F410M (B), probing the rest-
+frame optical, UV continuum, and Lyα, respectively. The ﬁlters, scaling, brightness, and saturation levels were chosen to emphasize color variations between emission
+knots. In each monochrome frame we label the identiﬁed emission knots. A 2 0 scale bar is shown in the bottom frame. The gray boxes in Figure 1 indicate the
+location of the frames shown here within the cluster ﬁeld of view.
+
+
+
+                                                                                 7
+The Astrophysical Journal, 941:203 (23pp), 2022 December 20                                                                                        Sharon et al.
+
+                                  Table 3                                                                           Table 3
+        List of Lensing Constraints from Secondary Lensed Galaxies                                                (Continued)
+
+ID        R.A. (deg)     Decl. (deg)     zspec     zmodel        Notes           ID         R.A. (deg)      Decl. (deg)      zspec      zmodel         Notes
+            J2000          J2000                                                              J2000           J2000
+                                                     +0.03
+21.1     237.507879     −78.195669        L      2.00-0.03                       151.1     237.533169      −78.197672         L           +0.14
+                                                                                                                                      3.27-0.14
+21.2     237.563285     −78.184445                                               151.2     237.518525      −78.179783
+22.1     237.507377     −78.195596
+                                                                                                                                          +0.03
+22.2     237.563645     −78.184605                                               161.1     237.531076      −78.197533         L       2.48-0.10
+                                                                                 161.2     237.517617      −78.180774
+31.1     237.501071     −78.194245     2.4600       L                            162.1     237.530599      −78.197467
+31.2     237.572190     −78.186764                                               162.2     237.518346      −78.180675
+32.1     237.501173     −78.194403
+32.2     237.570735     −78.186045                                               c170.1    237.533765      −78.182837         L           L          Candidate
+                                                                                 c170.2    237.553368      −78.198716
+41.1     237.508731     −78.189852     1.1860       L                            c170.3    237.523858      −78.200091
+41.2     237.558868     −78.193976
+                                                                                                                                          +0.19
+                                                                                 181.1     237.556363      −78.180047         L       3.15-0.08      Low con-
+51.11    237.495214     −78.192641     2.3709       L         Companion                                                                             ﬁdence zspec
+                                                             galaxy to the                                                                            2.5820
+                                                               Sunburst          181.2     237.518409      −78.196005
+                                                                 Arc
+                                                                                                                                          +0.12
+51.12    237.567111     −78.194878                                               191.1     237.547077      −78.180167         L       2.08-0.01
+52.11    237.495142     −78.192566                                               191.2     237.524546      −78.194008
+52.12    237.566914     −78.194972
+53.1     237.570080     −78.193511                                               Note. The IDs, positions, and redshifts of lensed multiply imaged galaxies
+53.2     237.572192     −78.191494                                               other than the Sunburst Arc that were used as constraints in this work. Where
+53.3     237.572516     −78.191086                                               possible, individual emission knots in each image are identiﬁed and used as
+                                                                                 lensing constraints. The IDs of images of lensed galaxies are labeled as AB.X or
+c61.1    237.538392     −78.190088        L         L         Radial arc,
+                                                                                 AAB.X, where A or AA is a number indicating the source ID (or system name),
+                                                              candidate
+                                                                                 B is a number indicating the ID of the emission knot within the system, and X is
+c61.2    237.545362     −78.188855
+                                                                                 a number indicating the ID of the lensed image within the multiple-image
+c61.3    237.493848     −78.194733
+                                                                                 family. A preﬁx c identiﬁes candidates. The reference for spectroscopic
+c61.3    237.485901     −78.196788
+                                                                                 redshifts is this work; see Section 3. The redshifts of sources 40 and 90 are
+                                                     +0.04                       consistent with the independent measurements of Pignataro et al. (2021), using
+71.1     237.544744     −78.190197        L      2.20-0.06    Radial arc
+71.2     237.541128     −78.190545                                               the same data, of 1.186 and 3.505, respectively.
+72.1     237.545902     −78.189977
+72.2     237.539452     −78.190676
+72.3     237.480527     −78.192377                                               51.x and 52.x, as well as knots 18.x and 19.x, are not observed
+                                                                                 in the north and northwest arcs owing to the lensing geometry.
+                                                     +0.05
+81.1     237.571984     −78.194627        L      2.14-0.01                       Because these images have a lower magniﬁcation, some of the
+81.2     237.501340     −78.190593                                               knots that are identiﬁed in other arcs are either not resolved or
+82.1     237.571210     −78.195048                                               too faint to be uniquely matched in these arcs. We map knots
+82.2     237.501364     −78.190318
+                                                                                 16.x and 17.x between these two arcs, but note that they could
+83.1     237.571123     −78.195091
+83.2     237.501366     −78.190278
+                                                                                 be matched to knots 11.x and/or 12.x in the north arc (see also
+                                                                                 Section 5.4).
+91.1     237.496776     −78.193334     3.5100       L                               The northwest arc (arc 2) is the least understood from the
+91.2     237.578283     −78.188071                                               perspective of lensing geometry. It has at least two and up to
+92.1     237.496803     −78.193415                                               four partial images of the source. Rivera-Thorsen et al. (2019)
+92.2     237.578121     −78.187978
+                                                                                 compared the MagE spectra of several spatially distinct regions
+93.1     237.496902     −78.193517
+93.2     237.577906     −78.187816
+                                                                                 along the arc, including images 1.1, 1.4+1.5, 1.8, and 1.10
+94.1     237.497320     −78.193754                                               (images 1, 4+5, 8, and 10 in their notation, respectively). They
+94.2     237.577150     −78.187272                                               found that the spectral features of these images are indis-
+95.1     237.498103     −78.194186                                               tinguishable, arguing in favor of these being images of the
+95.2     237.573889     −78.185414                                               same source, which implies that the LCE knot is observed with
+96.1     237.497953     −78.194128                                               a multiplicity of 4× in this arc. While in the north arc the
+96.2     237.574173     −78.185593                                               6× multiplicity of the LCE knot can be readily explained by the
+97.1     237.498285     −78.194236                                               complexity of the lensing potential owing to nearby cluster-
+97.2     237.573730     −78.185329
+                                                                                 member galaxies, no such perturbers are observed near the west
+                                                     +0.02
+131.1    237.553434     −78.191877        L      1.52-0.02                       end of the northwest arc.
+131.2    237.493765     −78.187681                                                  Indeed, near images 1.9 and 1.10, the lensing geometry is
+132.2    237.492902     −78.187827                                               not trivial. One explanation for the apparent multiplicity in this
+132.1    237.552558     −78.191747                                               region, as suggested by Diego et al. (2022), is that the critical
+141.1    237.537716     −78.196427        L          +0.02
+                                                 1.76-                           curve serpentines around image 1.9; this requires a lensing
+                                                      0.04
+141.2    237.510804     −78.182610                                               potential that is more complex than can be explained from the
+                                                                                 observed galaxy distribution, e.g., due to a very low surface
+                                                                                 brightness or a yet-unobserved mass component. They forced a
+
+                                                                             8
+The Astrophysical Journal, 941:203 (23pp), 2022 December 20                                                                       Sharon et al.
+
+high multiplicity in this region by constraining the lens model          galaxies that are also strongly lensed by PSZ1 G311.65−18.48.
+with critical points between images 1.8, 1.9, and 1.10 (h, i, and        Their positions and, where available, spectroscopic redshifts
+l in their notation). The model presented in this paper does not         are used as constraints in the lensing analysis. To avoid
+reproduce the multiplicity of images 1.9 and 1.10 because it             confusion with the IDs of clumps within the Sunburst Arc, we
+lacks the ﬂexibility on small scales that is needed in order to          assign these secondary lensed galaxies ID numbers starting at
+wind the critical curve around image 1.9 using only lens                 20. The tens digit denotes the source ID, and the ones digit
+components with an observed counterpart. Our early attempts              denotes the label of each emission knot. The digit to the right of
+to force the critical curve through those positions (by using            the decimal point labels each image within the multiple-image
+critical curve constraints, similar in principle to what was             “family” of the same source. For example, images 21.1 and
+recently done by Diego et al. 2022) resulted in unrealistic              21.2 are two lensed images of clump number 1 in source
+magniﬁcation ratios between the lensed images. We ruled out              number 20. Candidate features have an additional preﬁx c.
+those models based on the unrealistic magniﬁcations and                  Figure 1 shows the locations of the images of the secondary
+abandoned this direction. We will explore the possibility that a         systems. The positions of individual emission knots and the
+low surface brightness or a “dark” clump is responsible for the          available redshifts are tabulated in Table 3. In Figure 3 we
+lensing complexity in this region in future work. Despite its            present a close-up view of the identiﬁed multiple images of
+limitation in the southern part of the northwest arc, our lens           each system. We note that for each of the tangential systems the
+model correctly recovers the numerous lensing constraints from           model predicts a demagniﬁed (0 < |μ| < 1) counterimage
+multiple source planes (Section 3) elsewhere; the global lens            behind the BCG. These highly demagniﬁed images are
+properties and measurements are not affected.                            predicted to be several magnitudes fainter than the observed
+   An alternative explanation of the observed images 1.9 and             arcs, and as such they are not expected to be detectable in the
+1.10 is that the LCE clump itself is composed of multiple                current data. As noted in Sections 1 and 2.2, the BCG area is
+smaller clumps, unresolved in the other instances but resolved           active with star formation, which is expected for a cool-core
+in this image owing to its high tangential distortion. Additional        cluster such as PSZ1 G311.65−18.48. Since star formation
+data, such as the approved JWST NIRSpec Integral Field Unit              chains near the BCG can mimic the appearance of radial arcs
+(IFU) spectroscopy of this part of the arc (JWST-GO                      (e.g., Sharon et al. 2014; Tremblay et al. 2014; McDonald et al.
+program 02555; PI: Rivera-Thorsen), will provide more clues.              2019), we treat the central region with extra care in order not to
+The IFU spectroscopy of images 1.9 and 1.10 could reafﬁrm                misidentify star formation as lensed features.
+that they are indeed identical to the other images of the LCE,              Source 101.—Likely associated with the Sunburst Arc,
+thus conﬁrming its 4× multiplicity within this arc and requiring
+                                                                         source 101 (Figure 2) appears as a single emission knot
+a more complex lens model with sufﬁcient ﬂexibility to wind a
+                                                                         projected less than half an arcsecond from the main arc, but
+critical curve around image 1.9, as was attempted by Diego
+                                                                         with only ﬁve multiple images: two by the north arc, one by the
+et al. (2022). Deep imaging may reveal a faint interloper that
+                                                                         northwest arc, one by the west arc, and one by the southeast
+complicates the lensing potential, or put limits on the surface
+                                                                         arc. A sixth image is predicted by the northern tip of the
+brightness of such a component if undetected. The ﬁrst public
+JWST data already showcase its power to detect low surface               northwest arc, and we tentatively identify it blended in the light
+brightness structures (e.g., the intracluster light; Mahler et al.       of a foreground galaxy. The sixth image candidate is not used
+2022; Montes & Trujillo 2022). Alternatively, the IFU data               as a constraint. Due to its proximity to the main arc and the lack
+may reveal that one or two of these clumps differ from the main          of independent redshift measurement, we cannot spectro-
+LCE source, indicating that the LCE clump is actually                    scopically rule out its association with the main arc. When
+composed of several distinct LyC leaking regions.                        leaving its redshift as a free parameter, the model-predicted
+   A further anomaly observed in the northwest arc is a bright,          redshift for this source converges to that of the main arc.
+unresolved emission clump that displays signiﬁcantly different           Furthermore, narrowband HST imaging reveals strong line
+colors and spectral features, compared to other clumps of                emission from all the images of Source 101 at a wavelength
+similar brightness. This emission clump can be seen in                   consistent with [O III] λ4959 at the redshift of the Sunburst Arc
+Figure 2, as the bright clump in the left part of the 4.8 ellipse.       (J. Rigby et al. 2022, in preparation). We therefore proceed by
+Because a counterimage with similar brightness does not                  assigning this clump the same redshift as the Sunburst Arc.
+appear in any of the other giant arcs, in particular those that             Source 20.—This source appears with two images, one
+display full images of the source, Vanzella et al. (2020b)               southwest and one northeast of the BCG. Although we do not
+argued that this unresolved emission clump (labeled Tr in                have a spectroscopic redshift of this galaxy, the morphology
+Vanzella et al. 2020a) is a transient. They further identiﬁed            and color variations along the images provide conﬁdence in
+Bowen ﬂuorescence lines (Bowen 1934) in its spectrum. Diego              their identiﬁcation as multiple images of the same source.
+et al. (2022) examined the possibility that the observed                    Source 30.—We detect two images of source 30, with
+brightness and morphology of this candidate (which they                  similar morphology and color. A single emission line appears
+nicknamed “Godzilla” in their paper) is due to an unobserved             in both locations in the MUSE data, placing this source at
+lensing perturber in close proximity. They found that such a             zspec = 2.460, assuming that this line is from C III]. The secure
+perturber requires mass of order ∼108 Me. In Section 5.3.1, we           lensing identiﬁcation and high-conﬁdence redshifts of other
+discuss the discrepant emission clump in more detail and                 sources rule out other possible emission lines, which would
+demonstrate that it is unlikely to be a transient.                       result in too high or too low redshifts (e.g., Lyα, [O II], [O III]).
+                                                                         The east image of this source (30.2) and image 2 of source 90
+                                                                         appear in a region with higher tangential shear than the west
+                3.2. Secondary Lensed Systems
+                                                                         images of the same sources (Figure 1).
+  From the multiband HST imaging and archival MUSE                          Source 40.—Source 40 is lensed into two images, projected
+spectroscopy, we identify multiple images of several other               17″ and 22″ from the cluster center. Archival MUSE
+
+                                                                     9
+The Astrophysical Journal, 941:203 (23pp), 2022 December 20                                                                                    Sharon et al.
+
+
+
+
+Figure 3. Close-up view of the multiple images of strongly lensed galaxies identiﬁed in the ﬁeld of PSZ1 G311.65−18.48. The color image is composed of F140W
++F160W (R), F606W (G), and F390W (B), chosen to highlight color gradients within the lensed galaxies to show their internal structure and color differences
+between galaxies. North is up, and each image is 4 0 × 4 0.
+
+
+                                                                            10
+The Astrophysical Journal, 941:203 (23pp), 2022 December 20                                                                     Sharon et al.
+
+spectroscopy indicates that it is a star-forming galaxy at                 available to this study. It is possible that the HST-WFC3/G280
+zspec = 1.1484, based on several emission lines that are                   data (GO-15966) are deep enough for spectroscopic redshift
+observed in both of its images, 40.1 and 40.2.                             conﬁrmation. The redshift of this source is left as a free
+   Source 50.—We identify two images of a galaxy, one                      parameter in our modeling.
+extending the west Sunburst Arc to the south, and the other                   Source 80.—The two images of source 80 present distinctive
+extending the southeast Sunburst Arc to the east. Images of this           color and morphology, which secure their identiﬁcation despite
+source do not appear near any of the other Sunburst Arc images             not having a spectroscopic redshift conﬁrmation.
+because of the location of the source with respect to the caustics            Source 90.—Source 90 has two images; one appears south of
+in the source plane; this is consistent with expectation from the          the west Sunburst Arc, and the second one appears northeast of
+lensing geometry. Source 50 is smoother and redder than the                the cluster core. We measure the redshift of both images,
+main arc, with a distinctive color gradient. We identify two               zspec = 3.5053, based on MUSE detection of extended Lyα
+clumps within the images to be used as constraints.                        emission coincident with this galaxy. We identify ﬁve unique
+   MUSE spectroscopy of images 50.11 and 50.12 places this                 emission knots in the HST imaging of this source, while the
+source at the same redshift as the Sunburst Arc, zspec = 2.3709,           Lyα emission appears much more extended than the optical/IR
+based on weak C III] emission lines and Si II and C IV in                  emission. The eastern image of source 90 spans 10 6, about
+absorption in both images of the source. We note that the                  three times more extended than its west counterpart, at 3 4,
+spectrum of 50.11 contains features from an interloping galaxy             indicating that there is signiﬁcantly more lensing shear in the
+at zspec = 0.7373, based on a bright double emission feature at            east region. We observe similar behavior in the nearby
+6477.0 and 6482.1 Å from the [O II] λ3737 doublet, corrobo-                system 30.
+rated by other lines including Hβ emission and [O III] λ5008                  Source 130.—System 130 has two images, both resolved,
+emission. We identify the interloper as a faint galaxy in close            with a red center and two distinct blue emission knots. We use
+projected proximity, 0 94, northwest of 51.11. The identiﬁed               the blue emission knots as constraints, as their location can be
+interloper has the same spectroscopic features that contaminate            more precisely determined than that of the extended red center.
+the MUSE spectrum of 50.11.                                                We have no spectroscopic redshift for this system, but its
+   Our redshift analysis of source 50 disagrees with the redshift          unique morphology and colors provide conﬁdence in its
+reported for this galaxy by Pignataro et al. (2021), who                   identiﬁcation.
+measured z = 2.393 (Sys-3 in their paper). While their paper                  Sources 140, 150, 160.—Each of these systems has two
+does not provide information regarding the spectroscopic                   images, with no spectroscopic redshift. We identify them based
+                                                                           on their colors and morphology.
+features that were used to establish this redshift, it could
+                                                                              Source 170 (candidate).—We identify three images of this
+possibly be based on a misidentiﬁcation of the [O II] line from
+                                                                           candidate system, with similar surface brightness and morph-
+the z = 0.7373 interloper, as a C III] line at z = 2.393. Source 50
+                                                                           ology, which are predicted by the lens model to be counter-
+is close in projection to the Sunburst Arc (∼6 kpc away in
+                                                                           images of each other. Image 170.1 appears in the north part of
+projected distance in the source plane according to our lensing
+                                                                           the ﬁeld, close to image 1.1. The lens model predicts its
+analysis; Section 5.4), which could explain the absorption lines           counterimages in the south of the ﬁeld. We identify arcs with
+had source 50 been in the background. Nevertheless, the                    similar morphology that match the lensing parity and shear
+identiﬁcation of the C III] emission line adds conﬁdence to our            direction that are predicted by the model. We note that image
+zspec = 2.3709 interpretation.                                             170.1 appears slightly greener than 170.2 in the rendition
+   A close inspection of the imaging data reveals a thin                   shown in Figure 3, likely due to contamination from bright
+elongated arc that extends 50.12 toward the northeast. This                nearby cluster galaxies. The colors of 170.3 are contaminated
+emission is likely the magniﬁed image of just the edge of                  by a nearby star. To be conservative, these candidate images
+source 50, which is lensed to this location by contribution to the         were not used as constraints.
+lensing potential from a nearby cluster-member galaxy. The                    Source 180.—We identify two images of this source, one in
+three images that make this extension are labeled 53.1, 53.2,              the northeast and one southwest of the BCG. The MUSE
+and 53.3.                                                                  spectra of both images suggest a low conﬁdence line, which
+   Source 60 (candidate).—We identify this image as a                      could be C III] at z = 2.582. Due to its low conﬁdence, the
+candidate radial arc. At this time, we have no spectroscopic               suggestive redshift is not used as a constraint. The morphology
+redshift for it. There are several possible counterimages at the           of the two images is similar and consistent with the expected
+expected locations that match its surface brightness, colors, and          lensing parity and shear direction.
+expected lensing shear, but none can be spectroscopically                     Source 190.—We identify two faint candidate images of this
+conﬁrmed as counterimages. We therefore do not include this                source: a radial arc west of the BCG, and a counterimage
+system as a constraint in the lens model.                                  northwest.
+   Source 70.—This source appears as a radial arc, observed
+east of the cluster core. We identify a candidate counterimage
+of this arc, west of the west Sunburst Arc. The candidate has                          4. Strong-lens Modeling Procedure
+similar colors to the radial arc. The direction in which the arcs
+are sheared is consistent with expectation from lensing                                           4.1. Methodology
+geometry. The radial arc appears in the MUSE data with low                    We use the lens modeling software Lenstool (Jullo et al.
+signiﬁcance, and a redshift could not be secured from these                2007), which is a parametric lens modeling algorithm, i.e., it
+data. The location of the counterimage falls outside of the                assumes that the lens plane can be constructed from a linear
+footprint of the archival MUSE data, and we are therefore                  combination of individual parametric mass halos. In this work,
+unable to conﬁrm it or rule it out with the MUSE data.                     we model each mass component with a pseudo-isothermal
+Similarly, the arc is too faint in the Cycle 25 grism data                 ellipsoidal mass distribution (PIEMD, also known as dPIE;
+
+                                                                      11
+The Astrophysical Journal, 941:203 (23pp), 2022 December 20                                                                       Sharon et al.
+
+Elíasdóttir et al. 2007), with seven parameters: position (x, y,          observed properties (R.A., decl., ellipticity, and position angle)
+measured in arcseconds from a reference point), ellipticity e,            and the other parameters scaled to their luminosity following a
+position angle θ, core radius rc, truncation radius rcut, and a           parametric scaling relation given in Limousin et al. (2005,
+normalization σ.                                                          Equation (28)), with pivot parameter M(L*) = 19.45 mag.
+   Following procedures that have become standard in the ﬁeld,            Several galaxies were modeled as individual halos, allowing
+the lens plane is modeled iteratively. The most obvious lensing           Lenstool to solve for their best-ﬁt parameters. These are
+evidence (i.e., the most prominent features in the Sunburst Arc)          either galaxies that lie in close projected proximity to the arcs
+is used to constrain an initial lens model. The model is then             or galaxies that are not expected to follow the same scaling
+used to identify additional lensing constraints and predict the           relations as the red sequence cluster galaxies, e.g., the BCG,
+locations of their counterimages. We use the archival MUSE                and spectroscopically conﬁrmed star-forming galaxies at the
+data to spectroscopically conﬁrm candidates. Following the                cluster redshift.
+recommendations of Johnson & Sharon (2016), we reinitiate                    At the core of the cluster, the UV/optical light of the central
+the modeling process when including new spectroscopically                 galaxy appears to be obscured by dust. We therefore measure
+conﬁrmed constraints, in order not to bias the lens model by its          its position in the reddest band, F160W, which should be the
+own predictions. As new constraints are identiﬁed, we increase            least affected by dust obscuration. We leave all the parameters
+the lens model complexity as needed by either freeing the                 of the BCG free, including its position, with a ±0 5 prior
+parameters of galaxies in close proximity to the giant arc or             around the F160W centroid.
+adding dark matter halos that represent correlated substructure              We include in the lens model a lensing galaxy that is
+(e.g., Mahler et al. 2018).                                               positioned close to the northern part of the northwest arc,
+   This lens model is a signiﬁcant improvement on the model               behind the cluster, at zspec = 0.733 (galaxy G1 in Lopez et al.
+published by Rivera-Thorsen et al. (2019), which only used the            2020). We approximate this interloper as contributing to the
+Sunburst Arc images as constraints and consequently had a                 lensing potential at the same plane by allowing high ﬂexibility
+limited ﬂexibility with which to model the lens plane. Two                in modeling its mass. The degeneracy between the normal-
+important data sets enabled this improvement: multiband HST               ization and the distance term means that the mass of this galaxy
+imaging to identify lensed sources and resolve substructure               cannot be computed reliably with this approximation. Simi-
+within lensed images, and MUSE spectroscopy to derive                     larly, a faint interloper galaxy near image 50.11
+reliable redshifts. The large number of constraints coming from           (zspec = 0.737; see Section 3) is also included in the lens model
+the clumpy, highly magniﬁed Sunburst Arc and the other                    at the cluster redshift. We refer the reader to Raney et al. (2020)
+lensed sources discussed in Section 3 enables construction of a           for a thorough examination of the implications of the modeling
+lens model with high ﬂexibility and complexity, allowing a                approach of projecting the interloper onto the same lens plane
+large number of free parameters. The availability of constraints          of the main lensing structure.
+from secondary systems, i.e., multiply imaged galaxies at
+different source planes, provides important leverage for                                 4.3. Selection of Cluster Galaxies
+constraining the global properties of the cluster mass distribu-
+tion and lowers the uncertainties (Johnson & Sharon 2016).                   The mass associated with cluster-member galaxies contri-
+   The components of the lens model are described in the next             butes to the lensing potential of the cluster. We use Source
+section. The model uses positional constraints from 146 images            Extractor (Bertin & Arnouts 1996) in dual-image mode to
+of 48 identiﬁed clumps within 15 multiply imaged lensed                   generate a photometric catalog of the ﬁeld, with the F814W
+galaxies (19 of the clumps are in the Sunburst Arc), with                 image used as the detection image, and MAG_AUTO measured
+multiplicities ranging from 2 to 12, and has a total of 57 free           in both the F814W and F606W images within the same
+parameters, including 9 free redshifts. The best-ﬁt model rms             aperture. We use a detection threshold of 5σ and a deblending
+scatter between predicted and observed images is 0 85.                    contrast of 0.001. Stars were ﬂagged by their locus in the
+                                                                          MU_MAX versus MAG_AUTO plane and excluded from the
+                                                                          catalog. We select cluster-member galaxies based on their
+                     4.2. Lens Components                                 F814W–F606W color in a color–magnitude diagram, following
+   The lens plane is represented by one cluster-scale and two             Gladders & Yee (2000). These particular bands were selected
+group-scale dark matter halos, supplemented by galaxy-scale               because they span the characteristic 4000 Å break of passive
+halos. We position the cluster-scale halo near the BCG. We free           galaxies at the cluster redshift. The ACS data provide the
+all the parameters of this halo with the exception of the cut             widest ﬁeld of view around the cluster core. Finally, we
+radius, which is ﬁxed at 1500 kpc, as for cluster-scale halos this        visually inspect the galaxy catalog and remove objects that
+radius is far beyond the observed lensing evidence. This mass             were erroneously picked as cluster members, such as diffrac-
+component accounts for the dark matter halo of the cluster, as            tion spikes, faint stars, and parts of over-deblended galaxies.
+well as the hot X-ray gas, which we ﬁnd to be centered within
+1″ of the BCG. We place one group-size halo in the general                                   5. Results and Discussion
+direction of a small group of bright cluster galaxies                                      5.1. Cluster Mass Distribution
+approximately 25″ northeast of the BCG and one group-size
+halo 41″ south of the BCG ﬁxed to the position of a luminous                 Figure 4 shows the projected mass density proﬁle of
+cluster member. All the other parameters of both halos are left           PSZ1 G311.65−18.48, measured as a function of distance
+free, with broad priors. The cluster halos are supplemented with          from the BCG. We ﬁnd that the projected mass density of the
+250 galaxy-scale halos, positioned on the observed locations of           core of PSZ1 G311.65−18.48, enclosed within R = 250 kpc, is
+                                                                                             +0.01
+                                                                          M(<250 kpc) = 2.93- 0.02 ´ 10
+                                                                                                       14
+cluster-member galaxies. The selection procedure of these                                                 Me. For comparison with
+galaxies is explained in the next section. The galaxies are               previous mass estimates, we report the mass within
+                                                                                                             +0.005
+modeled as PIEMDs, with positional parameters ﬁxed at their               40″ = 228.3 kpc, M (<40) = 2.629-  0.015 ´ 10
+                                                                                                                        14 M , and
+                                                                                                                             e
+
+
+                                                                     12
+The Astrophysical Journal, 941:203 (23pp), 2022 December 20                                                                              Sharon et al.
+
+                                                                                  feature of interest. Table 2 lists the magniﬁcation for each of
+                                                                                  the knots in the Sunburst Arc, measured at the center of each
+                                                                                  feature. To estimate the statistical modeling uncertainties, we
+                                                                                  generate ∼100 lens models, each with a set of parameters from
+                                                                                  the Markov Chain Monte Carlo (MCMC) chain, which sample
+                                                                                  a 1σ conﬁdence interval in the parameter space. We then run
+                                                                                  our calculation on the ∼100 magniﬁcation and deﬂection
+                                                                                  outputs.
+                                                                                     As a test of the lens model, we compare the model-predicted
+                                                                                  magniﬁcations to the observed ﬂux of the LCE clump images.
+                                                                                  The absolute magniﬁcation prediction can be tested only when
+                                                                                  the absolute luminosity of the source can be estimated (e.g., for
+                                                                                  a standard candle; Rodney et al. 2015). Since the intrinsic
+                                                                                  ﬂuxes of the sources in this ﬁeld are unknown, we evaluate
+                                                                                  predicted relative magniﬁcations against relative ﬂuxes. We
+                                                                                  choose to run this analysis on the images of the LCE clump,
+                                                                                  which is the brightest lensed feature with the highest
+                                                                                  multiplicity in the ﬁeld. Fluxes are measured within a 0 12
+                                                                                  aperture in the F555W image, after matching it to the point-
+Figure 4. The cumulative projected mass density proﬁle at the core of the         spread function (PSF) of the F160W ﬁlter (a full description of
+lensing cluster PSZ1 G311.65−18.48. The functional 1σ uncertainty (statis-        the aperture photometry measurement will be presented in J. K.
+tical) is shown in the bottom panel.                                              Kim et al. 2022, in preparation). We divide the ﬂux of each
+                                                                                  image of the LCE by that of image 1.8. Since the magniﬁcation
+                                                   +0.003
+the mass within 200 kpc, M (<200 kpc) = 2.238-       0.007 ´ 10
+                                                               14                 uncertainties of the different images are likely correlated, we
+Me, which is similar to what was estimated by Pignataro et al.                    calculate the magniﬁcation relative to that of image 1.8 in each
+(2021) and Diego et al. (2022). It is unclear whether there is a                  of the ∼100 models sampled from the MCMC and combine
+discrepancy since no uncertainties were provided in those                         these measurements to estimate the uncertainty on the relative
+publications. Interestingly, we ﬁnd that the mass within the                      magniﬁcation. The formal uncertainty of the ﬂux measurement
+                                                   +0.005
+radius of the giant arc, M (<169 kpc) = 1.809-       0.002 ´ 10
+                                                               14                 is negligible compared to the lensing uncertainty, even in cases
+Me, is in perfect agreement with what was estimated by Dahle                      where the light from the source is somewhat obscured by
+et     al.    (2016),     ME = (1.8 ± 0.6) × 1014      Me     for                 foreground galaxies. The comparison is shown in Figure 7.
+rE = 169 ± 25 kpc. Their mass estimate is based on the                            Most of the images have a relative magniﬁcation within a factor
+relationship between the Einstein radius and the projected                        of 2 from the relative ﬂuxes, within errors. The relative
+mass enclosed within it, M (<rE ) = prE2 Scrit , for a circularly                 magniﬁcations of images 4, 5, 6, and 7 are lower than expected.
+symmetric lens. Such a close agreement between the detailed                       This could be due to their proximity to foreground galaxies
+lens model measurement and the mass enclosed by the Einstein                      whose local contribution to the lensing potential is not
+radius method indicates that the circular symmetry assumption                     adequately reproduced by the modeling process. The results
+is valid for this cluster (Remolina González et al. 2021).                        of this exercise emphasize that there are systematic uncertain-
+   The main cluster halo coincides with the BCG and the X-ray                     ties that are unaccounted for in the lensing analysis, as was
+gas centroid to within 1″, which is consistent with                               repeatedly highlighted in the literature (e.g., Rodney et al.
+PSZ1 G311.65−18.48 being a relaxed cluster.                                       2015; Zitrin et al. 2015; Johnson & Sharon 2016; Priewe et al.
+                                                                                  2017; Meneghetti et al. 2017; Kelly et al. 2018; Mahler et al.
+                     5.2. Lensing Magniﬁcation                                    2018; Remolina González et al. 2018). Based on this
+                                                                                  evaluation, we conclude that our statistical magniﬁcation
+   Figure 5 maps the absolute value of the lensing magniﬁca-                      uncertainties likely underestimate the full uncertainty by a
+tion and its statistical uncertainty for a source at z = 2.3703,                  factor of 4–5. It also indicates that the strong-lens model can be
+with a zoom-in on the north arc shown in Figure 6. Consistent                     improved on by tapping into relative magniﬁcation constrain-
+with the visual interpretation of the lensing evidence, we ﬁnd                    ing power, which can provide leverage over the second
+that the north and northwest images of the Sunburst Arc form                      derivative of the lensing potential. For example, ﬂux anomalies
+in regions of highest magniﬁcation; the west and southeast arcs                   in lensed quasars were found to be indicative of substructure in
+have the lowest magniﬁcation.                                                     the lens plane (Bradač et al. 2002).
+   Estimated over the entire arc, the average magniﬁcations of
+                                                       +2.4
+the west and southeast arcs are ám Wñ = 13.5-           1.0 and                                          5.3. Time Domain
+              +1.0
+ámSEñ = 13.1-  0.4 , respectively. Since these are the only two                     The arrival time surface, also known in the literature as the
+complete images of the source galaxy, a magniﬁcation
+                                                                                  Fermat potential, is described by the following equation (e.g.,
+measurement of the entire galaxy is only possible for these
+                                                                                  Schneider 1985):
+two arcs. The average magniﬁcations of the west and southeast
+arcs are computed by deﬁning an aperture in the image plane,                                       1 + z l Dl Ds ⎡ 1               
+ray-tracing the aperture to the source plane, and dividing the                          t (q , b ) =                  ( q - b )2 - y ( q )⎤ ,    (1 )
+image plane area by the source plane area of the ray-traced                                            c      Dls ⎣ 2                     ⎦
+aperture. For small enough regions that are far from the critical                                                                            
+curves, the average magniﬁcation is not different from the                        where b is the position of the source in the source plane; q is a
+value given by the magniﬁcation map at the center of the                          coordinate in the image plane; zl is the lens redshift; Dl and Ds
+
+                                                                             13
+The Astrophysical Journal, 941:203 (23pp), 2022 December 20                                                                                            Sharon et al.
+
+
+
+
+Figure 5. The magniﬁcation for a source redshift z = 2.3703 is shown in contours. The fractional uncertainty is represented by the shaded color map. The uncertainty
+σ is estimated from steps in the MCMC chain, approximately indicating where 68% of the results fall within μ ± σμ. The positions of the 12 images of the LyC knot
+are marked with plus signs. The image coordinates are measured from R.A. = 237.5294767, decl. = −78.19167258. See Figure 6 for a zoom-in on the north arc.
+
+are the angular diameter distances from the observer to the lens                     months to a year, a result that is qualitatively quite robust to the
+and to the source, respectively; Dls is the angular diameter                         details of the lens model. This relatively short time delay
+distance from the lens to the source; and ψ is the lensing                           implies that counterimages of transient events in the Sunburst
+potential. Multiple images of a strongly lensed source form in                       Arc, such as supernova explosions, could potentially be
+stationary points in this surface, i.e., minima, maxima, and                         observed, and their time delays measured, within the expected
+saddle points. The time delay between any two images can be                          lifetime of current observational facilities. We discuss this point
+                                                                                     further in the next section.
+calculated  as      the
+                         difference      in    arrival
+                                                            time,
+Dt = t (q1, b ) - t (q2, b ). The source location b is formally
+the same for all images of the same source; however, since lens                          5.3.1. The Discrepant Clump: Variability or Something Else?
+models have ﬁnite accuracy, the calculated source positions of                          As noted in Section 3, a bright point source appears in the
+the different images are expected to have a small scatter in the                     northwest arc, with similar brightness but different spectral
+source plane. It is therefore common to use the average or                           energy distribution (SED) from the LCE images. A counter-
+magniﬁcation-weighted average of the N                                               image of this point source is not apparent in any of the other
+                                         model-derived source                       arcs. Vanzella et al. (2020b) interpreted the occurrence of this
+positions of the N multiple images as b .
+   Figure 8 shows the Fermat potential result from the best-ﬁt                       source to be due to time variability and postulate that this
+                                                                                     source is transient in nature. They estimate its magniﬁcation at
+lens model. The relative arrival time is calculated with respect
+                                                                                     20  μ  100, based on lensing symmetry arguments (Vanzella
+to image 1.1 of the LCE. We ﬁnd that a packet of light
+                                                                                     et al. 2020a). Multiband HST imaging of PSZ1 G311.65
+emerging from the galaxy in the source plane arrives at the                          −18.48 spans more than 2 yr, from 2018 February 21 to 2020
+southeast arc ﬁrst (image 12), preceding the other arc positions                     December 30, and while not designed as a cadenced survey, the
+by 16–17 yr. Next to appear are the images of the north arc                          ﬁeld was imaged with a wide-throughput ﬁlter between two
+(1–6), followed by the northwest arc (7–10) and the west arc.                        and four times each year, with the longest gap of approximately
+Finally, the light from the source plane is predicted to arrive at                   1 yr between 2019 June 30 and 2020 July 14. During this time,
+the location of the (unobserved) demagniﬁed central image                            the discrepant clump does not show signiﬁcant variability. A
+some 26 yr after the north arc, due to gravitational time delay                      quantitative epoch-to-epoch comparison is challenging, since
+by the deep potential well of the cluster. Interestingly, we ﬁnd                     different ﬁlters were used in different epochs, with the
+that images 1–11 of the source occur within the span of several                      exception of F140W, which was repeated four times (2019
+
+                                                                                14
+The Astrophysical Journal, 941:203 (23pp), 2022 December 20                                                                                                Sharon et al.
+
+
+
+
+                           Figure 6. Same as Figure 5, zoomed in on the north arc (images 1–6 of the source). North is up, east is left.
+
+
+
+
+Figure 7. Model-predicted magniﬁcation of the LCE images divided by the                 Figure 8. The arrival time delay, τ, in observed days (Fermat potential) relative
+predicted magniﬁcation of image 1.8, compared to the relative ﬂuxes, measured           to image 1 of the LCE knot. Images of the same source position form at
+within a 0 12 aperture in the F555W image. The solid black line indicates the           stationary points in the Fermat potential (minima, maxima, and saddle points).
+1:1 ratio, and gray lines show a factor of 2 deviation. The magniﬁcations of            The southeast arc image forms ﬁrst (image 12), followed by the north arc
+images 1.9 and 1.10 are measured at their observed positions; they should be            (images 1–6), the northwest arc (images 7–10), and the west arc (image 11).
+used with caution, as the lens model does not correctly recover these positions.
+                                                                                        discrepant clump, its counterimages should be detectable in
+May and 2020 August, November, and December). Never-                                    close proximity to images 4.3 and 4.4 in the north arc. In
+theless, the brightness of the discrepant clump remains                                 Figure 9 we show the location of the discrepant arc (top row)
+qualitatively similar to that of the LCE for over 2 yr and does                         and the location where a counterimage should appear (bottom
+not fade away. Moreover, Vanzella et al. (2020b) note that the                          row) in the reddest available HST broadband ﬁlter in each of
+distinct spectral features of this source are observed in MUSE                          eight epochs. The discrepant source is clearly detected in each
+data as early as 2016. If indeed this discrepant emission is                            epoch in the northeast arc, with observed brightness compar-
+transient in nature, its light curve appears to be ﬂat on a several-                    able to that of the LCE clump. A dashed box marks a broad
+year observed timescale and an intrinsic timescale of more than                         region around the expected location of the counterimage, near
+a year (cosmological expansion stretches the rest-frame time by                         clump 4. If the transient hypothesis were correct, a counter-
+a factor of 1 + z = 3.37), signiﬁcantly longer than most                                image of the discrepant clump should be visible in these
+supernovae.                                                                             regions with brightness similar to that of the LCE. However,
+   Our lensing analysis points to a short time delay between the                        throughout the observing window, no such sources appear in or
+north and northwest arcs, meaning that a transient event in any                         disappear from these regions. The lensing analysis indicates
+of these arcs should appear in the other arcs within a few                              that images 7 and 11 of the source, the northern tip of the
+months; time variability alone cannot explain why multiple                              northwest arc and the west arc, respectively, lag less than a year
+images of the discrepant source are not detected. Unless this                           behind image 8 and the discrepant clump. Although these
+image experiences extreme magniﬁcation at the position of the                           images are less magniﬁed than image 8, a clump with
+
+                                                                                   15
+The Astrophysical Journal, 941:203 (23pp), 2022 December 20                                                                                                 Sharon et al.
+
+
+
+
+Figure 9. Time series imaging to test for variability. The top row shows the region around image 8 of the source and the discrepant point source (green arrow) that was
+interpreted as transient by Vanzella et al. (2020b). The bottom row shows the region in images 3 and 4 in the north arc where counterimages of the discrepant source
+are predicted to appear within a window of a few months prior to image 8; the discrepant source would be expected to be comparable in brightness to the LCE clump.
+The brightness of the discrepant source is stable throughout the observing window of 2 yr, and we do not observe variability in the north arc, in particular, there are no
+new or fading sources as bright as the LCE. Cutout frames are 4 5 × 6 1, and north is up.
+
+
+comparable brightness to the LCE clump would have been                                              5.4. Sunburst Galaxy Source Plane Analysis
+detectable. We observe no counterimage of the discrepant                                   The overall effect of gravitational lensing magniﬁcation is in
+clump in either location.                                                               amplifying the solid angle of a source while conserving its
+   To summarize, the combined model-predicted time delays                               surface brightness, thus increasing the amount of light that
+and the observational data tell us that the fact that the                               reaches the observer from the source by a factor of μ. The
+discrepant clump appears only in the northwest arc must be                              angular ampliﬁcation is not spatially uniform; it is a
+lensing related and not related to the variability of the clump.                        combination of an isotropic magniﬁcation (convergence, κ)
+Had it been only due to variability, we should have observed its                        and distortion (shear, γ). κ and γ are combinations of second
+counterimage.                                                                           partial derivative components of the lensing potential and thus
+   The only explanation that remains for why the discrepant                             are a function of the image plane position (Narayan &
+clump appears in the northwest arc but is absent from all other                         Bartelmann 1996).
+counterimages of the source galaxy is an extreme magniﬁcation                              The extreme tangential shear that makes the images of the
+at this image plane location. Such extreme magniﬁcation can                             Sunburst Arc acts to resolve the source galaxy in multiple
+occur if the source of emission is intrinsically small and located                      directions; in each arc, the shear acts most strongly in a
+extremely close to the source plane caustic. For a point-like                           preferential primary orientation. We illustrate this behavior in
+source, source plane caustics formally map to loci of inﬁnite                           Figure 10, showing a mock source and its resulting lensed
+magniﬁcation. Such a lensing geometry was invoked in order                              images in four regions of the image plane: image 2 in the north
+to explain candidate extremely magniﬁed single stars owing to                           arc, image 8 in the northwest arc, image 11 in the west arc, and
+caustic crossing (Kelly et al. 2018) or proximity (Welch et al.                         image 12 in the southeast arc. While the source does appear to
+2022). The average tangential magniﬁcation of image 8 is                                be magniﬁed in the radial direction, most of its magniﬁcation is
+                                                                                        in the tangential direction. The mock source is designed to
+higher than the other arcs, evident by its overall higher
+                                                                                        highlight the three primary source plane angles in which the
+distortion; for example, compare the image plane distance
+                                                                                        shear acts in this line of sight, with parallel lines plotted at
+between the three brightest clumps, 1, 2, and 3, in each of the                         −15°, 90°, and 130° (measured counterclockwise from north),
+images. In image 8, a grazing critical curve could be resolving                         perpendicular to the primary shear directions, 75°, 0°, and 40°,
+clump 4 into two emission knots plus the discrepant clump, the                          respectively. By lensing the mock source through the lens
+latter being further magniﬁed by its proximity to the critical                          model, we ﬁnd that the shear near the west arc (image 11) acts
+curve.                                                                                  to resolve the source in the north–south direction, separating
+   An interesting solution was recently proposed by Diego et al.                        the red lines in the mock source, which are angled at 90°. Near
+(2022); they explore the possibility that the critical curve near                       the southeast arc (image 12), the shear resolves the source in
+image 8 is perturbed by a small mass, ∼108 Me, with no                                  the northeast−southwest direction, increasing the separation
+observed counterpart. They show that such a perturber could                             between the color-sequence lines that are plotted at a 130°
+place the source of the discrepant clump right on top of a                              angle. It acts in a similar direction near image 8. Finally, near
+caustic, thus magnifying it extremely, and cause image 4.8 to                           image 2 in the north arc, the resolution is almost perpendicular
+split into the two observed clumps. A similar approach was also                         to that of image 11, acting to separate the blue parallel lines that
+employed by Mahler et al. (2023), where supermassive black                              are plotted at −15°.
+holes were shown to be a plausible reason for lensing                                      The multidirectional gravitational lensing distortion can
+anomalies. Upcoming JWST imaging might be able to detect                                therefore enable a tomographic reconstruction of the source
+a faint perturber in this location.                                                     plane, facilitating a high-resolution analysis, by carefully
+                                                                                        combining information from differently distorted images.
+
+                                                                                   16
+The Astrophysical Journal, 941:203 (23pp), 2022 December 20                                                                                                    Sharon et al.
+
+
+
+
+Figure 10. An illustration of the different directions in which the source is resolved. The lower right inset in each panel shows a zoomed-in view of a mock source,
+generated to show three main angles. Red lines mark the north–south direction (90° counterclockwise), blue lines and background color gradient are plotted at −15°,
+and the color-sequence lines are at 130°. The lower left inset shows the mock source at its actual source size. The source is ray-traced through the best-ﬁt model to
+produce its images, shown in each main panel. Also overplotted as a white box is the location of clump 1 (i.e., the LyC emitter; LCE), and in black the critical curves
+(in the main panels) and the relevant source plane caustics (in the zoom-in panels). The black ellipse illustrates the so-called lensing PSF, which depends on the image
+location. It is generated by lensing a circle from the image plane to the source plane. The direction of the semiminor axis of the ellipse is the direction of highest
+magniﬁcation. One can see that at the location of image 2 (as well as the adjacent images, 1 and 3) the source is stretched in the direction that resolves the blue lines, in
+images 8 and 12 the highest resolution is in the color-sequence line direction, whereas in image 11 the red lines are resolved. Images 2 and 8 are more highly distorted,
+as can also be seen from the shape of the lensing PSF ellipse. Finally, by comparing the background color gradient of the source and image of each panel, one can see
+that only a portion of the source reaches the image plane in images 2 and 8.
+
+Structures that may appear unresolved in one image of the                                    The closest clump to the LCE, clump 5, is resolved from the
+source may be resolved in a different image. Understanding the                            LCE mainly in the north arc; other arcs lack the resolving
+directional distortion also enabled an informed selection of our                          power in the direction connecting clumps 1–5. As Figure 10
+upcoming JWST NIRSpec IFU pointings, to resolve the same                                  showcases, the eastern parts of the source are not imaged in the
+source component in different directions (JWST-GO program                                 north arc. Clumps 1, 2, and 5–8 appear in all the images of the
+02555, PI: Rivera-Thorsen).                                                               source except images 5 and 6. Images 3 and 4 contain more of
+   A comprehensive computed tomography (CT) reconstruction                                the source galaxy, including clumps 1–12, but lack the clumps
+and forward-modeling of the source plane of the Sunburst Arc                              at the east edge, which are seen in images 7 and 8. Images 5
+is reserved for future work. In this section, we use the lens                             and 6 include only clump 1: image 5 because it is only isolating
+model and our understanding of the multidirectional lensing                               clump 1 within its caustics (red caustics in Figure 12); image 6
+distortion of the source to qualitatively construct the galaxy in                         would have included any emission west of clump 1 (i.e., west
+the source plane by hand. Figure 11 shows an “artist’s                                    of the orange caustic in Figure 12), if there were any. It does
+impression” of the source, as an approximate visualization of                             show an image of clump 101, which may be related to the same
+the Sunburst Arc galaxy in the source plane. The conceptual                               galaxy. From color considerations and the source plane
+reconstruction was produced by ray-tracing the position of each                           analysis, we identify that the nonleaking clump in images 9
+of the emission clumps from the image plane to the source                                 and 10 is clump 4. A lensing caustic can separate clumps 1 and
+                                                                                          4 from the rest of the galaxy, thus creating their multiple
+plane through the lens model. The approximate location of the
+                                                                                          images at these locations, as can be seen in Figure 12. We
+features was determined by taking into account the ray-tracing
+                                                                                          identify an apparent double image of clump 4 in image 8,
+of the different images of the Sunburst Arc, taking advantage of
+                                                                                          which, along with the discrepant clump (see Section 5.3.1), can
+the high magniﬁcation of some of the images from the northern                             be a result of a more complex caustic or a more complex source
+arcs, as well as the less magniﬁed but more complete images in                            that is extremely magniﬁed and tangentially resolved into
+the west and southeast. We then populate these approximate                                several components only in this location. Finally, all the
+locations with circular artiﬁcial sources with colors and surface                         clumps appear in images 11 and 12, which are complete images
+brightness approximately matching those of the composite                                  of the galaxy. However, due to the lower magniﬁcation, only
+color view in Figure 2. The source image of the extended                                  the brightest clumps are readily identiﬁed. From their source
+galaxy (source 50) and connecting “bridge” to the north is a                              plane positions, it is possible that the clumps we label 16 and
+direct ray-tracing of the image plane color rendition.                                    17 are the same as clump 11 or clump 12 but are less resolved,
+   We identify 19 discrete clumps in the main source galaxy.                              or that they are outside of the caustic of images 3 and 4.
+Clump 1 (the LCE) is positioned in the source plane such that it                             For studies of the source properties of the Sunburst Arc
+is multiply imaged 12 times (a 13th undetected image is                                   galaxy, and in particular the physical properties of its LyC
+predicted by the lens model to be a central demagniﬁed image).                            leaking versus nonleaking regions, it is informative to know the
+The clumps occupy a region sized ∼1 × 2 kpc in the source                                 source plane separation between each clump and the LCE. In
+plane, with the LCE clump positioned at one edge of the                                   Table 4 we summarize this information. For each clump, we
+galaxy.                                                                                   measure the source plane distance between the center of the
+
+                                                                                    17
+The Astrophysical Journal, 941:203 (23pp), 2022 December 20                                                                                             Sharon et al.
+
+
+
+
+Figure 11. An artist’s impression approximate view of the source galaxy of the Sunburst Arc. The ﬁgure was created by positioning circular light sources in source
+plane locations as determined by ray-tracing the image plane through the lens model. The color of each light source matches the composite color view in Figure 2. The
+emission shown north of the clumpy source is depicted by tracing the rendered image of the southeast arc to its model-predicted source plane position. This includes
+the image of source 50 and a “bridge” between the two galaxies, containing clumps 18 and 19. In the right panel, we label each light source to indicate which image
+plane emission clump it is lensed to. This ﬁgure is shown as an approximate visualization and is not a rigorous ﬂux-calibrated source reconstruction.
+
+
+
+clump and the LCE and note in which of the 12 Sunburst Arc                                                         5.4.1. Clump Sizes
+images it appears. The lower and upper limits on the distance to                         The extreme shear and anisotropic magniﬁcation, combined
+the LCE take into account the statistical lens modeling                               with the telescope PSF, complicates a traditional ray-tracing-
+uncertainties from the MCMC, as well as the variations of                             based source reconstruction of barely resolved star-forming
+source plane mapping from different images. The quoted                                regions. Simply ray-tracing an unresolved lensed image to the
+distance is the average of the distances calculated from the n                        source plane can only place upper limits on the clump size, as it
+different      images           of    the      same      clump,     i.e.,             will return the telescope PSF corrected for the linear
+ád ñj = (1 n ) å in= 1 dj,1 (i ), where dj,1(i) is the distance between               magniﬁcation. A properly unmagniﬁed, undistorted source
+clump j and clump 1 in the source plane projection of image i.                        plane can be recovered by using forward-modeling techniques
+The projections from image 7 were excluded from this                                  (e.g., Johnson et al. 2017), where a parameterized model of the
+calculation owing to the effect of modeling the foreground                            source is constructed and ray-traced through the lens equation
+galaxy in this region on the lensing magniﬁcation. Including                          to the observer, and the raw lensed image is convolved with the
+the source predictions from image 7 would increase the upper                          telescope PSF and perturbed by noise and other instrument
+uncertainty by a factor of ∼2.                                                        effects. The resulting image is then compared to the observed
+                                                                                      data iteratively to solve for the set of source plane model
+                                                                                      parameters that best minimize the scatter between the model
+                                                                                      and the data. These and other techniques have been
+
+                                                                                18
+The Astrophysical Journal, 941:203 (23pp), 2022 December 20                                                                                              Sharon et al.
+
+
+
+
+Figure 12. Left: the lensing potential of PSZ1 G311.65−18.48 forms a complex set of caustics in the source plane. Shown here are the caustics, which are the
+projection to the source plane of regions of highest magniﬁcation in the image plane, for a source at z = 2.3703. The location of the Sunburst Arc source galaxy is
+shown as a green oval. Right: zoom-in on the source galaxy. The background is the same as the right panel of Figure 11, the labeled artist’s impression of the clumpy
+source galaxy. Onto it, we overlay schematically our best understanding of where the source plane caustics bisect the galaxy and their positions relative to the
+identiﬁed clumps. In the image plane, each of the 12 images of the Sunburst Arc is bound by one or two critical lines, which map to the shown caustic lines in the
+source plane; clumps that are outside of the boundary caustics of a particular image would not appear in that image location. This ﬁgure is shown as an approximate
+visualization. The typical curvature of the caustics is not depicted in this ﬁgure. A more complex critical curve that winds around images 9 and 10 of sources 1 and 4
+would produce another caustic, south of the purple line.
+
+demonstrated to resolve structures down to tens of parsecs,                              Our upper limits on star-forming clump sizes are signiﬁ-
+especially when the magniﬁcation is particularly high (e.g.,                          cantly smaller than those reported for unlensed galaxies at
+Zitrin et al. 2011; Johnson et al. 2017; Vanzella et al. 2017;                        cosmic noon, which is consistent with expectations from
+Welch et al. 2022). A full forward-modeling of the Sunburst                           numerical simulations. For example, Meng & Gnedin (2020)
+Arc is saved for a future publication. We can, however, deduce                        conclude that clump sizes measured in ﬁeld galaxies are
+an upper limit for clump sizes from their apparent circular                           overestimated by a factor of 2−3 owing to a combination of the
+morphology and size in the image plane.                                               insufﬁcient resolution of the telescope (usually HST) and
+   The different directions in which the source is distorted in                       projection effects. They show that without the beneﬁt of high
+the different images of the same part of the Sunburst Arc source                      lensing magniﬁcation, the observed clumps are likely an
+galaxy allow not only for a tomographic analysis of the galaxy                        aggregate of several smaller clumps.
+morphology but also for a tomographic measurement of clump                               Since the LCE clump is of high interest in the literature, we
+sizes, i.e., to constrain the spatial extent of individual star-                      plot the delensed PSF for it separately, in Figure 14, and
+forming regions in multiple directions. We show this for each                         include lines from the 100 models that sample the parameter
+of the 19 clumps we identify, in Figure 13. For each of the                           space. The projection from each image of the clump is shown
+                                                                                      in a different shade of gray; image 1.5 is not shown because the
+images of each clump, we place a circle with R = 0 08 in the
+                                                                                      high magniﬁcation uncertainty due to a foreground galaxy
+image plane, representing the HST/ACS PSF. We ray-trace the
+                                                                                      prevents it from providing useful constraints. The clump, which
+PSF circle to the z = 2.3703 source plane using the lens                              is unresolved in our HST imaging data, is constrained to r  20
+equation and the lens model outputs. For clarity, we only plot                        pc in its short axis and r  50 pc in its long axis, leading to an
+the results from the best-ﬁt model. With the exception of image                       effective radius of reff  20 ´ 50 = 32 pc. The estimate of
+1.5 of the LCE, plotting the statistical uncertainties would have                     Vanzella et al. (2020a) of re  20 in the tangentially resolved
+resulted in only slight broadening of the shown ellipse lines.                        direction, which they obtained by measuring the image plane
+We ﬁnd that typically the HST PSF circles delens into high-                           size and assuming μ > 25, is consistent with our lens-model-
+eccentricity ellipses in the source plane, with semiminor axes of                     based upper limit.
+order <50 pc and semimajor axes of order 500 pc. This means
+that to be unresolved or barely resolved in the image plane, a
+clump must be smaller than 50 pc in the source plane. Regions                                5.4.2. Evidence for Galaxy Interaction in the Plane of the
+with larger spatial extent in the source plane should appear                                                       Sunburst Arc
+extended and elongated in the image plane, as they span several                          A likely companion to the Sunburst Arc, source 50 appears
+source plane resolution elements. We note that the distinct star-                     at the same redshift and ∼6 kpc in projection north of the LCE
+forming clumps observed in the Sunburst Arc are largely barely                        clump. In velocity space, source 50 and the Sunburst Arc
+resolved.                                                                             galaxy are separated by 50 ± 28 km s−1, indicating that they
+
+                                                                                 19
+The Astrophysical Journal, 941:203 (23pp), 2022 December 20                                                                               Sharon et al.
+
+                                 Table 4                                            properties through spatially resolved velocity structure (e.g.,
+           Source Plane Distances between Clumps and the LCE                        Wuyts et al. 2014). The anticipated six-ﬁlter, 1.4 hr JWST
+ID         Distance from                 Images                    Notes
+                                                                                    NIRCam imaging, which is planned for Cycle 1 (JWST-GO
+           Clump 1 (kpc)                                                            program 02555, PI: Rivera-Thorsen), will provide depth and
+                                                                                    high resolution and, combined with the existing multiband HST
+1               L               1,2,3,4,5,6,7,8,9,10,11,12          LCE
+                 +0.87                                                              data, will enable spatially resolved SED ﬁtting of the two
+2            0.60- 0.32             1,2,3,4,7,8,11,12
+                 +1.12                                                              galaxies and the bridging emission in rest-frame UV through
+3            0.91-                    3,4,7,8,11,12
+                   0.39
+                 +0.72                                                              near-IR (0.08–1.3 μm). Such SED analysis will map these
+4            1.05- 0.16             3,4,7,8,9,10,11,12
+                 +0.25                                                              galaxies’ metallicity, dust, star formation rate, and star
+5            0.11- 0.06                   1,2,3,4
+                 +0.21                                                              formation history and determine whether a recent burst of star
+6            1.08- 0.16                     1,2
+                 +0.82                                                              formation occurred, as might be triggered by an interaction. It
+7            1.77- 0.42             1,2,3,4,7,8,11,12
+                 +0.83                                                              may provide clues to whether galaxy interactions play a role in
+8            0.83- 0.31             1,2,3,4,7,8,11,12
+                 +0.81
+                                                                                    LyC escape from star-forming galaxies such as the Sun-
+9            0.91- 0.36                    3,4,8
+                 +1.00
+                                                                                    burst Arc.
+10           1.21-0.42                    3,4,7,8
+                 +0.97
+11           1.76- 0.42                     3,4
+                 +0.98
+12           1.70- 0.44                     3,4                                                              6. Summary
+                 +0.24
+13           1.40- 0.09                     7,8
+14               +0.25
+             1.45- 0.09                     7,8                                        We present new multiband HST imaging data and a lensing
+15               +0.25
+             1.44- 0.09                     7,8                                     analysis of PSZ1 G311.65−18.48, a z = 0.443 cluster lensing
+16               +0.18
+             1.20- 0.32                   11,12                                     the Sunburst Arc galaxy. In addition to the Sunburst Arc, we
+17               +0.24
+             1.74- 0.44                   11,12                                     identify multiple images of 14 strongly lensed galaxies and
+18               +0.41
+             3.70-                        11,12                  “Bridge”           measure spectroscopic redshifts of 4 of them from archival
+                   0.74
+19               +0.38
+             3.73-0.74                    11,12                  “Bridge”           MUSE on the VLT. The main arc in this line of sight, the
+51               +0.84
+             5.86-                        11,12                 Companion           Sunburst Arc, is a lensed image of a star-forming, LyC leaking
+                   1.21
+52               +0.82
+             5.61-                        11,12                 Companion           galaxy at z = 2.3703, which is lensed into 10 partial images and
+                   1.18
+53               +1.66
+             6.37-                     North of 12              Companion           2 complete images. In particular, we conﬁrm the identiﬁcation
+                                                                                    of 12 images of the LyC-emitting clump. We model the ﬁeld
+                   1.12
+                 +0.46
+101          2.16-                     1,6,8,11,12
+                                                                                    using the public software Lenstool (Jullo et al. 2007), a
+                   0.32
+
+
+Note. Average projected distance in kiloparsecs between each of the non-LyC
+                                                                                    parametric algorithm that uses MCMC sampling of the
+leaking clumps and the LCE (clump 1) in the source plane of the Sunburst Arc        parameter space. The lensing analysis provides a measurement
+galaxy. The quoted distance is measured as the average of the source plane          of the mass distribution of the foreground lensing cluster and
+distance predictions from different multiple images. Uncertainties take into        the magniﬁcation and distortion solutions for analyses of the
+account both the image-to-image variation and the strong-lens modeling              lensed sources behind it. Our ﬁndings are summarized as
+uncertainty.                                                                        follows.
+                                                                                      1. The projected mass density of the lens cluster
+are likely interacting. Unlike the Sunburst Arc, this galaxy does                        PSZ1 G311.65−18.48, enclosed within R = 250 kpc, is
+                                                                                                                +0.01
+                                                                                         M( < 250 kpc) = 2.93-   0.02 ´ 10     Me. We ﬁnd this
+                                                                                                                          14
+not exhibit strong emission lines indicative of ongoing star
+formation; while a clear color gradient within this galaxy is                            detailed lens-model-based measurement to be in good
+apparent, overall it is redder and signiﬁcantly less clumpy than                         agreement with previous estimates and, in particular, with
+the Sunburst Arc.                                                                        the mass inferred from the arc radius; this agreement
+   As can be seen in the source plane projection in Figure 11,                           implies a symmetric mass distribution. The Chandra
+the Sunburst Arc and its neighbor galaxy appear to be                                    X-ray data indicate that the cluster is relaxed and has a
+connected with a “bridge” of faint and largely diffuse emission.                         cool core, consistent with the star formation activity
+This emission could be a tidal tail resulting from a recent                              identiﬁed in the BCG from imaging and spectroscopy.
+interaction between these two galaxies. Another clump, labeled                        2. We measure the average magniﬁcation affecting the
+101 in our ﬁgures and tables, is projected ∼2 kpc from the LCE                           complete images of the Sunburst Arc galaxy,
+                                                                                                       +2.4                   +1.0
+but in a direction perpendicular to the line connecting the                              ám Wñ = 13.5-  1.0 and ámSEñ = 13.1-0.4 , for the west and
+Sunburst Arc and galaxy 50. This clump has no direct                                     southeast arcs, respectively. Uncertainties are measured
+spectroscopic redshift measurement, but based on the lensing                             from ∼100 models, representing a 1σ sampling of the
+analysis, its redshift is consistent with that of the Sunburst Arc.                      parameter space.
+It is therefore likely another correlated structure.                                  3. The source galaxy of the Sunburst Arc is clumpy, with 19
+   This likely interaction between the Sunburst Arc and nearby                           emission clumps identiﬁed and mapped between its
+galaxies could explain its clumpy nature. Analyses of zoom-in                            different images. The magniﬁcations acting upon indivi-
+hydro-cosmological simulations indicate that minor galactic                              dual clumps within the Sunburst Arc range from a factor
+mergers can induce formation of clumps and that massive                                  of a few to μ > 100 in regions close to the critical curve.
+clumps observed at large radii were likely formed ex situ and                            We provide the lensing magniﬁcations and statistical
+merged (e.g., Mandelker et al. 2014, 2017; Meng &                                        uncertainties of the images of the identiﬁed emission
+Gnedin 2020).                                                                            clumps and the average distance between each clump and
+   Other than the MUSE data, the images of source 50 were not                            the LCE clump.
+targeted for detailed spectroscopy (e.g., by our MagE or FIRE                         4. A discrepant unresolved clump in the northwest arc of the
+programs). Deep, high-resolution IFU observations targeting                              Sunburst Arc shows signiﬁcantly different colors and
+both galaxies could inform an investigation of their interaction                         spectral features from other similarly bright point sources.
+
+                                                                               20
+The Astrophysical Journal, 941:203 (23pp), 2022 December 20                                                                                          Sharon et al.
+
+
+
+
+Figure 13. Demonstration of the tomographic power of the PSZ1 G311.65−18.48 lens, and an upper limit on clump sizes from the HST/ACS PSF. We show the
+source plane ray-traced HST/ACS F814W PSF at the image plane location of each of the images of the 19 clumps we identify in the Sunburst Arc. The colors are the
+same as in Figure 2. The background grid lines are separated by 0.2 kpc. The blue circle has a radius of 0.05 kpc. The unlensed HST PSF, 0 08 = 0.69 kpc, is shown
+on the left for comparison.
+
+
+                                                                                             counterimage of the discrepant clump would have been
+                                                                                             detectable in our data had it been a transient event.
+                                                                                             However, such a source does not appear or disappear in
+                                                                                             any of the images of the Sunburst Arc. Our analysis
+                                                                                             instead conﬁrms the conclusion of Diego et al. (2022),
+                                                                                             that the occurrence of this clump (dubbed “Godzilla” in
+                                                                                             their publication) is due to extreme magniﬁcation at this
+                                                                                             location, not due to time variability.
+                                                                                          5. We show that the lensing potential of PSZ1 G311.65
+                                                                                             −18.48 results in multidirection distortion of the source
+                                                                                             galaxy, providing tomographic resolving power to
+                                                                                             constrain the morphology of the source galaxy of the
+                                                                                             Sunburst Arc. We show that the source is probed in three
+                                                                                             distinct axes. While a full CT and forward-modeling
+                                                                                             source reconstruction analyses are left for future work, we
+                                                                                             use the lensing information to generate a qualitative
+                                                                                             reconstruction of the source galaxy by hand. We show an
+                                                                                             “artist’s impression” realization of the source galaxy,
+                                                                                             with the emission clumps painted onto the source plane
+                                                                                             with similar colors to the observed image and at
+                                                                                             approximate positions as determined by projecting the
+                                                                                             12 images to the source plane. We show conceptually
+Figure 14. An upper limit on the source plane size of the LCE clump, from the                how the source galaxy is bisected by the source plane
+HST/ACS PSF and the lensing magniﬁcation. The HST/ACS F814W PSF is                           caustics, thus forming the 12 observed images.
+ray-traced from the image plane location of each of the images of the LCE to
+the source plane. The background grid lines are separated by 0.02 kpc. The                6. Based on the projected source plane size of the HST PSF,
+gray lines show the projections from 100 models that sample the parameter                    combined with the multidirection sampling of the source
+space, indicating statistical uncertainty; the projections of the high-uncertainty           plane by the lensing distortion, we place an upper limit on
+image 1.5 are not shown for clarity. The multidirectional magniﬁcation                       the size of any unresolved clump of r  50 pc. In
+constrains the physical size of the LCE to reff  31.6 pc, represented with a red
+ellipse at the center.
+                                                                                             particular, the unresolved LCE clump is constrained to
+                                                                                             reff  32 pc. That is, to our knowledge, the most precise
+                                                                                             localization of an LyC escape site in any galaxy, an order
+       Previous work claimed that it is a transient, since it does                           of magnitude better than other observed LyC leaking
+       not appear in the other images of the galaxy (Vanzella                                galaxies so far; it showcases the unique power of
+       et al. 2020b). We conduct a time delay analysis of the                                gravitational lensing in the study of the mechanisms
+       ﬁeld and show that the relative time delays between                                   enabling ionizing escape.
+       images 1–11 of the source span only several months to a                            7. We identify a likely companion galaxy, located ∼6 kpc
+       year, a time span covered by our observations. A                                      north of the Sunburst Arc in the source plane, labeled
+
+                                                                                     21
+The Astrophysical Journal, 941:203 (23pp), 2022 December 20                                                                                     Sharon et al.
+
+        source 50 and observed near the west and southeast arcs.                                             ORCID iDs
+        In velocity space, source 50 is separated from the
+                                                                              Keren Sharon https://orcid.org/0000-0002-7559-0864
+        Sunburst Arc galaxy by 36 km s−1, indicating that the
+                                                                              Guillaume Mahler https://orcid.org/0000-0003-3266-2001
+        galaxies could be interacting. Future IFU observations of
+                                                                              T. Emil Rivera-Thorsen https://orcid.org/0000-0002-
+        the two galaxies can map their velocity structures, while a
+                                                                              9204-3256
+        combination of the existing HST and the future JWST
+                                                                              Håkon Dahle https://orcid.org/0000-0003-2200-5606
+        multiband imaging will enable SED ﬁts to measure
+                                                                              Michael D. Gladders https://orcid.org/0000-0003-
+        spatially resolved stellar populations, ages, metallicities,
+                                                                              1370-5010
+        and other diagnostics and examine the role of galaxy
+                                                                              Matthew B. Bayliss https://orcid.org/0000-0003-1074-4807
+        −galaxy interactions in prompting the escape of LyC
+                                                                              Michael K. Florian https://orcid.org/0000-0001-5097-6755
+        radiation.
+                                                                              Keunho J. Kim https://orcid.org/0000-0001-6505-0293
+   The multiband HST imaging, combined with spectroscopy                      Gourav Khullar https://orcid.org/0000-0002-3475-7648
+from ground-based and space-based observatories, enables the                  Ramesh Mainali https://orcid.org/0000-0003-0094-6827
+detailed analysis of the lensing potential of PSZ1 G311.65                    Kate A. Napier https://orcid.org/0000-0003-4470-1696
+−18.48 presented here, which in turn facilitates its use as a                 Alexander Navarre https://orcid.org/0000-0001-7548-0473
+powerful cosmic telescope to study the background universe.                   Jane R. Rigby https://orcid.org/0000-0002-7627-6551
+Our model is and will be utilized by several ongoing and future               Juan David Remolina González https://orcid.org/0000-
+works. The primary lensed galaxy in this ﬁeld, the extremely                  0002-7868-9827
+bright Sunburst Arc, is a topic of numerous publications,                     Soniya Sharma https://orcid.org/0000-0001-9851-8753
+primarily because it is the most spatially resolved example of
+LyC escape at any redshift. With an Einstein radius of ∼30″
+                                                                                                              References
+and complex critical curve, this line of sight is a treasure trove
+for studies of intermediate- and high-redshift lensed galaxies                Bertin, E., & Arnouts, S. 1996, A&AS, 117, 393
+and cluster physics alike.                                                    Bowen, I. S. 1934, PASP, 46, 146
+                                                                              Bradač, M., Schneider, P., Steinmetz, M., et al. 2002, A&A, 388, 373
+                                                                              Calzetti, D. 2013, in Secular Evolution of Galaxies, ed. J. Falcón-Barroso &
+   Based on observations made with the NASA/ESA Hubble
+                                                                                 J. H. Knapen (Cambridge: Cambridge Univ. Press), 419
+Space Telescope, obtained at the Space Telescope Science                      Chisholm, J., Rigby, J. R., Bayliss, M., et al. 2019, ApJ, 882, 182
+Institute, which is operated by the Association of Universities               Dahle, H., Aghanim, N., Guennou, L., et al. 2016, A&A, 590, L4
+for Research in Astronomy, Inc., under NASA contract NAS                      Diego, J. M., Pascale, M., Kavanagh, B. J., et al. 2022, A&A, 665, A134
+5-26555. These observations are associated with programs GO-                  Diego, J. M., Protopapas, P., Sandvik, H. B., & Tegmark, M. 2005, MNRAS,
+                                                                                 360, 477
+15101, GO-15418, GO-15377, and GO-15949. The authors                          Elíasdóttir, Á., Limousin, M., Richard, J., et al. 2007, arXiv:0710.5636
+acknowledge support from Programs GO-15101, GO-15949,                         Fischer, T. C., Rigby, J. R., Mahler, G., et al. 2019, ApJ, 875, 102
+and GO-15337, provided through grants from the STScI under                    Fruscione, A., McDowell, J. C., Allen, G. E., et al. 2006, Proc. SPIE, 6270,
+NASA contract NAS5-26555. Based on VLT/MUSE observa-                             62701V
+tions collected at the European Southern Observatory under                    Gladders, M. D., & Yee, H. K. C. 2000, AJ, 120, 2148
+                                                                              James, B. L., Auger, M., Pettini, M., et al. 2018, MNRAS, 476, 1726
+ESO program 297.A-5012(A), PI: Aghanim, obtained from the                     Johnson, T. L., Rigby, J. R., Sharon, K., et al. 2017, ApJL, 843, L21
+ESO Science Archive Facility. Support for this work was also                  Johnson, T. L., & Sharon, K. 2016, ApJ, 832, 82
+provided by the National Aeronautics and Space Administra-                    Jullo, E., Kneib, J. P., Limousin, M., et al. 2007, NJPh, 9, 447
+tion through Chandra award No. GO8-19084X issued by the                       Kelly, P. L., Diego, J. M., Rodney, S., et al. 2018, NatAs, 2, 334
+                                                                              Limousin, M., Kneib, J.-P., & Natarajan, P. 2005, MNRAS, 356, 309
+Chandra X-ray Center, which is operated by the Smithsonian                    Lopez, S., Tejos, N., Barrientos, L. F., et al. 2020, MNRAS, 491, 4442
+Astrophysical Observatory for and on behalf of the National                   Mahler, G., Jauzac, M., Richard, J., et al. 2022, arXiv:2207.07101
+Aeronautics Space Administration under contract NAS8-                         Mahler, G., Natarajan, P., Jauzac, M., & Richard, J. 2023, MNRAS, 518, 54
+03060. The scientiﬁc results reported in this article are based               Mahler, G., Richard, J., Clément, B., et al. 2018, MNRAS, 473, 663
+on observations made by the Chandra X-ray Observatory, and                    Mainali, R., Rigby, J. R., Chisholm, J., et al. 2022, ApJ, 940, 160
+                                                                              Mandelker, N., Dekel, A., Ceverino, D., et al. 2014, MNRAS, 443, 3675
+this research has made use of software provided by the Chandra                Mandelker, N., Dekel, A., Ceverino, D., et al. 2017, MNRAS, 464, 635
+X-ray Center (CXC) in the application package, CIAO. This                     Mantz, A. B., Allen, S. W., Morris, R. G., & von der Linden, A. 2018,
+paper used data gathered with the 6.5 m Magellan Telescopes                      MNRAS, 473, 3072
+located at Las Campanas Observatory, Chile. We thank the                      McDonald, M., Bayliss, M., Benson, B. A., et al. 2012, Natur, 488, 349
+                                                                              McDonald, M., McNamara, B. R., Voit, G. M., et al. 2019, ApJ, 885, 63
+staff of Las Campanas for their dedicated service, which has                  Meneghetti, M., Natarajan, P., Coe, D., et al. 2017, MNRAS, 472, 3177
+made possible these observations. We thank the anonymous                      Meng, X., & Gnedin, O. Y. 2020, MNRAS, 494, 1263
+referee for a thoughtful and constructive review of the                       Montes, M., & Trujillo, I. 2022, ApJL, 940, L51
+manuscript. G.M. received funding from the European Union’s                   Narayan, R., & Bartelmann, M. 1996, arXiv:astro-ph/9606001
+Horizon 2020 research and innovation programme under the                      Ofek, E. O. 2014, MAAT: MATLAB Astronomy and Astrophysics Toolbox,
+                                                                                 Astrophysics Source Code Library, ascl:1407.005
+Marie Sklodowska-Curie grant agreement No. 896778.                            Patrício, V., Richard, J., Carton, D., et al. 2019, MNRAS, 489, 224
+   Facilities: HST(ACS, WFC3).                                                Pignataro, G. V., Bergamini, P., Meneghetti, M., et al. 2021, A&A, 655, A81
+   Software: Drizzlepac,12 Source Extractor (Bertin & Arn-                    Priewe, J., Williams, L. L. R., Liesenborgs, J., Coe, D., & Rodney, S. A. 2017,
+outs 1996), Lenstool (Jullo et al. 2007), MAAT (Ofek 2014),                      MNRAS, 465, 1030
+                                                                              Raney, C. A., Keeton, C. R., & Brennan, S. 2020, MNRAS, 492, 503
+CIAO (v4.13; Fruscione et al. 2006).                                          Remolina González, J. D., Sharon, K., & Mahler, G. 2018, ApJ, 863, 60
+                                                                              Remolina González, J. D., Sharon, K., Mahler, G., et al. 2021, ApJ, 920, 98
+                                                                              Rigby, J. R., Bayliss, M. B., Sharon, K., et al. 2018, AJ, 155, 104
+                                                                              Rivera-Thorsen, T. E., Dahle, H., Chisholm, J., et al. 2019, Sci, 366, 738
+                                                                              Rivera-Thorsen, T. E., Dahle, H., Gronke, M., et al. 2017, A&A, 608, L4
+12
+     http://www.stsci.edu/scientiﬁc-community/software/drizzlepac.html        Rodney, S. A., Patel, B., Scolnic, D., et al. 2015, ApJ, 811, 70
+
+                                                                         22
+The Astrophysical Journal, 941:203 (23pp), 2022 December 20                                                                                     Sharon et al.
+
+Schneider, P. 1985, A&A, 143, 413                                                 Vanzella, E., Meneghetti, M., Pastorello, A., et al. 2020b, MNRAS, 499, L67
+Sharon, K., Gladders, M. D., Rigby, J. R., et al. 2014, ApJ, 795, 50              Weilbacher, P. M., Palsa, R., Streicher, O., et al. 2020, A&A, 641, A28
+Tremblay, G. R., Gladders, M. D., Baum, S. A., et al. 2014, ApJL, 790, L26        Welch, B., Coe, D., Diego, J. M., et al. 2022, Natur, 603, 815
+Urrutia, T., Wisotzki, L., Kerutt, J., et al. 2019, A&A, 624, A141                Wuyts, E., Rigby, J. R., Gladders, M. D., & Sharon, K. 2014, ApJ, 781, 61
+Vanzella, E., Calura, F., Meneghetti, M., et al. 2017, MNRAS, 467, 4304           Zitrin, A., Broadhurst, T., Coe, D., et al. 2011, MNRAS, 413, 1753
+Vanzella, E., Caminha, G. B., Calura, F., et al. 2020a, MNRAS, 491, 1093          Zitrin, A., Fabris, A., Merten, J., et al. 2015, ApJ, 801, 44
+
+
+
+
+                                                                             23
+

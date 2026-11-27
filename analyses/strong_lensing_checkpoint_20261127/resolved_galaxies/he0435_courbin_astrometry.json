@@ -1,0 +1,65 @@
+{
+  "lens": "HE0435-1223",
+  "astrometry": {
+    "source": "Courbin et al.2011, A&A536,A53, Table2 (This work), HST/NIC2 F160W simultaneous deconvolution",
+    "doi": "10.1051/0004-6361/201015709",
+    "primary_pdf_url": "https://arxiv.org/pdf/1009.1473",
+    "pdf_sha256": "36d2d150f780f7659d53e5ca44b808189faab72e3e176c4ab60608efcf0a997a",
+    "pdf_page_one_based": 5,
+    "units": "arcsec",
+    "coordinates": "Published delta alpha and delta delta relative to imageA. A fixes origin; its zero coordinates have no independently quoted internal errors.",
+    "data": [
+      {
+        "id": "A",
+        "delta_alpha": 0.0,
+        "delta_delta": 0.0,
+        "internal_sigma_alpha": null,
+        "internal_sigma_delta": null
+      },
+      {
+        "id": "B",
+        "delta_alpha": -1.4743,
+        "delta_delta": 0.5518,
+        "internal_sigma_alpha": 0.0004,
+        "internal_sigma_delta": 0.0006
+      },
+      {
+        "id": "C",
+        "delta_alpha": -2.4664,
+        "delta_delta": -0.6022,
+        "internal_sigma_alpha": 0.0003,
+        "internal_sigma_delta": 0.0013
+      },
+      {
+        "id": "D",
+        "delta_alpha": -0.9378,
+        "delta_delta": -1.616,
+        "internal_sigma_alpha": 0.0005,
+        "internal_sigma_delta": 0.0006
+      },
+      {
+        "id": "G",
+        "delta_alpha": -1.1706,
+        "delta_delta": -0.5665,
+        "internal_sigma_alpha": 0.003,
+        "internal_sigma_delta": 0.0004
+      }
+    ],
+    "additional_systematic_sigma_arcsec": 0.002,
+    "systematic_note": "Table2 explicitly requires additional2mas systematic errors. It does not publish a full positional covariance. Do not treat internal errors alone as total errors. Any covariance approximation must be stated.",
+    "photometric_flux_ratios_not_used": "Optical flux ratios are affected by intrinsic variability and microlensing; contemporaneous calibrated light curves provide the data instead.",
+    "coordinate_use_note": "Preserve published delta-alpha/delta-delta signs as the planar sky coordinates; positive right ascension is east and positive declination north. Origin imageA; subtractG coordinates only once to center a circular-body model. No position transformation or cosmological posterior is fitted here."
+  },
+  "redshifts": {
+    "lens": 0.4546,
+    "lens_sigma": 0.0002,
+    "source_legacy": 1.689,
+    "source_updated": 1.693,
+    "source_updated_reference": "Sluse et al.2012, Microlensing of the broad line region in17lensed quasars, A&A544,A62, DOI10.1051/0004-6361/201219125; value explicitly adopted in Bonvin et al.2017 (H0LiCOWV)",
+    "source_context_url": "https://doi.org/10.1093/mnras/stw3006",
+    "note": "H0LiCOWIV uses legacy1.689 and explicitly verifies updated1.693 does not affect their results. For new work declare choice rather than silently mix.",
+    "source_adopted": 1.693,
+    "choice": "Use zl=.4546 and zs=1.693 in this new observed-lens application. Legacy1.689 retained only as a provenance note."
+  },
+  "no_published_delay_fit_inputs": true
+}

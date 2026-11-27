@@ -1,0 +1,148 @@
+--- a/manuscript/sections/strong_lensing_galaxies_20261020.tex
++++ b/manuscript/sections/strong_lensing_galaxies_20261020.tex
+@@ -1636,6 +1636,8 @@
+ supply the missing BHSM environmental source law or a new observational
+ fit to Jackpot.
+ 
++\input{sections/he0435_core_pull}
++
+ \section{Conclusions}
+ The multi-source extension in Section~\ref{sec:joint-lens-terrain}
+ sets a joint observational criterion: one fixed source-to-field rule
+--- /dev/null
++++ b/manuscript/sections/he0435_core_pull.tex
+@@ -0,0 +1,134 @@
++\subsection{A centered core-to-surface response: HE~0435-1223 closure screen}
++\label{sec:he0435-core-pull}
++We distinguish the ordinary gravity of a compact central body from an
++additional response of the surface to core coupling. A quadratic model
++makes the missing input explicit. For a surface mode $q$, complementary
++fields $y$, and a prescribed core load $f_c$, let
++\begin{equation}
++ E(q,y)=\tfrac12 kq^2+q b^{\dagger}y+
++             \tfrac12 y^{\dagger}Ky-f_c^{\dagger}y .
++ \label{eq:he0435-core-load}
++\end{equation}
++In the real static reduction with positive $K$, eliminating $y$ gives a
++stiffness $k-b^{\dagger}K^{-1}b$ and a force
++$-b^{\dagger}K^{-1}f_c$ at $q=0$. Knowing the stiffness does not fix the
++force. In particular, the presence of a black hole by itself specifies
++neither $f_c$ nor the resulting weak-field optical potentials.
++
++We use the converged foreground galaxy--group calculation described
++above with a $1.5$ Mpc half-box and a $\pm800$ kpc integration window.
++We add a centered, attractive optical response as a diagnostic only:
++\begin{equation}
++ \delta\widehat{\boldsymbol\alpha}(\boldsymbol b)
++ =\frac{4G M_{\rm eq}(<b)}{c^2 b^2}\,\boldsymbol b ,
++ \label{eq:he0435-core-lens}
++\end{equation}
++where $M_{\rm eq}$ is a projected lens-equivalent mass, not measured
++matter or a source derived from Eq.~\eqref{eq:he0435-core-load}.
++The ordinary foreground profiles and rear G1 model are unchanged.
++The new response deflects both the four quasar paths and the path
++to the apparent G1 centroid, so their separations on the G1 plane
++are recalculated before back-projecting to the quasar plane.
++A free common source is eliminated by subtracting the centroid of the
++four back-projections.
++
++With the correction off, the unweighted source-plane scatter is
++$898.86$ mas. Minimizing that same scatter over one nonnegative
++amplitude, separately for three profiles, gives:
++\begin{center}
++\begin{tabular}{lrr}
++\hline
++Trial projected mass law & $M_{\rm eq}(<6.39\,{\rm kpc})$ &
++  Source scatter \\
++ & ($10^{11}M_\odot$) & (mas) \\
++\hline
++Compact: $M_{\rm eq}\propto b^0$ & 2.54 & 146.91 \\
++Flat circular speed: $M_{\rm eq}\propto b$ & 2.31 & 79.82 \\
++Constant projected density: $M_{\rm eq}\propto b^2$ & 2.06 & 14.87 \\
++\hline
++\end{tabular}
++\end{center}
++The flat circular-speed row uses the projected radial law of an
++isothermal sphere, not a measurement of a rotation curve. The three
++laws apply over the ray and G1-centroid impact radii only; none is
++proposed as a global mass distribution. In particular, the compact
++trial amplitude is not an estimate of the black hole mass. All
++amplitudes are chosen using the four images. None provides an
++independent prediction or brings those rays to one exact source.
++
++The constant-density trial largely compresses source coordinates;
++ordinary projected mass produces the same optical term. A smaller
++unweighted source-plane scatter therefore does not establish a better
++observational fit or identify a core-coupling signal. To test the proposed
++mechanism, derive the amplitude and radial or angular variation from
++an independently specified core load and its surface response.
++Use image-plane or covariance-aware tests, including resolved host
++structure, and reserve the time delays for a model that passes the
++common-source test. No observed-lens delay is calculated in this screen.
++
++\paragraph{Two checks with no amplitude fit.}
++First, the retained spherical R1 law is tested on a hypothetical
++$10^9 M_\odot$ prescribed point source, keeping its direct Newtonian
++deflection separate. If the point source inherits the ordinary R1
++matter coupling, its screened scalar contribution changes the maximum
++pairwise source separation vector by only $1.47$ microarcseconds.
++This is not a black-hole scalar-charge calculation: the exterior
++equations do not assign a new scalar charge to a horizon.
++
++Second, a spherical exterior-flow candidate assumes
++$g_T=(GM_b/r_s)(1/r-r_s/r^2)$ for $r>r_s$, and zero inside.
++If both weak-field metric potentials receive this same correction,
++the spherical equivalent density is
++$M_b/(4\pi r_s r^2)$ on the exterior. Projection of this density
++is nonzero even for a ray inside $r_s$. For the existing gravity-only
++radius checks, $r_s=8.53$--$13.51$ kpc, and outer cutoffs at $100$ and
++$400$ kpc, it gives $1.25$--$3.66\times10^{10}M_\odot$ in the
++innermost ray cylinder and leaves $735$--$844$ mas of scatter when
++added as a trial correction. These are conditional sensitivity ranges,
++not measurements or a confidence interval. The extended density gives
++the right qualitative shape for a nearly uniform projected lensing
++term, but the tested normalization does not close the rays. Its export
++from a physical core, the physical interface radius, and the metric
++response of the exterior-flow branch remain to be derived.
++
++\paragraph{Calibrating the required load against the conventional halo.}
++The published composite model has an NFW scale radius of $8.43''$ and
++the related environment analysis reports a projected halo fraction of
++about $0.45$ inside the Einstein radius $1.182''$~\cite{Wong2017HE,Sluse2017H0LiCOWII}.
++We use the spherical counterpart as a calibration, not the original
++elliptical reconstruction. With the frozen R1 distances and the circular
++Einstein-aperture mass proxy $\pi R_E^2\Sigma_{\rm crit}$, the halo
++fraction fixes a projected target of $1.50\times10^{11}M_\odot$
++at $R_E=7.03$ kpc. The median scale translates to $r_h=50.1$ kpc.
++A spherical deprojection then specifies
++\begin{equation}
++ g_{\rm cal}(r)=\frac{G M_0}{r^2}\left[
++ \ln(1+x)-\frac{x}{1+x}\right],
++ \qquad x=\frac{r}{r_h},\quad M_0=6.97\times10^{12}M_\odot .
++ \label{eq:he0435-core-calibration}
++\end{equation}
++Here $M_0$ is a profile normalization, not the halo's total mass.
++If metric potentials are equal, the extra inward acceleration
++is $1.62\times10^{-10}\,{\rm m\,s^{-2}}$ at $R_E$.
++The enclosed response $r^2g_{\rm cal}/G$ grows locally as
++$r^{1.83}$ there. A central-only conserved exterior force flux is
++constant, whereas the older flat-speed exterior prescription has
++an enclosed response proportional to $r-r_s$ above its onset.
++The halo calibration therefore identifies the radial response the
++coupled equations must generate, not its cause.
++
++The repository already has a reciprocal attachment condition on
++regular geometry and a collective-curvature interpretation of the
++effective density. The attachment condition matches regular incidence
++data; it does not set the physical load or its curvature conversion
++from a nongeometric core. The optical calibration fixes the projected
++response within the adopted halo model. It does not determine a unique
++three-dimensional topology: a line-of-sight stretch
++$\rho_q(R,z)=\rho_1(R,z/q)/q$ leaves the projected density unchanged
++for every constant $q>0$ in the thin-lens limit.
++Stellar kinematics and independent source paths can test the assumed
++depth and the dynamical response. Passing the calibration itself is not
++validation on those observables, and applying this spherical halo alone
++to the frozen BHSM foreground still leaves about $366$ mas of scatter.
++This is not a replay of the published composite model, which has
++different stellar, halo-shape, and environmental parameters.

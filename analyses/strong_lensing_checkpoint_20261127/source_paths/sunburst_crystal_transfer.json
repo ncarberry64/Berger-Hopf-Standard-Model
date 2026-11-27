@@ -1,0 +1,2400 @@
+{
+  "summary": {
+    "positions_n": 81,
+    "unordered_pairs": 7,
+    "both_directions_wins": 1,
+    "queries": 122,
+    "stats": {
+      "affine": {
+        "rms": 0.4550055269201921,
+        "median": 0.10148571439634162
+      },
+      "bhsm": {
+        "rms": 0.9969048052113907,
+        "median": 0.24208255994532707
+      }
+    },
+    "pooled_squared_error_gain": -3.8003625025785297,
+    "passes": false
+  },
+  "pairs": [
+    {
+      "source": 3,
+      "target": 4,
+      "common": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "rms": {
+        "bhsm": 0.04920689026055536,
+        "affine": 0.04317521949027242
+      },
+      "queries": [
+        {
+          "knot": 1,
+          "training": [
+            5,
+            8,
+            2,
+            7,
+            9,
+            4
+          ],
+          "negative_parity": true,
+          "train_condition": 2.582500450160568,
+          "error": {
+            "bhsm": 0.05718122598327942,
+            "affine": 0.026219797369321625
+          }
+        },
+        {
+          "knot": 2,
+          "training": [
+            8,
+            9,
+            7,
+            4,
+            3,
+            10
+          ],
+          "negative_parity": true,
+          "train_condition": 1.9259149723583833,
+          "error": {
+            "bhsm": 0.02547913525458507,
+            "affine": 0.007557305717928612
+          }
+        },
+        {
+          "knot": 3,
+          "training": [
+            9,
+            4,
+            10,
+            11,
+            7,
+            2
+          ],
+          "negative_parity": true,
+          "train_condition": 1.7304111198160448,
+          "error": {
+            "bhsm": 0.02287940575005842,
+            "affine": 0.01581005210271069
+          }
+        },
+        {
+          "knot": 4,
+          "training": [
+            9,
+            3,
+            10,
+            2,
+            8,
+            7
+          ],
+          "negative_parity": true,
+          "train_condition": 2.280244423132617,
+          "error": {
+            "bhsm": 0.040805729129824664,
+            "affine": 0.05123080645208797
+          }
+        },
+        {
+          "knot": 5,
+          "training": [
+            1,
+            8,
+            2,
+            7,
+            9,
+            4
+          ],
+          "negative_parity": true,
+          "train_condition": 3.0666746252638775,
+          "error": {
+            "bhsm": 0.013688115337254983,
+            "affine": 0.009061283947165181
+          }
+        },
+        {
+          "knot": 7,
+          "training": [
+            8,
+            2,
+            9,
+            3,
+            4,
+            10
+          ],
+          "negative_parity": true,
+          "train_condition": 2.902412139175464,
+          "error": {
+            "bhsm": 0.08477347747699424,
+            "affine": 0.09735668737409899
+          }
+        },
+        {
+          "knot": 8,
+          "training": [
+            2,
+            7,
+            9,
+            3,
+            4,
+            10
+          ],
+          "negative_parity": true,
+          "train_condition": 1.6271318423023415,
+          "error": {
+            "bhsm": 0.028653176171831298,
+            "affine": 0.05260461864247176
+          }
+        },
+        {
+          "knot": 9,
+          "training": [
+            4,
+            3,
+            2,
+            8,
+            7,
+            10
+          ],
+          "negative_parity": true,
+          "train_condition": 1.9739746119046415,
+          "error": {
+            "bhsm": 0.01936852296319834,
+            "affine": 0.00407245281404793
+          }
+        },
+        {
+          "knot": 10,
+          "training": [
+            11,
+            3,
+            4,
+            9,
+            12,
+            7
+          ],
+          "negative_parity": true,
+          "train_condition": 2.1426955952761166,
+          "error": {
+            "bhsm": 0.036385970496414025,
+            "affine": 0.0184230530188452
+          }
+        },
+        {
+          "knot": 11,
+          "training": [
+            10,
+            12,
+            3,
+            4,
+            9,
+            7
+          ],
+          "negative_parity": true,
+          "train_condition": 2.140395205771715,
+          "error": {
+            "bhsm": 0.025649565182408494,
+            "affine": 0.026825877328636446
+          }
+        },
+        {
+          "knot": 12,
+          "training": [
+            11,
+            10,
+            3,
+            4,
+            9,
+            7
+          ],
+          "negative_parity": true,
+          "train_condition": 1.4185094609470277,
+          "error": {
+            "bhsm": 0.09987569599327983,
+            "affine": 0.0590140037845509
+          }
+        }
+      ],
+      "win": false
+    },
+    {
+      "source": 4,
+      "target": 3,
+      "common": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ],
+      "rms": {
+        "bhsm": 0.040663181689218085,
+        "affine": 0.03296712513042863
+      },
+      "queries": [
+        {
+          "knot": 1,
+          "training": [
+            5,
+            8,
+            2,
+            7,
+            9,
+            4
+          ],
+          "negative_parity": true,
+          "train_condition": 2.229728518082275,
+          "error": {
+            "bhsm": 0.05575282407565776,
+            "affine": 0.02263431267884363
+          }
+        },
+        {
+          "knot": 2,
+          "training": [
+            8,
+            9,
+            7,
+            4,
+            3,
+            5
+          ],
+          "negative_parity": true,
+          "train_condition": 2.5127378904809676,
+          "error": {
+            "bhsm": 0.03275598514395689,
+            "affine": 0.038531867139037584
+          }
+        },
+        {
+          "knot": 3,
+          "training": [
+            4,
+            9,
+            10,
+            11,
+            2,
+            8
+          ],
+          "negative_parity": true,
+          "train_condition": 3.2286748860785157,
+          "error": {
+            "bhsm": 0.013094805721406755,
+            "affine": 0.014630478264915384
+          }
+        },
+        {
+          "knot": 4,
+          "training": [
+            9,
+            3,
+            10,
+            2,
+            8,
+            11
+          ],
+          "negative_parity": true,
+          "train_condition": 4.961142752689183,
+          "error": {
+            "bhsm": 0.03579776107018343,
+            "affine": 0.011557237324150215
+          }
+        },
+        {
+          "knot": 5,
+          "training": [
+            1,
+            8,
+            2,
+            7,
+            9,
+            4
+          ],
+          "negative_parity": true,
+          "train_condition": 2.5629560537630662,
+          "error": {
+            "bhsm": 0.016836045171547128,
+            "affine": 0.007501711156294778
+          }
+        },
+        {
+          "knot": 7,
+          "training": [
+            8,
+            2,
+            9,
+            3,
+            4,
+            10
+          ],
+          "negative_parity": true,
+          "train_condition": 3.708125181494257,
+          "error": {
+            "bhsm": 0.06371795869927593,
+            "affine": 0.07927832704491213
+          }
+        },
+        {
+          "knot": 8,
+          "training": [
+            2,
+            7,
+            9,
+            4,
+            3,
+            5
+          ],
+          "negative_parity": true,
+          "train_condition": 2.5283396597166417,
+          "error": {
+            "bhsm": 0.01546999330201961,
+            "affine": 0.005960751181980003
+          }
+        },
+        {
+          "knot": 9,
+          "training": [
+            4,
+            3,
+            2,
+            8,
+            10,
+            7
+          ],
+          "negative_parity": true,
+          "train_condition": 2.34705537471316,
+          "error": {
+            "bhsm": 0.014655605404538771,
+            "affine": 0.003086089103011883
+          }
+        },
+        {
+          "knot": 10,
+          "training": [
+            11,
+            3,
+            4,
+            9,
+            12,
+            2
+          ],
+          "negative_parity": true,
+          "train_condition": 4.471015619937492,
+          "error": {
+            "bhsm": 0.024101468066487594,
+            "affine": 0.01869740732683981
+          }
+        },
+        {
+          "knot": 11,
+          "training": [
+            10,
+            12,
+            3,
+            4,
+            9,
+            7
+          ],
+          "negative_parity": true,
+          "train_condition": 2.47433705701295,
+          "error": {
+            "bhsm": 0.023725311276717467,
+            "affine": 0.021763881643713318
+          }
+        },
+        {
+          "knot": 12,
+          "training": [
+            11,
+            10,
+            3,
+            4,
+            9,
+            7
+          ],
+          "negative_parity": true,
+          "train_condition": 1.7590271749693578,
+          "error": {
+            "bhsm": 0.08131938826513721,
+            "affine": 0.04899861542597586
+          }
+        }
+      ],
+      "win": false
+    },
+    {
+      "source": 3,
+      "target": 7,
+      "common": [
+        1,
+        2,
+        3,
+        4,
+        7,
+        8,
+        10
+      ],
+      "rms": {
+        "bhsm": 0.5861105720421831,
+        "affine": 0.11915552463663161
+      },
+      "queries": [
+        {
+          "knot": 1,
+          "training": [
+            8,
+            2,
+            7,
+            4,
+            3,
+            10
+          ],
+          "negative_parity": false,
+          "train_condition": 1.9739746119046415,
+          "error": {
+            "bhsm": 1.006451873715542,
+            "affine": 0.23847312672672988
+          }
+        },
+        {
+          "knot": 2,
+          "training": [
+            8,
+            7,
+            4,
+            3,
+            10,
+            1
+          ],
+          "negative_parity": false,
+          "train_condition": 3.825509925752994,
+          "error": {
+            "bhsm": 0.2400109262502366,
+            "affine": 0.05270467424751005
+          }
+        },
+        {
+          "knot": 3,
+          "training": [
+            4,
+            10,
+            7,
+            2,
+            8,
+            1
+          ],
+          "negative_parity": false,
+          "train_condition": 3.593600054127909,
+          "error": {
+            "bhsm": 0.10016075395602879,
+            "affine": 0.04587085027475192
+          }
+        },
+        {
+          "knot": 4,
+          "training": [
+            3,
+            10,
+            2,
+            8,
+            7,
+            1
+          ],
+          "negative_parity": false,
+          "train_condition": 4.941368038097401,
+          "error": {
+            "bhsm": 0.7004129220108797,
+            "affine": 0.05764534138644629
+          }
+        },
+        {
+          "knot": 7,
+          "training": [
+            8,
+            2,
+            3,
+            4,
+            10,
+            1
+          ],
+          "negative_parity": false,
+          "train_condition": 6.390858462510941,
+          "error": {
+            "bhsm": 0.9020008303377415,
+            "affine": 0.12765585831091772
+          }
+        },
+        {
+          "knot": 8,
+          "training": [
+            2,
+            7,
+            3,
+            4,
+            10,
+            1
+          ],
+          "negative_parity": false,
+          "train_condition": 3.7911085155688027,
+          "error": {
+            "bhsm": 0.04887630878023864,
+            "affine": 0.12388091295722364
+          }
+        },
+        {
+          "knot": 10,
+          "training": [
+            3,
+            4,
+            7,
+            2,
+            8,
+            1
+          ],
+          "negative_parity": false,
+          "train_condition": 3.3009262157187926,
+          "error": {
+            "bhsm": 0.13237737854130738,
+            "affine": 0.05166661840063046
+          }
+        }
+      ],
+      "win": false
+    },
+    {
+      "source": 7,
+      "target": 3,
+      "common": [
+        1,
+        2,
+        3,
+        4,
+        7,
+        8,
+        10
+      ],
+      "rms": {
+        "bhsm": 0.5012828615676931,
+        "affine": 0.14554897170610362
+      },
+      "queries": [
+        {
+          "knot": 1,
+          "training": [
+            4,
+            2,
+            8,
+            3,
+            10,
+            7
+          ],
+          "negative_parity": false,
+          "train_condition": 5.533663633294986,
+          "error": {
+            "bhsm": 0.8537703521656484,
+            "affine": 0.30922619492646874
+          }
+        },
+        {
+          "knot": 2,
+          "training": [
+            4,
+            8,
+            1,
+            3,
+            10,
+            7
+          ],
+          "negative_parity": false,
+          "train_condition": 4.868551307017961,
+          "error": {
+            "bhsm": 0.0869961104124617,
+            "affine": 0.08868522919462794
+          }
+        },
+        {
+          "knot": 3,
+          "training": [
+            10,
+            8,
+            2,
+            7,
+            4,
+            1
+          ],
+          "negative_parity": false,
+          "train_condition": 5.0375275141728535,
+          "error": {
+            "bhsm": 0.19604336486065568,
+            "affine": 0.010188331869080419
+          }
+        },
+        {
+          "knot": 4,
+          "training": [
+            2,
+            1,
+            8,
+            3,
+            10,
+            7
+          ],
+          "negative_parity": false,
+          "train_condition": 5.6351240568676335,
+          "error": {
+            "bhsm": 0.5385315917323769,
+            "affine": 0.0707061773890965
+          }
+        },
+        {
+          "knot": 7,
+          "training": [
+            10,
+            3,
+            8,
+            2,
+            4,
+            1
+          ],
+          "negative_parity": false,
+          "train_condition": 4.9415172528242275,
+          "error": {
+            "bhsm": 0.7611709014491961,
+            "affine": 0.0464508569324818
+          }
+        },
+        {
+          "knot": 8,
+          "training": [
+            2,
+            3,
+            10,
+            4,
+            1,
+            7
+          ],
+          "negative_parity": false,
+          "train_condition": 5.112214350245231,
+          "error": {
+            "bhsm": 0.09139951461713429,
+            "affine": 0.09110123906631368
+          }
+        },
+        {
+          "knot": 10,
+          "training": [
+            3,
+            8,
+            7,
+            2,
+            4,
+            1
+          ],
+          "negative_parity": false,
+          "train_condition": 5.596869785494888,
+          "error": {
+            "bhsm": 0.3260600020879396,
+            "affine": 0.17101265786628345
+          }
+        }
+      ],
+      "win": false
+    },
+    {
+      "source": 3,
+      "target": 8,
+      "common": [
+        1,
+        2,
+        3,
+        4,
+        7,
+        8,
+        9,
+        10
+      ],
+      "rms": {
+        "bhsm": 2.575704402518733,
+        "affine": 0.8692865382173959
+      },
+      "queries": [
+        {
+          "knot": 1,
+          "training": [
+            8,
+            2,
+            7,
+            9,
+            4,
+            3
+          ],
+          "negative_parity": true,
+          "train_condition": 1.727518696089578,
+          "error": {
+            "bhsm": 5.933068916262886,
+            "affine": 1.362180487857989
+          }
+        },
+        {
+          "knot": 2,
+          "training": [
+            8,
+            9,
+            7,
+            4,
+            3,
+            10
+          ],
+          "negative_parity": true,
+          "train_condition": 1.9259149723583833,
+          "error": {
+            "bhsm": 1.0008222517361345,
+            "affine": 0.3522213104286924
+          }
+        },
+        {
+          "knot": 3,
+          "training": [
+            9,
+            4,
+            10,
+            7,
+            2,
+            8
+          ],
+          "negative_parity": true,
+          "train_condition": 1.8451106658635605,
+          "error": {
+            "bhsm": 0.8553758737832289,
+            "affine": 0.3922819052558013
+          }
+        },
+        {
+          "knot": 4,
+          "training": [
+            9,
+            3,
+            10,
+            2,
+            8,
+            7
+          ],
+          "negative_parity": true,
+          "train_condition": 2.280244423132617,
+          "error": {
+            "bhsm": 2.6859522642244213,
+            "affine": 1.4085375166116592
+          }
+        },
+        {
+          "knot": 7,
+          "training": [
+            8,
+            2,
+            9,
+            3,
+            4,
+            10
+          ],
+          "negative_parity": true,
+          "train_condition": 2.902412139175464,
+          "error": {
+            "bhsm": 1.9418487272743366,
+            "affine": 1.1980930832734706
+          }
+        },
+        {
+          "knot": 8,
+          "training": [
+            2,
+            7,
+            9,
+            3,
+            4,
+            10
+          ],
+          "negative_parity": true,
+          "train_condition": 1.6271318423023415,
+          "error": {
+            "bhsm": 0.919751253570978,
+            "affine": 0.0487174207658423
+          }
+        },
+        {
+          "knot": 9,
+          "training": [
+            4,
+            3,
+            2,
+            8,
+            7,
+            10
+          ],
+          "negative_parity": true,
+          "train_condition": 1.9739746119046415,
+          "error": {
+            "bhsm": 0.01820753295387185,
+            "affine": 0.6867942243500992
+          }
+        },
+        {
+          "knot": 10,
+          "training": [
+            3,
+            4,
+            9,
+            7,
+            2,
+            8
+          ],
+          "negative_parity": true,
+          "train_condition": 1.727518696089578,
+          "error": {
+            "bhsm": 2.075575967070031,
+            "affine": 0.13537870001819266
+          }
+        }
+      ],
+      "win": false
+    },
+    {
+      "source": 8,
+      "target": 3,
+      "common": [
+        1,
+        2,
+        3,
+        4,
+        7,
+        8,
+        9,
+        10
+      ],
+      "rms": {
+        "bhsm": 0.48911280892495285,
+        "affine": 0.2387058437282932
+      },
+      "queries": [
+        {
+          "knot": 1,
+          "training": [
+            4,
+            2,
+            9,
+            8,
+            3,
+            10
+          ],
+          "negative_parity": true,
+          "train_condition": 19.449496710625382,
+          "error": {
+            "bhsm": 0.9033437654074303,
+            "affine": 0.470459965245017
+          }
+        },
+        {
+          "knot": 2,
+          "training": [
+            9,
+            8,
+            3,
+            10,
+            4,
+            7
+          ],
+          "negative_parity": true,
+          "train_condition": 24.577985846492055,
+          "error": {
+            "bhsm": 0.22959774183539128,
+            "affine": 0.04944132819050675
+          }
+        },
+        {
+          "knot": 3,
+          "training": [
+            10,
+            8,
+            9,
+            2,
+            7,
+            4
+          ],
+          "negative_parity": true,
+          "train_condition": 25.321310836185756,
+          "error": {
+            "bhsm": 0.1744139485550645,
+            "affine": 0.07210860599925498
+          }
+        },
+        {
+          "knot": 4,
+          "training": [
+            1,
+            2,
+            9,
+            8,
+            3,
+            10
+          ],
+          "negative_parity": true,
+          "train_condition": 32.40780373263957,
+          "error": {
+            "bhsm": 0.8606011449323733,
+            "affine": 0.45822771452118716
+          }
+        },
+        {
+          "knot": 7,
+          "training": [
+            10,
+            3,
+            8,
+            9,
+            2,
+            4
+          ],
+          "negative_parity": true,
+          "train_condition": 19.449496710625343,
+          "error": {
+            "bhsm": 0.22364828363871517,
+            "affine": 0.09743973655527169
+          }
+        },
+        {
+          "knot": 8,
+          "training": [
+            9,
+            3,
+            10,
+            2,
+            7,
+            4
+          ],
+          "negative_parity": true,
+          "train_condition": 27.16188646993215,
+          "error": {
+            "bhsm": 0.26975995566979355,
+            "affine": 0.005670003982248098
+          }
+        },
+        {
+          "knot": 9,
+          "training": [
+            8,
+            2,
+            3,
+            10,
+            7,
+            4
+          ],
+          "negative_parity": true,
+          "train_condition": 23.139898590800264,
+          "error": {
+            "bhsm": 0.05434877296134184,
+            "affine": 0.07229822279712284
+          }
+        },
+        {
+          "knot": 10,
+          "training": [
+            3,
+            8,
+            9,
+            7,
+            2,
+            4
+          ],
+          "negative_parity": true,
+          "train_condition": 31.30509672182695,
+          "error": {
+            "bhsm": 0.38510817128422237,
+            "affine": 0.04626922486381681
+          }
+        }
+      ],
+      "win": false
+    },
+    {
+      "source": 4,
+      "target": 7,
+      "common": [
+        1,
+        2,
+        3,
+        4,
+        7,
+        8,
+        10
+      ],
+      "rms": {
+        "bhsm": 0.563629874625099,
+        "affine": 0.23500349728399547
+      },
+      "queries": [
+        {
+          "knot": 1,
+          "training": [
+            8,
+            2,
+            7,
+            4,
+            3,
+            10
+          ],
+          "negative_parity": true,
+          "train_condition": 2.3470553747131606,
+          "error": {
+            "bhsm": 0.8506784352467829,
+            "affine": 0.5389943915270773
+          }
+        },
+        {
+          "knot": 2,
+          "training": [
+            8,
+            7,
+            4,
+            3,
+            10,
+            1
+          ],
+          "negative_parity": true,
+          "train_condition": 3.2970817057631003,
+          "error": {
+            "bhsm": 0.23153024312346396,
+            "affine": 0.13266585782524837
+          }
+        },
+        {
+          "knot": 3,
+          "training": [
+            4,
+            10,
+            2,
+            8,
+            7,
+            1
+          ],
+          "negative_parity": true,
+          "train_condition": 3.120054081782246,
+          "error": {
+            "bhsm": 0.1350051748799751,
+            "affine": 0.06254207508927218
+          }
+        },
+        {
+          "knot": 4,
+          "training": [
+            3,
+            10,
+            2,
+            8,
+            7,
+            1
+          ],
+          "negative_parity": true,
+          "train_condition": 3.8544932590416043,
+          "error": {
+            "bhsm": 0.6865095352994426,
+            "affine": 0.11992473538424253
+          }
+        },
+        {
+          "knot": 7,
+          "training": [
+            8,
+            2,
+            3,
+            4,
+            10,
+            1
+          ],
+          "negative_parity": true,
+          "train_condition": 6.448737738160827,
+          "error": {
+            "bhsm": 0.9461119791604642,
+            "affine": 0.06862306693665857
+          }
+        },
+        {
+          "knot": 8,
+          "training": [
+            2,
+            7,
+            4,
+            3,
+            10,
+            1
+          ],
+          "negative_parity": true,
+          "train_condition": 3.31628498511981,
+          "error": {
+            "bhsm": 0.0666735104515749,
+            "affine": 0.1302405089208067
+          }
+        },
+        {
+          "knot": 10,
+          "training": [
+            3,
+            4,
+            2,
+            7,
+            8,
+            1
+          ],
+          "negative_parity": true,
+          "train_condition": 2.810953228266978,
+          "error": {
+            "bhsm": 0.23957341652677483,
+            "affine": 0.19622984845994276
+          }
+        }
+      ],
+      "win": false
+    },
+    {
+      "source": 7,
+      "target": 4,
+      "common": [
+        1,
+        2,
+        3,
+        4,
+        7,
+        8,
+        10
+      ],
+      "rms": {
+        "bhsm": 0.6036918602100253,
+        "affine": 0.10973263234621797
+      },
+      "queries": [
+        {
+          "knot": 1,
+          "training": [
+            4,
+            2,
+            8,
+            3,
+            10,
+            7
+          ],
+          "negative_parity": true,
+          "train_condition": 5.533663633294986,
+          "error": {
+            "bhsm": 0.9444411571899144,
+            "affine": 0.22710835954626582
+          }
+        },
+        {
+          "knot": 2,
+          "training": [
+            4,
+            8,
+            1,
+            3,
+            10,
+            7
+          ],
+          "negative_parity": true,
+          "train_condition": 4.868551307017961,
+          "error": {
+            "bhsm": 0.08719638836637725,
+            "affine": 0.05641578997753393
+          }
+        },
+        {
+          "knot": 3,
+          "training": [
+            10,
+            8,
+            2,
+            7,
+            4,
+            1
+          ],
+          "negative_parity": true,
+          "train_condition": 5.0375275141728535,
+          "error": {
+            "bhsm": 0.2764397933224707,
+            "affine": 0.041257868884308824
+          }
+        },
+        {
+          "knot": 4,
+          "training": [
+            2,
+            1,
+            8,
+            3,
+            10,
+            7
+          ],
+          "negative_parity": true,
+          "train_condition": 5.6351240568676335,
+          "error": {
+            "bhsm": 0.6206233377654634,
+            "affine": 0.03359687354261363
+          }
+        },
+        {
+          "knot": 7,
+          "training": [
+            10,
+            3,
+            8,
+            2,
+            4,
+            1
+          ],
+          "negative_parity": true,
+          "train_condition": 4.9415172528242275,
+          "error": {
+            "bhsm": 0.9703840206544964,
+            "affine": 0.05759842169032771
+          }
+        },
+        {
+          "knot": 8,
+          "training": [
+            2,
+            3,
+            10,
+            4,
+            1,
+            7
+          ],
+          "negative_parity": true,
+          "train_condition": 5.112214350245231,
+          "error": {
+            "bhsm": 0.14288838997181014,
+            "affine": 0.08616782806192905
+          }
+        },
+        {
+          "knot": 10,
+          "training": [
+            3,
+            8,
+            7,
+            2,
+            4,
+            1
+          ],
+          "negative_parity": true,
+          "train_condition": 5.596869785494888,
+          "error": {
+            "bhsm": 0.4773679909743453,
+            "affine": 0.12631061493788381
+          }
+        }
+      ],
+      "win": false
+    },
+    {
+      "source": 4,
+      "target": 8,
+      "common": [
+        1,
+        2,
+        3,
+        4,
+        7,
+        8,
+        9,
+        10
+      ],
+      "rms": {
+        "bhsm": 2.4144265501290074,
+        "affine": 0.9984176303698694
+      },
+      "queries": [
+        {
+          "knot": 1,
+          "training": [
+            8,
+            2,
+            7,
+            9,
+            4,
+            3
+          ],
+          "negative_parity": false,
+          "train_condition": 2.034966391963511,
+          "error": {
+            "bhsm": 5.261138162233783,
+            "affine": 0.6051656828458907
+          }
+        },
+        {
+          "knot": 2,
+          "training": [
+            8,
+            9,
+            7,
+            4,
+            3,
+            10
+          ],
+          "negative_parity": false,
+          "train_condition": 2.3573410785462197,
+          "error": {
+            "bhsm": 1.0399761023121772,
+            "affine": 0.3878452173893824
+          }
+        },
+        {
+          "knot": 3,
+          "training": [
+            4,
+            9,
+            10,
+            2,
+            8,
+            7
+          ],
+          "negative_parity": false,
+          "train_condition": 2.2166255945886784,
+          "error": {
+            "bhsm": 0.9160811782791246,
+            "affine": 0.34207635258075475
+          }
+        },
+        {
+          "knot": 4,
+          "training": [
+            9,
+            3,
+            10,
+            2,
+            8,
+            7
+          ],
+          "negative_parity": false,
+          "train_condition": 2.5633108668492954,
+          "error": {
+            "bhsm": 2.7158209155533632,
+            "affine": 1.5886791835120297
+          }
+        },
+        {
+          "knot": 7,
+          "training": [
+            8,
+            2,
+            9,
+            3,
+            4,
+            10
+          ],
+          "negative_parity": false,
+          "train_condition": 3.708125181494257,
+          "error": {
+            "bhsm": 2.0733898802843256,
+            "affine": 2.0298266780517413
+          }
+        },
+        {
+          "knot": 8,
+          "training": [
+            2,
+            7,
+            9,
+            4,
+            3,
+            10
+          ],
+          "negative_parity": false,
+          "train_condition": 2.036954316222328,
+          "error": {
+            "bhsm": 0.7336907885256264,
+            "affine": 0.26671819057420193
+          }
+        },
+        {
+          "knot": 9,
+          "training": [
+            4,
+            3,
+            2,
+            8,
+            10,
+            7
+          ],
+          "negative_parity": false,
+          "train_condition": 2.34705537471316,
+          "error": {
+            "bhsm": 0.05583869392207572,
+            "affine": 0.6440434807978429
+          }
+        },
+        {
+          "knot": 10,
+          "training": [
+            3,
+            4,
+            9,
+            2,
+            7,
+            8
+          ],
+          "negative_parity": false,
+          "train_condition": 2.0349663919635113,
+          "error": {
+            "bhsm": 2.1952826180525578,
+            "affine": 0.45935604962771853
+          }
+        }
+      ],
+      "win": false
+    },
+    {
+      "source": 8,
+      "target": 4,
+      "common": [
+        1,
+        2,
+        3,
+        4,
+        7,
+        8,
+        9,
+        10
+      ],
+      "rms": {
+        "bhsm": 0.5783404965013476,
+        "affine": 0.21723309533494004
+      },
+      "queries": [
+        {
+          "knot": 1,
+          "training": [
+            4,
+            2,
+            9,
+            8,
+            3,
+            10
+          ],
+          "negative_parity": false,
+          "train_condition": 19.449496710625382,
+          "error": {
+            "bhsm": 0.980933029972645,
+            "affine": 0.4002494966500926
+          }
+        },
+        {
+          "knot": 2,
+          "training": [
+            9,
+            8,
+            3,
+            10,
+            4,
+            7
+          ],
+          "negative_parity": false,
+          "train_condition": 24.577985846492055,
+          "error": {
+            "bhsm": 0.3136764539501889,
+            "affine": 0.06312079672884302
+          }
+        },
+        {
+          "knot": 3,
+          "training": [
+            10,
+            8,
+            9,
+            2,
+            7,
+            4
+          ],
+          "negative_parity": false,
+          "train_condition": 25.321310836185756,
+          "error": {
+            "bhsm": 0.2558917408755868,
+            "affine": 0.07712847531911765
+          }
+        },
+        {
+          "knot": 4,
+          "training": [
+            1,
+            2,
+            9,
+            8,
+            3,
+            10
+          ],
+          "negative_parity": false,
+          "train_condition": 32.40780373263957,
+          "error": {
+            "bhsm": 0.9944867871799375,
+            "affine": 0.4034194185586925
+          }
+        },
+        {
+          "knot": 7,
+          "training": [
+            10,
+            3,
+            8,
+            9,
+            2,
+            4
+          ],
+          "negative_parity": false,
+          "train_condition": 19.449496710625343,
+          "error": {
+            "bhsm": 0.3832935984767516,
+            "affine": 0.16097629275407907
+          }
+        },
+        {
+          "knot": 8,
+          "training": [
+            9,
+            3,
+            10,
+            2,
+            7,
+            4
+          ],
+          "negative_parity": false,
+          "train_condition": 27.16188646993215,
+          "error": {
+            "bhsm": 0.3413749471123196,
+            "affine": 0.04562200357770244
+          }
+        },
+        {
+          "knot": 9,
+          "training": [
+            8,
+            2,
+            3,
+            10,
+            7,
+            4
+          ],
+          "negative_parity": false,
+          "train_condition": 23.139898590800264,
+          "error": {
+            "bhsm": 0.06802761623549335,
+            "affine": 0.10202158339556487
+          }
+        },
+        {
+          "knot": 10,
+          "training": [
+            3,
+            8,
+            9,
+            7,
+            2,
+            4
+          ],
+          "negative_parity": false,
+          "train_condition": 31.30509672182695,
+          "error": {
+            "bhsm": 0.5409585616751342,
+            "affine": 0.0789853190722332
+          }
+        }
+      ],
+      "win": false
+    },
+    {
+      "source": 7,
+      "target": 8,
+      "common": [
+        1,
+        2,
+        3,
+        4,
+        7,
+        8,
+        10,
+        13,
+        14,
+        15
+      ],
+      "rms": {
+        "bhsm": 0.6127810070362398,
+        "affine": 0.8390902634486039
+      },
+      "queries": [
+        {
+          "knot": 1,
+          "training": [
+            4,
+            2,
+            8,
+            3,
+            10,
+            7
+          ],
+          "negative_parity": true,
+          "train_condition": 5.533663633294986,
+          "error": {
+            "bhsm": 1.0192554605666697,
+            "affine": 1.3162023840031005
+          }
+        },
+        {
+          "knot": 2,
+          "training": [
+            4,
+            8,
+            1,
+            3,
+            10,
+            7
+          ],
+          "negative_parity": true,
+          "train_condition": 4.868551307017961,
+          "error": {
+            "bhsm": 0.7992955106664605,
+            "affine": 0.8330716658320853
+          }
+        },
+        {
+          "knot": 3,
+          "training": [
+            10,
+            8,
+            2,
+            7,
+            4,
+            13
+          ],
+          "negative_parity": true,
+          "train_condition": 3.956141176464474,
+          "error": {
+            "bhsm": 0.3428975885402406,
+            "affine": 0.32707881588905896
+          }
+        },
+        {
+          "knot": 4,
+          "training": [
+            2,
+            1,
+            8,
+            3,
+            10,
+            7
+          ],
+          "negative_parity": true,
+          "train_condition": 5.6351240568676335,
+          "error": {
+            "bhsm": 0.9695712673516195,
+            "affine": 1.1548969413450993
+          }
+        },
+        {
+          "knot": 7,
+          "training": [
+            13,
+            10,
+            14,
+            3,
+            15,
+            8
+          ],
+          "negative_parity": true,
+          "train_condition": 29.064687758156243,
+          "error": {
+            "bhsm": 0.5846166558566954,
+            "affine": 1.5670745918960298
+          }
+        },
+        {
+          "knot": 8,
+          "training": [
+            2,
+            3,
+            10,
+            4,
+            1,
+            7
+          ],
+          "negative_parity": true,
+          "train_condition": 5.112214350245231,
+          "error": {
+            "bhsm": 0.6975790235864557,
+            "affine": 0.7133009748377205
+          }
+        },
+        {
+          "knot": 10,
+          "training": [
+            3,
+            8,
+            7,
+            13,
+            2,
+            4
+          ],
+          "negative_parity": true,
+          "train_condition": 3.9857035256269118,
+          "error": {
+            "bhsm": 0.1901736025026024,
+            "affine": 0.2443511988282874
+          }
+        },
+        {
+          "knot": 13,
+          "training": [
+            14,
+            15,
+            7,
+            10,
+            3,
+            8
+          ],
+          "negative_parity": true,
+          "train_condition": 4.244044787096569,
+          "error": {
+            "bhsm": 0.15075696085486168,
+            "affine": 0.2620238947309401
+          }
+        },
+        {
+          "knot": 14,
+          "training": [
+            15,
+            13,
+            7,
+            10,
+            3,
+            8
+          ],
+          "negative_parity": true,
+          "train_condition": 3.9567488070465924,
+          "error": {
+            "bhsm": 0.14146673702470697,
+            "affine": 0.006002419744007476
+          }
+        },
+        {
+          "knot": 15,
+          "training": [
+            14,
+            13,
+            7,
+            10,
+            3,
+            8
+          ],
+          "negative_parity": true,
+          "train_condition": 3.4720850070941043,
+          "error": {
+            "bhsm": 0.3351175814607235,
+            "affine": 0.28397002139487154
+          }
+        }
+      ],
+      "win": true
+    },
+    {
+      "source": 8,
+      "target": 7,
+      "common": [
+        1,
+        2,
+        3,
+        4,
+        7,
+        8,
+        10,
+        13,
+        14,
+        15
+      ],
+      "rms": {
+        "bhsm": 0.22190469377947036,
+        "affine": 0.3871955134133727
+      },
+      "queries": [
+        {
+          "knot": 1,
+          "training": [
+            4,
+            2,
+            8,
+            3,
+            10,
+            13
+          ],
+          "negative_parity": true,
+          "train_condition": 13.131879547987896,
+          "error": {
+            "bhsm": 0.22503842972290972,
+            "affine": 0.22562948298797086
+          }
+        },
+        {
+          "knot": 2,
+          "training": [
+            8,
+            3,
+            10,
+            4,
+            13,
+            7
+          ],
+          "negative_parity": true,
+          "train_condition": 12.083443409619269,
+          "error": {
+            "bhsm": 0.2638487861829403,
+            "affine": 0.18874873392869382
+          }
+        },
+        {
+          "knot": 3,
+          "training": [
+            10,
+            8,
+            2,
+            13,
+            7,
+            14
+          ],
+          "negative_parity": true,
+          "train_condition": 7.512555175178277,
+          "error": {
+            "bhsm": 0.05785349613441671,
+            "affine": 0.06671062447140919
+          }
+        },
+        {
+          "knot": 4,
+          "training": [
+            1,
+            2,
+            8,
+            3,
+            10,
+            13
+          ],
+          "negative_parity": true,
+          "train_condition": 19.308423331302563,
+          "error": {
+            "bhsm": 0.30940606191188696,
+            "affine": 0.1851220684086586
+          }
+        },
+        {
+          "knot": 7,
+          "training": [
+            13,
+            14,
+            15,
+            10,
+            3,
+            8
+          ],
+          "negative_parity": true,
+          "train_condition": 74.18662029143262,
+          "error": {
+            "bhsm": 0.40628108687018716,
+            "affine": 1.148648483074322
+          }
+        },
+        {
+          "knot": 8,
+          "training": [
+            3,
+            10,
+            2,
+            13,
+            7,
+            14
+          ],
+          "negative_parity": true,
+          "train_condition": 7.323093172246396,
+          "error": {
+            "bhsm": 0.09984409553416243,
+            "affine": 0.02066493097652416
+          }
+        },
+        {
+          "knot": 10,
+          "training": [
+            3,
+            8,
+            13,
+            7,
+            14,
+            2
+          ],
+          "negative_parity": true,
+          "train_condition": 7.594283221210517,
+          "error": {
+            "bhsm": 0.037890436003866705,
+            "affine": 0.027394547126028724
+          }
+        },
+        {
+          "knot": 13,
+          "training": [
+            14,
+            15,
+            7,
+            10,
+            3,
+            8
+          ],
+          "negative_parity": true,
+          "train_condition": 6.091825152976218,
+          "error": {
+            "bhsm": 0.08353504964460912,
+            "affine": 0.1603319318263594
+          }
+        },
+        {
+          "knot": 14,
+          "training": [
+            13,
+            15,
+            7,
+            10,
+            3,
+            8
+          ],
+          "negative_parity": true,
+          "train_condition": 6.052300374858337,
+          "error": {
+            "bhsm": 0.1370427774488326,
+            "affine": 0.010131758700720535
+          }
+        },
+        {
+          "knot": 15,
+          "training": [
+            14,
+            13,
+            7,
+            10,
+            3,
+            8
+          ],
+          "negative_parity": true,
+          "train_condition": 5.730947781426429,
+          "error": {
+            "bhsm": 0.2661797113913973,
+            "affine": 0.16603795090609755
+          }
+        }
+      ],
+      "win": true
+    },
+    {
+      "source": 11,
+      "target": 12,
+      "common": [
+        1,
+        2,
+        3,
+        4,
+        7,
+        8,
+        16,
+        17,
+        18,
+        19
+      ],
+      "rms": {
+        "bhsm": 0.36586448173329517,
+        "affine": 0.19957989898101477
+      },
+      "queries": [
+        {
+          "knot": 1,
+          "training": [
+            2,
+            4,
+            3,
+            8,
+            16,
+            17
+          ],
+          "negative_parity": true,
+          "train_condition": 15.517285947714033,
+          "error": {
+            "bhsm": 0.3162617384647915,
+            "affine": 0.18689384854163796
+          }
+        },
+        {
+          "knot": 2,
+          "training": [
+            1,
+            3,
+            4,
+            8,
+            16,
+            17
+          ],
+          "negative_parity": true,
+          "train_condition": 13.633635915267519,
+          "error": {
+            "bhsm": 0.04244176933076686,
+            "affine": 0.05810318012154262
+          }
+        },
+        {
+          "knot": 3,
+          "training": [
+            2,
+            8,
+            1,
+            4,
+            16,
+            17
+          ],
+          "negative_parity": true,
+          "train_condition": 13.929732900394857,
+          "error": {
+            "bhsm": 0.18158157265360836,
+            "affine": 0.16001148204552668
+          }
+        },
+        {
+          "knot": 4,
+          "training": [
+            1,
+            2,
+            3,
+            8,
+            16,
+            17
+          ],
+          "negative_parity": true,
+          "train_condition": 22.356219324743446,
+          "error": {
+            "bhsm": 0.24415419364041754,
+            "affine": 0.2565709136502033
+          }
+        },
+        {
+          "knot": 7,
+          "training": [
+            17,
+            16,
+            8,
+            3,
+            2,
+            1
+          ],
+          "negative_parity": true,
+          "train_condition": 22.356219324743435,
+          "error": {
+            "bhsm": 0.7838451001532433,
+            "affine": 0.31033575756467185
+          }
+        },
+        {
+          "knot": 8,
+          "training": [
+            3,
+            2,
+            16,
+            1,
+            4,
+            17
+          ],
+          "negative_parity": true,
+          "train_condition": 16.771235538465817,
+          "error": {
+            "bhsm": 0.14595845264800256,
+            "affine": 0.05368147874850799
+          }
+        },
+        {
+          "knot": 16,
+          "training": [
+            8,
+            17,
+            7,
+            3,
+            2,
+            1
+          ],
+          "negative_parity": true,
+          "train_condition": 17.01954668518451,
+          "error": {
+            "bhsm": 0.16922301609103285,
+            "affine": 0.005518709986770789
+          }
+        },
+        {
+          "knot": 17,
+          "training": [
+            7,
+            16,
+            8,
+            3,
+            2,
+            1
+          ],
+          "negative_parity": true,
+          "train_condition": 19.752928282590524,
+          "error": {
+            "bhsm": 0.5486135613095239,
+            "affine": 0.03715908078089843
+          }
+        },
+        {
+          "knot": 18,
+          "training": [
+            19,
+            7,
+            17,
+            16,
+            8,
+            3
+          ],
+          "negative_parity": true,
+          "train_condition": 18.067259195895492,
+          "error": {
+            "bhsm": 0.12451285822759099,
+            "affine": 0.31509879150909376
+          }
+        },
+        {
+          "knot": 19,
+          "training": [
+            18,
+            7,
+            17,
+            16,
+            8,
+            3
+          ],
+          "negative_parity": true,
+          "train_condition": 16.39799487663582,
+          "error": {
+            "bhsm": 0.4041392452041156,
+            "affine": 0.2620978387040181
+          }
+        }
+      ],
+      "win": false
+    },
+    {
+      "source": 12,
+      "target": 11,
+      "common": [
+        1,
+        2,
+        3,
+        4,
+        7,
+        8,
+        16,
+        17,
+        18,
+        19
+      ],
+      "rms": {
+        "bhsm": 0.48757121368435186,
+        "affine": 0.26740609676397564
+      },
+      "queries": [
+        {
+          "knot": 1,
+          "training": [
+            4,
+            2,
+            8,
+            3,
+            16,
+            7
+          ],
+          "negative_parity": true,
+          "train_condition": 9.986769089542708,
+          "error": {
+            "bhsm": 0.6286067668109223,
+            "affine": 0.11730518355731369
+          }
+        },
+        {
+          "knot": 2,
+          "training": [
+            8,
+            3,
+            4,
+            1,
+            16,
+            7
+          ],
+          "negative_parity": true,
+          "train_condition": 7.980481690335416,
+          "error": {
+            "bhsm": 0.12337209468205886,
+            "affine": 0.08434589841624311
+          }
+        },
+        {
+          "knot": 3,
+          "training": [
+            8,
+            2,
+            4,
+            16,
+            7,
+            1
+          ],
+          "negative_parity": true,
+          "train_condition": 8.84945705314396,
+          "error": {
+            "bhsm": 0.3967522611789445,
+            "affine": 0.10612057772453797
+          }
+        },
+        {
+          "knot": 4,
+          "training": [
+            1,
+            2,
+            3,
+            8,
+            16,
+            7
+          ],
+          "negative_parity": true,
+          "train_condition": 9.14994769938394,
+          "error": {
+            "bhsm": 0.22126147374522281,
+            "affine": 0.475761319450482
+          }
+        },
+        {
+          "knot": 7,
+          "training": [
+            16,
+            8,
+            17,
+            3,
+            2,
+            4
+          ],
+          "negative_parity": true,
+          "train_condition": 14.880245725353065,
+          "error": {
+            "bhsm": 0.9246150626180448,
+            "affine": 0.5875268844065333
+          }
+        },
+        {
+          "knot": 8,
+          "training": [
+            3,
+            2,
+            4,
+            16,
+            7,
+            1
+          ],
+          "negative_parity": true,
+          "train_condition": 8.344834824189087,
+          "error": {
+            "bhsm": 0.004604055155216775,
+            "affine": 0.17869383951762297
+          }
+        },
+        {
+          "knot": 16,
+          "training": [
+            7,
+            3,
+            8,
+            17,
+            2,
+            4
+          ],
+          "negative_parity": true,
+          "train_condition": 10.112795816152094,
+          "error": {
+            "bhsm": 0.13873533628607754,
+            "affine": 0.05597072483202392
+          }
+        },
+        {
+          "knot": 17,
+          "training": [
+            7,
+            16,
+            3,
+            8,
+            2,
+            4
+          ],
+          "negative_parity": true,
+          "train_condition": 9.986769089542705,
+          "error": {
+            "bhsm": 0.8985830366755088,
+            "affine": 0.10094984539711836
+          }
+        },
+        {
+          "knot": 18,
+          "training": [
+            19,
+            17,
+            7,
+            16,
+            3,
+            8
+          ],
+          "negative_parity": true,
+          "train_condition": 24.7604224315294,
+          "error": {
+            "bhsm": 0.11165367418190432,
+            "affine": 0.23451918448016235
+          }
+        },
+        {
+          "knot": 19,
+          "training": [
+            18,
+            17,
+            7,
+            16,
+            3,
+            8
+          ],
+          "negative_parity": true,
+          "train_condition": 22.12596294568197,
+          "error": {
+            "bhsm": 0.2577227676347849,
+            "affine": 0.10551250968189961
+          }
+        }
+      ],
+      "win": false
+    }
+  ]
+}

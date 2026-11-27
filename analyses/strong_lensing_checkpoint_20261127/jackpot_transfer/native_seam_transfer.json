@@ -1,0 +1,138 @@
+{
+  "classification": "Conditional BHSM v0.3 hash-pinned analytic shape, unit closure xi=1 and equal scalar-optical potentials assumptions. No fit enters the unit prediction. Nonclosing diagnostic amplitudes never used as BHSM predictions.",
+  "HE0435": [
+    {
+      "outer_seam_ratio": 20.0,
+      "stellar_seam_kpc": 9.406793146056273,
+      "baseline_rms_arcsec": 0.8988788685938612,
+      "unit_pair_shift_arcsec": 0.17639775194668258,
+      "unit_rms_arcsec": 0.8162464695492802,
+      "diagnostic_best_multiplier": 10.87292767560581,
+      "diagnostic_residual_rms_arcsec": 0.012249277737368412
+    },
+    {
+      "outer_seam_ratio": 100.0,
+      "stellar_seam_kpc": 9.406793146056273,
+      "baseline_rms_arcsec": 0.8988788685938612,
+      "unit_pair_shift_arcsec": 0.18329854710875795,
+      "unit_rms_arcsec": 0.8129817742288626,
+      "diagnostic_best_multiplier": 10.459516474618546,
+      "diagnostic_residual_rms_arcsec": 0.01220622547341938
+    },
+    {
+      "outer_seam_ratio": null,
+      "stellar_seam_kpc": 9.406793146056273,
+      "baseline_rms_arcsec": 0.8988788685938612,
+      "unit_pair_shift_arcsec": 0.18502345457362274,
+      "unit_rms_arcsec": 0.8121657243500687,
+      "diagnostic_best_multiplier": 10.361043695732047,
+      "diagnostic_residual_rms_arcsec": 0.012197897640028649
+    }
+  ],
+  "Jackpot": {
+    "Chabrier": {
+      "stellar_seam_kpc": 12.626252881291244,
+      "baseline_gap_arcsec": 3.8666382711873655,
+      "runs": [
+        {
+          "outer_seam_ratio": 20.0,
+          "unit_pair_bend_arcsec": 0.26371469189447094,
+          "unit_gap_arcsec": 3.602934346105368,
+          "diagnostic_best_nonnegative_export_multiplier": 14.66164491942759,
+          "diagnostic_residual_perpendicular_arcsec": 0.03372732529212842
+        },
+        {
+          "outer_seam_ratio": 100.0,
+          "unit_pair_bend_arcsec": 0.2735068337810514,
+          "unit_gap_arcsec": 3.5931429956472876,
+          "diagnostic_best_nonnegative_export_multiplier": 14.136708665850596,
+          "diagnostic_residual_perpendicular_arcsec": 0.03426700826304633
+        },
+        {
+          "outer_seam_ratio": null,
+          "unit_pair_bend_arcsec": 0.275954364827994,
+          "unit_gap_arcsec": 3.590695664092678,
+          "diagnostic_best_nonnegative_export_multiplier": 14.01132133996896,
+          "diagnostic_residual_perpendicular_arcsec": 0.034396130362019495
+        }
+      ]
+    },
+    "Salpeter": {
+      "stellar_seam_kpc": 18.727403060568374,
+      "baseline_gap_arcsec": 2.993594315698833,
+      "runs": [
+        {
+          "outer_seam_ratio": 20.0,
+          "unit_pair_bend_arcsec": 0.24156140111563762,
+          "unit_gap_arcsec": 2.7521451487129003,
+          "diagnostic_best_nonnegative_export_multiplier": 12.387391477847407,
+          "diagnostic_residual_perpendicular_arcsec": 0.08748730353206312
+        },
+        {
+          "outer_seam_ratio": 100.0,
+          "unit_pair_bend_arcsec": 0.2513524681058241,
+          "unit_gap_arcsec": 2.7423594090291252,
+          "diagnostic_best_nonnegative_export_multiplier": 11.904843114688074,
+          "diagnostic_residual_perpendicular_arcsec": 0.08762203649601727
+        },
+        {
+          "outer_seam_ratio": null,
+          "unit_pair_bend_arcsec": 0.2538000053922345,
+          "unit_gap_arcsec": 2.739913209694317,
+          "diagnostic_best_nonnegative_export_multiplier": 11.790034257249502,
+          "diagnostic_residual_perpendicular_arcsec": 0.08765417363427745
+        }
+      ]
+    }
+  },
+  "conditional_cross_transfer": [
+    {
+      "outer_seam_ratio": 20.0,
+      "stellar_IMF": "Chabrier",
+      "HE_fit_applied_to_Jackpot_gap_arcsec": 0.9997094941241169,
+      "Jackpot_fit_applied_to_HE_rms_arcsec": 0.31352683358252875
+    },
+    {
+      "outer_seam_ratio": 20.0,
+      "stellar_IMF": "Salpeter",
+      "HE_fit_applied_to_Jackpot_gap_arcsec": 0.3761515727976028,
+      "Jackpot_fit_applied_to_HE_rms_arcsec": 0.12583306431792926
+    },
+    {
+      "outer_seam_ratio": 100.0,
+      "stellar_IMF": "Chabrier",
+      "HE_fit_applied_to_Jackpot_gap_arcsec": 1.0063207888642178,
+      "Jackpot_fit_applied_to_HE_rms_arcsec": 0.3163305731327529
+    },
+    {
+      "outer_seam_ratio": 100.0,
+      "stellar_IMF": "Salpeter",
+      "HE_fit_applied_to_Jackpot_gap_arcsec": 0.37370395091397063,
+      "Jackpot_fit_applied_to_HE_rms_arcsec": 0.12484441310628631
+    },
+    {
+      "outer_seam_ratio": null,
+      "stellar_IMF": "Chabrier",
+      "HE_fit_applied_to_Jackpot_gap_arcsec": 1.0078971317149483,
+      "Jackpot_fit_applied_to_HE_rms_arcsec": 0.3170011981965515
+    },
+    {
+      "outer_seam_ratio": null,
+      "stellar_IMF": "Salpeter",
+      "HE_fit_applied_to_Jackpot_gap_arcsec": 0.3731198864053819,
+      "Jackpot_fit_applied_to_HE_rms_arcsec": 0.12460893518418388
+    }
+  ],
+  "Jackpot_aperture_control": {
+    "Chabrier": {
+      "GR_kms": 179.44079457514064,
+      "unit_export_kms": 179.84235670447484,
+      "HE0435_fitted_export_kms": 183.75985698908337
+    },
+    "Salpeter": {
+      "GR_kms": 245.9184392340079,
+      "unit_export_kms": 246.0957131640486,
+      "HE0435_fitted_export_kms": 247.839120097976
+    }
+  }
+}

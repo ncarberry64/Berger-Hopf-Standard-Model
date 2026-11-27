@@ -1,0 +1,601 @@
+diff --git a/manuscript/sections/strong_lensing_galaxies_20261020.tex b/manuscript/sections/strong_lensing_galaxies_20261020.tex
+index 135a90f..7b27b30 100644
+--- a/manuscript/sections/strong_lensing_galaxies_20261020.tex
++++ b/manuscript/sections/strong_lensing_galaxies_20261020.tex
+@@ -35,11 +35,12 @@ limitations \citep{Schechter2026}.
+ 
+ The calculation follows state and preparation, normalized source and
+ boundary problem, metric/optical transfer, images and delays, then
+-identifiability and approximation controls. A positive effective mass
+-reproduces the retained scalar metric and its complete optical
+-response. The reference-relative seconds therefore quantify a
+-conditional transfer; they do not by themselves identify a unique
+-underlying state. The finite refit makes this distinction concrete
++identifiability and approximation controls. The principal result is
++an exact correspondence at the retained order: a positive conventional
++effective mass reproduces the R1 metric and its complete optical
++response. The reference-relative seconds compare two calculations with
++the matter model fixed, rather than the two equivalent descriptions of
++the same metric. They do not by themselves identify an underlying state. The finite refit makes this distinction concrete
+ without changing the injected preparation.
+ We then construct an observed-lens timing and point-geometry baseline
+ for HE~0435$-$1223 and test frozen conventional and conditional R1
+@@ -1265,19 +1266,403 @@ and the later four-point is not imposed as a prerequisite for the
+ conditional classical optics used here.
+ 
+ 
++\section{Galaxy and group on one foreground domain: a fixed-input test}
++\label{sec:he0435-unified-foreground}
++Can the retained R1 equation predict the lens field from the galaxy and
++its surroundings, without fitting an extra lens potential? We test a
++restricted version of that question. We put the main galaxy and its
++spectroscopic group in one foreground field solve and propagate the
++result through the separate, more distant G1 plane. No image positions
++or time delays are used to set field parameters; the observed image
++positions are used only to evaluate the resulting map. This complements
++the fitted-model tests above and is not an additional fit.
++
++\paragraph{Source specification and field solve.}
++At $z_1=0.4546$ we deproject the circularized main-galaxy stellar
++S\'ersic profile ($n=3.51$, $R_e=3.984$ kpc,
++$M_\star=10^{11.1}M_\odot$) from published imaging and stellar-population
++inputs~\cite{Zahedy2016HE}. We regularize the inner density by replacing
++$r$ with $\sqrt{r^2+(0.5\,\mathrm{kpc})^2}$ and renormalize to the stated
++stellar mass. The approximately same-redshift group has a reported
++projected offset of $67.1''$ and a dispersion estimate of
++$470\,\mathrm{km\,s^{-1}}$~\cite{Sluse2017H0LiCOWII}. We model it as
++the difference of two softened isothermal density profiles of scales
++25 and 761 kpc and place the group offset in the sky plane. Those
++scales and the line-of-sight placement are model choices, not a measured
++three-dimensional density. The rear $z_2=0.7821$ G1 is a separate galaxy,
++represented by a circularized bulge and disk with a common
++stellar mass-to-light ratio and total stellar mass $10^{10.9}M_\odot$
++from the published inputs~\cite{Kochanek2006HE,Wong2017HE}.
++The foreground excludes a primary dark halo and any additional fitted
++external convergence or shear; the group proxy still contributes its
++ordinary gravity. This is therefore not a baryon-only test of the entire
++line of sight.
++
++We solve the static R1 scalar equation for the summed foreground
++sources with a common far-field monopole boundary value. In local Cartesian
++components the nonlinear Hessian invariant is proportional to
++$(\operatorname{tr}H)^2-\operatorname{tr}(H^2)$, where $H$ is the
++Hessian of the scalar. Hence adding the two isolated scalar solutions
++is not generally the solution for the combined source. The ordinary
++foreground deflections are evaluated for the same prescribed density
++profiles and included once. Both scalar calculations use the same finite
++line-of-sight segment in the foreground plane. The comparison does not
++solve the material source from the BHSM state.
++
++\paragraph{Two-plane propagation.}
++Let $\boldsymbol{\theta}_g$ be the observed angular position of G1,
++$D_i$ and $D_{ij}$ angular diameter distances, and $\hat\alpha_j$
++physical bending angles in plane $j$. The G1 impact vector and inferred
++source position follow from the ordered lens map~\cite{Wong2017HE}:
++\begin{align}
++ \boldsymbol{x}_{2g}(\boldsymbol{\theta}) &=
++ D_2(\boldsymbol{\theta}-\boldsymbol{\theta}_g)
++ -D_{12}\big[\hat\alpha_1(D_1\boldsymbol{\theta})
++              -\hat\alpha_1(D_1\boldsymbol{\theta}_g)\big],\\
++ \boldsymbol{\beta}(\boldsymbol{\theta}) &=
++ \boldsymbol{\theta}
++ -\frac{D_{1s}}{D_s}\hat\alpha_1(D_1\boldsymbol{\theta})
++ -\frac{D_{2s}}{D_s}\hat\alpha_2(\boldsymbol{x}_{2g}).
++\end{align}
++The foreground map is applied to G1's observed light centroid as well
++as to the quasar rays. In the scalar comparison the same isolated G1
++response is used in both branches. With $\boldsymbol{\delta\beta}_i$
++the joint-minus-isolated shift at observed image $i$, the reported
++differential is $\max_{i,j}|\boldsymbol{\delta\beta}_i-
++\boldsymbol{\delta\beta}_j|$. This removes any common shift without
++permitting a different source position for each model image.
++
++\paragraph{Result and limit.}
++For the same four published image positions~\cite{Courbin2011}, the
++ordinary-only profiles give $0.898879''$ root-mean-square source-plane
++scatter about the four-ray centroid. The jointly solved R1 foreground
++and isolated R1 rear response give $0.898862''$. Across four accepted
++grid and box choices, the joint-minus-isolated scalar difference after
++G1 propagation changes the inferred separations by $4.66$--$4.81$
++microarcseconds on the same $\pm800$ kpc foreground path. Propagating the
++changed foreground through G1 contributes less than $0.02$
++microarcseconds to that differential. On the finest accepted grid
++($115\times229$, 1.5 Mpc half-box), increasing the path half-length
++from 800 to 1250 kpc changes the differential from 4.66 to 4.67
++microarcseconds. A finer widened-box run missed the declared
++$2\times10^{-7}$ scaled discrete residual target; it is retained in
++the replay output and excluded from the accepted range. Grid spread
++is a numerical sensitivity, not a physical uncertainty interval.
++
++The prescribed galaxy and environment thus produce a calculable
++foreground and a two-plane source map without using the quasar images
++to tune the density. But the four inferred sources are nowhere near a
++single point under this prescription. The small nonadditive term
++cannot close the missing-field gap. There is no physical time-delay
++prediction here: one common source and its stationary images are
++required before taking an arrival-time difference. The unresolved
++step is to specify the independently constrained total matter and
++environmental state (or derive an equivalent density from BHSM) and
++pass the common-source imaging test before confronting delays. The
++failure applies to the stated source prescription, not to all
++Berger--Hopf states or all conventional models.
++
++\subsection{A joint test of the field with HE~0435-1223 and Jackpot}
++\label{sec:joint-lens-terrain}
++The two systems constrain different aspects of the same proposed
++matter-and-environment to metric rule. HE~0435-1223 supplies angular
++constraints and relative arrival times for a variable source.
++Its extended host arcs improve the angular coverage but do not add
++a second source distance~\cite{Ding2017host}. SDSS~J0946+1006
++(Jackpot) has one principal deflector at $z=0.222$ and three
++multiply imaged sources at $z=(0.609,2.035,5.975)$
++\cite{CollettSmith2021Jackpot,Ballard2024Jackpot}. The angular
++and radial coverage of Jackpot complements the timing information
++of HE~0435-1223; the two systems must share a physical rule, not
++a fitted mass distribution or an unlensed source position.
++
++\paragraph{What the broad environment does in HE~0435-1223.}
++In the fixed-input geometry of the preceding calculation, switching on
++the associated group's projected field changes a pairwise source
++separation vector by up to $99.20$ milliarcseconds.
++Replacing that field with the quadratic Taylor expansion of its lensing
++potential at the main galaxy, with unchanged source and mass inputs and
++with the rear propagation repeated, changes the same pairwise diagnostic
++by only $1.01$ milliarcseconds. These are model comparisons,
++not measurements of a group signal. The smooth contribution matters
++here, but higher spatial variation of this group proxy does not
++account for the persistent $0.899''$ root-mean-square source scatter.
++
++\paragraph{What the additional distances test.}
++Let $W_{ji}=D_{ij}/D_j$ for $i<j$, and let $\widehat{\boldsymbol\alpha}_i$
++be the physical deflection on plane $i$. In the ordered thin-plane
++approximation, the ray angle in plane $j$ is
++\begin{equation}
++ \boldsymbol\theta_j=\boldsymbol\theta
++ -\sum_{i<j}W_{ji}\widehat{\boldsymbol\alpha}_i(D_i\boldsymbol\theta_i).
++ \label{eq:jackpot-terrain-transfer}
++\end{equation}
++The frozen R1 background gives primary deflection weights of
++$0.595$, $0.828$ and $0.892$ for the three Jackpot sources. The
++third source also has weights $0.732$ and $0.369$ for deflections
++at the first and second source planes, if those planes carry
++mass. A flat $\Lambda$CDM control with $\Omega_{\mathrm m}=0.315$
++gives primary weights $0.595$, $0.826$ and $0.889$. The weights alone
++do not determine the deflections: the images take different paths,
++and the intermediate deflectors cannot be absorbed into a mere
++change of source distance. In a published retrospective check, an
++earlier model using the first two sources mapped the two images of the
++third source to locations $0.15''$ apart in their source plane.
++Updating the second source redshift reduced that separation by
++$0.02''$, and adjustments within the earlier parameter uncertainties
++can reconcile the images~\cite{CollettSmith2021Jackpot}. This is
++neither a BHSM signal nor a failure of general relativity.
++
++\paragraph{First fixed-input calculation on Jackpot.}
++The two published images of the third source probe projected radii of
++$1.35''$ and $3.56''$~\cite{CollettSmith2020Jackpot}. We use only the
++main galaxy's two-component HST light profile and
++stellar-population masses~\cite{Sonnenfeld2012Jackpot}, with no
++mass, halo, or coupling adjusted to either image. For spherical
++area-preserving proxies, the two rays back-project to points
++$3.867''$ apart with the Chabrier stellar mass and $2.994''$ apart
++with the Salpeter stellar mass. The frozen, baryon-sourced spherical
++R1 term moves the separation vector by $62$ and $86$ microarcseconds,
++respectively. Retaining the measured stellar ellipticities and
++orientations in ordinary gravity gives separations of $3.888''$ and
++$3.032''$. This is a control for the stellar geometry, not a solution
++of the anisotropic R1 equation. Two intervening isothermal deflectors
++with assumed dispersions $100$ and $150$ km/s can change that vector
++by at most $0.901''$ in this control, regardless of their centers;
++this bound is specific to those profiles and dispersions, not to
++the unseen matter in the field. No posterior uncertainty is
++claimed. The published two-source model uses lensing information
++to constrain the total density. Its smaller residual is a benchmark,
++not a matched-input comparison. In both HE~0435-1223 and Jackpot,
++the tested starlight-led prescription plus the retained R1 response
++does not predict a field that brings the observed rays together.
++
++\paragraph{A candidate cumulative displacement rule and its limits.}
++Let $\Phi_N$ be the ordinary potential of the fixed source inventory
++on a common weak-field domain, with $\nabla^2\Phi_N=4\pi G\rho$.
++Motivated by the BHSM curvature scale, define
++$a_H(z)=c^2/R_H(z)$, $y=|\nabla\Phi_N|/a_H$, and the exploratory rule
++\begin{equation}
++ \nabla^2\Phi = \nabla\cdot\big[\nu(y)\nabla\Phi_N\big],
++ \qquad
++ \nu(y)=\left(\frac{1+\sqrt{1+4/y^2}}{2}\right)^{1/2}.
++ \label{eq:cumulative-displacement-trial}
++\end{equation}
++The product on the right is continuously extended at zero field.
++In this trial the two weak-field metric potentials are both set to
++$\Phi$. Nearby matter fields are combined before applying the
++response, and only its gradient part bends the light. No interface
++radius or halo amplitude is fitted. The small-field limit gives
++$g\sim\sqrt{a_H g_N}$ in spherical symmetry, while the high-field
++limit rapidly approaches ordinary gravity. This is a QUMOND-form
++constitutive ansatz~\cite{Milgrom2010QUMOND} with a BHSM-motivated
++scale, not a derivation from the BHSM action, a separate proof of
++novelty, or a relativistic completion. It replaces the retained R1
++correction in this test.
++
++For HE~0435-1223, using the same stellar inputs and nominal effective
++group proxy, the angular scatter falls from $0.899''$ to
++$0.727''$. Treating the stellar and group responses as independent
++before adding them gives $0.668''$ instead. The ordered two-plane
++difference from that additive control changes the four-ray pair
++separation vectors by up to $0.124''$. The group proxy is not an
++independent baryon inventory. The joint foreground result uses a
++projected longitudinal solve on finite boxes; the tested box and
++projection changes give $0.7265''$--$0.7269''$, not a physical
++uncertainty. The new field still does not predict delays.
++
++For the isolated spherical Jackpot main galaxy, the new term changes
++the two farthest-source images' back-projected separation from
++$3.867''$ to $3.431''$ (Chabrier) or from $2.994''$ to $2.546''$
++(Salpeter). A stronger restriction applies to the class of radial
++responses at this fixed scale satisfying
++$0\leq g-g_N\leq\sqrt{a_H g_N}$ everywhere: integrating the upper
++envelope along both rays and applying the triangle inequality
++bounds their possible extra differential bending by $1.116''$
++or $1.513''$, respectively. Even allowing the $0.901''$ from the
++two illustrative intermediate SIS deflectors above, the gap in
++this radial class is at least $1.850''$ or $0.579''$, respectively.
++Changing the interpolation within that envelope cannot close this
++restricted calculation. This does not bound a joint anisotropic
++Jackpot solve, an independently sourced environment, a different
++optical metric or a different displacement amplitude derived from
++the action.
++
++\paragraph{Test of the archived BHSM export prescription.}
++The static topographic field in the archived construction obeys
++$\nabla^2(T-B\nabla^2T)=S$. With the proposed optical identification
++proportional to the canonical flux $\nabla(T-B\nabla^2T)$, varying $B$
++cannot generate another exterior monopole at fixed $S$ and boundary
++charge. A conserved radial flow can fall as $1/r^2$ without being a
++source: its divergence is zero away from the carrier. The extra
++field instead requires a physical transfer into $S$ from the
++environment. The proposed mixed-curvature export has a known
++geometric normalization, but at fixed geometry its direct variation
++with respect to $T$ is zero. A nonzero export requires the coupled
++variation, or an independently specified common-mode work term.
++A trace-mismatch penalty alone has vanishing common-mode derivative
++on matched traces with fixed geometry and attachment.
++
++We tested what the archived prescription would predict if that
++transfer were admitted with unit amplitude. The gravity-only
++curvature crossing fixes the outer activation radius $a$, and
++the mixed-curvature normalization sets $V^2=GM(<a)/a$. For an
++outflow from $a$ to $20a$, the extra inward acceleration is
++$V^2[\min(r,20a)-a]_+/r^2$; we use equal weak-field metric potentials.
++No lens inputs are adjusted. HE~0435-1223 gives $0.816''$
++root-mean-square source scatter. The heavier stellar prescription
++for Jackpot gives a third-source gap of $2.752''$. Extending the
++outflow indefinitely in this local control changes these results
++to $0.812''$ and $2.740''$, respectively. In HE~0435-1223 the group
++and rear galaxy remain at their ordinary reference contributions;
++the new outflow is that of the primary only.
++
++As a diagnostic, a multiplier of $10.87$ on this particular
++fixed-shape outflow minimizes HE~0435-1223 scatter at $0.0122''$
++for the $20a$ cutoff. Holding it fixed in Jackpot leaves a
++$0.376''$ gap for the heavier stellar prescription. This is not
++an action-derived multiplier, a validated fit, or a delay
++prediction. It shows why numerical agreement on one lens is not
++sufficient to fix the export law. The next derivation must select
++the physical common-mode flux and source, including the environment
++response, rather than fit an amplitude per lens.
++
++\paragraph{Controlled environment test at fixed stellar density.}
++We next vary only a specified exterior quadrupole while keeping
++the galaxy unchanged. The Newtonian driving potential is
++$q r^2P_2(\cos\vartheta)$ inside the test shell and
++$qR^5r^{-3}P_2(\cos\vartheta)$ outside it. This represents a signed
++quadrupole perturbation, not the measured environment of either
++lens. At first order the spherical R1 background has radial principal
++coefficient $A=C\sqrt{1+\mathcal K(r)}$, where $\mathcal K$ is the
++same dimensionless spherical screening argument used above, and
++tangential coefficient $A_t=A+rA'/2$. The radial perturbation obeys
++\begin{equation}
++   (r^2 A f')'-6 A_t f=0
++\end{equation}
++away from the driver. We match the regular and decaying solutions
++by continuity of $f$ and the flux jump supplied by that same
++quadrupole. We subtract both the ordinary tide and the isolated
++scalar tide, so the residual is the change caused by the galaxy's
++presence in the scalar equation. This uses the action-fixed R1
++coefficients and no new fitted gain, within the stated spherical
++and weak-field approximation. A pure quadrupole cannot change the
++monopole at first order about a rotation-invariant background;
++this test does not exclude higher-order monopole changes.
++The linearization is a cubic Galileon response, not a new
++independent optical carrier~\cite{Andrews2013StaticGalileon}.
++
++For $q=1 (\mathrm{km/s})^2/\mathrm{kpc}^2$ and $R=400$ kpc, the
++extra foreground pairwise displacement is $0.0267$ milliarcseconds
++on the HE~0435-1223 rays, compared with $89.69$ milliarcseconds
++from the ordinary imposed tide. For the farthest-source pair
++in the spherical Salpeter Jackpot model the values are $0.0849$
++and $153.42$ milliarcseconds. HE~0435-1223 uses the measured
++group direction for the probe orientation; Jackpot uses an eastward
++test axis. The readout uses full radial projection of the matched
++modes but no later deflector propagation or actual environment fit.
++Changing the test shell to $R=200$ or $800$ kpc yields respective
++ranges $0.0113$--$0.0316$ and $0.0166$--$0.1577$
++milliarcseconds. The R1 branch thus fixes a nonzero response in
++this experiment, but its amplitude here is far below that needed
++by the fixed-input lens models. This says nothing about the value
++of an independent, unselected BHSM interface-work term.
++
++\paragraph{Environment check using the reported neighbors.}
++The HE~0435-1223 spectroscopy gives two projected centers for the
++associated group: $67.1$ arcsec in Table~4 and $41.9$ arcsec in
++Table~B1 of Ref.~\cite{Sluse2017H0LiCOWII}, using different
++group-member selections. Repeating the same nonlinear calculation
++at the second center, with the first table's $470\,\mathrm{km\,s^{-1}}$
++velocity normalization and the group profile and projection held
++fixed, increases the joint-minus-isolated R1 differential from
++about $4.7$ to $6.1$ microarcseconds. The ordinary four-ray
++source-plane root-mean-square scatter changes from $0.899$ to
++$0.876$ arcsec. The change in group geometry matters, but neither
++case closes the rays. The measured redshifts and angular positions
++do not independently determine the three-dimensional group density.
++
++For Jackpot, discovery imaging places a bright possible companion
++about $40$ arcsec to the southwest, with a photometric
++redshift $0.20\pm0.04$~\cite{Gavazzi2008Jackpot}.
++The same-plane placement and the companion's mass are therefore
++scenario inputs, not measurements. At a nominal position angle of
++$225^\circ$, the same nonlinear R1 equation applied to the
++spherical Salpeter primary and a test Plummer companion
++(10 kpc scale) gives joint-minus-isolated deflection
++differences of approximately $1.5$ and $6.7$ microarcseconds at
++$10^{11}$ and $10^{12}\,M_\odot$, respectively.
++Ordinary companion deflection differences are $2.85$ and $28.5$
++milliarcseconds, respectively; the third-source pair still misses by
++$2.99$ and $2.97$ arcsec. These numerical examples omit the two
++intermediate-source deflectors. They do not replace an independently
++measured environment or provide a morphology prediction.
++In the same-plane test the ordinary companion alone would need at
++least $8.5\times10^{13}\,M_\odot$ to supply the amplitude of the
++stars-only source gap, even allowing any position angle at the
++reported separation. This necessary bound follows by bounding the
++norm of the Plummer-deflection derivative along the chord joining
++the two rays; it is neither a fit nor an estimate of the companion's
++mass. Thus the measured locations improve the environmental inputs
++but do not establish the missing full-field response.
++
++
++\paragraph{A criterion for adding knowledge.}
++Use a single independently specified BHSM rule to construct a field for
++each lens from that lens's own physical inputs. For Jackpot, freeze the
++rule and the deflector constraints without the third-source image
++positions. Back-project the two positions after freezing, and compare
++their separation with the propagated astrometric and model uncertainty.
++The image-plane likelihood or the covariance-weighted source statistic
++must be used so that a mere rescaling of source coordinates does not
++improve the score. Centroid agreement should be followed by a test
++of the reserved counterimage line morphology, convolved with its
++measured point-spread function; the centroids can agree without
++correct image shapes~\cite{Ballard2026Jackpot}.
++Equivalently, use one image to specify the otherwise unknown source
++position and predict the other. Fit or marginalize the lower-redshift
++source light only under the same data and prior rules in both
++comparisons. For HE~0435-1223, require common-source closure before
++scoring withheld delay differences. Matched resolved host features
++can also test relative image distortions: for Jacobians $J_i$ mapping
++image to source, $J_j^{-1}J_i$ cancels a common source-coordinate
++Jacobian at the matched feature. Report the two results jointly,
++with no lens-specific adjustment of the hypothesized BHSM coupling
++after inspecting either target. A conventional field with the same
++effective potentials will reproduce the same optics. A BHSM addition
++would therefore be an independently fixed feature of the field that
++predicts the reserved observations, not a new label for the fitted
++potential. The geometry calculation sets up that test; it does not
++supply the missing BHSM environmental source law or a new observational
++fit to Jackpot.
++
+ \section{Conclusions}
++The multi-source extension in Section~\ref{sec:joint-lens-terrain}
++sets a joint observational criterion: one fixed source-to-field rule
++must account for independent source tracks in Jackpot and relative
++arrival times in HE~0435-1223. The published Jackpot residual and
++the fixed-input closure failures motivate the test;
++neither establishes a BHSM preference.
++
++The principal result is a constructive ordinary-gravity
++correspondence. For the specified R1 branch, a positive conventional
++effective mass produces the same retained metric and optical transfer,
++hence the same image positions and relative arrival times. This
++equality is exact at the stated order. It does not imply that the
++retained model fits the observed lens to the claimed precision, nor is
++it asserted beyond the approximation used here.
++
+ For the prescribed $10^{11}M_\odot$, $3$ kpc body at $z_l=0.3$ and
+ common source at $z_s=1$, the fixed R1 action/state produces a regular
+ source, screening radius approximately $212$ kpc, reference-relative
+ delay offsets $25.96$ s and $8.65$ s, image changes approximately
+ $0.79$--$6.12$ microarcsec and a $6.82$ ppm delay-ratio change.
+ The state dependence enters explicitly through the normalized scalar
+-mixing and stiffness. These results retain one physical incident-light,
+-clock and propagation prescription throughout.
++mixing and stiffness. These are forward predictions for a prescribed
++benchmark, not measured delays in HE~0435-1223. The calculation retains
++one incident-light, clock and propagation prescription throughout.
+ 
+-The same retained metric and light transfer admit a positive
+-conventional effective mass. A finite five-parameter ordinary refit
+-also reproduces the three injected images and two delays to numerical
++Separately, a finite five-parameter ordinary refit reproduces the three injected images and two delays to numerical
+ precision; fixing its center leaves millisecond-scale delay mismatches
+ in the declared profile family. The interpretation of the response
+ therefore depends on the admitted lens freedoms. A smooth Plummer
+@@ -1288,8 +1673,8 @@ and distributed optical encounter make the benchmark's model and
+ approximation dependencies explicit. The common GR2 changes of the
+ original offsets remain $+69$ and $-10$ microseconds.
+ 
+-The observed HE~0435 baseline trains on 902 epochs and reserves 100
+-later epochs. With later B as the allowed driver, conventional and R1
++The retrospective COSMOGRAIL test of HE~0435-1223 trains on 902 epochs
++and withholds the 100 later epochs. With later B as the allowed driver, conventional and R1
+ predictions for 300 A/C/D targets differ by only $0.00498$ in joint log
+ score. Their nominal 95\% intervals cover $85.33\%$ of these targets,
+ and the separately retained all-channel forecast also undercovers.
+@@ -1326,14 +1711,27 @@ is sharpened by an explicit valid-rate correction and two new consumed-data
+ applications. Restoring 303 valid slopes gives $0.448$ mas raw RMS while
+ all profiles still fail. An electron-conserving history term does not
+ repair the held optical mean. A coherent sky with shared calibration
+-uncertainty lowers training residuals at a converged conditional optimum,
+-but also fails a held-exposure profile. Actual histories and calibration
++uncertainty lowers training residuals at a converged conditional optimum.
++The conditional E4 target test still gives original-ERR
++$Q=10974.065420$ in native replay. This used an already examined exposure:
++shared response parameters were frozen for the target test, but all four
++field calibrations were retained and E4 target group-0 information was
++used for the electronic intercept. This is an internal adequacy diagnostic,
++not an independent exposure forecast. Actual histories and calibration
+ darks identify missing temporal/spatial covariance and a noncommuting
+ IPC/linearity composition; these are tested instrumental relations,
+ not extra gravitational amplitudes. Precision inference therefore
+ requires an adequate instrumental mean and stochastic/reference covariance,
+ with the physical-state and global-matching dependencies still explicit.
+ 
++The independently specified source control in
++Section~\ref{sec:he0435-unified-foreground} adds an explicit test of
++the full-field objective: a single nonlinear foreground solve plus a
++distinct G1 plane is calculable, but the adopted sources leave
++$0.899''$ of source-plane scatter. The failed common-source test
++precedes any time-delay comparison, and no fitted correction was used
++to hide it.
++
+ Prepared light constrains an envelope encounter transfer. Identifying
+ that transfer with a particular underlying state consumes the specified
+ action/source map and independently justified mass/environment data.
+@@ -1351,7 +1749,9 @@ Their source paths, executable commands, input hashes, numerical outputs
+ and focused checks are mapped in the acceptance checkpoint. The long
+ cap and continuation TeX derivations are retained as technical
+ supplementary source; the historical target and transport calculations
+-remain available.}
++remain available. The author-review supplement also provides the
++galaxy--group two-plane replay, its numerical outputs and the
++accepted and failed grid checks.}
+ \authorcontributions{Norman P. Carberry: conceptualization, methodology,
+ software, validation, formal analysis, investigation, resources, data
+ curation, writing---original draft preparation, writing---review and
+@@ -1385,10 +1785,16 @@ The additive native-rate repair, byte-preserved supplied package,
+ actual read-group and coherent-sky applications, residual maps and
+ independent computational reviews are archived at
+ \href{https://github.com/ncarberry64/Manuscript-Generation/tree/34694083c22d32261c6f0ac27211d8e3f984803d}{\texttt{34694083c22d}}.
+-The supplied detector processing is preserved without a new replay;
+-the new applications and their failed adequacy gates are separately
+-identified. Reserved observations are not included in the development
+-fits.}
++The supplied detector processing is preserved without a new replay.
++The subsequent HE~0435-1223 native-mean, source-calibrated covariance
++and held-target applications are documented in the
++\href{https://github.com/ncarberry64/Manuscript-Generation/blob/4f044a6af5757f6f1c4e99e6547b43d6c45e353c/docs/HE0435_RESPONSE_COMPLETION_20261021.md}{final response-completion report}.
++The inputs and source hashes, numerical outputs and independent review
++receipts are retained in the
++\href{https://github.com/ncarberry64/Manuscript-Generation/tree/4f044a6af5757f6f1c4e99e6547b43d6c45e353c/artifacts/strong_lensing_response_completion_20261021}{response-completion archive}
++at revision \texttt{4f044a6af575}. The conditional E4 target diagnostic
++uses an already examined exposure. The separately reserved observations
++are not included in the development fits.}
+ % Numerical Gaia quasar targets were queried only after their separate freeze.
+ \acknowledgments{The author acknowledges COSMOGRAIL, the original LCO
+ investigators and CDS/VizieR for the public photometry, and NASA/ESA HST
+diff --git a/manuscript/strong_lensing_main.tex b/manuscript/strong_lensing_main.tex
+index 0d6986d..970bb3c 100644
+--- a/manuscript/strong_lensing_main.tex
++++ b/manuscript/strong_lensing_main.tex
+@@ -20,7 +20,7 @@
+ \AuthorNames{Norman P. Carberry}
+ \address[1]{Independent Researcher, Oconomowoc, Wisconsin, USA;\\
+ Correspondence: \href{mailto:carberry8878130@hotmail.com}{carberry8878130@hotmail.com}}
+-\abstract{Prepared environmental light probes a state-conditioned optical transfer in the Berger--Hopf interpretation. We calculate a regular finite-body response from the specified R1 cubic scalar--tensor action, obtaining fixed-preparation delay offsets of 25.9593 s and 8.6490 s. A positive conventional effective mass reproduces the retained metric, limiting state identifiability. We construct an HE 0435-1223 observed-light baseline and test separately frozen predictions. Brightness undercoverage, conditional HST central-image tension and a 3.26 mas Gaia discrepancy motivate source and geometry revisions. A positive G1 perturber reduces consumed-Gaia coordinate RMS to about 0.011 mas without enlarging errors, but the new JWST test fails instrumental adequacy. Correcting native-rate eligibility restores 303 valid slopes and gives about 0.45 mas raw geometry RMS for both reference and R1-inclusive controls; all sixteen profiles still fail. Actual target histories and source calibration darks expose missing temporal and interpixel covariance. The coupled coherent-sky/response mean converges, but its held exposure remains inadequate. Calibration-ordered readout applications retain the original residual evidence rather than equating changed errors with validation. These development results establish neither precision validation nor a BHSM detection or unique envelope-state measurement.}
++\abstract{Why does the Berger--Hopf R1 lens give the same result as ordinary gravity? For the spherical R1 family at the order calculated, the screened scalar changes the two equal weak-field metric potentials in exactly the way a nonnegative conventional mass density would. Identical potentials give identical light deflections, images and relative arrival times. R1 adds a predictive relation: once its state and matter source are specified, the scalar field equation determines the additional mass profile and its dependence on scalar mixing and stiffness, rather than fitting a separate halo for the same response. This is an advantage in physical interpretation, not an improvement in fit. Holding the ordinary matter profile fixed instead gives conditional offsets of 25.9593 s and 8.6490 s in a synthetic lens, not measured delays in HE~0435-1223. In that observed lens, the withheld COSMOGRAIL and unused LCO photometry give nearly tied scores, and JWST instrumental adequacy checks fail, including an internal check that reuses an exposure. A fixed-input nonlinear galaxy-and-group field propagated through the rear G1 plane still leaves 0.899 arcseconds of source-plane scatter, so it provides no observed-lens delay prediction. The correspondence is exact within the retained approximation; the data do not establish a precision fit or a unique BHSM envelope state.}
+ \keyword{Berger--Hopf framework; strong gravitational lensing; time delays; envelope response; Vainshtein screening; effective-mass representation}
+ \begin{document}
+ % This is an author-review artifact, not a record of a journal submission.
+@@ -158,6 +158,24 @@ H0LiCOW II. Spectroscopic survey and galaxy-group identification of the
+ strong gravitational lens system HE~0435$-$1223.
+ \emph{Mon. Not. R. Astron. Soc.} \textbf{2017}, \emph{470}, 4838--4857.
+ \href{https://doi.org/10.1093/mnras/stx1484}{https://doi.org/10.1093/mnras/stx1484}.
++\bibitem{Zahedy2016HE}
++Zahedy, F.S.; Chen, H.-W.; Rauch, M.; Wilson, M.L.; Zabludoff, A.
++Probing the Cool Interstellar and Circumgalactic Gas of Three Massive
++Lensing Galaxies at $z=0.4$--$0.7$.
++\url{https://arxiv.org/abs/1510.04307}.
++\bibitem{Kochanek2006HE}
++Kochanek, C.S.; Morgan, N.D.; Falco, E.E.; McLeod, B.A.; Winn, J.N.;
++Dembicky, J.; Ketzeback, B.
++The Time Delays of Gravitational Lens HE~0435-1223:
++An Early-Type Galaxy with a Rising Rotation Curve.
++\url{https://arxiv.org/abs/astro-ph/0508070}.
++\bibitem{Wong2017HE}
++Wong, K.C.; Suyu, S.H.; Auger, M.W.; Bonvin, V.; Courbin, F.;
++Fassnacht, C.D.; Halkola, A.; Rusu, C.E.; Sluse, D.; Sonnenfeld, A.; et al.
++H0LiCOW IV. Lens mass model of HE~0435-1223 and blind measurement
++of its time-delay distance for cosmology.
++\emph{Mon. Not. R. Astron. Soc.} \textbf{2017}, \emph{465}, 4895--4913.
++\href{https://doi.org/10.1093/mnras/stw3077}{https://doi.org/10.1093/mnras/stw3077}.
+ \bibitem{FadelyKeeton2012HE0435}
+ Fadely, R.; Keeton, C.R.
+ Substructure in the lens HE~0435$-$1223.
+@@ -190,5 +208,58 @@ Space Telescope Science Institute. JWST Using Wavefronts Measured On Orbit.
+ Available online: \url{https://stpsf.readthedocs.io/en/latest/jwst_measured_opds.html}
+ (accessed on 21 October 2026). The delivered version 2.2.0 PSF and dated OPD
+ used here are identified by exact hashes in the calculation archive.
++
++\bibitem{Ding2017host}
++Ding, X.; Liao, K.; Treu, T.; Suyu, S.H.; Chen, G.C.-F.; et al.
++H0LiCOW VI. Testing the fidelity of lensed quasar host galaxy reconstruction.
++\emph{Mon. Not. R. Astron. Soc.} \textbf{2017}, \emph{465}, 4634--4649.
++\href{https://doi.org/10.1093/mnras/stw3078}{https://doi.org/10.1093/mnras/stw3078}.
++\bibitem{CollettSmith2021Jackpot}
++Smith, R.J.; Collett, T.E.
++A fully-spectroscopic triple-source-plane lens: the Jackpot completed.
++\emph{Mon. Not. R. Astron. Soc.} \textbf{2021}, \emph{505}, 2136--2140.
++\href{https://doi.org/10.1093/mnras/stab1399}{https://doi.org/10.1093/mnras/stab1399}.
++\bibitem{Ballard2024Jackpot}
++Ballard, D.J.; Enzi, W.J.R.; Collett, T.E.; Turner, H.C.; Smith, R.J.
++Gravitational imaging through a triple source plane lens: revisiting the
++dark subhalo in SDSS J0946+1006.
++\emph{Mon. Not. R. Astron. Soc.} \textbf{2024}, \emph{528}, 7564--7586.
++\href{https://doi.org/10.1093/mnras/stae514}{https://doi.org/10.1093/mnras/stae514}.
++
++\bibitem{CollettSmith2020Jackpot}
++Collett, T.E.; Smith, R.J.
++A triple rollover: a third multiply imaged source at $z\approx6$ behind
++the Jackpot gravitational lens.
++\emph{Mon. Not. R. Astron. Soc.} \textbf{2020}, \emph{497}, 1654--1660.
++\href{https://doi.org/10.1093/mnras/staa1804}{https://doi.org/10.1093/mnras/staa1804}.
++\bibitem{Sonnenfeld2012Jackpot}
++Sonnenfeld, A.; Treu, T.; Gavazzi, R.; Marshall, P.J.; Auger, M.W.;
++Suyu, S.H.; Koopmans, L.V.E.; Bolton, A.S.
++Evidence for dark matter contraction and a Salpeter initial mass function
++in a massive early-type galaxy.
++\emph{Astrophys. J.} \textbf{2012}, \emph{752}, 163.
++\url{https://arxiv.org/abs/1111.4215}.
++
++\bibitem{Milgrom2010QUMOND}
++Milgrom, M. Quasi-linear formulation of MOND.
++\emph{Mon. Not. R. Astron. Soc.} \textbf{2010}, \emph{403}, 886--895.
++\href{https://doi.org/10.1111/j.1365-2966.2009.16184.x}{https://doi.org/10.1111/j.1365-2966.2009.16184.x}.
++
++\bibitem{Ballard2026Jackpot}
++Ballard, D.J. et al. Harnessing stellar kinematics to constrain dark
++energy with the double-source-plane gravitational lens SDSS J0946+1006.
++2026, preprint. \url{https://arxiv.org/abs/2609.08573}.
++
++\bibitem{Andrews2013StaticGalileon}
++Andrews, M.; Chu, Y.-Z.; Trodden, M. Galileon forces in the Solar System.
++\emph{Phys. Rev. D} \textbf{2013}, \emph{88}, 084028.
++\url{https://arxiv.org/abs/1305.2194}.
++\bibitem{Gavazzi2008Jackpot}
++Gavazzi, R.; Treu, T.; Koopmans, L.V.E.; Bolton, A.S.; Moustakas, L.A.;
++Burles, S.; Marshall, P.J. The Sloan Lens ACS Survey. VI. Discovery and
++analysis of a double Einstein ring. \emph{Astrophys. J.}
++\textbf{2008}, \emph{677}, 1046--1059.
++\url{https://doi.org/10.1086/529541}.
++
+ \end{thebibliography}
+ \end{document}

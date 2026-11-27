@@ -1,0 +1,616 @@
+{
+  "scope": "Conditional stars-only actual-target control; no masses, source position, delays, shear or halo fitted. Main circular. Independent G1 bulge+disk photometry circled as primary, with common H-band M/L, plus Plummer sensitivity variants; independent R1 quasi-static response on each well-separated redshift plane, with coupled ordered ray tracing; not joint cosmological nonlinear matter evolution or a BHSM environment-law prediction.",
+  "redshifts": [
+    0.4546,
+    0.7821,
+    1.693
+  ],
+  "distances_Mpc": [
+    1226.2418809191754,
+    1572.8421984178221,
+    1782.8518136641826,
+    573.2547645501627,
+    1124.9083321595724,
+    746.6082659792177
+  ],
+  "source_comparison": "Back-project observed positions only; common-source RMS is diagnostic equivalent to best constant centering, not a forward fitted quasar source.",
+  "main_Msun": 125892541179.41661,
+  "main_n": 3.51,
+  "main_Re_major_kpc": 4.4,
+  "main_q": 0.82,
+  "main_Re_circularized_kpc": 3.9843694607804636,
+  "G1_stellar_Msun": 79432823472.42822,
+  "G1_offsets_arcsec": [
+    -2.585,
+    -3.637
+  ],
+  "main_eps": 0.0009765080668985957,
+  "G1_eps": 0.0004000941126020631,
+  "main_no_G1": {
+    "rays": [
+      {
+        "image": "A",
+        "source_arcsec": [
+          0.9173048069971459,
+          0.443920359784626
+        ],
+        "total_convergence": 0.043153953856228,
+        "rotation": 0.0,
+        "signed_jacobian_det": 0.8855468665468332,
+        "G1_impact_kpc": 41.35343459895086,
+        "main_reduced_deflection_arcsec": 0.28139691361790675,
+        "G1_reduced_deflection_arcsec": 0.0,
+        "jacobian_fd_error": 9.123811151035e-10
+      },
+      {
+        "image": "B",
+        "source_arcsec": [
+          -0.2248044815955746,
+          0.8277868020030662
+        ],
+        "total_convergence": 0.05603481062565385,
+        "rotation": 0.0,
+        "signed_jacobian_det": 0.8495577305515323,
+        "G1_impact_kpc": 38.74065477862459,
+        "main_reduced_deflection_arcsec": 0.30103558101113026,
+        "G1_reduced_deflection_arcsec": 0.0,
+        "jacobian_fd_error": 1.1432281232792718e-09
+      },
+      {
+        "image": "C",
+        "source_arcsec": [
+          -1.0139653280204204,
+          -0.027935300362964162
+        ],
+        "total_convergence": 0.04347481795505359,
+        "rotation": 0.0,
+        "signed_jacobian_det": 0.8846561509024974,
+        "G1_impact_kpc": 29.166009890574326,
+        "main_reduced_deflection_arcsec": 0.28194161255531375,
+        "G1_reduced_deflection_arcsec": 0.0,
+        "jacobian_fd_error": 1.0302383390836667e-09
+      },
+      {
+        "image": "D",
+        "source_arcsec": [
+          0.16482102171509333,
+          -0.7430397864690307
+        ],
+        "total_convergence": 0.06611549009817619,
+        "rotation": 0.0,
+        "signed_jacobian_det": 0.82111379130199,
+        "G1_impact_kpc": 29.406484931877017,
+        "main_reduced_deflection_arcsec": 0.3139092288641849,
+        "G1_reduced_deflection_arcsec": 0.0,
+        "jacobian_fd_error": 1.3632674988883764e-09
+      }
+    ],
+    "common_source_RMS_arcsec": 0.910170878638412,
+    "max_source_disagreement_arcsec": 1.9880774880331216
+  },
+  "G1_photometric_bulge_disk": {
+    "bulge_fraction": 0.5230095872975626,
+    "bulge_Re_kpc": 2.82138103927163,
+    "disk_Re_kpc": 8.574653435638083,
+    "stars_only_GR": {
+      "rays": [
+        {
+          "image": "A",
+          "source_arcsec": [
+            0.896609325105214,
+            0.4202800196422391
+          ],
+          "total_convergence": 0.04284211755404732,
+          "rotation": -0.0004103976242233742,
+          "signed_jacobian_det": 0.884775798579623,
+          "G1_impact_kpc": 41.35343459895086,
+          "main_reduced_deflection_arcsec": 0.28139691361790675,
+          "G1_reduced_deflection_arcsec": 0.031419240168836626,
+          "jacobian_fd_error": 9.129331179913436e-10
+        },
+        {
+          "image": "B",
+          "source_arcsec": [
+            -0.23988693670072578,
+            0.797913339415948
+          ],
+          "total_convergence": 0.05607314095762783,
+          "rotation": 0.0007566231012142571,
+          "signed_jacobian_det": 0.8491846331064238,
+          "G1_impact_kpc": 38.74065477862459,
+          "main_reduced_deflection_arcsec": 0.30103558101113026,
+          "G1_reduced_deflection_arcsec": 0.03346497002752063,
+          "jacobian_fd_error": 1.1449453607426108e-09
+        },
+        {
+          "image": "C",
+          "source_arcsec": [
+            -1.0301304393663087,
+            -0.06853498540732139
+          ],
+          "total_convergence": 0.04472774728814466,
+          "rotation": -0.0007967918216787093,
+          "signed_jacobian_det": 0.8847107477004467,
+          "G1_impact_kpc": 29.166009890574326,
+          "main_reduced_deflection_arcsec": 0.28194161255531375,
+          "G1_reduced_deflection_arcsec": 0.0436994879892885,
+          "jacobian_fd_error": 1.0364215041747116e-09
+        },
+        {
+          "image": "D",
+          "source_arcsec": [
+            0.1339879337749406,
+            -0.7735454225992099
+          ],
+          "total_convergence": 0.06719557914087138,
+          "rotation": 0.0012653528546163542,
+          "signed_jacobian_det": 0.8210418087057354,
+          "G1_impact_kpc": 29.406484931877017,
+          "main_reduced_deflection_arcsec": 0.3139092288641849,
+          "G1_reduced_deflection_arcsec": 0.04337364577288935,
+          "jacobian_fd_error": 1.3723915337493509e-09
+        }
+      ],
+      "common_source_RMS_arcsec": 0.9092923531286993,
+      "max_source_disagreement_arcsec": 1.9877792204259959,
+      "max_source_shift_arcsec": 0.0436994879892885,
+      "max_pairwise_differential_source_shift_arcsec": 0.017805599143295037
+    },
+    "stars_plus_baryon_sourced_R1": {
+      "rays": [
+        {
+          "image": "A",
+          "source_arcsec": [
+            0.896596845921571,
+            0.42027194572907234
+          ],
+          "total_convergence": 0.042848578101466694,
+          "rotation": -0.00041043385880387695,
+          "signed_jacobian_det": 0.8847626471903589,
+          "G1_impact_kpc": 41.353317119985235,
+          "main_reduced_deflection_arcsec": 0.281407363904757,
+          "G1_reduced_deflection_arcsec": 0.03142391374537004,
+          "jacobian_fd_error": 9.130964595538416e-10
+        },
+        {
+          "image": "B",
+          "source_arcsec": [
+            -0.2398864703452141,
+            0.7978996872881077
+          ],
+          "total_convergence": 0.056080088115472826,
+          "rotation": 0.0007566836215873174,
+          "signed_jacobian_det": 0.8491706996863159,
+          "G1_impact_kpc": 38.74054791267732,
+          "main_reduced_deflection_arcsec": 0.3010454249099948,
+          "G1_reduced_deflection_arcsec": 0.033469629265861923,
+          "jacobian_fd_error": 1.1446839587314628e-09
+        },
+        {
+          "image": "C",
+          "source_arcsec": [
+            -1.0301217044563329,
+            -0.06853885478292326
+          ],
+          "total_convergence": 0.044734529810280144,
+          "rotation": -0.0007968395142347543,
+          "signed_jacobian_det": 0.8846972511091092,
+          "G1_impact_kpc": 29.16595471923407,
+          "main_reduced_deflection_arcsec": 0.2819520457113945,
+          "G1_reduced_deflection_arcsec": 0.043703976584483474,
+          "jacobian_fd_error": 1.0363446767414075e-09
+        },
+        {
+          "image": "D",
+          "source_arcsec": [
+            0.13398271698319214,
+            -0.7735393702364677
+          ],
+          "total_convergence": 0.06720302750093854,
+          "rotation": 0.0012654249221687522,
+          "signed_jacobian_det": 0.8210271253265736,
+          "G1_impact_kpc": 29.40643276251324,
+          "main_reduced_deflection_arcsec": 0.3139186868444325,
+          "G1_reduced_deflection_arcsec": 0.04337813564031796,
+          "jacobian_fd_error": 1.3723907565932336e-09
+        }
+      ],
+      "common_source_RMS_arcsec": 0.9092818032026714,
+      "max_source_disagreement_arcsec": 1.9877576238232642,
+      "max_source_shift_arcsec": 1.4863313837099458e-05,
+      "max_pairwise_differential_source_shift_arcsec": 2.162674048950848e-05
+    }
+  },
+  "G1_plummer_kpc": {
+    "0.2": {
+      "stars_only_GR": {
+        "rays": [
+          {
+            "image": "A",
+            "source_arcsec": [
+              0.8963858283953997,
+              0.4200247205258282
+            ],
+            "total_convergence": 0.04274668507885471,
+            "rotation": -0.00042116807511533016,
+            "signed_jacobian_det": 0.8849185954303802,
+            "G1_impact_kpc": 41.35343459895086,
+            "main_reduced_deflection_arcsec": 0.28139691361790675,
+            "G1_reduced_deflection_arcsec": 0.031758545957378335,
+            "jacobian_fd_error": 9.134974165991849e-10
+          },
+          {
+            "image": "B",
+            "source_arcsec": [
+              -0.24008314712626033,
+              0.7975247100604788
+            ],
+            "total_convergence": 0.055952398909171475,
+            "rotation": 0.0007809456652018085,
+            "signed_jacobian_det": 0.8493955794920367,
+            "G1_impact_kpc": 38.74065477862459,
+            "main_reduced_deflection_arcsec": 0.30103558101113026,
+            "G1_reduced_deflection_arcsec": 0.03390032196219064,
+            "jacobian_fd_error": 1.1451926351657704e-09
+          },
+          {
+            "image": "C",
+            "source_arcsec": [
+              -1.0306219629072426,
+              -0.06976947742700554
+            ],
+            "total_convergence": 0.044288773387684,
+            "rotation": -0.0008594733716263542,
+            "signed_jacobian_det": 0.885714321014291,
+            "G1_impact_kpc": 29.166009890574326,
+            "main_reduced_deflection_arcsec": 0.28194161255531375,
+            "G1_reduced_deflection_arcsec": 0.04502823399133557,
+            "jacobian_fd_error": 1.0391618676663938e-09
+          },
+          {
+            "image": "D",
+            "source_arcsec": [
+              0.13307346964785308,
+              -0.7744501749862941
+            ],
+            "total_convergence": 0.06676950617961208,
+            "rotation": 0.0013624105200911313,
+            "signed_jacobian_det": 0.8219467288649607,
+            "G1_impact_kpc": 29.406484931877017,
+            "main_reduced_deflection_arcsec": 0.3139092288641849,
+            "G1_reduced_deflection_arcsec": 0.044660044436471036,
+            "jacobian_fd_error": 1.3734537951393122e-09
+          }
+        ],
+        "common_source_RMS_arcsec": 0.9094986621610909,
+        "max_source_disagreement_arcsec": 1.9882800064601933,
+        "max_source_shift_arcsec": 0.04502823399133558,
+        "max_pairwise_differential_source_shift_arcsec": 0.018437969316991046
+      },
+      "stars_plus_baryon_sourced_R1": {
+        "rays": [
+          {
+            "image": "A",
+            "source_arcsec": [
+              0.8963733317797362,
+              0.4200166265712936
+            ],
+            "total_convergence": 0.0427531411710419,
+            "rotation": -0.0004212050981869525,
+            "signed_jacobian_det": 0.8849054485004789,
+            "G1_impact_kpc": 41.353317119985235,
+            "main_reduced_deflection_arcsec": 0.281407363904757,
+            "G1_reduced_deflection_arcsec": 0.03176324609562413,
+            "jacobian_fd_error": 9.130246558797239e-10
+          },
+          {
+            "image": "B",
+            "source_arcsec": [
+              -0.24008269508343658,
+              0.7975110300250914
+            ],
+            "total_convergence": 0.05595934114530854,
+            "rotation": 0.0007810078104751317,
+            "signed_jacobian_det": 0.8493816525485305,
+            "G1_impact_kpc": 38.74054791267732,
+            "main_reduced_deflection_arcsec": 0.3010454249099948,
+            "G1_reduced_deflection_arcsec": 0.033905012563641874,
+            "jacobian_fd_error": 1.1446237568879525e-09
+          },
+          {
+            "image": "C",
+            "source_arcsec": [
+              -1.0306132525831866,
+              -0.06977340555357756
+            ],
+            "total_convergence": 0.04429554586344264,
+            "rotation": -0.0008595242337264535,
+            "signed_jacobian_det": 0.8857008440518964,
+            "G1_impact_kpc": 29.16595471923407,
+            "main_reduced_deflection_arcsec": 0.2819520457113945,
+            "G1_reduced_deflection_arcsec": 0.04503278626473742,
+            "jacobian_fd_error": 1.039164088112443e-09
+          },
+          {
+            "image": "D",
+            "source_arcsec": [
+              0.13306820968740093,
+              -0.7744441667046695
+            ],
+            "total_convergence": 0.06677694471664375,
+            "rotation": 0.0013624871652417464,
+            "signed_jacobian_det": 0.8219320609128068,
+            "G1_impact_kpc": 29.40643276251324,
+            "main_reduced_deflection_arcsec": 0.3139186868444325,
+            "G1_reduced_deflection_arcsec": 0.04466459599451699,
+            "jacobian_fd_error": 1.3735957926641618e-09
+          }
+        ],
+        "common_source_RMS_arcsec": 0.9094881188631024,
+        "max_source_disagreement_arcsec": 1.988258426835799,
+        "max_source_shift_arcsec": 1.488883820344668e-05,
+        "max_pairwise_differential_source_shift_arcsec": 2.161222836453432e-05
+      }
+    },
+    "2.0": {
+      "stars_only_GR": {
+        "rays": [
+          {
+            "image": "A",
+            "source_arcsec": [
+              0.8964341562867504,
+              0.42007992522199605
+            ],
+            "total_convergence": 0.04276172598312167,
+            "rotation": -0.0004192243230953241,
+            "signed_jacobian_det": 0.8848969246251792,
+            "G1_impact_kpc": 41.35343459895086,
+            "main_reduced_deflection_arcsec": 0.28139691361790675,
+            "G1_reduced_deflection_arcsec": 0.031685176048278106,
+            "jacobian_fd_error": 9.135328327136705e-10
+          },
+          {
+            "image": "B",
+            "source_arcsec": [
+              -0.2400429411358973,
+              0.7976043451159466
+            ],
+            "total_convergence": 0.05596977810449022,
+            "rotation": 0.0007768409374940624,
+            "signed_jacobian_det": 0.8493654937662769,
+            "G1_impact_kpc": 38.74065477862459,
+            "main_reduced_deflection_arcsec": 0.30103558101113026,
+            "G1_reduced_deflection_arcsec": 0.03381111286108308,
+            "jacobian_fd_error": 1.1447703895939298e-09
+          },
+          {
+            "image": "C",
+            "source_arcsec": [
+              -1.0305447853482106,
+              -0.06957564117545453
+            ],
+            "total_convergence": 0.044334178899105625,
+            "rotation": -0.0008515271826823097,
+            "signed_jacobian_det": 0.8856063743905357,
+            "G1_impact_kpc": 29.166009890574326,
+            "main_reduced_deflection_arcsec": 0.28194161255531375,
+            "G1_reduced_deflection_arcsec": 0.04481959826085422,
+            "jacobian_fd_error": 1.0388966353858109e-09
+          },
+          {
+            "image": "D",
+            "source_arcsec": [
+              0.13321818510926275,
+              -0.7743069964238115
+            ],
+            "total_convergence": 0.06681409851137521,
+            "rotation": 0.0013500182258246937,
+            "signed_jacobian_det": 0.8218489511653285,
+            "G1_impact_kpc": 29.406484931877017,
+            "main_reduced_deflection_arcsec": 0.3139092288641849,
+            "G1_reduced_deflection_arcsec": 0.04445646971916645,
+            "jacobian_fd_error": 1.3732615045114471e-09
+          }
+        ],
+        "common_source_RMS_arcsec": 0.9094740236766921,
+        "max_source_disagreement_arcsec": 1.98821789932809,
+        "max_source_shift_arcsec": 0.044819598260854236,
+        "max_pairwise_differential_source_shift_arcsec": 0.018309860817350174
+      },
+      "stars_plus_baryon_sourced_R1": {
+        "rays": [
+          {
+            "image": "A",
+            "source_arcsec": [
+              0.896421663471618,
+              0.42007183563665296
+            ],
+            "total_convergence": 0.0427681825720323,
+            "rotation": -0.00041926121279432793,
+            "signed_jacobian_det": 0.8848837774073688,
+            "G1_impact_kpc": 41.353317119985235,
+            "main_reduced_deflection_arcsec": 0.281407363904757,
+            "G1_reduced_deflection_arcsec": 0.031689870395709155,
+            "jacobian_fd_error": 9.130192157869033e-10
+          },
+          {
+            "image": "B",
+            "source_arcsec": [
+              -0.24004248614471008,
+              0.7975906708298941
+            ],
+            "total_convergence": 0.055976720792726864,
+            "rotation": 0.0007769028275755804,
+            "signed_jacobian_det": 0.849351566372246,
+            "G1_impact_kpc": 38.74054791267732,
+            "main_reduced_deflection_arcsec": 0.3010454249099948,
+            "G1_reduced_deflection_arcsec": 0.03381579700141682,
+            "jacobian_fd_error": 1.1455044135466608e-09
+          },
+          {
+            "image": "C",
+            "source_arcsec": [
+              -1.0305360711416551,
+              -0.06957956002163998
+            ],
+            "total_convergence": 0.044340951850943444,
+            "rotation": -0.0008515776678744147,
+            "signed_jacobian_det": 0.8855928963643679,
+            "G1_impact_kpc": 29.16595471923407,
+            "main_reduced_deflection_arcsec": 0.2819520457113945,
+            "G1_reduced_deflection_arcsec": 0.04482414047597321,
+            "jacobian_fd_error": 1.0389431537305427e-09
+          },
+          {
+            "image": "D",
+            "source_arcsec": [
+              0.13321293204049192,
+              -0.7743009811067533
+            ],
+            "total_convergence": 0.0668215375411827,
+            "rotation": 0.0013500943245066607,
+            "signed_jacobian_det": 0.8218342825167659,
+            "G1_impact_kpc": 29.40643276251324,
+            "main_reduced_deflection_arcsec": 0.3139186868444325,
+            "G1_reduced_deflection_arcsec": 0.044461011429938024,
+            "jacobian_fd_error": 1.3733947312744021e-09
+          }
+        ],
+        "common_source_RMS_arcsec": 0.9094634799301303,
+        "max_source_disagreement_arcsec": 1.9881963183388183,
+        "max_source_shift_arcsec": 1.4883273193591772e-05,
+        "max_pairwise_differential_source_shift_arcsec": 2.1613255978443447e-05
+      }
+    },
+    "5.0": {
+      "stars_only_GR": {
+        "rays": [
+          {
+            "image": "A",
+            "source_arcsec": [
+              0.8966867538371013,
+              0.4203684660755316
+            ],
+            "total_convergence": 0.04283927834018497,
+            "rotation": -0.0004091379856312194,
+            "signed_jacobian_det": 0.8847853883593774,
+            "G1_impact_kpc": 41.35343459895086,
+            "main_reduced_deflection_arcsec": 0.28139691361790675,
+            "G1_reduced_deflection_arcsec": 0.03130169026418396,
+            "jacobian_fd_error": 9.129761391335478e-10
+          },
+          {
+            "image": "B",
+            "source_arcsec": [
+              -0.23983321534549498,
+              0.7980197440353836
+            ],
+            "total_convergence": 0.056058964581281234,
+            "rotation": 0.000755604876641218,
+            "signed_jacobian_det": 0.8492111504563725,
+            "G1_impact_kpc": 38.74065477862459,
+            "main_reduced_deflection_arcsec": 0.30103558101113026,
+            "G1_reduced_deflection_arcsec": 0.03334577301814098,
+            "jacobian_fd_error": 1.1443916925202302e-09
+          },
+          {
+            "image": "C",
+            "source_arcsec": [
+              -1.030147176525766,
+              -0.0685770218268647
+            ],
+            "total_convergence": 0.044560846951139155,
+            "rotation": -0.0008111742493535825,
+            "signed_jacobian_det": 0.8850652775094976,
+            "G1_impact_kpc": 29.166009890574326,
+            "main_reduced_deflection_arcsec": 0.28194161255531375,
+            "G1_reduced_deflection_arcsec": 0.043744733907057055,
+            "jacobian_fd_error": 1.037582908480772e-09
+          },
+          {
+            "image": "D",
+            "source_arcsec": [
+              0.1339640867853068,
+              -0.7735690163303982
+            ],
+            "total_convergence": 0.06703702885248108,
+            "rotation": 0.0012870430375522546,
+            "signed_jacobian_det": 0.8213584742906612,
+            "G1_impact_kpc": 29.406484931877017,
+            "main_reduced_deflection_arcsec": 0.3139092288641849,
+            "G1_reduced_deflection_arcsec": 0.04340719190628777,
+            "jacobian_fd_error": 1.3726912939659996e-09
+          }
+        ],
+        "common_source_RMS_arcsec": 0.9093492832951728,
+        "max_source_disagreement_arcsec": 1.987902584468798,
+        "max_source_shift_arcsec": 0.04374473390705706,
+        "max_pairwise_differential_source_shift_arcsec": 0.01782191482350067
+      },
+      "stars_plus_baryon_sourced_R1": {
+        "rays": [
+          {
+            "image": "A",
+            "source_arcsec": [
+              0.8966742809573787,
+              0.42036039940794345
+            ],
+            "total_convergence": 0.04284573746640974,
+            "rotation": -0.00040917418200894784,
+            "signed_jacobian_det": 0.8847722397183769,
+            "G1_impact_kpc": 41.353317119985235,
+            "main_reduced_deflection_arcsec": 0.281407363904757,
+            "G1_reduced_deflection_arcsec": 0.03130635423671,
+            "jacobian_fd_error": 9.13731590390654e-10
+          },
+          {
+            "image": "B",
+            "source_arcsec": [
+              -0.23983274491419307,
+              0.7980060998595506
+            ],
+            "total_convergence": 0.0560659095521332,
+            "rotation": 0.0007556654439606139,
+            "signed_jacobian_det": 0.84919722082227,
+            "G1_impact_kpc": 38.74054791267732,
+            "main_reduced_deflection_arcsec": 0.3010454249099948,
+            "G1_reduced_deflection_arcsec": 0.03335042332096182,
+            "jacobian_fd_error": 1.1447260500618839e-09
+          },
+          {
+            "image": "C",
+            "source_arcsec": [
+              -1.03013844218034,
+              -0.06858089251828026
+            ],
+            "total_convergence": 0.0445676221098632,
+            "rotation": -0.000811222815229504,
+            "signed_jacobian_det": 0.8850517943866718,
+            "G1_impact_kpc": 29.16595471923407,
+            "main_reduced_deflection_arcsec": 0.2819520457113945,
+            "G1_reduced_deflection_arcsec": 0.043749223933564736,
+            "jacobian_fd_error": 1.0376115522348073e-09
+          },
+          {
+            "image": "D",
+            "source_arcsec": [
+              0.13395886949919475,
+              -0.7735629644925175
+            ],
+            "total_convergence": 0.06704447019411441,
+            "rotation": 0.0012871163502504376,
+            "signed_jacobian_det": 0.8213438023620483,
+            "G1_impact_kpc": 29.40643276251324,
+            "main_reduced_deflection_arcsec": 0.3139186868444325,
+            "G1_reduced_deflection_arcsec": 0.04341168249429194,
+            "jacobian_fd_error": 1.3727716741129825e-09
+          }
+        ],
+        "common_source_RMS_arcsec": 0.9093387373544003,
+        "max_source_disagreement_arcsec": 1.9878809966886537,
+        "max_source_shift_arcsec": 1.4854085449871661e-05,
+        "max_pairwise_differential_source_shift_arcsec": 2.161833977312118e-05
+      }
+    }
+  }
+}

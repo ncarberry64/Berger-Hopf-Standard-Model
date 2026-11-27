@@ -1,0 +1,415 @@
+{
+  "scope": "Reduced one-plane projected modes, radially symmetric bending proportional to r^s and symmetric trace-free affine stretch. No ordinary foreground or secondary-plane propagation; mode family and transfer are diagnostic, not a physical BHSM law or full conventional comparator. Held scores are source-plane angular differences, not predicted image-plane locations. CSWA S4/S5 are held out; Jackpot tests S2 in same coordinate frame with updated z, not farthest S3; HE tests D with anchor A. Amplitude and angle calibrate on development per target, only fractional stretch and radial exponent transferred in joint transfer; in ablations the other shape parameter is refit from development.",
+  "models": [
+    {
+      "test": "CSWA31",
+      "mode": "radial",
+      "fit_parameters": [
+        23.980527945150758,
+        0.5021791976318183,
+        0.0,
+        0.0
+      ],
+      "train_radius_scale_arcsec": 11.333321779690557,
+      "active_bounds": [
+        0,
+        0
+      ],
+      "training_num_contrasts": 14,
+      "training_rms_source_component_arcsec": 0.5238126597083165,
+      "local_design_singular_values": [
+        11.139962347146634,
+        1.0658637732108283
+      ],
+      "held_scores": {
+        "S4": {
+          "anchor_closure_RMS": 2.224023216774419,
+          "max_pair_source_gap": 3.3408603853184426,
+          "individual_anchor_miss": [
+            0.262932558180052,
+            3.1342343574391758
+          ]
+        },
+        "S5": {
+          "anchor_closure_RMS": 2.563650313789367,
+          "max_pair_source_gap": 3.9095864930087627,
+          "individual_anchor_miss": [
+            1.2027412490394171,
+            2.7582357530103385,
+            3.2653419136212296
+          ]
+        }
+      }
+    },
+    {
+      "test": "CSWA31",
+      "mode": "radial_plus_stretch",
+      "fit_parameters": [
+        23.773428686418793,
+        0.40602404053530555,
+        0.043012945196504664,
+        3.00833276286793
+      ],
+      "train_radius_scale_arcsec": 11.333321779690557,
+      "active_bounds": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "training_num_contrasts": 14,
+      "training_rms_source_component_arcsec": 0.4613362310728093,
+      "local_design_singular_values": [
+        36.66729891724108,
+        6.592728293774728,
+        2.2835954250292674,
+        0.9087125150723303
+      ],
+      "held_scores": {
+        "S4": {
+          "anchor_closure_RMS": 2.5285665464602087,
+          "max_pair_source_gap": 4.1341785733244105,
+          "individual_anchor_miss": [
+            0.7373047323415836,
+            3.499096925125413
+          ]
+        },
+        "S5": {
+          "anchor_closure_RMS": 1.6314565083471415,
+          "max_pair_source_gap": 2.5079393645306753,
+          "individual_anchor_miss": [
+            0.9220812272449398,
+            2.5079393645306753,
+            0.9192156276329713
+          ]
+        }
+      }
+    },
+    {
+      "test": "Jackpot",
+      "mode": "radial",
+      "fit_parameters": [
+        2.476455016367368,
+        0.6499999999999999,
+        0.0,
+        0.0
+      ],
+      "train_radius_scale_arcsec": 1.4980300447150032,
+      "active_bounds": [
+        0,
+        1
+      ],
+      "training_num_contrasts": 12,
+      "training_rms_source_component_arcsec": 0.02843702304084106,
+      "local_design_singular_values": [
+        1.7713976160261675,
+        0.28296649406355917
+      ],
+      "held_scores": {
+        "S2": {
+          "anchor_closure_RMS": 0.7108639431398176,
+          "max_pair_source_gap": 0.9747416532853863,
+          "individual_anchor_miss": [
+            0.6416510686263601,
+            0.8175389206637244,
+            0.660224701370308
+          ]
+        }
+      }
+    },
+    {
+      "test": "Jackpot",
+      "mode": "radial_plus_stretch",
+      "fit_parameters": [
+        2.4742256217480323,
+        0.6499999999999999,
+        0.022824145675580092,
+        0.9348105152569512
+      ],
+      "train_radius_scale_arcsec": 1.4980300447150032,
+      "active_bounds": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "training_num_contrasts": 12,
+      "training_rms_source_component_arcsec": 0.004120292783310686,
+      "local_design_singular_values": [
+        4.2841576825890275,
+        1.770747865227318,
+        0.19509130385587506,
+        0.03693351375213114
+      ],
+      "held_scores": {
+        "S2": {
+          "anchor_closure_RMS": 0.7710391626183642,
+          "max_pair_source_gap": 0.9539970882027955,
+          "individual_anchor_miss": [
+            0.6371746911525639,
+            0.9539970882027955,
+            0.6836681501495498
+          ]
+        }
+      }
+    },
+    {
+      "test": "Jackpot",
+      "mode": "freeze_CSWA_slope_and_stretch_fraction",
+      "fit_parameters": [
+        2.4393570544719014,
+        0.40602404053530555,
+        0.043012945196504664,
+        4.074713399141008
+      ],
+      "train_radius_scale_arcsec": 1.4980300447150032,
+      "active_bounds": [
+        0,
+        0
+      ],
+      "training_num_contrasts": 12,
+      "training_rms_source_component_arcsec": 0.007690949845416784,
+      "local_design_singular_values": [
+        1.7836075475917543,
+        0.36246707812734813
+      ],
+      "held_scores": {
+        "S2": {
+          "anchor_closure_RMS": 0.37745224722172,
+          "max_pair_source_gap": 0.4717067369561933,
+          "individual_anchor_miss": [
+            0.2745688772315703,
+            0.4717067369561933,
+            0.3598823179375652
+          ]
+        }
+      }
+    },
+    {
+      "test": "Jackpot",
+      "mode": "freeze_CSWA_slope_only",
+      "fit_parameters": [
+        2.439875442424242,
+        0.40602404053530555,
+        0.03967747263686957,
+        4.074739292067552
+      ],
+      "train_radius_scale_arcsec": 1.4980300447150032,
+      "active_bounds": [
+        0,
+        0,
+        0
+      ],
+      "training_num_contrasts": 12,
+      "training_rms_source_component_arcsec": 0.0065386623473010054,
+      "local_design_singular_values": [
+        4.216348757493542,
+        1.7789877021969476,
+        0.334430358620063
+      ],
+      "held_scores": {
+        "S2": {
+          "anchor_closure_RMS": 0.36811485681333317,
+          "max_pair_source_gap": 0.45218029604088494,
+          "individual_anchor_miss": [
+            0.2736430024654757,
+            0.45218029604088494,
+            0.3566204291598557
+          ]
+        }
+      }
+    },
+    {
+      "test": "Jackpot",
+      "mode": "freeze_CSWA_stretch_fraction_only",
+      "fit_parameters": [
+        2.434180659204074,
+        0.36791552281227996,
+        0.043012945196504664,
+        4.074471486536733
+      ],
+      "train_radius_scale_arcsec": 1.4980300447150032,
+      "active_bounds": [
+        0,
+        0,
+        0
+      ],
+      "training_num_contrasts": 12,
+      "training_rms_source_component_arcsec": 0.006944486515338622,
+      "local_design_singular_values": [
+        1.804603049592248,
+        0.3617222866368286,
+        0.29878465019193123
+      ],
+      "held_scores": {
+        "S2": {
+          "anchor_closure_RMS": 0.3116991330641847,
+          "max_pair_source_gap": 0.3838794034161931,
+          "individual_anchor_miss": [
+            0.22028111796947877,
+            0.3838794034161931,
+            0.30916319534808345
+          ]
+        }
+      }
+    },
+    {
+      "test": "HE0435",
+      "mode": "radial",
+      "fit_parameters": [
+        2.0398190411457864,
+        0.6499999999999999,
+        0.0,
+        0.0
+      ],
+      "train_radius_scale_arcsec": 1.2962916839970857,
+      "active_bounds": [
+        0,
+        1
+      ],
+      "training_num_contrasts": 4,
+      "training_rms_source_component_arcsec": 0.017680038702968467,
+      "local_design_singular_values": [
+        0.9496203280955571,
+        0.1021666651579073
+      ],
+      "held_scores": {
+        "AD": {
+          "anchor_closure_RMS": 0.06299612984142144,
+          "max_pair_source_gap": 0.06299612984142144,
+          "individual_anchor_miss": [
+            0.06299612984142144
+          ]
+        }
+      }
+    },
+    {
+      "test": "HE0435",
+      "mode": "radial_plus_stretch",
+      "fit_parameters": [
+        2.0024637910011363,
+        0.6499999999999999,
+        0.026536018296896568,
+        0.2429035117478584
+      ],
+      "train_radius_scale_arcsec": 1.2962916839970857,
+      "active_bounds": [
+        0,
+        1,
+        0,
+        0
+      ],
+      "training_num_contrasts": 4,
+      "training_rms_source_component_arcsec": 0.00014271381518224274,
+      "local_design_singular_values": [
+        2.0261160426249707,
+        0.632571516576315,
+        0.10010225704518434,
+        0.0008335346311769796
+      ],
+      "held_scores": {
+        "AD": {
+          "anchor_closure_RMS": 0.002168409305972493,
+          "max_pair_source_gap": 0.002168409305972493,
+          "individual_anchor_miss": [
+            0.002168409305972493
+          ]
+        }
+      }
+    },
+    {
+      "test": "HE0435",
+      "mode": "freeze_CSWA_slope_and_stretch_fraction",
+      "fit_parameters": [
+        1.970155523889225,
+        0.40602404053530555,
+        0.043012945196504664,
+        0.24322731363883032
+      ],
+      "train_radius_scale_arcsec": 1.2962916839970857,
+      "active_bounds": [
+        0,
+        0
+      ],
+      "training_num_contrasts": 4,
+      "training_rms_source_component_arcsec": 0.0017147012967217625,
+      "local_design_singular_values": [
+        0.9824688784468276,
+        0.15965923823373557
+      ],
+      "held_scores": {
+        "AD": {
+          "anchor_closure_RMS": 0.010263958237586948,
+          "max_pair_source_gap": 0.010263958237586948,
+          "individual_anchor_miss": [
+            0.010263958237586948
+          ]
+        }
+      }
+    },
+    {
+      "test": "HE0435",
+      "mode": "freeze_CSWA_slope_only",
+      "fit_parameters": [
+        1.9665761691137844,
+        0.40602404053530555,
+        0.04565030938617915,
+        0.24290575502023098
+      ],
+      "train_radius_scale_arcsec": 1.2962916839970857,
+      "active_bounds": [
+        0,
+        0,
+        0
+      ],
+      "training_num_contrasts": 4,
+      "training_rms_source_component_arcsec": 0.0002482346550838664,
+      "local_design_singular_values": [
+        2.0005753776116912,
+        0.6319323460588977,
+        0.16911913362756784
+      ],
+      "held_scores": {
+        "AD": {
+          "anchor_closure_RMS": 0.004709499797177496,
+          "max_pair_source_gap": 0.004709499797177496,
+          "individual_anchor_miss": [
+            0.004709499797177496
+          ]
+        }
+      }
+    },
+    {
+      "test": "HE0435",
+      "mode": "freeze_CSWA_stretch_fraction_only",
+      "fit_parameters": [
+        1.9714539708638297,
+        0.43933822678910267,
+        0.043012945196504664,
+        3.3844977097490894
+      ],
+      "train_radius_scale_arcsec": 1.2962916839970857,
+      "active_bounds": [
+        0,
+        0,
+        0
+      ],
+      "training_num_contrasts": 4,
+      "training_rms_source_component_arcsec": 0.00023355084684940425,
+      "local_design_singular_values": [
+        0.9825686157156234,
+        0.15977867234444912,
+        0.10177464925281846
+      ],
+      "held_scores": {
+        "AD": {
+          "anchor_closure_RMS": 0.0043033935233724365,
+          "max_pair_source_gap": 0.0043033935233724365,
+          "individual_anchor_miss": [
+            0.0043033935233724365
+          ]
+        }
+      }
+    }
+  ]
+}

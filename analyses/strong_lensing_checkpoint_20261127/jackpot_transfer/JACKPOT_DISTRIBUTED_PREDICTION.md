@@ -1,0 +1,28 @@
+# Jackpot: author-aligned synthesis and forward counterimage
+
+## What carries forward
+
+- Norman's rule is inferred excess over accounted-for matter, not redistribution at fixed visible-only far charge. Keep ordinary bodies in their own planes. A published halo is a proxy for the excess, not an extra copy of it. The earlier compensated cases remain tests of a narrower boundary choice, not the working BHSM premise.
+- The singularity is the proposed coupling condition and a new settled configuration is the proposed response. Neither stored strain nor a larger ordinary black-hole term is introduced. The older v0.5 galaxy archive derives a conditional distributed exterior law but leaves the gravity-to-topography load, direct reaction, physical threshold and lensing metric unfinished. Its compact-domain zero source integral does not set the galaxy charge. Prior overlap, finite-depth, source/readout and Casimir checks do not supply those missing coefficients.
+- The two mass summaries are derived from Turner et al. (https://doi.org/10.1093/mnras/stae263), not independent raw data points. At 5.149 and 7.630 kpc they give total main-lens mass proxies 3.080 and 4.436 × 10^11 solar masses. Subtract explicitly modeled stars and the fixed 1.6 × 10^9 solar mass central proxy once. Nominal Salpeter residuals are 1.337 and 2.340 × 10^11, and Chabrier residuals 2.134 and 3.294 × 10^11. Gas and other central baryons are not independently measured in this replay. The 14 knots used to calibrate geometry are from Gavazzi et al. Table 1. The third source and its two positions (https://doi.org/10.1093/mnras/staa1804) are not fit.
+
+## From the archived force law to a forward optical test
+
+The distributed law has extra radial pull g_T(r) = V²/r - V² s/r² at r>s. For this conditional spherical bridge set g_T=0 at r≤s, then the extra enclosed mass is C(r-s)_+, C=V²/G. Assume the same weak-field potential acts on light and stars; BHSM has not derived that optical relation here. Integrate the corresponding extra density C/(4 pi r²) along the entire ray. The resulting enclosed optical mass is C K(R,s), with
+K(R,s)=R arcsin(min(1,R/s)) - s + sqrt(max(0,s²-R²)).
+For impact radius R≥s this gives C(pi R/2 - s). At a sharp finite cutoff t, subtract C K(R,t); do not impose that the extra monopole vanishes. The untruncated branch is a local optical stress limit with infinite total mass, not a global solution. The cutoff radii 20/50/100 kpc are fixed sensitivity choices with constant added charge beyond each, not inferred BHSM return flow. Verified the projected mass against independent integration of spherical shell weights across branches.
+
+Fit only C and s to the two aperture residuals for each cutoff. Check curvature and S3 without using either to fit C or s. Fit only two components of shear and source-1 deflection strength to the 14 early-ring features, using the archived R1 geometry and the shared angular conversion as the main comparison. The distinct aperture-anchored normalization is reported only in sensitivity because it rescales the central angular field. No separately modeled cluster or archived extra close-field in either arm. Without treating the two inputs as a precision likelihood, the shared-normalization nominal results are:
+
+| Stellar input | Infinite limit transition / V | Infinite limit curvature eta | S3 source-plane gap, infinite limit | With finite cutoff variants | Matched conventional S3 gap |
+|---|---|---:|---:|---:|---:|
+| Salpeter | 2.89 kpc / 333 km/s | 0.902 | 215 mas | 231–324 mas | 66 mas |
+| Chabrier | 0.92 kpc / 358 km/s | 1.023 | 184 mas | 203–310 mas | 18 mas |
+
+Reported inner curvature model target is around 0.96 (or 0.93 in the NFW comparator). The Salpeter cutoff variants move curvature farther from 0.96; two Chabrier variants approach it but still have large S3 residuals. These are nominal model results with no new uncertainty estimates. The separate, intentionally uncalibrated xi_c=1 gravity-only stress with the whole nominal stellar inventory and local R1 curvature radius gives only about 8–10% of the Salpeter ring excess and 5–7% of the Chabrier one; xi_c is not fixed to 1 by the full archive. Using an extended multi-component reference with the original point law is an optical bridge; the fitted C*s generally differs from the spherical enclosed stellar plus compact mass at s. The exercise does not establish self-consistency of a gravitating source or a BHSM field.
+
+## Actual image prediction
+
+After early calibration, back-project only measured third-source image A, then solve for its counterimage using a fixed 2D seed grid and frozen lens. B is used only to report the discrepancy; no intermediate deflection from S2 in the nominal counterimage solves. This is not a blind data discovery and the grid root search is not an all-images proof. The untruncated Salpeter continuation predicts B at (+0.803,+0.684) arcsec in stored tracer coordinates; observed B is (+1.030,+0.870), a 0.294 arcsec image-plane error. Same control procedure gives a 0.097 arcsec conventional image-plane error. Chabrier gives 0.241 vs 0.038 arcsec. These image-plane errors are not the source-plane gaps in the table. Nonzero S2 sensitivity does not reverse the source-plane ranking.
+
+Ruling: the archived force law plus the measured excess supplies a concrete conditional prediction, but does not close the held-out pair. The required next ingredient is an action-selected spatial distribution and metric coupling, not the bare amplitude of the inferred excess, a halo relabeling, or more freedom fitted to B. No transfer of this fit to HE 0435. Replay with OPENBLAS_NUM_THREADS=1 python jackpot_distributed_galaxy_prediction.py; JSON preserves all fitted and held-out values.

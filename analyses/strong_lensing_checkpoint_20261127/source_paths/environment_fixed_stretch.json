@@ -1,0 +1,598 @@
+{
+  "scope": "No tidal angle or amplitude fit to lensing. Round primary still calibrates using nearer image families. Ordinary 1st-order environmental trace-free projection only, no full diffuse group matter or joint BHSM response. For HE separately propagate the fixed stellar G1 on its own screen; other systems do not include their intermediate sources in this control. Jackpot amplitude scenarios are not measurements. CSWA weights are aperture-photometry-proportional stellar masses anchored on BGG SED; incomplete total-mass model.",
+  "data_refs": {
+    "cswa": "Wang 2022 Table 1, CDS and HST GO-15253",
+    "he": "Courbin 2011 Table 2, Sluse 2017 Table 4 and B1, Wang 2017 G1 stellar control as in he0435_joint_field_control",
+    "jackpot": "Gavazzi 2008 Table 1 and Fig.1; SZ lens-frame axes and SW companion; Smith & Collett 2021 for S2"
+  },
+  "rows": [
+    {
+      "lens": "CSWA31",
+      "scenario": "radial_only",
+      "includes_separate_G1": false,
+      "params_radial_only": [
+        23.980527942119462,
+        0.502179197977474
+      ],
+      "reduced_tidal_stretch_at_nearest_source": 0.0,
+      "unreduced_tide": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "axis_deg_from_positive_native_x": null,
+      "train_RMS": 0.5238126597083167,
+      "held_anchor_source_RMS": {
+        "S4": 2.2240232166979004,
+        "S5": 2.5636503154578594
+      }
+    },
+    {
+      "lens": "Jackpot",
+      "scenario": "radial_only",
+      "includes_separate_G1": false,
+      "params_radial_only": [
+        2.476455016299089,
+        0.6499999999999999
+      ],
+      "reduced_tidal_stretch_at_nearest_source": 0.0,
+      "unreduced_tide": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "axis_deg_from_positive_native_x": null,
+      "train_RMS": 0.02843702304084106,
+      "held_anchor_source_RMS": {
+        "S2": 0.710863943020083
+      }
+    },
+    {
+      "lens": "HE0435",
+      "scenario": "radial_only",
+      "includes_separate_G1": true,
+      "params_radial_only": [
+        2.029279985048677,
+        0.6499999999999999
+      ],
+      "reduced_tidal_stretch_at_nearest_source": 0.0,
+      "unreduced_tide": [
+        [
+          0.0,
+          0.0
+        ],
+        [
+          0.0,
+          0.0
+        ]
+      ],
+      "axis_deg_from_positive_native_x": null,
+      "train_RMS": 0.01790268434567118,
+      "held_anchor_source_RMS": {
+        "AD": 0.05205845448063392
+      }
+    },
+    {
+      "lens": "HE0435",
+      "scenario": "nominal_group_370",
+      "includes_separate_G1": true,
+      "params_radial_only": [
+        2.012139517888571,
+        0.6499999999999999
+      ],
+      "reduced_tidal_stretch_at_nearest_source": 0.01582297523064918,
+      "unreduced_tide": [
+        [
+          0.008227990482104822,
+          0.023689386588242847
+        ],
+        [
+          0.023689386588242847,
+          -0.008227990482104822
+        ]
+      ],
+      "axis_deg_from_positive_native_x": 35.42322361391561,
+      "train_RMS": 0.006820185773647757,
+      "held_anchor_source_RMS": {
+        "AD": 0.0316293906668902
+      }
+    },
+    {
+      "lens": "HE0435",
+      "scenario": "nominal_group_470",
+      "includes_separate_G1": true,
+      "params_radial_only": [
+        2.0016349928016823,
+        0.6499999999999999
+      ],
+      "reduced_tidal_stretch_at_nearest_source": 0.025531740163991266,
+      "unreduced_tide": [
+        [
+          0.013276574853885729,
+          0.03822487580235826
+        ],
+        [
+          0.03822487580235826,
+          -0.01327657485388573
+        ]
+      ],
+      "axis_deg_from_positive_native_x": 35.42322361391561,
+      "train_RMS": 0.007486826981513808,
+      "held_anchor_source_RMS": {
+        "AD": 0.021670995485620834
+      }
+    },
+    {
+      "lens": "HE0435",
+      "scenario": "nominal_group_570",
+      "includes_separate_G1": true,
+      "params_radial_only": [
+        1.9872315368872755,
+        0.5954643888297237
+      ],
+      "reduced_tidal_stretch_at_nearest_source": 0.03755211579574811,
+      "unreduced_tide": [
+        [
+          0.019527203123709688,
+          0.05622119578173922
+        ],
+        [
+          0.05622119578173922,
+          -0.01952720312370969
+        ]
+      ],
+      "axis_deg_from_positive_native_x": 35.42322361391561,
+      "train_RMS": 0.01572499517445136,
+      "held_anchor_source_RMS": {
+        "AD": 0.026703576279786995
+      }
+    },
+    {
+      "lens": "HE0435",
+      "scenario": "near_group_370",
+      "includes_separate_G1": true,
+      "params_radial_only": [
+        1.9931127513936995,
+        0.5923966570185183
+      ],
+      "reduced_tidal_stretch_at_nearest_source": 0.02397223014208548,
+      "unreduced_tide": [
+        [
+          0.034710331703468225,
+          0.015449292137949882
+        ],
+        [
+          0.015449292137949882,
+          -0.03471033170346823
+        ]
+      ],
+      "axis_deg_from_positive_native_x": 11.996732701024113,
+      "train_RMS": 0.010874850302382987,
+      "held_anchor_source_RMS": {
+        "AD": 0.022740858683890773
+      }
+    },
+    {
+      "lens": "HE0435",
+      "scenario": "near_group_470",
+      "includes_separate_G1": true,
+      "params_radial_only": [
+        1.9661007800102108,
+        0.40812773496462407
+      ],
+      "reduced_tidal_stretch_at_nearest_source": 0.03868126835928913,
+      "unreduced_tide": [
+        [
+          0.05600812471363134,
+          0.024928770148087136
+        ],
+        [
+          0.024928770148087136,
+          -0.05600812471363135
+        ]
+      ],
+      "axis_deg_from_positive_native_x": 11.996732701024113,
+      "train_RMS": 0.010532728000668646,
+      "held_anchor_source_RMS": {
+        "AD": 0.019967692731510726
+      }
+    },
+    {
+      "lens": "HE0435",
+      "scenario": "near_group_570",
+      "includes_separate_G1": true,
+      "params_radial_only": [
+        1.9314349696109927,
+        0.17014533393300216
+      ],
+      "reduced_tidal_stretch_at_nearest_source": 0.05689245853296984,
+      "unreduced_tide": [
+        [
+          0.08237682082145234,
+          0.0366652667320666
+        ],
+        [
+          0.0366652667320666,
+          -0.08237682082145234
+        ]
+      ],
+      "axis_deg_from_positive_native_x": 11.996732701024115,
+      "train_RMS": 0.01060250416009553,
+      "held_anchor_source_RMS": {
+        "AD": 0.01763823541244767
+      }
+    },
+    {
+      "lens": "CSWA31",
+      "scenario": "photometric_stars_outer_11.33_BGG_flux_3329.0",
+      "includes_separate_G1": false,
+      "params_radial_only": [
+        23.966738074407242,
+        0.4978228481004258
+      ],
+      "reduced_tidal_stretch_at_nearest_source": 0.0017395703782974363,
+      "unreduced_tide": [
+        [
+          0.003955423983830684,
+          0.0005997754379443478
+        ],
+        [
+          0.0005997754379443478,
+          -0.003955423983830684
+        ]
+      ],
+      "axis_deg_from_positive_native_x": 4.311143020772634,
+      "train_RMS": 0.5210435390367759,
+      "held_anchor_source_RMS": {
+        "S4": 2.22838561491508,
+        "S5": 2.4885425546669366
+      },
+      "members_used": [
+        524,
+        628,
+        636,
+        731,
+        542,
+        607,
+        649,
+        676,
+        693,
+        702,
+        713,
+        718,
+        721,
+        755,
+        814,
+        821,
+        826,
+        1071,
+        1091,
+        1216,
+        1222,
+        1226,
+        1233,
+        1261,
+        1296,
+        1303,
+        1334,
+        1339,
+        1347,
+        1367,
+        1451,
+        1492,
+        1507,
+        1574
+      ]
+    },
+    {
+      "lens": "CSWA31",
+      "scenario": "photometric_stars_outer_11.33_BGG_flux_3639.0",
+      "includes_separate_G1": false,
+      "params_radial_only": [
+        23.96791431540236,
+        0.49819452704688055
+      ],
+      "reduced_tidal_stretch_at_nearest_source": 0.001591379441976412,
+      "unreduced_tide": [
+        [
+          0.0036184683820204297,
+          0.0005486816248740669
+        ],
+        [
+          0.0005486816248740669,
+          -0.0036184683820204297
+        ]
+      ],
+      "axis_deg_from_positive_native_x": 4.311143020772626,
+      "train_RMS": 0.5212753143920551,
+      "held_anchor_source_RMS": {
+        "S4": 2.2280078445918043,
+        "S5": 2.49488289015892
+      },
+      "members_used": [
+        524,
+        628,
+        636,
+        731,
+        542,
+        607,
+        649,
+        676,
+        693,
+        702,
+        713,
+        718,
+        721,
+        755,
+        814,
+        821,
+        826,
+        1071,
+        1091,
+        1216,
+        1222,
+        1226,
+        1233,
+        1261,
+        1296,
+        1303,
+        1334,
+        1339,
+        1347,
+        1367,
+        1451,
+        1492,
+        1507,
+        1574
+      ]
+    },
+    {
+      "lens": "CSWA31",
+      "scenario": "photometric_stars_outer_25.00_BGG_flux_3329.0",
+      "includes_separate_G1": false,
+      "params_radial_only": [
+        23.978561405224266,
+        0.5018437354145396
+      ],
+      "reduced_tidal_stretch_at_nearest_source": 0.00020753449370790975,
+      "unreduced_tide": [
+        [
+          0.0002844846495998848,
+          0.0003832352692448708
+        ],
+        [
+          0.0003832352692448708,
+          -0.0002844846495998848
+        ]
+      ],
+      "axis_deg_from_positive_native_x": 26.706311521658492,
+      "train_RMS": 0.5241250684788229,
+      "held_anchor_source_RMS": {
+        "S4": 2.223068143750191,
+        "S5": 2.559638084393024
+      },
+      "members_used": [
+        524,
+        636,
+        731,
+        542,
+        607,
+        693,
+        755,
+        821,
+        826,
+        1071,
+        1091,
+        1216,
+        1226,
+        1261,
+        1303,
+        1492
+      ]
+    },
+    {
+      "lens": "CSWA31",
+      "scenario": "photometric_stars_outer_25.00_BGG_flux_3639.0",
+      "includes_separate_G1": false,
+      "params_radial_only": [
+        23.9787289307352,
+        0.5018723192001024
+      ],
+      "reduced_tidal_stretch_at_nearest_source": 0.0001898549957553261,
+      "unreduced_tide": [
+        [
+          0.00026024990341248056,
+          0.00035058813171645376
+        ],
+        [
+          0.00035058813171645376,
+          -0.00026024990341248056
+        ]
+      ],
+      "axis_deg_from_positive_native_x": 26.706311521658492,
+      "train_RMS": 0.5240982834753386,
+      "held_anchor_source_RMS": {
+        "S4": 2.2231489571372802,
+        "S5": 2.5599790726280136
+      },
+      "members_used": [
+        524,
+        636,
+        731,
+        542,
+        607,
+        693,
+        755,
+        821,
+        826,
+        1071,
+        1091,
+        1216,
+        1226,
+        1261,
+        1303,
+        1492
+      ]
+    },
+    {
+      "lens": "Jackpot",
+      "scenario": "conditional_SW_1e+11_PA_210",
+      "includes_separate_G1": false,
+      "params_radial_only": [
+        2.476468154089581,
+        0.6499999999999999
+      ],
+      "reduced_tidal_stretch_at_nearest_source": 0.00039455461201845526,
+      "unreduced_tide": [
+        [
+          -0.0006120426735069618,
+          -0.0002559727923673822
+        ],
+        [
+          -0.0002559727923673822,
+          0.0006120426735069618
+        ]
+      ],
+      "axis_deg_from_positive_native_x": 101.34800000000001,
+      "train_RMS": 0.028488698769324142,
+      "held_anchor_source_RMS": {
+        "S2": 0.7106147108066151
+      }
+    },
+    {
+      "lens": "Jackpot",
+      "scenario": "conditional_SW_1e+11_PA_225",
+      "includes_separate_G1": false,
+      "params_radial_only": [
+        2.4764854629353756,
+        0.6499999999999999
+      ],
+      "reduced_tidal_stretch_at_nearest_source": 0.0003945546120184552,
+      "unreduced_tide": [
+        [
+          -0.0004020581072734831,
+          -0.0005277002776212731
+        ],
+        [
+          -0.0005277002776212731,
+          0.0004020581072734831
+        ]
+      ],
+      "axis_deg_from_positive_native_x": 116.34799999999998,
+      "train_RMS": 0.02872475507973854,
+      "held_anchor_source_RMS": {
+        "S2": 0.7101844222543234
+      }
+    },
+    {
+      "lens": "Jackpot",
+      "scenario": "conditional_SW_1e+11_PA_240",
+      "includes_separate_G1": false,
+      "params_radial_only": [
+        2.476494613582099,
+        0.6499999999999999
+      ],
+      "reduced_tidal_stretch_at_nearest_source": 0.00039455461201845526,
+      "unreduced_tide": [
+        [
+          -8.434239588568932e-05,
+          -0.0006580308996408649
+        ],
+        [
+          -0.0006580308996408649,
+          8.434239588568932e-05
+        ]
+      ],
+      "axis_deg_from_positive_native_x": 131.34799999999998,
+      "train_RMS": 0.028883834337631396,
+      "held_anchor_source_RMS": {
+        "S2": 0.7099368806817851
+      }
+    },
+    {
+      "lens": "Jackpot",
+      "scenario": "conditional_SW_1e+12_PA_210",
+      "includes_separate_G1": false,
+      "params_radial_only": [
+        2.4765863933225107,
+        0.6499999999999999
+      ],
+      "reduced_tidal_stretch_at_nearest_source": 0.003945546120184553,
+      "unreduced_tide": [
+        [
+          -0.006120426735069618,
+          -0.0025597279236738214
+        ],
+        [
+          -0.0025597279236738214,
+          0.006120426735069618
+        ]
+      ],
+      "axis_deg_from_positive_native_x": 101.34800000000001,
+      "train_RMS": 0.029328816391185522,
+      "held_anchor_source_RMS": {
+        "S2": 0.7086255158709569
+      }
+    },
+    {
+      "lens": "Jackpot",
+      "scenario": "conditional_SW_1e+12_PA_225",
+      "includes_separate_G1": false,
+      "params_radial_only": [
+        2.476759480980223,
+        0.6499999999999999
+      ],
+      "reduced_tidal_stretch_at_nearest_source": 0.003945546120184552,
+      "unreduced_tide": [
+        [
+          -0.004020581072734831,
+          -0.005277002776212731
+        ],
+        [
+          -0.005277002776212731,
+          0.004020581072734831
+        ]
+      ],
+      "axis_deg_from_positive_native_x": 116.34799999999998,
+      "train_RMS": 0.031547075672063205,
+      "held_anchor_source_RMS": {
+        "S2": 0.7042936398607381
+      }
+    },
+    {
+      "lens": "Jackpot",
+      "scenario": "conditional_SW_1e+12_PA_240",
+      "includes_separate_G1": false,
+      "params_radial_only": [
+        2.4768509876602085,
+        0.6499999999999999
+      ],
+      "reduced_tidal_stretch_at_nearest_source": 0.003945546120184552,
+      "unreduced_tide": [
+        [
+          -0.000843423958856893,
+          -0.006580308996408648
+        ],
+        [
+          -0.006580308996408648,
+          0.000843423958856893
+        ]
+      ],
+      "axis_deg_from_positive_native_x": 131.34799999999998,
+      "train_RMS": 0.03296735459893878,
+      "held_anchor_source_RMS": {
+        "S2": 0.7017889811828879
+      }
+    }
+  ]
+}

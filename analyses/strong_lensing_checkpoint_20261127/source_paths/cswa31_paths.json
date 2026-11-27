@@ -1,0 +1,248 @@
+{
+  "reference": "https://doi.org/10.1051/0004-6361/202243600 Table 1 and Sect. 2; S4 is line-only with model-assisted association, and S5(d) has lower S/N and model corroboration.",
+  "lens_z": 0.6828,
+  "kpc_per_arcsec": 7.245140877387857,
+  "source_families": [
+    {
+      "feature_family": "S0",
+      "physical_source": "spiral",
+      "redshift": 1.4869,
+      "images": 4,
+      "EN_arcsec": [
+        [
+          -9.947828032390204,
+          -5.43
+        ],
+        [
+          1.710228315024117,
+          -10.459999999999999
+        ],
+        [
+          9.990583740265809,
+          -4.1
+        ],
+        [
+          0.6128318128836263,
+          6.940000000000001
+        ]
+      ],
+      "min_r_arcsec": 6.9670052986116096,
+      "max_r_arcsec": 11.333321779690557,
+      "max_pair_arcsec": 19.98272163685387,
+      "distance_weight": 0.43482317152245586,
+      "use": "development",
+      "outside_development_sky_hull": [
+        false,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "feature_family": "S1",
+      "physical_source": "spiral",
+      "redshift": 1.4869,
+      "images": 2,
+      "EN_arcsec": [
+        [
+          3.548723753674996,
+          -9.86
+        ],
+        [
+          9.092713874878172,
+          -5.119999999999999
+        ]
+      ],
+      "min_r_arcsec": 10.435125567543594,
+      "max_r_arcsec": 10.479171736349068,
+      "max_pair_arcsec": 7.294067895488662,
+      "distance_weight": 0.43482317152245586,
+      "use": "development",
+      "outside_development_sky_hull": [
+        false,
+        false
+      ]
+    },
+    {
+      "feature_family": "S2",
+      "physical_source": "S2",
+      "redshift": 1.4874,
+      "images": 3,
+      "EN_arcsec": [
+        [
+          1.6104649966476905,
+          16.349999999999998
+        ],
+        [
+          7.325477949353232,
+          13.43
+        ],
+        [
+          8.337363035742515,
+          13.34
+        ]
+      ],
+      "min_r_arcsec": 15.297958268555332,
+      "max_r_arcsec": 16.429123455176402,
+      "max_pair_arcsec": 7.369617169729902,
+      "distance_weight": 0.43494506644342723,
+      "use": "development",
+      "outside_development_sky_hull": [
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "feature_family": "S3",
+      "physical_source": "S3",
+      "redshift": 2.763,
+      "images": 2,
+      "EN_arcsec": [
+        [
+          -22.503754245192162,
+          -1.6699999999999982
+        ],
+        [
+          11.102232145031467,
+          4.030000000000001
+        ]
+      ],
+      "min_r_arcsec": 11.811031225179704,
+      "max_r_arcsec": 22.565634383460267,
+      "max_pair_arcsec": 34.08595489728717,
+      "distance_weight": 0.6008662937658878,
+      "use": "development",
+      "outside_development_sky_hull": [
+        false,
+        false
+      ]
+    },
+    {
+      "feature_family": "S4",
+      "physical_source": "S4",
+      "redshift": 3.428,
+      "images": 3,
+      "EN_arcsec": [
+        [
+          -9.02145436175213,
+          0.060000000000002274
+        ],
+        [
+          -2.950143843416588,
+          -0.0799999999999983
+        ],
+        [
+          23.615402649957822,
+          0.9499999999999993
+        ]
+      ],
+      "min_r_arcsec": 2.951228336955444,
+      "max_r_arcsec": 23.6345032171111,
+      "max_pair_arcsec": 32.648989809836394,
+      "distance_weight": 0.6382674861651233,
+      "use": "test_only",
+      "outside_development_sky_hull": [
+        false,
+        false,
+        true
+      ]
+    },
+    {
+      "feature_family": "S5",
+      "physical_source": "S5",
+      "redshift": 4.205,
+      "images": 4,
+      "EN_arcsec": [
+        [
+          -15.734100498221736,
+          -11.23
+        ],
+        [
+          -4.560608840064279,
+          -18.24
+        ],
+        [
+          19.197312836145574,
+          -4.309999999999999
+        ],
+        [
+          -0.9691293785136276,
+          18.110000000000003
+        ]
+      ],
+      "min_r_arcsec": 18.13591221174988,
+      "max_r_arcsec": 19.675185389948417,
+      "max_pair_arcsec": 36.52699309719786,
+      "distance_weight": 0.6671932100520308,
+      "use": "test_only",
+      "outside_development_sky_hull": [
+        true,
+        true,
+        true,
+        true
+      ]
+    }
+  ],
+  "design_train": [
+    {
+      "potential_degree": 2,
+      "equations": 14,
+      "columns": 3,
+      "rank": 3,
+      "condition_nonzero_geometry_only": 2.7598987121639516
+    },
+    {
+      "potential_degree": 3,
+      "equations": 14,
+      "columns": 7,
+      "rank": 7,
+      "condition_nonzero_geometry_only": 15.010654299000361
+    },
+    {
+      "potential_degree": 4,
+      "equations": 14,
+      "columns": 12,
+      "rank": 12,
+      "condition_nonzero_geometry_only": 255.52031284195667
+    },
+    {
+      "potential_degree": 5,
+      "equations": 14,
+      "columns": 18,
+      "rank": 14,
+      "condition_nonzero_geometry_only": 362.4428242828781
+    }
+  ],
+  "design_all": [
+    {
+      "potential_degree": 2,
+      "equations": 24,
+      "columns": 3,
+      "rank": 3,
+      "condition_nonzero_geometry_only": 1.5344140175021423
+    },
+    {
+      "potential_degree": 3,
+      "equations": 24,
+      "columns": 7,
+      "rank": 7,
+      "condition_nonzero_geometry_only": 3.302175927670197
+    },
+    {
+      "potential_degree": 4,
+      "equations": 24,
+      "columns": 12,
+      "rank": 12,
+      "condition_nonzero_geometry_only": 23.194230319654793
+    },
+    {
+      "potential_degree": 5,
+      "equations": 24,
+      "columns": 18,
+      "rank": 18,
+      "condition_nonzero_geometry_only": 102.47498288047251
+    }
+  ],
+  "scope": "Geometry and coverage only. Local Taylor expansion of projected potential is a one-plane sensitivity diagnostic, not a physical CSWA31 assignment. Other deflection planes, correlated errors and incomplete group density are not solved; no lensing map is fit."
+}

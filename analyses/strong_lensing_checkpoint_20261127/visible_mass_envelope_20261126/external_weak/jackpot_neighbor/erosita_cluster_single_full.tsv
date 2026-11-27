@@ -1,0 +1,152 @@
+#
+#   VizieR Astronomical Server vizier.cfa.harvard.edu
+#    Date: 2026-11-26T12:46:30 [V7.6.1]
+#   In case of problem, please report to:	cds-question@unistra.fr
+#
+#
+#Coosys	J2000:	eq_FK5 J2000
+#INFO	service_protocol=ASU	  IVOID of the protocol through which the data was retrieved
+#INFO	request_date=2026-11-26T12:46:30	  Query execution date
+#INFO	request=https://vizier.cfa.harvard.edu/viz-bin/asu-tsv?-source=J%2FA%2BA%2F685%2FA106&-c=146.3333361+%2B10.0853504&-c.rm=1&-out.all=1	  Full request URL
+#INFO	contact=cds-question@unistra.fr	  Email or URL to contact publisher
+#INFO	server_software=VizieR/7.6.1	  Software version
+#INFO	publisher=CDS	  Data centre that produced the VOTable
+#INFO	MaxTuples=50000	
+#INFO	-c=146.333336+10.085350,rm=1.	
+#Constraint -out.all=1
+
+#RESOURCE=yCat_36850106
+#Name: J/A+A/685/A106
+#Title: eRASS. Galaxy clusters and groups in WGH (Bulbul+, 2024)
+#INFO	ivoid=ivo://cds.vizier/j/a+a/685/a106	    IVOID of underlying data collection
+#INFO	data_ivoid=ivo://cds.vizier/j/a+a/685/a106	    IVOID of underlying data collection
+#INFO	creator=Bulbul E.	    First author or institution
+#INFO	cites=bibcode:2024A&A...685A.106B	    Article or Data origin sources
+#INFO	journal=A&A	    Journal name
+#INFO	original_date=2024	    Year of the article publication
+#INFO	reference_url=https://cdsarc.cds.unistra.fr/viz-bin/cat/J/A+A/685/A106	    Dataset landing page
+#INFO	citation=doi:10.26093/cds/vizier.36850106	    Dataset identifier that can be used for citation
+#INFO	publication_date=2024-11-07	    Date of first publication in the data centre
+#INFO	rights_uri=https://cds.unistra.fr/vizier-org/licences_vizier.html	    Licence URI
+#Table	J_A_A_685_A106_emain:
+#Name: J/A+A/685/A106/emain
+#Title: Primary galaxy clusters and groups catalog
+#Column	_r	(F6.4)	Distance from center (146.33333610000+10.08535040000)[FK5/J2000]	[ucd=pos.angDistance]
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	DetUId	(A32)	Unique source ID, as in main eRASS1 X-ray catalog (Merloni et al., 2024, Cat. J/A+A/682/A34)	[ucd=meta.id]
+#Column	Name	(A23)	Source name, 1eRASS JHHMMSS.s+DDMMSS	[ucd=meta.id;meta.main]
+#Column	RAJ2000	(F15.11)	Right ascension (J2000)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(F15.11)	Declination J2000)	[ucd=pos.eq.dec;meta.main]
+#Column	RAXdeg	(F8.4)	Best-fit Right ascension after the image is fit with MBProj2D (RA_XFIT)	[ucd=pos.eq.ra]
+#Column	DEXdeg	(F8.4)	Best-fit Declination after the image is fit with MBProj2D (DEC_XFIT)	[ucd=pos.eq.dec]
+#Column	ExtLike	(D12.5)	Source extent likelihood	[ucd=stat.likelihood]
+#Column	DetLike0	(D12.5)	Source detection likelihood in 0.2-2.3keV	[ucd=stat.likelihood]
+#Column	Exp	(F6.1)	Average exposure	[ucd=time.expo]
+#Column	zBest	(F7.4)	Best available redshift	[ucd=src.redshift]
+#Column	e_zBest	(F7.4)	? sigma error of BEST_Z	[ucd=stat.error]
+#Column	zType	(a11)	Type of zBest (1)	[ucd=meta.code]
+#Column	pcont	(F6.3)	[0/1] Contamination probability	[ucd=stat.fit.goodness]
+#Column	CR300kpc	(F7.3)	0.2-2.3keV count rate within 300kpc	[ucd=phot.count;em.X-ray]
+#Column	b_CR300kpc	(F7.3)	1sigma lower limit of CR300kpc	[ucd=phot.count;em.X-ray;stat.min]
+#Column	B_CR300kpc	(F7.3)	1sigma upper limit of CR300kpc	[ucd=phot.count;em.X-ray;stat.max]
+#Column	CR500	(F8.3)	0.2-2.3keV count rate within R500	[ucd=phot.count;em.X-ray]
+#Column	b_CR500	(F8.3)	1sigma lower limit of CR500	[ucd=phot.count;em.X-ray;stat.min]
+#Column	B_CR500	(F8.3)	1sigma upper limit of CR500	[ucd=phot.count;em.X-ray;stat.max]
+#Column	CTS300kpc	(F8.1)	0.2-2.3keV counts within 300kpc	[ucd=phot.count;em.X-ray]
+#Column	b_CTS300kpc	(F8.1)	1sigma lower limit of CTS300kpc	[ucd=phot.count;em.X-ray;stat.min]
+#Column	B_CTS300kpc	(F8.1)	1sigma upper limit of CTS300kpc	[ucd=phot.count;em.X-ray;stat.max]
+#Column	CTS500	(F8.1)	0.2-2.3keV counts within R500	[ucd=phot.count;em.X-ray]
+#Column	b_CTS500	(F8.1)	1sigma lower limit of CTS500	[ucd=phot.count;em.X-ray;stat.min]
+#Column	B_CTS500	(F8.1)	1sigma upper limit of CTS500	[ucd=phot.count;em.X-ray;stat.max]
+#Column	F300kpc	(F9.3)	? 0.2-2.3keV flux within 300kpc	[ucd=phot.flux;em.X-ray]
+#Column	b_F300kpc	(F9.3)	? 1sigma lower limit of F300kpc	[ucd=phot.flux;em.X-ray;stat.min]
+#Column	B_F300kpc	(F9.3)	1sigma upper limit of F300kpc	[ucd=phot.flux;em.X-ray;stat.max]
+#Column	F500	(F10.3)	? 0.2-2.3keV flux within R500	[ucd=phot.flux;em.X-ray]
+#Column	b_F500	(F10.3)	? 1sigma lower limit of F500	[ucd=phot.flux;em.X-ray;stat.min]
+#Column	B_F500	(F10.3)	1sigma upper limit of F500	[ucd=phot.flux;em.X-ray;stat.max]
+#Column	L300kpc	(F8.3)	? 0.2-2.3keV luminosity within 300kpc	[ucd=phys.luminosity;em.X-ray]
+#Column	b_L300kpc	(F8.3)	? 1sigma lower limit of L300kpc	[ucd=phys.luminosity;em.X-ray;stat.min]
+#Column	B_L300kpc	(F10.3)	1sigma upper limit of L300kpc	[ucd=phys.luminosity;em.X-ray;stat.max]
+#Column	L500	(F9.3)	? 0.2-2.3keV luminosity within R500	[ucd=phys.luminosity;em.X-ray]
+#Column	b_L500	(F9.3)	? 1sigma lower limit of L500	[ucd=phys.luminosity;em.X-ray;stat.min]
+#Column	B_L500	(F10.3)	1sigma upper limit of L500	[ucd=phys.luminosity;em.X-ray;stat.max]
+#Column	CR300kpcT	(F7.3)	0.5-2.0keV count rate within 300kpc	[ucd=phot.count;em.X-ray]
+#Column	b_CR300kpcT	(F7.3)	1sigma lower limit of CR300kpcT	[ucd=phot.count;em.X-ray;stat.min]
+#Column	B_CR300kpcT	(F7.3)	1sigma upper limit of CR300kpcT	[ucd=phot.count;em.X-ray;stat.max]
+#Column	CR500T	(F7.3)	0.5-2.0keV count rate within R500	[ucd=phot.count;em.X-ray]
+#Column	b_CR500T	(F7.3)	1sigma lower limit of CR500T	[ucd=phot.count;em.X-ray;stat.min]
+#Column	B_CR500T	(F7.3)	1sigma upper limit of CR500T	[ucd=phot.count;em.X-ray;stat.max]
+#Column	CTS300kpcT	(F8.1)	0.5-2.0keV counts within 300kpc	[ucd=phot.count;em.X-ray]
+#Column	b_CTS300kpcT	(F8.1)	1sigma lower limit of CTS300kpcT	[ucd=phot.count;em.X-ray;stat.min]
+#Column	B_CTS300kpcT	(F8.1)	1sigma upper limit of CTS300kpcT	[ucd=phot.count;em.X-ray;stat.max]
+#Column	CTS500T	(F8.1)	0.5-2.0keV counts within R500	[ucd=phot.count;em.X-ray]
+#Column	b_CTS500T	(F8.1)	1sigma lower limit of CTS500T	[ucd=phot.count;em.X-ray;stat.min]
+#Column	B_CTS500T	(F8.1)	1sigma upper limit of CTS500T	[ucd=phot.count;em.X-ray;stat.max]
+#Column	F300kpcT	(F9.3)	? 0.5-2.0keV flux within 300kpc	[ucd=phot.flux;em.X-ray]
+#Column	b_F300kpcT	(F9.3)	? 1sigma lower limit of F300kpcT	[ucd=phot.flux;em.X-ray;stat.min]
+#Column	B_F300kpcT	(F9.3)	1sigma upper limit of F300kpcT	[ucd=phot.flux;em.X-ray;stat.max]
+#Column	F500T	(F9.3)	? 0.5-2.0keV flux within R500	[ucd=phot.flux;em.X-ray]
+#Column	b_F500T	(F9.3)	? 1sigma lower limit of F500T	[ucd=phot.flux;em.X-ray;stat.min]
+#Column	B_F500T	(F9.3)	1sigma upper limit of F500T	[ucd=phot.flux;em.X-ray;stat.max]
+#Column	L300kpcT	(F8.3)	? 0.5-2.0keV luminosity within 300kpc	[ucd=phys.luminosity;em.X-ray]
+#Column	b_L300kpcT	(F8.3)	? 1sigma lower limit of L300kpcT	[ucd=phys.luminosity;em.X-ray;stat.min]
+#Column	B_L300kpcT	(F9.3)	1sigma upper limit of L300kpcT	[ucd=phys.luminosity;em.X-ray;stat.max]
+#Column	L500T	(F8.3)	? 0.5-2.0keV luminosity within R500	[ucd=phys.luminosity;em.X-ray]
+#Column	b_L500T	(F8.3)	? 1sigma lower limit of L500T	[ucd=phys.luminosity;em.X-ray;stat.min]
+#Column	B_L500T	(F9.3)	1sigma upper limit of L500T	[ucd=phys.luminosity;em.X-ray;stat.max]
+#Column	Lbol500	(F9.3)	? Bolometric luminosity within R500	[ucd=phys.luminosity]
+#Column	b_Lbol500	(F9.3)	? 1sigma lower limit of Lbol500	[ucd=phys.luminosity;stat.min]
+#Column	B_Lbol500	(D12.5)	1sigma upper limit of Lbol500	[ucd=phys.luminosity;stat.max]
+#Column	KT	(F6.2)	? Temperature measured by MBProj2D	[ucd=phys.temperature]
+#Column	b_KT	(F6.2)	? 1sigma lower limit of KT	[ucd=phys.energy;stat.min]
+#Column	B_KT	(F6.2)	? 1sigma upper limit of KT	[ucd=phys.energy;stat.max]
+#Column	Mgas500	(F7.2)	? Calibrated cluster gas mass within R500	[ucd=phys.mass]
+#Column	b_Mgas500	(F7.2)	? 1sigma lower limit of Mgas500	[ucd=phys.mass;stat.min]
+#Column	B_Mgas500	(F7.2)	1sigma upper limit of Mgas500	[ucd=phys.mass;stat.max]
+#Column	YX500	(F8.2)	? The mass proxy within R500	[ucd=phys.mass]
+#Column	b_YX500	(F8.2)	? 1sigma lower limit of YX500	[ucd=phys.mass;stat.min]
+#Column	B_YX500	(F8.2)	? 1sigma upper limit of YX500	[ucd=phys.mass;stat.max]
+#Column	M500	(F7.2)	? CLuster total mass M500 from eROCOP	[ucd=phys.mass]
+#Column	b_M500	(F7.2)	? 1sigma lower limit of M500	[ucd=phys.mass;stat.min]
+#Column	B_M500	(F7.2)	? 1sigma upper limit of M500	[ucd=phys.mass;stat.max]
+#Column	Fgas500	(F6.3)	? Cluster gas mass fraction within R500	[ucd=phys.mass]
+#Column	b_Fgas500	(F6.3)	? 1sigma lower limit of Fgas500	[ucd=meta.note]
+#Column	B_Fgas500	(F6.3)	? 1sigma upper limit of Fgas500	[ucd=meta.note]
+#Column	R500	(I5)	? Overdensity radius R500 from eROCOP	[ucd=phys.size.radius]
+#Column	b_R500	(I5)	? 1sigma lower limit of R500	[ucd=phys.size.radius;stat.min]
+#Column	B_R500	(I5)	? 1sigma upper limit of R500	[ucd=phys.size.radius;stat.max]
+#Column	MatchName	(a240)	IDs of matched counterparts in literature cluster catalogs within 2" radius	[ucd=meta.id]
+_r	recno	DetUId	Name	RAJ2000	DEJ2000	RAXdeg	DEXdeg	ExtLike	DetLike0	Exp	zBest	e_zBest	zType	pcont	CR300kpc	b_CR300kpc	B_CR300kpc	CR500	b_CR500	B_CR500	CTS300kpc	b_CTS300kpc	B_CTS300kpc	CTS500	b_CTS500	B_CTS500	F300kpc	b_F300kpc	B_F300kpc	F500	b_F500	B_F500	L300kpc	b_L300kpc	B_L300kpc	L500	b_L500	B_L500	CR300kpcT	b_CR300kpcT	B_CR300kpcT	CR500T	b_CR500T	B_CR500T	CTS300kpcT	b_CTS300kpcT	B_CTS300kpcT	CTS500T	b_CTS500T	B_CTS500T	F300kpcT	b_F300kpcT	B_F300kpcT	F500T	b_F500T	B_F500T	L300kpcT	b_L300kpcT	B_L300kpcT	L500T	b_L500T	B_L500T	Lbol500	b_Lbol500	B_Lbol500	KT	b_KT	B_KT	Mgas500	b_Mgas500	B_Mgas500	YX500	b_YX500	B_YX500	M500	b_M500	B_M500	Fgas500	b_Fgas500	B_Fgas500	R500	b_R500	B_R500	MatchName
+arcmin	 	 	 	deg	deg	deg	deg	 	 	s	 	 	 	 	ct/s	ct/s	ct/s	ct/s	ct/s	ct/s	ct	ct	ct	ct	ct	ct	mW/m2	mW/m2	mW/m2	mW/m2	mW/m2	mW/m2	10+35J	10+35J	10+35J	10+35J	10+35J	10+35J	ct/s	ct/s	ct/s	ct/s	ct/s	ct/s	ct	ct	ct	ct	ct	ct	10-14mW/m2	10-14mW/m2	10-14mW/m2	10-14mW/m2	10-14mW/m2	10-14mW/m2	10+35J	10+35J	10+35J	10+35J	10+35J	10+35J	10+35J	10+35J	10+35J	keV	keV	keV	10+11Msun	10+11Msun	10+11Msun	10+11keV.Msun	10+11keV.Msun	10+11keV.Msun	10+13Msun	10+13Msun	10+13Msun	 	 	 	kpc	kpc	kpc	
+------	--------	--------------------------------	-----------------------	---------------	---------------	--------	--------	------------	------------	------	-------	-------	-----------	------	-------	-------	-------	--------	--------	--------	--------	--------	--------	--------	--------	--------	---------	---------	---------	----------	----------	----------	--------	--------	----------	---------	---------	----------	-------	-------	-------	-------	-------	-------	--------	--------	--------	--------	--------	--------	---------	---------	---------	---------	---------	---------	--------	--------	---------	--------	--------	---------	---------	---------	------------	------	------	------	-------	-------	-------	--------	--------	--------	-------	-------	-------	------	------	------	-----	-----	-----	------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+0.0000	    7640	em01_147081_020_ML00104_011_c010	1eRASS J094520.0+100507	146.33333610581	+10.08535044288	146.3341	 10.0862	 4.99310e+00	 1.46368e+01	  83.6	 0.2183	 0.0004	cg_spec_z  	 0.376	  0.111	  0.062	  0.212	   0.120	   0.065	   0.221	     9.3	     5.2	    17.8	    10.0	     5.4	    18.5	   10.335	    5.753	   19.700	    11.130	     5.839	    20.745	  15.152	   8.570	    28.773	   16.138	    8.765	    30.174	  0.091	  0.050	  0.173	  0.098	  0.053	  0.181	     7.6	     4.2	    14.5	     8.2	     4.4	    15.1	    7.797	    4.284	   14.680	    8.329	    4.470	   15.432	  10.508	   5.931	   20.174	  11.180	   6.040	   21.062	   42.091	   19.388	 1.06038e+02	      	  1.94	      	   9.06	   0.53	  39.82	    0.00	    0.00	    0.00	   8.56	   5.66	  13.60	 0.013	 0.004	 0.046	  623	  543	  727	
+
+#Table	J_A_A_685_A106_ecosmos:
+#Name: J/A+A/685/A106/ecosmos
+#Title: Cosmology Sample
+#Column	_r	(F6.4)	Distance from center (146.33333610000+10.08535040000)[FK5/J2000]	[ucd=pos.angDistance]
+#Column	recno	(I8)	Record number assigned by the VizieR team. Should Not be used for identification.	[ucd=meta.record]
+#Column	DetUId	(A32)	Unique source ID, as in main eRASS1 X-ray catalog (Merloni et al., 2024, Cat. J/A+A/682/A34)	[ucd=meta.id]
+#Column	Name	(A23)	Source name 1eRASS JHHMMSS.s+DDMMSS	[ucd=meta.id;meta.main]
+#Column	RAJ2000	(F15.11)	Right ascension (J2000)	[ucd=pos.eq.ra;meta.main]
+#Column	DEJ2000	(F15.11)	Declination (J2000)	[ucd=pos.eq.dec;meta.main]
+#Column	zlambda	(F7.4)	Photometric redshift of the cluster based on the LS DR10 data	[ucd=src.redshift.phot]
+#Column	e_zlambda	(F7.4)	1 sigma error of photometric redshift	[ucd=stat.error]
+#Column	CR500	(F6.2)	? 0.2-2.3keV count rate within R500 measured at zlambda	[ucd=phot.count;em.X-ray]
+#Column	b_CR500	(F6.2)	? 1sigma lower limit of CR500	[ucd=phot.count;em.X-ray;stat.min]
+#Column	B_CR500	(F6.2)	? 1sigma upper limit of CR500	[ucd=phot.count;em.X-ray;stat.max]
+#Column	CR500NH0	(F8.3)	? 0.2-2.3keV unabsorbed count rate within R500 at zlambda	[ucd=phot.count;em.X-ray]
+#Column	b_CR500NH0	(F8.3)	? 1sigma lower limit of CR500NH0	[ucd=phot.count;em.X-ray;stat.min]
+#Column	B_CR500NH0	(F10.3)	? 1sigma upper limit of CR500NH0	[ucd=phot.count;em.X-ray;stat.max]
+#Column	L500	(F6.3)	0.2-2.3keV luminosity within R500 at zlambda	[ucd=phys.luminosity;em.X-ray]
+#Column	b_L500	(F6.3)	1sigma lower limit of L500	[ucd=phys.luminosity;em.X-ray;stat.min]
+#Column	B_L500	(F7.3)	1sigma upper limit of L500	[ucd=phys.luminosity;em.X-ray;stat.max]
+#Column	KT	(F6.3)	Temperature measured by MBProj2D at zlambda	[ucd=phys.temperature]
+#Column	b_KT	(F6.3)	1sigma lower limit of KT	[ucd=phys.energy;stat.min]
+#Column	B_KT	(F7.3)	1sigma upper limit of KT	[ucd=phys.energy;stat.max]
+#Column	Mgas500	(F7.2)	? MGAS within R500 at zlambda	[ucd=phys.mass]
+#Column	b_Mgas500	(F7.2)	? 1sigma lower limit of Mgas500	[ucd=phys.mass;stat.min]
+#Column	B_Mgas500	(F7.2)	? 1sigma upper limit of Mgas500	[ucd=phys.mass;stat.max]
+#Column	YX500	(F8.2)	? The mass proxy within R500 at zlambda	[ucd=phys.mass]
+#Column	b_YX500	(F8.2)	? 1sigma lower limit of YX500	[ucd=phys.mass;stat.min]
+#Column	B_YX500	(F8.2)	? 1sigma upper limit of YX500	[ucd=phys.mass;stat.max]

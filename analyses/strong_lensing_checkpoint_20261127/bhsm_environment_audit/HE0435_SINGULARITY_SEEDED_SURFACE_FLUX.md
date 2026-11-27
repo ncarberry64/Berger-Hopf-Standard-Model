@@ -1,0 +1,13 @@
+# HE 0435−1223: can a singularity seed extended pull?
+
+Use Norman Carberry's BHSM hypothesis that every singularity is a core-coupling event as source placement, not as an observed census. Model one counted-once excess source on the spacetime side, with any ordinary compact gravity already carried separately. Do not assign a spatial field equation to the core.
+
+The v0.3 topographic operator is div F = S, with F = grad(T − B ΔT). For a static spherical delta source of integrated strength J, integration over every enclosing sphere gives 4πr² F_r = J, independently of B. Under the archived canonical candidate g = −Q F, with fixed Q, the effect is a point monopole. This rules out simple smoothing of T as an explanation of distributed pull in this closure; it does not rule out singularity-seeded coupling.
+
+With constant B > 0 and Euclidean 3D local boundary conditions, the decaying Green function is T = −J[1 − exp(−r/L)]/(4πr), L = sqrt(B). Exporting −Q grad T instead, as a diagnostic change of the gravitational readout, gives spherical effective mass M[1 − (1 + r/L) exp(−r/L)]. Its density is M exp(−r/L)/(4π L² r), and its projected cylinder mass is M[1 − (R/L) K1(R/L)]. The projected aperture fixes M for every L. A shell quadrature independently verifies the projection.
+
+With the 45% spherical Wong halo calibration (not the full elliptical fit), matching its effective mass slope at the Einstein radius gives L = 27.65 kpc and an aperture dispersion of 173.5 km/s. Matching the Webb aperture dispersion instead gives L = 2.66 kpc and a slope of 0.671 instead of 1.834. That short-scale case reaches 51% of the spherical proxy's inferred enclosed mass at 20 kpc and 13% at 50 kpc; these are comparisons to the calibrated profile, not independent mass data. Distances, stars and aperture assumptions are fixed as in the paired Jeans control. The half-light profile, anisotropy and instrumental forward model can change this diagnostic. Replaying with doubled resolution shifts the aperture-matched length by less than 0.001 kpc.
+
+A canonical extended response needs distributed forcing, not a second copy of the central gravity. Write g_r as the positive inward magnitude: Q S(r) = r^(-2) d[r² g_r(r)]/dr. If g_r is the spherical NFW benchmark this requires G M0/[rh² r (1 + r/rh)²], not a delta and not just the v0.3 r^-2 loading. This inverse relation is a specification for an action-derived seed-to-surface source; matching it by hand would not establish BHSM. Any compact global completion must account for flux return separately.
+
+Replay: python he0435_seed_surface_flux.py. Public targets: Wong et al., https://doi.org/10.1093/mnras/stw3077; TDCOSMO XXIX, Table 6, https://arxiv.org/html/2609.03089#S5.T6.
