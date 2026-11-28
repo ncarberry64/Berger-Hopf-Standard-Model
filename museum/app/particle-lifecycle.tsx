@@ -3,6 +3,8 @@
 import { useId, useState, type ReactNode } from 'react';
 import { useSceneClock } from './use-scene-clock';
 import { ExhibitReview } from './exhibit-review';
+import { MuseumVisitorGuide } from './museum-visitor-guide';
+import { MuseumEvidenceGuide } from './museum-evidence-guide';
 
 const phases = [
   {
@@ -323,10 +325,11 @@ export function ParticleLifecycle({
         <div className="particle-home-invitation">
           <p>
             From a field excitation to a decay event, follow the idea at the
-            heart of BHSM: geometric organization connecting particles, matter
-            and the cosmos.
+            heart of BHSM. BHSM proposes geometric organization connecting
+            particles, matter and the cosmos.
           </p>
           <div className="particle-home-links">
+            <a href="#museum-visitor-guide">Take the three-minute tour ↓</a>
             <a href="#bhsm-scale-map">Explore the scales ↓</a>
             <a href="#bhsm-lifecycle">Enter the exhibits →</a>
           </div>
@@ -334,6 +337,7 @@ export function ParticleLifecycle({
       </div>
 
       <div
+        id="particle-lifecycle-theatre"
         ref={ref}
         className="particle-theatre"
         data-lifecycle-phase={phaseIndex}
@@ -400,30 +404,11 @@ export function ParticleLifecycle({
         </p>
       </div>
 
+      <MuseumVisitorGuide />
+
       {children}
 
-      <div className="particle-home-record">
-        <p className="eyebrow">An open scientific collection</p>
-        <h2>Follow the idea. Inspect the evidence.</h2>
-        <p>
-          BHSM proposes a common geometric foundation across scales. The museum
-          connects that proposal with conditional Standard Model structure,
-          calculations on specified backgrounds and experimental reference
-          science. Each exhibit identifies its assumptions, results and open
-          questions.
-        </p>
-        <div className="particle-home-links">
-          <a href="https://github.com/ncarberry64/Berger-Hopf-Standard-Model/blob/main/docs/current_bhsm_status.md">
-            Current research status ↗
-          </a>
-          <a href="./research/mass-and-hypersphere-context.md">
-            Hypersphere, core and mass ↗
-          </a>
-          <a href="./research/animation-evidence.md">
-            What drives the animations ↗
-          </a>
-        </div>
-      </div>
+      <MuseumEvidenceGuide />
       <ExhibitReview id="potential" />
     </section>
   );

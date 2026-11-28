@@ -151,6 +151,10 @@ try {
     'Periodic table',
     'Molecules',
     'Cosmic scale',
+    'id="museum-visitor-guide"',
+    'id="museum-evidence-guide"',
+    './learn/bhsm-scale-atlas.svg',
+    './learn/bhsm-visitor-guide.html',
   ]) {
     if (!welcome.includes(expected))
       throw new Error(`Welcome exhibit is missing: ${expected}`);
@@ -163,6 +167,23 @@ try {
     throw new Error('Lifecycle SVG needs a server-rendered accessible title.');
   if (!written.includes('data-white-hole-shape="sphere"'))
     throw new Error('Cosmic white-hole event lost its sphere.');
+  for (const file of ['bhsm-scale-atlas.svg', 'bhsm-visitor-guide.html']) {
+    const resource = await readFile(resolve(pagesRoot, 'learn', file), 'utf8');
+    if (!resource.includes('BHSM'))
+      throw new Error(`Missing visitor resource: ${file}`);
+  }
+  for (let stop = 1; stop <= 4; stop += 1) {
+    const name = `tour-${String(stop).padStart(2, '0')}-andrew`;
+    const clip = await readFile(
+      resolve(pagesRoot, 'learn/narration', `${name}.mp3`),
+    );
+    const captions = await readFile(
+      resolve(pagesRoot, 'learn/narration', `${name}.vtt`),
+      'utf8',
+    );
+    if (clip.length < 1000 || !captions.startsWith('WEBVTT'))
+      throw new Error(`Missing narration or captions for stop ${stop}.`);
+  }
   const positions = sections.map((id) => written.indexOf(`id="${id}"`));
   if (
     positions.some(

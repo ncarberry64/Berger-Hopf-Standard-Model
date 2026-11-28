@@ -21,7 +21,7 @@ const layers = [
     description:
       'Overlapping excitations make a moiré-like pattern: a visual way to introduce the proposed organization of modes.',
     detail:
-      'The interference drawing is an analogy for mode structure. A pattern alone does not determine a particle identity, mass or decay probability.',
+      'The interference drawing and three family tracks are conceptual. They follow the conditional family interpretation into the Standard Model without deriving particle masses or decay probabilities.',
   },
   {
     name: 'Standard Model',
@@ -41,7 +41,7 @@ const layers = [
     description:
       'Quarks bind into nucleons; nuclei and electrons form atoms. Elements are organized by atomic number in the periodic table.',
     detail:
-      'This slice moves from fundamental constituents to composite systems. Atomic structure and the Standard Model particle ledger describe different levels of organization.',
+      'The first-generation constituent route continues here: electrons and up/down quarks build ordinary atoms. The heavier-family routes stop before this slice; muonic and other exotic atoms are outside this ordinary-matter view.',
   },
   {
     name: 'Molecules',
@@ -51,7 +51,7 @@ const layers = [
     description:
       'Atoms join through chemical bonds. Their arrangements create molecules, with properties that depend on structure and environment.',
     detail:
-      'Chemistry brings collective organization into view: the same atomic ingredients can form very different molecular structures.',
+      'The white fork illustrates possible left/right mirror arrangements of the same ingredients. Some molecules are chiral; many are not. This is a new level of organization, not particle generations or particle chirality turning into molecular handedness.',
   },
   {
     name: 'Planets & stars',
@@ -124,31 +124,7 @@ function SliceContents({ level, y }: { level: number; y: number }) {
     );
   }
   if (level === 2) {
-    return (
-      <g
-        textAnchor="middle"
-        fontSize="18"
-        fill="currentColor"
-        fontFamily="monospace"
-      >
-        {['u', 'd', 'e', 'ν', 'γ', 'H'].map((symbol, i) => (
-          <g key={symbol}>
-            <circle
-              cx={130 + i * 44}
-              cy={y}
-              r="17"
-              fill="currentColor"
-              fillOpacity=".1"
-              stroke="currentColor"
-              strokeWidth="1"
-            />
-            <text x={130 + i * 44} y={y + 6}>
-              {symbol}
-            </text>
-          </g>
-        ))}
-      </g>
-    );
+    return null; // Family ports are drawn above the connecting paths.
   }
   if (level === 3) {
     return (
@@ -174,31 +150,7 @@ function SliceContents({ level, y }: { level: number; y: number }) {
     );
   }
   if (level === 4) {
-    const atoms = [
-      [145, -7],
-      [195, 15],
-      [245, -10],
-      [290, 14],
-      [334, -10],
-    ];
-    return (
-      <g stroke="currentColor" strokeWidth="3" fill="currentColor">
-        <path
-          d={`M145 ${y - 7} L195 ${y + 15} L245 ${y - 10} L290 ${y + 14} L334 ${y - 10}`}
-          fill="none"
-          opacity=".65"
-        />
-        {atoms.map(([x, dy], i) => (
-          <circle
-            key={i}
-            cx={x}
-            cy={y + dy}
-            r={i % 2 ? 8 : 12}
-            fillOpacity=".3"
-          />
-        ))}
-      </g>
-    );
+    return null; // The molecular slice carries the mirror pair.
   }
   if (level === 5) {
     return (
@@ -235,7 +187,328 @@ function SliceContents({ level, y }: { level: number; y: number }) {
   );
 }
 
-function ScaleSculpture({ selected }: { selected: number }) {
+const familyLanes = [
+  { roman: 'I', x: 150, color: '#71e5eb', quarks: 'u · d', leptons: 'e · νe' },
+  { roman: 'II', x: 240, color: '#ffbc77', quarks: 'c · s', leptons: 'μ · νμ' },
+  {
+    roman: 'III',
+    x: 330,
+    color: '#d1b8ff',
+    quarks: 't · b',
+    leptons: 'τ · ντ',
+  },
+];
+
+function MolecularMirrorPair() {
+  return (
+    <g className="scale-mirror-pair">
+      <path
+        d="M240 231 V296"
+        stroke="#aac1cf"
+        strokeDasharray="2 4"
+        opacity=".6"
+      />
+      {[
+        { x: 165, side: 1, label: 'left' },
+        { x: 315, side: -1, label: 'right' },
+      ].map(({ x, side, label }) => (
+        <g key={label}>
+          <g transform={`translate(${x} 264) scale(${side} 1)`}>
+            <path
+              d="M0 0 V-27 M0 0 L-34 7"
+              fill="none"
+              stroke="#d8efe2"
+              strokeWidth="1.8"
+            />
+            <path d="M0 0 L18 10 L26 20 Z" fill="#96dfb1" />
+            {[1, 2, 3, 4].map((i) => (
+              <path
+                key={i}
+                d={`M${i * 5 - i * 0.6} ${-i * 4 - i * 0.7} l${i * 1.2} ${i * 1.4}`}
+                stroke="#bda7f5"
+                strokeWidth="1.6"
+              />
+            ))}
+            <circle r="5" fill="#eef8f2" />
+            <circle cy="-27" r="6" fill="#f4ce77" />
+            <circle cx="-34" cy="7" r="6" fill="#71e5eb" />
+            <circle cx="22" cy="15" r="6" fill="#ff968a" />
+            <circle cx="23" cy="-19" r="6" fill="#bda7f5" />
+          </g>
+          <text
+            x={x}
+            y="305"
+            textAnchor="middle"
+            className="scale-mirror-label"
+          >
+            {label} · + &amp; −
+          </text>
+        </g>
+      ))}
+    </g>
+  );
+}
+
+function FamilyConnections({ showLines }: { showLines: boolean }) {
+  return (
+    <g className="scale-family-connections">
+      <g opacity={showLines ? 1 : 0}>
+        {familyLanes.map((family) => {
+          const path = `M240 604 C240 568 ${family.x} 565 ${family.x} 519 V461`;
+          return (
+            <g key={family.roman}>
+              <path d={path} fill="none" stroke="#0b1720" strokeWidth="6" />
+              <path
+                d={path}
+                fill="none"
+                stroke={family.color}
+                strokeWidth="2.5"
+                strokeDasharray="5 4"
+              />
+              <circle
+                cx={family.x}
+                cy="519"
+                r="10"
+                fill="#10212c"
+                stroke={family.color}
+                strokeWidth="1.3"
+              />
+              <text
+                x={family.x}
+                y="523"
+                textAnchor="middle"
+                fill={family.color}
+                className="scale-family-number"
+              >
+                {family.roman}
+              </text>
+            </g>
+          );
+        })}
+        <path
+          d="M150 405 C150 376 240 385 240 349"
+          className="scale-matter-route-back"
+        />
+        <path
+          d="M150 405 C150 376 240 385 240 349"
+          className="scale-matter-route"
+        />
+        <g strokeWidth="2" fill="none">
+          <path d="M240 405 V393 M234 393 H246" stroke="#ffbc77" opacity=".6" />
+          <path
+            d="M330 405 L346 393 M341 389 L351 397"
+            stroke="#d1b8ff"
+            opacity=".6"
+          />
+        </g>
+        <path
+          d="M240 335 C240 310 165 315 165 286 M240 335 C240 310 315 315 315 286"
+          fill="none"
+          stroke="#0b1720"
+          strokeWidth="6"
+        />
+        <path
+          d="M240 335 C240 310 165 315 165 286 M240 335 C240 310 315 315 315 286"
+          fill="none"
+          stroke="#d9e6e8"
+          strokeWidth="2"
+        />
+        <circle
+          cx="240"
+          cy="349"
+          r="14"
+          fill="#10212c"
+          stroke="#d9e6e8"
+          strokeWidth="1.5"
+        />
+        <ellipse
+          cx="240"
+          cy="349"
+          rx="10"
+          ry="4"
+          fill="none"
+          stroke="#71e5eb"
+        />
+        <circle cx="240" cy="349" r="3" fill="#71e5eb" />
+        <text x="178" y="373" className="scale-ordinary-constituents">
+          u, d, e
+        </text>
+      </g>
+      {familyLanes.map((family) => (
+        <g key={family.roman}>
+          <rect
+            x={family.x - 37}
+            y="405"
+            width="74"
+            height="56"
+            rx="6"
+            fill="#10212c"
+            stroke={family.color}
+            strokeWidth="1.5"
+          />
+          <text
+            x={family.x}
+            y="420"
+            textAnchor="middle"
+            fill={family.color}
+            className="scale-family-port-number"
+          >
+            {family.roman}
+          </text>
+          <text
+            x={family.x - 17}
+            y="437"
+            textAnchor="middle"
+            fill="#eef3f6"
+            className="scale-family-particles"
+          >
+            {family.quarks.split(' · ')[0]}
+          </text>
+          <text
+            x={family.x + 17}
+            y="437"
+            textAnchor="middle"
+            fill="#eef3f6"
+            className="scale-family-particles"
+          >
+            {family.quarks.split(' · ')[1]}
+          </text>
+          <text
+            x={family.x - 17}
+            y="451"
+            textAnchor="middle"
+            fill="#d5e4ec"
+            className="scale-family-particles"
+          >
+            {family.leptons.split(' · ')[0]}
+          </text>
+          <text
+            x={family.x + 17}
+            y="451"
+            textAnchor="middle"
+            fill="#a9becb"
+            className="scale-family-particles"
+          >
+            {family.leptons.split(' · ')[1]}
+          </text>
+        </g>
+      ))}
+      <MolecularMirrorPair />
+    </g>
+  );
+}
+
+function ChargeConnections() {
+  return (
+    <g className="scale-charge-connections">
+      <g
+        fill="none"
+        stroke="#ff998a"
+        strokeWidth="1.4"
+        strokeDasharray="1 3"
+        strokeLinecap="round"
+      >
+        <path d="M85 94 V470 H290" />
+        {familyLanes.map(({ x }) => (
+          <path key={x} d={`M${x - 40} 470 V433 H${x - 25}`} />
+        ))}
+        {[
+          [94, 150],
+          [179, 130],
+          [264, 105],
+          [349, 105],
+        ].map(([y, x]) => (
+          <path key={y} d={`M85 ${y} H${x - 9}`} />
+        ))}
+      </g>
+      <g
+        fill="none"
+        stroke="#79bfff"
+        strokeWidth="1.4"
+        strokeDasharray="1 3"
+        strokeLinecap="round"
+      >
+        <path d="M397 94 V477 H133" />
+        {familyLanes.map(({ x }) => (
+          <path
+            key={x}
+            d={`M${x + 41} 477 V433 H${x + 25} M${x - 17} 477 V455`}
+          />
+        ))}
+        {[
+          [94, 330],
+          [179, 350],
+          [264, 375],
+          [349, 375],
+        ].map(([y, x]) => (
+          <path key={y} d={`M397 ${y} H${x + 9}`} />
+        ))}
+      </g>
+      {familyLanes.map(({ x }) => (
+        <g key={x} fill="none" strokeWidth="1">
+          <circle cx={x - 17} cy="433" r="8" stroke="#ff998a" />
+          <circle cx={x + 17} cy="433" r="8" stroke="#79bfff" />
+          <circle cx={x - 17} cy="448" r="7" stroke="#79bfff" />
+        </g>
+      ))}
+      {[
+        {
+          sign: '+',
+          color: '#ff998a',
+          positions: [
+            [94, 150],
+            [179, 130],
+            [264, 105],
+            [349, 105],
+            [470, 85],
+          ],
+        },
+        {
+          sign: '−',
+          color: '#79bfff',
+          positions: [
+            [94, 330],
+            [179, 350],
+            [264, 375],
+            [349, 375],
+            [477, 397],
+          ],
+        },
+      ].map(({ sign, color, positions }) => (
+        <g key={sign} fill={color}>
+          {positions.map(([y, x]) => (
+            <g key={y}>
+              <circle
+                cx={x}
+                cy={y}
+                r="9"
+                fill="#10212c"
+                stroke={color}
+                strokeWidth="1.5"
+              />
+              <text
+                x={x}
+                y={y + 4}
+                textAnchor="middle"
+                className="scale-charge-sign"
+              >
+                {sign}
+              </text>
+            </g>
+          ))}
+        </g>
+      ))}
+    </g>
+  );
+}
+
+function ScaleSculpture({
+  selected,
+  threads,
+}: {
+  selected: number;
+  threads: string;
+}) {
   const uid = useId().replace(/:/g, '');
   return (
     <svg className="scale-sculpture" viewBox="0 0 480 690" aria-hidden="true">
@@ -316,6 +589,8 @@ function ScaleSculpture({ selected }: { selected: number }) {
           </g>
         );
       })}
+      <FamilyConnections showLines={threads !== 'charge'} />
+      {threads !== 'families' && <ChargeConnections />}
       <text x="240" y="670" textAnchor="middle" className="scale-diagram-note">
         Conceptual slices · not to physical scale
       </text>
@@ -409,7 +684,27 @@ function ParticleChart() {
 
 export function BHSMScaleSlices() {
   const [selected, setSelected] = useState(2);
+  const [threads, setThreads] = useState('both');
+  const [shareStatus, setShareStatus] = useState('');
+  const [fallbackLink, setFallbackLink] = useState('');
   const layer = layers[selected];
+
+  async function copyAtlasLink() {
+    const url = new URL(window.location.href);
+    url.hash = 'bhsm-scale-map';
+    const link = url.toString();
+    try {
+      if (!navigator.clipboard?.writeText)
+        throw new Error('Clipboard unavailable');
+      await navigator.clipboard.writeText(link);
+      setFallbackLink('');
+      setShareStatus('Atlas link copied. Share it with someone curious.');
+    } catch {
+      setFallbackLink(link);
+      setShareStatus('Select and copy the atlas link below.');
+    }
+  }
+
   return (
     <section
       id="bhsm-scale-map"
@@ -424,14 +719,62 @@ export function BHSMScaleSlices() {
           particles and matter to cosmic structure. The Standard Model is one
           slice in this larger BHSM conceptual map.
         </p>
+        <div
+          className="scale-share-actions"
+          aria-label="Take the scale atlas with you"
+        >
+          <a
+            href="./learn/bhsm-scale-atlas.svg"
+            download="BHSM-scale-atlas.svg"
+          >
+            Download the atlas poster <span>SVG · printable at any size ↓</span>
+          </a>
+          <button type="button" onClick={copyAtlasLink}>
+            Copy a link to the atlas ↗
+          </button>
+        </div>
+        <p className="scale-share-status" role="status">
+          {shareStatus}
+        </p>
+        {fallbackLink && (
+          <label className="scale-share-fallback">
+            Atlas link
+            <input
+              type="url"
+              value={fallbackLink}
+              readOnly
+              onFocus={(event) => event.currentTarget.select()}
+              onClick={(event) => event.currentTarget.select()}
+            />
+          </label>
+        )}
       </div>
       <div className="scale-atlas-layout">
         <figure className="scale-sculpture-frame">
-          <ScaleSculpture selected={selected} />
+          <div className="scale-thread-controls" aria-label="Atlas thread view">
+            {[
+              ['both', 'Both threads'],
+              ['families', 'Family paths'],
+              ['charge', 'Electric charge'],
+            ].map(([value, label]) => (
+              <button
+                key={value}
+                type="button"
+                aria-pressed={threads === value}
+                onClick={() => setThreads(value)}
+              >
+                {label}
+              </button>
+            ))}
+          </div>
+          <ScaleSculpture selected={selected} threads={threads} />
           <figcaption>
-            Seven separated slices show levels of organization. Their spacing is
-            illustrative; the stack is neither a timeline nor a set of measured
-            nested shells.
+            Follow three family paths from the proposed core and modes to their
+            Standard Model slots. The ordinary-matter route continues through
+            atoms to two mirror-image molecular arrangements. Slice spacing is
+            illustrative, not a timeline or measured nested shells. The dotted
+            +/− threads follow charged constituents and carriers, not spin or
+            the net charge of whole neutral objects.
           </figcaption>
         </figure>
         <div className="scale-atlas-reader">
@@ -480,6 +823,76 @@ export function BHSMScaleSlices() {
             <p className="scale-detail-context">{layer.detail}</p>
           </div>
         </div>
+      </div>
+      <div
+        className="scale-family-key"
+        aria-labelledby="scale-family-key-title"
+      >
+        <h3 id="scale-family-key-title">
+          Three families. Ordinary matter. Molecular handedness.
+        </h3>
+        <ul className="scale-family-legend">
+          {familyLanes.map((family) => (
+            <li
+              key={family.roman}
+              style={{ '--family-color': family.color } as CSSProperties}
+            >
+              <span>{family.roman}</span> {family.quarks} · {family.leptons}
+            </li>
+          ))}
+        </ul>
+        <p>
+          Dashed lower paths show the conditional BHSM family interpretation,
+          not computed trajectories or a derivation of the family masses. At the
+          particle slice, I, II and III mark the three conventional fermion
+          generations; gauge bosons and the Higgs are shared across them.
+        </p>
+        <p>
+          The electron and up/down quarks supply the constituents of ordinary
+          atoms. The II and III routes end before that slice because their
+          heavier charged relatives do not build ordinary stable atoms. This
+          does not erase their neutrinos, depict a decay chain, or cover muonic
+          and other exotic atoms.
+        </p>
+        <div className="scale-charge-key">
+          <h4>Electric charge through the scales</h4>
+          <p>
+            <span className="scale-charge-positive">+ positive:</span> up, charm
+            and top quarks (+⅔e).{' '}
+            <span className="scale-charge-negative">− negative:</span> down,
+            strange and bottom quarks (−⅓e), and electron, muon and tau (−1e).
+            Neutrinos have zero electric charge and no charge-thread connection.
+          </p>
+          <p>
+            W+ and W− also carry ±1e; they sit in the shared boson group below.
+            Photon, gluon, Z and Higgs have zero electric charge, so the
+            electric threads skip them. Gluon color charge is a different
+            property.
+          </p>
+          <p>
+            At atomic and molecular scales, +/− mark nuclei and electrons. At
+            planetary, stellar and cosmic scales, they mark charged constituents
+            or plasma carriers. A neutral atom, molecule or larger system can
+            contain both; the diagram does not assign it a net charge. The
+            charge paths begin at the Standard Model slice, with no electric
+            charge assigned to the proposed core or modes. Molecular handedness
+            is independent of the +/− sign.
+          </p>
+        </div>
+        <p>
+          Above atoms, the neutral fork changes the level of description: some
+          molecular arrangements come in non-superposable mirror pairs. The two
+          labels mean visual left and right, not assigned R/S or D/L
+          configurations. Not all molecules are chiral, and molecular handedness
+          is not a conversion of particle generation or particle chirality.{' '}
+          <a href="https://goldbook.iupac.org/terms/view/C01058">
+            IUPAC: chirality ↗
+          </a>{' '}
+          ·{' '}
+          <a href="https://goldbook.iupac.org/terms/view/E02069">
+            enantiomers ↗
+          </a>
+        </p>
       </div>
       <ParticleChart />
       <p className="scale-source-note">

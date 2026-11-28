@@ -1,0 +1,194 @@
+.museum-evidence-guide {
+  margin: 3rem 0 1.5rem;
+  padding-top: 2rem;
+  border-top: 1px solid #343344;
+  scroll-margin-top: 1rem;
+}
+.museum-evidence-heading {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+.museum-evidence-heading h2 {
+  max-width: 29ch;
+  margin: 0.4rem 0 1rem;
+  font-size: clamp(1.6rem, 2.7vw, 2.6rem);
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: -0.035em;
+}
+.museum-edition {
+  flex-shrink: 0;
+  margin: 0.3rem 0;
+  font:
+    0.7rem/1.8 var(--font-geist-mono),
+    monospace;
+  color: #aaa8bc;
+}
+.museum-edition time {
+  display: block;
+  color: #ddd7ea;
+}
+.museum-evidence-intro {
+  max-width: 75ch;
+  color: #bfb9cf;
+  line-height: 1.8;
+  font-size: 0.95rem;
+}
+.museum-status-key {
+  margin: 1.8rem 0;
+}
+.museum-status-key > div {
+  display: grid;
+  grid-template-columns: minmax(210px, 1fr) 2fr;
+  gap: 1.3rem;
+  padding: 1rem 0;
+  border-top: 1px solid #2a3040;
+}
+.museum-status-key dt {
+  font-size: 0.85rem;
+  color: #efebf5;
+}
+.museum-status-key dd {
+  margin: 0;
+  color: #bfb9cf;
+  font-size: 0.85rem;
+  line-height: 1.7;
+}
+.museum-status-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  margin-right: 0.6rem;
+}
+.status-reference {
+  background: #71e5eb;
+}
+.status-conditional {
+  background: #bda7f5;
+}
+.status-screen {
+  background: #ffbc77;
+}
+.status-proposal {
+  background: #ff9c91;
+}
+.museum-evidence-routes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+  margin: 1.5rem 0 2rem;
+}
+.museum-evidence-routes a {
+  display: grid;
+  align-content: start;
+  gap: 0.7rem;
+  color: #e7e2f2;
+  text-decoration: none;
+}
+.museum-evidence-routes span {
+  color: #71e5eb;
+  font:
+    0.65rem var(--font-geist-mono),
+    monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+.museum-evidence-routes strong {
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+.museum-evidence-routes small {
+  color: #b0aabd;
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+.museum-reading-desk {
+  padding: 1rem 1.2rem;
+  background: #101722;
+  border: 1px solid #303647;
+  border-radius: 4px;
+  color: #c5bfd2;
+  font-size: 0.86rem;
+  line-height: 1.8;
+}
+.museum-reading-desk summary {
+  color: #eee9f4;
+  cursor: pointer;
+  min-height: 26px;
+}
+.museum-reading-desk li {
+  padding: 0.4rem 0;
+}
+.museum-evidence-guide a {
+  text-underline-offset: 0.25em;
+}
+.museum-evidence-guide a:hover {
+  color: #ffbc77;
+}
+.museum-evidence-guide :is(a, summary):focus-visible {
+  outline: 2px solid #71e5eb;
+  outline-offset: 5px;
+}
+.museum-learning-kit {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 2.5rem;
+  margin-top: 2rem;
+  padding: 1.5rem 0;
+  border-block: 1px solid #303647;
+}
+.museum-learning-kit h3 {
+  font-size: 1.35rem;
+  font-weight: 500;
+  margin: 0.6rem 0;
+}
+.museum-learning-kit p:not(.eyebrow) {
+  max-width: 62ch;
+  font-size: 0.86rem;
+  line-height: 1.8;
+  color: #bfb9cf;
+}
+.museum-learning-links {
+  display: grid;
+  align-content: start;
+  gap: 1rem;
+}
+.museum-learning-links a {
+  display: block;
+  color: #71e5eb;
+  font-size: 0.85rem;
+}
+.museum-learning-links small {
+  display: block;
+  font-size: 0.72rem;
+  color: #aaa8bc;
+  margin-top: 0.3rem;
+}
+@media (max-width: 700px) {
+  .museum-evidence-heading {
+    flex-direction: column;
+    gap: 0;
+  }
+  .museum-edition {
+    margin-bottom: 0.8rem;
+  }
+  .museum-edition time {
+    display: inline;
+    margin-left: 0.5rem;
+  }
+  .museum-status-key > div {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+  }
+  .museum-evidence-routes {
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+  }
+  .museum-learning-kit {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}

@@ -1,5 +1,36 @@
 # Museum content update — 24 September 2026
 
+## Public visitor tools — 28 November 2026
+
+The welcome now offers an optional four-stop, roughly three-minute tour and
+separate paths into the scale atlas and the evidence. Its transcript remains
+available without audio; male narration is visitor initiated and stops
+when the tour closes or the visitor leaves. Narration and the soundtrack do not
+play over one another. The welcome still contains only one animated scene.
+Four locally served Microsoft Andrew natural male narration clips provide a
+consistent voice across browsers, with synchronized visible captions and MP3/VTT
+downloads. Recording provenance, text and hashes are retained alongside them.
+An explicitly selected male device voice remains an optional fallback.
+
+The atlas has a standalone printable SVG poster and a share link with a manual
+copy fallback. A self-contained classroom guide supplies the narration, a
+20-minute activity, evidence worksheet and teacher notes. The new evidence
+guide explains established reference science, scoped calculations, historical
+screens and proposals, then links to reproducible comparisons, source records
+and the dated open research register. Its visitor-edition date does not advance
+the dates or status of the linked scientific results. Nested tour and atlas
+links open the correct exhibit and retain their shareable fragment.
+
+The atlas also traces three conceptual family paths into the Standard Model
+slice. Ordinary atomic matter follows the up/down/electron route; the heavier
+charged family members end before that slice, while neutrinos retain their
+separate status. At molecules a distinct fork depicts mirror-image handedness,
+without equating chirality with generation or electric charge. Positive and
+negative charge threads connect charged particle/constituent sites and bypass
+neutral particles; their continuation through higher slices denotes charged
+constituents rather than net charge of whole objects. View controls separate
+family paths and charge threads when needed.
+
 ## Welcome lifecycle and scale atlas — 28 November 2026
 
 The welcome exhibit replaces its linked-fiber and Children of BHSM animation
