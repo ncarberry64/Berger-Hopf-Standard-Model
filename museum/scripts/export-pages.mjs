@@ -143,7 +143,13 @@ try {
   for (const expected of [
     'particle-theatre',
     'data-lifecycle-phase',
-    'Decay event',
+    'Ripples',
+    'Rogue wave',
+    'Separation',
+    'Pilot waves',
+    'Collision',
+    'Daughters',
+    'Return',
     'id="bhsm-scale-map"',
     'Hypersphere core',
     'Moiré organization',
@@ -163,7 +169,7 @@ try {
     if (welcome.includes(retired))
       throw new Error(`Welcome retained a retired animation: ${retired}`);
   }
-  if (!/<title[^>]*>Particle lifecycle: excitation<\/title>/.test(welcome))
+  if (!/<title[^>]*>Particle lifecycle: ripples<\/title>/.test(welcome))
     throw new Error('Lifecycle SVG needs a server-rendered accessible title.');
   if (!written.includes('data-white-hole-shape="sphere"'))
     throw new Error('Cosmic white-hole event lost its sphere.');

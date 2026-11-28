@@ -1,12 +1,45 @@
 # Museum content update — 24 September 2026
 
+## Surface ripples and the bubble cycle — 28 November 2026
+
+The welcome lifecycle now follows the requested surface-and-bubble picture:
+overlapping ripples reinforce into a rogue wave, a crest pinches off into a
+bubble, pilot-wave patterns accompany its travel, a second bubble collides
+with it, and unstable daughter bubbles deform and pop back into surface
+ripples. Seven selectable stages are Ripples, Rogue wave, Separation, Pilot
+waves, Collision, Daughters and Return. They form one continuous 46-second
+illustrative loop; that duration is presentation timing, not a physical clock.
+The welcome starts paused. Its Play control starts the animation and the
+exhibit's music together. While narration plays, an existing soundtrack is
+reduced to 18% of the visitor's selected volume; ending or pausing narration
+restores that volume. The narration controls use Play and Pause.
+
+The spreading return pattern represents the author's proposed return of
+residual inertia to the surface. No inertia or energy transfer is computed,
+and no particular particle, interaction channel, conservation ledger or
+pilot-wave dynamics is established by the drawing. The sequence supplies no
+decay rate, lifetime, branching probability or quantitative prediction.
+
+The first tour stop and its recorded narration, captions and printable
+transcript follow the new cycle. The AI guide, exhibit review, classroom
+claim card and animation-evidence record use the same conceptual scope.
+The seven-slice atlas, family paths, molecular-handedness distinction and
+electric-charge threads retain their existing content.
+
+Validation: 142 museum Node checks, 13 focused Python checks, TypeScript and
+the GitHub Pages static export passed. Browser review covered distinct cycle
+stages, desktop and 390px phone layouts, combined music playback, narration
+pause/resume, and returning to the welcome exhibit. The production preview
+used the repository subpath and reported no browser errors or warnings.
+
 ## Public visitor tools — 28 November 2026
 
 The welcome now offers an optional four-stop, roughly three-minute tour and
 separate paths into the scale atlas and the evidence. Its transcript remains
 available without audio; male narration is visitor initiated and stops
-when the tour closes or the visitor leaves. Narration and the soundtrack do not
-play over one another. The welcome still contains only one animated scene.
+when the tour closes or the visitor leaves. During narration, existing music
+continues at 18% of the selected volume, which is restored afterward. The
+welcome still contains only one animated scene.
 Four locally served Microsoft Andrew natural male narration clips provide a
 consistent voice across browsers, with synchronized visible captions and MP3/VTT
 downloads. Recording provenance, text and hashes are retained alongside them.
@@ -33,9 +66,10 @@ family paths and charge threads when needed.
 
 ## Welcome lifecycle and scale atlas — 28 November 2026
 
-The welcome exhibit replaces its linked-fiber and Children of BHSM animation
+The first 28 November welcome revision replaced its linked-fiber and Children of BHSM animation
 cluster with one particle lifecycle: excitation, organization, propagation,
-and an illustrative decay event with outgoing daughter excitations. Playback,
+and an illustrative decay event with outgoing daughter excitations. That
+four-stage presentation is superseded by the bubble cycle above. Playback,
 phase selection, restart and a scrubber share the museum's motion preference;
 the scene clock stops while offscreen. The sequence is conceptual and supplies
 no identified decay channel, lifetime, rate or branching ratio.
