@@ -14,6 +14,10 @@ import './phone-experience.css';
 import './blackhole-tracker.css';
 import './einstein-ring-tour.css';
 import './bhsm-lifecycle.css';
+// Global exhibit styles must load with the layout so static Pages exports
+// do not request route CSS from the hostname root during lazy hydration.
+import './particle-lifecycle.css';
+import './bhsm-scale-slices.css';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',

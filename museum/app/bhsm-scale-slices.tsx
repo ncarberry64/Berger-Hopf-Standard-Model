@@ -1,7 +1,6 @@
 'use client';
 
 import { useId, useState, type CSSProperties } from 'react';
-import './bhsm-scale-slices.css';
 
 const layers = [
   {

@@ -3,7 +3,6 @@
 import { useId, useState, type ReactNode } from 'react';
 import { useSceneClock } from './use-scene-clock';
 import { ExhibitReview } from './exhibit-review';
-import './particle-lifecycle.css';
 
 const phases = [
   {
