@@ -35,6 +35,8 @@ export function MuseumSoundtrack() {
     };
     // The entrance's explicitly labeled music action shares the Play control.
     window.addEventListener('bhsm:play-music', playMusic);
+    const pauseForNarration = () => player.pause();
+    window.addEventListener('bhsm:narration-start', pauseForNarration);
     const stopFollowing = followExhibit(window, (slideId) => {
       const index = exhibitSoundtracks.findIndex(
         (soundtrack) => soundtrack.slideId === slideId,
@@ -64,6 +66,7 @@ export function MuseumSoundtrack() {
     });
     return () => {
       window.removeEventListener('bhsm:play-music', playMusic);
+      window.removeEventListener('bhsm:narration-start', pauseForNarration);
       stopFollowing();
       player.dispose();
       stopSession();
@@ -76,7 +79,9 @@ export function MuseumSoundtrack() {
     const audio = audioRef.current;
     if (!player || !audio) return;
     if (!audio.paused) player.pause();
-    else void player.play().catch(() => {});
+    else {
+      window.dispatchEvent(new Event('bhsm:play-music'));
+    }
   }
 
   function toggleMute() {

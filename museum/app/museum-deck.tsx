@@ -17,6 +17,13 @@ const aliases: Record<string, string> = {
   comparisons: 'science-test',
 };
 
+function retainSlideFragment(index: number) {
+  const fragment = document.getElementById(location.hash.slice(1));
+  const slide = document.getElementById(slides[index][0]);
+  if (!fragment || !slide?.contains(fragment))
+    history.replaceState(null, '', `#${slides[index][0]}`);
+}
+
 export function MuseumDeck({ children }: { children: ReactNode }) {
   const track = useRef<HTMLDivElement>(null);
   const numberLinks = useRef<HTMLElement>(null);
@@ -47,12 +54,39 @@ export function MuseumDeck({ children }: { children: ReactNode }) {
   useEffect(() => {
     const element = track.current;
     if (!element) return;
-    const fromHash = () => {
-      const hash = location.hash.slice(1);
+    let focusFrame = 0;
+    const navigateFragment = (hash: string) => {
       const id = aliases[hash] ?? hash;
-      const index = slides.findIndex(([slideId]) => slideId === id);
-      if (index >= 0) go(index, false);
+      const target = document.getElementById(id);
+      const index = slides.findIndex(
+        ([slideId]) =>
+          slideId === id ||
+          (target && document.getElementById(slideId)?.contains(target)),
+      );
+      if (index < 0) return false;
+      go(index, false);
+      // Shared atlas/tour links can point inside a slide. Reveal the owning
+      // exhibit before scrolling its own vertical reading pane.
+      if (target && id !== slides[index][0]) {
+        const owner = document.getElementById(slides[index][0]);
+        if (owner)
+          owner.scrollTo({
+            top:
+              owner.scrollTop +
+              target.getBoundingClientRect().top -
+              owner.getBoundingClientRect().top -
+              16,
+            behavior: 'instant',
+          });
+        cancelAnimationFrame(focusFrame);
+        focusFrame = requestAnimationFrame(() => {
+          if (!target.hasAttribute('tabindex')) target.tabIndex = -1;
+          target.focus({ preventScroll: true });
+        });
+      }
+      return true;
     };
+    const fromHash = () => navigateFragment(location.hash.slice(1));
     const click = (event: MouseEvent) => {
       if (
         event.defaultPrevented ||
@@ -68,14 +102,11 @@ export function MuseumDeck({ children }: { children: ReactNode }) {
       );
       if (!link) return;
       const id = link.hash.slice(1);
-      const index = slides.findIndex(
-        ([slideId]) => slideId === (aliases[id] ?? id),
-      );
-      if (index < 0) return;
+      if (!navigateFragment(id)) return;
       event.preventDefault();
       // Direct destinations must not animate through unrelated exhibits or
       // race a second numbered selection against an unfinished swipe.
-      go(index, false);
+      history.replaceState(null, '', `#${id}`);
     };
     fromHash();
     announceExhibit(window, slides[activeIndex.current][0]);
@@ -94,10 +125,11 @@ export function MuseumDeck({ children }: { children: ReactNode }) {
       activeIndex.current = index;
       setActive(index);
       announceExhibit(window, slides[index][0]);
-      history.replaceState(null, '', `#${slides[index][0]}`);
+      retainSlideFragment(index);
     };
     element.addEventListener('scrollend', settled);
     return () => {
+      cancelAnimationFrame(focusFrame);
       window.removeEventListener('hashchange', fromHash);
       document.removeEventListener('click', click);
       resize.disconnect();
@@ -219,7 +251,7 @@ export function MuseumDeck({ children }: { children: ReactNode }) {
             setActive(index);
             announceExhibit(window, slides[index][0]);
             if (Math.abs(el.scrollLeft - index * el.clientWidth) < 2)
-              history.replaceState(null, '', `#${slides[index][0]}`);
+              retainSlideFragment(index);
           }
         }}
         onPointerDown={() => {

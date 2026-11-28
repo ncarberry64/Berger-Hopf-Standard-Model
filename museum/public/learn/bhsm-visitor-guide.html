@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A printable BHSM Museum visitor guide with a three-minute introduction, a 20-minute classroom activity, an evidence worksheet and teacher guidance.">
+  <title>BHSM Museum · Visitor &amp; classroom guide</title>
+  <style>
+    :root { color-scheme: light; --ink: #18303a; --muted: #4f6269; --teal: #176b6b; --amber: #9b580e; --line: #cbd5d2; --paper: #fffefa; }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: #e9efeb; color: var(--ink); font: 17px/1.6 system-ui, -apple-system, "Segoe UI", sans-serif; }
+    a { color: var(--teal); text-underline-offset: .2em; }
+    a:hover { color: #104d4d; }
+    :focus-visible { outline: 3px solid var(--amber); outline-offset: 4px; }
+    .skip { position: absolute; top: -6rem; left: 1rem; background: white; padding: .5rem 1rem; }
+    .skip:focus { top: 1rem; z-index: 5; }
+    .toolbar { max-width: 1080px; margin: auto; padding: 1.1rem 1.5rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; }
+    .toolbar a { font-size: .9rem; font-weight: 650; }
+    .toolbar button { border: 1px solid var(--teal); border-radius: 6px; background: var(--teal); color: white; padding: .65rem 1rem; font: inherit; font-size: .9rem; cursor: pointer; min-height: 44px; }
+    main { max-width: 1020px; margin: 0 auto 3rem; }
+    .sheet { background: var(--paper); margin: 0 0 1.4rem; padding: clamp(1.4rem, 5vw, 3.5rem); box-shadow: 0 8px 30px #18303a0b; border-top: 5px solid var(--teal); }
+    .kicker { color: var(--teal); text-transform: uppercase; font-size: .72rem; letter-spacing: .14em; font-weight: 750; margin: 0 0 .65rem; }
+    h1, h2, h3 { line-height: 1.17; letter-spacing: -.025em; }
+    h1 { font-size: clamp(2rem, 4.6vw, 3.3rem); margin: 0 0 .9rem; max-width: 20ch; }
+    h2 { font-size: clamp(1.65rem, 3vw, 2.3rem); margin: 0 0 1rem; }
+    h3 { font-size: 1.12rem; margin: 1.35rem 0 .6rem; }
+    p { margin: .75rem 0; }
+    .lede { color: var(--muted); max-width: 72ch; }
+    .meta { display: flex; gap: .6rem 1.2rem; flex-wrap: wrap; color: var(--muted); font-size: .78rem; border-block: 1px solid var(--line); padding: .7rem 0; margin: 1.2rem 0; }
+    .section-nav { display: flex; flex-wrap: wrap; gap: .6rem 1.3rem; font-size: .8rem; margin: 1rem 0 1.6rem; }
+    .transcript p { margin: .9rem 0; }
+    .scale-line { border-left: 3px solid var(--amber); background: #f5f0e5; padding: .75rem 1rem; color: #674b2c; font-size: .84rem; }
+    .scale-line strong { color: #553b1d; }
+    .note { color: var(--muted); font-size: .83rem; }
+    .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+    ul, ol { padding-left: 1.3rem; margin: .6rem 0; }
+    li { margin: .3rem 0; }
+    .agenda { width: 100%; border-collapse: collapse; font-size: .9rem; margin: 1rem 0; }
+    caption { text-align: left; font-weight: 700; margin-bottom: .45rem; }
+    th, td { text-align: left; vertical-align: top; border-bottom: 1px solid var(--line); padding: .65rem .7rem; }
+    thead { background: #e9f0eb; }
+    th[scope="row"] { white-space: nowrap; color: var(--teal); font-size: .85rem; }
+    .distinction { padding: 1rem 1.1rem; background: #edf3ef; border-left: 3px solid var(--teal); font-size: .88rem; }
+    .distinction h3 { margin: 0 0 .6rem; }
+    .distinction p:last-child { margin-bottom: 0; }
+    .questions li { padding-left: .25rem; margin-bottom: .6rem; }
+    .identity { display: grid; grid-template-columns: 2fr 1fr; gap: 1.5rem; color: var(--muted); font-size: .85rem; margin: 1.3rem 0; }
+    .write-line { display: inline-block; border-bottom: 1px solid #8a9b9a; min-width: 55%; min-height: 1.3em; }
+    .claim-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: .7rem; margin: 1rem 0; }
+    .claim-card { border: 1px solid var(--line); padding: .8rem; border-radius: 5px; font-size: .85rem; }
+    .claim-card strong { display: block; color: var(--teal); font-size: .7rem; letter-spacing: .08em; margin-bottom: .35rem; }
+    .worksheet { list-style: none; padding: 0; counter-reset: prompt; }
+    .worksheet li { counter-increment: prompt; margin: 1rem 0; }
+    .worksheet h3 { font-size: .95rem; letter-spacing: 0; margin: 0 0 .25rem; }
+    .worksheet h3::before { content: counter(prompt, decimal-leading-zero) " / "; color: var(--teal); font-size: .8rem; }
+    .worksheet p { font-size: .82rem; color: var(--muted); margin: .25rem 0 .4rem; }
+    .writing-space { height: 2.2rem; border-bottom: 1px solid #9daaa5; }
+    .writing-space.tall { height: 3.4rem; background: repeating-linear-gradient(to bottom, transparent 0, transparent 1.65rem, #cbd5d2 1.65rem, #cbd5d2 1.7rem); border-bottom: 0; }
+    .answers { font-size: .9rem; }
+    .answers dt { font-weight: 700; color: var(--teal); margin-top: .9rem; }
+    .answers dd { margin: .25rem 0 .6rem; }
+    .sources { font-size: .83rem; }
+    .sources li { margin-bottom: .5rem; }
+    .print-address { display: none; overflow-wrap: anywhere; }
+    .sheet-footer { border-top: 1px solid var(--line); padding-top: .7rem; margin-top: 1.6rem; color: var(--muted); font-size: .73rem; display: flex; justify-content: space-between; gap: 1rem; }
+    @media (max-width: 620px) {
+      body { font-size: 16px; }
+      .toolbar { padding-inline: 1rem; }
+      .two-col, .claim-cards { grid-template-columns: 1fr; }
+      .identity { grid-template-columns: 1fr; gap: .6rem; }
+      th, td { padding: .5rem .35rem; }
+      .agenda { font-size: .82rem; }
+      .sheet { margin-bottom: .8rem; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+    @page { size: auto; margin: 15mm; }
+    @media print {
+      html { scroll-behavior: auto; }
+      body { background: white; font-size: 10pt; line-height: 1.43; color: #172e36; }
+      .toolbar, .skip, .section-nav, .screen-only { display: none; }
+      main { max-width: none; margin: 0; }
+      .sheet { border-top-width: 3px; margin: 0; padding: 5mm 0 0; box-shadow: none; break-before: page; }
+      .sheet:first-child { break-before: auto; }
+      h1 { font-size: 27pt; }
+      h2 { font-size: 23pt; }
+      h3 { font-size: 12pt; break-after: avoid; }
+      p { orphans: 3; widows: 3; }
+      .meta { margin: 3mm 0; padding: 2mm 0; }
+      .transcript p { margin: 3mm 0; }
+      .kicker { font-size: 8pt; margin-bottom: 2mm; }
+      .note, .scale-line, .sources, .claim-card { font-size: 9pt; }
+      .agenda { font-size: 9pt; margin: 3mm 0; }
+      th, td { padding: 2mm; }
+      .two-col { gap: 5mm; }
+      .distinction { font-size: 9pt; padding: 3mm; }
+      .distinction p { margin: 2mm 0; }
+      .claim-cards { grid-template-columns: repeat(3, 1fr); gap: 3mm; margin: 3mm 0; }
+      .claim-card { padding: 3mm; }
+      .identity { margin: 3mm 0; }
+      .worksheet li { margin: 3mm 0; break-inside: avoid; }
+      .worksheet h3 { font-size: 10pt; }
+      .worksheet p { font-size: 9pt; }
+      .writing-space { height: 9mm; }
+      .writing-space.tall { height: 14mm; background: none; border-bottom: 1px solid #9daaa5; }
+      .answers { font-size: 10pt; }
+      .answers dt { margin-top: 3mm; }
+      .sources li { margin-bottom: 2mm; }
+      .print-address { display: block; font-size: 7.5pt; color: #4f6269; }
+      .sheet-footer { margin-top: 5mm; padding-top: 2mm; font-size: 8pt; }
+      tr, .claim-card, .distinction { break-inside: avoid; }
+      a { color: #18303a; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#guide">Skip to the guide</a>
+  <div class="toolbar">
+    <a href="https://ncarberry64.github.io/Berger-Hopf-Standard-Model/#potential">← Return to the BHSM Museum</a>
+    <button type="button" onclick="window.print()">Print guide</button>
+  </div>
+  <main id="guide">
+    <section class="sheet" id="narration" aria-labelledby="guide-title">
+      <p class="kicker">BHSM Museum / Visitor &amp; classroom guide</p>
+      <h1 id="guide-title">From an excitation<br>to a question worth testing.</h1>
+      <p class="lede">A short introduction, a 20-minute group activity and a worksheet for exploring the Berger–Hopf Standard Model with curiosity and careful evidence.</p>
+      <div class="meta"><span>Edition: 28 November 2026</span><span>Suggested audience: secondary school &amp; adult visitors</span><span>No equations required</span></div>
+      <nav class="section-nav" aria-label="Guide sections"><a href="#narration">Three-minute introduction</a><a href="#activity">Classroom activity</a><a href="#worksheet">Evidence worksheet</a><a href="#teacher">Teacher guidance</a></nav>
+      <h2>Three minutes in the museum</h2>
+      <p class="note">Complete four-stop museum tour transcript · About three minutes at a relaxed pace. Read it aloud or follow the museum’s recorded Andrew narration, a natural male synthetic voice, with optional device-voice fallback. Pause the animation or use its stage buttons while reading.</p>
+      <div class="transcript" id="narration-transcript">
+        <p><strong>01 / Excitation.</strong> Start with the lifecycle scene. BHSM interprets particle structure through geometric organization. The field lines make an excitation visible, and the changing pattern introduces the idea of a localized mode. Follow this illustrative unstable excitation through propagation to a decay event, where daughter excitations appear. The animation supplies a visual sequence; its durations, paths and outgoing modes are schematic. Use the pause button or select a phase to examine what changes. A physical decay calculation would also need the permitted interaction channels, conservation laws and a quantitative rate.</p>
+        <p><strong>02 / Seven scales.</strong> Read the scale map from bottom to top: hypersphere core; excitations and moiré-like modes; Standard Model particles; atoms and the periodic table; molecules; planets and stars; and cosmic structure. The Standard Model occupies one slice in this broader BHSM picture. The core is a proposed foundation without an assigned ordinary diameter or internal travel time. The slices organize ideas across scales, while the moiré pattern illustrates the proposed organization of modes. Select each slice to see its meaning and evidence status. Each connection still needs its own physical explanation and tests.</p>
+        <p><strong>03 / Claims &amp; context.</strong> Open the Standard Model chart and look at the quarks, leptons, interaction bosons and Higgs. This is the established particle framework used as a reference in the museum. BHSM proposes a geometric interpretation and conditionally reproduces the matter and gauge ledger under stated assumptions. That conditional structural result has a specific scope. Particle masses, interaction probabilities and cosmological responses each require further physical constructions and independent checks. The conventional minimal Standard Model also leaves neutrino masses outside its original field content. Use the exhibit labels to keep established references, conditional results and proposed interpretations distinct.</p>
+        <p><strong>04 / Evidence &amp; tests.</strong> Finish at the evidence guide. Choose one claim and follow its source. Look for what was assumed, what was calculated, the result’s stated scope and the observations used for comparison. A physical prediction must be fixed independently of the measured answer it will face. Historical numerical screens and certified calculations on specified backgrounds retain those classifications. Useful questions include: which observable follows from the construction, what could falsify it, and can another researcher reproduce the result? Follow the current research record for the unresolved steps. The museum invites careful exploration, independent checking and specific criticism.</p>
+      </div>
+      <p class="scale-line"><strong>Read upward:</strong> hypersphere core → excitations &amp; modes → Standard Model → periodic table → molecules → planets &amp; stars → cosmic scale.</p>
+      <footer class="sheet-footer"><span>Visitor introduction · 1 of 4</span><span>BHSM Museum / 28 November 2026</span></footer>
+    </section>
+
+    <section class="sheet" id="activity" aria-labelledby="activity-title">
+      <p class="kicker">Explore together / 20 minutes</p>
+      <h2 id="activity-title">Separate the picture from the claim.</h2>
+      <p class="lede">Work in pairs or groups of three. Use the live museum if available; the transcript and claim cards in this guide also support the complete activity offline.</p>
+      <div class="two-col">
+        <div><h3>Learning objectives</h3><ul><li>Place the Standard Model within the seven-slice conceptual map.</li><li>Distinguish reference physics, a BHSM proposal and an illustrative choice.</li><li>Identify evidence a specific claim would need.</li></ul></div>
+        <div><h3>Materials &amp; setup</h3><p>One guide per group, pencils and an optional museum screen. Assign a reader, an evidence checker and a reporter; pairs can share roles. Print the worksheet separately for individual use.</p></div>
+      </div>
+      <table class="agenda">
+        <caption>A complete 20-minute session</caption>
+        <thead><tr><th scope="col">Time</th><th scope="col">Task</th><th scope="col">What to produce</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">0–3 min</th><td>Read the narration or follow it with the lifecycle animation.</td><td>One observation and one question.</td></tr>
+          <tr><th scope="row">3–7 min</th><td>Trace the seven slices upward. Follow lanes I, II and III through modes and the Standard Model, then distinguish the ordinary-atom route from the molecular mirror-pair fork.</td><td>A spoken explanation of what the paths mean.</td></tr>
+          <tr><th scope="row">7–13 min</th><td>Choose claim card A, B or C on the worksheet. Complete the six prompts using this guide or a linked exhibit source.</td><td>A claim with an evidence classification and a next check.</td></tr>
+          <tr><th scope="row">13–17 min</th><td>Exchange worksheets. Check whether the stated evidence supports exactly the claim being made.</td><td>One revision that makes the claim more precise.</td></tr>
+          <tr><th scope="row">17–20 min</th><td>Each group gives a short report and answers one discussion question.</td><td>“We can say …; we still need …”</td></tr>
+        </tbody>
+      </table>
+      <div class="distinction">
+        <h3>Keep the evidence categories visible</h3>
+        <p><strong>Conventional reference:</strong> the Standard Model organizes fundamental particles and the electromagnetic, weak and strong interactions. It does not include gravity. Its minimal form does not supply neutrino masses. The particle chart introduces this established framework; consult <a href="https://home.cern/science/physics/standard-model">CERN’s overview</a> for context.</p>
+        <p><strong>BHSM proposal or conditional result:</strong> the core-to-field interpretation and moiré analogy remain proposed connections. Reproducing the Standard Model matter and gauge ledger under specified assumptions is a conditional structural result; it is not a first-principles derivation from geometry alone.</p>
+        <p><strong>Presentation choice:</strong> animation speed, symbolic outgoing tracks and slice spacing help explain ideas. They are not measured lifetimes, calculated decay probabilities or a calibrated distance scale.</p>
+      </div>
+      <h3>Three discussion questions</h3>
+      <ol class="questions"><li>What can the scale atlas help you understand, and what cannot be concluded from the arrangement of its slices?</li><li>If a calculation agrees with a measurement, what would you check before calling it a prediction?</li><li>Choose one proposed connection. What would need to be specified before an observation could test it?</li></ol>
+      <footer class="sheet-footer"><span>Classroom activity · 2 of 4</span><span>Explore → classify → check → revise</span></footer>
+    </section>
+
+    <section class="sheet" id="worksheet" aria-labelledby="worksheet-title">
+      <p class="kicker">Make the evidence traceable</p>
+      <h2 id="worksheet-title">One claim. Six checks.</h2>
+      <div class="identity"><span>Name / group: <span class="write-line"></span></span><span>Date: <span class="write-line"></span></span></div>
+      <p class="note">Choose a claim card below or copy one precise claim from an exhibit. “Not supplied here” is a valid answer when information is missing. Do not invent a value or an experiment to fill a blank.</p>
+      <div class="claim-cards">
+        <div class="claim-card"><strong>CARD A / PARTICLE CHART</strong>The Standard Model organizes quarks, leptons, interaction bosons and the Higgs.</div>
+        <div class="claim-card"><strong>CARD B / SCALE ATLAS</strong>BHSM proposes a common core connected to excitations on spacetime fields.</div>
+        <div class="claim-card"><strong>CARD C / LIFECYCLE</strong>The welcome animation shows an illustrative parent transforming into three symbolic outgoing excitations.</div>
+      </div>
+      <ol class="worksheet">
+        <li><h3>State the claim exactly.</h3><p>Which card or exhibit? What is the claim about, and what does it leave out?</p><div class="writing-space" aria-hidden="true"></div></li>
+        <li><h3>Classify the claim.</h3><p>Reference physics / BHSM proposal / conditional result / historical numerical screen / presentation choice. Explain your selection; categories can overlap.</p><div class="writing-space" aria-hidden="true"></div></li>
+        <li><h3>Record the source and scope.</h3><p>Title, author or organization, date or revision, and applicable system or assumptions. For offline work, record this guide’s edition and the named source to check later.</p><div class="writing-space tall" aria-hidden="true"></div></li>
+        <li><h3>Identify the actual support.</h3><p>Observation, measurement, derivation, numerical calculation, or explanatory picture? Does the support establish this claim or only a narrower statement?</p><div class="writing-space tall" aria-hidden="true"></div></li>
+        <li><h3>Name what is missing and the next check.</h3><p>Which definition, calculation or independent measurement is needed? What outcome could challenge the claim once it is specified? A picture alone may have no physical prediction to test.</p><div class="writing-space tall" aria-hidden="true"></div></li>
+        <li><h3>Write a careful conclusion.</h3><p>“The source supports … within … . It does not yet establish … .”</p><div class="writing-space tall" aria-hidden="true"></div></li>
+      </ol>
+      <footer class="sheet-footer"><span>Evidence worksheet · 3 of 4</span><span>Record missing information openly.</span></footer>
+    </section>
+
+    <section class="sheet" id="teacher" aria-labelledby="teacher-title">
+      <p class="kicker">Teacher &amp; facilitator notes</p>
+      <h2 id="teacher-title">Reward precision, not agreement.</h2>
+      <p class="lede">Assess whether learners connect a claim to appropriate support. They do not need to endorse or reject the full BHSM framework to complete the activity well.</p>
+      <dl class="answers">
+        <dt>Card A · Established reference framework</dt><dd>The grouping is part of the conventional Standard Model. CERN is a suitable introductory source; the museum chart is a summary. This does not establish that BHSM derives the particles. A strong answer separates the classification from the proposed connection to the lower slices.</dd>
+        <dt>Card B · Attributed BHSM proposal</dt><dd>The core and its relation to fields are proposed interpretations. The 22 October amendment specifies no ordinary distance, duration or trajectory inside the core. The diagram supplies no complete physical law or calibrated observable for the connection. A useful next step names the missing correspondence and a resulting measurable quantity, without claiming those have already been derived.</dd>
+        <dt>Card C · A statement about an illustration</dt><dd>Reading the animation or this guide confirms what the exhibit depicts. It does not establish a real three-body decay channel, a lifetime or a branching ratio. For an actual decay, the parent, daughters and interaction must be identified, with conservation conditions and quantitative dynamics checked. The symbolic tracks alone do not supply them.</dd>
+      </dl>
+      <p class="note"><strong>Reading the family paths:</strong> I, II and III cross the proposed mode layer into the three Standard Model fermion generations. The ordinary-atom route follows generation I’s up/down quarks and electron; heavier charged members of II and III are not ordinary atomic constituents. Neutrinos remain in all three families; exotic atoms are outside this diagram. Above atoms, the fork illustrates molecular mirror-image handedness for chiral molecules, distinct from particle generations and particle chirality. Not every molecule is chiral. “Left” and “right” are visual labels, not assigned R/S configurations. Ask: “What changes in meaning at the fork?” See <a href="https://goldbook.iupac.org/terms/view/C01058.html">IUPAC’s definition of chirality</a>.</p>
+      <h3>Discussion guidance</h3>
+      <p class="note"><strong>Reading the charge threads:</strong> plus and minus mean electric charge, not spin or molecular handedness. At the particle slice, the routes skip neutrinos and other electrically neutral particles. At larger scales, they track charged constituents such as nuclei and electrons, or charged plasma; they do not assign net charge to an entire atom, molecule, planet or universe. Ask: “How can a neutral object contain charged parts?”</p>
+      <ol class="answers"><li><strong>Atlas:</strong> it compares levels of organization and locates the Standard Model. It cannot establish a physical shell structure, chronology or derivation across every scale.</li><li><strong>Numerical agreement:</strong> ask whether measured data helped choose parameters, modes or normalization; check declared assumptions, uncertainties, scope and an independent comparison. Agreement alone cannot settle the origin of the answer.</li><li><strong>A testable connection:</strong> look for a defined system, a calculable observable and a comparison that could disagree. Where these are missing, the correct conclusion is that a test has not yet been specified.</li></ol>
+      <p class="distinction"><strong>A successful worksheet</strong> states a bounded claim, names a traceable source, distinguishes support from illustration, and identifies a concrete unresolved question. The retained repository status does not assert full physical completion: <code>FULL_BHSM_COMPLETE = FALSE</code>. Always read later research records in their own dated scope.</p>
+      <h3>Continue online / source trail</h3>
+      <ul class="sources">
+        <li><a href="https://ncarberry64.github.io/Berger-Hopf-Standard-Model/#potential">Museum welcome and particle lifecycle</a> · <a href="https://ncarberry64.github.io/Berger-Hopf-Standard-Model/#bhsm-scale-map">Seven-slice scale atlas</a><span class="print-address">ncarberry64.github.io/Berger-Hopf-Standard-Model/</span></li>
+        <li><a href="https://ncarberry64.github.io/Berger-Hopf-Standard-Model/research/animation-evidence.md">What drives the museum animations</a> — evidence and limits of the visualizations.</li>
+        <li><a href="https://ncarberry64.github.io/Berger-Hopf-Standard-Model/research/lifecycle-core-surface-amendment-20261022.md">Core/surface amendment, 22 October 2026</a> · <a href="https://ncarberry64.github.io/Berger-Hopf-Standard-Model/research/lifecycle-envelope-clarification-20261110.md">Envelope clarification, 10 November 2026</a> — attributed BHSM definitions and distinctions.</li>
+        <li><a href="https://github.com/ncarberry64/Berger-Hopf-Standard-Model/blob/main/docs/current_bhsm_status.md">Current research status and dated scope</a> · <a href="https://github.com/ncarberry64/Berger-Hopf-Standard-Model/blob/main/CLAIMS.md">Repository claim boundaries</a> — check for later work.</li>
+        <li><a href="https://home.cern/science/physics/standard-model">CERN: The Standard Model</a> — conventional particle framework.<span class="print-address">home.cern/science/physics/standard-model</span></li>
+      </ul>
+      <p class="note">This guide is a dated teaching resource, not a new scientific result. All teaching content and styles are included in this file; following source links requires access to the linked pages. Use your browser’s Print command to print all four sections or select just the worksheet.</p>
+      <footer class="sheet-footer"><span>Teacher guidance &amp; sources · 4 of 4</span><span>BHSM Museum / 28 November 2026</span></footer>
+    </section>
+  </main>
+</body>
+</html>

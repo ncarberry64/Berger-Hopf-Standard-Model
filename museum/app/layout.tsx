@@ -18,6 +18,8 @@ import './bhsm-lifecycle.css';
 // do not request route CSS from the hostname root during lazy hydration.
 import './particle-lifecycle.css';
 import './bhsm-scale-slices.css';
+import './museum-visitor-guide.css';
+import './museum-evidence-guide.css';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -35,7 +37,7 @@ export const metadata: Metadata = {
   ),
   title: 'BHSM Museum | Geometry, Evidence and Open Questions',
   description:
-    'Explore the Berger–Hopf Standard Model: conditional structural results, historical screens, geometric interpretations and conventional reference data.',
+    'Follow an excitation through decay, explore seven scales from the proposed BHSM core to the cosmos, and inspect the evidence, calculations and open questions.',
   icons: {
     icon: './bhsm-symbol.svg',
   },
