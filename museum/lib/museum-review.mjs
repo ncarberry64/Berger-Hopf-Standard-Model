@@ -3,7 +3,7 @@ export const reviewEntries = {
   potential: {
     classification: 'BHSM proposal',
     statement:
-      'BHSM proposes a common geometric description of matter, interactions and cosmic structure. The welcome animation illustrates an unstable excitation through decay; the seven-slice map places the established Standard Model within the proposed wider frame. Neither display supplies a physical derivation or decay rate.',
+      'BHSM proposes a common geometric description of matter, interactions and cosmic structure. The welcome illustrates ripples reinforcing into a rogue wave, bubble separation, pilot-wave travel, collision, unstable daughters and a return to surface ripples. The proposed return of residual inertia is depicted, not quantitatively calculated. The seven-slice map places the established Standard Model within the wider proposed frame. Neither display supplies a physical derivation, transfer law or decay rate.',
     question:
       'Which link from core topology through modes and geometry to a physical observable can you independently reproduce or challenge?',
   },

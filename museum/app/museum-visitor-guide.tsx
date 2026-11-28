@@ -10,15 +10,15 @@ import {
 
 const tourStops = [
   {
-    label: 'Excitation',
-    title: 'Begin with a field excitation.',
+    label: 'Bubble cycle',
+    title: 'From ripples to bubbles—and back.',
     caption:
-      'Follow a disturbance as it becomes a localized mode, propagates and reaches a decay event.',
+      'Follow constructive ripples, bubble formation, pilot waves, a collision and the return to surface ripples.',
     narration:
-      'Start with the lifecycle scene. BHSM interprets particle structure through geometric organization. The field lines make an excitation visible, and the changing pattern introduces the idea of a localized mode. Follow this illustrative unstable excitation through propagation to a decay event, where daughter excitations appear. The animation supplies a visual sequence; its durations, paths and outgoing modes are schematic. Use the pause button or select a phase to examine what changes. A physical decay calculation would also need the permitted interaction channels, conservation laws and a quantitative rate.',
-    prompt: 'Look for the moment when the parent becomes outgoing states.',
+      'Start with the rippling surface. In this BHSM illustration, overlapping ripples reinforce into a rogue wave. A crest pinches off into a bubble, which travels with a surrounding pilot-wave pattern. A second bubble arrives and the two collide. The resulting daughter bubbles are unstable: they break apart, pop and settle back into surface ripples. The final spreading pattern represents the proposed return of residual inertia to the surface. This is a conceptual cycle, not a calculated energy transfer, measured decay channel or prediction of physical rates. Pause at any stage to follow the changes.',
+    prompt: 'Follow what changes at pinch-off, collision and the final pop.',
     href: '#particle-lifecycle-theatre',
-    link: 'Explore the lifecycle',
+    link: 'Explore the bubble cycle',
   },
   {
     label: 'Seven scales',
@@ -56,6 +56,7 @@ const tourStops = [
     link: 'Inspect the evidence guide',
   },
 ] as const;
+const narrationRevision = '20261128-bubble';
 
 export function MuseumVisitorGuide() {
   const [stopIndex, setStopIndex] = useState(0);
@@ -69,11 +70,13 @@ export function MuseumVisitorGuide() {
   const [caption, setCaption] = useState('');
   const [captionFailed, setCaptionFailed] = useState(false);
   const [voiceStatus, setVoiceStatus] = useState(
-    'Andrew’s recorded natural male narration is ready. Select Read this stop aloud to begin.',
+    'Andrew’s recorded natural male narration is ready. Select Play to begin.',
   );
   const audioRef = useRef<HTMLAudioElement>(null);
   const captionTrackRef = useRef<HTMLTrackElement>(null);
   const audioActiveRef = useRef(false);
+  const narrationPausedRef = useRef(false);
+  const voiceStartedRef = useRef(false);
   const audioRevisionRef = useRef(0);
   const narrationSourceRef = useRef<'recorded' | 'device'>('recorded');
   const voicePreferenceRef = useRef('');
@@ -82,14 +85,16 @@ export function MuseumVisitorGuide() {
   const voiceTimeoutRef = useRef<number | null>(null);
   const stop = tourStops[stopIndex];
   const recordedTrack = `./learn/narration/tour-${String(stopIndex + 1).padStart(2, '0')}-andrew`;
+  const recordedAudio = `${recordedTrack}.mp3?v=${narrationRevision}`;
+  const recordedCaptions = `${recordedTrack}.vtt?v=${narrationRevision}`;
   const selectedVoice = selectNarrationVoice(maleVoices, voicePreference);
 
   const stopNarration = useCallback((message = 'Narration stopped.') => {
     setCaption('');
     const utterance = utteranceRef.current;
-    if (!utterance && !audioActiveRef.current) return;
     audioRevisionRef.current++;
     audioActiveRef.current = false;
+    narrationPausedRef.current = false;
     if (audioRef.current) {
       audioRef.current.pause();
       audioRef.current.currentTime = 0;
@@ -107,7 +112,33 @@ export function MuseumVisitorGuide() {
     }
     setNarrating(false);
     setVoiceStatus(message);
+    window.dispatchEvent(new Event('bhsm:narration-end'));
   }, []);
+
+  function pauseNarration() {
+    audioRevisionRef.current++;
+    audioActiveRef.current = false;
+    narrationPausedRef.current = true;
+    audioRef.current?.pause();
+    if (utteranceRef.current) window.speechSynthesis.pause();
+    if (voiceTimeoutRef.current !== null) {
+      window.clearTimeout(voiceTimeoutRef.current);
+      voiceTimeoutRef.current = null;
+    }
+    setNarrating(false);
+    setVoiceStatus('Narration paused. Select Play to continue.');
+    window.dispatchEvent(new Event('bhsm:narration-end'));
+  }
+
+  function watchDeviceStart(utterance: SpeechSynthesisUtterance, name: string) {
+    voiceTimeoutRef.current = window.setTimeout(() => {
+      if (utteranceRef.current === utterance) {
+        stopNarration(
+          `${name} did not start. Try another male voice or read the complete transcript below.`,
+        );
+      }
+    }, 8000);
+  }
 
   useEffect(() => {
     const element = captionTrackRef.current;
@@ -182,14 +213,14 @@ export function MuseumVisitorGuide() {
           narrationVoiceKey(nextVoice) !== narrationVoiceKey(speakingVoice))
       ) {
         stopNarration(
-          'Available voices changed. Select Read this stop aloud to hear the selected male voice.',
+          'Available voices changed. Select Play to hear the selected male voice.',
         );
       }
       setMaleVoices(discovered);
       if (!utteranceRef.current && narrationSourceRef.current === 'device')
         setVoiceStatus(
           nextVoice
-            ? `Ready: ${nextVoice.name}. Select Read this stop aloud to begin.`
+            ? `Ready: ${nextVoice.name}. Select Play to begin.`
             : 'No recognized male English voice is available in this browser yet. Refresh voices or read the complete transcript.',
         );
     };
@@ -197,24 +228,26 @@ export function MuseumVisitorGuide() {
     refreshVoices();
     if (available)
       window.speechSynthesis.addEventListener('voiceschanged', refreshVoices);
-    const stopForMusic = () =>
-      stopNarration('Narration stopped while music plays.');
+    const stopWhenBlurred = () =>
+      stopNarration(
+        'Narration stopped when this window lost focus. Select Play to restart.',
+      );
     const stopWhenHidden = () => {
       if (document.hidden)
         stopNarration(
-          'Narration stopped when you left the page. Select Read this stop aloud to restart.',
+          'Narration stopped when you left the page. Select Play to restart.',
         );
     };
     const stopFollowing = followExhibit(window, (slideId) => {
       if (slideId !== 'potential')
         stopNarration('Narration stopped when you moved to another exhibit.');
     });
-    window.addEventListener('bhsm:play-music', stopForMusic);
+    window.addEventListener('blur', stopWhenBlurred);
     document.addEventListener('visibilitychange', stopWhenHidden);
     return () => {
       // React may clear the ref before passive unmount cleanup runs.
       audio?.pause();
-      window.removeEventListener('bhsm:play-music', stopForMusic);
+      window.removeEventListener('blur', stopWhenBlurred);
       document.removeEventListener('visibilitychange', stopWhenHidden);
       if (available)
         window.speechSynthesis.removeEventListener(
@@ -228,9 +261,7 @@ export function MuseumVisitorGuide() {
   }, [stopNarration]);
 
   function selectStop(next: number) {
-    stopNarration(
-      'Narration stopped. Select Read this stop aloud to hear the selected stop.',
-    );
+    stopNarration('Narration stopped. Select Play to hear the selected stop.');
     setStopIndex(next);
   }
 
@@ -241,7 +272,7 @@ export function MuseumVisitorGuide() {
     const nextVoice = selectNarrationVoice(maleVoices, key);
     setVoiceStatus(
       nextVoice
-        ? `Selected: ${nextVoice.name}. Select Read this stop aloud to begin.`
+        ? `Selected: ${nextVoice.name}. Select Play to begin.`
         : 'No recognized male English voice is available. The complete transcript remains available.',
     );
   }
@@ -252,16 +283,16 @@ export function MuseumVisitorGuide() {
     setNarrationSource(source);
     setVoiceStatus(
       source === 'recorded'
-        ? 'Andrew’s recorded natural male narration is ready. Select Read this stop aloud to begin.'
+        ? 'Andrew’s recorded natural male narration is ready. Select Play to begin.'
         : selectedVoice
-          ? `Selected: ${selectedVoice.name}. Select Read this stop aloud to begin.`
+          ? `Selected: ${selectedVoice.name}. Select Play to begin.`
           : 'No recognized male English device voice is available. Use recorded Andrew or read the transcript.',
     );
   }
 
   function readStop() {
     if (narrating) {
-      stopNarration();
+      pauseNarration();
       return;
     }
     if (narrationSource === 'recorded') {
@@ -269,6 +300,7 @@ export function MuseumVisitorGuide() {
       if (!audio) return;
       const revision = ++audioRevisionRef.current;
       audioActiveRef.current = true;
+      narrationPausedRef.current = false;
       setNarrating(true);
       setVoiceStatus('Starting Andrew’s recorded natural male narration…');
       window.dispatchEvent(new Event('bhsm:narration-start'));
@@ -293,6 +325,25 @@ export function MuseumVisitorGuide() {
       return;
     }
     if (!voiceAvailable || !selectedVoice) return;
+    const pausedUtterance = utteranceRef.current;
+    if (pausedUtterance && narrationPausedRef.current) {
+      narrationPausedRef.current = false;
+      setNarrating(true);
+      setVoiceStatus(
+        `Continuing stop ${stopIndex + 1} with ${selectedVoice.name}.`,
+      );
+      window.dispatchEvent(new Event('bhsm:narration-start'));
+      try {
+        if (!voiceStartedRef.current)
+          watchDeviceStart(pausedUtterance, selectedVoice.name);
+        window.speechSynthesis.resume();
+      } catch {
+        stopNarration(
+          'Device narration could not resume. Select Play to restart or use recorded Andrew.',
+        );
+      }
+      return;
+    }
     // Bind the actual discovered voice: leaving this unset lets the browser
     // silently choose its default, which may be a female or unidentified voice.
     const voice = selectedVoice;
@@ -303,6 +354,8 @@ export function MuseumVisitorGuide() {
     utterance.lang = voice.lang;
     utterance.rate = 0.95;
     utteranceRef.current = utterance;
+    narrationPausedRef.current = false;
+    voiceStartedRef.current = false;
     setNarrating(true);
     setVoiceStatus(`Starting ${voice.name}…`);
     const clearTimer = () => {
@@ -312,6 +365,7 @@ export function MuseumVisitorGuide() {
     };
     utterance.onstart = () => {
       if (utteranceRef.current !== utterance) return;
+      voiceStartedRef.current = true;
       clearTimer();
       setVoiceStatus(
         `Reading stop ${stopIndex + 1} with ${voice.name}. The visible text is the narration transcript.`,
@@ -321,29 +375,29 @@ export function MuseumVisitorGuide() {
       if (utteranceRef.current !== utterance) return;
       clearTimer();
       utteranceRef.current = null;
+      narrationPausedRef.current = false;
       setNarrating(false);
       setVoiceStatus(
         'Narration finished. Continue to the next stop when you are ready.',
       );
+      window.dispatchEvent(new Event('bhsm:narration-end'));
     };
     utterance.onerror = () => {
       if (utteranceRef.current !== utterance) return;
       clearTimer();
       utteranceRef.current = null;
+      narrationPausedRef.current = false;
       setNarrating(false);
       setVoiceStatus(
         `${voice.name} could not read this stop aloud. Choose another available male voice or read the complete transcript.`,
       );
+      window.dispatchEvent(new Event('bhsm:narration-end'));
     };
     window.dispatchEvent(new Event('bhsm:narration-start'));
     try {
-      voiceTimeoutRef.current = window.setTimeout(() => {
-        if (utteranceRef.current === utterance) {
-          stopNarration(
-            `${voice.name} did not start. Try another male voice or read the complete transcript below.`,
-          );
-        }
-      }, 8000);
+      watchDeviceStart(utterance, voice.name);
+      // Some engines retain the paused flag even after cancel() on a prior stop.
+      if (window.speechSynthesis.paused) window.speechSynthesis.resume();
       window.speechSynthesis.speak(utterance);
     } catch {
       stopNarration(
@@ -458,21 +512,28 @@ export function MuseumVisitorGuide() {
               </select>
               <p>
                 AI-generated narration · Microsoft Andrew Online (Natural).{' '}
-                <a href="./learn/narration/credits.json">
+                <a
+                  href={`./learn/narration/credits.json?v=${narrationRevision}`}
+                >
                   Voice credits and recording details ↗
                 </a>
               </p>
             </div>
             <audio
               ref={audioRef}
-              src={`${recordedTrack}.mp3`}
+              src={recordedAudio}
               preload="none"
+              onPause={() => {
+                if (
+                  audioActiveRef.current &&
+                  audioRef.current?.paused &&
+                  !audioRef.current.ended
+                )
+                  pauseNarration();
+              }}
               onEnded={() => {
                 if (!audioActiveRef.current) return;
-                audioActiveRef.current = false;
-                setCaption('');
-                setNarrating(false);
-                setVoiceStatus(
+                stopNarration(
                   'Narration finished. Continue to the next stop when you are ready.',
                 );
               }}
@@ -487,7 +548,7 @@ export function MuseumVisitorGuide() {
                 key={stopIndex}
                 ref={captionTrackRef}
                 kind="captions"
-                src={`${recordedTrack}.vtt`}
+                src={recordedCaptions}
                 srcLang="en"
                 label="English narration captions"
                 onLoad={(event) => {
@@ -512,7 +573,7 @@ export function MuseumVisitorGuide() {
                       ? 'Captions could not load. The complete transcript is above.'
                       : narrating
                         ? 'Narration is playing. The complete transcript is above.'
-                        : 'Select Read this stop aloud to follow synchronized captions.')}
+                        : 'Select Play to follow synchronized captions.')}
                 </p>
               </div>
             )}
@@ -561,9 +622,11 @@ export function MuseumVisitorGuide() {
                 narrationSource === 'device' && !selectedVoice && !narrating
               }
               onClick={readStop}
-              aria-pressed={narrating}
+              aria-label={
+                narrating ? 'Pause tour narration' : 'Play tour narration'
+              }
             >
-              {narrating ? '■ Stop narration' : '▶ Read this stop aloud'}
+              {narrating ? 'Pause' : 'Play'}
             </button>
             {narrationSource === 'device' && (
               <button
@@ -580,13 +643,13 @@ export function MuseumVisitorGuide() {
             </p>
             <div className="visitor-narration-downloads">
               <a
-                href={`${recordedTrack}.mp3`}
+                href={recordedAudio}
                 download={`BHSM-tour-stop-${stopIndex + 1}-Andrew.mp3`}
               >
                 Download this stop · MP3 ↓
               </a>
               <a
-                href={`${recordedTrack}.vtt`}
+                href={recordedCaptions}
                 download={`BHSM-tour-stop-${stopIndex + 1}-captions.vtt`}
               >
                 Download captions · VTT ↓

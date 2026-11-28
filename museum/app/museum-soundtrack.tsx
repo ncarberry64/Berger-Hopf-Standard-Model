@@ -6,6 +6,7 @@ import { exhibitSoundtracks } from '../lib/exhibit-soundtracks.mjs';
 import { followExhibit } from '../lib/exhibit-navigation';
 import { createExhibitSoundtrack } from '../lib/exhibit-soundtrack';
 import { manageSoundtrackSession } from '../lib/soundtrack-session';
+import { coordinateMuseumAudio } from '../lib/museum-audio-coordination';
 
 export function MuseumSoundtrack() {
   const audioRef = useRef<HTMLAudioElement>(null);
@@ -30,14 +31,15 @@ export function MuseumSoundtrack() {
     });
     controller.current = player;
     player.select(exhibitSoundtracks[0].source);
-    const playMusic = () => {
-      void player.play().catch(() => {});
-    };
-    // The entrance's explicitly labeled music action shares the Play control.
-    window.addEventListener('bhsm:play-music', playMusic);
-    const pauseForNarration = () => player.pause();
-    window.addEventListener('bhsm:narration-start', pauseForNarration);
+    let currentSlide = exhibitSoundtracks[0].slideId;
+    const stopAudioCoordination = coordinateMuseumAudio({
+      target: window,
+      audio,
+      player,
+      isLifecycleActive: () => currentSlide === 'potential' && isActive(),
+    });
     const stopFollowing = followExhibit(window, (slideId) => {
+      currentSlide = slideId;
       const index = exhibitSoundtracks.findIndex(
         (soundtrack) => soundtrack.slideId === slideId,
       );
@@ -65,8 +67,7 @@ export function MuseumSoundtrack() {
       onSuspend: () => {},
     });
     return () => {
-      window.removeEventListener('bhsm:play-music', playMusic);
-      window.removeEventListener('bhsm:narration-start', pauseForNarration);
+      stopAudioCoordination();
       stopFollowing();
       player.dispose();
       stopSession();
@@ -128,7 +129,6 @@ export function MuseumSoundtrack() {
           type="button"
           onClick={togglePlayback}
           aria-label={playing ? 'Pause exhibit music' : 'Play exhibit music'}
-          aria-pressed={playing}
         >
           {playing ? <Pause aria-hidden="true" /> : <Play aria-hidden="true" />}
         </button>

@@ -1,6 +1,6 @@
 # What drives the museum animations
 
-White-hole visual updated 28 November 2026; other entries reviewed
+Welcome bubble cycle and white-hole visual updated 28 November 2026; other entries reviewed
 23 October 2026. Animation speed is a presentation choice unless
 an explicit physical readout says otherwise. Motion can reveal a mathematical
 construction, traverse measured records, or explain an established mechanism;
@@ -8,8 +8,8 @@ it is not automatically a solved physical history.
 
 | Display | Evidence and animated quantity |
 | --- | --- |
-| Welcome / Hopf geometry | Parameterized S³ circle fibers projected to three dimensions; [implementation](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/blob/main/museum/lib/berger-hopf.ts). View rotation changes projection, not physical state. |
-| Children: hypersphere, harmonics, moiré | S³ parameterization, standing-wave sines with fixed nodes, superposed rotated hexagons. [Equations](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/blob/main/museum/lib/children-geometry.ts). These are mathematical constructions; BHSM’s identification with reality remains a proposition. |
+| Welcome / surface-and-bubble cycle | Seven selectable stages: Ripples, Rogue wave, Separation, Pilot waves, Collision, Daughters and Return. Overlapping surface ripples reinforce into a crest that pinches off as a bubble; pilot-wave patterns accompany its travel; a second bubble collides with it; unstable daughters deform and pop back into surface ripples. The final pattern represents the author's proposed return of residual inertia to the surface. No inertia or energy transfer is calculated. The 46-second loop, surface amplitudes, bubble shapes, daughter count and paths are presentation choices, not a solved particle history, physical decay channel or established pilot-wave mechanism. The scene starts paused and respects motion, offscreen and hidden-tab guards. [Implementation](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/blob/main/museum/app/particle-lifecycle.tsx). |
+| Historical Children diagrams · retired from Welcome | S³ parameterization, standing-wave sines with fixed nodes, superposed rotated hexagons. [Equations](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/blob/main/museum/lib/children-geometry.ts). These are mathematical constructions; BHSM’s identification with reality remains a proposition. |
 | Standard Model block | Selectable reference electric charge and quantum spin. Decorative orbital/rotation markers removed. [CERN overview](https://home.cern/science/physics/standard-model). |
 | Hadrons and nuclei | Quark content, schematic gluon exchange, fixed nucleon counts. No calculated QCD trajectories or rotating nucleus. [DOE](https://www.energy.gov/science/doe-explainsquarks-and-gluons). |
 | Atoms | Hydrogenic probability-density sections computed from radial/angular functions; viewing angle rotates, density does not orbit. Carbon uses explicitly identified one-electron shape illustrations, not an evaluated many-electron density. [Implementation](https://github.com/ncarberry64/Berger-Hopf-Standard-Model/blob/main/museum/lib/orbital-density.ts). |
@@ -29,9 +29,31 @@ it is not automatically a solved physical history.
 No animation promotes an open physical claim. The original sources, existing
 completion definition and gate ledger govern the claims.
 
+## What the bubble-cycle return means
+
+The welcome uses the requested bubble analogy to show a complete visual cycle.
+The phrase “return of residual inertia to the surface” names the proposed
+interpretation of its last ripple pattern. It is not a numerical evaluation
+of energy, momentum or inertia, and the bubble's drawn area measures none of
+those quantities. The pilot-wave pattern is likewise illustrative; its
+presence is not a derivation or experimental demonstration of a mechanism.
+
+A physical construction would need identified fields and states, interaction
+and boundary conditions, a conservation ledger and quantitative evolution.
+The animation supplies none of those by itself. The first tour narration and
+printable classroom transcript explain the same distinction. The deeper
+common-frame exhibit keeps its separately sourced envelope interpretation.
+
 ## Music and presentation timing
 
-While an exhibit's music is playing, illustrative motion follows that audio
+The welcome begins paused. Its Play control starts the bubble cycle and the
+exhibit's soundtrack together. Narration reduces already-playing music to 18%
+of the selected volume, then restores that volume when narration ends or is
+paused. The welcome cycle keeps its independent 46-second presentation pace;
+the music does not set its stage timing. This volume change affects
+presentation only.
+
+In music-synchronized exhibits, illustrative motion follows the playing audio
 element's playback position. Stable musical pulses align the comparison
 tour to phrases. For ambient or changing-tempo recordings,
 motion follows the recorded swells instead of imposing a fixed beat. Collision
