@@ -13,7 +13,9 @@ import { ScienceGallery } from './science-gallery';
 import { PrototypeScience, UnificationConsole } from './prototype-science';
 import { CosmicEnclosure } from './cosmic-enclosure';
 import { CMSExplorer } from './cms-explorer';
-import { EngineHero, ScienceConsole } from './science-console';
+import { ScienceConsole } from './science-console';
+import { ParticleLifecycle } from './particle-lifecycle';
+import { BHSMScaleSlices } from './bhsm-scale-slices';
 import { CosmologyUpdate } from './cosmology-update';
 import { CosmologyRealization } from './cosmology-realization';
 import { BHSMResearchUpdate } from './research-update';
@@ -113,7 +115,9 @@ export default function Home() {
         </nav>
       </header>
       <MuseumDeck>
-        <EngineHero motion={motion} setMotion={setMotion} />
+        <ParticleLifecycle motion={motion} setMotion={setMotion}>
+          <BHSMScaleSlices />
+        </ParticleLifecycle>
         <BHSMLifecycle motion={motion} setMotion={setMotion} />
         <BergerHopf motion={motion} setMotion={setMotion} />
         <UnificationConsole motion={motion} setMotion={setMotion} />

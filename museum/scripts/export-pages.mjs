@@ -135,6 +135,34 @@ try {
       throw new Error(`Static export is missing: ${expected}`);
   }
   const sections = slides.map(([id]) => id);
+  // The landing exhibit has one lifecycle scene and a static scale atlas.
+  const welcome = written.slice(
+    written.indexOf('id="potential"'),
+    written.indexOf('id="bhsm-lifecycle"'),
+  );
+  for (const expected of [
+    'particle-theatre',
+    'data-lifecycle-phase',
+    'Decay event',
+    'id="bhsm-scale-map"',
+    'Hypersphere core',
+    'Moiré organization',
+    'id="standard-model-chart"',
+    'Periodic table',
+    'Molecules',
+    'Cosmic scale',
+  ]) {
+    if (!welcome.includes(expected))
+      throw new Error(`Welcome exhibit is missing: ${expected}`);
+  }
+  for (const retired of ['class="geometry-field', 'class="children-of-bhsm']) {
+    if (welcome.includes(retired))
+      throw new Error(`Welcome retained a retired animation: ${retired}`);
+  }
+  if (!/<title[^>]*>Particle lifecycle: excitation<\/title>/.test(welcome))
+    throw new Error('Lifecycle SVG needs a server-rendered accessible title.');
+  if (!written.includes('data-white-hole-shape="sphere"'))
+    throw new Error('Cosmic white-hole event lost its sphere.');
   const positions = sections.map((id) => written.indexOf(`id="${id}"`));
   if (
     positions.some(

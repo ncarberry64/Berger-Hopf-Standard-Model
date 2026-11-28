@@ -3,7 +3,7 @@ export const reviewEntries = {
   potential: {
     classification: 'BHSM proposal',
     statement:
-      'BHSM proposes a common geometric description of matter, interactions and cosmic structure.',
+      'BHSM proposes a common geometric description of matter, interactions and cosmic structure. The welcome animation illustrates an unstable excitation through decay; the seven-slice map places the established Standard Model within the proposed wider frame. Neither display supplies a physical derivation or decay rate.',
     question:
       'Which link from core topology through modes and geometry to a physical observable can you independently reproduce or challenge?',
   },

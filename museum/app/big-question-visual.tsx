@@ -44,7 +44,7 @@ const descriptions: Record<BigQuestionVisualKind, string> = {
   expansion:
     'Distances between markers grow on a closed geometry; the illustration resets to repeat.',
   cycle:
-    'Schematic field build-up and inward return precede an instantaneous whole-cosmos white-hole release. The faded restart is editorial replay, not a computed rebound.',
+    'Schematic field build-up and inward return precede an instantaneous whole-cosmos white-hole release, shown as a solid luminous white sphere. The faded restart is editorial replay, not a computed rebound.',
   darkmatter:
     'Visible matter is surrounded by a schematic collective geometric response.',
   symmetry:
@@ -129,6 +129,7 @@ function scene(
   kind: BigQuestionVisualKind,
   time: number,
   variant: string,
+  sphereGradientId: string,
 ): ReactNode {
   if (variant === 'light') {
     const progress = (time * 0.18) % 1;
@@ -807,7 +808,7 @@ function scene(
         phase < 0.75
           ? Math.max(0, Math.sin((phase - 0.12) * Math.PI * 1.3))
           : 0;
-      // Hold the returned structure; flash the whole surface together. The fade
+      // Hold the returned structure; form the white sphere all at once. The fade
       // permits an editorial restart without animating a physical rebound.
       const fade = phase > 0.93 ? (1 - phase) / 0.07 : 1;
       return (
@@ -846,16 +847,15 @@ function scene(
             opacity={release ? 0 : phase >= 0.75 ? 0.08 : 0.2 + inward * 0.55}
           />
           {release && (
-            <ellipse
+            <circle
               cx="300"
               cy="160"
-              rx="217"
-              ry="128"
-              fill="#fff5df"
-              fillOpacity=".46"
-              stroke={GOLD}
-              strokeWidth="2"
+              r="128"
+              fill={`url(#${sphereGradientId})`}
+              stroke="#fff"
+              strokeWidth="1.5"
               data-release="whole-cosmos"
+              data-white-hole-shape="sphere"
             />
           )}
         </g>
@@ -1167,6 +1167,12 @@ export function BigQuestionVisual({
             <stop stopColor="#342345" stopOpacity=".5" />
             <stop offset="1" stopColor="#08070d" stopOpacity="0" />
           </radialGradient>
+          <radialGradient id={`${id}-white-sphere`} cx="36%" cy="30%" r="72%">
+            <stop stopColor="#fff" />
+            <stop offset=".6" stopColor="#fff" />
+            <stop offset=".88" stopColor="#f1f5ff" />
+            <stop offset="1" stopColor="#cbd8ec" />
+          </radialGradient>
         </defs>
         <rect width="600" height="320" fill="#09080e" rx="18" />
         <ellipse
@@ -1182,7 +1188,7 @@ export function BigQuestionVisual({
           stroke={FAINT}
           opacity=".65"
         />
-        {scene(kind, frameTime, variant)}
+        {scene(kind, frameTime, variant, `${id}-white-sphere`)}
       </svg>
     </div>
   );
