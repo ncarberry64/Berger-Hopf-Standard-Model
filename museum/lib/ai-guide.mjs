@@ -63,11 +63,11 @@ export const currentSources = [
 const topics = {
   potential: {
     keywords:
-      'welcome children hypersphere topology modes harmonics moire geometry standard model particles quarks leptons bosons atoms hydrogen carbon molecules structures scales',
+      'welcome particle lifecycle excitation coherent mode propagation decay daughters hypersphere core fields moire modes standard model quarks leptons bosons periodic table molecules planets stars cosmic scale slices',
     summary:
-      'Children of BHSM connects proposed core/topology, modes and geometry to established particle families and larger structures. Selectable illustrations include orbital densities, molecules, matter phases and cosmic structures.',
+      'Welcome has one particle lifecycle animation, from field excitation through a localized mode and propagation to an illustrative decay event with outgoing daughter excitations. Pause or select a stage to inspect it. A static seven-slice scale map follows: hypersphere core, excitations and moiré modes, Standard Model fundamental particles, periodic table, molecules, planets and stars, then cosmic structure. The Standard Model has its own particle-family chart within that wider BHSM conceptual map.',
     scope:
-      'The foundational connections are BHSM propositions. Animations are schematic; established categories do not validate those connections.',
+      'The core-to-field and moiré-to-particle connections are BHSM propositions. The unstable excitation is illustrative, not an identified particle or a prediction of decay products, lifetime or rate. The slices organize scales conceptually; they are not measured shells, a calibrated length axis or a derivation of the Standard Model. Established particle categories do not validate the proposed connections.',
     sources: [
       source('Established science collection', 'data/science-collection.json'),
       currentSources[1],
@@ -223,7 +223,7 @@ const topics = {
     keywords:
       'cosmology original january cosmic cycle hypersphere light proposal universe expansion',
     summary:
-      'The original cosmology exhibit continuously animates the BHSM cosmic cycle through six stages, with about 1.5 seconds per stage without music. All black holes are proposed to lead to the same core/singularity, shown as one white core among dark entrances. After heat death, at zero core–surface differential, the entire scene turns uniformly white at once: one whole-cosmos white-hole event with no separate heat-death slide or spreading front. Playback is explanatory, not computed cosmic evolution. The original January illustration is expandable below; the interpretation follows the author’s clarification of 1 October 2026 and the visual correction of 23 October 2026.',
+      'The original cosmology exhibit continuously animates the BHSM cosmic cycle through six stages, with about 1.5 seconds per stage without music. All black holes are proposed to lead to the same core/singularity, shown as one white core among dark entrances. After heat death, at zero core–surface differential, the displayed hypersphere becomes an opaque luminous white sphere at once: one whole-cosmos white-hole event against a dark presentation background, with no separate heat-death slide or spreading front. Playback is explanatory, not computed cosmic evolution. The original January illustration is expandable below; the interpretation follows the author’s clarification of 1 October 2026 and sphere presentation requested on 28 November 2026.',
     scope:
       'Historical conceptual illustration, not a sky map, current numerical fit or demonstrated physical cosmic cycle.',
     sources: [
@@ -351,7 +351,7 @@ const topics = {
 export const catalog = {
   schema_version: '1.0',
   title: 'BHSM Museum AI navigation index',
-  updated: '2026-11-11',
+  updated: '2026-11-28',
   museum_url: museumUrl,
   repository_url: repository,
   guide_url: local('llms.txt'),

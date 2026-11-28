@@ -105,7 +105,6 @@ export function CosmicEnclosure({ motion }: { motion: boolean }) {
       <div className="cosmic-presentation">
         <button
           className="event-stage cosmic-stage"
-          style={{ background: release ? '#fff' : undefined }}
           ref={sceneRef}
           data-white-event={release}
           aria-label="Next stage of the BHSM cosmic cycle"
@@ -120,7 +119,7 @@ export function CosmicEnclosure({ motion }: { motion: boolean }) {
             role="img"
             aria-label={
               release
-                ? 'The entire scene is uniformly white: the proposed instantaneous whole-cosmos white-hole event at heat death. There is no spreading front or intermediate heat-death stage.'
+                ? 'The cosmic hypersphere is a solid luminous white sphere against a dark background: the proposed instantaneous whole-cosmos white-hole event at heat death. There is no spreading front or intermediate heat-death stage.'
                 : `Cosmic hypersphere: ${phases[active].title}. Irregular filaments, broad voids and dense cluster knots evolve into many dark black-hole entrances connected to one white shared core.`
             }
           >
@@ -140,6 +139,16 @@ export function CosmicEnclosure({ motion }: { motion: boolean }) {
                 <stop stopColor="#fffef0" />
                 <stop offset=".55" stopColor="#fff0c4" />
                 <stop offset="1" stopColor="#e2e9ff" stopOpacity=".05" />
+              </radialGradient>
+              <radialGradient id="cosmic-white-sphere" cx="36%" cy="30%" r="72%">
+                <stop stopColor="#fff" />
+                <stop offset=".6" stopColor="#fff" />
+                <stop offset=".88" stopColor="#f1f5ff" />
+                <stop offset="1" stopColor="#cbd8ec" />
+              </radialGradient>
+              <radialGradient id="cosmic-white-glow">
+                <stop offset=".8" stopColor="#e5efff" stopOpacity=".3" />
+                <stop offset="1" stopColor="#e5efff" stopOpacity="0" />
               </radialGradient>
               <radialGradient id="cosmic-plasma">
                 <stop stopColor="#fffef0" stopOpacity=".65" />
@@ -441,6 +450,25 @@ export function CosmicEnclosure({ motion }: { motion: boolean }) {
                 </text>
               </g>
             )}
+            {release && (
+              <g data-white-hole-shape="sphere">
+                <circle
+                  cx="480"
+                  cy="310"
+                  r="295"
+                  fill="url(#cosmic-white-glow)"
+                />
+                <circle
+                  data-whole-cosmos-white="true"
+                  cx="480"
+                  cy="310"
+                  r="260"
+                  fill="url(#cosmic-white-sphere)"
+                  stroke="#fff"
+                  strokeWidth="1.5"
+                />
+              </g>
+            )}
             <text
               x="480"
               y="615"
@@ -450,14 +478,6 @@ export function CosmicEnclosure({ motion }: { motion: boolean }) {
             >
               {phases[active].title}
             </text>
-            {release && (
-              <rect
-                data-whole-cosmos-white="true"
-                width="960"
-                height="650"
-                fill="#fff"
-              />
-            )}
           </svg>
         </button>
         <div className="cosmic-panel-controls">
@@ -489,8 +509,8 @@ export function CosmicEnclosure({ motion }: { motion: boolean }) {
             <p className="cycle-legend">
               Pale filaments: matter density · warm knots: galaxy groups and
               clusters · dark circles: black-hole entrances · one white center:
-              the shared core · all white: the proposed whole-cosmos white-hole
-              event.
+              the shared core · luminous white sphere: the proposed whole-cosmos
+              white-hole event.
             </p>
           </div>
         </div>
@@ -498,12 +518,14 @@ export function CosmicEnclosure({ motion }: { motion: boolean }) {
       <p className="console-caption">
         Continuous animation of the BHSM proposal. The visible tour follows the
         music&apos;s swells, or advances about every 1.5 seconds without music.
-        Select a stage to pause and inspect it. At heat death, the scene turns
-        entirely white at once: the proposed whole-cosmos white-hole event when
-        the core–surface differential vanishes. There is no intermediate
-        heat-death slide or spreading front. Select the white-hole event to
-        inspect the white frame. This is a conceptual visualization, not a
-        computed cosmic history or physical time scale. The numerical R1
+        Select a stage to pause and inspect it. At heat death, the cosmic
+        hypersphere becomes a luminous white sphere at once: the proposed
+        whole-cosmos white-hole event when the core–surface differential
+        vanishes. There is no intermediate heat-death slide or spreading front.
+        Select the white-hole event to inspect the white sphere. Its shading
+        shows the shape, not a temperature gradient; the dark surround is
+        presentation space. This is a conceptual visualization, not a computed
+        cosmic history or physical time scale. The numerical R1
         response is animated in the next exhibit. System reduced-motion and
         museum pause settings stop automatic playback.
       </p>

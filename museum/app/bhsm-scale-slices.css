@@ -1,0 +1,411 @@
+.bhsm-scale-map {
+  --scale-muted: #b4bdce;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: clamp(2.5rem, 6vw, 6rem) clamp(1rem, 4vw, 4rem);
+  color: #eef3f6;
+  scroll-margin-top: 90px;
+}
+.scale-section-heading {
+  max-width: 850px;
+  margin-bottom: 2rem;
+}
+.scale-section-heading .eyebrow,
+.scale-chart-heading .eyebrow {
+  color: #71e5eb;
+  font-size: 0.73rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin: 0 0 0.85rem;
+}
+.scale-section-heading h2 {
+  font-size: clamp(2rem, 4.5vw, 3.8rem);
+  line-height: 1.08;
+  letter-spacing: -0.045em;
+  font-weight: 550;
+  margin: 0 0 1.2rem;
+}
+.scale-section-heading > p:last-child {
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
+  color: #c1c9d7;
+  line-height: 1.7;
+  max-width: 70ch;
+}
+.scale-atlas-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: clamp(1.5rem, 4vw, 4rem);
+  align-items: start;
+}
+.scale-sculpture-frame {
+  margin: 0;
+  min-width: 0;
+  background: radial-gradient(ellipse at 50% 45%, #17293880, transparent 67%);
+}
+.scale-sculpture {
+  display: block;
+  width: 100%;
+  max-width: 580px;
+  height: auto;
+  margin: 0 auto;
+}
+.scale-axis-label {
+  fill: #a7b2c6;
+  font:
+    9px var(--font-geist-mono),
+    monospace;
+  letter-spacing: 1.7px;
+}
+.scale-slice-number {
+  font:
+    12px var(--font-geist-mono),
+    monospace;
+}
+.scale-diagram-note {
+  fill: #a7b2c6;
+  font:
+    11px var(--font-geist-mono),
+    monospace;
+}
+.scale-sculpture-frame figcaption {
+  color: var(--scale-muted);
+  font-size: 0.81rem;
+  line-height: 1.65;
+  margin: 0.1rem auto 0;
+  max-width: 48ch;
+  padding-inline: 1rem;
+}
+.scale-selector-label {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.4rem;
+  color: #d5deeb;
+  font-size: 0.76rem;
+  margin: 0.6rem 0 1rem;
+}
+.scale-selector-label span {
+  color: #9caec3;
+  font-size: 0.71rem;
+}
+.scale-layer-list {
+  display: grid;
+  gap: 0.4rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.scale-layer-list li {
+  margin: 0;
+  padding: 0;
+}
+.scale-layer-list button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-align: left;
+  color: #e0e5ee;
+  font: inherit;
+  border: 1px solid #303c4b;
+  border-radius: 7px;
+  background: #111b25;
+  padding: 0.65rem 0.85rem;
+  min-height: 62px;
+  cursor: pointer;
+}
+.scale-layer-list button:hover {
+  background: #1a2935;
+  border-color: var(--slice-color);
+}
+.scale-layer-list button[aria-pressed='true'] {
+  background: #1a2c35;
+  border-color: var(--slice-color);
+  box-shadow: inset 3px 0 var(--slice-color);
+}
+.scale-layer-list button:focus-visible {
+  outline: 2px solid #ffbc77;
+  outline-offset: 3px;
+}
+.scale-layer-number {
+  color: var(--slice-color);
+  font:
+    0.82rem var(--font-geist-mono),
+    monospace;
+  flex: 0 0 1.5rem;
+}
+.scale-layer-list strong {
+  display: block;
+  font-size: 0.99rem;
+  line-height: 1.4;
+  font-weight: 600;
+}
+.scale-layer-list small {
+  display: block;
+  color: #aebdd0;
+  font-size: 0.75rem;
+  line-height: 1.4;
+}
+.scale-layer-marker {
+  color: var(--slice-color);
+  margin-left: auto;
+  font-size: 0.85rem;
+}
+.scale-layer-detail {
+  border-left: 2px solid var(--slice-color);
+  padding: 0.2rem 0 0.2rem 1.1rem;
+  margin: 1.5rem 0 0;
+  min-height: 226px;
+}
+.scale-layer-status {
+  color: var(--slice-color);
+  font:
+    0.67rem/1.5 var(--font-geist-mono),
+    monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin: 0 0 0.6rem;
+}
+.scale-layer-detail h3 {
+  font-size: 1.4rem;
+  line-height: 1.2;
+  margin: 0 0 0.6rem;
+}
+.scale-layer-detail > p:not(.scale-layer-status) {
+  color: #d1d9e4;
+  font-size: 0.92rem;
+  line-height: 1.65;
+  margin: 0.5rem 0;
+}
+.scale-layer-detail > p.scale-detail-context {
+  color: #adbbcd;
+  font-size: 0.8rem;
+}
+.scale-particle-chart {
+  margin-top: clamp(2rem, 5vw, 4rem);
+  padding: clamp(1rem, 3vw, 2.5rem);
+  border: 1px solid #36515a;
+  border-radius: 12px;
+  background: linear-gradient(125deg, #11232a, #0c1620 70%);
+}
+.scale-chart-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 1rem;
+  margin-bottom: 1.7rem;
+}
+.scale-chart-heading .eyebrow {
+  margin-bottom: 0.65rem;
+}
+.scale-chart-heading h3 {
+  font-size: clamp(1.25rem, 2.3vw, 1.85rem);
+  line-height: 1.25;
+  letter-spacing: -0.025em;
+  margin: 0;
+  max-width: 27ch;
+}
+.scale-evidence-tag {
+  display: block;
+  border: 1px solid #496270;
+  color: #b7cdd6;
+  border-radius: 4px;
+  padding: 0.35rem 0.5rem;
+  font:
+    0.65rem/1.5 var(--font-geist-mono),
+    monospace;
+  white-space: nowrap;
+}
+.scale-particle-families {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: clamp(1rem, 2.5vw, 2rem);
+}
+.scale-generations {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  text-align: center;
+  margin-bottom: 0.6rem;
+  color: #afbbce;
+  font:
+    0.68rem var(--font-geist-mono),
+    monospace;
+}
+.scale-particle-family {
+  --particle-color: #ff968a;
+}
+.scale-particle-family.leptons {
+  --particle-color: #71e5eb;
+  margin-top: 1rem;
+}
+.scale-particle-family.bosons {
+  --particle-color: #bda7f5;
+  margin-top: 1.45rem;
+}
+.scale-particle-family h4 {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  color: var(--particle-color);
+  font-size: 0.86rem;
+  font-weight: 550;
+  margin: 0 0 0.5rem;
+}
+.scale-particle-family h4 small {
+  color: #a9b9cd;
+  font-size: 0.67rem;
+  font-weight: 400;
+  align-self: center;
+}
+.scale-particle-family ul {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  gap: 0.45rem;
+}
+.scale-particle-family li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 82px;
+  border: 1px solid color-mix(in srgb, var(--particle-color) 45%, #16222d);
+  background: color-mix(in srgb, var(--particle-color) 7%, #101923);
+  border-radius: 5px;
+  padding: 0.6rem 0.35rem;
+  text-align: center;
+}
+.scale-particle-family li b {
+  font:
+    1.7rem/1.1 var(--font-geist-mono),
+    monospace;
+  color: var(--particle-color);
+}
+.scale-particle-family li span {
+  font-size: 0.71rem;
+  line-height: 1.3;
+  color: #dbe4eb;
+  margin-top: 0.35rem;
+}
+.scale-particle-family li small {
+  font-size: 0.65rem;
+  color: #adbad0;
+  margin-top: 0.15rem;
+}
+.scale-particle-family.bosons ul {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.scale-particle-family.bosons li {
+  min-height: 100px;
+}
+.scale-higgs {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  background: #2b261f;
+  border: 1px solid #8c754f;
+  border-radius: 5px;
+  padding: 1rem;
+  margin-top: 1rem;
+  min-height: 100px;
+}
+.scale-higgs > b {
+  color: #ffbc77;
+  font:
+    2.4rem var(--font-geist-mono),
+    monospace;
+}
+.scale-higgs h4 {
+  color: #ffce96;
+  font-size: 0.9rem;
+  font-weight: 550;
+  margin: 0 0 0.25rem;
+}
+.scale-higgs p {
+  font-size: 0.73rem;
+  color: #d4c8b6;
+  line-height: 1.5;
+  margin: 0;
+}
+.scale-chart-note,
+.scale-source-note {
+  font-size: 0.77rem;
+  line-height: 1.7;
+  color: var(--scale-muted);
+  margin: 1.5rem 0 0;
+  max-width: 110ch;
+}
+.bhsm-scale-map a {
+  color: #71e5eb;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.scale-source-note {
+  padding-left: 1rem;
+  border-left: 2px solid #546078;
+  margin-top: 1.5rem;
+}
+.scale-tour-link {
+  display: inline-block;
+  margin-top: 1.2rem;
+  padding-block: 0.6rem;
+  font-size: 0.9rem;
+}
+@media (max-width: 900px) {
+  .scale-atlas-layout {
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1fr);
+    gap: 1.2rem;
+  }
+  .scale-sculpture-frame {
+    position: sticky;
+    top: 90px;
+  }
+  .scale-evidence-tag {
+    white-space: normal;
+    max-width: 10rem;
+  }
+}
+@media (max-width: 650px) {
+  .scale-atlas-layout {
+    grid-template-columns: 1fr;
+  }
+  .scale-sculpture-frame {
+    position: static;
+  }
+  .scale-sculpture {
+    max-width: 430px;
+  }
+  .scale-sculpture-frame figcaption {
+    max-width: none;
+  }
+  .scale-layer-list {
+    grid-template-columns: 1fr;
+  }
+  .scale-layer-detail {
+    min-height: 0;
+  }
+  .scale-chart-heading {
+    flex-direction: column;
+  }
+  .scale-evidence-tag {
+    max-width: none;
+  }
+  .scale-particle-families {
+    grid-template-columns: 1fr;
+  }
+  .scale-particle-family.bosons {
+    margin-top: 0.3rem;
+  }
+  .scale-generations {
+    font-size: 0.6rem;
+  }
+  .scale-particle-family li {
+    min-height: 85px;
+  }
+  .scale-particle-family li span {
+    font-size: 0.7rem;
+  }
+}

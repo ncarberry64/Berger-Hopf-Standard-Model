@@ -34,9 +34,12 @@ evenly sampled subset of the density marks and a pre-sampled filament skeleton.
 Playback stops offscreen, in hidden tabs, on pause, and for reduced motion.
 Converging schematic paths identify one shared core. Following the author's
 23 October 2026 visual correction, this core is white and the many black-hole
-entrances remain dark. At heat death the whole scene turns uniformly white
-in one frame, with no separate heat-death slide or reading hold. Visitors can
-select the white-hole event to pause and inspect that white frame.
+entrances remain dark. Following the author's 28 November 2026 refinement,
+at heat death the cosmic hypersphere becomes an opaque, luminous white sphere
+in one frame, with no separate heat-death slide or reading hold. The dark
+surround preserves its silhouette, and gentle shading makes its spherical
+shape legible. Neither is a physical exterior or a temperature gradient.
+Visitors can select the white-hole event to pause and inspect that sphere.
 
 This is the author's requested cyclic hypothesis. It is not established
 cosmology, an observation, a thermodynamic theorem or an implication of BHSM
@@ -76,7 +79,7 @@ view representing an S3 spatial hypersurface. It does not embed the full
 three-sphere or depict a literal two-dimensional outer wall of the universe.
 Deterministic surface coordinates, illustrative scalar roughness and marker
 paths create the animation. Markers are labeled as flows, celestial bodies,
-black-hole concentrations and explosive events. A uniform white frame represents
+black-hole concentrations and explosive events. A solid white sphere represents
 the requested whole-cosmos release; no propagating release front is drawn. Shrinking dark entrance symbols and
 expanding gold rings represent evaporation and surface restoration in the
 author's conceptual picture; they are not a calculated Hawking radiation flux.
@@ -121,6 +124,10 @@ visibility; individual stars and black-hole horizons would be unresolved at
 this scale. Black-hole markers remain enlarged symbols of the author's cycle.
 
 Earlier versions used radial light fields and overlapping plasma patches in
-the white-hole phase. The author's 23 October 2026 correction replaces that
-presentation with a completely white scene at the event. A circular SVG clip
-keeps the surface marks within the illustrated hypersphere in other stages.
+the white-hole phase. The author's 23 October 2026 correction replaced that
+presentation with a completely white scene at the event. The 28 November 2026
+revision keeps the simultaneous transition while replacing the full-frame
+white rectangle with a filled, shaded white sphere at the same radius as the
+other cosmic stages. A circular SVG clip keeps the surface marks within the
+illustrated hypersphere in those other stages. The small cosmic-cycle diagram
+in the questions exhibit uses the same opaque white-sphere convention.

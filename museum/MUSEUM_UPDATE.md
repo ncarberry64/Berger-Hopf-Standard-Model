@@ -1,5 +1,38 @@
 # Museum content update — 24 September 2026
 
+## Welcome lifecycle and scale atlas — 28 November 2026
+
+The welcome exhibit replaces its linked-fiber and Children of BHSM animation
+cluster with one particle lifecycle: excitation, organization, propagation,
+and an illustrative decay event with outgoing daughter excitations. Playback,
+phase selection, restart and a scrubber share the museum's motion preference;
+the scene clock stops while offscreen. The sequence is conceptual and supplies
+no identified decay channel, lifetime, rate or branching ratio.
+
+A static seven-slice atlas sits below it, ordered upward from hypersphere
+core, excitations/moiré modes, Standard Model, periodic table, molecules,
+planets and stars, to cosmic structure. Selectable descriptions explain each
+level; the Standard Model chart groups quarks, leptons, gauge bosons and Higgs.
+The established particle framework and the proposed BHSM connections retain
+their distinct status. The existing 16-exhibit sequence and soundtrack remain.
+
+Validation: 129 museum Node checks, TypeScript, the focused Python cosmic
+exhibit check, and production static export. Browser review covers desktop
+and 390px phone layout, phase selection, pause, the scale selector and white
+sphere. A split SVG title initially caused a hydration mismatch; rendering it
+as one text value resolves it. Static export guards retain the new welcome
+content and reject the retired welcome animation containers.
+
+## White-hole sphere refinement — 28 November 2026
+
+The original cosmic cycle now shows its white-hole event as a solid, luminous
+white sphere against a dark surround. This replaces the full-frame white
+rectangle, preserving the sphere's scale and the simultaneous transition at
+the existing stage boundary. The small cosmic-cycle diagram in the questions
+exhibit follows the same convention. Gentle shading describes shape only;
+neither a temperature gradient nor an exterior to the cosmos is implied.
+Stage timing, pause controls and the proposed status of the cycle are unchanged.
+
 ## Envelope interpretation correction - 11 November 2026
 
 The lifecycle now follows Norman's 10 November clarification: a propagating
@@ -21,7 +54,8 @@ at each observer year remain calculated from the same forward model.
 Comparisons run twice as fast, using eight measured beats per entry.
 
 The original cosmic cycle shows one white shared core among dark black-hole
-entrances. At heat death the whole scene turns uniformly white in one frame;
+entrances. At that revision, heat death turned the whole scene uniformly white
+in one frame (superseded by the 28 November sphere refinement);
 the separate heat-death stage is removed. R1 globes now deform with the same
 normalized signed field used for their colors: cyan outward, gold inward,
 zero round. This displacement is illustrative, not a computed physical metric.
